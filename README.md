@@ -4,7 +4,7 @@ Vehicle/object traffic counting from real road videos, starting with a Kaggle GP
 
 ## Current status
 
-Phase 1: the [parameterized video-inspection notebook](notebooks/01_video_inspection.ipynb) is available. Actual dataset execution must happen in Kaggle; no actual-video inspection findings, model inference, benchmark, or ground-truth dataset have been produced by the cloud implementation task. See [execution status and instructions](docs/VIDEO_INSPECTION.md).
+Phase 1: the [parameterized video-inspection notebook](notebooks/01_video_inspection.ipynb) has retained Kaggle execution reports for one selected video. Report metadata/decode/sampling have been reviewed; all 21 manual visual observations remain unknown, and the referenced pixel artifacts were not supplied. Model inference and Phase 2 have not started. See [execution evidence, limits, and instructions](docs/VIDEO_INSPECTION.md).
 
 Confirmed target: YOLO26M using the Ultralytics Python API → BoT-SORT with ReID-assisted association → track state/trajectory → per-video pixel geometry → valid crossing events → counts → aggregation/audit.
 
@@ -22,6 +22,6 @@ The camera remains at one recording position during each video, with possible sm
 
 [Phase 1 — video inspection](docs/PHASE_1_TASK.md) is authorized. Open or import `notebooks/01_video_inspection.ipynb` into the [provided Kaggle notebook](https://www.kaggle.com/code/chrisbiran/new-traffic-counter/edit), with the dataset mounted at `/kaggle/input/datasets/chrisbiran/traffic-tracker-videos`. Run through discovery, copy one actual discovered path into `VIDEO_PATH`, then restart the kernel and run all cells. Inspect the generated frames/temporal previews, enter evidence-based manual observations, and regenerate the report. Changing `VIDEO_PATH` selects another video without changing the inspection logic.
 
-Generated frames, previews, reports, and notebook outputs remain in the configured runtime artifact directory, not GitHub source. No detector, tracker, ReID, crossing, counting, enhancement, stabilization, or multi-GPU processing is implemented by this notebook. Phase 2 is not started.
+Generated frames, previews, videos, and executed notebook outputs remain in the configured runtime artifact directory, not GitHub source. The two user-supplied inspection reports are archived unchanged under `docs/evidence/phase_1/` to substantiate this documentation review. No detector, tracker, ReID, crossing, counting, enhancement, stabilization, or multi-GPU processing is implemented by this notebook. Phase 2 is not started.
 
 Documentation is part of the project contract. Preserve the distinction between FACT, REQUIREMENT, ASSUMPTION, PROPOSAL, and EXPERIMENT RESULT. Do not report formal accuracy without appropriate ground-truth evidence.

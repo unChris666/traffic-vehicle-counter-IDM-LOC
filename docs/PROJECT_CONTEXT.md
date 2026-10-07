@@ -6,7 +6,7 @@
 
 The primary use case is traffic around a retail store/location. Development begins with a Kaggle GPU prototype for one video. Modular Python, UI, Docker, and GPU VM deployment follow only after the core pipeline is stable and manually audited.
 
-**FACT — current evidence:** Phase 0 specifications, a sample-video screenshot, and the Phase 1 inspection tool are available. The user supplied the Kaggle dataset location, but actual videos, model assets, model class mapping, and real-video experiment results have not been inspected or verified in Codex. See [VIDEO_INSPECTION.md](VIDEO_INSPECTION.md) for execution status. The screenshot's overlay labels and counts are not evidence of detector, tracker, or counting performance.
+**FACT — current evidence:** Phase 0 specifications, a sample-video screenshot, the Phase 1 inspection tool, and uploaded Kaggle execution reports are available. The retained Markdown/JSON reports for run `20261007T180055_252361Z_27a6f8f3` have been reviewed for internal consistency. They record one video's metadata/decode/sampling; original video and referenced pixel artifacts were not supplied for this review. All 21 manual observations remain unknown. Model assets, class mapping, and model performance have not been verified. See [VIDEO_INSPECTION.md](VIDEO_INSPECTION.md) for source reports, findings, and limits. The earlier screenshot is not evidence of this run's visual conditions or model/counting performance.
 
 Decision provenance: the user's specification-update prompt and subsequent reference-side confirmation, received on 2026-10-08 (Asia/Jakarta). The reference screenshot was supplied in chat; no image asset or extracted polygon coordinates are stored in this documentation update.
 
@@ -27,6 +27,10 @@ The target input is eight videos:
 | Weekend | morning / pagi; noon / siang; afternoon / sore; night / malam |
 
 **FACT — reported input characteristics, not measurements:** Videos are approximately five minutes long and approximately 30 FPS. Resolution and aspect ratio may vary. Lighting varies by recording period, and night videos may be very dark. Phase 1 must inspect actual metadata and representative frames rather than treat these descriptions as measured properties.
+
+**EXPERIMENT RESULT — retained Kaggle report:** the selected `TDLE-PAGI.mp4` has reported H.264 metadata, 640 × 480 pixels (derived aspect ratio 4:3), 8,960 frames, stream duration 301.058555 seconds, and average FPS 29.761652209830647. Both decode passes record 8,960 frames. The nominal rate is 64.333 FPS; constant/variable frame rate and source timestamps remain unverified. These are report-supported facts about that input, not defaults for all videos or a guarantee of file integrity.
+
+Discovery contains metadata for 13 candidates, with dimensions 640 × 480, 640 × 360, 512 × 288, and 1280 × 720; reported average FPS ranges from about 24.003271 to 29.876442 and stream durations from 300.762749 to 344.859778 seconds. Only the selected video has full decode/sampling evidence. Candidate filenames do not establish store, weekday/weekend, recording-period, night visibility, or completeness of the required eight-video set for a location.
 
 ## 3. Camera Condition
 

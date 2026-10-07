@@ -4,9 +4,40 @@
 
 **FACT — user-supplied execution context:** actual videos are in Kaggle at `/kaggle/input/datasets/chrisbiran/traffic-tracker-videos`. The supplied editor is [new-traffic-counter](https://www.kaggle.com/code/chrisbiran/new-traffic-counter/edit). GitHub contains source and documentation, not the video files.
 
-**FACT — observed in Codex:** that dataset mount is unavailable. No actual dataset filenames, file metadata, frames, camera/lighting observations, geometry coordinates, or Kaggle GPU/runtime properties have been inspected here. No Kaggle-video inspection report is claimed. The earlier screenshot remains spatial context only.
+**FACT — review boundary:** the dataset mount is unavailable in Codex. The user supplied the retained Markdown and JSON reports from an actual Kaggle run; these have been reviewed for internal consistency. The original video, native PNGs, contact sheet, burst manifests/previews, and `run_manifest.json` were not supplied. Their paths/statuses in the reports are references, not independently inspected pixels or verified file existence. The earlier screenshot is not evidence of this run's camera, lighting, or geometry.
 
 **IMPLEMENTATION:** [01_video_inspection.ipynb](../notebooks/01_video_inspection.ipynb) is an output-free inspection notebook. It verifies the execution environment, discovers video candidates and available metadata, requires explicit selection of one video, records metadata provenance, and retains representative and temporal evidence. Manual observations remain UNKNOWN until supported by that run's evidence. This does not implement or validate a detector, tracker, ReID, counting, stabilization, night enhancement, or Phase 2.
+
+## Retained Kaggle execution evidence
+
+**EXPERIMENT RESULT — report-supported, not a new Codex video execution:** [inspection_report.md](evidence/phase_1/20261007T180055_252361Z_27a6f8f3/inspection_report.md) and [inspection_report.json](evidence/phase_1/20261007T180055_252361Z_27a6f8f3/inspection_report.json) are archived byte-for-byte from the user uploads. Run `20261007T180055_252361Z_27a6f8f3` was recorded at `2026-10-07T18:00:55.253136+00:00`. Findings below come from those retained reports, not from executing or reading the source notebook to infer results.
+
+| Selected-video field | Retained evidence |
+|---|---|
+| Input | `/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TDLE-PAGI.mp4` |
+| File size | 12,506,413 bytes, reported filesystem stat |
+| Codec | H.264, reported ffprobe codec |
+| Dimensions | 640 × 480 pixels; derived aspect ratio 4:3 |
+| Stream duration | 301.058555 seconds; container duration 301.059 seconds |
+| Average FPS | 29.761652209830647, ffprobe average rate |
+| Nominal FPS | 64.333, ffprobe nominal rate |
+| Frame count | 8,960 in ffprobe/OpenCV metadata and both sequential decode passes |
+| Input SHA-256 | `7a5e1a3dd55c83549326515398d1eeadc07d223eea171626058fd1bfae61a46c`, reported value; original bytes unavailable for recomputation |
+
+Discovery records metadata for **13 candidates**, not 13 completed visual inspections. Reported dimensions include 640 × 480, 640 × 360, 512 × 288, and 1280 × 720. Average FPS ranges from approximately 24.003271 to 29.876442; stream durations range from 300.762749 to 344.859778 seconds. Only `TDLE-PAGI.mp4` was selected for full sequential decoding and sampling. Filenames do not establish recording period, night conditions, store identity, weekday/weekend, or completeness of the target eight-video set.
+
+Sampling records five representative indices: **0, 2240, 4480, 6719, 8959**. Five bursts each contain 30 consecutive frame records, giving 150 unique frame-evidence records with saved statuses and no missing requested indices. Each burst spans about 0.974 seconds by average-FPS estimation; this is not certified source timing. The source image files and previews were not attached, so this review verifies report records only.
+
+Reported Kaggle environment: Python 3.12.13, four process-available CPUs, OpenCV 4.13.0, NumPy 2.0.2, Pillow 11.3.0, IPython 7.34.0, FFmpeg/ffprobe 4.4.2. `nvidia-smi` reports two Tesla T4 GPUs, each with 15,360 MiB, and driver 580.178.04. These are observations about that run, not dependency pins, proof of model/CUDA compatibility, or authorization for multi-GPU processing.
+
+### Unresolved review and decode limits
+
+- Run status is `evidence_saved_manual_review_pending`; review status is `incomplete_unknown_items`. All **21 manual observations** have null observations and empty evidence lists. Camera stability has no category. There is no retained visual conclusion about camera/road orientation, viewing angle, shake, lighting, vehicle visibility, occlusion, blur, reflections, shadows, entering/exiting or diagonal motion, geometry feasibility/alignment, low-light model risks, failure cases, or technical questions.
+- Matching metadata/decode counts support the recorded reads but do not prove source integrity. The stop reason is `read_returned_false: EOF_or_decode_failure_not_distinguished`, and completeness is `not_guaranteed_by_OpenCV`. No confirmed damaged frame or confirmed decode failure is established by these reports.
+- Average and nominal rates differ. Backend timestamps also differ from index/average-FPS estimates: for example, representative index 2240 has backend time 76.243918 seconds versus estimated time 75.264639 seconds. Neither is treated as an authoritative timestamp audit. CFR/VFR status, timestamp gaps, and dropped frames remain unknown; inspect original stream timestamps if timing decisions depend on them.
+- No architectural or counting decision changed. No detector, tracker, ReID, stabilization, night preprocessing, or model/counting performance experiment is established. No ground-truth evaluation exists.
+
+**PROPOSAL — next review action:** use the existing run's native frames, temporal previews, and original video in Kaggle to fill supported manual observations with references, then regenerate and retain the reports. Investigate timing without inventing a VFR/dropped-frame diagnosis. Additional temporal evidence may be needed for rare shake/events. Phase 2 remains a separate, explicitly authorized task.
 
 ## Run in Kaggle
 
@@ -55,6 +86,6 @@ Observed cloud validation environment: Python 3.12.14, OpenCV 5.0.0 (`opencv-pyt
 
 ## Remaining unknowns
 
-Actual video metadata and contents; qualitative camera stability; view/road orientation and any defensible approximate angle; lighting/night visibility; occlusion, blur, reflections, shadows, diagonal paths, entries/exits; per-video geometry feasibility; and downstream detection/tracking/ReID risks remain unknown until actual evidence is inspected.
+The selected video's reported metadata, decode/sampling records, discovery metadata, and runtime visibility are now known within the report-review limits above. Pixel contents; qualitative camera stability; view/road orientation and any defensible approximate angle; lighting/night visibility; occlusion, blur, reflections, shadows, diagonal paths, entries/exits; per-video geometry feasibility; source integrity/timing; and downstream detection/tracking/ReID risks remain unknown.
 
-Do not automatically assign a 45-degree angle, a shake category, geometry coordinates, or an improvement claim. Low-light risks are hypotheses until later relevant experiments. No ground truth exists and no formal model/counting performance is reported. Phase 1 real-video acceptance remains pending Kaggle execution and human review.
+Do not automatically assign a 45-degree angle, a shake category, geometry coordinates, or an improvement claim. Low-light risks are hypotheses until later relevant experiments. No ground truth exists and no formal model/counting performance is reported. Technical Kaggle execution is supported by the reports; visual Phase 1 review remains pending. Phase 2 has not started.
