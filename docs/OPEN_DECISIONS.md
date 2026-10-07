@@ -1,6 +1,6 @@
 # Decision Register
 
-Status: Phase 0 specification. Confirmed means accepted project intent, not verified model availability, implemented behavior, or measured performance. No video inspection, inference, tracking, ReID, counting, or benchmark experiment has been executed in this documentation task.
+Status: Phase 0 decision register maintained during Phase 1 tool creation. Confirmed means accepted project intent, not verified model availability or measured performance. No actual Kaggle-video inspection, inference, tracking, ReID, counting, or benchmark experiment has been executed in the cloud task. Runtime findings remain unknown until the real dataset is inspected.
 
 Source of this update: the user's clarification prompt and reference-image side confirmation, 2026-10-08 (Asia/Jakarta). These supersede the earlier proposal-only model status, camera-travel interpretation, pre-tracker ROI filter, center-anchor default, and unspecified projection discussion. They do not provide model assets, numerical parameters, or experiment results.
 
@@ -19,7 +19,7 @@ Read with [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md), [MODEL_SPEC.md](MODEL_SPEC.m
 - Counting is derived from eligible persistent-track crossing events. Bounding-box contact is insufficient. Protect against jitter, trajectory fluctuation, temporary detection loss, re-entry, and noisy re-crossing; count once per valid event.
 - Geometry anchor remains OPEN without a default. Candidate center/bottom-center choices require evidence.
 - No formal ground-truth dataset exists. No accuracy, precision, recall, F1, MAPE, or counting-performance claim is justified by this specification or visual audit.
-- Current authorization covers documentation and Phase 1 preparation only. Do not start Phase 1, implement inference/video processing, or select numerical thresholds now.
+- Current authorization covers Phase 1 video inspection only. The user supplied Kaggle dataset mount `/kaggle/input/datasets/chrisbiran/traffic-tracker-videos` and notebook editor `https://www.kaggle.com/code/chrisbiran/new-traffic-counter/edit`. These are supplied execution locations, not verified dataset contents. Do not implement model inference, tracking, crossing/counting, stabilization, or select model/counting thresholds in this phase.
 
 ## OPEN TECHNICAL DECISION
 
@@ -60,4 +60,4 @@ Read with [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md), [MODEL_SPEC.md](MODEL_SPEC.m
 
 The documentation can define a focused Phase 1 inspection task without deciding detector thresholds, anchor, ReID settings, or stabilization. **Execution readiness still requires actual videos and their source/metadata**, which are not established by a reference image.
 
-Recommended next task: once explicitly authorized and actual video input is supplied, inspect metadata, representative temporal frames, lighting, stationary handheld shake, diagonal paths, candidate per-video geometry, and difficult cases. Produce an inspection notebook, metadata table, representative images/clips, and evidence-based notes. Do not implement inference, tracking, crossing, counting, or stabilization in that task. This recommendation is not a claim that Phase 1 has started or passed.
+Phase 1 tool implementation is now authorized. Run `../notebooks/01_video_inspection.ipynb` in Kaggle against one explicitly selected discovered video, inspect metadata and temporal evidence, and record manual observations. See [VIDEO_INSPECTION.md](VIDEO_INSPECTION.md) for actual execution status. Tool validation on a synthetic fixture does not resolve any real-video question in the tables above. Do not implement inference, tracking, crossing, counting, or stabilization, and do not advance to Phase 2 in this task.

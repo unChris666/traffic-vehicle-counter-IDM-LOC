@@ -6,7 +6,7 @@ No formal ground-truth dataset currently exists.
 
 Therefore, model accuracy and counting accuracy are NOT current acceptance criteria.
 
-This document specifies future checks, not executed results. Phase 0 validation is specification consistency; Phase 1 video inspection is prepared in `PHASE_1_TASK.md` and has not started.
+This document specifies checks, not executed results. Phase 0 validation is specification consistency; the Phase 1 inspection tool is authorized in `PHASE_1_TASK.md`. See `VIDEO_INSPECTION.md` for actual tool-validation status. Synthetic tool checks are separate from actual Kaggle-video inspection, which remains pending.
 
 ## 2. Test Levels
 

@@ -80,7 +80,7 @@ The intended order is:
 
 Do not skip directly to later phases unless explicitly instructed.
 
-The present task completes documentation for Phase 0 only. `docs/PHASE_1_TASK.md` prepares the next task; it is not authorization to execute Phase 1. Phase 1 inspects actual video metadata, representative frames, and handheld shake. Detector/tracker inference and GMC/stabilization implementation belong to later authorized tasks.
+Phase 0 established the specifications. The user has now authorized Phase 1: video inspection, using `notebooks/01_video_inspection.ipynb` and the scope in `docs/PHASE_1_TASK.md`. The actual dataset is mounted in Kaggle, not this repository. Cloud fixture checks do not establish findings about that dataset. Phase 1 inspects actual video metadata, representative frames, and handheld shake. Detector/tracker inference and GMC/stabilization implementation belong to later authorized tasks.
 
 ## Task Execution Protocol
 

@@ -1,10 +1,10 @@
-# Prepared Task — Phase 1 Video Inspection
+# Phase 1 Task — Video Inspection
 
 ## Status
 
-PROPOSAL: the next implementation task. Prepared during Phase 0; not started. This task does not authorize itself. Begin only after the user explicitly requests Phase 1 and provides accessible actual video input.
+REQUIREMENT: Phase 1 is now explicitly authorized by the user. The inspection tool is `../notebooks/01_video_inspection.ipynb`. Actual dataset inspection has not been executed from the current cloud environment; see `VIDEO_INSPECTION.md` for execution status rather than treating this task specification as a result.
 
-The supplied screenshot is a spatial reference, not a video dataset or temporal measurement. No actual video is currently present in this checkout. Kaggle GPU availability and runtime dependencies have not been verified in Kaggle.
+The supplied screenshot is a spatial reference, not a video dataset or temporal measurement. The user supplied Kaggle input path `/kaggle/input/datasets/chrisbiran/traffic-tracker-videos` and notebook editor `https://www.kaggle.com/code/chrisbiran/new-traffic-counter/edit`. That path is not mounted in Codex. No actual video is present in this checkout. Kaggle GPU availability and runtime dependencies must be verified by running the notebook in Kaggle.
 
 ## Task
 
@@ -49,10 +49,10 @@ YOLO inference; BoT-SORT tracking; ReID; final anchor selection; counting; fixed
 
 ## Deliverables
 
-PROPOSAL file names for the next task, not existing implementation:
+Phase 1 deliverable locations:
 
 - `notebooks/01_video_inspection.ipynb` — inspection only.
-- `docs/VIDEO_INSPECTION.md` — actual metadata table, observations, limitations, and Phase 2 prerequisites.
+- `docs/VIDEO_INSPECTION.md` — execution status and tool-validation evidence now; actual metadata/observations only after reviewing a Kaggle run. Runtime reports retain the executed metadata table, manual observations, and limitations.
 - Generated metadata/frames/clips in a configurable artifact directory outside tracked source. Exact layout and serialization are selected and documented in that task. Do not commit raw videos or invent outputs.
 - Update `docs/OPEN_DECISIONS.md` only where actual video evidence changes a decision's status.
 

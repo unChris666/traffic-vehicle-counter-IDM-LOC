@@ -6,7 +6,7 @@
 
 The primary use case is traffic around a retail store/location. Development begins with a Kaggle GPU prototype for one video. Modular Python, UI, Docker, and GPU VM deployment follow only after the core pipeline is stable and manually audited.
 
-**FACT — current evidence:** Phase 0 specifications and a sample-video screenshot are available. The actual videos, model assets, model class mapping, and experiment results have not been inspected or verified in this documentation task. The screenshot's overlay labels and counts are not evidence of the proposed detector, tracker, or counting performance.
+**FACT — current evidence:** Phase 0 specifications, a sample-video screenshot, and the Phase 1 inspection tool are available. The user supplied the Kaggle dataset location, but actual videos, model assets, model class mapping, and real-video experiment results have not been inspected or verified in Codex. See [VIDEO_INSPECTION.md](VIDEO_INSPECTION.md) for execution status. The screenshot's overlay labels and counts are not evidence of detector, tracker, or counting performance.
 
 Decision provenance: the user's specification-update prompt and subsequent reference-side confirmation, received on 2026-10-08 (Asia/Jakarta). The reference screenshot was supplied in chat; no image asset or extracted polygon coordinates are stored in this documentation update.
 
@@ -108,6 +108,6 @@ The intended conceptual information includes track identity, bounding box, categ
 
 Work follows [CODEX_WORKFLOW.md](../CODEX_WORKFLOW.md), from Phase 0 specification through Phase 13 GPU VM deployment. Prove the single-video pipeline before eight-video processing or multi-GPU orchestration. The eventual GPU target detects available GPUs dynamically: one GPU processes sequentially; two GPUs may process videos in parallel with one active video assigned to each GPU where resources permit.
 
-This task updates Phase 0 documentation only. It does not run Phase 1 or implement video processing, inference, tracking, ReID, UI, Docker, or orchestration.
+The Phase 0 task established documentation only. Phase 1 now creates an inspection tool for actual video metadata and visual evidence, with execution intended in Kaggle. It does not implement inference, tracking, ReID, counting, UI, Docker, or orchestration.
 
 See [OPEN_DECISIONS.md](OPEN_DECISIONS.md) for confirmed/open decisions, [CONFIG_SCHEMA.md](CONFIG_SCHEMA.md) for preliminary configuration, and [API_CONTRACT.md](API_CONTRACT.md) for implementation-independent boundaries.

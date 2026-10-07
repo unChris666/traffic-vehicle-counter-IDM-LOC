@@ -109,4 +109,4 @@ Evaluate comparable video samples with explicit configuration and retain both im
 
 Record verified model/library identifiers, dependency versions, input identity, device choice, and explicit configuration during future runs. Do not invent versions or store secret values in configuration.
 
-The current task is Phase 0 documentation. Actual model loading, inference, tracker/ReID runs, and performance measurements have not been executed here. See [OPEN_DECISIONS.md](OPEN_DECISIONS.md), [CONFIG_SCHEMA.md](CONFIG_SCHEMA.md), [TEST_PLAN.md](TEST_PLAN.md), and [EVALUATION.md](EVALUATION.md).
+Phase 0 defined this model specification. The Phase 1 inspection tool does not load models, run inference/tracker/ReID, or measure their performance. None of those model operations has been executed here. See [OPEN_DECISIONS.md](OPEN_DECISIONS.md), [CONFIG_SCHEMA.md](CONFIG_SCHEMA.md), [TEST_PLAN.md](TEST_PLAN.md), and [EVALUATION.md](EVALUATION.md).
