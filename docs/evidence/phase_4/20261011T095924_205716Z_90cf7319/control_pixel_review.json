@@ -1,0 +1,173 @@
+{
+  "scope": "AI-assisted review of three actual retained paired contact sheets, six displayed frame positions per sheet only. No wholevideo annotation, no fullclip viewing, no inference or new tracker execution. Original source images and reports unchanged.",
+  "run_id": "20261011T095924_205716Z_90cf7319",
+  "review_provenance": "Codex visual inspection using view_image of actual retained outputs",
+  "source_artifacts": [
+    {
+      "path": "/tmp/kaggle-phase4-reid-output-20261011/reid_comparison/20261011T095924_205716Z_90cf7319/temporal/paired_burst_000000000_000000029_contact_sheet.png",
+      "sha256": "d2cd36fa75be2feebb7809ea9f5a63be0faddcea2f4f66c5dde91387a9c45620",
+      "reviewed_displayed_frame_indices": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        29
+      ],
+      "sheet_columns": "left ReID off, right ReID on",
+      "all_30_burst_frames_visually_reviewed": false
+    },
+    {
+      "path": "/tmp/kaggle-phase4-reid-output-20261011/reid_comparison/20261011T095924_205716Z_90cf7319/temporal/paired_burst_000002555_000002584_contact_sheet.png",
+      "sha256": "95210cc846ae616832bd7c5d08edcfdc437e7b4316c8433c9d230178eb47c2ca",
+      "reviewed_displayed_frame_indices": [
+        2555,
+        2560,
+        2565,
+        2570,
+        2575,
+        2584
+      ],
+      "sheet_columns": "left ReID off, right ReID on",
+      "all_30_burst_frames_visually_reviewed": false
+    },
+    {
+      "path": "/tmp/kaggle-phase4-reid-output-20261011/reid_comparison/20261011T095924_205716Z_90cf7319/temporal/paired_burst_000010252_000010281_contact_sheet.png",
+      "sha256": "891c095404d249faef3f2917ac1aaf06ecec88fde1c1e443d8a22ce1bd59abc4",
+      "reviewed_displayed_frame_indices": [
+        10252,
+        10257,
+        10262,
+        10267,
+        10272,
+        10281
+      ],
+      "sheet_columns": "left ReID off, right ReID on",
+      "all_30_burst_frames_visually_reviewed": false
+    }
+  ],
+  "findings": [
+    {
+      "case": "beginning_control_and_distant_left_candidate",
+      "observation": "Initial IDs1/2/3 source links stay unchanged between variants in retained0\u201329 records. The added distant-left raw car-candidate stream has ONID6 assigned10(unconfirmed),11(active),16(active),19(active),29(active); OFF fresh unconfirmed IDs6,8,9,10,11 at those source occurrences. The raw bbox stays roughly x102\u2013138/y421\u2013441. The paired MP4 crops show no apparent relocation of this candidate onto the separate larger approaching carID1 or neighboring carID2. However target dimensions are about33\u00d720nativepixels and annotation labels obscure upperbody, so physical identity discrimination is insufficient to confirm same-car recovery. Association/confirmation/reacquisition differs; a physical identity improvement remains unestablished.",
+      "classification": "OBSERVED_ASSOCIATION_DIFFERENCE_PHYSICAL_BENEFIT_UNESTABLISHED",
+      "improvement_claimed": false,
+      "final_vehicle_reid_configuration_accepted": false,
+      "tracking_candidate_ambiguity": "Visible candidate remains near same far-left road area, but detailed identity cannot be resolved reliably from these cropped annotated pixels."
+    },
+    {
+      "case": "receding_rider_scooter_control",
+      "observation": "The visibly same receding rider/scooter maintains consistent component boxes across the six displayed positions in both variants: OFF person933/motorcycle935, ON person483/motorcycle485. Numeric differences between variants are not identity errors. No apparent new loss/handoff is visible on these displayed positions. Person is rider-associated visual component, not an accepted pedestrian mapping.",
+      "classification": "OBSERVED_LOCAL_CONTINUITY_BOTH_VARIANTS",
+      "whole_burst_identity_correctness_established": false
+    },
+    {
+      "case": "end_control",
+      "observation": "Both variants show zero emitted tracks at10252 and a consistently placed distant-car track at10257,10262,10267,10272,10281: OFF4829, ON2327. Raw person prediction at roadside structure10262 and bench prediction10281 appear in both variants; those physical category interpretations remain unverified and ReID does not remove them. No apparent local continuity regression is visible in the sampled distant-car placements.",
+      "classification": "OBSERVED_LOCAL_CONTINUITY_BOTH_VARIANTS",
+      "physical_category_ground_truth_available": false
+    }
+  ],
+  "limits": [
+    "Sparse displayed positions do not establish continuity in every intervening frame.",
+    "Distant vehicle shapes and small rendered boxes limit physical identity discrimination.",
+    "No accuracy, ID-switch count, vehicle count, or whole-video improvement score is reported.",
+    "Root separately reviews red-scooter and entering/roadside-gap cases.",
+    "Display-only nearest3x enlargement of saved annotated MP4 pixels does not recover missing discriminative detail or remove rendered labels."
+  ],
+  "linked_record_review_status": "Actual representative beginning0\u201329 records reviewed for source-linked assigned/emitted observations; full-video independent audit remains separate.",
+  "derived_beginning_review": {
+    "manifest": "/tmp/phase4-beginning-review/derived_clip_crop_manifest.json",
+    "manifest_sha256": "05caeefca944f3562075ed4f41da446cc720da3ccb9d9bf1ece05888acb5fc11",
+    "derived_sheets": [
+      {
+        "path": "/tmp/phase4-beginning-review/paired_car_crop_10_19.png",
+        "sha256": "7324ffadefe0ca8f6b00a63a682986a5dd3fc8ba09238c0dc3adc51221e707cd",
+        "frame_indices": [
+          10,
+          11,
+          12,
+          16,
+          19
+        ],
+        "crop_xyxy": [
+          60,
+          365,
+          290,
+          495
+        ],
+        "upscale": "3x nearest display only"
+      },
+      {
+        "path": "/tmp/phase4-beginning-review/paired_car_crop_20_24.png",
+        "sha256": "99c61199a1fb4718eb08a64a91d1804c20d70d2bffc10ce8d055e753e2342e5e",
+        "frame_indices": [
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "crop_xyxy": [
+          60,
+          365,
+          290,
+          495
+        ],
+        "upscale": "3x nearest display only"
+      },
+      {
+        "path": "/tmp/phase4-beginning-review/paired_car_crop_25_29.png",
+        "sha256": "b32f91fb94e6bff348d91b005f8b8637409c7a125172f336e4565a9effbb3c6d",
+        "frame_indices": [
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        "crop_xyxy": [
+          60,
+          365,
+          290,
+          495
+        ],
+        "upscale": "3x nearest display only"
+      }
+    ],
+    "viewed_source_frame_indices": [
+      10,
+      11,
+      12,
+      16,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "source_records": [
+      {
+        "path": "/tmp/kaggle-phase4-reid-output-20261011/reid_comparison/20261011T095924_205716Z_90cf7319/reid_off/representative_temporal_track_records.json",
+        "sha256": "394eb4226179daed56ed57b645dbbf94c9d2999c27fb1a9d9b5dd1387825cffb",
+        "scope": "Actual retained beginning0\u201329, including assigned/unconfirmed observations; no tracker rerun."
+      },
+      {
+        "path": "/tmp/kaggle-phase4-reid-output-20261011/reid_comparison/20261011T095924_205716Z_90cf7319/reid_on/representative_temporal_track_records.json",
+        "sha256": "b903581fe8ce1daddbb5a014d84f495e20cd3612c23bba5fcc93ca829a6b9506",
+        "scope": "Actual retained beginning0\u201329, including assigned/unconfirmed observations; no tracker rerun."
+      },
+      {
+        "path": "/tmp/phase4-artifact-audit/actual_run/paired_trace_000000000_000000029.json",
+        "sha256": "436af4f15a15199cd7b614548522b315b632ec77f948cf408dc1569e21e584c0",
+        "scope": "Independent source-index linked trace from retained actual records."
+      }
+    ]
+  }
+}

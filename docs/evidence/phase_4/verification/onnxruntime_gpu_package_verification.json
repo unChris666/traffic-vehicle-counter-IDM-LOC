@@ -1,0 +1,40 @@
+{
+  "metadata_url": "https://pypi.org/pypi/onnxruntime-gpu/1.24.4/json",
+  "version": "1.24.4",
+  "requires_dist": [
+    "flatbuffers",
+    "numpy>=1.21.6",
+    "packaging",
+    "protobuf",
+    "sympy",
+    "nvidia-cuda-nvrtc-cu12~=12.0; extra == \"cuda\"",
+    "nvidia-cuda-runtime-cu12~=12.0; extra == \"cuda\"",
+    "nvidia-cufft-cu12~=11.0; extra == \"cuda\"",
+    "nvidia-curand-cu12~=10.0; extra == \"cuda\"",
+    "nvidia-cudnn-cu12~=9.0; extra == \"cudnn\""
+  ],
+  "wheel": {
+    "comment_text": null,
+    "core-metadata": {
+      "sha256": "3784e8d36c4f9b05461f6577c0ad8a497f7c30a5b0e922904a324f14a41c272e"
+    },
+    "digests": {
+      "blake2b_256": "d02c5b3fd4748cf7ed291eae541a37e426efc20ea04cb6e6a05768304ab0aa41",
+      "md5": "a686539d5fc39ba1520ed53e133ad614",
+      "sha256": "eb0e38f0c1ef3b76ae0081c8e51eed20dd8925aa916f0fc6f9b8b17d05610e99"
+    },
+    "downloads": -1,
+    "filename": "onnxruntime_gpu-1.24.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "has_sig": false,
+    "md5_digest": "a686539d5fc39ba1520ed53e133ad614",
+    "packagetype": "bdist_wheel",
+    "python_version": "py3",
+    "requires_python": ">=3.11",
+    "size": 252765531,
+    "upload_time": "2026-03-17T22:03:57",
+    "upload_time_iso_8601": "2026-03-17T22:03:57.528358Z",
+    "url": "https://files.pythonhosted.org/packages/d0/2c/5b3fd4748cf7ed291eae541a37e426efc20ea04cb6e6a05768304ab0aa41/onnxruntime_gpu-1.24.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+    "yanked": false,
+    "yanked_reason": null
+  }
+}

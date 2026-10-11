@@ -1,0 +1,60 @@
+{
+  "profile": "reid_on/ort_encoder_profile_2026-10-11_10-00-47.json",
+  "profile_sha256": "407c5bea537eb862ff18d1321009d72857b9c8424f7e2006360b3f51e105590d",
+  "provider_kernel_event_counts": {
+    "CUDAExecutionProvider": 137,
+    "CPUExecutionProvider": 20
+  },
+  "cuda_kernel_event_examples": [
+    {
+      "name": "/model.0/conv/Conv_kernel_time",
+      "provider": "CUDAExecutionProvider",
+      "op_name": "Conv",
+      "duration_us": 752303
+    },
+    {
+      "name": "/model.0/act/Mul/QuickGeluFusion/_kernel_time",
+      "provider": "CUDAExecutionProvider",
+      "op_name": "QuickGelu",
+      "duration_us": 864
+    },
+    {
+      "name": "/model.1/conv/Conv_kernel_time",
+      "provider": "CUDAExecutionProvider",
+      "op_name": "Conv",
+      "duration_us": 5991
+    },
+    {
+      "name": "/model.1/act/Mul/QuickGeluFusion/_kernel_time",
+      "provider": "CUDAExecutionProvider",
+      "op_name": "QuickGelu",
+      "duration_us": 17
+    },
+    {
+      "name": "/model.2/cv1/conv/Conv_kernel_time",
+      "provider": "CUDAExecutionProvider",
+      "op_name": "Conv",
+      "duration_us": 51382
+    },
+    {
+      "name": "/model.2/cv1/act/Mul/QuickGeluFusion/_kernel_time",
+      "provider": "CUDAExecutionProvider",
+      "op_name": "QuickGelu",
+      "duration_us": 19
+    },
+    {
+      "name": "/model.2/Split_kernel_time",
+      "provider": "CUDAExecutionProvider",
+      "op_name": "Split",
+      "duration_us": 637
+    },
+    {
+      "name": "/model.2/m.0/cv1/conv/Conv_kernel_time",
+      "provider": "CUDAExecutionProvider",
+      "op_name": "Conv",
+      "duration_us": 54019
+    }
+  ],
+  "actual_cuda_execution_confirmed": true,
+  "cpu_partition_note": "CPU-assigned graph nodes, if present, are reported; no whole-session CUDA fallback is permitted."
+}

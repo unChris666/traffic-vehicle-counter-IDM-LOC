@@ -1,0 +1,1110 @@
+{
+  "phase": 4,
+  "run_id": "20261011T095924_205716Z_90cf7319",
+  "started_utc": "2026-10-11T09:59:24.206366+00:00",
+  "status": "completed_controlled_reid_sequences_manual_review_pending",
+  "claim_type": "EXPERIMENT_RESULT_ON_EXECUTION",
+  "scope": "controlled cached ReID off/on; CPU association, dedicated ONNX encoder cuda:0; no detector or counting",
+  "configuration": {
+    "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-PAGI.mp4",
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+    "variants": [
+      "reid_off",
+      "reid_on"
+    ],
+    "reid_device": "cuda:0",
+    "tracker_overrides": {
+      "with_reid": false,
+      "gmc_method": "none"
+    },
+    "seed": 0,
+    "baseline_status": "PROPOSAL: published, untuned tracker defaults with explicit isolation overrides"
+  },
+  "stages": {
+    "dependency_installation": {
+      "wall_seconds": 27.570893743
+    },
+    "environment_and_verified_tracker_source": {
+      "wall_seconds": 0.09452475300003016
+    },
+    "retained_input_identity_and_cache_validation": {
+      "wall_seconds": 1.624982719000002
+    },
+    "tracker_configuration": {
+      "wall_seconds": 0.0017701909999914278
+    },
+    "verified_encoder_asset": {
+      "wall_seconds": 0.4124086940000211
+    },
+    "cached_adapter_and_observer_validation": {
+      "wall_seconds": 0.641061312999966
+    },
+    "full_independent_cached_off_on_sequences": {
+      "wall_seconds": 469.229097317
+    },
+    "paired_temporal_export_and_serialized_consistency_audit": {
+      "wall_seconds": 18.479347470999983
+    }
+  },
+  "frames_processed": 20564,
+  "variants": {
+    "reid_off": {
+      "status": "completed_full_cached_sequence_review_pending",
+      "frames_processed": 10282,
+      "configuration": {
+        "tracker_type": "botsort",
+        "track_high_thresh": 0.25,
+        "track_low_thresh": 0.1,
+        "new_track_thresh": 0.25,
+        "track_buffer": 30,
+        "match_thresh": 0.8,
+        "fuse_score": true,
+        "gmc_method": "none",
+        "proximity_thresh": 0.5,
+        "appearance_thresh": 0.8,
+        "with_reid": false,
+        "model": "auto"
+      },
+      "decode_metadata": {
+        "width": 1280.0,
+        "height": 720.0,
+        "fps": 29.81501660256117,
+        "frame_count": 10282.0,
+        "backend": "FFMPEG"
+      },
+      "decode_stop": "opencv_read_false_eof_or_decode_failure_unknown_after_expected_rows",
+      "timing": {
+        "loop_wall_seconds": 41.139683324999964,
+        "tracker_update_calls": 10282,
+        "tracker_update_wall_seconds": 18.206131658999766,
+        "tracker_update_wall_ms_mean": 1.7706799901769856,
+        "tracker_update_wall_ms_median": 1.6289885000162485,
+        "encoder_wall_seconds_inside_tracker": 0,
+        "decoder_read_calls_including_final_probe": 10283,
+        "decode_read_wall_seconds": 10.72800426099758,
+        "selected_render_and_png_write_wall_seconds": 1.4988181310001778,
+        "limits": "Instrumented tracker includes adapter, association and cost validation; on variant also actual crop/encoder inference. Encoder is a subset, not additional time. Loop also includes JSON serialization/IO. Sequential order/warmup may affect runtime."
+      },
+      "association_mechanism_diagnostics": {
+        "calls": 13929,
+        "candidate_pairs": 420466,
+        "nonempty_feature_association_calls": 0,
+        "appearance_eligible_pairs": 0,
+        "appearance_changed_cost_pairs": 0,
+        "calls_with_changed_costs": 0
+      },
+      "observed_process_peak_rss_bytes": 1473183744,
+      "diagnostics": {
+        "serialized_rows_verified": 10282,
+        "captured_tracker_ids_including_unconfirmed": 4922,
+        "unique_emitted_tracker_ids": 780,
+        "emitted_track_observations": 45756,
+        "frames_with_zero_cached_detections": 7,
+        "frames_with_no_emitted_tracks": 14,
+        "ids_never_emitted": 4142,
+        "within_id_gap_events": 1633,
+        "within_id_raw_class_changes": 497,
+        "lifecycle_transition_events": 14570,
+        "id_switch_count": null,
+        "id_switch_count_status": "Unknown; needs physical identity review.",
+        "traffic_count": null,
+        "traffic_count_status": "Not implemented; IDs are not vehicle counts."
+      },
+      "serialized_consistency_audit": {
+        "status": "passed",
+        "ordered_rows": 10282,
+        "raw_detection_preservation": true,
+        "unique_emitted_ids": true,
+        "ordered_histories": true,
+        "temporal_clips_decode": true
+      }
+    },
+    "reid_on": {
+      "status": "completed_full_cached_sequence_review_pending",
+      "frames_processed": 10282,
+      "configuration": {
+        "tracker_type": "botsort",
+        "track_high_thresh": 0.25,
+        "track_low_thresh": 0.1,
+        "new_track_thresh": 0.25,
+        "track_buffer": 30,
+        "match_thresh": 0.8,
+        "fuse_score": true,
+        "gmc_method": "none",
+        "proximity_thresh": 0.5,
+        "appearance_thresh": 0.8,
+        "with_reid": true,
+        "model": "/kaggle/working/reid_comparison/20261011T095924_205716Z_90cf7319/assets/yolo26n-reid.onnx",
+        "device": "cuda:0"
+      },
+      "encoder_runtime": {
+        "class": "ReID",
+        "providers": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ],
+        "provider_options": {
+          "CPUExecutionProvider": {},
+          "CUDAExecutionProvider": {
+            "sdpa_kernel": "0",
+            "use_tf32": "1",
+            "fuse_conv_bias": "0",
+            "prefer_nhwc": "0",
+            "tunable_op_max_tuning_duration_ms": "0",
+            "enable_skip_layer_norm_strict_mode": "0",
+            "tunable_op_tuning_enable": "0",
+            "tunable_op_enable": "0",
+            "use_ep_level_unified_stream": "0",
+            "device_id": "0",
+            "has_user_compute_stream": "0",
+            "gpu_external_empty_cache": "0",
+            "cudnn_conv_algo_search": "EXHAUSTIVE",
+            "cudnn_conv1d_pad_to_nc1d": "0",
+            "gpu_mem_limit": "18446744073709551615",
+            "gpu_external_alloc": "0",
+            "gpu_external_free": "0",
+            "arena_extend_strategy": "kNextPowerOfTwo",
+            "do_copy_in_default_stream": "1",
+            "enable_cuda_graph": "0",
+            "user_compute_stream": "0",
+            "cudnn_conv_use_max_workspace": "1"
+          }
+        },
+        "ort_version": "1.24.4",
+        "device": "cuda:0",
+        "backend_device": "cuda:0",
+        "imgsz": [
+          224,
+          224
+        ],
+        "fp16": false,
+        "static_batch_size": null,
+        "model_inputs": [
+          {
+            "name": "images",
+            "shape": [
+              "batch",
+              3,
+              "height",
+              "width"
+            ],
+            "type": "tensor(float)"
+          }
+        ],
+        "model_outputs": [
+          {
+            "name": "embeddings",
+            "shape": [
+              "batch",
+              512
+            ],
+            "type": "tensor(float)"
+          }
+        ],
+        "metadata": {
+          "end2end": "False",
+          "description": "Ultralytics YOLO26n-reid-2psa model trained on ultralytics/cfg/datasets/MSMT17-v1.yaml",
+          "docs": "https://docs.ultralytics.com",
+          "version": "8.4.62",
+          "batch": "1",
+          "license": "AGPL-3.0 License (https://ultralytics.com/license)",
+          "stride": "1",
+          "task": "reid",
+          "date": "2026-06-10T13:55:57.674614",
+          "imgsz": "[448, 448]",
+          "names": "{0: 'class_0', 1: 'class_1', 2: 'class_2', 3: 'class_3', 4: 'class_4', 5: 'class_5', 6: 'class_6', 7: 'class_7', 8: 'class_8', 9: 'class_9', 10: 'class_10', 11: 'class_11', 12: 'class_12', 13: 'class_13', 14: 'class_14', 15: 'class_15', 16: 'class_16', 17: 'class_17', 18: 'class_18', 19: 'class_19', 20: 'class_20', 21: 'class_21', 22: 'class_22', 23: 'class_23', 24: 'class_24', 25: 'class_25', 26: 'class_26', 27: 'class_27', 28: 'class_28', 29: 'class_29', 30: 'class_30', 31: 'class_31', 32: 'class_32', 33: 'class_33', 34: 'class_34', 35: 'class_35', 36: 'class_36', 37: 'class_37', 38: 'class_38', 39: 'class_39', 40: 'class_40', 41: 'class_41', 42: 'class_42', 43: 'class_43', 44: 'class_44', 45: 'class_45', 46: 'class_46', 47: 'class_47', 48: 'class_48', 49: 'class_49', 50: 'class_50', 51: 'class_51', 52: 'class_52', 53: 'class_53', 54: 'class_54', 55: 'class_55', 56: 'class_56', 57: 'class_57', 58: 'class_58', 59: 'class_59', 60: 'class_60', 61: 'class_61', 62: 'class_62', 63: 'class_63', 64: 'class_64', 65: 'class_65', 66: 'class_66', 67: 'class_67', 68: 'class_68', 69: 'class_69', 70: 'class_70', 71: 'class_71', 72: 'class_72', 73: 'class_73', 74: 'class_74', 75: 'class_75', 76: 'class_76', 77: 'class_77', 78: 'class_78', 79: 'class_79', 80: 'class_80', 81: 'class_81', 82: 'class_82', 83: 'class_83', 84: 'class_84', 85: 'class_85', 86: 'class_86', 87: 'class_87', 88: 'class_88', 89: 'class_89', 90: 'class_90', 91: 'class_91', 92: 'class_92', 93: 'class_93', 94: 'class_94', 95: 'class_95', 96: 'class_96', 97: 'class_97', 98: 'class_98', 99: 'class_99', 100: 'class_100', 101: 'class_101', 102: 'class_102', 103: 'class_103', 104: 'class_104', 105: 'class_105', 106: 'class_106', 107: 'class_107', 108: 'class_108', 109: 'class_109', 110: 'class_110', 111: 'class_111', 112: 'class_112', 113: 'class_113', 114: 'class_114', 115: 'class_115', 116: 'class_116', 117: 'class_117', 118: 'class_118', 119: 'class_119', 120: 'class_120', 121: 'class_121', 122: 'class_122', 123: 'class_123', 124: 'class_124', 125: 'class_125', 126: 'class_126', 127: 'class_127', 128: 'class_128', 129: 'class_129', 130: 'class_130', 131: 'class_131', 132: 'class_132', 133: 'class_133', 134: 'class_134', 135: 'class_135', 136: 'class_136', 137: 'class_137', 138: 'class_138', 139: 'class_139', 140: 'class_140', 141: 'class_141', 142: 'class_142', 143: 'class_143', 144: 'class_144', 145: 'class_145', 146: 'class_146', 147: 'class_147', 148: 'class_148', 149: 'class_149', 150: 'class_150', 151: 'class_151', 152: 'class_152', 153: 'class_153', 154: 'class_154', 155: 'class_155', 156: 'class_156', 157: 'class_157', 158: 'class_158', 159: 'class_159', 160: 'class_160', 161: 'class_161', 162: 'class_162', 163: 'class_163', 164: 'class_164', 165: 'class_165', 166: 'class_166', 167: 'class_167', 168: 'class_168', 169: 'class_169', 170: 'class_170', 171: 'class_171', 172: 'class_172', 173: 'class_173', 174: 'class_174', 175: 'class_175', 176: 'class_176', 177: 'class_177', 178: 'class_178', 179: 'class_179', 180: 'class_180', 181: 'class_181', 182: 'class_182', 183: 'class_183', 184: 'class_184', 185: 'class_185', 186: 'class_186', 187: 'class_187', 188: 'class_188', 189: 'class_189', 190: 'class_190', 191: 'class_191', 192: 'class_192', 193: 'class_193', 194: 'class_194', 195: 'class_195', 196: 'class_196', 197: 'class_197', 198: 'class_198', 199: 'class_199', 200: 'class_200', 201: 'class_201', 202: 'class_202', 203: 'class_203', 204: 'class_204', 205: 'class_205', 206: 'class_206', 207: 'class_207', 208: 'class_208', 209: 'class_209', 210: 'class_210', 211: 'class_211', 212: 'class_212', 213: 'class_213', 214: 'class_214', 215: 'class_215', 216: 'class_216', 217: 'class_217', 218: 'class_218', 219: 'class_219', 220: 'class_220', 221: 'class_221', 222: 'class_222', 223: 'class_223', 224: 'class_224', 225: 'class_225', 226: 'class_226', 227: 'class_227', 228: 'class_228', 229: 'class_229', 230: 'class_230', 231: 'class_231', 232: 'class_232', 233: 'class_233', 234: 'class_234', 235: 'class_235', 236: 'class_236', 237: 'class_237', 238: 'class_238', 239: 'class_239', 240: 'class_240', 241: 'class_241', 242: 'class_242', 243: 'class_243', 244: 'class_244', 245: 'class_245', 246: 'class_246', 247: 'class_247', 248: 'class_248', 249: 'class_249', 250: 'class_250', 251: 'class_251', 252: 'class_252', 253: 'class_253', 254: 'class_254', 255: 'class_255', 256: 'class_256', 257: 'class_257', 258: 'class_258', 259: 'class_259', 260: 'class_260', 261: 'class_261', 262: 'class_262', 263: 'class_263', 264: 'class_264', 265: 'class_265', 266: 'class_266', 267: 'class_267', 268: 'class_268', 269: 'class_269', 270: 'class_270', 271: 'class_271', 272: 'class_272', 273: 'class_273', 274: 'class_274', 275: 'class_275', 276: 'class_276', 277: 'class_277', 278: 'class_278', 279: 'class_279', 280: 'class_280', 281: 'class_281', 282: 'class_282', 283: 'class_283', 284: 'class_284', 285: 'class_285', 286: 'class_286', 287: 'class_287', 288: 'class_288', 289: 'class_289', 290: 'class_290', 291: 'class_291', 292: 'class_292', 293: 'class_293', 294: 'class_294', 295: 'class_295', 296: 'class_296', 297: 'class_297', 298: 'class_298', 299: 'class_299', 300: 'class_300', 301: 'class_301', 302: 'class_302', 303: 'class_303', 304: 'class_304', 305: 'class_305', 306: 'class_306', 307: 'class_307', 308: 'class_308', 309: 'class_309', 310: 'class_310', 311: 'class_311', 312: 'class_312', 313: 'class_313', 314: 'class_314', 315: 'class_315', 316: 'class_316', 317: 'class_317', 318: 'class_318', 319: 'class_319', 320: 'class_320', 321: 'class_321', 322: 'class_322', 323: 'class_323', 324: 'class_324', 325: 'class_325', 326: 'class_326', 327: 'class_327', 328: 'class_328', 329: 'class_329', 330: 'class_330', 331: 'class_331', 332: 'class_332', 333: 'class_333', 334: 'class_334', 335: 'class_335', 336: 'class_336', 337: 'class_337', 338: 'class_338', 339: 'class_339', 340: 'class_340', 341: 'class_341', 342: 'class_342', 343: 'class_343', 344: 'class_344', 345: 'class_345', 346: 'class_346', 347: 'class_347', 348: 'class_348', 349: 'class_349', 350: 'class_350', 351: 'class_351', 352: 'class_352', 353: 'class_353', 354: 'class_354', 355: 'class_355', 356: 'class_356', 357: 'class_357', 358: 'class_358', 359: 'class_359', 360: 'class_360', 361: 'class_361', 362: 'class_362', 363: 'class_363', 364: 'class_364', 365: 'class_365', 366: 'class_366', 367: 'class_367', 368: 'class_368', 369: 'class_369', 370: 'class_370', 371: 'class_371', 372: 'class_372', 373: 'class_373', 374: 'class_374', 375: 'class_375', 376: 'class_376', 377: 'class_377', 378: 'class_378', 379: 'class_379', 380: 'class_380', 381: 'class_381', 382: 'class_382', 383: 'class_383', 384: 'class_384', 385: 'class_385', 386: 'class_386', 387: 'class_387', 388: 'class_388', 389: 'class_389', 390: 'class_390', 391: 'class_391', 392: 'class_392', 393: 'class_393', 394: 'class_394', 395: 'class_395', 396: 'class_396', 397: 'class_397', 398: 'class_398', 399: 'class_399', 400: 'class_400', 401: 'class_401', 402: 'class_402', 403: 'class_403', 404: 'class_404', 405: 'class_405', 406: 'class_406', 407: 'class_407', 408: 'class_408', 409: 'class_409', 410: 'class_410', 411: 'class_411', 412: 'class_412', 413: 'class_413', 414: 'class_414', 415: 'class_415', 416: 'class_416', 417: 'class_417', 418: 'class_418', 419: 'class_419', 420: 'class_420', 421: 'class_421', 422: 'class_422', 423: 'class_423', 424: 'class_424', 425: 'class_425', 426: 'class_426', 427: 'class_427', 428: 'class_428', 429: 'class_429', 430: 'class_430', 431: 'class_431', 432: 'class_432', 433: 'class_433', 434: 'class_434', 435: 'class_435', 436: 'class_436', 437: 'class_437', 438: 'class_438', 439: 'class_439', 440: 'class_440', 441: 'class_441', 442: 'class_442', 443: 'class_443', 444: 'class_444', 445: 'class_445', 446: 'class_446', 447: 'class_447', 448: 'class_448', 449: 'class_449', 450: 'class_450', 451: 'class_451', 452: 'class_452', 453: 'class_453', 454: 'class_454', 455: 'class_455', 456: 'class_456', 457: 'class_457', 458: 'class_458', 459: 'class_459', 460: 'class_460', 461: 'class_461', 462: 'class_462', 463: 'class_463', 464: 'class_464', 465: 'class_465', 466: 'class_466', 467: 'class_467', 468: 'class_468', 469: 'class_469', 470: 'class_470', 471: 'class_471', 472: 'class_472', 473: 'class_473', 474: 'class_474', 475: 'class_475', 476: 'class_476', 477: 'class_477', 478: 'class_478', 479: 'class_479', 480: 'class_480', 481: 'class_481', 482: 'class_482', 483: 'class_483', 484: 'class_484', 485: 'class_485', 486: 'class_486', 487: 'class_487', 488: 'class_488', 489: 'class_489', 490: 'class_490', 491: 'class_491', 492: 'class_492', 493: 'class_493', 494: 'class_494', 495: 'class_495', 496: 'class_496', 497: 'class_497', 498: 'class_498', 499: 'class_499', 500: 'class_500', 501: 'class_501', 502: 'class_502', 503: 'class_503', 504: 'class_504', 505: 'class_505', 506: 'class_506', 507: 'class_507', 508: 'class_508', 509: 'class_509', 510: 'class_510', 511: 'class_511', 512: 'class_512', 513: 'class_513', 514: 'class_514', 515: 'class_515', 516: 'class_516', 517: 'class_517', 518: 'class_518', 519: 'class_519', 520: 'class_520', 521: 'class_521', 522: 'class_522', 523: 'class_523', 524: 'class_524', 525: 'class_525', 526: 'class_526', 527: 'class_527', 528: 'class_528', 529: 'class_529', 530: 'class_530', 531: 'class_531', 532: 'class_532', 533: 'class_533', 534: 'class_534', 535: 'class_535', 536: 'class_536', 537: 'class_537', 538: 'class_538', 539: 'class_539', 540: 'class_540', 541: 'class_541', 542: 'class_542', 543: 'class_543', 544: 'class_544', 545: 'class_545', 546: 'class_546', 547: 'class_547', 548: 'class_548', 549: 'class_549', 550: 'class_550', 551: 'class_551', 552: 'class_552', 553: 'class_553', 554: 'class_554', 555: 'class_555', 556: 'class_556', 557: 'class_557', 558: 'class_558', 559: 'class_559', 560: 'class_560', 561: 'class_561', 562: 'class_562', 563: 'class_563', 564: 'class_564', 565: 'class_565', 566: 'class_566', 567: 'class_567', 568: 'class_568', 569: 'class_569', 570: 'class_570', 571: 'class_571', 572: 'class_572', 573: 'class_573', 574: 'class_574', 575: 'class_575', 576: 'class_576', 577: 'class_577', 578: 'class_578', 579: 'class_579', 580: 'class_580', 581: 'class_581', 582: 'class_582', 583: 'class_583', 584: 'class_584', 585: 'class_585', 586: 'class_586', 587: 'class_587', 588: 'class_588', 589: 'class_589', 590: 'class_590', 591: 'class_591', 592: 'class_592', 593: 'class_593', 594: 'class_594', 595: 'class_595', 596: 'class_596', 597: 'class_597', 598: 'class_598', 599: 'class_599', 600: 'class_600', 601: 'class_601', 602: 'class_602', 603: 'class_603', 604: 'class_604', 605: 'class_605', 606: 'class_606', 607: 'class_607', 608: 'class_608', 609: 'class_609', 610: 'class_610', 611: 'class_611', 612: 'class_612', 613: 'class_613', 614: 'class_614', 615: 'class_615', 616: 'class_616', 617: 'class_617', 618: 'class_618', 619: 'class_619', 620: 'class_620', 621: 'class_621', 622: 'class_622', 623: 'class_623', 624: 'class_624', 625: 'class_625', 626: 'class_626', 627: 'class_627', 628: 'class_628', 629: 'class_629', 630: 'class_630', 631: 'class_631', 632: 'class_632', 633: 'class_633', 634: 'class_634', 635: 'class_635', 636: 'class_636', 637: 'class_637', 638: 'class_638', 639: 'class_639', 640: 'class_640', 641: 'class_641', 642: 'class_642', 643: 'class_643', 644: 'class_644', 645: 'class_645', 646: 'class_646', 647: 'class_647', 648: 'class_648', 649: 'class_649', 650: 'class_650', 651: 'class_651', 652: 'class_652', 653: 'class_653', 654: 'class_654', 655: 'class_655', 656: 'class_656', 657: 'class_657', 658: 'class_658', 659: 'class_659', 660: 'class_660', 661: 'class_661', 662: 'class_662', 663: 'class_663', 664: 'class_664', 665: 'class_665', 666: 'class_666', 667: 'class_667', 668: 'class_668', 669: 'class_669', 670: 'class_670', 671: 'class_671', 672: 'class_672', 673: 'class_673', 674: 'class_674', 675: 'class_675', 676: 'class_676', 677: 'class_677', 678: 'class_678', 679: 'class_679', 680: 'class_680', 681: 'class_681', 682: 'class_682', 683: 'class_683', 684: 'class_684', 685: 'class_685', 686: 'class_686', 687: 'class_687', 688: 'class_688', 689: 'class_689', 690: 'class_690', 691: 'class_691', 692: 'class_692', 693: 'class_693', 694: 'class_694', 695: 'class_695', 696: 'class_696', 697: 'class_697', 698: 'class_698', 699: 'class_699', 700: 'class_700', 701: 'class_701', 702: 'class_702', 703: 'class_703', 704: 'class_704', 705: 'class_705', 706: 'class_706', 707: 'class_707', 708: 'class_708', 709: 'class_709', 710: 'class_710', 711: 'class_711', 712: 'class_712', 713: 'class_713', 714: 'class_714', 715: 'class_715', 716: 'class_716', 717: 'class_717', 718: 'class_718', 719: 'class_719', 720: 'class_720', 721: 'class_721', 722: 'class_722', 723: 'class_723', 724: 'class_724', 725: 'class_725', 726: 'class_726', 727: 'class_727', 728: 'class_728', 729: 'class_729', 730: 'class_730', 731: 'class_731', 732: 'class_732', 733: 'class_733', 734: 'class_734', 735: 'class_735', 736: 'class_736', 737: 'class_737', 738: 'class_738', 739: 'class_739', 740: 'class_740', 741: 'class_741', 742: 'class_742', 743: 'class_743', 744: 'class_744', 745: 'class_745', 746: 'class_746', 747: 'class_747', 748: 'class_748', 749: 'class_749', 750: 'class_750', 751: 'class_751', 752: 'class_752', 753: 'class_753', 754: 'class_754', 755: 'class_755', 756: 'class_756', 757: 'class_757', 758: 'class_758', 759: 'class_759', 760: 'class_760', 761: 'class_761', 762: 'class_762', 763: 'class_763', 764: 'class_764', 765: 'class_765', 766: 'class_766', 767: 'class_767', 768: 'class_768', 769: 'class_769', 770: 'class_770', 771: 'class_771', 772: 'class_772', 773: 'class_773', 774: 'class_774', 775: 'class_775', 776: 'class_776', 777: 'class_777', 778: 'class_778', 779: 'class_779', 780: 'class_780', 781: 'class_781', 782: 'class_782', 783: 'class_783', 784: 'class_784', 785: 'class_785', 786: 'class_786', 787: 'class_787', 788: 'class_788', 789: 'class_789', 790: 'class_790', 791: 'class_791', 792: 'class_792', 793: 'class_793', 794: 'class_794', 795: 'class_795', 796: 'class_796', 797: 'class_797', 798: 'class_798', 799: 'class_799', 800: 'class_800', 801: 'class_801', 802: 'class_802', 803: 'class_803', 804: 'class_804', 805: 'class_805', 806: 'class_806', 807: 'class_807', 808: 'class_808', 809: 'class_809', 810: 'class_810', 811: 'class_811', 812: 'class_812', 813: 'class_813', 814: 'class_814', 815: 'class_815', 816: 'class_816', 817: 'class_817', 818: 'class_818', 819: 'class_819', 820: 'class_820', 821: 'class_821', 822: 'class_822', 823: 'class_823', 824: 'class_824', 825: 'class_825', 826: 'class_826', 827: 'class_827', 828: 'class_828', 829: 'class_829', 830: 'class_830', 831: 'class_831', 832: 'class_832', 833: 'class_833', 834: 'class_834', 835: 'class_835', 836: 'class_836', 837: 'class_837', 838: 'class_838', 839: 'class_839', 840: 'class_840', 841: 'class_841', 842: 'class_842', 843: 'class_843', 844: 'class_844', 845: 'class_845', 846: 'class_846', 847: 'class_847', 848: 'class_848', 849: 'class_849', 850: 'class_850', 851: 'class_851', 852: 'class_852', 853: 'class_853', 854: 'class_854', 855: 'class_855', 856: 'class_856', 857: 'class_857', 858: 'class_858', 859: 'class_859', 860: 'class_860', 861: 'class_861', 862: 'class_862', 863: 'class_863', 864: 'class_864', 865: 'class_865', 866: 'class_866', 867: 'class_867', 868: 'class_868', 869: 'class_869', 870: 'class_870', 871: 'class_871', 872: 'class_872', 873: 'class_873', 874: 'class_874', 875: 'class_875', 876: 'class_876', 877: 'class_877', 878: 'class_878', 879: 'class_879', 880: 'class_880', 881: 'class_881', 882: 'class_882', 883: 'class_883', 884: 'class_884', 885: 'class_885', 886: 'class_886', 887: 'class_887', 888: 'class_888', 889: 'class_889', 890: 'class_890', 891: 'class_891', 892: 'class_892', 893: 'class_893', 894: 'class_894', 895: 'class_895', 896: 'class_896', 897: 'class_897', 898: 'class_898', 899: 'class_899', 900: 'class_900', 901: 'class_901', 902: 'class_902', 903: 'class_903', 904: 'class_904', 905: 'class_905', 906: 'class_906', 907: 'class_907', 908: 'class_908', 909: 'class_909', 910: 'class_910', 911: 'class_911', 912: 'class_912', 913: 'class_913', 914: 'class_914', 915: 'class_915', 916: 'class_916', 917: 'class_917', 918: 'class_918', 919: 'class_919', 920: 'class_920', 921: 'class_921', 922: 'class_922', 923: 'class_923', 924: 'class_924', 925: 'class_925', 926: 'class_926', 927: 'class_927', 928: 'class_928', 929: 'class_929', 930: 'class_930', 931: 'class_931', 932: 'class_932', 933: 'class_933', 934: 'class_934', 935: 'class_935', 936: 'class_936', 937: 'class_937', 938: 'class_938', 939: 'class_939', 940: 'class_940', 941: 'class_941', 942: 'class_942', 943: 'class_943', 944: 'class_944', 945: 'class_945', 946: 'class_946', 947: 'class_947', 948: 'class_948', 949: 'class_949', 950: 'class_950', 951: 'class_951', 952: 'class_952', 953: 'class_953', 954: 'class_954', 955: 'class_955', 956: 'class_956', 957: 'class_957', 958: 'class_958', 959: 'class_959', 960: 'class_960', 961: 'class_961', 962: 'class_962', 963: 'class_963', 964: 'class_964', 965: 'class_965', 966: 'class_966', 967: 'class_967', 968: 'class_968', 969: 'class_969', 970: 'class_970', 971: 'class_971', 972: 'class_972', 973: 'class_973', 974: 'class_974', 975: 'class_975', 976: 'class_976', 977: 'class_977', 978: 'class_978', 979: 'class_979', 980: 'class_980', 981: 'class_981', 982: 'class_982', 983: 'class_983', 984: 'class_984', 985: 'class_985', 986: 'class_986', 987: 'class_987', 988: 'class_988', 989: 'class_989', 990: 'class_990', 991: 'class_991', 992: 'class_992', 993: 'class_993', 994: 'class_994', 995: 'class_995', 996: 'class_996', 997: 'class_997', 998: 'class_998', 999: 'class_999', 1000: 'class_1000', 1001: 'class_1001', 1002: 'class_1002', 1003: 'class_1003', 1004: 'class_1004', 1005: 'class_1005', 1006: 'class_1006', 1007: 'class_1007', 1008: 'class_1008', 1009: 'class_1009', 1010: 'class_1010', 1011: 'class_1011', 1012: 'class_1012', 1013: 'class_1013', 1014: 'class_1014', 1015: 'class_1015', 1016: 'class_1016', 1017: 'class_1017', 1018: 'class_1018', 1019: 'class_1019', 1020: 'class_1020', 1021: 'class_1021', 1022: 'class_1022', 1023: 'class_1023', 1024: 'class_1024', 1025: 'class_1025', 1026: 'class_1026', 1027: 'class_1027', 1028: 'class_1028', 1029: 'class_1029', 1030: 'class_1030', 1031: 'class_1031', 1032: 'class_1032', 1033: 'class_1033', 1034: 'class_1034', 1035: 'class_1035', 1036: 'class_1036', 1037: 'class_1037', 1038: 'class_1038', 1039: 'class_1039', 1040: 'class_1040'}",
+          "args": "{'data': None, 'batch': 1, 'fraction': 1.0, 'half': False, 'int8': False, 'dynamic': True, 'simplify': True, 'opset': None, 'nms': False}",
+          "author": "Ultralytics",
+          "channels": "3"
+        },
+        "no_runtime_fallback": true
+      },
+      "decode_metadata": {
+        "width": 1280.0,
+        "height": 720.0,
+        "fps": 29.81501660256117,
+        "frame_count": 10282.0,
+        "backend": "FFMPEG"
+      },
+      "cuda_execution_evidence": {
+        "profile": "reid_on/ort_encoder_profile_2026-10-11_10-00-47.json",
+        "profile_sha256": "407c5bea537eb862ff18d1321009d72857b9c8424f7e2006360b3f51e105590d",
+        "provider_kernel_event_counts": {
+          "CUDAExecutionProvider": 137,
+          "CPUExecutionProvider": 20
+        },
+        "cuda_kernel_event_examples": [
+          {
+            "name": "/model.0/conv/Conv_kernel_time",
+            "provider": "CUDAExecutionProvider",
+            "op_name": "Conv",
+            "duration_us": 752303
+          },
+          {
+            "name": "/model.0/act/Mul/QuickGeluFusion/_kernel_time",
+            "provider": "CUDAExecutionProvider",
+            "op_name": "QuickGelu",
+            "duration_us": 864
+          },
+          {
+            "name": "/model.1/conv/Conv_kernel_time",
+            "provider": "CUDAExecutionProvider",
+            "op_name": "Conv",
+            "duration_us": 5991
+          },
+          {
+            "name": "/model.1/act/Mul/QuickGeluFusion/_kernel_time",
+            "provider": "CUDAExecutionProvider",
+            "op_name": "QuickGelu",
+            "duration_us": 17
+          },
+          {
+            "name": "/model.2/cv1/conv/Conv_kernel_time",
+            "provider": "CUDAExecutionProvider",
+            "op_name": "Conv",
+            "duration_us": 51382
+          },
+          {
+            "name": "/model.2/cv1/act/Mul/QuickGeluFusion/_kernel_time",
+            "provider": "CUDAExecutionProvider",
+            "op_name": "QuickGelu",
+            "duration_us": 19
+          },
+          {
+            "name": "/model.2/Split_kernel_time",
+            "provider": "CUDAExecutionProvider",
+            "op_name": "Split",
+            "duration_us": 637
+          },
+          {
+            "name": "/model.2/m.0/cv1/conv/Conv_kernel_time",
+            "provider": "CUDAExecutionProvider",
+            "op_name": "Conv",
+            "duration_us": 54019
+          }
+        ],
+        "actual_cuda_execution_confirmed": true,
+        "cpu_partition_note": "CPU-assigned graph nodes, if present, are reported; no whole-session CUDA fallback is permitted.",
+        "profiled_source_frame": 0,
+        "scope": "First actual encoder-bearing update of this full sequence; profiling stopped immediately to avoid full-run diagnostic overhead."
+      },
+      "decode_stop": "opencv_read_false_eof_or_decode_failure_unknown_after_expected_rows",
+      "timing": {
+        "loop_wall_seconds": 422.91252200199995,
+        "tracker_update_calls": 10282,
+        "tracker_update_wall_seconds": 399.11875458599917,
+        "tracker_update_wall_ms_mean": 38.817229584322035,
+        "tracker_update_wall_ms_median": 17.12181749999786,
+        "encoder_wall_seconds_inside_tracker": 373.85365254799717,
+        "decoder_read_calls_including_final_probe": 10283,
+        "decode_read_wall_seconds": 12.578605550997395,
+        "selected_render_and_png_write_wall_seconds": 1.4797191309990012,
+        "limits": "Instrumented tracker includes adapter, association and cost validation; on variant also actual crop/encoder inference. Encoder is a subset, not additional time. Loop also includes JSON serialization/IO. Sequential order/warmup may affect runtime."
+      },
+      "association_mechanism_diagnostics": {
+        "calls": 12235,
+        "candidate_pairs": 461995,
+        "nonempty_feature_association_calls": 11606,
+        "appearance_eligible_pairs": 53187,
+        "appearance_changed_cost_pairs": 53152,
+        "calls_with_changed_costs": 11105
+      },
+      "embedding_diagnostics": {
+        "encoder_calls": 10275,
+        "finite_nonzero_features_produced": 50713,
+        "embedding_dimension": 512,
+        "encoder_observer_wall_seconds": 373.85365254799717
+      },
+      "observed_process_peak_rss_bytes": 2606784512,
+      "diagnostics": {
+        "serialized_rows_verified": 10282,
+        "captured_tracker_ids_including_unconfirmed": 2402,
+        "unique_emitted_tracker_ids": 997,
+        "emitted_track_observations": 48228,
+        "frames_with_zero_cached_detections": 7,
+        "frames_with_no_emitted_tracks": 8,
+        "ids_never_emitted": 1405,
+        "within_id_gap_events": 2135,
+        "within_id_raw_class_changes": 1088,
+        "lifecycle_transition_events": 10874,
+        "id_switch_count": null,
+        "id_switch_count_status": "Unknown; needs physical identity review.",
+        "traffic_count": null,
+        "traffic_count_status": "Not implemented; IDs are not vehicle counts."
+      },
+      "serialized_consistency_audit": {
+        "status": "passed",
+        "ordered_rows": 10282,
+        "raw_detection_preservation": true,
+        "unique_emitted_ids": true,
+        "ordered_histories": true,
+        "temporal_clips_decode": true
+      }
+    }
+  },
+  "manual_review_status": "pending_actual_temporal_evidence_review",
+  "current_stage": "paired_temporal_export_and_serialized_consistency_audit",
+  "environment": {
+    "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.35",
+    "cpu_count": 4,
+    "package_versions": {
+      "ultralytics": "8.4.175",
+      "lap": "0.5.13",
+      "torch": "2.10.0+cu128",
+      "numpy": "2.0.2",
+      "Pillow": "11.3.0",
+      "onnx": "1.20.1",
+      "onnxruntime-gpu": "1.24.4"
+    },
+    "opencv_version": "4.13.0",
+    "cuda_available": true,
+    "visible_cuda_device_count": 2,
+    "cuda_devices": [
+      {
+        "index": 0,
+        "name": "Tesla T4",
+        "total_memory_bytes": 15636037632
+      },
+      {
+        "index": 1,
+        "name": "Tesla T4",
+        "total_memory_bytes": 15636037632
+      }
+    ],
+    "nvidia_smi": {
+      "returncode": 0,
+      "stdout": "0, Tesla T4, 15360 MiB, 580.178.04\n1, Tesla T4, 15360 MiB, 580.178.04",
+      "stderr": ""
+    },
+    "association_device": "cpu",
+    "detector_inference_executed": false,
+    "reid_inference_executed": true,
+    "ort_available_providers": [
+      "TensorrtExecutionProvider",
+      "CUDAExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "requested_encoder_device": "cuda:0",
+    "exact_cross_runtime_repeatability_claimed": false
+  },
+  "tracker_source_verification": [
+    {
+      "path": "trackers/bot_sort.py",
+      "sha256": "b157cbc33f75f1132df530f04361824bc39a30d4051ce6df1cd5c388e49b3117",
+      "verified": true
+    },
+    {
+      "path": "trackers/byte_tracker.py",
+      "sha256": "fb45d70e952f99984085788bc09fc0c60a18b14bc4329b28e32bc2c70ac37401",
+      "verified": true
+    },
+    {
+      "path": "trackers/basetrack.py",
+      "sha256": "9ef094b9a54ff2f52c9118b5bd1a2f84ba331aa557277f54186de11728c2f7e8",
+      "verified": true
+    },
+    {
+      "path": "trackers/utils/matching.py",
+      "sha256": "318bf81030558863a4ec6effea3c9d063a297f299367e379a58b89c24e3f421f",
+      "verified": true
+    },
+    {
+      "path": "trackers/utils/gmc.py",
+      "sha256": "d797f701a22347001d780b0dc4d0f2f5cabdfefb895c36bbab084ceb2dfc4000",
+      "verified": true
+    },
+    {
+      "path": "trackers/utils/stracks.py",
+      "sha256": "9534294af850c3a6755c3a5a1ba9b2b068c5b79a11166c8547652944e2632f58",
+      "verified": true
+    },
+    {
+      "path": "trackers/utils/reid.py",
+      "sha256": "75c54a4f8fe9b1e6946d61b530fbb790fdfcc27df120fa71cc7759c11e9f0475",
+      "verified": true
+    },
+    {
+      "path": "cfg/trackers/botsort.yaml",
+      "sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01",
+      "verified": true
+    },
+    {
+      "path": "engine/results.py",
+      "sha256": "871e5b3eed1558c3c048d99058ddf28a7927c1317d020981e7c0836f18e00ee3",
+      "verified": true
+    },
+    {
+      "path": "nn/backends/onnx.py",
+      "sha256": "8a42c894bb34381ffa2636d2bf8704c5ea5f2f80db6de296b278c6c6528b6e5e",
+      "verified": true
+    },
+    {
+      "path": "nn/autobackend.py",
+      "sha256": "450d5d5301e441896f8422cd333ce35c414c2e7ac39a88af01fd5edbd2e552dd",
+      "verified": true
+    },
+    {
+      "path": "utils/plotting.py",
+      "sha256": "a21122beb75642c535ba5f20f81e51cf9fd9c22c097120d1e787a7286c468ff0",
+      "verified": true
+    }
+  ],
+  "input": {
+    "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-PAGI.mp4",
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "video_size_bytes": 53173467,
+    "detection_report_path": "/kaggle/input/datasets/chrisbiran/traffic-counter-phase-2-retained-cache/detection_report.json",
+    "detection_report_sha256": "9ec71dc98f441075120869f1279cc589e2983d26e7f4403bff638255024a81ff",
+    "frame_detections_path": "/kaggle/input/datasets/chrisbiran/traffic-counter-phase-2-retained-cache/frame_detections.jsonl",
+    "frame_detections_sha256": "033a2815d3abbd23327936a1b9d948b2b9b7d312796516e5ee46aec5685be345",
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+    "parent_status": "completed_decoder_stream_manual_review_pending",
+    "expected_and_validated_rows": 10282,
+    "width": 1280,
+    "height": 720,
+    "fps_from_parent_opencv": 29.81501660256117,
+    "parent_input_metadata": {
+      "filename": "TOR3-PAGI.mp4",
+      "path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-PAGI.mp4",
+      "file_size_bytes": 53173467,
+      "sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "hash_seconds": 0.8686952819998623,
+      "expected_hash_matches": true,
+      "recording_period_assignment": "unknown: filename is not authoritative metadata",
+      "store_location_assignment": "unknown",
+      "ffprobe": {
+        "returncode": 0,
+        "data": {
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 1280,
+              "height": 720,
+              "r_frame_rate": "30000/1001",
+              "avg_frame_rate": "46269000/1551869",
+              "duration": "344.859778",
+              "nb_frames": "10282"
+            }
+          ],
+          "format": {
+            "duration": "344.860000"
+          }
+        },
+        "stderr": ""
+      },
+      "opencv_metadata": {
+        "width": 1280.0,
+        "height": 720.0,
+        "fps": 29.81501660256117,
+        "frame_count": 10282.0,
+        "fourcc_integer": 875967080.0,
+        "backend": "FFMPEG",
+        "duration_seconds_estimate_from_count_fps": 344.85977777777777,
+        "fourcc_text": "h264"
+      }
+    },
+    "parent_detector_configuration": {
+      "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-PAGI.mp4",
+      "expected_video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "device": 0,
+      "frame_limit": null,
+      "seed": 0,
+      "package_version": "8.4.175",
+      "baseline_status": "PROPOSAL: pinned published defaults; not tuned product settings",
+      "overrides": {
+        "conf": null,
+        "imgsz": null,
+        "iou": null,
+        "max_det": null,
+        "nms": null,
+        "quantize": null
+      },
+      "class_filter": null,
+      "detection_roi": null,
+      "enhancement": null,
+      "sample_indices": [
+        0,
+        2570,
+        5140,
+        7711,
+        10281
+      ],
+      "sampling_basis": "configured prefix / metadata frame count; actual last processed frame is also saved"
+    },
+    "parent_detector_environment": {
+      "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+      "platform": "Linux-6.18.48+-x86_64-with-glibc2.35",
+      "cpu_count": 4,
+      "package_versions": {
+        "ultralytics": "8.4.175",
+        "torch": "2.10.0+cu128",
+        "torchvision": "0.25.0+cu128",
+        "numpy": "2.0.2",
+        "opencv-python": "4.13.0.92",
+        "opencv-python-headless": "4.13.0.92",
+        "Pillow": "11.3.0"
+      },
+      "opencv_version": "4.13.0",
+      "ultralytics_settings_directory": "/kaggle/working/yolo_detection/.ultralytics_settings",
+      "torch_cuda_build": "12.8",
+      "cuda_available": true,
+      "visible_cuda_device_count": 2,
+      "cuda_devices": [
+        {
+          "index": 0,
+          "name": "Tesla T4",
+          "total_memory_bytes": 15636037632,
+          "compute_capability": [
+            7,
+            5
+          ]
+        },
+        {
+          "index": 1,
+          "name": "Tesla T4",
+          "total_memory_bytes": 15636037632,
+          "compute_capability": [
+            7,
+            5
+          ]
+        }
+      ],
+      "nvidia_smi": {
+        "returncode": 0,
+        "stdout": "0, Tesla T4, 15360, 580.178.04\n1, Tesla T4, 15360, 580.178.04",
+        "stderr": ""
+      },
+      "reproducibility": {
+        "seed": 0,
+        "deterministic_algorithms_enabled": false,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": false,
+        "exact_repeatability_claimed": false
+      }
+    },
+    "parent_detector_weights": {
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt",
+      "expected_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "expected_bytes": 44255705,
+      "local_path": "/kaggle/working/yolo_detection/weights/yolo26m.pt",
+      "actual_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "actual_bytes": 44255705,
+      "cache_or_download_seconds": 0.8602222710001115
+    },
+    "timestamp_semantics": "Tracking uses zero-based frame order; index/FPS is approximate, backend timestamps are unverified PTS."
+  },
+  "tracker": {
+    "class": "ultralytics.trackers.bot_sort.BOTSORT",
+    "package_version": "8.4.175",
+    "published_yaml_sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01",
+    "published_defaults": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "sparseOptFlow",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "explicit_overrides": {
+      "with_reid": false,
+      "gmc_method": "none"
+    },
+    "effective_configuration": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "none",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "association_device": "cpu",
+    "class_gate_in_verified_source": false,
+    "class_semantics": "Raw class/score follow the latest matched detection; no product mapping or stabilization.",
+    "lost_buffer_semantics": "Pinned constructor uses track_buffer directly as update-call/frame count, no FPS rescaling.",
+    "max_frames_lost": 30,
+    "buffer_seconds_estimate_from_parent_fps": 1.006204370096609,
+    "internal_source_constants": {
+      "second_stage_iou_cost_limit": 0.5,
+      "unconfirmed_cost_limit": 0.7,
+      "tracked_lost_duplicate_iou_distance_ceiling": 0.15
+    },
+    "reid_architecture_status": "Target architecture; this Phase 4 tests one external-encoder configuration."
+  },
+  "encoder_candidate": {
+    "identifier": "yolo26n-reid.onnx",
+    "path": "/kaggle/working/reid_comparison/20261011T095924_205716Z_90cf7319/assets/yolo26n-reid.onnx",
+    "source_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n-reid.onnx",
+    "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+    "size_bytes": 9873245,
+    "candidate_status": "PROPOSAL: one untuned candidate; not a final accepted vehicle ReID solution",
+    "documented_training_domain": "MSMT17-v1 person ReID; vehicle transfer UNKNOWN",
+    "embedding_dimension_expected": 512,
+    "device": "cuda:0",
+    "crop_size": 224,
+    "crop_size_provenance": "Pinned ReID default with dynamic ONNX height/width; metadata export 448 is not applied.",
+    "preprocessing": "Exact pinned wrapper: save_one_box gain1.02/pad10 default then channel reversal, float32 CHW /255, bilinear224 align_cornersFalse. No custom channel fix or enhancement.",
+    "feature_postprocessing": "Pinned BOTrack L2 normalization and normalized EMA alpha0.9."
+  },
+  "variant_configurations": {
+    "reid_off": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "none",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "reid_on": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "none",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": true,
+      "model": "/kaggle/working/reid_comparison/20261011T095924_205716Z_90cf7319/assets/yolo26n-reid.onnx",
+      "device": "cuda:0"
+    }
+  },
+  "adapter_validation": {
+    "actual_cached_rows_checked": 200,
+    "output_and_lifecycle_equivalence": "passed",
+    "empty_update_aging": "passed",
+    "fresh_id_reset": "passed",
+    "detector_inference_executed": false,
+    "scope": "CPU cached adapter smoke before controlled Phase 4 off/on sequences; not a rerun of Phase 2."
+  },
+  "paired_native_source_pixels": {
+    "selected_frame_sha256_equal": true,
+    "frames_checked": [
+      0,
+      2570,
+      5140,
+      7711,
+      7712,
+      7713,
+      7714,
+      7715,
+      7716,
+      7717,
+      7718,
+      10281
+    ],
+    "limits": "Selected native PNG byte hashes match; video/cache hashes and ordered full decoding provide input identity. No source PTS/decode integrity guarantee."
+  },
+  "artifacts": {
+    "variants": {
+      "reid_off": {
+        "track_records": "reid_off/track_records.jsonl",
+        "track_records_sha256": "e657033ab754bda30465e5f4bc8dd51d1651c6d0be36834f5d0b523502076142",
+        "track_summary": "reid_off/track_summary.json",
+        "track_summary_sha256": "b7d44bd90d9508919d6a3d2af2a580d9c0ead452dd358b2f8918d886229183b6",
+        "appearance_records": "reid_off/appearance_records.jsonl",
+        "appearance_records_sha256": "4dcfcf96bbcc927fcfd1a1441d564a5c737ab3a7f074f1e8081e0b7c4e88ba55",
+        "representative_temporal_track_records": "reid_off/representative_temporal_track_records.json",
+        "representative_temporal_track_records_sha256": "394eb4226179daed56ed57b645dbbf94c9d2999c27fb1a9d9b5dd1387825cffb",
+        "sample_frames": [
+          {
+            "frame_index": 0,
+            "raw": "reid_off/samples/frame_000000000_raw.png",
+            "raw_sha256": "a45fac4250c5b38b99f17dee9fd7f38a3d878a0721853dec5e2af4721f36541e",
+            "annotated": "reid_off/samples/frame_000000000_tracked.png",
+            "annotated_sha256": "16e2d7d06eea05ad47875d252e5cda9df34225e6160a9993087feeb6ae57cbaa"
+          },
+          {
+            "frame_index": 2570,
+            "raw": "reid_off/samples/frame_000002570_raw.png",
+            "raw_sha256": "7bac08f753edf3d15625a815ec2355e09097baf11ce61d20d163b9bb2f579b08",
+            "annotated": "reid_off/samples/frame_000002570_tracked.png",
+            "annotated_sha256": "d2aff3ab0df215842397e6e887c857588d15033ba7ac12b89da2cd64906a4b55"
+          },
+          {
+            "frame_index": 5140,
+            "raw": "reid_off/samples/frame_000005140_raw.png",
+            "raw_sha256": "65123bf8207ff223841bcc8f6a50287aef75909e2bcf4a9abb608370de0d72ee",
+            "annotated": "reid_off/samples/frame_000005140_tracked.png",
+            "annotated_sha256": "fc81b9189f8511f7d1f6ab7e89be3c4ddaf95502effa07701c52b1d60c93050c"
+          },
+          {
+            "frame_index": 7711,
+            "raw": "reid_off/samples/frame_000007711_raw.png",
+            "raw_sha256": "c97ec27525047ef8d13c19ffc1801b93797873b3d9050fa6cb82ef0cb938fc15",
+            "annotated": "reid_off/samples/frame_000007711_tracked.png",
+            "annotated_sha256": "277fb61603f4c206aa3e7e2f56b493bad30d8877684c92ca12838f7d4ad7ac9e"
+          },
+          {
+            "frame_index": 7712,
+            "raw": "reid_off/samples/frame_000007712_raw.png",
+            "raw_sha256": "3449785d0b96db3d56f92d1e8c965009b640313daa0ef0fda1a909c5f6b5a44c",
+            "annotated": "reid_off/samples/frame_000007712_tracked.png",
+            "annotated_sha256": "6ca6a5464459a3fadb4e985d4286060ee14fdfd0b4841c21fad1c5e4b70d3cea"
+          },
+          {
+            "frame_index": 7713,
+            "raw": "reid_off/samples/frame_000007713_raw.png",
+            "raw_sha256": "4708e1de24b525425eecedc8c339ef6fa79f281df44566baa04aa54135f1dc1f",
+            "annotated": "reid_off/samples/frame_000007713_tracked.png",
+            "annotated_sha256": "deee2f1e46a32601eba211a4d7ea70b6fd11e95248ce2551e288115234e4d559"
+          },
+          {
+            "frame_index": 7714,
+            "raw": "reid_off/samples/frame_000007714_raw.png",
+            "raw_sha256": "387bfe81d08f8d6f77d34cbee5f72c9414a2012f266050e98017b64bcc234116",
+            "annotated": "reid_off/samples/frame_000007714_tracked.png",
+            "annotated_sha256": "e656312618d0b7bdbe693bf25c6e2b75e7632d6f1550f8fc3ea401d07ec14457"
+          },
+          {
+            "frame_index": 7715,
+            "raw": "reid_off/samples/frame_000007715_raw.png",
+            "raw_sha256": "ed273f2934814ec67e17954ce1da0ba325fbbe3d03b3335d60448990d299fc79",
+            "annotated": "reid_off/samples/frame_000007715_tracked.png",
+            "annotated_sha256": "69679fe3ae712906f0b86eb155d2e00431e5ae1272c282e56c4ec96a8de275cb"
+          },
+          {
+            "frame_index": 7716,
+            "raw": "reid_off/samples/frame_000007716_raw.png",
+            "raw_sha256": "246b1a68ec36a60eefb691cadf0fd9bfc74c7c50bd1616ac0cc3418c876c186f",
+            "annotated": "reid_off/samples/frame_000007716_tracked.png",
+            "annotated_sha256": "5ce4259ae675efea290dfa99fc5506755235bebb7a8e5251b1cc4c6e3292c74c"
+          },
+          {
+            "frame_index": 7717,
+            "raw": "reid_off/samples/frame_000007717_raw.png",
+            "raw_sha256": "4d62e8151829ef7a8541973de5866c0b13a379617cb3b0dfbf589c186d73e173",
+            "annotated": "reid_off/samples/frame_000007717_tracked.png",
+            "annotated_sha256": "3f35ebceb414d456f349ef27762533daed2ec2a1c87cd31750a0dbf0a86b5e26"
+          },
+          {
+            "frame_index": 7718,
+            "raw": "reid_off/samples/frame_000007718_raw.png",
+            "raw_sha256": "78e48a389821ba128315dbf6355206611ccbf8130f1aa14cf85468e7ecc04519",
+            "annotated": "reid_off/samples/frame_000007718_tracked.png",
+            "annotated_sha256": "f1e0f2fa9c0f959fb0081da95d0b5e12b373113526919dbb239b7b5bc71b7b03"
+          },
+          {
+            "frame_index": 10281,
+            "raw": "reid_off/samples/frame_000010281_raw.png",
+            "raw_sha256": "b7a8b2d4e6af1b92674023bb3fac97b5db30a062c13f5c4b2f94d2bf43479fb8",
+            "annotated": "reid_off/samples/frame_000010281_tracked.png",
+            "annotated_sha256": "12fab3ab9a13b7377af731210740fce94c9755457a813c90c5ac4f42b72c3420"
+          }
+        ],
+        "temporal_bursts": [
+          {
+            "start_frame": 0,
+            "end_frame": 29,
+            "frame_count": 30,
+            "clip": "reid_off/temporal/burst_000000000_000000029_tracked.mp4",
+            "clip_sha256": "67700d047afd88dada356988fb804a80a5a4768f0aaeaaa0f0c8d8d4c569b4df",
+            "contact_sheet": "reid_off/temporal/burst_000000000_000000029_contact_sheet.png",
+            "contact_sheet_sha256": "978e5dd1dfa5f8c49712ddc5dc60ade06bf41e54e35fd9f318c9af95f51eed19"
+          },
+          {
+            "start_frame": 2555,
+            "end_frame": 2584,
+            "frame_count": 30,
+            "clip": "reid_off/temporal/burst_000002555_000002584_tracked.mp4",
+            "clip_sha256": "594a36f5b7b3a7673d0629df7528dadb916b2bac8f1495dbb2cf8feaffe8126d",
+            "contact_sheet": "reid_off/temporal/burst_000002555_000002584_contact_sheet.png",
+            "contact_sheet_sha256": "c2be311b2073cb1ae0ab28caae578c29cc19beea7e3ea2006e9697c2a53bafa3"
+          },
+          {
+            "start_frame": 5125,
+            "end_frame": 5154,
+            "frame_count": 30,
+            "clip": "reid_off/temporal/burst_000005125_000005154_tracked.mp4",
+            "clip_sha256": "6b8ef13b407bf5536a98916bb7914f25f80a57cf81defc0c3c51102e908e28b8",
+            "contact_sheet": "reid_off/temporal/burst_000005125_000005154_contact_sheet.png",
+            "contact_sheet_sha256": "8f7fb52172203e69f39fac8c53cb0d449645aa658b79a4a497089d41db463bcd"
+          },
+          {
+            "start_frame": 7696,
+            "end_frame": 7725,
+            "frame_count": 30,
+            "clip": "reid_off/temporal/burst_000007696_000007725_tracked.mp4",
+            "clip_sha256": "6a24fa43a08e504aca31b3c4aa65695a41c994b485ce28e31c1ed2e6c03c0771",
+            "contact_sheet": "reid_off/temporal/burst_000007696_000007725_contact_sheet.png",
+            "contact_sheet_sha256": "dc6f2eed15aa9ac58e978a89a35b0c0cb2cf5a36a57e97909c142a7bd427ed4b"
+          },
+          {
+            "start_frame": 10252,
+            "end_frame": 10281,
+            "frame_count": 30,
+            "clip": "reid_off/temporal/burst_000010252_000010281_tracked.mp4",
+            "clip_sha256": "d6b325ae4bdc993502c546f6abef983b5ea13d33a0892361457b214f3f16974c",
+            "contact_sheet": "reid_off/temporal/burst_000010252_000010281_contact_sheet.png",
+            "contact_sheet_sha256": "f26403ef4c7487487789a5d37f008c2d740cc061d8851d98223e2a8213eb7e42"
+          }
+        ]
+      },
+      "reid_on": {
+        "track_records": "reid_on/track_records.jsonl",
+        "track_records_sha256": "6a4721eab4ed605e4002a21a16f3ab6ca221b889b22f97b12e6ccdd7d9623adf",
+        "track_summary": "reid_on/track_summary.json",
+        "track_summary_sha256": "7e8d4025f070b672aaea79b7d973e6e44451f70cff1744eb1c2490f7a65279c8",
+        "appearance_records": "reid_on/appearance_records.jsonl",
+        "appearance_records_sha256": "76f75694acfd6c1de248ee98b0e34e6951944fc2803d1e5dc8aa6d1fcfd2090c",
+        "representative_temporal_track_records": "reid_on/representative_temporal_track_records.json",
+        "representative_temporal_track_records_sha256": "b903581fe8ce1daddbb5a014d84f495e20cd3612c23bba5fcc93ca829a6b9506",
+        "sample_frames": [
+          {
+            "frame_index": 0,
+            "raw": "reid_on/samples/frame_000000000_raw.png",
+            "raw_sha256": "a45fac4250c5b38b99f17dee9fd7f38a3d878a0721853dec5e2af4721f36541e",
+            "annotated": "reid_on/samples/frame_000000000_tracked.png",
+            "annotated_sha256": "31b660f17ad83cfcdb79015c05228bc2c00a876ca4120a75ff7fa5166e70b973"
+          },
+          {
+            "frame_index": 2570,
+            "raw": "reid_on/samples/frame_000002570_raw.png",
+            "raw_sha256": "7bac08f753edf3d15625a815ec2355e09097baf11ce61d20d163b9bb2f579b08",
+            "annotated": "reid_on/samples/frame_000002570_tracked.png",
+            "annotated_sha256": "8e27066d96de3708fac93bc1af27b4488296880f214192c81649639fe39beef5"
+          },
+          {
+            "frame_index": 5140,
+            "raw": "reid_on/samples/frame_000005140_raw.png",
+            "raw_sha256": "65123bf8207ff223841bcc8f6a50287aef75909e2bcf4a9abb608370de0d72ee",
+            "annotated": "reid_on/samples/frame_000005140_tracked.png",
+            "annotated_sha256": "fc8d5269b5988d0e0ae616a0f4b6378a37ffbdba33c1a86989c61e372249771d"
+          },
+          {
+            "frame_index": 7711,
+            "raw": "reid_on/samples/frame_000007711_raw.png",
+            "raw_sha256": "c97ec27525047ef8d13c19ffc1801b93797873b3d9050fa6cb82ef0cb938fc15",
+            "annotated": "reid_on/samples/frame_000007711_tracked.png",
+            "annotated_sha256": "e3a4d59f2cdaf5169f4d44d7fd5d431dd3b9549f01acca4dd5aea7654dfa598e"
+          },
+          {
+            "frame_index": 7712,
+            "raw": "reid_on/samples/frame_000007712_raw.png",
+            "raw_sha256": "3449785d0b96db3d56f92d1e8c965009b640313daa0ef0fda1a909c5f6b5a44c",
+            "annotated": "reid_on/samples/frame_000007712_tracked.png",
+            "annotated_sha256": "6659f796aeade8945e3878eb7db2e37c1c389003e63d996c9979d2548e985b26"
+          },
+          {
+            "frame_index": 7713,
+            "raw": "reid_on/samples/frame_000007713_raw.png",
+            "raw_sha256": "4708e1de24b525425eecedc8c339ef6fa79f281df44566baa04aa54135f1dc1f",
+            "annotated": "reid_on/samples/frame_000007713_tracked.png",
+            "annotated_sha256": "46fb16297c3d53e5ef57de39070ae2b090957d596583000a2dfbbe31454fb444"
+          },
+          {
+            "frame_index": 7714,
+            "raw": "reid_on/samples/frame_000007714_raw.png",
+            "raw_sha256": "387bfe81d08f8d6f77d34cbee5f72c9414a2012f266050e98017b64bcc234116",
+            "annotated": "reid_on/samples/frame_000007714_tracked.png",
+            "annotated_sha256": "7bdb64388c89f0d9fba262d8899eb1db8ec2c2d57dd3da540ecb6693a441d316"
+          },
+          {
+            "frame_index": 7715,
+            "raw": "reid_on/samples/frame_000007715_raw.png",
+            "raw_sha256": "ed273f2934814ec67e17954ce1da0ba325fbbe3d03b3335d60448990d299fc79",
+            "annotated": "reid_on/samples/frame_000007715_tracked.png",
+            "annotated_sha256": "491c99bb72710498cc3a17a2ee243f619478e36cda818e6f4a5d67acb22d3955"
+          },
+          {
+            "frame_index": 7716,
+            "raw": "reid_on/samples/frame_000007716_raw.png",
+            "raw_sha256": "246b1a68ec36a60eefb691cadf0fd9bfc74c7c50bd1616ac0cc3418c876c186f",
+            "annotated": "reid_on/samples/frame_000007716_tracked.png",
+            "annotated_sha256": "22e9323d54d697dfe1b72bc33575e6dac0b70496b65d5a79d5eae695917f580d"
+          },
+          {
+            "frame_index": 7717,
+            "raw": "reid_on/samples/frame_000007717_raw.png",
+            "raw_sha256": "4d62e8151829ef7a8541973de5866c0b13a379617cb3b0dfbf589c186d73e173",
+            "annotated": "reid_on/samples/frame_000007717_tracked.png",
+            "annotated_sha256": "3f4d1c41c579e83cd65aff3da4694d7492311fa6e89cf6a65b0071234faa0574"
+          },
+          {
+            "frame_index": 7718,
+            "raw": "reid_on/samples/frame_000007718_raw.png",
+            "raw_sha256": "78e48a389821ba128315dbf6355206611ccbf8130f1aa14cf85468e7ecc04519",
+            "annotated": "reid_on/samples/frame_000007718_tracked.png",
+            "annotated_sha256": "69eb54d18fbb0cf354b6226580778f953e450ddd37f62abeb1e416ef303e1679"
+          },
+          {
+            "frame_index": 10281,
+            "raw": "reid_on/samples/frame_000010281_raw.png",
+            "raw_sha256": "b7a8b2d4e6af1b92674023bb3fac97b5db30a062c13f5c4b2f94d2bf43479fb8",
+            "annotated": "reid_on/samples/frame_000010281_tracked.png",
+            "annotated_sha256": "dbd403e9ffe10f419c4af653115c607f7084fb890021f4be255fdd2cee9b7c82"
+          }
+        ],
+        "temporal_bursts": [
+          {
+            "start_frame": 0,
+            "end_frame": 29,
+            "frame_count": 30,
+            "clip": "reid_on/temporal/burst_000000000_000000029_tracked.mp4",
+            "clip_sha256": "3381779fbd955ad3be8e254ffb346c48130982cd9a56b25bdaa2abf8645f1eb4",
+            "contact_sheet": "reid_on/temporal/burst_000000000_000000029_contact_sheet.png",
+            "contact_sheet_sha256": "000ac9446ead8e3b62246dddc7043383ed99bd230f59a4230e9b578a4c8e3e41"
+          },
+          {
+            "start_frame": 2555,
+            "end_frame": 2584,
+            "frame_count": 30,
+            "clip": "reid_on/temporal/burst_000002555_000002584_tracked.mp4",
+            "clip_sha256": "7d944e922cad48883222e9b0d4c488aa0784bf90dc1ecd6edd216ca2a59e5c1a",
+            "contact_sheet": "reid_on/temporal/burst_000002555_000002584_contact_sheet.png",
+            "contact_sheet_sha256": "612ac46f018ceaec87bd9c4698db56047b0b55c166f8fd4f32c892c489783cd1"
+          },
+          {
+            "start_frame": 5125,
+            "end_frame": 5154,
+            "frame_count": 30,
+            "clip": "reid_on/temporal/burst_000005125_000005154_tracked.mp4",
+            "clip_sha256": "41c031079c010be8ef1fe8c4647c895359f90a10175cd774ea4bddc8e48656d3",
+            "contact_sheet": "reid_on/temporal/burst_000005125_000005154_contact_sheet.png",
+            "contact_sheet_sha256": "0a37270d3289e5e97f610949724922d2dde324e03580306a98d7f3ff40e7239d"
+          },
+          {
+            "start_frame": 7696,
+            "end_frame": 7725,
+            "frame_count": 30,
+            "clip": "reid_on/temporal/burst_000007696_000007725_tracked.mp4",
+            "clip_sha256": "908a7983695dc3caf05475435ef366d67bdaba9ed75f119891face582dcf1f9b",
+            "contact_sheet": "reid_on/temporal/burst_000007696_000007725_contact_sheet.png",
+            "contact_sheet_sha256": "3c0f02b415d206ba14e565bde4c5ee27800a062ceead169ea8390f2383d892f7"
+          },
+          {
+            "start_frame": 10252,
+            "end_frame": 10281,
+            "frame_count": 30,
+            "clip": "reid_on/temporal/burst_000010252_000010281_tracked.mp4",
+            "clip_sha256": "6a012b57d84f18ed2ae6e5b4df35793dbbbfb2efacbe453ef14bbe364b1c733e",
+            "contact_sheet": "reid_on/temporal/burst_000010252_000010281_contact_sheet.png",
+            "contact_sheet_sha256": "db6ffdbad6b1dba5d0814052247bbc029d3af5d87db69bc0ab93e30490879684"
+          }
+        ]
+      }
+    },
+    "paired_contact_sheets": [
+      {
+        "scope": [
+          0,
+          29
+        ],
+        "path": "temporal/paired_burst_000000000_000000029_contact_sheet.png",
+        "sha256": "d2cd36fa75be2feebb7809ea9f5a63be0faddcea2f4f66c5dde91387a9c45620"
+      },
+      {
+        "scope": [
+          2555,
+          2584
+        ],
+        "path": "temporal/paired_burst_000002555_000002584_contact_sheet.png",
+        "sha256": "95210cc846ae616832bd7c5d08edcfdc437e7b4316c8433c9d230178eb47c2ca"
+      },
+      {
+        "scope": [
+          5125,
+          5154
+        ],
+        "path": "temporal/paired_burst_000005125_000005154_contact_sheet.png",
+        "sha256": "f70d2314a47ba0ec9e099e7951185161484ffa90094749bbe488c0be6609b492"
+      },
+      {
+        "scope": [
+          7696,
+          7725
+        ],
+        "path": "temporal/paired_burst_000007696_000007725_contact_sheet.png",
+        "sha256": "db21f673ccb3dd1fbbb963ea9d6968a5a62941ffecea020163d15678be64eafc"
+      },
+      {
+        "scope": [
+          10252,
+          10281
+        ],
+        "path": "temporal/paired_burst_000010252_000010281_contact_sheet.png",
+        "sha256": "891c095404d249faef3f2917ac1aaf06ecec88fde1c1e443d8a22ce1bd59abc4"
+      },
+      {
+        "scope": [
+          7711,
+          7712,
+          7713,
+          7714,
+          7715,
+          7716,
+          7717,
+          7718
+        ],
+        "display_crop_xyxy": [
+          500,
+          250,
+          1280,
+          720
+        ],
+        "path": "temporal/paired_entering_scooter_000007711_000007718_contact_sheet.png",
+        "sha256": "69bcb58c518f78e340bf2e53ae44b0f5ddb3b8c53bb3408dc034e8d73bf896b4"
+      },
+      {
+        "scope": [
+          5125,
+          5126,
+          5127,
+          5128,
+          5129,
+          5130
+        ],
+        "display_crop_xyxy": [
+          0,
+          250,
+          750,
+          720
+        ],
+        "path": "temporal/paired_red_scooter_000005125_000005130_contact_sheet.png",
+        "sha256": "b7ab00e8f849d1e169dc607ff9a2e98dbcd29a64f8e1f5a9e48f8be18d70d958"
+      }
+    ]
+  },
+  "baseline_compatibility_with_original_phase3": {
+    "status": "pending_independent_retained_artifact_audit",
+    "requirement": "Compare canonical emitted observations/lifecycle with original Phase 3; exclude new timing/variant fields."
+  },
+  "candidate_decision": {
+    "status": "pending_actual_temporal_review",
+    "final_vehicle_reid_configuration_accepted": false,
+    "architecture_reid_removed": false
+  },
+  "limitations": [
+    "No ground truth or physical-identity benchmark; no accuracy/IDF1/MOTA/counting metric or general improvement claim.",
+    "Person-domain encoder vehicle suitability unknown; exact upstream crop/channel behavior is retained without custom correction.",
+    "Cached detections excluded scores below0.25; missing/lower-confidence observations cannot be restored by ReID.",
+    "Class-agnostic association/raw-class changes and rider/pedestrian/product/duplicate policy remain unresolved.",
+    "Software counter and appearance-cost differences are mechanism diagnostics, not confirmed identity improvements.",
+    "Five temporal bursts plus focused sheets do not establish whole-video identity correctness; subsequent visual review is separate.",
+    "Sequential independent passes decode the same hashed source; order/warmup and diagnostic overhead limit runtime comparisons.",
+    "No detector inference, GMC/stabilization, night preprocessing, geometry, crossing/counting or Phase5 implementation.",
+    "Original execution review fields remain pending; subsequent actual AI-assisted review must be retained separately."
+  ],
+  "finished_utc": "2026-10-11T10:08:11.354857+00:00"
+}

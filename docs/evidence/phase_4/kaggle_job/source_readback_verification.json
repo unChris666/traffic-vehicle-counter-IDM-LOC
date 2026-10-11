@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-11T09:59:56.188660+00:00",
+  "actual_id": "chrisbiran/traffic-counter-phase-4-reid-comparison",
+  "canonical_all_cell_sources_and_notebook_metadata_equal": true,
+  "local_source_sha256": "82c31ef83b9afbf1c08614142844953db9d7539a88e632fdd29f54d5aa9b799c",
+  "pulled_source_sha256": "1160cc51febd8db9e1357392585bf4d33f532364d2b343021c60bd87ef81104d",
+  "private": true,
+  "gpu_enabled": true,
+  "metadata": {
+    "id": "chrisbiran/traffic-counter-phase-4-reid-comparison",
+    "title": "Traffic Counter Phase 4 ReID Comparison",
+    "dataset_sources": [
+      "chrisbiran/traffic-counter-phase-2-retained-cache",
+      "chrisbiran/traffic-tracker-videos"
+    ],
+    "docker_image": "gcr.io/kaggle-private-byod/python@sha256:37c64f7dd9c54116ecd1bcc88817c5469b88387388fade02bfa8bf3fc647d461",
+    "machine_shape": "NvidiaTeslaT4"
+  },
+  "no_second_submission": true
+}

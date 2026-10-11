@@ -1,0 +1,73 @@
+{
+  "original_clips": {
+    "reid_off": {
+      "path": "/tmp/kaggle-phase4-reid-output-20261011/reid_comparison/20261011T095924_205716Z_90cf7319/reid_off/temporal/burst_000000000_000000029_tracked.mp4",
+      "sha256": "67700d047afd88dada356988fb804a80a5a4768f0aaeaaa0f0c8d8d4c569b4df"
+    },
+    "reid_on": {
+      "path": "/tmp/kaggle-phase4-reid-output-20261011/reid_comparison/20261011T095924_205716Z_90cf7319/reid_on/temporal/burst_000000000_000000029_tracked.mp4",
+      "sha256": "3381779fbd955ad3be8e254ffb346c48130982cd9a56b25bdaa2abf8645f1eb4"
+    }
+  },
+  "source_size": [
+    1280,
+    720
+  ],
+  "derivatives": [
+    {
+      "path": "/tmp/phase4-beginning-review/paired_car_crop_10_19.png",
+      "sha256": "7324ffadefe0ca8f6b00a63a682986a5dd3fc8ba09238c0dc3adc51221e707cd",
+      "frame_indices": [
+        10,
+        11,
+        12,
+        16,
+        19
+      ],
+      "crop_xyxy": [
+        60,
+        365,
+        290,
+        495
+      ],
+      "upscale": "3x nearest display only"
+    },
+    {
+      "path": "/tmp/phase4-beginning-review/paired_car_crop_20_24.png",
+      "sha256": "99c61199a1fb4718eb08a64a91d1804c20d70d2bffc10ce8d055e753e2342e5e",
+      "frame_indices": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "crop_xyxy": [
+        60,
+        365,
+        290,
+        495
+      ],
+      "upscale": "3x nearest display only"
+    },
+    {
+      "path": "/tmp/phase4-beginning-review/paired_car_crop_25_29.png",
+      "sha256": "b32f91fb94e6bff348d91b005f8b8637409c7a125172f336e4565a9effbb3c6d",
+      "frame_indices": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "crop_xyxy": [
+        60,
+        365,
+        290,
+        495
+      ],
+      "upscale": "3x nearest display only"
+    }
+  ],
+  "claim": "Display-only crop derived from retained annotated clips; no pixels alter tracker input or original artifacts."
+}

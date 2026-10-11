@@ -1,0 +1,16 @@
+{
+  "scope": "Audit implementation correction only; actual Kaggle exports unchanged and no detector/tracker/encoder rerun.",
+  "correction": "Initial auditor parsed retained float32 cost matrices into float64 arithmetic; a max-reduction check differed by approximately2.98e-8. Pinned matching implementation uses float32, so reconstruction was corrected to float32 rather than relaxing an experiment threshold.",
+  "final_actual_artifact_audit": {
+    "path": "actual_run/artifact_audit.json",
+    "checks_passed": 19,
+    "checks_total": 19,
+    "status": "passed"
+  },
+  "fixture_validation": {
+    "path": "helper_validation.json",
+    "checks_passed": 5,
+    "checks_total": 5,
+    "status": "passed"
+  }
+}

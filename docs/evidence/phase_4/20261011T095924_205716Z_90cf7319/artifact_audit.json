@@ -1,0 +1,624 @@
+{
+  "claim_type": "EXPERIMENT_RESULT",
+  "created_at_utc": "2026-10-11T10:13:29.018249+00:00",
+  "run_id": "20261011T095924_205716Z_90cf7319",
+  "scope": "Independent read-only retained Phase 4 artifact audit; no detector, tracker or encoder execution.",
+  "status": "passed",
+  "checks_passed": 19,
+  "checks_total": 19,
+  "checks": [
+    {
+      "check": "original_execution_report_json",
+      "passed": true,
+      "details": {
+        "phase": 4,
+        "run_id": "20261011T095924_205716Z_90cf7319",
+        "status": "completed_controlled_reid_sequences_manual_review_pending",
+        "frames_processed": 20564
+      }
+    },
+    {
+      "check": "original_phase2_cache_identity_order_and_schema",
+      "passed": true,
+      "details": {
+        "frame_count": 10282,
+        "raw_detection_count": 50713,
+        "zero_detection_frame_count": 7,
+        "raw_detection_observations_by_class": {
+          "car": 14693,
+          "motorcycle": 16863,
+          "bench": 1530,
+          "truck": 2668,
+          "person": 14700,
+          "bus": 43,
+          "backpack": 113,
+          "traffic light": 2,
+          "bird": 22,
+          "cell phone": 1,
+          "handbag": 25,
+          "train": 1,
+          "boat": 23,
+          "sports ball": 1,
+          "horse": 1,
+          "stop sign": 1,
+          "teddy bear": 2,
+          "skateboard": 1,
+          "suitcase": 10,
+          "bicycle": 2,
+          "frisbee": 1,
+          "fire hydrant": 9,
+          "umbrella": 1
+        },
+        "interpretation": "Detection observations, not physical-object or traffic totals"
+      }
+    },
+    {
+      "check": "retained_parent_input_and_complete_controlled_scope",
+      "passed": true,
+      "details": {
+        "parent_report_sha256": "9ec71dc98f441075120869f1279cc589e2983d26e7f4403bff638255024a81ff",
+        "cache_sha256": "033a2815d3abbd23327936a1b9d948b2b9b7d312796516e5ee46aec5685be345",
+        "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+        "source_video_bytes_rehashed": true
+      }
+    },
+    {
+      "check": "pinned_off_on_configuration_asset_sources_and_runtime",
+      "passed": true,
+      "details": {
+        "source_files_verified": 12,
+        "package_versions": {
+          "ultralytics": "8.4.175",
+          "lap": "0.5.13",
+          "torch": "2.10.0+cu128",
+          "numpy": "2.0.2",
+          "Pillow": "11.3.0",
+          "onnx": "1.20.1",
+          "onnxruntime-gpu": "1.24.4"
+        },
+        "encoder_asset_sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+        "variant_changed_keys": [
+          "with_reid",
+          "model",
+          "device"
+        ],
+        "association_device": "cpu",
+        "encoder_device": "cuda:0",
+        "person_domain_vehicle_suitability": "unknown"
+      }
+    },
+    {
+      "check": "actual_onnx_cuda_node_profile_execution",
+      "passed": true,
+      "details": {
+        "raw_profile_sha256": "407c5bea537eb862ff18d1321009d72857b9c8424f7e2006360b3f51e105590d",
+        "provider_kernel_event_counts": {
+          "CUDAExecutionProvider": 137,
+          "CPUExecutionProvider": 20
+        },
+        "profiled_source_frame": 0,
+        "scope": "Actual first appearance-bearing update profile only; CPU graph partitions, if present, are reported."
+      }
+    },
+    {
+      "check": "original_manifest_equals_execution_report",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "all_declared_output_artifact_hashes_and_native_dimensions",
+      "passed": true,
+      "details": {
+        "declared_artifact_files_rehashed": 84,
+        "paths": [
+          "reid_off/track_records.jsonl",
+          "reid_off/track_summary.json",
+          "reid_off/appearance_records.jsonl",
+          "reid_off/representative_temporal_track_records.json",
+          "reid_off/samples/frame_000000000_raw.png",
+          "reid_off/samples/frame_000000000_tracked.png",
+          "reid_off/samples/frame_000002570_raw.png",
+          "reid_off/samples/frame_000002570_tracked.png",
+          "reid_off/samples/frame_000005140_raw.png",
+          "reid_off/samples/frame_000005140_tracked.png",
+          "reid_off/samples/frame_000007711_raw.png",
+          "reid_off/samples/frame_000007711_tracked.png",
+          "reid_off/samples/frame_000007712_raw.png",
+          "reid_off/samples/frame_000007712_tracked.png",
+          "reid_off/samples/frame_000007713_raw.png",
+          "reid_off/samples/frame_000007713_tracked.png",
+          "reid_off/samples/frame_000007714_raw.png",
+          "reid_off/samples/frame_000007714_tracked.png",
+          "reid_off/samples/frame_000007715_raw.png",
+          "reid_off/samples/frame_000007715_tracked.png",
+          "reid_off/samples/frame_000007716_raw.png",
+          "reid_off/samples/frame_000007716_tracked.png",
+          "reid_off/samples/frame_000007717_raw.png",
+          "reid_off/samples/frame_000007717_tracked.png",
+          "reid_off/samples/frame_000007718_raw.png",
+          "reid_off/samples/frame_000007718_tracked.png",
+          "reid_off/samples/frame_000010281_raw.png",
+          "reid_off/samples/frame_000010281_tracked.png",
+          "reid_off/temporal/burst_000000000_000000029_tracked.mp4",
+          "reid_off/temporal/burst_000000000_000000029_contact_sheet.png",
+          "reid_off/temporal/burst_000002555_000002584_tracked.mp4",
+          "reid_off/temporal/burst_000002555_000002584_contact_sheet.png",
+          "reid_off/temporal/burst_000005125_000005154_tracked.mp4",
+          "reid_off/temporal/burst_000005125_000005154_contact_sheet.png",
+          "reid_off/temporal/burst_000007696_000007725_tracked.mp4",
+          "reid_off/temporal/burst_000007696_000007725_contact_sheet.png",
+          "reid_off/temporal/burst_000010252_000010281_tracked.mp4",
+          "reid_off/temporal/burst_000010252_000010281_contact_sheet.png",
+          "reid_on/track_records.jsonl",
+          "reid_on/track_summary.json",
+          "reid_on/appearance_records.jsonl",
+          "reid_on/representative_temporal_track_records.json",
+          "reid_on/samples/frame_000000000_raw.png",
+          "reid_on/samples/frame_000000000_tracked.png",
+          "reid_on/samples/frame_000002570_raw.png",
+          "reid_on/samples/frame_000002570_tracked.png",
+          "reid_on/samples/frame_000005140_raw.png",
+          "reid_on/samples/frame_000005140_tracked.png",
+          "reid_on/samples/frame_000007711_raw.png",
+          "reid_on/samples/frame_000007711_tracked.png",
+          "reid_on/samples/frame_000007712_raw.png",
+          "reid_on/samples/frame_000007712_tracked.png",
+          "reid_on/samples/frame_000007713_raw.png",
+          "reid_on/samples/frame_000007713_tracked.png",
+          "reid_on/samples/frame_000007714_raw.png",
+          "reid_on/samples/frame_000007714_tracked.png",
+          "reid_on/samples/frame_000007715_raw.png",
+          "reid_on/samples/frame_000007715_tracked.png",
+          "reid_on/samples/frame_000007716_raw.png",
+          "reid_on/samples/frame_000007716_tracked.png",
+          "reid_on/samples/frame_000007717_raw.png",
+          "reid_on/samples/frame_000007717_tracked.png",
+          "reid_on/samples/frame_000007718_raw.png",
+          "reid_on/samples/frame_000007718_tracked.png",
+          "reid_on/samples/frame_000010281_raw.png",
+          "reid_on/samples/frame_000010281_tracked.png",
+          "reid_on/temporal/burst_000000000_000000029_tracked.mp4",
+          "reid_on/temporal/burst_000000000_000000029_contact_sheet.png",
+          "reid_on/temporal/burst_000002555_000002584_tracked.mp4",
+          "reid_on/temporal/burst_000002555_000002584_contact_sheet.png",
+          "reid_on/temporal/burst_000005125_000005154_tracked.mp4",
+          "reid_on/temporal/burst_000005125_000005154_contact_sheet.png",
+          "reid_on/temporal/burst_000007696_000007725_tracked.mp4",
+          "reid_on/temporal/burst_000007696_000007725_contact_sheet.png",
+          "reid_on/temporal/burst_000010252_000010281_tracked.mp4",
+          "reid_on/temporal/burst_000010252_000010281_contact_sheet.png",
+          "temporal/paired_burst_000000000_000000029_contact_sheet.png",
+          "temporal/paired_burst_000002555_000002584_contact_sheet.png",
+          "temporal/paired_burst_000005125_000005154_contact_sheet.png",
+          "temporal/paired_burst_000007696_000007725_contact_sheet.png",
+          "temporal/paired_burst_000010252_000010281_contact_sheet.png",
+          "temporal/paired_entering_scooter_000007711_000007718_contact_sheet.png",
+          "temporal/paired_red_scooter_000005125_000005130_contact_sheet.png",
+          "reid_on/ort_encoder_profile_2026-10-11_10-00-47.json"
+        ]
+      }
+    },
+    {
+      "check": "reid_off_full_measurement_links_lifecycle_and_history_contract",
+      "passed": true,
+      "details": {
+        "serialized_rows_verified": 10282,
+        "captured_tracker_ids_including_unconfirmed": 4922,
+        "unique_emitted_tracker_ids": 780,
+        "emitted_track_observations": 45756,
+        "frames_with_zero_cached_detections": 7,
+        "frames_with_no_emitted_tracks": 14,
+        "per_frame_track_ids_and_source_detection_links": "unique",
+        "measurement_and_lifecycle_contract": "verified",
+        "full_input_sequences_persisted_in_check_details": false
+      }
+    },
+    {
+      "check": "reid_off_full_track_summary_and_gap_class_lifecycle_counters",
+      "passed": true,
+      "details": {
+        "within_id_gap_events": 1633,
+        "within_id_raw_class_changes": 497,
+        "ids_never_emitted": 4142,
+        "lifecycle_transition_events": 14570,
+        "interpretation": "Algorithm bookkeeping/diagnostic events, not physical identity errors or traffic totals"
+      }
+    },
+    {
+      "check": "reid_off_all_embedding_metadata_and_association_mechanism_records",
+      "passed": true,
+      "details": {
+        "ordered_appearance_rows": 10282,
+        "encoder_calls": 0,
+        "feature_metadata_rows": 0,
+        "feature_norm_min": null,
+        "feature_norm_max": null,
+        "encoder_wall_seconds": 0.0,
+        "full_retained_association_matrices_recomputed": 183,
+        "association_mechanism_counters": {
+          "calls": 13929,
+          "candidate_pairs": 420466,
+          "nonempty_feature_association_calls": 0,
+          "appearance_eligible_pairs": 0,
+          "appearance_changed_cost_pairs": 0,
+          "calls_with_changed_costs": 0
+        },
+        "limits": "Full vectors are not retained; finite/nonzero evidence is supplied by the actual validated encoder observer, with per-feature norms/digests. Cost matrices independently reconcile where retained."
+      }
+    },
+    {
+      "check": "reid_off_reported_software_counters_and_actual_timings_reconcile",
+      "passed": true,
+      "details": {
+        "serialized_rows_verified": 10282,
+        "captured_tracker_ids_including_unconfirmed": 4922,
+        "unique_emitted_tracker_ids": 780,
+        "emitted_track_observations": 45756,
+        "frames_with_zero_cached_detections": 7,
+        "frames_with_no_emitted_tracks": 14,
+        "within_id_gap_events": 1633,
+        "within_id_raw_class_changes": 497,
+        "ids_never_emitted": 4142,
+        "lifecycle_transition_events": 14570,
+        "timing": {
+          "loop_wall_seconds": 41.139683324999964,
+          "tracker_update_calls": 10282,
+          "tracker_update_wall_seconds": 18.206131658999766,
+          "tracker_update_wall_ms_mean": 1.7706799901769856,
+          "tracker_update_wall_ms_median": 1.6289885000162485,
+          "encoder_wall_seconds_inside_tracker": 0,
+          "decoder_read_calls_including_final_probe": 10283,
+          "decode_read_wall_seconds": 10.72800426099758,
+          "selected_render_and_png_write_wall_seconds": 1.4988181310001778,
+          "limits": "Instrumented tracker includes adapter, association and cost validation; on variant also actual crop/encoder inference. Encoder is a subset, not additional time. Loop also includes JSON serialization/IO. Sequential order/warmup may affect runtime."
+        },
+        "interpretation": "Software diagnostics and instrumented timings, not physical identity/traffic metrics."
+      }
+    },
+    {
+      "check": "reid_on_full_measurement_links_lifecycle_and_history_contract",
+      "passed": true,
+      "details": {
+        "serialized_rows_verified": 10282,
+        "captured_tracker_ids_including_unconfirmed": 2402,
+        "unique_emitted_tracker_ids": 997,
+        "emitted_track_observations": 48228,
+        "frames_with_zero_cached_detections": 7,
+        "frames_with_no_emitted_tracks": 8,
+        "per_frame_track_ids_and_source_detection_links": "unique",
+        "measurement_and_lifecycle_contract": "verified",
+        "full_input_sequences_persisted_in_check_details": false
+      }
+    },
+    {
+      "check": "reid_on_full_track_summary_and_gap_class_lifecycle_counters",
+      "passed": true,
+      "details": {
+        "within_id_gap_events": 2135,
+        "within_id_raw_class_changes": 1088,
+        "ids_never_emitted": 1405,
+        "lifecycle_transition_events": 10874,
+        "interpretation": "Algorithm bookkeeping/diagnostic events, not physical identity errors or traffic totals"
+      }
+    },
+    {
+      "check": "reid_on_all_embedding_metadata_and_association_mechanism_records",
+      "passed": true,
+      "details": {
+        "ordered_appearance_rows": 10282,
+        "encoder_calls": 10275,
+        "feature_metadata_rows": 50713,
+        "feature_norm_min": 0.9999998807907104,
+        "feature_norm_max": 1.0000001192092896,
+        "encoder_wall_seconds": 373.85365254799717,
+        "full_retained_association_matrices_recomputed": 172,
+        "association_mechanism_counters": {
+          "calls": 12235,
+          "candidate_pairs": 461995,
+          "nonempty_feature_association_calls": 11606,
+          "appearance_eligible_pairs": 53187,
+          "appearance_changed_cost_pairs": 53152,
+          "calls_with_changed_costs": 11105
+        },
+        "limits": "Full vectors are not retained; finite/nonzero evidence is supplied by the actual validated encoder observer, with per-feature norms/digests. Cost matrices independently reconcile where retained."
+      }
+    },
+    {
+      "check": "reid_on_reported_software_counters_and_actual_timings_reconcile",
+      "passed": true,
+      "details": {
+        "serialized_rows_verified": 10282,
+        "captured_tracker_ids_including_unconfirmed": 2402,
+        "unique_emitted_tracker_ids": 997,
+        "emitted_track_observations": 48228,
+        "frames_with_zero_cached_detections": 7,
+        "frames_with_no_emitted_tracks": 8,
+        "within_id_gap_events": 2135,
+        "within_id_raw_class_changes": 1088,
+        "ids_never_emitted": 1405,
+        "lifecycle_transition_events": 10874,
+        "timing": {
+          "loop_wall_seconds": 422.91252200199995,
+          "tracker_update_calls": 10282,
+          "tracker_update_wall_seconds": 399.11875458599917,
+          "tracker_update_wall_ms_mean": 38.817229584322035,
+          "tracker_update_wall_ms_median": 17.12181749999786,
+          "encoder_wall_seconds_inside_tracker": 373.85365254799717,
+          "decoder_read_calls_including_final_probe": 10283,
+          "decode_read_wall_seconds": 12.578605550997395,
+          "selected_render_and_png_write_wall_seconds": 1.4797191309990012,
+          "limits": "Instrumented tracker includes adapter, association and cost validation; on variant also actual crop/encoder inference. Encoder is a subset, not additional time. Loop also includes JSON serialization/IO. Sequential order/warmup may affect runtime."
+        },
+        "interpretation": "Software diagnostics and instrumented timings, not physical identity/traffic metrics."
+      }
+    },
+    {
+      "check": "off_all_frames_exact_original_phase3_contract_equivalence",
+      "passed": true,
+      "details": {
+        "compared_frames": 10282,
+        "canonical_off_sha256": "3bafbc106ee073a7682a24273ed5927345c33b77b7e9a93dda86c89e0566c28d",
+        "canonical_original_phase3_sha256": "3bafbc106ee073a7682a24273ed5927345c33b77b7e9a93dda86c89e0566c28d",
+        "ignored_original_keys": [
+          "tracker_update_wall_seconds"
+        ],
+        "scope": "Every original per-frame association, source, history observation, lifecycle field; additional Phase 4 instrumentation audited separately."
+      }
+    },
+    {
+      "check": "off_all_tracks_exact_original_phase3_summary_equivalence",
+      "passed": true,
+      "details": {
+        "compared_ids_including_unconfirmed": 4922,
+        "canonical_off_sha256": "3bba7c02fb368cbfc6d1274bc2fa3e3b7be99d42dfa5100c5e3da3980912b5ca",
+        "canonical_original_phase3_sha256": "3bba7c02fb368cbfc6d1274bc2fa3e3b7be99d42dfa5100c5e3da3980912b5ca",
+        "ignored_original_metadata": {
+          "run_id": "20261011T060227_579936Z_05ebe213",
+          "track_id_scope": "one video tracker instance",
+          "summary_semantics": "All captured IDs including unconfirmed; no physical-object/traffic totals."
+        },
+        "new_declarative_metadata": {
+          "run_id": "20261011T095924_205716Z_90cf7319",
+          "track_id_scope": "one independent video tracker/variant",
+          "summary_semantics": "All captured IDs including unconfirmed; not physical-object/traffic totals."
+        },
+        "comparison_scope": "Exact video identity and every original track/history/lifecycle field; metadata wording is not association behavior."
+      }
+    },
+    {
+      "check": "native_source_pixel_preservation_and_full_paired_temporal_exports",
+      "passed": true,
+      "details": {
+        "identical_phase2_raw_samples_per_variant": 5,
+        "identical_off_on_native_raw_frames": [
+          0,
+          2570,
+          5140,
+          7711,
+          7712,
+          7713,
+          7714,
+          7715,
+          7716,
+          7717,
+          7718,
+          10281
+        ],
+        "temporal_record_subset_rows_per_variant": 150,
+        "rendered_clips": [
+          {
+            "variant": "reid_off",
+            "start_frame": 0,
+            "end_frame": 29,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_off",
+            "start_frame": 2555,
+            "end_frame": 2584,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_off",
+            "start_frame": 5125,
+            "end_frame": 5154,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_off",
+            "start_frame": 7696,
+            "end_frame": 7725,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_off",
+            "start_frame": 10252,
+            "end_frame": 10281,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_on",
+            "start_frame": 0,
+            "end_frame": 29,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_on",
+            "start_frame": 2555,
+            "end_frame": 2584,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_on",
+            "start_frame": 5125,
+            "end_frame": 5154,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_on",
+            "start_frame": 7696,
+            "end_frame": 7725,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "variant": "reid_on",
+            "start_frame": 10252,
+            "end_frame": 10281,
+            "decoded_rendered_frames": 30
+          }
+        ],
+        "scope": "Pixel/source preservation and retained export completeness, not physical identity quality."
+      }
+    },
+    {
+      "check": "focused_paired_traces_linked_by_original_detection_indices",
+      "passed": true,
+      "details": [
+        {
+          "path": "paired_trace_000000000_000000029.json",
+          "start_frame": 0,
+          "end_frame": 29,
+          "frame_count": 30
+        },
+        {
+          "path": "paired_trace_000002555_000002584.json",
+          "start_frame": 2555,
+          "end_frame": 2584,
+          "frame_count": 30
+        },
+        {
+          "path": "paired_trace_000005125_000005154.json",
+          "start_frame": 5125,
+          "end_frame": 5154,
+          "frame_count": 30
+        },
+        {
+          "path": "paired_trace_000007696_000007725.json",
+          "start_frame": 7696,
+          "end_frame": 7725,
+          "frame_count": 30
+        },
+        {
+          "path": "paired_trace_000010252_000010281.json",
+          "start_frame": 10252,
+          "end_frame": 10281,
+          "frame_count": 30
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "diagnostics": {
+    "retained_cache": {
+      "frame_count": 10282,
+      "raw_detection_count": 50713,
+      "zero_detection_frame_count": 7,
+      "raw_detection_observations_by_class": {
+        "car": 14693,
+        "motorcycle": 16863,
+        "bench": 1530,
+        "truck": 2668,
+        "person": 14700,
+        "bus": 43,
+        "backpack": 113,
+        "traffic light": 2,
+        "bird": 22,
+        "cell phone": 1,
+        "handbag": 25,
+        "train": 1,
+        "boat": 23,
+        "sports ball": 1,
+        "horse": 1,
+        "stop sign": 1,
+        "teddy bear": 2,
+        "skateboard": 1,
+        "suitcase": 10,
+        "bicycle": 2,
+        "frisbee": 1,
+        "fire hydrant": 9,
+        "umbrella": 1
+      },
+      "interpretation": "Detection observations, not physical-object or traffic totals"
+    },
+    "reid_off": {
+      "serialized_rows_verified": 10282,
+      "captured_tracker_ids_including_unconfirmed": 4922,
+      "unique_emitted_tracker_ids": 780,
+      "emitted_track_observations": 45756,
+      "frames_with_zero_cached_detections": 7,
+      "frames_with_no_emitted_tracks": 14,
+      "within_id_gap_events": 1633,
+      "within_id_raw_class_changes": 497,
+      "ids_never_emitted": 4142,
+      "lifecycle_transition_events": 14570,
+      "timing": {
+        "loop_wall_seconds": 41.139683324999964,
+        "tracker_update_calls": 10282,
+        "tracker_update_wall_seconds": 18.206131658999766,
+        "tracker_update_wall_ms_mean": 1.7706799901769856,
+        "tracker_update_wall_ms_median": 1.6289885000162485,
+        "encoder_wall_seconds_inside_tracker": 0,
+        "decoder_read_calls_including_final_probe": 10283,
+        "decode_read_wall_seconds": 10.72800426099758,
+        "selected_render_and_png_write_wall_seconds": 1.4988181310001778,
+        "limits": "Instrumented tracker includes adapter, association and cost validation; on variant also actual crop/encoder inference. Encoder is a subset, not additional time. Loop also includes JSON serialization/IO. Sequential order/warmup may affect runtime."
+      },
+      "interpretation": "Software diagnostics and instrumented timings, not physical identity/traffic metrics."
+    },
+    "reid_on": {
+      "serialized_rows_verified": 10282,
+      "captured_tracker_ids_including_unconfirmed": 2402,
+      "unique_emitted_tracker_ids": 997,
+      "emitted_track_observations": 48228,
+      "frames_with_zero_cached_detections": 7,
+      "frames_with_no_emitted_tracks": 8,
+      "within_id_gap_events": 2135,
+      "within_id_raw_class_changes": 1088,
+      "ids_never_emitted": 1405,
+      "lifecycle_transition_events": 10874,
+      "timing": {
+        "loop_wall_seconds": 422.91252200199995,
+        "tracker_update_calls": 10282,
+        "tracker_update_wall_seconds": 399.11875458599917,
+        "tracker_update_wall_ms_mean": 38.817229584322035,
+        "tracker_update_wall_ms_median": 17.12181749999786,
+        "encoder_wall_seconds_inside_tracker": 373.85365254799717,
+        "decoder_read_calls_including_final_probe": 10283,
+        "decode_read_wall_seconds": 12.578605550997395,
+        "selected_render_and_png_write_wall_seconds": 1.4797191309990012,
+        "limits": "Instrumented tracker includes adapter, association and cost validation; on variant also actual crop/encoder inference. Encoder is a subset, not additional time. Loop also includes JSON serialization/IO. Sequential order/warmup may affect runtime."
+      },
+      "interpretation": "Software diagnostics and instrumented timings, not physical identity/traffic metrics."
+    },
+    "paired_software_assignment_differences": {
+      "frames_with_different_assigned_detection_index_sets": 0,
+      "paired_detection_observations_with_different_numeric_ids": 50227,
+      "paired_detection_observations_with_different_emitted_flags": 3220,
+      "first_software_assignment_difference": {
+        "frame_index": 11,
+        "numeric_id_differences": 1,
+        "emitted_flag_differences": 1,
+        "off_assigned_detection_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "on_assigned_detection_indices": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "interpretation": "Variant software differences only; numeric ID shifts can propagate and are not physical ID-switch/improvement counts."
+    }
+  },
+  "limitations": [
+    "Software/provenance checks do not establish physical identity or model accuracy.",
+    "Only retained rendered clips may be decoded; source video is only hashed.",
+    "Baseline canonical comparison excludes new timing/run ID and audits all original measurement/lifecycle fields."
+  ]
+}

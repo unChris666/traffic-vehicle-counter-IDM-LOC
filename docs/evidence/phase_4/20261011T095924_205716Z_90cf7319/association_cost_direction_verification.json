@@ -1,0 +1,21 @@
+{
+  "scope": "Read-only signed cost verification; no detector/tracker/encoder execution.",
+  "video_file_independently_rehashed": {
+    "path": "/tmp/traffic-review-input/TOR3-PAGI.mp4",
+    "resolved_path": "/tmp/traffic-review-input/TOR3-PAGI.mp4",
+    "size_bytes": 53173467,
+    "sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "matches_actual_run_video_sha256": true
+  },
+  "all_association_call_records": 12235,
+  "all_reported_appearance_changed_cost_pairs": 53152,
+  "all_calls_declare_and_actual_observer_asserts_exact_parent_formula": true,
+  "source_formula": "actual=np.minimum(motion,appearance_gated); therefore actual never exceeds motion.",
+  "retained_full_matrices_independently_signed_checked": 172,
+  "retained_matrix_pairs_lowered": 717,
+  "retained_matrix_pairs_increased": 0,
+  "retained_matrix_pairs_unchanged": 4663,
+  "retained_delta_min": -0.7843908071517944,
+  "retained_delta_max": 0.0,
+  "limit": "Full matrices are retained only for five bursts. The all-frame lowering direction follows the pinned min formula and each actual observer assertion; explicit independent signed matrix recomputation is limited to retained full matrices."
+}

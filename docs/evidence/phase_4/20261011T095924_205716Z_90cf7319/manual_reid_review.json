@@ -1,0 +1,326 @@
+{
+  "run_id": "20261011T095924_205716Z_90cf7319",
+  "created_at_utc": "2026-10-11T10:20:50.717892+00:00",
+  "claim_type": "EXPERIMENT_RESULT_FROM_RETAINED_EVIDENCE",
+  "reviewer": "Codex AI-assisted visual review and independent artifact-audit agents; no human ground-truth annotation",
+  "status": "completed_scoped_visual_and_source_link_review",
+  "original_execution_exports_modified": false,
+  "execution_status_note": "Original reports were exported before review and keep their pending-review/candidate fields. This later supplement records the review and decision, without rewriting execution evidence.",
+  "scope": {
+    "full_cached_frames_per_variant": 10282,
+    "whole_video_physical_identity_review": false,
+    "whole_video_clips_watched": false,
+    "reviewed_paired_red_scooter_positions": [
+      5125,
+      5126,
+      5127,
+      5128,
+      5129,
+      5130
+    ],
+    "reviewed_paired_entry_positions": [
+      7711,
+      7712,
+      7713,
+      7714,
+      7715,
+      7716,
+      7717,
+      7718
+    ],
+    "reviewed_native_on_positions": [
+      7712,
+      7713,
+      7718
+    ],
+    "reviewed_native_off_positions": [
+      7712,
+      7718
+    ],
+    "control_displayed_positions": [
+      0,
+      5,
+      10,
+      15,
+      20,
+      29,
+      2555,
+      2560,
+      2565,
+      2570,
+      2575,
+      2584,
+      10252,
+      10257,
+      10262,
+      10267,
+      10272,
+      10281
+    ],
+    "beginning_additional_clip_derived_crop_positions": [
+      10,
+      11,
+      12,
+      16,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "derivative_note": "Beginning crops enlarge already-rendered annotated clip pixels 3x by nearest interpolation for display. This adds no identity detail; annotation and lossy clip compression limit interpretation.",
+    "record_review": "Independent audit covers full software records, plus source-index paired traces for five 30-frame bursts. Full software audit is not full physical identity annotation."
+  },
+  "cases": [
+    {
+      "case": "same_visible_red_scooter_concurrent_tracks",
+      "off_ids": [
+        1934,
+        1951
+      ],
+      "on_ids": [
+        964,
+        973
+      ],
+      "source_link_mapping": {
+        "1934": 964,
+        "1951": 973,
+        "rider_1937": 967
+      },
+      "finding": "The same visible red scooter retains concurrent motorcycle boxes/IDs in both variants. ReID does not resolve this observed duplicate-track case.",
+      "interpretation_limit": "No duplicate counting exists yet and no whole-video duplicate rate is calculated.",
+      "evidence": [
+        {
+          "path": "temporal/paired_red_scooter_000005125_000005130_contact_sheet.png",
+          "sha256": "b7ab00e8f849d1e169dc607ff9a2e98dbcd29a64f8e1f5a9e48f8be18d70d958"
+        },
+        {
+          "path": "paired_trace_000005125_000005154.json",
+          "sha256": "342f51522d229440ebb4d4247fbe5a794da0ac7d6420581ed3a3121a600a3305"
+        }
+      ]
+    },
+    {
+      "case": "entering_rider_scooter_class_component_handoff",
+      "off_ids": [
+        3681,
+        3683
+      ],
+      "on_ids": [
+        1772,
+        1774
+      ],
+      "source_link_mapping": {
+        "3681": 1772,
+        "3683": 1774
+      },
+      "raw_class_sequences_both_variants": [
+        "handbag -> person -> motorcycle",
+        "motorcycle -> person"
+      ],
+      "finding": "The same source-linked component/class handoff occurs with ReID off and on. Appearance does not stabilize physical component/category assignment in this reviewed case.",
+      "interpretation_limit": "This is not a formally labeled whole-video ID-switch score or an accepted pedestrian/rider category mapping.",
+      "evidence": [
+        {
+          "path": "temporal/paired_entering_scooter_000007711_000007718_contact_sheet.png",
+          "sha256": "69bcb58c518f78e340bf2e53ae44b0f5ddb3b8c53bb3408dc034e8d73bf896b4"
+        },
+        {
+          "path": "paired_trace_000007696_000007725.json",
+          "sha256": "b1bf7d03d19f293ac49306ea160b614c7f80415b2dc2cfacdc63e4255a4a3ad6"
+        }
+      ]
+    },
+    {
+      "case": "roadside_motorcycle_five_frame_gap",
+      "off_id": 3622,
+      "on_id": 1731,
+      "observed_before": {
+        "frame": 7712,
+        "source_detection_index": 7
+      },
+      "frames_without_assignment": [
+        7713,
+        7714,
+        7715,
+        7716,
+        7717
+      ],
+      "observed_after": {
+        "frame": 7718,
+        "source_detection_index": 6
+      },
+      "finding": "The same respective ID returns after five absent assignments in both variants; this recovery was already present without ReID.",
+      "interpretation_limit": "One retained recovery does not establish general recovery reliability or the physical cause of absent assignments.",
+      "evidence": [
+        {
+          "path": "reid_on/samples/frame_000007712_tracked.png",
+          "sha256": "6659f796aeade8945e3878eb7db2e37c1c389003e63d996c9979d2548e985b26"
+        },
+        {
+          "path": "reid_on/samples/frame_000007718_tracked.png",
+          "sha256": "69eb54d18fbb0cf354b6226580778f953e450ddd37f62abeb1e416ef303e1679"
+        },
+        {
+          "path": "paired_trace_000007696_000007725.json",
+          "sha256": "b1bf7d03d19f293ac49306ea160b614c7f80415b2dc2cfacdc63e4255a4a3ad6"
+        }
+      ]
+    },
+    {
+      "case": "beginning_small_raw_car_candidate",
+      "on_id": 6,
+      "off_unconfirmed_ids": [
+        6,
+        8,
+        9,
+        10,
+        11
+      ],
+      "source_observation_frames": [
+        10,
+        11,
+        16,
+        19,
+        29
+      ],
+      "finding": "ON ID6 becomes confirmed at frame11 and reacquires source-linked small car detections at16,19,29; OFF creates fresh unconfirmed IDs on these observations. Saved cost traces confirm appearance lowers the association cost here.",
+      "physical_identity_conclusion": "UNESTABLISHED: candidate is about33x20 native pixels and partly label-covered. No apparent relocation onto the larger carID1 or adjacentID2 is visible, but the pixels cannot reliably establish same-car identity or a quality gain.",
+      "improvement_claimed": false,
+      "evidence": [
+        {
+          "path": "beginning_car_gap_source_and_cost_trace.json",
+          "sha256": "715c87f75eb348ef686c26304d23ada5f81fa05a37b0c76898949ec60b7c5a55"
+        },
+        {
+          "path": "control_pixel_review.json",
+          "sha256": "9a4b6065a244b1d1a908e06600ede71589f0190eb6945d9794f2898301e62da1"
+        },
+        {
+          "path": "temporal/beginning_review/derived_clip_crop_manifest.json",
+          "sha256": "05caeefca944f3562075ed4f41da446cc720da3ccb9d9bf1ece05888acb5fc11"
+        }
+      ]
+    },
+    {
+      "case": "stable_controls",
+      "finding": "Receding rider/motorcycle components show local continuity at displayed positions in both variants (off933/935, on483/485). The end distant car likewise retains local continuity (off4829, on2327). Sparse displayed positions do not establish every intervening frame.",
+      "evidence": [
+        {
+          "path": "control_pixel_review.json",
+          "sha256": "9a4b6065a244b1d1a908e06600ede71589f0190eb6945d9794f2898301e62da1"
+        },
+        {
+          "path": "paired_trace_000002555_000002584.json",
+          "sha256": "77a082d8b6d864de2d7246b097efd9254b865736eabcf568c1cd2ce517a08e0a"
+        },
+        {
+          "path": "paired_trace_000010252_000010281.json",
+          "sha256": "299c59414a527640963df2532e4a8015634161efe53dfd1ed97d2d81d3819ea0"
+        }
+      ]
+    }
+  ],
+  "actual_runtime": {
+    "reid_off": {
+      "loop_wall_seconds": 41.139683324999964,
+      "tracker_update_calls": 10282,
+      "tracker_update_wall_seconds": 18.206131658999766,
+      "tracker_update_wall_ms_mean": 1.7706799901769856,
+      "tracker_update_wall_ms_median": 1.6289885000162485,
+      "encoder_wall_seconds_inside_tracker": 0,
+      "decoder_read_calls_including_final_probe": 10283,
+      "decode_read_wall_seconds": 10.72800426099758,
+      "selected_render_and_png_write_wall_seconds": 1.4988181310001778,
+      "limits": "Instrumented tracker includes adapter, association and cost validation; on variant also actual crop/encoder inference. Encoder is a subset, not additional time. Loop also includes JSON serialization/IO. Sequential order/warmup may affect runtime."
+    },
+    "reid_on": {
+      "loop_wall_seconds": 422.91252200199995,
+      "tracker_update_calls": 10282,
+      "tracker_update_wall_seconds": 399.11875458599917,
+      "tracker_update_wall_ms_mean": 38.817229584322035,
+      "tracker_update_wall_ms_median": 17.12181749999786,
+      "encoder_wall_seconds_inside_tracker": 373.85365254799717,
+      "decoder_read_calls_including_final_probe": 10283,
+      "decode_read_wall_seconds": 12.578605550997395,
+      "selected_render_and_png_write_wall_seconds": 1.4797191309990012,
+      "limits": "Instrumented tracker includes adapter, association and cost validation; on variant also actual crop/encoder inference. Encoder is a subset, not additional time. Loop also includes JSON serialization/IO. Sequential order/warmup may affect runtime."
+    }
+  },
+  "software_diagnostics_not_physical_metrics": {
+    "reid_off": {
+      "serialized_rows_verified": 10282,
+      "captured_tracker_ids_including_unconfirmed": 4922,
+      "unique_emitted_tracker_ids": 780,
+      "emitted_track_observations": 45756,
+      "frames_with_zero_cached_detections": 7,
+      "frames_with_no_emitted_tracks": 14,
+      "ids_never_emitted": 4142,
+      "within_id_gap_events": 1633,
+      "within_id_raw_class_changes": 497,
+      "lifecycle_transition_events": 14570,
+      "id_switch_count": null,
+      "id_switch_count_status": "Unknown; needs physical identity review.",
+      "traffic_count": null,
+      "traffic_count_status": "Not implemented; IDs are not vehicle counts."
+    },
+    "reid_on": {
+      "serialized_rows_verified": 10282,
+      "captured_tracker_ids_including_unconfirmed": 2402,
+      "unique_emitted_tracker_ids": 997,
+      "emitted_track_observations": 48228,
+      "frames_with_zero_cached_detections": 7,
+      "frames_with_no_emitted_tracks": 8,
+      "ids_never_emitted": 1405,
+      "within_id_gap_events": 2135,
+      "within_id_raw_class_changes": 1088,
+      "lifecycle_transition_events": 10874,
+      "id_switch_count": null,
+      "id_switch_count_status": "Unknown; needs physical identity review.",
+      "traffic_count": null,
+      "traffic_count_status": "Not implemented; IDs are not vehicle counts."
+    }
+  },
+  "candidate_decision": {
+    "decision": "REJECT_TESTED_CONFIGURATION_AS_CURRENT_VEHICLE_DEFAULT",
+    "applies_to": "This yolo26n-reid.onnx asset, untuned upstream224 preprocessing, fixed published appearance/proximity settings and TOR3-PAGI paired execution only.",
+    "reasons": [
+      "Reviewed priority duplicate and class/component failures persist.",
+      "No convincing physical identity improvement is established in this scoped review; the changed beginning association is visually ambiguous.",
+      "Measured instrumented loop cost increased from41.1397s off to422.9125s on.",
+      "Declared MSMT17 person-ReID provenance does not establish vehicle-domain transfer."
+    ],
+    "final_vehicle_reid_configuration": "OPEN",
+    "reid_removed_from_target_architecture": false,
+    "universal_reid_failure_claimed": false
+  },
+  "phase4_gate": "PASS_SCOPED_CAPABILITY_AND_CONTRIBUTION_EXPERIMENT_WITH_EXPLICIT_CANDIDATE_REJECTION",
+  "phase5_gate": "CONDITIONAL_SYNTHETIC_GEOMETRY_AFTER_EXPLICIT_CONTRACT; not trustworthy vehicle counting and no Phase5 implementation in this task",
+  "unresolved_issues": [
+    "Per-video geometry vertices, anchor, boundary/overlap, gap/prediction, jitter and crossing state semantics remain undefined.",
+    "Duplicate/category policy, physical identity recovery and suitable final vehicle ReID configuration remain open.",
+    "OpenCV final read_false occurred after all10282 expected cache rows; this alone does not distinguish EOF from a terminal decoding condition. Both sequences aligned and10exported30-frame clips decoded.",
+    "Frame-index/FPS time estimates are not verified original presentation timestamps.",
+    "No ground truth exists; no accuracy, precision, recall, F1, MAPE, physical ID-switch score, traffic totals or whole-video identity benefit is reported."
+  ],
+  "supporting_artifacts": [
+    {
+      "path": "artifact_audit.json",
+      "sha256": "5d4b215a5d491bdc266affaee80ba74d939a6fc254c6fa280c433543b7dd5c04"
+    },
+    {
+      "path": "reid_report.json",
+      "sha256": "ce927ae90a90a74a7f4c42c9bd6da92523e2ca9a2da06b5688d042e13d5f69bf"
+    },
+    {
+      "path": "reid_on/encoder_provider_evidence.json",
+      "sha256": "aa34ca7b1e38b060f4dd6fad228ab4b4bb8e427efb45b23950020af0e9f9c2e5"
+    }
+  ]
+}

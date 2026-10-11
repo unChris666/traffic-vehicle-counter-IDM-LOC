@@ -1,0 +1,421 @@
+{
+  "scope": "Exact actual retained software source/cost trace for appearance-on ID6, frames0\u201329; physical same-car interpretation requires temporal visual evidence. Numeric on/off IDs are not assumed equivalent.",
+  "frames": [
+    {
+      "frame_index": 10,
+      "source_detection": {
+        "original_detection_index": 4,
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.30055269598960876,
+        "bbox_xyxy_pixels": [
+          101.854248046875,
+          421.85723876953125,
+          134.7012939453125,
+          441.04656982421875
+        ]
+      },
+      "reid_off_assignment": {
+        "track_id": 6,
+        "frame_index": 10,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          101.854248046875,
+          421.85723876953125,
+          134.7012939453125,
+          441.04656982421875
+        ],
+        "bbox": [
+          101.854248046875,
+          421.85723876953125,
+          134.7012939453125,
+          441.04656982421875
+        ],
+        "center": [
+          118.27777099609375,
+          431.451904296875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.30055269598960876,
+        "timestamp_estimate_from_index_fps_seconds": 0.33540145669886967,
+        "timestamp_parent_backend_ms": 534.0555555555557,
+        "emitted": false,
+        "is_activated": false,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "reid_on_assignment": {
+        "track_id": 6,
+        "frame_index": 10,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          101.854248046875,
+          421.85723876953125,
+          134.7012939453125,
+          441.04656982421875
+        ],
+        "bbox": [
+          101.854248046875,
+          421.85723876953125,
+          134.7012939453125,
+          441.04656982421875
+        ],
+        "center": [
+          118.27777099609375,
+          431.451904296875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.30055269598960876,
+        "timestamp_estimate_from_index_fps_seconds": 0.33540145669886967,
+        "timestamp_parent_backend_ms": 534.0555555555557,
+        "emitted": false,
+        "is_activated": false,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "on_costs_for_track6_to_actual_source_detection": []
+    },
+    {
+      "frame_index": 11,
+      "source_detection": {
+        "original_detection_index": 4,
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2843542993068695,
+        "bbox_xyxy_pixels": [
+          101.52116394042969,
+          421.570068359375,
+          134.9530792236328,
+          440.78936767578125
+        ]
+      },
+      "reid_off_assignment": {
+        "track_id": 8,
+        "frame_index": 11,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          101.52116394042969,
+          421.570068359375,
+          134.9530792236328,
+          440.78936767578125
+        ],
+        "bbox": [
+          101.52116394042969,
+          421.570068359375,
+          134.9530792236328,
+          440.78936767578125
+        ],
+        "center": [
+          118.23712158203125,
+          431.1797180175781
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2843542993068695,
+        "timestamp_estimate_from_index_fps_seconds": 0.3689416023687566,
+        "timestamp_parent_backend_ms": 567.4333333333334,
+        "emitted": false,
+        "is_activated": false,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "reid_on_assignment": {
+        "track_id": 6,
+        "frame_index": 11,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          101.52116394042969,
+          421.570068359375,
+          134.9530792236328,
+          440.78936767578125
+        ],
+        "bbox": [
+          101.58778076171875,
+          421.62750244140625,
+          134.90272216796876,
+          440.84080810546874
+        ],
+        "center": [
+          118.23712158203125,
+          431.1797180175781
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2843542993068695,
+        "timestamp_estimate_from_index_fps_seconds": 0.3689416023687566,
+        "timestamp_parent_backend_ms": 567.4333333333334,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "on_costs_for_track6_to_actual_source_detection": [
+        {
+          "motion_cost": 0.7283662557601929,
+          "actual_cost": 0.02155369520187378,
+          "appearance_raw_half_cosine": 0.02155369520187378,
+          "appearance_gated_cost": 0.02155369520187378,
+          "parent_formula_exact_match": true
+        }
+      ]
+    },
+    {
+      "frame_index": 16,
+      "source_detection": {
+        "original_detection_index": 3,
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.32398346066474915,
+        "bbox_xyxy_pixels": [
+          103.03529357910156,
+          421.49041748046875,
+          137.77560424804688,
+          440.51715087890625
+        ]
+      },
+      "reid_off_assignment": {
+        "track_id": 9,
+        "frame_index": 16,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          103.03529357910156,
+          421.49041748046875,
+          137.77560424804688,
+          440.51715087890625
+        ],
+        "bbox": [
+          103.03529357910156,
+          421.49041748046875,
+          137.77560424804688,
+          440.51715087890625
+        ],
+        "center": [
+          120.40544891357422,
+          431.0037841796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.32398346066474915,
+        "timestamp_estimate_from_index_fps_seconds": 0.5366423307181915,
+        "timestamp_parent_backend_ms": 734.3222222222222,
+        "emitted": false,
+        "is_activated": false,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "reid_on_assignment": {
+        "track_id": 6,
+        "frame_index": 16,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          103.03529357910156,
+          421.49041748046875,
+          137.77560424804688,
+          440.51715087890625
+        ],
+        "bbox": [
+          103.00328270270552,
+          421.4933826445208,
+          137.71207218666447,
+          440.524151623312
+        ],
+        "center": [
+          120.40544891357422,
+          431.0037841796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.32398346066474915,
+        "timestamp_estimate_from_index_fps_seconds": 0.5366423307181915,
+        "timestamp_parent_backend_ms": 734.3222222222222,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "on_costs_for_track6_to_actual_source_detection": [
+        {
+          "motion_cost": 0.7210401296615601,
+          "actual_cost": 0.05520486831665039,
+          "appearance_raw_half_cosine": 0.05520486831665039,
+          "appearance_gated_cost": 0.05520486831665039,
+          "parent_formula_exact_match": true
+        }
+      ]
+    },
+    {
+      "frame_index": 19,
+      "source_detection": {
+        "original_detection_index": 3,
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2528705596923828,
+        "bbox_xyxy_pixels": [
+          103.82182312011719,
+          421.3970947265625,
+          137.8424530029297,
+          440.60205078125
+        ]
+      },
+      "reid_off_assignment": {
+        "track_id": 10,
+        "frame_index": 19,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          103.82182312011719,
+          421.3970947265625,
+          137.8424530029297,
+          440.60205078125
+        ],
+        "bbox": [
+          103.82182312011719,
+          421.3970947265625,
+          137.8424530029297,
+          440.60205078125
+        ],
+        "center": [
+          120.83213806152344,
+          430.99957275390625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2528705596923828,
+        "timestamp_estimate_from_index_fps_seconds": 0.6372627677278524,
+        "timestamp_parent_backend_ms": 834.4555555555556,
+        "emitted": false,
+        "is_activated": false,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "reid_on_assignment": {
+        "track_id": 6,
+        "frame_index": 19,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          103.82182312011719,
+          421.3970947265625,
+          137.8424530029297,
+          440.60205078125
+        ],
+        "bbox": [
+          103.84287272845782,
+          421.39634028383693,
+          137.97888867795535,
+          440.5773722707744
+        ],
+        "center": [
+          120.83213806152344,
+          430.99957275390625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2528705596923828,
+        "timestamp_estimate_from_index_fps_seconds": 0.6372627677278524,
+        "timestamp_parent_backend_ms": 834.4555555555556,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "on_costs_for_track6_to_actual_source_detection": [
+        {
+          "motion_cost": 0.7589895725250244,
+          "actual_cost": 0.07343822717666626,
+          "appearance_raw_half_cosine": 0.07343822717666626,
+          "appearance_gated_cost": 0.07343822717666626,
+          "parent_formula_exact_match": true
+        }
+      ]
+    },
+    {
+      "frame_index": 29,
+      "source_detection": {
+        "original_detection_index": 3,
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2656964063644409,
+        "bbox_xyxy_pixels": [
+          104.43486022949219,
+          422.4804992675781,
+          138.07723999023438,
+          440.8012390136719
+        ]
+      },
+      "reid_off_assignment": {
+        "track_id": 11,
+        "frame_index": 29,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          104.43486022949219,
+          422.4804992675781,
+          138.07723999023438,
+          440.8012390136719
+        ],
+        "bbox": [
+          104.43486022949219,
+          422.4804992675781,
+          138.07723999023438,
+          440.8012390136719
+        ],
+        "center": [
+          121.25605010986328,
+          431.640869140625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2656964063644409,
+        "timestamp_estimate_from_index_fps_seconds": 0.9726642244267221,
+        "timestamp_parent_backend_ms": 1168.2333333333333,
+        "emitted": false,
+        "is_activated": false,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "reid_on_assignment": {
+        "track_id": 6,
+        "frame_index": 29,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          104.43486022949219,
+          422.4804992675781,
+          138.07723999023438,
+          440.8012390136719
+        ],
+        "bbox": [
+          104.49861406031908,
+          422.44450836669466,
+          138.15112105708934,
+          440.78869402613213
+        ],
+        "center": [
+          121.25605010986328,
+          431.640869140625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2656964063644409,
+        "timestamp_estimate_from_index_fps_seconds": 0.9726642244267221,
+        "timestamp_parent_backend_ms": 1168.2333333333333,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "on_costs_for_track6_to_actual_source_detection": [
+        {
+          "motion_cost": 0.7923680543899536,
+          "actual_cost": 0.11401998996734619,
+          "appearance_raw_half_cosine": 0.11401998996734619,
+          "appearance_gated_cost": 0.11401998996734619,
+          "parent_formula_exact_match": true
+        }
+      ]
+    }
+  ],
+  "on_track_id": 6,
+  "source_frames": [
+    10,
+    11,
+    16,
+    19,
+    29
+  ],
+  "on_gap_missing_frames": [
+    4,
+    2,
+    9
+  ],
+  "counter_interpretation": "Five repeated observations / four emitted, not physical vehicle totals."
+}

@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "scope": "Independent direct actual CPU encoder/observer equivalence and profilingfactory validation only. Same retained frame5140 pixels and six cached detections replayed three times as an explicit software fixture, not three chronological source frames or identity-quality evidence. No detector inference.",
+  "reviewed_source_sha256": "82c31ef83b9afbf1c08614142844953db9d7539a88e632fdd29f54d5aa9b799c",
+  "profile_factory_positional_options_support": true,
+  "profile_factory_restored": true,
+  "encoder_feature_total": 18,
+  "output_equivalence_fixture": [
+    {
+      "synthetic_repeat_index": 0,
+      "output_shape": [
+        6,
+        8
+      ],
+      "output_exact_equal": true,
+      "pool_lifecycle_exact_equal": true,
+      "current_and_smoothed_features_exact_equal": true
+    },
+    {
+      "synthetic_repeat_index": 1,
+      "output_shape": [
+        6,
+        8
+      ],
+      "output_exact_equal": true,
+      "pool_lifecycle_exact_equal": true,
+      "current_and_smoothed_features_exact_equal": true
+    },
+    {
+      "synthetic_repeat_index": 2,
+      "output_shape": [
+        6,
+        8
+      ],
+      "output_exact_equal": true,
+      "pool_lifecycle_exact_equal": true,
+      "current_and_smoothed_features_exact_equal": true
+    }
+  ],
+  "cost_observer_reference_exact_match": true,
+  "association_cost_diagnostics": {
+    "calls": 3,
+    "candidate_pairs": 72,
+    "nonempty_feature_association_calls": 2,
+    "appearance_eligible_pairs": 12,
+    "appearance_changed_cost_pairs": 12,
+    "calls_with_changed_costs": 2
+  },
+  "profile": {
+    "path": "/tmp/phase4-independent-review-profile_2026-10-11_09-57-35.json",
+    "sha256": "7f7f3840d4463af326595eafd5191b6c02b99ab4d9a0f090b96d85c63a5e82d9",
+    "node_provider_counts": {
+      "CPUExecutionProvider": 735
+    },
+    "cuda_execution_tested": false
+  },
+  "notes": [
+    "Initial profiling factory positional sess_options bug was corrected before this validation.",
+    "Actual Kaggle CUDA execution must still be proven by actual encoder profile; CPU smoke cannot establish it.",
+    "Model officialperson-domain training metadata and actual512D output are supported; vehicle transfer remains unknown."
+  ]
+}

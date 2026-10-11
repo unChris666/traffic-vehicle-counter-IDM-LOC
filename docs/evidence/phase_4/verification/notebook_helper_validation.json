@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "scope": "Software helper and tiny actual CPU ReID observer validation; no detector rerun, no full-video Phase4 result or identity-quality claim. Actual Kaggle CUDA/full sequence must execute separately.",
+  "python": "3.12.14",
+  "notebook_sha256": "82c31ef83b9afbf1c08614142844953db9d7539a88e632fdd29f54d5aa9b799c",
+  "checks": [
+    {
+      "name": "notebook_schema_and_output_free",
+      "status": "PASS",
+      "details": {
+        "nbformat_validation": "passed",
+        "all_cells_output_free": true
+      },
+      "wall_seconds": 0.8717672409984516
+    },
+    {
+      "name": "all_code_cells_compile",
+      "status": "PASS",
+      "details": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "wall_seconds": 0.038900725998246344
+    },
+    {
+      "name": "same_actual_cache_identity_and_all_rows",
+      "status": "PASS",
+      "details": {
+        "rows": 10282,
+        "raw_observations": 50713,
+        "source_cache_sha256": "033a2815d3abbd23327936a1b9d948b2b9b7d312796516e5ee46aec5685be345"
+      },
+      "wall_seconds": 0.14283936300125788
+    },
+    {
+      "name": "off_cost_lifecycle_observer_preserves_parent_200_rows",
+      "status": "PASS",
+      "details": {
+        "actual_cached_prefix_rows": 200,
+        "output_and_lifecycle_exact_equal": true,
+        "cost_calls": 256
+      },
+      "wall_seconds": 0.4225164580020646
+    },
+    {
+      "name": "actual_cpu_encoder_and_cost_observer_preserve_parent",
+      "status": "PASS",
+      "details": {
+        "actual_native_frame": 5140,
+        "software_repeated_updates": 3,
+        "finite_nonzero_features": 18,
+        "embedding_dimension": 512,
+        "instrumented_outputs_lifecycle_exact_equal": true,
+        "association_diagnostics": {
+          "calls": 3,
+          "candidate_pairs": 72,
+          "nonempty_feature_association_calls": 2,
+          "appearance_eligible_pairs": 12,
+          "appearance_changed_cost_pairs": 12,
+          "calls_with_changed_costs": 2
+        }
+      },
+      "wall_seconds": 4.1179124059999594
+    },
+    {
+      "name": "actual_ort_profile_factory_positional_options_and_restore",
+      "status": "PASS",
+      "details": {
+        "actual_backend_positional_session_options_supported": true,
+        "actual_cpu_encoder_profile": "/tmp/phase4-notebook-helper-validation/cpu_actual_encoder_profile_2026-10-11_09-57-51.json",
+        "cpu_kernel_events": 245,
+        "gpu_execution_claimed": false,
+        "factory_restored": true
+      },
+      "wall_seconds": 1.2095608249983343
+    },
+    {
+      "name": "zero_norm_features_rejected",
+      "status": "PASS",
+      "details": {
+        "invalid_feature_rejected": "zero"
+      },
+      "wall_seconds": 0.002309095001692185
+    },
+    {
+      "name": "nonfinite_features_rejected",
+      "status": "PASS",
+      "details": {
+        "invalid_feature_rejected": "nan"
+      },
+      "wall_seconds": 9.668400161899626e-05
+    },
+    {
+      "name": "wrong_embedding_dimension_rejected",
+      "status": "PASS",
+      "details": {
+        "wrong_dimension_rejected": 128
+      },
+      "wall_seconds": 3.1895000574877486e-05
+    },
+    {
+      "name": "independent_fresh_variant_ids",
+      "status": "PASS",
+      "details": {
+        "independent_first_frame_ids_equal": true,
+        "minimum_first_id": 1,
+        "pinned_id_iterator_scope": "per tracker"
+      },
+      "wall_seconds": 0.0010325490002287552
+    },
+    {
+      "name": "empty_detection_update_no_fake_embedding",
+      "status": "PASS",
+      "details": {
+        "empty_update_ages_tracker": true,
+        "encoder_not_called": true
+      },
+      "wall_seconds": 0.16209754000010435
+    },
+    {
+      "name": "paired_temporal_display_and_index_guard",
+      "status": "PASS",
+      "details": {
+        "paired_actual_pixel_crop_written": true,
+        "wrong_pairing_rejected": true
+      },
+      "wall_seconds": 0.5797403760007
+    }
+  ],
+  "passed": 12,
+  "failed": 0
+}

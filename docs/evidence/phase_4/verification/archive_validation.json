@@ -1,0 +1,98 @@
+{
+  "created_at_utc": "2026-10-11T10:24:58.220110+00:00",
+  "scope": "Final archival/static integrity checks only; no model, tracker, notebook or Kaggle rerun.",
+  "status": "passed",
+  "checks_passed": 10,
+  "checks_total": 10,
+  "checks": [
+    {
+      "check": "frozen_output_free_notebook_and_python_syntax",
+      "passed": true,
+      "details": {
+        "sha256": "82c31ef83b9afbf1c08614142844953db9d7539a88e632fdd29f54d5aa9b799c",
+        "cells": 14,
+        "code_cells": 11,
+        "notebook_code_executed": false
+      }
+    },
+    {
+      "check": "notebook_structure",
+      "passed": true,
+      "details": {
+        "nbformat": 4,
+        "note": "Current static archive check uses JSON, AST and frozen hash; prior helper validation retains notebook validation."
+      }
+    },
+    {
+      "check": "original_execution_exports_byte_identical",
+      "passed": true,
+      "details": {
+        "files": [
+          "reid_report.json",
+          "reid_report.md",
+          "run_manifest.json"
+        ]
+      }
+    },
+    {
+      "check": "eight_lossless_gzip_archives",
+      "passed": true,
+      "details": {
+        "files": 8,
+        "original_bytes": 339070138
+      }
+    },
+    {
+      "check": "retained_original_native_images_sheets_profile_exports",
+      "passed": true,
+      "details": {
+        "byte_identical_files": 24
+      }
+    },
+    {
+      "check": "subsequent_review_provenance_scope_and_referenced_hashes",
+      "passed": true,
+      "details": {
+        "candidate_decision": "REJECT_TESTED_CONFIGURATION_AS_CURRENT_VEHICLE_DEFAULT",
+        "whole_video_identity_annotation": false
+      }
+    },
+    {
+      "check": "independent_audit_and_method_identity",
+      "passed": true,
+      "details": {
+        "artifact_checks": 19,
+        "method_fixture_checks": 5
+      }
+    },
+    {
+      "check": "phase1_to3_unchanged_and_no_video_weights_cache",
+      "passed": true,
+      "details": {
+        "changed_existing_files": [
+          "AGENTS.md",
+          "README.md",
+          "docs/ARCHITECTURE.md",
+          "docs/MODEL_SPEC.md",
+          "docs/OPEN_DECISIONS.md",
+          "docs/PROJECT_CONTEXT.md"
+        ],
+        "forbidden_files": []
+      }
+    },
+    {
+      "check": "new_and_updated_markdown_links",
+      "passed": true,
+      "details": {
+        "resolved_local_links": 150
+      }
+    },
+    {
+      "check": "verification_script_syntax_and_git_diff_check",
+      "passed": true,
+      "details": {
+        "scripts_parsed": 5
+      }
+    }
+  ]
+}

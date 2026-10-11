@@ -1,0 +1,15 @@
+# Retained Phase 4 evidence
+
+Actual private [Kaggle notebook](https://www.kaggle.com/code/chrisbiran/traffic-counter-phase-4-reid-comparison), version 1, run `20261011T095924_205716Z_90cf7319`. Both full 10,282-frame sequences completed with cached Phase 2 detections; no detector inference. The notebook source is [04_reid_comparison.ipynb](../../../../notebooks/04_reid_comparison.ipynb).
+
+[reid_report.json](reid_report.json), [reid_report.md](reid_report.md) and [run_manifest.json](run_manifest.json) preserve exact execution exports. Their pending-review fields describe export time. [manual_reid_review.json](manual_reid_review.json) and [manual_reid_review.md](manual_reid_review.md) record the subsequent AI-assisted evidence review/decision separately. [artifact_audit.json](artifact_audit.json) records 19 independent read-only checks. Paired traces retain source-index mappings rather than assuming numeric IDs match across variants.
+
+Eight large JSON/JSONL files are losslessly gzip-compressed. [compression_manifest.json](compression_manifest.json) preserves original/encoded hashes, sizes and round-trip validation. Decompress with `gzip -dk <file.jsonl.gz>` or read with Python `gzip.open`; this recreates the original bytes, not new experiment results.
+
+The archive retains all 7 paired sheets, 12 native on-variant annotated samples, actual encoder provider/profile evidence, and original exported records. Three additional beginning-review sheets are display-only crops from the retained annotated clips; [their manifest](temporal/beginning_review/derived_clip_crop_manifest.json) preserves clip hashes, frame indices, crop and interpolation. [control_pixel_review.json](control_pixel_review.json) preserves the reviewer provenance and original local source paths; matching named files and hashes locate the retained copies.
+
+The private Kaggle version 1 Output also retains both variants' native raw/annotated images, five 30-frame annotated clips per variant and individual sheets. Those clips, repeated raw images, source video and model asset are excluded from Git. Native source pixels match retained Phase 2/3 samples, and all 10 clips decoded during read-only audit. This is a targeted repository archive, not a claim that every Kaggle output file was committed.
+
+Audit/fixture methods and verification reports are in [../verification](../verification); submission, exact source readback and completion receipts are in [../kaggle_job](../kaggle_job). Reproduction requires the same Kaggle video/cache mounts and verified candidate asset; audit helper preserves its original `/workspace/traffic-vehicle-counter-IDM-LOC` repository path and requires the retained Phase 3 auditor and its declared input files. No Kaggle rerun is needed to review this archive.
+
+No accuracy, traffic count or full-video physical-identity benefit is established. Findings/decision: [REID_EXPERIMENT.md](../../../REID_EXPERIMENT.md). Conditional next-phase assessment: [PHASE_5_READINESS.md](../../../PHASE_5_READINESS.md).

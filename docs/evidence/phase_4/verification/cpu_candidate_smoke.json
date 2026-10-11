@@ -1,0 +1,201 @@
+{
+  "scope": "Tiny actual CPU appearance-encoder and direct BoT-SORT integration validation on six cached detections from retained native TOR3-PAGI frame 5140. No YOLO detector weights loaded or detector inference; no full-video identity-quality claim.",
+  "model": {
+    "path": "/tmp/phase4-verified-assets/yolo26n-reid.onnx",
+    "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+    "size_bytes": 9873245,
+    "metadata": {
+      "end2end": "False",
+      "description": "Ultralytics YOLO26n-reid-2psa model trained on ultralytics/cfg/datasets/MSMT17-v1.yaml",
+      "docs": "https://docs.ultralytics.com",
+      "version": "8.4.62",
+      "batch": "1",
+      "license": "AGPL-3.0 License (https://ultralytics.com/license)",
+      "stride": "1",
+      "task": "reid",
+      "date": "2026-06-10T13:55:57.674614",
+      "imgsz": "[448, 448]",
+      "args": "{'data': None, 'batch': 1, 'fraction': 1.0, 'half': False, 'int8': False, 'dynamic': True, 'simplify': True, 'opset': None, 'nms': False}",
+      "author": "Ultralytics",
+      "channels": "3"
+    },
+    "opset": [
+      [
+        "",
+        20
+      ]
+    ],
+    "ir_version": 9
+  },
+  "environment": {
+    "python": "3.12.14",
+    "torch": "2.13.0+cpu",
+    "ultralytics": "8.4.175",
+    "onnx": "1.20.1",
+    "onnxruntime": "1.24.4",
+    "available_providers": [
+      "AzureExecutionProvider",
+      "CPUExecutionProvider"
+    ],
+    "actual_session_providers": [
+      "CPUExecutionProvider"
+    ],
+    "device": "cpu"
+  },
+  "inputs": {
+    "frame_index": 5140,
+    "raw_png_sha256": "65123bf8207ff223841bcc8f6a50287aef75909e2bcf4a9abb608370de0d72ee",
+    "cache_sha256": "033a2815d3abbd23327936a1b9d948b2b9b7d312796516e5ee46aec5685be345",
+    "detection_count": 6,
+    "encoder_crop_size": [
+      224,
+      224
+    ],
+    "batch_size": null,
+    "onnx_inputs": [
+      {
+        "name": "images",
+        "shape": [
+          "batch",
+          3,
+          "height",
+          "width"
+        ],
+        "type": "tensor(float)"
+      }
+    ]
+  },
+  "outputs": {
+    "onnx_outputs": [
+      {
+        "name": "embeddings",
+        "shape": [
+          "batch",
+          512
+        ],
+        "type": "tensor(float)"
+      }
+    ],
+    "features": [
+      {
+        "shape": [
+          512
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "l2_norm": 0.9999999403953552,
+        "sha256": "b24fa288047370b14d423bbade8b38c4409c62b0ccf08e69548d777150d1e438"
+      },
+      {
+        "shape": [
+          512
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "l2_norm": 1.0000001192092896,
+        "sha256": "4d9928e59c0f4c3316513093b84bdcf74d697579de5b8f46e40a94fb466b2234"
+      },
+      {
+        "shape": [
+          512
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "l2_norm": 1.0,
+        "sha256": "87862d068f1ae0d4c2ada52f9391416123ff4136829c0d7d3cfe4a9ddd096a67"
+      },
+      {
+        "shape": [
+          512
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "l2_norm": 0.9999997615814209,
+        "sha256": "10fa02e6676a1a4ba3c4c7164653e8c87881d41a6870e1d6bfb76b742265065b"
+      },
+      {
+        "shape": [
+          512
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "l2_norm": 1.0,
+        "sha256": "38395bb12396f91df87f1438c0a6e566064023e55d9bd05b9e608c7ac90b9525"
+      },
+      {
+        "shape": [
+          512
+        ],
+        "dtype": "float32",
+        "finite": true,
+        "l2_norm": 0.9999998807907104,
+        "sha256": "52c0b0b7c47f82380ab303e0653c02e36dd8348a0c9b854cb506ad0b8ed4e2c7"
+      }
+    ],
+    "repeat_max_abs_delta": 0.0,
+    "track_count": 6,
+    "tracker_output_shape": [
+      6,
+      8
+    ],
+    "all_tracks_have_normalized_current_features": true
+  },
+  "measurements": {
+    "encoder_load_seconds": 0.1034784289986419,
+    "first_batch_encode_seconds": 0.08558684700255981,
+    "not_a_benchmark": true
+  },
+  "source_files": [
+    {
+      "path": "ultralytics/trackers/bot_sort.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/bot_sort.py",
+      "official_sha256": "b157cbc33f75f1132df530f04361824bc39a30d4051ce6df1cd5c388e49b3117",
+      "installed_sha256": "b157cbc33f75f1132df530f04361824bc39a30d4051ce6df1cd5c388e49b3117",
+      "match": true
+    },
+    {
+      "path": "ultralytics/trackers/byte_tracker.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/byte_tracker.py",
+      "official_sha256": "fb45d70e952f99984085788bc09fc0c60a18b14bc4329b28e32bc2c70ac37401",
+      "installed_sha256": "fb45d70e952f99984085788bc09fc0c60a18b14bc4329b28e32bc2c70ac37401",
+      "match": true
+    },
+    {
+      "path": "ultralytics/trackers/utils/reid.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/utils/reid.py",
+      "official_sha256": "75c54a4f8fe9b1e6946d61b530fbb790fdfcc27df120fa71cc7759c11e9f0475",
+      "installed_sha256": "75c54a4f8fe9b1e6946d61b530fbb790fdfcc27df120fa71cc7759c11e9f0475",
+      "match": true
+    },
+    {
+      "path": "ultralytics/trackers/utils/matching.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/utils/matching.py",
+      "official_sha256": "318bf81030558863a4ec6effea3c9d063a297f299367e379a58b89c24e3f421f",
+      "installed_sha256": "318bf81030558863a4ec6effea3c9d063a297f299367e379a58b89c24e3f421f",
+      "match": true
+    },
+    {
+      "path": "ultralytics/nn/backends/onnx.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/nn/backends/onnx.py",
+      "official_sha256": "8a42c894bb34381ffa2636d2bf8704c5ea5f2f80db6de296b278c6c6528b6e5e",
+      "installed_sha256": "8a42c894bb34381ffa2636d2bf8704c5ea5f2f80db6de296b278c6c6528b6e5e",
+      "match": true
+    },
+    {
+      "path": "ultralytics/nn/autobackend.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/nn/autobackend.py",
+      "official_sha256": "450d5d5301e441896f8422cd333ce35c414c2e7ac39a88af01fd5edbd2e552dd",
+      "installed_sha256": "450d5d5301e441896f8422cd333ce35c414c2e7ac39a88af01fd5edbd2e552dd",
+      "match": true
+    },
+    {
+      "path": "ultralytics/utils/plotting.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/utils/plotting.py",
+      "official_sha256": "a21122beb75642c535ba5f20f81e51cf9fd9c22c097120d1e787a7286c468ff0",
+      "installed_sha256": "a21122beb75642c535ba5f20f81e51cf9fd9c22c097120d1e787a7286c468ff0",
+      "match": true
+    }
+  ],
+  "status": "PASS",
+  "vehicle_identity_suitability": "UNESTABLISHED; model metadata names MSMT17-v1 training, dedicated person ReID dataset; smoke verifies integration only"
+}
