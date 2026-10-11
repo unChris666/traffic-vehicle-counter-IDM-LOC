@@ -6,7 +6,7 @@
 
 The primary use case is traffic around a retail store/location. Development begins with a Kaggle GPU prototype for one video. Modular Python, UI, Docker, and GPU VM deployment follow only after the core pipeline is stable and manually audited.
 
-**FACT — current evidence:** Phase 0 specifications, a sample-video screenshot, the Phase 1 inspection tool, and uploaded Kaggle execution reports are available. The retained Markdown/JSON reports for run `20261007T180055_252361Z_27a6f8f3` have been reviewed for internal consistency. They record one video's metadata/decode/sampling; original video and referenced pixel artifacts were not supplied for this review. All 21 manual observations remain unknown. Model assets, class mapping, and model performance have not been verified. See [VIDEO_INSPECTION.md](VIDEO_INSPECTION.md) for source reports, findings, and limits. The earlier screenshot is not evidence of this run's visual conditions or model/counting performance.
+**FACT — current evidence:** Phase 0 specifications, a sample-video screenshot, the Phase 1 tool, historical Kaggle reports, and [actual TOR3 visual reviews](evidence/phase_1/20261011_TOR3/README.md) are available. `TOR3-PAGI.mp4` and `TOR3-MALAM.mp4` were downloaded from the user's Kaggle dataset, decoded, and inspected in Codex; all 21 review fields are recorded separately, with explicit unknown/open limits. Uploaded-video byte identity is unverified because the upload transfer exceeds 32 MiB. The historical `TDLE-PAGI` reports still contain unknown manual observations and were not visually resolved by inspecting TOR3. Model assets, class mapping, and performance remain unverified; Phase 2 has not started.
 
 Decision provenance: the user's specification-update prompt and subsequent reference-side confirmation, received on 2026-10-08 (Asia/Jakarta). The reference screenshot was supplied in chat; no image asset or extracted polygon coordinates are stored in this documentation update.
 
@@ -33,6 +33,8 @@ The target input is eight videos:
 Discovery contains metadata for 13 candidates, with dimensions 640 × 480, 640 × 360, 512 × 288, and 1280 × 720; reported average FPS ranges from about 24.003271 to 29.876442 and stream durations from 300.762749 to 344.859778 seconds. Only the selected video has full decode/sampling evidence. Candidate filenames do not establish store, weekday/weekend, recording-period, night visibility, or completeness of the required eight-video set for a location.
 
 ## 3. Camera Condition
+
+**EXPERIMENT RESULT — sampled TOR3 pixels:** both morning/night examples show an oblique roadside view and diagonal vehicle movement. Five 30-frame bursts per video appear `effectively_stationary` qualitatively; this does not prove a tripod, absence of fine shake, or continuous alignment across the recording. Morning road/markings are visible; night has extensive darkness, headlight glare, and some blurred nearby vehicles. Both inputs have a burned-in lower-right metadata overlay that obscures some entering-vehicle pixels. Numeric viewing angle, height, actual A/B coordinates/semantics, and anchor remain OPEN. These findings are video-scoped; see the retained evidence above.
 
 **CONFIRMED:** The camera remains at the recording location throughout an individual video. It does not translate to another position during that video.
 

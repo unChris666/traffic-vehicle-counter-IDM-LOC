@@ -1,0 +1,211 @@
+{
+  "camera_position": {
+    "observation": "Pandangan berasal dari tepi jalan: bahu/trotoar tampak di kiri depan dan deretan bangunan di seberang jalan. Posisi pengamatan tampak tetap pada sampel awal, tengah, dan akhir; tinggi serta koordinat kamera tidak diketahui.",
+    "evidence": [
+      "frames/frame_000000000.png",
+      "frames/frame_000004794.png",
+      "frames/frame_000009589.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "camera_orientation": {
+    "observation": "Frame landscape 1280 x 720; kamera menghadap serong sepanjang jalan menuju kejauhan kiri, dengan bangunan seberang di kanan. Arah kompas dan pitch/roll numerik tidak diketahui.",
+    "evidence": [
+      "frames/frame_000000000.png",
+      "frames/frame_000004794.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "road_orientation": {
+    "observation": "Jalan tampak memanjang dari area dekat kanan/bawah menuju kejauhan kiri. Tepi jalan kiri dan sebagian permukaan aspal terlihat; marka tidak selalu jelas dalam gelap. Orientasi geografis tidak ditentukan dari gambar.",
+    "evidence": [
+      "frames/frame_000000000.png",
+      "frames/frame_000002397.png",
+      "frames/frame_000007192.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "approximate_viewing_angle": {
+    "observation": "Sudut pandang oblique dari sisi jalan, bukan pandangan tegak lurus dari atas. Nilai sudut dalam derajat UNKNOWN: tidak ada kalibrasi atau ukuran acuan yang mendukung angka 45 derajat.",
+    "evidence": [
+      "frames/frame_000000000.png",
+      "frames/frame_000004794.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "handheld_shake": {
+    "observation": "Pada lima burst sekitar satu detik, posisi tiang, atap, dan fasad bangunan relatif tetap ketika kendaraan bergerak. Tidak terlihat guncangan besar atau pan dalam burst yang diperiksa; perubahan framing kecil antarsampel mungkin ada. Cara memegang kamera dan gerak di sela sampel tidak dapat dipastikan.",
+    "evidence": [
+      "bursts/beginning/manifest.json",
+      "bursts/quarter/manifest.json",
+      "bursts/middle/manifest.json",
+      "bursts/three_quarters/manifest.json",
+      "bursts/end/manifest.json"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "camera_stability": {
+    "observation": "Secara kualitatif effectively_stationary pada lima burst yang diperiksa: latar relatif tetap dan jalan tetap berada dalam bidang pandang yang sama. Penilaian visual ini bukan pengukuran jitter dan tidak mencakup setiap frame selama 325,969 detik.",
+    "evidence": [
+      "bursts/beginning/manifest.json",
+      "bursts/quarter/manifest.json",
+      "bursts/middle/manifest.json",
+      "bursts/three_quarters/manifest.json",
+      "bursts/end/manifest.json"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED",
+    "category": "effectively_stationary"
+  },
+  "lighting_condition": {
+    "observation": "Kondisi malam sangat gelap: sebagian besar langit dan latar tidak memiliki detail yang mudah dilihat. Lampu bangunan memberi penerangan lokal, sedangkan lampu depan kendaraan menimbulkan silau/flare dan perubahan terang pada permukaan jalan. Teks tertanam menunjukkan sekitar 18.58-19.03; waktu tersebut belum diverifikasi terhadap metadata perekaman.",
+    "evidence": [
+      "frames/frame_000000000.png",
+      "frames/frame_000002397.png",
+      "frames/frame_000007192.png",
+      "frames/frame_000009589.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "vehicle_visibility": {
+    "observation": "Motor/rider dekat masih dapat dikenali pada burst awal dan tiga-perempat, tetapi detail bodi/warna kendaraan jauh atau gelap sulit dipisahkan dari latar. Pada kendaraan berlampu depan terang, silau lebih dominan daripada detail bodi. Mobil dekat pada frame 7206 terlihat sebagian dan terpotong tepi kanan.",
+    "evidence": [
+      "frames/frame_000000007.png",
+      "frames/frame_000000029.png",
+      "frames/frame_000002397.png",
+      "frames/frame_000007206.png",
+      "frames/frame_000009589.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "occlusion": {
+    "observation": "Teks lokasi/waktu tertanam di kanan bawah menutupi sebagian piksel kendaraan yang masuk dekat kamera, contohnya mobil pada frame 7206. Kendaraan dekat juga menutup bagian latar/jalan; tepi frame memotong objek saat masuk. Sampel ini tidak menetapkan frekuensi oklusi antar kendaraan sepanjang video.",
+    "evidence": [
+      "frames/frame_000000007.png",
+      "frames/frame_000007206.png",
+      "frames/frame_000009589.png",
+      "bursts/three_quarters/manifest.json"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "blur": {
+    "observation": "Motor dekat pada frame 7/14/29 dan mobil yang masuk pada frame 7206 menunjukkan detail gerak yang lembut/kabur dibanding latar bangunan. Bodi kendaraan jauh juga kurang jelas dalam gelap. Penyebab relatif motion blur, fokus, noise, dan kompresi belum dipisahkan atau diukur.",
+    "evidence": [
+      "frames/frame_000000007.png",
+      "frames/frame_000000014.png",
+      "frames/frame_000000029.png",
+      "frames/frame_000007206.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "reflections": {
+    "observation": "Terdapat pantulan cahaya lampu pada aspal, flare berbentuk garis/silang di sekitar sumber terang, dan area lampu depan sangat terang. Tampilan berkilau tidak membuktikan bahwa jalan basah.",
+    "evidence": [
+      "frames/frame_000002397.png",
+      "frames/frame_000004794.png",
+      "frames/frame_000009589.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "shadows": {
+    "observation": "Area gelap kuat tampak di bawah/sekitar bangunan dan pada bagian jalan yang tidak tersinari. Terang serta pola gelap pada jalan berubah saat kendaraan berlampu lewat; bayangan kendaraan individual tidak selalu dapat dipisahkan dari latar gelap. Tidak ditetapkan ukuran atau arah bayangan.",
+    "evidence": [
+      "frames/frame_000000000.png",
+      "frames/frame_000002397.png",
+      "frames/frame_000007192.png",
+      "bursts/three_quarters/manifest.json"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "vehicles_entering_exiting": {
+    "observation": "Pada burst awal motor masuk dari tepi kanan, bergerak ke arah kiri yang lebih jauh, lalu mengecil; mobil mulai masuk dari tepi kanan pada akhir burst tiga-perempat. Sampel tersebut memperlihatkan pemotongan objek di batas frame, tetapi tidak memuat setiap peristiwa keluar atau re-entry sepanjang video.",
+    "evidence": [
+      "frames/frame_000000000.png",
+      "frames/frame_000000007.png",
+      "frames/frame_000000029.png",
+      "frames/frame_000007206.png",
+      "bursts/beginning/manifest.json",
+      "bursts/three_quarters/manifest.json"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "diagonal_vehicle_movement": {
+    "observation": "Motor pada frame 7 ke 29 bergerak dari kanan/dekat menuju kiri/lebih jauh dengan perubahan posisi vertikal dan ukuran; lintasan tampak diagonal dalam koordinat gambar. Arah A_TO_B/B_TO_A tidak disimpulkan dari tanda X/Y ini.",
+    "evidence": [
+      "frames/frame_000000007.png",
+      "frames/frame_000000029.png",
+      "bursts/beginning/manifest.json"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "geometry_feasibility": {
+    "observation": "Secara visual geometri per-video dengan dua region dan garis yang memotong koridor perjalanan tampak memungkinkan karena ruas jalan dekat terlihat. Bagian kandidat perlu mempertimbangkan area gelap, silau, teks kanan bawah, objek terpotong, dan kendaraan parkir. Poligon, koordinat, anchor, serta pemetaan semantik A/B untuk video ini masih OPEN; tidak disalin dari screenshot contoh.",
+    "evidence": [
+      "frames/frame_000000000.png",
+      "frames/frame_000002397.png",
+      "frames/frame_000007192.png",
+      "frames/frame_000007206.png"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "geometry_alignment_over_time": {
+    "observation": "Tepi jalan dan fasad relatif selaras dalam masing-masing burst dan koridor jalan tetap terlihat pada lima sampel tersebar. Pergeseran framing kecil antarsampel mungkin memengaruhi geometri yang sangat dekat batas. Belum ada garis/poligon terpasang, toleransi drift terukur, atau jaminan alignment kontinu.",
+    "evidence": [
+      "bursts/beginning/manifest.json",
+      "bursts/quarter/manifest.json",
+      "bursts/middle/manifest.json",
+      "bursts/three_quarters/manifest.json",
+      "bursts/end/manifest.json"
+    ],
+    "claim_type": "VISUAL_OBSERVATION_AI_ASSISTED"
+  },
+  "low_light_detection_risk": {
+    "observation": "HIPOTESIS BELUM DIUJI: bodi gelap/berkontras rendah dan lampu depan yang menyilaukan mungkin menyebabkan deteksi terlewat atau kotak tidak stabil. Ini berasal dari visibilitas gambar, bukan hasil YOLO; tidak ada inference atau metrik model.",
+    "evidence": [
+      "frames/frame_000002397.png",
+      "frames/frame_000004794.png",
+      "frames/frame_000009589.png"
+    ],
+    "claim_type": "HYPOTHESIS_UNTESTED"
+  },
+  "low_light_tracking_risk": {
+    "observation": "HIPOTESIS BELUM DIUJI: perubahan terang, blur kendaraan dekat, batas frame, dan detail bodi yang sulit terlihat mungkin menimbulkan gap asosiasi, fragmentasi, atau pergantian ID. BoT-SORT belum dijalankan sehingga kejadian tersebut belum terbukti.",
+    "evidence": [
+      "frames/frame_000000007.png",
+      "frames/frame_000002397.png",
+      "frames/frame_000007206.png",
+      "bursts/beginning/manifest.json",
+      "bursts/three_quarters/manifest.json"
+    ],
+    "claim_type": "HYPOTHESIS_UNTESTED"
+  },
+  "low_light_reid_risk": {
+    "observation": "HIPOTESIS BELUM DIUJI: warna/tekstur bodi yang hilang dalam gelap, flare, dan teks yang menutup objek mungkin mengurangi informasi tampilan untuk membedakan identitas. Model/embedding ReID belum diuji dan manfaat ReID tidak dapat disimpulkan.",
+    "evidence": [
+      "frames/frame_000000029.png",
+      "frames/frame_000002397.png",
+      "frames/frame_000007206.png",
+      "frames/frame_000009589.png"
+    ],
+    "claim_type": "HYPOTHESIS_UNTESTED"
+  },
+  "potential_failure_cases": {
+    "observation": "HIPOTESIS BELUM DIUJI: kendaraan gelap di kejauhan, kendaraan didominasi lampu depan, kendaraan dekat kabur/terpotong/tertutup teks, dan motor yang tampak diam di tepi jalan dapat menjadi kasus sulit. Kesalahan deteksi, identitas, anchor, atau event crossing belum diobservasi karena pipeline model/counting belum dijalankan.",
+    "evidence": [
+      "frames/frame_000000007.png",
+      "frames/frame_000002397.png",
+      "frames/frame_000007206.png",
+      "frames/frame_000009589.png"
+    ],
+    "claim_type": "HYPOTHESIS_UNTESTED"
+  },
+  "technical_questions": {
+    "observation": "OPEN: di bagian jalan mana kedua arah dapat diamati cukup lama tanpa teks/silau dominan? Bagaimana poligon/garis serta semantik A/B ditetapkan untuk video ini? Anchor center atau bottom-center mana yang sesuai? Apakah jitter langka muncul di luar lima burst? Bagaimana source PTS dibanding rata-rata/nominal FPS? Pada fase terkait, apakah deteksi/BoT-SORT/ReID memadai untuk kendaraan gelap dan parkir? Eksperimen enhancement tetap Phase 7.",
+    "evidence": [
+      "frames/frame_000002397.png",
+      "frames/frame_000007206.png",
+      "bursts/beginning/manifest.json",
+      "bursts/end/manifest.json"
+    ],
+    "claim_type": "OPEN"
+  }
+}
