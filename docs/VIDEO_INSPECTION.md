@@ -51,6 +51,18 @@ Reported Kaggle environment: Python 3.12.13, four process-available CPUs, OpenCV
 
 For another input, change `VIDEO_PATH` to another discovered path, restart, and rerun. Do not carry observations or evidence references from a different run/video.
 
+## GPU visibility and utilization
+
+The environment cell records the raw `nvidia-smi` query, parsed device inventory, and `gpu_count`. A successful nonempty inventory prints `GPU probe succeeded: <count> NVIDIA GPU(s) visible.` and each device's index, name, memory, and driver. It does not print a failure/unavailability message on success. Missing command, failed query, empty output, or unparseable inventory produces an explicit UNKNOWN result with `gpu_count=null`; none is silently treated as zero GPUs.
+
+**FACT — user-supplied troubleshooting log, 2026-10-11:** `RESPONSE.txt` records `status=reported`, `returncode=0`, and two Tesla T4 entries at indices 0 and 1, each with 15,360 MiB. GPU detection succeeded in that run. The old environment cell printed its failure/unavailability disclaimer unconditionally, which could be mistaken for a failed probe. This notebook fix changes the reporting, not Kaggle accelerator allocation or CUDA/model compatibility.
+
+Phase 1 uses ordinary OpenCV video decoding and Pillow/frame-export operations without requesting CUDA acceleration. Low GPU utilization is therefore expected. Seeing two GPUs does not require this inspection to use them, and does not authorize multi-GPU processing or Phase 2.
+
+To apply the fix to the existing Kaggle editor, replace its environment-verification cell with the updated source, including the `csv` import, and run the parameter/import and environment cells again. Alternatively, import the updated notebook while preserving any selected `VIDEO_PATH` and manual observations in the old copy. If the result is UNKNOWN, inspect the recorded probe error, confirm the accelerator setting, restart the Kaggle session, and rerun environment verification. Do not reinstall a driver or a model package based on low utilization alone.
+
+**EXPERIMENT RESULT — reporting regression checks only, 2026-10-11:** 15 local mocked-probe cases passed with real inspection dependency imports, including the supplied two-T4 query output, one GPU, command absence, failed/timeout queries, empty/malformed CSV, duplicate indices, unknown metadata, and a quoted device name containing a comma. The two-T4 case produced `gpu_count=2` without an inconclusive/failure message; inconclusive cases retained `gpu_count=null`. Notebook format, code compilation, and output-free source checks passed. The replacement cell also ran in Codex, where `nvidia-smi` was unavailable and GPU status correctly remained UNKNOWN. This is validation of reporting behavior; the patched cell has not been rerun in Kaggle and no CUDA workload was tested.
+
 ## Runtime artifacts
 
 Each successful technical inspection retains:
