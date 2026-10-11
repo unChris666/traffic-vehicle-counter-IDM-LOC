@@ -1,0 +1,527 @@
+{
+  "phase": 3,
+  "run_id": "20261011T060227_579936Z_05ebe213",
+  "started_utc": "2026-10-11T06:02:27.580564+00:00",
+  "status": "completed_cached_sequence_manual_review_pending",
+  "claim_type": "EXPERIMENT_RESULT_ON_EXECUTION",
+  "scope": "one video; cached detections to CPU BoT-SORT; no detector inference or traffic counts",
+  "configuration": {
+    "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-PAGI.mp4",
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+    "tracker_overrides": {
+      "with_reid": false,
+      "gmc_method": "none"
+    },
+    "seed": 0,
+    "baseline_status": "PROPOSAL: published, untuned tracker defaults with explicit isolation overrides"
+  },
+  "stages": {
+    "dependency_installation": {
+      "wall_seconds": 3.893053533
+    },
+    "environment_and_verified_tracker_source": {
+      "wall_seconds": 0.352841441999999
+    },
+    "retained_input_identity_and_cache_validation": {
+      "wall_seconds": 1.6495940660000201
+    },
+    "tracker_configuration": {
+      "wall_seconds": 0.001829026000052636
+    },
+    "cached_adapter_and_observer_validation": {
+      "wall_seconds": 0.453191204999996
+    },
+    "full_cached_tracking_and_aligned_video_decode": {
+      "wall_seconds": 36.26951800699999
+    },
+    "temporal_evidence_export_and_consistency_audit": {
+      "wall_seconds": 6.2865542949999735
+    }
+  },
+  "frames_processed": 10282,
+  "manual_review_status": "pending_actual_temporal_evidence_review",
+  "current_stage": "temporal_evidence_export_and_consistency_audit",
+  "environment": {
+    "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.35",
+    "cpu_count": 4,
+    "package_versions": {
+      "ultralytics": "8.4.175",
+      "lap": "0.5.13",
+      "torch": "2.10.0+cu128",
+      "numpy": "2.0.2",
+      "Pillow": "11.3.0"
+    },
+    "opencv_version": "4.13.0",
+    "cuda_available": true,
+    "visible_cuda_device_count": 2,
+    "cuda_devices": [
+      {
+        "index": 0,
+        "name": "Tesla T4",
+        "total_memory_bytes": 15636037632
+      },
+      {
+        "index": 1,
+        "name": "Tesla T4",
+        "total_memory_bytes": 15636037632
+      }
+    ],
+    "nvidia_smi": {
+      "returncode": 0,
+      "stdout": "0, Tesla T4, 15360 MiB, 580.178.04\n1, Tesla T4, 15360 MiB, 580.178.04",
+      "stderr": ""
+    },
+    "association_device": "cpu",
+    "detector_inference_executed": false,
+    "reid_inference_executed": false,
+    "exact_cross_runtime_repeatability_claimed": false
+  },
+  "tracker_source_verification": [
+    {
+      "path": "trackers/bot_sort.py",
+      "sha256": "b157cbc33f75f1132df530f04361824bc39a30d4051ce6df1cd5c388e49b3117",
+      "verified": true
+    },
+    {
+      "path": "trackers/byte_tracker.py",
+      "sha256": "fb45d70e952f99984085788bc09fc0c60a18b14bc4329b28e32bc2c70ac37401",
+      "verified": true
+    },
+    {
+      "path": "trackers/basetrack.py",
+      "sha256": "9ef094b9a54ff2f52c9118b5bd1a2f84ba331aa557277f54186de11728c2f7e8",
+      "verified": true
+    },
+    {
+      "path": "trackers/utils/matching.py",
+      "sha256": "318bf81030558863a4ec6effea3c9d063a297f299367e379a58b89c24e3f421f",
+      "verified": true
+    },
+    {
+      "path": "trackers/utils/gmc.py",
+      "sha256": "d797f701a22347001d780b0dc4d0f2f5cabdfefb895c36bbab084ceb2dfc4000",
+      "verified": true
+    },
+    {
+      "path": "trackers/utils/stracks.py",
+      "sha256": "9534294af850c3a6755c3a5a1ba9b2b068c5b79a11166c8547652944e2632f58",
+      "verified": true
+    },
+    {
+      "path": "trackers/utils/reid.py",
+      "sha256": "75c54a4f8fe9b1e6946d61b530fbb790fdfcc27df120fa71cc7759c11e9f0475",
+      "verified": true
+    },
+    {
+      "path": "cfg/trackers/botsort.yaml",
+      "sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01",
+      "verified": true
+    },
+    {
+      "path": "engine/results.py",
+      "sha256": "871e5b3eed1558c3c048d99058ddf28a7927c1317d020981e7c0836f18e00ee3",
+      "verified": true
+    }
+  ],
+  "input": {
+    "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-PAGI.mp4",
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "video_size_bytes": 53173467,
+    "detection_report_path": "/kaggle/input/datasets/chrisbiran/traffic-counter-phase-2-retained-cache/detection_report.json",
+    "detection_report_sha256": "9ec71dc98f441075120869f1279cc589e2983d26e7f4403bff638255024a81ff",
+    "frame_detections_path": "/kaggle/input/datasets/chrisbiran/traffic-counter-phase-2-retained-cache/frame_detections.jsonl",
+    "frame_detections_sha256": "033a2815d3abbd23327936a1b9d948b2b9b7d312796516e5ee46aec5685be345",
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+    "parent_status": "completed_decoder_stream_manual_review_pending",
+    "expected_and_validated_rows": 10282,
+    "width": 1280,
+    "height": 720,
+    "fps_from_parent_opencv": 29.81501660256117,
+    "parent_input_metadata": {
+      "filename": "TOR3-PAGI.mp4",
+      "path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-PAGI.mp4",
+      "file_size_bytes": 53173467,
+      "sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "hash_seconds": 0.8686952819998623,
+      "expected_hash_matches": true,
+      "recording_period_assignment": "unknown: filename is not authoritative metadata",
+      "store_location_assignment": "unknown",
+      "ffprobe": {
+        "returncode": 0,
+        "data": {
+          "programs": [],
+          "streams": [
+            {
+              "codec_name": "h264",
+              "width": 1280,
+              "height": 720,
+              "r_frame_rate": "30000/1001",
+              "avg_frame_rate": "46269000/1551869",
+              "duration": "344.859778",
+              "nb_frames": "10282"
+            }
+          ],
+          "format": {
+            "duration": "344.860000"
+          }
+        },
+        "stderr": ""
+      },
+      "opencv_metadata": {
+        "width": 1280.0,
+        "height": 720.0,
+        "fps": 29.81501660256117,
+        "frame_count": 10282.0,
+        "fourcc_integer": 875967080.0,
+        "backend": "FFMPEG",
+        "duration_seconds_estimate_from_count_fps": 344.85977777777777,
+        "fourcc_text": "h264"
+      }
+    },
+    "parent_detector_configuration": {
+      "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-PAGI.mp4",
+      "expected_video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "device": 0,
+      "frame_limit": null,
+      "seed": 0,
+      "package_version": "8.4.175",
+      "baseline_status": "PROPOSAL: pinned published defaults; not tuned product settings",
+      "overrides": {
+        "conf": null,
+        "imgsz": null,
+        "iou": null,
+        "max_det": null,
+        "nms": null,
+        "quantize": null
+      },
+      "class_filter": null,
+      "detection_roi": null,
+      "enhancement": null,
+      "sample_indices": [
+        0,
+        2570,
+        5140,
+        7711,
+        10281
+      ],
+      "sampling_basis": "configured prefix / metadata frame count; actual last processed frame is also saved"
+    },
+    "parent_detector_environment": {
+      "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+      "platform": "Linux-6.18.48+-x86_64-with-glibc2.35",
+      "cpu_count": 4,
+      "package_versions": {
+        "ultralytics": "8.4.175",
+        "torch": "2.10.0+cu128",
+        "torchvision": "0.25.0+cu128",
+        "numpy": "2.0.2",
+        "opencv-python": "4.13.0.92",
+        "opencv-python-headless": "4.13.0.92",
+        "Pillow": "11.3.0"
+      },
+      "opencv_version": "4.13.0",
+      "ultralytics_settings_directory": "/kaggle/working/yolo_detection/.ultralytics_settings",
+      "torch_cuda_build": "12.8",
+      "cuda_available": true,
+      "visible_cuda_device_count": 2,
+      "cuda_devices": [
+        {
+          "index": 0,
+          "name": "Tesla T4",
+          "total_memory_bytes": 15636037632,
+          "compute_capability": [
+            7,
+            5
+          ]
+        },
+        {
+          "index": 1,
+          "name": "Tesla T4",
+          "total_memory_bytes": 15636037632,
+          "compute_capability": [
+            7,
+            5
+          ]
+        }
+      ],
+      "nvidia_smi": {
+        "returncode": 0,
+        "stdout": "0, Tesla T4, 15360, 580.178.04\n1, Tesla T4, 15360, 580.178.04",
+        "stderr": ""
+      },
+      "reproducibility": {
+        "seed": 0,
+        "deterministic_algorithms_enabled": false,
+        "cudnn_deterministic": false,
+        "cudnn_benchmark": false,
+        "exact_repeatability_claimed": false
+      }
+    },
+    "parent_detector_weights": {
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt",
+      "expected_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "expected_bytes": 44255705,
+      "local_path": "/kaggle/working/yolo_detection/weights/yolo26m.pt",
+      "actual_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "actual_bytes": 44255705,
+      "cache_or_download_seconds": 0.8602222710001115
+    },
+    "timestamp_semantics": "Tracking uses zero-based frame order; index/FPS is approximate, backend timestamps are unverified PTS."
+  },
+  "tracker": {
+    "class": "ultralytics.trackers.bot_sort.BOTSORT",
+    "package_version": "8.4.175",
+    "published_yaml_sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01",
+    "published_defaults": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "sparseOptFlow",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "explicit_overrides": {
+      "with_reid": false,
+      "gmc_method": "none"
+    },
+    "effective_configuration": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "none",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "association_device": "cpu",
+    "class_gate_in_verified_source": false,
+    "class_semantics": "Raw class/score follow the latest matched detection; no product mapping or stabilization.",
+    "lost_buffer_semantics": "Pinned constructor uses track_buffer directly as update-call/frame count, no FPS rescaling.",
+    "max_frames_lost": 30,
+    "buffer_seconds_estimate_from_parent_fps": 1.006204370096609,
+    "internal_source_constants": {
+      "second_stage_iou_cost_limit": 0.5,
+      "unconfirmed_cost_limit": 0.7,
+      "tracked_lost_duplicate_iou_distance_ceiling": 0.15
+    },
+    "reid_architecture_status": "Still target architecture; isolated disabled baseline precedes Phase 4."
+  },
+  "adapter_validation": {
+    "actual_cached_rows_checked": 200,
+    "output_and_lifecycle_equivalence": "passed",
+    "empty_update_aging": "passed",
+    "fresh_id_reset": "passed",
+    "detector_inference_executed": false,
+    "scope": "CPU cached adapter smoke before one full Phase 3 sequence; not a rerun of Phase 2."
+  },
+  "actual_decode_metadata": {
+    "width": 1280.0,
+    "height": 720.0,
+    "fps": 29.81501660256117,
+    "frame_count": 10282.0,
+    "backend": "FFMPEG"
+  },
+  "decode_stop": "opencv_read_false_eof_or_decode_failure_unknown_after_expected_rows",
+  "execution": {
+    "frames_processed": 10282,
+    "loop_wall_seconds": 34.15621119299999,
+    "tracker_update_calls": 10282,
+    "tracker_update_wall_seconds": 13.661493815999677,
+    "tracker_update_wall_ms_mean": 1.3286805889904374,
+    "tracker_update_wall_ms_median": 1.2067835000095783,
+    "decoder_read_calls_including_final_probe": 10283,
+    "decode_read_wall_seconds": 9.836499509998191,
+    "selected_frame_render_and_png_write_wall_seconds": 1.3023566680000727,
+    "timing_limits": "Tracker counter includes Boxes adapter construction and actual update. Loop also includes lifecycle serialization/IO. No new detection runtime is measured."
+  },
+  "diagnostics": {
+    "serialized_rows_verified": 10282,
+    "captured_tracker_ids_including_unconfirmed": 4922,
+    "unique_emitted_tracker_ids": 780,
+    "emitted_track_observations": 45756,
+    "frames_with_zero_cached_detections": 7,
+    "frames_with_no_emitted_tracks": 14,
+    "ids_never_emitted": 4142,
+    "within_id_gap_events": 1633,
+    "within_id_raw_class_changes": 497,
+    "lifecycle_transition_events": 14570,
+    "id_switch_count": null,
+    "id_switch_count_status": "Unknown; requires physical-object temporal review, not inferred from diagnostics.",
+    "traffic_count": null,
+    "traffic_count_status": "Not implemented; ID totals are not vehicle counts."
+  },
+  "consistency_audit": {
+    "status": "passed",
+    "frame_order_and_video_cache_alignment": "passed",
+    "raw_detection_preservation": "passed",
+    "emitted_id_and_detection_linkage": "passed",
+    "ordered_track_histories": "passed",
+    "saved_temporal_clip_decoding": "passed"
+  },
+  "artifacts": {
+    "track_records": "track_records.jsonl",
+    "track_records_sha256": "7faf654701258d95e84492f889a4bbb4f41e0b0a4baba30dc5675568e461bd8c",
+    "track_summary": "track_summary.json",
+    "track_summary_sha256": "826a6abc25844cef12e8cd23b6bd9d8ca73f4284cb40bfb1e6cd9a4699c6573b",
+    "representative_temporal_track_records": "representative_temporal_track_records.json",
+    "sample_frames": [
+      {
+        "frame_index": 0,
+        "raw": "samples/frame_000000000_raw.png",
+        "raw_sha256": "a45fac4250c5b38b99f17dee9fd7f38a3d878a0721853dec5e2af4721f36541e",
+        "annotated": "samples/frame_000000000_tracked.png",
+        "annotated_sha256": "6b2ab9ca71904219915d098f9becd35dad3fd1a8ddc07701b41aeb5b924794e1"
+      },
+      {
+        "frame_index": 2570,
+        "raw": "samples/frame_000002570_raw.png",
+        "raw_sha256": "7bac08f753edf3d15625a815ec2355e09097baf11ce61d20d163b9bb2f579b08",
+        "annotated": "samples/frame_000002570_tracked.png",
+        "annotated_sha256": "162cf81e0ba32b6e9c564b94d0f709fb7af5c01419b33d60742b208cccc2b3f3"
+      },
+      {
+        "frame_index": 5140,
+        "raw": "samples/frame_000005140_raw.png",
+        "raw_sha256": "65123bf8207ff223841bcc8f6a50287aef75909e2bcf4a9abb608370de0d72ee",
+        "annotated": "samples/frame_000005140_tracked.png",
+        "annotated_sha256": "b8ee44ed1497bcb3669619474dba5ca64d9244d848da4c16493c0a46d269b525"
+      },
+      {
+        "frame_index": 7711,
+        "raw": "samples/frame_000007711_raw.png",
+        "raw_sha256": "c97ec27525047ef8d13c19ffc1801b93797873b3d9050fa6cb82ef0cb938fc15",
+        "annotated": "samples/frame_000007711_tracked.png",
+        "annotated_sha256": "1e883e234c8d556155336cdf8bfb1c39d85151d7afda1ddd9ee1e39bb7d81a72"
+      },
+      {
+        "frame_index": 7712,
+        "raw": "samples/frame_000007712_raw.png",
+        "raw_sha256": "3449785d0b96db3d56f92d1e8c965009b640313daa0ef0fda1a909c5f6b5a44c",
+        "annotated": "samples/frame_000007712_tracked.png",
+        "annotated_sha256": "0ad7cf2011d7ebf083c94ddf23d9eda5ffb84c5c8f233ed63b88239817130187"
+      },
+      {
+        "frame_index": 7713,
+        "raw": "samples/frame_000007713_raw.png",
+        "raw_sha256": "4708e1de24b525425eecedc8c339ef6fa79f281df44566baa04aa54135f1dc1f",
+        "annotated": "samples/frame_000007713_tracked.png",
+        "annotated_sha256": "06b5e622c54aef425aa9564709694fde173d401d091d925ae9a597c75efd719d"
+      },
+      {
+        "frame_index": 7714,
+        "raw": "samples/frame_000007714_raw.png",
+        "raw_sha256": "387bfe81d08f8d6f77d34cbee5f72c9414a2012f266050e98017b64bcc234116",
+        "annotated": "samples/frame_000007714_tracked.png",
+        "annotated_sha256": "3f1087f1e20e614c306d90df39a183fbfaa3dd57e8f6a8a35e70d46bba35f9b2"
+      },
+      {
+        "frame_index": 7715,
+        "raw": "samples/frame_000007715_raw.png",
+        "raw_sha256": "ed273f2934814ec67e17954ce1da0ba325fbbe3d03b3335d60448990d299fc79",
+        "annotated": "samples/frame_000007715_tracked.png",
+        "annotated_sha256": "af1691037eb6745e9bca26b0064ce95167e82ec0846fe5fb2adedc1a14737edc"
+      },
+      {
+        "frame_index": 7716,
+        "raw": "samples/frame_000007716_raw.png",
+        "raw_sha256": "246b1a68ec36a60eefb691cadf0fd9bfc74c7c50bd1616ac0cc3418c876c186f",
+        "annotated": "samples/frame_000007716_tracked.png",
+        "annotated_sha256": "efeec4073ce4c732327e845c318595ff1314832a9f84ca8c8689f9fd6c5cf963"
+      },
+      {
+        "frame_index": 7717,
+        "raw": "samples/frame_000007717_raw.png",
+        "raw_sha256": "4d62e8151829ef7a8541973de5866c0b13a379617cb3b0dfbf589c186d73e173",
+        "annotated": "samples/frame_000007717_tracked.png",
+        "annotated_sha256": "4b6133db1239dc2a6ce0ad80f5d378d418b2a487b68715d6dcb1150a382cc793"
+      },
+      {
+        "frame_index": 7718,
+        "raw": "samples/frame_000007718_raw.png",
+        "raw_sha256": "78e48a389821ba128315dbf6355206611ccbf8130f1aa14cf85468e7ecc04519",
+        "annotated": "samples/frame_000007718_tracked.png",
+        "annotated_sha256": "8b07cdf909647a94731f7284f6f4e4f38f922268e1e2bf1c631470784cc73187"
+      },
+      {
+        "frame_index": 10281,
+        "raw": "samples/frame_000010281_raw.png",
+        "raw_sha256": "b7a8b2d4e6af1b92674023bb3fac97b5db30a062c13f5c4b2f94d2bf43479fb8",
+        "annotated": "samples/frame_000010281_tracked.png",
+        "annotated_sha256": "36833512a8d6f7e1a3e4551942ba4a9b8c47f7f2874129387c26b2abe4ff5ec8"
+      }
+    ],
+    "temporal_bursts": [
+      {
+        "start_frame": 0,
+        "end_frame": 29,
+        "frame_count": 30,
+        "clip": "temporal/burst_000000000_000000029_tracked.mp4",
+        "clip_sha256": "9bf4d87e9036c7d2f6216a6656c934af7c5df98c54492d8c3ce3149a56d147e2",
+        "contact_sheet": "temporal/burst_000000000_000000029_contact_sheet.png",
+        "contact_sheet_sha256": "351ae6bc78833f76ac1756d5946bd8650faaae2b7f3d88671cf883e74f9cf1f1"
+      },
+      {
+        "start_frame": 2555,
+        "end_frame": 2584,
+        "frame_count": 30,
+        "clip": "temporal/burst_000002555_000002584_tracked.mp4",
+        "clip_sha256": "bdee5465b83569231c8bcb0c7aac2be3692e0053a73032a64a723778b71388f0",
+        "contact_sheet": "temporal/burst_000002555_000002584_contact_sheet.png",
+        "contact_sheet_sha256": "72bae389498c77d26b9688abb5b47e26bd8cb033f13d80ccc35b6b04893831ae"
+      },
+      {
+        "start_frame": 5125,
+        "end_frame": 5154,
+        "frame_count": 30,
+        "clip": "temporal/burst_000005125_000005154_tracked.mp4",
+        "clip_sha256": "71fc03ba5dd0aa475d7f22046cc9b968d5d8ff798282a1d4ee60bb6d9752a5c3",
+        "contact_sheet": "temporal/burst_000005125_000005154_contact_sheet.png",
+        "contact_sheet_sha256": "b92d66acda3620b8b29b8713e52590048041bf8f1db82c489d6158a38cb4c0ca"
+      },
+      {
+        "start_frame": 7696,
+        "end_frame": 7725,
+        "frame_count": 30,
+        "clip": "temporal/burst_000007696_000007725_tracked.mp4",
+        "clip_sha256": "487be59c857983c69cda2597ca3df061fe5a3cd53fad2a26137cf43883831cf4",
+        "contact_sheet": "temporal/burst_000007696_000007725_contact_sheet.png",
+        "contact_sheet_sha256": "ef78fc7df3941661ea616db74e2628b57a8eb459074374fe843e84776da00853"
+      },
+      {
+        "start_frame": 10252,
+        "end_frame": 10281,
+        "frame_count": 30,
+        "clip": "temporal/burst_000010252_000010281_tracked.mp4",
+        "clip_sha256": "8a9c0e66d876d8378ddb99ee820df098305dce28ff17fb1caba6b005a75b4974",
+        "contact_sheet": "temporal/burst_000010252_000010281_contact_sheet.png",
+        "contact_sheet_sha256": "aa7eafd7b8dc886dc68127bb278472f27d1b96b9bde43d7d3aa336cf945c1de6"
+      }
+    ],
+    "focused_scooter_contact_sheet": "temporal/entering_scooter_000007711_000007718_contact_sheet.png",
+    "focused_scooter_contact_sheet_sha256": "ca0aaaab81b05953cb00fb93f1f133d6786d3429311981c5dbfb57c9ebd3cfd3"
+  },
+  "limitations": [
+    "No ground truth or physical-object identity labels; no model/tracking/counting quality metric is available.",
+    "Only retained YOLO26M detections are replayed; detector confidence filtering already removed lower-scored/missing boxes.",
+    "Motion/IoU/score association is class-agnostic in this pinned implementation; raw class changes are retained, not mapped to product categories.",
+    "ReID and GMC are explicitly disabled for this baseline. Native detector appearance features were not retained in Phase 2.",
+    "Five short temporal bursts and the focused sequence do not establish identity correctness throughout the complete video.",
+    "Frame order is reproducible; backend times and index/FPS estimates do not establish source PTS, CFR/VFR or source decode integrity.",
+    "No source stabilization, night enhancement, geometry eligibility, crossing or traffic counting is implemented.",
+    "Observer reports not-retained pool disappearance separately from explicit library Removed state.",
+    "Loop time includes decode, CPU association, bookkeeping, serialization and selected sample writes; it is not an end-to-end detector/tracker benchmark."
+  ],
+  "finished_utc": "2026-10-11T06:03:25.020612+00:00"
+}

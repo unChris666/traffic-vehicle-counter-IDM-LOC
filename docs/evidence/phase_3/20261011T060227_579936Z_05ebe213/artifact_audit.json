@@ -1,0 +1,342 @@
+{
+  "claim_type": "EXPERIMENT_RESULT",
+  "scope": "Independent read-only retained-artifact audit. No detector/tracker execution, physical identity labeling or ground-truth evaluation.",
+  "created_at_utc": "2026-10-11T09:13:45.818251+00:00",
+  "run_dir": "/tmp/kaggle-phase3-botsort-output-20261011/botsort_tracking/20261011T060227_579936Z_05ebe213",
+  "run_id": "20261011T060227_579936Z_05ebe213",
+  "status": "passed",
+  "checks_passed": 12,
+  "checks_total": 12,
+  "checks": [
+    {
+      "check": "phase3_report_json_read",
+      "passed": true,
+      "details": {
+        "phase": 3,
+        "run_id": "20261011T060227_579936Z_05ebe213",
+        "status": "completed_cached_sequence_manual_review_pending",
+        "frames_processed": 10282,
+        "manual_review_status": "pending_actual_temporal_evidence_review"
+      }
+    },
+    {
+      "check": "retained_detection_cache_identity_schema_contiguity",
+      "passed": true,
+      "details": {
+        "frame_count": 10282,
+        "raw_detection_count": 50713,
+        "zero_detection_frame_count": 7,
+        "raw_detection_observations_by_class": {
+          "car": 14693,
+          "motorcycle": 16863,
+          "bench": 1530,
+          "truck": 2668,
+          "person": 14700,
+          "bus": 43,
+          "backpack": 113,
+          "traffic light": 2,
+          "bird": 22,
+          "cell phone": 1,
+          "handbag": 25,
+          "train": 1,
+          "boat": 23,
+          "sports ball": 1,
+          "horse": 1,
+          "stop sign": 1,
+          "teddy bear": 2,
+          "skateboard": 1,
+          "suitcase": 10,
+          "bicycle": 2,
+          "frisbee": 1,
+          "fire hydrant": 9,
+          "umbrella": 1
+        },
+        "interpretation": "Detection observations, not physical-object or traffic totals"
+      }
+    },
+    {
+      "check": "input_and_parent_provenance",
+      "passed": true,
+      "details": {
+        "parent_report_sha256": "9ec71dc98f441075120869f1279cc589e2983d26e7f4403bff638255024a81ff",
+        "cache_sha256": "033a2815d3abbd23327936a1b9d948b2b9b7d312796516e5ee46aec5685be345",
+        "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+        "source_video_bytes_rehashed": true
+      }
+    },
+    {
+      "check": "pinned_runtime_sources_and_isolated_cpu_configuration",
+      "passed": true,
+      "details": {
+        "tracker_source_files_verified": 9,
+        "association_device": "cpu",
+        "with_reid": false,
+        "gmc_method": "none",
+        "package_versions": {
+          "ultralytics": "8.4.175",
+          "lap": "0.5.13",
+          "torch": "2.10.0+cu128",
+          "numpy": "2.0.2",
+          "Pillow": "11.3.0"
+        }
+      }
+    },
+    {
+      "check": "all_declared_output_artifact_hashes_and_native_sample_dimensions",
+      "passed": true,
+      "details": {
+        "hashed_output_files": 37,
+        "paths": [
+          "track_records.jsonl",
+          "track_summary.json",
+          "temporal/entering_scooter_000007711_000007718_contact_sheet.png",
+          "samples/frame_000000000_raw.png",
+          "samples/frame_000000000_tracked.png",
+          "samples/frame_000002570_raw.png",
+          "samples/frame_000002570_tracked.png",
+          "samples/frame_000005140_raw.png",
+          "samples/frame_000005140_tracked.png",
+          "samples/frame_000007711_raw.png",
+          "samples/frame_000007711_tracked.png",
+          "samples/frame_000007712_raw.png",
+          "samples/frame_000007712_tracked.png",
+          "samples/frame_000007713_raw.png",
+          "samples/frame_000007713_tracked.png",
+          "samples/frame_000007714_raw.png",
+          "samples/frame_000007714_tracked.png",
+          "samples/frame_000007715_raw.png",
+          "samples/frame_000007715_tracked.png",
+          "samples/frame_000007716_raw.png",
+          "samples/frame_000007716_tracked.png",
+          "samples/frame_000007717_raw.png",
+          "samples/frame_000007717_tracked.png",
+          "samples/frame_000007718_raw.png",
+          "samples/frame_000007718_tracked.png",
+          "samples/frame_000010281_raw.png",
+          "samples/frame_000010281_tracked.png",
+          "temporal/burst_000000000_000000029_tracked.mp4",
+          "temporal/burst_000000000_000000029_contact_sheet.png",
+          "temporal/burst_000002555_000002584_tracked.mp4",
+          "temporal/burst_000002555_000002584_contact_sheet.png",
+          "temporal/burst_000005125_000005154_tracked.mp4",
+          "temporal/burst_000005125_000005154_contact_sheet.png",
+          "temporal/burst_000007696_000007725_tracked.mp4",
+          "temporal/burst_000007696_000007725_contact_sheet.png",
+          "temporal/burst_000010252_000010281_tracked.mp4",
+          "temporal/burst_000010252_000010281_contact_sheet.png"
+        ]
+      }
+    },
+    {
+      "check": "run_manifest_json_read",
+      "passed": true,
+      "details": {
+        "phase": 3,
+        "run_id": "20261011T060227_579936Z_05ebe213",
+        "status": "completed_cached_sequence_manual_review_pending",
+        "frames_processed": 10282,
+        "manual_review_status": "pending_actual_temporal_evidence_review"
+      }
+    },
+    {
+      "check": "run_manifest_matches_original_tracking_report",
+      "passed": true
+    },
+    {
+      "check": "full_frame_records_links_measurement_and_lifecycle_consistency",
+      "passed": true,
+      "details": {
+        "serialized_rows_verified": 10282,
+        "captured_tracker_ids_including_unconfirmed": 4922,
+        "unique_emitted_tracker_ids": 780,
+        "emitted_track_observations": 45756,
+        "frames_with_zero_cached_detections": 7,
+        "frames_with_no_emitted_tracks": 14,
+        "measurement_provenance": "raw detections preserved; estimated Kalman boxes distinguished",
+        "per_frame_id_and_source_detection_uniqueness": "passed",
+        "lifecycle_last_observed_missing_counts_and_pool_semantics": "passed"
+      }
+    },
+    {
+      "check": "per_id_histories_counters_gaps_classes_and_lifecycle",
+      "passed": true,
+      "details": {
+        "within_id_gap_events": 1633,
+        "within_id_raw_class_changes": 497,
+        "ids_never_emitted": 4142,
+        "lifecycle_transition_events": 14570,
+        "interpretation": "Algorithm bookkeeping/diagnostic events, not physical identity errors or traffic totals"
+      }
+    },
+    {
+      "check": "reported_diagnostics_and_measured_timing_reconcile",
+      "passed": true,
+      "details": {
+        "serialized_rows_verified": 10282,
+        "captured_tracker_ids_including_unconfirmed": 4922,
+        "unique_emitted_tracker_ids": 780,
+        "emitted_track_observations": 45756,
+        "frames_with_zero_cached_detections": 7,
+        "frames_with_no_emitted_tracks": 14,
+        "within_id_gap_events": 1633,
+        "within_id_raw_class_changes": 497,
+        "ids_never_emitted": 4142,
+        "lifecycle_transition_events": 14570,
+        "tracker_update_wall_seconds": 13.661493815999677,
+        "interpretation": "Software/association diagnostics, not identity-quality or counting metrics"
+      }
+    },
+    {
+      "check": "native_raw_pixel_preservation_and_full_history_temporal_exports",
+      "passed": true,
+      "details": {
+        "matched_phase2_native_raw_samples": [
+          {
+            "frame_index": 0,
+            "raw_rgb_pixels_identical": true,
+            "png_bytes_identical": true
+          },
+          {
+            "frame_index": 2570,
+            "raw_rgb_pixels_identical": true,
+            "png_bytes_identical": true
+          },
+          {
+            "frame_index": 5140,
+            "raw_rgb_pixels_identical": true,
+            "png_bytes_identical": true
+          },
+          {
+            "frame_index": 7711,
+            "raw_rgb_pixels_identical": true,
+            "png_bytes_identical": true
+          },
+          {
+            "frame_index": 10281,
+            "raw_rgb_pixels_identical": true,
+            "png_bytes_identical": true
+          }
+        ],
+        "temporal_subset_records": 150,
+        "rendered_clips": [
+          {
+            "start_frame": 0,
+            "end_frame": 29,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "start_frame": 2555,
+            "end_frame": 2584,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "start_frame": 5125,
+            "end_frame": 5154,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "start_frame": 7696,
+            "end_frame": 7725,
+            "decoded_rendered_frames": 30
+          },
+          {
+            "start_frame": 10252,
+            "end_frame": 10281,
+            "decoded_rendered_frames": 30
+          }
+        ],
+        "scope": "Pixel preservation and rendered artifact completeness only; not physical identity correctness"
+      }
+    },
+    {
+      "check": "focused_trace_7711_7718_complete",
+      "passed": true,
+      "details": {
+        "scope": "Exact algorithm/detector-link trace for temporal visual review; no physical identity classification inferred",
+        "frame_indices": [
+          7711,
+          7712,
+          7713,
+          7714,
+          7715,
+          7716,
+          7717,
+          7718
+        ],
+        "trace_artifact": "focused_track_trace_7711_7718.json"
+      }
+    }
+  ],
+  "errors": [],
+  "diagnostics": {
+    "retained_input": {
+      "frame_count": 10282,
+      "raw_detection_count": 50713,
+      "zero_detection_frame_count": 7,
+      "raw_detection_observations_by_class": {
+        "car": 14693,
+        "motorcycle": 16863,
+        "bench": 1530,
+        "truck": 2668,
+        "person": 14700,
+        "bus": 43,
+        "backpack": 113,
+        "traffic light": 2,
+        "bird": 22,
+        "cell phone": 1,
+        "handbag": 25,
+        "train": 1,
+        "boat": 23,
+        "sports ball": 1,
+        "horse": 1,
+        "stop sign": 1,
+        "teddy bear": 2,
+        "skateboard": 1,
+        "suitcase": 10,
+        "bicycle": 2,
+        "frisbee": 1,
+        "fire hydrant": 9,
+        "umbrella": 1
+      },
+      "interpretation": "Detection observations, not physical-object or traffic totals"
+    },
+    "tracking_software_diagnostics": {
+      "serialized_rows_verified": 10282,
+      "captured_tracker_ids_including_unconfirmed": 4922,
+      "unique_emitted_tracker_ids": 780,
+      "emitted_track_observations": 45756,
+      "frames_with_zero_cached_detections": 7,
+      "frames_with_no_emitted_tracks": 14,
+      "within_id_gap_events": 1633,
+      "within_id_raw_class_changes": 497,
+      "ids_never_emitted": 4142,
+      "lifecycle_transition_events": 14570,
+      "tracker_update_wall_seconds": 13.661493815999677,
+      "interpretation": "Software/association diagnostics, not identity-quality or counting metrics"
+    }
+  },
+  "limitations": [
+    "Checks establish serialization/provenance/lifecycle consistency, not tracking accuracy or physical identity correctness.",
+    "Source video is only hashed when supplied; only already-rendered temporal MP4 artifacts are decoded.",
+    "No Phase 2 rerun, detector prediction, ReID/GMC inference, geometry, crossing or counting is performed."
+  ],
+  "compact_representation": {
+    "created_at_utc": "2026-10-11T09:20:58.454815+00:00",
+    "source_audit_sha256": "e33bc7e9d35e75b3fb671ad5cb83cac6853861390118c72fe21b61947b43a647",
+    "source_audit_size_bytes": 280095251,
+    "source_audit_retained_outside_repository": "/tmp/phase3-artifact-audit/actual_run/artifact_audit.json",
+    "transformation": "Only bulky returned raw arrays and duplicate report bodies in check details were summarized. The 12 check names/results, errors and aggregate diagnostics are unchanged. No audit, model or tracker execution was repeated."
+  },
+  "measured_execution_summary": {
+    "frames_processed": 10282,
+    "loop_wall_seconds": 34.15621119299999,
+    "tracker_update_calls": 10282,
+    "tracker_update_wall_seconds": 13.661493815999677,
+    "tracker_update_wall_ms_mean": 1.3286805889904374,
+    "tracker_update_wall_ms_median": 1.2067835000095783,
+    "decoder_read_calls_including_final_probe": 10283,
+    "decode_read_wall_seconds": 9.836499509998191,
+    "selected_frame_render_and_png_write_wall_seconds": 1.3023566680000727,
+    "timing_limits": "Tracker counter includes Boxes adapter construction and actual update. Loop also includes lifecycle serialization/IO. No new detection runtime is measured."
+  }
+}

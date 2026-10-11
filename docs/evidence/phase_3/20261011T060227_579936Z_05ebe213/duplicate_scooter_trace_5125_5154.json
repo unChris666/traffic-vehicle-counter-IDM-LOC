@@ -1,0 +1,2601 @@
+{
+  "claim_type": "EXPERIMENT_RESULT",
+  "scope": "Read-only exact software-ID/source-detection trace for root temporal visual review. No physical identity labels or ground-truth quality metric inferred here.",
+  "run_id": "20261011T060227_579936Z_05ebe213",
+  "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+  "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+  "source_track_records_sha256": "7faf654701258d95e84492f889a4bbb4f41e0b0a4baba30dc5675568e461bd8c",
+  "source_track_summary_sha256": "826a6abc25844cef12e8cd23b6bd9d8ca73f4284cb40bfb1e6cd9a4699c6573b",
+  "selected_track_ids": [
+    1934,
+    1937,
+    1951
+  ],
+  "frame_range": [
+    5125,
+    5154
+  ],
+  "track_boundaries": [
+    {
+      "track_id": 1934,
+      "first_seen_frame": 5115,
+      "last_seen_frame": 5132,
+      "detection_count": 18,
+      "emitted_observation_count": 17,
+      "final_recorded_state": "removed"
+    },
+    {
+      "track_id": 1937,
+      "first_seen_frame": 5116,
+      "last_seen_frame": 5187,
+      "detection_count": 70,
+      "emitted_observation_count": 69,
+      "final_recorded_state": "removed"
+    },
+    {
+      "track_id": 1951,
+      "first_seen_frame": 5128,
+      "last_seen_frame": 5227,
+      "detection_count": 94,
+      "emitted_observation_count": 93,
+      "final_recorded_state": "removed"
+    }
+  ],
+  "id_1951_lifecycle": [
+    {
+      "track_id": 1951,
+      "frame_index": 5128,
+      "previous_state": null,
+      "state": "tracked",
+      "is_activated": false,
+      "pool_membership": [
+        "tracked"
+      ]
+    },
+    {
+      "track_id": 1951,
+      "frame_index": 5129,
+      "previous_state": [
+        "tracked",
+        false
+      ],
+      "state": "tracked",
+      "is_activated": true,
+      "pool_membership": [
+        "tracked"
+      ]
+    },
+    {
+      "track_id": 1951,
+      "frame_index": 5219,
+      "previous_state": [
+        "tracked",
+        true
+      ],
+      "state": "lost",
+      "is_activated": true,
+      "pool_membership": [
+        "lost"
+      ]
+    },
+    {
+      "track_id": 1951,
+      "frame_index": 5220,
+      "previous_state": [
+        "lost",
+        true
+      ],
+      "state": "tracked",
+      "is_activated": true,
+      "pool_membership": [
+        "tracked"
+      ]
+    },
+    {
+      "track_id": 1951,
+      "frame_index": 5222,
+      "previous_state": [
+        "tracked",
+        true
+      ],
+      "state": "lost",
+      "is_activated": true,
+      "pool_membership": [
+        "lost"
+      ]
+    },
+    {
+      "track_id": 1951,
+      "frame_index": 5227,
+      "previous_state": [
+        "lost",
+        true
+      ],
+      "state": "tracked",
+      "is_activated": true,
+      "pool_membership": [
+        "tracked"
+      ]
+    },
+    {
+      "track_id": 1951,
+      "frame_index": 5228,
+      "previous_state": [
+        "tracked",
+        true
+      ],
+      "state": "lost",
+      "is_activated": true,
+      "pool_membership": [
+        "lost"
+      ]
+    },
+    {
+      "track_id": 1951,
+      "frame_index": 5258,
+      "previous_state": [
+        "lost",
+        true
+      ],
+      "state": "removed",
+      "is_activated": true,
+      "pool_membership": [
+        "lost",
+        "removed_this_frame"
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "frame_index": 5125,
+      "assigned_observations": [
+        {
+          "track_id": 1934,
+          "frame_index": 5125,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8321271538734436,
+          "raw_bbox": [
+            377.59014892578125,
+            436.1494140625,
+            531.4524536132812,
+            651.959716796875
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "frame_index": 5125,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8242434859275818,
+          "raw_bbox": [
+            380.5145263671875,
+            364.80645751953125,
+            506.13812255859375,
+            606.1533203125
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5125,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5125,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5126,
+      "assigned_observations": [
+        {
+          "track_id": 1934,
+          "frame_index": 5126,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8064974546432495,
+          "raw_bbox": [
+            364.99932861328125,
+            454.9156494140625,
+            497.78375244140625,
+            638.0660400390625
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "frame_index": 5126,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8506065011024475,
+          "raw_bbox": [
+            365.98406982421875,
+            370.01983642578125,
+            477.22784423828125,
+            590.1530151367188
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5126,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5126,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5127,
+      "assigned_observations": [
+        {
+          "track_id": 1934,
+          "frame_index": 5127,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8047380447387695,
+          "raw_bbox": [
+            345.3861999511719,
+            446.4535217285156,
+            468.4372863769531,
+            626.9774169921875
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "frame_index": 5127,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8564521670341492,
+          "raw_bbox": [
+            347.0506591796875,
+            377.21649169921875,
+            450.95086669921875,
+            576.2485961914062
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5127,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5127,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5128,
+      "assigned_observations": [
+        {
+          "track_id": 1934,
+          "frame_index": 5128,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.5925920009613037,
+          "raw_bbox": [
+            314.67333984375,
+            457.56011962890625,
+            442.372314453125,
+            615.9722290039062
+          ],
+          "original_detection_index": 2,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "frame_index": 5128,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8610142469406128,
+          "raw_bbox": [
+            328.6279296875,
+            379.74493408203125,
+            426.8846435546875,
+            578.44189453125
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5128,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.31038951873779297,
+          "raw_bbox": [
+            342.37322998046875,
+            488.68756103515625,
+            442.68951416015625,
+            614.9965209960938
+          ],
+          "original_detection_index": 4,
+          "emitted": false,
+          "is_activated": false
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5128,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5128,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": false,
+          "latest_observed_frame": 5128,
+          "missing_frame_count": 0,
+          "is_activated": false
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 1951,
+          "frame_index": 5128,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 5129,
+      "assigned_observations": [
+        {
+          "track_id": 1934,
+          "frame_index": 5129,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.4547596871852875,
+          "raw_bbox": [
+            312.46588134765625,
+            458.6859436035156,
+            418.66021728515625,
+            605.9029541015625
+          ],
+          "original_detection_index": 3,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "frame_index": 5129,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8126493096351624,
+          "raw_bbox": [
+            312.742431640625,
+            383.76898193359375,
+            410.2139892578125,
+            568.2869262695312
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5129,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.6122607588768005,
+          "raw_bbox": [
+            327.80950927734375,
+            486.3431396484375,
+            418.77587890625,
+            605.728515625
+          ],
+          "original_detection_index": 2,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5129,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5129,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5129,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 1951,
+          "frame_index": 5129,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "tracked",
+          "is_activated": true,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 5130,
+      "assigned_observations": [
+        {
+          "track_id": 1934,
+          "frame_index": 5130,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.5324631333351135,
+          "raw_bbox": [
+            284.5619812011719,
+            457.6932678222656,
+            407.5185241699219,
+            597.9381103515625
+          ],
+          "original_detection_index": 3,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "frame_index": 5130,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8497506976127625,
+          "raw_bbox": [
+            301.036865234375,
+            388.760986328125,
+            391.8033447265625,
+            554.7615966796875
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5130,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7073541879653931,
+          "raw_bbox": [
+            308.5099182128906,
+            482.9860534667969,
+            399.1655578613281,
+            596.884521484375
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5130,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5130,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5130,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5131,
+      "assigned_observations": [
+        {
+          "track_id": 1934,
+          "frame_index": 5131,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.35263076424598694,
+          "raw_bbox": [
+            278.7587890625,
+            455.58837890625,
+            382.26446533203125,
+            589.628662109375
+          ],
+          "original_detection_index": 5,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "frame_index": 5131,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8275569677352905,
+          "raw_bbox": [
+            287.8487548828125,
+            390.84014892578125,
+            373.39208984375,
+            549.4662475585938
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5131,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7547715306282043,
+          "raw_bbox": [
+            295.79534912109375,
+            481.95745849609375,
+            381.49591064453125,
+            589.2118530273438
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5131,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5131,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5131,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5132,
+      "assigned_observations": [
+        {
+          "track_id": 1934,
+          "frame_index": 5132,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.5008301734924316,
+          "raw_bbox": [
+            276.510498046875,
+            458.612060546875,
+            372.7562255859375,
+            582.7955322265625
+          ],
+          "original_detection_index": 3,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "frame_index": 5132,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7716270685195923,
+          "raw_bbox": [
+            277.43426513671875,
+            394.1845703125,
+            361.63262939453125,
+            541.4775390625
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5132,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7153763771057129,
+          "raw_bbox": [
+            283.8189697265625,
+            481.0241394042969,
+            365.2452392578125,
+            582.112060546875
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5133,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5133,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.831732451915741,
+          "raw_bbox": [
+            267.6046447753906,
+            398.31658935546875,
+            345.3815612792969,
+            545.9514770507812
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5133,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7550144791603088,
+          "raw_bbox": [
+            275.4929504394531,
+            481.7583923339844,
+            350.0444030761719,
+            576.2559814453125
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 1,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5133,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5133,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 1934,
+          "frame_index": 5133,
+          "previous_state": [
+            "tracked",
+            true
+          ],
+          "state": "lost",
+          "is_activated": true,
+          "pool_membership": [
+            "lost"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 5134,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5134,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8414443135261536,
+          "raw_bbox": [
+            258.2362060546875,
+            399.03912353515625,
+            331.56329345703125,
+            540.1410522460938
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5134,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7729061841964722,
+          "raw_bbox": [
+            266.42059326171875,
+            480.0364074707031,
+            336.1663818359375,
+            571.372314453125
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 2,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5134,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5134,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5135,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5135,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8044646978378296,
+          "raw_bbox": [
+            249.9666748046875,
+            401.61346435546875,
+            323.34478759765625,
+            530.6803588867188
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5135,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7320216298103333,
+          "raw_bbox": [
+            255.93531799316406,
+            478.6986083984375,
+            324.6666259765625,
+            565.123291015625
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 3,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5135,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5135,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5136,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5136,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8359220027923584,
+          "raw_bbox": [
+            242.03643798828125,
+            400.87115478515625,
+            312.6363525390625,
+            528.5858764648438
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5136,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7879844307899475,
+          "raw_bbox": [
+            249.08285522460938,
+            477.5096435546875,
+            313.0742492675781,
+            560.9298095703125
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 4,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5136,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5136,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5137,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5137,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8251616954803467,
+          "raw_bbox": [
+            234.00706481933594,
+            404.21044921875,
+            302.0576171875,
+            528.56396484375
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5137,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7829757332801819,
+          "raw_bbox": [
+            241.26031494140625,
+            476.22589111328125,
+            302.88018798828125,
+            556.5615844726562
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 5,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5137,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5137,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5138,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5138,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8314564228057861,
+          "raw_bbox": [
+            227.45712280273438,
+            406.903564453125,
+            292.3027648925781,
+            524.3206787109375
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5138,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7783690690994263,
+          "raw_bbox": [
+            233.53501892089844,
+            472.2823181152344,
+            293.677734375,
+            553.0108642578125
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 6,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5138,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5138,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5139,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5139,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8094003200531006,
+          "raw_bbox": [
+            224.02957153320312,
+            409.02880859375,
+            286.62921142578125,
+            522.224365234375
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5139,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7482975125312805,
+          "raw_bbox": [
+            228.37481689453125,
+            469.8699645996094,
+            285.09234619140625,
+            549.2650146484375
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 7,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5139,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5139,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5140,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5140,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8240718245506287,
+          "raw_bbox": [
+            218.0816650390625,
+            409.9677734375,
+            275.8474426269531,
+            520.1470947265625
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5140,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8041313290596008,
+          "raw_bbox": [
+            221.33056640625,
+            472.15020751953125,
+            276.42718505859375,
+            545.7120971679688
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 8,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5140,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5140,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5141,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5141,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7897639870643616,
+          "raw_bbox": [
+            212.41574096679688,
+            411.67755126953125,
+            269.8435363769531,
+            523.4332885742188
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5141,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8026430606842041,
+          "raw_bbox": [
+            216.12603759765625,
+            471.27886962890625,
+            268.4964599609375,
+            541.7583618164062
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 9,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5141,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5141,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5142,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5142,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.806663453578949,
+          "raw_bbox": [
+            207.09619140625,
+            413.61700439453125,
+            259.3979797363281,
+            519.1115112304688
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5142,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7898765802383423,
+          "raw_bbox": [
+            210.4185791015625,
+            470.2657470703125,
+            260.97418212890625,
+            539.375
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 10,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5142,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5142,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5143,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5143,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.778779149055481,
+          "raw_bbox": [
+            201.8231658935547,
+            414.21044921875,
+            255.0133819580078,
+            518.3558959960938
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5143,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8201472759246826,
+          "raw_bbox": [
+            206.35406494140625,
+            470.37176513671875,
+            254.80120849609375,
+            536.7511596679688
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 11,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5143,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5143,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5144,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5144,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8310750126838684,
+          "raw_bbox": [
+            198.20358276367188,
+            415.0831298828125,
+            248.77291870117188,
+            517.1193237304688
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5144,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7590900659561157,
+          "raw_bbox": [
+            202.02792358398438,
+            469.8401794433594,
+            247.35873413085938,
+            533.8621826171875
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 12,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5144,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5144,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5145,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5145,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.824479877948761,
+          "raw_bbox": [
+            193.17019653320312,
+            416.74163818359375,
+            245.01089477539062,
+            516.7659301757812
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5145,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7664063572883606,
+          "raw_bbox": [
+            196.97702026367188,
+            470.2317810058594,
+            241.99966430664062,
+            531.6580810546875
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 13,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5145,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5145,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5146,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5146,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7774425745010376,
+          "raw_bbox": [
+            188.16278076171875,
+            417.272705078125,
+            236.94921875,
+            509.5469970703125
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5146,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8231593370437622,
+          "raw_bbox": [
+            192.20875549316406,
+            469.5227355957031,
+            236.22401428222656,
+            529.124267578125
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 14,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5146,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5146,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5147,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5147,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.784473717212677,
+          "raw_bbox": [
+            185.62612915039062,
+            417.1763916015625,
+            233.7012939453125,
+            505.196044921875
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5147,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7532497644424438,
+          "raw_bbox": [
+            187.6832275390625,
+            468.34246826171875,
+            231.62057495117188,
+            526.5880737304688
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 15,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5147,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5147,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5148,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5148,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7251988053321838,
+          "raw_bbox": [
+            180.97552490234375,
+            417.79547119140625,
+            228.10211181640625,
+            507.43719482421875
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5148,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7440719604492188,
+          "raw_bbox": [
+            183.54241943359375,
+            467.52044677734375,
+            226.7720947265625,
+            524.0729370117188
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 16,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5148,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5148,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5149,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5149,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7566416263580322,
+          "raw_bbox": [
+            177.77944946289062,
+            418.65338134765625,
+            223.42984008789062,
+            508.490966796875
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5149,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7784355282783508,
+          "raw_bbox": [
+            181.03948974609375,
+            467.81805419921875,
+            221.32958984375,
+            521.1720581054688
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 17,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5149,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5149,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5150,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5150,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7674326300621033,
+          "raw_bbox": [
+            175.14108276367188,
+            419.37591552734375,
+            219.78890991210938,
+            505.10833740234375
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5150,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7640385031700134,
+          "raw_bbox": [
+            178.7850341796875,
+            466.97802734375,
+            216.79205322265625,
+            518.7061767578125
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 18,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5150,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5150,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5151,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5151,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7533857226371765,
+          "raw_bbox": [
+            171.99273681640625,
+            419.44439697265625,
+            215.63201904296875,
+            501.46185302734375
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5151,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7112354040145874,
+          "raw_bbox": [
+            174.79757690429688,
+            464.65191650390625,
+            212.66085815429688,
+            516.7249145507812
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 19,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5151,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5151,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5152,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5152,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7658402323722839,
+          "raw_bbox": [
+            168.29190063476562,
+            419.49078369140625,
+            211.75424194335938,
+            500.29925537109375
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5152,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.6955200433731079,
+          "raw_bbox": [
+            170.66415405273438,
+            463.1055908203125,
+            208.83285522460938,
+            515.2972412109375
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 20,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5152,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5152,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5153,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5153,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7755477428436279,
+          "raw_bbox": [
+            165.21896362304688,
+            419.186767578125,
+            205.48165893554688,
+            503.5137939453125
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5153,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7256842851638794,
+          "raw_bbox": [
+            167.67300415039062,
+            463.7849426269531,
+            205.07162475585938,
+            512.705810546875
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 21,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5153,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5153,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    },
+    {
+      "frame_index": 5154,
+      "assigned_observations": [
+        {
+          "track_id": 1937,
+          "frame_index": 5154,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7415413856506348,
+          "raw_bbox": [
+            163.2015380859375,
+            419.772216796875,
+            202.88031005859375,
+            498.57611083984375
+          ],
+          "original_detection_index": 0,
+          "emitted": true,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "frame_index": 5154,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7322174310684204,
+          "raw_bbox": [
+            165.8857421875,
+            462.9810791015625,
+            201.2247314453125,
+            511.31201171875
+          ],
+          "original_detection_index": 1,
+          "emitted": true,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 1934,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "observed_this_frame": false,
+          "emitted": false,
+          "latest_observed_frame": 5132,
+          "missing_frame_count": 22,
+          "is_activated": true
+        },
+        {
+          "track_id": 1937,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5154,
+          "missing_frame_count": 0,
+          "is_activated": true
+        },
+        {
+          "track_id": 1951,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "observed_this_frame": true,
+          "emitted": true,
+          "latest_observed_frame": 5154,
+          "missing_frame_count": 0,
+          "is_activated": true
+        }
+      ],
+      "lifecycle_transitions": []
+    }
+  ],
+  "measurement_provenance": "raw_bbox/class/confidence come from the original retained Phase 2 detection linked by original_detection_index; snapshots are tracker lifecycle records, not additional measured detections."
+}

@@ -1,0 +1,6199 @@
+{
+  "scope": "Exact algorithm/detector-link trace for temporal visual review; no physical identity classification inferred",
+  "frames": [
+    {
+      "frame_index": 7711,
+      "raw_detections": [
+        {
+          "original_detection_index": 0,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.5480419397354126,
+          "bbox_xyxy_pixels": [
+            105.11215209960938,
+            434.4921875,
+            129.8852996826172,
+            480.134521484375
+          ]
+        },
+        {
+          "original_detection_index": 1,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.45905008912086487,
+          "bbox_xyxy_pixels": [
+            1148.78076171875,
+            435.7451171875,
+            1279.45361328125,
+            479.3082275390625
+          ]
+        },
+        {
+          "original_detection_index": 2,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.40922656655311584,
+          "bbox_xyxy_pixels": [
+            92.186279296875,
+            442.36529541015625,
+            105.28860473632812,
+            466.79364013671875
+          ]
+        },
+        {
+          "original_detection_index": 3,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.38070791959762573,
+          "bbox_xyxy_pixels": [
+            91.21290588378906,
+            441.03436279296875,
+            105.52680969238281,
+            466.64215087890625
+          ]
+        },
+        {
+          "original_detection_index": 4,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37551456689834595,
+          "bbox_xyxy_pixels": [
+            49.723350524902344,
+            438.1811828613281,
+            70.43641662597656,
+            457.5842590332031
+          ]
+        },
+        {
+          "original_detection_index": 5,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3262452483177185,
+          "bbox_xyxy_pixels": [
+            104.5626220703125,
+            447.9053955078125,
+            127.69757080078125,
+            481.077880859375
+          ]
+        },
+        {
+          "original_detection_index": 6,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2812575101852417,
+          "bbox_xyxy_pixels": [
+            374.0783996582031,
+            467.73681640625,
+            407.7288513183594,
+            494.089111328125
+          ]
+        },
+        {
+          "original_detection_index": 7,
+          "class_id": 26,
+          "class_name": "handbag",
+          "confidence": 0.26056602597236633,
+          "bbox_xyxy_pixels": [
+            961.3148803710938,
+            412.60858154296875,
+            1279.43310546875,
+            715.1244506835938
+          ]
+        }
+      ],
+      "emitted_tracks": [
+        {
+          "track_id": 3607,
+          "frame_index": 7711,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            91.21290588378906,
+            441.03436279296875,
+            105.52680969238281,
+            466.64215087890625
+          ],
+          "bbox": [
+            91.58472442626953,
+            442.3786926269531,
+            105.17231750488281,
+            466.5445861816406
+          ],
+          "center": [
+            98.36985778808594,
+            453.8382568359375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.38070791959762573,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7711,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            105.11215209960938,
+            434.4921875,
+            129.8852996826172,
+            480.134521484375
+          ],
+          "bbox": [
+            104.94544219970703,
+            434.5702819824219,
+            130.05404663085938,
+            480.1244201660156
+          ],
+          "center": [
+            117.49872589111328,
+            457.3133544921875
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.5480419397354126,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3622,
+          "frame_index": 7711,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            374.0783996582031,
+            467.73681640625,
+            407.7288513183594,
+            494.089111328125
+          ],
+          "bbox": [
+            374.0851135253906,
+            467.76611328125,
+            407.7283935546875,
+            494.0975646972656
+          ],
+          "center": [
+            390.90362548828125,
+            480.9129638671875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2812575101852417,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3434,
+          "frame_index": 7711,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            49.723350524902344,
+            438.1811828613281,
+            70.43641662597656,
+            457.5842590332031
+          ],
+          "bbox": [
+            49.806419372558594,
+            438.2073974609375,
+            70.418212890625,
+            457.5690612792969
+          ],
+          "center": [
+            60.07988357543945,
+            447.8827209472656
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37551456689834595,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7711,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            92.186279296875,
+            442.36529541015625,
+            105.28860473632812,
+            466.79364013671875
+          ],
+          "bbox": [
+            92.16049194335938,
+            442.40087890625,
+            105.30524444580078,
+            466.70367431640625
+          ],
+          "center": [
+            98.73744201660156,
+            454.5794677734375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.40922656655311584,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7711,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            104.5626220703125,
+            447.9053955078125,
+            127.69757080078125,
+            481.077880859375
+          ],
+          "bbox": [
+            104.2620620727539,
+            446.7406921386719,
+            127.78775024414062,
+            481.0257873535156
+          ],
+          "center": [
+            116.13009643554688,
+            464.49163818359375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3262452483177185,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "assigned_observations_including_unconfirmed": [
+        {
+          "track_id": 3434,
+          "frame_index": 7711,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            49.723350524902344,
+            438.1811828613281,
+            70.43641662597656,
+            457.5842590332031
+          ],
+          "bbox": [
+            49.80641830257955,
+            438.20740449186474,
+            70.41821057636965,
+            457.5690599056879
+          ],
+          "center": [
+            60.07988357543945,
+            447.8827209472656
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37551456689834595,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3607,
+          "frame_index": 7711,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            91.21290588378906,
+            441.03436279296875,
+            105.52680969238281,
+            466.64215087890625
+          ],
+          "bbox": [
+            91.58472779845975,
+            442.3786934012067,
+            105.17231759758394,
+            466.54457100185556
+          ],
+          "center": [
+            98.36985778808594,
+            453.8382568359375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.38070791959762573,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3622,
+          "frame_index": 7711,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            374.0783996582031,
+            467.73681640625,
+            407.7288513183594,
+            494.089111328125
+          ],
+          "bbox": [
+            374.08511534883877,
+            467.7661203859137,
+            407.7284010115469,
+            494.0975728477849
+          ],
+          "center": [
+            390.90362548828125,
+            480.9129638671875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2812575101852417,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7711,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            105.11215209960938,
+            434.4921875,
+            129.8852996826172,
+            480.134521484375
+          ],
+          "bbox": [
+            104.9454447045658,
+            434.57028753151707,
+            130.0540518815705,
+            480.12442677341085
+          ],
+          "center": [
+            117.49872589111328,
+            457.3133544921875
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.5480419397354126,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7711,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            104.5626220703125,
+            447.9053955078125,
+            127.69757080078125,
+            481.077880859375
+          ],
+          "bbox": [
+            104.26206550178357,
+            446.7407015302485,
+            127.78775007739662,
+            481.02577493069947
+          ],
+          "center": [
+            116.13009643554688,
+            464.49163818359375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3262452483177185,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7711,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            92.186279296875,
+            442.36529541015625,
+            105.28860473632812,
+            466.79364013671875
+          ],
+          "bbox": [
+            92.16048995385593,
+            442.4008897480679,
+            105.30524618717706,
+            466.7036624128452
+          ],
+          "center": [
+            98.73744201660156,
+            454.5794677734375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.40922656655311584,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3680,
+          "frame_index": 7711,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            1148.78076171875,
+            435.7451171875,
+            1279.45361328125,
+            479.3082275390625
+          ],
+          "bbox": [
+            1148.78076171875,
+            435.7451171875,
+            1279.45361328125,
+            479.3082275390625
+          ],
+          "center": [
+            1214.1171875,
+            457.52667236328125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.45905008912086487,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7711,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            961.3148803710938,
+            412.60858154296875,
+            1279.43310546875,
+            715.1244506835938
+          ],
+          "bbox": [
+            961.3149108886719,
+            412.60858154296875,
+            1279.4331359863281,
+            715.1244506835938
+          ],
+          "center": [
+            1120.3739929199219,
+            563.8665161132812
+          ],
+          "class_id": 26,
+          "class_name": "handbag",
+          "confidence": 0.26056602597236633,
+          "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+          "timestamp_parent_backend_ms": 258678.25555555554,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 3434,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            49.80641830257955,
+            438.20740449186474,
+            70.41821057636965,
+            457.5690599056879
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3607,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            91.58472779845975,
+            442.3786934012067,
+            105.17231759758394,
+            466.54457100185556
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3622,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            374.08511534883877,
+            467.7661203859137,
+            407.7284010115469,
+            494.0975728477849
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3656,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            104.9454447045658,
+            434.57028753151707,
+            130.0540518815705,
+            480.12442677341085
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3657,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            104.26206550178357,
+            446.7407015302485,
+            127.78775007739662,
+            481.02577493069947
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3679,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            92.16048995385593,
+            442.4008897480679,
+            105.30524618717706,
+            466.7036624128452
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3680,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            1148.78076171875,
+            435.7451171875,
+            1279.45361328125,
+            479.3082275390625
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3681,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            961.3149108886719,
+            412.60858154296875,
+            1279.4331359863281,
+            715.1244506835938
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 0
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 3657,
+          "frame_index": 7711,
+          "previous_state": [
+            "lost",
+            true
+          ],
+          "state": "tracked",
+          "is_activated": true,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3680,
+          "frame_index": 7711,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7711,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 7712,
+      "raw_detections": [
+        {
+          "original_detection_index": 0,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7472630739212036,
+          "bbox_xyxy_pixels": [
+            939.0287475585938,
+            207.6851806640625,
+            1279.64306640625,
+            708.154052734375
+          ]
+        },
+        {
+          "original_detection_index": 1,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.5241570472717285,
+          "bbox_xyxy_pixels": [
+            104.68833923339844,
+            435.08074951171875,
+            129.2629852294922,
+            479.79168701171875
+          ]
+        },
+        {
+          "original_detection_index": 2,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.45928263664245605,
+          "bbox_xyxy_pixels": [
+            829.8209838867188,
+            387.12518310546875,
+            1023.9589233398438,
+            715.4663696289062
+          ]
+        },
+        {
+          "original_detection_index": 3,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.406593918800354,
+          "bbox_xyxy_pixels": [
+            91.01116943359375,
+            440.4794921875,
+            105.92669677734375,
+            466.38958740234375
+          ]
+        },
+        {
+          "original_detection_index": 4,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3922163248062134,
+          "bbox_xyxy_pixels": [
+            104.07547760009766,
+            448.43206787109375,
+            127.2470932006836,
+            480.80755615234375
+          ]
+        },
+        {
+          "original_detection_index": 5,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3832983672618866,
+          "bbox_xyxy_pixels": [
+            91.9868392944336,
+            441.06256103515625,
+            106.16202545166016,
+            466.67254638671875
+          ]
+        },
+        {
+          "original_detection_index": 6,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3690514862537384,
+          "bbox_xyxy_pixels": [
+            49.647918701171875,
+            438.20928955078125,
+            70.4334716796875,
+            457.62603759765625
+          ]
+        },
+        {
+          "original_detection_index": 7,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.27695515751838684,
+          "bbox_xyxy_pixels": [
+            373.97930908203125,
+            467.8236083984375,
+            407.67913818359375,
+            494.045654296875
+          ]
+        },
+        {
+          "original_detection_index": 8,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2760123312473297,
+          "bbox_xyxy_pixels": [
+            829.1370849609375,
+            382.9956359863281,
+            1133.918701171875,
+            716.482177734375
+          ]
+        },
+        {
+          "original_detection_index": 9,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.25379678606987,
+          "bbox_xyxy_pixels": [
+            830.7093505859375,
+            388.387939453125,
+            1277.8961181640625,
+            715.6134033203125
+          ]
+        }
+      ],
+      "emitted_tracks": [
+        {
+          "track_id": 3607,
+          "frame_index": 7712,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            91.01116943359375,
+            440.4794921875,
+            105.92669677734375,
+            466.38958740234375
+          ],
+          "bbox": [
+            91.11067199707031,
+            440.989501953125,
+            105.56846618652344,
+            466.3742370605469
+          ],
+          "center": [
+            98.46893310546875,
+            453.4345397949219
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.406593918800354,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7712,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            104.68833923339844,
+            435.08074951171875,
+            129.2629852294922,
+            479.79168701171875
+          ],
+          "bbox": [
+            104.6216812133789,
+            434.9976501464844,
+            129.30198669433594,
+            479.80303955078125
+          ],
+          "center": [
+            116.97566223144531,
+            457.43621826171875
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.5241570472717285,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3622,
+          "frame_index": 7712,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            373.97930908203125,
+            467.8236083984375,
+            407.67913818359375,
+            494.045654296875
+          ],
+          "bbox": [
+            374.01470947265625,
+            467.80615234375,
+            407.6949462890625,
+            494.0595703125
+          ],
+          "center": [
+            390.8292236328125,
+            480.93463134765625
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.27695515751838684,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3434,
+          "frame_index": 7712,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            49.647918701171875,
+            438.20928955078125,
+            70.4334716796875,
+            457.62603759765625
+          ],
+          "bbox": [
+            49.716217041015625,
+            438.2115478515625,
+            70.4250259399414,
+            457.6034851074219
+          ],
+          "center": [
+            60.04069519042969,
+            447.91766357421875
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3690514862537384,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7712,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            91.9868392944336,
+            441.06256103515625,
+            106.16202545166016,
+            466.67254638671875
+          ],
+          "bbox": [
+            92.02642059326172,
+            441.5439758300781,
+            105.86161804199219,
+            466.6596374511719
+          ],
+          "center": [
+            99.07443237304688,
+            453.8675537109375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3832983672618866,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7712,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            939.0287475585938,
+            207.6851806640625,
+            1279.64306640625,
+            708.154052734375
+          ],
+          "bbox": [
+            943.4860229492188,
+            248.66986083984375,
+            1279.60107421875,
+            709.5481567382812
+          ],
+          "center": [
+            1109.3359069824219,
+            457.91961669921875
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7472630739212036,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7712,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            104.07547760009766,
+            448.43206787109375,
+            127.2470932006836,
+            480.80755615234375
+          ],
+          "bbox": [
+            104.01024627685547,
+            447.8890075683594,
+            127.22863006591797,
+            480.6850280761719
+          ],
+          "center": [
+            115.66128540039062,
+            464.61981201171875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3922163248062134,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "assigned_observations_including_unconfirmed": [
+        {
+          "track_id": 3434,
+          "frame_index": 7712,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            49.647918701171875,
+            438.20928955078125,
+            70.4334716796875,
+            457.62603759765625
+          ],
+          "bbox": [
+            49.716217495077316,
+            438.2115521395148,
+            70.4250283702977,
+            457.6034740257539
+          ],
+          "center": [
+            60.04069519042969,
+            447.91766357421875
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3690514862537384,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3607,
+          "frame_index": 7712,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            91.01116943359375,
+            440.4794921875,
+            105.92669677734375,
+            466.38958740234375
+          ],
+          "bbox": [
+            91.11067094079837,
+            440.9895089445756,
+            105.56846319492095,
+            466.3742429405427
+          ],
+          "center": [
+            98.46893310546875,
+            453.4345397949219
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.406593918800354,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3622,
+          "frame_index": 7712,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            373.97930908203125,
+            467.8236083984375,
+            407.67913818359375,
+            494.045654296875
+          ],
+          "bbox": [
+            374.014721203313,
+            467.8061494191178,
+            407.6949599166961,
+            494.0595801670572
+          ],
+          "center": [
+            390.8292236328125,
+            480.93463134765625
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.27695515751838684,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7712,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            104.68833923339844,
+            435.08074951171875,
+            129.2629852294922,
+            479.79168701171875
+          ],
+          "bbox": [
+            104.62168151814448,
+            434.9976500924941,
+            129.30198883200637,
+            479.8030475270978
+          ],
+          "center": [
+            116.97566223144531,
+            457.43621826171875
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.5241570472717285,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7712,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            104.07547760009766,
+            448.43206787109375,
+            127.2470932006836,
+            480.80755615234375
+          ],
+          "bbox": [
+            104.01024547592579,
+            447.8890021296814,
+            127.22863351823293,
+            480.6850353544317
+          ],
+          "center": [
+            115.66128540039062,
+            464.61981201171875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3922163248062134,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7712,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            91.9868392944336,
+            441.06256103515625,
+            106.16202545166016,
+            466.67254638671875
+          ],
+          "bbox": [
+            92.02641896358989,
+            441.5439906989093,
+            105.86161540685565,
+            466.6596345883732
+          ],
+          "center": [
+            99.07443237304688,
+            453.8675537109375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3832983672618866,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7712,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            939.0287475585938,
+            207.6851806640625,
+            1279.64306640625,
+            708.154052734375
+          ],
+          "bbox": [
+            943.486004638672,
+            248.66986083984375,
+            1279.6011047363281,
+            709.5481323242187
+          ],
+          "center": [
+            1109.3359069824219,
+            457.91961669921875
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7472630739212036,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3682,
+          "frame_index": 7712,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            829.8209838867188,
+            387.12518310546875,
+            1023.9589233398438,
+            715.4663696289062
+          ],
+          "bbox": [
+            829.8209838867188,
+            387.12518310546875,
+            1023.9589233398438,
+            715.4663696289062
+          ],
+          "center": [
+            926.8899536132812,
+            551.2957763671875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.45928263664245605,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7712,
+          "original_detection_index": 8,
+          "raw_bbox": [
+            829.1370849609375,
+            382.9956359863281,
+            1133.918701171875,
+            716.482177734375
+          ],
+          "bbox": [
+            829.1370849609375,
+            382.99562072753906,
+            1133.918701171875,
+            716.4821624755859
+          ],
+          "center": [
+            981.5278930664062,
+            549.7389068603516
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2760123312473297,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3684,
+          "frame_index": 7712,
+          "original_detection_index": 9,
+          "raw_bbox": [
+            830.7093505859375,
+            388.387939453125,
+            1277.8961181640625,
+            715.6134033203125
+          ],
+          "bbox": [
+            830.7093505859375,
+            388.387939453125,
+            1277.8961181640625,
+            715.6134033203125
+          ],
+          "center": [
+            1054.302734375,
+            552.0006713867188
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.25379678606987,
+          "timestamp_estimate_from_index_fps_seconds": 258.6616034061683,
+          "timestamp_parent_backend_ms": 258711.6111111111,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 3434,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            49.716217495077316,
+            438.2115521395148,
+            70.4250283702977,
+            457.6034740257539
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3607,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            91.11067094079837,
+            440.9895089445756,
+            105.56846319492095,
+            466.3742429405427
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3622,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            374.014721203313,
+            467.8061494191178,
+            407.6949599166961,
+            494.0595801670572
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3656,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            104.62168151814448,
+            434.9976500924941,
+            129.30198883200637,
+            479.8030475270978
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3657,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            104.01024547592579,
+            447.8890021296814,
+            127.22863351823293,
+            480.6850353544317
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3679,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            92.02641896358989,
+            441.5439906989093,
+            105.86161540685565,
+            466.6596345883732
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3680,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            1148.78076171875,
+            435.7451171875,
+            1279.45361328125,
+            479.3082275390625
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7711,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3681,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            943.486004638672,
+            248.66986083984375,
+            1279.6011047363281,
+            709.5481323242187
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3682,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            829.8209838867188,
+            387.12518310546875,
+            1023.9589233398438,
+            715.4663696289062
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3683,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            829.1370849609375,
+            382.99562072753906,
+            1133.918701171875,
+            716.4821624755859
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3684,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            830.7093505859375,
+            388.387939453125,
+            1277.8961181640625,
+            715.6134033203125
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 0
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 3680,
+          "frame_index": 7712,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7712,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "tracked",
+          "is_activated": true,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3682,
+          "frame_index": 7712,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7712,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3684,
+          "frame_index": 7712,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 7713,
+      "raw_detections": [
+        {
+          "original_detection_index": 0,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8526117205619812,
+          "bbox_xyxy_pixels": [
+            731.0133056640625,
+            392.9261169433594,
+            1218.6214599609375,
+            715.0462646484375
+          ]
+        },
+        {
+          "original_detection_index": 1,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8081502914428711,
+          "bbox_xyxy_pixels": [
+            751.33056640625,
+            255.77899169921875,
+            1061.603759765625,
+            652.5526123046875
+          ]
+        },
+        {
+          "original_detection_index": 2,
+          "class_id": 24,
+          "class_name": "backpack",
+          "confidence": 0.518414318561554,
+          "bbox_xyxy_pixels": [
+            987.7567138671875,
+            350.655029296875,
+            1122.1365966796875,
+            561.5721435546875
+          ]
+        },
+        {
+          "original_detection_index": 3,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37129509449005127,
+          "bbox_xyxy_pixels": [
+            49.71551513671875,
+            438.04998779296875,
+            70.30422973632812,
+            457.597412109375
+          ]
+        },
+        {
+          "original_detection_index": 4,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.34588250517845154,
+          "bbox_xyxy_pixels": [
+            91.63336181640625,
+            441.53857421875,
+            105.60467529296875,
+            466.19482421875
+          ]
+        },
+        {
+          "original_detection_index": 5,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.33225157856941223,
+          "bbox_xyxy_pixels": [
+            104.14480590820312,
+            435.42401123046875,
+            128.52090454101562,
+            479.11700439453125
+          ]
+        },
+        {
+          "original_detection_index": 6,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3255833685398102,
+          "bbox_xyxy_pixels": [
+            90.74951171875,
+            440.69000244140625,
+            105.76034545898438,
+            466.00799560546875
+          ]
+        },
+        {
+          "original_detection_index": 7,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2980358600616455,
+          "bbox_xyxy_pixels": [
+            103.80122375488281,
+            446.2907409667969,
+            126.65005493164062,
+            480.6263122558594
+          ]
+        }
+      ],
+      "emitted_tracks": [
+        {
+          "track_id": 3607,
+          "frame_index": 7713,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            90.74951171875,
+            440.69000244140625,
+            105.76034545898438,
+            466.00799560546875
+          ],
+          "bbox": [
+            90.76557159423828,
+            440.57684326171875,
+            105.62937927246094,
+            466.0709228515625
+          ],
+          "center": [
+            98.25492858886719,
+            453.3489990234375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3255833685398102,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7713,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            104.14480590820312,
+            435.42401123046875,
+            128.52090454101562,
+            479.11700439453125
+          ],
+          "bbox": [
+            104.15560913085938,
+            435.3756408691406,
+            128.55364990234375,
+            479.2430725097656
+          ],
+          "center": [
+            116.33285522460938,
+            457.2705078125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.33225157856941223,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3434,
+          "frame_index": 7713,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            49.71551513671875,
+            438.04998779296875,
+            70.30422973632812,
+            457.597412109375
+          ],
+          "bbox": [
+            49.725318908691406,
+            438.1075134277344,
+            70.34256744384766,
+            457.5978698730469
+          ],
+          "center": [
+            60.00987243652344,
+            447.8236999511719
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37129509449005127,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7713,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            91.63336181640625,
+            441.53857421875,
+            105.60467529296875,
+            466.19482421875
+          ],
+          "bbox": [
+            91.74443054199219,
+            441.56085205078125,
+            105.68540954589844,
+            466.32281494140625
+          ],
+          "center": [
+            98.6190185546875,
+            453.86669921875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.34588250517845154,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7713,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            731.0133056640625,
+            392.9261169433594,
+            1218.6214599609375,
+            715.0462646484375
+          ],
+          "bbox": [
+            782.6309814453125,
+            345.1255798339844,
+            1233.4356689453125,
+            713.2244262695312
+          ],
+          "center": [
+            974.8173828125,
+            553.9861907958984
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8526117205619812,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7713,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            103.80122375488281,
+            446.2907409667969,
+            126.65005493164062,
+            480.6263122558594
+          ],
+          "bbox": [
+            103.74183654785156,
+            446.7737731933594,
+            126.64356231689453,
+            480.4492492675781
+          ],
+          "center": [
+            115.22563934326172,
+            463.4585266113281
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2980358600616455,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7713,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            751.33056640625,
+            255.77899169921875,
+            1061.603759765625,
+            652.5526123046875
+          ],
+          "bbox": [
+            766.891845703125,
+            281.2223205566406,
+            1076.0667724609375,
+            665.3385009765625
+          ],
+          "center": [
+            906.4671630859375,
+            454.1658020019531
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8081502914428711,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "assigned_observations_including_unconfirmed": [
+        {
+          "track_id": 3434,
+          "frame_index": 7713,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            49.71551513671875,
+            438.04998779296875,
+            70.30422973632812,
+            457.597412109375
+          ],
+          "bbox": [
+            49.72531734962246,
+            438.1075035041098,
+            70.34256939868294,
+            457.59787274439486
+          ],
+          "center": [
+            60.00987243652344,
+            447.8236999511719
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37129509449005127,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3607,
+          "frame_index": 7713,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            90.74951171875,
+            440.69000244140625,
+            105.76034545898438,
+            466.00799560546875
+          ],
+          "bbox": [
+            90.76557107161358,
+            440.5768419370404,
+            105.62938141685989,
+            466.0709329613974
+          ],
+          "center": [
+            98.25492858886719,
+            453.3489990234375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3255833685398102,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7713,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            104.14480590820312,
+            435.42401123046875,
+            128.52090454101562,
+            479.11700439453125
+          ],
+          "bbox": [
+            104.15561155629031,
+            435.37562874093237,
+            128.5536463773953,
+            479.2430769621084
+          ],
+          "center": [
+            116.33285522460938,
+            457.2705078125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.33225157856941223,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7713,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            103.80122375488281,
+            446.2907409667969,
+            126.65005493164062,
+            480.6263122558594
+          ],
+          "bbox": [
+            103.74183494859615,
+            446.7737636877028,
+            126.64356548349576,
+            480.44923746697276
+          ],
+          "center": [
+            115.22563934326172,
+            463.4585266113281
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2980358600616455,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7713,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            91.63336181640625,
+            441.53857421875,
+            105.60467529296875,
+            466.19482421875
+          ],
+          "bbox": [
+            91.74443142284453,
+            441.5608550128277,
+            105.68540577780239,
+            466.3228238937068
+          ],
+          "center": [
+            98.6190185546875,
+            453.86669921875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.34588250517845154,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7713,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            731.0133056640625,
+            392.9261169433594,
+            1218.6214599609375,
+            715.0462646484375
+          ],
+          "bbox": [
+            782.6309710100081,
+            345.12556588745935,
+            1233.4357250976877,
+            713.2244210329636
+          ],
+          "center": [
+            974.8173828125,
+            553.9861907958984
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8526117205619812,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7713,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            751.33056640625,
+            255.77899169921875,
+            1061.603759765625,
+            652.5526123046875
+          ],
+          "bbox": [
+            766.8918701171875,
+            281.2223175048828,
+            1076.066748046875,
+            665.3385223388673
+          ],
+          "center": [
+            906.4671630859375,
+            454.1658020019531
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8081502914428711,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3685,
+          "frame_index": 7713,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            987.7567138671875,
+            350.655029296875,
+            1122.1365966796875,
+            561.5721435546875
+          ],
+          "bbox": [
+            987.7567138671875,
+            350.655029296875,
+            1122.1365966796875,
+            561.5721435546875
+          ],
+          "center": [
+            1054.9466552734375,
+            456.11358642578125
+          ],
+          "class_id": 24,
+          "class_name": "backpack",
+          "confidence": 0.518414318561554,
+          "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+          "timestamp_parent_backend_ms": 258745.01111111112,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 3434,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            49.72531734962246,
+            438.1075035041098,
+            70.34256939868294,
+            457.59787274439486
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3607,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            90.76557107161358,
+            440.5768419370404,
+            105.62938141685989,
+            466.0709329613974
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3622,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            374.00569257442356,
+            467.8158961018106,
+            407.68893623686495,
+            494.04574170945517
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3656,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            104.15561155629031,
+            435.37562874093237,
+            128.5536463773953,
+            479.2430769621084
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3657,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            103.74183494859615,
+            446.7737636877028,
+            126.64356548349576,
+            480.44923746697276
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3679,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            91.74443142284453,
+            441.5608550128277,
+            105.68540577780239,
+            466.3228238937068
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3681,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            782.6309710100081,
+            345.12556588745935,
+            1233.4357250976877,
+            713.2244210329636
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3682,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            829.8209838867188,
+            387.12518310546875,
+            1023.9589233398438,
+            715.4663696289062
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3683,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            766.8918701171875,
+            281.2223175048828,
+            1076.066748046875,
+            665.3385223388673
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3684,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            830.7093505859375,
+            388.387939453125,
+            1277.8961181640625,
+            715.6134033203125
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3685,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            987.7567138671875,
+            350.655029296875,
+            1122.1365966796875,
+            561.5721435546875
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 0
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 3622,
+          "frame_index": 7713,
+          "previous_state": [
+            "tracked",
+            true
+          ],
+          "state": "lost",
+          "is_activated": true,
+          "pool_membership": [
+            "lost"
+          ]
+        },
+        {
+          "track_id": 3682,
+          "frame_index": 7713,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7713,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "tracked",
+          "is_activated": true,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3684,
+          "frame_index": 7713,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3685,
+          "frame_index": 7713,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 7714,
+      "raw_detections": [
+        {
+          "original_detection_index": 0,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.883860170841217,
+          "bbox_xyxy_pixels": [
+            656.1649169921875,
+            404.22607421875,
+            1026.9520263671875,
+            714.508056640625
+          ]
+        },
+        {
+          "original_detection_index": 1,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7616870403289795,
+          "bbox_xyxy_pixels": [
+            687.83154296875,
+            287.22430419921875,
+            950.3876953125,
+            625.49658203125
+          ]
+        },
+        {
+          "original_detection_index": 2,
+          "class_id": 24,
+          "class_name": "backpack",
+          "confidence": 0.6841142177581787,
+          "bbox_xyxy_pixels": [
+            839.79150390625,
+            366.36907958984375,
+            951.7978515625,
+            517.4129028320312
+          ]
+        },
+        {
+          "original_detection_index": 3,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.38524797558784485,
+          "bbox_xyxy_pixels": [
+            49.789764404296875,
+            437.99725341796875,
+            70.37865447998047,
+            457.52423095703125
+          ]
+        },
+        {
+          "original_detection_index": 4,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3013857305049896,
+          "bbox_xyxy_pixels": [
+            90.82504272460938,
+            440.3123474121094,
+            105.77619934082031,
+            465.5939025878906
+          ]
+        },
+        {
+          "original_detection_index": 5,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.28333035111427307,
+          "bbox_xyxy_pixels": [
+            103.1556396484375,
+            435.08770751953125,
+            127.25309753417969,
+            478.52996826171875
+          ]
+        },
+        {
+          "original_detection_index": 6,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2714087665081024,
+          "bbox_xyxy_pixels": [
+            91.63369750976562,
+            441.5174865722656,
+            105.35337829589844,
+            465.6302795410156
+          ]
+        },
+        {
+          "original_detection_index": 7,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2559370696544647,
+          "bbox_xyxy_pixels": [
+            102.89812469482422,
+            435.72088623046875,
+            126.1954116821289,
+            479.71478271484375
+          ]
+        }
+      ],
+      "emitted_tracks": [
+        {
+          "track_id": 3607,
+          "frame_index": 7714,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            90.82504272460938,
+            440.3123474121094,
+            105.77619934082031,
+            465.5939025878906
+          ],
+          "bbox": [
+            90.68982696533203,
+            440.19598388671875,
+            105.67095947265625,
+            465.6910400390625
+          ],
+          "center": [
+            98.30062103271484,
+            452.953125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3013857305049896,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7714,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            103.1556396484375,
+            435.08770751953125,
+            127.25309753417969,
+            478.52996826171875
+          ],
+          "bbox": [
+            103.33834075927734,
+            435.2760925292969,
+            127.4548568725586,
+            478.6539306640625
+          ],
+          "center": [
+            115.2043685913086,
+            456.808837890625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.28333035111427307,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3434,
+          "frame_index": 7714,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            49.789764404296875,
+            437.99725341796875,
+            70.37865447998047,
+            457.52423095703125
+          ],
+          "bbox": [
+            49.77680969238281,
+            438.0332946777344,
+            70.36104583740234,
+            457.5476379394531
+          ],
+          "center": [
+            60.08420944213867,
+            447.7607421875
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.38524797558784485,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7714,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            91.63369750976562,
+            441.5174865722656,
+            105.35337829589844,
+            465.6302795410156
+          ],
+          "bbox": [
+            91.63994598388672,
+            441.54925537109375,
+            105.45072174072266,
+            465.81591796875
+          ],
+          "center": [
+            98.49353790283203,
+            453.5738830566406
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2714087665081024,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7714,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            656.1649169921875,
+            404.22607421875,
+            1026.9520263671875,
+            714.508056640625
+          ],
+          "bbox": [
+            675.0602416992188,
+            399.12908935546875,
+            1091.685302734375,
+            714.4972534179688
+          ],
+          "center": [
+            841.5584716796875,
+            559.3670654296875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.883860170841217,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7714,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            687.83154296875,
+            287.22430419921875,
+            950.3876953125,
+            625.49658203125
+          ],
+          "bbox": [
+            706.2354736328125,
+            285.63677978515625,
+            979.6437377929688,
+            636.03466796875
+          ],
+          "center": [
+            819.109619140625,
+            456.3604431152344
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7616870403289795,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "assigned_observations_including_unconfirmed": [
+        {
+          "track_id": 3434,
+          "frame_index": 7714,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            49.789764404296875,
+            437.99725341796875,
+            70.37865447998047,
+            457.52423095703125
+          ],
+          "bbox": [
+            49.776810288238124,
+            438.03328132488565,
+            70.36104205620187,
+            457.547651559477
+          ],
+          "center": [
+            60.08420944213867,
+            447.7607421875
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.38524797558784485,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3607,
+          "frame_index": 7714,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            90.82504272460938,
+            440.3123474121094,
+            105.77619934082031,
+            465.5939025878906
+          ],
+          "bbox": [
+            90.6898302916972,
+            440.19599395499546,
+            105.67095600043861,
+            465.69102536538446
+          ],
+          "center": [
+            98.30062103271484,
+            452.953125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3013857305049896,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7714,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            103.1556396484375,
+            435.08770751953125,
+            127.25309753417969,
+            478.52996826171875
+          ],
+          "bbox": [
+            103.33834048514588,
+            435.27610418207723,
+            127.45485486906077,
+            478.65392142849595
+          ],
+          "center": [
+            115.2043685913086,
+            456.808837890625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.28333035111427307,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7714,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            91.63369750976562,
+            441.5174865722656,
+            105.35337829589844,
+            465.6302795410156
+          ],
+          "bbox": [
+            91.63994504631074,
+            441.5492630291847,
+            105.45072498324342,
+            465.81592735085826
+          ],
+          "center": [
+            98.49353790283203,
+            453.5738830566406
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2714087665081024,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7714,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            656.1649169921875,
+            404.22607421875,
+            1026.9520263671875,
+            714.508056640625
+          ],
+          "bbox": [
+            675.0602214556147,
+            399.1291019818777,
+            1091.6852967999014,
+            714.4972344098894
+          ],
+          "center": [
+            841.5584716796875,
+            559.3670654296875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.883860170841217,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7714,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            687.83154296875,
+            287.22430419921875,
+            950.3876953125,
+            625.49658203125
+          ],
+          "bbox": [
+            706.2354852746291,
+            285.63679240975824,
+            979.643709283177,
+            636.0346843587697
+          ],
+          "center": [
+            819.109619140625,
+            456.3604431152344
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7616870403289795,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3686,
+          "frame_index": 7714,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            839.79150390625,
+            366.36907958984375,
+            951.7978515625,
+            517.4129028320312
+          ],
+          "bbox": [
+            839.79150390625,
+            366.36907958984375,
+            951.7978515625,
+            517.4129028320312
+          ],
+          "center": [
+            895.794677734375,
+            441.8909912109375
+          ],
+          "class_id": 24,
+          "class_name": "backpack",
+          "confidence": 0.6841142177581787,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3687,
+          "frame_index": 7714,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            102.89812469482422,
+            435.72088623046875,
+            126.1954116821289,
+            479.71478271484375
+          ],
+          "bbox": [
+            102.89812469482422,
+            435.72088623046875,
+            126.1954116821289,
+            479.71478271484375
+          ],
+          "center": [
+            114.54676818847656,
+            457.71783447265625
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2559370696544647,
+          "timestamp_estimate_from_index_fps_seconds": 258.7286836975081,
+          "timestamp_parent_backend_ms": 258778.3888888889,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 3434,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            49.776810288238124,
+            438.03328132488565,
+            70.36104205620187,
+            457.547651559477
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3607,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            90.6898302916972,
+            440.19599395499546,
+            105.67095600043861,
+            465.69102536538446
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3622,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            373.9981664200633,
+            467.81385021435597,
+            407.68141008250467,
+            494.04369582200053
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 2
+        },
+        {
+          "track_id": 3656,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            103.33834048514588,
+            435.27610418207723,
+            127.45485486906077,
+            478.65392142849595
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3657,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            103.36532394008627,
+            446.57627135522165,
+            126.0466852485997,
+            479.8769964029155
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3679,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            91.63994504631074,
+            441.5492630291847,
+            105.45072498324342,
+            465.81592735085826
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3681,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            675.0602214556147,
+            399.1291019818777,
+            1091.6852967999014,
+            714.4972344098894
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3683,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            706.2354852746291,
+            285.63679240975824,
+            979.643709283177,
+            636.0346843587697
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3685,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            987.7567138671875,
+            350.655029296875,
+            1122.1365966796875,
+            561.5721435546875
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3686,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            839.79150390625,
+            366.36907958984375,
+            951.7978515625,
+            517.4129028320312
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3687,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            102.89812469482422,
+            435.72088623046875,
+            126.1954116821289,
+            479.71478271484375
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 0
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 3657,
+          "frame_index": 7714,
+          "previous_state": [
+            "tracked",
+            true
+          ],
+          "state": "lost",
+          "is_activated": true,
+          "pool_membership": [
+            "lost"
+          ]
+        },
+        {
+          "track_id": 3685,
+          "frame_index": 7714,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3686,
+          "frame_index": 7714,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3687,
+          "frame_index": 7714,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 7715,
+      "raw_detections": [
+        {
+          "original_detection_index": 0,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8996121287345886,
+          "bbox_xyxy_pixels": [
+            593.4090576171875,
+            416.4807434082031,
+            890.7972412109375,
+            716.174560546875
+          ]
+        },
+        {
+          "original_detection_index": 1,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8021132349967957,
+          "bbox_xyxy_pixels": [
+            620.0140380859375,
+            309.43798828125,
+            827.440673828125,
+            638.4781494140625
+          ]
+        },
+        {
+          "original_detection_index": 2,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.39986473321914673,
+          "bbox_xyxy_pixels": [
+            49.891204833984375,
+            438.08612060546875,
+            70.48855590820312,
+            457.47772216796875
+          ]
+        },
+        {
+          "original_detection_index": 3,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.34062719345092773,
+          "bbox_xyxy_pixels": [
+            90.86590576171875,
+            440.5113525390625,
+            104.54365539550781,
+            465.5404052734375
+          ]
+        },
+        {
+          "original_detection_index": 4,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3365103304386139,
+          "bbox_xyxy_pixels": [
+            91.43269348144531,
+            442.1507568359375,
+            103.93894958496094,
+            465.54541015625
+          ]
+        },
+        {
+          "original_detection_index": 5,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3030257821083069,
+          "bbox_xyxy_pixels": [
+            102.98011779785156,
+            435.147216796875,
+            126.38618469238281,
+            476.13916015625
+          ]
+        },
+        {
+          "original_detection_index": 6,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2772822082042694,
+          "bbox_xyxy_pixels": [
+            102.96710205078125,
+            435.530517578125,
+            126.11801147460938,
+            478.624267578125
+          ]
+        }
+      ],
+      "emitted_tracks": [
+        {
+          "track_id": 3607,
+          "frame_index": 7715,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            90.86590576171875,
+            440.5113525390625,
+            104.54365539550781,
+            465.5404052734375
+          ],
+          "bbox": [
+            90.6993179321289,
+            440.1989440917969,
+            104.89453125,
+            465.516357421875
+          ],
+          "center": [
+            97.70478057861328,
+            453.02587890625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.34062719345092773,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7715,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            102.98011779785156,
+            435.147216796875,
+            126.38618469238281,
+            476.13916015625
+          ],
+          "bbox": [
+            102.93641662597656,
+            435.26898193359375,
+            126.49528503417969,
+            476.84356689453125
+          ],
+          "center": [
+            114.68315124511719,
+            455.6431884765625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3030257821083069,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3434,
+          "frame_index": 7715,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            49.891204833984375,
+            438.08612060546875,
+            70.48855590820312,
+            457.47772216796875
+          ],
+          "bbox": [
+            49.8623161315918,
+            438.0640869140625,
+            70.44132995605469,
+            457.4981384277344
+          ],
+          "center": [
+            60.18988037109375,
+            447.78192138671875
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.39986473321914673,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7715,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            91.43269348144531,
+            442.1507568359375,
+            103.93894958496094,
+            465.54541015625
+          ],
+          "bbox": [
+            91.47012329101562,
+            441.9736328125,
+            104.41541290283203,
+            465.577880859375
+          ],
+          "center": [
+            97.68582153320312,
+            453.84808349609375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3365103304386139,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7715,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            593.4090576171875,
+            416.4807434082031,
+            890.7972412109375,
+            716.174560546875
+          ],
+          "bbox": [
+            593.0211181640625,
+            420.6944274902344,
+            929.9009399414062,
+            716.0914306640625
+          ],
+          "center": [
+            742.1031494140625,
+            566.3276519775391
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8996121287345886,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7715,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            620.0140380859375,
+            309.43798828125,
+            827.440673828125,
+            638.4781494140625
+          ],
+          "bbox": [
+            630.2180786132812,
+            304.998779296875,
+            846.3126220703125,
+            635.4713745117188
+          ],
+          "center": [
+            723.7273559570312,
+            473.95806884765625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8021132349967957,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "assigned_observations_including_unconfirmed": [
+        {
+          "track_id": 3434,
+          "frame_index": 7715,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            49.891204833984375,
+            438.08612060546875,
+            70.48855590820312,
+            457.47772216796875
+          ],
+          "bbox": [
+            49.86231690339618,
+            438.0640762930333,
+            70.44133374879875,
+            457.4981525217633
+          ],
+          "center": [
+            60.18988037109375,
+            447.78192138671875
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.39986473321914673,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3607,
+          "frame_index": 7715,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            90.86590576171875,
+            440.5113525390625,
+            104.54365539550781,
+            465.5404052734375
+          ],
+          "bbox": [
+            90.69932142936727,
+            440.1989508417799,
+            104.89453428486894,
+            465.51637010542714
+          ],
+          "center": [
+            97.70478057861328,
+            453.02587890625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.34062719345092773,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7715,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            102.98011779785156,
+            435.147216796875,
+            126.38618469238281,
+            476.13916015625
+          ],
+          "bbox": [
+            102.93641668301248,
+            435.2689840232923,
+            126.49528443049181,
+            476.8435709723738
+          ],
+          "center": [
+            114.68315124511719,
+            455.6431884765625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.3030257821083069,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7715,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            91.43269348144531,
+            442.1507568359375,
+            103.93894958496094,
+            465.54541015625
+          ],
+          "bbox": [
+            91.47012207600793,
+            441.97364292444223,
+            104.41541557688676,
+            465.5778771026884
+          ],
+          "center": [
+            97.68582153320312,
+            453.84808349609375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3365103304386139,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7715,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            593.4090576171875,
+            416.4807434082031,
+            890.7972412109375,
+            716.174560546875
+          ],
+          "bbox": [
+            593.0210936896192,
+            420.69444088987916,
+            929.9009518124006,
+            716.0914589412653
+          ],
+          "center": [
+            742.1031494140625,
+            566.3276519775391
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8996121287345886,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7715,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            620.0140380859375,
+            309.43798828125,
+            827.440673828125,
+            638.4781494140625
+          ],
+          "bbox": [
+            630.2180594569959,
+            304.9987852794883,
+            846.3125954573061,
+            635.471385467644
+          ],
+          "center": [
+            723.7273559570312,
+            473.95806884765625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8021132349967957,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3688,
+          "frame_index": 7715,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            102.96710205078125,
+            435.530517578125,
+            126.11801147460938,
+            478.624267578125
+          ],
+          "bbox": [
+            102.96710205078125,
+            435.530517578125,
+            126.11801147460938,
+            478.624267578125
+          ],
+          "center": [
+            114.54255676269531,
+            457.077392578125
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2772822082042694,
+          "timestamp_estimate_from_index_fps_seconds": 258.76222384317794,
+          "timestamp_parent_backend_ms": 258811.7666666667,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 3434,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            49.86231690339618,
+            438.0640762930333,
+            70.44133374879875,
+            457.4981525217633
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7715,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3607,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            90.69932142936727,
+            440.1989508417799,
+            104.89453428486894,
+            465.51637010542714
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7715,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3622,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            373.990640265703,
+            467.8118043269013,
+            407.6738839281444,
+            494.0416499345459
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 3
+        },
+        {
+          "track_id": 3656,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            102.93641668301248,
+            435.2689840232923,
+            126.49528443049181,
+            476.8435709723738
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7715,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3657,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            102.8786283183833,
+            446.19140465695244,
+            125.55998962689674,
+            479.4921297046463
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7713,
+          "missing_frame_count": 2
+        },
+        {
+          "track_id": 3679,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            91.47012207600793,
+            441.97364292444223,
+            104.41541557688676,
+            465.5778771026884
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7715,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3681,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            593.0210936896192,
+            420.69444088987916,
+            929.9009518124006,
+            716.0914589412653
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7715,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3683,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            630.2180594569959,
+            304.9987852794883,
+            846.3125954573061,
+            635.471385467644
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7715,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3686,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            839.79150390625,
+            366.36907958984375,
+            951.7978515625,
+            517.4129028320312
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3687,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            102.89812469482422,
+            435.72088623046875,
+            126.1954116821289,
+            479.71478271484375
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7714,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3688,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            102.96710205078125,
+            435.530517578125,
+            126.11801147460938,
+            478.624267578125
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7715,
+          "missing_frame_count": 0
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 3686,
+          "frame_index": 7715,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3687,
+          "frame_index": 7715,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3688,
+          "frame_index": 7715,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 7716,
+      "raw_detections": [
+        {
+          "original_detection_index": 0,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.909180760383606,
+          "bbox_xyxy_pixels": [
+            540.4122314453125,
+            413.8559875488281,
+            791.544189453125,
+            695.6865234375
+          ]
+        },
+        {
+          "original_detection_index": 1,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8390631079673767,
+          "bbox_xyxy_pixels": [
+            559.2257080078125,
+            326.08148193359375,
+            738.3214111328125,
+            590.5908813476562
+          ]
+        },
+        {
+          "original_detection_index": 2,
+          "class_id": 24,
+          "class_name": "backpack",
+          "confidence": 0.4071377217769623,
+          "bbox_xyxy_pixels": [
+            657.6143798828125,
+            382.7149658203125,
+            736.7794189453125,
+            502.56298828125
+          ]
+        },
+        {
+          "original_detection_index": 3,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3814393877983093,
+          "bbox_xyxy_pixels": [
+            50.071197509765625,
+            438.14056396484375,
+            70.45831298828125,
+            457.46746826171875
+          ]
+        },
+        {
+          "original_detection_index": 4,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.360730916261673,
+          "bbox_xyxy_pixels": [
+            103.03048706054688,
+            435.74932861328125,
+            125.38442993164062,
+            478.43157958984375
+          ]
+        },
+        {
+          "original_detection_index": 5,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3464790880680084,
+          "bbox_xyxy_pixels": [
+            91.22288513183594,
+            442.0802001953125,
+            104.02180480957031,
+            465.5333251953125
+          ]
+        },
+        {
+          "original_detection_index": 6,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.31405526399612427,
+          "bbox_xyxy_pixels": [
+            103.19552612304688,
+            435.21435546875,
+            125.60208129882812,
+            477.0078125
+          ]
+        },
+        {
+          "original_detection_index": 7,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.2728250026702881,
+          "bbox_xyxy_pixels": [
+            90.80230712890625,
+            440.582275390625,
+            104.2640380859375,
+            465.5582275390625
+          ]
+        }
+      ],
+      "emitted_tracks": [
+        {
+          "track_id": 3607,
+          "frame_index": 7716,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            90.80230712890625,
+            440.582275390625,
+            104.2640380859375,
+            465.5582275390625
+          ],
+          "bbox": [
+            90.67781066894531,
+            440.26788330078125,
+            104.41143035888672,
+            465.46893310546875
+          ],
+          "center": [
+            97.53317260742188,
+            453.07025146484375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.2728250026702881,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7716,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            103.19552612304688,
+            435.21435546875,
+            125.60208129882812,
+            477.0078125
+          ],
+          "bbox": [
+            102.95414733886719,
+            435.2995300292969,
+            125.64411926269531,
+            476.7828674316406
+          ],
+          "center": [
+            114.3988037109375,
+            456.111083984375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.31405526399612427,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3434,
+          "frame_index": 7716,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            50.071197509765625,
+            438.14056396484375,
+            70.45831298828125,
+            457.46746826171875
+          ],
+          "bbox": [
+            50.01244354248047,
+            438.1121826171875,
+            70.45189666748047,
+            457.4730529785156
+          ],
+          "center": [
+            60.26475524902344,
+            447.80401611328125
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3814393877983093,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7716,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            91.22288513183594,
+            442.0802001953125,
+            104.02180480957031,
+            465.5333251953125
+          ],
+          "bbox": [
+            91.26805877685547,
+            442.0779724121094,
+            104.08556365966797,
+            465.4907531738281
+          ],
+          "center": [
+            97.62234497070312,
+            453.8067626953125
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3464790880680084,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7716,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            540.4122314453125,
+            413.8559875488281,
+            791.544189453125,
+            695.6865234375
+          ],
+          "bbox": [
+            533.5891723632812,
+            423.03265380859375,
+            803.8211059570312,
+            700.60546875
+          ],
+          "center": [
+            665.9782104492188,
+            554.7712554931641
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.909180760383606,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7716,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            559.2257080078125,
+            326.08148193359375,
+            738.3214111328125,
+            590.5908813476562
+          ],
+          "bbox": [
+            562.5460205078125,
+            323.24884033203125,
+            742.1546630859375,
+            598.8849487304688
+          ],
+          "center": [
+            648.7735595703125,
+            458.336181640625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8390631079673767,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7716,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            103.03048706054688,
+            435.74932861328125,
+            125.38442993164062,
+            478.43157958984375
+          ],
+          "bbox": [
+            102.93595123291016,
+            437.26837158203125,
+            125.33836364746094,
+            478.53363037109375
+          ],
+          "center": [
+            114.20745849609375,
+            457.0904541015625
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.360730916261673,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "assigned_observations_including_unconfirmed": [
+        {
+          "track_id": 3434,
+          "frame_index": 7716,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            50.071197509765625,
+            438.14056396484375,
+            70.45831298828125,
+            457.46746826171875
+          ],
+          "bbox": [
+            50.012445229118356,
+            438.1121972460122,
+            70.4518993323621,
+            457.4730623840302
+          ],
+          "center": [
+            60.26475524902344,
+            447.80401611328125
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3814393877983093,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3607,
+          "frame_index": 7716,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            90.80230712890625,
+            440.582275390625,
+            104.2640380859375,
+            465.5582275390625
+          ],
+          "bbox": [
+            90.67781295547513,
+            440.2678956509192,
+            104.4114284490557,
+            465.4689339497515
+          ],
+          "center": [
+            97.53317260742188,
+            453.07025146484375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.2728250026702881,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7716,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            103.19552612304688,
+            435.21435546875,
+            125.60208129882812,
+            477.0078125
+          ],
+          "bbox": [
+            102.95414976858333,
+            435.2995322496076,
+            125.64411616917424,
+            476.78287003435264
+          ],
+          "center": [
+            114.3988037109375,
+            456.111083984375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.31405526399612427,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7716,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            103.03048706054688,
+            435.74932861328125,
+            125.38442993164062,
+            478.43157958984375
+          ],
+          "bbox": [
+            102.93594782467109,
+            437.26836672600507,
+            125.33836564267128,
+            478.5336346258482
+          ],
+          "center": [
+            114.20745849609375,
+            457.0904541015625
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.360730916261673,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7716,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            91.22288513183594,
+            442.0802001953125,
+            104.02180480957031,
+            465.5333251953125
+          ],
+          "bbox": [
+            91.26805708432269,
+            442.07796072656214,
+            104.08556144641939,
+            465.49075853528075
+          ],
+          "center": [
+            97.62234497070312,
+            453.8067626953125
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3464790880680084,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7716,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            540.4122314453125,
+            413.8559875488281,
+            791.544189453125,
+            695.6865234375
+          ],
+          "bbox": [
+            533.5891864789601,
+            423.03264775968916,
+            803.8211116912737,
+            700.6054411248872
+          ],
+          "center": [
+            665.9782104492188,
+            554.7712554931641
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.909180760383606,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7716,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            559.2257080078125,
+            326.08148193359375,
+            738.3214111328125,
+            590.5908813476562
+          ],
+          "bbox": [
+            562.5460311877575,
+            323.24884461478086,
+            742.1546336862758,
+            598.8849304647467
+          ],
+          "center": [
+            648.7735595703125,
+            458.336181640625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8390631079673767,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3689,
+          "frame_index": 7716,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            657.6143798828125,
+            382.7149658203125,
+            736.7794189453125,
+            502.56298828125
+          ],
+          "bbox": [
+            657.6143798828125,
+            382.7149658203125,
+            736.7794189453125,
+            502.56298828125
+          ],
+          "center": [
+            697.1968994140625,
+            442.63897705078125
+          ],
+          "class_id": 24,
+          "class_name": "backpack",
+          "confidence": 0.4071377217769623,
+          "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+          "timestamp_parent_backend_ms": 258845.14444444442,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 3434,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            50.012445229118356,
+            438.1121972460122,
+            70.4518993323621,
+            457.4730623840302
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3607,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            90.67781295547513,
+            440.2678956509192,
+            104.4114284490557,
+            465.4689339497515
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3622,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            373.98311411134273,
+            467.8097584394467,
+            407.6663577737841,
+            494.03960404709125
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 4
+        },
+        {
+          "track_id": 3656,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            102.95414976858333,
+            435.2995322496076,
+            125.64411616917424,
+            476.78287003435264
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3657,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            102.93594782467109,
+            437.26836672600507,
+            125.33836564267128,
+            478.5336346258482
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3679,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            91.26805708432269,
+            442.07796072656214,
+            104.08556144641939,
+            465.49075853528075
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3681,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            533.5891864789601,
+            423.03264775968916,
+            803.8211116912737,
+            700.6054411248872
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3683,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            562.5460311877575,
+            323.24884461478086,
+            742.1546336862758,
+            598.8849304647467
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3688,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            102.96710205078125,
+            435.530517578125,
+            126.11801147460938,
+            478.624267578125
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7715,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3689,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            657.6143798828125,
+            382.7149658203125,
+            736.7794189453125,
+            502.56298828125
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 0
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 3657,
+          "frame_index": 7716,
+          "previous_state": [
+            "lost",
+            true
+          ],
+          "state": "tracked",
+          "is_activated": true,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3688,
+          "frame_index": 7716,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3689,
+          "frame_index": 7716,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 7717,
+      "raw_detections": [
+        {
+          "original_detection_index": 0,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.9048710465431213,
+          "bbox_xyxy_pixels": [
+            496.31170654296875,
+            418.5126647949219,
+            710.7621459960938,
+            667.411865234375
+          ]
+        },
+        {
+          "original_detection_index": 1,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7570672631263733,
+          "bbox_xyxy_pixels": [
+            510.6939697265625,
+            336.48321533203125,
+            681.357177734375,
+            574.6336059570312
+          ]
+        },
+        {
+          "original_detection_index": 2,
+          "class_id": 24,
+          "class_name": "backpack",
+          "confidence": 0.42968618869781494,
+          "bbox_xyxy_pixels": [
+            592.6368408203125,
+            390.97210693359375,
+            672.0841064453125,
+            496.16015625
+          ]
+        },
+        {
+          "original_detection_index": 3,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3892309069633484,
+          "bbox_xyxy_pixels": [
+            49.95066833496094,
+            438.2186584472656,
+            70.47434997558594,
+            457.3390808105469
+          ]
+        },
+        {
+          "original_detection_index": 4,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3740280866622925,
+          "bbox_xyxy_pixels": [
+            102.181640625,
+            435.660400390625,
+            124.619384765625,
+            478.127197265625
+          ]
+        },
+        {
+          "original_detection_index": 5,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.34605470299720764,
+          "bbox_xyxy_pixels": [
+            102.47381591796875,
+            435.13690185546875,
+            124.61488342285156,
+            477.02032470703125
+          ]
+        },
+        {
+          "original_detection_index": 6,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.27987998723983765,
+          "bbox_xyxy_pixels": [
+            123.22756958007812,
+            437.61981201171875,
+            139.16448974609375,
+            454.92047119140625
+          ]
+        }
+      ],
+      "emitted_tracks": [
+        {
+          "track_id": 3656,
+          "frame_index": 7717,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            102.47381591796875,
+            435.13690185546875,
+            124.61488342285156,
+            477.02032470703125
+          ],
+          "bbox": [
+            102.49320983886719,
+            435.2520751953125,
+            124.69651794433594,
+            476.7855224609375
+          ],
+          "center": [
+            113.54434967041016,
+            456.07861328125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.34605470299720764,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3434,
+          "frame_index": 7717,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            49.95066833496094,
+            438.2186584472656,
+            70.47434997558594,
+            457.3390808105469
+          ],
+          "bbox": [
+            49.98759460449219,
+            438.1822509765625,
+            70.46659088134766,
+            457.3791809082031
+          ],
+          "center": [
+            60.21250915527344,
+            447.77886962890625
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3892309069633484,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7717,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            496.31170654296875,
+            418.5126647949219,
+            710.7621459960938,
+            667.411865234375
+          ],
+          "bbox": [
+            488.10223388671875,
+            425.5854187011719,
+            710.4937744140625,
+            674.5895385742188
+          ],
+          "center": [
+            603.5369262695312,
+            542.9622650146484
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.9048710465431213,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7717,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            510.6939697265625,
+            336.48321533203125,
+            681.357177734375,
+            574.6336059570312
+          ],
+          "bbox": [
+            510.1366271972656,
+            336.1520080566406,
+            676.7220458984375,
+            576.065673828125
+          ],
+          "center": [
+            596.0255737304688,
+            455.55841064453125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7570672631263733,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7717,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            102.181640625,
+            435.660400390625,
+            124.619384765625,
+            478.127197265625
+          ],
+          "bbox": [
+            102.28279113769531,
+            435.7767028808594,
+            124.70025634765625,
+            478.112548828125
+          ],
+          "center": [
+            113.4005126953125,
+            456.893798828125
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3740280866622925,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "assigned_observations_including_unconfirmed": [
+        {
+          "track_id": 3434,
+          "frame_index": 7717,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            49.95066833496094,
+            438.2186584472656,
+            70.47434997558594,
+            457.3390808105469
+          ],
+          "bbox": [
+            49.98759649570666,
+            438.1822582401301,
+            70.46659453117807,
+            457.3791734649895
+          ],
+          "center": [
+            60.21250915527344,
+            447.77886962890625
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.3892309069633484,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7717,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            102.47381591796875,
+            435.13690185546875,
+            124.61488342285156,
+            477.02032470703125
+          ],
+          "bbox": [
+            102.49320948607527,
+            435.2520772069649,
+            124.69651873703089,
+            476.7855083529361
+          ],
+          "center": [
+            113.54434967041016,
+            456.07861328125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.34605470299720764,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7717,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            102.181640625,
+            435.660400390625,
+            124.619384765625,
+            478.127197265625
+          ],
+          "bbox": [
+            102.28279361468184,
+            435.77669371490515,
+            124.70025692801295,
+            478.11255597661557
+          ],
+          "center": [
+            113.4005126953125,
+            456.893798828125
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3740280866622925,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7717,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            496.31170654296875,
+            418.5126647949219,
+            710.7621459960938,
+            667.411865234375
+          ],
+          "bbox": [
+            488.1022284805153,
+            425.5854262876377,
+            710.4937685970626,
+            674.5895343791109
+          ],
+          "center": [
+            603.5369262695312,
+            542.9622650146484
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.9048710465431213,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7717,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            510.6939697265625,
+            336.48321533203125,
+            681.357177734375,
+            574.6336059570312
+          ],
+          "bbox": [
+            510.13662804878095,
+            336.1519969617179,
+            676.7220509487865,
+            576.065701581859
+          ],
+          "center": [
+            596.0255737304688,
+            455.55841064453125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7570672631263733,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3690,
+          "frame_index": 7717,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            592.6368408203125,
+            390.97210693359375,
+            672.0841064453125,
+            496.16015625
+          ],
+          "bbox": [
+            592.6368408203125,
+            390.97210693359375,
+            672.0841064453125,
+            496.16015625
+          ],
+          "center": [
+            632.3604736328125,
+            443.5661315917969
+          ],
+          "class_id": 24,
+          "class_name": "backpack",
+          "confidence": 0.42968618869781494,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3691,
+          "frame_index": 7717,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            123.22756958007812,
+            437.61981201171875,
+            139.16448974609375,
+            454.92047119140625
+          ],
+          "bbox": [
+            123.22756958007812,
+            437.61981201171875,
+            139.16448974609375,
+            454.92047119140625
+          ],
+          "center": [
+            131.19602966308594,
+            446.2701416015625
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.27987998723983765,
+          "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+          "timestamp_parent_backend_ms": 258878.50000000003,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 3434,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            49.98759649570666,
+            438.1822582401301,
+            70.46659453117807,
+            457.3791734649895
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3607,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            90.43392420241985,
+            439.80341801897356,
+            104.19160168239756,
+            465.26998928901736
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3622,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            373.97558795698245,
+            467.80771255199204,
+            407.65883161942384,
+            494.0375581596366
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7712,
+          "missing_frame_count": 5
+        },
+        {
+          "track_id": 3656,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            102.49320948607527,
+            435.2520772069649,
+            124.69651873703089,
+            476.7855083529361
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3657,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            102.28279361468184,
+            435.77669371490515,
+            124.70025692801295,
+            478.11255597661557
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3679,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            91.15143631945521,
+            442.17813573218075,
+            103.87630508160467,
+            465.3248958415182
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3681,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            488.1022284805153,
+            425.5854262876377,
+            710.4937685970626,
+            674.5895343791109
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3683,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            510.13662804878095,
+            336.1519969617179,
+            676.7220509487865,
+            576.065701581859
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3689,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            657.6143798828125,
+            382.7149658203125,
+            736.7794189453125,
+            502.56298828125
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3690,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            592.6368408203125,
+            390.97210693359375,
+            672.0841064453125,
+            496.16015625
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3691,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            123.22756958007812,
+            437.61981201171875,
+            139.16448974609375,
+            454.92047119140625
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 0
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 3607,
+          "frame_index": 7717,
+          "previous_state": [
+            "tracked",
+            true
+          ],
+          "state": "lost",
+          "is_activated": true,
+          "pool_membership": [
+            "lost"
+          ]
+        },
+        {
+          "track_id": 3679,
+          "frame_index": 7717,
+          "previous_state": [
+            "tracked",
+            true
+          ],
+          "state": "lost",
+          "is_activated": true,
+          "pool_membership": [
+            "lost"
+          ]
+        },
+        {
+          "track_id": 3689,
+          "frame_index": 7717,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3690,
+          "frame_index": 7717,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3691,
+          "frame_index": 7717,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    },
+    {
+      "frame_index": 7718,
+      "raw_detections": [
+        {
+          "original_detection_index": 0,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8810086250305176,
+          "bbox_xyxy_pixels": [
+            463.1061706542969,
+            452.6968688964844,
+            648.1376953125,
+            647.7808837890625
+          ]
+        },
+        {
+          "original_detection_index": 1,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8334238529205322,
+          "bbox_xyxy_pixels": [
+            468.3758544921875,
+            349.17828369140625,
+            616.57666015625,
+            565.6721801757812
+          ]
+        },
+        {
+          "original_detection_index": 2,
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.4133307635784149,
+          "bbox_xyxy_pixels": [
+            102.06733703613281,
+            435.1540222167969,
+            123.96499633789062,
+            476.3210754394531
+          ]
+        },
+        {
+          "original_detection_index": 3,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.38826122879981995,
+          "bbox_xyxy_pixels": [
+            101.6885986328125,
+            435.5375671386719,
+            124.17677307128906,
+            477.6979675292969
+          ]
+        },
+        {
+          "original_detection_index": 4,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37213078141212463,
+          "bbox_xyxy_pixels": [
+            49.957557678222656,
+            438.12738037109375,
+            70.43370056152344,
+            457.44207763671875
+          ]
+        },
+        {
+          "original_detection_index": 5,
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.293425053358078,
+          "bbox_xyxy_pixels": [
+            123.1905517578125,
+            437.6884765625,
+            139.11181640625,
+            455.0086669921875
+          ]
+        },
+        {
+          "original_detection_index": 6,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.27342545986175537,
+          "bbox_xyxy_pixels": [
+            374.0067138671875,
+            468.025390625,
+            407.6927490234375,
+            493.95611572265625
+          ]
+        }
+      ],
+      "emitted_tracks": [
+        {
+          "track_id": 3656,
+          "frame_index": 7718,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            102.06733703613281,
+            435.1540222167969,
+            123.96499633789062,
+            476.3210754394531
+          ],
+          "bbox": [
+            102.06761169433594,
+            435.2391662597656,
+            123.94404602050781,
+            476.3357238769531
+          ],
+          "center": [
+            113.01616668701172,
+            455.737548828125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.4133307635784149,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3434,
+          "frame_index": 7718,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            49.957557678222656,
+            438.12738037109375,
+            70.43370056152344,
+            457.44207763671875
+          ],
+          "bbox": [
+            49.9811897277832,
+            438.1480712890625,
+            70.44520568847656,
+            457.412841796875
+          ],
+          "center": [
+            60.19562911987305,
+            447.78472900390625
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37213078141212463,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7718,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            463.1061706542969,
+            452.6968688964844,
+            648.1376953125,
+            647.7808837890625
+          ],
+          "bbox": [
+            454.4371032714844,
+            450.8297424316406,
+            641.85791015625,
+            651.9149169921875
+          ],
+          "center": [
+            555.6219329833984,
+            550.2388763427734
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8810086250305176,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7718,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            468.3758544921875,
+            349.17828369140625,
+            616.57666015625,
+            565.6721801757812
+          ],
+          "bbox": [
+            465.7999267578125,
+            348.9549560546875,
+            612.25146484375,
+            563.9603271484375
+          ],
+          "center": [
+            542.4762573242188,
+            457.42523193359375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8334238529205322,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7718,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            101.6885986328125,
+            435.5375671386719,
+            124.17677307128906,
+            477.6979675292969
+          ],
+          "bbox": [
+            101.73543548583984,
+            435.1491394042969,
+            124.19173431396484,
+            477.6874084472656
+          ],
+          "center": [
+            112.93268585205078,
+            456.6177673339844
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.38826122879981995,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3622,
+          "frame_index": 7718,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            374.0067138671875,
+            468.025390625,
+            407.6927490234375,
+            493.95611572265625
+          ],
+          "bbox": [
+            374.0040283203125,
+            468.01031494140625,
+            407.68988037109375,
+            493.9615783691406
+          ],
+          "center": [
+            390.8497314453125,
+            480.9907531738281
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.27342545986175537,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "assigned_observations_including_unconfirmed": [
+        {
+          "track_id": 3434,
+          "frame_index": 7718,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            49.957557678222656,
+            438.12738037109375,
+            70.43370056152344,
+            457.44207763671875
+          ],
+          "bbox": [
+            49.981190198474536,
+            438.1480772036918,
+            70.44520758623528,
+            457.41282943266486
+          ],
+          "center": [
+            60.19562911987305,
+            447.78472900390625
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37213078141212463,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3622,
+          "frame_index": 7718,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            374.0067138671875,
+            468.025390625,
+            407.6927490234375,
+            493.95611572265625
+          ],
+          "bbox": [
+            374.0040431709821,
+            468.0103108384535,
+            407.6898854466704,
+            493.9615647552372
+          ],
+          "center": [
+            390.8497314453125,
+            480.9907531738281
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.27342545986175537,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3656,
+          "frame_index": 7718,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            102.06733703613281,
+            435.1540222167969,
+            123.96499633789062,
+            476.3210754394531
+          ],
+          "bbox": [
+            102.06760921567192,
+            435.2391796143093,
+            123.94404590485422,
+            476.33573599104824
+          ],
+          "center": [
+            113.01616668701172,
+            455.737548828125
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.4133307635784149,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3657,
+          "frame_index": 7718,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            101.6885986328125,
+            435.5375671386719,
+            124.17677307128906,
+            477.6979675292969
+          ],
+          "bbox": [
+            101.73543694885173,
+            435.1491307372122,
+            124.19173810154655,
+            477.68741182265603
+          ],
+          "center": [
+            112.93268585205078,
+            456.6177673339844
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.38826122879981995,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3681,
+          "frame_index": 7718,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            463.1061706542969,
+            452.6968688964844,
+            648.1376953125,
+            647.7808837890625
+          ],
+          "bbox": [
+            454.43711730554764,
+            450.8297273686164,
+            641.8579228607068,
+            651.9149412074643
+          ],
+          "center": [
+            555.6219329833984,
+            550.2388763427734
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8810086250305176,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3683,
+          "frame_index": 7718,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            468.3758544921875,
+            349.17828369140625,
+            616.57666015625,
+            565.6721801757812
+          ],
+          "bbox": [
+            465.7999299502725,
+            348.9549685467314,
+            612.2514528379907,
+            563.9603038211155
+          ],
+          "center": [
+            542.4762573242188,
+            457.42523193359375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8334238529205322,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 3692,
+          "frame_index": 7718,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            123.1905517578125,
+            437.6884765625,
+            139.11181640625,
+            455.0086669921875
+          ],
+          "bbox": [
+            123.1905517578125,
+            437.6884765625,
+            139.11181640625,
+            455.0086669921875
+          ],
+          "center": [
+            131.15118408203125,
+            446.34857177734375
+          ],
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.293425053358078,
+          "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+          "timestamp_parent_backend_ms": 258911.9,
+          "emitted": false,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ],
+      "lifecycle_snapshots": [
+        {
+          "track_id": 3434,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            49.981190198474536,
+            438.1480772036918,
+            70.44520758623528,
+            457.41282943266486
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7718,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3607,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            90.20206644256314,
+            439.47170687263366,
+            103.95974392254085,
+            464.93827814267746
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 2
+        },
+        {
+          "track_id": 3622,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            374.0040431709821,
+            468.0103108384535,
+            407.6898854466704,
+            493.9615647552372
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7718,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3656,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            102.06760921567192,
+            435.2391796143093,
+            123.94404590485422,
+            476.33573599104824
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7718,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3657,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            101.73543694885173,
+            435.1491307372122,
+            124.19173810154655,
+            477.68741182265603
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7718,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3679,
+          "state": "lost",
+          "library_state": "lost",
+          "pool_membership": [
+            "lost"
+          ],
+          "is_activated": true,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            90.98849775461412,
+            442.14529188810883,
+            103.71336651676357,
+            465.29205199744626
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7716,
+          "missing_frame_count": 2
+        },
+        {
+          "track_id": 3681,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            454.43711730554764,
+            450.8297273686164,
+            641.8579228607068,
+            651.9149412074643
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7718,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3683,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": true,
+          "observed_this_frame": true,
+          "emitted": true,
+          "bbox_kalman_estimate": [
+            465.7999299502725,
+            348.9549685467314,
+            612.2514528379907,
+            563.9603038211155
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7718,
+          "missing_frame_count": 0
+        },
+        {
+          "track_id": 3690,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            592.6368408203125,
+            390.97210693359375,
+            672.0841064453125,
+            496.16015625
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3691,
+          "state": "removed",
+          "library_state": "removed",
+          "pool_membership": [
+            "removed_this_frame"
+          ],
+          "is_activated": false,
+          "observed_this_frame": false,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            123.22756958007812,
+            437.61981201171875,
+            139.16448974609375,
+            454.92047119140625
+          ],
+          "bbox_provenance": "tracker_estimate_not_current_detection",
+          "latest_observed_frame": 7717,
+          "missing_frame_count": 1
+        },
+        {
+          "track_id": 3692,
+          "state": "tracked",
+          "library_state": "tracked",
+          "pool_membership": [
+            "tracked"
+          ],
+          "is_activated": false,
+          "observed_this_frame": true,
+          "emitted": false,
+          "bbox_kalman_estimate": [
+            123.1905517578125,
+            437.6884765625,
+            139.11181640625,
+            455.0086669921875
+          ],
+          "bbox_provenance": "filtered_current_detection",
+          "latest_observed_frame": 7718,
+          "missing_frame_count": 0
+        }
+      ],
+      "lifecycle_transitions": [
+        {
+          "track_id": 3622,
+          "frame_index": 7718,
+          "previous_state": [
+            "lost",
+            true
+          ],
+          "state": "tracked",
+          "is_activated": true,
+          "pool_membership": [
+            "tracked"
+          ]
+        },
+        {
+          "track_id": 3690,
+          "frame_index": 7718,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3691,
+          "frame_index": 7718,
+          "previous_state": [
+            "tracked",
+            false
+          ],
+          "state": "removed",
+          "is_activated": false,
+          "pool_membership": [
+            "removed_this_frame"
+          ]
+        },
+        {
+          "track_id": 3692,
+          "frame_index": 7718,
+          "previous_state": null,
+          "state": "tracked",
+          "is_activated": false,
+          "pool_membership": [
+            "tracked"
+          ]
+        }
+      ]
+    }
+  ]
+}

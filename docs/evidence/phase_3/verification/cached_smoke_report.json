@@ -1,0 +1,101 @@
+{
+  "claim_type": "EXPERIMENT_RESULT",
+  "scope": "Actual pinned BOTSORT CPU compatibility smoke on first 200 sequential retained TOR3-PAGI detector rows. No YOLO model loading/inference; no full-video tracking/quality claim. img=None because ReID and GMC explicitly disabled.",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "ultralytics": "8.4.175",
+    "lap": "0.5.13",
+    "numpy": "2.5.2",
+    "torch": "2.13.0+cpu"
+  },
+  "input": {
+    "path": "/tmp/kaggle-phase2-yolo26m-output-20261011/yolo_detection/20261011T052950_360560Z_ed399fb8/frame_detections.jsonl",
+    "sha256": "033a2815d3abbd23327936a1b9d948b2b9b7d312796516e5ee46aec5685be345",
+    "original_detector_run_id": "20261011T052950_360560Z_ed399fb8",
+    "first_frame_index": 0,
+    "last_frame_index": 199,
+    "frames_processed": 200
+  },
+  "tracker": {
+    "class": "ultralytics.trackers.bot_sort.BOTSORT",
+    "constructor_signature": "(args: 'Any')",
+    "update_signature": "(self, results, img: 'np.ndarray | None' = None, feats: 'np.ndarray | None' = None, **kwargs) -> 'np.ndarray'",
+    "yaml_default_sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01",
+    "published_defaults": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "sparseOptFlow",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "experiment_config": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "none",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "override_provenance": {
+      "gmc_method": "PROPOSAL: none disables compensation for controlled Phase3 baseline; no shake correction capability/need decision",
+      "with_reid": "REQUIREMENT: disabled in Phase3 baseline; ReID implementation/experiments are Phase4"
+    },
+    "actual_encoder_is_none": true,
+    "actual_gmc_method": null,
+    "max_frames_lost": 30,
+    "input_box_columns": [
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "confidence",
+      "class_id"
+    ],
+    "output_columns": [
+      "kalman_x1",
+      "kalman_y1",
+      "kalman_x2",
+      "kalman_y2",
+      "track_id",
+      "score",
+      "class_id",
+      "original_detection_index"
+    ],
+    "output_empty_shape_can_be": [
+      0
+    ],
+    "association_class_gate": false,
+    "class_value_updated_from_latest_match": true,
+    "frame_id_semantics": "1-based update-call count, equals 0-based cached video frame_index+1",
+    "track_id_scope": "one tracker instance, reset on new video; not physical object proof"
+  },
+  "validation": {
+    "every_output_links_valid_source_detection_index": true,
+    "every_output_class_and_score_match_linked_detection": true,
+    "frame_id_increment_correct_on_every_row": true,
+    "finite_output_and_eight_column_contract": true
+  },
+  "cpu_smoke_wall_seconds": 0.12396443400029966,
+  "unique_emitted_track_ids": 14,
+  "number_of_output_records": 651,
+  "limitations": [
+    "Only first 200 real rows processed in this compatibility test.",
+    "Source detector uses published conf=0.25 baseline; retained cache does not provide the complete lower-score (0.1,0.25) observation range used by the standard BoT-SORT second association.",
+    "No actual image/physical identity review performed by this smoke.",
+    "No ID-switch, fragmentation, accuracy, tracking metric or counting claim.",
+    "Other scenes, night, ReID, GMC and tuned thresholds remain untested."
+  ]
+}

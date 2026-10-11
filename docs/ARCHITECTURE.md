@@ -4,7 +4,7 @@
 
 **REQUIREMENT:** Develop phase by phase: Kaggle prototype first, production architecture after the single-video pipeline, eight-video processing, and manual audit are stable.
 
-Phase 0 establishes specifications and conceptual boundaries. It does not implement model inference, video processing, stabilization, UI, Docker, or GPU orchestration. The architecture below is the confirmed target with unresolved integration details, not an already working application.
+Phase 0 established specifications and conceptual boundaries. Current executed capabilities are Phase 1 inspection, Phase 2 one-video YOLO26M detection, and Phase 3 direct BoT-SORT replay of the retained detections; see [detection status](YOLO_DETECTION.md), [Phase 2 gate](PHASE_2_REVIEW.md) and [tracking status](BOTSORT_TRACKING.md). The architecture below remains the confirmed target, with later components and unresolved integration details still unimplemented.
 
 ## 2. Confirmed Prototype Pipeline
 
@@ -39,7 +39,9 @@ Produces frame-level observations across the frame. Does not assign persistent i
 
 ### Tracking and ReID
 
-BoT-SORT associates observations over time. ReID provides appearance-assisted identity association as part of the target architecture. Exact integration is open; do not assume a verified implementation or identity guarantees.
+BoT-SORT associates observations over time. The Phase 3 notebook verifies direct Ultralytics 8.4.175 `BOTSORT` integration and replays the byte-identical retained detection stream against the matching video, without detector inference. Its isolated CPU baseline disables ReID and GMC and retains raw labels, detection linkage and lifecycle evidence. Source association is class-agnostic and uses the latest matched raw class. These settings are recorded untuned experiment configuration, not product identity/category policies.
+
+ReID remains the target appearance-assisted association component. Its enabled model/assets/integration and benefit remain OPEN; cached detector features are unavailable for the verified native `auto` appearance path. Baseline IDs do not guarantee physical-object identity. ReID removal, tracker replacement and GMC need are not decided by the disabled baseline.
 
 ### Track State
 
@@ -100,9 +102,9 @@ Configuration covers project, store/location, video, geometry, model, tracking/R
 
 ## 8. Experiment Artifacts and Evaluation
 
-Future meaningful experiments retain input identity, verified model/dependency identifiers, explicit configuration, device information, preprocessing variant, annotated evidence, observations actually measured, conclusions, and limitations.
+Meaningful experiments retain input identity, verified model/dependency identifiers, explicit configuration, device information, preprocessing variant, annotated evidence, observations actually measured, conclusions, and limitations.
 
-No actual experiment result is reported by this Phase 0 documentation task. There is no formal ground truth. Software invariants and visual plausibility cannot be presented as accuracy, precision, recall, F1, MAPE, or counting performance. See [TEST_PLAN.md](TEST_PLAN.md) and [EVALUATION.md](EVALUATION.md).
+Phase 0 itself reported no experiment. Subsequent Phase 1–3 records are retained with their individual scopes; Phase 3 separates successful cached execution, software diagnostics and evidence-linked temporal review in [BOTSORT_TRACKING.md](BOTSORT_TRACKING.md). Its unique IDs, missing-observation gaps and raw-class changes are not physical vehicle totals or confirmed ID-switch counts. There is no formal ground truth. Software invariants and visual plausibility cannot be presented as accuracy, precision, recall, F1, MAPE, or counting performance. See [TEST_PLAN.md](TEST_PLAN.md) and [EVALUATION.md](EVALUATION.md).
 
 ## 9. Production Transition
 

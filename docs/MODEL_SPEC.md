@@ -50,7 +50,11 @@ Responsibilities:
 - use the selected implementation's motion/temporal association
 - expose track updates and the evidence needed to inspect gaps and identity changes
 
-**OPEN TECHNICAL DECISION:** The selected integration/library, version, lifecycle behavior, available ReID/GMC capability, and all tracker parameters must be verified. Confirmation, minimum age, lost-track duration, buffer, association thresholds, and handling of ID switches are not assigned numerical values.
+**EXPERIMENT RESULT — verified Phase 3 baseline:** the pinned Ultralytics 8.4.175 implementation is `ultralytics.trackers.bot_sort.BOTSORT`, constructed with `BOTSORT(args)` and fed the retained Phase 2 detections through `update(results, img=None, feats=None, **kwargs)`. Native-pixel `Boxes` rows contain box coordinates, confidence and raw class; activated outputs expose eight fields, including `track_id` and the original detection index. Empty detection rows still advance the tracker. Source/API/default verification and actual Kaggle execution are retained in [tracking status](BOTSORT_TRACKING.md).
+
+[Run `20261011T060227_579936Z_05ebe213`](evidence/phase_3/20261011T060227_579936Z_05ebe213/tracking_report.json) completed 10,282 aligned cached frames without detector inference, with Ultralytics 8.4.175 and lap 0.5.13. Association ran on CPU despite two visible Tesla T4s. **PROPOSAL — untuned baseline:** published `botsort.yaml` settings were retained with explicit `with_reid=False` and `gmc_method='none'`. The verified `track_buffer=30` means 30 update-call frames without FPS rescaling; it is not an accepted elapsed-source-time or product lifecycle policy. Association is class-agnostic and emitted class/score follow the latest matched raw detection.
+
+**OPEN TECHNICAL DECISION:** suitable confirmation/lifecycle/association settings, physical-identity recovery, category stabilization, enabled ReID integration and GMC need remain unresolved. The parent cache discarded detections below `conf=0.25`; it cannot reproduce the tracker's complete lower-confidence second-stage range. Recorded defaults/source behavior establish what this baseline did, not that its thresholds or identity outcomes are suitable for counting.
 
 Tracker IDs are not a guarantee of physical-object identity. Fragmentation, gaps, overlaps, and ID switches require inspection in Phase 3 and later ReID experiments.
 
@@ -62,7 +66,9 @@ Its purpose is to use appearance information when it can help maintain or recove
 
 Potential inspection cases include overlap, occlusion, similar-looking vehicles, temporary disappearance, and handheld shake.
 
-**OPEN TECHNICAL DECISION:** Verify the selected tracker implementation's real ReID support. Model/weights source, embeddings, association strategy, gallery/history management where applicable, thresholds, and enabled configuration remain open.
+**FACT — verified source boundary:** the pinned BoT-SORT implementation exposes ReID configuration. Its native `model='auto'` appearance path needs detector features that are absent from the retained Phase 2 cache; the Phase 3 baseline has no encoder and runs no ReID inference. Enabling `auto` on this cache is not an established supported experiment. See [tracking status](BOTSORT_TRACKING.md).
+
+**OPEN TECHNICAL DECISION:** model/weights source, usable embeddings/integration, enabled configuration, association/gallery policies where applicable, thresholds, resource cost and actual identity benefit remain open. Source capability verification does not establish a working or beneficial ReID configuration.
 
 **EXPERIMENT REQUIRED:** Phase 4 must document the selected capability and run controlled comparisons where supported, including ReID disabled as an experimental baseline. A baseline comparison is not permission to remove ReID from the target architecture. Unsupported integration or ineffective results must be reported with evidence and a proposed decision.
 
@@ -103,7 +109,7 @@ These fields and conceptual data needs do not select a library data structure. E
 
 **CONFIRMED:** The camera remains at its location during a video; small handheld shake is possible. Do not implement stabilization in this specification task.
 
-Phase 1 inspects visual shake and candidate geometry alignment using actual videos. Effects on actual detection and trajectory outputs require later model/tracker experiments. Whether GMC/stabilization is necessary, supported, and appropriate remains open; no strategy is selected and no tracker capability is assumed.
+Phase 1 inspects visual shake and candidate geometry alignment using actual videos. The pinned tracker exposes a GMC setting; Phase 3 explicitly uses `gmc_method='none'` to isolate cached detection association and executes no correction. Whether GMC/stabilization is necessary or helpful remains open; the disabled baseline does not decide a correction strategy or benefit.
 
 ## 8. Night Preprocessing
 
@@ -115,4 +121,4 @@ Evaluate comparable video samples with explicit configuration and retain both im
 
 Record verified model/library identifiers, dependency versions, input identity, device choice, and explicit configuration during future runs. Do not invent versions or store secret values in configuration.
 
-Phase 0 defined this model specification. Phase 1's inspection tool does not load models, run inference/tracker/ReID, or measure their performance; its TOR3 evidence passed [scoped acceptance](PHASE_1_ACCEPTANCE.md). The user's conditional instruction authorized [Phase 2](PHASE_2_TASK.md); CPU smoke and the selected TOR3-PAGI Kaggle GPU technical baseline have now completed with retained execution and sampled review evidence. The original Kaggle report's pending manual-review fields are preserved; subsequent review is documented separately in [detection status](YOLO_DETECTION.md). No Phase 3 authorization, tracking, ReID, crossing/counting, tuned production settings, or model-quality metrics are established. See [OPEN_DECISIONS.md](OPEN_DECISIONS.md), [CONFIG_SCHEMA.md](CONFIG_SCHEMA.md), [TEST_PLAN.md](TEST_PLAN.md), and [EVALUATION.md](EVALUATION.md).
+Phase 0 defined this model specification. Phase 1's inspection tool does not load models, run inference/tracker/ReID, or measure their performance; its TOR3 evidence passed [scoped acceptance](PHASE_1_ACCEPTANCE.md). The authorized [Phase 2](PHASE_2_TASK.md) CPU smoke and TOR3-PAGI Kaggle GPU technical baseline completed with retained execution and sampled review evidence. The original Kaggle report's pending manual-review fields are preserved; subsequent review is separate in [detection status](YOLO_DETECTION.md). The user's later instruction authorized [Phase 3](PHASE_3_TASK.md) after the [retained-evidence gate](PHASE_2_REVIEW.md) passed, without rerunning Phase 2. Actual cached BoT-SORT execution, temporal review and acceptance limits are documented in [tracking status](BOTSORT_TRACKING.md). Direction and counting state remain uncomputed; observed raw-box centers do not select the OPEN geometry anchor. Phase 4/ReID experiments, crossing/counting, tuned production settings and model-quality metrics are not established. See [OPEN_DECISIONS.md](OPEN_DECISIONS.md), [CONFIG_SCHEMA.md](CONFIG_SCHEMA.md), [TEST_PLAN.md](TEST_PLAN.md), and [EVALUATION.md](EVALUATION.md).

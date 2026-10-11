@@ -1,0 +1,89 @@
+{
+  "created_utc": "2026-10-11T05:57:33.593161+00:00",
+  "notebook": "notebooks/03_botsort_tracking.ipynb",
+  "scope": "CPU cached adapter validation plus identified negative software fixtures; no YOLO inference, no Phase 2 rerun, no full Phase 3 run",
+  "actual_parent_run_id": "20261011T052950_360560Z_ed399fb8",
+  "actual_cached_rows_in_equivalence_smoke": 200,
+  "checks": [
+    {
+      "name": "actual_cached_200_frame_baseline_observer_output_lifecycle_equivalence",
+      "status": "passed"
+    },
+    {
+      "name": "actual_cached_input_hash_and_all_10282_rows_validated",
+      "status": "passed"
+    },
+    {
+      "name": "actual_empty_cached_adapter_update_ages_track",
+      "status": "passed"
+    },
+    {
+      "name": "new_tracker_has_fresh_ids",
+      "status": "passed"
+    },
+    {
+      "name": "wrong_input_hash_rejected",
+      "status": "passed",
+      "expected_rejection": "SHA-256 mismatch for /tmp/traffic-review-input/TOR3-PAGI.mp4: 606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c"
+    },
+    {
+      "name": "out_of_order_cached_frame_rejected",
+      "status": "passed",
+      "expected_rejection": "Out-of-order/missing/extra cached frame: expected 0."
+    },
+    {
+      "name": "mixed_video_row_rejected",
+      "status": "passed",
+      "expected_rejection": "Wrong video identity at frame 0."
+    },
+    {
+      "name": "degenerate_raw_box_rejected",
+      "status": "passed",
+      "expected_rejection": "Raw detection box must be positive and in-frame."
+    },
+    {
+      "name": "nonfinite_confidence_rejected",
+      "status": "passed",
+      "expected_rejection": "Invalid detection confidence."
+    },
+    {
+      "name": "fabricated_class_name_rejected",
+      "status": "passed",
+      "expected_rejection": "Class name does not match the retained model mapping."
+    },
+    {
+      "name": "duplicate_emitted_ids_rejected",
+      "status": "passed",
+      "expected_rejection": "Invalid/duplicate emitted ID."
+    },
+    {
+      "name": "out_of_range_original_detection_link_rejected",
+      "status": "passed",
+      "expected_rejection": "Invalid/duplicate original detection linkage."
+    },
+    {
+      "name": "emitted_class_mismatch_rejected",
+      "status": "passed",
+      "expected_rejection": "Emitted class is not latest linked raw class."
+    },
+    {
+      "name": "partial_failure_status_retained",
+      "status": "passed",
+      "scope": "intentional software fixture only"
+    },
+    {
+      "name": "actual_cached_first30_track_render_and_mp4_roundtrip",
+      "status": "passed",
+      "decoded_clip_frames": 30,
+      "scope": "software rendering smoke only, not full Phase3run"
+    },
+    {
+      "name": "temporal_contact_sheet_and_display_crop_helpers",
+      "status": "passed",
+      "scope": "actual first30 frames; no claimed focused scooter finding"
+    }
+  ],
+  "passed": 16,
+  "failed": 0,
+  "kaggle_full_run_executed": false
+}

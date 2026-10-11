@@ -1,0 +1,218 @@
+{
+  "reviewed_utc": "2026-10-11T09:22:15.323817+00:00",
+  "run_id": "20261011T060227_579936Z_05ebe213",
+  "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+  "claim_type": "EXPERIMENT_RESULT",
+  "reviewer": "AI-assisted Codex visual inspection; not a human ground-truth annotation",
+  "basis": "Actual retained Kaggle pixels and matching track records, not source notebook predictions or a detector rerun",
+  "review_scope": {
+    "full_tracking_sequence_frames": 10282,
+    "visually_inspected_burst_sheet_frames": [
+      [
+        0,
+        5,
+        10,
+        15,
+        20,
+        29
+      ],
+      [
+        2555,
+        2560,
+        2565,
+        2570,
+        2575,
+        2584
+      ],
+      [
+        5125,
+        5130,
+        5135,
+        5140,
+        5145,
+        5154
+      ],
+      [
+        7696,
+        7701,
+        7706,
+        7711,
+        7716,
+        7725
+      ],
+      [
+        10252,
+        10257,
+        10262,
+        10267,
+        10272,
+        10281
+      ]
+    ],
+    "focused_consecutive_sheet_frames": [
+      7711,
+      7712,
+      7713,
+      7714,
+      7715,
+      7716,
+      7717,
+      7718
+    ],
+    "native_focus_frames_inspected": [
+      7711,
+      7712,
+      7713,
+      7718
+    ],
+    "additional_retained_clip_frames_inspected": [
+      5125,
+      5126,
+      5127,
+      5128,
+      5129,
+      5130
+    ],
+    "additional_clip_crop": [
+      0,
+      250,
+      750,
+      720
+    ],
+    "crop_semantics": "Display only; decoded from retained lossy annotated MP4, no new tracking/detection",
+    "all_five_30_frame_clips_visually_reviewed_end_to_end": false,
+    "all_150_subset_records_and_clip_frame_counts_software_audited": true,
+    "whole_video_physical_identity_reviewed": false
+  },
+  "observations": [
+    {
+      "case": "sampled_continuity",
+      "frames": [
+        2555,
+        2560,
+        2565,
+        2570,
+        2575,
+        2584
+      ],
+      "observation": "IDs 933/person and 935/motorcycle remain on the visible receding rider/scooter across the displayed positions. This is local continuity, not proof of whole-video identity.",
+      "evidence": [
+        "temporal/burst_000002555_000002584_contact_sheet.png",
+        "representative_temporal_track_records.json.gz"
+      ],
+      "product_limit": "A rider person box and a motorcycle box describe components of the same vehicle scene; person is not an accepted pedestrian mapping."
+    },
+    {
+      "case": "concurrent_motorcycle_tracks_on_same_visible_scooter",
+      "frames": [
+        5125,
+        5126,
+        5127,
+        5128,
+        5129,
+        5130
+      ],
+      "track_ids": [
+        1934,
+        1951,
+        1937
+      ],
+      "observation": "The visibly same red scooter has motorcycle ID 1934, then an additional motorcycle ID 1951 initialized at 5128 and emitted alongside 1934 at 5129/5130. Rider ID 1937 remains separate. Two nested motorcycle boxes/IDs are visible on the same scooter; this is a concrete duplicate-track risk.",
+      "evidence": [
+        "temporal/red_scooter_5125_5130_clip_contact_sheet.png",
+        "temporal/burst_000005125_000005154_contact_sheet.png",
+        "duplicate_scooter_trace_5125_5154.json"
+      ],
+      "interpretation_limit": "This is a local qualitative observation, not a measured duplicate-vehicle rate or an implemented counting failure. No ID was merged or corrected."
+    },
+    {
+      "case": "entering_scooter_class_and_component_handoff",
+      "frames": [
+        7711,
+        7712,
+        7713,
+        7714,
+        7715,
+        7716,
+        7717,
+        7718
+      ],
+      "track_ids": [
+        3680,
+        3681,
+        3683
+      ],
+      "observation": "At the cropped, text-overlaid entry, ID 3681 is unconfirmed handbag at 7711, emitted person at 7712, and motorcycle from 7713. ID 3683 starts unconfirmed motorcycle at 7712 and emits person from 7713. Native frames show the rider/scooter components exchanging these raw track labels/associations. ID 3680/person at 7711 is never emitted. After the handoff, 3681/motorcycle and 3683/person continue on the receding scooter/rider through the displayed later frames.",
+      "evidence": [
+        "temporal/entering_scooter_000007711_000007718_contact_sheet.png",
+        "samples/frame_000007711_tracked.png",
+        "samples/frame_000007712_tracked.png",
+        "samples/frame_000007713_tracked.png",
+        "samples/frame_000007718_tracked.png",
+        "focused_track_trace_7711_7718.json"
+      ],
+      "interpretation_limit": "Observed component/class association instability; not a ground-truth ID-switch total or proof of an inter-vehicle identity switch. The initial assignment and latest label cannot define a counting category."
+    },
+    {
+      "case": "temporary_observation_gap_and_same_id_reactivation",
+      "track_id": 3622,
+      "last_observed_before_gap": 7712,
+      "missing_frames": [
+        7713,
+        7714,
+        7715,
+        7716,
+        7717
+      ],
+      "next_observed_frame": 7718,
+      "observation": "The roadside motorcycle-position track has no assigned observation for five frames, then returns with ID 3622 at 7718. Native annotations show its box in the same roadside area before and after the gap. This verifies one local reactivation case; the reason for missing detector observations remains unknown.",
+      "evidence": [
+        "samples/frame_000007712_tracked.png",
+        "samples/frame_000007713_tracked.png",
+        "samples/frame_000007718_tracked.png",
+        "retained_burst_diagnostic_candidates.json",
+        "track_summary.json.gz"
+      ],
+      "interpretation_limit": "No general recovery guarantee; no assumption that a missing measurement means absence of the physical object."
+    },
+    {
+      "case": "end_samples",
+      "frames": [
+        10252,
+        10257,
+        10262,
+        10267,
+        10272,
+        10281
+      ],
+      "observation": "A distant car retains ID 4829 across the displayed positions after 10252. A raw bench track appears at the roadside structure near the end. Small objects and non-product labels remain part of the raw baseline.",
+      "evidence": [
+        "temporal/burst_000010252_000010281_contact_sheet.png"
+      ],
+      "interpretation_limit": "No product filtering, category correction, traffic count or quality estimate is inferred."
+    }
+  ],
+  "fragmentation_and_switch_review": {
+    "observed": "The entering-rider association changes components/IDs across 7712–7713; the red-scooter case instead has concurrent duplicate tracks, not a falsely asserted simple 1934-to-1951 replacement.",
+    "whole_video_fragmentation_total": null,
+    "whole_video_id_switch_total": null,
+    "reason": "No full physical-object labeling protocol or ground truth; raw algorithm gap/class/ID counters are not identity-error metrics."
+  },
+  "phase3_acceptance": {
+    "technical_gate": "PASS_SCOPED_BASELINE",
+    "basis": "Verified actual BoT-SORT integration, full ordered cache processing, inspectable outputs/lifecycle, retained temporal review and explicit limitations",
+    "ready_for": "A separately authorized controlled Phase 4 ReID experiment after verifying a usable encoder/asset/integration",
+    "ready_for_vehicle_counting": false,
+    "phase4_started": false
+  },
+  "open_decisions": [
+    "Usable ReID encoder/assets/integration: native auto needs detector features absent from this cache; do not silently enable an ineffective path.",
+    "Product pedestrian-versus-rider mapping, category stabilization and treatment of simultaneous duplicate vehicle detections/tracks.",
+    "Suitable detector/tracker settings and lifecycle policy; defaults are untuned and the cache excludes detections below confidence 0.25.",
+    "Authoritative source timestamps, decode integrity, night/other scenes and whole-video identity correctness.",
+    "Geometry anchor/coordinates, GMC need and later crossing/event identity/counting policies."
+  ],
+  "original_export_unchanged": true,
+  "original_export_manual_review_status": "pending_actual_temporal_evidence_review",
+  "no_ground_truth_metrics_reported": true
+}

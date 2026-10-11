@@ -1,0 +1,187 @@
+{
+  "scope": "Authoritative pinned tracker source/API/default verification, explicit verified lap installation, and actual CPU compatibility smoke on 200 retained detector rows. No YOLO loading/inference or Phase2 rerun.",
+  "installed_ultralytics": "8.4.175",
+  "files": [
+    {
+      "path": "ultralytics/trackers/bot_sort.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/bot_sort.py",
+      "http_status": 200,
+      "official_sha256": "b157cbc33f75f1132df530f04361824bc39a30d4051ce6df1cd5c388e49b3117",
+      "installed_sha256": "b157cbc33f75f1132df530f04361824bc39a30d4051ce6df1cd5c388e49b3117",
+      "exact_match": true,
+      "size_bytes": 10640
+    },
+    {
+      "path": "ultralytics/trackers/byte_tracker.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/byte_tracker.py",
+      "http_status": 200,
+      "official_sha256": "fb45d70e952f99984085788bc09fc0c60a18b14bc4329b28e32bc2c70ac37401",
+      "installed_sha256": "fb45d70e952f99984085788bc09fc0c60a18b14bc4329b28e32bc2c70ac37401",
+      "exact_match": true,
+      "size_bytes": 24941
+    },
+    {
+      "path": "ultralytics/trackers/basetrack.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/basetrack.py",
+      "http_status": 200,
+      "official_sha256": "9ef094b9a54ff2f52c9118b5bd1a2f84ba331aa557277f54186de11728c2f7e8",
+      "installed_sha256": "9ef094b9a54ff2f52c9118b5bd1a2f84ba331aa557277f54186de11728c2f7e8",
+      "exact_match": true,
+      "size_bytes": 3752
+    },
+    {
+      "path": "ultralytics/trackers/utils/matching.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/utils/matching.py",
+      "http_status": 200,
+      "official_sha256": "318bf81030558863a4ec6effea3c9d063a297f299367e379a58b89c24e3f421f",
+      "installed_sha256": "318bf81030558863a4ec6effea3c9d063a297f299367e379a58b89c24e3f421f",
+      "exact_match": true,
+      "size_bytes": 7881
+    },
+    {
+      "path": "ultralytics/trackers/utils/gmc.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/utils/gmc.py",
+      "http_status": 200,
+      "official_sha256": "d797f701a22347001d780b0dc4d0f2f5cabdfefb895c36bbab084ceb2dfc4000",
+      "installed_sha256": "d797f701a22347001d780b0dc4d0f2f5cabdfefb895c36bbab084ceb2dfc4000",
+      "exact_match": true,
+      "size_bytes": 15078
+    },
+    {
+      "path": "ultralytics/trackers/utils/stracks.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/utils/stracks.py",
+      "http_status": 200,
+      "official_sha256": "9534294af850c3a6755c3a5a1ba9b2b068c5b79a11166c8547652944e2632f58",
+      "installed_sha256": "9534294af850c3a6755c3a5a1ba9b2b068c5b79a11166c8547652944e2632f58",
+      "exact_match": true,
+      "size_bytes": 8060
+    },
+    {
+      "path": "ultralytics/trackers/utils/reid.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/trackers/utils/reid.py",
+      "http_status": 200,
+      "official_sha256": "75c54a4f8fe9b1e6946d61b530fbb790fdfcc27df120fa71cc7759c11e9f0475",
+      "installed_sha256": "75c54a4f8fe9b1e6946d61b530fbb790fdfcc27df120fa71cc7759c11e9f0475",
+      "exact_match": true,
+      "size_bytes": 8802
+    },
+    {
+      "path": "ultralytics/cfg/trackers/botsort.yaml",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/cfg/trackers/botsort.yaml",
+      "http_status": 200,
+      "official_sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01",
+      "installed_sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01",
+      "exact_match": true,
+      "size_bytes": 1385
+    },
+    {
+      "path": "ultralytics/engine/results.py",
+      "official_url": "https://raw.githubusercontent.com/ultralytics/ultralytics/v8.4.175/ultralytics/engine/results.py",
+      "http_status": 200,
+      "official_sha256": "871e5b3eed1558c3c048d99058ddf28a7927c1317d020981e7c0836f18e00ee3",
+      "installed_sha256": "871e5b3eed1558c3c048d99058ddf28a7927c1317d020981e7c0836f18e00ee3",
+      "exact_match": true,
+      "size_bytes": 75052
+    }
+  ],
+  "lap_requirement_from_matching_source": "lap>=0.5.12",
+  "verified_pypi_lap_version": "0.5.13",
+  "lap_cp312_linux_x86_64_wheels": [
+    {
+      "filename": "lap-0.5.13-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "sha256": "226c24acbc1acd22c76bac54525174577571d7e71e70845d0c43dd664332e867",
+      "url": "https://files.pythonhosted.org/packages/92/0a/8d8395c8ea22a665ab4150fb2bcb97cc1f987843a1d316aaabc2d71044dd/lap-0.5.13-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl",
+      "upload_time": "2026-02-23T12:36:24.003558Z"
+    }
+  ],
+  "lap_install": {
+    "version": "0.5.13",
+    "wheel_sha256": "226c24acbc1acd22c76bac54525174577571d7e71e70845d0c43dd664332e867",
+    "verified_against_pypi": true,
+    "environment": "/workspace/.venvs/traffic-detection-validation",
+    "method": "uv pip install --python isolated-venv-python --no-deps verified-local-wheel",
+    "initial_pip_attempt": "The venv has no pip module; no installation occurred via python -m pip. uv installation then succeeded."
+  },
+  "contracts": {
+    "class": "ultralytics.trackers.bot_sort.BOTSORT",
+    "constructor_signature": "(args: 'Any')",
+    "update_signature": "(self, results, img: 'np.ndarray | None' = None, feats: 'np.ndarray | None' = None, **kwargs) -> 'np.ndarray'",
+    "yaml_default_sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01",
+    "published_defaults": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "sparseOptFlow",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "experiment_config": {
+      "tracker_type": "botsort",
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "new_track_thresh": 0.25,
+      "track_buffer": 30,
+      "match_thresh": 0.8,
+      "fuse_score": true,
+      "gmc_method": "none",
+      "proximity_thresh": 0.5,
+      "appearance_thresh": 0.8,
+      "with_reid": false,
+      "model": "auto"
+    },
+    "override_provenance": {
+      "gmc_method": "PROPOSAL: none disables compensation for controlled Phase3 baseline; no shake correction capability/need decision",
+      "with_reid": "REQUIREMENT: disabled in Phase3 baseline; ReID implementation/experiments are Phase4"
+    },
+    "actual_encoder_is_none": true,
+    "actual_gmc_method": null,
+    "max_frames_lost": 30,
+    "input_box_columns": [
+      "x1",
+      "y1",
+      "x2",
+      "y2",
+      "confidence",
+      "class_id"
+    ],
+    "output_columns": [
+      "kalman_x1",
+      "kalman_y1",
+      "kalman_x2",
+      "kalman_y2",
+      "track_id",
+      "score",
+      "class_id",
+      "original_detection_index"
+    ],
+    "output_empty_shape_can_be": [
+      0
+    ],
+    "association_class_gate": false,
+    "class_value_updated_from_latest_match": true,
+    "frame_id_semantics": "1-based update-call count, equals 0-based cached video frame_index+1",
+    "track_id_scope": "one tracker instance, reset on new video; not physical object proof",
+    "internal_fixed_association_values": {
+      "second_stage_iou_cost_limit": 0.5,
+      "unconfirmed_cost_limit": 0.7,
+      "tracked_lost_duplicate_iou_distance_ceiling": 0.15,
+      "provenance": "FACT from pinned source, not user-selected/tuned parameters"
+    },
+    "cache_limitations_for_later_reid": {
+      "native_detector_embedding_features_retained": false,
+      "native_auto_reid_needs_detector_feats": true,
+      "claim_type": "FACT from _input_for and cached detector serialization; Phase4 decision OPEN"
+    }
+  },
+  "dependency_observation": {
+    "direct_tracker_import_and_update_succeeded_without_scipy": true,
+    "lap_version": "0.5.13",
+    "no_tracker_imports_scipy_in_pinned_source": true
+  }
+}
