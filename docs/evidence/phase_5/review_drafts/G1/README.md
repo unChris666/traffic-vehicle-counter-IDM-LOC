@@ -1,0 +1,15 @@
+# G1 — draft review geometry for TOR3-PAGI
+
+**PROPOSAL, awaiting user feedback:** the user authorized the staged workflow: visual candidate → feedback → geometry revision → agreed contract → synthetic tests → retained temporal replay → parameter decision. Only the first visual candidate is prepared here. No crossing/counting logic, synthetic acceptance test, temporal geometry replay or threshold selection is claimed.
+
+Open [review.html](review.html) in a browser. Toggle overlays, compare the original frame, and click to read native pixel coordinates. [TOR3-PAGI-G1.svg](TOR3-PAGI-G1.svg) is the deterministic vector figure over an embedded byte-identical original PNG. [candidate_geometry.json](candidate_geometry.json) preserves exact proposed coordinates, source hashes and actual bbox/anchor linkage; it is not an accepted pipeline configuration.
+
+[TOR3-PAGI-G1.png](TOR3-PAGI-G1.png) is the native-size browser rendering of that vector figure. [Source verification](source_verification.json) confirms actual PNG/track linkage; [figure validation](figure_validation.json) records seven executed source/browser checks, not synthetic geometry tests. Pointer coordinates are estimates limited by displayed-pixel quantization. Reproduction methods in [../../verification](../../verification) preserve the actual workspace/input paths used; the figure builder reads the downloaded Phase4 representative records declared in its method. No raster editing or model execution is performed by these methods.
+
+Source: retained Phase2 native raw frame5140,1280×720; anchor example from the actual Phase4 ReID-on record, ID973/source detection1. Center≈(249,509), bottom-center≈(249,546), from the same raw motorcycle bbox. Neither is selected. Source PNG is embedded unchanged; annotations occupy separate SVG layers. Any separately displayed imagegen illustration is conceptual and is not measurement evidence or the source of configuration coordinates.
+
+Candidate line P1=(160,650), P2=(620,500). A is far/upper-left, B near/lower-right; both span the two travel paths rather than assigning one polygon per lane. Proposed direction mapping A→B approaching and B→A away requires user confirmation. The earlier example's accepted metadata is not overwritten. P2 extends slightly above the asphalt edge to permit comparing center; its position is open. B stops atX850 to reduce overlap with lower-right burned-in text. Detection remains full-frame.
+
+Provide feedback in chat about line/P1/P2, polygon extent, and approaching/away mapping. The HTML notes box is local; editing does not send feedback, approve settings or save a new configuration. Raw bbox/model label is evidence, not an accepted product category or verified unique physical identity.
+
+Neutral-band width, confirmation, gap/prediction rules, boundary/endpoint policies and final anchor remain OPEN. Later implementation must follow [PHASE_5_TASK.md](../../../../PHASE_5_TASK.md), [COUNTING_LOGIC.md](../../../../COUNTING_LOGIC.md), and the approved contract. No detector, tracker or encoder rerun was performed to prepare this figure.

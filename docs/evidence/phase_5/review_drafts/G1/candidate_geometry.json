@@ -1,0 +1,122 @@
+{
+  "status": "PROPOSAL_PENDING_USER_FEEDBACK_NOT_EXECUTABLE_PIPELINE_CONFIGURATION",
+  "draft_id": "TOR3-PAGI-G1",
+  "created_at_utc": "2026-10-11T14:46:02.963866+00:00",
+  "source_video": {
+    "filename": "TOR3-PAGI.mp4",
+    "sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c"
+  },
+  "source_frame": {
+    "frame_index": 5140,
+    "coordinate_space": "native1280x720 pixel coordinates; origin upper-left; x rightward; y downward",
+    "width": 1280,
+    "height": 720,
+    "retained_path": "docs/evidence/phase_2/20261011T052950_360560Z_ed399fb8/samples/frame_000005140_raw.png",
+    "sha256": "65123bf8207ff223841bcc8f6a50287aef75909e2bcf4a9abb608370de0d72ee"
+  },
+  "line_endpoints_pixels": {
+    "P1": [
+      160,
+      650
+    ],
+    "P2": [
+      620,
+      500
+    ]
+  },
+  "side_a_polygon_pixels": [
+    [
+      70,
+      425
+    ],
+    [
+      620,
+      500
+    ],
+    [
+      160,
+      650
+    ],
+    [
+      120,
+      545
+    ],
+    [
+      75,
+      470
+    ]
+  ],
+  "side_b_polygon_pixels": [
+    [
+      160,
+      650
+    ],
+    [
+      620,
+      500
+    ],
+    [
+      850,
+      550
+    ],
+    [
+      850,
+      710
+    ],
+    [
+      180,
+      710
+    ]
+  ],
+  "spatial_labels": {
+    "A": "far/upper-left region relative to candidate line",
+    "B": "near/lower-right region relative to candidate line",
+    "not_traffic_lane_polygons": true
+  },
+  "proposed_direction_metadata_pending_feedback": {
+    "A_TO_B": "approaching camera",
+    "B_TO_A": "moving away from camera"
+  },
+  "anchor_example": {
+    "source_variant": "reid_on",
+    "source_run_id": "20261011T095924_205716Z_90cf7319",
+    "track_id": 973,
+    "source_detection_index": 1,
+    "raw_model_class": "motorcycle",
+    "raw_bbox_xyxy_pixels": [
+      221.33056640625,
+      472.15020751953125,
+      276.42718505859375,
+      545.7120971679688
+    ],
+    "center_pixels": [
+      248.87887573242188,
+      508.93115234375
+    ],
+    "bottom_center_pixels": [
+      248.87887573242188,
+      545.7120971679688
+    ],
+    "selected_anchor": null,
+    "raw_class_is_not_accepted_product_category": true
+  },
+  "source_records_sha256": "b903581fe8ce1daddbb5a014d84f495e20cd3612c23bba5fcc93ca829a6b9506",
+  "review_notes": [
+    "Each side spans both travel paths; regions are not assigned one-per-lane.",
+    "P2 extends slightly above asphalt edge to allow reviewing body-center anchor; its position is open.",
+    "B stops atx850 to avoid much of the burned-in lower-right text; exact boundary remains open.",
+    "Boundary sharing is drawn as a proposal; no boundary acceptance or neutral-band width is selected.",
+    "Different bbox components and duplicate physical tracks remain identity/category issues, not solved by this figure."
+  ],
+  "thresholds": {
+    "neutral_band_width_pixels": null,
+    "destination_confirmation": null,
+    "gap_bridge": null
+  },
+  "geometry_contract_accepted": false,
+  "synthetic_tests_executed": false,
+  "temporal_geometry_replay_executed": false,
+  "detector_tracker_encoder_rerun": false,
+  "generated_illustration_is_measurement_evidence": false,
+  "reference_example_semantics_overwritten": false
+}

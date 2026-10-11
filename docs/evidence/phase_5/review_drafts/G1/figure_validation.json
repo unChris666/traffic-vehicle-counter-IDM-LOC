@@ -1,0 +1,19 @@
+{
+  "created_at_utc": "2026-10-11T14:49:31.697818+00:00",
+  "scope": "Figure/source preservation and actual local browser interaction checks only; not synthetic geometry tests, model inference or temporal crossing replay.",
+  "status": "passed",
+  "checks_passed": 7,
+  "checks_total": 7,
+  "checks": [
+    "Embedded source PNG is byte-identical to actual retained frame5140",
+    "Geometry, anchor, thresholds, tests and replay are explicitly pending",
+    "Standalone vector figure renders at native1280x720, device scale1",
+    "Frame-original and restore controls toggle only separate vector annotation layers",
+    "Center and bottom-center can be reviewed independently",
+    "Scaled click maps back to nativepixelP1 within one displayed-pixel quantization; output is a pointer estimate",
+    "No browser JavaScript errors during declared control checks"
+  ],
+  "browser": "/usr/bin/chromium via Playwright",
+  "rendered_figure": "TOR3-PAGI-G1.png",
+  "rendered_figure_sha256": "17fdd66e4d02df26e1464f6fc9b1adf505149b14760800e9330baa9aa4a6024b"
+}
