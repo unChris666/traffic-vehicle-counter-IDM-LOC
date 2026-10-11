@@ -1,0 +1,35 @@
+{
+  "recorded_at_utc": "2026-10-11T15:04:40.635261+00:00",
+  "recorded_at_asia_jakarta": "2026-10-11T22:04:40.635261+07:00",
+  "claim_type": "USER_FEEDBACK_AND_CONFIRMED_DIRECTION_METADATA_NOT_EXPERIMENT_RESULT",
+  "draft_id": "TOR3-PAGI-G1",
+  "video": "TOR3-PAGI.mp4",
+  "source": "User request_user_input_async reply in current conversation",
+  "verbatim_answers": {
+    "geometry_review": "Revisi garis atau polygon",
+    "direction_mapping": "Ya, pemetaan arah tersebut benar"
+  },
+  "geometry_review": {
+    "status": "REVISION_REQUIRED_DETAILS_NOT_YET_SUPPLIED",
+    "g1_coordinates_accepted": false,
+    "affected_elements": null,
+    "replacement_positions": null,
+    "next_action": "Ask which line endpoint or polygon section to change and the intended direction/location; do not invent G2 coordinates."
+  },
+  "confirmed_direction_mapping": {
+    "status": "CONFIRMED_BY_USER",
+    "spatial_roles": {
+      "A": "far region",
+      "B": "near region"
+    },
+    "A_TO_B": "approaching camera",
+    "B_TO_A": "moving away from camera",
+    "scope": "TOR3-PAGI only; does not accept G1 coordinates or change the reference-example semantics"
+  },
+  "selected_anchor": null,
+  "geometry_contract_accepted": false,
+  "thresholds_selected": false,
+  "synthetic_geometry_tests_executed": false,
+  "temporal_geometry_replay_executed": false,
+  "detector_tracker_encoder_rerun": false
+}

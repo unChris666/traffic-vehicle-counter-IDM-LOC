@@ -17,6 +17,8 @@ DETECTION ≠ TRACKING ≠ ELIGIBILITY ≠ COUNTING
 
 Initial geometry is in image pixel coordinates. No world-coordinate, homography, or geographic projection is required for the initial prototype.
 
+**USER REQUIREMENT — shared default:** the user requests the new line as a default across videos. Its resize/aspect/crop transfer policy is OPEN, and reliability is unestablished. A reference template may initialize configuration; effective per-video geometry must remain explicit and reviewable.
+
 Line and polygon coordinates must support arbitrary diagonal geometry. Side A/B are opposite configured regions relative to the boundary, not fixed image halves. Never hardcode a line angle, pixel position, image orientation, or polygon dimensions. A conceptual diagram is not a literal geometry configuration.
 
 **OPEN TECHNICAL DECISION:** Exact polygon boundaries, line extent/intersection semantics, point-on-boundary behavior, allowed polygon overlap or gaps, and correspondence to the processed frame dimensions need an explicit contract and deterministic tests before geometry implementation. See [CONFIG_SCHEMA.md](CONFIG_SCHEMA.md).
@@ -28,6 +30,8 @@ Line and polygon coordinates must support arbitrary diagonal geometry. Side A/B 
 The image does not label exact polygon vertices. It supplies visual intent, not an approved pixel configuration. Overlay counts, track IDs, and class labels are not evidence of the planned model stack or counting correctness.
 
 For other videos, geometry and semantic metadata are supplied independently. Do not infer approaching/away or side membership from left/right, top/bottom, X-axis direction, or Y-axis direction.
+
+**CONFIRMED — TOR3-PAGI Phase 5 feedback:** `A_TO_B` = approaching the camera and `B_TO_A` = moving away, for A as the far region and B as the near region. [Feedback 001](evidence/phase_5/feedback/G1_review_001.json) first requested G1 revision; [feedback 002](evidence/phase_5/feedback/G1_review_002.json) supplies P1 `(4.5,516.5)` and P2 `(936.4,305.4)`, B maxX `875`, engineer polygon-adjustment authorization and BC selection. Native1280×720 coordinates are an explicit draft ASSUMPTION. [G2](evidence/phase_5/review_drafts/G2/README.md) preserves the full segment and proposes adjusted polygons and qualitative rules for review. B's cap does not truncate P2. Boundary/noise/gap rules, measurement source and thresholds remain unresolved.
 
 ## 4. Detection, Tracking, and Eligibility Order
 
@@ -53,7 +57,7 @@ Origin side and eligibility must be established from the configured rules. The t
 
 ## 6. Geometry Anchor and Trajectory
 
-**OPEN TECHNICAL DECISION:** Bounding-box center and bottom-center are candidate anchors. Neither is an accepted default. The exact geometric point must be chosen with evidence and consistently recorded before implementation relies on it.
+**USER DECISION — TOR3-PAGI:** [feedback 002](evidence/phase_5/feedback/G1_review_002.json) selects bottom-center (BC). This selection supersedes the earlier candidate-only status for the current geometry; it is not evidence of superiority or all-video robustness. **PROPOSAL:** use `((x1+x2)/2,y2)` from detector-linked emitted `raw_bbox` observations; the raw-versus-filtered box source still requires agreement before dependent implementation. Other videos retain configurable geometry and evidence requirements.
 
 Direction and crossing use a temporal track trajectory, not one frame or raw detections. The required history, treatment of predicted/missing observations, and stabilization rules remain open.
 

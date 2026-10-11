@@ -1,0 +1,20 @@
+{
+  "created_at_utc": "2026-10-11T15:16:51.839881+00:00",
+  "scope": "Figure/source/feedback and browser controls only; not synthetic crossing tests or accepted state-machine replay",
+  "status": "passed",
+  "checks_passed": 10,
+  "checks_total": 10,
+  "checks": [
+    "Embedded source is byte-identical to the actual retained native frame",
+    "Rendered endpoints, B cap and anchor match actual user feedback; line not truncated at B cap",
+    "Unagreed contract, thresholds and all-video reliability remain explicitly unresolved",
+    "BC sample matches the actual retained Phase 4 emitted raw observation and detection link",
+    "All six placement-screening observations match the actual retained raw boxes and detection links",
+    "SVG browser rendering preserves native1280x720 dimensions",
+    "Raw/restore controls toggle annotations without changing the source photograph",
+    "Selected BC and comparator C remain separate figure layers",
+    "Scaled pointer maps to native P1 within one displayed-pixel quantization",
+    "No browser JavaScript errors during declared review controls"
+  ],
+  "rendered_figure_sha256": "0fa1113af18d6cd53dc49239bb2bf84059a43849cc0dd35d293c65931c94e9b5"
+}

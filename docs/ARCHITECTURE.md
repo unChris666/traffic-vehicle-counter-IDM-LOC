@@ -4,7 +4,7 @@
 
 **REQUIREMENT:** Develop phase by phase: Kaggle prototype first, production architecture after the single-video pipeline, eight-video processing, and manual audit are stable.
 
-Phase 0 established specifications and conceptual boundaries. Current executed capabilities are Phase 1 inspection, Phase 2 one-video YOLO26M detection, and Phase 3 direct BoT-SORT replay of the retained detections; see [detection status](YOLO_DETECTION.md), [Phase 2 gate](PHASE_2_REVIEW.md) and [tracking status](BOTSORT_TRACKING.md). The architecture below remains the confirmed target, with later components and unresolved integration details still unimplemented.
+Phase 0 established specifications and conceptual boundaries. Current executed capabilities are Phase 1 inspection, Phase 2 one-video YOLO26M detection, Phase 3 direct BoT-SORT replay of retained detections, and the controlled [Phase 4 ReID comparison](REID_EXPERIMENT.md); see [detection status](YOLO_DETECTION.md), [Phase 2 gate](PHASE_2_REVIEW.md) and [tracking status](BOTSORT_TRACKING.md). The user subsequently authorized staged [Phase 5 collaboration](PHASE_5_TASK.md), now at visual-feedback/revision using [feedback 002](evidence/phase_5/feedback/G1_review_002.json). Only bounded read-only placement screening and source/figure checks have occurred; crossing implementation, synthetic geometry tests and accepted crossing state-machine replay have not occurred. The architecture below remains the confirmed target, with later components and unresolved integration details still unimplemented.
 
 ## 2. Confirmed Prototype Pipeline
 
@@ -49,13 +49,13 @@ Maintains track history, lifecycle, category/identity evidence, and the informat
 
 ### Trajectory
 
-Represents temporal movement using the selected geometric anchor. Bounding-box center and bottom-center are candidates; neither is selected. Missing/predicted observation treatment remains open.
+Represents temporal movement using the selected geometric anchor. The user selected bottom-center (BC) for the current TOR3-PAGI geometry revision; this is not a measured universal-best anchor. The operational box source (linked raw detection versus Kalman-filtered track box) and missing/predicted observation treatment remain OPEN. Stored center coordinates do not override the BC selection. See [feedback 002](evidence/phase_5/feedback/G1_review_002.json).
 
 ### Geometry and Direction
 
 Uses per-video pixel Side A/Side B polygons and counting-line endpoints. Evaluates side membership, track eligibility/origin, trajectory transitions, and line crossing. No homography, geographic projection, fixed angle, or image-axis traffic-direction rule is required.
 
-Side semantics are configured per video. The sample's upper-left Side A/approaching and lower-right Side B/away mapping is confirmed for that sample only.
+Side semantics are configured per video. The reference sample's upper-left Side A/approaching and lower-right Side B/away mapping is confirmed for that sample only. Separately, the user confirmed TOR3-PAGI `A_TO_B` approaching / `B_TO_A` away and supplied line endpoints `(4.5,516.5)` and `(936.4,305.4)`, with Side B capped at `X=875`. The cap does not truncate the line. G2 polygon adaptation is an engineer proposal for visual review. The requested all-video line default is a starting template with explicit source dimensions; scaling/transfer policy and cross-video reliability remain OPEN. See [PHASE_5_TASK.md](PHASE_5_TASK.md).
 
 ### Counting
 
@@ -104,7 +104,7 @@ Configuration covers project, store/location, video, geometry, model, tracking/R
 
 Meaningful experiments retain input identity, verified model/dependency identifiers, explicit configuration, device information, preprocessing variant, annotated evidence, observations actually measured, conclusions, and limitations.
 
-Phase 0 itself reported no experiment. Subsequent Phase 1–4 records are retained with their individual scopes; Phase 3 separates successful cached execution, software diagnostics and evidence-linked temporal review in [BOTSORT_TRACKING.md](BOTSORT_TRACKING.md). Phase 4 separately retains the paired contribution experiment, independent audit and subsequent bounded review in [REID_EXPERIMENT.md](REID_EXPERIMENT.md), with the tested setting not selected as the current vehicle default. [Phase 5 readiness](PHASE_5_READINESS.md) is conditional for synthetic geometry after explicit semantics; Phase 5 has not started. Unique IDs, missing-observation gaps, raw-class changes and appearance-cost differences are not physical vehicle totals, confirmed ID-switch counts or proof of improved identity. There is no formal ground truth. Software invariants and visual plausibility cannot be presented as accuracy, precision, recall, F1, MAPE, or counting performance. See [TEST_PLAN.md](TEST_PLAN.md) and [EVALUATION.md](EVALUATION.md).
+Phase 0 itself reported no experiment. Subsequent Phase 1–4 records are retained with their individual scopes; Phase 3 separates successful cached execution, software diagnostics and evidence-linked temporal review in [BOTSORT_TRACKING.md](BOTSORT_TRACKING.md). Phase 4 separately retains the paired contribution experiment, independent audit and subsequent bounded review in [REID_EXPERIMENT.md](REID_EXPERIMENT.md), with the tested setting not selected as the current vehicle default. [Phase 5 readiness](PHASE_5_READINESS.md) recorded conditional readiness at that time; the subsequently authorized [Phase 5 task](PHASE_5_TASK.md) is now at visual-feedback/revision. Geometry/contract review precedes synthetic tests and retained-track replay; none of those dependent stages or crossing/event/count implementation has been executed yet. Unique IDs, missing-observation gaps, raw-class changes and appearance-cost differences are not physical vehicle totals, confirmed ID-switch counts or proof of improved identity. There is no formal ground truth. Software invariants and visual plausibility cannot be presented as accuracy, precision, recall, F1, MAPE, or counting performance. See [TEST_PLAN.md](TEST_PLAN.md) and [EVALUATION.md](EVALUATION.md).
 
 ## 9. Production Transition
 

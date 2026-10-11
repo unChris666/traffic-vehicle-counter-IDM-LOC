@@ -1,0 +1,144 @@
+{
+  "created_at_utc": "2026-10-11T15:16:44.504303+00:00",
+  "scope": "READ_ONLY_PLACEMENT_SCREENING_NOT_CROSSING_EVENTS_OR_ACCEPTANCE",
+  "coordinate_assumption": "coordinates taken as native1280x720; must verify user intended coordinate space",
+  "source_records": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/track_records.jsonl.gz",
+  "source_records_gzip_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+  "P1": [
+    4.5,
+    516.5
+  ],
+  "P2": [
+    936.4,
+    305.4
+  ],
+  "method": "Signed infinite-line distances for actual raw-bbox BC observations, followed by algebraic intersection of selected adjacent observation pairs. The finite-line parameter is retained. No polygon, eligibility, state-machine, jitter, gap, unique-identity or event acceptance was evaluated.",
+  "tracks": {
+    "1": {
+      "arithmetic_brackets": [
+        {
+          "observations": [
+            {
+              "frame": 26,
+              "sourceidx": 0,
+              "class": "car",
+              "bc": [
+                226.16036987304688,
+                465.8709411621094
+              ],
+              "bbox_width": 55.80328369140625,
+              "bbox_height": 42.0601806640625,
+              "signed_infinite_line_distance_px": -0.40681472726517026,
+              "line_y_at_same_x": 466.28806301083785
+            },
+            {
+              "frame": 27,
+              "sourceidx": 0,
+              "class": "car",
+              "bc": [
+                227.56686401367188,
+                466.69769287109375
+              ],
+              "bbox_width": 56.2928466796875,
+              "bbox_height": 43.0234375,
+              "signed_infinite_line_distance_px": 0.7102431552544554,
+              "line_y_at_same_x": 465.9694548843372
+            }
+          ],
+          "linear_segment_intersection_xy": [
+            226.67259268546533,
+            466.1720309948474
+          ],
+          "line_segment_parameter": 0.23840819045548375,
+          "gap_frames": 0,
+          "meaning": "arithmetic straddle only; no polygon, eligibility, gap, hysteresis, confirmed-event or physical-identity acceptance"
+        }
+      ]
+    },
+    "485": {
+      "arithmetic_brackets": [
+        {
+          "observations": [
+            {
+              "frame": 2586,
+              "sourceidx": 0,
+              "class": "motorcycle",
+              "bc": [
+                135.90485000610352,
+                486.9774169921875
+              ],
+              "bbox_width": 21.00139617919922,
+              "bbox_height": 31.10394287109375,
+              "signed_infinite_line_distance_px": 0.23805983134159664,
+              "line_y_at_same_x": 486.7333256397806
+            },
+            {
+              "frame": 2587,
+              "sourceidx": 0,
+              "class": "motorcycle",
+              "bc": [
+                135.63754272460938,
+                486.69580078125
+              ],
+              "bbox_width": 20.631500244140625,
+              "bbox_height": 31.74560546875,
+              "signed_infinite_line_distance_px": -0.09565353550960377,
+              "line_y_at_same_x": 486.79387780967375
+            }
+          ],
+          "linear_segment_intersection_xy": [
+            135.71416203052343,
+            486.7765215102012
+          ],
+          "line_segment_parameter": 0.14080283510089434,
+          "gap_frames": 0,
+          "meaning": "arithmetic straddle only; no polygon, eligibility, gap, hysteresis, confirmed-event or physical-identity acceptance"
+        }
+      ]
+    },
+    "973": {
+      "arithmetic_brackets": [
+        {
+          "observations": [
+            {
+              "frame": 5181,
+              "sourceidx": 0,
+              "class": "motorcycle",
+              "bc": [
+                134.18457412719727,
+                487.41607666015625
+              ],
+              "bbox_width": 21.31835174560547,
+              "bbox_height": 31.6885986328125,
+              "signed_infinite_line_distance_px": 0.2858214142199714,
+              "line_y_at_same_x": 487.1230136299481
+            },
+            {
+              "frame": 5182,
+              "sourceidx": 0,
+              "class": "motorcycle",
+              "bc": [
+                132.9842071533203,
+                486.789794921875
+              ],
+              "bbox_width": 20.59112548828125,
+              "bbox_height": 30.739013671875,
+              "signed_infinite_line_distance_px": -0.5901806693574679,
+              "line_y_at_same_x": 487.3949285008414
+            }
+          ],
+          "linear_segment_intersection_xy": [
+            133.792919138598,
+            487.21173384466357
+          ],
+          "line_segment_parameter": 0.13874119448288225,
+          "gap_frames": 0,
+          "meaning": "arithmetic straddle only; no polygon, eligibility, gap, hysteresis, confirmed-event or physical-identity acceptance"
+        }
+      ]
+    }
+  },
+  "interpretation": "Small vehicle boxes at the proposed gate are a placement concern, not a tested quality regression. These are not accepted crossings or traffic totals.",
+  "model_tracker_encoder_rerun": false,
+  "geometry_contract_accepted": false
+}

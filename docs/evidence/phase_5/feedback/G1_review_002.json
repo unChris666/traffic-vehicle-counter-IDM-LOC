@@ -1,0 +1,41 @@
+{
+  "recorded_at_utc": "2026-10-11T15:13:39.670297+00:00",
+  "recorded_at_asia_jakarta": "2026-10-11T22:13:39.670297+07:00",
+  "claim_type": "USER_GEOMETRY_REVISION_AND_ANCHOR_DECISION_NOT_EXPERIMENT_RESULT",
+  "source": "User request_user_input_async reply in this conversation",
+  "reviewed_draft_id": "TOR3-PAGI-G1",
+  "revision_draft_id": "TOR3-PAGI-G2",
+  "supersedes_pending_details_of": "G1_review_001.json; original feedback retained unchanged",
+  "verbatim_answer": "1. gua butuh garis ini sebagai default dan reliable di semua video\nP1 : (4.5, 516.5)\nP2 : (936.4, 305.4)\n\n2. Ruang polygon cukup untuk A/B cukup jika menyesuaikan dengan garis yang baru \nkemudian, B berhenti di X875\n\n3. Arah: usulan A→B mendekati kamera; B→A menjauhi\n\n4. Anchor : BC",
+  "user_selected_line_endpoints": {
+    "P1": [
+      4.5,
+      516.5
+    ],
+    "P2": [
+      936.4,
+      305.4
+    ]
+  },
+  "coordinate_reference_status": "ASSUMPTION: native1280x720 coordinates from G1 viewer; user did not restate dimensions",
+  "polygon_adjustment_authorized": true,
+  "exact_polygon_vertices_supplied_by_user": false,
+  "side_b_max_x": 875,
+  "b_limit_shortens_counting_line": false,
+  "confirmed_direction_mapping": {
+    "A_TO_B": "approaching camera",
+    "B_TO_A": "moving away from camera",
+    "scope": "TOR3-PAGI"
+  },
+  "selected_anchor": "bottom_center",
+  "anchor_bbox_source_accepted": false,
+  "default_all_videos_requested": true,
+  "default_transfer_policy_selected": false,
+  "reliability_all_videos_established": false,
+  "g2_polygon_review_complete": false,
+  "geometry_contract_accepted": false,
+  "thresholds_selected": false,
+  "synthetic_geometry_tests_executed": false,
+  "temporal_geometry_replay_executed": false,
+  "detector_tracker_encoder_rerun": false
+}
