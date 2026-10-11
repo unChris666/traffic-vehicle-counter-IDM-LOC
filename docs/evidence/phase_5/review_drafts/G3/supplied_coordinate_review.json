@@ -1,0 +1,228 @@
+{
+  "scope": "ACTUAL_READ_ONLY_STATIC_COORDINATE_ARITHMETIC_NOT_GEOMETRY_ACCEPTANCE_OR_CROSSING_TEST",
+  "coordinate_space": "SUPPLIED_SCALED_IMAGE_COORDINATES_ONLY; image dimensions/crop/native transform UNKNOWN",
+  "input_provenance": "latest user G2 reply; all four polygon points labelled P1 in user text; indices below are helper aliases only",
+  "listed_points": [
+    {
+      "supplied_point_index": 1,
+      "supplied_label": "P1",
+      "coordinate": [
+        4.5,
+        516.5
+      ]
+    },
+    {
+      "supplied_point_index": 2,
+      "supplied_label": "P1",
+      "coordinate": [
+        4.5,
+        348.2
+      ]
+    },
+    {
+      "supplied_point_index": 3,
+      "supplied_label": "P1",
+      "coordinate": [
+        936.6,
+        305.8
+      ]
+    },
+    {
+      "supplied_point_index": 4,
+      "supplied_label": "P1",
+      "coordinate": [
+        557.5,
+        165.3
+      ]
+    }
+  ],
+  "line_endpoints_supplied_coordinates": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      936.4,
+      305.4
+    ]
+  ],
+  "listed_order_topology": {
+    "order_by_supplied_point_index": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "coordinates": [
+      [
+        4.5,
+        516.5
+      ],
+      [
+        4.5,
+        348.2
+      ],
+      [
+        936.6,
+        305.8
+      ],
+      [
+        557.5,
+        165.3
+      ]
+    ],
+    "nonadjacent_edge_intersections": [
+      {
+        "edges_by_supplied_point_indices": [
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "intersection": [
+          289.95129890684734,
+          335.21519678827343
+        ],
+        "intersection_exact_fraction": [
+          "8811803223/30390632",
+          "6367126054/18994145"
+        ],
+        "first_segment_parameter": 0.3062453587671359,
+        "second_segment_parameter": 0.4838132027000952,
+        "proper_interior_intersection": true
+      }
+    ],
+    "signed_area_scaled_coordinate_units2": -26981.995,
+    "convex_turn_cross_products": [
+      156872.43,
+      -147033.89,
+      -210836.42,
+      93069.9
+    ],
+    "convex_all_nonzero_turns_same_sign": false
+  },
+  "simple_perimeter_reorder_proposal": {
+    "order_by_supplied_point_index": [
+      1,
+      2,
+      4,
+      3
+    ],
+    "coordinates": [
+      [
+        4.5,
+        516.5
+      ],
+      [
+        4.5,
+        348.2
+      ],
+      [
+        557.5,
+        165.3
+      ],
+      [
+        936.6,
+        305.8
+      ]
+    ],
+    "nonadjacent_edge_intersections": [],
+    "signed_area_scaled_coordinate_units2": 151953.16,
+    "convex_turn_cross_products": [
+      93069.9,
+      147033.89,
+      210836.42,
+      156872.43
+    ],
+    "convex_all_nonzero_turns_same_sign": true
+  },
+  "reorder_status": "PROPOSAL_ONLY_NOT_USER_APPROVED; swaps listed points3/4; all coordinates preserved exactly",
+  "P2_minus_supplied_polygon_point3": [
+    -0.2,
+    -0.4
+  ],
+  "P2_distance_to_supplied_polygon_point3_scaled_units": 0.447213595499958,
+  "P2_is_exact_polygon_vertex": false,
+  "P2_orientations_against_proposed_perimeter_edges": [
+    156838.77,
+    146776.11,
+    -123.54,
+    414.98
+  ],
+  "P2_is_outside_proposed_convex_polygon": true,
+  "selected_line_boundary_intersections_for_proposed_reorder": [
+    {
+      "polygon_edge_by_supplied_point_indices": [
+        1,
+        2
+      ],
+      "intersection": [
+        4.5,
+        516.5
+      ],
+      "intersection_exact_fraction": [
+        "9/2",
+        "1033/2"
+      ],
+      "first_segment_parameter": 0.0,
+      "second_segment_parameter": 0.0,
+      "proper_interior_intersection": false
+    },
+    {
+      "polygon_edge_by_supplied_point_indices": [
+        4,
+        3
+      ],
+      "intersection": [
+        935.8542711991413,
+        305.52362200865036
+      ],
+      "intersection_exact_fraction": [
+        "98713889809/105479980",
+        "32226625539/105479980"
+      ],
+      "first_segment_parameter": 0.9994143912427742,
+      "second_segment_parameter": 0.9980328968587214,
+      "proper_interior_intersection": true
+    },
+    {
+      "polygon_edge_by_supplied_point_indices": [
+        3,
+        1
+      ],
+      "intersection": [
+        4.5,
+        516.5
+      ],
+      "intersection_exact_fraction": [
+        "9/2",
+        "1033/2"
+      ],
+      "first_segment_parameter": 0.0,
+      "second_segment_parameter": 1.0,
+      "proper_interior_intersection": false
+    }
+  ],
+  "offset_status": "KEEP_EXACT_VALUES; no snap, extrapolation, tolerance or native-pixel offset selected",
+  "limitations": [
+    "source display width/height unknown",
+    "resize/crop/rotation/letterbox transform unknown",
+    "listed point order not explicitly confirmed",
+    "polygon reorder unapproved",
+    "static arithmetic only; no crossing acceptance, state or event",
+    "no source/model/tracker/encoder execution",
+    "relative template selected by user does not establish all-video reliability"
+  ],
+  "repository_modified": false,
+  "geometry_contract_accepted": false,
+  "native_pixel_conversion_executed": false,
+  "model_tracker_encoder_rerun": false,
+  "synthetic_crossing_tests_executed": false,
+  "retained_at_utc": "2026-10-11T15:48:11.756261+00:00",
+  "method_reference": "docs/evidence/phase_5/verification/check_supplied_polygon_coordinates.py",
+  "scope_note": "This prior independent static check was in supplied coordinate units before G3 native-preview mapping; its flags describe that check only."
+}

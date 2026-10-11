@@ -1,0 +1,45 @@
+{
+  "recorded_at_utc": "2026-10-11T15:40:52.121513+00:00",
+  "recorded_at_asia_jakarta": "2026-10-11T22:40:52.121513+07:00",
+  "claim_type": "USER_COORDINATE_CORRECTION_POLYGON_REVISION_AND_TEMPLATE_DECISION_NOT_EXPERIMENT_RESULT",
+  "reviewed_draft_id": "TOR3-PAGI-G2",
+  "source": "User request_user_input_async reply in this conversation",
+  "verbatim_answers": {
+    "coordinate_reference": "Koordinat berasal dari gambar berskala",
+    "polygon_and_rules": "revisi polygon A \nP1 : (4.5, 516.5)\nP1 : (4.5, 348.2)\nP1 : (936.6, 305.8)\nP1 : (557.5, 165.3)",
+    "template_transfer": "Template relatif, review per video"
+  },
+  "original_image_dimensions": null,
+  "original_image_crop_or_margins": null,
+  "g2_native1280x720_assumption_refuted": true,
+  "g2_placement_screening_applies_to_intended_gate": false,
+  "requested_side_a_points_in_supplied_order": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      4.5,
+      348.2
+    ],
+    [
+      936.6,
+      305.8
+    ],
+    [
+      557.5,
+      165.3
+    ]
+  ],
+  "repeated_user_point_label": "P1",
+  "simple_perimeter_order_accepted": false,
+  "default_transfer_policy": "RELATIVE_TEMPLATE_WITH_PER_VIDEO_REVIEW_USER_CONFIRMED",
+  "line_and_bcap_unit_status": "Scaled-image coordinates; original dimensions unknown",
+  "bc_selection_retained": true,
+  "direction_mapping_retained": true,
+  "g2_polygon_accepted": false,
+  "qualitative_crossing_contract_accepted": false,
+  "thresholds_selected": false,
+  "accepted_crossing_state_machine_replay_executed": false,
+  "detector_tracker_encoder_rerun": false
+}

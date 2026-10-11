@@ -17,7 +17,7 @@ DETECTION ≠ TRACKING ≠ ELIGIBILITY ≠ COUNTING
 
 Initial geometry is in image pixel coordinates. No world-coordinate, homography, or geographic projection is required for the initial prototype.
 
-**USER REQUIREMENT — shared default:** the user requests the new line as a default across videos. Its resize/aspect/crop transfer policy is OPEN, and reliability is unestablished. A reference template may initialize configuration; effective per-video geometry must remain explicit and reviewable.
+**USER-CONFIRMED POLICY — shared default:** a relative template, reviewed and adjustable per video. [Latest feedback](evidence/phase_5/feedback/G2_review_001.json) confirms the original values were read from a scaled image. Original dimensions/crop remain UNKNOWN; [the user delegates default preparation](evidence/phase_5/feedback/G2_review_002.json). G3 proposes a NEW960×540 reference, with u=x/960,v=y/540 and explicit effective native pixels. This is not recovery of the old display scale. Each video retains identifiable geometry and spatial mapping; cross-video reliability and transform-specific handling remain unestablished. The future geometry setup page belongs to Phase11.
 
 Line and polygon coordinates must support arbitrary diagonal geometry. Side A/B are opposite configured regions relative to the boundary, not fixed image halves. Never hardcode a line angle, pixel position, image orientation, or polygon dimensions. A conceptual diagram is not a literal geometry configuration.
 
@@ -31,7 +31,7 @@ The image does not label exact polygon vertices. It supplies visual intent, not 
 
 For other videos, geometry and semantic metadata are supplied independently. Do not infer approaching/away or side membership from left/right, top/bottom, X-axis direction, or Y-axis direction.
 
-**CONFIRMED — TOR3-PAGI Phase 5 feedback:** `A_TO_B` = approaching the camera and `B_TO_A` = moving away, for A as the far region and B as the near region. [Feedback 001](evidence/phase_5/feedback/G1_review_001.json) first requested G1 revision; [feedback 002](evidence/phase_5/feedback/G1_review_002.json) supplies P1 `(4.5,516.5)` and P2 `(936.4,305.4)`, B maxX `875`, engineer polygon-adjustment authorization and BC selection. Native1280×720 coordinates are an explicit draft ASSUMPTION. [G2](evidence/phase_5/review_drafts/G2/README.md) preserves the full segment and proposes adjusted polygons and qualitative rules for review. B's cap does not truncate P2. Boundary/noise/gap rules, measurement source and thresholds remain unresolved.
+**CONFIRMED — TOR3-PAGI Phase 5 feedback:** `A_TO_B` = approaching and `B_TO_A` = moving away, with selected BC. The line numbers `(4.5,516.5)`/`(936.4,305.4)` and Bcap875 remain exact; their earlier native1280×720 interpretation is refuted by [G2 feedback 001](evidence/phase_5/feedback/G2_review_001.json). G3 uses them only under a new proposed template reference. The requested A points are `(4.5,516.5)`, `(4.5,348.2)`, `(936.6,305.8)`, `(557.5,165.3)`. Proposed perimeter1→2→4→3 preserves these points without self-intersection. [G3](evidence/phase_5/review_drafts/G3/README.md) proposes B sharing A's lower edge and clipping atreferenceX875. LineP2 differs from A's right vertex and is not snapped or shortened at B's cap. Polygon/qualitative contract review, boundary/noise/gap rules, measurement source and thresholds remain unresolved. Historical G2 source/placement evidence is retained but does not establish the intended gate's behavior.
 
 ## 4. Detection, Tracking, and Eligibility Order
 

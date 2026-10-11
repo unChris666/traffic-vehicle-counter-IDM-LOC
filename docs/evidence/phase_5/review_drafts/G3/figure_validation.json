@@ -1,0 +1,24 @@
+{
+  "created_at_utc": "2026-10-11T15:44:12.574174+00:00",
+  "scope": "Source, coordinate mapping, static proposed polygon topology and browser controls only; not synthetic crossing trajectories or accepted state-machine replay",
+  "status": "passed",
+  "checks_passed": 13,
+  "checks_total": 13,
+  "checks": [
+    "Embedded raw frame remains byte-identical to retained source",
+    "Exact user points and line remain separate; perimeter proposal preserves all four coordinates",
+    "New reference is explicitly proposed; unknown original size and corrected G2 assumption are retained",
+    "Explicit normalized mapping matches reference/native preview; all proposed points fit the reference extent",
+    "SVG uses mapped polygons/endpoints and B cap without truncating the full line",
+    "Proposed A/B drawings are simple, nonzero-area and on opposite half-planes of their shared polygon edge; no crossing acceptance implied",
+    "Actual retained observation/detection link verifies the selected BC example",
+    "Contract/state replay/thresholds and reliability remain unestablished; no model rerun",
+    "Figure renders at native1280x720 without altering source dimensions",
+    "Original/restore controls toggle only separate annotations",
+    "BC stays visible independently of the comparator center",
+    "Pointer displays native, new-reference and relative coordinates within display quantization",
+    "No JavaScript errors during declared viewer interactions"
+  ],
+  "roundoff_note": "Coordinate comparison and half-plane roundoff checks are numerical verification only; no product noise/gap/neutral-band threshold is selected.",
+  "rendered_figure_sha256": "0307d69a123388841285ce5b48c43e7063a379bf819ef207f4b037a6c72efff3"
+}
