@@ -1,0 +1,368 @@
+{
+  "created_at_utc": "2026-10-11T05:09:23.074031+00:00",
+  "scope": "Codex CPU-only actual-image compatibility smoke; not Kaggle GPU execution or a model-quality benchmark.",
+  "environment": {
+    "python": "3.12.14",
+    "ultralytics": "8.4.175",
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "opencv": "5.0.0",
+    "numpy": "2.5.2",
+    "cuda_available": false,
+    "torch_cuda_build": null,
+    "torch_cpu_threads": 4,
+    "torch_interop_threads": 1,
+    "ultralytics_settings_warning": "Requested YOLO_CONFIG_DIR parent did not yet exist; library warned and wrote settings to its explicit /tmp/Ultralytics fallback. Both model loading/inference validations passed. Future notebook should create config parent before importing ultralytics."
+  },
+  "input_identity": {
+    "path": "/tmp/traffic-review-input/TOR3-PAGI.mp4",
+    "filename": "TOR3-PAGI.mp4",
+    "size_bytes": 53173467,
+    "sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c"
+  },
+  "model": {
+    "filename": "yolo26m.pt",
+    "source_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt",
+    "size_bytes": 44255705,
+    "sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+    "task": "detect",
+    "actual_names": {
+      "0": "person",
+      "1": "bicycle",
+      "2": "car",
+      "3": "motorcycle",
+      "4": "airplane",
+      "5": "bus",
+      "6": "train",
+      "7": "truck",
+      "8": "boat",
+      "9": "traffic light",
+      "10": "fire hydrant",
+      "11": "stop sign",
+      "12": "parking meter",
+      "13": "bench",
+      "14": "bird",
+      "15": "cat",
+      "16": "dog",
+      "17": "horse",
+      "18": "sheep",
+      "19": "cow",
+      "20": "elephant",
+      "21": "bear",
+      "22": "zebra",
+      "23": "giraffe",
+      "24": "backpack",
+      "25": "umbrella",
+      "26": "handbag",
+      "27": "tie",
+      "28": "suitcase",
+      "29": "frisbee",
+      "30": "skis",
+      "31": "snowboard",
+      "32": "sports ball",
+      "33": "kite",
+      "34": "baseball bat",
+      "35": "baseball glove",
+      "36": "skateboard",
+      "37": "surfboard",
+      "38": "tennis racket",
+      "39": "bottle",
+      "40": "wine glass",
+      "41": "cup",
+      "42": "fork",
+      "43": "knife",
+      "44": "spoon",
+      "45": "bowl",
+      "46": "banana",
+      "47": "apple",
+      "48": "sandwich",
+      "49": "orange",
+      "50": "broccoli",
+      "51": "carrot",
+      "52": "hot dog",
+      "53": "pizza",
+      "54": "donut",
+      "55": "cake",
+      "56": "chair",
+      "57": "couch",
+      "58": "potted plant",
+      "59": "bed",
+      "60": "dining table",
+      "61": "toilet",
+      "62": "tv",
+      "63": "laptop",
+      "64": "mouse",
+      "65": "remote",
+      "66": "keyboard",
+      "67": "cell phone",
+      "68": "microwave",
+      "69": "oven",
+      "70": "toaster",
+      "71": "sink",
+      "72": "refrigerator",
+      "73": "book",
+      "74": "clock",
+      "75": "vase",
+      "76": "scissors",
+      "77": "teddy bear",
+      "78": "hair drier",
+      "79": "toothbrush"
+    },
+    "load_seconds": 0.09392306199970335
+  },
+  "explicit_call_configuration": {
+    "device": "cpu",
+    "save": false,
+    "verbose": false
+  },
+  "threshold_policy": "No tuned product thresholds: inherit pinned Ultralytics published predict defaults and record resolved values.",
+  "samples": [
+    {
+      "sequential_decoded_index_zero_based": 0,
+      "native_image_path": "/tmp/traffic-review-runs/20261011T041657_637329Z_ee2d00c8/frames/frame_000000000.png",
+      "native_image_sha256": "a45fac4250c5b38b99f17dee9fd7f38a3d878a0721853dec5e2af4721f36541e",
+      "orig_shape_height_width": [
+        720,
+        1280
+      ],
+      "annotated_png": "/tmp/yolo26-cpu-validation/annotated_frame_000000000.png",
+      "annotated_png_sha256": "0e82e7aaf1114e37c88462f606e146ed2f50dc809fcd7c994fa08edcc014f5ee",
+      "raw_detections": [
+        {
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.8032363653182983,
+          "xyxy_native_pixels": [
+            176.61398315429688,
+            423.0985107421875,
+            216.61398315429688,
+            454.3267822265625
+          ]
+        },
+        {
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.36725762486457825,
+          "xyxy_native_pixels": [
+            85.44271850585938,
+            425.48193359375,
+            108.7930908203125,
+            446.74810791015625
+          ]
+        },
+        {
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.28324535489082336,
+          "xyxy_native_pixels": [
+            403.67230224609375,
+            453.314208984375,
+            435.18927001953125,
+            481.1036376953125
+          ]
+        },
+        {
+          "class_id": 13,
+          "class_name": "bench",
+          "confidence": 0.25078320503234863,
+          "xyxy_native_pixels": [
+            551.2161865234375,
+            482.28778076171875,
+            631.274658203125,
+            523.6395874023438
+          ]
+        }
+      ],
+      "measured_cpu_speed_ms_per_image": {
+        "preprocess": 1.863481000327738,
+        "inference": 354.8063770003864,
+        "postprocess": 1.5192490000117687
+      },
+      "measured_predict_call_wall_seconds": 0.5900799209994148,
+      "wall_time_note": "First call includes predictor setup and native warmup; result.speed inference excludes warmup. These two calls are a smoke test, not a representative runtime benchmark."
+    },
+    {
+      "sequential_decoded_index_zero_based": 7718,
+      "native_image_path": "/tmp/traffic-review-runs/20261011T041657_637329Z_ee2d00c8/frames/frame_000007718.png",
+      "native_image_sha256": "78e48a389821ba128315dbf6355206611ccbf8130f1aa14cf85468e7ecc04519",
+      "orig_shape_height_width": [
+        720,
+        1280
+      ],
+      "annotated_png": "/tmp/yolo26-cpu-validation/annotated_frame_000007718.png",
+      "annotated_png_sha256": "2d1dd8873c62f47489b536c05464f34be761519c01a2a13560f056c3787915e0",
+      "raw_detections": [
+        {
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8810088634490967,
+          "xyxy_native_pixels": [
+            463.1061706542969,
+            452.69677734375,
+            648.1376953125,
+            647.7808837890625
+          ]
+        },
+        {
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.833423376083374,
+          "xyxy_native_pixels": [
+            468.3758544921875,
+            349.1783447265625,
+            616.57666015625,
+            565.6721801757812
+          ]
+        },
+        {
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.4133293628692627,
+          "xyxy_native_pixels": [
+            102.06735229492188,
+            435.1540222167969,
+            123.96499633789062,
+            476.3210754394531
+          ]
+        },
+        {
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.38826191425323486,
+          "xyxy_native_pixels": [
+            101.6885986328125,
+            435.53753662109375,
+            124.17678833007812,
+            477.69793701171875
+          ]
+        },
+        {
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.37213099002838135,
+          "xyxy_native_pixels": [
+            49.95756530761719,
+            438.12738037109375,
+            70.43370056152344,
+            457.44207763671875
+          ]
+        },
+        {
+          "class_id": 2,
+          "class_name": "car",
+          "confidence": 0.2934240400791168,
+          "xyxy_native_pixels": [
+            123.1905517578125,
+            437.6884765625,
+            139.11181640625,
+            455.0086669921875
+          ]
+        },
+        {
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.27342525124549866,
+          "xyxy_native_pixels": [
+            374.0067138671875,
+            468.02532958984375,
+            407.6927490234375,
+            493.95611572265625
+          ]
+        }
+      ],
+      "measured_cpu_speed_ms_per_image": {
+        "preprocess": 2.715349000027345,
+        "inference": 1034.7584279998046,
+        "postprocess": 0.8584909992350731
+      },
+      "measured_predict_call_wall_seconds": 1.0407914500001425,
+      "wall_time_note": "First call includes predictor setup and native warmup; result.speed inference excludes warmup. These two calls are a smoke test, not a representative runtime benchmark."
+    }
+  ],
+  "limitations": [
+    "Only two actual native frames from one video were inferred, not the whole video.",
+    "No Kaggle execution, CUDA compatibility check, GPU timing, tracking, ReID, geometry, crossing or traffic counting.",
+    "No ground truth or accuracy/precision/recall/F1/MAPE claims.",
+    "Raw model labels retained; bus/angkot product mapping remains OPEN."
+  ],
+  "resolved_predictor_configuration": {
+    "mode": "predict",
+    "task": "detect",
+    "device": "cpu",
+    "conf": 0.25,
+    "iou": 0.7,
+    "imgsz": 640,
+    "max_det": 300,
+    "batch": 1,
+    "rect": true,
+    "classes": null,
+    "nms": null,
+    "quantize": null,
+    "augment": false,
+    "agnostic_nms": false,
+    "save": false,
+    "verbose": false,
+    "vid_stride": 1,
+    "compile": false
+  },
+  "actual_predictor_device": "cpu",
+  "actual_backend_format": "pt",
+  "actual_backend_end2end": false,
+  "status": "actual_cpu_model_load_and_two_native_image_inferences_passed",
+  "installed_dependencies": {
+    "PyYAML": "6.0.3",
+    "networkx": "3.6.1",
+    "numpy": "2.5.2",
+    "anyio": "4.15.1",
+    "contourpy": "1.4.0",
+    "sympy": "1.14.0",
+    "ultralytics-platform": "0.1.83",
+    "pyparsing": "3.3.3",
+    "idna": "3.20",
+    "python-dateutil": "2.9.0.post0",
+    "mpmath": "1.3.0",
+    "h11": "0.16.0",
+    "polars-runtime-32": "2.0.0",
+    "requests": "2.34.2",
+    "kiwisolver": "1.5.1",
+    "urllib3": "2.8.0",
+    "pillow": "12.3.0",
+    "certifi": "2026.7.22",
+    "six": "1.17.0",
+    "opencv-python": "5.0.0.93",
+    "cycler": "0.12.1",
+    "nvidia-ml-py": "13.615.71",
+    "httpcore": "1.0.9",
+    "charset-normalizer": "3.5.2",
+    "fsspec": "2026.7.0",
+    "ultralytics-thop": "2.2.2",
+    "filelock": "3.32.3",
+    "psutil": "7.2.2",
+    "packaging": "26.3",
+    "typing_extensions": "4.16.0",
+    "torchvision": "0.28.0+cpu",
+    "httpx": "0.28.1",
+    "fonttools": "4.66.1",
+    "matplotlib": "3.11.2",
+    "setuptools": "78.1.0",
+    "MarkupSafe": "3.0.3",
+    "polars": "2.0.0",
+    "Jinja2": "3.1.6",
+    "ultralytics": "8.4.175",
+    "torch": "2.13.0+cpu"
+  },
+  "visual_observations_from_actual_annotated_pngs": [
+    {
+      "claim_type": "EXPERIMENT RESULT",
+      "sequential_decoded_index_zero_based": 7718,
+      "evidence": "/tmp/yolo26-cpu-validation/annotated_frame_000007718.png",
+      "observation": "Visually inspected annotation contains person and motorcycle boxes over the same visible motorcycle rider. Raw person is not an established product pedestrian label; rider/pedestrian policy remains OPEN."
+    },
+    {
+      "claim_type": "EXPERIMENT RESULT",
+      "sequential_decoded_index_zero_based": 0,
+      "evidence": "/tmp/yolo26-cpu-validation/annotated_frame_000000000.png",
+      "observation": "The tool retained non-target raw bench class at a roadside wooden structure. No product-category filtering or interpretation was applied; visual labeling questions need further audit without ground-truth performance claims."
+    }
+  ]
+}

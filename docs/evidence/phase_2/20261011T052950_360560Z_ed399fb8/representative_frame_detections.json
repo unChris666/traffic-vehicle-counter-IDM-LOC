@@ -1,0 +1,362 @@
+[
+  {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "frame_index": 0,
+    "width": 1280,
+    "height": 720,
+    "timestamp_backend_ms": 0.0,
+    "timestamp_estimate_from_index_fps_seconds": 0.0,
+    "prediction_wall_seconds": 3.0871243840001625,
+    "first_call_includes_setup_and_warmup": true,
+    "library_speed_ms": {
+      "preprocess": 172.06742300004407,
+      "inference": 24.19035499997335,
+      "postprocess": 60.11605799994868
+    },
+    "detections": [
+      {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8032366037368774,
+        "bbox_xyxy_pixels": [
+          176.61398315429688,
+          423.0985107421875,
+          216.61398315429688,
+          454.3267822265625
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.36725762486457825,
+        "bbox_xyxy_pixels": [
+          85.44270324707031,
+          425.48193359375,
+          108.7930908203125,
+          446.74810791015625
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.28324535489082336,
+        "bbox_xyxy_pixels": [
+          403.6723327636719,
+          453.3141784667969,
+          435.1892395019531,
+          481.1036071777344
+        ]
+      },
+      {
+        "class_id": 13,
+        "class_name": "bench",
+        "confidence": 0.25078320503234863,
+        "bbox_xyxy_pixels": [
+          551.2161865234375,
+          482.28778076171875,
+          631.274658203125,
+          523.6395874023438
+        ]
+      }
+    ]
+  },
+  {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "frame_index": 2570,
+    "width": 1280,
+    "height": 720,
+    "timestamp_backend_ms": 86381.83333333333,
+    "timestamp_estimate_from_index_fps_seconds": 86.1981743716095,
+    "prediction_wall_seconds": 0.015579772999899433,
+    "first_call_includes_setup_and_warmup": false,
+    "library_speed_ms": {
+      "preprocess": 1.1711859999650187,
+      "inference": 12.534278999964954,
+      "postprocess": 1.4410810001663776
+    },
+    "detections": [
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.7778153419494629,
+        "bbox_xyxy_pixels": [
+          133.79470825195312,
+          457.148193359375,
+          158.83291625976562,
+          495.2154541015625
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.5330252647399902,
+        "bbox_xyxy_pixels": [
+          373.4610595703125,
+          463.72735595703125,
+          408.5791015625,
+          495.53118896484375
+        ]
+      },
+      {
+        "class_id": 0,
+        "class_name": "person",
+        "confidence": 0.4745037257671356,
+        "bbox_xyxy_pixels": [
+          131.52203369140625,
+          426.16290283203125,
+          166.17355346679688,
+          481.84381103515625
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.3298391103744507,
+        "bbox_xyxy_pixels": [
+          52.048492431640625,
+          437.53851318359375,
+          71.79035949707031,
+          456.2359619140625
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.2709302008152008,
+        "bbox_xyxy_pixels": [
+          111.11729431152344,
+          441.793212890625,
+          133.23550415039062,
+          454.182861328125
+        ]
+      }
+    ]
+  },
+  {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "frame_index": 5140,
+    "width": 1280,
+    "height": 720,
+    "timestamp_backend_ms": 172663.63333333333,
+    "timestamp_estimate_from_index_fps_seconds": 172.396348743219,
+    "prediction_wall_seconds": 0.01620434100004786,
+    "first_call_includes_setup_and_warmup": false,
+    "library_speed_ms": {
+      "preprocess": 1.1549209998520382,
+      "inference": 13.352436000104717,
+      "postprocess": 1.3004699999328295
+    },
+    "detections": [
+      {
+        "class_id": 0,
+        "class_name": "person",
+        "confidence": 0.8240718245506287,
+        "bbox_xyxy_pixels": [
+          218.0816650390625,
+          409.9677734375,
+          275.8474426269531,
+          520.1470947265625
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.8041313290596008,
+        "bbox_xyxy_pixels": [
+          221.33056640625,
+          472.15020751953125,
+          276.42718505859375,
+          545.7120971679688
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.486072838306427,
+        "bbox_xyxy_pixels": [
+          371.42242431640625,
+          464.18243408203125,
+          408.06695556640625,
+          495.69342041015625
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.4601680636405945,
+        "bbox_xyxy_pixels": [
+          99.41455078125,
+          443.8861083984375,
+          121.24752807617188,
+          471.83734130859375
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.4600299894809723,
+        "bbox_xyxy_pixels": [
+          117.34318542480469,
+          434.8974609375,
+          141.5135040283203,
+          457.99749755859375
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.39587974548339844,
+        "bbox_xyxy_pixels": [
+          169.26742553710938,
+          449.51568603515625,
+          181.6612548828125,
+          469.374755859375
+        ]
+      }
+    ]
+  },
+  {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "frame_index": 7711,
+    "width": 1280,
+    "height": 720,
+    "timestamp_backend_ms": 258678.25555555554,
+    "timestamp_estimate_from_index_fps_seconds": 258.6280632604984,
+    "prediction_wall_seconds": 0.018212432999916928,
+    "first_call_includes_setup_and_warmup": false,
+    "library_speed_ms": {
+      "preprocess": 1.2874359999841545,
+      "inference": 15.224722000084512,
+      "postprocess": 1.2979820000964537
+    },
+    "detections": [
+      {
+        "class_id": 0,
+        "class_name": "person",
+        "confidence": 0.5480419397354126,
+        "bbox_xyxy_pixels": [
+          105.11215209960938,
+          434.4921875,
+          129.8852996826172,
+          480.134521484375
+        ]
+      },
+      {
+        "class_id": 0,
+        "class_name": "person",
+        "confidence": 0.45905008912086487,
+        "bbox_xyxy_pixels": [
+          1148.78076171875,
+          435.7451171875,
+          1279.45361328125,
+          479.3082275390625
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.40922656655311584,
+        "bbox_xyxy_pixels": [
+          92.186279296875,
+          442.36529541015625,
+          105.28860473632812,
+          466.79364013671875
+        ]
+      },
+      {
+        "class_id": 0,
+        "class_name": "person",
+        "confidence": 0.38070791959762573,
+        "bbox_xyxy_pixels": [
+          91.21290588378906,
+          441.03436279296875,
+          105.52680969238281,
+          466.64215087890625
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.37551456689834595,
+        "bbox_xyxy_pixels": [
+          49.723350524902344,
+          438.1811828613281,
+          70.43641662597656,
+          457.5842590332031
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.3262452483177185,
+        "bbox_xyxy_pixels": [
+          104.5626220703125,
+          447.9053955078125,
+          127.69757080078125,
+          481.077880859375
+        ]
+      },
+      {
+        "class_id": 3,
+        "class_name": "motorcycle",
+        "confidence": 0.2812575101852417,
+        "bbox_xyxy_pixels": [
+          374.0783996582031,
+          467.73681640625,
+          407.7288513183594,
+          494.089111328125
+        ]
+      },
+      {
+        "class_id": 26,
+        "class_name": "handbag",
+        "confidence": 0.26056602597236633,
+        "bbox_xyxy_pixels": [
+          961.3148803710938,
+          412.60858154296875,
+          1279.43310546875,
+          715.1244506835938
+        ]
+      }
+    ]
+  },
+  {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "frame_index": 10281,
+    "width": 1280,
+    "height": 720,
+    "timestamp_backend_ms": 344659.4777777778,
+    "timestamp_estimate_from_index_fps_seconds": 344.8262376321079,
+    "prediction_wall_seconds": 0.018090330999939397,
+    "first_call_includes_setup_and_warmup": false,
+    "library_speed_ms": {
+      "preprocess": 1.1937409999518422,
+      "inference": 15.187038000021857,
+      "postprocess": 1.3089050000871794
+    },
+    "detections": [
+      {
+        "class_id": 13,
+        "class_name": "bench",
+        "confidence": 0.31751593947410583,
+        "bbox_xyxy_pixels": [
+          524.4881591796875,
+          495.42340087890625,
+          601.05029296875,
+          539.2488403320312
+        ]
+      },
+      {
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.31700077652931213,
+        "bbox_xyxy_pixels": [
+          106.12120056152344,
+          444.2855224609375,
+          130.9732666015625,
+          458.9862060546875
+        ]
+      }
+    ]
+  }
+]

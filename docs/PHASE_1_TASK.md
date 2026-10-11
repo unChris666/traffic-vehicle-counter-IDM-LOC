@@ -2,9 +2,9 @@
 
 ## Status
 
-REQUIREMENT: Phase 1 is now explicitly authorized by the user. The inspection tool is `../notebooks/01_video_inspection.ipynb`. Actual dataset inspection has not been executed from the current cloud environment; see `VIDEO_INSPECTION.md` for execution status rather than treating this task specification as a result.
+**STATUS — completed within scope:** Phase 1 has [passed acceptance](PHASE_1_ACCEPTANCE.md) for `TOR3-PAGI.mp4` and `TOR3-MALAM.mp4`. Actual Kaggle-sourced videos were decoded/reviewed in Codex; the user then retained matching Kaggle execution reports. All 21 review fields are recorded with references and explicit limitations. Historical TDLE visual observations and other videos remain unresolved. See [VIDEO_INSPECTION.md](VIDEO_INSPECTION.md) and the acceptance document for provenance; this task specification is not itself an experiment result. The user's conditional instruction authorized [Phase 2](PHASE_2_TASK.md), whose selected technical GPU baseline has now completed with limits recorded in [detection status](YOLO_DETECTION.md).
 
-The supplied screenshot is a spatial reference, not a video dataset or temporal measurement. The user supplied Kaggle input path `/kaggle/input/datasets/chrisbiran/traffic-tracker-videos` and notebook editor `https://www.kaggle.com/code/chrisbiran/new-traffic-counter/edit`. That path is not mounted in Codex. No actual video is present in this checkout. Kaggle GPU availability and runtime dependencies must be verified by running the notebook in Kaggle.
+The supplied screenshot is a spatial reference, not a video dataset or temporal measurement. The user supplied Kaggle input path `/kaggle/input/datasets/chrisbiran/traffic-tracker-videos` and notebook editor `https://www.kaggle.com/code/chrisbiran/new-traffic-counter/edit`. That path is not mounted in Codex and no video is committed in this checkout; temporary Kaggle API downloads supported the Codex review. The retained Phase 1 Kaggle reports record runtime dependencies and two visible Tesla T4 GPUs. Hardware visibility alone is not model/CUDA compatibility; the later selected Phase 2 baseline verified GPU execution separately.
 
 ## Task
 
@@ -60,4 +60,4 @@ Phase 1 deliverable locations:
 
 Report files changed, checks executed/passed/failed/unrun, measured metadata, evidence references, assumptions, and remaining unknowns. Phase 1 can establish video characteristics; detector/tracker behavior and the effect of GMC require later authorized experiments.
 
-Before Phase 2, verify the actual YOLO26M asset, Ultralytics package/API compatibility, runtime, and class mapping. Preserve the target technology; report a blocker if unavailable rather than silently substituting a detector.
+The scoped acceptance gate passed. Official YOLO26M assets, Ultralytics 8.4.175, raw labels, CPU smoke, and the selected TOR3-PAGI Kaggle GPU baseline are now verified; see [MODEL_SPEC.md](MODEL_SPEC.md) and [detection status](YOLO_DETECTION.md). The authorized technical Phase 2 baseline completed with 10,282 processed decoder frames and matching serialized rows on `cuda:0`, with sampled review recorded separately. Product-category mapping, tuned parameters, and model quality remain OPEN. Phase 3 is not authorized. Preserve the target technology; report a blocker if unavailable rather than silently substituting a detector.

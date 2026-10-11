@@ -6,7 +6,7 @@
 
 The primary use case is traffic around a retail store/location. Development begins with a Kaggle GPU prototype for one video. Modular Python, UI, Docker, and GPU VM deployment follow only after the core pipeline is stable and manually audited.
 
-**FACT — current evidence:** Phase 0 specifications, a sample-video screenshot, the Phase 1 tool, historical Kaggle reports, and [actual TOR3 visual reviews](evidence/phase_1/20261011_TOR3/README.md) are available. `TOR3-PAGI.mp4` and `TOR3-MALAM.mp4` were downloaded from the user's Kaggle dataset, decoded, and inspected in Codex; all 21 review fields are recorded separately, with explicit unknown/open limits. Uploaded-video byte identity is unverified because the upload transfer exceeds 32 MiB. The historical `TDLE-PAGI` reports still contain unknown manual observations and were not visually resolved by inspecting TOR3. Model assets, class mapping, and performance remain unverified; Phase 2 has not started.
+**FACT — current evidence:** Phase 0 specifications, the Phase 1 tool, historical Kaggle reports, and [actual TOR3 visual reviews](evidence/phase_1/20261011_TOR3/README.md) are available. The latest retained Kaggle reports match the two TOR3 identities, sampling, and earlier AI-assisted Codex reviews; [Phase 1 acceptance](PHASE_1_ACCEPTANCE.md) is PASS for these two videos only. Uploaded-video byte identity remains unverified. Historical `TDLE-PAGI` manual observations and other inputs remain unresolved. The user's conditional instruction authorized Phase 2. Official YOLO26M assets/API, Ultralytics 8.4.175, CPU smoke, and the selected Kaggle `cuda:0` baseline are now verified. [The GPU report](evidence/phase_2/20261011T052950_360560Z_ed399fb8/detection_report.json) records 10,282 processed TOR3-PAGI decoder frames and matching serialized rows. This completes the technical Phase 2 baseline with documented limits; product mapping, tuned settings, and model quality remain OPEN. See [detection status](YOLO_DETECTION.md); Phase 3 is not authorized.
 
 Decision provenance: the user's specification-update prompt and subsequent reference-side confirmation, received on 2026-10-08 (Asia/Jakarta). The reference screenshot was supplied in chat; no image asset or extracted polygon coordinates are stored in this documentation update.
 
@@ -30,7 +30,7 @@ The target input is eight videos:
 
 **EXPERIMENT RESULT — retained Kaggle report:** the selected `TDLE-PAGI.mp4` has reported H.264 metadata, 640 × 480 pixels (derived aspect ratio 4:3), 8,960 frames, stream duration 301.058555 seconds, and average FPS 29.761652209830647. Both decode passes record 8,960 frames. The nominal rate is 64.333 FPS; constant/variable frame rate and source timestamps remain unverified. These are report-supported facts about that input, not defaults for all videos or a guarantee of file integrity.
 
-Discovery contains metadata for 13 candidates, with dimensions 640 × 480, 640 × 360, 512 × 288, and 1280 × 720; reported average FPS ranges from about 24.003271 to 29.876442 and stream durations from 300.762749 to 344.859778 seconds. Only the selected video has full decode/sampling evidence. Candidate filenames do not establish store, weekday/weekend, recording-period, night visibility, or completeness of the required eight-video set for a location.
+Discovery contains metadata for 13 candidates, with dimensions 640 × 480, 640 × 360, 512 × 288, and 1280 × 720; reported average FPS ranges from about 24.003271 to 29.876442 and stream durations from 300.762749 to 344.859778 seconds. The historical TDLE run decoded/sampled one selected video; the new TOR3 runs decoded/sampled two additional inputs with separate reviews. Discovery is not inspection of all 13 candidates. Candidate filenames do not establish store, weekday/weekend, recording-period, night visibility, or completeness of the required eight-video set for a location.
 
 ## 3. Camera Condition
 
@@ -54,7 +54,7 @@ The camera views the road obliquely in the reference example. The reported appro
 - bus / angkot
 - truck
 
-**OPEN TECHNICAL DECISION:** Verify the actual selected weights' labels and the mapping to these reporting categories, including whether and how bus/angkot can be supported. Do not invent class IDs or assume labels shown in the sample overlay come from YOLO26M.
+**EXPERIMENT RESULT — actual weights:** the verified YOLO26M asset has 80 raw labels, including `0: person`, `2: car`, `3: motorcycle`, `5: bus`, and `7: truck`; no `angkot` label exists. See [model specification](MODEL_SPEC.md) and [asset verification](evidence/phase_2/asset_verification.json). **OPEN:** mapping raw labels to product reporting categories, particularly riders versus pedestrians and bus/angkot. A CPU sample places `person` and `motorcycle` boxes on the same rider; `person` must not silently become `pedestrian`.
 
 ## 5. Confirmed Target Pipeline
 
@@ -70,7 +70,7 @@ VIDEO
 → aggregation
 → audit/result export
 
-**CONFIRMED:** YOLO26M, BoT-SORT, and ReID are the target architecture. Package versions, weights sources, actual API compatibility, and ReID configuration remain open. Unknown compatibility is not permission to substitute another technology or silently remove ReID.
+**CONFIRMED:** YOLO26M, BoT-SORT, and ReID are the target architecture. Official YOLO26M provenance, Ultralytics 8.4.175, CPU frame-API loading/inference, and the selected Kaggle CUDA baseline are verified. Tracker integration/version, ReID configuration, and compatibility outside the tested runtime remain open. Unknown compatibility is not permission to substitute another technology or silently remove ReID.
 
 ## 6. Geometry and Direction Semantics
 
@@ -114,6 +114,6 @@ The intended conceptual information includes track identity, bounding box, categ
 
 Work follows [CODEX_WORKFLOW.md](../CODEX_WORKFLOW.md), from Phase 0 specification through Phase 13 GPU VM deployment. Prove the single-video pipeline before eight-video processing or multi-GPU orchestration. The eventual GPU target detects available GPUs dynamically: one GPU processes sequentially; two GPUs may process videos in parallel with one active video assigned to each GPU where resources permit.
 
-The Phase 0 task established documentation only. Phase 1 now creates an inspection tool for actual video metadata and visual evidence, with execution intended in Kaggle. It does not implement inference, tracking, ReID, counting, UI, Docker, or orchestration.
+The Phase 0 task established documentation only. Phase 1's inspection tool and retained TOR3 evidence passed [scoped acceptance](PHASE_1_ACCEPTANCE.md). The authorized single-video, full-frame YOLO26M Phase 2 baseline completed on one Kaggle GPU, with actual execution and sampled review documented separately from Phase 1. No quality or generalization claim follows from execution alone. Phase 3 is not authorized; tracking, ReID, crossing/counting, UI, Docker, stabilization, enhancement, and orchestration remain outside this task.
 
 See [OPEN_DECISIONS.md](OPEN_DECISIONS.md) for confirmed/open decisions, [CONFIG_SCHEMA.md](CONFIG_SCHEMA.md) for preliminary configuration, and [API_CONTRACT.md](API_CONTRACT.md) for implementation-independent boundaries.

@@ -22,7 +22,7 @@ Read these files before making implementation decisions:
 - `docs/CONFIG_SCHEMA.md` — preliminary logical configuration, with unresolved values explicit.
 - `docs/API_CONTRACT.md` — implementation-independent processing boundaries.
 
-Confirmed target: YOLO26M through the Ultralytics Python API in Kaggle, with BoT-SORT and ReID-assisted identity association. Versions, weights, class mapping, and the ReID implementation remain unverified. Do not replace the detector/tracker or remove ReID without an explicit architecture decision.
+Confirmed target: YOLO26M through the Ultralytics Python API in Kaggle, with BoT-SORT and ReID-assisted identity association. Official `yolo26m.pt`, Ultralytics 8.4.175, the frame API, CPU smoke, and the selected TOR3-PAGI Kaggle `cuda:0` baseline are verified; see `docs/MODEL_SPEC.md`. Product-category mapping, tuned parameters, other-scene performance, and the ReID implementation remain open. Do not replace the detector/tracker or remove ReID without an explicit architecture decision.
 
 The camera stays at one recording position during a video; small handheld shake may occur. Geometry uses per-video pixel coordinates. No world projection or homography is required initially. The geometry anchor is OPEN; do not silently choose a default.
 
@@ -80,7 +80,7 @@ The intended order is:
 
 Do not skip directly to later phases unless explicitly instructed.
 
-Phase 0 established the specifications. The user has now authorized Phase 1: video inspection, using `notebooks/01_video_inspection.ipynb` and the scope in `docs/PHASE_1_TASK.md`. The actual dataset is mounted in Kaggle, not this repository. Cloud fixture checks do not establish findings about that dataset. Phase 1 inspects actual video metadata, representative frames, and handheld shake. Detector/tracker inference and GMC/stabilization implementation belong to later authorized tasks.
+Phase 0 established the specifications. Phase 1 passed the scoped TOR3 morning/night acceptance in `docs/PHASE_1_ACCEPTANCE.md`; historical TDLE visual review and other inputs remain unresolved. The user's conditional instruction authorized Phase 2: YOLO26M detection on one actual video, with one GPU and full-frame detection; see `docs/PHASE_2_TASK.md`. That technical baseline completed in Kaggle on `cuda:0`, processing 10,282 TOR3-PAGI decoder frames with matching serialized records; see `docs/YOLO_DETECTION.md` for retained evidence and limitations. This does not establish model quality or authorize Phase 3. The dataset is mounted in Kaggle, not this repository. Cloud fixtures do not establish dataset/model findings. Tracking, ReID, crossing/counting, stabilization/GMC, night enhancement, and multi-GPU orchestration remain outside this task.
 
 ## Task Execution Protocol
 

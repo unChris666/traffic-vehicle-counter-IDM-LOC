@@ -1,0 +1,56 @@
+{
+  "scope": "Nine synthetic-video/stubbed-predictor or download-guard checks plus an actual CPU-only torch CUDA guard (display import stubbed); no actual GPU inference or dataset findings.",
+  "fixture_path": "/tmp/phase2-helper-validation-e_f1cloi/synthetic-fixture.avi",
+  "outcomes": [
+    {
+      "name": "sequential_fixture_stream_and_artifacts",
+      "status": "passed"
+    },
+    {
+      "name": "bounded_prefix_and_empty_detections",
+      "status": "passed"
+    },
+    {
+      "name": "invalid_native_bbox_retains_failure_manifest",
+      "status": "passed"
+    },
+    {
+      "name": "midstream_predictor_failure_retains_partial_evidence",
+      "status": "passed"
+    },
+    {
+      "name": "wrong_input_hash_is_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "invalid_frame_limit_is_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "manual_evidence_path_escape_is_rejected",
+      "status": "passed"
+    },
+    {
+      "name": "decoder_returns_no_frames_retains_failure_report",
+      "status": "passed"
+    },
+    {
+      "name": "actual_cpu_runtime_rejects_missing_cuda_no_fallback",
+      "status": "passed"
+    },
+    {
+      "name": "equal_size_wrong_asset_hash_is_rejected_before_model_load",
+      "status": "passed",
+      "scope": "Synthetic injected download only; no network request or actual weights load.",
+      "synthetic_download_bytes": 44255705,
+      "expected_asset_bytes_unchanged": 44255705,
+      "expected_asset_sha256_unchanged": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "synthetic_download_sha256": "5c9831367d94d3eee4a86667fcf04acf4b1fd61efa4b889a227f814ce5d6542d",
+      "size_matches_expected": true,
+      "sha256_matches_expected": false,
+      "model_loader_calls": 0,
+      "temporary_download_cleaned": true,
+      "failure_manifest_retained": true
+    }
+  ]
+}
