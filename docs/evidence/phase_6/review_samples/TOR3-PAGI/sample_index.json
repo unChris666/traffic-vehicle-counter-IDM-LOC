@@ -1,0 +1,5625 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_PIXEL_EXTRACTION_NOT_VISUAL_VERDICT",
+  "source_video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+  "source_video_size_bytes": 53173467,
+  "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+  "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+  "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+  "method_sha256": "c8af9ce8eca194fc2702d55232c9e834b1bc97da8011b61828221322abcd870b",
+  "inventory_sha256": "2856407cf541e20c326bddd05d563bbe41ef29a6b2feb8a55942b1e3bf1e4f57",
+  "python_opencv_version": "5.0.0",
+  "decoded_frame_count": 10282,
+  "native_dimensions": [
+    1280,
+    720
+  ],
+  "target_frames_excluding_alignment_count": 94,
+  "alignment_frame5140_equals_retained_phase2_png": true,
+  "pixel_hash_encoding": "SHA256 contiguous native uint8 BGR bytes",
+  "reviewer": null,
+  "decoder_indices_not_authoritative_pts": true,
+  "no_models_or_geometry_replayed": true,
+  "display_margin_px": 24,
+  "display_margin_is_not_model_or_association_threshold": true,
+  "cases": [
+    {
+      "track_id": 1,
+      "candidate_inventory_indices": [
+        0
+      ],
+      "frames": [
+        0,
+        60,
+        75,
+        76,
+        77
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1,
+          "origin_frame": 0,
+          "crossing_frame_start": 76,
+          "crossing_frame_end": 77,
+          "confirmation_frame": 77,
+          "direction": "A_TO_B"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        152,
+        372,
+        764,
+        589
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_raw_contact.png",
+          "sha256": "c09161e62c2dd2f7d20ac21a44f03e40d640e16890acd2b4937a188f1f044bf7",
+          "size_bytes": 680433,
+          "shape_width_height": [
+            1224,
+            729
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_overlay_contact.png",
+          "sha256": "c535b2d8fb17165f8281ed6725084da58041138f3627e6d7b79b7433f6640e8c",
+          "size_bytes": 681952,
+          "shape_width_height": [
+            1224,
+            729
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 0,
+          "native_crop_xyxy": [
+            152,
+            372,
+            764,
+            589
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "77d2756b282ebef9e08036cb5537ad4048c2cc04c016a6269c34cca0bd55d5d3",
+          "focus_measurement": {
+            "track_id": 1,
+            "frame_index": 0,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              176.61398315429688,
+              423.0985107421875,
+              216.61398315429688,
+              454.3267822265625
+            ],
+            "bbox": [
+              176.61398315429688,
+              423.0985107421875,
+              216.61398315429688,
+              454.3267822265625
+            ],
+            "center": [
+              196.61398315429688,
+              438.712646484375
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.8032366037368774,
+            "timestamp_estimate_from_index_fps_seconds": 0.0,
+            "timestamp_parent_backend_ms": 0.0,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 60,
+          "native_crop_xyxy": [
+            152,
+            372,
+            764,
+            589
+          ],
+          "contact_sheet_image_origin_xy": [
+            612,
+            26
+          ],
+          "native_bgr_uint8_sha256": "853f654bd66c0235acd57e203ed7cdcebc1d91567b8b3e9a79dba942dab70452",
+          "focus_measurement": {
+            "track_id": 1,
+            "frame_index": 60,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              287.50177001953125,
+              414.5599365234375,
+              410.55694580078125,
+              498.69378662109375
+            ],
+            "bbox": [
+              286.4916076660156,
+              414.5361633300781,
+              408.6527404785156,
+              498.2363586425781
+            ],
+            "center": [
+              349.02935791015625,
+              456.6268615722656
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.9026987552642822,
+            "timestamp_estimate_from_index_fps_seconds": 2.012408740193218,
+            "timestamp_parent_backend_ms": 2236.3333333333335,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 2,
+              "other_emitted_track_id": 3,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                407.5889892578125,
+                455.08148193359375,
+                432.25323486328125,
+                481.26043701171875
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 75,
+          "native_crop_xyxy": [
+            152,
+            372,
+            764,
+            589
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            269
+          ],
+          "native_bgr_uint8_sha256": "9371645f0353d64e8eedf4871ca122a55189ebda0f256ec3ab4fef5f02f2c0c0",
+          "focus_measurement": {
+            "track_id": 1,
+            "frame_index": 75,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              416.0205993652344,
+              402.54058837890625,
+              668.5655517578125,
+              550.6895141601562
+            ],
+            "bbox": [
+              412.1158447265625,
+              402.8764343261719,
+              659.9111328125,
+              548.98681640625
+            ],
+            "center": [
+              542.2930755615234,
+              476.61505126953125
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.9308390617370605,
+            "timestamp_estimate_from_index_fps_seconds": 2.5155109252415224,
+            "timestamp_parent_backend_ms": 2737.0,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 76,
+          "native_crop_xyxy": [
+            152,
+            372,
+            764,
+            589
+          ],
+          "contact_sheet_image_origin_xy": [
+            612,
+            269
+          ],
+          "native_bgr_uint8_sha256": "1bf28aff1a740b8ae947202ef4cecdc54b214353c4f78ffb8b10d87a6d3fd0fa",
+          "focus_measurement": {
+            "track_id": 1,
+            "frame_index": 76,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              432.55792236328125,
+              400.0247802734375,
+              703.3881225585938,
+              556.3785400390625
+            ],
+            "bbox": [
+              427.7099609375,
+              400.8105773925781,
+              692.6903076171875,
+              554.7978515625
+            ],
+            "center": [
+              567.9730224609375,
+              478.20166015625
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.9356159567832947,
+            "timestamp_estimate_from_index_fps_seconds": 2.5490510709114096,
+            "timestamp_parent_backend_ms": 2770.377777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 77,
+          "native_crop_xyxy": [
+            152,
+            372,
+            764,
+            589
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            512
+          ],
+          "native_bgr_uint8_sha256": "32310dc516d5a333ab6e01df9b0c42afa238f330640f4b2e481a6fc5ae9ff75c",
+          "focus_measurement": {
+            "track_id": 1,
+            "frame_index": 77,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              448.5763244628906,
+              396.6297607421875,
+              739.8035888671875,
+              564.1097412109375
+            ],
+            "bbox": [
+              443.76715087890625,
+              397.8717346191406,
+              728.16943359375,
+              561.89111328125
+            ],
+            "center": [
+              594.1899566650391,
+              480.3697509765625
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.9347564578056335,
+            "timestamp_estimate_from_index_fps_seconds": 2.5825912165812963,
+            "timestamp_parent_backend_ms": 2803.7555555555555,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 311,
+      "candidate_inventory_indices": [
+        17
+      ],
+      "frames": [
+        1591,
+        1595,
+        1596,
+        1597
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 311,
+          "origin_frame": 1591,
+          "crossing_frame_start": 1596,
+          "crossing_frame_end": 1597,
+          "confirmation_frame": 1597,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        353,
+        336,
+        802,
+        718
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id311_raw_contact.png",
+          "sha256": "a54d937f2b63aba411ead72407933ae1bf3a42fbf5c2cf1423ed8d2a17e4fd73",
+          "size_bytes": 706058,
+          "shape_width_height": [
+            898,
+            816
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id311_overlay_contact.png",
+          "sha256": "04af15ec243e7c233407b9d9482930259e333a44936587a013676582629cf9ea",
+          "size_bytes": 710336,
+          "shape_width_height": [
+            898,
+            816
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 1591,
+          "native_crop_xyxy": [
+            353,
+            336,
+            802,
+            718
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "9b77ae59b40f75299388e2975fc0ec5b343131193d8dde88e5ee172ef19a3e3e",
+          "focus_measurement": {
+            "track_id": 311,
+            "frame_index": 1591,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              555.105712890625,
+              432.4007568359375,
+              777.6409912109375,
+              693.8026123046875
+            ],
+            "bbox": [
+              555.9203491210938,
+              429.6473388671875,
+              778.947021484375,
+              699.853759765625
+            ],
+            "center": [
+              666.3733520507812,
+              563.1016845703125
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.9060527682304382,
+            "timestamp_estimate_from_index_fps_seconds": 53.36237176079016,
+            "timestamp_parent_backend_ms": 53504.68888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 1595,
+          "native_crop_xyxy": [
+            353,
+            336,
+            802,
+            718
+          ],
+          "contact_sheet_image_origin_xy": [
+            449,
+            26
+          ],
+          "native_bgr_uint8_sha256": "4ac8a2f6d00da11d1bbaec90b2816ef127e8fd6b847ff973777842e5f09aeff9",
+          "focus_measurement": {
+            "track_id": 311,
+            "frame_index": 1595,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              418.5224609375,
+              448.40240478515625,
+              544.373046875,
+              615.6095581054688
+            ],
+            "bbox": [
+              414.15093994140625,
+              447.69879150390625,
+              536.996826171875,
+              616.1463012695312
+            ],
+            "center": [
+              481.44775390625,
+              532.0059814453125
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7995071411132812,
+            "timestamp_estimate_from_index_fps_seconds": 53.49653234346971,
+            "timestamp_parent_backend_ms": 53638.200000000004,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 1596,
+          "native_crop_xyxy": [
+            353,
+            336,
+            802,
+            718
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            434
+          ],
+          "native_bgr_uint8_sha256": "e7f710e73c6ad2e0abf5f7dba85a073b624ded3307dbfe4a8a61b74066fe4a59",
+          "focus_measurement": {
+            "track_id": 311,
+            "frame_index": 1596,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              383.76275634765625,
+              442.0579528808594,
+              506.81683349609375,
+              602.9627685546875
+            ],
+            "bbox": [
+              382.6058044433594,
+              443.8828125,
+              500.34326171875,
+              602.5572509765625
+            ],
+            "center": [
+              445.289794921875,
+              522.5103607177734
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8510270714759827,
+            "timestamp_estimate_from_index_fps_seconds": 53.5300724891396,
+            "timestamp_parent_backend_ms": 53671.58888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 1597,
+          "native_crop_xyxy": [
+            353,
+            336,
+            802,
+            718
+          ],
+          "contact_sheet_image_origin_xy": [
+            449,
+            434
+          ],
+          "native_bgr_uint8_sha256": "d0c1a26c16b57066c3a3befdf590141ff9ee5c52c2b3ca176c3395816b2de058",
+          "focus_measurement": {
+            "track_id": 311,
+            "frame_index": 1597,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              377.53973388671875,
+              477.02001953125,
+              473.79351806640625,
+              592.8431396484375
+            ],
+            "bbox": [
+              370.6529541015625,
+              468.6324157714844,
+              466.8550109863281,
+              591.59130859375
+            ],
+            "center": [
+              425.6666259765625,
+              534.9315795898438
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7121073007583618,
+            "timestamp_estimate_from_index_fps_seconds": 53.56361263480949,
+            "timestamp_parent_backend_ms": 53704.955555555556,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 394,
+      "candidate_inventory_indices": [
+        25
+      ],
+      "frames": [
+        1893,
+        1897,
+        1898,
+        1899
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 394,
+          "origin_frame": 1893,
+          "crossing_frame_start": 1898,
+          "crossing_frame_end": 1899,
+          "confirmation_frame": 1899,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        209,
+        326,
+        503,
+        716
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id394_raw_contact.png",
+          "sha256": "79fb08c5628b44013b063c926e756d36e330724bceae8b6e0aaa6789d80e9d42",
+          "size_bytes": 461547,
+          "shape_width_height": [
+            588,
+            832
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id394_overlay_contact.png",
+          "sha256": "e570bccb783da1cd6928d3ad8cd555f0c14dbcc9523031b27846b5f3b94a6a42",
+          "size_bytes": 465066,
+          "shape_width_height": [
+            588,
+            832
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 1893,
+          "native_crop_xyxy": [
+            209,
+            326,
+            503,
+            716
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "c6e25001c4509ed495c8861f4e36a3e5fb57a9fa07118b429aefc56507c8a9c9",
+          "focus_measurement": {
+            "track_id": 394,
+            "frame_index": 1893,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              327.98797607421875,
+              502.8037109375,
+              478.49395751953125,
+              691.880126953125
+            ],
+            "bbox": [
+              327.2353820800781,
+              509.489013671875,
+              472.3345031738281,
+              697.337158203125
+            ],
+            "center": [
+              403.240966796875,
+              597.3419189453125
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.64351487159729,
+            "timestamp_estimate_from_index_fps_seconds": 63.491495753096025,
+            "timestamp_parent_backend_ms": 63584.77777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 1897,
+          "native_crop_xyxy": [
+            209,
+            326,
+            503,
+            716
+          ],
+          "contact_sheet_image_origin_xy": [
+            294,
+            26
+          ],
+          "native_bgr_uint8_sha256": "9fd27ab3fbb4d9fdfee49c4b24c33d06ce3bed0ba4ac1b2307a143271648497f",
+          "focus_measurement": {
+            "track_id": 394,
+            "frame_index": 1897,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              273.20648193359375,
+              494.243408203125,
+              373.90228271484375,
+              630.60498046875
+            ],
+            "bbox": [
+              271.6292724609375,
+              493.4476623535156,
+              369.06060791015625,
+              631.714599609375
+            ],
+            "center": [
+              323.55438232421875,
+              562.4241943359375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8402228951454163,
+            "timestamp_estimate_from_index_fps_seconds": 63.625656335775574,
+            "timestamp_parent_backend_ms": 63718.28888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 1898,
+          "native_crop_xyxy": [
+            209,
+            326,
+            503,
+            716
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            442
+          ],
+          "native_bgr_uint8_sha256": "ce072cd755d5d27241610e78e5323b434ed4e4be099c3d950fa78ff8a30a891d",
+          "focus_measurement": {
+            "track_id": 394,
+            "frame_index": 1898,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              260.2960205078125,
+              489.8135986328125,
+              352.038818359375,
+              621.3895263671875
+            ],
+            "bbox": [
+              259.1423034667969,
+              491.1959533691406,
+              348.1406555175781,
+              621.3028564453125
+            ],
+            "center": [
+              306.16741943359375,
+              555.6015625
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8286795616149902,
+            "timestamp_estimate_from_index_fps_seconds": 63.65919648144546,
+            "timestamp_parent_backend_ms": 63751.66666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 1899,
+          "native_crop_xyxy": [
+            209,
+            326,
+            503,
+            716
+          ],
+          "contact_sheet_image_origin_xy": [
+            294,
+            442
+          ],
+          "native_bgr_uint8_sha256": "fd26a8b09438fffa466713e86c1fe2c08f52b0c58ffd7c972bc40df0dafd73fb",
+          "focus_measurement": {
+            "track_id": 394,
+            "frame_index": 1899,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              251.45062255859375,
+              488.5460205078125,
+              338.75885009765625,
+              610.6328125
+            ],
+            "bbox": [
+              249.64108276367188,
+              489.51751708984375,
+              333.72430419921875,
+              610.6490478515625
+            ],
+            "center": [
+              295.104736328125,
+              549.5894165039062
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8118494153022766,
+            "timestamp_estimate_from_index_fps_seconds": 63.69273662711535,
+            "timestamp_parent_backend_ms": 63785.044444444444,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 443,
+      "candidate_inventory_indices": [
+        29
+      ],
+      "frames": [
+        2292,
+        2296,
+        2297,
+        2298
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 443,
+          "origin_frame": 2292,
+          "crossing_frame_start": 2297,
+          "crossing_frame_end": 2298,
+          "confirmation_frame": 2298,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        355,
+        305,
+        892,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id443_raw_contact.png",
+          "sha256": "72faafbb503102c21ab1b075d735e982b0ebc428dfeef83b5e5cce7002c19874",
+          "size_bytes": 887144,
+          "shape_width_height": [
+            1074,
+            882
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id443_overlay_contact.png",
+          "sha256": "ef47f250bc2587cee93c27142f63a3f57123a4df6d7c1108948b8e4912aad737",
+          "size_bytes": 892951,
+          "shape_width_height": [
+            1074,
+            882
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 2292,
+          "native_crop_xyxy": [
+            355,
+            305,
+            892,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "e0bbe96fc89f4c50d018e2ce6e739b5d33d0086017b056377de377fe39bb3777",
+          "focus_measurement": {
+            "track_id": 443,
+            "frame_index": 2292,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              603.8861083984375,
+              448.250244140625,
+              867.8468017578125,
+              702.8291015625
+            ],
+            "bbox": [
+              619.2877807617188,
+              441.40423583984375,
+              913.4176025390625,
+              705.5427856445312
+            ],
+            "center": [
+              735.866455078125,
+              575.5396728515625
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8833737373352051,
+            "timestamp_estimate_from_index_fps_seconds": 76.87401387538092,
+            "timestamp_parent_backend_ms": 76969.2888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 2296,
+          "native_crop_xyxy": [
+            355,
+            305,
+            892,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            537,
+            26
+          ],
+          "native_bgr_uint8_sha256": "5c3be8d8235508d80ac98fd3ac995b03430d3d72e464fdc76b2b08df187e7121",
+          "focus_measurement": {
+            "track_id": 443,
+            "frame_index": 2296,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              437.4212646484375,
+              457.8559265136719,
+              576.960205078125,
+              613.859375
+            ],
+            "bbox": [
+              432.81781005859375,
+              462.1819152832031,
+              572.37548828125,
+              614.0018920898438
+            ],
+            "center": [
+              507.19073486328125,
+              535.8576507568359
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8415399193763733,
+            "timestamp_estimate_from_index_fps_seconds": 77.00817445806048,
+            "timestamp_parent_backend_ms": 77102.8,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 2297,
+          "native_crop_xyxy": [
+            355,
+            305,
+            892,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            467
+          ],
+          "native_bgr_uint8_sha256": "c6a59eece6ff64b9840f98082917835621dac894093597e1524c4530756e92c8",
+          "focus_measurement": {
+            "track_id": 443,
+            "frame_index": 2297,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              410.0682373046875,
+              459.7830505371094,
+              534.31787109375,
+              598.9964599609375
+            ],
+            "bbox": [
+              404.9424743652344,
+              462.3363952636719,
+              528.2166748046875,
+              598.5479736328125
+            ],
+            "center": [
+              472.19305419921875,
+              529.3897552490234
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6003586053848267,
+            "timestamp_estimate_from_index_fps_seconds": 77.04171460373036,
+            "timestamp_parent_backend_ms": 77136.17777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 2298,
+          "native_crop_xyxy": [
+            355,
+            305,
+            892,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            537,
+            467
+          ],
+          "native_bgr_uint8_sha256": "de4c4446e0e556386326f8f529f5fb32e3c134376a303c10f9a80aea2129e959",
+          "focus_measurement": {
+            "track_id": 443,
+            "frame_index": 2298,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              379.96905517578125,
+              458.612060546875,
+              498.60028076171875,
+              589.764892578125
+            ],
+            "bbox": [
+              376.3746032714844,
+              460.9359436035156,
+              491.9933776855469,
+              588.052734375
+            ],
+            "center": [
+              439.28466796875,
+              524.1884765625
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6785662174224854,
+            "timestamp_estimate_from_index_fps_seconds": 77.07525474940024,
+            "timestamp_parent_backend_ms": 77169.55555555556,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 461,
+      "candidate_inventory_indices": [
+        31
+      ],
+      "frames": [
+        2362,
+        2366,
+        2367,
+        2368
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 461,
+          "origin_frame": 2362,
+          "crossing_frame_start": 2367,
+          "crossing_frame_end": 2368,
+          "confirmation_frame": 2368,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        300,
+        311,
+        706,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id461_raw_contact.png",
+          "sha256": "35504823766f7028736ba1c669ced35fbe394cad74f112d7b137761f80e6ebbd",
+          "size_bytes": 697007,
+          "shape_width_height": [
+            812,
+            870
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id461_overlay_contact.png",
+          "sha256": "98019e5570798c2e461c6c52f0f20c80740992df4401b2b4901a75c7a2bfebb0",
+          "size_bytes": 701882,
+          "shape_width_height": [
+            812,
+            870
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 2362,
+          "native_crop_xyxy": [
+            300,
+            311,
+            706,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "7df8357947da9bd099402685fe8d5ee523b839f22ed97d3138e57b668a4a1a9d",
+          "focus_measurement": {
+            "track_id": 461,
+            "frame_index": 2362,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              469.40570068359375,
+              422.5611572265625,
+              681.3342895507812,
+              695.486083984375
+            ],
+            "bbox": [
+              462.9103698730469,
+              429.9273681640625,
+              678.507080078125,
+              701.1270141601562
+            ],
+            "center": [
+              575.3699951171875,
+              559.0236206054688
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8957394361495972,
+            "timestamp_estimate_from_index_fps_seconds": 79.22182407227301,
+            "timestamp_parent_backend_ms": 79305.73333333334,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 2366,
+          "native_crop_xyxy": [
+            300,
+            311,
+            706,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            406,
+            26
+          ],
+          "native_bgr_uint8_sha256": "e714e88e4dca9288da2ec83c19bcf2e357d6d4e4b9c0a6c9c2ff581b3f408aac",
+          "focus_measurement": {
+            "track_id": 461,
+            "frame_index": 2366,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              365.22784423828125,
+              474.971923828125,
+              491.6707763671875,
+              622.8525390625
+            ],
+            "bbox": [
+              358.98919677734375,
+              474.888427734375,
+              483.5503234863281,
+              623.3621215820312
+            ],
+            "center": [
+              428.4493103027344,
+              548.9122314453125
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7778440117835999,
+            "timestamp_estimate_from_index_fps_seconds": 79.35598465495256,
+            "timestamp_parent_backend_ms": 79439.24444444446,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 2367,
+          "native_crop_xyxy": [
+            300,
+            311,
+            706,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            461
+          ],
+          "native_bgr_uint8_sha256": "4309c4c1b27b2c204ba5a30cc42c0731a1058ffbe7927409cc8e79c2738354aa",
+          "focus_measurement": {
+            "track_id": 461,
+            "frame_index": 2367,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              345.3481140136719,
+              472.33966064453125,
+              461.2391052246094,
+              609.0458374023438
+            ],
+            "bbox": [
+              341.3738708496094,
+              475.63543701171875,
+              454.1087341308594,
+              609.236328125
+            ],
+            "center": [
+              403.2936096191406,
+              540.6927490234375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7465203404426575,
+            "timestamp_estimate_from_index_fps_seconds": 79.38952480062245,
+            "timestamp_parent_backend_ms": 79472.62222222223,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 2368,
+          "native_crop_xyxy": [
+            300,
+            311,
+            706,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            406,
+            461
+          ],
+          "native_bgr_uint8_sha256": "c8256373b6fb2637f1602228167d76ca517e7698e576408c25f196c273e44ec4",
+          "focus_measurement": {
+            "track_id": 461,
+            "frame_index": 2368,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              327.6038818359375,
+              472.04925537109375,
+              432.9114990234375,
+              599.5514526367188
+            ],
+            "bbox": [
+              324.2646179199219,
+              475.1147766113281,
+              426.63092041015625,
+              598.7060546875
+            ],
+            "center": [
+              380.2576904296875,
+              535.8003540039062
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6761335134506226,
+            "timestamp_estimate_from_index_fps_seconds": 79.42306494629234,
+            "timestamp_parent_backend_ms": 79506.0,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 693,
+      "candidate_inventory_indices": [
+        52
+      ],
+      "frames": [
+        4207,
+        4214,
+        4215,
+        4216
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 693,
+          "origin_frame": 4207,
+          "crossing_frame_start": 4215,
+          "crossing_frame_end": 4216,
+          "confirmation_frame": 4216,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        285,
+        307,
+        738,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id693_raw_contact.png",
+          "sha256": "59c13c070641450d10da777d7df7edbe9b872aa4a2b16c5e41a08662782f3dfc",
+          "size_bytes": 816518,
+          "shape_width_height": [
+            906,
+            878
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id693_overlay_contact.png",
+          "sha256": "a0e2d6e44974cd33a6eda14848954fd47f51a62648935b8a3117d682ca7c7111",
+          "size_bytes": 820204,
+          "shape_width_height": [
+            906,
+            878
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 4207,
+          "native_crop_xyxy": [
+            285,
+            307,
+            738,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "f92dc5982017ab0361f673f4c2608d6af223fdf24d50dc3074d5bb5b0db9fc00",
+          "focus_measurement": {
+            "track_id": 693,
+            "frame_index": 4207,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              486.7037658691406,
+              479.291748046875,
+              713.9879150390625,
+              705.490234375
+            ],
+            "bbox": [
+              484.11846923828125,
+              481.9077453613281,
+              708.311767578125,
+              708.1935424804688
+            ],
+            "center": [
+              600.3458404541016,
+              592.3909912109375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8901724815368652,
+            "timestamp_estimate_from_index_fps_seconds": 141.10339283321446,
+            "timestamp_parent_backend_ms": 141321.7888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 4214,
+          "native_crop_xyxy": [
+            285,
+            307,
+            738,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            453,
+            26
+          ],
+          "native_bgr_uint8_sha256": "cee913822dd56cac8275483f2ca638ef60caca2e67f6abe2d517582399b15a50",
+          "focus_measurement": {
+            "track_id": 693,
+            "frame_index": 4214,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              338.52734375,
+              458.8280029296875,
+              470.8707275390625,
+              619.8983154296875
+            ],
+            "bbox": [
+              338.4184875488281,
+              464.90234375,
+              464.9656677246094,
+              619.5016479492188
+            ],
+            "center": [
+              404.69903564453125,
+              539.3631591796875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7543364763259888,
+            "timestamp_estimate_from_index_fps_seconds": 141.33817385290368,
+            "timestamp_parent_backend_ms": 141555.43333333332,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 4215,
+          "native_crop_xyxy": [
+            285,
+            307,
+            738,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            465
+          ],
+          "native_bgr_uint8_sha256": "c83a7e29f1dd51062398256aee4e40f63e7fed6dcd7d7903ceee6f7c884e2a33",
+          "focus_measurement": {
+            "track_id": 693,
+            "frame_index": 4215,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              334.7752685546875,
+              471.8338928222656,
+              446.22088623046875,
+              610.4080810546875
+            ],
+            "bbox": [
+              329.9997863769531,
+              469.4288635253906,
+              441.0670471191406,
+              610.4043579101562
+            ],
+            "center": [
+              390.4980773925781,
+              541.1209869384766
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.5515854954719543,
+            "timestamp_estimate_from_index_fps_seconds": 141.37171399857357,
+            "timestamp_parent_backend_ms": 141588.8111111111,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 4216,
+          "native_crop_xyxy": [
+            285,
+            307,
+            738,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            453,
+            465
+          ],
+          "native_bgr_uint8_sha256": "1061fad8b3af13bbb4fa7ea2df0d37e4d1d950483c464b548959e58b11fe8f9d",
+          "focus_measurement": {
+            "track_id": 693,
+            "frame_index": 4216,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              322.97686767578125,
+              476.6795654296875,
+              426.97064208984375,
+              603.0643310546875
+            ],
+            "bbox": [
+              320.1388854980469,
+              474.64434814453125,
+              421.9369201660156,
+              602.5673217773438
+            ],
+            "center": [
+              374.9737548828125,
+              539.8719482421875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.76728755235672,
+            "timestamp_estimate_from_index_fps_seconds": 141.40525414424346,
+            "timestamp_parent_backend_ms": 141622.2,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 829,
+      "candidate_inventory_indices": [
+        61
+      ],
+      "frames": [
+        4797,
+        4800,
+        4801,
+        4802
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 829,
+          "origin_frame": 4797,
+          "crossing_frame_start": 4801,
+          "crossing_frame_end": 4802,
+          "confirmation_frame": 4802,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        283,
+        325,
+        682,
+        712
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id829_raw_contact.png",
+          "sha256": "d2dd554414b2c8e55a5d8d854ffec4aec60ee4780f8aebea6c423691b8b8dbcd",
+          "size_bytes": 679398,
+          "shape_width_height": [
+            798,
+            826
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id829_overlay_contact.png",
+          "sha256": "0d6d381929a6ca2a90104dc9506b6f3787b54f4f7bf7deca816a268064beb318",
+          "size_bytes": 684143,
+          "shape_width_height": [
+            798,
+            826
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 4797,
+          "native_crop_xyxy": [
+            283,
+            325,
+            682,
+            712
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "6169c8ff4191b93e6bb0903cb3f4ef6ba42c9d598bd978a7aa5592b4a306f329",
+          "focus_measurement": {
+            "track_id": 829,
+            "frame_index": 4797,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              461.0010681152344,
+              418.00018310546875,
+              657.4141845703125,
+              687.6930541992188
+            ],
+            "bbox": [
+              459.74267578125,
+              417.4773254394531,
+              653.6961669921875,
+              695.2321166992188
+            ],
+            "center": [
+              559.2076263427734,
+              552.8466186523438
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8929302096366882,
+            "timestamp_estimate_from_index_fps_seconds": 160.89207877844777,
+            "timestamp_parent_backend_ms": 161048.0777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 4800,
+          "native_crop_xyxy": [
+            283,
+            325,
+            682,
+            712
+          ],
+          "contact_sheet_image_origin_xy": [
+            399,
+            26
+          ],
+          "native_bgr_uint8_sha256": "70752479a19cec51f3b6dbf009d48f7ec723d6b214fab2e6a240d97f1713aa6b",
+          "focus_measurement": {
+            "track_id": 829,
+            "frame_index": 4800,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              370.295166015625,
+              434.5429992675781,
+              496.316650390625,
+              627.844970703125
+            ],
+            "bbox": [
+              366.2259521484375,
+              432.3763732910156,
+              489.1110534667969,
+              630.126220703125
+            ],
+            "center": [
+              433.305908203125,
+              531.1939849853516
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8099666833877563,
+            "timestamp_estimate_from_index_fps_seconds": 160.99269921545744,
+            "timestamp_parent_backend_ms": 161148.2,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 4801,
+          "native_crop_xyxy": [
+            283,
+            325,
+            682,
+            712
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            439
+          ],
+          "native_bgr_uint8_sha256": "e57b676ff16f66caf846c58765ee828fe77af072d78587baf997545e3eba7aaa",
+          "focus_measurement": {
+            "track_id": 829,
+            "frame_index": 4801,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              343.2779541015625,
+              433.1803894042969,
+              461.3931884765625,
+              612.5107421875
+            ],
+            "bbox": [
+              341.21673583984375,
+              433.935791015625,
+              454.6387023925781,
+              613.4379272460938
+            ],
+            "center": [
+              402.3355712890625,
+              522.8455657958984
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7896125912666321,
+            "timestamp_estimate_from_index_fps_seconds": 161.02623936112732,
+            "timestamp_parent_backend_ms": 161181.58888888892,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 4802,
+          "native_crop_xyxy": [
+            283,
+            325,
+            682,
+            712
+          ],
+          "contact_sheet_image_origin_xy": [
+            399,
+            439
+          ],
+          "native_bgr_uint8_sha256": "50bf83ae55138d11635ea805814fd8927a696d04e089a9ed6f9ac10adc3bc816",
+          "focus_measurement": {
+            "track_id": 829,
+            "frame_index": 4802,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              307.6755065917969,
+              424.3060302734375,
+              431.7552795410156,
+              600.9805908203125
+            ],
+            "bbox": [
+              307.9910888671875,
+              427.53204345703125,
+              424.6681823730469,
+              600.495849609375
+            ],
+            "center": [
+              369.71539306640625,
+              512.643310546875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7611566185951233,
+            "timestamp_estimate_from_index_fps_seconds": 161.0597795067972,
+            "timestamp_parent_backend_ms": 161214.9777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 893,
+      "candidate_inventory_indices": [
+        64,
+        65
+      ],
+      "frames": [
+        4975,
+        4976,
+        4977,
+        4978,
+        4979
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 893,
+          "origin_frame": 4975,
+          "crossing_frame_start": 4977,
+          "crossing_frame_end": 4978,
+          "confirmation_frame": 4978,
+          "direction": "B_TO_A"
+        },
+        {
+          "track_id": 893,
+          "origin_frame": 4978,
+          "crossing_frame_start": 4978,
+          "crossing_frame_end": 4979,
+          "confirmation_frame": 4979,
+          "direction": "A_TO_B"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        413,
+        309,
+        747,
+        647
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_raw_contact.png",
+          "sha256": "ce5a1e5ea4d1ee59be8658fbeb102ef6262389076e51907ad4dbbe3f440e75e0",
+          "size_bytes": 705893,
+          "shape_width_height": [
+            668,
+            1092
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_overlay_contact.png",
+          "sha256": "d3a99a7a88f9d9a497bd8ff649a2347041bea218b127929aff65ed239706e7dc",
+          "size_bytes": 714398,
+          "shape_width_height": [
+            668,
+            1092
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 4975,
+          "native_crop_xyxy": [
+            413,
+            309,
+            747,
+            647
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "bc55be2c0a06348dec6f43d7a7658160c1057dd7c96c02cb36c3b9efcdeceb92",
+          "focus_measurement": {
+            "track_id": 893,
+            "frame_index": 4975,
+            "original_detection_index": 7,
+            "raw_bbox": [
+              524.6514892578125,
+              352.1787109375,
+              641.4693603515625,
+              612.2303466796875
+            ],
+            "bbox": [
+              530.12451171875,
+              351.3511047363281,
+              649.25048828125,
+              613.6423950195312
+            ],
+            "center": [
+              583.0604248046875,
+              482.20452880859375
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.4214937090873718,
+            "timestamp_estimate_from_index_fps_seconds": 166.86222470768766,
+            "timestamp_parent_backend_ms": 167056.1111111111,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 0,
+              "other_emitted_track_id": 880,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                519.6611328125,
+                422.850830078125,
+                765.385498046875,
+                715.5882568359375
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 4976,
+          "native_crop_xyxy": [
+            413,
+            309,
+            747,
+            647
+          ],
+          "contact_sheet_image_origin_xy": [
+            334,
+            26
+          ],
+          "native_bgr_uint8_sha256": "c597ef10182ebc57597ff7c2cc6f3c3416c532339474da2090dbba4e00d5006e",
+          "focus_measurement": {
+            "track_id": 893,
+            "frame_index": 4976,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              501.24871826171875,
+              357.63848876953125,
+              612.3182983398438,
+              605.1796875
+            ],
+            "bbox": [
+              507.3369445800781,
+              356.24951171875,
+              620.1051635742188,
+              607.0491943359375
+            ],
+            "center": [
+              556.7835083007812,
+              481.4090881347656
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.634507954120636,
+            "timestamp_estimate_from_index_fps_seconds": 166.89576485335755,
+            "timestamp_parent_backend_ms": 167089.47777777776,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 2,
+              "other_emitted_track_id": 880,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                497.2574462890625,
+                452.6496276855469,
+                724.492919921875,
+                704.174560546875
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 4977,
+          "native_crop_xyxy": [
+            413,
+            309,
+            747,
+            647
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            390
+          ],
+          "native_bgr_uint8_sha256": "cad93ce5da4b2f1da24d3d75517f5685bd50daea3c7109a6d730587f46bf4e7e",
+          "focus_measurement": {
+            "track_id": 893,
+            "frame_index": 4977,
+            "original_detection_index": 3,
+            "raw_bbox": [
+              477.442626953125,
+              364.00323486328125,
+              583.9285888671875,
+              599.0466918945312
+            ],
+            "bbox": [
+              481.0469055175781,
+              362.91705322265625,
+              588.1448974609375,
+              600.0220947265625
+            ],
+            "center": [
+              530.6856079101562,
+              481.52496337890625
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.7410043478012085,
+            "timestamp_estimate_from_index_fps_seconds": 166.92930499902744,
+            "timestamp_parent_backend_ms": 167122.86666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 2,
+              "other_emitted_track_id": 880,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                474.39703369140625,
+                464.8439636230469,
+                687.2461547851562,
+                691.824951171875
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 4978,
+          "native_crop_xyxy": [
+            413,
+            309,
+            747,
+            647
+          ],
+          "contact_sheet_image_origin_xy": [
+            334,
+            390
+          ],
+          "native_bgr_uint8_sha256": "86e96332ea5baf232c6b3c5e5817f8f9d05f6fe8ba693163fd79e5279c833b2d",
+          "focus_measurement": {
+            "track_id": 893,
+            "frame_index": 4978,
+            "original_detection_index": 7,
+            "raw_bbox": [
+              466.030517578125,
+              370.67657470703125,
+              561.62548828125,
+              569.3724365234375
+            ],
+            "bbox": [
+              465.4934387207031,
+              369.8773193359375,
+              562.6729125976562,
+              575.0451049804688
+            ],
+            "center": [
+              513.8280029296875,
+              470.0245056152344
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.31890273094177246,
+            "timestamp_estimate_from_index_fps_seconds": 166.96284514469733,
+            "timestamp_parent_backend_ms": 167156.25555555557,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 2,
+              "other_emitted_track_id": 880,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                456.41473388671875,
+                452.78265380859375,
+                653.6742553710938,
+                680.0388793945312
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 4979,
+          "native_crop_xyxy": [
+            413,
+            309,
+            747,
+            647
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            754
+          ],
+          "native_bgr_uint8_sha256": "145c4a44eba8c971f29d00298ef0f7fe9bc6f927e0906e0ed08ded9a4832866a",
+          "focus_measurement": {
+            "track_id": 893,
+            "frame_index": 4979,
+            "original_detection_index": 6,
+            "raw_bbox": [
+              437.89678955078125,
+              376.45556640625,
+              534.8871459960938,
+              583.7503051757812
+            ],
+            "bbox": [
+              440.2867126464844,
+              376.14105224609375,
+              535.9572143554688,
+              579.5853881835938
+            ],
+            "center": [
+              486.3919677734375,
+              480.1029357910156
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.3929554224014282,
+            "timestamp_estimate_from_index_fps_seconds": 166.99638529036721,
+            "timestamp_parent_backend_ms": 167189.6111111111,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 2,
+              "other_emitted_track_id": 880,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                437.0312194824219,
+                431.5411682128906,
+                625.471435546875,
+                668.9063720703125
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_id": 912,
+      "candidate_inventory_indices": [
+        68,
+        69,
+        71
+      ],
+      "frames": [
+        5011,
+        5018,
+        5019,
+        5020,
+        5021,
+        5022
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 912,
+          "origin_frame": 5011,
+          "crossing_frame_start": 5019,
+          "crossing_frame_end": 5020,
+          "confirmation_frame": 5020,
+          "direction": "B_TO_A"
+        },
+        {
+          "track_id": 912,
+          "origin_frame": 5020,
+          "crossing_frame_start": 5020,
+          "crossing_frame_end": 5021,
+          "confirmation_frame": 5021,
+          "direction": "A_TO_B"
+        },
+        {
+          "track_id": 912,
+          "origin_frame": 5021,
+          "crossing_frame_start": 5021,
+          "crossing_frame_end": 5022,
+          "confirmation_frame": 5022,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        390,
+        212,
+        1280,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_raw_contact.png",
+          "sha256": "a5e55b1a773821f60fb857d81730382d1c26e7723f86646a758d6113a27dca69",
+          "size_bytes": 2696396,
+          "shape_width_height": [
+            1780,
+            1602
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_overlay_contact.png",
+          "sha256": "600834e2267949968f0875cb56a27669a8deeaafd279801e45b928e102f65e73",
+          "size_bytes": 2708247,
+          "shape_width_height": [
+            1780,
+            1602
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 5011,
+          "native_crop_xyxy": [
+            390,
+            212,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "f6232f60bec7f181a1ce9a155d310db7e5a886a1e5bbf91882d6a7e08bca8099",
+          "focus_measurement": {
+            "track_id": 912,
+            "frame_index": 5011,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              894.1024169921875,
+              236.64324951171875,
+              1266.0343017578125,
+              706.4889526367188
+            ],
+            "bbox": [
+              874.2498779296875,
+              239.5679931640625,
+              1234.5130615234375,
+              708.0052490234375
+            ],
+            "center": [
+              1080.068359375,
+              471.56610107421875
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.8306858539581299,
+            "timestamp_estimate_from_index_fps_seconds": 168.06966995180358,
+            "timestamp_parent_backend_ms": 168257.71111111113,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 8,
+              "other_emitted_track_id": null,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                725.5704345703125,
+                470.9608154296875,
+                919.9840087890625,
+                715.6051025390625
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5018,
+          "native_crop_xyxy": [
+            390,
+            212,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            890,
+            26
+          ],
+          "native_bgr_uint8_sha256": "b84873bed591d0f3967e7ae766a06c0ec05f3c411d5bd9ee334fefdbd556e52c",
+          "focus_measurement": {
+            "track_id": 912,
+            "frame_index": 5018,
+            "original_detection_index": 5,
+            "raw_bbox": [
+              532.907958984375,
+              327.84637451171875,
+              711.814697265625,
+              601.4288940429688
+            ],
+            "bbox": [
+              537.893310546875,
+              328.3317565917969,
+              711.07666015625,
+              592.3404541015625
+            ],
+            "center": [
+              622.361328125,
+              464.63763427734375
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.572656512260437,
+            "timestamp_estimate_from_index_fps_seconds": 168.3044509714928,
+            "timestamp_parent_backend_ms": 168491.35555555558,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 1,
+              "other_emitted_track_id": 923,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                491.26519775390625,
+                465.890869140625,
+                727.5374145507812,
+                692.5599365234375
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5019,
+          "native_crop_xyxy": [
+            390,
+            212,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            560
+          ],
+          "native_bgr_uint8_sha256": "dd17d36b7a03ceb1fbaccd21a59e63696b451b5c9c7e4299dd8668ca61c31319",
+          "focus_measurement": {
+            "track_id": 912,
+            "frame_index": 5019,
+            "original_detection_index": 5,
+            "raw_bbox": [
+              546.003662109375,
+              327.5531005859375,
+              671.052978515625,
+              577.2123413085938
+            ],
+            "bbox": [
+              532.22509765625,
+              330.5128173828125,
+              667.0449829101562,
+              578.0177612304688
+            ],
+            "center": [
+              608.5283203125,
+              452.3827209472656
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.4434789717197418,
+            "timestamp_estimate_from_index_fps_seconds": 168.3379911171627,
+            "timestamp_parent_backend_ms": 168524.73333333334,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 1,
+              "other_emitted_track_id": 923,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                467.30291748046875,
+                412.2613525390625,
+                685.5139770507812,
+                680.109130859375
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5020,
+          "native_crop_xyxy": [
+            390,
+            212,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            890,
+            560
+          ],
+          "native_bgr_uint8_sha256": "818afb3d7158f6aaf5ea2271ee9a11d2fb2e9c8bd71c33a0ba565bc8ae6b1bc7",
+          "focus_measurement": {
+            "track_id": 912,
+            "frame_index": 5020,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              516.896240234375,
+              339.2425537109375,
+              634.911376953125,
+              518.6107177734375
+            ],
+            "bbox": [
+              513.316162109375,
+              339.1080627441406,
+              630.968505859375,
+              531.2464599609375
+            ],
+            "center": [
+              575.90380859375,
+              428.9266357421875
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.45865222811698914,
+            "timestamp_estimate_from_index_fps_seconds": 168.37153126283258,
+            "timestamp_parent_backend_ms": 168558.11111111112,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 1,
+              "other_emitted_track_id": 923,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                448.1922912597656,
+                469.48187255859375,
+                646.4281005859375,
+                667.7651977539062
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5021,
+          "native_crop_xyxy": [
+            390,
+            212,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            1094
+          ],
+          "native_bgr_uint8_sha256": "9c71eadda7f53f9148107965672fe694d1a40d9f6eacd35d371733a4ff34dd33",
+          "focus_measurement": {
+            "track_id": 912,
+            "frame_index": 5021,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              476.6650390625,
+              346.1263427734375,
+              606.329345703125,
+              572.0452880859375
+            ],
+            "bbox": [
+              478.100830078125,
+              346.3912658691406,
+              601.3842163085938,
+              559.6573486328125
+            ],
+            "center": [
+              541.4971923828125,
+              459.0858154296875
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.5448742508888245,
+            "timestamp_estimate_from_index_fps_seconds": 168.40507140850247,
+            "timestamp_parent_backend_ms": 168591.4888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 0,
+              "other_emitted_track_id": 923,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                429.1142272949219,
+                468.421630859375,
+                612.07861328125,
+                657.751953125
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5022,
+          "native_crop_xyxy": [
+            390,
+            212,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            890,
+            1094
+          ],
+          "native_bgr_uint8_sha256": "14694484c21c47c26ee0563df9b188db0a4960f2dd72ea674eb8450778fd8a04",
+          "focus_measurement": {
+            "track_id": 912,
+            "frame_index": 5022,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              442.97625732421875,
+              351.691162109375,
+              576.5455322265625,
+              571.549072265625
+            ],
+            "bbox": [
+              444.0560607910156,
+              352.5353698730469,
+              571.4224853515625,
+              565.2378540039062
+            ],
+            "center": [
+              509.7608947753906,
+              461.6201171875
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.6351653933525085,
+            "timestamp_estimate_from_index_fps_seconds": 168.43861155417235,
+            "timestamp_parent_backend_ms": 168624.86666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 3,
+              "other_emitted_track_id": 923,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                412.03857421875,
+                464.64715576171875,
+                581.3866577148438,
+                647.7808227539062
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_id": 923,
+      "candidate_inventory_indices": [
+        72
+      ],
+      "frames": [
+        5017,
+        5027,
+        5028,
+        5029
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 923,
+          "origin_frame": 5017,
+          "crossing_frame_start": 5028,
+          "crossing_frame_end": 5029,
+          "confirmation_frame": 5029,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        289,
+        296,
+        803,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id923_raw_contact.png",
+          "sha256": "21635bff1601e9da5e212381de64bb5c84d8ddad23a1f45039b9f2e54abf5bbe",
+          "size_bytes": 897174,
+          "shape_width_height": [
+            1028,
+            900
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id923_overlay_contact.png",
+          "sha256": "3f983658d66e246bc6af44229fe08bd23f9671a3cfd369dac4389780af75a58c",
+          "size_bytes": 902097,
+          "shape_width_height": [
+            1028,
+            900
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 5017,
+          "native_crop_xyxy": [
+            289,
+            296,
+            803,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "e8181a9245fc7ecf3a7e1378fe439eae3c61d191d0c668de34ebc5baa7a20d88",
+          "focus_measurement": {
+            "track_id": 923,
+            "frame_index": 5017,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              514.1699829101562,
+              455.79931640625,
+              778.0341186523438,
+              708.227783203125
+            ],
+            "bbox": [
+              508.7005920410156,
+              467.17816162109375,
+              804.7047729492188,
+              710.5507202148438
+            ],
+            "center": [
+              646.10205078125,
+              582.0135498046875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8178127408027649,
+            "timestamp_estimate_from_index_fps_seconds": 168.2709108258229,
+            "timestamp_parent_backend_ms": 168457.96666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 5027,
+          "native_crop_xyxy": [
+            289,
+            296,
+            803,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            514,
+            26
+          ],
+          "native_bgr_uint8_sha256": "6bb2f37a087b3005d8d59f3d39c8ecee01991047b0e6d394c7145f1622f39831",
+          "focus_measurement": {
+            "track_id": 923,
+            "frame_index": 5027,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              337.223876953125,
+              453.7325439453125,
+              471.0311279296875,
+              608.7242431640625
+            ],
+            "bbox": [
+              334.61407470703125,
+              427.8807067871094,
+              466.90899658203125,
+              608.4359741210938
+            ],
+            "center": [
+              404.12750244140625,
+              531.2283935546875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7083272933959961,
+            "timestamp_estimate_from_index_fps_seconds": 168.60631228252177,
+            "timestamp_parent_backend_ms": 168791.7666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 5028,
+          "native_crop_xyxy": [
+            289,
+            296,
+            803,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            476
+          ],
+          "native_bgr_uint8_sha256": "15cbbd582d83ecd69b99d071e834abb3893f7069fdb4a28f6cb536021dadfd01",
+          "focus_measurement": {
+            "track_id": 923,
+            "frame_index": 5028,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              324.80670166015625,
+              461.65960693359375,
+              454.45947265625,
+              603.1084594726562
+            ],
+            "bbox": [
+              322.2366943359375,
+              450.4169921875,
+              450.6518859863281,
+              602.3502197265625
+            ],
+            "center": [
+              389.6330871582031,
+              532.384033203125
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6400591135025024,
+            "timestamp_estimate_from_index_fps_seconds": 168.63985242819166,
+            "timestamp_parent_backend_ms": 168825.13333333336,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 5029,
+          "native_crop_xyxy": [
+            289,
+            296,
+            803,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            514,
+            476
+          ],
+          "native_bgr_uint8_sha256": "73a4f361edccafdaa9d3f807ca4a8e30b0326020b802974423333e7d96059b66",
+          "focus_measurement": {
+            "track_id": 923,
+            "frame_index": 5029,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              313.88848876953125,
+              473.1666259765625,
+              434.82098388671875,
+              597.9266357421875
+            ],
+            "bbox": [
+              311.16845703125,
+              466.654541015625,
+              432.43597412109375,
+              597.0357666015625
+            ],
+            "center": [
+              374.354736328125,
+              535.546630859375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6414653658866882,
+            "timestamp_estimate_from_index_fps_seconds": 168.67339257386155,
+            "timestamp_parent_backend_ms": 168858.51111111112,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 967,
+      "candidate_inventory_indices": [
+        73
+      ],
+      "frames": [
+        5118,
+        5124,
+        5125,
+        5126
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 967,
+          "origin_frame": 5118,
+          "crossing_frame_start": 5125,
+          "crossing_frame_end": 5126,
+          "confirmation_frame": 5126,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        341,
+        248,
+        965,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id967_raw_contact.png",
+          "sha256": "52b29a70185e433f4f6f70db7ae01ba504d90ad70d5058b3f73ec7b92c79123b",
+          "size_bytes": 1166500,
+          "shape_width_height": [
+            1248,
+            996
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id967_overlay_contact.png",
+          "sha256": "4ef049ffa0bab5b6a7322d2989f79081a516036d875fe2430823c80f45f2af22",
+          "size_bytes": 1174573,
+          "shape_width_height": [
+            1248,
+            996
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 5118,
+          "native_crop_xyxy": [
+            341,
+            248,
+            965,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "d0a42608a19d2afd98addd2fb98024a4511a53a51f391e5e088b81da3b075d9a",
+          "focus_measurement": {
+            "track_id": 967,
+            "frame_index": 5118,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              687.4100341796875,
+              272.7547607421875,
+              940.7269287109375,
+              703.3431396484375
+            ],
+            "bbox": [
+              710.2277221679688,
+              271.67083740234375,
+              975.3554077148438,
+              706.41357421875
+            ],
+            "center": [
+              814.0684814453125,
+              488.0489501953125
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.881060779094696,
+            "timestamp_estimate_from_index_fps_seconds": 171.6584655384815,
+            "timestamp_parent_backend_ms": 171929.32222222222,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 1,
+              "other_emitted_track_id": 964,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                644.5811767578125,
+                399.5014953613281,
+                1090.2713623046875,
+                715.570068359375
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5124,
+          "native_crop_xyxy": [
+            341,
+            248,
+            965,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            624,
+            26
+          ],
+          "native_bgr_uint8_sha256": "24e54c93757c24bb337a8aaf2dbfd0829a12283a374e4c2e82ad33f42c5f515d",
+          "focus_measurement": {
+            "track_id": 967,
+            "frame_index": 5124,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              401.64886474609375,
+              358.1186828613281,
+              539.7881469726562,
+              621.472412109375
+            ],
+            "bbox": [
+              397.1030578613281,
+              358.7699890136719,
+              531.204833984375,
+              615.1773681640625
+            ],
+            "center": [
+              470.718505859375,
+              489.79554748535156
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.8557658791542053,
+            "timestamp_estimate_from_index_fps_seconds": 171.85970641250083,
+            "timestamp_parent_backend_ms": 172129.6,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 1,
+              "other_emitted_track_id": 964,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                393.89532470703125,
+                458.30938720703125,
+                570.4310302734375,
+                667.7970581054688
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5125,
+          "native_crop_xyxy": [
+            341,
+            248,
+            965,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            524
+          ],
+          "native_bgr_uint8_sha256": "a1e85f4b671b636c4b4d9ff360d5933b2e00aa2525069084fae689f5fdf8ab5f",
+          "focus_measurement": {
+            "track_id": 967,
+            "frame_index": 5125,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              380.5145263671875,
+              364.80645751953125,
+              506.13812255859375,
+              606.1533203125
+            ],
+            "bbox": [
+              373.8003845214844,
+              366.21820068359375,
+              497.2759704589844,
+              605.747802734375
+            ],
+            "center": [
+              443.3263244628906,
+              485.4798889160156
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.8242434859275818,
+            "timestamp_estimate_from_index_fps_seconds": 171.89324655817072,
+            "timestamp_parent_backend_ms": 172162.96666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 0,
+              "other_emitted_track_id": 964,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                377.59014892578125,
+                436.1494140625,
+                531.4524536132812,
+                651.959716796875
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5126,
+          "native_crop_xyxy": [
+            341,
+            248,
+            965,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            624,
+            524
+          ],
+          "native_bgr_uint8_sha256": "3d10be27cc17bb96d2876ef51e9d76255a7761b0bf455bdc16c9a481147031d8",
+          "focus_measurement": {
+            "track_id": 967,
+            "frame_index": 5126,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              365.98406982421875,
+              370.01983642578125,
+              477.22784423828125,
+              590.1530151367188
+            ],
+            "bbox": [
+              358.316650390625,
+              371.7931213378906,
+              468.718017578125,
+              591.56884765625
+            ],
+            "center": [
+              421.60595703125,
+              480.08642578125
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.8506065011024475,
+            "timestamp_estimate_from_index_fps_seconds": 171.92678670384058,
+            "timestamp_parent_backend_ms": 172196.35555555555,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 1,
+              "other_emitted_track_id": 964,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                364.99932861328125,
+                454.9156494140625,
+                497.78375244140625,
+                638.0660400390625
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_id": 973,
+      "candidate_inventory_indices": [
+        75
+      ],
+      "frames": [
+        5128,
+        5129,
+        5130
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 973,
+          "origin_frame": 5129,
+          "crossing_frame_start": 5129,
+          "crossing_frame_end": 5130,
+          "confirmation_frame": 5130,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        277,
+        359,
+        443,
+        630
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_raw_contact.png",
+          "sha256": "00418cece3fd65658e63363010e3d4b23bba16a04e5679883d1122492ff80298",
+          "size_bytes": 173833,
+          "shape_width_height": [
+            332,
+            594
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_overlay_contact.png",
+          "sha256": "c529bbd29c1add9924e84e2da4e135ce6c757c843ec8ae4e2d74f6b85c9d69fb",
+          "size_bytes": 176855,
+          "shape_width_height": [
+            332,
+            594
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 5128,
+          "native_crop_xyxy": [
+            277,
+            359,
+            443,
+            630
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "41b62170d89f9f8ada268270d5d2f39bf533b089b71c9c50913be5e41cd6947e",
+          "focus_measurement": null,
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 5129,
+          "native_crop_xyxy": [
+            277,
+            359,
+            443,
+            630
+          ],
+          "contact_sheet_image_origin_xy": [
+            166,
+            26
+          ],
+          "native_bgr_uint8_sha256": "15431eb1fef78bb1a20cb97c834cbfe32c1b9ad71d3410b5f4954ce20a5435ee",
+          "focus_measurement": {
+            "track_id": 973,
+            "frame_index": 5129,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              327.80950927734375,
+              486.3431396484375,
+              418.77587890625,
+              605.728515625
+            ],
+            "bbox": [
+              330.7222595214844,
+              486.81201171875,
+              423.55859375,
+              607.5820922851562
+            ],
+            "center": [
+              373.2926940917969,
+              546.0358276367188
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6122607588768005,
+            "timestamp_estimate_from_index_fps_seconds": 172.02740714085024,
+            "timestamp_parent_backend_ms": 172296.4777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 3,
+              "other_emitted_track_id": 964,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                312.46588134765625,
+                458.6859436035156,
+                418.66021728515625,
+                605.9029541015625
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 5130,
+          "native_crop_xyxy": [
+            277,
+            359,
+            443,
+            630
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            323
+          ],
+          "native_bgr_uint8_sha256": "b5a3cb93ec101d3921371fc4a2270d4425a706a532ca69f56122e2610d193970",
+          "focus_measurement": {
+            "track_id": 973,
+            "frame_index": 5130,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              308.5099182128906,
+              482.9860534667969,
+              399.1655578613281,
+              596.884521484375
+            ],
+            "bbox": [
+              313.1778259277344,
+              483.8206787109375,
+              404.2917175292969,
+              599.2181396484375
+            ],
+            "center": [
+              353.8377380371094,
+              539.9352874755859
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7073541879653931,
+            "timestamp_estimate_from_index_fps_seconds": 172.06094728652013,
+            "timestamp_parent_backend_ms": 172329.86666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 3,
+              "other_emitted_track_id": 964,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                284.5619812011719,
+                457.6932678222656,
+                407.5185241699219,
+                597.9381103515625
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_id": 1144,
+      "candidate_inventory_indices": [
+        84
+      ],
+      "frames": [
+        5674,
+        5688,
+        5689,
+        5690
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1144,
+          "origin_frame": 5674,
+          "crossing_frame_start": 5689,
+          "crossing_frame_end": 5690,
+          "confirmation_frame": 5690,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        417,
+        299,
+        1151,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1144_raw_contact.png",
+          "sha256": "069ef6f9d8434f757ee8ba718aa6b3a2a6cfba749d9fda3127fae045b6d4baac",
+          "size_bytes": 1507023,
+          "shape_width_height": [
+            1468,
+            894
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1144_overlay_contact.png",
+          "sha256": "654f6cc2439820135774807e00baeb29339edea1fc4d3a9930e7bddb35269e97",
+          "size_bytes": 1512247,
+          "shape_width_height": [
+            1468,
+            894
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 5674,
+          "native_crop_xyxy": [
+            417,
+            299,
+            1151,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "a0fa8f72a017ac15f3beb38b54c70a6570be22d5d126ba22651de2a2c948a950",
+          "focus_measurement": {
+            "track_id": 1144,
+            "frame_index": 5674,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              791.91259765625,
+              436.0865783691406,
+              1126.59130859375,
+              706.8851318359375
+            ],
+            "bbox": [
+              803.2896728515625,
+              435.991455078125,
+              1149.94189453125,
+              708.6578369140625
+            ],
+            "center": [
+              959.251953125,
+              571.4858551025391
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8417362570762634,
+            "timestamp_estimate_from_index_fps_seconds": 190.30678653093864,
+            "timestamp_parent_backend_ms": 190520.76666666666,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 5688,
+          "native_crop_xyxy": [
+            417,
+            299,
+            1151,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            734,
+            26
+          ],
+          "native_bgr_uint8_sha256": "c5bf0ac4a1250a0a47d860d8a87810ad476c1a11916f9ef45b185897bbabeddf",
+          "focus_measurement": {
+            "track_id": 1144,
+            "frame_index": 5688,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              467.72357177734375,
+              452.1236877441406,
+              586.0023803710938,
+              585.3812255859375
+            ],
+            "bbox": [
+              465.3256530761719,
+              452.2889709472656,
+              581.6392211914062,
+              584.0652465820312
+            ],
+            "center": [
+              526.8629760742188,
+              518.7524566650391
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8135771155357361,
+            "timestamp_estimate_from_index_fps_seconds": 190.77634857031705,
+            "timestamp_parent_backend_ms": 190988.03333333333,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 5689,
+          "native_crop_xyxy": [
+            417,
+            299,
+            1151,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            473
+          ],
+          "native_bgr_uint8_sha256": "84d790b97ec37c374f6fe6de11531cc8e941baf4900e9c7cfe3208ff31533a4b",
+          "focus_measurement": {
+            "track_id": 1144,
+            "frame_index": 5689,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              453.9599609375,
+              447.03070068359375,
+              565.2560424804688,
+              581.1786499023438
+            ],
+            "bbox": [
+              451.8717956542969,
+              448.70648193359375,
+              561.6150512695312,
+              579.9117431640625
+            ],
+            "center": [
+              509.6080017089844,
+              514.1046752929688
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8216909766197205,
+            "timestamp_estimate_from_index_fps_seconds": 190.80988871598694,
+            "timestamp_parent_backend_ms": 191021.43333333335,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 5690,
+          "native_crop_xyxy": [
+            417,
+            299,
+            1151,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            734,
+            473
+          ],
+          "native_bgr_uint8_sha256": "1d2ab37ce193826c0562cbeeaccbd40a636488d36cb7bdf79add061e56d189e1",
+          "focus_measurement": {
+            "track_id": 1144,
+            "frame_index": 5690,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              441.32000732421875,
+              453.0321350097656,
+              548.1629638671875,
+              576.8712158203125
+            ],
+            "bbox": [
+              439.2631530761719,
+              451.63525390625,
+              544.1556396484375,
+              575.75
+            ],
+            "center": [
+              494.7414855957031,
+              514.9516754150391
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.784750759601593,
+            "timestamp_estimate_from_index_fps_seconds": 190.84342886165683,
+            "timestamp_parent_backend_ms": 191054.81111111114,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 1323,
+      "candidate_inventory_indices": [
+        90
+      ],
+      "frames": [
+        6256,
+        6257,
+        6258
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1323,
+          "origin_frame": 6257,
+          "crossing_frame_start": 6257,
+          "crossing_frame_end": 6258,
+          "confirmation_frame": 6258,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        186,
+        290,
+        561,
+        634
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1323_raw_contact.png",
+          "sha256": "fb0bc2791a1b7616041b899f7351b8f9d25089f21f8139e854baa537f8654dce",
+          "size_bytes": 414172,
+          "shape_width_height": [
+            750,
+            740
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1323_overlay_contact.png",
+          "sha256": "5037ff8d91f7213c81370e5f3e36ffedd44690e8004e44a5cc2b5fe02bc427a1",
+          "size_bytes": 416620,
+          "shape_width_height": [
+            750,
+            740
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 6256,
+          "native_crop_xyxy": [
+            186,
+            290,
+            561,
+            634
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "94a843e5fd290ad2312170307e0d4a227afb7b994f52b558cd0b5861bd8c290e",
+          "focus_measurement": null,
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6257,
+          "native_crop_xyxy": [
+            186,
+            290,
+            561,
+            634
+          ],
+          "contact_sheet_image_origin_xy": [
+            375,
+            26
+          ],
+          "native_bgr_uint8_sha256": "e2df1389115336b24ef8c5e39cf768609d9b49e2033b48e755f5473544e6272d",
+          "focus_measurement": {
+            "track_id": 1323,
+            "frame_index": 6257,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              213.1161651611328,
+              314.3194580078125,
+              536.4096069335938,
+              609.1771850585938
+            ],
+            "bbox": [
+              210.65061950683594,
+              314.1663818359375,
+              535.0811767578125,
+              610.2666015625
+            ],
+            "center": [
+              374.7628860473633,
+              461.7483215332031
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.5913342833518982,
+            "timestamp_estimate_from_index_fps_seconds": 209.86069145648275,
+            "timestamp_parent_backend_ms": 210013.3888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 3,
+              "other_emitted_track_id": null,
+              "raw_class_name": "car",
+              "raw_bbox": [
+                195.66525268554688,
+                429.80474853515625,
+                220.60409545898438,
+                467.06695556640625
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 6258,
+          "native_crop_xyxy": [
+            186,
+            290,
+            561,
+            634
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            396
+          ],
+          "native_bgr_uint8_sha256": "a5ed5460b01f61ef9f02c44e6252696eb4a745622edd3dfb048e2085a7928f9f",
+          "focus_measurement": {
+            "track_id": 1323,
+            "frame_index": 6258,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              210.51947021484375,
+              318.29840087890625,
+              524.0745849609375,
+              606.0953979492188
+            ],
+            "bbox": [
+              207.47146606445312,
+              317.1606140136719,
+              524.1951904296875,
+              607.3314819335938
+            ],
+            "center": [
+              367.2970275878906,
+              462.1968994140625
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.6305152177810669,
+            "timestamp_estimate_from_index_fps_seconds": 209.89423160215264,
+            "timestamp_parent_backend_ms": 210046.7888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 3,
+              "other_emitted_track_id": 1336,
+              "raw_class_name": "car",
+              "raw_bbox": [
+                195.97244262695312,
+                431.47418212890625,
+                217.72915649414062,
+                464.82122802734375
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_id": 1346,
+      "candidate_inventory_indices": [
+        92
+      ],
+      "frames": [
+        6283,
+        6293,
+        6294,
+        6295
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1346,
+          "origin_frame": 6283,
+          "crossing_frame_start": 6294,
+          "crossing_frame_end": 6295,
+          "confirmation_frame": 6295,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        464,
+        294,
+        1280,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1346_raw_contact.png",
+          "sha256": "4efb75fbe5dba3dce3f07b2991f683f8defeacb841a0336f59b73c8f3f1854d3",
+          "size_bytes": 1572672,
+          "shape_width_height": [
+            1632,
+            904
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1346_overlay_contact.png",
+          "sha256": "56c35bc63cf2f1da2617249cdcd78ccb40a4d42d1adc25ece342b33104a2f039",
+          "size_bytes": 1578809,
+          "shape_width_height": [
+            1632,
+            904
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 6283,
+          "native_crop_xyxy": [
+            464,
+            294,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "64324cf0f39f1ad0e6ce5c899cf5648297e12d0044cc7d403a7427cde63d8b65",
+          "focus_measurement": {
+            "track_id": 1346,
+            "frame_index": 6283,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              936.7791137695312,
+              409.22479248046875,
+              1278.780029296875,
+              700.3633422851562
+            ],
+            "bbox": [
+              954.029052734375,
+              389.94866943359375,
+              1278.8790283203125,
+              699.60791015625
+            ],
+            "center": [
+              1107.7795715332031,
+              554.7940673828125
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6247819066047668,
+            "timestamp_estimate_from_index_fps_seconds": 210.7327352438998,
+            "timestamp_parent_backend_ms": 210881.21111111113,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6293,
+          "native_crop_xyxy": [
+            464,
+            294,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            816,
+            26
+          ],
+          "native_bgr_uint8_sha256": "f5a78e0e26fc48ca2b817f2cbdb43ac82939f5917a100e69a17e6825cbd4250e",
+          "focus_measurement": {
+            "track_id": 1346,
+            "frame_index": 6293,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              526.60107421875,
+              448.6402893066406,
+              629.238525390625,
+              578.1693115234375
+            ],
+            "bbox": [
+              523.2969360351562,
+              451.4053955078125,
+              623.539306640625,
+              576.7822875976562
+            ],
+            "center": [
+              577.9197998046875,
+              513.4048004150391
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.756999671459198,
+            "timestamp_estimate_from_index_fps_seconds": 211.06813670059867,
+            "timestamp_parent_backend_ms": 211214.9888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6294,
+          "native_crop_xyxy": [
+            464,
+            294,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            478
+          ],
+          "native_bgr_uint8_sha256": "74e75255f31752ea5742ece8c84afbc60cc2db91a51122da0a88f2653c694d53",
+          "focus_measurement": {
+            "track_id": 1346,
+            "frame_index": 6294,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              506.88470458984375,
+              461.4049072265625,
+              605.2221069335938,
+              572.0638427734375
+            ],
+            "bbox": [
+              503.7632751464844,
+              459.60467529296875,
+              598.6773071289062,
+              570.4095458984375
+            ],
+            "center": [
+              556.0534057617188,
+              516.734375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7989738583564758,
+            "timestamp_estimate_from_index_fps_seconds": 211.10167684626856,
+            "timestamp_parent_backend_ms": 211248.3888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6295,
+          "native_crop_xyxy": [
+            464,
+            294,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            816,
+            478
+          ],
+          "native_bgr_uint8_sha256": "cd808c40add0184e7751fb63325845442d9876878caf61425a3c65007cf0cecd",
+          "focus_measurement": {
+            "track_id": 1346,
+            "frame_index": 6295,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              488.556884765625,
+              449.6611633300781,
+              575.1064453125,
+              565.492919921875
+            ],
+            "bbox": [
+              485.48455810546875,
+              453.074951171875,
+              570.5630493164062,
+              564.259033203125
+            ],
+            "center": [
+              531.8316650390625,
+              507.57704162597656
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7195301055908203,
+            "timestamp_estimate_from_index_fps_seconds": 211.13521699193845,
+            "timestamp_parent_backend_ms": 211281.74444444446,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 1372,
+      "candidate_inventory_indices": [
+        94
+      ],
+      "frames": [
+        6406,
+        6415,
+        6416,
+        6417
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1372,
+          "origin_frame": 6406,
+          "crossing_frame_start": 6416,
+          "crossing_frame_end": 6417,
+          "confirmation_frame": 6417,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        305,
+        319,
+        760,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1372_raw_contact.png",
+          "sha256": "39c02a5448a7ecd205b4f003e217466e7087ec9fe1e495be15374d81da8336c8",
+          "size_bytes": 743490,
+          "shape_width_height": [
+            910,
+            854
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1372_overlay_contact.png",
+          "sha256": "07314221d83d7d55c07576ed62d2a1b00f92be1f49c79283d38adfa4ebc331f5",
+          "size_bytes": 749438,
+          "shape_width_height": [
+            910,
+            854
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 6406,
+          "native_crop_xyxy": [
+            305,
+            319,
+            760,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "e4b9f8c55ca0d16f980b69a34e57570caed361c3f5528aaa0036546cdf4a3cc7",
+          "focus_measurement": {
+            "track_id": 1372,
+            "frame_index": 6406,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              514.6661376953125,
+              431.9637451171875,
+              735.99169921875,
+              698.54736328125
+            ],
+            "bbox": [
+              515.3213500976562,
+              436.8175354003906,
+              750.9551391601562,
+              702.8143310546875
+            ],
+            "center": [
+              625.3289184570312,
+              565.2555541992188
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.783026933670044,
+            "timestamp_estimate_from_index_fps_seconds": 214.8581731612959,
+            "timestamp_parent_backend_ms": 215020.1,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6415,
+          "native_crop_xyxy": [
+            305,
+            319,
+            760,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            455,
+            26
+          ],
+          "native_bgr_uint8_sha256": "a627e201a6215508a8a4600cec52a4ee9ad7d220c06caeb6981b893596f109ee",
+          "focus_measurement": {
+            "track_id": 1372,
+            "frame_index": 6415,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              360.11175537109375,
+              439.2475891113281,
+              483.08349609375,
+              606.18701171875
+            ],
+            "bbox": [
+              355.8433837890625,
+              442.9239196777344,
+              479.18243408203125,
+              605.8814697265625
+            ],
+            "center": [
+              421.5976257324219,
+              522.7173004150391
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.475371778011322,
+            "timestamp_estimate_from_index_fps_seconds": 215.1600344723249,
+            "timestamp_parent_backend_ms": 215320.4777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6416,
+          "native_crop_xyxy": [
+            305,
+            319,
+            760,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            453
+          ],
+          "native_bgr_uint8_sha256": "e40545585412ae633d6c937b2869cc658ceb779d10eb51a060b6afc80bde8421",
+          "focus_measurement": {
+            "track_id": 1372,
+            "frame_index": 6416,
+            "original_detection_index": 3,
+            "raw_bbox": [
+              343.6461181640625,
+              440.2576599121094,
+              472.782958984375,
+              601.1712646484375
+            ],
+            "bbox": [
+              342.3095397949219,
+              440.629150390625,
+              467.3101501464844,
+              599.9741821289062
+            ],
+            "center": [
+              408.21453857421875,
+              520.7144622802734
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6138425469398499,
+            "timestamp_estimate_from_index_fps_seconds": 215.19357461799478,
+            "timestamp_parent_backend_ms": 215353.85555555555,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6417,
+          "native_crop_xyxy": [
+            305,
+            319,
+            760,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            455,
+            453
+          ],
+          "native_bgr_uint8_sha256": "fcf91ebca79a52859a54b14c211868492051945bd89ed8f167f2a990da2015bc",
+          "focus_measurement": {
+            "track_id": 1372,
+            "frame_index": 6417,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              346.8017578125,
+              452.2863464355469,
+              454.0908203125,
+              595.865966796875
+            ],
+            "bbox": [
+              340.4860534667969,
+              448.2255859375,
+              450.8950500488281,
+              594.6171875
+            ],
+            "center": [
+              400.4462890625,
+              524.0761566162109
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.4172181487083435,
+            "timestamp_estimate_from_index_fps_seconds": 215.22711476366467,
+            "timestamp_parent_backend_ms": 215387.23333333334,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 1389,
+      "candidate_inventory_indices": [
+        96
+      ],
+      "frames": [
+        6421,
+        6432,
+        6433,
+        6434
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1389,
+          "origin_frame": 6421,
+          "crossing_frame_start": 6433,
+          "crossing_frame_end": 6434,
+          "confirmation_frame": 6434,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        352,
+        319,
+        911,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1389_raw_contact.png",
+          "sha256": "d51f0eb70bdafc0e59619055bf21cec1486af171a88f9cfbfdf34113c01f06ed",
+          "size_bytes": 937221,
+          "shape_width_height": [
+            1118,
+            854
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1389_overlay_contact.png",
+          "sha256": "1f962fc001e221930606275db6eedc04835995fce4924facaafd054d774f2d08",
+          "size_bytes": 943057,
+          "shape_width_height": [
+            1118,
+            854
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 6421,
+          "native_crop_xyxy": [
+            352,
+            319,
+            911,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "fc6106f1d0b629e8bbb9808c4936d86e03bb60d291cafb18be3ce2f171822bd6",
+          "focus_measurement": {
+            "track_id": 1389,
+            "frame_index": 6421,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              616.359130859375,
+              424.1500244140625,
+              886.414794921875,
+              699.8280029296875
+            ],
+            "bbox": [
+              615.6070556640625,
+              426.99505615234375,
+              885.0496215820312,
+              703.7840576171875
+            ],
+            "center": [
+              751.386962890625,
+              561.989013671875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.9095820784568787,
+            "timestamp_estimate_from_index_fps_seconds": 215.3612753463442,
+            "timestamp_parent_backend_ms": 215520.74444444446,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6432,
+          "native_crop_xyxy": [
+            352,
+            319,
+            911,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            559,
+            26
+          ],
+          "native_bgr_uint8_sha256": "b3dbc1ff1490391b377ae55ae8b1f0f5bcc45b7b41de252a07048aa77941c2fc",
+          "focus_measurement": {
+            "track_id": 1389,
+            "frame_index": 6432,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              393.3345947265625,
+              437.74237060546875,
+              520.614013671875,
+              596.4363403320312
+            ],
+            "bbox": [
+              393.3314514160156,
+              445.9154968261719,
+              515.8289184570312,
+              595.5374755859375
+            ],
+            "center": [
+              456.97430419921875,
+              517.08935546875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7782707214355469,
+            "timestamp_estimate_from_index_fps_seconds": 215.73021694871298,
+            "timestamp_parent_backend_ms": 215887.92222222223,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6433,
+          "native_crop_xyxy": [
+            352,
+            319,
+            911,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            453
+          ],
+          "native_bgr_uint8_sha256": "428852e2aca0fc62e8a624212a57f021dad24271d55529b91885c7c2566be698",
+          "focus_measurement": {
+            "track_id": 1389,
+            "frame_index": 6433,
+            "original_detection_index": 3,
+            "raw_bbox": [
+              386.5284423828125,
+              454.6457214355469,
+              501.3145751953125,
+              590.24169921875
+            ],
+            "bbox": [
+              382.97796630859375,
+              451.4251403808594,
+              496.7835693359375,
+              589.5552978515625
+            ],
+            "center": [
+              443.9215087890625,
+              522.4437103271484
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7309749126434326,
+            "timestamp_estimate_from_index_fps_seconds": 215.76375709438287,
+            "timestamp_parent_backend_ms": 215921.27777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6434,
+          "native_crop_xyxy": [
+            352,
+            319,
+            911,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            559,
+            453
+          ],
+          "native_bgr_uint8_sha256": "cd434604e4cc01aa98572d5daee76f3003bccc7657651bf859936c6a31188693",
+          "focus_measurement": {
+            "track_id": 1389,
+            "frame_index": 6434,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              378.6141052246094,
+              465.55572509765625,
+              485.1263732910156,
+              585.5208129882812
+            ],
+            "bbox": [
+              374.96356201171875,
+              461.35003662109375,
+              480.5381164550781,
+              584.5919189453125
+            ],
+            "center": [
+              431.8702392578125,
+              525.5382690429688
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.788200318813324,
+            "timestamp_estimate_from_index_fps_seconds": 215.79729724005273,
+            "timestamp_parent_backend_ms": 215954.65555555557,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 1408,
+      "candidate_inventory_indices": [
+        98
+      ],
+      "frames": [
+        6440,
+        6451,
+        6452,
+        6453
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1408,
+          "origin_frame": 6440,
+          "crossing_frame_start": 6452,
+          "crossing_frame_end": 6453,
+          "confirmation_frame": 6453,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        343,
+        304,
+        927,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1408_raw_contact.png",
+          "sha256": "e5d4707fa22c19b024a0d050347bf8e2b1012034dcbd3ce4865665b7e4f72d97",
+          "size_bytes": 1041094,
+          "shape_width_height": [
+            1168,
+            884
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1408_overlay_contact.png",
+          "sha256": "120e31ed5c7f9095d3e122ec965a86cf0adcf09f8804bf9c3a17e8a8ed060ead",
+          "size_bytes": 1045792,
+          "shape_width_height": [
+            1168,
+            884
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 6440,
+          "native_crop_xyxy": [
+            343,
+            304,
+            927,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "7fc2edaa7a5123fd807900cbec77ea9f2d7f79c3c69801eae7fcd6ba35c8d58f",
+          "focus_measurement": {
+            "track_id": 1408,
+            "frame_index": 6440,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              589.2223510742188,
+              456.7407531738281,
+              902.0126342773438,
+              703.7763671875
+            ],
+            "bbox": [
+              592.53564453125,
+              453.78955078125,
+              941.8651123046875,
+              707.6060791015625
+            ],
+            "center": [
+              745.6174926757812,
+              580.2585601806641
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8482640385627747,
+            "timestamp_estimate_from_index_fps_seconds": 215.99853811407206,
+            "timestamp_parent_backend_ms": 216154.92222222223,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6451,
+          "native_crop_xyxy": [
+            343,
+            304,
+            927,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            584,
+            26
+          ],
+          "native_bgr_uint8_sha256": "3c7208e94495db92ca19c7a92866ee28553ba6bab8748c8ec2c100c95469c880",
+          "focus_measurement": {
+            "track_id": 1408,
+            "frame_index": 6451,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              383.29052734375,
+              452.08990478515625,
+              542.1724243164062,
+              597.7418823242188
+            ],
+            "bbox": [
+              383.50225830078125,
+              449.96514892578125,
+              540.7250366210938,
+              597.0191040039062
+            ],
+            "center": [
+              462.7314758300781,
+              524.9158935546875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8470687866210938,
+            "timestamp_estimate_from_index_fps_seconds": 216.3674797164408,
+            "timestamp_parent_backend_ms": 216522.10000000003,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6452,
+          "native_crop_xyxy": [
+            343,
+            304,
+            927,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            468
+          ],
+          "native_bgr_uint8_sha256": "d6185e532c627d1a1f0f553c7e394c95b6f370c9a621e604d4f59fb576b9409b",
+          "focus_measurement": {
+            "track_id": 1408,
+            "frame_index": 6452,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              372.3096923828125,
+              453.3820495605469,
+              523.6505126953125,
+              592.0966796875
+            ],
+            "bbox": [
+              370.2437744140625,
+              452.6768798828125,
+              521.4772338867188,
+              591.282470703125
+            ],
+            "center": [
+              447.9801025390625,
+              522.7393646240234
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8173602819442749,
+            "timestamp_estimate_from_index_fps_seconds": 216.4010198621107,
+            "timestamp_parent_backend_ms": 216555.45555555556,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6453,
+          "native_crop_xyxy": [
+            343,
+            304,
+            927,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            584,
+            468
+          ],
+          "native_bgr_uint8_sha256": "18e1b5621ef045e60c684ec0e491b0f76ba2bef7f7a180ac35662526ba1af50f",
+          "focus_measurement": {
+            "track_id": 1408,
+            "frame_index": 6453,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              367.30633544921875,
+              455.4780578613281,
+              508.07891845703125,
+              587.629638671875
+            ],
+            "bbox": [
+              362.9716796875,
+              455.02691650390625,
+              505.0372009277344,
+              586.5441284179688
+            ],
+            "center": [
+              437.692626953125,
+              521.5538482666016
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.778551459312439,
+            "timestamp_estimate_from_index_fps_seconds": 216.4345600077806,
+            "timestamp_parent_backend_ms": 216588.83333333334,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 1478,
+      "candidate_inventory_indices": [
+        102
+      ],
+      "frames": [
+        6592,
+        6597,
+        6598,
+        6599
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1478,
+          "origin_frame": 6592,
+          "crossing_frame_start": 6598,
+          "crossing_frame_end": 6599,
+          "confirmation_frame": 6599,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        321,
+        304,
+        793,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1478_raw_contact.png",
+          "sha256": "f565188c96a54a8b30094fbb51af09785d83a357a0bcf90e3c36f03fd1d986cc",
+          "size_bytes": 859325,
+          "shape_width_height": [
+            944,
+            884
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1478_overlay_contact.png",
+          "sha256": "8a678dc8cdaacc861a578fa865e6ed71469f0f444719ce7df99345105188d705",
+          "size_bytes": 863543,
+          "shape_width_height": [
+            944,
+            884
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 6592,
+          "native_crop_xyxy": [
+            321,
+            304,
+            793,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "b0ac91eb6b3013ed93dd55f204719bae84a2fdfb9cbd3584c68994907c6dd319",
+          "focus_measurement": {
+            "track_id": 1478,
+            "frame_index": 6592,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              515.1356201171875,
+              415.1223449707031,
+              768.22265625,
+              705.212158203125
+            ],
+            "bbox": [
+              508.76019287109375,
+              415.4181213378906,
+              767.2261962890625,
+              707.9469604492188
+            ],
+            "center": [
+              641.6791381835938,
+              560.1672515869141
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.9162477254867554,
+            "timestamp_estimate_from_index_fps_seconds": 221.09664025589487,
+            "timestamp_parent_backend_ms": 221261.72222222222,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6597,
+          "native_crop_xyxy": [
+            321,
+            304,
+            793,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            472,
+            26
+          ],
+          "native_bgr_uint8_sha256": "78ae6bf810540fc72d6cb0197ec6d6b9be38aecffa7f9b4b5922d5a78e0d1b77",
+          "focus_measurement": {
+            "track_id": 1478,
+            "frame_index": 6597,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              374.79583740234375,
+              445.619384765625,
+              517.6140747070312,
+              615.965087890625
+            ],
+            "bbox": [
+              371.1059875488281,
+              447.7528381347656,
+              509.917724609375,
+              616.3809204101562
+            ],
+            "center": [
+              446.2049560546875,
+              530.792236328125
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8070365190505981,
+            "timestamp_estimate_from_index_fps_seconds": 221.2643409842443,
+            "timestamp_parent_backend_ms": 221428.63333333336,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6598,
+          "native_crop_xyxy": [
+            321,
+            304,
+            793,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            468
+          ],
+          "native_bgr_uint8_sha256": "d08a270336a6113a3595cfd8c5f4b161caf13aca0e9d90bead1c11dcbc9f5979",
+          "focus_measurement": {
+            "track_id": 1478,
+            "frame_index": 6598,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              358.2689208984375,
+              439.6673583984375,
+              488.1885986328125,
+              604.5013427734375
+            ],
+            "bbox": [
+              354.5919189453125,
+              443.0522766113281,
+              480.78240966796875,
+              604.1961059570312
+            ],
+            "center": [
+              423.228759765625,
+              522.0843505859375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7180297374725342,
+            "timestamp_estimate_from_index_fps_seconds": 221.2978811299142,
+            "timestamp_parent_backend_ms": 221462.01111111112,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6599,
+          "native_crop_xyxy": [
+            321,
+            304,
+            793,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            472,
+            468
+          ],
+          "native_bgr_uint8_sha256": "5e24138e4fea53f2779bdcd215a60f48088233e4cefaafa60882da52bf549f86",
+          "focus_measurement": {
+            "track_id": 1478,
+            "frame_index": 6599,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              346.31072998046875,
+              465.6506042480469,
+              462.83575439453125,
+              595.303466796875
+            ],
+            "bbox": [
+              342.2269592285156,
+              460.550048828125,
+              455.8189392089844,
+              594.243408203125
+            ],
+            "center": [
+              404.5732421875,
+              530.4770355224609
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.7320575714111328,
+            "timestamp_estimate_from_index_fps_seconds": 221.3314212755841,
+            "timestamp_parent_backend_ms": 221495.3666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 1520,
+      "candidate_inventory_indices": [
+        105
+      ],
+      "frames": [
+        6822,
+        6837,
+        6838,
+        6839
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1520,
+          "origin_frame": 6822,
+          "crossing_frame_start": 6838,
+          "crossing_frame_end": 6839,
+          "confirmation_frame": 6839,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        196,
+        0,
+        1280,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1520_raw_contact.png",
+          "sha256": "127e1536650f5f18d44e9ef2d6e641487cdb5e84595312b338211b4a0a42d08d",
+          "size_bytes": 2605031,
+          "shape_width_height": [
+            2168,
+            1492
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1520_overlay_contact.png",
+          "sha256": "29da0984be481a16832402eaa2f2e56cba26f0dba08cc3d2094ebf66336f20ee",
+          "size_bytes": 2610595,
+          "shape_width_height": [
+            2168,
+            1492
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 6822,
+          "native_crop_xyxy": [
+            196,
+            0,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "c2d13633375c205495cd220a4ae97e99a7968e7b32bc0f4bb507e2912b162f37",
+          "focus_measurement": {
+            "track_id": 1520,
+            "frame_index": 6822,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              438.1805419921875,
+              0.0,
+              1277.5830078125,
+              709.9864501953125
+            ],
+            "bbox": [
+              432.7922668457031,
+              0.006922220345586538,
+              1276.3912353515625,
+              710.6845092773438
+            ],
+            "center": [
+              857.8817749023438,
+              354.99322509765625
+            ],
+            "class_id": 7,
+            "class_name": "truck",
+            "confidence": 0.9459372162818909,
+            "timestamp_estimate_from_index_fps_seconds": 228.81087375996887,
+            "timestamp_parent_backend_ms": 228938.63333333333,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6837,
+          "native_crop_xyxy": [
+            196,
+            0,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            1084,
+            26
+          ],
+          "native_bgr_uint8_sha256": "f1798edb9751d5695649748135bffb546896f6a350c39b2298a908246c583cbc",
+          "focus_measurement": {
+            "track_id": 1520,
+            "frame_index": 6837,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              232.5357666015625,
+              218.06719970703125,
+              677.0321655273438,
+              605.5252075195312
+            ],
+            "bbox": [
+              229.17166137695312,
+              219.42544555664062,
+              674.8186645507812,
+              606.1124877929688
+            ],
+            "center": [
+              454.7839660644531,
+              411.79620361328125
+            ],
+            "class_id": 7,
+            "class_name": "truck",
+            "confidence": 0.6989519000053406,
+            "timestamp_estimate_from_index_fps_seconds": 229.31397594501718,
+            "timestamp_parent_backend_ms": 229439.27777777778,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6838,
+          "native_crop_xyxy": [
+            196,
+            0,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            772
+          ],
+          "native_bgr_uint8_sha256": "1ed1402547614202c7c6de681d99afb7c59ef77c4c2d0f9b59c3ae88718db8a2",
+          "focus_measurement": {
+            "track_id": 1520,
+            "frame_index": 6838,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              226.279296875,
+              224.613037109375,
+              641.924072265625,
+              597.1825561523438
+            ],
+            "bbox": [
+              223.56333923339844,
+              229.05653381347656,
+              638.3776245117188,
+              597.2023315429688
+            ],
+            "center": [
+              434.1016845703125,
+              410.8977966308594
+            ],
+            "class_id": 7,
+            "class_name": "truck",
+            "confidence": 0.8610658049583435,
+            "timestamp_estimate_from_index_fps_seconds": 229.34751609068707,
+            "timestamp_parent_backend_ms": 229472.65555555557,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 6839,
+          "native_crop_xyxy": [
+            196,
+            0,
+            1280,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            1084,
+            772
+          ],
+          "native_bgr_uint8_sha256": "65b8b168efde13a356c01a5922d50c9936c3bd12d8fe2e6901c5ba5851151b4b",
+          "focus_measurement": {
+            "track_id": 1520,
+            "frame_index": 6839,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              220.30621337890625,
+              251.303955078125,
+              609.1920776367188,
+              589.8377685546875
+            ],
+            "bbox": [
+              218.061279296875,
+              250.51812744140625,
+              605.131591796875,
+              589.423095703125
+            ],
+            "center": [
+              414.7491455078125,
+              420.57086181640625
+            ],
+            "class_id": 7,
+            "class_name": "truck",
+            "confidence": 0.7537716031074524,
+            "timestamp_estimate_from_index_fps_seconds": 229.38105623635695,
+            "timestamp_parent_backend_ms": 229506.05555555556,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 1774,
+      "candidate_inventory_indices": [
+        121
+      ],
+      "frames": [
+        7713,
+        7716,
+        7717,
+        7718
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1774,
+          "origin_frame": 7713,
+          "crossing_frame_start": 7717,
+          "crossing_frame_end": 7718,
+          "confirmation_frame": 7718,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        444,
+        231,
+        1086,
+        677
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_raw_contact.png",
+          "sha256": "c089b9763490637e74ad87219e477a1718f7b66d83e0ae65011b8d634a1bfe9e",
+          "size_bytes": 1202159,
+          "shape_width_height": [
+            1284,
+            944
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_overlay_contact.png",
+          "sha256": "76de7ad38ce12aa037ff47c0fcc4e599abb4f1bf9f606f7fec69821075c10a09",
+          "size_bytes": 1210731,
+          "shape_width_height": [
+            1284,
+            944
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 7713,
+          "native_crop_xyxy": [
+            444,
+            231,
+            1086,
+            677
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "05b0a9b3f5cc23aa9af7629acfd5653ce3b6457fd16a2385c01fa4c88a92e6e7",
+          "focus_measurement": {
+            "track_id": 1774,
+            "frame_index": 7713,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              751.33056640625,
+              255.77899169921875,
+              1061.603759765625,
+              652.5526123046875
+            ],
+            "bbox": [
+              766.891845703125,
+              281.2223205566406,
+              1076.0667724609375,
+              665.3385009765625
+            ],
+            "center": [
+              906.4671630859375,
+              454.1658020019531
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.8081502914428711,
+            "timestamp_estimate_from_index_fps_seconds": 258.69514355183816,
+            "timestamp_parent_backend_ms": 258745.01111111112,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 0,
+              "other_emitted_track_id": 1772,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                731.0133056640625,
+                392.9261169433594,
+                1218.6214599609375,
+                715.0462646484375
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 7716,
+          "native_crop_xyxy": [
+            444,
+            231,
+            1086,
+            677
+          ],
+          "contact_sheet_image_origin_xy": [
+            642,
+            26
+          ],
+          "native_bgr_uint8_sha256": "efe980ddc6a8e19e92593a8d867792f517c1d561894b215058e9a6a91d888eb6",
+          "focus_measurement": {
+            "track_id": 1774,
+            "frame_index": 7716,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              559.2257080078125,
+              326.08148193359375,
+              738.3214111328125,
+              590.5908813476562
+            ],
+            "bbox": [
+              562.5460205078125,
+              323.24884033203125,
+              742.1546630859375,
+              598.8849487304688
+            ],
+            "center": [
+              648.7735595703125,
+              458.336181640625
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.8390631079673767,
+            "timestamp_estimate_from_index_fps_seconds": 258.79576398884785,
+            "timestamp_parent_backend_ms": 258845.14444444442,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 0,
+              "other_emitted_track_id": 1772,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                540.4122314453125,
+                413.8559875488281,
+                791.544189453125,
+                695.6865234375
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 7717,
+          "native_crop_xyxy": [
+            444,
+            231,
+            1086,
+            677
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            498
+          ],
+          "native_bgr_uint8_sha256": "5a08750638319687cf2e008f6b58ff5eb974d37a97679ec095503532d07ef258",
+          "focus_measurement": {
+            "track_id": 1774,
+            "frame_index": 7717,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              510.6939697265625,
+              336.48321533203125,
+              681.357177734375,
+              574.6336059570312
+            ],
+            "bbox": [
+              510.1366271972656,
+              336.1520080566406,
+              676.7220458984375,
+              576.065673828125
+            ],
+            "center": [
+              596.0255737304688,
+              455.55841064453125
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.7570672631263733,
+            "timestamp_estimate_from_index_fps_seconds": 258.8293041345177,
+            "timestamp_parent_backend_ms": 258878.50000000003,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 0,
+              "other_emitted_track_id": 1772,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                496.31170654296875,
+                418.5126647949219,
+                710.7621459960938,
+                667.411865234375
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 7718,
+          "native_crop_xyxy": [
+            444,
+            231,
+            1086,
+            677
+          ],
+          "contact_sheet_image_origin_xy": [
+            642,
+            498
+          ],
+          "native_bgr_uint8_sha256": "7515c12a0ec63e4bacf7110ce8c73b0513298dae47329298746fb5f7b5b6baa1",
+          "focus_measurement": {
+            "track_id": 1774,
+            "frame_index": 7718,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              468.3758544921875,
+              349.17828369140625,
+              616.57666015625,
+              565.6721801757812
+            ],
+            "bbox": [
+              465.7999267578125,
+              348.9549560546875,
+              612.25146484375,
+              563.9603271484375
+            ],
+            "center": [
+              542.4762573242188,
+              457.42523193359375
+            ],
+            "class_id": 0,
+            "class_name": "person",
+            "confidence": 0.8334238529205322,
+            "timestamp_estimate_from_index_fps_seconds": 258.86284428018763,
+            "timestamp_parent_backend_ms": 258911.9,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": [
+            {
+              "raw_detection_index": 0,
+              "other_emitted_track_id": 1772,
+              "raw_class_name": "motorcycle",
+              "raw_bbox": [
+                463.1061706542969,
+                452.6968688964844,
+                648.1376953125,
+                647.7808837890625
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "track_id": 1824,
+      "candidate_inventory_indices": [
+        126
+      ],
+      "frames": [
+        7842,
+        7849,
+        7850,
+        7851
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1824,
+          "origin_frame": 7842,
+          "crossing_frame_start": 7850,
+          "crossing_frame_end": 7851,
+          "confirmation_frame": 7851,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        393,
+        317,
+        937,
+        720
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1824_raw_contact.png",
+          "sha256": "b13b4771f70aa69a5d5b929f91c0431f5fd8c3031fd6618bd19918d1e97e9cc1",
+          "size_bytes": 962272,
+          "shape_width_height": [
+            1088,
+            858
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1824_overlay_contact.png",
+          "sha256": "62fbca423e75d986e87ba44971af9f48bfeeec9c0bf301e058a6a62a492c44f5",
+          "size_bytes": 966979,
+          "shape_width_height": [
+            1088,
+            858
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 7842,
+          "native_crop_xyxy": [
+            393,
+            317,
+            937,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "2e20b3385b279cdf9ca861c123bf7b4294f17d64f419ef3841a374dfdacf3d32",
+          "focus_measurement": {
+            "track_id": 1824,
+            "frame_index": 7842,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              655.8953857421875,
+              418.5655517578125,
+              912.2554931640625,
+              706.8983154296875
+            ],
+            "bbox": [
+              658.6105346679688,
+              421.2939453125,
+              918.8203735351562,
+              708.8146362304688
+            ],
+            "center": [
+              784.075439453125,
+              562.73193359375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.9080197811126709,
+            "timestamp_estimate_from_index_fps_seconds": 263.0218223432536,
+            "timestamp_parent_backend_ms": 263084.14444444445,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 7849,
+          "native_crop_xyxy": [
+            393,
+            317,
+            937,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            544,
+            26
+          ],
+          "native_bgr_uint8_sha256": "5049248951bccd49a3c691832fd6225b35b0680b0b0cd971af444e692a63206c",
+          "focus_measurement": {
+            "track_id": 1824,
+            "frame_index": 7849,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              450.3109130859375,
+              443.93780517578125,
+              570.45458984375,
+              598.5239868164062
+            ],
+            "bbox": [
+              447.6552429199219,
+              445.91387939453125,
+              564.3489990234375,
+              597.6838989257812
+            ],
+            "center": [
+              510.38275146484375,
+              521.2308959960938
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.863225519657135,
+            "timestamp_estimate_from_index_fps_seconds": 263.2566033629428,
+            "timestamp_parent_backend_ms": 263317.7888888889,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 7850,
+          "native_crop_xyxy": [
+            393,
+            317,
+            937,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            455
+          ],
+          "native_bgr_uint8_sha256": "1b0a6d59b5524aefa65b1ba379c9e19582c6b56ae19e52bf4ca13f0ffca9cf67",
+          "focus_measurement": {
+            "track_id": 1824,
+            "frame_index": 7850,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              441.772705078125,
+              480.90789794921875,
+              542.009521484375,
+              590.0466918945312
+            ],
+            "bbox": [
+              436.4266052246094,
+              471.3022766113281,
+              536.1400146484375,
+              588.8735961914062
+            ],
+            "center": [
+              491.89111328125,
+              535.477294921875
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.6716388463973999,
+            "timestamp_estimate_from_index_fps_seconds": 263.2901435086127,
+            "timestamp_parent_backend_ms": 263351.1222222222,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 7851,
+          "native_crop_xyxy": [
+            393,
+            317,
+            937,
+            720
+          ],
+          "contact_sheet_image_origin_xy": [
+            544,
+            455
+          ],
+          "native_bgr_uint8_sha256": "eee1dff5f6eb12982272cf00ffa7b59c1aa0e2d356b94a859c60eac084e281c6",
+          "focus_measurement": {
+            "track_id": 1824,
+            "frame_index": 7851,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              426.3062744140625,
+              477.346435546875,
+              520.0693359375,
+              582.458251953125
+            ],
+            "bbox": [
+              423.21051025390625,
+              477.126953125,
+              514.3443603515625,
+              581.4507446289062
+            ],
+            "center": [
+              473.18780517578125,
+              529.90234375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.717073380947113,
+            "timestamp_estimate_from_index_fps_seconds": 263.32368365428255,
+            "timestamp_parent_backend_ms": 263384.52222222224,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    },
+    {
+      "track_id": 1887,
+      "candidate_inventory_indices": [
+        129
+      ],
+      "frames": [
+        8268,
+        8271,
+        8272,
+        8273
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1887,
+          "origin_frame": 8268,
+          "crossing_frame_start": 8272,
+          "crossing_frame_end": 8273,
+          "confirmation_frame": 8273,
+          "direction": "B_TO_A"
+        }
+      ],
+      "scope": "only listed frames visually available; full support windows scanned numerically, not all visually reviewed",
+      "crop_xyxy": [
+        313,
+        315,
+        800,
+        714
+      ],
+      "coordinate_mapping": "tile_x=native_x-crop_x1+sheet_image_origin_x; tile_y=native_y-crop_y1+sheet_image_origin_y; no resize",
+      "artifacts": {
+        "raw": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1887_raw_contact.png",
+          "sha256": "04fcfd2fc0e634398f8f7daefadda78e806269ce6779730f4e46e3c35099428b",
+          "size_bytes": 853412,
+          "shape_width_height": [
+            974,
+            850
+          ]
+        },
+        "overlay": {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1887_overlay_contact.png",
+          "sha256": "f7916918fcafb8fd8398d6273fb670c0092a838425d4d6e0fa60bd80ffb17c4e",
+          "size_bytes": 859353,
+          "shape_width_height": [
+            974,
+            850
+          ]
+        }
+      },
+      "tiles": [
+        {
+          "frame_index": 8268,
+          "native_crop_xyxy": [
+            313,
+            315,
+            800,
+            714
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            26
+          ],
+          "native_bgr_uint8_sha256": "ba90c85c9d63c4af3455ce33278c2b127988374eed7bc0e7700bd56402fcd72e",
+          "focus_measurement": {
+            "track_id": 1887,
+            "frame_index": 8268,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              533.9532470703125,
+              418.67047119140625,
+              775.5545654296875,
+              689.3099975585938
+            ],
+            "bbox": [
+              540.6387939453125,
+              414.8523254394531,
+              789.4332885742188,
+              695.834716796875
+            ],
+            "center": [
+              654.75390625,
+              553.990234375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8283863663673401,
+            "timestamp_estimate_from_index_fps_seconds": 277.3099243986254,
+            "timestamp_parent_backend_ms": 277369.81111111114,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 8271,
+          "native_crop_xyxy": [
+            313,
+            315,
+            800,
+            714
+          ],
+          "contact_sheet_image_origin_xy": [
+            487,
+            26
+          ],
+          "native_bgr_uint8_sha256": "6f1759bbdc38e12403c1a75e02bfbfa6280e9ae60607578641ef094172d9a5b5",
+          "focus_measurement": {
+            "track_id": 1887,
+            "frame_index": 8271,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              391.29876708984375,
+              439.351318359375,
+              535.5826416015625,
+              611.4599609375
+            ],
+            "bbox": [
+              389.0381164550781,
+              436.8485107421875,
+              528.79052734375,
+              612.106689453125
+            ],
+            "center": [
+              463.4407043457031,
+              525.4056396484375
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8194617033004761,
+            "timestamp_estimate_from_index_fps_seconds": 277.4105448356351,
+            "timestamp_parent_backend_ms": 277469.9444444445,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 8272,
+          "native_crop_xyxy": [
+            313,
+            315,
+            800,
+            714
+          ],
+          "contact_sheet_image_origin_xy": [
+            0,
+            451
+          ],
+          "native_bgr_uint8_sha256": "fbbe5ebf773adb6ad89517deabc589fcfa68e2e4b70ff4bf40b3fe59bbebc9cf",
+          "focus_measurement": {
+            "track_id": 1887,
+            "frame_index": 8272,
+            "original_detection_index": 0,
+            "raw_bbox": [
+              364.9410400390625,
+              449.9173278808594,
+              487.361328125,
+              595.8187255859375
+            ],
+            "bbox": [
+              360.595458984375,
+              447.6940002441406,
+              479.62451171875,
+              595.0494995117188
+            ],
+            "center": [
+              426.15118408203125,
+              522.8680267333984
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.8122342824935913,
+            "timestamp_estimate_from_index_fps_seconds": 277.44408498130497,
+            "timestamp_parent_backend_ms": 277503.3666666667,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        },
+        {
+          "frame_index": 8273,
+          "native_crop_xyxy": [
+            313,
+            315,
+            800,
+            714
+          ],
+          "contact_sheet_image_origin_xy": [
+            487,
+            451
+          ],
+          "native_bgr_uint8_sha256": "6162a0f6a304d89f949f21a66e4c7f130de00f075bec90b96753dd89b50d2b57",
+          "focus_measurement": {
+            "track_id": 1887,
+            "frame_index": 8273,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              337.99871826171875,
+              449.3762512207031,
+              447.65191650390625,
+              583.501220703125
+            ],
+            "bbox": [
+              334.64447021484375,
+              449.9643249511719,
+              440.5549621582031,
+              581.99365234375
+            ],
+            "center": [
+              392.8253173828125,
+              516.4387359619141
+            ],
+            "class_id": 3,
+            "class_name": "motorcycle",
+            "confidence": 0.756614625453949,
+            "timestamp_estimate_from_index_fps_seconds": 277.4776251269749,
+            "timestamp_parent_backend_ms": 277536.72222222225,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_2_detection"
+          },
+          "auxiliary_competitor_detections": []
+        }
+      ]
+    }
+  ],
+  "archived_inventory_input": {
+    "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/candidate_inventory_input.json.gz",
+    "sha256": "edf9a47d6b0b7ce28c9eb5ff2336fc9ccef923d08488bdbf67c0ce4a2c48e9c2",
+    "decompressed_sha256": "2856407cf541e20c326bddd05d563bbe41ef29a6b2feb8a55942b1e3bf1e4f57",
+    "reason": "Preserve exact executed input; decompress before invoking builder --inventory."
+  }
+}

@@ -4,7 +4,7 @@
 
 **REQUIREMENT:** Develop phase by phase: Kaggle prototype first, production architecture after the single-video pipeline, eight-video processing, and manual audit are stable.
 
-Phase 0 established specifications. Executed model capabilities are Phase 1 inspection, Phase 2 one-video YOLO26M, Phase 3 cached BoT-SORT and the controlled [Phase 4 ReID comparison](REID_EXPERIMENT.md). The staged [Phase 5 task](PHASE_5_TASK.md) now uses accepted G3/reference/B and contextual qualitative rules from [latest feedback](evidence/phase_5/feedback/G3_review_001.json). The four named A points remain exact; simple perimeter ABDC avoids self-intersection. [GEOMETRY_CONTRACT.md](GEOMETRY_CONTRACT.md) defines the notebook-only prototype; [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) records actual software validation and cached replay evidence. There is no accepted counting implementation or final suitable numerical setting. The architecture below remains the target; later components remain unimplemented.
+Phase 0 established specifications. Executed capabilities include Phase 1 inspection, Phase 2 one-video YOLO26M, Phase 3 cached BoT-SORT, the controlled [Phase 4 ReID comparison](REID_EXPERIMENT.md) and [Phase 5 geometry](PHASE_5_REVIEW.md). G3/BC and its qualitative rules remain unchanged. The user now authorizes [Phase 6](PHASE_6_TASK.md) Opsi A; [COUNTING_CONTRACT.md](COUNTING_CONTRACT.md) defines implemented notebook-only audit-gated passage counting. Actual counting execution and bounded review are reported in [PHASE_6_REVIEW.md](PHASE_6_REVIEW.md). Suitable numerical defaults and production counting/automatic identity resolution remain OPEN; later components remain unimplemented.
 
 ## 2. Confirmed Prototype Pipeline
 
@@ -59,7 +59,9 @@ Side semantics are per-video; TOR3-PAGI `A_TO_B` means approaching and `B_TO_A` 
 
 ### Counting
 
-Accepts an eligible track event only after crossing the line and reaching the opposite side. Prevents duplicate recording of the same event. Does not count detections or mere region/line contact. Re-entry, true repeat crossings, noise, gaps, and ID recovery policies need explicit decisions before their implementation.
+Accepts an eligible passage only after the retained measured crossing/origin/arrival evidence and positive unit/category/identity review satisfy the [Phase 6 counting contract](COUNTING_CONTRACT.md). All unreviewed/conflicting candidates remain pending. Whole origin–confirmation histories are checked; person↔vehicle component changes are hard-blocked, and person is not automatically pedestrian. Raw detection overlap is auxiliary conflict evidence, never a count source or duplicate proof. Explicit-review same physical unit + passage becomes one deterministic event. Genuine later passages require independent episode evidence; overlapping passage intervals assigned distinct IDs remain pending. Automatic ID recovery, taxonomy and suitable parameters remain OPEN.
+
+The [counting helper](../notebooks/phase_6_counting_helpers.py) and [06_counting_audit.ipynb](../notebooks/06_counting_audit.ipynb) consume retained Phase 5 `b0_c1`/Phase 4 sources on CPU, without inference or geometry rerun. Machine candidates/results, review input, resolved decisions, accepted events and aggregate snapshots are separate artifacts. This is a notebook prototype, not a Phase 10 production modularization.
 
 ### Aggregation
 
@@ -104,7 +106,7 @@ Configuration covers project, store/location, video, geometry, model, tracking/R
 
 Meaningful experiments retain input identity, verified model/dependency identifiers, explicit configuration, device information, preprocessing variant, annotated evidence, observations actually measured, conclusions, and limitations.
 
-Phase 0 itself reported no experiment. Phase 1–4 retain their separate scopes; ReID architecture remains while the tested person-domain setting is not the current vehicle default. Phase 5 separates source/figure checks, independent synthetic software tests, complete cached-measurement diagnostics and bounded retained-pixel review in [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md). No model is rerun for geometry. Diagnostic transitions are not CountEvent or traffic totals; all raw classes remain visible. Numeric sensitivity comparisons do not establish optimal thresholds. Original scaled-image mapping and all-video reliability remain unknown. There is no formal ground truth; software invariants and visual plausibility cannot be presented as model/counting accuracy.
+Phase 0 itself reported no experiment. Phase 1–5 retain original evidence and separate scopes; ReID remains while the tested person-domain setting is not the current vehicle default. Phase 5 geometry diagnostics are not traffic counts. Phase 6 layers audit-gated counting/review and accepted-only aggregation without rerunning models or geometric state machines. Its input/config/review/evidence hashes and event identities make scoped decisions reconstructible; rerun snapshots do not append duplicate counts. Pixel review supports only actual inspected windows, and accepted subtotal does not establish whole-video completeness. Numeric controls do not establish optimal thresholds; original display mapping, taxonomy, automatic physical identity and all-video reliability remain OPEN. No formal ground truth or accuracy claim is implied.
 
 ## 9. Production Transition
 

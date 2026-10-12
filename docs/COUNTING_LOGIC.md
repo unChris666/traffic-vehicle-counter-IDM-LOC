@@ -47,7 +47,7 @@ FULL-FRAME DETECTION
 
 YOLO may detect objects anywhere in the frame. Tracking is not gated by a Side A/B detection filter. Geometry constrains track counting eligibility, not the existence of every tracked object.
 
-**CONFIRMED — prototype origin:** measured BC inside exactly one side and outside the configured neutral band can establish a geometric origin. This is separate from business eligibility. **OPEN — Phase 6:** suitable minimum age, displacement, identity recovery and final eligibility rules; no product threshold values are established here. Geometry gap handling follows the conservative contract below without choosing a physical-identity recovery policy.
+**CONFIRMED — prototype origin:** measured BC inside exactly one side and outside the configured neutral band can establish a geometric origin. This is separate from business eligibility. **ENGINEERING EXPERIMENT — Phase 6 Opsi A:** [COUNTING_CONTRACT.md](COUNTING_CONTRACT.md) requires complete measured geometry, supported unit/category and positive identity review before event acceptance. It adds no arbitrary minimum age, confidence or displacement threshold. Suitable product thresholds and automatic identity recovery remain OPEN. Geometry gap handling is unchanged.
 
 ## 5. Initial-Frame Objects
 
@@ -103,7 +103,7 @@ These requirements do not establish a working recovery mechanism or guarantee tr
 
 **CONFIRMED — geometry controls:** `neutral_band_px` is a nonnegative native-pixel half-width and `confirmation_observations` is a positive count of consecutive qualifying destination measurements. Both are mandatory explicit experiment parameters; suitable product values remain OPEN. Same-side updates do not re-emit a completed geometric transition, while a later valid reverse trajectory may produce another diagnostic with `repeat_business_policy_open=True`.
 
-**OPEN — Phase 6:** event identity/deduplication across changed/duplicate track IDs, physical-identity recovery, and genuine repeated crossing/re-entry/U-turn policy. Do not silently decide that every track may count only once for its lifetime, or that every geometric recrossing is a new accepted event. The conservative no-gap-interpolation geometry policy does not resolve physical crossing timing during missing observations.
+**USER DECISION — Phase 6:** Opsi A holds unit/category/identity conflicts outside accepted subtotal. **ENGINEERING EXPERIMENT:** all unreviewed candidates remain pending; absence of overlap is not positive identity evidence. Review-confirmed same physical unit + same passage is deduplicated to one measured, hard-eligible representative. A later passage of the same unit may count only after independent episode review; overlapping measured passage intervals assigned distinct passage IDs remain ambiguous, even with an affirmative return flag. Adjacent intervals may share a measured boundary. Lifetime once-per-ID and unconditional recross counting are not adopted. Automatic physical-identity recovery and suitable numerical settings remain OPEN; missing crossings are never interpolated.
 
 ## 9. Camera Shake and Geometry Alignment
 
@@ -123,7 +123,7 @@ Each accepted event needs enough evidence to trace the count, conceptually inclu
 - geometry and processing configuration identity
 - relevant trajectory/evidence references for audit
 
-These are conceptual requirements, not finalized event fields or storage types. The exact event schema, which timestamp represents the event, and category stabilization/assignment rules remain open. See [API_CONTRACT.md](API_CONTRACT.md).
+These are conceptual product requirements. The [Phase 6 counting contract](COUNTING_CONTRACT.md) now defines a concrete notebook-prototype `CountEvent`, layered candidate/review/event IDs, full origin–confirmation class evidence, audited physical-unit/passage references and stable input/config identity. Crossing/contact interval and confirmation frame are stored separately; frame/FPS timestamps remain estimates. Final production storage/schema, pickup/bus/angkot taxonomy and suitable numerical values remain OPEN. See [API_CONTRACT.md](API_CONTRACT.md).
 
 Aggregate tables must be derived from accepted events and remain internally consistent. Manual result overrides belong to the future product/audit layer and must preserve original machine-generated outputs.
 
@@ -131,6 +131,6 @@ Aggregate tables must be derived from accepted events and remain internally cons
 
 Phase 5 develops deterministic geometry using synthetic trajectories before relying on model quality. Phase 6 validates counting with synthetic tests and real-video inspection. Required cases include diagonal paths, parallel movement, touching without crossing, initial-frame objects, incomplete crossing, jitter, gaps, re-entry, and duplicate-event prevention once their open policies are resolved.
 
-Phase 0 was documentation only. The authorized Phase 5 prototype now implements the accepted geometry contract and synthetic tests; [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) records retained-track execution, review scope, parameter experiments and unresolved issues. No Phase 6 counting/category aggregation is implemented by this geometry capability. There is no formal ground truth; internal correctness and manual audit are not measured real-world accuracy.
+Phase 0 was documentation only. The Phase 5 prototype implements geometry diagnostics; [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) preserves its original execution and limits. The separately authorized [Phase 6 task](PHASE_6_TASK.md) implements counting in [06_counting_audit.ipynb](../notebooks/06_counting_audit.ipynb) and [phase_6_counting_helpers.py](../notebooks/phase_6_counting_helpers.py), consuming retained `b0_c1` without rerunning geometry/models. Every unreviewed candidate is pending; all origin–confirmation measurements are inspected, person↔vehicle histories are hard-blocked and rider is not automatically pedestrian. Machine and review-resolved decisions/events remain separate, with aggregate snapshots derived only from accepted unique passage events. Actual execution and bounded pixel review belong to [PHASE_6_REVIEW.md](PHASE_6_REVIEW.md). Accepted subtotal is not proof of whole-video traffic completeness or measured accuracy.
 
 See [OPEN_DECISIONS.md](OPEN_DECISIONS.md), [TEST_PLAN.md](TEST_PLAN.md), and [EVALUATION.md](EVALUATION.md).

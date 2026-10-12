@@ -6,7 +6,7 @@ No formal ground-truth dataset currently exists.
 
 Therefore, model accuracy and counting accuracy are NOT current acceptance criteria.
 
-This document specifies checks, not executed results. Phase 0 validation is specification consistency; the Phase 1 inspection tool is authorized in `PHASE_1_TASK.md`. See `VIDEO_INSPECTION.md` for actual tool-validation status. Synthetic tool checks are separate from actual Kaggle-video inspection, which remains pending.
+This document specifies checks, not executed results. Phase 0 validation is specification consistency; original evidence/status for later phases remains in their own review documents. Scoped TOR3 Phase 1 inspection is retained, and current [Phase 6](PHASE_6_TASK.md) Opsi A validation follows [COUNTING_CONTRACT.md](COUNTING_CONTRACT.md). Synthetic checks and bounded real pixel review remain distinct from formal ground-truth evaluation.
 
 ## 2. Test Levels
 
@@ -88,7 +88,7 @@ Required invariants:
 - bounding-box contact with the counting line alone does not produce an event
 - a crossing without confirmed arrival in the opposite configured side does not produce an accepted directional event
 
-Temporary gaps, ID switches, re-entry, and genuine repeated crossings require documented identity/deduplication policies before their final acceptance tests are specified. Noise-induced re-crossing must not create duplicates; the business rule for a genuine return crossing remains OPEN. Do not mask an unresolved policy with a passing test.
+The [Phase 6 counting contract](COUNTING_CONTRACT.md) now specifies audit-gated identity/dedup/return handling for the prototype: unreviewed or conflicted candidates do not count; only reviewed same unit + same passage is deduplicated; a later episode requires independent return review. Positive-duration overlapping crossing intervals assigned distinct passage IDs remain pending. Geometry gaps/endpoint/predictions and person↔vehicle histories cannot be repaired by review overrides. Automatic identity recovery, suitable numerical thresholds and final taxonomy remain OPEN; tests must exercise explicit pending behavior rather than hide the unresolved policy.
 
 ## 7. Night Preprocessing Tests
 
@@ -143,4 +143,10 @@ Every implementation task should report:
 
 ## Phase 5 implemented prototype validation
 
-The standard-library [synthetic suite](../notebooks/phase_5_synthetic_tests.py) exercises the [accepted qualitative contract](GEOMETRY_CONTRACT.md), including diagonal A→B/B→A, finite endpoints/extensions, measured touches, region boundaries, gaps/predictions, explicit band/confirmation, G3 line-versus-polygon offset and raw detection linkage. Numeric fixtures are test controls, not product defaults. The [notebook](../notebooks/05_geometry_replay.ipynb) stops before cache replay when a test fails. See [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) for results actually executed, initial regressions, retained provenance and visual scope. Phase6 physical dedup/category/genuine repeat acceptance tests still require their own decisions.
+The standard-library [synthetic suite](../notebooks/phase_5_synthetic_tests.py) exercises the [accepted qualitative contract](GEOMETRY_CONTRACT.md), including diagonal A→B/B→A, finite endpoints/extensions, measured touches, region boundaries, gaps/predictions, explicit band/confirmation, G3 line-versus-polygon offset and raw detection linkage. Numeric fixtures are test controls, not product defaults. The [notebook](../notebooks/05_geometry_replay.ipynb) stops before cache replay when a test fails. See [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) for results actually executed, initial regressions, retained provenance and visual scope. This historical validation remains separate from Phase 6 counting tests.
+
+## Phase 6 implemented prototype validation
+
+**ENGINEERING EXPERIMENT — checks, not results:** [phase_6_synthetic_tests.py](../notebooks/phase_6_synthetic_tests.py) tests the [Opsi A contract](COUNTING_CONTRACT.md) before [06_counting_audit.ipynb](../notebooks/06_counting_audit.ipynb) processes retained sources. Required cases include unreviewed hold despite no overlap, full supported A→B/B→A, rider/pedestrian distinction, full-window component changes, category conflicts, missing/tampered evidence, same-unit/passage dedup, return review, simultaneous conflicting episodes, idempotent IDs/snapshots and accepted-event reconciliation. Reviews used in fixtures are software test inputs, not evidence of real-video outcomes.
+
+Actual real-window reviews must validate raw pixel/source alignment and state which origin/contact/passage/confirmation frames were inspected. A contact interval requires its measured contact evidence, not just an endpoint. Review cannot upgrade ambiguous geometry or component-changing trajectories; unknown pickup/bus/angkot interpretation stays pending. Machine outputs must remain separate from resolved outcomes, and event subtotal must reconcile without implying completeness or accuracy. Actual executed test counts, retained events/decisions and independent artifact checks belong only to [PHASE_6_REVIEW.md](PHASE_6_REVIEW.md).

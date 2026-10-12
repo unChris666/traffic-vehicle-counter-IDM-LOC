@@ -1,0 +1,788 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_ARCHIVE_SOURCE_LINK_INTEGRITY_ONLY",
+  "checks_passed": 195,
+  "checks_failed": 0,
+  "checks": [
+    {
+      "check": "case_count23",
+      "passed": true
+    },
+    {
+      "check": "distinct_sample_frames94",
+      "passed": true
+    },
+    {
+      "check": "review_case_ids_match_extraction",
+      "passed": true
+    },
+    {
+      "check": "review_unique_contacts46",
+      "passed": true
+    },
+    {
+      "check": "no_count_events_created",
+      "passed": true
+    },
+    {
+      "check": "no_human_or_GT_claim",
+      "passed": true
+    },
+    {
+      "check": "sample_index_link_hash",
+      "passed": true
+    },
+    {
+      "check": "executed_method_hash",
+      "passed": true
+    },
+    {
+      "check": "archived_inventory_exact_executed_input",
+      "passed": true
+    },
+    {
+      "check": "id1_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1_frame0_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1_frame60_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1_frame75_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1_frame76_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1_frame77_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id311_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id311_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id311_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id311_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id311_frame1591_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id311_frame1595_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id311_frame1596_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id311_frame1597_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id394_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id394_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id394_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id394_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id394_frame1893_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id394_frame1897_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id394_frame1898_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id394_frame1899_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id443_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id443_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id443_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id443_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id443_frame2292_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id443_frame2296_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id443_frame2297_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id443_frame2298_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id461_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id461_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id461_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id461_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id461_frame2362_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id461_frame2366_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id461_frame2367_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id461_frame2368_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id693_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id693_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id693_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id693_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id693_frame4207_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id693_frame4214_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id693_frame4215_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id693_frame4216_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id829_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id829_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id829_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id829_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id829_frame4797_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id829_frame4800_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id829_frame4801_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id829_frame4802_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id893_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id893_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id893_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id893_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id893_frame4975_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id893_frame4976_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id893_frame4977_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id893_frame4978_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id893_frame4979_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id912_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id912_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id912_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id912_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id912_frame5011_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id912_frame5018_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id912_frame5019_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id912_frame5020_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id912_frame5021_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id912_frame5022_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id923_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id923_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id923_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id923_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id923_frame5017_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id923_frame5027_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id923_frame5028_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id923_frame5029_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id967_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id967_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id967_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id967_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id967_frame5118_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id967_frame5124_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id967_frame5125_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id967_frame5126_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id973_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id973_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id973_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id973_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id973_frame5128_not_emitted_record",
+      "passed": true
+    },
+    {
+      "check": "id973_frame5129_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id973_frame5130_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1144_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1144_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1144_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1144_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1144_frame5674_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1144_frame5688_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1144_frame5689_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1144_frame5690_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1323_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1323_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1323_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1323_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1323_frame6256_not_emitted_record",
+      "passed": true
+    },
+    {
+      "check": "id1323_frame6257_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1323_frame6258_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1346_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1346_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1346_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1346_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1346_frame6283_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1346_frame6293_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1346_frame6294_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1346_frame6295_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1372_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1372_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1372_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1372_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1372_frame6406_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1372_frame6415_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1372_frame6416_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1372_frame6417_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1389_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1389_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1389_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1389_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1389_frame6421_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1389_frame6432_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1389_frame6433_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1389_frame6434_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1408_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1408_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1408_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1408_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1408_frame6440_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1408_frame6451_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1408_frame6452_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1408_frame6453_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1478_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1478_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1478_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1478_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1478_frame6592_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1478_frame6597_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1478_frame6598_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1478_frame6599_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1520_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1520_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1520_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1520_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1520_frame6822_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1520_frame6837_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1520_frame6838_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1520_frame6839_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1774_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1774_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1774_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1774_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1774_frame7713_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1774_frame7716_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1774_frame7717_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1774_frame7718_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1824_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1824_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1824_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1824_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1824_frame7842_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1824_frame7849_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1824_frame7850_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1824_frame7851_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1887_raw_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1887_raw_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1887_overlay_sha256",
+      "passed": true
+    },
+    {
+      "check": "id1887_overlay_native_contact_shape",
+      "passed": true
+    },
+    {
+      "check": "id1887_frame8268_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1887_frame8271_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1887_frame8272_source_measurement_link",
+      "passed": true
+    },
+    {
+      "check": "id1887_frame8273_source_measurement_link",
+      "passed": true
+    }
+  ],
+  "no_ground_truth_performance_claim": true
+}

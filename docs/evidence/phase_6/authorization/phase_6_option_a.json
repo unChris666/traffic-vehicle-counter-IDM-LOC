@@ -1,0 +1,12 @@
+{
+  "recorded_at_utc": "2026-10-12T14:30:57.169693+00:00",
+  "claim_type": "USER_DECISION_AND_AUTHORIZATION_NOT_EXPERIMENT_RESULT",
+  "verbatim_user_instruction": "APAKAH DENGAN MEMILIH OPSI A SUDAH BISA LANJUT KE PHASE 6?\nJIKA YA, LANJUTKAN KE PHASE 6 : metrik passage → unit/rider → kategori → deduplikasi → genuine return → eligibility → parameter dan schema event.\nEvent diterima ketika bukti geometri, unit, kategori dan identitas memenuhi aturan eksplisit. Konflik ID/komponen/kategori ditahan dan tidak masuk subtotal accepted sampai terselesaikan. Review dapat dilakukan melalui notebook dan berkas audit, tanpa membuat UI terlebih dahulu.",
+  "selected_option": "A",
+  "metric": "passage",
+  "authorized_phase": 6,
+  "scope": "TOR3-PAGI counting prototype from retained ReID/G3 evidence; pending conflicts excluded accepted subtotal; no UI",
+  "engineering_experiment_choices": "Audit-gated v0 acceptance; Phase5 b0_c1 control retained unchanged; bounded AI-assisted pixel review; source-linked candidate/event/review schemas",
+  "suitable_product_numeric_defaults_selected": false,
+  "architecture_reid_retained": true
+}

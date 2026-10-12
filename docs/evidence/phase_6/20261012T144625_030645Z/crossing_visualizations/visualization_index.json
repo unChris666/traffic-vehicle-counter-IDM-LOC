@@ -1,0 +1,705 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_RETAINED_CASE_OUTCOME_VISUALIZATION",
+  "run_id": "20261012T144625_030645Z",
+  "resolved_decisions_path": "docs/evidence/phase_6/20261012T144625_030645Z/resolved_decisions.jsonl.gz",
+  "resolved_decisions_sha256": "0cf8cf60ed1e957cb12794f2ab27dff4af91805f38f818407f556f4e7a3ea019",
+  "accepted_events_path": "docs/evidence/phase_6/20261012T144625_030645Z/accepted_events.jsonl.gz",
+  "accepted_events_sha256": "ac2db6188259d3ac6b6a1d53ba654c4ec4210dd61d63a2f67836006a211b1282",
+  "source_sample_index_sha256": "95b3882d1f12863b8252ff3252691d57aaef9a6d702c83e59ca06af547d55059",
+  "method_sha256": "b65a723a7cde88042870f4d91298144f465cb0a83a860ecf3558eefc8f71a0c9",
+  "pillow_version": "12.3.0",
+  "counting_models_video_or_geometry_rerun": false,
+  "new_reviews_or_events_created": false,
+  "case_count": 6,
+  "artifact_count": 12,
+  "artifacts": [
+    {
+      "track_id": 1,
+      "status": "accepted",
+      "category": "car",
+      "direction": "A_TO_B",
+      "candidate_id": "pc6_29d883c7afba4c22415afdf4c389953ac9fca8929cf2233f3f071d15ec51de08",
+      "event_id": "pe6_a9ecdaaea8cc797ca23217109eda5cea28568fafe1f607110bc792210d1cb4e7",
+      "reasons": [
+        "REVIEW_CONFIRMED_PASSAGE"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 0,
+      "passage_frame_interval": [
+        76,
+        77
+      ],
+      "confirmation_frame": 77,
+      "confirmation_index_fps_estimate_seconds": 2.5825912165812963,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1,
+      "photo_exact_frames": [
+        0,
+        60,
+        75,
+        76,
+        77
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_raw_contact.png",
+      "source_sha256": "c09161e62c2dd2f7d20ac21a44f03e40d640e16890acd2b4937a188f1f044bf7",
+      "source_kind": "raw",
+      "source_paste_origin_xy": [
+        0,
+        235
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1_accepted_raw_case.png",
+      "output_sha256": "9ff12c641859b9a610684694ffdcdd5c9dc7f0aafe6c474f931000794a6d9e2f",
+      "output_size_bytes": 721314,
+      "dimensions_width_height": [
+        1224,
+        964
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: ACCEPTED | target track1",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: car | arah geometri: A_TO_B",
+        "Origin frame0; passage terukur frame76..77; konfirmasi geometri frame77",
+        "Waktu konfirmasi geometri: 2.582591s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_29d883c7afba4c22415afdf4c389953ac9fca8929cf2233f3f071d15ec51de08",
+        "Event: pe6_a9ecdaaea8cc797ca23217109eda5cea28568fafe1f607110bc792210d1cb4e7",
+        "Alasan snapshot: REVIEW_CONFIRMED_PASSAGE",
+        "Frame pada foto sumber track1: 0,60,75,76,77"
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1,
+      "status": "accepted",
+      "category": "car",
+      "direction": "A_TO_B",
+      "candidate_id": "pc6_29d883c7afba4c22415afdf4c389953ac9fca8929cf2233f3f071d15ec51de08",
+      "event_id": "pe6_a9ecdaaea8cc797ca23217109eda5cea28568fafe1f607110bc792210d1cb4e7",
+      "reasons": [
+        "REVIEW_CONFIRMED_PASSAGE"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 0,
+      "passage_frame_interval": [
+        76,
+        77
+      ],
+      "confirmation_frame": 77,
+      "confirmation_index_fps_estimate_seconds": 2.5825912165812963,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1,
+      "photo_exact_frames": [
+        0,
+        60,
+        75,
+        76,
+        77
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_overlay_contact.png",
+      "source_sha256": "c535b2d8fb17165f8281ed6725084da58041138f3627e6d7b79b7433f6640e8c",
+      "source_kind": "overlay",
+      "source_paste_origin_xy": [
+        0,
+        235
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1_accepted_overlay_case.png",
+      "output_sha256": "50f1d545b3a1bebfd02364851d429daad7049bd4e1e0d0537ff8b6d5616c6711",
+      "output_size_bytes": 722842,
+      "dimensions_width_height": [
+        1224,
+        964
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: ACCEPTED | target track1",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: car | arah geometri: A_TO_B",
+        "Origin frame0; passage terukur frame76..77; konfirmasi geometri frame77",
+        "Waktu konfirmasi geometri: 2.582591s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_29d883c7afba4c22415afdf4c389953ac9fca8929cf2233f3f071d15ec51de08",
+        "Event: pe6_a9ecdaaea8cc797ca23217109eda5cea28568fafe1f607110bc792210d1cb4e7",
+        "Alasan snapshot: REVIEW_CONFIRMED_PASSAGE",
+        "Frame pada foto sumber track1: 0,60,75,76,77"
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 973,
+      "status": "accepted",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_9e70c8cc189cfa89d788cbbe5e0ee36fd4bdc3623f200f8a483ad39551c6037b",
+      "event_id": "pe6_beb5763e21de883e247ab5bacf3aba83fe558d4712b035376a3ed37d8e38603c",
+      "reasons": [
+        "REVIEW_CONFIRMED_PASSAGE"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 5129,
+      "passage_frame_interval": [
+        5129,
+        5130
+      ],
+      "confirmation_frame": 5130,
+      "confirmation_index_fps_estimate_seconds": 172.06094728652013,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 973,
+      "photo_exact_frames": [
+        5128,
+        5129,
+        5130
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_raw_contact.png",
+      "source_sha256": "00418cece3fd65658e63363010e3d4b23bba16a04e5679883d1122492ff80298",
+      "source_kind": "raw",
+      "source_paste_origin_xy": [
+        0,
+        258
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id973_accepted_raw_case.png",
+      "output_sha256": "cd547d81bc5b1231d89953c0a1c15c4a899eae9214bec26a5565767f198eda3f",
+      "output_size_bytes": 234614,
+      "dimensions_width_height": [
+        1024,
+        852
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: ACCEPTED | target track973",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: motorcycle | arah geometri: B_TO_A",
+        "Origin frame5129; passage terukur frame5129..5130; konfirmasi geometri frame5130",
+        "Waktu konfirmasi geometri: 172.060947s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_9e70c8cc189cfa89d788cbbe5e0ee36fd4bdc3623f200f8a483ad39551c6037b",
+        "Event: pe6_beb5763e21de883e247ab5bacf3aba83fe558d4712b035376a3ed37d8e38603c",
+        "Alasan snapshot: REVIEW_CONFIRMED_PASSAGE",
+        "Frame pada foto sumber track973: 5128,5129,5130",
+        "Satu unit skuter merah; representative973. Kandidat964 tetap pending, bukan kendaraan tambahan."
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 973,
+      "status": "accepted",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_9e70c8cc189cfa89d788cbbe5e0ee36fd4bdc3623f200f8a483ad39551c6037b",
+      "event_id": "pe6_beb5763e21de883e247ab5bacf3aba83fe558d4712b035376a3ed37d8e38603c",
+      "reasons": [
+        "REVIEW_CONFIRMED_PASSAGE"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 5129,
+      "passage_frame_interval": [
+        5129,
+        5130
+      ],
+      "confirmation_frame": 5130,
+      "confirmation_index_fps_estimate_seconds": 172.06094728652013,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 973,
+      "photo_exact_frames": [
+        5128,
+        5129,
+        5130
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_overlay_contact.png",
+      "source_sha256": "c529bbd29c1add9924e84e2da4e135ce6c757c843ec8ae4e2d74f6b85c9d69fb",
+      "source_kind": "overlay",
+      "source_paste_origin_xy": [
+        0,
+        258
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id973_accepted_overlay_case.png",
+      "output_sha256": "bcb176676e032faf51203e0cc79153f00a63306612c2bda2ece7eb9fb99ac313",
+      "output_size_bytes": 237599,
+      "dimensions_width_height": [
+        1024,
+        852
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: ACCEPTED | target track973",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: motorcycle | arah geometri: B_TO_A",
+        "Origin frame5129; passage terukur frame5129..5130; konfirmasi geometri frame5130",
+        "Waktu konfirmasi geometri: 172.060947s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_9e70c8cc189cfa89d788cbbe5e0ee36fd4bdc3623f200f8a483ad39551c6037b",
+        "Event: pe6_beb5763e21de883e247ab5bacf3aba83fe558d4712b035376a3ed37d8e38603c",
+        "Alasan snapshot: REVIEW_CONFIRMED_PASSAGE",
+        "Frame pada foto sumber track973: 5128,5129,5130",
+        "Satu unit skuter merah; representative973. Kandidat964 tetap pending, bukan kendaraan tambahan."
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1520,
+      "status": "accepted",
+      "category": "truck",
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_32b7ba157abe0bdf97e7bb31b5fe975d9ff4d62896d82d1eab02178b340cacb3",
+      "event_id": "pe6_f6a74316be629b805b62629d3a22a1f13fbc6929c5d7b8cece335cee41622f39",
+      "reasons": [
+        "REVIEW_CONFIRMED_PASSAGE"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 6822,
+      "passage_frame_interval": [
+        6838,
+        6839
+      ],
+      "confirmation_frame": 6839,
+      "confirmation_index_fps_estimate_seconds": 229.38105623635695,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1520,
+      "photo_exact_frames": [
+        6822,
+        6837,
+        6838,
+        6839
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1520_raw_contact.png",
+      "source_sha256": "127e1536650f5f18d44e9ef2d6e641487cdb5e84595312b338211b4a0a42d08d",
+      "source_kind": "raw",
+      "source_paste_origin_xy": [
+        0,
+        235
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1520_accepted_raw_case.png",
+      "output_sha256": "b170fdd02ab8cbadb230b1632f7ac31a4087d8e9ffd455456322c70a205d7d6b",
+      "output_size_bytes": 2651700,
+      "dimensions_width_height": [
+        2168,
+        1727
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: ACCEPTED | target track1520",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: truck | arah geometri: B_TO_A",
+        "Origin frame6822; passage terukur frame6838..6839; konfirmasi geometri frame6839",
+        "Waktu konfirmasi geometri: 229.381056s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_32b7ba157abe0bdf97e7bb31b5fe975d9ff4d62896d82d1eab02178b340cacb3",
+        "Event: pe6_f6a74316be629b805b62629d3a22a1f13fbc6929c5d7b8cece335cee41622f39",
+        "Alasan snapshot: REVIEW_CONFIRMED_PASSAGE",
+        "Frame pada foto sumber track1520: 6822,6837,6838,6839"
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1520,
+      "status": "accepted",
+      "category": "truck",
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_32b7ba157abe0bdf97e7bb31b5fe975d9ff4d62896d82d1eab02178b340cacb3",
+      "event_id": "pe6_f6a74316be629b805b62629d3a22a1f13fbc6929c5d7b8cece335cee41622f39",
+      "reasons": [
+        "REVIEW_CONFIRMED_PASSAGE"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 6822,
+      "passage_frame_interval": [
+        6838,
+        6839
+      ],
+      "confirmation_frame": 6839,
+      "confirmation_index_fps_estimate_seconds": 229.38105623635695,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1520,
+      "photo_exact_frames": [
+        6822,
+        6837,
+        6838,
+        6839
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1520_overlay_contact.png",
+      "source_sha256": "29da0984be481a16832402eaa2f2e56cba26f0dba08cc3d2094ebf66336f20ee",
+      "source_kind": "overlay",
+      "source_paste_origin_xy": [
+        0,
+        235
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1520_accepted_overlay_case.png",
+      "output_sha256": "17778e8ac9ea6e299c0a9493d86ebf283b3ed2cc394971b5a2bf494a5d7795c9",
+      "output_size_bytes": 2656739,
+      "dimensions_width_height": [
+        2168,
+        1727
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: ACCEPTED | target track1520",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: truck | arah geometri: B_TO_A",
+        "Origin frame6822; passage terukur frame6838..6839; konfirmasi geometri frame6839",
+        "Waktu konfirmasi geometri: 229.381056s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_32b7ba157abe0bdf97e7bb31b5fe975d9ff4d62896d82d1eab02178b340cacb3",
+        "Event: pe6_f6a74316be629b805b62629d3a22a1f13fbc6929c5d7b8cece335cee41622f39",
+        "Alasan snapshot: REVIEW_CONFIRMED_PASSAGE",
+        "Frame pada foto sumber track1520: 6822,6837,6838,6839"
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1772,
+      "status": "pending_review",
+      "category": null,
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_27b21405b47b90d2a7afaa7cd936dce2356477fb7de986fe748acd786788fea5",
+      "event_id": null,
+      "reasons": [
+        "VEHICLE_OVERLAP_IDENTITY_CONFLICT",
+        "UNIT_COMPONENT_CHANGE",
+        "UNIT_REVIEW_REQUIRED",
+        "CATEGORY_REVIEW_REQUIRED",
+        "IDENTITY_REVIEW_REQUIRED"
+      ],
+      "hard_block_reasons": [
+        "UNIT_COMPONENT_CHANGE"
+      ],
+      "origin_frame": 7712,
+      "passage_frame_interval": [
+        7721,
+        7722
+      ],
+      "confirmation_frame": 7722,
+      "confirmation_index_fps_estimate_seconds": 258.99700486286713,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1774,
+      "photo_exact_frames": [
+        7713,
+        7716,
+        7717,
+        7718
+      ],
+      "photo_complete_passage_evidence_for_target": false,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_raw_contact.png",
+      "source_sha256": "c089b9763490637e74ad87219e477a1718f7b66d83e0ae65011b8d634a1bfe9e",
+      "source_kind": "raw",
+      "source_paste_origin_xy": [
+        0,
+        304
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1772_pending_review_raw_case.png",
+      "output_sha256": "700f5ed77997d6530d8c6e0281c93343e50e4a70ad2dab0941e48ee662085c0c",
+      "output_size_bytes": 1260502,
+      "dimensions_width_height": [
+        1284,
+        1248
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: PENDING_REVIEW | target track1772",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: UNKNOWN / belum disahkan | arah geometri: B_TO_A",
+        "Origin frame7712; passage terukur frame7721..7722; konfirmasi geometri frame7722",
+        "Waktu konfirmasi geometri: 258.997005s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_27b21405b47b90d2a7afaa7cd936dce2356477fb7de986fe748acd786788fea5",
+        "Event: NONE; tidak masuk subtotal accepted",
+        "Alasan snapshot: VEHICLE_OVERLAP_IDENTITY_CONFLICT, UNIT_COMPONENT_CHANGE, UNIT_REVIEW_REQUIRED, CATEGORY_REVIEW_REQUIRED, IDENTITY_REVIEW_REQUIRED",
+        "Frame pada foto sumber track1774: 7713,7716,7717,7718",
+        "CONTEXT PHOTO: track1774 pada kendaraan yang sama; bukan crop atau bukti passage lengkap track1772.",
+        "Frame7712/7721/7722 tidak ditampilkan oleh foto konteks ini. UNIT_COMPONENT_CHANGE tetap pending."
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1772,
+      "status": "pending_review",
+      "category": null,
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_27b21405b47b90d2a7afaa7cd936dce2356477fb7de986fe748acd786788fea5",
+      "event_id": null,
+      "reasons": [
+        "VEHICLE_OVERLAP_IDENTITY_CONFLICT",
+        "UNIT_COMPONENT_CHANGE",
+        "UNIT_REVIEW_REQUIRED",
+        "CATEGORY_REVIEW_REQUIRED",
+        "IDENTITY_REVIEW_REQUIRED"
+      ],
+      "hard_block_reasons": [
+        "UNIT_COMPONENT_CHANGE"
+      ],
+      "origin_frame": 7712,
+      "passage_frame_interval": [
+        7721,
+        7722
+      ],
+      "confirmation_frame": 7722,
+      "confirmation_index_fps_estimate_seconds": 258.99700486286713,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1774,
+      "photo_exact_frames": [
+        7713,
+        7716,
+        7717,
+        7718
+      ],
+      "photo_complete_passage_evidence_for_target": false,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_overlay_contact.png",
+      "source_sha256": "76de7ad38ce12aa037ff47c0fcc4e599abb4f1bf9f606f7fec69821075c10a09",
+      "source_kind": "overlay",
+      "source_paste_origin_xy": [
+        0,
+        304
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1772_pending_review_overlay_case.png",
+      "output_sha256": "4360d2f7657bf9a60397c43ecf7d0f5fc4eaf6829cd1f7c49fa71d853a8be2cf",
+      "output_size_bytes": 1269236,
+      "dimensions_width_height": [
+        1284,
+        1248
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: PENDING_REVIEW | target track1772",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: UNKNOWN / belum disahkan | arah geometri: B_TO_A",
+        "Origin frame7712; passage terukur frame7721..7722; konfirmasi geometri frame7722",
+        "Waktu konfirmasi geometri: 258.997005s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_27b21405b47b90d2a7afaa7cd936dce2356477fb7de986fe748acd786788fea5",
+        "Event: NONE; tidak masuk subtotal accepted",
+        "Alasan snapshot: VEHICLE_OVERLAP_IDENTITY_CONFLICT, UNIT_COMPONENT_CHANGE, UNIT_REVIEW_REQUIRED, CATEGORY_REVIEW_REQUIRED, IDENTITY_REVIEW_REQUIRED",
+        "Frame pada foto sumber track1774: 7713,7716,7717,7718",
+        "CONTEXT PHOTO: track1774 pada kendaraan yang sama; bukan crop atau bukti passage lengkap track1772.",
+        "Frame7712/7721/7722 tidak ditampilkan oleh foto konteks ini. UNIT_COMPONENT_CHANGE tetap pending."
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1774,
+      "status": "rejected",
+      "category": null,
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_dff1ca76368fffd6d1c00d37b81711e534a966f3d031ba9a2a8fe2e495fce02f",
+      "event_id": null,
+      "reasons": [
+        "REVIEW_REJECTED_COMPONENT"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 7713,
+      "passage_frame_interval": [
+        7717,
+        7718
+      ],
+      "confirmation_frame": 7718,
+      "confirmation_index_fps_estimate_seconds": 258.86284428018763,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1774,
+      "photo_exact_frames": [
+        7713,
+        7716,
+        7717,
+        7718
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_raw_contact.png",
+      "source_sha256": "c089b9763490637e74ad87219e477a1718f7b66d83e0ae65011b8d634a1bfe9e",
+      "source_kind": "raw",
+      "source_paste_origin_xy": [
+        0,
+        258
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1774_rejected_raw_case.png",
+      "output_sha256": "318a309711387ecc29089743ff49bd63d5464b9ebea1155a13912feccd254a80",
+      "output_size_bytes": 1248462,
+      "dimensions_width_height": [
+        1284,
+        1202
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: REJECTED | target track1774",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: UNKNOWN / belum disahkan | arah geometri: B_TO_A",
+        "Origin frame7713; passage terukur frame7717..7718; konfirmasi geometri frame7718",
+        "Waktu konfirmasi geometri: 258.862844s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_dff1ca76368fffd6d1c00d37b81711e534a966f3d031ba9a2a8fe2e495fce02f",
+        "Event: NONE; tidak masuk subtotal accepted",
+        "Alasan snapshot: REVIEW_REJECTED_COMPONENT",
+        "Frame pada foto sumber track1774: 7713,7716,7717,7718",
+        "Komponen orang yang duduk pada skuter; bukan pedestrian independen dalam scope review ini."
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1774,
+      "status": "rejected",
+      "category": null,
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_dff1ca76368fffd6d1c00d37b81711e534a966f3d031ba9a2a8fe2e495fce02f",
+      "event_id": null,
+      "reasons": [
+        "REVIEW_REJECTED_COMPONENT"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 7713,
+      "passage_frame_interval": [
+        7717,
+        7718
+      ],
+      "confirmation_frame": 7718,
+      "confirmation_index_fps_estimate_seconds": 258.86284428018763,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1774,
+      "photo_exact_frames": [
+        7713,
+        7716,
+        7717,
+        7718
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_overlay_contact.png",
+      "source_sha256": "76de7ad38ce12aa037ff47c0fcc4e599abb4f1bf9f606f7fec69821075c10a09",
+      "source_kind": "overlay",
+      "source_paste_origin_xy": [
+        0,
+        258
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1774_rejected_overlay_case.png",
+      "output_sha256": "22ae9730d435bef708ee1c7e1167da0c72ce2245a3fa11723c2ca9963177b127",
+      "output_size_bytes": 1257061,
+      "dimensions_width_height": [
+        1284,
+        1202
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: REJECTED | target track1774",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: UNKNOWN / belum disahkan | arah geometri: B_TO_A",
+        "Origin frame7713; passage terukur frame7717..7718; konfirmasi geometri frame7718",
+        "Waktu konfirmasi geometri: 258.862844s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_dff1ca76368fffd6d1c00d37b81711e534a966f3d031ba9a2a8fe2e495fce02f",
+        "Event: NONE; tidak masuk subtotal accepted",
+        "Alasan snapshot: REVIEW_REJECTED_COMPONENT",
+        "Frame pada foto sumber track1774: 7713,7716,7717,7718",
+        "Komponen orang yang duduk pada skuter; bukan pedestrian independen dalam scope review ini."
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1323,
+      "status": "pending_review",
+      "category": null,
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_8eede2790dd5c0a3e190b3d37afdd431568e51e3d7c651812de9745fbadf5335",
+      "event_id": null,
+      "reasons": [
+        "CATEGORY_REVIEW_REQUIRED",
+        "IDENTITY_REVIEW_REQUIRED",
+        "REVIEW_HOLD",
+        "UNIT_REVIEW_REQUIRED",
+        "VEHICLE_OVERLAP_IDENTITY_CONFLICT"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 6257,
+      "passage_frame_interval": [
+        6257,
+        6258
+      ],
+      "confirmation_frame": 6258,
+      "confirmation_index_fps_estimate_seconds": 209.89423160215264,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1323,
+      "photo_exact_frames": [
+        6256,
+        6257,
+        6258
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1323_raw_contact.png",
+      "source_sha256": "fb0bc2791a1b7616041b899f7351b8f9d25089f21f8139e854baa537f8654dce",
+      "source_kind": "raw",
+      "source_paste_origin_xy": [
+        0,
+        281
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1323_pending_review_raw_case.png",
+      "output_sha256": "355f7088fc3b49bade5e79629298dfb9f7af83efa0a6355dcc78df5f8b4a88bf",
+      "output_size_bytes": 474522,
+      "dimensions_width_height": [
+        1024,
+        1021
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: PENDING_REVIEW | target track1323",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: UNKNOWN / belum disahkan | arah geometri: B_TO_A",
+        "Origin frame6257; passage terukur frame6257..6258; konfirmasi geometri frame6258",
+        "Waktu konfirmasi geometri: 209.894232s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_8eede2790dd5c0a3e190b3d37afdd431568e51e3d7c651812de9745fbadf5335",
+        "Event: NONE; tidak masuk subtotal accepted",
+        "Alasan snapshot: CATEGORY_REVIEW_REQUIRED, IDENTITY_REVIEW_REQUIRED, REVIEW_HOLD, UNIT_REVIEW_REQUIRED, VEHICLE_OVERLAP_IDENTITY_CONFLICT",
+        "Frame pada foto sumber track1323: 6256,6257,6258",
+        "Minivan/minibus: mapping kategori produk/angkot belum diputuskan; raw car bukan kategori event final."
+      ],
+      "case_level_outcome_not_frame_counter": true
+    },
+    {
+      "track_id": 1323,
+      "status": "pending_review",
+      "category": null,
+      "direction": "B_TO_A",
+      "candidate_id": "pc6_8eede2790dd5c0a3e190b3d37afdd431568e51e3d7c651812de9745fbadf5335",
+      "event_id": null,
+      "reasons": [
+        "CATEGORY_REVIEW_REQUIRED",
+        "IDENTITY_REVIEW_REQUIRED",
+        "REVIEW_HOLD",
+        "UNIT_REVIEW_REQUIRED",
+        "VEHICLE_OVERLAP_IDENTITY_CONFLICT"
+      ],
+      "hard_block_reasons": [],
+      "origin_frame": 6257,
+      "passage_frame_interval": [
+        6257,
+        6258
+      ],
+      "confirmation_frame": 6258,
+      "confirmation_index_fps_estimate_seconds": 209.89423160215264,
+      "authoritative_source_pts": null,
+      "photo_context_track_id": 1323,
+      "photo_exact_frames": [
+        6256,
+        6257,
+        6258
+      ],
+      "photo_complete_passage_evidence_for_target": true,
+      "source_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1323_overlay_contact.png",
+      "source_sha256": "5037ff8d91f7213c81370e5f3e36ffedd44690e8004e44a5cc2b5fe02bc427a1",
+      "source_kind": "overlay",
+      "source_paste_origin_xy": [
+        0,
+        281
+      ],
+      "source_pixels_unchanged": true,
+      "output_path": "docs/evidence/phase_6/20261012T144625_030645Z/crossing_visualizations/id1323_pending_review_overlay_case.png",
+      "output_sha256": "24939b5286698d69b524d868246b9460ef4c98ebad119f5b02f6135e2b3ce1d2",
+      "output_size_bytes": 476653,
+      "dimensions_width_height": [
+        1024,
+        1021
+      ],
+      "header_text": [
+        "KEPUTUSAN AKHIR KASUS: PENDING_REVIEW | target track1323",
+        "CASE-LEVEL FINAL OUTCOME; BUKAN counter/status pada tiap frame foto.",
+        "Kategori event: UNKNOWN / belum disahkan | arah geometri: B_TO_A",
+        "Origin frame6257; passage terukur frame6257..6258; konfirmasi geometri frame6258",
+        "Waktu konfirmasi geometri: 209.894232s (estimasi indeks/FPS; bukan authoritative source PTS)",
+        "Candidate: pc6_8eede2790dd5c0a3e190b3d37afdd431568e51e3d7c651812de9745fbadf5335",
+        "Event: NONE; tidak masuk subtotal accepted",
+        "Alasan snapshot: CATEGORY_REVIEW_REQUIRED, IDENTITY_REVIEW_REQUIRED, REVIEW_HOLD, UNIT_REVIEW_REQUIRED, VEHICLE_OVERLAP_IDENTITY_CONFLICT",
+        "Frame pada foto sumber track1323: 6256,6257,6258",
+        "Minivan/minibus: mapping kategori produk/angkot belum diputuskan; raw car bukan kategori event final."
+      ],
+      "case_level_outcome_not_frame_counter": true
+    }
+  ]
+}

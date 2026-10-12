@@ -1,0 +1,1473 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_BOUNDED_AI_ASSISTED_PIXEL_REVIEW",
+  "created_at_utc": "2026-10-12T14:34:43.273600+00:00",
+  "source_video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+  "source_sample_index_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/sample_index.json",
+  "source_sample_index_sha256": "95b3882d1f12863b8252ff3252691d57aaef9a6d702c83e59ca06af547d55059",
+  "actual_reviewed_cases": 23,
+  "exact_unique_sample_frames": 94,
+  "source_decode_frame_count": 10282,
+  "native_dimensions": [
+    1280,
+    720
+  ],
+  "baseline_geometry_diagnostic_reference": "b0_c1 retained Phase5 only; no numerical product defaults selected",
+  "reviewer_type": "AI_ASSISTED_CODEX",
+  "human_review": false,
+  "formal_ground_truth": false,
+  "geometry_or_models_replayed": false,
+  "count_events_created": false,
+  "summary_recommendation_only": {
+    "bounded_review_supported_vehicle_candidates": 17,
+    "raw_person_track_cases_not_independent_units": 4,
+    "unresolved_duplicate_track_cases": 1,
+    "unresolved_category_track_cases": 1
+  },
+  "reviews": [
+    {
+      "track_id": 1,
+      "candidate_inventory_indices": [
+        0
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1,
+          "origin_frame": 0,
+          "crossing_frame_start": 76,
+          "crossing_frame_end": 77,
+          "confirmation_frame": 77,
+          "direction": "A_TO_B"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        0,
+        60,
+        75,
+        76,
+        77
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_raw_contact.png",
+        "sha256": "c09161e62c2dd2f7d20ac21a44f03e40d640e16890acd2b4937a188f1f044bf7",
+        "size_bytes": 680433,
+        "shape_width_height": [
+          1224,
+          729
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_overlay_contact.png",
+        "sha256": "c535b2d8fb17165f8281ed6725084da58041138f3627e6d7b79b7433f6640e8c",
+        "size_bytes": 681952,
+        "shape_width_height": [
+          1224,
+          729
+        ]
+      },
+      "observations": "Satu mobil hatchback perak terlihat datang dari kiri/jauh menuju kanan/dekat. Pada frame60, target mobil dan sepeda motor ID3 di tepi kanan merupakan dua kendaraan berbeda; overlap kecil bbox tidak mewakili duplikasi mobil. Frame75/76/77 memperlihatkan target mobil yang konsisten.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Mobil",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [
+        3
+      ],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 311,
+      "candidate_inventory_indices": [
+        17
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 311,
+          "origin_frame": 1591,
+          "crossing_frame_start": 1596,
+          "crossing_frame_end": 1597,
+          "confirmation_frame": 1597,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        1591,
+        1595,
+        1596,
+        1597
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id311_raw_contact.png",
+        "sha256": "a54d937f2b63aba411ead72407933ae1bf3a42fbf5c2cf1423ed8d2a17e4fd73",
+        "size_bytes": 706058,
+        "shape_width_height": [
+          898,
+          816
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id311_overlay_contact.png",
+        "sha256": "04af15ec243e7c233407b9d9482930259e333a44936587a013676582629cf9ea",
+        "size_bytes": 710336,
+        "shape_width_height": [
+          898,
+          816
+        ]
+      },
+      "observations": "Satu skuter biru dengan pengendara duduk terlihat bergerak ke kiri/menjauh di empat frame. Tampilan skuter dan pengendara konsisten pada sampel; tidak terlihat kendaraan kedua yang tertumpuk pada target.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 394,
+      "candidate_inventory_indices": [
+        25
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 394,
+          "origin_frame": 1893,
+          "crossing_frame_start": 1898,
+          "crossing_frame_end": 1899,
+          "confirmation_frame": 1899,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        1893,
+        1897,
+        1898,
+        1899
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id394_raw_contact.png",
+        "sha256": "79fb08c5628b44013b063c926e756d36e330724bceae8b6e0aaa6789d80e9d42",
+        "size_bytes": 461547,
+        "shape_width_height": [
+          588,
+          832
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id394_overlay_contact.png",
+        "sha256": "e570bccb783da1cd6928d3ad8cd555f0c14dbcc9523031b27846b5f3b94a6a42",
+        "size_bytes": 465066,
+        "shape_width_height": [
+          588,
+          832
+        ]
+      },
+      "observations": "Satu sepeda motor dengan pengendara berhelm merah terlihat dari belakang dan bergerak ke kiri/menjauh. Unit yang sama dapat ditelusuri pada empat sampel.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 443,
+      "candidate_inventory_indices": [
+        29
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 443,
+          "origin_frame": 2292,
+          "crossing_frame_start": 2297,
+          "crossing_frame_end": 2298,
+          "confirmation_frame": 2298,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        2292,
+        2296,
+        2297,
+        2298
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id443_raw_contact.png",
+        "sha256": "72faafbb503102c21ab1b075d735e982b0ebc428dfeef83b5e5cce7002c19874",
+        "size_bytes": 887144,
+        "shape_width_height": [
+          1074,
+          882
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id443_overlay_contact.png",
+        "sha256": "ef47f250bc2587cee93c27142f63a3f57123a4df6d7c1108948b8e4912aad737",
+        "size_bytes": 892951,
+        "shape_width_height": [
+          1074,
+          882
+        ]
+      },
+      "observations": "Satu sepeda motor dengan pengendara membawa ransel terlihat bergerak ke kiri/menjauh. Bodi, roda dan posisi pengendara konsisten pada sampel.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 461,
+      "candidate_inventory_indices": [
+        31
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 461,
+          "origin_frame": 2362,
+          "crossing_frame_start": 2367,
+          "crossing_frame_end": 2368,
+          "confirmation_frame": 2368,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        2362,
+        2366,
+        2367,
+        2368
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id461_raw_contact.png",
+        "sha256": "35504823766f7028736ba1c669ced35fbe394cad74f112d7b137761f80e6ebbd",
+        "size_bytes": 697007,
+        "shape_width_height": [
+          812,
+          870
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id461_overlay_contact.png",
+        "sha256": "98019e5570798c2e461c6c52f0f20c80740992df4401b2b4901a75c7a2bfebb0",
+        "size_bytes": 701882,
+        "shape_width_height": [
+          812,
+          870
+        ]
+      },
+      "observations": "Satu skuter biru dengan pengendara terlihat bergerak ke kiri/menjauh. Kotak target tetap pada satu kendaraan pada empat sampel.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 693,
+      "candidate_inventory_indices": [
+        52
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 693,
+          "origin_frame": 4207,
+          "crossing_frame_start": 4215,
+          "crossing_frame_end": 4216,
+          "confirmation_frame": 4216,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        4207,
+        4214,
+        4215,
+        4216
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id693_raw_contact.png",
+        "sha256": "59c13c070641450d10da777d7df7edbe9b872aa4a2b16c5e41a08662782f3dfc",
+        "size_bytes": 816518,
+        "shape_width_height": [
+          906,
+          878
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id693_overlay_contact.png",
+        "sha256": "a0e2d6e44974cd33a6eda14848954fd47f51a62648935b8a3117d682ca7c7111",
+        "size_bytes": 820204,
+        "shape_width_height": [
+          906,
+          878
+        ]
+      },
+      "observations": "Satu skuter hitam/putih dan pengendara terlihat bergerak ke kiri/menjauh. Orang jauh di latar tidak mewakili pengendara target dan tidak dianggap unit target.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 829,
+      "candidate_inventory_indices": [
+        61
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 829,
+          "origin_frame": 4797,
+          "crossing_frame_start": 4801,
+          "crossing_frame_end": 4802,
+          "confirmation_frame": 4802,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        4797,
+        4800,
+        4801,
+        4802
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id829_raw_contact.png",
+        "sha256": "d2dd554414b2c8e55a5d8d854ffec4aec60ee4780f8aebea6c423691b8b8dbcd",
+        "size_bytes": 679398,
+        "shape_width_height": [
+          798,
+          826
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id829_overlay_contact.png",
+        "sha256": "0d6d381929a6ca2a90104dc9506b6f3787b54f4f7bf7deca816a268064beb318",
+        "size_bytes": 684143,
+        "shape_width_height": [
+          798,
+          826
+        ]
+      },
+      "observations": "Satu skuter berwarna terang dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 893,
+      "candidate_inventory_indices": [
+        64,
+        65
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 893,
+          "origin_frame": 4975,
+          "crossing_frame_start": 4977,
+          "crossing_frame_end": 4978,
+          "confirmation_frame": 4978,
+          "direction": "B_TO_A"
+        },
+        {
+          "track_id": 893,
+          "origin_frame": 4978,
+          "crossing_frame_start": 4978,
+          "crossing_frame_end": 4979,
+          "confirmation_frame": 4979,
+          "direction": "A_TO_B"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        4975,
+        4976,
+        4977,
+        4978,
+        4979
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_raw_contact.png",
+        "sha256": "ce5a1e5ea4d1ee59be8658fbeb102ef6262389076e51907ad4dbbe3f440e75e0",
+        "size_bytes": 705893,
+        "shape_width_height": [
+          668,
+          1092
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_overlay_contact.png",
+        "sha256": "d3a99a7a88f9d9a497bd8ff649a2347041bea218b127929aff65ed239706e7dc",
+        "size_bytes": 714398,
+        "shape_width_height": [
+          668,
+          1092
+        ]
+      },
+      "observations": "Target person melingkupi orang yang duduk pada skuter, dengan pengendara/penumpang lain dan kendaraan motorcycle ID880. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn. Kotak person berubah cakupan; transisi balik tidak diperlakukan sebagai bukti genuine return.",
+      "observed_unit_role": "RIDING_PERSON_COMPONENT",
+      "visual_category_supported": null,
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "NOT_INDEPENDENT_UNIT",
+      "other_identifiers_relevant": [
+        880
+      ],
+      "recommendation_for_later_count_decision": "NOT_INDEPENDENT_TRAFFIC_UNIT",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": false,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 912,
+      "candidate_inventory_indices": [
+        68,
+        69,
+        71
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 912,
+          "origin_frame": 5011,
+          "crossing_frame_start": 5019,
+          "crossing_frame_end": 5020,
+          "confirmation_frame": 5020,
+          "direction": "B_TO_A"
+        },
+        {
+          "track_id": 912,
+          "origin_frame": 5020,
+          "crossing_frame_start": 5020,
+          "crossing_frame_end": 5021,
+          "confirmation_frame": 5021,
+          "direction": "A_TO_B"
+        },
+        {
+          "track_id": 912,
+          "origin_frame": 5021,
+          "crossing_frame_start": 5021,
+          "crossing_frame_end": 5022,
+          "confirmation_frame": 5022,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        5011,
+        5018,
+        5019,
+        5020,
+        5021,
+        5022
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_raw_contact.png",
+        "sha256": "a5e55b1a773821f60fb857d81730382d1c26e7723f86646a758d6113a27dca69",
+        "size_bytes": 2696396,
+        "shape_width_height": [
+          1780,
+          1602
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_overlay_contact.png",
+        "sha256": "600834e2267949968f0875cb56a27669a8deeaafd279801e45b928e102f65e73",
+        "size_bytes": 2708247,
+        "shape_width_height": [
+          1780,
+          1602
+        ]
+      },
+      "observations": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang.",
+      "observed_unit_role": "RIDING_PERSON_COMPONENT",
+      "visual_category_supported": null,
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "NOT_INDEPENDENT_UNIT",
+      "other_identifiers_relevant": [
+        923
+      ],
+      "recommendation_for_later_count_decision": "NOT_INDEPENDENT_TRAFFIC_UNIT",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": false,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 923,
+      "candidate_inventory_indices": [
+        72
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 923,
+          "origin_frame": 5017,
+          "crossing_frame_start": 5028,
+          "crossing_frame_end": 5029,
+          "confirmation_frame": 5029,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        5017,
+        5027,
+        5028,
+        5029
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id923_raw_contact.png",
+        "sha256": "21635bff1601e9da5e212381de64bb5c84d8ddad23a1f45039b9f2e54abf5bbe",
+        "size_bytes": 897174,
+        "shape_width_height": [
+          1028,
+          900
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id923_overlay_contact.png",
+        "sha256": "3f983658d66e246bc6af44229fe08bd23f9671a3cfd369dac4389780af75a58c",
+        "size_bytes": 902097,
+        "shape_width_height": [
+          1028,
+          900
+        ]
+      },
+      "observations": "Satu skuter membawa pengendara dan penumpang terlihat bergerak ke kiri/menjauh. Dua orang yang duduk di kendaraan merupakan komponen satu unit kendaraan, bukan dua kendaraan.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 967,
+      "candidate_inventory_indices": [
+        73
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 967,
+          "origin_frame": 5118,
+          "crossing_frame_start": 5125,
+          "crossing_frame_end": 5126,
+          "confirmation_frame": 5126,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        5118,
+        5124,
+        5125,
+        5126
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id967_raw_contact.png",
+        "sha256": "52b29a70185e433f4f6f70db7ae01ba504d90ad70d5058b3f73ec7b92c79123b",
+        "size_bytes": 1166500,
+        "shape_width_height": [
+          1248,
+          996
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id967_overlay_contact.png",
+        "sha256": "4ef049ffa0bab5b6a7322d2989f79081a516036d875fe2430823c80f45f2af22",
+        "size_bytes": 1174573,
+        "shape_width_height": [
+          1248,
+          996
+        ]
+      },
+      "observations": "Target person berada pada pengendara yang duduk pada skuter merah. Overlay motorcycle ID964 mengacu pada kendaraan yang sama. Komponen ini bukan pedestrian yang berjalan sendiri pada sampel.",
+      "observed_unit_role": "RIDING_PERSON_COMPONENT",
+      "visual_category_supported": null,
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "NOT_INDEPENDENT_UNIT",
+      "other_identifiers_relevant": [
+        964
+      ],
+      "recommendation_for_later_count_decision": "NOT_INDEPENDENT_TRAFFIC_UNIT",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 973,
+      "candidate_inventory_indices": [
+        75
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 973,
+          "origin_frame": 5129,
+          "crossing_frame_start": 5129,
+          "crossing_frame_end": 5130,
+          "confirmation_frame": 5130,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        5128,
+        5129,
+        5130
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_raw_contact.png",
+        "sha256": "00418cece3fd65658e63363010e3d4b23bba16a04e5679883d1122492ff80298",
+        "size_bytes": 173833,
+        "shape_width_height": [
+          332,
+          594
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_overlay_contact.png",
+        "sha256": "c529bbd29c1add9924e84e2da4e135ce6c757c843ec8ae4e2d74f6b85c9d69fb",
+        "size_bytes": 176855,
+        "shape_width_height": [
+          332,
+          594
+        ]
+      },
+      "observations": "Foto memperlihatkan satu skuter merah. Pada frame5129/5130, bbox motorcycle ID973 dan ID964 melingkupi skuter yang sama. ID973 tidak dapat disahkan sebagai kendaraan tambahan; penyelesaian kelompok identitas tetap diperlukan.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": null,
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "DUPLICATE_WITH_ID964_ON_RED_SCOOTER",
+      "other_identifiers_relevant": [
+        964
+      ],
+      "recommendation_for_later_count_decision": "UNRESOLVED_DUPLICATE_IDENTITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1144,
+      "candidate_inventory_indices": [
+        84
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1144,
+          "origin_frame": 5674,
+          "crossing_frame_start": 5689,
+          "crossing_frame_end": 5690,
+          "confirmation_frame": 5690,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        5674,
+        5688,
+        5689,
+        5690
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1144_raw_contact.png",
+        "sha256": "069ef6f9d8434f757ee8ba718aa6b3a2a6cfba749d9fda3127fae045b6d4baac",
+        "size_bytes": 1507023,
+        "shape_width_height": [
+          1468,
+          894
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1144_overlay_contact.png",
+        "sha256": "654f6cc2439820135774807e00baeb29339edea1fc4d3a9930e7bddb35269e97",
+        "size_bytes": 1512247,
+        "shape_width_height": [
+          1468,
+          894
+        ]
+      },
+      "observations": "Satu sepeda motor membawa pengendara dan barang/bungkusan terlihat bergerak ke kiri/menjauh. Overlay teks video menutupi sebagian citra, namun roda/bodi kendaraan tetap terlihat pada sampel.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1323,
+      "candidate_inventory_indices": [
+        90
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1323,
+          "origin_frame": 6257,
+          "crossing_frame_start": 6257,
+          "crossing_frame_end": 6258,
+          "confirmation_frame": 6258,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        6256,
+        6257,
+        6258
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1323_raw_contact.png",
+        "sha256": "fb0bc2791a1b7616041b899f7351b8f9d25089f21f8139e854baa537f8654dce",
+        "size_bytes": 414172,
+        "shape_width_height": [
+          750,
+          740
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1323_overlay_contact.png",
+        "sha256": "5037ff8d91f7213c81370e5f3e36ffedd44690e8004e44a5cc2b5fe02bc427a1",
+        "size_bytes": 416620,
+        "shape_width_height": [
+          750,
+          740
+        ]
+      },
+      "observations": "Satu kendaraan berbentuk minivan/minibus merah terlihat dari belakang. Foto tidak menetapkan apakah unit ini angkot atau bagaimana minivan harus dipetakan ke kategori produk; kategori tetap UNKNOWN. Deteksi car lain tampak berada di tepi kiri bbox; clearance identitas/kategori tidak dipaksakan.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": null,
+      "visual_category_unknown_reason": "Minivan/minibus-vs-angkot product taxonomy not resolved by samples",
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "CATEGORY_OR_IDENTITY_UNRESOLVED",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "CATEGORY_UNRESOLVED",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1346,
+      "candidate_inventory_indices": [
+        92
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1346,
+          "origin_frame": 6283,
+          "crossing_frame_start": 6294,
+          "crossing_frame_end": 6295,
+          "confirmation_frame": 6295,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        6283,
+        6293,
+        6294,
+        6295
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1346_raw_contact.png",
+        "sha256": "4efb75fbe5dba3dce3f07b2991f683f8defeacb841a0336f59b73c8f3f1854d3",
+        "size_bytes": 1572672,
+        "shape_width_height": [
+          1632,
+          904
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1346_overlay_contact.png",
+        "sha256": "56c35bc63cf2f1da2617249cdcd78ccb40a4d42d1adc25ece342b33104a2f039",
+        "size_bytes": 1578809,
+        "shape_width_height": [
+          1632,
+          904
+        ]
+      },
+      "observations": "Satu skuter dengan pengendara terlihat bergerak ke kiri/menjauh. Overlay teks menutup sebagian kendaraan pada origin; sampel berikutnya memperlihatkan kendaraan yang sama.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1372,
+      "candidate_inventory_indices": [
+        94
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1372,
+          "origin_frame": 6406,
+          "crossing_frame_start": 6416,
+          "crossing_frame_end": 6417,
+          "confirmation_frame": 6417,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        6406,
+        6415,
+        6416,
+        6417
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1372_raw_contact.png",
+        "sha256": "39c02a5448a7ecd205b4f003e217466e7087ec9fe1e495be15374d81da8336c8",
+        "size_bytes": 743490,
+        "shape_width_height": [
+          910,
+          854
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1372_overlay_contact.png",
+        "sha256": "07314221d83d7d55c07576ed62d2a1b00f92be1f49c79283d38adfa4ebc331f5",
+        "size_bytes": 749438,
+        "shape_width_height": [
+          910,
+          854
+        ]
+      },
+      "observations": "Satu skuter membawa pengendara dan penumpang terlihat bergerak ke kiri/menjauh. Orang-orang yang duduk di kendaraan tidak dijadikan unit pedestrian tambahan.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1389,
+      "candidate_inventory_indices": [
+        96
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1389,
+          "origin_frame": 6421,
+          "crossing_frame_start": 6433,
+          "crossing_frame_end": 6434,
+          "confirmation_frame": 6434,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        6421,
+        6432,
+        6433,
+        6434
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1389_raw_contact.png",
+        "sha256": "d51f0eb70bdafc0e59619055bf21cec1486af171a88f9cfbfdf34113c01f06ed",
+        "size_bytes": 937221,
+        "shape_width_height": [
+          1118,
+          854
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1389_overlay_contact.png",
+        "sha256": "1f962fc001e221930606275db6eedc04835995fce4924facaafd054d774f2d08",
+        "size_bytes": 943057,
+        "shape_width_height": [
+          1118,
+          854
+        ]
+      },
+      "observations": "Satu skuter dengan pengendara berbaju merah terlihat bergerak ke kiri/menjauh. Kendaraan di depan dan kendaraan yang mulai masuk dari kanan merupakan unit lain yang tampak terpisah pada sampel, bukan duplikasi target.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1408,
+      "candidate_inventory_indices": [
+        98
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1408,
+          "origin_frame": 6440,
+          "crossing_frame_start": 6452,
+          "crossing_frame_end": 6453,
+          "confirmation_frame": 6453,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        6440,
+        6451,
+        6452,
+        6453
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1408_raw_contact.png",
+        "sha256": "e5d4707fa22c19b024a0d050347bf8e2b1012034dcbd3ce4865665b7e4f72d97",
+        "size_bytes": 1041094,
+        "shape_width_height": [
+          1168,
+          884
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1408_overlay_contact.png",
+        "sha256": "120e31ed5c7f9095d3e122ec965a86cf0adcf09f8804bf9c3a17e8a8ed060ead",
+        "size_bytes": 1045792,
+        "shape_width_height": [
+          1168,
+          884
+        ]
+      },
+      "observations": "Satu sepeda motor dengan pengendara dan muatan samping besar terlihat bergerak ke kiri/menjauh. Kendaraan di depan tampak terpisah dari target.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1478,
+      "candidate_inventory_indices": [
+        102
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1478,
+          "origin_frame": 6592,
+          "crossing_frame_start": 6598,
+          "crossing_frame_end": 6599,
+          "confirmation_frame": 6599,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        6592,
+        6597,
+        6598,
+        6599
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1478_raw_contact.png",
+        "sha256": "f565188c96a54a8b30094fbb51af09785d83a357a0bcf90e3c36f03fd1d986cc",
+        "size_bytes": 859325,
+        "shape_width_height": [
+          944,
+          884
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1478_overlay_contact.png",
+        "sha256": "8a678dc8cdaacc861a578fa865e6ed71469f0f444719ce7df99345105188d705",
+        "size_bytes": 863543,
+        "shape_width_height": [
+          944,
+          884
+        ]
+      },
+      "observations": "Satu skuter gelap dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1520,
+      "candidate_inventory_indices": [
+        105
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1520,
+          "origin_frame": 6822,
+          "crossing_frame_start": 6838,
+          "crossing_frame_end": 6839,
+          "confirmation_frame": 6839,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        6822,
+        6837,
+        6838,
+        6839
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1520_raw_contact.png",
+        "sha256": "127e1536650f5f18d44e9ef2d6e641487cdb5e84595312b338211b4a0a42d08d",
+        "size_bytes": 2605031,
+        "shape_width_height": [
+          2168,
+          1492
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1520_overlay_contact.png",
+        "sha256": "29da0984be481a16832402eaa2f2e56cba26f0dba08cc3d2094ebf66336f20ee",
+        "size_bytes": 2610595,
+        "shape_width_height": [
+          2168,
+          1492
+        ]
+      },
+      "observations": "Satu truk kargo kuning berbak sisi tinggi dengan kabin terpisah dan muatan terlihat bergerak ke kiri/menjauh. Bentuk kendaraan pada sampel mendukung kategori Truck dan bukan pickup yang sulit dibedakan.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Truck",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1774,
+      "candidate_inventory_indices": [
+        121
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1774,
+          "origin_frame": 7713,
+          "crossing_frame_start": 7717,
+          "crossing_frame_end": 7718,
+          "confirmation_frame": 7718,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        7713,
+        7716,
+        7717,
+        7718
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_raw_contact.png",
+        "sha256": "c089b9763490637e74ad87219e477a1718f7b66d83e0ae65011b8d634a1bfe9e",
+        "size_bytes": 1202159,
+        "shape_width_height": [
+          1284,
+          944
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_overlay_contact.png",
+        "sha256": "76de7ad38ce12aa037ff47c0fcc4e599abb4f1bf9f606f7fec69821075c10a09",
+        "size_bytes": 1210731,
+        "shape_width_height": [
+          1284,
+          944
+        ]
+      },
+      "observations": "Target person berada pada pengendara berhelm yang duduk pada skuter. Overlay motorcycle ID1772 mengacu pada kendaraan yang sama. Komponen pengendara tidak merupakan unit pedestrian tambahan.",
+      "observed_unit_role": "RIDING_PERSON_COMPONENT",
+      "visual_category_supported": null,
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "NOT_INDEPENDENT_UNIT",
+      "other_identifiers_relevant": [
+        1772
+      ],
+      "recommendation_for_later_count_decision": "NOT_INDEPENDENT_TRAFFIC_UNIT",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1824,
+      "candidate_inventory_indices": [
+        126
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1824,
+          "origin_frame": 7842,
+          "crossing_frame_start": 7850,
+          "crossing_frame_end": 7851,
+          "confirmation_frame": 7851,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        7842,
+        7849,
+        7850,
+        7851
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1824_raw_contact.png",
+        "sha256": "b13b4771f70aa69a5d5b929f91c0431f5fd8c3031fd6618bd19918d1e97e9cc1",
+        "size_bytes": 962272,
+        "shape_width_height": [
+          1088,
+          858
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1824_overlay_contact.png",
+        "sha256": "62fbca423e75d986e87ba44971af9f48bfeeec9c0bf301e058a6a62a492c44f5",
+        "size_bytes": 966979,
+        "shape_width_height": [
+          1088,
+          858
+        ]
+      },
+      "observations": "Satu skuter merah dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    },
+    {
+      "track_id": 1887,
+      "candidate_inventory_indices": [
+        129
+      ],
+      "source_diagnostic_selectors": [
+        {
+          "track_id": 1887,
+          "origin_frame": 8268,
+          "crossing_frame_start": 8272,
+          "crossing_frame_end": 8273,
+          "confirmation_frame": 8273,
+          "direction": "B_TO_A"
+        }
+      ],
+      "claim_type": "FACT_FROM_ACTUALLY_OPENED_BOUNDED_PIXELS",
+      "reviewer": {
+        "type": "AI_ASSISTED_CODEX",
+        "human_review": false,
+        "formal_ground_truth": false
+      },
+      "exact_frames_opened": [
+        8268,
+        8271,
+        8272,
+        8273
+      ],
+      "raw_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1887_raw_contact.png",
+        "sha256": "04fcfd2fc0e634398f8f7daefadda78e806269ce6779730f4e46e3c35099428b",
+        "size_bytes": 853412,
+        "shape_width_height": [
+          974,
+          850
+        ]
+      },
+      "overlay_contact": {
+        "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1887_overlay_contact.png",
+        "sha256": "f7916918fcafb8fd8398d6273fb670c0092a838425d4d6e0fa60bd80ffb17c4e",
+        "size_bytes": 859353,
+        "shape_width_height": [
+          974,
+          850
+        ]
+      },
+      "observations": "Satu skuter gelap dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel.",
+      "observed_unit_role": "VEHICLE",
+      "visual_category_supported": "Motor",
+      "visual_category_unknown_reason": null,
+      "identity_scope": "same visible unit across listed frames, not whole-video unique identity proof",
+      "identity_review": "ONE_VISIBLE_VEHICLE_ACROSS_BOUNDED_SAMPLES",
+      "other_identifiers_relevant": [],
+      "recommendation_for_later_count_decision": "BOUNDED_VEHICLE_REVIEW_SUPPORTS_ELIGIBILITY",
+      "accepted_count_event_created": false,
+      "genuine_return_visually_supported": null,
+      "limitations": [
+        "Only listed frames were visually reviewed; intervening full support observations were inspected as records.",
+        "Not a completeness audit of all vehicle passages or the full video.",
+        "No ground-truth performance metric or unique-object guarantee."
+      ]
+    }
+  ],
+  "actual_unique_opened_contact_artifacts": 46
+}

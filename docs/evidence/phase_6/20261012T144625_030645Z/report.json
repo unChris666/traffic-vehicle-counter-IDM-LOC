@@ -1,0 +1,182 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_AUDIT_GATED_PASSAGE_SUBTOTAL_NOT_COMPLETE_TRAFFIC",
+  "counting_completed_at_utc": "2026-10-12T14:46:27.064557+00:00",
+  "counting_started_at_utc": "2026-10-12T14:46:25.265566+00:00",
+  "effective_configuration": {
+    "baseline_phase_5_experiment": "b0_c1",
+    "baseline_phase_5_run_id": "20261011T161440_100155Z_2e39a11c",
+    "confirmation_observations": 1,
+    "contract_version": "phase6_option_a_v0",
+    "input_identity": {
+      "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+      "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+      "height": 720,
+      "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+      "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+      "variant": "reid_on",
+      "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "width": 1280
+    },
+    "metric": "passage",
+    "neutral_band_px": 0.0,
+    "open_product_policies": [
+      "bus_angkot_mapping",
+      "pickup_classification",
+      "suitable_geometry_numeric_defaults",
+      "final_vehicle_reid_configuration",
+      "whole_video_physical_identity_recovery"
+    ],
+    "parameter_claim_type": "ENGINEERING_EXPERIMENT_REUSE_PHASE5_CONTROL_NOT_SELECTED_PRODUCT_DEFAULT",
+    "recording_metadata": {
+      "day_type": null,
+      "filename": "TOR3-PAGI.mp4",
+      "latitude": null,
+      "longitude": null,
+      "recording_period": "pagi",
+      "recording_period_basis": "USER_DESCRIBED_MORNING_SAMPLE",
+      "store_code": null,
+      "store_name": null,
+      "video_id": "TOR3-PAGI"
+    },
+    "review_policy": "audit_gated",
+    "source_phase_4_run_id": "20261011T095924_205716Z_90cf7319"
+  },
+  "formal_ground_truth_available": false,
+  "input_sha256": {
+    "configuration": "61fe90d9893851c3454ce6a8aa7d584f5e0c66c84b574f6c0c0a52a967886bc7",
+    "diagnostics": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+    "geometry": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "records": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "reviews": "ab7cd4d966299f1db045efaf53f60b9914d65f4079093b2858aa4942323ac9b8"
+  },
+  "measured_counting_elapsed_seconds": 1.497597505003796,
+  "phase_7_started": false,
+  "review_input_supplied": true,
+  "run_id": "20261012T144625_030645Z",
+  "runtime": {
+    "available_cpu_count": 5,
+    "execution_mode": "CPU_ONLY_RETAINED_CROSSING_COUNTING_AUDIT",
+    "gpu_required": false,
+    "models_and_geometry_rerun": false,
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "python_executable": "/workspace/.venvs/traffic-inspection/bin/python",
+    "video_decode_required_for_counting": false
+  },
+  "selected_suitable_product_parameters": null,
+  "software_report": {
+    "accepted_candidate_members": 18,
+    "accepted_duplicate_members": 0,
+    "accepted_event_count": 18,
+    "aggregate_reconciles": true,
+    "ambiguous_geometry_audit_items": 6,
+    "claim_type": "EXECUTED_SOFTWARE_AUDIT_GATED_PASSAGE_SUBTOTAL_NOT_ACCURACY",
+    "complete_geometry_candidates": 160,
+    "complete_video_traffic_count_established": false,
+    "contract_version": "phase6_option_a_v0",
+    "counting_config_id": "cc6_bb7a00b69bf450d0f9e3d8fef16d0013e2f5164150a88f5691a185419b7d365c",
+    "effective_config": {
+      "baseline_phase_5_experiment": "b0_c1",
+      "baseline_phase_5_run_id": "20261011T161440_100155Z_2e39a11c",
+      "confirmation_observations": 1,
+      "contract_version": "phase6_option_a_v0",
+      "input_identity": {
+        "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+        "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+        "height": 720,
+        "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+        "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+        "variant": "reid_on",
+        "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+        "width": 1280
+      },
+      "metric": "passage",
+      "neutral_band_px": 0.0,
+      "open_product_policies": [
+        "bus_angkot_mapping",
+        "pickup_classification",
+        "suitable_geometry_numeric_defaults",
+        "final_vehicle_reid_configuration",
+        "whole_video_physical_identity_recovery"
+      ],
+      "parameter_claim_type": "ENGINEERING_EXPERIMENT_REUSE_PHASE5_CONTROL_NOT_SELECTED_PRODUCT_DEFAULT",
+      "recording_metadata": {
+        "day_type": null,
+        "filename": "TOR3-PAGI.mp4",
+        "latitude": null,
+        "longitude": null,
+        "recording_period": "pagi",
+        "recording_period_basis": "USER_DESCRIBED_MORNING_SAMPLE",
+        "store_code": null,
+        "store_name": null,
+        "video_id": "TOR3-PAGI"
+      },
+      "review_policy": "audit_gated",
+      "source_phase_4_run_id": "20261011T095924_205716Z_90cf7319"
+    },
+    "emitted_measured_observations_processed": 48228,
+    "frames_processed": 10282,
+    "geometry_detector_tracker_encoder_rerun": false,
+    "ground_truth_available": false,
+    "helper_sha256": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5",
+    "ignored_identical_duplicate_diagnostics": 0,
+    "input_identity": {
+      "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+      "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+      "height": 720,
+      "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+      "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+      "variant": "reid_on",
+      "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "width": 1280
+    },
+    "machine_decision_statuses": {
+      "pending_review": 166
+    },
+    "machine_events_accepted": 0,
+    "numeric_product_defaults_selected": false,
+    "representative_order": [
+      "crossing_frame_start",
+      "crossing_frame_end",
+      "confirmation_frame",
+      "origin_frame",
+      "track_id",
+      "candidate_id"
+    ],
+    "resolved_decision_statuses": {
+      "accepted": 18,
+      "pending_review": 141,
+      "rejected": 7
+    },
+    "resolved_pending_reason_frequencies": {
+      "AMBIGUOUS_GAP": 6,
+      "BUS_ANGKOT_MAPPING_OPEN": 1,
+      "CATEGORY_CONFLICT": 4,
+      "CATEGORY_REVIEW_REQUIRED": 135,
+      "IDENTITY_REVIEW_REQUIRED": 135,
+      "RETURN_EPISODE_REVIEW_REQUIRED": 1,
+      "REVIEW_HOLD": 2,
+      "ROLE_UNRESOLVED": 61,
+      "UNIT_COMPONENT_CHANGE": 24,
+      "UNIT_REVIEW_REQUIRED": 135,
+      "VEHICLE_OVERLAP_IDENTITY_CONFLICT": 135
+    },
+    "review_input_sha256": "bebfe3e574906d238523026dc6b81677cff3670a079042aaed301afbe4ff5f29",
+    "reviewed_candidates": 27,
+    "source_diagnostic_frequencies": {
+      "AMBIGUOUS_GAP": 6,
+      "GEOMETRY_TRANSITION": 160,
+      "ORIGIN_ESTABLISHED": 3107
+    }
+  },
+  "source_code_sha256": {
+    "counting_helper": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5",
+    "geometry_validation_helper": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+    "repository_notebook_source": "542acc45fd14e29ec2a0159e3a5df6ca3a813603f1304018460fcf29df39623f",
+    "synthetic_tests": "6b1c8e2990611215683f3161af6e1d6ee9ed97081112f5f7b02073b44a247a85"
+  },
+  "source_pts_status": "UNKNOWN_FRAME_FPS_TIMESTAMPS_ARE_ESTIMATES",
+  "synthetic_test_results_sha256": "ba710afd087edececfb18a949a6abb76f2e8977bb79e150dd2844636ddc6291c",
+  "synthetic_tests_successful": true,
+  "whole_video_physical_audit_complete": false
+}
