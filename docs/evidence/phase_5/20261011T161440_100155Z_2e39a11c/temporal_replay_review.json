@@ -1,0 +1,5845 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_REVIEW_OF_ACTUALLY_RETAINED_PHASE5_REPLAY_OUTPUTS",
+  "reviewed_at_utc": "2026-10-12T13:28:58.644039+00:00",
+  "source_execution_run_id": "20261011T161440_100155Z_2e39a11c",
+  "method": "Loaded and checked six retained diagnostic streams/reports. Compared exact (track_id,direction,crossing_frame_start,crossing_frame_end) keys and confirmation frame deltas; inspected stored source-measurement links for named cases. No model, tracker, encoder, state-machine, or source-video rerun. This review performs no direct pixel inspection; prior pixel review is a referenced separate artifact.",
+  "inputs": [
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/b0_c1_diagnostics.jsonl.gz",
+      "sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/b0_c1_report.json",
+      "sha256": "5c1f13ccb01499777be49913f2f39fc67c1ee0d427d0439fa417399f35200837"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/b0_c2_diagnostics.jsonl.gz",
+      "sha256": "97ec95b63b02631a71c1948f61549bca1a0c9ea2080e77d30cd18bd7ce1fc999"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/b0_c2_report.json",
+      "sha256": "e01d5ba7f0554a7630e66a1ff97c52cf888fc6260838ed219581e37d590ae539"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/bmedian_c1_diagnostics.jsonl.gz",
+      "sha256": "3a340bef6f27f70d84f1678b5792a8a27e8d3e8b7a74421d01369e7ef392b734"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/bmedian_c1_report.json",
+      "sha256": "afebefdcbed3ac736992ac75bd314a56ff93b479bc80fa676aa79cba0332a1e5"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/bmedian_c2_diagnostics.jsonl.gz",
+      "sha256": "51aecb779eae24a20fb0beb211b5b7ae372f5cb41c20142d197e57fb4bb542a7"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/bmedian_c2_report.json",
+      "sha256": "f395a94284e1cf39366f6255efed8e052cbf2c452c5f3bbbcd43651d6d1d5223"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/bmax_c1_diagnostics.jsonl.gz",
+      "sha256": "097f123a84df9532d7096ea2d58ac9ccd625f9807a93fd272c3848d7ac48fdef"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/bmax_c1_report.json",
+      "sha256": "ee783b0b5f37ef595198ecedb4e3bca1887f71ed8dd590852c209fedf5ae1a23"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/bmax_c2_diagnostics.jsonl.gz",
+      "sha256": "9931daef8e44ecd807844c9b94d6ace30234d479fa9f962c4cb5186526c581fd"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011T161440_100155Z_2e39a11c/bmax_c2_report.json",
+      "sha256": "c3c42ad49e2e799ff5c2f62914eecbb0c140176d24164c4e9af141876a34e0aa"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011_G3_analysis/anchor_variation_analysis.json",
+      "sha256": "24256b5c868084ff7ee1a71c535890d390a170093ed49a7006cc84d0ea28dc80"
+    },
+    {
+      "path": "docs/evidence/phase_5/20261011_G3_analysis/retained_visual_review.json",
+      "sha256": "07aa9a81a7ce8cbf67475620c8d59b9bd6570809dfcea895cf3732e632ff98c5"
+    },
+    {
+      "path": "docs/GEOMETRY_CONTRACT.md",
+      "sha256": "714ee3d97ad74da23ef886a0839e50a43681716704527e204ebed5d65c9b14cd"
+    }
+  ],
+  "integrity_checks": [
+    {
+      "experiment": "b0_c1",
+      "reported_frequencies_match_stored_rows": true,
+      "reported_diagnostics_hash_matches_file": true,
+      "all_rows_are_non_count_diagnostics": true,
+      "crossing_identity_keys_unique_in_variant": true
+    },
+    {
+      "experiment": "b0_c2",
+      "reported_frequencies_match_stored_rows": true,
+      "reported_diagnostics_hash_matches_file": true,
+      "all_rows_are_non_count_diagnostics": true,
+      "crossing_identity_keys_unique_in_variant": true
+    },
+    {
+      "experiment": "bmedian_c1",
+      "reported_frequencies_match_stored_rows": true,
+      "reported_diagnostics_hash_matches_file": true,
+      "all_rows_are_non_count_diagnostics": true,
+      "crossing_identity_keys_unique_in_variant": true
+    },
+    {
+      "experiment": "bmedian_c2",
+      "reported_frequencies_match_stored_rows": true,
+      "reported_diagnostics_hash_matches_file": true,
+      "all_rows_are_non_count_diagnostics": true,
+      "crossing_identity_keys_unique_in_variant": true
+    },
+    {
+      "experiment": "bmax_c1",
+      "reported_frequencies_match_stored_rows": true,
+      "reported_diagnostics_hash_matches_file": true,
+      "all_rows_are_non_count_diagnostics": true,
+      "crossing_identity_keys_unique_in_variant": true
+    },
+    {
+      "experiment": "bmax_c2",
+      "reported_frequencies_match_stored_rows": true,
+      "reported_diagnostics_hash_matches_file": true,
+      "all_rows_are_non_count_diagnostics": true,
+      "crossing_identity_keys_unique_in_variant": true
+    }
+  ],
+  "source_cache_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+  "software_measurement_scope": {
+    "frames": 10282,
+    "emitted_measured_observations": 48228,
+    "software_ids": 997,
+    "all_six_runs_share_source_cache": true,
+    "all_six_runs_share_geometry": true
+  },
+  "experiment_summaries": {
+    "b0_c1": {
+      "parameters": {
+        "experiment_id": "b0_c1",
+        "claim_type": "PROPOSAL_EXPERIMENT_NOT_SELECTED_DEFAULT",
+        "parameter_basis": "ZERO_BAND_ONE_OBSERVATION_CONTROL",
+        "neutral_band_px": 0.0,
+        "confirmation_observations": 1
+      },
+      "software_diagnostic_frequency": {
+        "ORIGIN_ESTABLISHED": 3107,
+        "GEOMETRY_TRANSITION": 160,
+        "AMBIGUOUS_GAP": 6
+      },
+      "geometric_transitions": 160,
+      "distinct_software_ids_with_transition": 156,
+      "direction_frequency": {
+        "A_TO_B": 67,
+        "B_TO_A": 93
+      },
+      "software_ids_with_multiple_transitions": {
+        "893": 2,
+        "912": 3,
+        "1157": 2
+      },
+      "frames_processed": 10282,
+      "emitted_measurements_processed": 48228
+    },
+    "b0_c2": {
+      "parameters": {
+        "experiment_id": "b0_c2",
+        "claim_type": "PROPOSAL_EXPERIMENT_NOT_SELECTED_DEFAULT",
+        "parameter_basis": "ZERO_BAND_TWO_OBSERVATION_COMPARISON_PROPOSAL",
+        "neutral_band_px": 0.0,
+        "confirmation_observations": 2
+      },
+      "software_diagnostic_frequency": {
+        "ORIGIN_ESTABLISHED": 3107,
+        "GEOMETRY_TRANSITION": 153,
+        "AMBIGUOUS_GAP": 6
+      },
+      "geometric_transitions": 153,
+      "distinct_software_ids_with_transition": 152,
+      "direction_frequency": {
+        "A_TO_B": 64,
+        "B_TO_A": 89
+      },
+      "software_ids_with_multiple_transitions": {
+        "1157": 2
+      },
+      "frames_processed": 10282,
+      "emitted_measurements_processed": 48228
+    },
+    "bmedian_c1": {
+      "parameters": {
+        "experiment_id": "bmedian_c1",
+        "claim_type": "PROPOSAL_EXPERIMENT_NOT_SELECTED_DEFAULT",
+        "parameter_basis": "MEDIAN_OF_THREE_MEASURED_ONE_FRAME_RETURN_EXCURSIONS",
+        "neutral_band_px": 4.567185192815604,
+        "confirmation_observations": 1
+      },
+      "software_diagnostic_frequency": {
+        "ORIGIN_ESTABLISHED": 3104,
+        "GEOMETRY_TRANSITION": 153,
+        "AMBIGUOUS_GAP": 8
+      },
+      "geometric_transitions": 153,
+      "distinct_software_ids_with_transition": 152,
+      "direction_frequency": {
+        "A_TO_B": 65,
+        "B_TO_A": 88
+      },
+      "software_ids_with_multiple_transitions": {
+        "1157": 2
+      },
+      "frames_processed": 10282,
+      "emitted_measurements_processed": 48228
+    },
+    "bmedian_c2": {
+      "parameters": {
+        "experiment_id": "bmedian_c2",
+        "claim_type": "PROPOSAL_EXPERIMENT_NOT_SELECTED_DEFAULT",
+        "parameter_basis": "MEDIAN_EXCURSION_PLUS_TWO_OBSERVATION_COMPARISON",
+        "neutral_band_px": 4.567185192815604,
+        "confirmation_observations": 2
+      },
+      "software_diagnostic_frequency": {
+        "ORIGIN_ESTABLISHED": 3104,
+        "GEOMETRY_TRANSITION": 150,
+        "AMBIGUOUS_GAP": 7
+      },
+      "geometric_transitions": 150,
+      "distinct_software_ids_with_transition": 149,
+      "direction_frequency": {
+        "A_TO_B": 64,
+        "B_TO_A": 86
+      },
+      "software_ids_with_multiple_transitions": {
+        "1157": 2
+      },
+      "frames_processed": 10282,
+      "emitted_measurements_processed": 48228
+    },
+    "bmax_c1": {
+      "parameters": {
+        "experiment_id": "bmax_c1",
+        "claim_type": "PROPOSAL_EXPERIMENT_NOT_SELECTED_DEFAULT",
+        "parameter_basis": "MAXIMUM_EXCURSION_STRESS_SENSITIVITY",
+        "neutral_band_px": 39.945593728512996,
+        "confirmation_observations": 1
+      },
+      "software_diagnostic_frequency": {
+        "ORIGIN_ESTABLISHED": 2749,
+        "GEOMETRY_TRANSITION": 133,
+        "AMBIGUOUS_GAP": 10
+      },
+      "geometric_transitions": 133,
+      "distinct_software_ids_with_transition": 132,
+      "direction_frequency": {
+        "A_TO_B": 60,
+        "B_TO_A": 73
+      },
+      "software_ids_with_multiple_transitions": {
+        "1157": 2
+      },
+      "frames_processed": 10282,
+      "emitted_measurements_processed": 48228
+    },
+    "bmax_c2": {
+      "parameters": {
+        "experiment_id": "bmax_c2",
+        "claim_type": "PROPOSAL_EXPERIMENT_NOT_SELECTED_DEFAULT",
+        "parameter_basis": "MAXIMUM_EXCURSION_STRESS_SENSITIVITY_PLUS_TWO_OBSERVATIONS",
+        "neutral_band_px": 39.945593728512996,
+        "confirmation_observations": 2
+      },
+      "software_diagnostic_frequency": {
+        "ORIGIN_ESTABLISHED": 2749,
+        "GEOMETRY_TRANSITION": 128,
+        "AMBIGUOUS_GAP": 10
+      },
+      "geometric_transitions": 128,
+      "distinct_software_ids_with_transition": 127,
+      "direction_frequency": {
+        "A_TO_B": 57,
+        "B_TO_A": 71
+      },
+      "software_ids_with_multiple_transitions": {
+        "1157": 2
+      },
+      "frames_processed": 10282,
+      "emitted_measurements_processed": 48228
+    }
+  },
+  "pairwise_comparisons": [
+    {
+      "reference": "b0_c1",
+      "comparison": "b0_c2",
+      "matching_key": [
+        "track_id",
+        "direction",
+        "crossing_frame_start",
+        "crossing_frame_end"
+      ],
+      "common_crossing_keys": 153,
+      "absent_in_comparison_keys": [
+        [
+          868,
+          "A_TO_B",
+          4969,
+          4970
+        ],
+        [
+          893,
+          "A_TO_B",
+          4978,
+          4979
+        ],
+        [
+          893,
+          "B_TO_A",
+          4977,
+          4978
+        ],
+        [
+          912,
+          "A_TO_B",
+          5020,
+          5021
+        ],
+        [
+          912,
+          "B_TO_A",
+          5019,
+          5020
+        ],
+        [
+          1095,
+          "B_TO_A",
+          5428,
+          5429
+        ],
+        [
+          1751,
+          "B_TO_A",
+          7623,
+          7624
+        ]
+      ],
+      "new_in_comparison_keys": [],
+      "confirmation_frame_delta_histogram": {
+        "1": 153
+      },
+      "membership_is_subset": true,
+      "interpretation": "Crossing-key membership and confirmation latency only. Absent does not imply invalid physical passage; fewer diagnostics do not imply greater quality."
+    },
+    {
+      "reference": "bmedian_c1",
+      "comparison": "bmedian_c2",
+      "matching_key": [
+        "track_id",
+        "direction",
+        "crossing_frame_start",
+        "crossing_frame_end"
+      ],
+      "common_crossing_keys": 149,
+      "absent_in_comparison_keys": [
+        [
+          868,
+          "A_TO_B",
+          4969,
+          4970
+        ],
+        [
+          912,
+          "B_TO_A",
+          5019,
+          5020
+        ],
+        [
+          1095,
+          "B_TO_A",
+          5428,
+          5429
+        ],
+        [
+          1751,
+          "B_TO_A",
+          7623,
+          7624
+        ]
+      ],
+      "new_in_comparison_keys": [
+        [
+          912,
+          "B_TO_A",
+          5021,
+          5022
+        ]
+      ],
+      "confirmation_frame_delta_histogram": {
+        "1": 149
+      },
+      "membership_is_subset": false,
+      "interpretation": "Crossing-key membership and confirmation latency only. Absent does not imply invalid physical passage; fewer diagnostics do not imply greater quality."
+    },
+    {
+      "reference": "bmax_c1",
+      "comparison": "bmax_c2",
+      "matching_key": [
+        "track_id",
+        "direction",
+        "crossing_frame_start",
+        "crossing_frame_end"
+      ],
+      "common_crossing_keys": 128,
+      "absent_in_comparison_keys": [
+        [
+          423,
+          "A_TO_B",
+          2134,
+          2135
+        ],
+        [
+          508,
+          "A_TO_B",
+          2951,
+          2952
+        ],
+        [
+          706,
+          "A_TO_B",
+          4292,
+          4293
+        ],
+        [
+          1478,
+          "B_TO_A",
+          6598,
+          6599
+        ],
+        [
+          1750,
+          "B_TO_A",
+          7619,
+          7620
+        ]
+      ],
+      "new_in_comparison_keys": [],
+      "confirmation_frame_delta_histogram": {
+        "1": 128
+      },
+      "membership_is_subset": true,
+      "interpretation": "Crossing-key membership and confirmation latency only. Absent does not imply invalid physical passage; fewer diagnostics do not imply greater quality."
+    },
+    {
+      "reference": "b0_c1",
+      "comparison": "bmedian_c1",
+      "matching_key": [
+        "track_id",
+        "direction",
+        "crossing_frame_start",
+        "crossing_frame_end"
+      ],
+      "common_crossing_keys": 153,
+      "absent_in_comparison_keys": [
+        [
+          893,
+          "A_TO_B",
+          4978,
+          4979
+        ],
+        [
+          893,
+          "B_TO_A",
+          4977,
+          4978
+        ],
+        [
+          912,
+          "A_TO_B",
+          5020,
+          5021
+        ],
+        [
+          912,
+          "B_TO_A",
+          5021,
+          5022
+        ],
+        [
+          973,
+          "B_TO_A",
+          5129,
+          5130
+        ],
+        [
+          1323,
+          "B_TO_A",
+          6257,
+          6258
+        ],
+        [
+          1760,
+          "B_TO_A",
+          7623,
+          7624
+        ]
+      ],
+      "new_in_comparison_keys": [],
+      "confirmation_frame_delta_histogram": {
+        "0": 77,
+        "1": 70,
+        "2": 6
+      },
+      "membership_is_subset": true,
+      "interpretation": "Crossing-key membership and confirmation latency only. Absent does not imply invalid physical passage; fewer diagnostics do not imply greater quality."
+    },
+    {
+      "reference": "b0_c1",
+      "comparison": "bmax_c1",
+      "matching_key": [
+        "track_id",
+        "direction",
+        "crossing_frame_start",
+        "crossing_frame_end"
+      ],
+      "common_crossing_keys": 133,
+      "absent_in_comparison_keys": [
+        [
+          68,
+          "B_TO_A",
+          488,
+          489
+        ],
+        [
+          262,
+          "B_TO_A",
+          1441,
+          1442
+        ],
+        [
+          450,
+          "B_TO_A",
+          2295,
+          2296
+        ],
+        [
+          529,
+          "B_TO_A",
+          3088,
+          3089
+        ],
+        [
+          555,
+          "B_TO_A",
+          3189,
+          3190
+        ],
+        [
+          836,
+          "B_TO_A",
+          4799,
+          4800
+        ],
+        [
+          849,
+          "A_TO_B",
+          4966,
+          4967
+        ],
+        [
+          868,
+          "A_TO_B",
+          4969,
+          4970
+        ],
+        [
+          880,
+          "B_TO_A",
+          4987,
+          4988
+        ],
+        [
+          893,
+          "A_TO_B",
+          4978,
+          4979
+        ],
+        [
+          893,
+          "B_TO_A",
+          4977,
+          4978
+        ],
+        [
+          912,
+          "A_TO_B",
+          5020,
+          5021
+        ],
+        [
+          912,
+          "B_TO_A",
+          5019,
+          5020
+        ],
+        [
+          964,
+          "B_TO_A",
+          5128,
+          5129
+        ],
+        [
+          973,
+          "B_TO_A",
+          5129,
+          5130
+        ],
+        [
+          1095,
+          "B_TO_A",
+          5428,
+          5429
+        ],
+        [
+          1323,
+          "B_TO_A",
+          6257,
+          6258
+        ],
+        [
+          1384,
+          "B_TO_A",
+          6411,
+          6412
+        ],
+        [
+          1414,
+          "B_TO_A",
+          6446,
+          6447
+        ],
+        [
+          1557,
+          "A_TO_B",
+          7230,
+          7231
+        ],
+        [
+          1620,
+          "A_TO_B",
+          7235,
+          7236
+        ],
+        [
+          1751,
+          "B_TO_A",
+          7623,
+          7624
+        ],
+        [
+          1760,
+          "B_TO_A",
+          7623,
+          7624
+        ],
+        [
+          1920,
+          "B_TO_A",
+          8542,
+          8543
+        ],
+        [
+          2021,
+          "A_TO_B",
+          9180,
+          9181
+        ],
+        [
+          2283,
+          "B_TO_A",
+          9738,
+          9739
+        ],
+        [
+          2292,
+          "B_TO_A",
+          9739,
+          9740
+        ]
+      ],
+      "new_in_comparison_keys": [],
+      "confirmation_frame_delta_histogram": {
+        "1": 1,
+        "2": 8,
+        "3": 29,
+        "4": 39,
+        "5": 25,
+        "6": 16,
+        "7": 12,
+        "8": 1,
+        "9": 2
+      },
+      "membership_is_subset": true,
+      "interpretation": "Crossing-key membership and confirmation latency only. Absent does not imply invalid physical passage; fewer diagnostics do not imply greater quality."
+    },
+    {
+      "reference": "b0_c2",
+      "comparison": "bmedian_c2",
+      "matching_key": [
+        "track_id",
+        "direction",
+        "crossing_frame_start",
+        "crossing_frame_end"
+      ],
+      "common_crossing_keys": 150,
+      "absent_in_comparison_keys": [
+        [
+          973,
+          "B_TO_A",
+          5129,
+          5130
+        ],
+        [
+          1323,
+          "B_TO_A",
+          6257,
+          6258
+        ],
+        [
+          1760,
+          "B_TO_A",
+          7623,
+          7624
+        ]
+      ],
+      "new_in_comparison_keys": [],
+      "confirmation_frame_delta_histogram": {
+        "0": 73,
+        "1": 71,
+        "2": 6
+      },
+      "membership_is_subset": true,
+      "interpretation": "Crossing-key membership and confirmation latency only. Absent does not imply invalid physical passage; fewer diagnostics do not imply greater quality."
+    },
+    {
+      "reference": "b0_c2",
+      "comparison": "bmax_c2",
+      "matching_key": [
+        "track_id",
+        "direction",
+        "crossing_frame_start",
+        "crossing_frame_end"
+      ],
+      "common_crossing_keys": 128,
+      "absent_in_comparison_keys": [
+        [
+          68,
+          "B_TO_A",
+          488,
+          489
+        ],
+        [
+          262,
+          "B_TO_A",
+          1441,
+          1442
+        ],
+        [
+          423,
+          "A_TO_B",
+          2134,
+          2135
+        ],
+        [
+          450,
+          "B_TO_A",
+          2295,
+          2296
+        ],
+        [
+          508,
+          "A_TO_B",
+          2951,
+          2952
+        ],
+        [
+          529,
+          "B_TO_A",
+          3088,
+          3089
+        ],
+        [
+          555,
+          "B_TO_A",
+          3189,
+          3190
+        ],
+        [
+          706,
+          "A_TO_B",
+          4292,
+          4293
+        ],
+        [
+          836,
+          "B_TO_A",
+          4799,
+          4800
+        ],
+        [
+          849,
+          "A_TO_B",
+          4966,
+          4967
+        ],
+        [
+          880,
+          "B_TO_A",
+          4987,
+          4988
+        ],
+        [
+          964,
+          "B_TO_A",
+          5128,
+          5129
+        ],
+        [
+          973,
+          "B_TO_A",
+          5129,
+          5130
+        ],
+        [
+          1323,
+          "B_TO_A",
+          6257,
+          6258
+        ],
+        [
+          1384,
+          "B_TO_A",
+          6411,
+          6412
+        ],
+        [
+          1414,
+          "B_TO_A",
+          6446,
+          6447
+        ],
+        [
+          1478,
+          "B_TO_A",
+          6598,
+          6599
+        ],
+        [
+          1557,
+          "A_TO_B",
+          7230,
+          7231
+        ],
+        [
+          1620,
+          "A_TO_B",
+          7235,
+          7236
+        ],
+        [
+          1750,
+          "B_TO_A",
+          7619,
+          7620
+        ],
+        [
+          1760,
+          "B_TO_A",
+          7623,
+          7624
+        ],
+        [
+          1920,
+          "B_TO_A",
+          8542,
+          8543
+        ],
+        [
+          2021,
+          "A_TO_B",
+          9180,
+          9181
+        ],
+        [
+          2283,
+          "B_TO_A",
+          9738,
+          9739
+        ],
+        [
+          2292,
+          "B_TO_A",
+          9739,
+          9740
+        ]
+      ],
+      "new_in_comparison_keys": [],
+      "confirmation_frame_delta_histogram": {
+        "1": 1,
+        "2": 8,
+        "3": 27,
+        "4": 36,
+        "5": 25,
+        "6": 16,
+        "7": 12,
+        "8": 1,
+        "9": 2
+      },
+      "membership_is_subset": true,
+      "interpretation": "Crossing-key membership and confirmation latency only. Absent does not imply invalid physical passage; fewer diagnostics do not imply greater quality."
+    }
+  ],
+  "named_case_grid": {
+    "893": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 4975,
+          "side": "B",
+          "point": [
+            583.0604248046875,
+            612.2303466796875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 7
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 893,
+            "frame_index": 4978,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 4975,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 4977,
+            "crossing_frame_end": 4978,
+            "confirmation_frame": 4978,
+            "crossing_point": [
+              515.97100765899,
+              573.1447440174416
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 4977,
+                "point": [
+                  530.6856079101562,
+                  599.0466918945312
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 28.512789565465777,
+                "raw_class": "person",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  477.442626953125,
+                  364.00323486328125,
+                  583.9285888671875,
+                  599.0466918945312
+                ]
+              },
+              {
+                "frame_index": 4978,
+                "point": [
+                  513.8280029296875,
+                  569.3724365234375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -4.152545216412263,
+                "raw_class": "person",
+                "source_detection_index": 7,
+                "raw_bbox": [
+                  466.030517578125,
+                  370.67657470703125,
+                  561.62548828125,
+                  569.3724365234375
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 4978,
+                "point": [
+                  513.8280029296875,
+                  569.3724365234375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -4.152545216412263,
+                "raw_class": "person",
+                "source_detection_index": 7,
+                "raw_bbox": [
+                  466.030517578125,
+                  370.67657470703125,
+                  561.62548828125,
+                  569.3724365234375
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 4975,
+              "point": [
+                583.0604248046875,
+                612.2303466796875
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 52.9417888208367,
+              "raw_class": "person",
+              "source_detection_index": 7,
+              "raw_bbox": [
+                524.6514892578125,
+                352.1787109375,
+                641.4693603515625,
+                612.2303466796875
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          },
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 893,
+            "frame_index": 4979,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 4978,
+            "origin_side": "A",
+            "destination_side": "B",
+            "direction": "A_TO_B",
+            "crossing_frame_start": 4978,
+            "crossing_frame_end": 4979,
+            "confirmation_frame": 4979,
+            "crossing_point": [
+              499.5173803129592,
+              576.8719258317426
+            ],
+            "software_transition_sequence": 2,
+            "crossing_measurements": [
+              {
+                "frame_index": 4978,
+                "point": [
+                  513.8280029296875,
+                  569.3724365234375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -4.152545216412263,
+                "raw_class": "person",
+                "source_detection_index": 7,
+                "raw_bbox": [
+                  466.030517578125,
+                  370.67657470703125,
+                  561.62548828125,
+                  569.3724365234375
+                ]
+              },
+              {
+                "frame_index": 4979,
+                "point": [
+                  486.3919677734375,
+                  583.7503051757812
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 3.808630170340458,
+                "raw_class": "person",
+                "source_detection_index": 6,
+                "raw_bbox": [
+                  437.89678955078125,
+                  376.45556640625,
+                  534.8871459960938,
+                  583.7503051757812
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 4979,
+                "point": [
+                  486.3919677734375,
+                  583.7503051757812
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 3.808630170340458,
+                "raw_class": "person",
+                "source_detection_index": 6,
+                "raw_bbox": [
+                  437.89678955078125,
+                  376.45556640625,
+                  534.8871459960938,
+                  583.7503051757812
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 4978,
+              "point": [
+                513.8280029296875,
+                569.3724365234375
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -4.152545216412263,
+              "raw_class": "person",
+              "source_detection_index": 7,
+              "raw_bbox": [
+                466.030517578125,
+                370.67657470703125,
+                561.62548828125,
+                569.3724365234375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 4975,
+          "side": "B",
+          "point": [
+            583.0604248046875,
+            612.2303466796875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 7
+        },
+        "non_origin_diagnostics": []
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 4975,
+          "side": "B",
+          "point": [
+            583.0604248046875,
+            612.2303466796875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 7
+        },
+        "non_origin_diagnostics": []
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 4975,
+          "side": "B",
+          "point": [
+            583.0604248046875,
+            612.2303466796875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 7
+        },
+        "non_origin_diagnostics": []
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 4975,
+          "side": "B",
+          "point": [
+            583.0604248046875,
+            612.2303466796875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 7
+        },
+        "non_origin_diagnostics": []
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 4975,
+          "side": "B",
+          "point": [
+            583.0604248046875,
+            612.2303466796875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 7
+        },
+        "non_origin_diagnostics": []
+      }
+    },
+    "912": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5011,
+          "side": "B",
+          "point": [
+            1080.068359375,
+            706.4889526367188
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 912,
+            "frame_index": 5020,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5011,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5019,
+            "crossing_frame_end": 5020,
+            "confirmation_frame": 5020,
+            "crossing_point": [
+              596.1520955953954,
+              554.9816067029495
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5019,
+                "point": [
+                  608.5283203125,
+                  577.2123413085938
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 24.41567745469381,
+                "raw_class": "person",
+                "source_detection_index": 5,
+                "raw_bbox": [
+                  546.003662109375,
+                  327.5531005859375,
+                  671.052978515625,
+                  577.2123413085938
+                ]
+              },
+              {
+                "frame_index": 5020,
+                "point": [
+                  575.90380859375,
+                  518.6107177734375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -39.945593728512996,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  516.896240234375,
+                  339.2425537109375,
+                  634.911376953125,
+                  518.6107177734375
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5020,
+                "point": [
+                  575.90380859375,
+                  518.6107177734375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -39.945593728512996,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  516.896240234375,
+                  339.2425537109375,
+                  634.911376953125,
+                  518.6107177734375
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5011,
+              "point": [
+                1080.068359375,
+                706.4889526367188
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 254.6747018911949,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                894.1024169921875,
+                236.64324951171875,
+                1266.0343017578125,
+                706.4889526367188
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          },
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 912,
+            "frame_index": 5021,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5020,
+            "origin_side": "A",
+            "destination_side": "B",
+            "direction": "A_TO_B",
+            "crossing_frame_start": 5020,
+            "crossing_frame_end": 5021,
+            "confirmation_frame": 5021,
+            "crossing_point": [
+              545.0274457595161,
+              566.5626922060659
+            ],
+            "software_transition_sequence": 2,
+            "crossing_measurements": [
+              {
+                "frame_index": 5020,
+                "point": [
+                  575.90380859375,
+                  518.6107177734375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -39.945593728512996,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  516.896240234375,
+                  339.2425537109375,
+                  634.911376953125,
+                  518.6107177734375
+                ]
+              },
+              {
+                "frame_index": 5021,
+                "point": [
+                  541.4971923828125,
+                  572.0452880859375
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 4.567185192815604,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  476.6650390625,
+                  346.1263427734375,
+                  606.329345703125,
+                  572.0452880859375
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5021,
+                "point": [
+                  541.4971923828125,
+                  572.0452880859375
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 4.567185192815604,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  476.6650390625,
+                  346.1263427734375,
+                  606.329345703125,
+                  572.0452880859375
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5020,
+              "point": [
+                575.90380859375,
+                518.6107177734375
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -39.945593728512996,
+              "raw_class": "person",
+              "source_detection_index": 4,
+              "raw_bbox": [
+                516.896240234375,
+                339.2425537109375,
+                634.911376953125,
+                518.6107177734375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          },
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 912,
+            "frame_index": 5022,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5021,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5021,
+            "crossing_frame_end": 5022,
+            "confirmation_frame": 5022,
+            "crossing_point": [
+              522.1593141842327,
+              571.7429289004991
+            ],
+            "software_transition_sequence": 3,
+            "crossing_measurements": [
+              {
+                "frame_index": 5021,
+                "point": [
+                  541.4971923828125,
+                  572.0452880859375
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 4.567185192815604,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  476.6650390625,
+                  346.1263427734375,
+                  606.329345703125,
+                  572.0452880859375
+                ]
+              },
+              {
+                "frame_index": 5022,
+                "point": [
+                  509.7608947753906,
+                  571.549072265625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -2.928236332698584,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  442.97625732421875,
+                  351.691162109375,
+                  576.5455322265625,
+                  571.549072265625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5022,
+                "point": [
+                  509.7608947753906,
+                  571.549072265625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -2.928236332698584,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  442.97625732421875,
+                  351.691162109375,
+                  576.5455322265625,
+                  571.549072265625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5021,
+              "point": [
+                541.4971923828125,
+                572.0452880859375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 4.567185192815604,
+              "raw_class": "person",
+              "source_detection_index": 4,
+              "raw_bbox": [
+                476.6650390625,
+                346.1263427734375,
+                606.329345703125,
+                572.0452880859375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5011,
+          "side": "B",
+          "point": [
+            1080.068359375,
+            706.4889526367188
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 912,
+            "frame_index": 5023,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5011,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5021,
+            "crossing_frame_end": 5022,
+            "confirmation_frame": 5023,
+            "crossing_point": [
+              522.1593141842327,
+              571.7429289004991
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5021,
+                "point": [
+                  541.4971923828125,
+                  572.0452880859375
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 4.567185192815604,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  476.6650390625,
+                  346.1263427734375,
+                  606.329345703125,
+                  572.0452880859375
+                ]
+              },
+              {
+                "frame_index": 5022,
+                "point": [
+                  509.7608947753906,
+                  571.549072265625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -2.928236332698584,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  442.97625732421875,
+                  351.691162109375,
+                  576.5455322265625,
+                  571.549072265625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5022,
+                "point": [
+                  509.7608947753906,
+                  571.549072265625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -2.928236332698584,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  442.97625732421875,
+                  351.691162109375,
+                  576.5455322265625,
+                  571.549072265625
+                ]
+              },
+              {
+                "frame_index": 5023,
+                "point": [
+                  482.45062255859375,
+                  564.536376953125
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -15.801277318652371,
+                "raw_class": "person",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  415.12548828125,
+                  356.66827392578125,
+                  549.7757568359375,
+                  564.536376953125
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5011,
+              "point": [
+                1080.068359375,
+                706.4889526367188
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 254.6747018911949,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                894.1024169921875,
+                236.64324951171875,
+                1266.0343017578125,
+                706.4889526367188
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5011,
+          "side": "B",
+          "point": [
+            1080.068359375,
+            706.4889526367188
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 912,
+            "frame_index": 5020,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5011,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5019,
+            "crossing_frame_end": 5020,
+            "confirmation_frame": 5020,
+            "crossing_point": [
+              596.1520955953954,
+              554.9816067029495
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5019,
+                "point": [
+                  608.5283203125,
+                  577.2123413085938
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 24.41567745469381,
+                "raw_class": "person",
+                "source_detection_index": 5,
+                "raw_bbox": [
+                  546.003662109375,
+                  327.5531005859375,
+                  671.052978515625,
+                  577.2123413085938
+                ]
+              },
+              {
+                "frame_index": 5020,
+                "point": [
+                  575.90380859375,
+                  518.6107177734375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -39.945593728512996,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  516.896240234375,
+                  339.2425537109375,
+                  634.911376953125,
+                  518.6107177734375
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5020,
+                "point": [
+                  575.90380859375,
+                  518.6107177734375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -39.945593728512996,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  516.896240234375,
+                  339.2425537109375,
+                  634.911376953125,
+                  518.6107177734375
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5011,
+              "point": [
+                1080.068359375,
+                706.4889526367188
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 254.6747018911949,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                894.1024169921875,
+                236.64324951171875,
+                1266.0343017578125,
+                706.4889526367188
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          },
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 912,
+            "frame_index": 5115,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 1,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 5113,
+              "point": [
+                134.4218406677246,
+                465.1571960449219
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -189.61442606976252,
+              "raw_class": "person",
+              "source_detection_index": 3,
+              "raw_bbox": [
+                124.67363739013672,
+                433.1098327636719,
+                144.1700439453125,
+                465.1571960449219
+              ]
+            },
+            "after": {
+              "frame_index": 5115,
+              "point": [
+                133.10800170898438,
+                465.5751953125
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -189.4970206804148,
+              "raw_class": "person",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                123.72952270507812,
+                432.405029296875,
+                142.48648071289062,
+                465.5751953125
+              ]
+            }
+          }
+        ]
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5011,
+          "side": "B",
+          "point": [
+            1080.068359375,
+            706.4889526367188
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 912,
+            "frame_index": 5024,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5011,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5021,
+            "crossing_frame_end": 5022,
+            "confirmation_frame": 5024,
+            "crossing_point": [
+              522.1593141842327,
+              571.7429289004991
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5021,
+                "point": [
+                  541.4971923828125,
+                  572.0452880859375
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 4.567185192815604,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  476.6650390625,
+                  346.1263427734375,
+                  606.329345703125,
+                  572.0452880859375
+                ]
+              },
+              {
+                "frame_index": 5022,
+                "point": [
+                  509.7608947753906,
+                  571.549072265625
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -2.928236332698584,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  442.97625732421875,
+                  351.691162109375,
+                  576.5455322265625,
+                  571.549072265625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5023,
+                "point": [
+                  482.45062255859375,
+                  564.536376953125
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -15.801277318652371,
+                "raw_class": "person",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  415.12548828125,
+                  356.66827392578125,
+                  549.7757568359375,
+                  564.536376953125
+                ]
+              },
+              {
+                "frame_index": 5024,
+                "point": [
+                  459.9449768066406,
+                  564.1463012695312
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -21.15386311967851,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  393.20318603515625,
+                  361.19647216796875,
+                  526.686767578125,
+                  564.1463012695312
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5011,
+              "point": [
+                1080.068359375,
+                706.4889526367188
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 254.6747018911949,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                894.1024169921875,
+                236.64324951171875,
+                1266.0343017578125,
+                706.4889526367188
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 2
+          }
+        ]
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5011,
+          "side": "B",
+          "point": [
+            1080.068359375,
+            706.4889526367188
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 912,
+            "frame_index": 5027,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5011,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5021,
+            "crossing_frame_end": 5022,
+            "confirmation_frame": 5027,
+            "crossing_point": [
+              522.1593141842327,
+              571.7429289004991
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5021,
+                "point": [
+                  541.4971923828125,
+                  572.0452880859375
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 4.567185192815604,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  476.6650390625,
+                  346.1263427734375,
+                  606.329345703125,
+                  572.0452880859375
+                ]
+              },
+              {
+                "frame_index": 5022,
+                "point": [
+                  509.7608947753906,
+                  571.549072265625
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -2.928236332698584,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  442.97625732421875,
+                  351.691162109375,
+                  576.5455322265625,
+                  571.549072265625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5027,
+                "point": [
+                  409.440673828125,
+                  548.12744140625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -47.934758564448416,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  348.89471435546875,
+                  372.054443359375,
+                  469.98663330078125,
+                  548.12744140625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5011,
+              "point": [
+                1080.068359375,
+                706.4889526367188
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 254.6747018911949,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                894.1024169921875,
+                236.64324951171875,
+                1266.0343017578125,
+                706.4889526367188
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 5
+          }
+        ]
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5011,
+          "side": "B",
+          "point": [
+            1080.068359375,
+            706.4889526367188
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 912,
+            "frame_index": 5028,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5011,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5021,
+            "crossing_frame_end": 5022,
+            "confirmation_frame": 5028,
+            "crossing_point": [
+              522.1593141842327,
+              571.7429289004991
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5021,
+                "point": [
+                  541.4971923828125,
+                  572.0452880859375
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 4.567185192815604,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  476.6650390625,
+                  346.1263427734375,
+                  606.329345703125,
+                  572.0452880859375
+                ]
+              },
+              {
+                "frame_index": 5022,
+                "point": [
+                  509.7608947753906,
+                  571.549072265625
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -2.928236332698584,
+                "raw_class": "person",
+                "source_detection_index": 4,
+                "raw_bbox": [
+                  442.97625732421875,
+                  351.691162109375,
+                  576.5455322265625,
+                  571.549072265625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5027,
+                "point": [
+                  409.440673828125,
+                  548.12744140625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -47.934758564448416,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  348.89471435546875,
+                  372.054443359375,
+                  469.98663330078125,
+                  548.12744140625
+                ]
+              },
+              {
+                "frame_index": 5028,
+                "point": [
+                  391.62567138671875,
+                  545.9309692382812
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -54.0128056654355,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  331.556396484375,
+                  374.31964111328125,
+                  451.6949462890625,
+                  545.9309692382812
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5011,
+              "point": [
+                1080.068359375,
+                706.4889526367188
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 254.6747018911949,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                894.1024169921875,
+                236.64324951171875,
+                1266.0343017578125,
+                706.4889526367188
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 6
+          }
+        ]
+      }
+    },
+    "964": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5116,
+          "side": "B",
+          "point": [
+            1100.6585693359375,
+            700.3087158203125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 964,
+            "frame_index": 5129,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5116,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5128,
+            "crossing_frame_end": 5129,
+            "confirmation_frame": 5129,
+            "crossing_point": [
+              366.8716532677934,
+              606.919691664165
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5128,
+                "point": [
+                  378.5228271484375,
+                  615.9722290039062
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 11.402929997577699,
+                "raw_class": "motorcycle",
+                "source_detection_index": 2,
+                "raw_bbox": [
+                  314.67333984375,
+                  457.56011962890625,
+                  442.372314453125,
+                  615.9722290039062
+                ]
+              },
+              {
+                "frame_index": 5129,
+                "point": [
+                  365.56304931640625,
+                  605.9029541015625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -1.2807223894418678,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  312.46588134765625,
+                  458.6859436035156,
+                  418.66021728515625,
+                  605.9029541015625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5129,
+                "point": [
+                  365.56304931640625,
+                  605.9029541015625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -1.2807223894418678,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  312.46588134765625,
+                  458.6859436035156,
+                  418.66021728515625,
+                  605.9029541015625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5116,
+              "point": [
+                1100.6585693359375,
+                700.3087158203125
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 253.19615301474516,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                921.80126953125,
+                196.4422607421875,
+                1279.515869140625,
+                700.3087158203125
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5116,
+          "side": "B",
+          "point": [
+            1100.6585693359375,
+            700.3087158203125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 964,
+            "frame_index": 5130,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5116,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5128,
+            "crossing_frame_end": 5129,
+            "confirmation_frame": 5130,
+            "crossing_point": [
+              366.8716532677934,
+              606.919691664165
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5128,
+                "point": [
+                  378.5228271484375,
+                  615.9722290039062
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 11.402929997577699,
+                "raw_class": "motorcycle",
+                "source_detection_index": 2,
+                "raw_bbox": [
+                  314.67333984375,
+                  457.56011962890625,
+                  442.372314453125,
+                  615.9722290039062
+                ]
+              },
+              {
+                "frame_index": 5129,
+                "point": [
+                  365.56304931640625,
+                  605.9029541015625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -1.2807223894418678,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  312.46588134765625,
+                  458.6859436035156,
+                  418.66021728515625,
+                  605.9029541015625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5129,
+                "point": [
+                  365.56304931640625,
+                  605.9029541015625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -1.2807223894418678,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  312.46588134765625,
+                  458.6859436035156,
+                  418.66021728515625,
+                  605.9029541015625
+                ]
+              },
+              {
+                "frame_index": 5130,
+                "point": [
+                  346.0402526855469,
+                  597.9381103515625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -13.361905244810696,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  284.5619812011719,
+                  457.6932678222656,
+                  407.5185241699219,
+                  597.9381103515625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5116,
+              "point": [
+                1100.6585693359375,
+                700.3087158203125
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 253.19615301474516,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                921.80126953125,
+                196.4422607421875,
+                1279.515869140625,
+                700.3087158203125
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5116,
+          "side": "B",
+          "point": [
+            1100.6585693359375,
+            700.3087158203125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 964,
+            "frame_index": 5130,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5116,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5128,
+            "crossing_frame_end": 5129,
+            "confirmation_frame": 5130,
+            "crossing_point": [
+              366.8716532677934,
+              606.919691664165
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5128,
+                "point": [
+                  378.5228271484375,
+                  615.9722290039062
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 11.402929997577699,
+                "raw_class": "motorcycle",
+                "source_detection_index": 2,
+                "raw_bbox": [
+                  314.67333984375,
+                  457.56011962890625,
+                  442.372314453125,
+                  615.9722290039062
+                ]
+              },
+              {
+                "frame_index": 5129,
+                "point": [
+                  365.56304931640625,
+                  605.9029541015625
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -1.2807223894418678,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  312.46588134765625,
+                  458.6859436035156,
+                  418.66021728515625,
+                  605.9029541015625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5130,
+                "point": [
+                  346.0402526855469,
+                  597.9381103515625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -13.361905244810696,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  284.5619812011719,
+                  457.6932678222656,
+                  407.5185241699219,
+                  597.9381103515625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5116,
+              "point": [
+                1100.6585693359375,
+                700.3087158203125
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 253.19615301474516,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                921.80126953125,
+                196.4422607421875,
+                1279.515869140625,
+                700.3087158203125
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5116,
+          "side": "B",
+          "point": [
+            1100.6585693359375,
+            700.3087158203125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 964,
+            "frame_index": 5131,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5116,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5128,
+            "crossing_frame_end": 5129,
+            "confirmation_frame": 5131,
+            "crossing_point": [
+              366.8716532677934,
+              606.919691664165
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5128,
+                "point": [
+                  378.5228271484375,
+                  615.9722290039062
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 11.402929997577699,
+                "raw_class": "motorcycle",
+                "source_detection_index": 2,
+                "raw_bbox": [
+                  314.67333984375,
+                  457.56011962890625,
+                  442.372314453125,
+                  615.9722290039062
+                ]
+              },
+              {
+                "frame_index": 5129,
+                "point": [
+                  365.56304931640625,
+                  605.9029541015625
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -1.2807223894418678,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  312.46588134765625,
+                  458.6859436035156,
+                  418.66021728515625,
+                  605.9029541015625
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5130,
+                "point": [
+                  346.0402526855469,
+                  597.9381103515625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -13.361905244810696,
+                "raw_class": "motorcycle",
+                "source_detection_index": 3,
+                "raw_bbox": [
+                  284.5619812011719,
+                  457.6932678222656,
+                  407.5185241699219,
+                  597.9381103515625
+                ]
+              },
+              {
+                "frame_index": 5131,
+                "point": [
+                  330.5116271972656,
+                  589.628662109375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -24.896749302511118,
+                "raw_class": "motorcycle",
+                "source_detection_index": 5,
+                "raw_bbox": [
+                  278.7587890625,
+                  455.58837890625,
+                  382.26446533203125,
+                  589.628662109375
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5116,
+              "point": [
+                1100.6585693359375,
+                700.3087158203125
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 253.19615301474516,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                921.80126953125,
+                196.4422607421875,
+                1279.515869140625,
+                700.3087158203125
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 2
+          }
+        ]
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5116,
+          "side": "B",
+          "point": [
+            1100.6585693359375,
+            700.3087158203125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": []
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5116,
+          "side": "B",
+          "point": [
+            1100.6585693359375,
+            700.3087158203125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": []
+      }
+    },
+    "967": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5118,
+          "side": "B",
+          "point": [
+            814.0684814453125,
+            703.3431396484375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 967,
+            "frame_index": 5126,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5118,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5125,
+            "crossing_frame_end": 5126,
+            "confirmation_frame": 5126,
+            "crossing_point": [
+              426.14085783030885,
+              593.4936490811122
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5125,
+                "point": [
+                  443.3263244628906,
+                  606.1533203125
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 16.143616805640615,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  380.5145263671875,
+                  364.80645751953125,
+                  506.13812255859375,
+                  606.1533203125
+                ]
+              },
+              {
+                "frame_index": 5126,
+                "point": [
+                  421.60595703125,
+                  590.1530151367188
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -4.259977474967237,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  365.98406982421875,
+                  370.01983642578125,
+                  477.22784423828125,
+                  590.1530151367188
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5126,
+                "point": [
+                  421.60595703125,
+                  590.1530151367188
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -4.259977474967237,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  365.98406982421875,
+                  370.01983642578125,
+                  477.22784423828125,
+                  590.1530151367188
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5118,
+              "point": [
+                814.0684814453125,
+                703.3431396484375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 192.83954567456144,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                687.4100341796875,
+                272.7547607421875,
+                940.7269287109375,
+                703.3431396484375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5118,
+          "side": "B",
+          "point": [
+            814.0684814453125,
+            703.3431396484375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 967,
+            "frame_index": 5127,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5118,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5125,
+            "crossing_frame_end": 5126,
+            "confirmation_frame": 5127,
+            "crossing_point": [
+              426.14085783030885,
+              593.4936490811122
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5125,
+                "point": [
+                  443.3263244628906,
+                  606.1533203125
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 16.143616805640615,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  380.5145263671875,
+                  364.80645751953125,
+                  506.13812255859375,
+                  606.1533203125
+                ]
+              },
+              {
+                "frame_index": 5126,
+                "point": [
+                  421.60595703125,
+                  590.1530151367188
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -4.259977474967237,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  365.98406982421875,
+                  370.01983642578125,
+                  477.22784423828125,
+                  590.1530151367188
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5126,
+                "point": [
+                  421.60595703125,
+                  590.1530151367188
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -4.259977474967237,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  365.98406982421875,
+                  370.01983642578125,
+                  477.22784423828125,
+                  590.1530151367188
+                ]
+              },
+              {
+                "frame_index": 5127,
+                "point": [
+                  399.0007629394531,
+                  576.2485961914062
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -22.814958912181954,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  347.0506591796875,
+                  377.21649169921875,
+                  450.95086669921875,
+                  576.2485961914062
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5118,
+              "point": [
+                814.0684814453125,
+                703.3431396484375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 192.83954567456144,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                687.4100341796875,
+                272.7547607421875,
+                940.7269287109375,
+                703.3431396484375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5118,
+          "side": "B",
+          "point": [
+            814.0684814453125,
+            703.3431396484375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 967,
+            "frame_index": 5127,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5118,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5125,
+            "crossing_frame_end": 5126,
+            "confirmation_frame": 5127,
+            "crossing_point": [
+              426.14085783030885,
+              593.4936490811122
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5125,
+                "point": [
+                  443.3263244628906,
+                  606.1533203125
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 16.143616805640615,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  380.5145263671875,
+                  364.80645751953125,
+                  506.13812255859375,
+                  606.1533203125
+                ]
+              },
+              {
+                "frame_index": 5126,
+                "point": [
+                  421.60595703125,
+                  590.1530151367188
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -4.259977474967237,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  365.98406982421875,
+                  370.01983642578125,
+                  477.22784423828125,
+                  590.1530151367188
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5127,
+                "point": [
+                  399.0007629394531,
+                  576.2485961914062
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -22.814958912181954,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  347.0506591796875,
+                  377.21649169921875,
+                  450.95086669921875,
+                  576.2485961914062
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5118,
+              "point": [
+                814.0684814453125,
+                703.3431396484375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 192.83954567456144,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                687.4100341796875,
+                272.7547607421875,
+                940.7269287109375,
+                703.3431396484375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5118,
+          "side": "B",
+          "point": [
+            814.0684814453125,
+            703.3431396484375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 967,
+            "frame_index": 5128,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5118,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5125,
+            "crossing_frame_end": 5126,
+            "confirmation_frame": 5128,
+            "crossing_point": [
+              426.14085783030885,
+              593.4936490811122
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5125,
+                "point": [
+                  443.3263244628906,
+                  606.1533203125
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 16.143616805640615,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  380.5145263671875,
+                  364.80645751953125,
+                  506.13812255859375,
+                  606.1533203125
+                ]
+              },
+              {
+                "frame_index": 5126,
+                "point": [
+                  421.60595703125,
+                  590.1530151367188
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -4.259977474967237,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  365.98406982421875,
+                  370.01983642578125,
+                  477.22784423828125,
+                  590.1530151367188
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5127,
+                "point": [
+                  399.0007629394531,
+                  576.2485961914062
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -22.814958912181954,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  347.0506591796875,
+                  377.21649169921875,
+                  450.95086669921875,
+                  576.2485961914062
+                ]
+              },
+              {
+                "frame_index": 5128,
+                "point": [
+                  377.75628662109375,
+                  578.44189453125
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -25.369377261011238,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  328.6279296875,
+                  379.74493408203125,
+                  426.8846435546875,
+                  578.44189453125
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5118,
+              "point": [
+                814.0684814453125,
+                703.3431396484375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 192.83954567456144,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                687.4100341796875,
+                272.7547607421875,
+                940.7269287109375,
+                703.3431396484375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 2
+          }
+        ]
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5118,
+          "side": "B",
+          "point": [
+            814.0684814453125,
+            703.3431396484375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 967,
+            "frame_index": 5130,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5118,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5125,
+            "crossing_frame_end": 5126,
+            "confirmation_frame": 5130,
+            "crossing_point": [
+              426.14085783030885,
+              593.4936490811122
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5125,
+                "point": [
+                  443.3263244628906,
+                  606.1533203125
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 16.143616805640615,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  380.5145263671875,
+                  364.80645751953125,
+                  506.13812255859375,
+                  606.1533203125
+                ]
+              },
+              {
+                "frame_index": 5126,
+                "point": [
+                  421.60595703125,
+                  590.1530151367188
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -4.259977474967237,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  365.98406982421875,
+                  370.01983642578125,
+                  477.22784423828125,
+                  590.1530151367188
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5130,
+                "point": [
+                  346.42010498046875,
+                  554.7615966796875
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -55.387602690536426,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  301.036865234375,
+                  388.760986328125,
+                  391.8033447265625,
+                  554.7615966796875
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5118,
+              "point": [
+                814.0684814453125,
+                703.3431396484375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 192.83954567456144,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                687.4100341796875,
+                272.7547607421875,
+                940.7269287109375,
+                703.3431396484375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 4
+          }
+        ]
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5118,
+          "side": "B",
+          "point": [
+            814.0684814453125,
+            703.3431396484375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 967,
+            "frame_index": 5131,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5118,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5125,
+            "crossing_frame_end": 5126,
+            "confirmation_frame": 5131,
+            "crossing_point": [
+              426.14085783030885,
+              593.4936490811122
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5125,
+                "point": [
+                  443.3263244628906,
+                  606.1533203125
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 16.143616805640615,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  380.5145263671875,
+                  364.80645751953125,
+                  506.13812255859375,
+                  606.1533203125
+                ]
+              },
+              {
+                "frame_index": 5126,
+                "point": [
+                  421.60595703125,
+                  590.1530151367188
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -4.259977474967237,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  365.98406982421875,
+                  370.01983642578125,
+                  477.22784423828125,
+                  590.1530151367188
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5130,
+                "point": [
+                  346.42010498046875,
+                  554.7615966796875
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -55.387602690536426,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  301.036865234375,
+                  388.760986328125,
+                  391.8033447265625,
+                  554.7615966796875
+                ]
+              },
+              {
+                "frame_index": 5131,
+                "point": [
+                  330.62042236328125,
+                  549.4662475585938
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -64.0427106794386,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  287.8487548828125,
+                  390.84014892578125,
+                  373.39208984375,
+                  549.4662475585938
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5118,
+              "point": [
+                814.0684814453125,
+                703.3431396484375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 192.83954567456144,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                687.4100341796875,
+                272.7547607421875,
+                940.7269287109375,
+                703.3431396484375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 5
+          }
+        ]
+      }
+    },
+    "973": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5129,
+          "side": "B",
+          "point": [
+            373.2926940917969,
+            605.728515625
+          ],
+          "raw_class": "motorcycle",
+          "source_detection_index": 2
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 973,
+            "frame_index": 5130,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5129,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5129,
+            "crossing_frame_end": 5130,
+            "confirmation_frame": 5130,
+            "crossing_point": [
+              372.90603446200254,
+              605.5527447062323
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5129,
+                "point": [
+                  373.2926940917969,
+                  605.728515625
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 0.25685191241373684,
+                "raw_class": "motorcycle",
+                "source_detection_index": 2,
+                "raw_bbox": [
+                  327.80950927734375,
+                  486.3431396484375,
+                  418.77587890625,
+                  605.728515625
+                ]
+              },
+              {
+                "frame_index": 5130,
+                "point": [
+                  353.8377380371094,
+                  596.884521484375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -12.666769493910438,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  308.5099182128906,
+                  482.9860534667969,
+                  399.1655578613281,
+                  596.884521484375
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5130,
+                "point": [
+                  353.8377380371094,
+                  596.884521484375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -12.666769493910438,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  308.5099182128906,
+                  482.9860534667969,
+                  399.1655578613281,
+                  596.884521484375
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5129,
+              "point": [
+                373.2926940917969,
+                605.728515625
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 0.25685191241373684,
+              "raw_class": "motorcycle",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                327.80950927734375,
+                486.3431396484375,
+                418.77587890625,
+                605.728515625
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5129,
+          "side": "B",
+          "point": [
+            373.2926940917969,
+            605.728515625
+          ],
+          "raw_class": "motorcycle",
+          "source_detection_index": 2
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 973,
+            "frame_index": 5131,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 5129,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 5129,
+            "crossing_frame_end": 5130,
+            "confirmation_frame": 5131,
+            "crossing_point": [
+              372.90603446200254,
+              605.5527447062323
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 5129,
+                "point": [
+                  373.2926940917969,
+                  605.728515625
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 0.25685191241373684,
+                "raw_class": "motorcycle",
+                "source_detection_index": 2,
+                "raw_bbox": [
+                  327.80950927734375,
+                  486.3431396484375,
+                  418.77587890625,
+                  605.728515625
+                ]
+              },
+              {
+                "frame_index": 5130,
+                "point": [
+                  353.8377380371094,
+                  596.884521484375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -12.666769493910438,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  308.5099182128906,
+                  482.9860534667969,
+                  399.1655578613281,
+                  596.884521484375
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 5130,
+                "point": [
+                  353.8377380371094,
+                  596.884521484375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -12.666769493910438,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  308.5099182128906,
+                  482.9860534667969,
+                  399.1655578613281,
+                  596.884521484375
+                ]
+              },
+              {
+                "frame_index": 5131,
+                "point": [
+                  338.6456298828125,
+                  589.2118530273438
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -23.506222232047644,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  295.79534912109375,
+                  481.95745849609375,
+                  381.49591064453125,
+                  589.2118530273438
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 5129,
+              "point": [
+                373.2926940917969,
+                605.728515625
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 0.25685191241373684,
+              "raw_class": "motorcycle",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                327.80950927734375,
+                486.3431396484375,
+                418.77587890625,
+                605.728515625
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5130,
+          "side": "A",
+          "point": [
+            353.8377380371094,
+            596.884521484375
+          ],
+          "raw_class": "motorcycle",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": []
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5130,
+          "side": "A",
+          "point": [
+            353.8377380371094,
+            596.884521484375
+          ],
+          "raw_class": "motorcycle",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": []
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5133,
+          "side": "A",
+          "point": [
+            312.7686767578125,
+            576.2559814453125
+          ],
+          "raw_class": "motorcycle",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": []
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5133,
+          "side": "A",
+          "point": [
+            312.7686767578125,
+            576.2559814453125
+          ],
+          "raw_class": "motorcycle",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": []
+      }
+    },
+    "1217": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5847,
+          "side": "A",
+          "point": [
+            129.46023178100586,
+            456.82342529296875
+          ],
+          "raw_class": "car",
+          "source_detection_index": 5
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1217,
+            "frame_index": 6019,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 1,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 6017,
+              "point": [
+                546.5090942382812,
+                565.079345703125
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -1.1193538080262648,
+              "raw_class": "car",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                400.7734375,
+                393.68951416015625,
+                692.2447509765625,
+                565.079345703125
+              ]
+            },
+            "after": {
+              "frame_index": 6019,
+              "point": [
+                592.7902221679688,
+                576.9730224609375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 20.70527053281622,
+              "raw_class": "truck",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                427.35345458984375,
+                383.6217041015625,
+                758.2269897460938,
+                576.9730224609375
+              ]
+            }
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5847,
+          "side": "A",
+          "point": [
+            129.46023178100586,
+            456.82342529296875
+          ],
+          "raw_class": "car",
+          "source_detection_index": 5
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1217,
+            "frame_index": 6019,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 1,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 6017,
+              "point": [
+                546.5090942382812,
+                565.079345703125
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -1.1193538080262648,
+              "raw_class": "car",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                400.7734375,
+                393.68951416015625,
+                692.2447509765625,
+                565.079345703125
+              ]
+            },
+            "after": {
+              "frame_index": 6019,
+              "point": [
+                592.7902221679688,
+                576.9730224609375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 20.70527053281622,
+              "raw_class": "truck",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                427.35345458984375,
+                383.6217041015625,
+                758.2269897460938,
+                576.9730224609375
+              ]
+            }
+          }
+        ]
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5847,
+          "side": "A",
+          "point": [
+            129.46023178100586,
+            456.82342529296875
+          ],
+          "raw_class": "car",
+          "source_detection_index": 5
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1217,
+            "frame_index": 6019,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 1,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 6017,
+              "point": [
+                546.5090942382812,
+                565.079345703125
+              ],
+              "side": "A",
+              "stable_side": null,
+              "signed_distance_px": -1.1193538080262648,
+              "raw_class": "car",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                400.7734375,
+                393.68951416015625,
+                692.2447509765625,
+                565.079345703125
+              ]
+            },
+            "after": {
+              "frame_index": 6019,
+              "point": [
+                592.7902221679688,
+                576.9730224609375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 20.70527053281622,
+              "raw_class": "truck",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                427.35345458984375,
+                383.6217041015625,
+                758.2269897460938,
+                576.9730224609375
+              ]
+            }
+          }
+        ]
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5847,
+          "side": "A",
+          "point": [
+            129.46023178100586,
+            456.82342529296875
+          ],
+          "raw_class": "car",
+          "source_detection_index": 5
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1217,
+            "frame_index": 6019,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 1,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 6017,
+              "point": [
+                546.5090942382812,
+                565.079345703125
+              ],
+              "side": "A",
+              "stable_side": null,
+              "signed_distance_px": -1.1193538080262648,
+              "raw_class": "car",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                400.7734375,
+                393.68951416015625,
+                692.2447509765625,
+                565.079345703125
+              ]
+            },
+            "after": {
+              "frame_index": 6019,
+              "point": [
+                592.7902221679688,
+                576.9730224609375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 20.70527053281622,
+              "raw_class": "truck",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                427.35345458984375,
+                383.6217041015625,
+                758.2269897460938,
+                576.9730224609375
+              ]
+            }
+          }
+        ]
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 5847,
+          "side": "A",
+          "point": [
+            129.46023178100586,
+            456.82342529296875
+          ],
+          "raw_class": "car",
+          "source_detection_index": 5
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1217,
+            "frame_index": 6019,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 1,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 6017,
+              "point": [
+                546.5090942382812,
+                565.079345703125
+              ],
+              "side": "A",
+              "stable_side": null,
+              "signed_distance_px": -1.1193538080262648,
+              "raw_class": "car",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                400.7734375,
+                393.68951416015625,
+                692.2447509765625,
+                565.079345703125
+              ]
+            },
+            "after": {
+              "frame_index": 6019,
+              "point": [
+                592.7902221679688,
+                576.9730224609375
+              ],
+              "side": "B",
+              "stable_side": null,
+              "signed_distance_px": 20.70527053281622,
+              "raw_class": "truck",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                427.35345458984375,
+                383.6217041015625,
+                758.2269897460938,
+                576.9730224609375
+              ]
+            }
+          }
+        ]
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 5847,
+          "side": "A",
+          "point": [
+            129.46023178100586,
+            456.82342529296875
+          ],
+          "raw_class": "car",
+          "source_detection_index": 5
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1217,
+            "frame_index": 6019,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 1,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 6017,
+              "point": [
+                546.5090942382812,
+                565.079345703125
+              ],
+              "side": "A",
+              "stable_side": null,
+              "signed_distance_px": -1.1193538080262648,
+              "raw_class": "car",
+              "source_detection_index": 2,
+              "raw_bbox": [
+                400.7734375,
+                393.68951416015625,
+                692.2447509765625,
+                565.079345703125
+              ]
+            },
+            "after": {
+              "frame_index": 6019,
+              "point": [
+                592.7902221679688,
+                576.9730224609375
+              ],
+              "side": "B",
+              "stable_side": null,
+              "signed_distance_px": 20.70527053281622,
+              "raw_class": "truck",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                427.35345458984375,
+                383.6217041015625,
+                758.2269897460938,
+                576.9730224609375
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "1712": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7544,
+          "side": "A",
+          "point": [
+            403.3476257324219,
+            508.74591064453125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 4
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1712,
+            "frame_index": 7565,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 5,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 7559,
+              "point": [
+                541.1066284179688,
+                542.7677001953125
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -24.07323754348793,
+              "raw_class": "motorcycle",
+              "source_detection_index": 6,
+              "raw_bbox": [
+                505.6263427734375,
+                448.037841796875,
+                576.5869140625,
+                542.7677001953125
+              ]
+            },
+            "after": {
+              "frame_index": 7565,
+              "point": [
+                643.3240966796875,
+                571.531005859375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 26.56212306618559,
+              "raw_class": "motorcycle",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                585.7808837890625,
+                448.7256164550781,
+                700.8673095703125,
+                571.531005859375
+              ]
+            }
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7544,
+          "side": "A",
+          "point": [
+            403.3476257324219,
+            508.74591064453125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 4
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1712,
+            "frame_index": 7565,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 5,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 7559,
+              "point": [
+                541.1066284179688,
+                542.7677001953125
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -24.07323754348793,
+              "raw_class": "motorcycle",
+              "source_detection_index": 6,
+              "raw_bbox": [
+                505.6263427734375,
+                448.037841796875,
+                576.5869140625,
+                542.7677001953125
+              ]
+            },
+            "after": {
+              "frame_index": 7565,
+              "point": [
+                643.3240966796875,
+                571.531005859375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 26.56212306618559,
+              "raw_class": "motorcycle",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                585.7808837890625,
+                448.7256164550781,
+                700.8673095703125,
+                571.531005859375
+              ]
+            }
+          }
+        ]
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7544,
+          "side": "A",
+          "point": [
+            403.3476257324219,
+            508.74591064453125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 4
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1712,
+            "frame_index": 7565,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 5,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 7559,
+              "point": [
+                541.1066284179688,
+                542.7677001953125
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -24.07323754348793,
+              "raw_class": "motorcycle",
+              "source_detection_index": 6,
+              "raw_bbox": [
+                505.6263427734375,
+                448.037841796875,
+                576.5869140625,
+                542.7677001953125
+              ]
+            },
+            "after": {
+              "frame_index": 7565,
+              "point": [
+                643.3240966796875,
+                571.531005859375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 26.56212306618559,
+              "raw_class": "motorcycle",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                585.7808837890625,
+                448.7256164550781,
+                700.8673095703125,
+                571.531005859375
+              ]
+            }
+          }
+        ]
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7544,
+          "side": "A",
+          "point": [
+            403.3476257324219,
+            508.74591064453125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 4
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1712,
+            "frame_index": 7565,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 5,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 7559,
+              "point": [
+                541.1066284179688,
+                542.7677001953125
+              ],
+              "side": "A",
+              "stable_side": "A",
+              "signed_distance_px": -24.07323754348793,
+              "raw_class": "motorcycle",
+              "source_detection_index": 6,
+              "raw_bbox": [
+                505.6263427734375,
+                448.037841796875,
+                576.5869140625,
+                542.7677001953125
+              ]
+            },
+            "after": {
+              "frame_index": 7565,
+              "point": [
+                643.3240966796875,
+                571.531005859375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 26.56212306618559,
+              "raw_class": "motorcycle",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                585.7808837890625,
+                448.7256164550781,
+                700.8673095703125,
+                571.531005859375
+              ]
+            }
+          }
+        ]
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7544,
+          "side": "A",
+          "point": [
+            403.3476257324219,
+            508.74591064453125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 4
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1712,
+            "frame_index": 7565,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 5,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 7559,
+              "point": [
+                541.1066284179688,
+                542.7677001953125
+              ],
+              "side": "A",
+              "stable_side": null,
+              "signed_distance_px": -24.07323754348793,
+              "raw_class": "motorcycle",
+              "source_detection_index": 6,
+              "raw_bbox": [
+                505.6263427734375,
+                448.037841796875,
+                576.5869140625,
+                542.7677001953125
+              ]
+            },
+            "after": {
+              "frame_index": 7565,
+              "point": [
+                643.3240966796875,
+                571.531005859375
+              ],
+              "side": "B",
+              "stable_side": null,
+              "signed_distance_px": 26.56212306618559,
+              "raw_class": "motorcycle",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                585.7808837890625,
+                448.7256164550781,
+                700.8673095703125,
+                571.531005859375
+              ]
+            }
+          }
+        ]
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7544,
+          "side": "A",
+          "point": [
+            403.3476257324219,
+            508.74591064453125
+          ],
+          "raw_class": "person",
+          "source_detection_index": 4
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "AMBIGUOUS_GAP",
+            "track_id": 1712,
+            "frame_index": 7565,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "missing_observation_frames": 5,
+            "interpolation_used": false,
+            "before": {
+              "frame_index": 7559,
+              "point": [
+                541.1066284179688,
+                542.7677001953125
+              ],
+              "side": "A",
+              "stable_side": null,
+              "signed_distance_px": -24.07323754348793,
+              "raw_class": "motorcycle",
+              "source_detection_index": 6,
+              "raw_bbox": [
+                505.6263427734375,
+                448.037841796875,
+                576.5869140625,
+                542.7677001953125
+              ]
+            },
+            "after": {
+              "frame_index": 7565,
+              "point": [
+                643.3240966796875,
+                571.531005859375
+              ],
+              "side": "B",
+              "stable_side": null,
+              "signed_distance_px": 26.56212306618559,
+              "raw_class": "motorcycle",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                585.7808837890625,
+                448.7256164550781,
+                700.8673095703125,
+                571.531005859375
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "1772": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7712,
+          "side": "B",
+          "point": [
+            1109.3359069824219,
+            708.154052734375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1772,
+            "frame_index": 7722,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7712,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7721,
+            "crossing_frame_end": 7722,
+            "confirmation_frame": 7722,
+            "crossing_point": [
+              426.34348133271646,
+              593.4477494981545
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7721,
+                "point": [
+                  449.63836669921875,
+                  603.0599365234375
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 14.521183762028942,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  383.10150146484375,
+                  447.6178283691406,
+                  516.1752319335938,
+                  603.0599365234375
+                ]
+              },
+              {
+                "frame_index": 7722,
+                "point": [
+                  425.10986328125,
+                  592.938720703125
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -0.7689925979743224,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  366.2030029296875,
+                  442.2575988769531,
+                  484.0167236328125,
+                  592.938720703125
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7722,
+                "point": [
+                  425.10986328125,
+                  592.938720703125
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -0.7689925979743224,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  366.2030029296875,
+                  442.2575988769531,
+                  484.0167236328125,
+                  592.938720703125
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7712,
+              "point": [
+                1109.3359069824219,
+                708.154052734375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 262.76470607814935,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                939.0287475585938,
+                207.6851806640625,
+                1279.64306640625,
+                708.154052734375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7712,
+          "side": "B",
+          "point": [
+            1109.3359069824219,
+            708.154052734375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1772,
+            "frame_index": 7723,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7712,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7721,
+            "crossing_frame_end": 7722,
+            "confirmation_frame": 7723,
+            "crossing_point": [
+              426.34348133271646,
+              593.4477494981545
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7721,
+                "point": [
+                  449.63836669921875,
+                  603.0599365234375
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 14.521183762028942,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  383.10150146484375,
+                  447.6178283691406,
+                  516.1752319335938,
+                  603.0599365234375
+                ]
+              },
+              {
+                "frame_index": 7722,
+                "point": [
+                  425.10986328125,
+                  592.938720703125
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -0.7689925979743224,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  366.2030029296875,
+                  442.2575988769531,
+                  484.0167236328125,
+                  592.938720703125
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7722,
+                "point": [
+                  425.10986328125,
+                  592.938720703125
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -0.7689925979743224,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  366.2030029296875,
+                  442.2575988769531,
+                  484.0167236328125,
+                  592.938720703125
+                ]
+              },
+              {
+                "frame_index": 7723,
+                "point": [
+                  403.1688537597656,
+                  583.466796875
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -14.854268696756712,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  350.02191162109375,
+                  471.7377624511719,
+                  456.3157958984375,
+                  583.466796875
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7712,
+              "point": [
+                1109.3359069824219,
+                708.154052734375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 262.76470607814935,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                939.0287475585938,
+                207.6851806640625,
+                1279.64306640625,
+                708.154052734375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7712,
+          "side": "B",
+          "point": [
+            1109.3359069824219,
+            708.154052734375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1772,
+            "frame_index": 7723,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7712,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7721,
+            "crossing_frame_end": 7722,
+            "confirmation_frame": 7723,
+            "crossing_point": [
+              426.34348133271646,
+              593.4477494981545
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7721,
+                "point": [
+                  449.63836669921875,
+                  603.0599365234375
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 14.521183762028942,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  383.10150146484375,
+                  447.6178283691406,
+                  516.1752319335938,
+                  603.0599365234375
+                ]
+              },
+              {
+                "frame_index": 7722,
+                "point": [
+                  425.10986328125,
+                  592.938720703125
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -0.7689925979743224,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  366.2030029296875,
+                  442.2575988769531,
+                  484.0167236328125,
+                  592.938720703125
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7723,
+                "point": [
+                  403.1688537597656,
+                  583.466796875
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -14.854268696756712,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  350.02191162109375,
+                  471.7377624511719,
+                  456.3157958984375,
+                  583.466796875
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7712,
+              "point": [
+                1109.3359069824219,
+                708.154052734375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 262.76470607814935,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                939.0287475585938,
+                207.6851806640625,
+                1279.64306640625,
+                708.154052734375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7712,
+          "side": "B",
+          "point": [
+            1109.3359069824219,
+            708.154052734375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1772,
+            "frame_index": 7724,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7712,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7721,
+            "crossing_frame_end": 7722,
+            "confirmation_frame": 7724,
+            "crossing_point": [
+              426.34348133271646,
+              593.4477494981545
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7721,
+                "point": [
+                  449.63836669921875,
+                  603.0599365234375
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 14.521183762028942,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  383.10150146484375,
+                  447.6178283691406,
+                  516.1752319335938,
+                  603.0599365234375
+                ]
+              },
+              {
+                "frame_index": 7722,
+                "point": [
+                  425.10986328125,
+                  592.938720703125
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -0.7689925979743224,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  366.2030029296875,
+                  442.2575988769531,
+                  484.0167236328125,
+                  592.938720703125
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7723,
+                "point": [
+                  403.1688537597656,
+                  583.466796875
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -14.854268696756712,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  350.02191162109375,
+                  471.7377624511719,
+                  456.3157958984375,
+                  583.466796875
+                ]
+              },
+              {
+                "frame_index": 7724,
+                "point": [
+                  383.42913818359375,
+                  574.5302734375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -27.931044617154768,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  336.9595947265625,
+                  470.7606201171875,
+                  429.898681640625,
+                  574.5302734375
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7712,
+              "point": [
+                1109.3359069824219,
+                708.154052734375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 262.76470607814935,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                939.0287475585938,
+                207.6851806640625,
+                1279.64306640625,
+                708.154052734375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 2
+          }
+        ]
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7712,
+          "side": "B",
+          "point": [
+            1109.3359069824219,
+            708.154052734375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1772,
+            "frame_index": 7726,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7712,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7721,
+            "crossing_frame_end": 7722,
+            "confirmation_frame": 7726,
+            "crossing_point": [
+              426.34348133271646,
+              593.4477494981545
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7721,
+                "point": [
+                  449.63836669921875,
+                  603.0599365234375
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 14.521183762028942,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  383.10150146484375,
+                  447.6178283691406,
+                  516.1752319335938,
+                  603.0599365234375
+                ]
+              },
+              {
+                "frame_index": 7722,
+                "point": [
+                  425.10986328125,
+                  592.938720703125
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -0.7689925979743224,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  366.2030029296875,
+                  442.2575988769531,
+                  484.0167236328125,
+                  592.938720703125
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7726,
+                "point": [
+                  353.18218994140625,
+                  561.136474609375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -47.67630821221137,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  307.87127685546875,
+                  469.16455078125,
+                  398.49310302734375,
+                  561.136474609375
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7712,
+              "point": [
+                1109.3359069824219,
+                708.154052734375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 262.76470607814935,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                939.0287475585938,
+                207.6851806640625,
+                1279.64306640625,
+                708.154052734375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 4
+          }
+        ]
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7712,
+          "side": "B",
+          "point": [
+            1109.3359069824219,
+            708.154052734375
+          ],
+          "raw_class": "person",
+          "source_detection_index": 0
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1772,
+            "frame_index": 7727,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7712,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7721,
+            "crossing_frame_end": 7722,
+            "confirmation_frame": 7727,
+            "crossing_point": [
+              426.34348133271646,
+              593.4477494981545
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7721,
+                "point": [
+                  449.63836669921875,
+                  603.0599365234375
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 14.521183762028942,
+                "raw_class": "motorcycle",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  383.10150146484375,
+                  447.6178283691406,
+                  516.1752319335938,
+                  603.0599365234375
+                ]
+              },
+              {
+                "frame_index": 7722,
+                "point": [
+                  425.10986328125,
+                  592.938720703125
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -0.7689925979743224,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  366.2030029296875,
+                  442.2575988769531,
+                  484.0167236328125,
+                  592.938720703125
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7726,
+                "point": [
+                  353.18218994140625,
+                  561.136474609375
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -47.67630821221137,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  307.87127685546875,
+                  469.16455078125,
+                  398.49310302734375,
+                  561.136474609375
+                ]
+              },
+              {
+                "frame_index": 7727,
+                "point": [
+                  338.286865234375,
+                  555.1324462890625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -56.82278501519504,
+                "raw_class": "motorcycle",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  298.82965087890625,
+                  468.67138671875,
+                  377.74407958984375,
+                  555.1324462890625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7712,
+              "point": [
+                1109.3359069824219,
+                708.154052734375
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 262.76470607814935,
+              "raw_class": "person",
+              "source_detection_index": 0,
+              "raw_bbox": [
+                939.0287475585938,
+                207.6851806640625,
+                1279.64306640625,
+                708.154052734375
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 5
+          }
+        ]
+      }
+    },
+    "1774": {
+      "b0_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7713,
+          "side": "B",
+          "point": [
+            906.4671630859375,
+            652.5526123046875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1774,
+            "frame_index": 7718,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7713,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7717,
+            "crossing_frame_end": 7718,
+            "confirmation_frame": 7718,
+            "crossing_point": [
+              546.2043993107504,
+              566.2960810947175
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7717,
+                "point": [
+                  596.0255737304688,
+                  574.6336059570312
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 19.138444096473993,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  510.6939697265625,
+                  336.48321533203125,
+                  681.357177734375,
+                  574.6336059570312
+                ]
+              },
+              {
+                "frame_index": 7718,
+                "point": [
+                  542.4762573242188,
+                  565.6721801757812
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -1.4321388009013858,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  468.3758544921875,
+                  349.17828369140625,
+                  616.57666015625,
+                  565.6721801757812
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7718,
+                "point": [
+                  542.4762573242188,
+                  565.6721801757812
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -1.4321388009013858,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  468.3758544921875,
+                  349.17828369140625,
+                  616.57666015625,
+                  565.6721801757812
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7713,
+              "point": [
+                906.4671630859375,
+                652.5526123046875
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 163.71760190634734,
+              "raw_class": "person",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                751.33056640625,
+                255.77899169921875,
+                1061.603759765625,
+                652.5526123046875
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 0
+          }
+        ]
+      },
+      "b0_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7713,
+          "side": "B",
+          "point": [
+            906.4671630859375,
+            652.5526123046875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1774,
+            "frame_index": 7719,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7713,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7717,
+            "crossing_frame_end": 7718,
+            "confirmation_frame": 7719,
+            "crossing_point": [
+              546.2043993107504,
+              566.2960810947175
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7717,
+                "point": [
+                  596.0255737304688,
+                  574.6336059570312
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 19.138444096473993,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  510.6939697265625,
+                  336.48321533203125,
+                  681.357177734375,
+                  574.6336059570312
+                ]
+              },
+              {
+                "frame_index": 7718,
+                "point": [
+                  542.4762573242188,
+                  565.6721801757812
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -1.4321388009013858,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  468.3758544921875,
+                  349.17828369140625,
+                  616.57666015625,
+                  565.6721801757812
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7718,
+                "point": [
+                  542.4762573242188,
+                  565.6721801757812
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -1.4321388009013858,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  468.3758544921875,
+                  349.17828369140625,
+                  616.57666015625,
+                  565.6721801757812
+                ]
+              },
+              {
+                "frame_index": 7719,
+                "point": [
+                  502.94085693359375,
+                  552.5445556640625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -22.96989335233261,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  437.10052490234375,
+                  359.1597900390625,
+                  568.7811889648438,
+                  552.5445556640625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7713,
+              "point": [
+                906.4671630859375,
+                652.5526123046875
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 163.71760190634734,
+              "raw_class": "person",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                751.33056640625,
+                255.77899169921875,
+                1061.603759765625,
+                652.5526123046875
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7713,
+          "side": "B",
+          "point": [
+            906.4671630859375,
+            652.5526123046875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1774,
+            "frame_index": 7719,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7713,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7717,
+            "crossing_frame_end": 7718,
+            "confirmation_frame": 7719,
+            "crossing_point": [
+              546.2043993107504,
+              566.2960810947175
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7717,
+                "point": [
+                  596.0255737304688,
+                  574.6336059570312
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 19.138444096473993,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  510.6939697265625,
+                  336.48321533203125,
+                  681.357177734375,
+                  574.6336059570312
+                ]
+              },
+              {
+                "frame_index": 7718,
+                "point": [
+                  542.4762573242188,
+                  565.6721801757812
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -1.4321388009013858,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  468.3758544921875,
+                  349.17828369140625,
+                  616.57666015625,
+                  565.6721801757812
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7719,
+                "point": [
+                  502.94085693359375,
+                  552.5445556640625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -22.96989335233261,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  437.10052490234375,
+                  359.1597900390625,
+                  568.7811889648438,
+                  552.5445556640625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7713,
+              "point": [
+                906.4671630859375,
+                652.5526123046875
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 163.71760190634734,
+              "raw_class": "person",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                751.33056640625,
+                255.77899169921875,
+                1061.603759765625,
+                652.5526123046875
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 1
+          }
+        ]
+      },
+      "bmedian_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7713,
+          "side": "B",
+          "point": [
+            906.4671630859375,
+            652.5526123046875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1774,
+            "frame_index": 7720,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7713,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7717,
+            "crossing_frame_end": 7718,
+            "confirmation_frame": 7720,
+            "crossing_point": [
+              546.2043993107504,
+              566.2960810947175
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7717,
+                "point": [
+                  596.0255737304688,
+                  574.6336059570312
+                ],
+                "side": "B",
+                "stable_side": "B",
+                "signed_distance_px": 19.138444096473993,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  510.6939697265625,
+                  336.48321533203125,
+                  681.357177734375,
+                  574.6336059570312
+                ]
+              },
+              {
+                "frame_index": 7718,
+                "point": [
+                  542.4762573242188,
+                  565.6721801757812
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -1.4321388009013858,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  468.3758544921875,
+                  349.17828369140625,
+                  616.57666015625,
+                  565.6721801757812
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7719,
+                "point": [
+                  502.94085693359375,
+                  552.5445556640625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -22.96989335233261,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  437.10052490234375,
+                  359.1597900390625,
+                  568.7811889648438,
+                  552.5445556640625
+                ]
+              },
+              {
+                "frame_index": 7720,
+                "point": [
+                  472.340087890625,
+                  549.777587890625
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -32.42908518371883,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  410.0853271484375,
+                  367.43524169921875,
+                  534.5948486328125,
+                  549.777587890625
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7713,
+              "point": [
+                906.4671630859375,
+                652.5526123046875
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 163.71760190634734,
+              "raw_class": "person",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                751.33056640625,
+                255.77899169921875,
+                1061.603759765625,
+                652.5526123046875
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 2
+          }
+        ]
+      },
+      "bmax_c1": {
+        "first_geometric_origin": {
+          "frame_index": 7713,
+          "side": "B",
+          "point": [
+            906.4671630859375,
+            652.5526123046875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1774,
+            "frame_index": 7721,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7713,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7717,
+            "crossing_frame_end": 7718,
+            "confirmation_frame": 7721,
+            "crossing_point": [
+              546.2043993107504,
+              566.2960810947175
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7717,
+                "point": [
+                  596.0255737304688,
+                  574.6336059570312
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 19.138444096473993,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  510.6939697265625,
+                  336.48321533203125,
+                  681.357177734375,
+                  574.6336059570312
+                ]
+              },
+              {
+                "frame_index": 7718,
+                "point": [
+                  542.4762573242188,
+                  565.6721801757812
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -1.4321388009013858,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  468.3758544921875,
+                  349.17828369140625,
+                  616.57666015625,
+                  565.6721801757812
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7721,
+                "point": [
+                  444.39752197265625,
+                  539.74560546875
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -48.38649839108005,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  387.9915771484375,
+                  372.7783203125,
+                  500.803466796875,
+                  539.74560546875
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7713,
+              "point": [
+                906.4671630859375,
+                652.5526123046875
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 163.71760190634734,
+              "raw_class": "person",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                751.33056640625,
+                255.77899169921875,
+                1061.603759765625,
+                652.5526123046875
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 3
+          }
+        ]
+      },
+      "bmax_c2": {
+        "first_geometric_origin": {
+          "frame_index": 7713,
+          "side": "B",
+          "point": [
+            906.4671630859375,
+            652.5526123046875
+          ],
+          "raw_class": "person",
+          "source_detection_index": 1
+        },
+        "non_origin_diagnostics": [
+          {
+            "type": "GEOMETRY_TRANSITION",
+            "track_id": 1774,
+            "frame_index": 7722,
+            "accepted_count_event": false,
+            "repeat_business_policy_open": true,
+            "origin_frame": 7713,
+            "origin_side": "B",
+            "destination_side": "A",
+            "direction": "B_TO_A",
+            "crossing_frame_start": 7717,
+            "crossing_frame_end": 7718,
+            "confirmation_frame": 7722,
+            "crossing_point": [
+              546.2043993107504,
+              566.2960810947175
+            ],
+            "software_transition_sequence": 1,
+            "crossing_measurements": [
+              {
+                "frame_index": 7717,
+                "point": [
+                  596.0255737304688,
+                  574.6336059570312
+                ],
+                "side": "B",
+                "stable_side": null,
+                "signed_distance_px": 19.138444096473993,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  510.6939697265625,
+                  336.48321533203125,
+                  681.357177734375,
+                  574.6336059570312
+                ]
+              },
+              {
+                "frame_index": 7718,
+                "point": [
+                  542.4762573242188,
+                  565.6721801757812
+                ],
+                "side": "A",
+                "stable_side": null,
+                "signed_distance_px": -1.4321388009013858,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  468.3758544921875,
+                  349.17828369140625,
+                  616.57666015625,
+                  565.6721801757812
+                ]
+              }
+            ],
+            "confirmation_measurements": [
+              {
+                "frame_index": 7721,
+                "point": [
+                  444.39752197265625,
+                  539.74560546875
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -48.38649839108005,
+                "raw_class": "person",
+                "source_detection_index": 1,
+                "raw_bbox": [
+                  387.9915771484375,
+                  372.7783203125,
+                  500.803466796875,
+                  539.74560546875
+                ]
+              },
+              {
+                "frame_index": 7722,
+                "point": [
+                  419.57684326171875,
+                  534.7654418945312
+                ],
+                "side": "A",
+                "stable_side": "A",
+                "signed_distance_px": -58.72720838997018,
+                "raw_class": "person",
+                "source_detection_index": 0,
+                "raw_bbox": [
+                  366.999267578125,
+                  376.9588623046875,
+                  472.1544189453125,
+                  534.7654418945312
+                ]
+              }
+            ],
+            "origin_measurement": {
+              "frame_index": 7713,
+              "point": [
+                906.4671630859375,
+                652.5526123046875
+              ],
+              "side": "B",
+              "stable_side": "B",
+              "signed_distance_px": 163.71760190634734,
+              "raw_class": "person",
+              "source_detection_index": 1,
+              "raw_bbox": [
+                751.33056640625,
+                255.77899169921875,
+                1061.603759765625,
+                652.5526123046875
+              ]
+            },
+            "confirmation_minus_crossing_end_frames": 4
+          }
+        ]
+      }
+    }
+  },
+  "review_findings": [
+    {
+      "claim_type": "EXPERIMENT_RESULT",
+      "case": "confirmation_parameter",
+      "finding": "At zero band, requiring two destination observations removes seven of 160 exact crossing keys; all 153 retained keys confirm one frame later. At maximum band, five of 133 keys are removed and 128 retained keys confirm one frame later. These are diagnostic changes, not correctness labels."
+    },
+    {
+      "claim_type": "EXPERIMENT_RESULT",
+      "case": "non_monotonic_membership_ID912",
+      "finding": "At median band, c1 confirms B_TO_A from5019→5020 at5020. c2 does not confirm that earlier passage; it confirms B_TO_A from5021→5022 at5024. Thus c2 removes four c1 keys and introduces one different key, for totals153→150; transition membership is not simply monotonic under added confirmation."
+    },
+    {
+      "claim_type": "EXPERIMENT_RESULT",
+      "case": "red_scooter_967_964_973",
+      "finding": "Zero-band variants produce B_TO_A diagnostics for person967, class-handoff964, and motorcycle973 across5125→5126,5128→5129,5129→5130 respectively. Median band retains967 and964, with confirmation delayed, while973 establishes first eligible origin atA5130 rather thanB5129 and has no transition. Maximum band retains967 and suppresses both964 and973. Suppression is parameter-dependent, not an implemented physical-identity deduplication policy."
+    },
+    {
+      "claim_type": "EXPERIMENT_RESULT",
+      "case": "rider1774_motorcycle1772",
+      "finding": "All six variants retain both B_TO_A diagnostic keys:1774 at7717→7718 and1772 at7721→7722. Confirmations range7718→7722 for1774 and7722→7727 for1772. The stored raw classes are person for1774 and person→motorcycle from origin to confirmation for1772; labels are not accepted product categories."
+    },
+    {
+      "claim_type": "EXPERIMENT_RESULT",
+      "case": "observed_gaps1217_1712",
+      "finding": "All six variants mark6017→6019 for1217 and7559→7565 for1712 AMBIGUOUS_GAP, with one/five missing observed frames and interpolation_used=False. Neither software ID has any GEOMETRY_TRANSITION in these six streams. The1217 raw-class car→truck change remains visible as measurement provenance, not resolved classification."
+    },
+    {
+      "claim_type": "EXPERIMENT_RESULT",
+      "case": "short_excursions893_912",
+      "finding": "Control emits two opposite diagnostics for893 at4978/4979 and three for912 at5020/5021/5022. Every other variant emits none for893;912 retains one B_TO_A, with cross-pair and confirmation dependent on configuration. Raw measurements alone do not establish jitter, physical return, or category correctness."
+    },
+    {
+      "claim_type": "EXPERIMENT_RESULT",
+      "case": "band_latency",
+      "finding": "Compared with zero band at the same confirmation setting, matched median-band confirmations are delayed0–2 frames; matched maximum-band confirmations are delayed1–9 frames. The larger band excludes candidate origins/destinations as well as transient excursions. Delays are decoder-frame indices, not authoritative source timing."
+    }
+  ],
+  "parameter_decision": {
+    "claim_type": "OPEN",
+    "selected_suitable_product_default": null,
+    "selected_physical_counting_policy": null,
+    "reason": "Three measured one-frame sign excursions are insufficient to establish a general jitter distribution; named duplicates/component handoff remain. Quantitative output frequencies have no ground-truth correctness labels, and this agent does not directly inspect source pixels. Retain zero-band/c1 as labelled diagnostic control, not selected deployment default.",
+    "required_next_evidence": [
+      "Inspect actual pixels for893 and912 around4977–4979/5019–5023 to separate bbox extent variation from actual motion.",
+      "Audit origin/arrival suppression and latency for representative nonduplicate passages; do not choose the minimum diagnostic total.",
+      "Resolve physical-ID/category/eligibility/repeated-crossing business rules separately before Phase6 counting.",
+      "Per-video geometry review remains required before template transfer."
+    ]
+  },
+  "limitations": [
+    "No ground truth; no accuracy, precision, recall, F1, MAPE, physical counting result, or ReID benefit established.",
+    "All raw classes remain diagnostic inputs; software IDs are not unique physical vehicles.",
+    "Comparison keys identify retained measured geometric passages, not actual unique traffic events.",
+    "No direct source-pixel review was performed by this output-analysis agent. Prior bounded visual review findings retain their original scope; root may add separately verified source pixels.",
+    "Absent transitions have not been reclassified as false positives or false negatives.",
+    "No suitable numeric default or Phase6 implementation is selected."
+  ]
+}

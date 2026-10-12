@@ -1,0 +1,35 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_DECODE_AND_CACHE_ALIGNMENT_ONLY",
+  "source_video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+  "source_video_bytes": 53173467,
+  "cache_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+  "cache_successful_frame_rows": 10282,
+  "decoded_successful_frames": 10282,
+  "decoded_native_sizes": [
+    [
+      1280,
+      720
+    ]
+  ],
+  "frame_5140_pixel_array_identical_to_retained_raw_png": true,
+  "retained_png_file_sha256": "65123bf8207ff223841bcc8f6a50287aef75909e2bcf4a9abb608370de0d72ee",
+  "retained_png_decoded_pixel_sha256": "34a436e285f598af75d11097b7c3c68640452f4578e2f4af129a7939b01e055d",
+  "new_decoded_5140_pixel_sha256": "34a436e285f598af75d11097b7c3c68640452f4578e2f4af129a7939b01e055d",
+  "decoder_reported_metadata": {
+    "backend": "FFMPEG",
+    "reported_width": 1280.0,
+    "reported_height": 720.0,
+    "reported_fps": 29.81501660256117,
+    "reported_frame_count": 10282.0
+  },
+  "python_version": "3.12.14",
+  "opencv_version": "5.0.0",
+  "numpy_version": "2.5.3",
+  "method_sha256": "2068d9459255c453102a24c500910d3f33156b63871f79f69a0a94bdb549e7e1",
+  "alignment_pass": true,
+  "limits": [
+    "Sequential decoder index alignment checked by identical source file, successful frame count/native size, and exact pixel equality at frame5140; no authoritative source PTS or independent all-frame cache-pixel hash is available.",
+    "Metadata-reported frame count is not used as the successful decode count.",
+    "Decode/pixel checks do not establish model or counting performance."
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "claim_type": "ACTUALLY_EXECUTED_SYNTHETIC_SOFTWARE_CONTRACT_TESTS",
+  "scope": "Phase5 geometry and retained-measurement boundary; not physical identity, category counting or model accuracy",
+  "fixture_controls_are_product_defaults": false,
+  "successful": false,
+  "tests_run": 34,
+  "tests_passed": 32,
+  "failures": [
+    {
+      "id": "__main__.CrossingStateMachineTests.test_g3_origin_in_offset_strip_can_later_cross_from_deeper_a_to_b",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/traffic-vehicle-counter-IDM-LOC/notebooks/phase_5_synthetic_tests.py\", line 314, in test_g3_origin_in_offset_strip_can_later_cross_from_deeper_a_to_b\n    self.assertEqual(len(items), 1)\nAssertionError: 0 != 1\n"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_line_contact_sliding_beyond_finite_endpoint_cannot_reuse_old_touch",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/traffic-vehicle-counter-IDM-LOC/notebooks/phase_5_synthetic_tests.py\", line 206, in test_line_contact_sliding_beyond_finite_endpoint_cannot_reuse_old_touch\n    self.assertEqual(transitions(diagnostics), [])\nAssertionError: Lists differ: [{'type': 'GEOMETRY_TRANSITION', 'geometry[1606 chars] 3}}] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n{'type': 'GEOMETRY_TRANSITION', 'geometry_id': 'synthetic-rectangles-finite-line', 'accepted_count_event': False, 'repeat_business_policy_open': True, 'software_transition_sequence': 1, 'origin_side': 'A', 'destination_side': 'B', 'direction': 'A_TO_B', 'origin_frame': 0, 'origin_point': [2.0, 5.0], 'crossing_frame_start': 0, 'crossing_frame_end': 3, 'crossing_point': [5.0, 5.0], 'confirmation_frame': 3, 'confirmation_point': [8.0, 9.0], 'origin_observation': {'frame_index': 0, 'point': [2.0, 5.0], 'metadata': {'fixture_frame': 0}, 'side': 'A', 'stable_side': 'A', 'signed_distance_px': 3.0, 'sign': 1}, 'crossing_evidence': {'intersection': {'kind': 'touch', 'point': [5.0, 5.0], 't': 1.0, 'u': 0.5}, 'start_observation': {'frame_index': 0, 'point': [2.0, 5.0], 'metadata': {'fixture_frame': 0}, 'side': 'A', 'stable_side': 'A', 'signed_distance_px': 3.0, 'sign': 1}, 'end_observation': {'frame_index': 3, 'point': [8.0, 9.0], 'metadata': {'fixture_frame': 3}, 'side': 'B', 'stable_side': 'B', 'signed_distance_px': -3.0, 'sign': -1}, 'method': 'measured_touch_then_opposite_sign', 'first_touch_observation': {'frame_index': 1, 'point': [5.0, 5.0], 'metadata': {'fixture_frame': 1}, 'side': None, 'stable_side': None, 'signed_distance_px': 0.0, 'sign': 0}, 'last_touch_observation': {'frame_index': 2, 'point': [5.0, 9.0], 'metadata': {'fixture_frame': 2}, 'side': None, 'stable_side': None, 'signed_distance_px': 0.0, 'sign': 0}}, 'confirmation_observations': [{'frame_index': 3, 'point': [8.0, 9.0], 'metadata': {'fixture_frame': 3}, 'side': 'B', 'stable_side': 'B', 'signed_distance_px': -3.0, 'sign': -1}], 'metadata': {'fixture_frame': 3}}\n\nDiff is 3570 characters long. Set self.maxDiff to None to see it.\n"
+    }
+  ],
+  "errors": [],
+  "skipped": [],
+  "tests": [
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_concave_polygon_is_not_its_bounding_rectangle",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_g3_normalization_preserves_distinct_line_and_polygon_vertex",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_intersection_distinguishes_proper_endpoint_touch_and_overlap",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_invalid_line_self_intersecting_polygon_and_nonfinite_point_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_parallel_and_infinite_extension_are_not_finite_intersections",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_polygon_boundaries_and_outside_are_neutral",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_polygon_interior_overlap_rejected_even_with_different_vertex_sampling",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_required_controls_do_not_supply_silent_threshold_defaults",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.GeometryPrimitivesTests.test_signed_distance_is_metric_and_has_no_side_semantics",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_boundary_and_outside_origin_do_not_establish_crossing_eligibility",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_destination_confirmation_requires_consecutive_measured_arrivals",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_diagonal_a_to_b_retains_measured_origin_crossing_and_arrival",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_diagonal_b_to_a_is_not_inferred_from_fixed_image_axes",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_exact_band_edge_is_neutral_not_stable_arrival",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_exact_line_endpoint_is_ambiguous_not_confirmed",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_g3_crossing_line_inside_a_requires_later_b_arrival",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_g3_origin_in_offset_strip_can_later_cross_from_deeper_a_to_b",
+      "status": "failed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_infinite_line_extension_does_not_complete_directional_transition",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_initial_presence_and_repeated_same_side_are_not_transitions",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_jitter_inside_explicit_neutral_band_does_not_emit_repeated_transitions",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_line_contact_sliding_beyond_finite_endpoint_cannot_reuse_old_touch",
+      "status": "failed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_line_passage_without_opposite_roi_arrival_is_incomplete",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_measured_contact_then_opposite_side_is_a_real_contiguous_passage",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_missing_arrival_discards_pending_confirmation",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_missing_observation_cannot_interpolate_crossing_and_resets_origin",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_nonmonotonic_track_frames_are_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_parallel_motion_and_line_touch_return_do_not_complete",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_prediction_cannot_supply_crossing_or_destination_confirmation",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.CrossingStateMachineTests.test_true_return_remains_diagnostic_with_business_policy_open",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RetainedTrackBoundaryTests.test_bbox_overlap_alone_does_not_substitute_for_anchor_crossing",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RetainedTrackBoundaryTests.test_missing_measured_provenance_and_broken_source_link_are_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RetainedTrackBoundaryTests.test_native_dimensions_video_identity_and_frame_alignment_are_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RetainedTrackBoundaryTests.test_nonemitted_unconfirmed_and_lifecycle_predictions_are_ignored",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RetainedTrackBoundaryTests.test_raw_bbox_bc_and_source_links_override_filtered_box_and_stored_center",
+      "status": "passed"
+    }
+  ],
+  "output": "test_concave_polygon_is_not_its_bounding_rectangle (__main__.GeometryPrimitivesTests.test_concave_polygon_is_not_its_bounding_rectangle) ... ok\ntest_g3_normalization_preserves_distinct_line_and_polygon_vertex (__main__.GeometryPrimitivesTests.test_g3_normalization_preserves_distinct_line_and_polygon_vertex) ... ok\ntest_intersection_distinguishes_proper_endpoint_touch_and_overlap (__main__.GeometryPrimitivesTests.test_intersection_distinguishes_proper_endpoint_touch_and_overlap) ... ok\ntest_invalid_line_self_intersecting_polygon_and_nonfinite_point_rejected (__main__.GeometryPrimitivesTests.test_invalid_line_self_intersecting_polygon_and_nonfinite_point_rejected) ... ok\ntest_parallel_and_infinite_extension_are_not_finite_intersections (__main__.GeometryPrimitivesTests.test_parallel_and_infinite_extension_are_not_finite_intersections) ... ok\ntest_polygon_boundaries_and_outside_are_neutral (__main__.GeometryPrimitivesTests.test_polygon_boundaries_and_outside_are_neutral) ... ok\ntest_polygon_interior_overlap_rejected_even_with_different_vertex_sampling (__main__.GeometryPrimitivesTests.test_polygon_interior_overlap_rejected_even_with_different_vertex_sampling) ... ok\ntest_required_controls_do_not_supply_silent_threshold_defaults (__main__.GeometryPrimitivesTests.test_required_controls_do_not_supply_silent_threshold_defaults) ... ok\ntest_signed_distance_is_metric_and_has_no_side_semantics (__main__.GeometryPrimitivesTests.test_signed_distance_is_metric_and_has_no_side_semantics) ... ok\ntest_boundary_and_outside_origin_do_not_establish_crossing_eligibility (__main__.CrossingStateMachineTests.test_boundary_and_outside_origin_do_not_establish_crossing_eligibility) ... ok\ntest_destination_confirmation_requires_consecutive_measured_arrivals (__main__.CrossingStateMachineTests.test_destination_confirmation_requires_consecutive_measured_arrivals) ... ok\ntest_diagonal_a_to_b_retains_measured_origin_crossing_and_arrival (__main__.CrossingStateMachineTests.test_diagonal_a_to_b_retains_measured_origin_crossing_and_arrival) ... ok\ntest_diagonal_b_to_a_is_not_inferred_from_fixed_image_axes (__main__.CrossingStateMachineTests.test_diagonal_b_to_a_is_not_inferred_from_fixed_image_axes) ... ok\ntest_exact_band_edge_is_neutral_not_stable_arrival (__main__.CrossingStateMachineTests.test_exact_band_edge_is_neutral_not_stable_arrival) ... ok\ntest_exact_line_endpoint_is_ambiguous_not_confirmed (__main__.CrossingStateMachineTests.test_exact_line_endpoint_is_ambiguous_not_confirmed) ... ok\ntest_g3_crossing_line_inside_a_requires_later_b_arrival (__main__.CrossingStateMachineTests.test_g3_crossing_line_inside_a_requires_later_b_arrival) ... ok\ntest_g3_origin_in_offset_strip_can_later_cross_from_deeper_a_to_b (__main__.CrossingStateMachineTests.test_g3_origin_in_offset_strip_can_later_cross_from_deeper_a_to_b) ... FAIL\ntest_infinite_line_extension_does_not_complete_directional_transition (__main__.CrossingStateMachineTests.test_infinite_line_extension_does_not_complete_directional_transition) ... ok\ntest_initial_presence_and_repeated_same_side_are_not_transitions (__main__.CrossingStateMachineTests.test_initial_presence_and_repeated_same_side_are_not_transitions) ... ok\ntest_jitter_inside_explicit_neutral_band_does_not_emit_repeated_transitions (__main__.CrossingStateMachineTests.test_jitter_inside_explicit_neutral_band_does_not_emit_repeated_transitions) ... ok\ntest_line_contact_sliding_beyond_finite_endpoint_cannot_reuse_old_touch (__main__.CrossingStateMachineTests.test_line_contact_sliding_beyond_finite_endpoint_cannot_reuse_old_touch) ... FAIL\ntest_line_passage_without_opposite_roi_arrival_is_incomplete (__main__.CrossingStateMachineTests.test_line_passage_without_opposite_roi_arrival_is_incomplete) ... ok\ntest_measured_contact_then_opposite_side_is_a_real_contiguous_passage (__main__.CrossingStateMachineTests.test_measured_contact_then_opposite_side_is_a_real_contiguous_passage) ... ok\ntest_missing_arrival_discards_pending_confirmation (__main__.CrossingStateMachineTests.test_missing_arrival_discards_pending_confirmation) ... ok\ntest_missing_observation_cannot_interpolate_crossing_and_resets_origin (__main__.CrossingStateMachineTests.test_missing_observation_cannot_interpolate_crossing_and_resets_origin) ... ok\ntest_nonmonotonic_track_frames_are_rejected (__main__.CrossingStateMachineTests.test_nonmonotonic_track_frames_are_rejected) ... ok\ntest_parallel_motion_and_line_touch_return_do_not_complete (__main__.CrossingStateMachineTests.test_parallel_motion_and_line_touch_return_do_not_complete) ... ok\ntest_prediction_cannot_supply_crossing_or_destination_confirmation (__main__.CrossingStateMachineTests.test_prediction_cannot_supply_crossing_or_destination_confirmation) ... ok\ntest_true_return_remains_diagnostic_with_business_policy_open (__main__.CrossingStateMachineTests.test_true_return_remains_diagnostic_with_business_policy_open) ... ok\ntest_bbox_overlap_alone_does_not_substitute_for_anchor_crossing (__main__.RetainedTrackBoundaryTests.test_bbox_overlap_alone_does_not_substitute_for_anchor_crossing) ... ok\ntest_missing_measured_provenance_and_broken_source_link_are_rejected (__main__.RetainedTrackBoundaryTests.test_missing_measured_provenance_and_broken_source_link_are_rejected) ... ok\ntest_native_dimensions_video_identity_and_frame_alignment_are_rejected (__main__.RetainedTrackBoundaryTests.test_native_dimensions_video_identity_and_frame_alignment_are_rejected) ... ok\ntest_nonemitted_unconfirmed_and_lifecycle_predictions_are_ignored (__main__.RetainedTrackBoundaryTests.test_nonemitted_unconfirmed_and_lifecycle_predictions_are_ignored) ... ok\ntest_raw_bbox_bc_and_source_links_override_filtered_box_and_stored_center (__main__.RetainedTrackBoundaryTests.test_raw_bbox_bc_and_source_links_override_filtered_box_and_stored_center) ... ok\n\n======================================================================\nFAIL: test_g3_origin_in_offset_strip_can_later_cross_from_deeper_a_to_b (__main__.CrossingStateMachineTests.test_g3_origin_in_offset_strip_can_later_cross_from_deeper_a_to_b)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/traffic-vehicle-counter-IDM-LOC/notebooks/phase_5_synthetic_tests.py\", line 314, in test_g3_origin_in_offset_strip_can_later_cross_from_deeper_a_to_b\n    self.assertEqual(len(items), 1)\nAssertionError: 0 != 1\n\n======================================================================\nFAIL: test_line_contact_sliding_beyond_finite_endpoint_cannot_reuse_old_touch (__main__.CrossingStateMachineTests.test_line_contact_sliding_beyond_finite_endpoint_cannot_reuse_old_touch)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/traffic-vehicle-counter-IDM-LOC/notebooks/phase_5_synthetic_tests.py\", line 206, in test_line_contact_sliding_beyond_finite_endpoint_cannot_reuse_old_touch\n    self.assertEqual(transitions(diagnostics), [])\nAssertionError: Lists differ: [{'type': 'GEOMETRY_TRANSITION', 'geometry[1606 chars] 3}}] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n{'type': 'GEOMETRY_TRANSITION', 'geometry_id': 'synthetic-rectangles-finite-line', 'accepted_count_event': False, 'repeat_business_policy_open': True, 'software_transition_sequence': 1, 'origin_side': 'A', 'destination_side': 'B', 'direction': 'A_TO_B', 'origin_frame': 0, 'origin_point': [2.0, 5.0], 'crossing_frame_start': 0, 'crossing_frame_end': 3, 'crossing_point': [5.0, 5.0], 'confirmation_frame': 3, 'confirmation_point': [8.0, 9.0], 'origin_observation': {'frame_index': 0, 'point': [2.0, 5.0], 'metadata': {'fixture_frame': 0}, 'side': 'A', 'stable_side': 'A', 'signed_distance_px': 3.0, 'sign': 1}, 'crossing_evidence': {'intersection': {'kind': 'touch', 'point': [5.0, 5.0], 't': 1.0, 'u': 0.5}, 'start_observation': {'frame_index': 0, 'point': [2.0, 5.0], 'metadata': {'fixture_frame': 0}, 'side': 'A', 'stable_side': 'A', 'signed_distance_px': 3.0, 'sign': 1}, 'end_observation': {'frame_index': 3, 'point': [8.0, 9.0], 'metadata': {'fixture_frame': 3}, 'side': 'B', 'stable_side': 'B', 'signed_distance_px': -3.0, 'sign': -1}, 'method': 'measured_touch_then_opposite_sign', 'first_touch_observation': {'frame_index': 1, 'point': [5.0, 5.0], 'metadata': {'fixture_frame': 1}, 'side': None, 'stable_side': None, 'signed_distance_px': 0.0, 'sign': 0}, 'last_touch_observation': {'frame_index': 2, 'point': [5.0, 9.0], 'metadata': {'fixture_frame': 2}, 'side': None, 'stable_side': None, 'signed_distance_px': 0.0, 'sign': 0}}, 'confirmation_observations': [{'frame_index': 3, 'point': [8.0, 9.0], 'metadata': {'fixture_frame': 3}, 'side': 'B', 'stable_side': 'B', 'signed_distance_px': -3.0, 'sign': -1}], 'metadata': {'fixture_frame': 3}}\n\nDiff is 3570 characters long. Set self.maxDiff to None to see it.\n\n----------------------------------------------------------------------\nRan 34 tests in 0.041s\n\nFAILED (failures=2)\n"
+}

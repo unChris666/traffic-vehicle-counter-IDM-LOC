@@ -1,0 +1,134 @@
+{
+  "run_id": "20261011T161440_100155Z_2e39a11c",
+  "source_phase_4_run_id": "20261011T095924_205716Z_90cf7319",
+  "source_parent_phase_2_run_id": "20261011T052950_360560Z_ed399fb8",
+  "execution_started_at_utc": "2026-10-11T16:14:56.341825+00:00",
+  "execution_completed_at_utc": "2026-10-11T16:14:59.469935+00:00",
+  "measured_replay_elapsed_seconds": 3.0240392270002303,
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "python_executable": "/workspace/.venvs/traffic-inspection/bin/python",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "available_cpu_count": 5,
+    "execution_mode": "CPU_ONLY_RETAINED_TRACK_GEOMETRY_REPLAY",
+    "gpu_required": false,
+    "video_decode_required": false,
+    "model_import_or_inference_required": false
+  },
+  "experiment_config": {
+    "experiment_id": "bmax_c2",
+    "claim_type": "PROPOSAL_EXPERIMENT_NOT_SELECTED_DEFAULT",
+    "parameter_basis": "MAXIMUM_EXCURSION_STRESS_SENSITIVITY_PLUS_TWO_OBSERVATIONS",
+    "neutral_band_px": 39.945593728512996,
+    "confirmation_observations": 2
+  },
+  "source_code_sha256": {
+    "geometry_helper": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+    "synthetic_tests": "88775b9ffe602bf6f131d153aec82aabc4cbf4e0b3e7d71b0c9b853b69b6cf2f",
+    "repository_notebook_source": "a36095d4509840635d28310151889b5556b156769af78cf13788ee2cdf529ef3"
+  },
+  "input_sha256": {
+    "retained_records": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "accepted_geometry": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "retained_parameter_analysis": "24256b5c868084ff7ee1a71c535890d390a170093ed49a7006cc84d0ea28dc80"
+  },
+  "synthetic_tests_successful": true,
+  "synthetic_test_results_sha256": "f968508481abcb4f3360cefba685cebf883e8a8d49848d03af160c7dfa4a1073",
+  "software_report": {
+    "claim_type": "EXECUTED_SOFTWARE_GEOMETRY_DIAGNOSTICS_NOT_TRAFFIC_COUNTS",
+    "source_records_path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/track_records.jsonl.gz",
+    "source_records_file_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "source_parent_run_id": "20261011T052950_360560Z_ed399fb8",
+    "source_variant": "reid_on",
+    "frames_processed": 10282,
+    "emitted_measured_observations_processed": 48228,
+    "software_track_ids": 997,
+    "software_diagnostic_counts": {
+      "ORIGIN_ESTABLISHED": 2749,
+      "GEOMETRY_TRANSITION": 128,
+      "AMBIGUOUS_GAP": 10
+    },
+    "effective_geometry": {
+      "geometry_id": "TOR3-PAGI-G3-accepted-v1",
+      "width": 1280,
+      "height": 720,
+      "coordinate_space": "native decoded-frame continuous image-edge pixels",
+      "line": {
+        "P1": [
+          6.0,
+          688.6666666666666
+        ],
+        "P2": [
+          1248.5333333333333,
+          407.19999999999993
+        ]
+      },
+      "side_a_polygon": [
+        [
+          6.0,
+          688.6666666666666
+        ],
+        [
+          6.0,
+          464.2666666666667
+        ],
+        [
+          743.3333333333333,
+          220.4
+        ],
+        [
+          1248.8000000000002,
+          407.73333333333335
+        ]
+      ],
+      "side_b_polygon": [
+        [
+          6.0,
+          688.6666666666666
+        ],
+        [
+          1166.6666666666667,
+          426.29946715302367
+        ],
+        [
+          1166.6666666666667,
+          710.0
+        ],
+        [
+          6.0,
+          710.0
+        ]
+      ],
+      "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "source_draft_status": "ACCEPTED_PHASE5_QUALITATIVE_GEOMETRY_BASELINE_NUMERIC_DEFAULTS_OPEN"
+    },
+    "anchor": "raw_bbox_bottom_center",
+    "neutral_band_px": 39.945593728512996,
+    "neutral_band_semantics": "half-width per side",
+    "confirmation_observations": 2,
+    "category_filter": "none_all_raw_classes_are_diagnostic_inputs_only",
+    "detector_tracker_encoder_rerun": false,
+    "accepted_count_events_emitted": false,
+    "physical_identity_or_counting_accuracy_established": false,
+    "repeat_business_policy": "OPEN",
+    "gap_policy": "no interpolation; ambiguous passage; origin reset"
+  },
+  "software_transition_direction_diagnostics": {
+    "A_TO_B": 57,
+    "B_TO_A": 71
+  },
+  "diagnostics_file": "bmax_c2_diagnostics.jsonl.gz",
+  "diagnostics_file_sha256": "9931daef8e44ecd807844c9b94d6ace30234d479fa9f962c4cb5186526c581fd",
+  "selected_suitable_product_parameters": null,
+  "selected_parameter_status": "OPEN_REQUIRES_TEMPORAL_REVIEW",
+  "phase_6_started": false,
+  "limitations": [
+    "Software track identity does not establish unique physical vehicles.",
+    "All raw classes are diagnostic inputs; no accepted product mapping.",
+    "Repeated geometric transitions are not accepted repeated count events.",
+    "No source-video decode or complete continuous visual review is performed here.",
+    "Index/FPS timestamps are estimates, not verified source PTS.",
+    "No ground truth or real-world accuracy evidence is established."
+  ]
+}

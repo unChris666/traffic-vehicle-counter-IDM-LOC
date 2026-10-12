@@ -1,0 +1,322 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_BOUNDED_DIRECT_PIXEL_REVIEW",
+  "reviewer": "AI-assisted direct view_image review of actual retained raw/overlay PNG contact sheets",
+  "source_video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+  "no_model_rerun": true,
+  "no_preprocessing_or_stabilization": true,
+  "decode_alignment_summary": {
+    "successful_decoder_frames": 10282,
+    "native_dimensions": [
+      1280,
+      720
+    ],
+    "source5140_pixel_equality": true,
+    "authoritative_source_pts": "UNKNOWN",
+    "current_decoder_reported_frame_count": 10282.0
+  },
+  "viewed_artifacts": [
+    {
+      "path": "id893_return_raw_contact.png",
+      "sha256": "2339ceca5521c90f034f5773bdb7c423150403d65f804f24530029b3357718b5",
+      "raw_or_overlay": "raw",
+      "frame_indices": [
+        4977,
+        4978,
+        4979,
+        4980
+      ]
+    },
+    {
+      "path": "id893_return_overlay_contact.png",
+      "sha256": "86df43cbdca368d03f76af33d1ac780a53242342d8dc2d2c517f2a02a1d7ee88",
+      "raw_or_overlay": "overlay",
+      "frame_indices": [
+        4977,
+        4978,
+        4979,
+        4980
+      ]
+    },
+    {
+      "path": "id912_return_raw_contact.png",
+      "sha256": "0a7782af440b4525c74e41f6a4a85eda237d3cee24d4c06502408b094c3392cd",
+      "raw_or_overlay": "raw",
+      "frame_indices": [
+        5019,
+        5020,
+        5021,
+        5022
+      ]
+    },
+    {
+      "path": "id912_return_overlay_contact.png",
+      "sha256": "7f167a0cfa8c6927ac66866100fbca3c05f9e1e1b24bc1459286e55f44e9d31c",
+      "raw_or_overlay": "overlay",
+      "frame_indices": [
+        5019,
+        5020,
+        5021,
+        5022
+      ]
+    },
+    {
+      "path": "id1217_class_gap_raw_contact.png",
+      "sha256": "cb96811aecf136292affd3e67f8530f19ef0d57ddf2463582bcb99f3cdd9ee3d",
+      "raw_or_overlay": "raw",
+      "frame_indices": [
+        6015,
+        6017,
+        6018,
+        6019
+      ]
+    },
+    {
+      "path": "id1217_class_gap_overlay_contact.png",
+      "sha256": "8a80d8b8ab10fd77b822af6ed8fabd7019cb6b61b0214784ad845b05fda20836",
+      "raw_or_overlay": "overlay",
+      "frame_indices": [
+        6015,
+        6017,
+        6018,
+        6019
+      ]
+    },
+    {
+      "path": "id1712_five_missing_raw_contact.png",
+      "sha256": "5198a4fbf13efee0873890830a7747d72174754df16bc3818a988e4651b23923",
+      "raw_or_overlay": "raw",
+      "frame_indices": [
+        7559,
+        7560,
+        7564,
+        7565
+      ]
+    },
+    {
+      "path": "id1712_five_missing_overlay_contact.png",
+      "sha256": "373578621a61a66d230a2494c75ad87e156935e87b069f918b8f52d5fd610d8c",
+      "raw_or_overlay": "overlay",
+      "frame_indices": [
+        7559,
+        7560,
+        7564,
+        7565
+      ]
+    },
+    {
+      "path": "red_scooter_components_raw_contact.png",
+      "sha256": "a7da578b5b643aafd87fc5245ef93b1d01a4c55dd1c9b14442fc8f700a4f156a",
+      "raw_or_overlay": "raw",
+      "frame_indices": [
+        5128,
+        5129,
+        5130,
+        5132
+      ]
+    },
+    {
+      "path": "red_scooter_components_overlay_contact.png",
+      "sha256": "b79620bc864d18a40b2eddb43cf815780c18b5463e26f1ffc7046568772503de",
+      "raw_or_overlay": "overlay",
+      "frame_indices": [
+        5128,
+        5129,
+        5130,
+        5132
+      ]
+    }
+  ],
+  "visual_reviewed_frame_indices": [
+    4977,
+    4978,
+    4979,
+    4980,
+    5019,
+    5020,
+    5021,
+    5022,
+    5128,
+    5129,
+    5130,
+    5132,
+    6015,
+    6017,
+    6018,
+    6019,
+    7559,
+    7560,
+    7564,
+    7565
+  ],
+  "cases": [
+    {
+      "name": "id893_return",
+      "claim_type": "EXPERIMENT_RESULT",
+      "frames": [
+        4977,
+        4978,
+        4979,
+        4980
+      ],
+      "visible_observation": "Satu scooter dengan rider/penumpang terlihat bergerak berurutan ke kiri dan lebih jauh. Dalam empat sampel ini tidak terlihat U-turn atau gerak balik kendaraan. Raw-bbox berlabel person pada4978 memiliki batas bawah yang lebih pendek daripada4977/4979; bagian kaki/bawah rider masih terlihat di luar batas kotak pada4978.",
+      "measured_observation": "ID893 y2 berubah599.0466918945312→569.3724365234375→583.7503051757812 pada4977/4978/4979; signeddistance28.512789565465777→-4.152545216412263→3.808630170340458. ID893 tidak emitted pada 4980.",
+      "interpretation": "Excursion satu frame konsisten dengan perubahan cakupan bbox rider; bukan bukti crossing balik scooter fisik. Ini tidak melabeli seluruh variasi sebagai jitter kamera.",
+      "unknown": "Identitas fisik formal, kontribusi noise detector/camera/association, dan groundtruth crossing tidak tersedia."
+    },
+    {
+      "name": "id912_return",
+      "claim_type": "EXPERIMENT_RESULT",
+      "frames": [
+        5019,
+        5020,
+        5021,
+        5022
+      ],
+      "visible_observation": "Scooter dengan dua orang melanjutkan gerak ke kiri/menjauh di empat sampel. Bbox person pada5020 menyempit cakupan bawah secara jelas dibanding5019/5021; kaki/komponen bawah terlihat di luar bbox pendek. Tidak terlihat U-turn pada sampel ini.",
+      "measured_observation": "ID912 y2 berubah577.2123413085938→518.6107177734375→572.0452880859375→571.549072265625; signeddistance24.41567745469381→-39.945593728512996→4.567185192815604→-2.928236332698584.",
+      "interpretation": "Excursion39.9456px berasal dari anchor bbox person yang berubah cakupan pada rider yang tetap tampak bergerak berurutan. Nilai ini bukan estimasi noise kamera atau alasan otomatis memilih band39.9456px.",
+      "unknown": "Tidak tersedia groundtruth anchor permukaan jalan, batas objek atau crossing fisik; sebab numerik tiap perubahan bbox belum diisolasi."
+    },
+    {
+      "name": "id1217_class_gap",
+      "claim_type": "EXPERIMENT_RESULT",
+      "frames": [
+        6015,
+        6017,
+        6018,
+        6019
+      ],
+      "visible_observation": "Pickup yang sama secara visual terlihat pada semua empat frame, bergerak ke kanan/dekat dengan bagian depan kendaraan makin besar. Label cache1217 adalah truck pada6015, car pada6017, tidak emitted6018, truck6019.",
+      "measured_observation": "Frame 6018 tidak memiliki emitted ID 1217. Raw detection index 0 berlabel truck masih mencakup pickup dan terasosiasi ke ID 1279 dalam assigned observations, tetapi emitted=False meski is_activated=True; lifecycle not_retained/pool kosong. Frame 6018 tetap terlihat jelas; gap 1217 tidak membuktikan seluruh objek kehilangan visibilitas atau semua deteksi hilang.",
+      "interpretation": "Kebijakan konservatif tidak menjembatani gap1217 tetap tepat pada sumber trajectory ini. Class/ID association memerlukan keputusan terpisah; jangan mengubah missing emitted menjadi crossing terkonfirmasi berdasarkan interpolasi.",
+      "unknown": "Keputusan final kategori pickup, deduplikasi/penyatuan ID 1217/1279 dan penyebab rinci tidak retained belum ditetapkan; tidak ada ground truth formal."
+    },
+    {
+      "name": "id1712_five_missing",
+      "claim_type": "EXPERIMENT_RESULT",
+      "frames": [
+        7559,
+        7560,
+        7564,
+        7565
+      ],
+      "visible_observation": "Motorcycle kecil pada jalan di belakang scooter besar foreground tampak di7559, tertutup sebagian/berat oleh kendaraan foreground pada7560, dan tampak kembali lebih ke kanan/dekat di7564/7565. Foreground bergerak ke kiri sementara motorcycle kecil bergerak ke kanan.",
+      "measured_observation": "1712 memiliki motorcycle rawbbox terakhir sebelumgap7559, tidak emitted7560–7564 (lima frame), lalu emittedlagi7565.7564 menyimpan calon1727motorcycle/1728person yang belumactivated dan tidakdipakai untuk trajectory1712.",
+      "interpretation": "Ada dukungan pixel untuk occlusion dalam interval gap; tanda A/B sebelum/sesudah gap bukan bukti passage terukur kontinu. AMBIGUOUS_GAP tetap benar dan reappearanceID bukan bukti keandalan ReID umum.",
+      "unknown": "Tidak semua lima frame gap direview sebagai gambar tertahan dalam laporan ini; tingkat occlusion setiap frame dan penyebab lengkap association gap belum diisolasi."
+    },
+    {
+      "name": "red_scooter_components",
+      "claim_type": "EXPERIMENT_RESULT",
+      "frames": [
+        5128,
+        5129,
+        5130,
+        5132
+      ],
+      "visible_observation": "Satu scooter merah dengan satu rider bergerak ke kiri/menjauh. Bboxmotorcycle964dan973 bertumpuk pada scooter yang sama pada5129/5130/5132, dengan bboxperson967 pada rider.",
+      "measured_observation": "Ketiga IDsoftware rawbbox/BC dipertahankan sebagai diagnostik yang berbeda. Anchor967 berada pada cakupan rider sedangkan964/973 pada scooter, sehingga waktu/geometri passage dapat berbeda pada satu unit visual.",
+      "interpretation": "Penjumlahan diagnostik track berisiko menghitung kendaraan yang sama lebih dari sekali. BC dari tiap kelas mentah belum menjadi anchorvehicle yang konsisten; Phase5 tidak menyelesaikan kebijakan komponen/duplikasi.",
+      "unknown": "Kebijakan kategori, physicalidentity dedup dan counting unik tetapOPEN."
+    }
+  ],
+  "additional_retained_source_extracts": [
+    {
+      "frame_index": 6018,
+      "target1217_emitted": false,
+      "raw_detection_index0": {
+        "class_id": 7,
+        "class_name": "truck",
+        "confidence": 0.9187536835670471,
+        "bbox_xyxy_pixels": [
+          412.5377197265625,
+          390.7667236328125,
+          723.768310546875,
+          570.5252685546875
+        ]
+      },
+      "other_emitted_pickup_source": [],
+      "other_assigned_pickup_observation": {
+        "track_id": 1279,
+        "class_name": "truck",
+        "class_id": 7,
+        "raw_bbox": [
+          412.5377197265625,
+          390.7667236328125,
+          723.768310546875,
+          570.5252685546875
+        ],
+        "original_detection_index": 0,
+        "is_activated": true,
+        "emitted": false,
+        "measurement_provenance": "retained_phase_2_detection"
+      },
+      "other_assigned_pickup_lifecycle": {
+        "track_id": 1279,
+        "state": "not_retained",
+        "library_state": "tracked",
+        "pool_membership": [],
+        "is_activated": true,
+        "observed_this_frame": true,
+        "emitted": false,
+        "bbox_kalman_estimate": [
+          409.08192992473494,
+          391.4872414999113,
+          714.939369541542,
+          568.9324017930459
+        ],
+        "bbox_provenance": "filtered_current_detection",
+        "latest_observed_frame": 6018,
+        "missing_frame_count": 0
+      }
+    },
+    {
+      "frame_index": 7564,
+      "target1712_emitted": false,
+      "unconfirmed_near_reappearing_vehicle": [
+        {
+          "track_id": 1727,
+          "class_name": "motorcycle",
+          "class_id": 3,
+          "raw_bbox": [
+            584.8977661132812,
+            458.4709777832031,
+            678.7523803710938,
+            567.802734375
+          ],
+          "original_detection_index": 2,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        },
+        {
+          "track_id": 1728,
+          "class_name": "person",
+          "class_id": 0,
+          "raw_bbox": [
+            587.7640991210938,
+            415.24285888671875,
+            641.9707641601562,
+            548.4341430664062
+          ],
+          "original_detection_index": 5,
+          "is_activated": false,
+          "measurement_provenance": "retained_phase_2_detection"
+        }
+      ]
+    }
+  ],
+  "parameter_decision_limits": [
+    "EXPERIMENT_RESULT: ketiga excursion singkat893/912 kini memiliki bukti pixel tepat dan bbox person yang berubah cakupan; tidak ada U-turn tampak pada sampel yang direview.",
+    "UNKNOWN: ini tidak mengisolasi noise kamera dan tidak menetapkan band numerik terbaik atau konfirmasi produksi.",
+    "EXPERIMENT_RESULT: band besar dapat menyembunyikan perubahan cakupan anchor; menyaring diagnostik tidak dengan sendirinya memperbaiki physical identity/kategori.",
+    "UNKNOWN: generalisasi geometry/template/threshold kevideo lain belum diuji."
+  ],
+  "review_limits": [
+    "Seluruh10.282frame didecode untuk pemeriksaan integritas; review visual langsung hanya20frame unik pada10contactsheet raw/overlay. Decode lengkap bukan review visual video lengkap.",
+    "54 frame target termasuk5140 memiliki nativepixelSHA. Empat samplepercase dipertahankan sebagai lossless nativecrop tanparesize; fullvideo/rawfullframes tidak dimasukkan Git.",
+    "Frame5140 persis secara pixel dan count/nativealignment mendukung sequentialindex; tidak ada PTS authoritative atau checksum pixelcache untuk semuaframe.",
+    "Identitasunit visual adalah review terbatas, bukan formalgroundtruth dataset.",
+    "Tidak ada detector/tracker/ReID rerun, stabilisasi, enhancement, trafficcount atau klaim accuracy/precision/recall/F1/MAPE.",
+    "OpenCV 5.0.0 pada eksekusi ini melaporkan metadata 10282 frame dan berhasil decode 10282 frame. Tidak ada discrepancy metadata/decode baru yang diobservasi; hasil ini tidak membuktikan semua masalah decoder historis terselesaikan."
+  ]
+}

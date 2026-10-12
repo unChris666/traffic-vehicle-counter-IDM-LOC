@@ -1,0 +1,15 @@
+{
+  "created_at_utc": "2026-10-12T13:33:56.034021+00:00",
+  "scope": "Annotation/source/browser verification only, not synthetic crossing tests",
+  "status": "passed",
+  "checks_passed": 5,
+  "checks_total": 5,
+  "checks": [
+    "Source photograph remains byte-identical",
+    "Line, A/B polygons, B cap and actual anchor example remain identical to G3",
+    "All four vertex identities match exact reference coordinates; simple perimeter retained",
+    "Labelled vector figure renders at unchanged native dimensions",
+    "Vertex layer toggles independently; original/restore preserve photo; no JavaScript errors"
+  ],
+  "rendered_figure_sha256": "886a3e765e27d2dddfb3c942265f541c37b5cef944b9eb4edaf7983d062c408a"
+}

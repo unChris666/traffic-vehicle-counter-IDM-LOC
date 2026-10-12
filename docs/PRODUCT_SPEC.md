@@ -110,4 +110,4 @@ This is important because the videos are handheld and geometry may vary.
 
 For the Kaggle prototype, geometry can be configured interactively in the notebook and saved as JSON.
 
-Initial geometry is in pixel coordinates and supports configurable diagonal counting lines and Side A/B polygons. The reference example's side placement is documented in `PROJECT_CONTEXT.md`; it must not become a fixed orientation rule for other videos. The geometry anchor remains OPEN.
+Initial geometry is in pixel coordinates and supports configurable diagonal counting lines and Side A/B polygons. The reference example's side placement is documented in `PROJECT_CONTEXT.md`; it must not become a fixed orientation rule for other videos. TOR3-PAGI uses user-selected measured raw-box BC under [GEOMETRY_CONTRACT.md](GEOMETRY_CONTRACT.md); anchor suitability/robustness for other videos remains OPEN.

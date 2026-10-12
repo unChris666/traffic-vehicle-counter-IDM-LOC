@@ -17,11 +17,11 @@ DETECTION ≠ TRACKING ≠ ELIGIBILITY ≠ COUNTING
 
 Initial geometry is in image pixel coordinates. No world-coordinate, homography, or geographic projection is required for the initial prototype.
 
-**USER-CONFIRMED POLICY — shared default:** a relative template, reviewed and adjustable per video. [Latest feedback](evidence/phase_5/feedback/G2_review_001.json) confirms the original values were read from a scaled image. Original dimensions/crop remain UNKNOWN; [the user delegates default preparation](evidence/phase_5/feedback/G2_review_002.json). G3 proposes a NEW960×540 reference, with u=x/960,v=y/540 and explicit effective native pixels. This is not recovery of the old display scale. Each video retains identifiable geometry and spatial mapping; cross-video reliability and transform-specific handling remain unestablished. The future geometry setup page belongs to Phase11.
+**USER-CONFIRMED POLICY — shared default:** a relative template, reviewed and adjustable per video. [G2 feedback](evidence/phase_5/feedback/G2_review_001.json) confirms the original values were read from a scaled image; original dimensions/crop remain UNKNOWN. After [delegated default preparation](evidence/phase_5/feedback/G2_review_002.json), [G3 feedback](evidence/phase_5/feedback/G3_review_001.json) accepts the new 960 × 540 reference and B outline, and labels the unchanged A points. Normalize with `u=x/960,v=y/540`, then map to effective native pixels `(u×W,v×H)`. This is not recovery of the old display scale. Each video retains identifiable geometry and spatial mapping; cross-video reliability and transform-specific handling remain unestablished. The future geometry setup page belongs to Phase 11.
 
 Line and polygon coordinates must support arbitrary diagonal geometry. Side A/B are opposite configured regions relative to the boundary, not fixed image halves. Never hardcode a line angle, pixel position, image orientation, or polygon dimensions. A conceptual diagram is not a literal geometry configuration.
 
-**OPEN TECHNICAL DECISION:** Exact polygon boundaries, line extent/intersection semantics, point-on-boundary behavior, allowed polygon overlap or gaps, and correspondence to the processed frame dimensions need an explicit contract and deterministic tests before geometry implementation. See [CONFIG_SCHEMA.md](CONFIG_SCHEMA.md).
+**CONFIRMED — Phase 5 qualitative baseline:** [GEOMETRY_CONTRACT.md](GEOMETRY_CONTRACT.md) records contextual acceptance of the rules offered with G3. The prototype uses finite line segments, neutral polygon boundaries, no overlapping interiors, measured passage and opposite-region arrival. Endpoint/gap passages remain ambiguous; predictions cannot confirm crossing. The helper and notebook implement this contract with synthetic validation before retained-track replay; actual evidence and limits are reported in [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md). Suitable numerical parameters and cross-video robustness remain OPEN.
 
 ## 3. Reference Screenshot and Side Metadata
 
@@ -31,7 +31,7 @@ The image does not label exact polygon vertices. It supplies visual intent, not 
 
 For other videos, geometry and semantic metadata are supplied independently. Do not infer approaching/away or side membership from left/right, top/bottom, X-axis direction, or Y-axis direction.
 
-**CONFIRMED — TOR3-PAGI Phase 5 feedback:** `A_TO_B` = approaching and `B_TO_A` = moving away, with selected BC. The line numbers `(4.5,516.5)`/`(936.4,305.4)` and Bcap875 remain exact; their earlier native1280×720 interpretation is refuted by [G2 feedback 001](evidence/phase_5/feedback/G2_review_001.json). G3 uses them only under a new proposed template reference. The requested A points are `(4.5,516.5)`, `(4.5,348.2)`, `(936.6,305.8)`, `(557.5,165.3)`. Proposed perimeter1→2→4→3 preserves these points without self-intersection. [G3](evidence/phase_5/review_drafts/G3/README.md) proposes B sharing A's lower edge and clipping atreferenceX875. LineP2 differs from A's right vertex and is not snapped or shortened at B's cap. Polygon/qualitative contract review, boundary/noise/gap rules, measurement source and thresholds remain unresolved. Historical G2 source/placement evidence is retained but does not establish the intended gate's behavior.
+**CONFIRMED — TOR3-PAGI Phase 5 feedback:** `A_TO_B` = approaching and `B_TO_A` = moving away, with selected BC. Exact template line endpoints remain `(4.5,516.5)`/`(936.4,305.4)` and B cap X875; their earlier native 1280 × 720 interpretation is refuted by [G2 feedback 001](evidence/phase_5/feedback/G2_review_001.json). Current [accepted G3 configuration](evidence/phase_5/accepted_geometry/TOR3-PAGI-G3.json) uses the new reference and labels A as P1A `(4.5,516.5)`, P1B `(4.5,348.2)`, P1C `(936.6,305.8)`, P1D `(557.5,165.3)`. The simple perimeter A→B→D→C preserves every point; labels are not an instruction for self-intersecting traversal A→B→C→D. Approved B shares A's lower edge, clips at template X875, and ends at Y532.5. Line P2 differs from P1C and is not snapped or shortened at B's cap. Polygon membership and signed line distance are separate predicates. Original G1/G2/G3 artifacts remain historical; G2 placement does not establish the intended gate's behavior.
 
 ## 4. Detection, Tracking, and Eligibility Order
 
@@ -47,7 +47,7 @@ FULL-FRAME DETECTION
 
 YOLO may detect objects anywhere in the frame. Tracking is not gated by a Side A/B detection filter. Geometry constrains track counting eligibility, not the existence of every tracked object.
 
-**OPEN TECHNICAL DECISION:** Eligibility/entry rules, track confirmation, age, displacement, gap handling, and evidence requirements must be defined before Phase 5/6. No threshold values are established here.
+**CONFIRMED — prototype origin:** measured BC inside exactly one side and outside the configured neutral band can establish a geometric origin. This is separate from business eligibility. **OPEN — Phase 6:** suitable minimum age, displacement, identity recovery and final eligibility rules; no product threshold values are established here. Geometry gap handling follows the conservative contract below without choosing a physical-identity recovery policy.
 
 ## 5. Initial-Frame Objects
 
@@ -57,9 +57,9 @@ Origin side and eligibility must be established from the configured rules. The t
 
 ## 6. Geometry Anchor and Trajectory
 
-**USER DECISION — TOR3-PAGI:** [feedback 002](evidence/phase_5/feedback/G1_review_002.json) selects bottom-center (BC). This selection supersedes the earlier candidate-only status for the current geometry; it is not evidence of superiority or all-video robustness. **PROPOSAL:** use `((x1+x2)/2,y2)` from detector-linked emitted `raw_bbox` observations; the raw-versus-filtered box source still requires agreement before dependent implementation. Other videos retain configurable geometry and evidence requirements.
+**USER DECISION — TOR3-PAGI:** [feedback 002](evidence/phase_5/feedback/G1_review_002.json) selects bottom-center (BC). The [G3 contextual contract acceptance](evidence/phase_5/feedback/G3_review_001.json) uses `((x1+x2)/2,y2)` from detector-linked emitted `raw_bbox` observations, with retained measurement provenance and source-detection linkage. Kalman `bbox` and stored `center` do not replace this measured BC. Selection does not establish superiority, physical road contact or all-video robustness.
 
-Direction and crossing use a temporal track trajectory, not one frame or raw detections. The required history, treatment of predicted/missing observations, and stabilization rules remain open.
+Direction and crossing use a temporal track trajectory, not one frame or unassociated raw detections. Only consecutive measured observations support passage/confirmation. A gap greater than one frame or a predicted observation breaks pending evidence; possible gap passage is ambiguous, and origin is rebuilt from later measurements. No interpolation, stabilization or GMC is selected. Source PTS remains unverified; frame/FPS timestamps remain estimates.
 
 Initial counting uses pixel geometry; no projection computation should be introduced from the earlier unspecified term `projection`.
 
@@ -77,10 +77,14 @@ TRACK CREATED
 
 This sequence specifies required behavior, not finalized state names or a library state-machine API. Eligibility is established according to the accepted configuration rules before event acceptance.
 
+**Phase 5 separation:** the implemented prototype stops at `GEOMETRY_TRANSITION`, with `accepted_count_event=False`. It requires measured origin → finite passage → opposite-region confirmation using explicit experimental parameters. It does not produce the accepted event/count at the end of the conceptual sequence.
+
 - `A_TO_B`: eligible track starts/enters Side A → crosses the line → reaches Side B.
 - `B_TO_A`: eligible track starts/enters Side B → crosses the line → reaches Side A.
 
 Bounding-box contact with the line is insufficient. A line intersection without arrival in the opposite configured side is also insufficient. The metadata meaning of a side does not change the geometric event direction.
+
+Line and polygon edges can differ slightly. Remaining in the narrow origin strip after a line passage is not a return to origin: cancellation for an origin return requires measured departure from that region followed by measured return. Passage sign follows the actual local line crossing, not a fixed sign assigned to Side A/B. See the contract for touches, endpoints and interrupted arrival confirmation.
 
 ## 8. Duplicate and Noise Protection
 
@@ -97,7 +101,9 @@ Protection must address:
 
 These requirements do not establish a working recovery mechanism or guarantee tracker identity consistency.
 
-**OPEN TECHNICAL DECISION:** Define the event identity/deduplication scope, recovery across changed track IDs, allowed time/history gaps, and rules for a genuinely repeated crossing or return after leaving. Do not silently decide that every track may count only once for its lifetime, or that every geometric recrossing is a new event. Numerical hysteresis/confirmation settings also remain open.
+**CONFIRMED — geometry controls:** `neutral_band_px` is a nonnegative native-pixel half-width and `confirmation_observations` is a positive count of consecutive qualifying destination measurements. Both are mandatory explicit experiment parameters; suitable product values remain OPEN. Same-side updates do not re-emit a completed geometric transition, while a later valid reverse trajectory may produce another diagnostic with `repeat_business_policy_open=True`.
+
+**OPEN — Phase 6:** event identity/deduplication across changed/duplicate track IDs, physical-identity recovery, and genuine repeated crossing/re-entry/U-turn policy. Do not silently decide that every track may count only once for its lifetime, or that every geometric recrossing is a new accepted event. The conservative no-gap-interpolation geometry policy does not resolve physical crossing timing during missing observations.
 
 ## 9. Camera Shake and Geometry Alignment
 
@@ -125,6 +131,6 @@ Aggregate tables must be derived from accepted events and remain internally cons
 
 Phase 5 develops deterministic geometry using synthetic trajectories before relying on model quality. Phase 6 validates counting with synthetic tests and real-video inspection. Required cases include diagonal paths, parallel movement, touching without crossing, initial-frame objects, incomplete crossing, jitter, gaps, re-entry, and duplicate-event prevention once their open policies are resolved.
 
-No geometry/counting code or tests are implemented or executed in this Phase 0 documentation task. There is no formal ground truth; internal correctness and manual audit are not measured real-world accuracy.
+Phase 0 was documentation only. The authorized Phase 5 prototype now implements the accepted geometry contract and synthetic tests; [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) records retained-track execution, review scope, parameter experiments and unresolved issues. No Phase 6 counting/category aggregation is implemented by this geometry capability. There is no formal ground truth; internal correctness and manual audit are not measured real-world accuracy.
 
 See [OPEN_DECISIONS.md](OPEN_DECISIONS.md), [TEST_PLAN.md](TEST_PLAN.md), and [EVALUATION.md](EVALUATION.md).

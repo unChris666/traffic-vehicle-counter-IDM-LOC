@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-10-11T16:05:12.339868+00:00",
+  "source": "Latest user reply to G3 geometry and initial-rules question in this conversation",
+  "claim_type": "USER_FEEDBACK_WITH_EXPLICIT_ENGINEERING_INTERPRETATION_NOT_EXPERIMENT_RESULT",
+  "verbatim_question": "Apakah G3 dengan acuan template baru 960×540, urutan polygon A yang dirapikan, dan B yang dibatasi X875 sesuai untuk uji awal? Usulan aturannya: BC dari bbox observasi mentah yang terhubung ke track; segmen garis terbatas; batas polygon netral; sentuhan saja tidak diterima; endpoint/gap ambigu; prediksi tidak mengesahkan crossing. P2 garis dan vertex kanan A tetap berbeda sedikit sesuai angka kiriman. Threshold jitter/konfirmasi dipilih setelah replay.",
+  "verbatim_answer": "sudah setuju untuk G3, POLYGON B. namun untuk POLYGON A : P1A : (4.5, 516.5)\nP1B : (4.5, 348.2)\nP1C : (936.6, 305.8)\nP1D : (557.5, 165.3)",
+  "reference_g3_and_polygon_b_approved": true,
+  "a_vertex_labels_reference": {
+    "P1A": [
+      4.5,
+      516.5
+    ],
+    "P1B": [
+      4.5,
+      348.2
+    ],
+    "P1C": [
+      936.6,
+      305.8
+    ],
+    "P1D": [
+      557.5,
+      165.3
+    ]
+  },
+  "a_coordinates_identical_to_g3": true,
+  "simple_perimeter_labels": [
+    "P1A",
+    "P1B",
+    "P1D",
+    "P1C"
+  ],
+  "perimeter_interpretation": "The names identify points; the answer does not explicitly order their traversal. The valid simple G3 perimeter is retained without moving a point. ABCD would self-intersect.",
+  "qualitative_baseline_acceptance": "CONTEXTUAL: setuju untuk G3 responds to the question explicitly bundling G3 and the stated initial rules. This is recorded interpretation; the answer does not repeat every rule verbatim.",
+  "qualitative_baseline": [
+    "Observed raw detection-linked emitted-track bbox bottom-center",
+    "Finite configured counting segment",
+    "Polygon boundaries neutral",
+    "Touch alone insufficient",
+    "Exact endpoint passage ambiguous",
+    "Observation-gap passage ambiguous, no predicted confirmation"
+  ],
+  "numeric_noise_confirmation_defaults_selected": false,
+  "cross_video_reliability_established": false,
+  "original_source_display_size_recovered": false,
+  "phase6_business_rules_decided": false
+}

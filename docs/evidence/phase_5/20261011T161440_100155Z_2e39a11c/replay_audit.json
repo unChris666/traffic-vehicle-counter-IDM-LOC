@@ -1,0 +1,378 @@
+{
+  "audit_started_ended_at_utc": "2026-10-12T13:29:22.971233+00:00",
+  "claim_type": "ACTUAL_READ_ONLY_RETAINED_OUTPUT_AUDIT_NO_MODEL_OR_GEOMETRY_RERUN",
+  "source_run_id": "20261011T161440_100155Z_2e39a11c",
+  "source_manifest_sha256": "564ced2a74bee0186ad6e80d9ad705f5518583b7a13a4b2ccd647b9abc0aaf93",
+  "source_code_sha256": {
+    "geometry_helper": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+    "synthetic_tests": "88775b9ffe602bf6f131d153aec82aabc4cbf4e0b3e7d71b0c9b853b69b6cf2f",
+    "repository_notebook_source": "a36095d4509840635d28310151889b5556b156769af78cf13788ee2cdf529ef3"
+  },
+  "input_sha256": {
+    "retained_records": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "accepted_geometry": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "retained_parameter_analysis": "24256b5c868084ff7ee1a71c535890d390a170093ed49a7006cc84d0ea28dc80"
+  },
+  "executed_notebook_sha256": "2fdb8cdaacc1b47b689c4add84252f4935a97840cdb65c9cf86b4e3292a7a10f",
+  "checks": [
+    {
+      "name": "current_helper_tests_notebook_hashes_match_executed_manifest",
+      "status": "PASS",
+      "detail": {
+        "geometry_helper": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+        "synthetic_tests": "88775b9ffe602bf6f131d153aec82aabc4cbf4e0b3e7d71b0c9b853b69b6cf2f",
+        "repository_notebook_source": "a36095d4509840635d28310151889b5556b156769af78cf13788ee2cdf529ef3"
+      }
+    },
+    {
+      "name": "all_14_manifest_artifact_sizes_and_hashes",
+      "status": "PASS",
+      "detail": {
+        "artifacts_checked": 14,
+        "mismatch": []
+      }
+    },
+    {
+      "name": "compressed_executed_notebook_retention_hash_size",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "executed_notebook_all_source_cells_match_current_source",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "executed_notebook_contains_no_error_outputs",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "retained_synthetic_40_pass_zero_failure_error_skip",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "actual_notebook_guard_40_pass_precedes_six_replay_outputs",
+      "status": "PASS",
+      "detail": {
+        "guard_execution_count": 3,
+        "replay_execution_count": 5
+      }
+    },
+    {
+      "name": "source_guard_explicitly_raises_before_any_replay_on_test_failure",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "retained_inputs_match_executed_manifest_hashes",
+      "status": "PASS",
+      "detail": {
+        "retained_records": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+        "accepted_geometry": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+        "retained_parameter_analysis": "24256b5c868084ff7ee1a71c535890d390a170093ed49a7006cc84d0ea28dc80"
+      }
+    },
+    {
+      "name": "exact_user_A_vertex_labels_retained",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "G3_reference960x540_exact_line_and_B875_not_snapped",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "normalized_template_points_equal_reference_divided_by960_540",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "source10282_consecutive_frames48228_emitted_measurements997_IDs",
+      "status": "PASS",
+      "detail": {
+        "frames": 10282,
+        "measurements": 48228,
+        "IDs": 997
+      }
+    },
+    {
+      "name": "all_source_measurements_exact_detection_link_raw_bbox_class_confidence",
+      "status": "PASS",
+      "detail": {
+        "bad_measurements": []
+      }
+    },
+    {
+      "name": "source_identity_is_phase2_parent_reid_on_native_video_not_phase4_parent",
+      "status": "PASS",
+      "detail": [
+        [
+          "20261011T052950_360560Z_ed399fb8",
+          "reid_on",
+          "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+          1280,
+          720
+        ]
+      ]
+    },
+    {
+      "name": "b0_c1_all_actual_diagnostics_provenance_geometry_and_continuity",
+      "status": "PASS",
+      "detail": {
+        "transitions_checked": 160,
+        "diagnostic_counts": {
+          "ORIGIN_ESTABLISHED": 3107,
+          "GEOMETRY_TRANSITION": 160,
+          "AMBIGUOUS_GAP": 6
+        },
+        "directions": {
+          "A_TO_B": 67,
+          "B_TO_A": 93
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "b0_c2_all_actual_diagnostics_provenance_geometry_and_continuity",
+      "status": "PASS",
+      "detail": {
+        "transitions_checked": 153,
+        "diagnostic_counts": {
+          "ORIGIN_ESTABLISHED": 3107,
+          "GEOMETRY_TRANSITION": 153,
+          "AMBIGUOUS_GAP": 6
+        },
+        "directions": {
+          "A_TO_B": 64,
+          "B_TO_A": 89
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "bmedian_c1_all_actual_diagnostics_provenance_geometry_and_continuity",
+      "status": "PASS",
+      "detail": {
+        "transitions_checked": 153,
+        "diagnostic_counts": {
+          "ORIGIN_ESTABLISHED": 3104,
+          "GEOMETRY_TRANSITION": 153,
+          "AMBIGUOUS_GAP": 8
+        },
+        "directions": {
+          "A_TO_B": 65,
+          "B_TO_A": 88
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "bmedian_c2_all_actual_diagnostics_provenance_geometry_and_continuity",
+      "status": "PASS",
+      "detail": {
+        "transitions_checked": 150,
+        "diagnostic_counts": {
+          "ORIGIN_ESTABLISHED": 3104,
+          "GEOMETRY_TRANSITION": 150,
+          "AMBIGUOUS_GAP": 7
+        },
+        "directions": {
+          "A_TO_B": 64,
+          "B_TO_A": 86
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "bmax_c1_all_actual_diagnostics_provenance_geometry_and_continuity",
+      "status": "PASS",
+      "detail": {
+        "transitions_checked": 133,
+        "diagnostic_counts": {
+          "ORIGIN_ESTABLISHED": 2749,
+          "GEOMETRY_TRANSITION": 133,
+          "AMBIGUOUS_GAP": 10
+        },
+        "directions": {
+          "A_TO_B": 60,
+          "B_TO_A": 73
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "bmax_c2_all_actual_diagnostics_provenance_geometry_and_continuity",
+      "status": "PASS",
+      "detail": {
+        "transitions_checked": 128,
+        "diagnostic_counts": {
+          "ORIGIN_ESTABLISHED": 2749,
+          "GEOMETRY_TRANSITION": 128,
+          "AMBIGUOUS_GAP": 10
+        },
+        "directions": {
+          "A_TO_B": 57,
+          "B_TO_A": 71
+        },
+        "errors": []
+      }
+    },
+    {
+      "name": "every_transition_across_six_grid_cells_independently_validated",
+      "status": "PASS",
+      "detail": {
+        "total_transition_rows": 877,
+        "total_gap_rows": 47
+      }
+    },
+    {
+      "name": "accepted_geometry_exact_normalized_G3_points_unchanged",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "historical_G3_draft_source_hash_matches_accepted_reference",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "raw_source_frame_hash_matches_accepted_reference",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "passed": 25,
+  "failed": 0,
+  "findings": [
+    {
+      "type": "FACT",
+      "text": "Source parent_run_id is the Phase2 detection run, while each execution report separately names the Phase4 retained ReID-on run."
+    },
+    {
+      "type": "EXPERIMENT_RESULT",
+      "text": "All retained notebook source cells match the current source notebook; 40 actual synthetic software tests PASS before the six CPU cached-geometry experiments."
+    },
+    {
+      "type": "EXPERIMENT_RESULT",
+      "text": "Every retained geometric transition was independently checked against raw measured BC, exact polygon classification, metric line distance, finite proper intersection and source-frame continuity; none is an accepted count event."
+    },
+    {
+      "type": "OPEN",
+      "text": "Numerical parameters are experimental inputs; no selected suitable product default or real-world accuracy conclusion is supported."
+    },
+    {
+      "type": "LIMITATION",
+      "text": "This is a read-only audit of retained measurements and outputs; no video decode, detector/tracker/ReID inference, pipeline replay or synthetic tests were rerun."
+    }
+  ],
+  "issues": [],
+  "experiment_summaries": [
+    {
+      "experiment_id": "b0_c1",
+      "neutral_band_px": 0.0,
+      "confirmation_observations": 1,
+      "diagnostics": {
+        "ORIGIN_ESTABLISHED": 3107,
+        "GEOMETRY_TRANSITION": 160,
+        "AMBIGUOUS_GAP": 6
+      },
+      "directions": {
+        "A_TO_B": 67,
+        "B_TO_A": 93
+      },
+      "transitions_checked": 160
+    },
+    {
+      "experiment_id": "b0_c2",
+      "neutral_band_px": 0.0,
+      "confirmation_observations": 2,
+      "diagnostics": {
+        "ORIGIN_ESTABLISHED": 3107,
+        "GEOMETRY_TRANSITION": 153,
+        "AMBIGUOUS_GAP": 6
+      },
+      "directions": {
+        "A_TO_B": 64,
+        "B_TO_A": 89
+      },
+      "transitions_checked": 153
+    },
+    {
+      "experiment_id": "bmedian_c1",
+      "neutral_band_px": 4.567185192815604,
+      "confirmation_observations": 1,
+      "diagnostics": {
+        "ORIGIN_ESTABLISHED": 3104,
+        "GEOMETRY_TRANSITION": 153,
+        "AMBIGUOUS_GAP": 8
+      },
+      "directions": {
+        "A_TO_B": 65,
+        "B_TO_A": 88
+      },
+      "transitions_checked": 153
+    },
+    {
+      "experiment_id": "bmedian_c2",
+      "neutral_band_px": 4.567185192815604,
+      "confirmation_observations": 2,
+      "diagnostics": {
+        "ORIGIN_ESTABLISHED": 3104,
+        "GEOMETRY_TRANSITION": 150,
+        "AMBIGUOUS_GAP": 7
+      },
+      "directions": {
+        "A_TO_B": 64,
+        "B_TO_A": 86
+      },
+      "transitions_checked": 150
+    },
+    {
+      "experiment_id": "bmax_c1",
+      "neutral_band_px": 39.945593728512996,
+      "confirmation_observations": 1,
+      "diagnostics": {
+        "ORIGIN_ESTABLISHED": 2749,
+        "GEOMETRY_TRANSITION": 133,
+        "AMBIGUOUS_GAP": 10
+      },
+      "directions": {
+        "A_TO_B": 60,
+        "B_TO_A": 73
+      },
+      "transitions_checked": 133
+    },
+    {
+      "experiment_id": "bmax_c2",
+      "neutral_band_px": 39.945593728512996,
+      "confirmation_observations": 2,
+      "diagnostics": {
+        "ORIGIN_ESTABLISHED": 2749,
+        "GEOMETRY_TRANSITION": 128,
+        "AMBIGUOUS_GAP": 10
+      },
+      "directions": {
+        "A_TO_B": 57,
+        "B_TO_A": 71
+      },
+      "transitions_checked": 128
+    }
+  ],
+  "source_raw_class_measurement_counts": {
+    "car": 14336,
+    "motorcycle": 16251,
+    "bench": 1467,
+    "truck": 2503,
+    "person": 13599,
+    "bus": 34,
+    "traffic light": 1,
+    "boat": 22,
+    "backpack": 6,
+    "horse": 1,
+    "bird": 1,
+    "fire hydrant": 7
+  }
+}

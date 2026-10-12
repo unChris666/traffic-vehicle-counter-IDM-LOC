@@ -139,3 +139,8 @@ Every implementation task should report:
 - tests not run
 - relevant assumptions
 - unresolved issues
+
+
+## Phase 5 implemented prototype validation
+
+The standard-library [synthetic suite](../notebooks/phase_5_synthetic_tests.py) exercises the [accepted qualitative contract](GEOMETRY_CONTRACT.md), including diagonal A→B/B→A, finite endpoints/extensions, measured touches, region boundaries, gaps/predictions, explicit band/confirmation, G3 line-versus-polygon offset and raw detection linkage. Numeric fixtures are test controls, not product defaults. The [notebook](../notebooks/05_geometry_replay.ipynb) stops before cache replay when a test fails. See [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) for results actually executed, initial regressions, retained provenance and visual scope. Phase6 physical dedup/category/genuine repeat acceptance tests still require their own decisions.

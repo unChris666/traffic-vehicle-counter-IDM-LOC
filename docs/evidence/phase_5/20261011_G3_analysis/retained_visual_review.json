@@ -1,0 +1,156 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_ACTUAL_RETAINED_PIXEL_REVIEW",
+  "reviewer": "AI-assisted direct view_image review",
+  "method": "Viewed actual retained PNGs, compared visible vehicle/rider/component movement with independently extracted raw_bbox BC finite-line sign-pairs. Did not infer findings from notebook source.",
+  "viewed_artifacts": [
+    {
+      "path": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/temporal/paired_red_scooter_000005125_000005130_contact_sheet.png",
+      "sha256": "b7ab00e8f849d1e169dc607ff9a2e98dbcd29a64f8e1f5a9e48f8be18d70d958"
+    },
+    {
+      "path": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/samples/frame_000007717_tracked.png",
+      "sha256": "3f4d1c41c579e83cd65aff3da4694d7492311fa6e89cf6a65b0071234faa0574"
+    },
+    {
+      "path": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/samples/frame_000007718_tracked.png",
+      "sha256": "69eb54d18fbb0cf354b6226580778f953e450ddd37f62abeb1e416ef303e1679"
+    },
+    {
+      "path": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/temporal/paired_burst_000007696_000007725_contact_sheet.png",
+      "sha256": "db21f673ccb3dd1fbbb963ea9d6968a5a62941ffecea020163d15678be64eafc"
+    }
+  ],
+  "confirmed_pixel_observations": [
+    {
+      "source": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/temporal/paired_red_scooter_000005125_000005130_contact_sheet.png",
+      "frames": [
+        5125,
+        5126,
+        5127,
+        5128,
+        5129,
+        5130
+      ],
+      "observation": "Same red scooter and rider move farther along road toward image left. ReID-on labels show rider967 plus overlapping motorcycle964/973 around5128\u20135130. These are separate software records associated with one visibly overlapping vehicle/rider passage; physical traffic counts cannot be obtained by summing them.",
+      "linked_measured_anchor_pairs": [
+        {
+          "track_id": 967,
+          "frames": [
+            5125,
+            5126
+          ],
+          "raw_class": "person",
+          "geometry_roi_direction": "B_TO_A"
+        },
+        {
+          "track_id": 964,
+          "frames": [
+            5128,
+            5129
+          ],
+          "raw_class": "motorcycle",
+          "geometry_roi_direction": "B_TO_A"
+        },
+        {
+          "track_id": 973,
+          "frames": [
+            5129,
+            5130
+          ],
+          "raw_class": "motorcycle",
+          "geometry_roi_direction": "B_TO_A"
+        }
+      ]
+    },
+    {
+      "source": [
+        "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/samples/frame_000007717_tracked.png",
+        "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/samples/frame_000007718_tracked.png"
+      ],
+      "frames": [
+        7717,
+        7718
+      ],
+      "observation": "Visible rear-facing scooter/rider shifts left and farther up the road. Rider label1774 and motorcycle1772 have distinct boxes; motorcycle lower extent remains below rider lower extent.",
+      "linked_measured_anchor_pairs": [
+        {
+          "track_id": 1774,
+          "frames": [
+            7717,
+            7718
+          ],
+          "raw_class": "person",
+          "geometry_roi_direction": "B_TO_A"
+        }
+      ]
+    },
+    {
+      "source": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/temporal/paired_burst_000007696_000007725_contact_sheet.png",
+      "frames": [
+        7696,
+        7701,
+        7706,
+        7711,
+        7716,
+        7725
+      ],
+      "observation": "Broad named7696\u20137725 contact sheet contains only six sampled frames. It brackets visible scooter movement7716\u21927725, but does not retain exact7721/7722 pixels for motorcycle1772 line-pair verification."
+    }
+  ],
+  "raw_measurement_source": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/track_records.jsonl.gz",
+  "unresolved_pixel_review_cases": [
+    {
+      "track_id": 893,
+      "frames": [
+        4977,
+        4978,
+        4979
+      ],
+      "short_excursion_amplitude_px": 4.152545216412263,
+      "raw_class": "person",
+      "reason": "No exact temporal pixels retained locally; measured return excursion is not labelled jitter."
+    },
+    {
+      "track_id": 912,
+      "frames": [
+        5019,
+        5020,
+        5021,
+        5022
+      ],
+      "short_excursion_amplitudes_px": [
+        39.945593728512996,
+        4.567185192815604
+      ],
+      "raw_class": "person",
+      "reason": "No exact temporal pixels retained locally; cannot separate box variation, handoff, or real motion."
+    },
+    {
+      "track_id": 1217,
+      "frames": [
+        6017,
+        6019
+      ],
+      "missing_observed_frames": 1,
+      "raw_class_before": "car",
+      "raw_class_after": "truck",
+      "reason": "Cross-gap anchor sign change exists in records; exact pixels absent."
+    },
+    {
+      "track_id": 1712,
+      "frames": [
+        7559,
+        7565
+      ],
+      "missing_observed_frames": 5,
+      "raw_class": "motorcycle",
+      "reason": "Cross-gap anchor sign change exists in records; exact pixels absent."
+    }
+  ],
+  "limits": [
+    "Tracked display boxes may be filtered; raw_bbox BC coordinates independently come from retained linked observations, not display-label pixel measurement.",
+    "No complete video or MP4 clips available locally; retained PNG contact sheets/full-resolution tracked samples permit bounded visual review only.",
+    "Diagnostic sign-pairs are not accepted state-machine transitions, physical identity ground truth, traffic counts or accuracy evidence.",
+    "No best jitter threshold or final numerical default established."
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "draft_id": "TOR3-PAGI-G3-accepted-v1",
+  "status": "ACCEPTED_PHASE5_QUALITATIVE_GEOMETRY_BASELINE_NUMERIC_DEFAULTS_OPEN",
+  "created_at_utc": "2026-10-11T15:41:29.704088+00:00",
+  "source_video": {
+    "filename": "TOR3-PAGI.mp4",
+    "sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c"
+  },
+  "source_frame": {
+    "frame_index": 5140,
+    "coordinate_space": "native1280x720 pixel coordinates; origin upper-left; x rightward; y downward",
+    "width": 1280,
+    "height": 720,
+    "retained_path": "docs/evidence/phase_2/20261011T052950_360560Z_ed399fb8/samples/frame_000005140_raw.png",
+    "sha256": "65123bf8207ff223841bcc8f6a50287aef75909e2bcf4a9abb608370de0d72ee"
+  },
+  "feedback_references": [
+    "docs/evidence/phase_5/feedback/G2_review_001.json",
+    "docs/evidence/phase_5/feedback/G2_review_002.json",
+    "docs/evidence/phase_5/feedback/G3_review_001.json"
+  ],
+  "original_display_dimensions": null,
+  "original_display_crop_or_margins": null,
+  "g2_native_coordinate_assumption_refuted": true,
+  "g2_placement_findings_apply_to_intended_gate": false,
+  "template_reference": {
+    "width": 960.0,
+    "height": 540.0,
+    "claim_type": "NEW_ENGINEERING_CANVAS_ACCEPTED_IN_G3_REVIEW_NOT_DISCOVERED_SOURCE_SIZE",
+    "reason": "Fits all supplied points and uses16:9 like this TOR3-PAGI frame"
+  },
+  "user_supplied_side_a_points": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      4.5,
+      348.2
+    ],
+    [
+      936.6,
+      305.8
+    ],
+    [
+      557.5,
+      165.3
+    ]
+  ],
+  "proposed_perimeter_indices_zero_based": [
+    0,
+    1,
+    3,
+    2
+  ],
+  "line_endpoints_reference": {
+    "P1": [
+      4.5,
+      516.5
+    ],
+    "P2": [
+      936.4,
+      305.4
+    ]
+  },
+  "side_a_polygon_reference": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      4.5,
+      348.2
+    ],
+    [
+      557.5,
+      165.3
+    ],
+    [
+      936.6,
+      305.8
+    ]
+  ],
+  "side_b_polygon_reference": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      875.0,
+      319.72460036476775
+    ],
+    [
+      875.0,
+      532.5
+    ],
+    [
+      4.5,
+      532.5
+    ]
+  ],
+  "side_b_max_x_reference": 875.0,
+  "normalization_convention": "u=x/reference_width, v=y/reference_height; origin upper-left, x rightward, y downward; continuous image-edge coordinates",
+  "normalized": {
+    "line": {
+      "P1": [
+        0.0046875,
+        0.9564814814814815
+      ],
+      "P2": [
+        0.9754166666666666,
+        0.5655555555555555
+      ]
+    },
+    "side_a_polygon": [
+      [
+        0.0046875,
+        0.9564814814814815
+      ],
+      [
+        0.0046875,
+        0.6448148148148148
+      ],
+      [
+        0.5807291666666666,
+        0.3061111111111111
+      ],
+      [
+        0.9756250000000001,
+        0.5662962962962963
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        0.0046875,
+        0.9564814814814815
+      ],
+      [
+        0.9114583333333334,
+        0.5920825932680884
+      ],
+      [
+        0.9114583333333334,
+        0.9861111111111112
+      ],
+      [
+        0.0046875,
+        0.9861111111111112
+      ]
+    ],
+    "side_b_max_u": 0.9114583333333334
+  },
+  "rendered_native_pixels": {
+    "width": 1280,
+    "height": 720,
+    "line": {
+      "P1": [
+        6.0,
+        688.6666666666666
+      ],
+      "P2": [
+        1248.5333333333333,
+        407.19999999999993
+      ]
+    },
+    "side_a_polygon": [
+      [
+        6.0,
+        688.6666666666666
+      ],
+      [
+        6.0,
+        464.2666666666667
+      ],
+      [
+        743.3333333333333,
+        220.4
+      ],
+      [
+        1248.8000000000002,
+        407.73333333333335
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        6.0,
+        688.6666666666666
+      ],
+      [
+        1166.6666666666667,
+        426.29946715302367
+      ],
+      [
+        1166.6666666666667,
+        710.0
+      ],
+      [
+        6.0,
+        710.0
+      ]
+    ],
+    "side_b_max_x": 1166.6666666666667
+  },
+  "line_polygon_endpoint_difference_reference": {
+    "line_P2": [
+      936.4,
+      305.4
+    ],
+    "polygon_A_right_vertex": [
+      936.6,
+      305.8
+    ],
+    "line_minus_polygon": [
+      -0.2,
+      -0.4
+    ],
+    "snapped": false
+  },
+  "polygon_proposal_notes": [
+    "Exact G3 vertices retained; labels are point identities, simple perimeter P1A P1B P1D P1C.",
+    "Accepted B shares polygon edge and stops at X875. Full line stays distinct, not snapped or shortened.",
+    "Acceptance is per-video TOR3-PAGI baseline, not validated reliability across other videos."
+  ],
+  "transfer_policy": {
+    "status": "USER_CONFIRMED_RELATIVE_TEMPLATE_WITH_PER_VIDEO_REVIEW",
+    "application": "Map normalized points to native decoded-frame width/height for the full-frame preview; no crop, rotation or letterbox transform inferred. Viewpoint/path alignment still needs per-video review.",
+    "future_setup_page": "Phase11 UI; no production UI implemented here",
+    "all_video_reliability": "UNKNOWN_NOT_VALIDATED"
+  },
+  "selected_anchor": "bottom_center",
+  "anchor_selection_status": "USER_SELECTED",
+  "anchor_example": {
+    "source_variant": "reid_on",
+    "source_run_id": "20261011T095924_205716Z_90cf7319",
+    "track_id": 973,
+    "source_detection_index": 1,
+    "raw_model_class": "motorcycle",
+    "raw_bbox_xyxy_pixels": [
+      221.33056640625,
+      472.15020751953125,
+      276.42718505859375,
+      545.7120971679688
+    ],
+    "center_pixels": [
+      248.87887573242188,
+      508.93115234375
+    ],
+    "bottom_center_pixels": [
+      248.87887573242188,
+      545.7120971679688
+    ],
+    "selected_anchor": "bottom_center",
+    "raw_class_is_not_accepted_product_category": true
+  },
+  "anchor_source_status": "ACCEPTED_CONTEXTUAL_RAW_DETECTOR_LINKED_EMITTED_OBSERVATION",
+  "confirmed_direction_metadata": {
+    "A_TO_B": "approaching camera",
+    "B_TO_A": "moving away from camera",
+    "scope": "TOR3-PAGI"
+  },
+  "thresholds": {
+    "neutral_band_width_pixels": null,
+    "destination_confirmation": null,
+    "gap_bridge": null
+  },
+  "geometry_contract_accepted": true,
+  "detector_tracker_encoder_rerun": false,
+  "geometry_source": "docs/evidence/phase_5/review_drafts/G3/candidate_geometry.json",
+  "geometry_source_sha256": "1f4ec4235365c9cbf155cbd6dc19d93a8724d9639a847b34c5e26dff3e1ceaf1",
+  "approval_feedback": "docs/evidence/phase_5/feedback/G3_review_001.json",
+  "approval_interpretation": "CONTEXTUAL: setuju untuk G3 responds to the question explicitly bundling G3 and the stated initial rules. This is recorded interpretation; the answer does not repeat every rule verbatim.",
+  "a_vertex_labels_reference": {
+    "P1A": [
+      4.5,
+      516.5
+    ],
+    "P1B": [
+      4.5,
+      348.2
+    ],
+    "P1C": [
+      936.6,
+      305.8
+    ],
+    "P1D": [
+      557.5,
+      165.3
+    ]
+  },
+  "perimeter_labels": [
+    "P1A",
+    "P1B",
+    "P1D",
+    "P1C"
+  ],
+  "geometry_contract": "docs/GEOMETRY_CONTRACT.md",
+  "evidence_results_referenced_separately": true
+}
