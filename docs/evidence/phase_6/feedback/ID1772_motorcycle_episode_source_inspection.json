@@ -1,0 +1,464 @@
+{
+  "claim_type": "EXECUTED_READ_ONLY_SOURCE_AND_GEOMETRY_PREDICATE_INSPECTION_NOT_RECOVERY_COUNTING",
+  "source_records": {
+    "path": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/track_records.jsonl.gz",
+    "sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89"
+  },
+  "source_geometry": {
+    "path": "docs/evidence/phase_5/accepted_geometry/TOR3-PAGI-G3.json",
+    "sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15"
+  },
+  "geometry_predicate_helper": {
+    "path": "notebooks/phase_5_geometry_helpers.py",
+    "sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9"
+  },
+  "method": "Read emitted source measurements for tracks1772/1774 frames7712..7722. Verify source detection bbox/class links. Derive each raw BC, inspect accepted polygon membership/signed line distance and finite measured segment intersection. No geometry state machine or model/tracker/encoder/counting executed.",
+  "observations": [
+    {
+      "frame_index": 7712,
+      "track_id": 1772,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        939.0287475585938,
+        207.6851806640625,
+        1279.64306640625,
+        708.154052734375
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        1109.3359069824219,
+        708.154052734375
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 262.76470607814935
+    },
+    {
+      "frame_index": 7713,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        731.0133056640625,
+        392.9261169433594,
+        1218.6214599609375,
+        715.0462646484375
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        974.8173828125,
+        715.0462646484375
+      ],
+      "polygon_side": null,
+      "signed_line_distance_native_px": 239.76757302753927
+    },
+    {
+      "frame_index": 7713,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        751.33056640625,
+        255.77899169921875,
+        1061.603759765625,
+        652.5526123046875
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        906.4671630859375,
+        652.5526123046875
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 163.71760190634734
+    },
+    {
+      "frame_index": 7714,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        656.1649169921875,
+        404.22607421875,
+        1026.9520263671875,
+        714.508056640625
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        841.5584716796875,
+        714.508056640625
+      ],
+      "polygon_side": null,
+      "signed_line_distance_native_px": 209.80191145337335
+    },
+    {
+      "frame_index": 7714,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        687.83154296875,
+        287.22430419921875,
+        950.3876953125,
+        625.49658203125
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        819.109619140625,
+        625.49658203125
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 118.03031738137942
+    },
+    {
+      "frame_index": 7715,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        593.4090576171875,
+        416.4807434082031,
+        890.7972412109375,
+        716.174560546875
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        742.1031494140625,
+        716.174560546875
+      ],
+      "polygon_side": null,
+      "signed_line_distance_native_px": 189.45467490323097
+    },
+    {
+      "frame_index": 7715,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        620.0140380859375,
+        309.43798828125,
+        827.440673828125,
+        638.4781494140625
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        723.7273559570312,
+        638.4781494140625
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 109.61840469826778
+    },
+    {
+      "frame_index": 7716,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        540.4122314453125,
+        413.8559875488281,
+        791.544189453125,
+        695.6865234375
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        665.9782104492188,
+        695.6865234375
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 152.65469553637027
+    },
+    {
+      "frame_index": 7716,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        559.2257080078125,
+        326.08148193359375,
+        738.3214111328125,
+        590.5908813476562
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        648.7735595703125,
+        590.5908813476562
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 46.35497134955846
+    },
+    {
+      "frame_index": 7717,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        496.31170654296875,
+        418.5126647949219,
+        710.7621459960938,
+        667.411865234375
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        603.5369262695312,
+        667.411865234375
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 111.28361887059334
+    },
+    {
+      "frame_index": 7717,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        510.6939697265625,
+        336.48321533203125,
+        681.357177734375,
+        574.6336059570312
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        596.0255737304688,
+        574.6336059570312
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 19.138444096473993
+    },
+    {
+      "frame_index": 7718,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        463.1061706542969,
+        452.6968688964844,
+        648.1376953125,
+        647.7808837890625
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        555.6219329833984,
+        647.7808837890625
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 81.5519112187325
+    },
+    {
+      "frame_index": 7718,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        468.3758544921875,
+        349.17828369140625,
+        616.57666015625,
+        565.6721801757812
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        542.4762573242188,
+        565.6721801757812
+      ],
+      "polygon_side": "A",
+      "signed_line_distance_native_px": -1.4321388009013858
+    },
+    {
+      "frame_index": 7719,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        432.1328125,
+        429.373291015625,
+        596.634033203125,
+        629.2081298828125
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        514.3834228515625,
+        629.2081298828125
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 54.32731068480011
+    },
+    {
+      "frame_index": 7719,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        437.10052490234375,
+        359.1597900390625,
+        568.7811889648438,
+        552.5445556640625
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        502.94085693359375,
+        552.5445556640625
+      ],
+      "polygon_side": "A",
+      "signed_line_distance_native_px": -22.96989335233261
+    },
+    {
+      "frame_index": 7720,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        406.4058837890625,
+        446.5079040527344,
+        553.5904541015625,
+        615.9959716796875
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        479.9981689453125,
+        615.9959716796875
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 33.84492778786997
+    },
+    {
+      "frame_index": 7720,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        410.0853271484375,
+        367.43524169921875,
+        534.5948486328125,
+        549.777587890625
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        472.340087890625,
+        549.777587890625
+      ],
+      "polygon_side": "A",
+      "signed_line_distance_native_px": -32.42908518371883
+    },
+    {
+      "frame_index": 7721,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        383.10150146484375,
+        447.6178283691406,
+        516.1752319335938,
+        603.0599365234375
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        449.63836669921875,
+        603.0599365234375
+      ],
+      "polygon_side": "B",
+      "signed_line_distance_native_px": 14.521183762028942
+    },
+    {
+      "frame_index": 7721,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        387.9915771484375,
+        372.7783203125,
+        500.803466796875,
+        539.74560546875
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        444.39752197265625,
+        539.74560546875
+      ],
+      "polygon_side": "A",
+      "signed_line_distance_native_px": -48.38649839108005
+    },
+    {
+      "frame_index": 7722,
+      "track_id": 1772,
+      "class_id": 3,
+      "class_name": "motorcycle",
+      "raw_bbox": [
+        366.2030029296875,
+        442.2575988769531,
+        484.0167236328125,
+        592.938720703125
+      ],
+      "original_detection_index": 1,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        425.10986328125,
+        592.938720703125
+      ],
+      "polygon_side": "A",
+      "signed_line_distance_native_px": -0.7689925979743224
+    },
+    {
+      "frame_index": 7722,
+      "track_id": 1774,
+      "class_id": 0,
+      "class_name": "person",
+      "raw_bbox": [
+        366.999267578125,
+        376.9588623046875,
+        472.1544189453125,
+        534.7654418945312
+      ],
+      "original_detection_index": 0,
+      "measurement_provenance": "retained_phase_2_detection",
+      "bottom_center": [
+        419.57684326171875,
+        534.7654418945312
+      ],
+      "polygon_side": "A",
+      "signed_line_distance_native_px": -58.72720838997018
+    }
+  ],
+  "motorcycle_only_window": {
+    "first_frame": 7716,
+    "last_frame": 7722,
+    "continuous_measured_observations": 7,
+    "origin_side": "B",
+    "crossing_frame_start": 7721,
+    "crossing_frame_end": 7722,
+    "destination_side": "A",
+    "derived_segment_intersection": {
+      "kind": "proper",
+      "point": [
+        426.34348133271646,
+        593.4477494981545
+      ],
+      "t": 0.9497067542016137,
+      "u": 0.338295537074297
+    }
+  },
+  "original_person_origin_7712_preserved": true,
+  "original_option_a_outputs_modified": false,
+  "new_count_event_created": false,
+  "proposed_recovery_eligibility_rule_implemented": false,
+  "limitations": [
+    "Pixel identity relation1772/1774 is separately confirmed by user feedback; this numeric inspection is not an automatic identity proof.",
+    "A new consistent-unit episode policy still needs implementation and synthetic/real-case validation before a recovered CountEvent can be accepted."
+  ]
+}

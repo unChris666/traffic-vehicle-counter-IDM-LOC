@@ -1,0 +1,47 @@
+{
+  "claim_type": "USER_CONFIRMED_CASE_REVIEW_NOT_FORMAL_GROUND_TRUTH",
+  "source": "USER_CHAT_20261013",
+  "client_timezone": "Asia/Jakarta",
+  "client_date": "2026-10-13",
+  "recorded_at_utc": "2026-10-13T09:57:52.145617+00:00",
+  "reviewed_snapshot_run_id": "20261012T144625_030645Z",
+  "input_identity": {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+    "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "variant": "reid_on",
+    "width": 1280,
+    "height": 720,
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8"
+  },
+  "user_text": "ID1774 : masih satu kendaraan dengan ID 1772\nID1772 : masih satu kendaraan dengan ID 1774. buthu dijadikan satu kendaraan motorcycle. riders + motorcycle = 1 motorcycle\nID1323 : jadikan car saja\n\nDISINI ADA DUPLIKASI DAN KESULITAN MENGHITUNG RIDERS + MOTORCYCLE = 1 MOTORCYCLE\nUNTUK ARAH A-TO-B ATAU B-TO-A SUDAH AMAN\nCENTER BOX DI BOTTOM CENTER SUDAH SESUAI\n\nBAGAIMANA KITA MEMPERBAIKINYA?\n\nKITA MASIH MEMILIKI OPSI B UNTUK PEMBANDING YANG BELUM KITA JALANKAN\nopsi B: resolusi identitas dan kategori secara otomatis.\nSistem mencoba mengelompokkan kandidat berdasarkan bukti trajectory, hubungan spasial, koeksistensi dan penampilan yang tersedia, lalu menetapkan kategori dari bukti temporal. Konflik yang tidak terselesaikan tetap pending. Algoritme serta threshold pengelompokan masih perlu ditentukan dan diuji; BC tetap berasal dari pengukuran sumber.",
+  "confirmed_case_decisions": [
+    {
+      "vehicle_track_id": 1772,
+      "component_track_ids": [
+        1774
+      ],
+      "relationship": "RIDER_COMPONENT_OF_SAME_PHYSICAL_MOTORCYCLE",
+      "product_category": "motorcycle",
+      "desired_passage_unit": "one motorcycle including rider/passengers",
+      "geometry_acceptance_override": false
+    },
+    {
+      "track_id": 1323,
+      "product_category": "car",
+      "category_scope": "THIS_REVIEWED_CASE_ONLY",
+      "global_minivan_or_angkot_policy_selected": false,
+      "identity_conflict_auto_cleared": false
+    }
+  ],
+  "geometry_feedback": {
+    "bottom_center": "USER_CONFIRMED_SUITABLE_FOR_REVIEWED_TOR3-PAGI_CASES",
+    "A_TO_B": "approaching camera confirmed",
+    "B_TO_A": "moving away confirmed",
+    "universal_all_video_reliability_claimed": false
+  },
+  "option_b_status": "COMPARATOR_PROPOSED_NOT_EXECUTED_ALGORITHM_THRESHOLDS_OPEN",
+  "original_counting_outputs_modified": false,
+  "accepted_subtotal_recomputed": false
+}
