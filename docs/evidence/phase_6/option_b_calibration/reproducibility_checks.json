@@ -1,0 +1,97 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_CALIBRATION_REPRODUCIBILITY_CHECKS",
+  "checks": [
+    {
+      "check": "deterministic_reproduction",
+      "path": "docs/evidence/phase_6/option_b_calibration/pair_features.json",
+      "pass": true,
+      "sha256": "4723724cc4445758168a4d75944e1574027547c7c41b4d7ec0d259fae3b80a28"
+    },
+    {
+      "check": "deterministic_reproduction",
+      "path": "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json",
+      "pass": true,
+      "sha256": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723"
+    },
+    {
+      "check": "deterministic_reproduction",
+      "path": "docs/evidence/phase_6/option_b_calibration/README.md",
+      "pass": true,
+      "sha256": "ac4a944ea48ad75f9ed0ca73582b3a2a80503947c5ebfceffd57074a6e56e6f2"
+    },
+    {
+      "check": "deterministic_reproduction",
+      "path": "docs/evidence/phase_6/option_b_calibration/manifest.json",
+      "pass": true,
+      "sha256": "260fea9d82851951891a9c18d3d7813b89b9900c7253f327f43cd811ef22b37c"
+    },
+    {
+      "check": "held_out_target_excluded",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "component_893_880_4975_4979",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_raw_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "component_893_880_4975_4979",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_overlay_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "component_912_923_5011_5022",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_raw_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "component_912_923_5011_5022",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_overlay_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "component_967_964_5118_5126",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id967_raw_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "component_967_964_5118_5126",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id967_overlay_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "duplicate_964_973_5129_5130",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_raw_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "duplicate_964_973_5129_5130",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_overlay_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "separate_1_3_60_60",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_raw_contact.png",
+      "pass": true
+    },
+    {
+      "check": "review_pixel_sha_matches",
+      "pair_id": "separate_1_3_60_60",
+      "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_overlay_contact.png",
+      "pass": true
+    }
+  ],
+  "passed": 15,
+  "failed": 0,
+  "formal_ground_truth": false,
+  "new_model_geometry_counting_execution": false
+}

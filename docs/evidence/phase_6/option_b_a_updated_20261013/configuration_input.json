@@ -1,0 +1,39 @@
+{
+  "contract_version": "phase6_option_a_v0",
+  "metric": "passage",
+  "review_policy": "audit_gated",
+  "neutral_band_px": 0.0,
+  "confirmation_observations": 1,
+  "parameter_claim_type": "ENGINEERING_EXPERIMENT_REUSE_PHASE5_CONTROL_NOT_SELECTED_PRODUCT_DEFAULT",
+  "source_phase_4_run_id": "20261011T095924_205716Z_90cf7319",
+  "baseline_phase_5_run_id": "20261011T161440_100155Z_2e39a11c",
+  "baseline_phase_5_experiment": "b0_c1",
+  "input_identity": {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+    "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "variant": "reid_on",
+    "width": 1280,
+    "height": 720,
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8"
+  },
+  "recording_metadata": {
+    "video_id": "TOR3-PAGI",
+    "filename": "TOR3-PAGI.mp4",
+    "store_code": null,
+    "store_name": null,
+    "latitude": null,
+    "longitude": null,
+    "day_type": null,
+    "recording_period": "pagi",
+    "recording_period_basis": "USER_DESCRIBED_MORNING_SAMPLE"
+  },
+  "open_product_policies": [
+    "bus_angkot_mapping",
+    "pickup_classification",
+    "suitable_geometry_numeric_defaults",
+    "final_vehicle_reid_configuration",
+    "whole_video_physical_identity_recovery"
+  ]
+}

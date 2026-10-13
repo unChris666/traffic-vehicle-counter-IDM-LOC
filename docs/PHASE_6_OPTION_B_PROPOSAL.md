@@ -1,6 +1,6 @@
 # Phase 6 — proposal pembanding Opsi B
 
-**STATUS: PROPOSAL, belum diimplementasikan atau dijalankan.** Dokumen ini merancang resolusi unit fisik/kategori untuk dibandingkan dengan [Opsi A](COUNTING_CONTRACT.md). Tidak ada hasil counting baru, threshold yang dipilih, atau klaim bahwa otomatisasi mengurangi pending secara benar. [Snapshot awal](PHASE_6_REVIEW.md) tetap merupakan hasil historis tersendiri.
+**STATUS: PROPOSAL HISTORIS.** Isi usulan di bawah mempertahankan konteks sebelum implementasi. Pengguna kemudian mengizinkan [tugas eksperimen](PHASE_6_OPTION_B_TASK.md); resolver dan pembanding notebook telah diimplementasikan serta dijalankan sebagai eksperimen terbatas. [Review aktual Opsi B](PHASE_6_OPTION_B_REVIEW.md) dan [run final v1](evidence/phase_6/20261013T104301_354775Z/report.json) mencatat bukti, parameter eksperimen yang dibekukan, koreksi dukungan identitas temporal, hasil mesin dan batasnya. Status OPEN/PROPOSAL pada bagian historis bukan pernyataan bahwa implementasi saat ini belum ada. [Snapshot awal Opsi A](PHASE_6_REVIEW.md) tetap tersendiri dan immutable; Opsi B belum dipilih sebagai default produksi.
 
 ## 1. Keputusan pengguna dan masalah yang sebenarnya
 

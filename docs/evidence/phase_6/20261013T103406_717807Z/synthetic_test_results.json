@@ -1,0 +1,230 @@
+{
+  "claim_type": "ACTUALLY_EXECUTED_SYNTHETIC_SOFTWARE_CONTRACT_TESTS",
+  "errors": [],
+  "failures": [],
+  "fixture_controls_are_product_defaults": false,
+  "output": "test_category_flip_inside_vehicle_family_is_preserved_as_evidence (phase_6_identity_resolution_tests.IdentityEpisodeTests.test_category_flip_inside_vehicle_family_is_preserved_as_evidence) ... ok\ntest_episode_order_and_ids_do_not_depend_on_input_track_order (phase_6_identity_resolution_tests.IdentityEpisodeTests.test_episode_order_and_ids_do_not_depend_on_input_track_order) ... ok\ntest_input_measurements_are_not_modified_by_episode_extraction (phase_6_identity_resolution_tests.IdentityEpisodeTests.test_input_measurements_are_not_modified_by_episode_extraction) ... ok\ntest_missing_frame_starts_new_episode_and_preserves_both_sides (phase_6_identity_resolution_tests.IdentityEpisodeTests.test_missing_frame_starts_new_episode_and_preserves_both_sides) ... ok\ntest_person_origin_is_not_inherited_by_new_vehicle_episode (phase_6_identity_resolution_tests.IdentityEpisodeTests.test_person_origin_is_not_inherited_by_new_vehicle_episode) ... ok\ntest_vehicle_person_vehicle_creates_three_episodes_without_cherry_picking (phase_6_identity_resolution_tests.IdentityEpisodeTests.test_vehicle_person_vehicle_creates_three_episodes_without_cherry_picking) ... ok\ntest_bus_taxonomy_is_not_silently_mapped_to_bus_angkot (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_bus_taxonomy_is_not_silently_mapped_to_bus_angkot) ... ok\ntest_case_specific_manual_ids_do_not_change_generic_resolution (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_case_specific_manual_ids_do_not_change_generic_resolution) ... ok\ntest_component_person_labels_do_not_vote_against_motorcycle_category (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_component_person_labels_do_not_vote_against_motorcycle_category) ... ok\ntest_consistent_motorcycle_without_positive_identity_evidence_stays_pending (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_consistent_motorcycle_without_positive_identity_evidence_stays_pending) ... ok\ntest_crossing_over_missing_observation_cannot_be_recovered_by_episode_reset (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_crossing_over_missing_observation_cannot_be_recovered_by_episode_reset) ... ok\ntest_duplicate_member_without_vehicle_origin_cannot_replace_eligible_member (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_duplicate_member_without_vehicle_origin_cannot_replace_eligible_member) ... ok\ntest_duplicate_spatial_support_cannot_resolve_motorcycle_car_category_conflict (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_duplicate_spatial_support_cannot_resolve_motorcycle_car_category_conflict) ... ok\ntest_duplicate_vehicle_tracks_produce_one_event_without_bbox_union (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_duplicate_vehicle_tracks_produce_one_event_without_bbox_union) ... ok\ntest_episode_processing_order_cannot_change_assignment_or_event_ids (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_episode_processing_order_cannot_change_assignment_or_event_ids) ... ok\ntest_equally_plausible_two_motorcycle_assignment_stays_unresolved (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_equally_plausible_two_motorcycle_assignment_stays_unresolved) ... ok\ntest_exact_line_endpoint_crossing_stays_ambiguous (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_exact_line_endpoint_crossing_stays_ambiguous) ... ok\ntest_family_reset_rebuilds_vehicle_origin_and_creates_new_candidate (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_family_reset_rebuilds_vehicle_origin_and_creates_new_candidate) ... ok\ntest_grouping_ablation_preserves_geometry_without_automatic_identity_acceptance (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_grouping_ablation_preserves_geometry_without_automatic_identity_acceptance) ... ok\ntest_independent_return_is_held_not_unconditionally_counted (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_independent_return_is_held_not_unconditionally_counted) ... ok\ntest_infinite_line_extension_crossing_outside_segment_cannot_count (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_infinite_line_extension_crossing_outside_segment_cannot_count) ... ok\ntest_initial_presence_on_arrival_side_is_not_a_passage (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_initial_presence_on_arrival_side_is_not_a_passage) ... ok\ntest_later_complete_episode_same_track_after_family_change_needs_return_review (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_later_complete_episode_same_track_after_family_change_needs_return_review) ... ok\ntest_later_complete_episode_same_track_after_gap_is_not_automatic_return (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_later_complete_episode_same_track_after_gap_is_not_automatic_return) ... ok\ntest_measured_touch_followed_by_opposite_side_preserves_contact_evidence (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_measured_touch_followed_by_opposite_side_preserves_contact_evidence) ... ok\ntest_missing_explicit_association_control_is_not_filled_by_hidden_default (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_missing_explicit_association_control_is_not_filled_by_hidden_default) ... ok\ntest_missing_full_frame_competitor_context_does_not_grant_acceptance (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_missing_full_frame_competitor_context_does_not_grant_acceptance) ... ok\ntest_nearby_pedestrian_outside_vehicle_is_not_a_rider (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_nearby_pedestrian_outside_vehicle_is_not_a_rider) ... ok\ntest_new_vehicle_episode_without_its_own_origin_cannot_count_old_person_path (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_new_vehicle_episode_without_its_own_origin_cannot_count_old_person_path) ... ok\ntest_nonclique_transitive_duplicate_chain_is_not_one_supported_vehicle (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_nonclique_transitive_duplicate_chain_is_not_one_supported_vehicle) ... ok\ntest_nonfinite_association_control_is_rejected (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_nonfinite_association_control_is_rejected) ... ok\ntest_one_frame_overlap_does_not_establish_component_identity (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_one_frame_overlap_does_not_establish_component_identity) ... ok\ntest_one_raw_detection_cannot_supply_two_track_measurements (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_one_raw_detection_cannot_supply_two_track_measurements) ... ok\ntest_opposing_motion_despite_spatial_overlap_is_not_component (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_opposing_motion_despite_spatial_overlap_is_not_component) ... ok\ntest_pending_decision_cannot_enter_typed_event_aggregate (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_pending_decision_cannot_enter_typed_event_aggregate) ... ok\ntest_pending_earlier_category_conflict_does_not_make_later_crossing_first_passage (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_pending_earlier_category_conflict_does_not_make_later_crossing_first_passage) ... ok\ntest_pending_earlier_raw_competitor_does_not_release_later_return (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_pending_earlier_raw_competitor_does_not_release_later_return) ... ok\ntest_person_without_vehicle_cannot_automatically_become_pedestrian (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_person_without_vehicle_cannot_automatically_become_pedestrian) ... ok\ntest_predicted_track_box_cannot_substitute_for_measured_bbox (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_predicted_track_box_cannot_substitute_for_measured_bbox) ... ok\ntest_raw_bbox_tamper_is_rejected_even_after_source_hash_rebinding (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_raw_bbox_tamper_is_rejected_even_after_source_hash_rebinding) ... ok\ntest_raw_class_tamper_is_not_a_valid_category_correction (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_raw_class_tamper_is_not_a_valid_category_correction) ... ok\ntest_raw_unemitted_vehicle_competitor_is_not_ignored (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_raw_unemitted_vehicle_competitor_is_not_ignored) ... ok\ntest_repeated_count_event_is_idempotent_in_aggregate (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_repeated_count_event_is_idempotent_in_aggregate) ... ok\ntest_rider_bottom_center_crossing_cannot_replace_vehicle_crossing (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_rider_bottom_center_crossing_cannot_replace_vehicle_crossing) ... ok\ntest_rider_is_component_and_does_not_add_pedestrian_count (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_rider_is_component_and_does_not_add_pedestrian_count) ... ok\ntest_rider_of_verified_duplicate_vehicle_group_has_one_assignment (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_rider_of_verified_duplicate_vehicle_group_has_one_assignment) ... ok\ntest_same_source_rerun_is_idempotent_and_keeps_event_ids (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_same_source_rerun_is_idempotent_and_keeps_event_ids) ... ok\ntest_selecting_only_later_window_does_not_hide_earlier_source_passage (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_selecting_only_later_window_does_not_hide_earlier_source_passage) ... ok\ntest_source_sha_mismatch_does_not_silently_rebind (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_source_sha_mismatch_does_not_silently_rebind) ... ok\ntest_temporal_car_truck_conflict_is_not_majority_vote_resolved (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_temporal_car_truck_conflict_is_not_majority_vote_resolved) ... ok\ntest_touch_line_and_return_to_same_side_is_not_a_passage (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_touch_line_and_return_to_same_side_is_not_a_passage) ... ok\ntest_two_motorcycles_beside_each_other_are_not_duplicates (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_two_motorcycles_beside_each_other_are_not_duplicates) ... ok\ntest_two_passengers_still_make_only_one_motorcycle (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_two_passengers_still_make_only_one_motorcycle) ... ok\ntest_vehicle_person_vehicle_does_not_stitch_across_excluded_component (phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_vehicle_person_vehicle_does_not_stitch_across_excluded_component) ... ok\n\n----------------------------------------------------------------------\nRan 54 tests in 0.179s\n\nOK\n",
+  "scope": "Option B physical-unit relations and vehicle episodes; no actual-video results or accuracy",
+  "skipped": [],
+  "successful": true,
+  "tests": [
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityEpisodeTests.test_category_flip_inside_vehicle_family_is_preserved_as_evidence",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityEpisodeTests.test_episode_order_and_ids_do_not_depend_on_input_track_order",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityEpisodeTests.test_input_measurements_are_not_modified_by_episode_extraction",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityEpisodeTests.test_missing_frame_starts_new_episode_and_preserves_both_sides",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityEpisodeTests.test_person_origin_is_not_inherited_by_new_vehicle_episode",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityEpisodeTests.test_vehicle_person_vehicle_creates_three_episodes_without_cherry_picking",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_bus_taxonomy_is_not_silently_mapped_to_bus_angkot",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_case_specific_manual_ids_do_not_change_generic_resolution",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_component_person_labels_do_not_vote_against_motorcycle_category",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_consistent_motorcycle_without_positive_identity_evidence_stays_pending",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_crossing_over_missing_observation_cannot_be_recovered_by_episode_reset",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_duplicate_member_without_vehicle_origin_cannot_replace_eligible_member",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_duplicate_spatial_support_cannot_resolve_motorcycle_car_category_conflict",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_duplicate_vehicle_tracks_produce_one_event_without_bbox_union",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_episode_processing_order_cannot_change_assignment_or_event_ids",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_equally_plausible_two_motorcycle_assignment_stays_unresolved",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_exact_line_endpoint_crossing_stays_ambiguous",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_family_reset_rebuilds_vehicle_origin_and_creates_new_candidate",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_grouping_ablation_preserves_geometry_without_automatic_identity_acceptance",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_independent_return_is_held_not_unconditionally_counted",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_infinite_line_extension_crossing_outside_segment_cannot_count",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_initial_presence_on_arrival_side_is_not_a_passage",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_later_complete_episode_same_track_after_family_change_needs_return_review",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_later_complete_episode_same_track_after_gap_is_not_automatic_return",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_measured_touch_followed_by_opposite_side_preserves_contact_evidence",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_missing_explicit_association_control_is_not_filled_by_hidden_default",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_missing_full_frame_competitor_context_does_not_grant_acceptance",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_nearby_pedestrian_outside_vehicle_is_not_a_rider",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_new_vehicle_episode_without_its_own_origin_cannot_count_old_person_path",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_nonclique_transitive_duplicate_chain_is_not_one_supported_vehicle",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_nonfinite_association_control_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_one_frame_overlap_does_not_establish_component_identity",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_one_raw_detection_cannot_supply_two_track_measurements",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_opposing_motion_despite_spatial_overlap_is_not_component",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_pending_decision_cannot_enter_typed_event_aggregate",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_pending_earlier_category_conflict_does_not_make_later_crossing_first_passage",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_pending_earlier_raw_competitor_does_not_release_later_return",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_person_without_vehicle_cannot_automatically_become_pedestrian",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_predicted_track_box_cannot_substitute_for_measured_bbox",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_raw_bbox_tamper_is_rejected_even_after_source_hash_rebinding",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_raw_class_tamper_is_not_a_valid_category_correction",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_raw_unemitted_vehicle_competitor_is_not_ignored",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_repeated_count_event_is_idempotent_in_aggregate",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_rider_bottom_center_crossing_cannot_replace_vehicle_crossing",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_rider_is_component_and_does_not_add_pedestrian_count",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_rider_of_verified_duplicate_vehicle_group_has_one_assignment",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_same_source_rerun_is_idempotent_and_keeps_event_ids",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_selecting_only_later_window_does_not_hide_earlier_source_passage",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_source_sha_mismatch_does_not_silently_rebind",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_temporal_car_truck_conflict_is_not_majority_vote_resolved",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_touch_line_and_return_to_same_side_is_not_a_passage",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_two_motorcycles_beside_each_other_are_not_duplicates",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_two_passengers_still_make_only_one_motorcycle",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_identity_resolution_tests.IdentityResolutionContractTests.test_vehicle_person_vehicle_does_not_stitch_across_excluded_component",
+      "status": "passed"
+    }
+  ],
+  "tests_passed": 54,
+  "tests_run": 54
+}

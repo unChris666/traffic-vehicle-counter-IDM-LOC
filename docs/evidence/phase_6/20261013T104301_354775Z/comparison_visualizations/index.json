@@ -1,0 +1,797 @@
+{
+  "claim_type": "EXECUTED_RETAINED_PHOTO_CASE_VISUALIZATION_NOT_MODEL_BENCHMARK",
+  "source_run_id": "20261013T104301_354775Z",
+  "method_path": "docs/evidence/phase_6/option_b_verification/build_comparison_visuals.py",
+  "method_sha256": "0a71f29222ff7fa18701f71ddb70c4082e28aa2b9ffea12526f8a31d2673b986",
+  "input_sha256": {
+    "docs/evidence/phase_6/option_b_temporal_review/motorcycle1772_rider1774_crop_overlay.png": "6d4026a7bffa4d668e609e12f5b5456bf2b20dc8e1b3429f2cb86fa081386514",
+    "docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_overlay.png": "35b0bc5cb31a574436017542a02a19c6f2ea5f2473f377f80ff10512c61daf45",
+    "docs/evidence/phase_6/option_b_temporal_review/car1323_crop_overlay.png": "33fd6ec71b7daf2bb23cadb15ca999458a1dc91767209f2e4386c812686f1050",
+    "docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_overlay.png": "59c1e36b09210fe6f81cb77819665095f06e1d893ce34ca0b5539500f55e8a85",
+    "docs/evidence/phase_6/option_b_temporal_review/negative_motorcycles880_892_crop_overlay.png": "7523fa2e9d9461440bff6820fb86e44e8a59eb1533e152658bcec62907a3869b",
+    "docs/evidence/phase_6/option_b_temporal_review/sample_index.json": "6103327a959605ddef937e375002f068474a0b46e3f2a6bd8481d213f48cf926",
+    "docs/evidence/phase_6/20261013T104301_354775Z/machine_decisions.jsonl.gz": "8a34f890d1b0324ef91147277259b4cea45c16a9b386ae4a70f45798e73e8796",
+    "docs/evidence/phase_6/20261013T104301_354775Z/relations.jsonl.gz": "bcb02f8301753229c3e997e61bed5d1f6343d1a2dea75daaa5cff08c9d29282c",
+    "docs/evidence/phase_6/20261013T104301_354775Z/reviewed/resolved_decisions.jsonl.gz": "63ac8435473dd9d902f091c75bfde2c769453e9c1aef3d3afcc60ef3610e6ce2",
+    "docs/evidence/phase_6/20261013T104301_354775Z/reviewed/accepted_events.jsonl.gz": "10b71a5ef406a72f72361241c9d9700dda8cd9471a337b7832610b3af7200d69",
+    "docs/evidence/phase_6/20261013T104301_354775Z/reviewed/report.json": "dbfacab59541f8f6c64c57aa3a8583946b44f7bbdba8c91cebea5a9ef38752d6",
+    "docs/evidence/phase_6/20261013T104301_354775Z/configuration_input.json": "4b1a366b887d2ce1833454b0aeed6cabd4579f4fa4a903be28611405fe31c99f",
+    "docs/evidence/phase_6/20261013T104301_354775Z/synthetic_test_results.json": "9600b4e0b152d674a31ddae3ae3d12fc2daa8ccfc6b885032892606f49dde479",
+    "docs/evidence/phase_6/20261013T104301_354775Z/accepted_events.jsonl.gz": "95c9b0626feda82c6e0cc810732e864f5b5d4b76d02a30eac22c6a7b9cc201be"
+  },
+  "source_identity": {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "variant": "reid_on",
+    "width": 1280,
+    "height": 720,
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8"
+  },
+  "renderer": {
+    "library": "Pillow",
+    "version": "12.3.0",
+    "font": "DejaVuSans / DejaVuSans-Bold",
+    "font_files_sha256": {
+      "DejaVuSans.ttf": "57f73e11f51999432bf7ab22ce55b6f945d5eca1bf824404cfa9ec2e3718c84e",
+      "DejaVuSans-Bold.ttf": "a4c5bc453ca281d90ea079e596da7ae0dfeb5777497c29ec254e76d97ff6f890"
+    }
+  },
+  "video_decoded": false,
+  "detector_tracker_encoder_resolver_run": false,
+  "source_photos_modified": false,
+  "source_events_modified": false,
+  "cards": [
+    {
+      "case_id": "motorcycle1772_rider1774",
+      "title": "ID1772 + rider1774: satu motorcycle",
+      "machine_status_caption": "ACCEPTED OTOMATIS · 1 passage",
+      "reviewed_status_caption": "Dipertahankan · event mesin sama",
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/01_motorcycle1772.png",
+      "sha256": "fccec540d05c1046027ba1e76663734dcf1ba042c9c92c63dc1ad15d391eb405",
+      "width_height": [
+        1440,
+        900
+      ],
+      "photo_tiles": [
+        {
+          "frame_index": 7716,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle1772_rider1774_crop_overlay.png",
+          "source_sheet_sha256": "6d4026a7bffa4d668e609e12f5b5456bf2b20dc8e1b3429f2cb86fa081386514",
+          "source_sheet_extract_xyxy": [
+            0,
+            1174,
+            946,
+            1719
+          ],
+          "native_crop_xyxy": [
+            334,
+            175,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            258
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "65405063bbb34ff438610085679010f4bbd2f9a2567127d3b11c90ddb852315e"
+        },
+        {
+          "frame_index": 7721,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle1772_rider1774_crop_overlay.png",
+          "source_sheet_sha256": "6d4026a7bffa4d668e609e12f5b5456bf2b20dc8e1b3429f2cb86fa081386514",
+          "source_sheet_extract_xyxy": [
+            946,
+            2320,
+            1892,
+            2865
+          ],
+          "native_crop_xyxy": [
+            334,
+            175,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            258
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "930b0d179c112ea9deb8ef0815e902d74af8cb33d5ebeeed3021c061ef3e0537"
+        },
+        {
+          "frame_index": 7722,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle1772_rider1774_crop_overlay.png",
+          "source_sheet_sha256": "6d4026a7bffa4d668e609e12f5b5456bf2b20dc8e1b3429f2cb86fa081386514",
+          "source_sheet_extract_xyxy": [
+            0,
+            2893,
+            946,
+            3438
+          ],
+          "native_crop_xyxy": [
+            334,
+            175,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            258
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "fec413513bf3078a9bf4a927cf2f317f2d013d8e0226faee920d3470da575055"
+        }
+      ],
+      "notes": [
+        "B→A. Origin7716; segmen BC kendaraan7721→7722; konfirmasi7722.",
+        "Person1774 adalah komponen: tidak membuat event tambahan atau mengganti anchor kendaraan.",
+        "Dukungan relasi lokal: tujuh frame7716–7722. Histori person1772 sebelum episode kendaraan tidak diwarisi."
+      ]
+    },
+    {
+      "case_id": "duplicate964_973",
+      "title": "ID964 / ID973: satu skuter, dua kandidat sumber",
+      "machine_status_caption": "PENDING · dua kandidat",
+      "reviewed_status_caption": "ACCEPTED MANUAL · 1 passage",
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/02_duplicate964_973.png",
+      "sha256": "a4f95e14977296de38e7c73603907643fa8ecbab3fed39704d5032da9aced491",
+      "width_height": [
+        1440,
+        900
+      ],
+      "photo_tiles": [
+        {
+          "frame_index": 5122,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_overlay.png",
+          "source_sheet_sha256": "35b0bc5cb31a574436017542a02a19c6f2ea5f2473f377f80ff10512c61daf45",
+          "source_sheet_extract_xyxy": [
+            1028,
+            612,
+            2056,
+            1168
+          ],
+          "native_crop_xyxy": [
+            252,
+            164,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            242
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "dc11a7573398cf72c1348213b6a8aa4aa7baad265b12607eb27b9f1ff8bf9d9e"
+        },
+        {
+          "frame_index": 5128,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_overlay.png",
+          "source_sheet_sha256": "35b0bc5cb31a574436017542a02a19c6f2ea5f2473f377f80ff10512c61daf45",
+          "source_sheet_extract_xyxy": [
+            0,
+            1196,
+            1028,
+            1752
+          ],
+          "native_crop_xyxy": [
+            252,
+            164,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            242
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "f0b368b642b8054d56f99f1c38c12a228ac775af6a8bb9274b3b92dfd3d1b136"
+        },
+        {
+          "frame_index": 5129,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_overlay.png",
+          "source_sheet_sha256": "35b0bc5cb31a574436017542a02a19c6f2ea5f2473f377f80ff10512c61daf45",
+          "source_sheet_extract_xyxy": [
+            1028,
+            1196,
+            2056,
+            1752
+          ],
+          "native_crop_xyxy": [
+            252,
+            164,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            242
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "6c8e11f86aee783810ac56dcd130766cfe73f5be197ebda7d98948c64018e803"
+        }
+      ],
+      "notes": [
+        "Duplicate motion 0.057293 > kontrol 0.01; parameter tidak dituning agar lolos.",
+        "Review foto menyatukan physical unit/passage. Event memakai964: origin5122, BC5128→5129.",
+        "973 disimpan sebagai anggota duplikat, bukan event kedua. Person967 tidak menjadi count tambahan."
+      ]
+    },
+    {
+      "case_id": "car1323",
+      "title": "ID1323: kategori car, identitas masih belum selesai",
+      "machine_status_caption": "PENDING · car",
+      "reviewed_status_caption": "PENDING · keputusan kategori car",
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/03_car1323.png",
+      "sha256": "55a1d680217a344ef83e153176a76416073eca9b6f4d1abde7c4a91a1e5c1cad",
+      "width_height": [
+        1440,
+        900
+      ],
+      "photo_tiles": [
+        {
+          "frame_index": 6256,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/car1323_crop_overlay.png",
+          "source_sheet_sha256": "33fd6ec71b7daf2bb23cadb15ca999458a1dc91767209f2e4386c812686f1050",
+          "source_sheet_extract_xyxy": [
+            0,
+            28,
+            569,
+            388
+          ],
+          "native_crop_xyxy": [
+            0,
+            282,
+            569,
+            642
+          ],
+          "display_size_width_height": [
+            448,
+            283
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "507abe64476e558fe9bc8bd6635cd8e3e4af2b56c6a9d6edd460c76bb960b137"
+        },
+        {
+          "frame_index": 6257,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/car1323_crop_overlay.png",
+          "source_sheet_sha256": "33fd6ec71b7daf2bb23cadb15ca999458a1dc91767209f2e4386c812686f1050",
+          "source_sheet_extract_xyxy": [
+            569,
+            28,
+            1138,
+            388
+          ],
+          "native_crop_xyxy": [
+            0,
+            282,
+            569,
+            642
+          ],
+          "display_size_width_height": [
+            448,
+            283
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "bb6b05613db962d4d6c816f065b3ff823f18fdf4fe2d6a118c912ef3a9cb777c"
+        },
+        {
+          "frame_index": 6258,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/car1323_crop_overlay.png",
+          "source_sheet_sha256": "33fd6ec71b7daf2bb23cadb15ca999458a1dc91767209f2e4386c812686f1050",
+          "source_sheet_extract_xyxy": [
+            0,
+            416,
+            569,
+            776
+          ],
+          "native_crop_xyxy": [
+            0,
+            282,
+            569,
+            642
+          ],
+          "display_size_width_height": [
+            448,
+            283
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "7241313070c78176f96e8d45571560b30661abf8ce945d3d11eec8de4bd76467"
+        }
+      ],
+      "notes": [
+        "Keputusan pengguna: ID1323=car untuk kasus ini. Tidak mengubah taxonomy minivan/angkot global.",
+        "BC kendaraan6257→6258 memenuhi geometri, tetapi raw car d3 / ID1336 di tepi kiri belum teridentifikasi.",
+        "Belum diketahui: kendaraan lain, bagian badan van, atau false detection. Tidak dipaksa accepted."
+      ]
+    },
+    {
+      "case_id": "motorcycle923_rider912",
+      "title": "ID923: bukti identitas harus milik passage yang sama",
+      "machine_status_caption": "PENDING · bukti relasi di luar passage",
+      "reviewed_status_caption": "ACCEPTED MANUAL · 1 passage",
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/04_motorcycle923.png",
+      "sha256": "2d19dd702c077b3ec0410769ab6a265729ade8af0971e6c5bbc69816ea3a71b4",
+      "width_height": [
+        1440,
+        900
+      ],
+      "photo_tiles": [
+        {
+          "frame_index": 5017,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_overlay.png",
+          "source_sheet_sha256": "59c1e36b09210fe6f81cb77819665095f06e1d893ce34ca0b5539500f55e8a85",
+          "source_sheet_extract_xyxy": [
+            999,
+            28,
+            1998,
+            544
+          ],
+          "native_crop_xyxy": [
+            281,
+            204,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            231
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "148bca3597cd6850c7be20e2edc95903e6248ac531dec3320ea3cd409c6a9481"
+        },
+        {
+          "frame_index": 5028,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_overlay.png",
+          "source_sheet_sha256": "59c1e36b09210fe6f81cb77819665095f06e1d893ce34ca0b5539500f55e8a85",
+          "source_sheet_extract_xyxy": [
+            0,
+            1116,
+            999,
+            1632
+          ],
+          "native_crop_xyxy": [
+            281,
+            204,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            231
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "733705b0358cb8fd8dd06bb3df4598e1c9a7d301d884943ff109ab1c4221fd60"
+        },
+        {
+          "frame_index": 5029,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_overlay.png",
+          "source_sheet_sha256": "59c1e36b09210fe6f81cb77819665095f06e1d893ce34ca0b5539500f55e8a85",
+          "source_sheet_extract_xyxy": [
+            999,
+            1116,
+            1998,
+            1632
+          ],
+          "native_crop_xyxy": [
+            281,
+            204,
+            1280,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            231
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "87006ff305db735c8c72d52755f93642a207ebe1f382f418f7870c3f1a83d84c"
+        }
+      ],
+      "notes": [
+        "Event reviewed memakai raw BC motorcycle923: origin5017, crossing5028→5029.",
+        "Relasi mesin yang didukung pada frame5116+ tidak boleh mengesahkan passage5017–5029.",
+        "Review manual memakai foto di window passage ini. Versi v0 yang memakai dukungan masa depan telah digantikan v1."
+      ]
+    },
+    {
+      "case_id": "negative_motorcycles880_892",
+      "title": "Kontrol negatif ID880 / ID892: dua kendaraan berbeda",
+      "machine_status_caption": "SAME_VEHICLE: REJECTED",
+      "reviewed_status_caption": "Tidak disatukan · kontrol asosiasi",
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/05_negative880_892.png",
+      "sha256": "cf8fa4aa1d857113858a3b130a4802678da561c6ac02c89c96ee83ba8fcce6ab",
+      "width_height": [
+        1440,
+        900
+      ],
+      "photo_tiles": [
+        {
+          "frame_index": 4975,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/negative_motorcycles880_892_crop_overlay.png",
+          "source_sheet_sha256": "7523fa2e9d9461440bff6820fb86e44e8a59eb1533e152658bcec62907a3869b",
+          "source_sheet_extract_xyxy": [
+            0,
+            28,
+            715,
+            358
+          ],
+          "native_crop_xyxy": [
+            405,
+            390,
+            1120,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            207
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "83515e25d7b72e608b65edb5c729a0e04e5aba9e3f52b50b0c9d14213d7355cc"
+        },
+        {
+          "frame_index": 4977,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/negative_motorcycles880_892_crop_overlay.png",
+          "source_sheet_sha256": "7523fa2e9d9461440bff6820fb86e44e8a59eb1533e152658bcec62907a3869b",
+          "source_sheet_extract_xyxy": [
+            0,
+            386,
+            715,
+            716
+          ],
+          "native_crop_xyxy": [
+            405,
+            390,
+            1120,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            207
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "9095dbeb927680d39983e360686b18ca0cfa3efac7ae0663e837d0e78be9c459"
+        },
+        {
+          "frame_index": 4979,
+          "source_sheet_path": "docs/evidence/phase_6/option_b_temporal_review/negative_motorcycles880_892_crop_overlay.png",
+          "source_sheet_sha256": "7523fa2e9d9461440bff6820fb86e44e8a59eb1533e152658bcec62907a3869b",
+          "source_sheet_extract_xyxy": [
+            0,
+            744,
+            715,
+            1074
+          ],
+          "native_crop_xyxy": [
+            405,
+            390,
+            1120,
+            720
+          ],
+          "display_size_width_height": [
+            448,
+            207
+          ],
+          "display_resize_filter": "Pillow LANCZOS",
+          "extracted_rgb_sha256": "189c0b3c5d17fe25f9b23e75e6efdb07efcd0495078b760ad86a0954bffabd0d"
+        }
+      ],
+      "notes": [
+        "Foto menunjukkan dua motorcycle bersamaan; relasi duplikasi ditolak oleh spatial/motion/IoU gates.",
+        "Tidak ada count event pada window kontrol4975–4980; crossing880 pada4988 di luar scope ini.",
+        "Satu kasus negatif nyata yang diperiksa. Belum membuktikan sistem bebas salah penggabungan secara umum."
+      ]
+    }
+  ],
+  "overview": {
+    "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/00_overview.png",
+    "sha256": "8c36e1b19332c394ba3b249d3240a762e3d57d8ba55665bcbaac9665d8c7a4de",
+    "width_height": [
+      1440,
+      1160
+    ]
+  },
+  "display_semantics": "Headers describe one retained case; source BC comes only from measured vehicle bbox, never rider/union/interpolation. Photos resized for display only.",
+  "validation": {
+    "checks": 73,
+    "passed": 73,
+    "failed": 0,
+    "details": [
+      {
+        "check": "machine_accepted1772",
+        "passed": true
+      },
+      {
+        "check": "retained_synthetic63_success",
+        "passed": true
+      },
+      {
+        "check": "reviewed_accepted1772",
+        "passed": true
+      },
+      {
+        "check": "1772_entire_decision_preserved",
+        "passed": true
+      },
+      {
+        "check": "machine_pending923",
+        "passed": true
+      },
+      {
+        "check": "machine_pending964",
+        "passed": true
+      },
+      {
+        "check": "machine_pending973",
+        "passed": true
+      },
+      {
+        "check": "machine_pending1323",
+        "passed": true
+      },
+      {
+        "check": "reviewed_manual_accepted923",
+        "passed": true
+      },
+      {
+        "check": "reviewed_manual_accepted964",
+        "passed": true
+      },
+      {
+        "check": "973_duplicate_suppressed",
+        "passed": true
+      },
+      {
+        "check": "1323_car_pending",
+        "passed": true
+      },
+      {
+        "check": "964973_relation_rejected",
+        "passed": true
+      },
+      {
+        "check": "964973_motion_exceeds_frozen_control",
+        "passed": true
+      },
+      {
+        "check": "880892_relation_rejected",
+        "passed": true
+      },
+      {
+        "check": "880892_not_counted_in_declared_case_window",
+        "passed": true
+      },
+      {
+        "check": "caption_geometry_matches_source_01_motorcycle1772",
+        "passed": true
+      },
+      {
+        "check": "source_overlay_sha_01_motorcycle1772",
+        "passed": true
+      },
+      {
+        "check": "text_fits_before_photos_01_motorcycle1772",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_01_motorcycle1772_7716",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_01_motorcycle1772_7716",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_01_motorcycle1772_7721",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_01_motorcycle1772_7721",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_01_motorcycle1772_7722",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_01_motorcycle1772_7722",
+        "passed": true
+      },
+      {
+        "check": "output_dimensions_01_motorcycle1772",
+        "passed": true
+      },
+      {
+        "check": "caption_geometry_matches_source_02_duplicate964_973",
+        "passed": true
+      },
+      {
+        "check": "source_overlay_sha_02_duplicate964_973",
+        "passed": true
+      },
+      {
+        "check": "text_fits_before_photos_02_duplicate964_973",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_02_duplicate964_973_5122",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_02_duplicate964_973_5122",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_02_duplicate964_973_5128",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_02_duplicate964_973_5128",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_02_duplicate964_973_5129",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_02_duplicate964_973_5129",
+        "passed": true
+      },
+      {
+        "check": "output_dimensions_02_duplicate964_973",
+        "passed": true
+      },
+      {
+        "check": "caption_geometry_matches_source_03_car1323",
+        "passed": true
+      },
+      {
+        "check": "source_overlay_sha_03_car1323",
+        "passed": true
+      },
+      {
+        "check": "text_fits_before_photos_03_car1323",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_03_car1323_6256",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_03_car1323_6257",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_03_car1323_6257",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_03_car1323_6258",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_03_car1323_6258",
+        "passed": true
+      },
+      {
+        "check": "output_dimensions_03_car1323",
+        "passed": true
+      },
+      {
+        "check": "caption_geometry_matches_source_04_motorcycle923",
+        "passed": true
+      },
+      {
+        "check": "source_overlay_sha_04_motorcycle923",
+        "passed": true
+      },
+      {
+        "check": "text_fits_before_photos_04_motorcycle923",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_04_motorcycle923_5017",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_04_motorcycle923_5017",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_04_motorcycle923_5028",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_04_motorcycle923_5028",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_04_motorcycle923_5029",
+        "passed": true
+      },
+      {
+        "check": "retained_track_present_04_motorcycle923_5029",
+        "passed": true
+      },
+      {
+        "check": "output_dimensions_04_motorcycle923",
+        "passed": true
+      },
+      {
+        "check": "source_overlay_sha_05_negative880_892",
+        "passed": true
+      },
+      {
+        "check": "text_fits_before_photos_05_negative880_892",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_05_negative880_892_4975",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_05_negative880_892_4977",
+        "passed": true
+      },
+      {
+        "check": "sheet_bounds_05_negative880_892_4979",
+        "passed": true
+      },
+      {
+        "check": "output_dimensions_05_negative880_892",
+        "passed": true
+      },
+      {
+        "check": "overview_dimensions",
+        "passed": true
+      },
+      {
+        "check": "overview_count_machine1",
+        "passed": true
+      },
+      {
+        "check": "overview_count_reviewed4",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_sample_index.json_option_b_temporal_review",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_machine_decisions.jsonl.gz_20261013T104301_354775Z",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_relations.jsonl.gz_20261013T104301_354775Z",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_resolved_decisions.jsonl.gz_reviewed",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_accepted_events.jsonl.gz_reviewed",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_report.json_reviewed",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_configuration_input.json_20261013T104301_354775Z",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_synthetic_test_results.json_20261013T104301_354775Z",
+        "passed": true
+      },
+      {
+        "check": "source_input_unchanged_accepted_events.jsonl.gz_20261013T104301_354775Z",
+        "passed": true
+      }
+    ]
+  },
+  "visual_review_status": "ACTUALLY_OPENED_ALL_SIX_PUBLISHED_PNGS_WITH_VIEW_IMAGE",
+  "visual_review_path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/visual_review.json",
+  "visual_review_sha256": "0c06a4751b0a93c56e2f99b32323d0df6bd78636a8199ef186536b0215bf2f84"
+}

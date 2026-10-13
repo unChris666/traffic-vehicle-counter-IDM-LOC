@@ -1,0 +1,44 @@
+{
+  "claim_type": "ENGINEERING_EXPERIMENT_FROZEN_DEVELOPMENT_ONLY_NOT_PRODUCT_DEFAULT",
+  "derivation": "Component spatial/motion upper bounds = ceil(100 * largest positive-window value)/100. Duplicate IoU lower bound = floor(100 * smallest positive-window value)/100; other bounds use same ceiling. Foot-inside minimum = smallest positive-window fraction. No target used. Rounding precision .01 is an explicit engineering control, not calibrated probability.",
+  "excluded_from_bounds": {
+    "held_out_component_pair": [
+      1772,
+      1774
+    ],
+    "reviewed_separate_pair": [
+      1,
+      3
+    ],
+    "unknown_alternative_pairs": true
+  },
+  "minimum_support_controls": "Component common/consecutive frames >=3 is an explicit engineering control to require temporal support. Duplicate >=2 reuses the two actually pixel-reviewed coexistent calibration frames; its reliability/generalization are unestablished.",
+  "missing_validation": "No held-out duplicate positive. Only one pixel-backed real negative, cross-category and one frame; same-category near-neighbour and walking-person negatives require additional actual review. Synthetic negatives do not substitute for those reviews.",
+  "provenance": {
+    "method_path": "docs/evidence/phase_6/option_b_calibration/calibrate_retained_pairs.py",
+    "method_sha256": "34213faeb350581f78b9ab24ca1cc33acd3d313cd4d2d3a2ba6a509ca2f8936f",
+    "pair_features_path": "docs/evidence/phase_6/option_b_calibration/pair_features.json",
+    "pair_features_sha256": "4723724cc4445758168a4d75944e1574027547c7c41b4d7ec0d259fae3b80a28",
+    "source_pixel_review_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/pixel_review.json",
+    "source_pixel_review_sha256": "6a563e2938e3a4e89e479ec750890171847c01b1124e2ac5e1cbee03584057b6",
+    "source_records_path": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/track_records.jsonl.gz",
+    "source_records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89"
+  },
+  "thresholds": {
+    "component": {
+      "max_center_distance_norm": 0.51,
+      "max_relative_motion_residual_norm": 0.15,
+      "min_common_frames": 3,
+      "min_consecutive_common_frames": 3,
+      "min_first_bc_inside_second_fraction": 1.0
+    },
+    "same_vehicle": {
+      "max_center_distance_norm": 0.1,
+      "max_relative_motion_residual_norm": 0.01,
+      "min_common_frames": 2,
+      "min_consecutive_common_frames": 2,
+      "min_iou": 0.59
+    }
+  },
+  "unique_assignment_policy": "If multiple distinct vehicle groups pass, keep unresolved; no numeric score margin was inferred from these samples."
+}

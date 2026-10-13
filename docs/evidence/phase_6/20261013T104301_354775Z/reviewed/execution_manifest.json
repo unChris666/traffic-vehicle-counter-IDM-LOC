@@ -1,0 +1,42 @@
+{
+  "accepted_unique_event_subtotal": 4,
+  "artifacts": [
+    {
+      "path": "resolved_decisions.jsonl.gz",
+      "sha256": "63ac8435473dd9d902f091c75bfde2c769453e9c1aef3d3afcc60ef3610e6ce2",
+      "size_bytes": 34284
+    },
+    {
+      "path": "accepted_events.jsonl.gz",
+      "sha256": "10b71a5ef406a72f72361241c9d9700dda8cd9471a337b7832610b3af7200d69",
+      "size_bytes": 33801
+    },
+    {
+      "path": "aggregate.json",
+      "sha256": "ba285bd5768bd96cba515897a86983e0760bceddaf9c416d000135d4b6874486",
+      "size_bytes": 593
+    },
+    {
+      "path": "report.json",
+      "sha256": "dbfacab59541f8f6c64c57aa3a8583946b44f7bbdba8c91cebea5a9ef38752d6",
+      "size_bytes": 2082
+    },
+    {
+      "path": "review_input.json",
+      "sha256": "8aefe2302f9816c28312be22d86da6acf8523adf0cbcfa52768d5e8022d57127",
+      "size_bytes": 10729
+    }
+  ],
+  "automatic_acceptance_claimed": false,
+  "claim_type": "REVIEWED_OVERLAY_REPRODUCIBILITY_MANIFEST",
+  "method_sha256": "663a52190f8c495533d50b36509232dad0d3fb64e0d31c0c3d669415fb38e81b",
+  "source_artifact_sha256": {
+    "accepted_events.jsonl.gz": "95c9b0626feda82c6e0cc810732e864f5b5d4b76d02a30eac22c6a7b9cc201be",
+    "configuration_input.json": "4b1a366b887d2ce1833454b0aeed6cabd4579f4fa4a903be28611405fe31c99f",
+    "episodes.jsonl.gz": "149905263df8dc31b98f6da68151412e8d40aa01dcfabb0fb21e8bc1ee615946",
+    "execution_manifest.json": "cba768ee4f31f63dda80ecc9055df59c8e4adb45d09bd273e6461209f089bdf7",
+    "machine_decisions.jsonl.gz": "8a34f890d1b0324ef91147277259b4cea45c16a9b386ae4a70f45798e73e8796",
+    "report.json": "a30922f9af8663a69575660ae59cce0b7d5f6214674a7f55a22adfe13c729b5b"
+  },
+  "source_run_id": "20261013T104301_354775Z"
+}

@@ -1,0 +1,250 @@
+{
+  "claim_type": "ACTUALLY_EXECUTED_SYNTHETIC_SOFTWARE_CONTRACT_TESTS",
+  "scope": "Phase6 audit-gated counting, synthetic evidence only; not actual-video identity or accuracy",
+  "fixture_controls_are_product_defaults": false,
+  "successful": true,
+  "tests_run": 59,
+  "tests_passed": 59,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "tests": [
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_actual_input_hash_bindings_reject_mutated_records_without_rebinding",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_aggregate_rejects_accepted_candidate_without_count_event_type",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_aggregate_rejects_count_event_without_positive_accepted_marker",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_aggregate_rejects_same_event_id_with_conflicting_category",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_aggregation_is_unique_idempotent_and_exactly_reconciled",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_bus_angkot_mapping_open_cannot_be_forced_by_review",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_car_truck_conflict_pending_until_evidence_backed_category_resolution",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_category_correction_does_not_create_new_physical_event_id",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_contact_evidence_cannot_omit_measured_line_contact_frames",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_contact_sheet_frame_coverage_must_include_origin_and_passage",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_contradictory_category_in_confirmed_same_passage_group_fails",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_contradictory_direction_in_confirmed_same_passage_group_fails",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_contradictory_duplicate_reviews_for_one_candidate_fail",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_diagnostic_confirmation_evidence_does_not_match_unexecuted_config",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_each_positive_unit_category_identity_gate_is_required",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_endpoint_diagnostic_never_produces_count",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_evidence_hash_tampering_is_not_accepted",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_evidence_path_cannot_escape_explicit_root",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_execution_timestamp_is_not_part_of_candidate_or_event_identity",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_gap_diagnostic_is_never_promoted_by_manual_confirmation",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_geometry_diagnostic_coordinate_tampering_cannot_be_reviewed_away",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_independently_reviewed_return_counts_new_passage_not_once_per_id",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_initial_presence_touch_and_incomplete_crossing_emit_no_event",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_invalid_measurement_provenance_cannot_be_accepted_even_with_valid_hash",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_invalid_numeric_controls_and_alternate_metric_fail_explicitly",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_lifecycle_prediction_and_unconfirmed_observation_cannot_supply_passage",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_manual_review_cannot_override_endpoint_ambiguity",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_measured_a_to_b_positive_review_produces_one_auditable_event",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_measured_b_to_a_has_own_direction_without_image_axis_assumption",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_measured_touch_then_opposite_sign_remains_valid_with_full_contact_evidence",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_mid_window_component_change_cannot_be_hidden_by_motorcycle_endpoints",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_missing_evidence_file_is_not_accepted",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_neutral_band_fixture_blocks_near_line_jitter_before_counting",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_no_overlap_and_consistent_class_do_not_replace_review",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_origin_window_raw_vehicle_overlap_is_screened_even_if_not_emitted",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_person_to_vehicle_anywhere_in_full_window_is_hard_blocked",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_raw_person_overlap_does_not_automatically_reject_vehicle",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_repeated_physical_unit_across_changed_ids_requires_episode_proof",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_repeated_same_side_updates_never_create_extra_event",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_repeating_identical_diagnostic_is_not_duplicate_count",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_required_parameters_and_review_policy_have_no_silent_fallback",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_retained_intersection_claims_are_rederived_from_measured_sources",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_reverse_passage_without_independent_return_proof_stays_pending",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_review_category_requires_supporting_raw_class_history",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_review_is_bound_to_exact_input_hash_namespace",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_rider_and_passenger_are_rejected_not_silently_pedestrian",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_same_candidate_identifier_conflicting_payload_fails",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_same_direction_later_independently_reviewed_reentry_is_not_forbidden",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_same_group_never_selects_earlier_unit_changing_id_as_representative",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_same_inputs_and_reviews_rerun_are_idempotent",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_same_physical_unit_and_same_passage_multiple_ids_count_once",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_simultaneous_passages_cannot_be_confirmed_as_independent_return_episodes",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_source_bbox_link_and_native_dimension_mismatch_fail_closed",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_source_cache_identity_change_changes_candidate_namespace",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_two_distinct_reviewed_units_are_not_merged_by_spatial_overlap",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_two_required_destination_observations_are_retained_before_acceptance",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_unknown_product_category_does_not_create_new_aggregate_row",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_unsupported_raw_class_is_not_invented_product_category",
+      "status": "passed"
+    },
+    {
+      "id": "phase_6_synthetic_tests.CountingContractTests.test_walking_person_requires_explicit_pedestrian_role_and_full_review",
+      "status": "passed"
+    }
+  ],
+  "output": "test_actual_input_hash_bindings_reject_mutated_records_without_rebinding (phase_6_synthetic_tests.CountingContractTests.test_actual_input_hash_bindings_reject_mutated_records_without_rebinding) ... ok\ntest_aggregate_rejects_accepted_candidate_without_count_event_type (phase_6_synthetic_tests.CountingContractTests.test_aggregate_rejects_accepted_candidate_without_count_event_type) ... ok\ntest_aggregate_rejects_count_event_without_positive_accepted_marker (phase_6_synthetic_tests.CountingContractTests.test_aggregate_rejects_count_event_without_positive_accepted_marker) ... ok\ntest_aggregate_rejects_same_event_id_with_conflicting_category (phase_6_synthetic_tests.CountingContractTests.test_aggregate_rejects_same_event_id_with_conflicting_category) ... ok\ntest_aggregation_is_unique_idempotent_and_exactly_reconciled (phase_6_synthetic_tests.CountingContractTests.test_aggregation_is_unique_idempotent_and_exactly_reconciled) ... ok\ntest_bus_angkot_mapping_open_cannot_be_forced_by_review (phase_6_synthetic_tests.CountingContractTests.test_bus_angkot_mapping_open_cannot_be_forced_by_review) ... ok\ntest_car_truck_conflict_pending_until_evidence_backed_category_resolution (phase_6_synthetic_tests.CountingContractTests.test_car_truck_conflict_pending_until_evidence_backed_category_resolution) ... ok\ntest_category_correction_does_not_create_new_physical_event_id (phase_6_synthetic_tests.CountingContractTests.test_category_correction_does_not_create_new_physical_event_id) ... ok\ntest_contact_evidence_cannot_omit_measured_line_contact_frames (phase_6_synthetic_tests.CountingContractTests.test_contact_evidence_cannot_omit_measured_line_contact_frames) ... ok\ntest_contact_sheet_frame_coverage_must_include_origin_and_passage (phase_6_synthetic_tests.CountingContractTests.test_contact_sheet_frame_coverage_must_include_origin_and_passage) ... ok\ntest_contradictory_category_in_confirmed_same_passage_group_fails (phase_6_synthetic_tests.CountingContractTests.test_contradictory_category_in_confirmed_same_passage_group_fails) ... ok\ntest_contradictory_direction_in_confirmed_same_passage_group_fails (phase_6_synthetic_tests.CountingContractTests.test_contradictory_direction_in_confirmed_same_passage_group_fails) ... ok\ntest_contradictory_duplicate_reviews_for_one_candidate_fail (phase_6_synthetic_tests.CountingContractTests.test_contradictory_duplicate_reviews_for_one_candidate_fail) ... ok\ntest_diagnostic_confirmation_evidence_does_not_match_unexecuted_config (phase_6_synthetic_tests.CountingContractTests.test_diagnostic_confirmation_evidence_does_not_match_unexecuted_config) ... ok\ntest_each_positive_unit_category_identity_gate_is_required (phase_6_synthetic_tests.CountingContractTests.test_each_positive_unit_category_identity_gate_is_required) ... ok\ntest_endpoint_diagnostic_never_produces_count (phase_6_synthetic_tests.CountingContractTests.test_endpoint_diagnostic_never_produces_count) ... ok\ntest_evidence_hash_tampering_is_not_accepted (phase_6_synthetic_tests.CountingContractTests.test_evidence_hash_tampering_is_not_accepted) ... ok\ntest_evidence_path_cannot_escape_explicit_root (phase_6_synthetic_tests.CountingContractTests.test_evidence_path_cannot_escape_explicit_root) ... ok\ntest_execution_timestamp_is_not_part_of_candidate_or_event_identity (phase_6_synthetic_tests.CountingContractTests.test_execution_timestamp_is_not_part_of_candidate_or_event_identity) ... ok\ntest_gap_diagnostic_is_never_promoted_by_manual_confirmation (phase_6_synthetic_tests.CountingContractTests.test_gap_diagnostic_is_never_promoted_by_manual_confirmation) ... ok\ntest_geometry_diagnostic_coordinate_tampering_cannot_be_reviewed_away (phase_6_synthetic_tests.CountingContractTests.test_geometry_diagnostic_coordinate_tampering_cannot_be_reviewed_away) ... ok\ntest_independently_reviewed_return_counts_new_passage_not_once_per_id (phase_6_synthetic_tests.CountingContractTests.test_independently_reviewed_return_counts_new_passage_not_once_per_id) ... ok\ntest_initial_presence_touch_and_incomplete_crossing_emit_no_event (phase_6_synthetic_tests.CountingContractTests.test_initial_presence_touch_and_incomplete_crossing_emit_no_event) ... ok\ntest_invalid_measurement_provenance_cannot_be_accepted_even_with_valid_hash (phase_6_synthetic_tests.CountingContractTests.test_invalid_measurement_provenance_cannot_be_accepted_even_with_valid_hash) ... ok\ntest_invalid_numeric_controls_and_alternate_metric_fail_explicitly (phase_6_synthetic_tests.CountingContractTests.test_invalid_numeric_controls_and_alternate_metric_fail_explicitly) ... ok\ntest_lifecycle_prediction_and_unconfirmed_observation_cannot_supply_passage (phase_6_synthetic_tests.CountingContractTests.test_lifecycle_prediction_and_unconfirmed_observation_cannot_supply_passage) ... ok\ntest_manual_review_cannot_override_endpoint_ambiguity (phase_6_synthetic_tests.CountingContractTests.test_manual_review_cannot_override_endpoint_ambiguity) ... ok\ntest_measured_a_to_b_positive_review_produces_one_auditable_event (phase_6_synthetic_tests.CountingContractTests.test_measured_a_to_b_positive_review_produces_one_auditable_event) ... ok\ntest_measured_b_to_a_has_own_direction_without_image_axis_assumption (phase_6_synthetic_tests.CountingContractTests.test_measured_b_to_a_has_own_direction_without_image_axis_assumption) ... ok\ntest_measured_touch_then_opposite_sign_remains_valid_with_full_contact_evidence (phase_6_synthetic_tests.CountingContractTests.test_measured_touch_then_opposite_sign_remains_valid_with_full_contact_evidence) ... ok\ntest_mid_window_component_change_cannot_be_hidden_by_motorcycle_endpoints (phase_6_synthetic_tests.CountingContractTests.test_mid_window_component_change_cannot_be_hidden_by_motorcycle_endpoints) ... ok\ntest_missing_evidence_file_is_not_accepted (phase_6_synthetic_tests.CountingContractTests.test_missing_evidence_file_is_not_accepted) ... ok\ntest_neutral_band_fixture_blocks_near_line_jitter_before_counting (phase_6_synthetic_tests.CountingContractTests.test_neutral_band_fixture_blocks_near_line_jitter_before_counting) ... ok\ntest_no_overlap_and_consistent_class_do_not_replace_review (phase_6_synthetic_tests.CountingContractTests.test_no_overlap_and_consistent_class_do_not_replace_review) ... ok\ntest_origin_window_raw_vehicle_overlap_is_screened_even_if_not_emitted (phase_6_synthetic_tests.CountingContractTests.test_origin_window_raw_vehicle_overlap_is_screened_even_if_not_emitted) ... ok\ntest_person_to_vehicle_anywhere_in_full_window_is_hard_blocked (phase_6_synthetic_tests.CountingContractTests.test_person_to_vehicle_anywhere_in_full_window_is_hard_blocked) ... ok\ntest_raw_person_overlap_does_not_automatically_reject_vehicle (phase_6_synthetic_tests.CountingContractTests.test_raw_person_overlap_does_not_automatically_reject_vehicle) ... ok\ntest_repeated_physical_unit_across_changed_ids_requires_episode_proof (phase_6_synthetic_tests.CountingContractTests.test_repeated_physical_unit_across_changed_ids_requires_episode_proof) ... ok\ntest_repeated_same_side_updates_never_create_extra_event (phase_6_synthetic_tests.CountingContractTests.test_repeated_same_side_updates_never_create_extra_event) ... ok\ntest_repeating_identical_diagnostic_is_not_duplicate_count (phase_6_synthetic_tests.CountingContractTests.test_repeating_identical_diagnostic_is_not_duplicate_count) ... ok\ntest_required_parameters_and_review_policy_have_no_silent_fallback (phase_6_synthetic_tests.CountingContractTests.test_required_parameters_and_review_policy_have_no_silent_fallback) ... ok\ntest_retained_intersection_claims_are_rederived_from_measured_sources (phase_6_synthetic_tests.CountingContractTests.test_retained_intersection_claims_are_rederived_from_measured_sources) ... ok\ntest_reverse_passage_without_independent_return_proof_stays_pending (phase_6_synthetic_tests.CountingContractTests.test_reverse_passage_without_independent_return_proof_stays_pending) ... ok\ntest_review_category_requires_supporting_raw_class_history (phase_6_synthetic_tests.CountingContractTests.test_review_category_requires_supporting_raw_class_history) ... ok\ntest_review_is_bound_to_exact_input_hash_namespace (phase_6_synthetic_tests.CountingContractTests.test_review_is_bound_to_exact_input_hash_namespace) ... ok\ntest_rider_and_passenger_are_rejected_not_silently_pedestrian (phase_6_synthetic_tests.CountingContractTests.test_rider_and_passenger_are_rejected_not_silently_pedestrian) ... ok\ntest_same_candidate_identifier_conflicting_payload_fails (phase_6_synthetic_tests.CountingContractTests.test_same_candidate_identifier_conflicting_payload_fails) ... ok\ntest_same_direction_later_independently_reviewed_reentry_is_not_forbidden (phase_6_synthetic_tests.CountingContractTests.test_same_direction_later_independently_reviewed_reentry_is_not_forbidden) ... ok\ntest_same_group_never_selects_earlier_unit_changing_id_as_representative (phase_6_synthetic_tests.CountingContractTests.test_same_group_never_selects_earlier_unit_changing_id_as_representative) ... ok\ntest_same_inputs_and_reviews_rerun_are_idempotent (phase_6_synthetic_tests.CountingContractTests.test_same_inputs_and_reviews_rerun_are_idempotent) ... ok\ntest_same_physical_unit_and_same_passage_multiple_ids_count_once (phase_6_synthetic_tests.CountingContractTests.test_same_physical_unit_and_same_passage_multiple_ids_count_once) ... ok\ntest_simultaneous_passages_cannot_be_confirmed_as_independent_return_episodes (phase_6_synthetic_tests.CountingContractTests.test_simultaneous_passages_cannot_be_confirmed_as_independent_return_episodes) ... ok\ntest_source_bbox_link_and_native_dimension_mismatch_fail_closed (phase_6_synthetic_tests.CountingContractTests.test_source_bbox_link_and_native_dimension_mismatch_fail_closed) ... ok\ntest_source_cache_identity_change_changes_candidate_namespace (phase_6_synthetic_tests.CountingContractTests.test_source_cache_identity_change_changes_candidate_namespace) ... ok\ntest_two_distinct_reviewed_units_are_not_merged_by_spatial_overlap (phase_6_synthetic_tests.CountingContractTests.test_two_distinct_reviewed_units_are_not_merged_by_spatial_overlap) ... ok\ntest_two_required_destination_observations_are_retained_before_acceptance (phase_6_synthetic_tests.CountingContractTests.test_two_required_destination_observations_are_retained_before_acceptance) ... ok\ntest_unknown_product_category_does_not_create_new_aggregate_row (phase_6_synthetic_tests.CountingContractTests.test_unknown_product_category_does_not_create_new_aggregate_row) ... ok\ntest_unsupported_raw_class_is_not_invented_product_category (phase_6_synthetic_tests.CountingContractTests.test_unsupported_raw_class_is_not_invented_product_category) ... ok\ntest_walking_person_requires_explicit_pedestrian_role_and_full_review (phase_6_synthetic_tests.CountingContractTests.test_walking_person_requires_explicit_pedestrian_role_and_full_review) ... ok\n\n----------------------------------------------------------------------\nRan 59 tests in 0.208s\n\nOK\n"
+}

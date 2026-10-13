@@ -1,0 +1,56 @@
+{
+  "A_baseline_target_scope_event_counts": {
+    "A_original": 3,
+    "A_updated": 3
+  },
+  "B_episode_only_no_grouping_aggregate": {
+    "by_category": {
+      "bus_angkot": 0,
+      "car": 0,
+      "motorcycle": 0,
+      "pedestrian": 0,
+      "truck": 0
+    },
+    "by_direction": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "event_ids": [],
+    "scope": "option_b_experimental_accepted_passage_subtotal_not_complete_traffic",
+    "total": 0
+  },
+  "B_episode_only_no_grouping_status_counts": {
+    "pending_review": 6
+  },
+  "B_machine_aggregate": {
+    "by_category": {
+      "bus_angkot": 0,
+      "car": 0,
+      "motorcycle": 2,
+      "pedestrian": 0,
+      "truck": 0
+    },
+    "by_direction": {
+      "A_TO_B": 0,
+      "B_TO_A": 2
+    },
+    "event_ids": [
+      "ce6b_2a1f9b901714462c2f76f3d0f6bda9957ceb5268e24dc4382d7066b8cbcda428",
+      "ce6b_4721e7849256d0316f779133ce974d0e73c2547b935f1bda21b45d5f3a6804c4"
+    ],
+    "scope": "option_b_experimental_accepted_passage_subtotal_not_complete_traffic",
+    "total": 2
+  },
+  "B_machine_candidate_status_counts": {
+    "accepted": 2,
+    "pending_review": 4
+  },
+  "B_machine_unique_accepted_event_subtotal": 2,
+  "interpretation": "TARGETED_EXPERIMENT_SUBTOTAL_NOT_COMPLETE_VIDEO_TRAFFIC_RESULT",
+  "visual_case_audit_required": [
+    "false_merge",
+    "duplicate_or_missed_passage",
+    "category",
+    "vehicle_BC_source"
+  ]
+}

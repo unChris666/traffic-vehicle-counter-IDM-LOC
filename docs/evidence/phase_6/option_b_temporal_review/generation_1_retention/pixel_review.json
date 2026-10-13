@@ -1,0 +1,575 @@
+{
+  "claim_type": "ACTUAL_BOUNDED_AI_ASSISTED_PIXEL_REVIEW_NOT_GROUND_TRUTH_OR_AUTO_ACCEPTANCE",
+  "reviewer": "AI_ASSISTED_CODEX",
+  "human_review_performed_by_this_agent": false,
+  "formal_ground_truth": false,
+  "created_at_utc": "2026-10-13T10:30:47.076490+00:00",
+  "source_video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+  "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+  "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+  "sample_index_sha256": "44625b3b95175a892965f365e08f4ee73749441b139c857e55a61d41f3f6b8aa",
+  "case_count": 6,
+  "unique_exact_frames_opened": 31,
+  "image_artifacts_opened": 16,
+  "scope": "Only listed raw/overlay contact sheets and overview/detail images were opened. No whole-video manual audit, detector/tracker/encoder/resolver run, metric computation or event acceptance was performed. Held-out1772 is excluded from numeric development calibration but known from user-described target; evaluation is not blind. Category1323 follows explicit user case decision.",
+  "reviews": [
+    {
+      "case_id": "motorcycle1772_rider1774",
+      "track_ids": [
+        1772,
+        1774
+      ],
+      "partition": "HELD_OUT_TARGET",
+      "exact_frames_opened": [
+        7712,
+        7713,
+        7714,
+        7715,
+        7716,
+        7717,
+        7718,
+        7719,
+        7720,
+        7721,
+        7722
+      ],
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle1772_rider1774_crop_raw.png",
+          "sha256": "3a1dac3afd31001d1eb2b6fd1d7db0ade44aa9eec462de41221e071e3e322bae",
+          "size_bytes": 5497138,
+          "shape_width_height": [
+            1892,
+            3438
+          ],
+          "view_kind": "crop_raw",
+          "frame_indices": [
+            7712,
+            7713,
+            7714,
+            7715,
+            7716,
+            7717,
+            7718,
+            7719,
+            7720,
+            7721,
+            7722
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle1772_rider1774_crop_overlay.png",
+          "sha256": "6d4026a7bffa4d668e609e12f5b5456bf2b20dc8e1b3429f2cb86fa081386514",
+          "size_bytes": 5502789,
+          "shape_width_height": [
+            1892,
+            3438
+          ],
+          "view_kind": "crop_overlay",
+          "frame_indices": [
+            7712,
+            7713,
+            7714,
+            7715,
+            7716,
+            7717,
+            7718,
+            7719,
+            7720,
+            7721,
+            7722
+          ],
+          "actually_opened_with_view_image": true
+        }
+      ],
+      "observations": "Across the eleven opened consecutive frames7712\u20137722, one black scooter carrying one helmeted rider enters close from the right and moves left/away. The same dark clothing, backpack, scooter rear panel and wheel arrangement are visible as the unit shrinks. On7712 the emitted ID1772 box is labeled person and covers the rider; an auxiliary raw motorcycle box is present but not emitted as ID1772. On7713 onward the ID1772 raw box covers the motorcycle body while ID1774 covers its seated rider. These are distinct component boxes of one visible vehicle, not two independent vehicles.",
+      "reference_relations": [
+        {
+          "relation": "COMPONENT_OF",
+          "component_track_id": 1774,
+          "vehicle_track_id": 1772,
+          "support_frames": [
+            7713,
+            7714,
+            7715,
+            7716,
+            7717,
+            7718,
+            7719,
+            7720,
+            7721,
+            7722
+          ]
+        }
+      ],
+      "visual_unit_category": "motorcycle",
+      "visual_unit_role": "VEHICLE_WITH_RIDER",
+      "same_vehicle_duplicate_reference": null,
+      "crossing_scope": "Frames7716\u20137722 contain motorcycle-source BCs around the intended B-to-A passage. Line drawing only; this pixel review did not execute the episode state machine or accept an event. Frame7712 person BC must not serve as motorcycle origin.",
+      "unresolved": "Numerical resolver acceptance and episode geometry must be executed and audited separately. No automatic acceptance is inferred from this visual review.",
+      "review_reference_basis": "ACTUAL_OPENED_PIXELS_AND_CASE_SPECIFIC_USER_DECISION; known target not a blind evaluation"
+    },
+    {
+      "case_id": "car1323",
+      "track_ids": [
+        1323
+      ],
+      "partition": "USER_REVIEW_CATEGORY_REFERENCE",
+      "exact_frames_opened": [
+        6256,
+        6257,
+        6258
+      ],
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/car1323_crop_raw.png",
+          "sha256": "9b3988d34daff346912b7fd203fb0f181cb227bdc3d92d4a254007c1e94f9b02",
+          "size_bytes": 590165,
+          "shape_width_height": [
+            1138,
+            776
+          ],
+          "view_kind": "crop_raw",
+          "frame_indices": [
+            6256,
+            6257,
+            6258
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/car1323_crop_overlay.png",
+          "sha256": "33fd6ec71b7daf2bb23cadb15ca999458a1dc91767209f2e4386c812686f1050",
+          "size_bytes": 595757,
+          "shape_width_height": [
+            1138,
+            776
+          ],
+          "view_kind": "crop_overlay",
+          "frame_indices": [
+            6256,
+            6257,
+            6258
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/car1323_overview_raw.png",
+          "sha256": "4671f4b0650fafa49ce5ab30738a681b5202cd6de5e403d49e66fe5df8072925",
+          "size_bytes": 2581583,
+          "shape_width_height": [
+            1280,
+            2244
+          ],
+          "view_kind": "overview_raw",
+          "frame_indices": [
+            6256,
+            6257,
+            6258
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/car1323_overview_overlay.png",
+          "sha256": "1e302333a0409dcff8be53bd979f37bb9d1c808c7ae2bb5add718117cc0a57ab",
+          "size_bytes": 2590482,
+          "shape_width_height": [
+            1280,
+            2244
+          ],
+          "view_kind": "overview_overlay",
+          "frame_indices": [
+            6256,
+            6257,
+            6258
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/car1323_left_edge_detail_raw.png",
+          "sha256": "78d58d4f98f1f19335bebb37ddd0bbd4786fd36fde7b5dbdba9ed83bcf2b56ec",
+          "size_bytes": 35078,
+          "shape_width_height": [
+            150,
+            236
+          ],
+          "view_kind": "left_edge_detail_raw",
+          "frame_indices": [
+            6256,
+            6257,
+            6258
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/car1323_left_edge_detail_overlay.png",
+          "sha256": "b924ad3bf5923df3273f1493bf678a00e6106eb9646d544de081ac8878cc8a32",
+          "size_bytes": 36162,
+          "shape_width_height": [
+            150,
+            236
+          ],
+          "view_kind": "left_edge_detail_overlay",
+          "frame_indices": [
+            6256,
+            6257,
+            6258
+          ],
+          "actually_opened_with_view_image": true
+        }
+      ],
+      "observations": "Opened crop and full native overview for6256,6257,6258 show the same red van/minivan with consistent rear body, roof rack, rear window and plate area moving away. The native full-scene views include a much smaller background vehicle farther left (emitted ID1316), visibly distinct from the large red target. At6257 and6258 another raw car detection d3 sits at the target left/front edge; in the additional 75x90 native detail the small region includes vehicle edge and background, and its physical meaning cannot be established confidently.",
+      "reference_relations": [
+        {
+          "relation": "DIFFERENT_VISIBLE_VEHICLES",
+          "vehicle_track_ids": [
+            1323,
+            1316
+          ],
+          "support_frames": [
+            6256,
+            6257,
+            6258
+          ]
+        }
+      ],
+      "visual_unit_category": "car",
+      "category_basis": "USER_CASE_SPECIFIC_DECISION_ID1323_CAR; visual minivan shape does not independently determine angkot function",
+      "visual_unit_role": "VEHICLE",
+      "same_vehicle_duplicate_reference": null,
+      "crossing_scope": "Focus1323 emitted sources on6257\u20136258 preserve the reviewed complete candidate support. Source6256 has a raw car detection over the same van but no emitted1323; do not manufacture a track measurement there.",
+      "unresolved": "Physical interpretation of raw car d3 on6257/6258 and emitted ID1336 on6258 is UNKNOWN: second vehicle, component/duplicate or detector artifact not confidently distinguished. This overlap cannot be declared automatically cleared by this review.",
+      "review_reference_basis": "ACTUAL_OPENED_PIXELS_PLUS_USER_CATEGORY_DECISION"
+    },
+    {
+      "case_id": "duplicate964_973",
+      "track_ids": [
+        964,
+        973
+      ],
+      "partition": "DEVELOPMENT",
+      "exact_frames_opened": [
+        5116,
+        5117,
+        5118,
+        5128,
+        5129,
+        5130
+      ],
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_raw.png",
+          "sha256": "ff94e463ad3f78479c22ee3a7028b71ed27a16869920e895cfbac0abd2bb3ad4",
+          "size_bytes": 3349998,
+          "shape_width_height": [
+            2056,
+            1752
+          ],
+          "view_kind": "crop_raw",
+          "frame_indices": [
+            5116,
+            5117,
+            5118,
+            5128,
+            5129,
+            5130
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_overlay.png",
+          "sha256": "d7291c77884795e703fbc1a7e4829560183ec20226ea6099078822acbbbe42d4",
+          "size_bytes": 3352795,
+          "shape_width_height": [
+            2056,
+            1752
+          ],
+          "view_kind": "crop_overlay",
+          "frame_indices": [
+            5116,
+            5117,
+            5118,
+            5128,
+            5129,
+            5130
+          ],
+          "actually_opened_with_view_image": true
+        }
+      ],
+      "observations": "Opened5116\u20135118 show one red scooter with the same rider in a dark shirt. Opened5128\u20135130 show that scooter farther left and away, with the same rider and rear body. On5129 and5130 two emitted motorcycle boxes labeled964 and973 enclose that one scooter; no second motorcycle body is visible inside this pair. The person box for ID967 covers its rider. ID964 starts as person on5116 then becomes motorcycle; its class/component origin is not repaired by establishing the physical duplicate relation.",
+      "reference_relations": [
+        {
+          "relation": "SAME_VEHICLE",
+          "vehicle_track_ids": [
+            964,
+            973
+          ],
+          "support_frames": [
+            5129,
+            5130
+          ]
+        },
+        {
+          "relation": "COMPONENT_OF",
+          "component_track_id": 967,
+          "vehicle_track_id": 964,
+          "support_frames": [
+            5117,
+            5118,
+            5128,
+            5129,
+            5130
+          ]
+        }
+      ],
+      "visual_unit_category": "motorcycle",
+      "visual_unit_role": "ONE_VEHICLE_TWO_VEHICLE_IDS_PLUS_RIDER",
+      "same_vehicle_duplicate_reference": true,
+      "crossing_scope": "Pixel snapshots cover both source transition intervals5128\u20135129 and5129\u20135130. Earlier5116 person component is preserved. No synthetic trajectory is drawn by concatenating IDs.",
+      "unresolved": "Intermediate frames5119\u20135127 were not opened in this targeted contact review. Identity beyond this bounded passage is not established.",
+      "review_reference_basis": "ACTUAL_OPENED_PIXELS_DEVELOPMENT_REFERENCE"
+    },
+    {
+      "case_id": "motorcycle923_rider912",
+      "track_ids": [
+        923,
+        912
+      ],
+      "partition": "DEVELOPMENT",
+      "exact_frames_opened": [
+        5011,
+        5017,
+        5018,
+        5020,
+        5028,
+        5029
+      ],
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_raw.png",
+          "sha256": "6bcceccde5b32a3210ad5def5e4bf0e51191d5b5b6c6db82d79c3978bbdf87c7",
+          "size_bytes": 2931262,
+          "shape_width_height": [
+            1998,
+            1632
+          ],
+          "view_kind": "crop_raw",
+          "frame_indices": [
+            5011,
+            5017,
+            5018,
+            5020,
+            5028,
+            5029
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_overlay.png",
+          "sha256": "59c1e36b09210fe6f81cb77819665095f06e1d893ce34ca0b5539500f55e8a85",
+          "size_bytes": 2932441,
+          "shape_width_height": [
+            1998,
+            1632
+          ],
+          "view_kind": "crop_overlay",
+          "frame_indices": [
+            5011,
+            5017,
+            5018,
+            5020,
+            5028,
+            5029
+          ],
+          "actually_opened_with_view_image": true
+        }
+      ],
+      "observations": "Opened5011,5017,5018,5020,5028,5029 show one dark scooter carrying a driver, a rear passenger in pale clothing/pink head covering and a smaller seated front occupant. ID912 person box corresponds to the rear seated passenger; vehicle923 covers the scooter body after its initial person-labeled measurement. All travel together away/left. A second narrow raw motorcycle box is visible around part of the same scooter in some overlays; the raw overlays alone do not create count sources.",
+      "reference_relations": [
+        {
+          "relation": "COMPONENT_OF",
+          "component_track_id": 912,
+          "vehicle_track_id": 923,
+          "support_frames": [
+            5017,
+            5018,
+            5020,
+            5028,
+            5029
+          ]
+        }
+      ],
+      "visual_unit_category": "motorcycle",
+      "visual_unit_role": "VEHICLE_WITH_RIDER_AND_PASSENGERS",
+      "same_vehicle_duplicate_reference": null,
+      "crossing_scope": "Opened5028\u20135029 cover the motorcycle geometry passage snapshots, while earlier person-source frame5011 is excluded from vehicle episode geometry. Individual person crossings are component diagnostics, not additional physical units.",
+      "unresolved": "Only listed frames were opened; no claim that all intermediate observations or unrelated vehicles were visually reviewed.",
+      "review_reference_basis": "ACTUAL_OPENED_PIXELS_DEVELOPMENT_REFERENCE"
+    },
+    {
+      "case_id": "motorcycle880_rider893",
+      "track_ids": [
+        880,
+        893
+      ],
+      "partition": "DEVELOPMENT",
+      "exact_frames_opened": [
+        4975,
+        4976,
+        4977,
+        4978,
+        4979
+      ],
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle880_rider893_crop_raw.png",
+          "sha256": "8669a0436f1135db1369b56e9a1d87ed071f527b2b0bb256be2ccccbe10b042d",
+          "size_bytes": 944807,
+          "shape_width_height": [
+            786,
+            1284
+          ],
+          "view_kind": "crop_raw",
+          "frame_indices": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/motorcycle880_rider893_crop_overlay.png",
+          "sha256": "1ffda0543a064a864f043e47b56e4819035c091e25965951617177c0e4c193f4",
+          "size_bytes": 944447,
+          "shape_width_height": [
+            786,
+            1284
+          ],
+          "view_kind": "crop_overlay",
+          "frame_indices": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ],
+          "actually_opened_with_view_image": true
+        }
+      ],
+      "observations": "Opened4975\u20134979 show the same foreground dark motorcycle moving left/away with seated adults; ID893 person box covers a seated member of that motorcycle, not an independently walking pedestrian. Person890 and891 source boxes also lie on the seated foreground occupants. A helmeted rider on a separate blue/purple scooter (ID892) is simultaneously visible to the right and moves right. The exact person-ID-to-driver versus passenger assignment within the foreground vehicle is not required to conclude that ID893 is a component of vehicle880.",
+      "reference_relations": [
+        {
+          "relation": "COMPONENT_OF",
+          "component_track_id": 893,
+          "vehicle_track_id": 880,
+          "support_frames": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ]
+        },
+        {
+          "relation": "DIFFERENT_VISIBLE_VEHICLES",
+          "vehicle_track_ids": [
+            880,
+            892
+          ],
+          "support_frames": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ]
+        }
+      ],
+      "visual_unit_category": "motorcycle",
+      "visual_unit_role": "VEHICLE_WITH_SEATED_COMPONENTS",
+      "same_vehicle_duplicate_reference": null,
+      "crossing_scope": "This review covers person893 near-line excursions4977\u20134979 and component association. It does not cover motorcycle880 later crossing4987\u20134988 and does not assert a complete vehicle passage review.",
+      "unresolved": "Individual assignment of overlapping person boxes to driver versus passenger remains unspecified; unit association is supported.",
+      "review_reference_basis": "ACTUAL_OPENED_PIXELS_DEVELOPMENT_REFERENCE"
+    },
+    {
+      "case_id": "negative_motorcycles880_892",
+      "track_ids": [
+        880,
+        892
+      ],
+      "partition": "DEVELOPMENT_NEGATIVE_ACTUAL_PIXELS",
+      "exact_frames_opened": [
+        4975,
+        4976,
+        4977,
+        4978,
+        4979
+      ],
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/negative_motorcycles880_892_crop_raw.png",
+          "sha256": "131a1ffa4eb04e20a45176e98498851e13c5e1289696503d039ef7639e8f9a58",
+          "size_bytes": 1354003,
+          "shape_width_height": [
+            1430,
+            1074
+          ],
+          "view_kind": "crop_raw",
+          "frame_indices": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ],
+          "actually_opened_with_view_image": true
+        },
+        {
+          "path": "docs/evidence/phase_6/option_b_temporal_review/negative_motorcycles880_892_crop_overlay.png",
+          "sha256": "7523fa2e9d9461440bff6820fb86e44e8a59eb1533e152658bcec62907a3869b",
+          "size_bytes": 1342898,
+          "shape_width_height": [
+            1430,
+            1074
+          ],
+          "view_kind": "crop_overlay",
+          "frame_indices": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ],
+          "actually_opened_with_view_image": true
+        }
+      ],
+      "observations": "Opened4975\u20134979 show two distinct motorcycles at the same time. ID880 is the dark foreground motorcycle carrying seated adults and moving left/away; ID892 is a blue/purple scooter with a helmeted rider behind/right and moving right. Distinct bodies and riders are visible simultaneously. Their separation grows across the consecutive frames. They are not duplicates and must not be joined by SAME_VEHICLE. A rider component on880 must not be reassigned to892 merely because the bodies overlap briefly in projection.",
+      "reference_relations": [
+        {
+          "relation": "DIFFERENT_VISIBLE_VEHICLES",
+          "vehicle_track_ids": [
+            880,
+            892
+          ],
+          "support_frames": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ]
+        }
+      ],
+      "visual_unit_category": null,
+      "visual_unit_role": "TWO_DISTINCT_VEHICLES",
+      "same_vehicle_duplicate_reference": false,
+      "crossing_scope": "Actual negative association reference only; no crossing or count is inferred from these frames.",
+      "unresolved": "One bounded negative example does not establish general false-merge performance or thresholds for parallel close motorcycles.",
+      "review_reference_basis": "ACTUAL_OPENED_PIXELS_DEVELOPMENT_NEGATIVE_REFERENCE"
+    }
+  ]
+}

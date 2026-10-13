@@ -1,0 +1,283 @@
+{
+  "claim_type": "EXPERIMENT_RESULT_MECHANISM_ABLATION_NOT_MODEL_PERFORMANCE",
+  "control": "B_episode_only_no_grouping",
+  "detector_tracker_encoder_rerun": false,
+  "effective_configuration": {
+    "appearance_evidence_available": false,
+    "association": {
+      "component": {
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15,
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0
+      },
+      "same_vehicle": {
+        "max_center_distance_norm": 0.1,
+        "max_relative_motion_residual_norm": 0.01,
+        "min_common_frames": 2,
+        "min_consecutive_common_frames": 2,
+        "min_iou": 0.59
+      }
+    },
+    "calibration_evidence_path": "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json",
+    "calibration_evidence_sha256": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723",
+    "category_policy": "experimental_unanimous_vehicle_measurement_labels_person_components_excluded_bus_mapping_open",
+    "comparison_track_ids": [
+      1,
+      3,
+      880,
+      892,
+      893,
+      912,
+      923,
+      964,
+      967,
+      973,
+      1323,
+      1772,
+      1774
+    ],
+    "confirmation_observations": 1,
+    "development_component_pairs": [
+      [
+        880,
+        893
+      ],
+      [
+        923,
+        912
+      ],
+      [
+        964,
+        967
+      ]
+    ],
+    "development_duplicate_pair": [
+      964,
+      973
+    ],
+    "episode_policy": "split_every_track_at_unit_family_change_or_measured_frame_gap_before_geometry",
+    "grouping_enabled": false,
+    "held_out_component_pair": [
+      1772,
+      1774
+    ],
+    "human_feedback_used_as_automatic_resolver_feature": false,
+    "identity_policy": "measured_component_and_duplicate_relation_unique_parent_complete_clique_raw_context_conflict_guard",
+    "identity_support_policy": "positive_component_or_duplicate_support_must_satisfy_frozen_controls_inside_candidate_measured_origin_to_confirmation_window",
+    "input_identity": {
+      "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+      "height": 720,
+      "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+      "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+      "variant": "reid_on",
+      "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "width": 1280
+    },
+    "metric": "passage",
+    "neutral_band_px": 0.0,
+    "new_pixel_negative_pair": [
+      880,
+      892
+    ],
+    "parameter_claim_type": "FROZEN_CALIBRATION_DERIVED_ENGINEERING_CONTROLS_NOT_PRODUCT_DEFAULTS",
+    "policy_version": "phase6_option_b_v1",
+    "recording_metadata": {
+      "day_type": null,
+      "filename": "TOR3-PAGI.mp4",
+      "latitude": null,
+      "longitude": null,
+      "recording_period": "pagi",
+      "recording_period_basis": "USER_DESCRIBED_MORNING_SAMPLE",
+      "store_code": null,
+      "store_name": null,
+      "video_id": "TOR3-PAGI"
+    },
+    "review_reference_only": "docs/evidence/phase_6/feedback/user_review_20261013_001.json",
+    "scope": {
+      "association_frame_windows": [
+        [
+          0,
+          80
+        ],
+        [
+          4975,
+          4980
+        ],
+        [
+          5011,
+          5030
+        ],
+        [
+          5116,
+          5132
+        ],
+        [
+          6256,
+          6260
+        ],
+        [
+          7712,
+          7725
+        ]
+      ],
+      "scope_claim": "BOUNDED_PREDECLARED_CASE_REPLAY_NOT_COMPLETE_VIDEO_TRAFFIC",
+      "track_ids": [
+        1,
+        3,
+        880,
+        892,
+        893,
+        912,
+        923,
+        964,
+        967,
+        973,
+        1323,
+        1772,
+        1774
+      ]
+    },
+    "selected_suitable_product_parameters": null,
+    "supersedes_initial_run_id": "20261013T103406_717807Z"
+  },
+  "effective_configuration_sha256": "14ba2b90dffed70bd6e839fe8895b01a1d69e2e116c98c2508f58d26842dd373",
+  "formal_ground_truth_available": false,
+  "input_sha256": {
+    "A_original/accepted_events.jsonl.gz": "ac2db6188259d3ac6b6a1d53ba654c4ec4210dd61d63a2f67836006a211b1282",
+    "A_original/aggregate.json": "0f0ef2593c609e563b6262bbf8ae92c0695f6390b1d7456c20a2d3a237b53d7f",
+    "A_original/report.json": "44ea66e30009b9ebe2f4695d62c23b87590fe8a9f0e05d5738797c2147e96abf",
+    "A_original/resolved_decisions.jsonl.gz": "0cf8cf60ed1e957cb12794f2ab27dff4af91805f38f818407f556f4e7a3ea019",
+    "A_updated/accepted_events.jsonl.gz": "ac2db6188259d3ac6b6a1d53ba654c4ec4210dd61d63a2f67836006a211b1282",
+    "A_updated/aggregate.json": "11d0ea33293b39e457d0ebe9b405ba354e131cf8a5cfe5a5b53933bbfe87ec10",
+    "A_updated/report.json": "ceaad5c6f455a61ba03705ab9c99bc0306601a751d6b6e99d2fca1a280e5a0ed",
+    "A_updated/resolved_decisions.jsonl.gz": "fcce56a3d60200f566a67e61123a5980c88bff1126447e1c33ed8b453e0ee1b1",
+    "calibration": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723",
+    "configuration": "4b1a366b887d2ce1833454b0aeed6cabd4579f4fa4a903be28611405fe31c99f",
+    "geometry": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "records": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89"
+  },
+  "manual_feedback_applied": false,
+  "measured_replay_elapsed_seconds": 9.776452289981535,
+  "new_episode_geometry_replay": true,
+  "replay_completed_at_utc": "2026-10-13T10:43:22.819530+00:00",
+  "replay_started_at_utc": "2026-10-13T10:43:12.638824+00:00",
+  "run_id": "20261013T104301_354775Z",
+  "software_report": {
+    "accepted_events": 0,
+    "all_source_episode_count": 3685,
+    "appearance_features_used": false,
+    "association_frame_windows": [
+      [
+        0,
+        80
+      ],
+      [
+        4975,
+        4980
+      ],
+      [
+        5011,
+        5030
+      ],
+      [
+        5116,
+        5132
+      ],
+      [
+        6256,
+        6260
+      ],
+      [
+        7712,
+        7725
+      ]
+    ],
+    "association_window_policy": "all_measured_common_frames_within_predeclared_generic_windows",
+    "claim_type": "EXECUTED_OPTION_B_SOFTWARE_EXPERIMENT_NOT_A_BENCHMARK",
+    "component_person_episodes": 0,
+    "decision_status_counts": {
+      "pending_review": 6
+    },
+    "detector_tracker_encoder_rerun": false,
+    "episode_count": 59,
+    "episode_family_counts": {
+      "person": 18,
+      "vehicle": 41
+    },
+    "geometry_diagnostic_counts": {
+      "GEOMETRY_TRANSITION": 7,
+      "ORIGIN_ESTABLISHED": 41
+    },
+    "grouping_enabled": false,
+    "identity_support_policy": "PASSAGE_LOCAL_RELATION_EVIDENCE_REQUIRED_GLOBAL_GRAPH_EXPLORATORY",
+    "input_identity": {
+      "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+      "height": 720,
+      "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+      "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+      "variant": "reid_on",
+      "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "width": 1280
+    },
+    "physical_identity_or_counting_accuracy_established": false,
+    "policy_version": "phase6_option_b_v1",
+    "relation_status_counts": {
+      "REJECTED": 20
+    },
+    "scope": {
+      "association_frame_windows": [
+        [
+          0,
+          80
+        ],
+        [
+          4975,
+          4980
+        ],
+        [
+          5011,
+          5030
+        ],
+        [
+          5116,
+          5132
+        ],
+        [
+          6256,
+          6260
+        ],
+        [
+          7712,
+          7725
+        ]
+      ],
+      "scope_claim": "BOUNDED_PREDECLARED_CASE_REPLAY_NOT_COMPLETE_VIDEO_TRAFFIC",
+      "track_ids": [
+        1,
+        3,
+        880,
+        892,
+        893,
+        912,
+        923,
+        964,
+        967,
+        973,
+        1323,
+        1772,
+        1774
+      ]
+    },
+    "source_frame_count": 10282,
+    "source_measured_observation_count": 48228
+  },
+  "source_code_sha256": {
+    "counting_validation_helper": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5",
+    "geometry_helper": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+    "identity_resolution_helper": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054",
+    "identity_resolution_tests": "3aa3798c5db0a33895fb529628cf0544479510def54e6bc8b0df0e13fc88c52d",
+    "repository_notebook_source": "10796f714b2e63b73d03567d1c1369ba298c8661913edd8bef0705505ab00489"
+  }
+}

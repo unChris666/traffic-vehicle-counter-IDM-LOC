@@ -1,0 +1,3375 @@
+{
+  "auditor": "INDEPENDENT_CODEX_AGENT",
+  "checks": [
+    {
+      "check": "actual_source_cache_sha256",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "actual_geometry_sha256",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "accepted_geometry_video_identity",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "frozen_calibration_bytes",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "association_controls_not_retuned",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "held_out_excluded_numeric_bounds",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "v1_explicit_policy",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "geometry_experimental_control_unchanged",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/a_baseline_comparison_inputs.json.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/accepted_events.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/aggregate.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/derived_diagnostics.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/effective_configuration.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/episodes.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/machine_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/relations.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/report.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/ablation/software_report.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/accepted_events.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/aggregate.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/calibration_input.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/comparison_inventory.json.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/configuration_input.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/derived_diagnostics.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/episodes.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/machine_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/pending_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/rejected_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/relations.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/report.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/runtime.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/software_report.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/source_code_sha256.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/source_index.json.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/summary.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261013T104301_354775Z/synthetic_test_results.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "executed_source_archive:identity_resolution_helper",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "executed_source_archive:identity_resolution_tests",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "executed_source_archive:repository_notebook_source",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "current_source_matches_run:geometry_helper",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "current_source_matches_run:counting_validation_helper",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "current_source_matches_run:identity_resolution_helper",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "current_source_matches_run:identity_resolution_tests",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "actual_notebook_synthetic_guard",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "no_model_encoder_or_video_decoder",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "no_appearance_fabrication",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "no_ground_truth_or_accuracy_claim",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "all_cache_frames_ordered_continuous",
+      "details": {
+        "frames": 10282
+      },
+      "passed": true
+    },
+    {
+      "check": "all_cache_context_identity",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "all_emitted_raw_source_links",
+      "details": {
+        "observations": 48228
+      },
+      "passed": true
+    },
+    {
+      "check": "all_required_raw_frames_available",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "declared_scope_complete_source_partition",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:1",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_70a61bb646acfec0cda780548b1426315f6db6d3d6441657fb5bbb71269be43e",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_70a61bb646acfec0cda780548b1426315f6db6d3d6441657fb5bbb71269be43e",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_70a61bb646acfec0cda780548b1426315f6db6d3d6441657fb5bbb71269be43e",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_70a61bb646acfec0cda780548b1426315f6db6d3d6441657fb5bbb71269be43e",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:3",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_2211d2ee6af56cbeb8384be40789d8d7b5f7264f468d9d1d4ef13c556a295652",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_2211d2ee6af56cbeb8384be40789d8d7b5f7264f468d9d1d4ef13c556a295652",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_2211d2ee6af56cbeb8384be40789d8d7b5f7264f468d9d1d4ef13c556a295652",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_2211d2ee6af56cbeb8384be40789d8d7b5f7264f468d9d1d4ef13c556a295652",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_7dd5c9818992f5b12848791466e49246e681ce35cbdec63499ccd3ac13b8ab2a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_7dd5c9818992f5b12848791466e49246e681ce35cbdec63499ccd3ac13b8ab2a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_7dd5c9818992f5b12848791466e49246e681ce35cbdec63499ccd3ac13b8ab2a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_7dd5c9818992f5b12848791466e49246e681ce35cbdec63499ccd3ac13b8ab2a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_eb4d0043a5366929a1fb5bf55f76c122b5c0c21973ddd1d7af6e1053e51e0624",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_eb4d0043a5366929a1fb5bf55f76c122b5c0c21973ddd1d7af6e1053e51e0624",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_eb4d0043a5366929a1fb5bf55f76c122b5c0c21973ddd1d7af6e1053e51e0624",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_eb4d0043a5366929a1fb5bf55f76c122b5c0c21973ddd1d7af6e1053e51e0624",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_9e0aed60e66045b2f3d4f2c268013c4893e0492c63c5dfbeadb6e62043939b30",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_9e0aed60e66045b2f3d4f2c268013c4893e0492c63c5dfbeadb6e62043939b30",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_9e0aed60e66045b2f3d4f2c268013c4893e0492c63c5dfbeadb6e62043939b30",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_9e0aed60e66045b2f3d4f2c268013c4893e0492c63c5dfbeadb6e62043939b30",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_6dd96b6c84b8f784b39dcaab9ecc9227f1d31f9db456169a5352c6c7fb644621",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_6dd96b6c84b8f784b39dcaab9ecc9227f1d31f9db456169a5352c6c7fb644621",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_6dd96b6c84b8f784b39dcaab9ecc9227f1d31f9db456169a5352c6c7fb644621",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_6dd96b6c84b8f784b39dcaab9ecc9227f1d31f9db456169a5352c6c7fb644621",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_74502fb5cadd1a968ab5ca45ee1d4c76036f2c4474f7accd5d047b5cd54e97df",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_74502fb5cadd1a968ab5ca45ee1d4c76036f2c4474f7accd5d047b5cd54e97df",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_74502fb5cadd1a968ab5ca45ee1d4c76036f2c4474f7accd5d047b5cd54e97df",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_74502fb5cadd1a968ab5ca45ee1d4c76036f2c4474f7accd5d047b5cd54e97df",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_3d9fc2fd95aedf8151e5cfc591df62b687fb7ffa6ec66218c8f043be413e153e",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_3d9fc2fd95aedf8151e5cfc591df62b687fb7ffa6ec66218c8f043be413e153e",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_3d9fc2fd95aedf8151e5cfc591df62b687fb7ffa6ec66218c8f043be413e153e",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_3d9fc2fd95aedf8151e5cfc591df62b687fb7ffa6ec66218c8f043be413e153e",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_ee5284ef67b54eb34e29ff382dc7d540b73fa62bdccc9382a7972fad31d22b23",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_ee5284ef67b54eb34e29ff382dc7d540b73fa62bdccc9382a7972fad31d22b23",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_ee5284ef67b54eb34e29ff382dc7d540b73fa62bdccc9382a7972fad31d22b23",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_ee5284ef67b54eb34e29ff382dc7d540b73fa62bdccc9382a7972fad31d22b23",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_ff1d369747a54d42f21f836ec5b53c9b88341d944e9cf31772b58060d3c8bb46",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_ff1d369747a54d42f21f836ec5b53c9b88341d944e9cf31772b58060d3c8bb46",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_ff1d369747a54d42f21f836ec5b53c9b88341d944e9cf31772b58060d3c8bb46",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_ff1d369747a54d42f21f836ec5b53c9b88341d944e9cf31772b58060d3c8bb46",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_026a41d832f26f3d2cfce045b9a2500924632fc1725c8f3c6074526fdfd90ea9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_026a41d832f26f3d2cfce045b9a2500924632fc1725c8f3c6074526fdfd90ea9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_026a41d832f26f3d2cfce045b9a2500924632fc1725c8f3c6074526fdfd90ea9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_026a41d832f26f3d2cfce045b9a2500924632fc1725c8f3c6074526fdfd90ea9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_28e7891b75a88f6bb79a05e0f6f06a201d37751eff7a5d50569910455f9c453b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_28e7891b75a88f6bb79a05e0f6f06a201d37751eff7a5d50569910455f9c453b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_28e7891b75a88f6bb79a05e0f6f06a201d37751eff7a5d50569910455f9c453b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_28e7891b75a88f6bb79a05e0f6f06a201d37751eff7a5d50569910455f9c453b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_7adff08772ed21659593d7a63ec48df37ba39d9694e9f2af373454885de3d985",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_7adff08772ed21659593d7a63ec48df37ba39d9694e9f2af373454885de3d985",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_7adff08772ed21659593d7a63ec48df37ba39d9694e9f2af373454885de3d985",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_7adff08772ed21659593d7a63ec48df37ba39d9694e9f2af373454885de3d985",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_d667741e5c4eab1f3cace5fcdfb8d921890c3545d4ee87efe4aad5979d1941ae",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_d667741e5c4eab1f3cace5fcdfb8d921890c3545d4ee87efe4aad5979d1941ae",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_d667741e5c4eab1f3cace5fcdfb8d921890c3545d4ee87efe4aad5979d1941ae",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_d667741e5c4eab1f3cace5fcdfb8d921890c3545d4ee87efe4aad5979d1941ae",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:880",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_1204b29c98b68d268c7945fbd7d25a5300e33f6d752d3cd69beb30e1dd4d75c7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_1204b29c98b68d268c7945fbd7d25a5300e33f6d752d3cd69beb30e1dd4d75c7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_1204b29c98b68d268c7945fbd7d25a5300e33f6d752d3cd69beb30e1dd4d75c7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_1204b29c98b68d268c7945fbd7d25a5300e33f6d752d3cd69beb30e1dd4d75c7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_ef584f556377870fa5bdfd9c25eef76a4f5ce80b5078c8cbd4ecc84b097435f9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_ef584f556377870fa5bdfd9c25eef76a4f5ce80b5078c8cbd4ecc84b097435f9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_ef584f556377870fa5bdfd9c25eef76a4f5ce80b5078c8cbd4ecc84b097435f9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_ef584f556377870fa5bdfd9c25eef76a4f5ce80b5078c8cbd4ecc84b097435f9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_9bd26a97054d01c586825de9d5495747fcf6ad8d8feef0590dcbfed9583f8f06",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_9bd26a97054d01c586825de9d5495747fcf6ad8d8feef0590dcbfed9583f8f06",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_9bd26a97054d01c586825de9d5495747fcf6ad8d8feef0590dcbfed9583f8f06",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_9bd26a97054d01c586825de9d5495747fcf6ad8d8feef0590dcbfed9583f8f06",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:892",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_0fad282f27c5629f60b465a9bd02b919f2d0a990c9be934bdf2f9ccf4cb7b43b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_0fad282f27c5629f60b465a9bd02b919f2d0a990c9be934bdf2f9ccf4cb7b43b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_0fad282f27c5629f60b465a9bd02b919f2d0a990c9be934bdf2f9ccf4cb7b43b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_0fad282f27c5629f60b465a9bd02b919f2d0a990c9be934bdf2f9ccf4cb7b43b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:893",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_b38b06e2a933737a2d585b54b708421d68000237be373ae9f530936ebbf436b8",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_b38b06e2a933737a2d585b54b708421d68000237be373ae9f530936ebbf436b8",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_b38b06e2a933737a2d585b54b708421d68000237be373ae9f530936ebbf436b8",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_b38b06e2a933737a2d585b54b708421d68000237be373ae9f530936ebbf436b8",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:912",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_0da9d0f0adfe2bd8d55ad2e3875586b2d727f9bf5e76b1980085edf3dccdbfea",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_0da9d0f0adfe2bd8d55ad2e3875586b2d727f9bf5e76b1980085edf3dccdbfea",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_0da9d0f0adfe2bd8d55ad2e3875586b2d727f9bf5e76b1980085edf3dccdbfea",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_0da9d0f0adfe2bd8d55ad2e3875586b2d727f9bf5e76b1980085edf3dccdbfea",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_b7e436b8454dfb15df638a1490706b5b0fa231aae8e7c4582f01e93af64b88b7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_b7e436b8454dfb15df638a1490706b5b0fa231aae8e7c4582f01e93af64b88b7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_b7e436b8454dfb15df638a1490706b5b0fa231aae8e7c4582f01e93af64b88b7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_b7e436b8454dfb15df638a1490706b5b0fa231aae8e7c4582f01e93af64b88b7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_7ae90d8d5371688744dd08996462cfc907bd52d52888141a6e8a7e27d375fc48",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_7ae90d8d5371688744dd08996462cfc907bd52d52888141a6e8a7e27d375fc48",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_7ae90d8d5371688744dd08996462cfc907bd52d52888141a6e8a7e27d375fc48",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_7ae90d8d5371688744dd08996462cfc907bd52d52888141a6e8a7e27d375fc48",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_366095d4aa77c7fc7efed37deff39913e7567a24c6cf003252e42bed257f36b1",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_366095d4aa77c7fc7efed37deff39913e7567a24c6cf003252e42bed257f36b1",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_366095d4aa77c7fc7efed37deff39913e7567a24c6cf003252e42bed257f36b1",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_366095d4aa77c7fc7efed37deff39913e7567a24c6cf003252e42bed257f36b1",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_ec30b3e4308586d74f358b91ab7e69bc901d95c8a1112786aee7fe2bce34b2ef",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_ec30b3e4308586d74f358b91ab7e69bc901d95c8a1112786aee7fe2bce34b2ef",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_ec30b3e4308586d74f358b91ab7e69bc901d95c8a1112786aee7fe2bce34b2ef",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_ec30b3e4308586d74f358b91ab7e69bc901d95c8a1112786aee7fe2bce34b2ef",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:923",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_011457d4754766dc6c558f06dca310ba67841c535c973fab2c8d35ee21fb22f2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_011457d4754766dc6c558f06dca310ba67841c535c973fab2c8d35ee21fb22f2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_011457d4754766dc6c558f06dca310ba67841c535c973fab2c8d35ee21fb22f2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_011457d4754766dc6c558f06dca310ba67841c535c973fab2c8d35ee21fb22f2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_ca76266a0e9df0bb0bc63fb97fc947f45571b42169970b7be25c52bb5f34c576",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_ca76266a0e9df0bb0bc63fb97fc947f45571b42169970b7be25c52bb5f34c576",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_ca76266a0e9df0bb0bc63fb97fc947f45571b42169970b7be25c52bb5f34c576",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_ca76266a0e9df0bb0bc63fb97fc947f45571b42169970b7be25c52bb5f34c576",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_1bbbe93bc8f3101ee70a22c725a4c00063f5b9a551cde83fd255d9e6a0666be4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_1bbbe93bc8f3101ee70a22c725a4c00063f5b9a551cde83fd255d9e6a0666be4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_1bbbe93bc8f3101ee70a22c725a4c00063f5b9a551cde83fd255d9e6a0666be4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_1bbbe93bc8f3101ee70a22c725a4c00063f5b9a551cde83fd255d9e6a0666be4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_8ed08810e734ad5ec5a84084d7dd9881bac83f54f0e7fbc142c052a70401a93b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_8ed08810e734ad5ec5a84084d7dd9881bac83f54f0e7fbc142c052a70401a93b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_8ed08810e734ad5ec5a84084d7dd9881bac83f54f0e7fbc142c052a70401a93b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_8ed08810e734ad5ec5a84084d7dd9881bac83f54f0e7fbc142c052a70401a93b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_a104d63634c6729becc5e836b62c45e934805827036b448757fca0870dd982a3",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_a104d63634c6729becc5e836b62c45e934805827036b448757fca0870dd982a3",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_a104d63634c6729becc5e836b62c45e934805827036b448757fca0870dd982a3",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_a104d63634c6729becc5e836b62c45e934805827036b448757fca0870dd982a3",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_6313eb9a60ceeeb4ca7467ceb91730bc97cbdfba50752d9d44d5ef7e2a234d06",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_6313eb9a60ceeeb4ca7467ceb91730bc97cbdfba50752d9d44d5ef7e2a234d06",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_6313eb9a60ceeeb4ca7467ceb91730bc97cbdfba50752d9d44d5ef7e2a234d06",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_6313eb9a60ceeeb4ca7467ceb91730bc97cbdfba50752d9d44d5ef7e2a234d06",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:964",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_64805ad49004063afb9c2b737ae11492febb1274df3c6e3a37fe851d9a374fb9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_64805ad49004063afb9c2b737ae11492febb1274df3c6e3a37fe851d9a374fb9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_64805ad49004063afb9c2b737ae11492febb1274df3c6e3a37fe851d9a374fb9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_64805ad49004063afb9c2b737ae11492febb1274df3c6e3a37fe851d9a374fb9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_c3dd767e2c18a6585279adfa9634bad347ec2e844bcbd4b9fb6f416c4ededa05",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_c3dd767e2c18a6585279adfa9634bad347ec2e844bcbd4b9fb6f416c4ededa05",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_c3dd767e2c18a6585279adfa9634bad347ec2e844bcbd4b9fb6f416c4ededa05",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_c3dd767e2c18a6585279adfa9634bad347ec2e844bcbd4b9fb6f416c4ededa05",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:967",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_ef58b87596d9405a7b7b368d8a40cd71425220465a2d5e78fb1e2f00064478d2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_ef58b87596d9405a7b7b368d8a40cd71425220465a2d5e78fb1e2f00064478d2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_ef58b87596d9405a7b7b368d8a40cd71425220465a2d5e78fb1e2f00064478d2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_ef58b87596d9405a7b7b368d8a40cd71425220465a2d5e78fb1e2f00064478d2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_7ba48e075a3e628235b7f478f76123608dc9843adcd99d783043e88e359ae500",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_7ba48e075a3e628235b7f478f76123608dc9843adcd99d783043e88e359ae500",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_7ba48e075a3e628235b7f478f76123608dc9843adcd99d783043e88e359ae500",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_7ba48e075a3e628235b7f478f76123608dc9843adcd99d783043e88e359ae500",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_5a6c39d7e6468bd59ae5404d12b1a09c797c617f3259e232b8610de5d87d4620",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_5a6c39d7e6468bd59ae5404d12b1a09c797c617f3259e232b8610de5d87d4620",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_5a6c39d7e6468bd59ae5404d12b1a09c797c617f3259e232b8610de5d87d4620",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_5a6c39d7e6468bd59ae5404d12b1a09c797c617f3259e232b8610de5d87d4620",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_fca6c746a7e345b627c84294931af176c3046411dd9cdf5534445ffcdf851c8d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_fca6c746a7e345b627c84294931af176c3046411dd9cdf5534445ffcdf851c8d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_fca6c746a7e345b627c84294931af176c3046411dd9cdf5534445ffcdf851c8d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_fca6c746a7e345b627c84294931af176c3046411dd9cdf5534445ffcdf851c8d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:973",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_8d9cb026f8a97c3c2bba925be764aa4c4a22a0072eebea36092e2eca61a477d4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_8d9cb026f8a97c3c2bba925be764aa4c4a22a0072eebea36092e2eca61a477d4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_8d9cb026f8a97c3c2bba925be764aa4c4a22a0072eebea36092e2eca61a477d4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_8d9cb026f8a97c3c2bba925be764aa4c4a22a0072eebea36092e2eca61a477d4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_d5bbd45e55d985440d00cda7e8e3b21ce65bfdc18bfb712a2455a3321252eb84",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_d5bbd45e55d985440d00cda7e8e3b21ce65bfdc18bfb712a2455a3321252eb84",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_d5bbd45e55d985440d00cda7e8e3b21ce65bfdc18bfb712a2455a3321252eb84",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_d5bbd45e55d985440d00cda7e8e3b21ce65bfdc18bfb712a2455a3321252eb84",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_7d6963c6ad6fd734cfe9c294ae9775c469da1ae4d3ad73011453914b430d17d2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_7d6963c6ad6fd734cfe9c294ae9775c469da1ae4d3ad73011453914b430d17d2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_7d6963c6ad6fd734cfe9c294ae9775c469da1ae4d3ad73011453914b430d17d2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_7d6963c6ad6fd734cfe9c294ae9775c469da1ae4d3ad73011453914b430d17d2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_f09c1437c47bb4ae514ae60c33498e55ed9d2fea1b170818177fdb9ca91f04c9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_f09c1437c47bb4ae514ae60c33498e55ed9d2fea1b170818177fdb9ca91f04c9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_f09c1437c47bb4ae514ae60c33498e55ed9d2fea1b170818177fdb9ca91f04c9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_f09c1437c47bb4ae514ae60c33498e55ed9d2fea1b170818177fdb9ca91f04c9",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_7de334eb060fd9b55b70867725c6c28a1e9b8696010b9685a8c5d25ffbca2948",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_7de334eb060fd9b55b70867725c6c28a1e9b8696010b9685a8c5d25ffbca2948",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_7de334eb060fd9b55b70867725c6c28a1e9b8696010b9685a8c5d25ffbca2948",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_7de334eb060fd9b55b70867725c6c28a1e9b8696010b9685a8c5d25ffbca2948",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_e30ad7435ab4a8e6e3492c46d3f90bc705720679eb7d25e81eb0fb3e97900de4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_e30ad7435ab4a8e6e3492c46d3f90bc705720679eb7d25e81eb0fb3e97900de4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_e30ad7435ab4a8e6e3492c46d3f90bc705720679eb7d25e81eb0fb3e97900de4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_e30ad7435ab4a8e6e3492c46d3f90bc705720679eb7d25e81eb0fb3e97900de4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:1323",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_d41636566ef4e3a04438e2f6c844a1b05b91dc5cb25ccdf5a77b64a723685d1a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_d41636566ef4e3a04438e2f6c844a1b05b91dc5cb25ccdf5a77b64a723685d1a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_d41636566ef4e3a04438e2f6c844a1b05b91dc5cb25ccdf5a77b64a723685d1a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_d41636566ef4e3a04438e2f6c844a1b05b91dc5cb25ccdf5a77b64a723685d1a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_0c1eaf6a622967c95f57586c6c82fd0699c058532f9c8e534bc9b2b653a2fc09",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_0c1eaf6a622967c95f57586c6c82fd0699c058532f9c8e534bc9b2b653a2fc09",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_0c1eaf6a622967c95f57586c6c82fd0699c058532f9c8e534bc9b2b653a2fc09",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_0c1eaf6a622967c95f57586c6c82fd0699c058532f9c8e534bc9b2b653a2fc09",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_72382481b6b062c4cc8140eddccd957010d3df775d38918cdb6029f2d7c5e61b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_72382481b6b062c4cc8140eddccd957010d3df775d38918cdb6029f2d7c5e61b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_72382481b6b062c4cc8140eddccd957010d3df775d38918cdb6029f2d7c5e61b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_72382481b6b062c4cc8140eddccd957010d3df775d38918cdb6029f2d7c5e61b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_b38cb6fda5475bf5471a05b0db5323cd254f3a1e0ff27514994bd0ab242bd328",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_b38cb6fda5475bf5471a05b0db5323cd254f3a1e0ff27514994bd0ab242bd328",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_b38cb6fda5475bf5471a05b0db5323cd254f3a1e0ff27514994bd0ab242bd328",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_b38cb6fda5475bf5471a05b0db5323cd254f3a1e0ff27514994bd0ab242bd328",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_b48791ea31d16c9964217e57f5dff014a22eabfec573694e0d3c6bd33f9fec4c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_b48791ea31d16c9964217e57f5dff014a22eabfec573694e0d3c6bd33f9fec4c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_b48791ea31d16c9964217e57f5dff014a22eabfec573694e0d3c6bd33f9fec4c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_b48791ea31d16c9964217e57f5dff014a22eabfec573694e0d3c6bd33f9fec4c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_31f492423acbcc60ef90a418ca7187c37a2bb3c4e816c7a756d0425a82b65a07",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_31f492423acbcc60ef90a418ca7187c37a2bb3c4e816c7a756d0425a82b65a07",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_31f492423acbcc60ef90a418ca7187c37a2bb3c4e816c7a756d0425a82b65a07",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_31f492423acbcc60ef90a418ca7187c37a2bb3c4e816c7a756d0425a82b65a07",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_925cc6e8af6c290a06bdd395ac027719d1d666ad87203941067dea30a2edab2c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_925cc6e8af6c290a06bdd395ac027719d1d666ad87203941067dea30a2edab2c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_925cc6e8af6c290a06bdd395ac027719d1d666ad87203941067dea30a2edab2c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_925cc6e8af6c290a06bdd395ac027719d1d666ad87203941067dea30a2edab2c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_e1b9b17879239dcf2c5f23e0766daa7740cf30e09b214e6eb1810b506cf178e4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_e1b9b17879239dcf2c5f23e0766daa7740cf30e09b214e6eb1810b506cf178e4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_e1b9b17879239dcf2c5f23e0766daa7740cf30e09b214e6eb1810b506cf178e4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_e1b9b17879239dcf2c5f23e0766daa7740cf30e09b214e6eb1810b506cf178e4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_f30e97b75c112291daf89d4bb80cf4f521a205d544f2a782fbf04cfe69166e2d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_f30e97b75c112291daf89d4bb80cf4f521a205d544f2a782fbf04cfe69166e2d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_f30e97b75c112291daf89d4bb80cf4f521a205d544f2a782fbf04cfe69166e2d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_f30e97b75c112291daf89d4bb80cf4f521a205d544f2a782fbf04cfe69166e2d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:1772",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_a53b2c0494912762cf8053cb4d83604d127c832947eef0e2b1282a1c9d5c6af0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_a53b2c0494912762cf8053cb4d83604d127c832947eef0e2b1282a1c9d5c6af0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_a53b2c0494912762cf8053cb4d83604d127c832947eef0e2b1282a1c9d5c6af0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_a53b2c0494912762cf8053cb4d83604d127c832947eef0e2b1282a1c9d5c6af0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_5296868ccd694ac9a58b50eca7dd9db0044b831b0d7fab06332d617c16499391",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_5296868ccd694ac9a58b50eca7dd9db0044b831b0d7fab06332d617c16499391",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_5296868ccd694ac9a58b50eca7dd9db0044b831b0d7fab06332d617c16499391",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_5296868ccd694ac9a58b50eca7dd9db0044b831b0d7fab06332d617c16499391",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_cd9fbafb9f591154aae9e0deda85533a0e73ca890867ff829121f1b7368d2424",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_cd9fbafb9f591154aae9e0deda85533a0e73ca890867ff829121f1b7368d2424",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_cd9fbafb9f591154aae9e0deda85533a0e73ca890867ff829121f1b7368d2424",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_cd9fbafb9f591154aae9e0deda85533a0e73ca890867ff829121f1b7368d2424",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_b4193435dfc78dbeb6f86677bffc5668f8594b6b7022cc4b8646c2fcc3bbe05a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_b4193435dfc78dbeb6f86677bffc5668f8594b6b7022cc4b8646c2fcc3bbe05a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_b4193435dfc78dbeb6f86677bffc5668f8594b6b7022cc4b8646c2fcc3bbe05a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_b4193435dfc78dbeb6f86677bffc5668f8594b6b7022cc4b8646c2fcc3bbe05a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_8f11858ce0d2eefe64b99fd633bc88d7d73986df5b4d4eea871c4a26974e810f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_8f11858ce0d2eefe64b99fd633bc88d7d73986df5b4d4eea871c4a26974e810f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_8f11858ce0d2eefe64b99fd633bc88d7d73986df5b4d4eea871c4a26974e810f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_8f11858ce0d2eefe64b99fd633bc88d7d73986df5b4d4eea871c4a26974e810f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "full_family_gap_partition:1774",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_33406bcb97d9e96c08c4022daea1686c60465540f5da451a4c4b9285d4e4b6c2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_33406bcb97d9e96c08c4022daea1686c60465540f5da451a4c4b9285d4e4b6c2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_33406bcb97d9e96c08c4022daea1686c60465540f5da451a4c4b9285d4e4b6c2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_33406bcb97d9e96c08c4022daea1686c60465540f5da451a4c4b9285d4e4b6c2",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_b37c98c3b030fdcb012093c05eea40207c5fffebfb787a640ab3178843d36c08",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_b37c98c3b030fdcb012093c05eea40207c5fffebfb787a640ab3178843d36c08",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_b37c98c3b030fdcb012093c05eea40207c5fffebfb787a640ab3178843d36c08",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_b37c98c3b030fdcb012093c05eea40207c5fffebfb787a640ab3178843d36c08",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_raw_values:ve6b_e63b65669d0d789ca2960c2643b566c23e33cb9419514c97f3fc14fbd7a70579",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_unit_family:ve6b_e63b65669d0d789ca2960c2643b566c23e33cb9419514c97f3fc14fbd7a70579",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_preceding_provenance:ve6b_e63b65669d0d789ca2960c2643b566c23e33cb9419514c97f3fc14fbd7a70579",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_deterministic_id:ve6b_e63b65669d0d789ca2960c2643b566c23e33cb9419514c97f3fc14fbd7a70579",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_0074f4af7a0fae305e92b708f66bb7d7c70579cd93137f438b9de823fbf0c0fe",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_0074f4af7a0fae305e92b708f66bb7d7c70579cd93137f438b9de823fbf0c0fe",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "supported_relation_passes_controls:ur6b_0074f4af7a0fae305e92b708f66bb7d7c70579cd93137f438b9de823fbf0c0fe",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_040eab73c291556df515a982f9f8903196d35456cc9c4dae6cccc2de7915dd3b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_040eab73c291556df515a982f9f8903196d35456cc9c4dae6cccc2de7915dd3b",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_0f3c8557c3a2c859c40ba8bab7a04041ad643c3c3d2bca571ea2c87088039cdd",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_0f3c8557c3a2c859c40ba8bab7a04041ad643c3c3d2bca571ea2c87088039cdd",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "supported_relation_passes_controls:ur6b_0f3c8557c3a2c859c40ba8bab7a04041ad643c3c3d2bca571ea2c87088039cdd",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_150462a78c4125843830197d8ccf7822898d32abd70da9f52599ee700ca7a18d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_150462a78c4125843830197d8ccf7822898d32abd70da9f52599ee700ca7a18d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_1dc79a90d6a6710a1911c2dcd4e52936ac972a152b1cbfeef77cbf709968ded1",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_1dc79a90d6a6710a1911c2dcd4e52936ac972a152b1cbfeef77cbf709968ded1",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_2c66ea159279b4cf8fd548e1b678f150441258e8376225856c0f610cc8b11527",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_2c66ea159279b4cf8fd548e1b678f150441258e8376225856c0f610cc8b11527",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_472bb9e8b645bbb776558c9a6a46547c831edccd0b63a630fee48f298654bb68",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_472bb9e8b645bbb776558c9a6a46547c831edccd0b63a630fee48f298654bb68",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_6a75735e8ae595e4b0ab719fc3f87321007c81f4b80a1c0eeb75a813868db682",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_6a75735e8ae595e4b0ab719fc3f87321007c81f4b80a1c0eeb75a813868db682",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_99f34f7027037f91882ae1307868053ec3bf625177b45c50e7a8bf963c245c60",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_99f34f7027037f91882ae1307868053ec3bf625177b45c50e7a8bf963c245c60",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_9b67bfeab2197bc539fd77655e0d4f4ddbfb3a2deaa32b1687664b1d1efe02eb",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_9b67bfeab2197bc539fd77655e0d4f4ddbfb3a2deaa32b1687664b1d1efe02eb",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "supported_relation_passes_controls:ur6b_9b67bfeab2197bc539fd77655e0d4f4ddbfb3a2deaa32b1687664b1d1efe02eb",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_b585fcd6bf3cf57fb9d7c27fb6106078f08976287ed232dc756597a085f8d972",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_b585fcd6bf3cf57fb9d7c27fb6106078f08976287ed232dc756597a085f8d972",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_bd97bb5de2f693758a965d4b53935a9983b684556a56b621d8d9c62f7d955008",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_bd97bb5de2f693758a965d4b53935a9983b684556a56b621d8d9c62f7d955008",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_bffd35254a866d31e5d8fd7e1a4fadc2916564eab7ac36ae814387207e4a6041",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_bffd35254a866d31e5d8fd7e1a4fadc2916564eab7ac36ae814387207e4a6041",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_c323686953f62f7ac7411336a9600698deaf3fe9349133308bc8274db7160874",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_c323686953f62f7ac7411336a9600698deaf3fe9349133308bc8274db7160874",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_c529ca4a2cd457f987a79e75244224676033687f7a0ac687db474b0e49e6102d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_c529ca4a2cd457f987a79e75244224676033687f7a0ac687db474b0e49e6102d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "supported_relation_passes_controls:ur6b_c529ca4a2cd457f987a79e75244224676033687f7a0ac687db474b0e49e6102d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_cb17a3bb5eb984b4785c689c299688c29e8154f86c6dadefff44ab3ace3acc63",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_cb17a3bb5eb984b4785c689c299688c29e8154f86c6dadefff44ab3ace3acc63",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_d64fd017d100716f061b63fe8f4bd04680dae95fd01d1537dd179d686b17b38a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_d64fd017d100716f061b63fe8f4bd04680dae95fd01d1537dd179d686b17b38a",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_ebe39f238732eec450021e74406113996f2de916a54a86cd5e42984fc90614d0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_ebe39f238732eec450021e74406113996f2de916a54a86cd5e42984fc90614d0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_ecde938592be2e9bbb8c1e4e0771302d7bc8d4e18e3a3ce44f5545713695cdb7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_ecde938592be2e9bbb8c1e4e0771302d7bc8d4e18e3a3ce44f5545713695cdb7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_relation_arithmetic:ur6b_f285550d3a9692d1f65593d6d4d2a4896dcd32fc046b9909dc1110ac613d57a5",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "relation_frozen_controls:ur6b_f285550d3a9692d1f65593d6d4d2a4896dcd32fc046b9909dc1110ac613d57a5",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "candidate_complete_raw_vehicle_support:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "all_raw_competitors_including_unemitted:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": {
+        "competitor_rows": 1,
+        "unemitted_rows": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "candidate_complete_raw_vehicle_support:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "passage_local_identity_arithmetic:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c:ur6b_c529ca4a2cd457f987a79e75244224676033687f7a0ac687db474b0e49e6102d",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "passage_local_identity_arithmetic:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c:ur6b_0074f4af7a0fae305e92b708f66bb7d7c70579cd93137f438b9de823fbf0c0fe",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "all_raw_competitors_including_unemitted:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": {
+        "competitor_rows": 0,
+        "unemitted_rows": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "candidate_complete_raw_vehicle_support:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "all_raw_competitors_including_unemitted:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": {
+        "competitor_rows": 2,
+        "unemitted_rows": 1
+      },
+      "passed": true
+    },
+    {
+      "check": "candidate_complete_raw_vehicle_support:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "all_raw_competitors_including_unemitted:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": {
+        "competitor_rows": 2,
+        "unemitted_rows": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "candidate_complete_raw_vehicle_support:pc6b_c8323d3fd71b1fc99ff9448be2ea97fb0156627c5308da9e84c127bacb857d98",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "all_raw_competitors_including_unemitted:pc6b_c8323d3fd71b1fc99ff9448be2ea97fb0156627c5308da9e84c127bacb857d98",
+      "details": {
+        "competitor_rows": 2,
+        "unemitted_rows": 1
+      },
+      "passed": true
+    },
+    {
+      "check": "candidate_complete_raw_vehicle_support:pc6b_62d0a22417c2acf13a6f929431ef6514f50b4910d1c17ccd9f8f901b49b574f4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "passage_local_identity_arithmetic:pc6b_62d0a22417c2acf13a6f929431ef6514f50b4910d1c17ccd9f8f901b49b574f4:ur6b_9b67bfeab2197bc539fd77655e0d4f4ddbfb3a2deaa32b1687664b1d1efe02eb",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "local_identity_passes_frozen_controls:pc6b_62d0a22417c2acf13a6f929431ef6514f50b4910d1c17ccd9f8f901b49b574f4:ur6b_9b67bfeab2197bc539fd77655e0d4f4ddbfb3a2deaa32b1687664b1d1efe02eb",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "all_raw_competitors_including_unemitted:pc6b_62d0a22417c2acf13a6f929431ef6514f50b4910d1c17ccd9f8f901b49b574f4",
+      "details": {
+        "competitor_rows": 0,
+        "unemitted_rows": 0
+      },
+      "passed": true
+    },
+    {
+      "check": "accepted_candidate_has_no_unresolved_blocks:pc6b_62d0a22417c2acf13a6f929431ef6514f50b4910d1c17ccd9f8f901b49b574f4",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "typed_unique_accepted_events",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "machine_actual_one_held_out_motorcycle",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "aggregate_event_total",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "aggregate_reconciles:category",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "aggregate_reconciles:direction",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "event_exact_measured_candidate:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "event_no_person_bc:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "event_identity_inside_passage:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "event_reset_person_origin_excluded:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "event_new_geometry_and_immutable_source_flag:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "event_explicit_offline_category_evidence:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "event_one_component_person:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "event_whole_vehicle_episode_category_consistent:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_finite_measured_crossing:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "independent_origin_arrival_roi_interiors:ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_reviewed_negative_880_892_not_merged",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "known_duplicate_not_auto_claimed_resolved",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "unresolved_duplicate_candidates_excluded",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "923_future_only_identity_no_promotion",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "episode_only_ablation_no_events",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "ablation_geometry_not_changed",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/accepted_events.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/aggregate.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/audit_queue.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/configuration_input.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/machine_aggregate.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/machine_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/machine_events.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/rejected_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/report.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/resolved_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/review_input.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/review_queue.csv",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/runtime.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/summary.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/20261012T144625_030645Z/synthetic_test_results.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "A_original_actual_snapshot_18_141_7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/accepted_events.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/aggregate.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/audit_queue.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/configuration_input.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/machine_aggregate.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/machine_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/machine_events.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/rejected_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/report.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/resolved_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/review_input.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "manifest_bytes:docs/evidence/phase_6/option_b_a_updated_20261013/synthetic_test_results.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "A_updated_actual_snapshot_18_141_7",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "A_updated_reviews_actual_28",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "A_updated_1772_old_mixed_history_not_promoted",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "A_updated_user_category1323_kept_pending_identity",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "historical_A_original_tracked_bytes_immutable",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_review_source_identity",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/motorcycle1772_rider1774_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/motorcycle1772_rider1774_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7712",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7712",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7713",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7713",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7714",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7714",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7715",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7715",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7716",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7716",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7717",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7717",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7718",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7718",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7719",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7719",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7720",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7720",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7721",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7721",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle1772_rider1774:crop:7722",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle1772_rider1774:crop:7722",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/car1323_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/car1323_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/car1323_overview_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/car1323_overview_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/car1323_left_edge_detail_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/car1323_left_edge_detail_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:crop:6256",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:crop:6256",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:crop:6257",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:crop:6257",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:crop:6258",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:crop:6258",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:overview:6256",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:overview:6256",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:overview:6257",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:overview:6257",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:overview:6258",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:overview:6258",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:left_edge_detail:6256",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:left_edge_detail:6256",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:left_edge_detail:6257",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:left_edge_detail:6257",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:car1323:left_edge_detail:6258",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:car1323:left_edge_detail:6258",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:duplicate964_973:crop:5116",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:duplicate964_973:crop:5116",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:duplicate964_973:crop:5117",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:duplicate964_973:crop:5117",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:duplicate964_973:crop:5118",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:duplicate964_973:crop:5118",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:duplicate964_973:crop:5122",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:duplicate964_973:crop:5122",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:duplicate964_973:crop:5128",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:duplicate964_973:crop:5128",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:duplicate964_973:crop:5129",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:duplicate964_973:crop:5129",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:duplicate964_973:crop:5130",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:duplicate964_973:crop:5130",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle923_rider912:crop:5011",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle923_rider912:crop:5011",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle923_rider912:crop:5017",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle923_rider912:crop:5017",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle923_rider912:crop:5018",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle923_rider912:crop:5018",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle923_rider912:crop:5020",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle923_rider912:crop:5020",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle923_rider912:crop:5028",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle923_rider912:crop:5028",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle923_rider912:crop:5029",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle923_rider912:crop:5029",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/motorcycle880_rider893_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/motorcycle880_rider893_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle880_rider893:crop:4975",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle880_rider893:crop:4975",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle880_rider893:crop:4976",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle880_rider893:crop:4976",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle880_rider893:crop:4977",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle880_rider893:crop:4977",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle880_rider893:crop:4978",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle880_rider893:crop:4978",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:motorcycle880_rider893:crop:4979",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:motorcycle880_rider893:crop:4979",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/negative_motorcycles880_892_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/negative_motorcycles880_892_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:negative_motorcycles880_892:crop:4975",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:negative_motorcycles880_892:crop:4975",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:negative_motorcycles880_892:crop:4976",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:negative_motorcycles880_892:crop:4976",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:negative_motorcycles880_892:crop:4977",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:negative_motorcycles880_892:crop:4977",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:negative_motorcycles880_892:crop:4978",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:negative_motorcycles880_892:crop:4978",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:negative_motorcycles880_892:crop:4979",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:negative_motorcycles880_892:crop:4979",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/late_motorcycle923_person912_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/late_motorcycle923_person912_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/late_motorcycle923_person912_overview_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "retained_pixel_artifact:docs/evidence/phase_6/option_b_temporal_review/late_motorcycle923_person912_overview_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:late_motorcycle923_person912:crop:5116",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:late_motorcycle923_person912:crop:5116",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:late_motorcycle923_person912:crop:5128",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:late_motorcycle923_person912:crop:5128",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:late_motorcycle923_person912:overview:5116",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:late_motorcycle923_person912:overview:5116",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "raw_contact_tile_exact_pixels:late_motorcycle923_person912:overview:5128",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "pixel_tile_source_measurements:late_motorcycle923_person912:overview:5128",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manifest_bytes:resolved_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manifest_bytes:accepted_events.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manifest_bytes:aggregate.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manifest_bytes:report.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manifest_bytes:review_input.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_input_run_and_source_binding",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_input_exact_copy",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_executed_method_binding",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_machine_source_immutable:accepted_events.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_machine_source_immutable:configuration_input.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_machine_source_immutable:episodes.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_machine_source_immutable:execution_manifest.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_machine_source_immutable:machine_decisions.jsonl.gz",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_machine_source_immutable:report.json",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_explicit_nonautomatic_nontruth_semantics",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_candidate_inventory_unchanged",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_input_exact_five_existing_rows",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_typed_unique_accepted_only",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_automatic1772_event_exact_payload_preserved",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_unmodified_machine_decision1772",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_actual_four_physical_events",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_unique_physical_unit_passage",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_aggregate_event_ids_exact",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_aggregate_reconciles:category",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_aggregate_reconciles:direction",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_snapshot_decision_counts",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manual_auto_report_split",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_photo_index_binding",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_photo_source_identity",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_decision_preserved:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_deterministic_review_id:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf:docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_raw_contact.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf:docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_overlay_contact.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_positive_unit_category_identity:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_required_actual_photo_frames:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": {
+        "covered_actual_frames": [
+          0,
+          60,
+          75,
+          76,
+          77
+        ],
+        "required_frames": [
+          0,
+          76,
+          77
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "reviewed_association_only_blocks_resolved:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_measurement_diagnostic_unchanged:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_decision_preserved:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_deterministic_review_id:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c:docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c:docs/evidence/phase_6/option_b_temporal_review/motorcycle923_rider912_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_positive_unit_category_identity:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_required_actual_photo_frames:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": {
+        "covered_actual_frames": [
+          5011,
+          5017,
+          5018,
+          5020,
+          5028,
+          5029
+        ],
+        "required_frames": [
+          5017,
+          5028,
+          5029
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "reviewed_association_only_blocks_resolved:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_measurement_diagnostic_unchanged:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_component_source_is_person_without_crossing_substitution:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c:912",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_decision_preserved:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_deterministic_review_id:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf:docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf:docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_positive_unit_category_identity:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_required_actual_photo_frames:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": {
+        "covered_actual_frames": [
+          5116,
+          5117,
+          5118,
+          5122,
+          5128,
+          5129,
+          5130
+        ],
+        "required_frames": [
+          5122,
+          5128,
+          5129
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "reviewed_association_only_blocks_resolved:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_measurement_diagnostic_unchanged:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_component_source_is_person_without_crossing_substitution:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf:967",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_decision_preserved:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_deterministic_review_id:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032:docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032:docs/evidence/phase_6/option_b_temporal_review/duplicate964_973_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_positive_unit_category_identity:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_required_actual_photo_frames:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": {
+        "covered_actual_frames": [
+          5116,
+          5117,
+          5118,
+          5122,
+          5128,
+          5129,
+          5130
+        ],
+        "required_frames": [
+          5129,
+          5130
+        ]
+      },
+      "passed": true
+    },
+    {
+      "check": "reviewed_association_only_blocks_resolved:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_measurement_diagnostic_unchanged:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_component_source_is_person_without_crossing_substitution:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032:967",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_decision_preserved:pc6b_c8323d3fd71b1fc99ff9448be2ea97fb0156627c5308da9e84c127bacb857d98",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_deterministic_review_id:pc6b_c8323d3fd71b1fc99ff9448be2ea97fb0156627c5308da9e84c127bacb857d98",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_c8323d3fd71b1fc99ff9448be2ea97fb0156627c5308da9e84c127bacb857d98:docs/evidence/phase_6/option_b_temporal_review/car1323_crop_raw.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_photo_hash_and_actual_frame_inventory:pc6b_c8323d3fd71b1fc99ff9448be2ea97fb0156627c5308da9e84c127bacb857d98:docs/evidence/phase_6/option_b_temporal_review/car1323_crop_overlay.png",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_hold1323_categorycar_identity_unknown",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_three_explicit_manual_events",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_policy_identity_source_bound",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_earliest_valid_vehicle_representative:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_all_same_passage_sources_retained:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_source_episode_references_exact:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_deterministic_manual_event_id:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_group_members_share_one_count_authority:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29:5017",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29:5028",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29:5029",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29:5029",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manual_source_identity_category_full_history:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_full_raw_vehicle_only_support:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_independent_finite_measured_crossing:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_independent_original_opposite_roi_interiors:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_event_review_reference_exact:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_automatic_evidence_retained:ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29:pc6b_c73bd4f73e4d85c8bf576d472ec4ca2700700fb2f98e813a8f4197a2c6e87c6c",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_earliest_valid_vehicle_representative:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_all_same_passage_sources_retained:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_source_episode_references_exact:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_deterministic_manual_event_id:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_group_members_share_one_count_authority:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0:5122",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0:5128",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0:5129",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0:5129",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manual_source_identity_category_full_history:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_full_raw_vehicle_only_support:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_independent_finite_measured_crossing:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_independent_original_opposite_roi_interiors:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_event_review_reference_exact:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_event_review_reference_exact:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_automatic_evidence_retained:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0:pc6b_5ec25fcd6d78b4c88bb5a15e1142bc8bd59c5f875580c9bdb28df3fc9c081acf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_automatic_evidence_retained:ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0:pc6b_bc49cd92638522b5e6a38660bae53db4a027575fe07062bc002ec0695a9c0032",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_earliest_valid_vehicle_representative:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_all_same_passage_sources_retained:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_source_episode_references_exact:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_deterministic_manual_event_id:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_group_members_share_one_count_authority:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f:0",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f:76",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f:77",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_geometry_observation_raw_source_metadata:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f:77",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_manual_source_identity_category_full_history:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_full_raw_vehicle_only_support:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_independent_finite_measured_crossing:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_independent_original_opposite_roi_interiors:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_event_review_reference_exact:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_original_automatic_evidence_retained:ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f:pc6b_e7f8eb1182f6c9ed78b503a97e6f58f4bbf67849bf2056f2021d9c5d47f7badf",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed964973_one_motorcycle_count_correct_origin",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed973_source_suppressed_excluded_from_subtotal",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed964_prior_person_not_inherited",
+      "details": null,
+      "passed": true
+    },
+    {
+      "check": "reviewed_overlay_required_and_present",
+      "details": null,
+      "passed": true
+    }
+  ],
+  "checks_failed": 0,
+  "checks_passed": 653,
+  "claim_type": "ACTUALLY_EXECUTED_INDEPENDENT_READ_ONLY_ARTIFACT_SOURCE_AUDIT_NOT_ACCURACY",
+  "limitations": [
+    "Artifact consistency does not establish physical identity or counting accuracy.",
+    "Pixel source hashes verify retained evidence; interpretation is separately recorded in bounded pixel review.",
+    "No whole-video physical audit, held-out duplicate positive, or generalization claim.",
+    "Reviewed acceptance is an explicit photo-supported manual overlay, not additional automatic resolver success."
+  ],
+  "machine_accepted_event_count": 1,
+  "method_path": "docs/evidence/phase_6/verification/check_option_b_artifacts.py",
+  "method_sha256": "79c8acf0ecd3f42cca8df91c6347a34c03a89af955a26e0bacd6d110b98986d6",
+  "pipeline_rerun": false,
+  "reviewed_overlay": {
+    "accepted_events": 4,
+    "audited": true,
+    "duplicate_suppressed_items": 1,
+    "manual_events": 3,
+    "pending_items": 1,
+    "preserved_automatic_events": 1
+  },
+  "run_id": "20261013T104301_354775Z",
+  "selected_source_measurements_checked": 2042,
+  "source_cache_emitted_links_checked": 48228,
+  "source_cache_frames_read": 10282,
+  "successful": true,
+  "video_decoder_executed": false
+}

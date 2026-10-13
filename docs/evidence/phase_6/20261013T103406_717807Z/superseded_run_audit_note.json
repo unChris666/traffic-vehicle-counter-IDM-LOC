@@ -1,0 +1,10 @@
+{
+  "status": "SUPERSEDED_BY_TEMPORAL_IDENTITY_GATE_CORRECTION",
+  "original_execution_outputs_modified": false,
+  "finding": "Candidate923 crossing5028\u21925029 wasaccepted usingpositive componentrelations912\u2192923 onlymuchlater5116\u20135122/5128\u20135131. Geometry/sourcevalidity doesnotprovephysicalidentity fromafuture unrelatedassociationwindow.",
+  "fix_required": "Require passage-local positiveidentitysupport withfrozen thresholds andnew policyversionv1; retain firstexecutedsource/snapshot.",
+  "initial_machine_event_subtotal": 2,
+  "source_helper_snapshot_sha256": "2004e1e0070869dbf22e91a5af9da4e8ceec7db5f6a84b535ee14bb5792d6552",
+  "numeric_thresholds_changed": false,
+  "source_snapshot_file": "phase_6_identity_resolution_helpers.executed_source.py.gz"
+}

@@ -1,0 +1,138 @@
+{
+  "policy_version": "phase6_option_b_v0",
+  "metric": "passage",
+  "input_identity": {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "variant": "reid_on",
+    "width": 1280,
+    "height": 720,
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8"
+  },
+  "neutral_band_px": 0.0,
+  "confirmation_observations": 1,
+  "grouping_enabled": true,
+  "comparison_track_ids": [
+    1,
+    3,
+    880,
+    892,
+    893,
+    912,
+    923,
+    964,
+    967,
+    973,
+    1323,
+    1772,
+    1774
+  ],
+  "scope": {
+    "track_ids": [
+      1,
+      3,
+      880,
+      892,
+      893,
+      912,
+      923,
+      964,
+      967,
+      973,
+      1323,
+      1772,
+      1774
+    ],
+    "association_frame_windows": [
+      [
+        0,
+        80
+      ],
+      [
+        4975,
+        4980
+      ],
+      [
+        5011,
+        5030
+      ],
+      [
+        5116,
+        5132
+      ],
+      [
+        6256,
+        6260
+      ],
+      [
+        7712,
+        7725
+      ]
+    ],
+    "scope_claim": "BOUNDED_PREDECLARED_CASE_REPLAY_NOT_COMPLETE_VIDEO_TRAFFIC"
+  },
+  "association": {
+    "component": {
+      "max_center_distance_norm": 0.51,
+      "max_relative_motion_residual_norm": 0.15,
+      "min_common_frames": 3,
+      "min_consecutive_common_frames": 3,
+      "min_first_bc_inside_second_fraction": 1.0
+    },
+    "same_vehicle": {
+      "max_center_distance_norm": 0.1,
+      "max_relative_motion_residual_norm": 0.01,
+      "min_common_frames": 2,
+      "min_consecutive_common_frames": 2,
+      "min_iou": 0.59
+    }
+  },
+  "calibration_evidence_path": "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json",
+  "calibration_evidence_sha256": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723",
+  "parameter_claim_type": "FROZEN_CALIBRATION_DERIVED_ENGINEERING_CONTROLS_NOT_PRODUCT_DEFAULTS",
+  "episode_policy": "split_every_track_at_unit_family_change_or_measured_frame_gap_before_geometry",
+  "category_policy": "experimental_unanimous_vehicle_measurement_labels_person_components_excluded_bus_mapping_open",
+  "identity_policy": "measured_component_and_duplicate_relation_unique_parent_complete_clique_raw_context_conflict_guard",
+  "appearance_evidence_available": false,
+  "recording_metadata": {
+    "video_id": "TOR3-PAGI",
+    "filename": "TOR3-PAGI.mp4",
+    "store_code": null,
+    "store_name": null,
+    "latitude": null,
+    "longitude": null,
+    "day_type": null,
+    "recording_period": "pagi",
+    "recording_period_basis": "USER_DESCRIBED_MORNING_SAMPLE"
+  },
+  "review_reference_only": "docs/evidence/phase_6/feedback/user_review_20261013_001.json",
+  "human_feedback_used_as_automatic_resolver_feature": false,
+  "development_component_pairs": [
+    [
+      880,
+      893
+    ],
+    [
+      923,
+      912
+    ],
+    [
+      964,
+      967
+    ]
+  ],
+  "development_duplicate_pair": [
+    964,
+    973
+  ],
+  "held_out_component_pair": [
+    1772,
+    1774
+  ],
+  "new_pixel_negative_pair": [
+    880,
+    892
+  ],
+  "selected_suitable_product_parameters": null
+}

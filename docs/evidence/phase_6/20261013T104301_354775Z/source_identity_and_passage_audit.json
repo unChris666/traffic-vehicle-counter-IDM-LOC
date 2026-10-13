@@ -1,0 +1,108 @@
+{
+  "claim_type": "INDEPENDENT_MEASURED_SOURCE_PASSAGE_AUDIT_NOT_GROUND_TRUTH",
+  "input_identity": {
+    "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "height": 720,
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+    "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "variant": "reid_on",
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "width": 1280
+  },
+  "manual_reviewed_passages": [
+    {
+      "automatic_acceptance": false,
+      "claim_type": "INDEPENDENT_SOURCE_RECONCILIATION_OF_EXPLICIT_REVIEW_NOT_PHYSICAL_ACCURACY",
+      "confirmation_frame": 5029,
+      "crossing_frames": [
+        5028,
+        5029
+      ],
+      "event_id": "ce6br_a9d32d77e40b3494ddc2607f61266018626b16f02d06eb9d79411a56b9cd1a29",
+      "manual_component_track_ids": [
+        912
+      ],
+      "manual_review_applied": true,
+      "origin_frame": 5017,
+      "raw_vehicle_only": true,
+      "vehicle_member_track_ids": [
+        923
+      ],
+      "vehicle_track_id": 923
+    },
+    {
+      "automatic_acceptance": false,
+      "claim_type": "INDEPENDENT_SOURCE_RECONCILIATION_OF_EXPLICIT_REVIEW_NOT_PHYSICAL_ACCURACY",
+      "confirmation_frame": 5129,
+      "crossing_frames": [
+        5128,
+        5129
+      ],
+      "event_id": "ce6br_db282bf7c165a17ba259b6edaac339d20128b3f436b380920bc770f803c73cb0",
+      "manual_component_track_ids": [
+        967
+      ],
+      "manual_review_applied": true,
+      "origin_frame": 5122,
+      "raw_vehicle_only": true,
+      "vehicle_member_track_ids": [
+        964,
+        973
+      ],
+      "vehicle_track_id": 964
+    },
+    {
+      "automatic_acceptance": false,
+      "claim_type": "INDEPENDENT_SOURCE_RECONCILIATION_OF_EXPLICIT_REVIEW_NOT_PHYSICAL_ACCURACY",
+      "confirmation_frame": 77,
+      "crossing_frames": [
+        76,
+        77
+      ],
+      "event_id": "ce6br_e60d8d458e4bad92254162f3554153f13e762dd550a45b9c8ccdfede29b80b4f",
+      "manual_component_track_ids": [],
+      "manual_review_applied": true,
+      "origin_frame": 0,
+      "raw_vehicle_only": true,
+      "vehicle_member_track_ids": [
+        1
+      ],
+      "vehicle_track_id": 1
+    }
+  ],
+  "passages": [
+    {
+      "category_latest_evidence_frame": 7809,
+      "claim_type": "INDEPENDENT_SOURCE_AND_ARTIFACT_RECONCILIATION_NOT_PHYSICAL_ACCURACY",
+      "component_track_ids": [
+        1774
+      ],
+      "confirmation_frame": 7722,
+      "crossing_frames": [
+        7721,
+        7722
+      ],
+      "event_id": "ce6b_3f782bbcde84efffd52319cd6481b3f66ea61b52ab78a0b02a9349e00e4c8d5c",
+      "identity_evidence_frames": [
+        7716,
+        7717,
+        7718,
+        7719,
+        7720,
+        7721,
+        7722
+      ],
+      "origin_frame": 7716,
+      "raw_vehicle_only": true,
+      "vehicle_track_id": 1772
+    }
+  ],
+  "reviewed_overlay": {
+    "accepted_events": 4,
+    "audited": true,
+    "duplicate_suppressed_items": 1,
+    "manual_events": 3,
+    "pending_items": 1,
+    "preserved_automatic_events": 1
+  }
+}

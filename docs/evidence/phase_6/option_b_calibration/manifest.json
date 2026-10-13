@@ -1,0 +1,33 @@
+{
+  "claim_type": "REPRODUCIBILITY_MANIFEST",
+  "files": [
+    {
+      "path": "docs/evidence/phase_6/option_b_calibration/pair_features.json",
+      "sha256": "4723724cc4445758168a4d75944e1574027547c7c41b4d7ec0d259fae3b80a28",
+      "size_bytes": 196119
+    },
+    {
+      "path": "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json",
+      "sha256": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723",
+      "size_bytes": 2623
+    },
+    {
+      "path": "docs/evidence/phase_6/option_b_calibration/README.md",
+      "sha256": "ac4a944ea48ad75f9ed0ca73582b3a2a80503947c5ebfceffd57074a6e56e6f2",
+      "size_bytes": 3290
+    },
+    {
+      "path": "docs/evidence/phase_6/option_b_calibration/calibrate_retained_pairs.py",
+      "sha256": "34213faeb350581f78b9ab24ca1cc33acd3d313cd4d2d3a2ba6a509ca2f8936f",
+      "size_bytes": 19316
+    }
+  ],
+  "provenance": {
+    "method_path": "docs/evidence/phase_6/option_b_calibration/calibrate_retained_pairs.py",
+    "method_sha256": "34213faeb350581f78b9ab24ca1cc33acd3d313cd4d2d3a2ba6a509ca2f8936f",
+    "source_pixel_review_path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/pixel_review.json",
+    "source_pixel_review_sha256": "6a563e2938e3a4e89e479ec750890171847c01b1124e2ac5e1cbee03584057b6",
+    "source_records_path": "docs/evidence/phase_4/20261011T095924_205716Z_90cf7319/reid_on/track_records.jsonl.gz",
+    "source_records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89"
+  }
+}

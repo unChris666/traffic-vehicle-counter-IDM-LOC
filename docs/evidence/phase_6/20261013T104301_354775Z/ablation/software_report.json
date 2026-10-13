@@ -1,0 +1,109 @@
+{
+  "accepted_events": 0,
+  "all_source_episode_count": 3685,
+  "appearance_features_used": false,
+  "association_frame_windows": [
+    [
+      0,
+      80
+    ],
+    [
+      4975,
+      4980
+    ],
+    [
+      5011,
+      5030
+    ],
+    [
+      5116,
+      5132
+    ],
+    [
+      6256,
+      6260
+    ],
+    [
+      7712,
+      7725
+    ]
+  ],
+  "association_window_policy": "all_measured_common_frames_within_predeclared_generic_windows",
+  "claim_type": "EXECUTED_OPTION_B_SOFTWARE_EXPERIMENT_NOT_A_BENCHMARK",
+  "component_person_episodes": 0,
+  "decision_status_counts": {
+    "pending_review": 6
+  },
+  "detector_tracker_encoder_rerun": false,
+  "episode_count": 59,
+  "episode_family_counts": {
+    "person": 18,
+    "vehicle": 41
+  },
+  "geometry_diagnostic_counts": {
+    "GEOMETRY_TRANSITION": 7,
+    "ORIGIN_ESTABLISHED": 41
+  },
+  "grouping_enabled": false,
+  "identity_support_policy": "PASSAGE_LOCAL_RELATION_EVIDENCE_REQUIRED_GLOBAL_GRAPH_EXPLORATORY",
+  "input_identity": {
+    "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "height": 720,
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8",
+    "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "variant": "reid_on",
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "width": 1280
+  },
+  "physical_identity_or_counting_accuracy_established": false,
+  "policy_version": "phase6_option_b_v1",
+  "relation_status_counts": {
+    "REJECTED": 20
+  },
+  "scope": {
+    "association_frame_windows": [
+      [
+        0,
+        80
+      ],
+      [
+        4975,
+        4980
+      ],
+      [
+        5011,
+        5030
+      ],
+      [
+        5116,
+        5132
+      ],
+      [
+        6256,
+        6260
+      ],
+      [
+        7712,
+        7725
+      ]
+    ],
+    "scope_claim": "BOUNDED_PREDECLARED_CASE_REPLAY_NOT_COMPLETE_VIDEO_TRAFFIC",
+    "track_ids": [
+      1,
+      3,
+      880,
+      892,
+      893,
+      912,
+      923,
+      964,
+      967,
+      973,
+      1323,
+      1772,
+      1774
+    ]
+  },
+  "source_frame_count": 10282,
+  "source_measured_observation_count": 48228
+}

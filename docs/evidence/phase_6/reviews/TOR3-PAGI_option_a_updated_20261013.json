@@ -1,0 +1,1242 @@
+{
+  "review_set_id": "TOR3-PAGI_option_a_updated_user_20261013",
+  "created_at_utc": "2026-10-12T14:45:52.551801+00:00",
+  "claim_type": "ACTUAL_BOUNDED_AI_ASSISTED_VISUAL_REVIEW_NOT_GROUND_TRUTH",
+  "reviewer_type": "AI_ASSISTED_CODEX",
+  "human_review": false,
+  "formal_ground_truth": false,
+  "input_identity": {
+    "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+    "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+    "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+    "variant": "reid_on",
+    "width": 1280,
+    "height": 720,
+    "parent_run_id": "20261011T052950_360560Z_ed399fb8"
+  },
+  "source_pixel_review": {
+    "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/pixel_review.json",
+    "sha256": "6a563e2938e3a4e89e479ec750890171847c01b1124e2ac5e1cbee03584057b6"
+  },
+  "scope": "Updated case decisions from user. Original input/cache/geometry unchanged. ID1323 categorycar confirmed but tinyoverlapping rawcar identityUNKNOWN remainsHOLD. ID1772/1774 samephysicalmotorcycle; originalmixed-unit geometry stillHOLD. No episode recovery in A_updated.",
+  "decisions": [
+    {
+      "selector": {
+        "track_id": 1,
+        "crossing_frame_start": 76,
+        "crossing_frame_end": 77,
+        "direction": "A_TO_B"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu mobil hatchback perak terlihat datang dari kiri/jauh menuju kanan/dekat. Pada frame60, target mobil dan sepeda motor ID3 di tepi kanan merupakan dua kendaraan berbeda; overlap kecil bbox tidak mewakili duplikasi mobil. Frame75/76/77 memperlihatkan target mobil yang konsisten.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_raw_contact.png",
+          "sha256": "c09161e62c2dd2f7d20ac21a44f03e40d640e16890acd2b4937a188f1f044bf7",
+          "frame_indices": [
+            0,
+            60,
+            75,
+            76,
+            77
+          ],
+          "observation": "Satu mobil hatchback perak terlihat datang dari kiri/jauh menuju kanan/dekat. Pada frame60, target mobil dan sepeda motor ID3 di tepi kanan merupakan dua kendaraan berbeda; overlap kecil bbox tidak mewakili duplikasi mobil. Frame75/76/77 memperlihatkan target mobil yang konsisten."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1_overlay_contact.png",
+          "sha256": "c535b2d8fb17165f8281ed6725084da58041138f3627e6d7b79b7433f6640e8c",
+          "frame_indices": [
+            0,
+            60,
+            75,
+            76,
+            77
+          ],
+          "observation": "Satu mobil hatchback perak terlihat datang dari kiri/jauh menuju kanan/dekat. Pada frame60, target mobil dan sepeda motor ID3 di tepi kanan merupakan dua kendaraan berbeda; overlap kecil bbox tidak mewakili duplikasi mobil. Frame75/76/77 memperlihatkan target mobil yang konsisten."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "car",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1",
+      "passage_id": "A_TO_B_76_77",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 311,
+        "crossing_frame_start": 1596,
+        "crossing_frame_end": 1597,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter biru dengan pengendara duduk terlihat bergerak ke kiri/menjauh di empat frame. Tampilan skuter dan pengendara konsisten pada sampel; tidak terlihat kendaraan kedua yang tertumpuk pada target.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id311_raw_contact.png",
+          "sha256": "a54d937f2b63aba411ead72407933ae1bf3a42fbf5c2cf1423ed8d2a17e4fd73",
+          "frame_indices": [
+            1591,
+            1595,
+            1596,
+            1597
+          ],
+          "observation": "Satu skuter biru dengan pengendara duduk terlihat bergerak ke kiri/menjauh di empat frame. Tampilan skuter dan pengendara konsisten pada sampel; tidak terlihat kendaraan kedua yang tertumpuk pada target."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id311_overlay_contact.png",
+          "sha256": "04af15ec243e7c233407b9d9482930259e333a44936587a013676582629cf9ea",
+          "frame_indices": [
+            1591,
+            1595,
+            1596,
+            1597
+          ],
+          "observation": "Satu skuter biru dengan pengendara duduk terlihat bergerak ke kiri/menjauh di empat frame. Tampilan skuter dan pengendara konsisten pada sampel; tidak terlihat kendaraan kedua yang tertumpuk pada target."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_311",
+      "passage_id": "B_TO_A_1596_1597",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 394,
+        "crossing_frame_start": 1898,
+        "crossing_frame_end": 1899,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu sepeda motor dengan pengendara berhelm merah terlihat dari belakang dan bergerak ke kiri/menjauh. Unit yang sama dapat ditelusuri pada empat sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id394_raw_contact.png",
+          "sha256": "79fb08c5628b44013b063c926e756d36e330724bceae8b6e0aaa6789d80e9d42",
+          "frame_indices": [
+            1893,
+            1897,
+            1898,
+            1899
+          ],
+          "observation": "Satu sepeda motor dengan pengendara berhelm merah terlihat dari belakang dan bergerak ke kiri/menjauh. Unit yang sama dapat ditelusuri pada empat sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id394_overlay_contact.png",
+          "sha256": "e570bccb783da1cd6928d3ad8cd555f0c14dbcc9523031b27846b5f3b94a6a42",
+          "frame_indices": [
+            1893,
+            1897,
+            1898,
+            1899
+          ],
+          "observation": "Satu sepeda motor dengan pengendara berhelm merah terlihat dari belakang dan bergerak ke kiri/menjauh. Unit yang sama dapat ditelusuri pada empat sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_394",
+      "passage_id": "B_TO_A_1898_1899",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 443,
+        "crossing_frame_start": 2297,
+        "crossing_frame_end": 2298,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu sepeda motor dengan pengendara membawa ransel terlihat bergerak ke kiri/menjauh. Bodi, roda dan posisi pengendara konsisten pada sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id443_raw_contact.png",
+          "sha256": "72faafbb503102c21ab1b075d735e982b0ebc428dfeef83b5e5cce7002c19874",
+          "frame_indices": [
+            2292,
+            2296,
+            2297,
+            2298
+          ],
+          "observation": "Satu sepeda motor dengan pengendara membawa ransel terlihat bergerak ke kiri/menjauh. Bodi, roda dan posisi pengendara konsisten pada sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id443_overlay_contact.png",
+          "sha256": "ef47f250bc2587cee93c27142f63a3f57123a4df6d7c1108948b8e4912aad737",
+          "frame_indices": [
+            2292,
+            2296,
+            2297,
+            2298
+          ],
+          "observation": "Satu sepeda motor dengan pengendara membawa ransel terlihat bergerak ke kiri/menjauh. Bodi, roda dan posisi pengendara konsisten pada sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_443",
+      "passage_id": "B_TO_A_2297_2298",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 461,
+        "crossing_frame_start": 2367,
+        "crossing_frame_end": 2368,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter biru dengan pengendara terlihat bergerak ke kiri/menjauh. Kotak target tetap pada satu kendaraan pada empat sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id461_raw_contact.png",
+          "sha256": "35504823766f7028736ba1c669ced35fbe394cad74f112d7b137761f80e6ebbd",
+          "frame_indices": [
+            2362,
+            2366,
+            2367,
+            2368
+          ],
+          "observation": "Satu skuter biru dengan pengendara terlihat bergerak ke kiri/menjauh. Kotak target tetap pada satu kendaraan pada empat sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id461_overlay_contact.png",
+          "sha256": "98019e5570798c2e461c6c52f0f20c80740992df4401b2b4901a75c7a2bfebb0",
+          "frame_indices": [
+            2362,
+            2366,
+            2367,
+            2368
+          ],
+          "observation": "Satu skuter biru dengan pengendara terlihat bergerak ke kiri/menjauh. Kotak target tetap pada satu kendaraan pada empat sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_461",
+      "passage_id": "B_TO_A_2367_2368",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 693,
+        "crossing_frame_start": 4215,
+        "crossing_frame_end": 4216,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter hitam/putih dan pengendara terlihat bergerak ke kiri/menjauh. Orang jauh di latar tidak mewakili pengendara target dan tidak dianggap unit target.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id693_raw_contact.png",
+          "sha256": "59c13c070641450d10da777d7df7edbe9b872aa4a2b16c5e41a08662782f3dfc",
+          "frame_indices": [
+            4207,
+            4214,
+            4215,
+            4216
+          ],
+          "observation": "Satu skuter hitam/putih dan pengendara terlihat bergerak ke kiri/menjauh. Orang jauh di latar tidak mewakili pengendara target dan tidak dianggap unit target."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id693_overlay_contact.png",
+          "sha256": "a0e2d6e44974cd33a6eda14848954fd47f51a62648935b8a3117d682ca7c7111",
+          "frame_indices": [
+            4207,
+            4214,
+            4215,
+            4216
+          ],
+          "observation": "Satu skuter hitam/putih dan pengendara terlihat bergerak ke kiri/menjauh. Orang jauh di latar tidak mewakili pengendara target dan tidak dianggap unit target."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_693",
+      "passage_id": "B_TO_A_4215_4216",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 829,
+        "crossing_frame_start": 4801,
+        "crossing_frame_end": 4802,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter berwarna terang dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id829_raw_contact.png",
+          "sha256": "d2dd554414b2c8e55a5d8d854ffec4aec60ee4780f8aebea6c423691b8b8dbcd",
+          "frame_indices": [
+            4797,
+            4800,
+            4801,
+            4802
+          ],
+          "observation": "Satu skuter berwarna terang dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id829_overlay_contact.png",
+          "sha256": "0d6d381929a6ca2a90104dc9506b6f3787b54f4f7bf7deca816a268064beb318",
+          "frame_indices": [
+            4797,
+            4800,
+            4801,
+            4802
+          ],
+          "observation": "Satu skuter berwarna terang dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_829",
+      "passage_id": "B_TO_A_4801_4802",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 893,
+        "crossing_frame_start": 4977,
+        "crossing_frame_end": 4978,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Target person melingkupi orang yang duduk pada skuter, dengan pengendara/penumpang lain dan kendaraan motorcycle ID880. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn. Kotak person berubah cakupan; transisi balik tidak diperlakukan sebagai bukti genuine return.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_raw_contact.png",
+          "sha256": "ce5a1e5ea4d1ee59be8658fbeb102ef6262389076e51907ad4dbbe3f440e75e0",
+          "frame_indices": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter, dengan pengendara/penumpang lain dan kendaraan motorcycle ID880. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn. Kotak person berubah cakupan; transisi balik tidak diperlakukan sebagai bukti genuine return."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_overlay_contact.png",
+          "sha256": "d3a99a7a88f9d9a497bd8ff649a2347041bea218b127929aff65ed239706e7dc",
+          "frame_indices": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter, dengan pengendara/penumpang lain dan kendaraan motorcycle ID880. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn. Kotak person berubah cakupan; transisi balik tidak diperlakukan sebagai bukti genuine return."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "REJECT_COMPONENT",
+      "role": "rider",
+      "category": null,
+      "physical_unit_id": null,
+      "passage_id": null,
+      "unit_confirmed": false,
+      "category_confirmed": false,
+      "identity_confirmed": false
+    },
+    {
+      "selector": {
+        "track_id": 893,
+        "crossing_frame_start": 4978,
+        "crossing_frame_end": 4979,
+        "direction": "A_TO_B"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Target person melingkupi orang yang duduk pada skuter, dengan pengendara/penumpang lain dan kendaraan motorcycle ID880. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn. Kotak person berubah cakupan; transisi balik tidak diperlakukan sebagai bukti genuine return.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_raw_contact.png",
+          "sha256": "ce5a1e5ea4d1ee59be8658fbeb102ef6262389076e51907ad4dbbe3f440e75e0",
+          "frame_indices": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter, dengan pengendara/penumpang lain dan kendaraan motorcycle ID880. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn. Kotak person berubah cakupan; transisi balik tidak diperlakukan sebagai bukti genuine return."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id893_overlay_contact.png",
+          "sha256": "d3a99a7a88f9d9a497bd8ff649a2347041bea218b127929aff65ed239706e7dc",
+          "frame_indices": [
+            4975,
+            4976,
+            4977,
+            4978,
+            4979
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter, dengan pengendara/penumpang lain dan kendaraan motorcycle ID880. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn. Kotak person berubah cakupan; transisi balik tidak diperlakukan sebagai bukti genuine return."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "REJECT_COMPONENT",
+      "role": "rider",
+      "category": null,
+      "physical_unit_id": null,
+      "passage_id": null,
+      "unit_confirmed": false,
+      "category_confirmed": false,
+      "identity_confirmed": false
+    },
+    {
+      "selector": {
+        "track_id": 912,
+        "crossing_frame_start": 5019,
+        "crossing_frame_end": 5020,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_raw_contact.png",
+          "sha256": "a5e55b1a773821f60fb857d81730382d1c26e7723f86646a758d6113a27dca69",
+          "frame_indices": [
+            5011,
+            5018,
+            5019,
+            5020,
+            5021,
+            5022
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_overlay_contact.png",
+          "sha256": "600834e2267949968f0875cb56a27669a8deeaafd279801e45b928e102f65e73",
+          "frame_indices": [
+            5011,
+            5018,
+            5019,
+            5020,
+            5021,
+            5022
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "REJECT_COMPONENT",
+      "role": "rider",
+      "category": null,
+      "physical_unit_id": null,
+      "passage_id": null,
+      "unit_confirmed": false,
+      "category_confirmed": false,
+      "identity_confirmed": false
+    },
+    {
+      "selector": {
+        "track_id": 912,
+        "crossing_frame_start": 5020,
+        "crossing_frame_end": 5021,
+        "direction": "A_TO_B"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_raw_contact.png",
+          "sha256": "a5e55b1a773821f60fb857d81730382d1c26e7723f86646a758d6113a27dca69",
+          "frame_indices": [
+            5011,
+            5018,
+            5019,
+            5020,
+            5021,
+            5022
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_overlay_contact.png",
+          "sha256": "600834e2267949968f0875cb56a27669a8deeaafd279801e45b928e102f65e73",
+          "frame_indices": [
+            5011,
+            5018,
+            5019,
+            5020,
+            5021,
+            5022
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "REJECT_COMPONENT",
+      "role": "rider",
+      "category": null,
+      "physical_unit_id": null,
+      "passage_id": null,
+      "unit_confirmed": false,
+      "category_confirmed": false,
+      "identity_confirmed": false
+    },
+    {
+      "selector": {
+        "track_id": 912,
+        "crossing_frame_start": 5021,
+        "crossing_frame_end": 5022,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_raw_contact.png",
+          "sha256": "a5e55b1a773821f60fb857d81730382d1c26e7723f86646a758d6113a27dca69",
+          "frame_indices": [
+            5011,
+            5018,
+            5019,
+            5020,
+            5021,
+            5022
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id912_overlay_contact.png",
+          "sha256": "600834e2267949968f0875cb56a27669a8deeaafd279801e45b928e102f65e73",
+          "frame_indices": [
+            5011,
+            5018,
+            5019,
+            5020,
+            5021,
+            5022
+          ],
+          "observation": "Target person melingkupi orang yang duduk pada skuter yang terkait motorcycle ID923. Sampel menunjukkan skuter bergerak ke kiri/menjauh; tidak tampak U-turn pada frame yang diperiksa. Perubahan batas bawah bbox person tidak membuktikan passage fisik berulang."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "REJECT_COMPONENT",
+      "role": "rider",
+      "category": null,
+      "physical_unit_id": null,
+      "passage_id": null,
+      "unit_confirmed": false,
+      "category_confirmed": false,
+      "identity_confirmed": false
+    },
+    {
+      "selector": {
+        "track_id": 923,
+        "crossing_frame_start": 5028,
+        "crossing_frame_end": 5029,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter membawa pengendara dan penumpang terlihat bergerak ke kiri/menjauh. Dua orang yang duduk di kendaraan merupakan komponen satu unit kendaraan, bukan dua kendaraan.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id923_raw_contact.png",
+          "sha256": "21635bff1601e9da5e212381de64bb5c84d8ddad23a1f45039b9f2e54abf5bbe",
+          "frame_indices": [
+            5017,
+            5027,
+            5028,
+            5029
+          ],
+          "observation": "Satu skuter membawa pengendara dan penumpang terlihat bergerak ke kiri/menjauh. Dua orang yang duduk di kendaraan merupakan komponen satu unit kendaraan, bukan dua kendaraan."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id923_overlay_contact.png",
+          "sha256": "3f983658d66e246bc6af44229fe08bd23f9671a3cfd369dac4389780af75a58c",
+          "frame_indices": [
+            5017,
+            5027,
+            5028,
+            5029
+          ],
+          "observation": "Satu skuter membawa pengendara dan penumpang terlihat bergerak ke kiri/menjauh. Dua orang yang duduk di kendaraan merupakan komponen satu unit kendaraan, bukan dua kendaraan."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_923",
+      "passage_id": "B_TO_A_5028_5029",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 967,
+        "crossing_frame_start": 5125,
+        "crossing_frame_end": 5126,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Target person berada pada pengendara yang duduk pada skuter merah. Overlay motorcycle ID964 mengacu pada kendaraan yang sama. Komponen ini bukan pedestrian yang berjalan sendiri pada sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id967_raw_contact.png",
+          "sha256": "52b29a70185e433f4f6f70db7ae01ba504d90ad70d5058b3f73ec7b92c79123b",
+          "frame_indices": [
+            5118,
+            5124,
+            5125,
+            5126
+          ],
+          "observation": "Target person berada pada pengendara yang duduk pada skuter merah. Overlay motorcycle ID964 mengacu pada kendaraan yang sama. Komponen ini bukan pedestrian yang berjalan sendiri pada sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id967_overlay_contact.png",
+          "sha256": "4ef049ffa0bab5b6a7322d2989f79081a516036d875fe2430823c80f45f2af22",
+          "frame_indices": [
+            5118,
+            5124,
+            5125,
+            5126
+          ],
+          "observation": "Target person berada pada pengendara yang duduk pada skuter merah. Overlay motorcycle ID964 mengacu pada kendaraan yang sama. Komponen ini bukan pedestrian yang berjalan sendiri pada sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "REJECT_COMPONENT",
+      "role": "rider",
+      "category": null,
+      "physical_unit_id": null,
+      "passage_id": null,
+      "unit_confirmed": false,
+      "category_confirmed": false,
+      "identity_confirmed": false
+    },
+    {
+      "selector": {
+        "track_id": 973,
+        "crossing_frame_start": 5129,
+        "crossing_frame_end": 5130,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "ROOT AI-ASSISTED ADJUDICATION: actual raw/overlay samples5128/5129/5130 opened. One red scooter with seated rider is present; raw vehicle boxes assigned IDs964 and973 enclose the same scooter. Confirm one physical unit and one passage only, represented by hard-eligible measured ID973 origin5129 to opposite-side confirmation5130. ID964 mixed person-to-motorcycle measurement history cannot confirm a vehicle passage; it remains pending and is linked to the same unit/passage. No trajectories merged and no additional vehicle inferred.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_raw_contact.png",
+          "sha256": "00418cece3fd65658e63363010e3d4b23bba16a04e5679883d1122492ff80298",
+          "frame_indices": [
+            5128,
+            5129,
+            5130
+          ],
+          "observation": "ROOT AI-ASSISTED ADJUDICATION: actual raw/overlay samples5128/5129/5130 opened. One red scooter with seated rider is present; raw vehicle boxes assigned IDs964 and973 enclose the same scooter. Confirm one physical unit and one passage only, represented by hard-eligible measured ID973 origin5129 to opposite-side confirmation5130. ID964 mixed person-to-motorcycle measurement history cannot confirm a vehicle passage; it remains pending and is linked to the same unit/passage. No trajectories merged and no additional vehicle inferred."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_overlay_contact.png",
+          "sha256": "c529bbd29c1add9924e84e2da4e135ce6c757c843ec8ae4e2d74f6b85c9d69fb",
+          "frame_indices": [
+            5128,
+            5129,
+            5130
+          ],
+          "observation": "ROOT AI-ASSISTED ADJUDICATION: actual raw/overlay samples5128/5129/5130 opened. One red scooter with seated rider is present; raw vehicle boxes assigned IDs964 and973 enclose the same scooter. Confirm one physical unit and one passage only, represented by hard-eligible measured ID973 origin5129 to opposite-side confirmation5130. ID964 mixed person-to-motorcycle measurement history cannot confirm a vehicle passage; it remains pending and is linked to the same unit/passage. No trajectories merged and no additional vehicle inferred."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_red_scooter_5128_5130",
+      "passage_id": "B_TO_A_red_scooter_5128_5130",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1144,
+        "crossing_frame_start": 5689,
+        "crossing_frame_end": 5690,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu sepeda motor membawa pengendara dan barang/bungkusan terlihat bergerak ke kiri/menjauh. Overlay teks video menutupi sebagian citra, namun roda/bodi kendaraan tetap terlihat pada sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1144_raw_contact.png",
+          "sha256": "069ef6f9d8434f757ee8ba718aa6b3a2a6cfba749d9fda3127fae045b6d4baac",
+          "frame_indices": [
+            5674,
+            5688,
+            5689,
+            5690
+          ],
+          "observation": "Satu sepeda motor membawa pengendara dan barang/bungkusan terlihat bergerak ke kiri/menjauh. Overlay teks video menutupi sebagian citra, namun roda/bodi kendaraan tetap terlihat pada sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1144_overlay_contact.png",
+          "sha256": "654f6cc2439820135774807e00baeb29339edea1fc4d3a9930e7bddb35269e97",
+          "frame_indices": [
+            5674,
+            5688,
+            5689,
+            5690
+          ],
+          "observation": "Satu sepeda motor membawa pengendara dan barang/bungkusan terlihat bergerak ke kiri/menjauh. Overlay teks video menutupi sebagian citra, namun roda/bodi kendaraan tetap terlihat pada sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1144",
+      "passage_id": "B_TO_A_5689_5690",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1323,
+        "crossing_frame_start": 6257,
+        "crossing_frame_end": 6258,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "USER_CATEGORY_PLUS_AI_ASSISTED_EVIDENCE",
+      "reason": "USER_CONFIRMED: ID1323 category car. Actual retained frames6256/6257/6258 show one consistent red van target. The small rawcar box atleft edge(detection3) remainsUNKNOWN as distinctvehicle versusbody/false detection. Categorydecision recorded; unresolvedoverlap identity keepsHOLD, no acceptanceoverride.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1323_raw_contact.png",
+          "sha256": "fb0bc2791a1b7616041b899f7351b8f9d25089f21f8139e854baa537f8654dce",
+          "frame_indices": [
+            6256,
+            6257,
+            6258
+          ],
+          "observation": "Satu kendaraan berbentuk minivan/minibus merah terlihat dari belakang. Foto tidak menetapkan apakah unit ini angkot atau bagaimana minivan harus dipetakan ke kategori produk; kategori tetap UNKNOWN. Deteksi car lain tampak berada di tepi kiri bbox; clearance identitas/kategori tidak dipaksakan."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1323_overlay_contact.png",
+          "sha256": "5037ff8d91f7213c81370e5f3e36ffedd44690e8004e44a5cc2b5fe02bc427a1",
+          "frame_indices": [
+            6256,
+            6257,
+            6258
+          ],
+          "observation": "Satu kendaraan berbentuk minivan/minibus merah terlihat dari belakang. Foto tidak menetapkan apakah unit ini angkot atau bagaimana minivan harus dipetakan ke kategori produk; kategori tetap UNKNOWN. Deteksi car lain tampak berada di tepi kiri bbox; clearance identitas/kategori tidak dipaksakan."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "HOLD",
+      "role": "vehicle",
+      "category": "car",
+      "physical_unit_id": "TOR3-PAGI_user_vehicle_1323",
+      "passage_id": "B_TO_A_6257_6258",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": false
+    },
+    {
+      "selector": {
+        "track_id": 1346,
+        "crossing_frame_start": 6294,
+        "crossing_frame_end": 6295,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter dengan pengendara terlihat bergerak ke kiri/menjauh. Overlay teks menutup sebagian kendaraan pada origin; sampel berikutnya memperlihatkan kendaraan yang sama.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1346_raw_contact.png",
+          "sha256": "4efb75fbe5dba3dce3f07b2991f683f8defeacb841a0336f59b73c8f3f1854d3",
+          "frame_indices": [
+            6283,
+            6293,
+            6294,
+            6295
+          ],
+          "observation": "Satu skuter dengan pengendara terlihat bergerak ke kiri/menjauh. Overlay teks menutup sebagian kendaraan pada origin; sampel berikutnya memperlihatkan kendaraan yang sama."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1346_overlay_contact.png",
+          "sha256": "56c35bc63cf2f1da2617249cdcd78ccb40a4d42d1adc25ece342b33104a2f039",
+          "frame_indices": [
+            6283,
+            6293,
+            6294,
+            6295
+          ],
+          "observation": "Satu skuter dengan pengendara terlihat bergerak ke kiri/menjauh. Overlay teks menutup sebagian kendaraan pada origin; sampel berikutnya memperlihatkan kendaraan yang sama."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1346",
+      "passage_id": "B_TO_A_6294_6295",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1372,
+        "crossing_frame_start": 6416,
+        "crossing_frame_end": 6417,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter membawa pengendara dan penumpang terlihat bergerak ke kiri/menjauh. Orang-orang yang duduk di kendaraan tidak dijadikan unit pedestrian tambahan.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1372_raw_contact.png",
+          "sha256": "39c02a5448a7ecd205b4f003e217466e7087ec9fe1e495be15374d81da8336c8",
+          "frame_indices": [
+            6406,
+            6415,
+            6416,
+            6417
+          ],
+          "observation": "Satu skuter membawa pengendara dan penumpang terlihat bergerak ke kiri/menjauh. Orang-orang yang duduk di kendaraan tidak dijadikan unit pedestrian tambahan."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1372_overlay_contact.png",
+          "sha256": "07314221d83d7d55c07576ed62d2a1b00f92be1f49c79283d38adfa4ebc331f5",
+          "frame_indices": [
+            6406,
+            6415,
+            6416,
+            6417
+          ],
+          "observation": "Satu skuter membawa pengendara dan penumpang terlihat bergerak ke kiri/menjauh. Orang-orang yang duduk di kendaraan tidak dijadikan unit pedestrian tambahan."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1372",
+      "passage_id": "B_TO_A_6416_6417",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1389,
+        "crossing_frame_start": 6433,
+        "crossing_frame_end": 6434,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter dengan pengendara berbaju merah terlihat bergerak ke kiri/menjauh. Kendaraan di depan dan kendaraan yang mulai masuk dari kanan merupakan unit lain yang tampak terpisah pada sampel, bukan duplikasi target.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1389_raw_contact.png",
+          "sha256": "d51f0eb70bdafc0e59619055bf21cec1486af171a88f9cfbfdf34113c01f06ed",
+          "frame_indices": [
+            6421,
+            6432,
+            6433,
+            6434
+          ],
+          "observation": "Satu skuter dengan pengendara berbaju merah terlihat bergerak ke kiri/menjauh. Kendaraan di depan dan kendaraan yang mulai masuk dari kanan merupakan unit lain yang tampak terpisah pada sampel, bukan duplikasi target."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1389_overlay_contact.png",
+          "sha256": "1f962fc001e221930606275db6eedc04835995fce4924facaafd054d774f2d08",
+          "frame_indices": [
+            6421,
+            6432,
+            6433,
+            6434
+          ],
+          "observation": "Satu skuter dengan pengendara berbaju merah terlihat bergerak ke kiri/menjauh. Kendaraan di depan dan kendaraan yang mulai masuk dari kanan merupakan unit lain yang tampak terpisah pada sampel, bukan duplikasi target."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1389",
+      "passage_id": "B_TO_A_6433_6434",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1408,
+        "crossing_frame_start": 6452,
+        "crossing_frame_end": 6453,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu sepeda motor dengan pengendara dan muatan samping besar terlihat bergerak ke kiri/menjauh. Kendaraan di depan tampak terpisah dari target.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1408_raw_contact.png",
+          "sha256": "e5d4707fa22c19b024a0d050347bf8e2b1012034dcbd3ce4865665b7e4f72d97",
+          "frame_indices": [
+            6440,
+            6451,
+            6452,
+            6453
+          ],
+          "observation": "Satu sepeda motor dengan pengendara dan muatan samping besar terlihat bergerak ke kiri/menjauh. Kendaraan di depan tampak terpisah dari target."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1408_overlay_contact.png",
+          "sha256": "120e31ed5c7f9095d3e122ec965a86cf0adcf09f8804bf9c3a17e8a8ed060ead",
+          "frame_indices": [
+            6440,
+            6451,
+            6452,
+            6453
+          ],
+          "observation": "Satu sepeda motor dengan pengendara dan muatan samping besar terlihat bergerak ke kiri/menjauh. Kendaraan di depan tampak terpisah dari target."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1408",
+      "passage_id": "B_TO_A_6452_6453",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1478,
+        "crossing_frame_start": 6598,
+        "crossing_frame_end": 6599,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter gelap dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1478_raw_contact.png",
+          "sha256": "f565188c96a54a8b30094fbb51af09785d83a357a0bcf90e3c36f03fd1d986cc",
+          "frame_indices": [
+            6592,
+            6597,
+            6598,
+            6599
+          ],
+          "observation": "Satu skuter gelap dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1478_overlay_contact.png",
+          "sha256": "8a678dc8cdaacc861a578fa865e6ed71469f0f444719ce7df99345105188d705",
+          "frame_indices": [
+            6592,
+            6597,
+            6598,
+            6599
+          ],
+          "observation": "Satu skuter gelap dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1478",
+      "passage_id": "B_TO_A_6598_6599",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1520,
+        "crossing_frame_start": 6838,
+        "crossing_frame_end": 6839,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu truk kargo kuning berbak sisi tinggi dengan kabin terpisah dan muatan terlihat bergerak ke kiri/menjauh. Bentuk kendaraan pada sampel mendukung kategori Truck dan bukan pickup yang sulit dibedakan.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1520_raw_contact.png",
+          "sha256": "127e1536650f5f18d44e9ef2d6e641487cdb5e84595312b338211b4a0a42d08d",
+          "frame_indices": [
+            6822,
+            6837,
+            6838,
+            6839
+          ],
+          "observation": "Satu truk kargo kuning berbak sisi tinggi dengan kabin terpisah dan muatan terlihat bergerak ke kiri/menjauh. Bentuk kendaraan pada sampel mendukung kategori Truck dan bukan pickup yang sulit dibedakan."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1520_overlay_contact.png",
+          "sha256": "29da0984be481a16832402eaa2f2e56cba26f0dba08cc3d2094ebf66336f20ee",
+          "frame_indices": [
+            6822,
+            6837,
+            6838,
+            6839
+          ],
+          "observation": "Satu truk kargo kuning berbak sisi tinggi dengan kabin terpisah dan muatan terlihat bergerak ke kiri/menjauh. Bentuk kendaraan pada sampel mendukung kategori Truck dan bukan pickup yang sulit dibedakan."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "truck",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1520",
+      "passage_id": "B_TO_A_6838_6839",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1774,
+        "crossing_frame_start": 7717,
+        "crossing_frame_end": 7718,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "USER_UNIT_PLUS_AI_ASSISTED_EVIDENCE",
+      "reason": "USER_CONFIRMED: rider1774 belongs to motorcycle1772; retain as same-unit component with no independent count. Original vehicle1772 mixed-unit diagnostic stillrequires separate vehicleepisode recovery experiment.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_raw_contact.png",
+          "sha256": "c089b9763490637e74ad87219e477a1718f7b66d83e0ae65011b8d634a1bfe9e",
+          "frame_indices": [
+            7713,
+            7716,
+            7717,
+            7718
+          ],
+          "observation": "Target person berada pada pengendara berhelm yang duduk pada skuter. Overlay motorcycle ID1772 mengacu pada kendaraan yang sama. Komponen pengendara tidak merupakan unit pedestrian tambahan."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_overlay_contact.png",
+          "sha256": "76de7ad38ce12aa037ff47c0fcc4e599abb4f1bf9f606f7fec69821075c10a09",
+          "frame_indices": [
+            7713,
+            7716,
+            7717,
+            7718
+          ],
+          "observation": "Target person berada pada pengendara berhelm yang duduk pada skuter. Overlay motorcycle ID1772 mengacu pada kendaraan yang sama. Komponen pengendara tidak merupakan unit pedestrian tambahan."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "REJECT_COMPONENT",
+      "role": "rider",
+      "category": null,
+      "physical_unit_id": "TOR3-PAGI_user_motorcycle_1772_1774",
+      "passage_id": "B_TO_A_motorcycle_1772_1774",
+      "unit_confirmed": false,
+      "category_confirmed": false,
+      "identity_confirmed": false
+    },
+    {
+      "selector": {
+        "track_id": 1824,
+        "crossing_frame_start": 7850,
+        "crossing_frame_end": 7851,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter merah dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1824_raw_contact.png",
+          "sha256": "b13b4771f70aa69a5d5b929f91c0431f5fd8c3031fd6618bd19918d1e97e9cc1",
+          "frame_indices": [
+            7842,
+            7849,
+            7850,
+            7851
+          ],
+          "observation": "Satu skuter merah dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1824_overlay_contact.png",
+          "sha256": "62fbca423e75d986e87ba44971af9f48bfeeec9c0bf301e058a6a62a492c44f5",
+          "frame_indices": [
+            7842,
+            7849,
+            7850,
+            7851
+          ],
+          "observation": "Satu skuter merah dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1824",
+      "passage_id": "B_TO_A_7850_7851",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 1887,
+        "crossing_frame_start": 8272,
+        "crossing_frame_end": 8273,
+        "direction": "B_TO_A"
+      },
+      "reviewer": "AI_ASSISTED_CODEX",
+      "reason": "Satu skuter gelap dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1887_raw_contact.png",
+          "sha256": "04fcfd2fc0e634398f8f7daefadda78e806269ce6779730f4e46e3c35099428b",
+          "frame_indices": [
+            8268,
+            8271,
+            8272,
+            8273
+          ],
+          "observation": "Satu skuter gelap dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1887_overlay_contact.png",
+          "sha256": "f7916918fcafb8fd8398d6273fb670c0092a838425d4d6e0fa60bd80ffb17c4e",
+          "frame_indices": [
+            8268,
+            8271,
+            8272,
+            8273
+          ],
+          "observation": "Satu skuter gelap dengan pengendara berhelm terlihat bergerak ke kiri/menjauh pada empat sampel."
+        }
+      ],
+      "independent_return_confirmed": false,
+      "decision": "CONFIRM_PASSAGE",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_bounded_vehicle_track_1887",
+      "passage_id": "B_TO_A_8272_8273",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true
+    },
+    {
+      "selector": {
+        "track_id": 964,
+        "crossing_frame_start": 5128,
+        "crossing_frame_end": 5129,
+        "direction": "B_TO_A"
+      },
+      "decision": "HOLD",
+      "reviewer": "AI_ASSISTED_CODEX",
+      "role": "vehicle",
+      "category": null,
+      "physical_unit_id": "TOR3-PAGI_red_scooter_5128_5130",
+      "passage_id": "B_TO_A_red_scooter_5128_5130",
+      "unit_confirmed": false,
+      "category_confirmed": false,
+      "identity_confirmed": true,
+      "independent_return_confirmed": false,
+      "reason": "Raw/overlay samples5128/5129/5130 show ID964 and973 on one red scooter. The retained raw measured origin-to-confirmation history for ID964 includes person then motorcycle, so its BC changes unit/component semantics and cannot validate a vehicle passage. Hold this candidate; duplicate identity linkage does not repair its measured geometry. Only independently hard-eligible ID973 may represent this same passage.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_raw_contact.png",
+          "sha256": "00418cece3fd65658e63363010e3d4b23bba16a04e5679883d1122492ff80298",
+          "frame_indices": [
+            5128,
+            5129,
+            5130
+          ],
+          "observation": "Foto memperlihatkan satu skuter merah. Pada frame5129/5130, bbox motorcycle ID973 dan ID964 melingkupi skuter yang sama. ID973 tidak dapat disahkan sebagai kendaraan tambahan; penyelesaian kelompok identitas tetap diperlukan."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id973_overlay_contact.png",
+          "sha256": "c529bbd29c1add9924e84e2da4e135ce6c757c843ec8ae4e2d74f6b85c9d69fb",
+          "frame_indices": [
+            5128,
+            5129,
+            5130
+          ],
+          "observation": "Foto memperlihatkan satu skuter merah. Pada frame5129/5130, bbox motorcycle ID973 dan ID964 melingkupi skuter yang sama. ID973 tidak dapat disahkan sebagai kendaraan tambahan; penyelesaian kelompok identitas tetap diperlukan."
+        }
+      ]
+    },
+    {
+      "selector": {
+        "track_id": 1772,
+        "crossing_frame_start": 7721,
+        "crossing_frame_end": 7722,
+        "direction": "B_TO_A"
+      },
+      "decision": "HOLD",
+      "reviewer": "USER_UNIT_PLUS_AI_ASSISTED_EVIDENCE",
+      "reason": "USER_CONFIRMED: motorcycle1772 andrider1774 samephysicalunit,categorymotorcycle. Original7712person-origin to7722motorcycle-confirmation geometry mixescomponentBC; hardblockcannotbeoverridden. Cleanvehicleepisode recovery isseparateOptionBpolicy, notperformed inA_updated.",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "physical_unit_id": "TOR3-PAGI_user_motorcycle_1772_1774",
+      "passage_id": "B_TO_A_motorcycle_1772_1774",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true,
+      "independent_return_confirmed": false,
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_raw_contact.png",
+          "sha256": "c089b9763490637e74ad87219e477a1718f7b66d83e0ae65011b8d634a1bfe9e",
+          "frame_indices": [
+            7713,
+            7716,
+            7717,
+            7718
+          ],
+          "observation": "Seatedrider1774 onvehicle1772; userconfirmssameunit. Photoevidence scope7713/16/17/18 supportsrole, notcompletevehiclecrossing proof."
+        },
+        {
+          "path": "docs/evidence/phase_6/review_samples/TOR3-PAGI/id1774_overlay_contact.png",
+          "sha256": "76de7ad38ce12aa037ff47c0fcc4e599abb4f1bf9f606f7fec69821075c10a09",
+          "frame_indices": [
+            7713,
+            7716,
+            7717,
+            7718
+          ],
+          "observation": "Seatedrider1774 onvehicle1772; userconfirmssameunit. Photoevidence scope7713/16/17/18 supportsrole, notcompletevehiclecrossing proof."
+        }
+      ]
+    }
+  ],
+  "user_feedback_reference": "docs/evidence/phase_6/feedback/user_review_20261013_001.json"
+}

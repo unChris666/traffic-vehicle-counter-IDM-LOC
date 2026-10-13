@@ -1,0 +1,103 @@
+{
+  "claim_type": "SYNTHETIC_REVIEW_OVERLAY_SOFTWARE_CHECKS_NOT_VIDEO_EVIDENCE",
+  "passed": 24,
+  "failed": 0,
+  "checks": [
+    {
+      "check": "typed_event_acceptance",
+      "pass": true
+    },
+    {
+      "check": "original_input_immutable",
+      "pass": true
+    },
+    {
+      "check": "deterministic_idempotence",
+      "pass": true
+    },
+    {
+      "check": "hard_gap_not_promoted",
+      "pass": true
+    },
+    {
+      "check": "wrong_category_not_promoted",
+      "pass": true
+    },
+    {
+      "check": "missing_frame_evidence",
+      "pass": true
+    },
+    {
+      "check": "wrong_photo_hash",
+      "pass": true
+    },
+    {
+      "check": "positive_identity_required",
+      "pass": true
+    },
+    {
+      "check": "invented_bottom_center",
+      "pass": true
+    },
+    {
+      "check": "unknown_candidate",
+      "pass": true
+    },
+    {
+      "check": "duplicate_review_rows",
+      "pass": true
+    },
+    {
+      "check": "wrong_source_identity",
+      "pass": true
+    },
+    {
+      "check": "return_hard_block_preserved",
+      "pass": true
+    },
+    {
+      "check": "unknown_context_hard_block",
+      "pass": true
+    },
+    {
+      "check": "unsupported_disposition",
+      "pass": true
+    },
+    {
+      "check": "hold_excluded",
+      "pass": true
+    },
+    {
+      "check": "same_passage_deduplicated",
+      "pass": true
+    },
+    {
+      "check": "deterministic_representative_order",
+      "pass": true
+    },
+    {
+      "check": "all_duplicate_sources_retained",
+      "pass": true
+    },
+    {
+      "check": "manual_return_not_silently_added",
+      "pass": true
+    },
+    {
+      "check": "untouched_machine_event_reused_verbatim",
+      "pass": true
+    },
+    {
+      "check": "explicit_review_replaces_not_appends",
+      "pass": true
+    },
+    {
+      "check": "full_measured_contact_interval_accepted",
+      "pass": true
+    },
+    {
+      "check": "missing_contact_frame_not_accepted",
+      "pass": true
+    }
+  ]
+}

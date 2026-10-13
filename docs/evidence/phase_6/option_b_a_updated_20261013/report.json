@@ -1,0 +1,173 @@
+{
+  "claim_type": "EXECUTED_A_UPDATED_HUMAN_CASE_REVIEW_NOT_NEW_GEOMETRY_POLICY",
+  "run_id": "option_b_a_updated_20261013",
+  "started_at_utc": "2026-10-13T10:32:36.355734+00:00",
+  "completed_at_utc": "2026-10-13T10:32:38.360182+00:00",
+  "measured_counting_elapsed_seconds": 1.5722979389829561,
+  "effective_configuration": {
+    "contract_version": "phase6_option_a_v0",
+    "metric": "passage",
+    "review_policy": "audit_gated",
+    "neutral_band_px": 0.0,
+    "confirmation_observations": 1,
+    "parameter_claim_type": "ENGINEERING_EXPERIMENT_REUSE_PHASE5_CONTROL_NOT_SELECTED_PRODUCT_DEFAULT",
+    "source_phase_4_run_id": "20261011T095924_205716Z_90cf7319",
+    "baseline_phase_5_run_id": "20261011T161440_100155Z_2e39a11c",
+    "baseline_phase_5_experiment": "b0_c1",
+    "input_identity": {
+      "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+      "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+      "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+      "variant": "reid_on",
+      "width": 1280,
+      "height": 720,
+      "parent_run_id": "20261011T052950_360560Z_ed399fb8"
+    },
+    "recording_metadata": {
+      "video_id": "TOR3-PAGI",
+      "filename": "TOR3-PAGI.mp4",
+      "store_code": null,
+      "store_name": null,
+      "latitude": null,
+      "longitude": null,
+      "day_type": null,
+      "recording_period": "pagi",
+      "recording_period_basis": "USER_DESCRIBED_MORNING_SAMPLE"
+    },
+    "open_product_policies": [
+      "bus_angkot_mapping",
+      "pickup_classification",
+      "suitable_geometry_numeric_defaults",
+      "final_vehicle_reid_configuration",
+      "whole_video_physical_identity_recovery"
+    ]
+  },
+  "software_report": {
+    "claim_type": "EXECUTED_SOFTWARE_AUDIT_GATED_PASSAGE_SUBTOTAL_NOT_ACCURACY",
+    "contract_version": "phase6_option_a_v0",
+    "input_identity": {
+      "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+      "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+      "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+      "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+      "variant": "reid_on",
+      "width": 1280,
+      "height": 720,
+      "parent_run_id": "20261011T052950_360560Z_ed399fb8"
+    },
+    "counting_config_id": "cc6_bb7a00b69bf450d0f9e3d8fef16d0013e2f5164150a88f5691a185419b7d365c",
+    "effective_config": {
+      "contract_version": "phase6_option_a_v0",
+      "metric": "passage",
+      "review_policy": "audit_gated",
+      "neutral_band_px": 0.0,
+      "confirmation_observations": 1,
+      "parameter_claim_type": "ENGINEERING_EXPERIMENT_REUSE_PHASE5_CONTROL_NOT_SELECTED_PRODUCT_DEFAULT",
+      "source_phase_4_run_id": "20261011T095924_205716Z_90cf7319",
+      "baseline_phase_5_run_id": "20261011T161440_100155Z_2e39a11c",
+      "baseline_phase_5_experiment": "b0_c1",
+      "input_identity": {
+        "video_sha256": "606cfdd26c2d0a6892f5680d6a35d7e4d372efd76dd6bc56e2e4cbed7a74754c",
+        "records_sha256": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+        "diagnostics_sha256": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+        "geometry_sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15",
+        "variant": "reid_on",
+        "width": 1280,
+        "height": 720,
+        "parent_run_id": "20261011T052950_360560Z_ed399fb8"
+      },
+      "recording_metadata": {
+        "video_id": "TOR3-PAGI",
+        "filename": "TOR3-PAGI.mp4",
+        "store_code": null,
+        "store_name": null,
+        "latitude": null,
+        "longitude": null,
+        "day_type": null,
+        "recording_period": "pagi",
+        "recording_period_basis": "USER_DESCRIBED_MORNING_SAMPLE"
+      },
+      "open_product_policies": [
+        "bus_angkot_mapping",
+        "pickup_classification",
+        "suitable_geometry_numeric_defaults",
+        "final_vehicle_reid_configuration",
+        "whole_video_physical_identity_recovery"
+      ]
+    },
+    "frames_processed": 10282,
+    "emitted_measured_observations_processed": 48228,
+    "source_diagnostic_frequencies": {
+      "AMBIGUOUS_GAP": 6,
+      "GEOMETRY_TRANSITION": 160,
+      "ORIGIN_ESTABLISHED": 3107
+    },
+    "complete_geometry_candidates": 160,
+    "ambiguous_geometry_audit_items": 6,
+    "ignored_identical_duplicate_diagnostics": 0,
+    "machine_decision_statuses": {
+      "pending_review": 166
+    },
+    "resolved_decision_statuses": {
+      "accepted": 18,
+      "pending_review": 141,
+      "rejected": 7
+    },
+    "resolved_pending_reason_frequencies": {
+      "VEHICLE_OVERLAP_IDENTITY_CONFLICT": 135,
+      "UNIT_COMPONENT_CHANGE": 24,
+      "UNIT_REVIEW_REQUIRED": 135,
+      "CATEGORY_REVIEW_REQUIRED": 135,
+      "IDENTITY_REVIEW_REQUIRED": 135,
+      "ROLE_UNRESOLVED": 61,
+      "BUS_ANGKOT_MAPPING_OPEN": 1,
+      "AMBIGUOUS_GAP": 6,
+      "REVIEW_HOLD": 3,
+      "CATEGORY_CONFLICT": 4,
+      "RETURN_EPISODE_REVIEW_REQUIRED": 1
+    },
+    "reviewed_candidates": 28,
+    "accepted_event_count": 18,
+    "accepted_candidate_members": 18,
+    "accepted_duplicate_members": 0,
+    "machine_events_accepted": 0,
+    "aggregate_reconciles": true,
+    "geometry_detector_tracker_encoder_rerun": false,
+    "numeric_product_defaults_selected": false,
+    "complete_video_traffic_count_established": false,
+    "ground_truth_available": false,
+    "helper_sha256": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5",
+    "review_input_sha256": "ebc54971d6b3d814e43221e64adbc0eb8b64fdefc36d5b8f69cb961ed3457ca0",
+    "representative_order": [
+      "crossing_frame_start",
+      "crossing_frame_end",
+      "confirmation_frame",
+      "origin_frame",
+      "track_id",
+      "candidate_id"
+    ]
+  },
+  "input_sha256": {
+    "configuration": "61fe90d9893851c3454ce6a8aa7d584f5e0c66c84b574f6c0c0a52a967886bc7",
+    "reviews": "4783a39c5575fb61b30323d4298153a830d74f842cc0e9acabd060f1347da822",
+    "records": "9611e2a6551e0c080692c72ac775c3ef978fb716d3900fdabbc47c79331eba89",
+    "diagnostics": "968257e556eff1b1cedae62f42ea571ebc70b34b4eb34daa22c66c698a3fee35",
+    "geometry": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15"
+  },
+  "source_code_sha256": {
+    "method": "0d03c8bdad7ceae5858df68a3f8a3073838199505d41d19f6e7a5d5620584b6f",
+    "counting_helper": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5",
+    "synthetic_tests": "6b1c8e2990611215683f3161af6e1d6ee9ed97081112f5f7b02073b44a247a85"
+  },
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "gpu_required": false
+  },
+  "original_event_ids_unchanged": true,
+  "unit_episode_recovery_executed": false,
+  "models_tracker_encoder_geometry_rerun": false,
+  "formal_ground_truth_available": false,
+  "complete_video_traffic_count_established": false
+}

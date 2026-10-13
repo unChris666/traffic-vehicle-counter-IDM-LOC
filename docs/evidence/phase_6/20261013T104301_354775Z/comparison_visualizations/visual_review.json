@@ -1,0 +1,51 @@
+{
+  "claim_type": "ACTUAL_TOOL_VIEW_OF_RETAINED_CASE_VISUALIZATIONS",
+  "reviewer": "CODEX_AGENT_FINAL_COMPARISON_VISUALS",
+  "view_tool": "view_image",
+  "all_published_pngs_actually_opened": true,
+  "opened_image_count": 6,
+  "checks": [
+    "All captions and status panels are readable; no clipped text.",
+    "Frame captions match retained tile indices and audited source geometry.",
+    "Motor1772 BC is raw vehicle BC and rider1774 is separate component.",
+    "Duplicate964/973 has one reviewed event; captions explicitly distinguish manual vs machine.",
+    "Car1323 remains pending identity; no unsupported interpretation of tiny edge box.",
+    "Motor923 future-only relation does not validate earlier passage; manual review is separate.",
+    "Negative880/892 photos show two distinct simultaneously visible vehicles.",
+    "Case statuses and bounded totals are not full-video counts or model-accuracy claims."
+  ],
+  "images": [
+    {
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/00_overview.png",
+      "sha256": "8c36e1b19332c394ba3b249d3240a762e3d57d8ba55665bcbaac9665d8c7a4de",
+      "visually_opened": true
+    },
+    {
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/01_motorcycle1772.png",
+      "sha256": "fccec540d05c1046027ba1e76663734dcf1ba042c9c92c63dc1ad15d391eb405",
+      "visually_opened": true
+    },
+    {
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/02_duplicate964_973.png",
+      "sha256": "a4f95e14977296de38e7c73603907643fa8ecbab3fed39704d5032da9aced491",
+      "visually_opened": true
+    },
+    {
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/03_car1323.png",
+      "sha256": "55a1d680217a344ef83e153176a76416073eca9b6f4d1abde7c4a91a1e5c1cad",
+      "visually_opened": true
+    },
+    {
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/04_motorcycle923.png",
+      "sha256": "2d19dd702c077b3ec0410769ab6a265729ade8af0971e6c5bbc69816ea3a71b4",
+      "visually_opened": true
+    },
+    {
+      "path": "docs/evidence/phase_6/20261013T104301_354775Z/comparison_visualizations/05_negative880_892.png",
+      "sha256": "cf8fa4aa1d857113858a3b130a4802678da561c6ac02c89c96ee83ba8fcce6ab",
+      "visually_opened": true
+    }
+  ],
+  "visual_problems_found": [],
+  "no_source_photo_or_event_modification": true
+}

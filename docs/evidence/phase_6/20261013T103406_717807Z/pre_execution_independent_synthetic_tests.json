@@ -1,0 +1,230 @@
+{
+  "claim_type": "ACTUALLY_EXECUTED_SYNTHETIC_SOFTWARE_CONTRACT_TESTS",
+  "scope": "Option B physical-unit relations and vehicle episodes; no actual-video results or accuracy",
+  "fixture_controls_are_product_defaults": false,
+  "successful": true,
+  "tests_run": 54,
+  "tests_passed": 54,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "tests": [
+    {
+      "id": "__main__.IdentityEpisodeTests.test_category_flip_inside_vehicle_family_is_preserved_as_evidence",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityEpisodeTests.test_episode_order_and_ids_do_not_depend_on_input_track_order",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityEpisodeTests.test_input_measurements_are_not_modified_by_episode_extraction",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityEpisodeTests.test_missing_frame_starts_new_episode_and_preserves_both_sides",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityEpisodeTests.test_person_origin_is_not_inherited_by_new_vehicle_episode",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityEpisodeTests.test_vehicle_person_vehicle_creates_three_episodes_without_cherry_picking",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_bus_taxonomy_is_not_silently_mapped_to_bus_angkot",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_case_specific_manual_ids_do_not_change_generic_resolution",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_component_person_labels_do_not_vote_against_motorcycle_category",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_consistent_motorcycle_without_positive_identity_evidence_stays_pending",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_crossing_over_missing_observation_cannot_be_recovered_by_episode_reset",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_duplicate_member_without_vehicle_origin_cannot_replace_eligible_member",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_duplicate_spatial_support_cannot_resolve_motorcycle_car_category_conflict",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_duplicate_vehicle_tracks_produce_one_event_without_bbox_union",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_episode_processing_order_cannot_change_assignment_or_event_ids",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_equally_plausible_two_motorcycle_assignment_stays_unresolved",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_exact_line_endpoint_crossing_stays_ambiguous",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_family_reset_rebuilds_vehicle_origin_and_creates_new_candidate",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_grouping_ablation_preserves_geometry_without_automatic_identity_acceptance",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_independent_return_is_held_not_unconditionally_counted",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_infinite_line_extension_crossing_outside_segment_cannot_count",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_initial_presence_on_arrival_side_is_not_a_passage",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_later_complete_episode_same_track_after_family_change_needs_return_review",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_later_complete_episode_same_track_after_gap_is_not_automatic_return",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_measured_touch_followed_by_opposite_side_preserves_contact_evidence",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_missing_explicit_association_control_is_not_filled_by_hidden_default",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_missing_full_frame_competitor_context_does_not_grant_acceptance",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_nearby_pedestrian_outside_vehicle_is_not_a_rider",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_new_vehicle_episode_without_its_own_origin_cannot_count_old_person_path",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_nonclique_transitive_duplicate_chain_is_not_one_supported_vehicle",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_nonfinite_association_control_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_one_frame_overlap_does_not_establish_component_identity",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_one_raw_detection_cannot_supply_two_track_measurements",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_opposing_motion_despite_spatial_overlap_is_not_component",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_pending_decision_cannot_enter_typed_event_aggregate",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_pending_earlier_category_conflict_does_not_make_later_crossing_first_passage",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_pending_earlier_raw_competitor_does_not_release_later_return",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_person_without_vehicle_cannot_automatically_become_pedestrian",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_predicted_track_box_cannot_substitute_for_measured_bbox",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_raw_bbox_tamper_is_rejected_even_after_source_hash_rebinding",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_raw_class_tamper_is_not_a_valid_category_correction",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_raw_unemitted_vehicle_competitor_is_not_ignored",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_repeated_count_event_is_idempotent_in_aggregate",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_rider_bottom_center_crossing_cannot_replace_vehicle_crossing",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_rider_is_component_and_does_not_add_pedestrian_count",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_rider_of_verified_duplicate_vehicle_group_has_one_assignment",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_same_source_rerun_is_idempotent_and_keeps_event_ids",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_selecting_only_later_window_does_not_hide_earlier_source_passage",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_source_sha_mismatch_does_not_silently_rebind",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_temporal_car_truck_conflict_is_not_majority_vote_resolved",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_touch_line_and_return_to_same_side_is_not_a_passage",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_two_motorcycles_beside_each_other_are_not_duplicates",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_two_passengers_still_make_only_one_motorcycle",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.IdentityResolutionContractTests.test_vehicle_person_vehicle_does_not_stitch_across_excluded_component",
+      "status": "passed"
+    }
+  ],
+  "output": "test_category_flip_inside_vehicle_family_is_preserved_as_evidence (__main__.IdentityEpisodeTests.test_category_flip_inside_vehicle_family_is_preserved_as_evidence) ... ok\ntest_episode_order_and_ids_do_not_depend_on_input_track_order (__main__.IdentityEpisodeTests.test_episode_order_and_ids_do_not_depend_on_input_track_order) ... ok\ntest_input_measurements_are_not_modified_by_episode_extraction (__main__.IdentityEpisodeTests.test_input_measurements_are_not_modified_by_episode_extraction) ... ok\ntest_missing_frame_starts_new_episode_and_preserves_both_sides (__main__.IdentityEpisodeTests.test_missing_frame_starts_new_episode_and_preserves_both_sides) ... ok\ntest_person_origin_is_not_inherited_by_new_vehicle_episode (__main__.IdentityEpisodeTests.test_person_origin_is_not_inherited_by_new_vehicle_episode) ... ok\ntest_vehicle_person_vehicle_creates_three_episodes_without_cherry_picking (__main__.IdentityEpisodeTests.test_vehicle_person_vehicle_creates_three_episodes_without_cherry_picking) ... ok\ntest_bus_taxonomy_is_not_silently_mapped_to_bus_angkot (__main__.IdentityResolutionContractTests.test_bus_taxonomy_is_not_silently_mapped_to_bus_angkot) ... ok\ntest_case_specific_manual_ids_do_not_change_generic_resolution (__main__.IdentityResolutionContractTests.test_case_specific_manual_ids_do_not_change_generic_resolution) ... ok\ntest_component_person_labels_do_not_vote_against_motorcycle_category (__main__.IdentityResolutionContractTests.test_component_person_labels_do_not_vote_against_motorcycle_category) ... ok\ntest_consistent_motorcycle_without_positive_identity_evidence_stays_pending (__main__.IdentityResolutionContractTests.test_consistent_motorcycle_without_positive_identity_evidence_stays_pending) ... ok\ntest_crossing_over_missing_observation_cannot_be_recovered_by_episode_reset (__main__.IdentityResolutionContractTests.test_crossing_over_missing_observation_cannot_be_recovered_by_episode_reset) ... ok\ntest_duplicate_member_without_vehicle_origin_cannot_replace_eligible_member (__main__.IdentityResolutionContractTests.test_duplicate_member_without_vehicle_origin_cannot_replace_eligible_member) ... ok\ntest_duplicate_spatial_support_cannot_resolve_motorcycle_car_category_conflict (__main__.IdentityResolutionContractTests.test_duplicate_spatial_support_cannot_resolve_motorcycle_car_category_conflict) ... ok\ntest_duplicate_vehicle_tracks_produce_one_event_without_bbox_union (__main__.IdentityResolutionContractTests.test_duplicate_vehicle_tracks_produce_one_event_without_bbox_union) ... ok\ntest_episode_processing_order_cannot_change_assignment_or_event_ids (__main__.IdentityResolutionContractTests.test_episode_processing_order_cannot_change_assignment_or_event_ids) ... ok\ntest_equally_plausible_two_motorcycle_assignment_stays_unresolved (__main__.IdentityResolutionContractTests.test_equally_plausible_two_motorcycle_assignment_stays_unresolved) ... ok\ntest_exact_line_endpoint_crossing_stays_ambiguous (__main__.IdentityResolutionContractTests.test_exact_line_endpoint_crossing_stays_ambiguous) ... ok\ntest_family_reset_rebuilds_vehicle_origin_and_creates_new_candidate (__main__.IdentityResolutionContractTests.test_family_reset_rebuilds_vehicle_origin_and_creates_new_candidate) ... ok\ntest_grouping_ablation_preserves_geometry_without_automatic_identity_acceptance (__main__.IdentityResolutionContractTests.test_grouping_ablation_preserves_geometry_without_automatic_identity_acceptance) ... ok\ntest_independent_return_is_held_not_unconditionally_counted (__main__.IdentityResolutionContractTests.test_independent_return_is_held_not_unconditionally_counted) ... ok\ntest_infinite_line_extension_crossing_outside_segment_cannot_count (__main__.IdentityResolutionContractTests.test_infinite_line_extension_crossing_outside_segment_cannot_count) ... ok\ntest_initial_presence_on_arrival_side_is_not_a_passage (__main__.IdentityResolutionContractTests.test_initial_presence_on_arrival_side_is_not_a_passage) ... ok\ntest_later_complete_episode_same_track_after_family_change_needs_return_review (__main__.IdentityResolutionContractTests.test_later_complete_episode_same_track_after_family_change_needs_return_review) ... ok\ntest_later_complete_episode_same_track_after_gap_is_not_automatic_return (__main__.IdentityResolutionContractTests.test_later_complete_episode_same_track_after_gap_is_not_automatic_return) ... ok\ntest_measured_touch_followed_by_opposite_side_preserves_contact_evidence (__main__.IdentityResolutionContractTests.test_measured_touch_followed_by_opposite_side_preserves_contact_evidence) ... ok\ntest_missing_explicit_association_control_is_not_filled_by_hidden_default (__main__.IdentityResolutionContractTests.test_missing_explicit_association_control_is_not_filled_by_hidden_default) ... ok\ntest_missing_full_frame_competitor_context_does_not_grant_acceptance (__main__.IdentityResolutionContractTests.test_missing_full_frame_competitor_context_does_not_grant_acceptance) ... ok\ntest_nearby_pedestrian_outside_vehicle_is_not_a_rider (__main__.IdentityResolutionContractTests.test_nearby_pedestrian_outside_vehicle_is_not_a_rider) ... ok\ntest_new_vehicle_episode_without_its_own_origin_cannot_count_old_person_path (__main__.IdentityResolutionContractTests.test_new_vehicle_episode_without_its_own_origin_cannot_count_old_person_path) ... ok\ntest_nonclique_transitive_duplicate_chain_is_not_one_supported_vehicle (__main__.IdentityResolutionContractTests.test_nonclique_transitive_duplicate_chain_is_not_one_supported_vehicle) ... ok\ntest_nonfinite_association_control_is_rejected (__main__.IdentityResolutionContractTests.test_nonfinite_association_control_is_rejected) ... ok\ntest_one_frame_overlap_does_not_establish_component_identity (__main__.IdentityResolutionContractTests.test_one_frame_overlap_does_not_establish_component_identity) ... ok\ntest_one_raw_detection_cannot_supply_two_track_measurements (__main__.IdentityResolutionContractTests.test_one_raw_detection_cannot_supply_two_track_measurements) ... ok\ntest_opposing_motion_despite_spatial_overlap_is_not_component (__main__.IdentityResolutionContractTests.test_opposing_motion_despite_spatial_overlap_is_not_component) ... ok\ntest_pending_decision_cannot_enter_typed_event_aggregate (__main__.IdentityResolutionContractTests.test_pending_decision_cannot_enter_typed_event_aggregate) ... ok\ntest_pending_earlier_category_conflict_does_not_make_later_crossing_first_passage (__main__.IdentityResolutionContractTests.test_pending_earlier_category_conflict_does_not_make_later_crossing_first_passage) ... ok\ntest_pending_earlier_raw_competitor_does_not_release_later_return (__main__.IdentityResolutionContractTests.test_pending_earlier_raw_competitor_does_not_release_later_return) ... ok\ntest_person_without_vehicle_cannot_automatically_become_pedestrian (__main__.IdentityResolutionContractTests.test_person_without_vehicle_cannot_automatically_become_pedestrian) ... ok\ntest_predicted_track_box_cannot_substitute_for_measured_bbox (__main__.IdentityResolutionContractTests.test_predicted_track_box_cannot_substitute_for_measured_bbox) ... ok\ntest_raw_bbox_tamper_is_rejected_even_after_source_hash_rebinding (__main__.IdentityResolutionContractTests.test_raw_bbox_tamper_is_rejected_even_after_source_hash_rebinding) ... ok\ntest_raw_class_tamper_is_not_a_valid_category_correction (__main__.IdentityResolutionContractTests.test_raw_class_tamper_is_not_a_valid_category_correction) ... ok\ntest_raw_unemitted_vehicle_competitor_is_not_ignored (__main__.IdentityResolutionContractTests.test_raw_unemitted_vehicle_competitor_is_not_ignored) ... ok\ntest_repeated_count_event_is_idempotent_in_aggregate (__main__.IdentityResolutionContractTests.test_repeated_count_event_is_idempotent_in_aggregate) ... ok\ntest_rider_bottom_center_crossing_cannot_replace_vehicle_crossing (__main__.IdentityResolutionContractTests.test_rider_bottom_center_crossing_cannot_replace_vehicle_crossing) ... ok\ntest_rider_is_component_and_does_not_add_pedestrian_count (__main__.IdentityResolutionContractTests.test_rider_is_component_and_does_not_add_pedestrian_count) ... ok\ntest_rider_of_verified_duplicate_vehicle_group_has_one_assignment (__main__.IdentityResolutionContractTests.test_rider_of_verified_duplicate_vehicle_group_has_one_assignment) ... ok\ntest_same_source_rerun_is_idempotent_and_keeps_event_ids (__main__.IdentityResolutionContractTests.test_same_source_rerun_is_idempotent_and_keeps_event_ids) ... ok\ntest_selecting_only_later_window_does_not_hide_earlier_source_passage (__main__.IdentityResolutionContractTests.test_selecting_only_later_window_does_not_hide_earlier_source_passage) ... ok\ntest_source_sha_mismatch_does_not_silently_rebind (__main__.IdentityResolutionContractTests.test_source_sha_mismatch_does_not_silently_rebind) ... ok\ntest_temporal_car_truck_conflict_is_not_majority_vote_resolved (__main__.IdentityResolutionContractTests.test_temporal_car_truck_conflict_is_not_majority_vote_resolved) ... ok\ntest_touch_line_and_return_to_same_side_is_not_a_passage (__main__.IdentityResolutionContractTests.test_touch_line_and_return_to_same_side_is_not_a_passage) ... ok\ntest_two_motorcycles_beside_each_other_are_not_duplicates (__main__.IdentityResolutionContractTests.test_two_motorcycles_beside_each_other_are_not_duplicates) ... ok\ntest_two_passengers_still_make_only_one_motorcycle (__main__.IdentityResolutionContractTests.test_two_passengers_still_make_only_one_motorcycle) ... ok\ntest_vehicle_person_vehicle_does_not_stitch_across_excluded_component (__main__.IdentityResolutionContractTests.test_vehicle_person_vehicle_does_not_stitch_across_excluded_component) ... ok\n\n----------------------------------------------------------------------\nRan 54 tests in 0.166s\n\nOK\n"
+}
