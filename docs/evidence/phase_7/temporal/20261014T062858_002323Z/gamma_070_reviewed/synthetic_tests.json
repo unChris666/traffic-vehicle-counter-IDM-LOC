@@ -1,0 +1,153 @@
+{
+  "checks": [
+    {
+      "check": "typed_event_acceptance",
+      "pass": true
+    },
+    {
+      "check": "original_input_immutable",
+      "pass": true
+    },
+    {
+      "check": "deterministic_idempotence",
+      "pass": true
+    },
+    {
+      "check": "hard_gap_not_promoted",
+      "pass": true
+    },
+    {
+      "check": "wrong_category_not_promoted",
+      "pass": true
+    },
+    {
+      "check": "missing_frame_evidence",
+      "pass": true
+    },
+    {
+      "check": "wrong_photo_hash",
+      "pass": true
+    },
+    {
+      "check": "positive_identity_required",
+      "pass": true
+    },
+    {
+      "check": "invented_bottom_center",
+      "pass": true
+    },
+    {
+      "check": "unknown_candidate",
+      "pass": true
+    },
+    {
+      "check": "duplicate_review_rows",
+      "pass": true
+    },
+    {
+      "check": "wrong_source_identity",
+      "pass": true
+    },
+    {
+      "check": "return_hard_block_preserved",
+      "pass": true
+    },
+    {
+      "check": "unknown_context_hard_block",
+      "pass": true
+    },
+    {
+      "check": "unsupported_disposition",
+      "pass": true
+    },
+    {
+      "check": "hold_excluded",
+      "pass": true
+    },
+    {
+      "check": "same_passage_deduplicated",
+      "pass": true
+    },
+    {
+      "check": "deterministic_representative_order",
+      "pass": true
+    },
+    {
+      "check": "all_duplicate_sources_retained",
+      "pass": true
+    },
+    {
+      "check": "manual_return_not_silently_added",
+      "pass": true
+    },
+    {
+      "check": "untouched_machine_event_reused_verbatim",
+      "pass": true
+    },
+    {
+      "check": "explicit_review_replaces_not_appends",
+      "pass": true
+    },
+    {
+      "check": "full_measured_contact_interval_accepted",
+      "pass": true
+    },
+    {
+      "check": "missing_contact_frame_not_accepted",
+      "pass": true
+    },
+    {
+      "check": "exact_one_production_provenance_substitution",
+      "pass": true
+    },
+    {
+      "check": "historical_overlay_source_immutable",
+      "pass": true
+    },
+    {
+      "check": "historical_geometry_and_aggregation_sources_immutable",
+      "pass": true
+    },
+    {
+      "check": "correct_hash_bound_review_identity",
+      "pass": true
+    },
+    {
+      "check": "wrong_review_run_rejected",
+      "pass": true
+    },
+    {
+      "check": "wrong_review_decision_sha_rejected",
+      "pass": true
+    },
+    {
+      "check": "wrong_review_variant_rejected",
+      "pass": true
+    },
+    {
+      "check": "wrong_review_source_identity_rejected",
+      "pass": true
+    }
+  ],
+  "claim_type": "EXECUTED_SYNTHETIC_PHASE7_REVIEW_OVERLAY_GUARDS_NOT_VIDEO_EVIDENCE",
+  "failed": 0,
+  "model_geometry_resolver_rerun": false,
+  "passed": 32,
+  "provenance_adapter": {
+    "adapted_source_sha256": "a20a3e3391521a66f69319bbf290e118409be61479576e7e1959f1413b129702",
+    "algorithm_category_geometry_identity_controls_changed": false,
+    "base_path": "docs/evidence/phase_6/option_b_verification/build_reviewed_comparison.py",
+    "base_source_sha256": "663a52190f8c495533d50b36509232dad0d3fb64e0d31c0c3d669415fb38e81b",
+    "frozen_predicate_source_sha256": {
+      "notebooks/phase_5_geometry_helpers.py": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+      "notebooks/phase_6_counting_helpers.py": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5"
+    },
+    "historical_source_modified": false,
+    "new_guard": "observation.get(\"measurement_provenance\") != \"retained_phase_7_detection\"",
+    "old_guard": "observation.get(\"measurement_provenance\") != \"retained_phase_2_detection\"",
+    "policy": "phase7_exact_review_measurement_provenance_adapter_v1",
+    "production_substitution_count": 1
+  },
+  "synthetic_fixture_only_substitution_count": 1,
+  "synthetic_fixture_source_sha256": "305627fd46b9f807890ed3518b74b1d21947195fcb8be4a48da5bd23faf94e23"
+}

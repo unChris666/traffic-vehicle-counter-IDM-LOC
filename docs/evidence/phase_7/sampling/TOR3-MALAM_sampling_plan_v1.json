@@ -1,0 +1,128 @@
+{
+  "schema_version": "phase7_sampling_plan_v1",
+  "status": "PROPOSAL_NOT_HUMAN_APPROVED",
+  "source_video": {
+    "filename": "TOR3-MALAM.mp4",
+    "sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "size_bytes": 52906523,
+    "native_width": 1280,
+    "native_height": 720,
+    "decoded_frame_count": 9590,
+    "average_fps": 29.419969502218617,
+    "average_fps_provenance": "retained Phase1 ffprobe; not authoritative source PTS",
+    "kaggle_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-MALAM.mp4"
+  },
+  "input_identity": {
+    "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "width": 1280,
+    "height": 720,
+    "decoded_frame_count": 9590
+  },
+  "frame_index_convention": "zero based; start_frame and end_frame inclusive; decode native full-frame images",
+  "development": {
+    "segments": [
+      {
+        "segment_id": "dev_beginning",
+        "start_frame": 0,
+        "end_frame": 239,
+        "anchor_frame": 0,
+        "frame_count": 240,
+        "reason": "Around historical Phase1 anchor; raw temporal context inspected, not a model performance selection",
+        "context_limits": [
+          "LEFT_CENSORED_AT_VIDEO_START: earlier vehicle history unavailable"
+        ]
+      },
+      {
+        "segment_id": "dev_quarter",
+        "start_frame": 2277,
+        "end_frame": 2516,
+        "anchor_frame": 2397,
+        "frame_count": 240,
+        "reason": "Around historical Phase1 anchor; raw temporal context inspected, not a model performance selection",
+        "context_limits": []
+      },
+      {
+        "segment_id": "dev_three_quarters",
+        "start_frame": 7072,
+        "end_frame": 7311,
+        "anchor_frame": 7192,
+        "frame_count": 240,
+        "reason": "Around historical Phase1 anchor; raw temporal context inspected, not a model performance selection",
+        "context_limits": []
+      }
+    ],
+    "sample_frame_indices": [
+      0,
+      7,
+      14,
+      29,
+      239,
+      2277,
+      2337,
+      2397,
+      2457,
+      2516,
+      7072,
+      7132,
+      7192,
+      7252,
+      7311
+    ]
+  },
+  "holdout": {
+    "segments": [
+      {
+        "segment_id": "holdout_middle",
+        "start_frame": 4674,
+        "end_frame": 4913,
+        "anchor_frame": 4794,
+        "frame_count": 240,
+        "reason": "Around historical Phase1 anchor; raw temporal context inspected, not a model performance selection",
+        "context_limits": []
+      },
+      {
+        "segment_id": "holdout_end",
+        "start_frame": 9350,
+        "end_frame": 9589,
+        "anchor_frame": 9589,
+        "frame_count": 240,
+        "reason": "Around historical Phase1 anchor; raw temporal context inspected, not a model performance selection",
+        "context_limits": [
+          "RIGHT_CENSORED_AT_VIDEO_END: later vehicle history unavailable"
+        ]
+      }
+    ],
+    "sample_frame_indices": [
+      4674,
+      4734,
+      4794,
+      4854,
+      4913,
+      9350,
+      9410,
+      9470,
+      9530,
+      9589
+    ]
+  },
+  "sampling_budget": {
+    "frames_per_continuous_segment": 240,
+    "claim_type": "ENGINEERING_EXPERIMENT_BUDGET_NOT_ELIGIBILITY_THRESHOLD"
+  },
+  "split_policy": "Three nonoverlapping development windows; two separately reserved holdout windows. No candidate selection/tuning on holdout model/enhancement outcomes.",
+  "holdout_blindness": "NOT_BLIND: anchor pixels and short bursts were already inspected in Phase1; current raw temporal preview is sample planning only, not enhancement/model evaluation.",
+  "geometry_gate": {
+    "require_geometry_approval": true,
+    "proposal_path": "docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1.json",
+    "proposal_sha256": "4a70d56955cace14bac617c14935d8279dbe382942f17a8c417756e074448a53",
+    "tracking_counting_stage": "WAIT_FOR_NIGHT_GEOMETRY_REVIEW",
+    "photometric_detection_screen_stage": "DEVELOPMENT_ONLY_NO_COUNTING"
+  },
+  "limitations": [
+    "Window lengths are experiment budgets; no complete physical passage is asserted by these ranges.",
+    "Beginning is left-censored and end is right-censored by file boundaries.",
+    "A vehicle identity across split boundaries cannot be established without temporal/manual evidence; do not label windows ground truth.",
+    "Index/FPS timing is estimated; authoritative source PTS and variable-frame-rate status remain unknown.",
+    "Sparse development samples support photometric/detection screening only; tracking/counting requires actual continuous frames plus approved geometry."
+  ]
+}

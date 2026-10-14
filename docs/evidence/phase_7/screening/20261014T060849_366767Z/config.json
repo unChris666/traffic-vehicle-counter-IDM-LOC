@@ -1,0 +1,68 @@
+{
+  "contract_version": "phase7_dev_screen_v1",
+  "detector": {
+    "baseline_provenance": "docs/evidence/phase_2/20261011T052950_360560Z_ed399fb8/detection_report.json",
+    "device": 0,
+    "package_version": "8.4.175",
+    "settings": {
+      "agnostic_nms": false,
+      "augment": false,
+      "batch": 1,
+      "classes": null,
+      "conf": 0.25,
+      "imgsz": 640,
+      "iou": 0.7,
+      "max_det": 300,
+      "nms": null,
+      "quantize": null,
+      "rect": true,
+      "seed": 0
+    },
+    "weights_bytes": 44255705,
+    "weights_path": "/kaggle/working/phase_7_night/weights/yolo26m.pt",
+    "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+    "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt"
+  },
+  "expected_sampling_sha256": "23091cbc1afd5eb24f63bf6d81d2be0bdc1ab04b43a78b7d31e3e65882f6437f",
+  "expected_video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+  "experiment_stage": "development_screening_only",
+  "later_counting_parameters_status": "FROZEN_NO_TUNING_IN_ENHANCEMENT_COMPARISON",
+  "later_counting_profile": "phase6_option_b_v1_with_explicit_review_overlay_offline",
+  "max_dev_samples": 50,
+  "night_geometry_approval_reference": "docs/evidence/phase_7/feedback/N1_review_001.json",
+  "night_geometry_status": "USER_APPROVED_N1_INITIAL_TRIAL",
+  "parameter_status": "ENGINEERING_TEST_POINTS_NOT_SELECTED_PRODUCTION_SETTINGS",
+  "recording_period": "malam",
+  "recording_period_basis": "USER_PROVIDED_NIGHT_VIDEO_NOT_FILENAME_INFERENCE",
+  "source_helper_sha256": "6a31794bad0c5cd346575ad4602adb5d10f17bd14cc1094dd5f2b207b0935889",
+  "source_test_sha256": "620a6238695158c99d721750ad56f31e24dbba56269ac94f676a95653d5ed451",
+  "variants": [
+    {
+      "method": "raw",
+      "name": "raw"
+    },
+    {
+      "gamma": 0.7,
+      "method": "gamma",
+      "name": "gamma_070"
+    },
+    {
+      "gain": 1.25,
+      "method": "exposure",
+      "name": "exposure_125"
+    },
+    {
+      "factor": 1.25,
+      "method": "contrast",
+      "name": "contrast_125",
+      "pivot": 128.0
+    },
+    {
+      "amount": 0.5,
+      "method": "unsharp",
+      "name": "unsharp_s1_a05",
+      "sigma": 1.0
+    }
+  ],
+  "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-MALAM.mp4"
+}

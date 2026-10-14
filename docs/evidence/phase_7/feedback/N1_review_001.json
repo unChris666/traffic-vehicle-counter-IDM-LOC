@@ -1,0 +1,40 @@
+{
+  "feedback_id": "TOR3-MALAM-N1-review-001",
+  "recorded_at_utc": "2026-10-14T06:07:07Z",
+  "user_date": "2026-10-14",
+  "user_timezone": "Asia/Bangkok",
+  "source": "Explicit user answers to N1 review questions in this conversation",
+  "geometry_proposal": {
+    "path": "docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1.json",
+    "sha256": "4a70d56955cace14bac617c14935d8279dbe382942f17a8c417756e074448a53"
+  },
+  "review_picture": {
+    "path": "docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1.png",
+    "sha256": "f01a517f3c49d9a95c653ca48382c4ff95dcfeacd145569b62a584e60cbe2958"
+  },
+  "questions_and_answers": [
+    {
+      "question": "Review gambar TOR3-MALAM N1 yang baru ditampilkan: apakah garis kuning P1–P2 dan cakupan polygon A biru/B oranye sesuai untuk uji awal? P1=(6,688.7), P2=(1248.5,407.2) pada frame asli1280×720. Jika perlu revisi, sebutkan bagian dan arah pergeserannya.",
+      "answer": "Setuju untuk uji awal"
+    },
+    {
+      "question": "Untuk TOR3-MALAM N1, apakah pemetaan A→B=mendekati kamera dan B→A=menjauhi kamera benar?",
+      "answer": "Ya, pemetaan arah benar"
+    }
+  ],
+  "confirmed_decisions": {
+    "geometry": "N1 full counting line and polygon A/B accepted for initial TOR3-MALAM experiment",
+    "direction_metadata": {
+      "A_TO_B": "approaching camera",
+      "B_TO_A": "moving away from camera",
+      "scope": "TOR3-MALAM"
+    },
+    "coordinates": "Preserve exact native/normalized template coordinates; question labels are rounded display values only"
+  },
+  "acceptance_limits": [
+    "Initial experimental per-video approval, not all-video reliability or production suitability",
+    "No numerical threshold tuning or default production parameter approval",
+    "No inference/tracking/counting outcome or accuracy claim",
+    "Source proposal JSON/PNG and sampling plan remain immutable; acceptance is a separate artifact"
+  ]
+}

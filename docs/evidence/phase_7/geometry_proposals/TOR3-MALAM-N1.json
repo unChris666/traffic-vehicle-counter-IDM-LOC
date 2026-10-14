@@ -1,0 +1,222 @@
+{
+  "draft_id": "TOR3-MALAM-N1-v1",
+  "status": "PROPOSAL_NOT_HUMAN_APPROVED",
+  "claim_type": "PROPOSAL",
+  "source_video": {
+    "filename": "TOR3-MALAM.mp4",
+    "sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "size_bytes": 52906523,
+    "native_width": 1280,
+    "native_height": 720,
+    "decoded_frame_count": 9590,
+    "average_fps": 29.419969502218617,
+    "average_fps_provenance": "retained Phase1 ffprobe; not authoritative source PTS",
+    "kaggle_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-MALAM.mp4"
+  },
+  "template_source": {
+    "path": "docs/evidence/phase_5/accepted_geometry/TOR3-PAGI-G3.json",
+    "sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15"
+  },
+  "transfer_policy": "Full-frame u=x/960,v=y/540 -> x=u*1280,y=v*720. No crop, rotation or inferred transform.",
+  "template_reference": {
+    "width": 960.0,
+    "height": 540.0,
+    "claim_type": "NEW_ENGINEERING_CANVAS_ACCEPTED_IN_G3_REVIEW_NOT_DISCOVERED_SOURCE_SIZE",
+    "reason": "Fits all supplied points and uses16:9 like this TOR3-PAGI frame"
+  },
+  "normalization_convention": "u=x/reference_width, v=y/reference_height; origin upper-left, x rightward, y downward; continuous image-edge coordinates",
+  "normalized": {
+    "line": {
+      "P1": [
+        0.0046875,
+        0.9564814814814815
+      ],
+      "P2": [
+        0.9754166666666666,
+        0.5655555555555555
+      ]
+    },
+    "side_a_polygon": [
+      [
+        0.0046875,
+        0.9564814814814815
+      ],
+      [
+        0.0046875,
+        0.6448148148148148
+      ],
+      [
+        0.5807291666666666,
+        0.3061111111111111
+      ],
+      [
+        0.9756250000000001,
+        0.5662962962962963
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        0.0046875,
+        0.9564814814814815
+      ],
+      [
+        0.9114583333333334,
+        0.5920825932680884
+      ],
+      [
+        0.9114583333333334,
+        0.9861111111111112
+      ],
+      [
+        0.0046875,
+        0.9861111111111112
+      ]
+    ],
+    "side_b_max_u": 0.9114583333333334
+  },
+  "line_endpoints_reference": {
+    "P1": [
+      4.5,
+      516.5
+    ],
+    "P2": [
+      936.4,
+      305.4
+    ]
+  },
+  "side_a_polygon_reference": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      4.5,
+      348.2
+    ],
+    [
+      557.5,
+      165.3
+    ],
+    [
+      936.6,
+      305.8
+    ]
+  ],
+  "side_b_polygon_reference": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      875.0,
+      319.72460036476775
+    ],
+    [
+      875.0,
+      532.5
+    ],
+    [
+      4.5,
+      532.5
+    ]
+  ],
+  "rendered_native_pixels": {
+    "width": 1280,
+    "height": 720,
+    "line": {
+      "P1": [
+        6.0,
+        688.6666666666666
+      ],
+      "P2": [
+        1248.5333333333333,
+        407.19999999999993
+      ]
+    },
+    "side_a_polygon": [
+      [
+        6.0,
+        688.6666666666666
+      ],
+      [
+        6.0,
+        464.2666666666667
+      ],
+      [
+        743.3333333333333,
+        220.4
+      ],
+      [
+        1248.8000000000002,
+        407.73333333333335
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        6.0,
+        688.6666666666666
+      ],
+      [
+        1166.6666666666667,
+        426.29946715302367
+      ],
+      [
+        1166.6666666666667,
+        710.0
+      ],
+      [
+        6.0,
+        710.0
+      ]
+    ],
+    "side_b_max_x": 1166.6666666666667
+  },
+  "line_polygon_endpoint_difference_reference": {
+    "line_P2": [
+      936.4,
+      305.4
+    ],
+    "polygon_A_right_vertex": [
+      936.6,
+      305.8
+    ],
+    "line_minus_polygon": [
+      -0.2,
+      -0.4
+    ],
+    "snapped": false
+  },
+  "selected_anchor": "bottom_center",
+  "anchor_status": "USER_ACCEPTED_MEASUREMENT_CONTROL_NIGHT_SUITABILITY_REQUIRES_REVIEW",
+  "anchor_source": "raw detector-linked measured vehicle bbox after emitted-track association; never rider BC/prediction",
+  "proposed_direction_metadata": {
+    "A_TO_B": "approaching camera",
+    "B_TO_A": "moving away from camera",
+    "scope": "TOR3-MALAM",
+    "claim_type": "PROPOSAL_NOT_CONFIRMED"
+  },
+  "confirmed_direction_metadata": null,
+  "geometry_contract_accepted": false,
+  "counting_execution_allowed": false,
+  "thresholds": {
+    "neutral_band_px": 0.0,
+    "confirmation_observations": 1,
+    "status": "FROZEN_B0_C1_EXPERIMENT_CONTROL_NOT_PRODUCTION_DEFAULT"
+  },
+  "approval_feedback": null,
+  "review_questions": [
+    "Does N1 cross the intended vehicle corridor with observable before/after regions?",
+    "Are A/B polygons and B right cap appropriate in the night scene?",
+    "Confirm or revise approaching/away semantics for this video.",
+    "Should embedded text, glare, cropped vehicles or unlit road require a geometry revision?"
+  ],
+  "source_frame": {
+    "frame_index": 7192,
+    "width": 1280,
+    "height": 720,
+    "coordinate_space": "native full-frame pixel coordinates; origin upper-left; x right; y down",
+    "path": "docs/evidence/phase_7/sampling/frames/frame_000007192.png",
+    "sha256": "53a7e90553be44138f56ed70c28fb2c051615a60a66fc393122becd5ad174ac5",
+    "lossless": true
+  }
+}

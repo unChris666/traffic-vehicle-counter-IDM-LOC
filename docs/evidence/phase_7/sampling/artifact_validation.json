@@ -1,0 +1,5545 @@
+{
+  "status": "PASS",
+  "passed": 1384,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1_alignment.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/geometry_proposals/TOR3-MALAM-N1_alignment.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/TOR3-MALAM_sampling_plan_v1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/TOR3-MALAM_sampling_plan_v1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/verification/build_night_geometry_and_sampling.py",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/verification/build_night_geometry_and_sampling.py",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_5/accepted_geometry/TOR3-PAGI-G3.json",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_5/accepted_geometry/TOR3-PAGI-G3.json",
+      "passed": true
+    },
+    {
+      "name": "new_source_identity",
+      "passed": true
+    },
+    {
+      "name": "night_not_accepted",
+      "passed": true
+    },
+    {
+      "name": "night_semantics_not_confirmed",
+      "passed": true
+    },
+    {
+      "name": "counting_execution_disallowed",
+      "passed": true
+    },
+    {
+      "name": "g3_relative_geometry_retained_exactly",
+      "passed": true
+    },
+    {
+      "name": "g3_native_geometry_retained_exactly",
+      "passed": true
+    },
+    {
+      "name": "endpoint_difference_not_snapped",
+      "passed": true
+    },
+    {
+      "name": "geometry_gate_binds_proposal_hash",
+      "passed": true
+    },
+    {
+      "name": "geometry_gate_required",
+      "passed": true
+    },
+    {
+      "name": "all_native_source_frames_decoded",
+      "passed": true
+    },
+    {
+      "name": "no_model_or_enhancement_execution",
+      "passed": true
+    },
+    {
+      "name": "polygon_simple_finite_nonoverlap_validation",
+      "passed": true
+    },
+    {
+      "name": "geometry_line_matches_native",
+      "passed": true
+    },
+    {
+      "name": "development_samples_unique_sorted",
+      "passed": true
+    },
+    {
+      "name": "dev_beginning_frame_bounds",
+      "passed": true
+    },
+    {
+      "name": "dev_beginning_continuous_budget",
+      "passed": true
+    },
+    {
+      "name": "dev_beginning_anchor_in_window",
+      "passed": true
+    },
+    {
+      "name": "dev_beginning_no_within_split_window_overlap",
+      "passed": true
+    },
+    {
+      "name": "dev_quarter_frame_bounds",
+      "passed": true
+    },
+    {
+      "name": "dev_quarter_continuous_budget",
+      "passed": true
+    },
+    {
+      "name": "dev_quarter_anchor_in_window",
+      "passed": true
+    },
+    {
+      "name": "dev_quarter_no_within_split_window_overlap",
+      "passed": true
+    },
+    {
+      "name": "dev_three_quarters_frame_bounds",
+      "passed": true
+    },
+    {
+      "name": "dev_three_quarters_continuous_budget",
+      "passed": true
+    },
+    {
+      "name": "dev_three_quarters_anchor_in_window",
+      "passed": true
+    },
+    {
+      "name": "dev_three_quarters_no_within_split_window_overlap",
+      "passed": true
+    },
+    {
+      "name": "development_samples_within_windows",
+      "passed": true
+    },
+    {
+      "name": "holdout_samples_unique_sorted",
+      "passed": true
+    },
+    {
+      "name": "holdout_middle_frame_bounds",
+      "passed": true
+    },
+    {
+      "name": "holdout_middle_continuous_budget",
+      "passed": true
+    },
+    {
+      "name": "holdout_middle_anchor_in_window",
+      "passed": true
+    },
+    {
+      "name": "holdout_middle_no_within_split_window_overlap",
+      "passed": true
+    },
+    {
+      "name": "holdout_end_frame_bounds",
+      "passed": true
+    },
+    {
+      "name": "holdout_end_continuous_budget",
+      "passed": true
+    },
+    {
+      "name": "holdout_end_anchor_in_window",
+      "passed": true
+    },
+    {
+      "name": "holdout_end_no_within_split_window_overlap",
+      "passed": true
+    },
+    {
+      "name": "holdout_samples_within_windows",
+      "passed": true
+    },
+    {
+      "name": "development_holdout_window_disjoint",
+      "passed": true
+    },
+    {
+      "name": "development_holdout_sample_disjoint",
+      "passed": true
+    },
+    {
+      "name": "dev_fifteen_samples",
+      "passed": true
+    },
+    {
+      "name": "holdout_ten_samples",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000000000.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000000000.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:0",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:0",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000000007.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000000007.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:7",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:7",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000000014.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000000014.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:14",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:14",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000000029.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000000029.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:29",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:29",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000000239.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000000239.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:239",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:239",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000002277.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000002277.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:2277",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:2277",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000002337.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000002337.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:2337",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:2337",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000002397.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000002397.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:2397",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:2397",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000002457.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000002457.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:2457",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:2457",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000002516.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000002516.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:2516",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:2516",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000004674.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000004674.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:4674",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:4674",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000004734.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000004734.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:4734",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:4734",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000004794.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000004794.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:4794",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:4794",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000004854.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000004854.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:4854",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:4854",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000004913.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000004913.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:4913",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:4913",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000007072.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000007072.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:7072",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:7072",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000007132.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000007132.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:7132",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:7132",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000007192.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000007192.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:7192",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:7192",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000007252.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000007252.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:7252",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:7252",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000007311.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000007311.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:7311",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:7311",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000009350.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000009350.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:9350",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:9350",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000009410.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000009410.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:9410",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:9410",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000009470.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000009470.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:9470",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:9470",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000009530.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000009530.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:9530",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:9530",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/frames/frame_000009589.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/frames/frame_000009589.png",
+      "passed": true
+    },
+    {
+      "name": "native_dimensions:9589",
+      "passed": true
+    },
+    {
+      "name": "native_pixels:9589",
+      "passed": true
+    },
+    {
+      "name": "native_samples_cover_plan",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/dev_beginning_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/dev_beginning_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "raw_temporal_sheet:docs/evidence/phase_7/sampling/dev_beginning_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/dev_quarter_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/dev_quarter_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "raw_temporal_sheet:docs/evidence/phase_7/sampling/dev_quarter_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/holdout_middle_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/holdout_middle_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "raw_temporal_sheet:docs/evidence/phase_7/sampling/holdout_middle_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/dev_three_quarters_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/dev_three_quarters_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "raw_temporal_sheet:docs/evidence/phase_7/sampling/dev_three_quarters_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_exists:docs/evidence/phase_7/sampling/holdout_end_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "artifact_hash:docs/evidence/phase_7/sampling/holdout_end_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "raw_temporal_sheet:docs/evidence/phase_7/sampling/holdout_end_raw_temporal.png",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_hash:dev_beginning",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:0",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:1",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:2",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:3",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:4",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:5",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:6",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:7",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:8",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:9",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:10",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:11",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:12",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:13",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:14",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:15",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:16",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:17",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:18",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:19",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:20",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:21",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:22",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:23",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:24",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:25",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:26",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:27",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:28",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:29",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:30",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:31",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:32",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:33",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:34",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:35",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:36",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:37",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:38",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:39",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:40",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:41",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:42",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:43",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:44",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:45",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:46",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:47",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:48",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:49",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:50",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:51",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:52",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:53",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:54",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:55",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:56",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:57",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:58",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:59",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:60",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:61",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:62",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:63",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:64",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:65",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:66",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:67",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:68",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:69",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:70",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:71",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:72",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:73",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:74",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:75",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:76",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:77",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:78",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:79",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:80",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:81",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:82",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:83",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:84",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:85",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:86",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:87",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:88",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:89",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:90",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:91",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:92",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:93",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:94",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:95",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:96",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:97",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:98",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:99",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:100",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:101",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:102",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:103",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:104",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:105",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:106",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:107",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:108",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:109",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:110",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:111",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:112",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:113",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:114",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:115",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:116",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:117",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:118",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:119",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:120",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:121",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:122",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:123",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:124",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:125",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:126",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:127",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:128",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:129",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:130",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:131",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:132",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:133",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:134",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:135",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:136",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:137",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:138",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:139",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:140",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:141",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:142",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:143",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:144",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:145",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:146",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:147",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:148",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:149",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:150",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:151",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:152",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:153",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:154",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:155",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:156",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:157",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:158",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:159",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:160",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:161",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:162",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:163",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:164",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:165",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:166",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:167",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:168",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:169",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:170",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:171",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:172",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:173",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:174",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:175",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:176",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:177",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:178",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:179",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:180",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:181",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:182",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:183",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:184",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:185",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:186",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:187",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:188",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:189",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:190",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:191",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:192",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:193",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:194",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:195",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:196",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:197",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:198",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:199",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:200",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:201",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:202",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:203",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:204",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:205",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:206",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:207",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:208",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:209",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:210",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:211",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:212",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:213",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:214",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:215",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:216",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:217",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:218",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:219",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:220",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:221",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:222",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:223",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:224",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:225",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:226",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:227",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:228",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:229",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:230",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:231",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:232",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:233",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:234",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:235",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:236",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:237",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:238",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_beginning:239",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_exact_frame_count:dev_beginning",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_not_source_or_model_input:dev_beginning",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_hash:dev_quarter",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:0",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:1",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:2",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:3",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:4",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:5",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:6",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:7",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:8",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:9",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:10",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:11",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:12",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:13",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:14",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:15",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:16",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:17",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:18",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:19",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:20",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:21",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:22",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:23",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:24",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:25",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:26",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:27",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:28",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:29",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:30",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:31",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:32",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:33",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:34",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:35",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:36",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:37",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:38",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:39",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:40",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:41",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:42",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:43",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:44",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:45",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:46",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:47",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:48",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:49",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:50",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:51",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:52",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:53",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:54",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:55",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:56",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:57",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:58",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:59",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:60",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:61",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:62",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:63",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:64",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:65",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:66",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:67",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:68",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:69",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:70",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:71",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:72",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:73",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:74",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:75",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:76",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:77",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:78",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:79",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:80",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:81",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:82",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:83",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:84",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:85",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:86",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:87",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:88",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:89",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:90",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:91",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:92",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:93",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:94",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:95",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:96",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:97",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:98",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:99",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:100",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:101",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:102",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:103",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:104",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:105",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:106",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:107",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:108",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:109",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:110",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:111",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:112",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:113",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:114",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:115",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:116",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:117",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:118",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:119",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:120",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:121",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:122",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:123",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:124",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:125",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:126",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:127",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:128",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:129",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:130",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:131",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:132",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:133",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:134",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:135",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:136",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:137",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:138",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:139",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:140",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:141",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:142",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:143",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:144",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:145",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:146",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:147",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:148",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:149",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:150",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:151",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:152",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:153",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:154",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:155",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:156",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:157",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:158",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:159",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:160",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:161",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:162",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:163",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:164",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:165",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:166",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:167",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:168",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:169",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:170",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:171",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:172",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:173",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:174",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:175",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:176",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:177",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:178",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:179",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:180",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:181",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:182",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:183",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:184",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:185",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:186",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:187",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:188",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:189",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:190",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:191",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:192",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:193",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:194",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:195",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:196",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:197",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:198",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:199",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:200",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:201",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:202",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:203",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:204",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:205",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:206",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:207",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:208",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:209",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:210",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:211",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:212",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:213",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:214",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:215",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:216",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:217",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:218",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:219",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:220",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:221",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:222",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:223",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:224",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:225",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:226",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:227",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:228",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:229",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:230",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:231",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:232",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:233",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:234",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:235",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:236",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:237",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:238",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_quarter:239",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_exact_frame_count:dev_quarter",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_not_source_or_model_input:dev_quarter",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_hash:holdout_middle",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:0",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:1",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:2",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:3",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:4",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:5",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:6",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:7",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:8",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:9",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:10",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:11",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:12",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:13",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:14",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:15",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:16",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:17",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:18",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:19",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:20",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:21",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:22",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:23",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:24",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:25",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:26",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:27",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:28",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:29",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:30",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:31",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:32",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:33",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:34",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:35",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:36",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:37",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:38",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:39",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:40",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:41",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:42",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:43",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:44",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:45",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:46",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:47",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:48",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:49",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:50",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:51",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:52",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:53",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:54",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:55",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:56",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:57",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:58",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:59",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:60",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:61",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:62",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:63",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:64",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:65",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:66",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:67",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:68",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:69",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:70",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:71",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:72",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:73",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:74",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:75",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:76",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:77",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:78",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:79",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:80",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:81",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:82",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:83",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:84",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:85",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:86",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:87",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:88",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:89",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:90",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:91",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:92",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:93",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:94",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:95",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:96",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:97",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:98",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:99",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:100",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:101",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:102",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:103",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:104",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:105",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:106",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:107",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:108",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:109",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:110",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:111",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:112",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:113",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:114",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:115",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:116",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:117",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:118",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:119",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:120",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:121",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:122",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:123",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:124",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:125",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:126",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:127",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:128",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:129",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:130",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:131",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:132",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:133",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:134",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:135",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:136",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:137",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:138",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:139",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:140",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:141",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:142",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:143",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:144",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:145",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:146",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:147",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:148",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:149",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:150",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:151",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:152",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:153",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:154",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:155",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:156",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:157",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:158",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:159",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:160",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:161",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:162",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:163",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:164",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:165",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:166",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:167",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:168",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:169",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:170",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:171",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:172",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:173",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:174",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:175",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:176",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:177",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:178",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:179",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:180",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:181",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:182",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:183",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:184",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:185",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:186",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:187",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:188",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:189",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:190",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:191",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:192",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:193",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:194",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:195",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:196",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:197",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:198",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:199",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:200",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:201",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:202",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:203",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:204",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:205",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:206",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:207",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:208",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:209",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:210",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:211",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:212",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:213",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:214",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:215",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:216",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:217",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:218",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:219",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:220",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:221",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:222",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:223",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:224",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:225",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:226",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:227",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:228",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:229",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:230",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:231",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:232",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:233",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:234",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:235",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:236",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:237",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:238",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_middle:239",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_exact_frame_count:holdout_middle",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_not_source_or_model_input:holdout_middle",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_hash:dev_three_quarters",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:0",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:1",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:2",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:3",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:4",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:5",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:6",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:7",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:8",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:9",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:10",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:11",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:12",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:13",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:14",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:15",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:16",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:17",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:18",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:19",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:20",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:21",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:22",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:23",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:24",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:25",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:26",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:27",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:28",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:29",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:30",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:31",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:32",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:33",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:34",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:35",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:36",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:37",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:38",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:39",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:40",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:41",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:42",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:43",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:44",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:45",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:46",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:47",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:48",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:49",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:50",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:51",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:52",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:53",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:54",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:55",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:56",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:57",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:58",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:59",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:60",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:61",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:62",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:63",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:64",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:65",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:66",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:67",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:68",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:69",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:70",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:71",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:72",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:73",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:74",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:75",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:76",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:77",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:78",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:79",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:80",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:81",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:82",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:83",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:84",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:85",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:86",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:87",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:88",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:89",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:90",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:91",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:92",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:93",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:94",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:95",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:96",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:97",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:98",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:99",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:100",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:101",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:102",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:103",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:104",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:105",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:106",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:107",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:108",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:109",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:110",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:111",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:112",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:113",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:114",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:115",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:116",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:117",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:118",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:119",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:120",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:121",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:122",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:123",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:124",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:125",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:126",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:127",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:128",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:129",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:130",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:131",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:132",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:133",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:134",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:135",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:136",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:137",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:138",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:139",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:140",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:141",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:142",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:143",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:144",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:145",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:146",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:147",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:148",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:149",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:150",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:151",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:152",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:153",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:154",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:155",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:156",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:157",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:158",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:159",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:160",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:161",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:162",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:163",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:164",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:165",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:166",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:167",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:168",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:169",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:170",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:171",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:172",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:173",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:174",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:175",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:176",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:177",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:178",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:179",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:180",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:181",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:182",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:183",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:184",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:185",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:186",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:187",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:188",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:189",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:190",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:191",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:192",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:193",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:194",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:195",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:196",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:197",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:198",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:199",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:200",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:201",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:202",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:203",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:204",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:205",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:206",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:207",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:208",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:209",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:210",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:211",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:212",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:213",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:214",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:215",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:216",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:217",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:218",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:219",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:220",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:221",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:222",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:223",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:224",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:225",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:226",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:227",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:228",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:229",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:230",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:231",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:232",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:233",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:234",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:235",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:236",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:237",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:238",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:dev_three_quarters:239",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_exact_frame_count:dev_three_quarters",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_not_source_or_model_input:dev_three_quarters",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_hash:holdout_end",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:0",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:1",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:2",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:3",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:4",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:5",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:6",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:7",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:8",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:9",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:10",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:11",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:12",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:13",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:14",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:15",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:16",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:17",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:18",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:19",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:20",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:21",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:22",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:23",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:24",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:25",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:26",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:27",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:28",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:29",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:30",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:31",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:32",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:33",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:34",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:35",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:36",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:37",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:38",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:39",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:40",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:41",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:42",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:43",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:44",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:45",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:46",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:47",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:48",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:49",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:50",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:51",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:52",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:53",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:54",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:55",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:56",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:57",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:58",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:59",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:60",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:61",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:62",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:63",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:64",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:65",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:66",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:67",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:68",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:69",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:70",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:71",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:72",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:73",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:74",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:75",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:76",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:77",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:78",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:79",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:80",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:81",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:82",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:83",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:84",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:85",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:86",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:87",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:88",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:89",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:90",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:91",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:92",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:93",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:94",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:95",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:96",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:97",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:98",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:99",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:100",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:101",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:102",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:103",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:104",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:105",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:106",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:107",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:108",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:109",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:110",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:111",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:112",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:113",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:114",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:115",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:116",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:117",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:118",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:119",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:120",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:121",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:122",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:123",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:124",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:125",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:126",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:127",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:128",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:129",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:130",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:131",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:132",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:133",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:134",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:135",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:136",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:137",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:138",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:139",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:140",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:141",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:142",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:143",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:144",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:145",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:146",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:147",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:148",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:149",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:150",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:151",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:152",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:153",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:154",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:155",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:156",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:157",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:158",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:159",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:160",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:161",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:162",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:163",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:164",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:165",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:166",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:167",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:168",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:169",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:170",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:171",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:172",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:173",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:174",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:175",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:176",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:177",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:178",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:179",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:180",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:181",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:182",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:183",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:184",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:185",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:186",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:187",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:188",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:189",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:190",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:191",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:192",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:193",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:194",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:195",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:196",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:197",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:198",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:199",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:200",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:201",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:202",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:203",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:204",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:205",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:206",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:207",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:208",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:209",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:210",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:211",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:212",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:213",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:214",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:215",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:216",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:217",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:218",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:219",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:220",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:221",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:222",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:223",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:224",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:225",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:226",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:227",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:228",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:229",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:230",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:231",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:232",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:233",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:234",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:235",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:236",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:237",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:238",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_dimensions:holdout_end:239",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_exact_frame_count:holdout_end",
+      "passed": true
+    },
+    {
+      "name": "runtime_clip_not_source_or_model_input:holdout_end",
+      "passed": true
+    }
+  ],
+  "scope": "raw native pixel/source/hash/sample-split/geometry-proposal checks; no model, enhancement or count performance",
+  "checked_manifest_sha256": "167704d8ef9300d5f50ab0e3f7b4fe2864e9008d316b7f29603b1a33bee55c89"
+}

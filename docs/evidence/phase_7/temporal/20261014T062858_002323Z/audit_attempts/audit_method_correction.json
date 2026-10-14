@@ -1,0 +1,19 @@
+{
+  "additional_reporting_guard": "Record actual decoded frame counter and canonical audited input path; failed decode must not report9590 as executed.",
+  "attempt_1": "Stopped before checks because retained copy was not complete; FileNotFoundError report.json.",
+  "attempt_2": {
+    "checks_passed": 343819,
+    "checks_run": 343820,
+    "failures": [
+      {
+        "check": "actual user feedback directions hash bound",
+        "passed": false
+      }
+    ],
+    "input_path": "/tmp/traffic-phase7-temporal-output/phase_7_night_temporal/20261014T062858_002323Z",
+    "scope": "All9590 donor frames each variant decoded and verified; only feedback-dict schema equality failed."
+  },
+  "claim_type": "AUDIT_METHOD_CORRECTION_NOT_MODEL_OR_PIPELINE_FAILURE",
+  "correction": "Direction metadata is exactly A_TO_B approaching camera, B_TO_A moving away from camera, and scope TOR3-MALAM. Checker now includes the source-bound scope field instead of expecting a two-key dict. Final audit reads the complete canonical retained mirror.",
+  "method_unchanged_pipeline": true
+}

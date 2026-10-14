@@ -1,0 +1,1492 @@
+{
+  "configuration": {
+    "contract_version": "phase7_night_temporal_v1",
+    "counting": {
+      "association": {
+        "component": {
+          "max_center_distance_norm": 0.51,
+          "max_relative_motion_residual_norm": 0.15,
+          "min_common_frames": 3,
+          "min_consecutive_common_frames": 3,
+          "min_first_bc_inside_second_fraction": 1.0
+        },
+        "same_vehicle": {
+          "max_center_distance_norm": 0.1,
+          "max_relative_motion_residual_norm": 0.01,
+          "min_common_frames": 2,
+          "min_consecutive_common_frames": 2,
+          "min_iou": 0.59
+        }
+      },
+      "calibration_path": "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json",
+      "calibration_sha256": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723",
+      "confirmation_observations": 1,
+      "geometry_source_sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+      "grouping_enabled": true,
+      "metric": "passage",
+      "neutral_band_px": 0.0,
+      "parameter_status": "FROZEN_PAGI_EXPERIMENT_CONTROLS_NOT_NIGHT_CALIBRATION",
+      "policy_version": "phase6_option_b_v1",
+      "source_path": "notebooks/phase_6_identity_resolution_helpers.py",
+      "source_sha256": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054"
+    },
+    "counting_scope": "DECLARED_DEV_AND_HOLDOUT_SAMPLING_WINDOWS_DYNAMIC_OBSERVED_IDS_FULL_HISTORY",
+    "detector": {
+      "baseline_provenance": "docs/evidence/phase_2/20261011T052950_360560Z_ed399fb8/detection_report.json",
+      "device": 0,
+      "package_version": "8.4.175",
+      "settings": {
+        "agnostic_nms": false,
+        "augment": false,
+        "batch": 1,
+        "classes": null,
+        "conf": 0.25,
+        "imgsz": 640,
+        "iou": 0.7,
+        "max_det": 300,
+        "nms": null,
+        "quantize": null,
+        "rect": true,
+        "seed": 0
+      },
+      "weights_bytes": 44255705,
+      "weights_path": "/kaggle/working/phase_7_assets/yolo26m.pt",
+      "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt"
+    },
+    "encoder": {
+      "bytes": 9873245,
+      "device": "cuda:0",
+      "final_vehicle_configuration": false,
+      "input_policy": "SAME_TRANSFORMED_FRAME_AS_DETECTOR",
+      "onnx_version": "1.20.1",
+      "ort_version": "1.24.4",
+      "path": "/kaggle/working/phase_7_assets/yolo26n-reid.onnx",
+      "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n-reid.onnx"
+    },
+    "expected_frame_count": 9590,
+    "expected_geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+    "expected_sampling_sha256": "23091cbc1afd5eb24f63bf6d81d2be0bdc1ab04b43a78b7d31e3e65882f6437f",
+    "expected_selection_sha256": "e1c7b5f1a212416ded809cf0558b8cdf2d63e3dea4b60b978ab2febf9e4bf123",
+    "expected_video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "frame_scope": "FULL_VIDEO_FROM_FRAME_ZERO_NO_TRACKER_RESET_WITHIN_VARIANT",
+    "geometry_path": "docs/evidence/phase_7/accepted_geometry/TOR3-MALAM-N1.json",
+    "holdout_policy": "FROZEN_DEV_SELECTION_BEFORE_ANY_HOLDOUT_MODEL_OUTCOME_REVIEW",
+    "output_root": "/kaggle/working/phase_7_night_temporal",
+    "repo_root": "/kaggle/working/phase7_temporal_source_snapshot_04ae48b87d52f592",
+    "result_semantics": "MACHINE_CANDIDATES_SEPARATE_FROM_EXPLICIT_PHYSICAL_PASSAGE_REVIEW_OFFLINE",
+    "sampling_path": "docs/evidence/phase_7/sampling/TOR3-MALAM_sampling_plan_v1.json",
+    "selection_path": "docs/evidence/phase_7/selection/TOR3-MALAM_DEV_shortlist_v1.json",
+    "tracker": {
+      "appearance_thresh": 0.8,
+      "device": "cuda:0",
+      "fuse_score": true,
+      "gmc_method": "none",
+      "match_thresh": 0.8,
+      "new_track_thresh": 0.25,
+      "proximity_thresh": 0.5,
+      "track_buffer": 30,
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "tracker_type": "botsort",
+      "with_reid": true
+    },
+    "variants": [
+      {
+        "method": "raw",
+        "name": "raw"
+      },
+      {
+        "gamma": 0.7,
+        "method": "gamma",
+        "name": "gamma_070"
+      }
+    ],
+    "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-MALAM.mp4"
+  },
+  "environment": {
+    "association_device": "cpu",
+    "detector_and_encoder_device": "cuda:0",
+    "opencv": "4.13.0",
+    "python": "3.12.13",
+    "torch": "2.10.0+cu128"
+  },
+  "execution_kind": "ACTUAL_MODEL_EXECUTION",
+  "finished_utc": "2026-10-14T07:00:31.381720+00:00",
+  "holdout_selection_used": false,
+  "limits": [
+    "No ground truth or accuracy/precision/recall/F1/MAPE claim",
+    "Track IDs independent between variants",
+    "Person-domain encoder candidate remains unselected as final vehicle encoder",
+    "Frozen PAGI association controls are not night calibration",
+    "Offline categories use whole vehicle episode",
+    "Machine accepted decisions are distinct from review overlay",
+    "Full history crosses sampling windows; heldout family/category evidence may be offline",
+    "Only enhancement changes; its separate detector-vs-ReID contribution cannot be isolated",
+    "Sequential variants and detector/encoder warmup plus instrumentation limit timing comparisons",
+    "Inference is fullvideo; counting comparison is limited to declared five windows",
+    "No measuredIDs in declared windows is an explicit unsupported condition, not whole-video fallback"
+  ],
+  "manual_review_status": "PENDING_PHYSICAL_PASSAGE_REVIEW",
+  "native_sample_pixel_equality": {
+    "frame_indices": [
+      0,
+      7,
+      14,
+      29,
+      239,
+      2277,
+      2337,
+      2397,
+      2457,
+      2516,
+      4674,
+      4734,
+      4794,
+      4854,
+      4913,
+      7072,
+      7132,
+      7192,
+      7252,
+      7311,
+      9350,
+      9410,
+      9470,
+      9530,
+      9589
+    ],
+    "passed": true
+  },
+  "phase": 7,
+  "run_id": "20261014T062858_002323Z",
+  "selection_frozen_before_temporal_execution": true,
+  "source_helper_sha256": "2ef8de2d0d309b86bae6a75a2135c59d8dd09e203610fc444c6023c0614d9c74",
+  "started_utc": "2026-10-14T06:28:58.003099+00:00",
+  "status": "completed_raw_selected_temporal_machine_outputs_physical_review_pending",
+  "variants": {
+    "gamma_070": {
+      "appearance_diagnostics": {
+        "appearance_changed_cost_pairs": 11544,
+        "appearance_eligible_pairs": 11590,
+        "calls": 10651,
+        "candidate_pairs": 64603,
+        "embedding_dimension": 512,
+        "encoder_calls": 6466,
+        "finite_nonzero_features_produced": 12642,
+        "nonempty_feature_association_calls": 6988
+      },
+      "appearance_records_sha256": "b2b9816cda49bf8023008643f896745fa090b9486404d84079fcd8c005653a9a",
+      "counting_report": {
+        "accepted_events": 1,
+        "all_source_episode_count": 1598,
+        "appearance_features_used": false,
+        "association_frame_windows": [
+          [
+            0,
+            239
+          ],
+          [
+            2277,
+            2516
+          ],
+          [
+            4674,
+            4913
+          ],
+          [
+            7072,
+            7311
+          ],
+          [
+            9350,
+            9589
+          ]
+        ],
+        "association_window_policy": "all_measured_common_frames_within_predeclared_generic_windows",
+        "claim_type": "EXECUTED_OPTION_B_SOFTWARE_EXPERIMENT_NOT_A_BENCHMARK",
+        "component_person_episodes": 9,
+        "counting_replay_wall_seconds": 5.001470746999985,
+        "counting_scope": "DECLARED_DEV_AND_HOLDOUT_SAMPLING_WINDOWS_DYNAMIC_OBSERVED_IDS_FULL_HISTORY",
+        "decision_status_counts": {
+          "accepted": 1,
+          "pending_review": 7
+        },
+        "detector_tracker_encoder_rerun": false,
+        "episode_count": 295,
+        "episode_family_counts": {
+          "other": 28,
+          "person": 149,
+          "vehicle": 118
+        },
+        "geometry_diagnostic_counts": {
+          "AMBIGUOUS_GAP": 2,
+          "GEOMETRY_TRANSITION": 10,
+          "ORIGIN_ESTABLISHED": 112
+        },
+        "grouping_enabled": true,
+        "identity_support_policy": "PASSAGE_LOCAL_RELATION_EVIDENCE_REQUIRED_GLOBAL_GRAPH_EXPLORATORY",
+        "input_identity": {
+          "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+          "height": 720,
+          "parent_run_id": "20261014T062858_002323Z",
+          "records_sha256": "b9804bd798674c13d93485170fc032a9f33557c14f61f22d51c78428f839ba2d",
+          "variant": "gamma_070",
+          "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+          "width": 1280
+        },
+        "phase": 7,
+        "phase7_source_adapter": {
+          "adapted_source_sha256": "e2588f99c29fc577a85f3fb21053edc130d9203b15a42cc4bef142e6ae7b4b47",
+          "base_source_sha256": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054",
+          "behavior_changes": "SOURCE_PROVENANCE_ENUM_ONLY_NO_ALGORITHM_OR_THRESHOLD_CHANGE",
+          "from": "\"retained_phase_2_detection\"",
+          "literal_substitution_count": 1,
+          "to": "\"retained_phase_7_detection\""
+        },
+        "physical_identity_or_counting_accuracy_established": false,
+        "physical_passage_review_status": "PENDING_SEPARATE_AUDIT_NO_CROSS_VARIANT_TRACK_ID_MATCHING",
+        "policy_version": "phase6_option_b_v1",
+        "relation_status_counts": {
+          "REJECTED": 171,
+          "SUPPORTED": 10,
+          "UNRESOLVED": 6
+        },
+        "scope": {
+          "association_frame_windows": [
+            [
+              0,
+              239
+            ],
+            [
+              2277,
+              2516
+            ],
+            [
+              4674,
+              4913
+            ],
+            [
+              7072,
+              7311
+            ],
+            [
+              9350,
+              9589
+            ]
+          ],
+          "track_ids": [
+            1,
+            2,
+            4,
+            6,
+            7,
+            11,
+            14,
+            15,
+            18,
+            28,
+            35,
+            36,
+            37,
+            40,
+            430,
+            432,
+            433,
+            434,
+            435,
+            437,
+            441,
+            443,
+            444,
+            445,
+            580,
+            585,
+            587,
+            591,
+            593,
+            826,
+            829,
+            830,
+            835,
+            838,
+            839,
+            841,
+            845,
+            847,
+            852,
+            853,
+            856,
+            857,
+            858,
+            859,
+            863,
+            865,
+            868,
+            869,
+            871,
+            873,
+            874,
+            875,
+            879,
+            883,
+            884,
+            887,
+            890,
+            1189,
+            1199,
+            1223,
+            1229,
+            1238,
+            1240,
+            1241,
+            1242,
+            1243,
+            1244,
+            1246,
+            1247,
+            1252,
+            1253,
+            1257,
+            1259,
+            1260,
+            1264,
+            1265,
+            1267,
+            1268,
+            1269
+          ]
+        },
+        "source_cache_created_by_phase7_new_inference": true,
+        "source_frame_count": 9590,
+        "source_measured_observation_count": 11330
+      },
+      "cuda_execution_evidence": {
+        "actual_cuda_execution_confirmed": true,
+        "cpu_partition_note": "CPU graph partitions are reported; whole-session fallback forbidden",
+        "execution_kind": "ACTUAL_MODEL_EXECUTION",
+        "profile": "ort_encoder_profile_2026-10-14_06-40-20.json",
+        "profile_sha256": "4366a2c530b44ac99846660bd29bba537ea763c1dbe4c8de2b37a6277401796e",
+        "profiled_source_frame": 0,
+        "provider_kernel_event_counts": {
+          "CPUExecutionProvider": 20,
+          "CUDAExecutionProvider": 137
+        }
+      },
+      "decode_metadata": {
+        "backend": "FFMPEG",
+        "fps_backend": 29.419969502218617,
+        "frame_count_backend": 9590.0,
+        "height": 720,
+        "timestamp_semantics": "index/FPS estimate; POS_MSEC unverified source PTS",
+        "width": 1280
+      },
+      "detector_input_policy": "NATIVE_FULL_FRAME_TRANSFORMED",
+      "detector_resources": {
+        "actual_backend": {
+          "device": "cuda:0",
+          "end2end": false,
+          "fp16": false,
+          "imgsz": [
+            640,
+            640
+          ]
+        },
+        "actual_predictor_arguments": {
+          "agnostic_nms": false,
+          "augment": false,
+          "batch": 1,
+          "classes": null,
+          "conf": 0.25,
+          "imgsz": 640,
+          "iou": 0.7,
+          "max_det": 300,
+          "nms": null,
+          "quantize": null,
+          "rect": true,
+          "seed": 0
+        },
+        "class_names": {
+          "0": "person",
+          "1": "bicycle",
+          "10": "fire hydrant",
+          "11": "stop sign",
+          "12": "parking meter",
+          "13": "bench",
+          "14": "bird",
+          "15": "cat",
+          "16": "dog",
+          "17": "horse",
+          "18": "sheep",
+          "19": "cow",
+          "2": "car",
+          "20": "elephant",
+          "21": "bear",
+          "22": "zebra",
+          "23": "giraffe",
+          "24": "backpack",
+          "25": "umbrella",
+          "26": "handbag",
+          "27": "tie",
+          "28": "suitcase",
+          "29": "frisbee",
+          "3": "motorcycle",
+          "30": "skis",
+          "31": "snowboard",
+          "32": "sports ball",
+          "33": "kite",
+          "34": "baseball bat",
+          "35": "baseball glove",
+          "36": "skateboard",
+          "37": "surfboard",
+          "38": "tennis racket",
+          "39": "bottle",
+          "4": "airplane",
+          "40": "wine glass",
+          "41": "cup",
+          "42": "fork",
+          "43": "knife",
+          "44": "spoon",
+          "45": "bowl",
+          "46": "banana",
+          "47": "apple",
+          "48": "sandwich",
+          "49": "orange",
+          "5": "bus",
+          "50": "broccoli",
+          "51": "carrot",
+          "52": "hot dog",
+          "53": "pizza",
+          "54": "donut",
+          "55": "cake",
+          "56": "chair",
+          "57": "couch",
+          "58": "potted plant",
+          "59": "bed",
+          "6": "train",
+          "60": "dining table",
+          "61": "toilet",
+          "62": "tv",
+          "63": "laptop",
+          "64": "mouse",
+          "65": "remote",
+          "66": "keyboard",
+          "67": "cell phone",
+          "68": "microwave",
+          "69": "oven",
+          "7": "truck",
+          "70": "toaster",
+          "71": "sink",
+          "72": "refrigerator",
+          "73": "book",
+          "74": "clock",
+          "75": "vase",
+          "76": "scissors",
+          "77": "teddy bear",
+          "78": "hair drier",
+          "79": "toothbrush",
+          "8": "boat",
+          "9": "traffic light"
+        },
+        "cuda_available": true,
+        "cuda_device_name": "Tesla T4",
+        "cuda_total_memory_bytes": 15636037632,
+        "exact_bitwise_repeatability_claimed": false,
+        "execution_device": "cuda:0",
+        "package_version": "8.4.175",
+        "torch_cuda_build": "12.8",
+        "torch_version": "2.10.0+cu128",
+        "visible_cuda_device_count": 2,
+        "weights_bytes": 44255705,
+        "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+        "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt"
+      },
+      "encoder_input_policy": "SAME_TRANSFORMED_FRAME_AS_DETECTOR",
+      "encoder_runtime": {
+        "backend_device": "cuda:0",
+        "device": "cuda:0",
+        "documented_training_domain": "MSMT17-v1 person; vehicle transfer unknown",
+        "effective_configuration": {
+          "appearance_thresh": 0.8,
+          "device": "cuda:0",
+          "fuse_score": true,
+          "gmc_method": "none",
+          "match_thresh": 0.8,
+          "model": "/kaggle/working/phase_7_assets/yolo26n-reid.onnx",
+          "new_track_thresh": 0.25,
+          "proximity_thresh": 0.5,
+          "track_buffer": 30,
+          "track_high_thresh": 0.25,
+          "track_low_thresh": 0.1,
+          "tracker_type": "botsort",
+          "with_reid": true
+        },
+        "encoder_asset_sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+        "encoder_input_policy": "SAME_TRANSFORMED_FRAME_AS_DETECTOR",
+        "final_vehicle_configuration": false,
+        "fp16": false,
+        "imgsz": [
+          224,
+          224
+        ],
+        "no_runtime_fallback": true,
+        "provider_options": {
+          "CPUExecutionProvider": {},
+          "CUDAExecutionProvider": {
+            "arena_extend_strategy": "kNextPowerOfTwo",
+            "cudnn_conv1d_pad_to_nc1d": "0",
+            "cudnn_conv_algo_search": "EXHAUSTIVE",
+            "cudnn_conv_use_max_workspace": "1",
+            "device_id": "0",
+            "do_copy_in_default_stream": "1",
+            "enable_cuda_graph": "0",
+            "enable_skip_layer_norm_strict_mode": "0",
+            "fuse_conv_bias": "0",
+            "gpu_external_alloc": "0",
+            "gpu_external_empty_cache": "0",
+            "gpu_external_free": "0",
+            "gpu_mem_limit": "18446744073709551615",
+            "has_user_compute_stream": "0",
+            "prefer_nhwc": "0",
+            "sdpa_kernel": "0",
+            "tunable_op_enable": "0",
+            "tunable_op_max_tuning_duration_ms": "0",
+            "tunable_op_tuning_enable": "0",
+            "use_ep_level_unified_stream": "0",
+            "use_tf32": "1",
+            "user_compute_stream": "0"
+          }
+        },
+        "providers": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ],
+        "static_batch_size": null,
+        "tracker_source_checks": [
+          {
+            "path": "trackers/bot_sort.py",
+            "sha256": "b157cbc33f75f1132df530f04361824bc39a30d4051ce6df1cd5c388e49b3117"
+          },
+          {
+            "path": "trackers/byte_tracker.py",
+            "sha256": "fb45d70e952f99984085788bc09fc0c60a18b14bc4329b28e32bc2c70ac37401"
+          },
+          {
+            "path": "trackers/basetrack.py",
+            "sha256": "9ef094b9a54ff2f52c9118b5bd1a2f84ba331aa557277f54186de11728c2f7e8"
+          },
+          {
+            "path": "trackers/utils/matching.py",
+            "sha256": "318bf81030558863a4ec6effea3c9d063a297f299367e379a58b89c24e3f421f"
+          },
+          {
+            "path": "trackers/utils/gmc.py",
+            "sha256": "d797f701a22347001d780b0dc4d0f2f5cabdfefb895c36bbab084ceb2dfc4000"
+          },
+          {
+            "path": "trackers/utils/stracks.py",
+            "sha256": "9534294af850c3a6755c3a5a1ba9b2b068c5b79a11166c8547652944e2632f58"
+          },
+          {
+            "path": "trackers/utils/reid.py",
+            "sha256": "75c54a4f8fe9b1e6946d61b530fbb790fdfcc27df120fa71cc7759c11e9f0475"
+          },
+          {
+            "path": "cfg/trackers/botsort.yaml",
+            "sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01"
+          },
+          {
+            "path": "engine/results.py",
+            "sha256": "871e5b3eed1558c3c048d99058ddf28a7927c1317d020981e7c0836f18e00ee3"
+          },
+          {
+            "path": "nn/backends/onnx.py",
+            "sha256": "8a42c894bb34381ffa2636d2bf8704c5ea5f2f80db6de296b278c6c6528b6e5e"
+          },
+          {
+            "path": "nn/autobackend.py",
+            "sha256": "450d5d5301e441896f8422cd333ce35c414c2e7ac39a88af01fd5edbd2e552dd"
+          },
+          {
+            "path": "utils/plotting.py",
+            "sha256": "a21122beb75642c535ba5f20f81e51cf9fd9c22c097120d1e787a7286c468ff0"
+          }
+        ]
+      },
+      "frames_processed": 9590,
+      "native_sample_pixel_hashes": {
+        "0": "4e3b5bb12b7ae3f60cfae784ab52dd143005e859cb8c46dd9578040268cc5d80",
+        "14": "c72435b96d1ff363c5d2eb0d3cd2843a2c0075b55e7284a780297a50c32a6ea1",
+        "2277": "5e15bb851e1c965082d38e4021f46dbb892e24a2029929568818df9bb6dfe154",
+        "2337": "54370ad89837d73b4b8458cf81101933528a52b33405ed8ec51a46e2230397cc",
+        "239": "f99b3933ac81b13f8dc6263c5b3bc21463f294df7c3a422d225cbcab6451ffed",
+        "2397": "f404d4f8caa514da5118a364a5bc8029d8ddbba3c16c046f450addfe8748f0d2",
+        "2457": "e692a88513937e90c76d76edf43b08a6c543bf0058086b2990099dae2f62ed56",
+        "2516": "eb73f33425ae8847059dd50162ea0e55e89fe9a9ae2e701f521b1407ed42ddf2",
+        "29": "2a16476bc26a7a3b980b3e02c9f2916aa5ddd0882d7f6f0d2aee6935e60f33c4",
+        "4674": "71d25bf16a3bd199cb209143bacff665ea4ce867f2b1bfbabc92a18463d9f427",
+        "4734": "d3e62529a80b107848080bbaadb6588cb681d33ab10935ed2285b2cd7d26cfbc",
+        "4794": "273c5338edf83f4f0990a93d7186dccf2f2c858d380de335e7cdfe1e0804063b",
+        "4854": "20484dcdc00431adfad9f2224484cbb20f0a160b29b1dc164cab299a8ce84780",
+        "4913": "e94b9d6e4553327596d0f5a83f4c63f54589dd54869eae19f33863057cd9eb1b",
+        "7": "6220b5ea215db20f43b57f80c466da54db10a07f9824afef0c263fdb54b6ae99",
+        "7072": "a54336e7ef909eb90b58360293ef026715318edc4bdc01a7f4aa4ccf077b508c",
+        "7132": "c4503c17fe14ed9e5e9c6b4345914ed038277b1b0613632fa3292cbbf9473c6d",
+        "7192": "2a54e8f2c4c60c2b0c98598ceca8b808e9248719900f8b37cf34ca5992482273",
+        "7252": "3cfc5cefe4f0d79283086d8658c4bee54804452cfea17c0deb9a32870a09f35e",
+        "7311": "0f1146e5d98ccc84f8e7bcfd948fcd20d8f21dbeaeb4cf8479f3342dcb85b4eb",
+        "9350": "57395827dbda6d2b3303c8d089155f36eead6f54d3890ea3168fa387aff86ef0",
+        "9410": "f03d74f0b5a97fd32692b7e7b3d779503ccbfaea24f021b9e986e859942fb8ef",
+        "9470": "f1eda81434900f105e17af16be1e9ca58a1aa9e6c3a0e6735eede6b62c19a5ad",
+        "9530": "d380810db9a9dde003266054e9d5db520f09a5ddcf7a101a64d43eb8499b8660",
+        "9589": "da9b1ff24fab9aa38206174381230f0a4da5c86f07be9c25ba0aee3352ba16fa"
+      },
+      "observed_diagnostics": {
+        "captured_ids_including_unconfirmed": 1270,
+        "emitted_observations": 11330,
+        "empty_detection_frames": 3124,
+        "no_emitted_track_frames": 3370,
+        "raw_detections": 12642,
+        "within_id_gap_events": 961,
+        "within_id_raw_class_changes": 523
+      },
+      "resource": {
+        "cuda_peak_allocated_bytes": 166716416,
+        "cuda_peak_reserved_bytes": 207618048,
+        "process_peak_rss_bytes": 2072465408
+      },
+      "samples": [
+        {
+          "frame_index": 0,
+          "input_png": "samples/frame_000000000_input.png",
+          "input_png_sha256": "46422e7f4c7b13f9a5c5c3a5e3045247ad014e37faefa4451f12efbff913c839",
+          "pixel_sha256": "0b55d83da9f6bbd6b91ed099ff1c5cfff88d4de2449151729f266ac295491814"
+        },
+        {
+          "frame_index": 7,
+          "input_png": "samples/frame_000000007_input.png",
+          "input_png_sha256": "6286d1cdf39d367708ab47393d8c1f9a0850c871a7bd1baeea7a03221ac518e3",
+          "pixel_sha256": "0de93b3f0bc9b7252bc6603c29ae116e3f4a4c1c3c703a7edd48dbdcb82f41bc"
+        },
+        {
+          "frame_index": 14,
+          "input_png": "samples/frame_000000014_input.png",
+          "input_png_sha256": "294dad0e59c8d7fbba62e83d4d3c6ad0ea994d88c69e11939de677a2216ddd23",
+          "pixel_sha256": "ba691a33e2abfb40ff23e1472ec5359709de107c7f6e95a5d1670fbcdad1331d"
+        },
+        {
+          "frame_index": 29,
+          "input_png": "samples/frame_000000029_input.png",
+          "input_png_sha256": "617649f94e76d413a545ceff79e890cf3f409c0efec18cd8b2ded210b42a9157",
+          "pixel_sha256": "0d6fbf99d5366c3021ff80bad00ce0924115b2c3283c2afeb249fb3fa775e721"
+        },
+        {
+          "frame_index": 239,
+          "input_png": "samples/frame_000000239_input.png",
+          "input_png_sha256": "301e2736bef36bd5947f7f682cec21a92d770ada36b08f294306379ee1ca1595",
+          "pixel_sha256": "9b8b594a9a49abab8d5f2c02aac29889e4917c1b841498dab6b439757ee28c09"
+        },
+        {
+          "frame_index": 2277,
+          "input_png": "samples/frame_000002277_input.png",
+          "input_png_sha256": "14448ec801632fa1ea513de053bc2f50ea590909b3e6f4e217f9e2a300b1e23b",
+          "pixel_sha256": "2534e7c8349af070db411a032392cf5cf0e9ced6fe278700096a07d527e4fa90"
+        },
+        {
+          "frame_index": 2337,
+          "input_png": "samples/frame_000002337_input.png",
+          "input_png_sha256": "8a39cdcf917ac2235aaeff97d746a06e895f38c35f5ef6561ba3c0b00e0513ab",
+          "pixel_sha256": "2ecf08e0d9d6c0b11236039b0a8e76a4e93ebd905ad5dcda71dc17eaf69f03cb"
+        },
+        {
+          "frame_index": 2397,
+          "input_png": "samples/frame_000002397_input.png",
+          "input_png_sha256": "d75321fb9f5a494342870c0db50cfabb097448abd450af65c7826f47d4f5003c",
+          "pixel_sha256": "7d1908309614536dd4840b406d9b3f5f70acb8ca94acec2a4889746335d262f1"
+        },
+        {
+          "frame_index": 2457,
+          "input_png": "samples/frame_000002457_input.png",
+          "input_png_sha256": "c9ff8bd46b972e8b2fdf929134ee0d2a344be61e0e7832fcb3eab25381323b4a",
+          "pixel_sha256": "b7a0b2746625c8a86ad84f929cb6b7ecbfebb0bfb7fc1957263f452bc7f66a0e"
+        },
+        {
+          "frame_index": 2516,
+          "input_png": "samples/frame_000002516_input.png",
+          "input_png_sha256": "b14ae10dbb8c07f66da457084cc03c1b7313d3d4a569f7260938bdfd703a4198",
+          "pixel_sha256": "dac830d779ff97a383abe82900cfb63b8b60f00275a8eb6e252bd99be5b9b108"
+        },
+        {
+          "frame_index": 4674,
+          "input_png": "samples/frame_000004674_input.png",
+          "input_png_sha256": "4d6adf934e6eb2ab51a51b45cf1467de6407dbce3c2e12a9407cc73c55dbd163",
+          "pixel_sha256": "1cdf6c22a482e6771ade82b2c76278e5fcf53f22045894b50f03e89b31ab01ad"
+        },
+        {
+          "frame_index": 4734,
+          "input_png": "samples/frame_000004734_input.png",
+          "input_png_sha256": "9de20f863c0a677b303c53ad3d81cf1a05a8bef37c874a7a8451040f49d812ee",
+          "pixel_sha256": "106b93c27790ddc56ff6c6a588963e1fa675dd28dcd0e5def7c735b5db686ffa"
+        },
+        {
+          "frame_index": 4794,
+          "input_png": "samples/frame_000004794_input.png",
+          "input_png_sha256": "348d7a03b25be2baacbc94c9d2c59da371414b977e8d63092aa3a17ea2aa0273",
+          "pixel_sha256": "9016cfd6674e2ad796869fdc3ec5ea6c7c6e0927e80938ff65a97e41d0f822da"
+        },
+        {
+          "frame_index": 4854,
+          "input_png": "samples/frame_000004854_input.png",
+          "input_png_sha256": "17bc682569b445cbd8960e4c35cc49c5e48609cad00551fe7300572c7361e080",
+          "pixel_sha256": "1c04b6fd4a4e99afeea37f4bb2fba4572741713f4f8344d04c8b695d403e35ea"
+        },
+        {
+          "frame_index": 4913,
+          "input_png": "samples/frame_000004913_input.png",
+          "input_png_sha256": "81fd0223130c63dee0bd91992186f65346eb88cfaaee6f5b8d896a7c0bebc6e2",
+          "pixel_sha256": "b6eca1ddc296337d1d841f89327cfd5d87b482e790d41e0543acad13dc121c34"
+        },
+        {
+          "frame_index": 7072,
+          "input_png": "samples/frame_000007072_input.png",
+          "input_png_sha256": "c579438bebcd647310dca89a5223107ec8d1ff1f3fd946d849b72f5db48898d7",
+          "pixel_sha256": "bb25746bb33a8f59dbaa7e11729d08c8745b390eea832a7be734cb81c4b3c053"
+        },
+        {
+          "frame_index": 7132,
+          "input_png": "samples/frame_000007132_input.png",
+          "input_png_sha256": "75a71e6489555e4603c9e57c656573afc6d011d86de1fabde89f4dc183266ca0",
+          "pixel_sha256": "2cb95cc7905df50fab5590a309d8c2f59883fe5a6da7b76d1b25b2c0631ba87e"
+        },
+        {
+          "frame_index": 7192,
+          "input_png": "samples/frame_000007192_input.png",
+          "input_png_sha256": "3c264dc114c7de0f4589b493ed95ecfc126bad9aa4ef00a36ed83df53bcb044b",
+          "pixel_sha256": "e01457f4cabc953939dd9cb4200ba90dea7e66f138abf515d5506ba20d80879a"
+        },
+        {
+          "frame_index": 7252,
+          "input_png": "samples/frame_000007252_input.png",
+          "input_png_sha256": "cf057f6a08040cd5e328e63018f3359a9c76650aa6288d51ded5e256df2fcce8",
+          "pixel_sha256": "acd2474cb246f2111702b79a5bd11d9e5424938bda49068c7e933834cac1de1a"
+        },
+        {
+          "frame_index": 7311,
+          "input_png": "samples/frame_000007311_input.png",
+          "input_png_sha256": "5700de1d2c19c7db4aab6c9de04cdfbdb3646ef0f726743e97445ac8907b5cf3",
+          "pixel_sha256": "f2c542a012d2e650129d2bcd692a147e78a9720884ea9c330813e3c033a21f9f"
+        },
+        {
+          "frame_index": 9350,
+          "input_png": "samples/frame_000009350_input.png",
+          "input_png_sha256": "a303182ac4ad08c2b4a80fdcd67a5ad89f48df9bf81c532581277b735c6cf91a",
+          "pixel_sha256": "fa67ded8af582c21a1ef5599d97fc246e8d53c38ed5edf98eefb322964605f9a"
+        },
+        {
+          "frame_index": 9410,
+          "input_png": "samples/frame_000009410_input.png",
+          "input_png_sha256": "01b8d7a71901f7c153fc19e4062aad2459c4088fa81f3d3e33b72eaeb1e9927b",
+          "pixel_sha256": "13dc4e1d63fafffa7bab138d34d1cfde32cfe1522bed25cf985d52085535427a"
+        },
+        {
+          "frame_index": 9470,
+          "input_png": "samples/frame_000009470_input.png",
+          "input_png_sha256": "09b9586061625c19717cb00dac82a4d0da6177f056156e48d44eab91d851fbeb",
+          "pixel_sha256": "111d056a802c3eddc82dde20c5435cf0fb10029b73d854a9ced15785bbabccae"
+        },
+        {
+          "frame_index": 9530,
+          "input_png": "samples/frame_000009530_input.png",
+          "input_png_sha256": "6d7aae55463817cc59054f942d27dd2e5668cbe3cfc7a29716e6a20f355fadef",
+          "pixel_sha256": "761d7bff4f85a335ab391d7cf4012c1b4e06aec0948570b9db6e21df33d1e585"
+        },
+        {
+          "frame_index": 9589,
+          "input_png": "samples/frame_000009589_input.png",
+          "input_png_sha256": "c2f623727e8f9db94076c758533a72d7cd7c67f7dc14bddc04411c8ba856a2b7",
+          "pixel_sha256": "25a054e3153e7bcc929bc3036f180295a24e90407d2c63a9220c0f747599fbf2"
+        }
+      ],
+      "status": "completed_full_video_inference_geometry_counting_review_pending",
+      "timing": {
+        "decode_wall_seconds": 12.225189658004638,
+        "detector_wall_seconds": 257.64751982500707,
+        "encoder_wall_seconds_inside_tracker": 384.93467190399565,
+        "loop_wall_seconds": 1205.2089724829998,
+        "tracker_wall_seconds": 397.02717958301787,
+        "transform_wall_seconds": 450.34019367399355
+      },
+      "track_records_sha256": "b9804bd798674c13d93485170fc032a9f33557c14f61f22d51c78428f839ba2d",
+      "variant": {
+        "gamma": 0.7,
+        "method": "gamma",
+        "name": "gamma_070"
+      }
+    },
+    "raw": {
+      "appearance_diagnostics": {
+        "appearance_changed_cost_pairs": 12709,
+        "appearance_eligible_pairs": 12757,
+        "calls": 10643,
+        "candidate_pairs": 71898,
+        "embedding_dimension": 512,
+        "encoder_calls": 7077,
+        "finite_nonzero_features_produced": 13760,
+        "nonempty_feature_association_calls": 7654
+      },
+      "appearance_records_sha256": "6c6f0c40b61ed383eb382d3157e988180e765bb83827d15f93070dd3c7130d09",
+      "counting_report": {
+        "accepted_events": 0,
+        "all_source_episode_count": 1633,
+        "appearance_features_used": false,
+        "association_frame_windows": [
+          [
+            0,
+            239
+          ],
+          [
+            2277,
+            2516
+          ],
+          [
+            4674,
+            4913
+          ],
+          [
+            7072,
+            7311
+          ],
+          [
+            9350,
+            9589
+          ]
+        ],
+        "association_window_policy": "all_measured_common_frames_within_predeclared_generic_windows",
+        "claim_type": "EXECUTED_OPTION_B_SOFTWARE_EXPERIMENT_NOT_A_BENCHMARK",
+        "component_person_episodes": 5,
+        "counting_replay_wall_seconds": 5.585448120999899,
+        "counting_scope": "DECLARED_DEV_AND_HOLDOUT_SAMPLING_WINDOWS_DYNAMIC_OBSERVED_IDS_FULL_HISTORY",
+        "decision_status_counts": {
+          "pending_review": 8
+        },
+        "detector_tracker_encoder_rerun": false,
+        "episode_count": 304,
+        "episode_family_counts": {
+          "other": 17,
+          "person": 179,
+          "vehicle": 108
+        },
+        "geometry_diagnostic_counts": {
+          "AMBIGUOUS_GAP": 1,
+          "GEOMETRY_TRANSITION": 9,
+          "ORIGIN_ESTABLISHED": 102
+        },
+        "grouping_enabled": true,
+        "identity_support_policy": "PASSAGE_LOCAL_RELATION_EVIDENCE_REQUIRED_GLOBAL_GRAPH_EXPLORATORY",
+        "input_identity": {
+          "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+          "height": 720,
+          "parent_run_id": "20261014T062858_002323Z",
+          "records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+          "variant": "raw",
+          "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+          "width": 1280
+        },
+        "phase": 7,
+        "phase7_source_adapter": {
+          "adapted_source_sha256": "e2588f99c29fc577a85f3fb21053edc130d9203b15a42cc4bef142e6ae7b4b47",
+          "base_source_sha256": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054",
+          "behavior_changes": "SOURCE_PROVENANCE_ENUM_ONLY_NO_ALGORITHM_OR_THRESHOLD_CHANGE",
+          "from": "\"retained_phase_2_detection\"",
+          "literal_substitution_count": 1,
+          "to": "\"retained_phase_7_detection\""
+        },
+        "physical_identity_or_counting_accuracy_established": false,
+        "physical_passage_review_status": "PENDING_SEPARATE_AUDIT_NO_CROSS_VARIANT_TRACK_ID_MATCHING",
+        "policy_version": "phase6_option_b_v1",
+        "relation_status_counts": {
+          "REJECTED": 179,
+          "SUPPORTED": 5,
+          "UNRESOLVED": 13
+        },
+        "scope": {
+          "association_frame_windows": [
+            [
+              0,
+              239
+            ],
+            [
+              2277,
+              2516
+            ],
+            [
+              4674,
+              4913
+            ],
+            [
+              7072,
+              7311
+            ],
+            [
+              9350,
+              9589
+            ]
+          ],
+          "track_ids": [
+            1,
+            2,
+            4,
+            7,
+            9,
+            11,
+            14,
+            15,
+            18,
+            22,
+            23,
+            25,
+            27,
+            28,
+            32,
+            404,
+            408,
+            409,
+            417,
+            420,
+            422,
+            423,
+            424,
+            425,
+            426,
+            427,
+            429,
+            430,
+            431,
+            432,
+            554,
+            555,
+            560,
+            561,
+            562,
+            563,
+            564,
+            566,
+            568,
+            807,
+            810,
+            811,
+            815,
+            816,
+            818,
+            819,
+            826,
+            830,
+            831,
+            832,
+            833,
+            835,
+            836,
+            838,
+            840,
+            841,
+            844,
+            846,
+            847,
+            849,
+            850,
+            851,
+            852,
+            854,
+            860,
+            861,
+            862,
+            864,
+            1169,
+            1177,
+            1198,
+            1203,
+            1211,
+            1212,
+            1214,
+            1215,
+            1216,
+            1218,
+            1221,
+            1227,
+            1229,
+            1231,
+            1232,
+            1239,
+            1240,
+            1241,
+            1243
+          ]
+        },
+        "source_cache_created_by_phase7_new_inference": true,
+        "source_frame_count": 9590,
+        "source_measured_observation_count": 12479
+      },
+      "cuda_execution_evidence": {
+        "actual_cuda_execution_confirmed": true,
+        "cpu_partition_note": "CPU graph partitions are reported; whole-session fallback forbidden",
+        "execution_kind": "ACTUAL_MODEL_EXECUTION",
+        "profile": "ort_encoder_profile_2026-10-14_06-29-00.json",
+        "profile_sha256": "eb64436216af8060d37661e35f9bc30b44e4994936d6600ccf26fd46c7a77878",
+        "profiled_source_frame": 0,
+        "provider_kernel_event_counts": {
+          "CPUExecutionProvider": 20,
+          "CUDAExecutionProvider": 137
+        }
+      },
+      "decode_metadata": {
+        "backend": "FFMPEG",
+        "fps_backend": 29.419969502218617,
+        "frame_count_backend": 9590.0,
+        "height": 720,
+        "timestamp_semantics": "index/FPS estimate; POS_MSEC unverified source PTS",
+        "width": 1280
+      },
+      "detector_input_policy": "NATIVE_FULL_FRAME_TRANSFORMED",
+      "detector_resources": {
+        "actual_backend": {
+          "device": "cuda:0",
+          "end2end": false,
+          "fp16": false,
+          "imgsz": [
+            640,
+            640
+          ]
+        },
+        "actual_predictor_arguments": {
+          "agnostic_nms": false,
+          "augment": false,
+          "batch": 1,
+          "classes": null,
+          "conf": 0.25,
+          "imgsz": 640,
+          "iou": 0.7,
+          "max_det": 300,
+          "nms": null,
+          "quantize": null,
+          "rect": true,
+          "seed": 0
+        },
+        "class_names": {
+          "0": "person",
+          "1": "bicycle",
+          "10": "fire hydrant",
+          "11": "stop sign",
+          "12": "parking meter",
+          "13": "bench",
+          "14": "bird",
+          "15": "cat",
+          "16": "dog",
+          "17": "horse",
+          "18": "sheep",
+          "19": "cow",
+          "2": "car",
+          "20": "elephant",
+          "21": "bear",
+          "22": "zebra",
+          "23": "giraffe",
+          "24": "backpack",
+          "25": "umbrella",
+          "26": "handbag",
+          "27": "tie",
+          "28": "suitcase",
+          "29": "frisbee",
+          "3": "motorcycle",
+          "30": "skis",
+          "31": "snowboard",
+          "32": "sports ball",
+          "33": "kite",
+          "34": "baseball bat",
+          "35": "baseball glove",
+          "36": "skateboard",
+          "37": "surfboard",
+          "38": "tennis racket",
+          "39": "bottle",
+          "4": "airplane",
+          "40": "wine glass",
+          "41": "cup",
+          "42": "fork",
+          "43": "knife",
+          "44": "spoon",
+          "45": "bowl",
+          "46": "banana",
+          "47": "apple",
+          "48": "sandwich",
+          "49": "orange",
+          "5": "bus",
+          "50": "broccoli",
+          "51": "carrot",
+          "52": "hot dog",
+          "53": "pizza",
+          "54": "donut",
+          "55": "cake",
+          "56": "chair",
+          "57": "couch",
+          "58": "potted plant",
+          "59": "bed",
+          "6": "train",
+          "60": "dining table",
+          "61": "toilet",
+          "62": "tv",
+          "63": "laptop",
+          "64": "mouse",
+          "65": "remote",
+          "66": "keyboard",
+          "67": "cell phone",
+          "68": "microwave",
+          "69": "oven",
+          "7": "truck",
+          "70": "toaster",
+          "71": "sink",
+          "72": "refrigerator",
+          "73": "book",
+          "74": "clock",
+          "75": "vase",
+          "76": "scissors",
+          "77": "teddy bear",
+          "78": "hair drier",
+          "79": "toothbrush",
+          "8": "boat",
+          "9": "traffic light"
+        },
+        "cuda_available": true,
+        "cuda_device_name": "Tesla T4",
+        "cuda_total_memory_bytes": 15636037632,
+        "exact_bitwise_repeatability_claimed": false,
+        "execution_device": "cuda:0",
+        "package_version": "8.4.175",
+        "torch_cuda_build": "12.8",
+        "torch_version": "2.10.0+cu128",
+        "visible_cuda_device_count": 2,
+        "weights_bytes": 44255705,
+        "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+        "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt"
+      },
+      "encoder_input_policy": "SAME_TRANSFORMED_FRAME_AS_DETECTOR",
+      "encoder_runtime": {
+        "backend_device": "cuda:0",
+        "device": "cuda:0",
+        "documented_training_domain": "MSMT17-v1 person; vehicle transfer unknown",
+        "effective_configuration": {
+          "appearance_thresh": 0.8,
+          "device": "cuda:0",
+          "fuse_score": true,
+          "gmc_method": "none",
+          "match_thresh": 0.8,
+          "model": "/kaggle/working/phase_7_assets/yolo26n-reid.onnx",
+          "new_track_thresh": 0.25,
+          "proximity_thresh": 0.5,
+          "track_buffer": 30,
+          "track_high_thresh": 0.25,
+          "track_low_thresh": 0.1,
+          "tracker_type": "botsort",
+          "with_reid": true
+        },
+        "encoder_asset_sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+        "encoder_input_policy": "SAME_TRANSFORMED_FRAME_AS_DETECTOR",
+        "final_vehicle_configuration": false,
+        "fp16": false,
+        "imgsz": [
+          224,
+          224
+        ],
+        "no_runtime_fallback": true,
+        "provider_options": {
+          "CPUExecutionProvider": {},
+          "CUDAExecutionProvider": {
+            "arena_extend_strategy": "kNextPowerOfTwo",
+            "cudnn_conv1d_pad_to_nc1d": "0",
+            "cudnn_conv_algo_search": "EXHAUSTIVE",
+            "cudnn_conv_use_max_workspace": "1",
+            "device_id": "0",
+            "do_copy_in_default_stream": "1",
+            "enable_cuda_graph": "0",
+            "enable_skip_layer_norm_strict_mode": "0",
+            "fuse_conv_bias": "0",
+            "gpu_external_alloc": "0",
+            "gpu_external_empty_cache": "0",
+            "gpu_external_free": "0",
+            "gpu_mem_limit": "18446744073709551615",
+            "has_user_compute_stream": "0",
+            "prefer_nhwc": "0",
+            "sdpa_kernel": "0",
+            "tunable_op_enable": "0",
+            "tunable_op_max_tuning_duration_ms": "0",
+            "tunable_op_tuning_enable": "0",
+            "use_ep_level_unified_stream": "0",
+            "use_tf32": "1",
+            "user_compute_stream": "0"
+          }
+        },
+        "providers": [
+          "CUDAExecutionProvider",
+          "CPUExecutionProvider"
+        ],
+        "static_batch_size": null,
+        "tracker_source_checks": [
+          {
+            "path": "trackers/bot_sort.py",
+            "sha256": "b157cbc33f75f1132df530f04361824bc39a30d4051ce6df1cd5c388e49b3117"
+          },
+          {
+            "path": "trackers/byte_tracker.py",
+            "sha256": "fb45d70e952f99984085788bc09fc0c60a18b14bc4329b28e32bc2c70ac37401"
+          },
+          {
+            "path": "trackers/basetrack.py",
+            "sha256": "9ef094b9a54ff2f52c9118b5bd1a2f84ba331aa557277f54186de11728c2f7e8"
+          },
+          {
+            "path": "trackers/utils/matching.py",
+            "sha256": "318bf81030558863a4ec6effea3c9d063a297f299367e379a58b89c24e3f421f"
+          },
+          {
+            "path": "trackers/utils/gmc.py",
+            "sha256": "d797f701a22347001d780b0dc4d0f2f5cabdfefb895c36bbab084ceb2dfc4000"
+          },
+          {
+            "path": "trackers/utils/stracks.py",
+            "sha256": "9534294af850c3a6755c3a5a1ba9b2b068c5b79a11166c8547652944e2632f58"
+          },
+          {
+            "path": "trackers/utils/reid.py",
+            "sha256": "75c54a4f8fe9b1e6946d61b530fbb790fdfcc27df120fa71cc7759c11e9f0475"
+          },
+          {
+            "path": "cfg/trackers/botsort.yaml",
+            "sha256": "8cd88930d3be5557be0777f384eecff0a36a7011850fe613fc0a68178bfd5b01"
+          },
+          {
+            "path": "engine/results.py",
+            "sha256": "871e5b3eed1558c3c048d99058ddf28a7927c1317d020981e7c0836f18e00ee3"
+          },
+          {
+            "path": "nn/backends/onnx.py",
+            "sha256": "8a42c894bb34381ffa2636d2bf8704c5ea5f2f80db6de296b278c6c6528b6e5e"
+          },
+          {
+            "path": "nn/autobackend.py",
+            "sha256": "450d5d5301e441896f8422cd333ce35c414c2e7ac39a88af01fd5edbd2e552dd"
+          },
+          {
+            "path": "utils/plotting.py",
+            "sha256": "a21122beb75642c535ba5f20f81e51cf9fd9c22c097120d1e787a7286c468ff0"
+          }
+        ]
+      },
+      "frames_processed": 9590,
+      "native_sample_pixel_hashes": {
+        "0": "4e3b5bb12b7ae3f60cfae784ab52dd143005e859cb8c46dd9578040268cc5d80",
+        "14": "c72435b96d1ff363c5d2eb0d3cd2843a2c0075b55e7284a780297a50c32a6ea1",
+        "2277": "5e15bb851e1c965082d38e4021f46dbb892e24a2029929568818df9bb6dfe154",
+        "2337": "54370ad89837d73b4b8458cf81101933528a52b33405ed8ec51a46e2230397cc",
+        "239": "f99b3933ac81b13f8dc6263c5b3bc21463f294df7c3a422d225cbcab6451ffed",
+        "2397": "f404d4f8caa514da5118a364a5bc8029d8ddbba3c16c046f450addfe8748f0d2",
+        "2457": "e692a88513937e90c76d76edf43b08a6c543bf0058086b2990099dae2f62ed56",
+        "2516": "eb73f33425ae8847059dd50162ea0e55e89fe9a9ae2e701f521b1407ed42ddf2",
+        "29": "2a16476bc26a7a3b980b3e02c9f2916aa5ddd0882d7f6f0d2aee6935e60f33c4",
+        "4674": "71d25bf16a3bd199cb209143bacff665ea4ce867f2b1bfbabc92a18463d9f427",
+        "4734": "d3e62529a80b107848080bbaadb6588cb681d33ab10935ed2285b2cd7d26cfbc",
+        "4794": "273c5338edf83f4f0990a93d7186dccf2f2c858d380de335e7cdfe1e0804063b",
+        "4854": "20484dcdc00431adfad9f2224484cbb20f0a160b29b1dc164cab299a8ce84780",
+        "4913": "e94b9d6e4553327596d0f5a83f4c63f54589dd54869eae19f33863057cd9eb1b",
+        "7": "6220b5ea215db20f43b57f80c466da54db10a07f9824afef0c263fdb54b6ae99",
+        "7072": "a54336e7ef909eb90b58360293ef026715318edc4bdc01a7f4aa4ccf077b508c",
+        "7132": "c4503c17fe14ed9e5e9c6b4345914ed038277b1b0613632fa3292cbbf9473c6d",
+        "7192": "2a54e8f2c4c60c2b0c98598ceca8b808e9248719900f8b37cf34ca5992482273",
+        "7252": "3cfc5cefe4f0d79283086d8658c4bee54804452cfea17c0deb9a32870a09f35e",
+        "7311": "0f1146e5d98ccc84f8e7bcfd948fcd20d8f21dbeaeb4cf8479f3342dcb85b4eb",
+        "9350": "57395827dbda6d2b3303c8d089155f36eead6f54d3890ea3168fa387aff86ef0",
+        "9410": "f03d74f0b5a97fd32692b7e7b3d779503ccbfaea24f021b9e986e859942fb8ef",
+        "9470": "f1eda81434900f105e17af16be1e9ca58a1aa9e6c3a0e6735eede6b62c19a5ad",
+        "9530": "d380810db9a9dde003266054e9d5db520f09a5ddcf7a101a64d43eb8499b8660",
+        "9589": "da9b1ff24fab9aa38206174381230f0a4da5c86f07be9c25ba0aee3352ba16fa"
+      },
+      "observed_diagnostics": {
+        "captured_ids_including_unconfirmed": 1244,
+        "emitted_observations": 12479,
+        "empty_detection_frames": 2513,
+        "no_emitted_track_frames": 2739,
+        "raw_detections": 13760,
+        "within_id_gap_events": 982,
+        "within_id_raw_class_changes": 518
+      },
+      "resource": {
+        "cuda_peak_allocated_bytes": 166721536,
+        "cuda_peak_reserved_bytes": 207618048,
+        "process_peak_rss_bytes": 1979396096
+      },
+      "samples": [
+        {
+          "frame_index": 0,
+          "input_png": "samples/frame_000000000_input.png",
+          "input_png_sha256": "bac61ff5623e40e14db8ee7eca10745394410745b370ee7247f68f611861ed16",
+          "pixel_sha256": "4e3b5bb12b7ae3f60cfae784ab52dd143005e859cb8c46dd9578040268cc5d80"
+        },
+        {
+          "frame_index": 7,
+          "input_png": "samples/frame_000000007_input.png",
+          "input_png_sha256": "fac8ba77a047cdbc12066813e783eca45c3c2f6ec7895abd8ffb1911cddb8e23",
+          "pixel_sha256": "6220b5ea215db20f43b57f80c466da54db10a07f9824afef0c263fdb54b6ae99"
+        },
+        {
+          "frame_index": 14,
+          "input_png": "samples/frame_000000014_input.png",
+          "input_png_sha256": "df4ca9a21717703a515fc3c0f2728e4d2f0ecd4a815b1cf006d6da7c7bf00939",
+          "pixel_sha256": "c72435b96d1ff363c5d2eb0d3cd2843a2c0075b55e7284a780297a50c32a6ea1"
+        },
+        {
+          "frame_index": 29,
+          "input_png": "samples/frame_000000029_input.png",
+          "input_png_sha256": "4cf1676aa807136f109c11fd24dbe722d4898fbafbc57a0c557354e6ba204de9",
+          "pixel_sha256": "2a16476bc26a7a3b980b3e02c9f2916aa5ddd0882d7f6f0d2aee6935e60f33c4"
+        },
+        {
+          "frame_index": 239,
+          "input_png": "samples/frame_000000239_input.png",
+          "input_png_sha256": "b8393145c249ebe86b492d24b04b105e283278d350f9fe1c2b34a158bbdb1230",
+          "pixel_sha256": "f99b3933ac81b13f8dc6263c5b3bc21463f294df7c3a422d225cbcab6451ffed"
+        },
+        {
+          "frame_index": 2277,
+          "input_png": "samples/frame_000002277_input.png",
+          "input_png_sha256": "05c74607bdbb21c9c821e5a935d9fd5c1b55c6c789ed63160752116a5266478d",
+          "pixel_sha256": "5e15bb851e1c965082d38e4021f46dbb892e24a2029929568818df9bb6dfe154"
+        },
+        {
+          "frame_index": 2337,
+          "input_png": "samples/frame_000002337_input.png",
+          "input_png_sha256": "73d6774f0ae92ebc54d6a2cf4cc0c15a9de602af310199c88a9ac46f6eeeeb71",
+          "pixel_sha256": "54370ad89837d73b4b8458cf81101933528a52b33405ed8ec51a46e2230397cc"
+        },
+        {
+          "frame_index": 2397,
+          "input_png": "samples/frame_000002397_input.png",
+          "input_png_sha256": "225e2a15f63ab7a3ad2b7418fba283229051abab3b3fd4094515d319d750633a",
+          "pixel_sha256": "f404d4f8caa514da5118a364a5bc8029d8ddbba3c16c046f450addfe8748f0d2"
+        },
+        {
+          "frame_index": 2457,
+          "input_png": "samples/frame_000002457_input.png",
+          "input_png_sha256": "b05a31b50189986921492bac9f26a00677ff87190d0691c3ce9b10fec076cbaf",
+          "pixel_sha256": "e692a88513937e90c76d76edf43b08a6c543bf0058086b2990099dae2f62ed56"
+        },
+        {
+          "frame_index": 2516,
+          "input_png": "samples/frame_000002516_input.png",
+          "input_png_sha256": "9302c34f689151a2b20c34ec925311780b360ec130294f5d30fa34b250651cda",
+          "pixel_sha256": "eb73f33425ae8847059dd50162ea0e55e89fe9a9ae2e701f521b1407ed42ddf2"
+        },
+        {
+          "frame_index": 4674,
+          "input_png": "samples/frame_000004674_input.png",
+          "input_png_sha256": "2f5ad1f327741c10ad35d2b2f950a0d96a916fe5e950aee1a4409cff531011e0",
+          "pixel_sha256": "71d25bf16a3bd199cb209143bacff665ea4ce867f2b1bfbabc92a18463d9f427"
+        },
+        {
+          "frame_index": 4734,
+          "input_png": "samples/frame_000004734_input.png",
+          "input_png_sha256": "64357f10c06e9fec5c9e99ea0e8efc7a17901bddaea5b1b52d341cd5114e5ede",
+          "pixel_sha256": "d3e62529a80b107848080bbaadb6588cb681d33ab10935ed2285b2cd7d26cfbc"
+        },
+        {
+          "frame_index": 4794,
+          "input_png": "samples/frame_000004794_input.png",
+          "input_png_sha256": "7f04fd00d7379f0069fcc0981508c9423df95a576d4f74e125f8920324d23456",
+          "pixel_sha256": "273c5338edf83f4f0990a93d7186dccf2f2c858d380de335e7cdfe1e0804063b"
+        },
+        {
+          "frame_index": 4854,
+          "input_png": "samples/frame_000004854_input.png",
+          "input_png_sha256": "c6d2155c83c22d2df81eb64756cd7be64ecafbf9ec94a4970e8274d69e653004",
+          "pixel_sha256": "20484dcdc00431adfad9f2224484cbb20f0a160b29b1dc164cab299a8ce84780"
+        },
+        {
+          "frame_index": 4913,
+          "input_png": "samples/frame_000004913_input.png",
+          "input_png_sha256": "9da957d979336078bedae204d9c6d32d64fef516dd524d46d405b8bc9681e7fd",
+          "pixel_sha256": "e94b9d6e4553327596d0f5a83f4c63f54589dd54869eae19f33863057cd9eb1b"
+        },
+        {
+          "frame_index": 7072,
+          "input_png": "samples/frame_000007072_input.png",
+          "input_png_sha256": "378eeb71b7ade9fe3112611472a2bca6d2645ddf2fc66245c4ea5a905c6f6358",
+          "pixel_sha256": "a54336e7ef909eb90b58360293ef026715318edc4bdc01a7f4aa4ccf077b508c"
+        },
+        {
+          "frame_index": 7132,
+          "input_png": "samples/frame_000007132_input.png",
+          "input_png_sha256": "f5f409f162f4ac59482cd6f67d4d4a7044b3d6152d01cb511c7258244eaeb060",
+          "pixel_sha256": "c4503c17fe14ed9e5e9c6b4345914ed038277b1b0613632fa3292cbbf9473c6d"
+        },
+        {
+          "frame_index": 7192,
+          "input_png": "samples/frame_000007192_input.png",
+          "input_png_sha256": "f62b3b21c959e75b0583a73890d9b7cc5ecc5059f570a08edbf0b40a6acf208c",
+          "pixel_sha256": "2a54e8f2c4c60c2b0c98598ceca8b808e9248719900f8b37cf34ca5992482273"
+        },
+        {
+          "frame_index": 7252,
+          "input_png": "samples/frame_000007252_input.png",
+          "input_png_sha256": "b254d3af67e50cddb24f145f4ccc7eaa272fabf583ec008334fd772d2c2751c6",
+          "pixel_sha256": "3cfc5cefe4f0d79283086d8658c4bee54804452cfea17c0deb9a32870a09f35e"
+        },
+        {
+          "frame_index": 7311,
+          "input_png": "samples/frame_000007311_input.png",
+          "input_png_sha256": "b77b37e94535be62c234076e2de78e23f224df1b5bee6cb24ebb0c3c321b3a05",
+          "pixel_sha256": "0f1146e5d98ccc84f8e7bcfd948fcd20d8f21dbeaeb4cf8479f3342dcb85b4eb"
+        },
+        {
+          "frame_index": 9350,
+          "input_png": "samples/frame_000009350_input.png",
+          "input_png_sha256": "c9a70a2cfd8a771d1d441064a7b8c7a1a9e53271f5353dd2153c86d593f8599d",
+          "pixel_sha256": "57395827dbda6d2b3303c8d089155f36eead6f54d3890ea3168fa387aff86ef0"
+        },
+        {
+          "frame_index": 9410,
+          "input_png": "samples/frame_000009410_input.png",
+          "input_png_sha256": "659e5aaaa4dec03c221e473eaaeb3a4bbf40fbab70ce94d0a4d07d6e03643e89",
+          "pixel_sha256": "f03d74f0b5a97fd32692b7e7b3d779503ccbfaea24f021b9e986e859942fb8ef"
+        },
+        {
+          "frame_index": 9470,
+          "input_png": "samples/frame_000009470_input.png",
+          "input_png_sha256": "6052cb0e06fcea9b38276b9c13b12de0c427547af244f20597b4e8341a626afe",
+          "pixel_sha256": "f1eda81434900f105e17af16be1e9ca58a1aa9e6c3a0e6735eede6b62c19a5ad"
+        },
+        {
+          "frame_index": 9530,
+          "input_png": "samples/frame_000009530_input.png",
+          "input_png_sha256": "b064be15ca428cae9801185a7755b82676f06ec3eaf2c481b1cf4324247f32a3",
+          "pixel_sha256": "d380810db9a9dde003266054e9d5db520f09a5ddcf7a101a64d43eb8499b8660"
+        },
+        {
+          "frame_index": 9589,
+          "input_png": "samples/frame_000009589_input.png",
+          "input_png_sha256": "9a42cc7b11a664d7e3b6e8534ab6e0fe93f6ba2479a22308bda654a4ade87fa5",
+          "pixel_sha256": "da9b1ff24fab9aa38206174381230f0a4da5c86f07be9c25ba0aee3352ba16fa"
+        }
+      ],
+      "status": "completed_full_video_inference_geometry_counting_review_pending",
+      "timing": {
+        "decode_wall_seconds": 10.241073920998758,
+        "detector_wall_seconds": 181.77927667601028,
+        "encoder_wall_seconds_inside_tracker": 380.9386633830062,
+        "loop_wall_seconds": 673.548502413,
+        "tracker_wall_seconds": 392.4911856369975,
+        "transform_wall_seconds": 3.3367166529977226
+      },
+      "track_records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+      "variant": {
+        "method": "raw",
+        "name": "raw"
+      }
+    }
+  }
+}

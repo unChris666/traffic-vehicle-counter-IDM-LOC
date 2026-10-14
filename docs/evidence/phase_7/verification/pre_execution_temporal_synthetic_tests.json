@@ -1,0 +1,177 @@
+{
+  "claim_type": "ACTUALLY_EXECUTED_SYNTHETIC_SOFTWARE_CONTRACT_TESTS",
+  "scope": "Phase7 temporal lineage/control/source adaptation; no model/provider or real-video performance evidence",
+  "fixture_controls_are_product_defaults": false,
+  "successful": true,
+  "tests_run": 41,
+  "tests_passed": 41,
+  "failures": [],
+  "errors": [],
+  "tests": [
+    {
+      "id": "__main__.EncoderBoundaryAndProviderTests.test_encoder_donor_frame_requires_native_uint8_three_channels",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.EncoderBoundaryAndProviderTests.test_provider_configuration_names_or_cpu_nodes_never_establish_cuda_execution",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.EncoderBoundaryAndProviderTests.test_synthetic_cuda_profile_fixture_cannot_claim_actual_gpu_execution",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.EncoderBoundaryAndProviderTests.test_tracker_receives_same_transformed_donor_image_without_overlay_or_raw_fallback",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.FrozenConfigurationTests.test_changed_counting_association_or_geometry_controls_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.FrozenConfigurationTests.test_configuration_types_cannot_masquerade_as_frozen_controls",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.FrozenConfigurationTests.test_frozen_controls_have_same_semantics_as_phase6b_baseline",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.FrozenConfigurationTests.test_ignored_encoder_or_counting_override_fields_are_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.FrozenConfigurationTests.test_nonfullvideo_scope_and_unfrozen_holdout_policy_are_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.FrozenConfigurationTests.test_reid_cannot_be_disabled_or_silently_use_auto_or_cpu",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_candidate_not_actually_screened_cannot_be_shortlisted",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_changed_detector_between_development_and_temporal_run_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_geometry_approval_flags_must_be_explicit_true",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_holdout_used_in_screen_cannot_supply_development_selection",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_other_video_development_screen_cannot_supply_shortlist_evidence",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_other_video_geometry_stops_even_when_its_file_hash_matches",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_selection_file_sha_mismatch_stops_before_detector_or_encoder_setup",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_synthetic_screen_record_cannot_supply_actual_dev_model_proof",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.InputDecisionGateTests.test_unapproved_geometry_stops_even_when_its_file_hash_matches_supplied_config",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.Phase7ResolverAdapterTests.test_frozen_source_matches_binding_and_adapter_never_modifies_it",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.Phase7ResolverAdapterTests.test_future_rider_support_does_not_accept_earlier_crossing",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.Phase7ResolverAdapterTests.test_gap_in_source_frame_records_cannot_be_silently_interpolated",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.Phase7ResolverAdapterTests.test_new_measurement_provenance_is_preserved_without_fabricating_phase2",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.Phase7ResolverAdapterTests.test_phase2_or_predicted_observation_cannot_enter_new_source_adapter",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.Phase7ResolverAdapterTests.test_raw_bbox_link_tampering_fails_before_event_generation",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.Phase7ResolverAdapterTests.test_synthetic_motorcycle_rider_yields_one_vehicle_bc_event",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.Phase7ResolverAdapterTests.test_wrong_base_source_hash_cannot_be_silently_adapted",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_builder_is_immutable_and_native_frame_index_is_not_rebased",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_duplicate_track_or_source_index_and_fractional_identity_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_empty_detections_and_no_emitted_track_still_preserve_source_frame",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_explicit_empty_assigned_observation_metadata_is_not_fabricated",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_fullvideo_order_rejects_frame_one_as_first_and_unknown_input_identity",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_measurement_uses_exact_raw_bbox_and_never_filtered_tracker_box",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_raw_invalid_native_bbox_or_confidence_or_class_does_not_enter_cache",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_raw_person_label_preserved_not_automatically_mapped_to_pedestrian",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_source_tampering_of_each_linked_value_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.RawMeasurementBoundaryTests.test_tracker_class_or_score_mismatch_and_nonfinite_output_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SelectionTests.test_explicit_development_only_nonraw_variant_can_be_shortlisted",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SelectionTests.test_holdout_cannot_be_used_to_select_transform",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SelectionTests.test_missing_source_development_report_identity_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SelectionTests.test_not_frozen_unknown_or_raw_candidate_is_rejected",
+      "status": "passed"
+    }
+  ],
+  "output": "test_encoder_donor_frame_requires_native_uint8_three_channels (__main__.EncoderBoundaryAndProviderTests.test_encoder_donor_frame_requires_native_uint8_three_channels) ... ok\ntest_provider_configuration_names_or_cpu_nodes_never_establish_cuda_execution (__main__.EncoderBoundaryAndProviderTests.test_provider_configuration_names_or_cpu_nodes_never_establish_cuda_execution) ... ok\ntest_synthetic_cuda_profile_fixture_cannot_claim_actual_gpu_execution (__main__.EncoderBoundaryAndProviderTests.test_synthetic_cuda_profile_fixture_cannot_claim_actual_gpu_execution) ... ok\ntest_tracker_receives_same_transformed_donor_image_without_overlay_or_raw_fallback (__main__.EncoderBoundaryAndProviderTests.test_tracker_receives_same_transformed_donor_image_without_overlay_or_raw_fallback) ... ok\ntest_changed_counting_association_or_geometry_controls_rejected (__main__.FrozenConfigurationTests.test_changed_counting_association_or_geometry_controls_rejected) ... ok\ntest_configuration_types_cannot_masquerade_as_frozen_controls (__main__.FrozenConfigurationTests.test_configuration_types_cannot_masquerade_as_frozen_controls) ... ok\ntest_frozen_controls_have_same_semantics_as_phase6b_baseline (__main__.FrozenConfigurationTests.test_frozen_controls_have_same_semantics_as_phase6b_baseline) ... ok\ntest_ignored_encoder_or_counting_override_fields_are_rejected (__main__.FrozenConfigurationTests.test_ignored_encoder_or_counting_override_fields_are_rejected) ... ok\ntest_nonfullvideo_scope_and_unfrozen_holdout_policy_are_rejected (__main__.FrozenConfigurationTests.test_nonfullvideo_scope_and_unfrozen_holdout_policy_are_rejected) ... ok\ntest_reid_cannot_be_disabled_or_silently_use_auto_or_cpu (__main__.FrozenConfigurationTests.test_reid_cannot_be_disabled_or_silently_use_auto_or_cpu) ... ok\ntest_candidate_not_actually_screened_cannot_be_shortlisted (__main__.InputDecisionGateTests.test_candidate_not_actually_screened_cannot_be_shortlisted) ... ok\ntest_changed_detector_between_development_and_temporal_run_is_rejected (__main__.InputDecisionGateTests.test_changed_detector_between_development_and_temporal_run_is_rejected) ... ok\ntest_geometry_approval_flags_must_be_explicit_true (__main__.InputDecisionGateTests.test_geometry_approval_flags_must_be_explicit_true) ... ok\ntest_holdout_used_in_screen_cannot_supply_development_selection (__main__.InputDecisionGateTests.test_holdout_used_in_screen_cannot_supply_development_selection) ... ok\ntest_other_video_development_screen_cannot_supply_shortlist_evidence (__main__.InputDecisionGateTests.test_other_video_development_screen_cannot_supply_shortlist_evidence) ... ok\ntest_other_video_geometry_stops_even_when_its_file_hash_matches (__main__.InputDecisionGateTests.test_other_video_geometry_stops_even_when_its_file_hash_matches) ... ok\ntest_selection_file_sha_mismatch_stops_before_detector_or_encoder_setup (__main__.InputDecisionGateTests.test_selection_file_sha_mismatch_stops_before_detector_or_encoder_setup) ... ok\ntest_synthetic_screen_record_cannot_supply_actual_dev_model_proof (__main__.InputDecisionGateTests.test_synthetic_screen_record_cannot_supply_actual_dev_model_proof) ... ok\ntest_unapproved_geometry_stops_even_when_its_file_hash_matches_supplied_config (__main__.InputDecisionGateTests.test_unapproved_geometry_stops_even_when_its_file_hash_matches_supplied_config) ... ok\ntest_frozen_source_matches_binding_and_adapter_never_modifies_it (__main__.Phase7ResolverAdapterTests.test_frozen_source_matches_binding_and_adapter_never_modifies_it) ... ok\ntest_future_rider_support_does_not_accept_earlier_crossing (__main__.Phase7ResolverAdapterTests.test_future_rider_support_does_not_accept_earlier_crossing) ... ok\ntest_gap_in_source_frame_records_cannot_be_silently_interpolated (__main__.Phase7ResolverAdapterTests.test_gap_in_source_frame_records_cannot_be_silently_interpolated) ... ok\ntest_new_measurement_provenance_is_preserved_without_fabricating_phase2 (__main__.Phase7ResolverAdapterTests.test_new_measurement_provenance_is_preserved_without_fabricating_phase2) ... ok\ntest_phase2_or_predicted_observation_cannot_enter_new_source_adapter (__main__.Phase7ResolverAdapterTests.test_phase2_or_predicted_observation_cannot_enter_new_source_adapter) ... ok\ntest_raw_bbox_link_tampering_fails_before_event_generation (__main__.Phase7ResolverAdapterTests.test_raw_bbox_link_tampering_fails_before_event_generation) ... ok\ntest_synthetic_motorcycle_rider_yields_one_vehicle_bc_event (__main__.Phase7ResolverAdapterTests.test_synthetic_motorcycle_rider_yields_one_vehicle_bc_event) ... ok\ntest_wrong_base_source_hash_cannot_be_silently_adapted (__main__.Phase7ResolverAdapterTests.test_wrong_base_source_hash_cannot_be_silently_adapted) ... ok\ntest_builder_is_immutable_and_native_frame_index_is_not_rebased (__main__.RawMeasurementBoundaryTests.test_builder_is_immutable_and_native_frame_index_is_not_rebased) ... ok\ntest_duplicate_track_or_source_index_and_fractional_identity_rejected (__main__.RawMeasurementBoundaryTests.test_duplicate_track_or_source_index_and_fractional_identity_rejected) ... ok\ntest_empty_detections_and_no_emitted_track_still_preserve_source_frame (__main__.RawMeasurementBoundaryTests.test_empty_detections_and_no_emitted_track_still_preserve_source_frame) ... ok\ntest_explicit_empty_assigned_observation_metadata_is_not_fabricated (__main__.RawMeasurementBoundaryTests.test_explicit_empty_assigned_observation_metadata_is_not_fabricated) ... ok\ntest_fullvideo_order_rejects_frame_one_as_first_and_unknown_input_identity (__main__.RawMeasurementBoundaryTests.test_fullvideo_order_rejects_frame_one_as_first_and_unknown_input_identity) ... ok\ntest_measurement_uses_exact_raw_bbox_and_never_filtered_tracker_box (__main__.RawMeasurementBoundaryTests.test_measurement_uses_exact_raw_bbox_and_never_filtered_tracker_box) ... ok\ntest_raw_invalid_native_bbox_or_confidence_or_class_does_not_enter_cache (__main__.RawMeasurementBoundaryTests.test_raw_invalid_native_bbox_or_confidence_or_class_does_not_enter_cache) ... ok\ntest_raw_person_label_preserved_not_automatically_mapped_to_pedestrian (__main__.RawMeasurementBoundaryTests.test_raw_person_label_preserved_not_automatically_mapped_to_pedestrian) ... ok\ntest_source_tampering_of_each_linked_value_is_rejected (__main__.RawMeasurementBoundaryTests.test_source_tampering_of_each_linked_value_is_rejected) ... ok\ntest_tracker_class_or_score_mismatch_and_nonfinite_output_rejected (__main__.RawMeasurementBoundaryTests.test_tracker_class_or_score_mismatch_and_nonfinite_output_rejected) ... ok\ntest_explicit_development_only_nonraw_variant_can_be_shortlisted (__main__.SelectionTests.test_explicit_development_only_nonraw_variant_can_be_shortlisted) ... ok\ntest_holdout_cannot_be_used_to_select_transform (__main__.SelectionTests.test_holdout_cannot_be_used_to_select_transform) ... ok\ntest_missing_source_development_report_identity_is_rejected (__main__.SelectionTests.test_missing_source_development_report_identity_is_rejected) ... ok\ntest_not_frozen_unknown_or_raw_candidate_is_rejected (__main__.SelectionTests.test_not_frozen_unknown_or_raw_candidate_is_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 41 tests in 0.098s\n\nOK\n"
+}

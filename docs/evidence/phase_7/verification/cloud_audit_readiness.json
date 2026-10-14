@@ -1,0 +1,57 @@
+{
+  "claim_type": "ACTUAL_CLOUD_AUDIT_ENVIRONMENT_FUNCTIONAL_VERIFICATION_NOT_MODEL_EXECUTION",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "interpreter": "/workspace/.venvs/phase7-audit/bin/python",
+  "packages": {
+    "numpy": "2.0.2",
+    "opencv-python-headless": "4.13.0.92",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.2",
+    "pillow": "12.2.0"
+  },
+  "checks_run": 7,
+  "checks_passed": 7,
+  "checks": [
+    {
+      "check": "actual native frame14 transform matches retained raw",
+      "passed": true
+    },
+    {
+      "check": "actual native frame14 transform matches retained gamma_070",
+      "passed": true
+    },
+    {
+      "check": "actual native frame14 transform matches retained exposure_125",
+      "passed": true
+    },
+    {
+      "check": "actual native frame14 transform matches retained contrast_125",
+      "passed": true
+    },
+    {
+      "check": "actual native frame14 transform matches retained unsharp_s1_a05",
+      "passed": true
+    },
+    {
+      "check": "notebook schema valid 07_night_preprocessing.ipynb",
+      "passed": true
+    },
+    {
+      "check": "notebook schema valid 07b_night_temporal_comparison.ipynb",
+      "passed": true
+    }
+  ],
+  "model_inference_rerun": false,
+  "kaggle_cli_version": "2.2.4",
+  "install_script_path": "docs/evidence/phase_7/verification/cloud_audit_install.sh",
+  "installation_log_retained": true,
+  "saved_environment_config_is_not_runtime_publication": true,
+  "environment_configuration_draft_status": "saved",
+  "environment_configuration_fields_saved": [
+    "install_script",
+    "start_skill"
+  ],
+  "environment_configuration_requires_publish": true,
+  "environment_configuration_runtime_publication_executed": false,
+  "fresh_task_restoration_tested": false
+}

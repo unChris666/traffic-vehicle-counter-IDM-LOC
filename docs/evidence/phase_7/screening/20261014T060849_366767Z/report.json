@@ -1,0 +1,2454 @@
+{
+  "channel_order": "BGR; per-channel point operations, native shape preserved; no crop/resize/stabilization",
+  "configuration": {
+    "contract_version": "phase7_dev_screen_v1",
+    "detector": {
+      "baseline_provenance": "docs/evidence/phase_2/20261011T052950_360560Z_ed399fb8/detection_report.json",
+      "device": 0,
+      "package_version": "8.4.175",
+      "settings": {
+        "agnostic_nms": false,
+        "augment": false,
+        "batch": 1,
+        "classes": null,
+        "conf": 0.25,
+        "imgsz": 640,
+        "iou": 0.7,
+        "max_det": 300,
+        "nms": null,
+        "quantize": null,
+        "rect": true,
+        "seed": 0
+      },
+      "weights_bytes": 44255705,
+      "weights_path": "/kaggle/working/phase_7_night/weights/yolo26m.pt",
+      "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt"
+    },
+    "expected_sampling_sha256": "23091cbc1afd5eb24f63bf6d81d2be0bdc1ab04b43a78b7d31e3e65882f6437f",
+    "expected_video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "experiment_stage": "development_screening_only",
+    "later_counting_parameters_status": "FROZEN_NO_TUNING_IN_ENHANCEMENT_COMPARISON",
+    "later_counting_profile": "phase6_option_b_v1_with_explicit_review_overlay_offline",
+    "max_dev_samples": 50,
+    "night_geometry_approval_reference": "docs/evidence/phase_7/feedback/N1_review_001.json",
+    "night_geometry_status": "USER_APPROVED_N1_INITIAL_TRIAL",
+    "parameter_status": "ENGINEERING_TEST_POINTS_NOT_SELECTED_PRODUCTION_SETTINGS",
+    "recording_period": "malam",
+    "recording_period_basis": "USER_PROVIDED_NIGHT_VIDEO_NOT_FILENAME_INFERENCE",
+    "source_helper_sha256": "6a31794bad0c5cd346575ad4602adb5d10f17bd14cc1094dd5f2b207b0935889",
+    "source_test_sha256": "620a6238695158c99d721750ad56f31e24dbba56269ac94f676a95653d5ed451",
+    "variants": [
+      {
+        "method": "raw",
+        "name": "raw"
+      },
+      {
+        "gamma": 0.7,
+        "method": "gamma",
+        "name": "gamma_070"
+      },
+      {
+        "gain": 1.25,
+        "method": "exposure",
+        "name": "exposure_125"
+      },
+      {
+        "factor": 1.25,
+        "method": "contrast",
+        "name": "contrast_125",
+        "pivot": 128.0
+      },
+      {
+        "amount": 0.5,
+        "method": "unsharp",
+        "name": "unsharp_s1_a05",
+        "sigma": 1.0
+      }
+    ],
+    "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-MALAM.mp4"
+  },
+  "count_events_generated": false,
+  "decode": {
+    "backend": "FFMPEG",
+    "decode_completeness": "prefix through last DEV sample; not full video integrity proof",
+    "decode_method": "sequential_from_frame_zero_no_seek",
+    "decode_wall_seconds": 12.97236348499996,
+    "discarded_prefix_frames_may_include_holdout": true,
+    "fps_backend": 29.419969502218617,
+    "frame_count_backend": 9590.0,
+    "height": 720,
+    "holdout_prefix_read_is_not_evaluation": true,
+    "sample_positions": [
+      {
+        "backend_pos_frames_after_read": 1.0,
+        "backend_timestamp_seconds": 0.0,
+        "estimated_seconds_index_over_fps": 0.0,
+        "frame_index": 0
+      },
+      {
+        "backend_pos_frames_after_read": 8.0,
+        "backend_timestamp_seconds": 0.8344666666666667,
+        "estimated_seconds_index_over_fps": 0.23793362530413625,
+        "frame_index": 7
+      },
+      {
+        "backend_pos_frames_after_read": 15.0,
+        "backend_timestamp_seconds": 1.0681111111111112,
+        "estimated_seconds_index_over_fps": 0.4758672506082725,
+        "frame_index": 14
+      },
+      {
+        "backend_pos_frames_after_read": 30.0,
+        "backend_timestamp_seconds": 1.5687777777777778,
+        "estimated_seconds_index_over_fps": 0.9857250191171358,
+        "frame_index": 29
+      },
+      {
+        "backend_pos_frames_after_read": 240.0,
+        "backend_timestamp_seconds": 8.67828888888889,
+        "estimated_seconds_index_over_fps": 8.123733778241222,
+        "frame_index": 239
+      },
+      {
+        "backend_pos_frames_after_read": 2278.0,
+        "backend_timestamp_seconds": 78.40483333333334,
+        "estimated_seconds_index_over_fps": 77.39640925964547,
+        "frame_index": 2277
+      },
+      {
+        "backend_pos_frames_after_read": 2338.0,
+        "backend_timestamp_seconds": 80.4075,
+        "estimated_seconds_index_over_fps": 79.43584033368091,
+        "frame_index": 2337
+      },
+      {
+        "backend_pos_frames_after_read": 2398.0,
+        "backend_timestamp_seconds": 82.41016666666667,
+        "estimated_seconds_index_over_fps": 81.47527140771636,
+        "frame_index": 2397
+      },
+      {
+        "backend_pos_frames_after_read": 2458.0,
+        "backend_timestamp_seconds": 84.44622222222223,
+        "estimated_seconds_index_over_fps": 83.51470248175183,
+        "frame_index": 2457
+      },
+      {
+        "backend_pos_frames_after_read": 2517.0,
+        "backend_timestamp_seconds": 86.4156,
+        "estimated_seconds_index_over_fps": 85.52014303788668,
+        "frame_index": 2516
+      },
+      {
+        "backend_pos_frames_after_read": 7073.0,
+        "backend_timestamp_seconds": 241.05584444444446,
+        "estimated_seconds_index_over_fps": 240.38094259297878,
+        "frame_index": 7072
+      },
+      {
+        "backend_pos_frames_after_read": 7133.0,
+        "backend_timestamp_seconds": 243.05851111111113,
+        "estimated_seconds_index_over_fps": 242.42037366701425,
+        "frame_index": 7132
+      },
+      {
+        "backend_pos_frames_after_read": 7193.0,
+        "backend_timestamp_seconds": 245.0611777777778,
+        "estimated_seconds_index_over_fps": 244.45980474104968,
+        "frame_index": 7192
+      },
+      {
+        "backend_pos_frames_after_read": 7253.0,
+        "backend_timestamp_seconds": 247.06384444444447,
+        "estimated_seconds_index_over_fps": 246.49923581508514,
+        "frame_index": 7252
+      },
+      {
+        "backend_pos_frames_after_read": 7312.0,
+        "backend_timestamp_seconds": 249.03313333333335,
+        "estimated_seconds_index_over_fps": 248.50467637122,
+        "frame_index": 7311
+      }
+    ],
+    "sampled_indices": [
+      0,
+      7,
+      14,
+      29,
+      239,
+      2277,
+      2337,
+      2397,
+      2457,
+      2516,
+      7072,
+      7132,
+      7192,
+      7252,
+      7311
+    ],
+    "sequential_decoded_frames": 7312,
+    "timestamp_limits": "Backend POS_MSEC and index/FPS estimates are not verified source PTS",
+    "width": 1280
+  },
+  "decoder_holdout_prefix_read_possible": true,
+  "environment": {
+    "cpu_count": 4,
+    "numpy_version": "2.0.2",
+    "opencv_version": "4.13.0",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.35",
+    "python": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]"
+  },
+  "execution_kind": "ACTUAL_MODEL_EXECUTION",
+  "finished_utc": "2026-10-14T06:09:23.740494+00:00",
+  "formulae": {
+    "contrast": "output = round_clip_uint8(pivot + factor * (input - pivot))",
+    "exposure": "output = round_clip_uint8(gain * input)",
+    "gamma": "output = round_clip_uint8(255 * (input / 255) ** gamma)",
+    "raw": "output = input.copy()",
+    "unsharp": "output = round_clip_uint8(input + amount * (input - GaussianBlur(input, sigma, BORDER_REFLECT_101)))"
+  },
+  "heldout_evaluation_executed": false,
+  "holdout_enhancement_or_inference_executed": false,
+  "input_identity": {
+    "filename": "TOR3-MALAM.mp4",
+    "height": 720,
+    "path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-MALAM.mp4",
+    "size_bytes": 52906523,
+    "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "width": 1280
+  },
+  "limitations": [
+    "No ground truth or accuracy/precision/recall/F1/MAPE claims.",
+    "No tracker, ReID encoder, geometry/crossing/counting execution in this stage.",
+    "Sparse detector outputs are not unique vehicles, physical identity, passage totals or temporal quality.",
+    "Engineering transformation points are not tuned or production defaults.",
+    "Hold-out is excluded from enhancement/inference; prior Phase1 visual inspection means it is not blind.",
+    "More brightness, confidence or detections do not by themselves demonstrate improvement."
+  ],
+  "output_directory": "/kaggle/working/phase_7_night/20261014T060849_366767Z",
+  "phase": 7,
+  "resource": {
+    "actual_backend": {
+      "device": "cuda:0",
+      "end2end": false,
+      "fp16": false,
+      "imgsz": [
+        640,
+        640
+      ]
+    },
+    "actual_predictor_arguments": {
+      "agnostic_nms": false,
+      "augment": false,
+      "batch": 1,
+      "classes": null,
+      "conf": 0.25,
+      "imgsz": 640,
+      "iou": 0.7,
+      "max_det": 300,
+      "nms": null,
+      "quantize": null,
+      "rect": true,
+      "seed": 0
+    },
+    "class_names": {
+      "0": "person",
+      "1": "bicycle",
+      "10": "fire hydrant",
+      "11": "stop sign",
+      "12": "parking meter",
+      "13": "bench",
+      "14": "bird",
+      "15": "cat",
+      "16": "dog",
+      "17": "horse",
+      "18": "sheep",
+      "19": "cow",
+      "2": "car",
+      "20": "elephant",
+      "21": "bear",
+      "22": "zebra",
+      "23": "giraffe",
+      "24": "backpack",
+      "25": "umbrella",
+      "26": "handbag",
+      "27": "tie",
+      "28": "suitcase",
+      "29": "frisbee",
+      "3": "motorcycle",
+      "30": "skis",
+      "31": "snowboard",
+      "32": "sports ball",
+      "33": "kite",
+      "34": "baseball bat",
+      "35": "baseball glove",
+      "36": "skateboard",
+      "37": "surfboard",
+      "38": "tennis racket",
+      "39": "bottle",
+      "4": "airplane",
+      "40": "wine glass",
+      "41": "cup",
+      "42": "fork",
+      "43": "knife",
+      "44": "spoon",
+      "45": "bowl",
+      "46": "banana",
+      "47": "apple",
+      "48": "sandwich",
+      "49": "orange",
+      "5": "bus",
+      "50": "broccoli",
+      "51": "carrot",
+      "52": "hot dog",
+      "53": "pizza",
+      "54": "donut",
+      "55": "cake",
+      "56": "chair",
+      "57": "couch",
+      "58": "potted plant",
+      "59": "bed",
+      "6": "train",
+      "60": "dining table",
+      "61": "toilet",
+      "62": "tv",
+      "63": "laptop",
+      "64": "mouse",
+      "65": "remote",
+      "66": "keyboard",
+      "67": "cell phone",
+      "68": "microwave",
+      "69": "oven",
+      "7": "truck",
+      "70": "toaster",
+      "71": "sink",
+      "72": "refrigerator",
+      "73": "book",
+      "74": "clock",
+      "75": "vase",
+      "76": "scissors",
+      "77": "teddy bear",
+      "78": "hair drier",
+      "79": "toothbrush",
+      "8": "boat",
+      "9": "traffic light"
+    },
+    "cuda_available": true,
+    "cuda_device_name": "Tesla T4",
+    "cuda_total_memory_bytes": 15636037632,
+    "exact_bitwise_repeatability_claimed": false,
+    "execution_device": "cuda:0",
+    "model_inference_executed": true,
+    "package_version": "8.4.175",
+    "torch_cuda_build": "12.8",
+    "torch_version": "2.10.0+cu128",
+    "visible_cuda_device_count": 2,
+    "weights_bytes": 44255705,
+    "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+    "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt"
+  },
+  "rounding": "float64, numpy.rint ties-to-even, clip [0,255], uint8",
+  "run_id": "20261014T060849_366767Z",
+  "sample_indices": [
+    0,
+    7,
+    14,
+    29,
+    239,
+    2277,
+    2337,
+    2397,
+    2457,
+    2516,
+    7072,
+    7132,
+    7192,
+    7252,
+    7311
+  ],
+  "sampling_sha256": "23091cbc1afd5eb24f63bf6d81d2be0bdc1ab04b43a78b7d31e3e65882f6437f",
+  "scope": "DEV sparse native full-frame photometric/detection screening only",
+  "selected_configuration": null,
+  "selection_status": "OPEN_PENDING_ACTUAL_REVIEW_AND_HOLDOUT",
+  "source_frames": [
+    {
+      "frame_index": 0,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000000000.png",
+      "sha256": "bac61ff5623e40e14db8ee7eca10745394410745b370ee7247f68f611861ed16"
+    },
+    {
+      "frame_index": 7,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000000007.png",
+      "sha256": "fac8ba77a047cdbc12066813e783eca45c3c2f6ec7895abd8ffb1911cddb8e23"
+    },
+    {
+      "frame_index": 14,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000000014.png",
+      "sha256": "df4ca9a21717703a515fc3c0f2728e4d2f0ecd4a815b1cf006d6da7c7bf00939"
+    },
+    {
+      "frame_index": 29,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000000029.png",
+      "sha256": "4cf1676aa807136f109c11fd24dbe722d4898fbafbc57a0c557354e6ba204de9"
+    },
+    {
+      "frame_index": 239,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000000239.png",
+      "sha256": "b8393145c249ebe86b492d24b04b105e283278d350f9fe1c2b34a158bbdb1230"
+    },
+    {
+      "frame_index": 2277,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000002277.png",
+      "sha256": "05c74607bdbb21c9c821e5a935d9fd5c1b55c6c789ed63160752116a5266478d"
+    },
+    {
+      "frame_index": 2337,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000002337.png",
+      "sha256": "73d6774f0ae92ebc54d6a2cf4cc0c15a9de602af310199c88a9ac46f6eeeeb71"
+    },
+    {
+      "frame_index": 2397,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000002397.png",
+      "sha256": "225e2a15f63ab7a3ad2b7418fba283229051abab3b3fd4094515d319d750633a"
+    },
+    {
+      "frame_index": 2457,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000002457.png",
+      "sha256": "b05a31b50189986921492bac9f26a00677ff87190d0691c3ce9b10fec076cbaf"
+    },
+    {
+      "frame_index": 2516,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000002516.png",
+      "sha256": "9302c34f689151a2b20c34ec925311780b360ec130294f5d30fa34b250651cda"
+    },
+    {
+      "frame_index": 7072,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000007072.png",
+      "sha256": "378eeb71b7ade9fe3112611472a2bca6d2645ddf2fc66245c4ea5a905c6f6358"
+    },
+    {
+      "frame_index": 7132,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000007132.png",
+      "sha256": "f5f409f162f4ac59482cd6f67d4d4a7044b3d6152d01cb511c7258244eaeb060"
+    },
+    {
+      "frame_index": 7192,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000007192.png",
+      "sha256": "f62b3b21c959e75b0583a73890d9b7cc5ecc5059f570a08edbf0b40a6acf208c"
+    },
+    {
+      "frame_index": 7252,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000007252.png",
+      "sha256": "b254d3af67e50cddb24f145f4ccc7eaa272fabf583ec008334fd772d2c2751c6"
+    },
+    {
+      "frame_index": 7311,
+      "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/source_frames/frame_000007311.png",
+      "sha256": "b77b37e94535be62c234076e2de78e23f224df1b5bee6cb24ebb0c3c321b3a05"
+    }
+  ],
+  "source_helper_sha256": "6a31794bad0c5cd346575ad4602adb5d10f17bd14cc1094dd5f2b207b0935889",
+  "stage": "detection",
+  "started_utc": "2026-10-14T06:08:49.366767+00:00",
+  "status": "completed_detection_screen_no_temporal_claims",
+  "temporal_pipeline_executed": false,
+  "total_wall_seconds": 34.37374485999999,
+  "variants": [
+    {
+      "detection_class_observation_totals": {
+        "bicycle": 1,
+        "car": 2,
+        "motorcycle": 6,
+        "person": 13,
+        "truck": 4
+      },
+      "detection_confidence_mean": 0.5291382544315778,
+      "detections_path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_detections.jsonl.gz",
+      "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+      "formula": "output = input.copy()",
+      "observation_totals_limits": "Frame-level observations; not physical units/counts/quality metrics",
+      "prediction_calls_measured": 15,
+      "prediction_wall_ms_mean": 27.36980700000231,
+      "prediction_wall_ms_median": 27.210297999999966,
+      "prediction_wall_seconds_total_excluding_warmup": 0.41054710500003466,
+      "resource": {
+        "cuda_peak_allocated_bytes": 166721536,
+        "cuda_peak_reserved_bytes": 207618048
+      },
+      "sample_indices": [
+        0,
+        7,
+        14,
+        29,
+        239,
+        2277,
+        2337,
+        2397,
+        2457,
+        2516,
+        7072,
+        7132,
+        7192,
+        7252,
+        7311
+      ],
+      "samples": [
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000000_annotated.png",
+            "sha256": "22edc39f5a4cbfa3354f031602245cb707ff258e8d157e266324a39c7e942457"
+          },
+          "detection_count": 1,
+          "frame_index": 0,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0034353298611111112,
+            "fraction_grayscale_zero": 0.00019639756944444444,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              16.0,
+              240.0
+            ],
+            "mean_grayscale_8bit": 40.397962239583336
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000000_transformed.png",
+            "sha256": "bac61ff5623e40e14db8ee7eca10745394410745b370ee7247f68f611861ed16"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000007_annotated.png",
+            "sha256": "b2cf0de86e487cf5d34d461a5e48cd0db262b61bf5db38fa7a0ac940696b0ed3"
+          },
+          "detection_count": 1,
+          "frame_index": 7,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0032649739583333333,
+            "fraction_grayscale_zero": 0.0005164930555555555,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              17.0,
+              238.0
+            ],
+            "mean_grayscale_8bit": 38.96115668402778
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000007_transformed.png",
+            "sha256": "fac8ba77a047cdbc12066813e783eca45c3c2f6ec7895abd8ffb1911cddb8e23"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000014_annotated.png",
+            "sha256": "e78f786abfae0da40bbaae1112b61698f77c1a61d4272c283abb7e8d5359845e"
+          },
+          "detection_count": 2,
+          "frame_index": 14,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003403862847222222,
+            "fraction_grayscale_zero": 0.00025390625,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              19.0,
+              240.0
+            ],
+            "mean_grayscale_8bit": 41.167186414930555
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000014_transformed.png",
+            "sha256": "df4ca9a21717703a515fc3c0f2728e4d2f0ecd4a815b1cf006d6da7c7bf00939"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000029_annotated.png",
+            "sha256": "2d2f0c7edcf94572c244eefe433094934762ffbb519da52c39ad3b9534c99829"
+          },
+          "detection_count": 3,
+          "frame_index": 29,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0038096788194444445,
+            "fraction_grayscale_zero": 0.00018771701388888888,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              16.0,
+              243.0
+            ],
+            "mean_grayscale_8bit": 35.79475260416667
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000029_transformed.png",
+            "sha256": "4cf1676aa807136f109c11fd24dbe722d4898fbafbc57a0c557354e6ba204de9"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000239_annotated.png",
+            "sha256": "a56e652615910c6c2702f88646f2a0025c8c46a9ac0979fbc9d7dbb44cc841f5"
+          },
+          "detection_count": 1,
+          "frame_index": 239,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0032530381944444442,
+            "fraction_grayscale_zero": 1.4105902777777777e-05,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              16.0,
+              244.0
+            ],
+            "mean_grayscale_8bit": 34.37030490451389
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000000239_transformed.png",
+            "sha256": "b8393145c249ebe86b492d24b04b105e283278d350f9fe1c2b34a158bbdb1230"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002277_annotated.png",
+            "sha256": "96e46e22a8ed124601d56651f35a0914dd08ecd3cee263e0c38f5220f006b421"
+          },
+          "detection_count": 1,
+          "frame_index": 2277,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0016796875,
+            "fraction_grayscale_zero": 2.712673611111111e-05,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              26.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 58.48695529513889
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002277_transformed.png",
+            "sha256": "05c74607bdbb21c9c821e5a935d9fd5c1b55c6c789ed63160752116a5266478d"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002337_annotated.png",
+            "sha256": "274b68153a026c951c6577c5b885c46e18bf36752a70988e9089e57db03d7ddd"
+          },
+          "detection_count": 3,
+          "frame_index": 2337,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0020887586805555555,
+            "fraction_grayscale_zero": 1.8446180555555556e-05,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              19.0,
+              243.0
+            ],
+            "mean_grayscale_8bit": 40.09176106770833
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002337_transformed.png",
+            "sha256": "73d6774f0ae92ebc54d6a2cf4cc0c15a9de602af310199c88a9ac46f6eeeeb71"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002397_annotated.png",
+            "sha256": "225e2a15f63ab7a3ad2b7418fba283229051abab3b3fd4094515d319d750633a"
+          },
+          "detection_count": 0,
+          "frame_index": 2397,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0016514756944444443,
+            "fraction_grayscale_zero": 1.953125e-05,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              28.0,
+              244.0
+            ],
+            "mean_grayscale_8bit": 44.96461154513889
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002397_transformed.png",
+            "sha256": "225e2a15f63ab7a3ad2b7418fba283229051abab3b3fd4094515d319d750633a"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002457_annotated.png",
+            "sha256": "b05a31b50189986921492bac9f26a00677ff87190d0691c3ce9b10fec076cbaf"
+          },
+          "detection_count": 0,
+          "frame_index": 2457,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003095703125,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              30.0,
+              248.0
+            ],
+            "mean_grayscale_8bit": 54.46113606770833
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002457_transformed.png",
+            "sha256": "b05a31b50189986921492bac9f26a00677ff87190d0691c3ce9b10fec076cbaf"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002516_annotated.png",
+            "sha256": "90fcb5a6c4560793abfa3000971d58d30ca69d8b9608203836af227e309fdfaf"
+          },
+          "detection_count": 1,
+          "frame_index": 2516,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0026085069444444445,
+            "fraction_grayscale_zero": 6.618923611111112e-05,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              15.0,
+              243.0
+            ],
+            "mean_grayscale_8bit": 33.251690538194445
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000002516_transformed.png",
+            "sha256": "9302c34f689151a2b20c34ec925311780b360ec130294f5d30fa34b250651cda"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007072_annotated.png",
+            "sha256": "f5fe02e3f36afe95d7ac3624c97ddde3f5e2d5a689226afea16547d9682999c1"
+          },
+          "detection_count": 2,
+          "frame_index": 7072,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0034776475694444442,
+            "fraction_grayscale_zero": 7.595486111111111e-05,
+            "grayscale_percentiles_1_50_99": [
+              9.0,
+              50.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 68.98214192708333
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007072_transformed.png",
+            "sha256": "378eeb71b7ade9fe3112611472a2bca6d2645ddf2fc66245c4ea5a905c6f6358"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007132_annotated.png",
+            "sha256": "9fd4f3f44f3c6acee60a5f82f4431d5d817f12e5fe5d601e3f38fd3f9e33e5f8"
+          },
+          "detection_count": 2,
+          "frame_index": 7132,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003388671875,
+            "fraction_grayscale_zero": 1.0850694444444444e-06,
+            "grayscale_percentiles_1_50_99": [
+              10.0,
+              40.0,
+              248.0
+            ],
+            "mean_grayscale_8bit": 66.73461588541667
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007132_transformed.png",
+            "sha256": "f5f409f162f4ac59482cd6f67d4d4a7044b3d6152d01cb511c7258244eaeb060"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007192_annotated.png",
+            "sha256": "a918903ce8bb3b85a0b9510250f0ecbff2dd749d8b466418665863752ba456bd"
+          },
+          "detection_count": 3,
+          "frame_index": 7192,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0018565538194444445,
+            "fraction_grayscale_zero": 0.0,
+            "grayscale_percentiles_1_50_99": [
+              9.0,
+              30.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 82.31223198784723
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007192_transformed.png",
+            "sha256": "f62b3b21c959e75b0583a73890d9b7cc5ecc5059f570a08edbf0b40a6acf208c"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007252_annotated.png",
+            "sha256": "cbb776f5217d76c9000adfbe897e9ead953080ccce5c866f7ab6fc571d280a68"
+          },
+          "detection_count": 3,
+          "frame_index": 7252,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.005066189236111111,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              11.0,
+              34.0,
+              249.0
+            ],
+            "mean_grayscale_8bit": 62.78486762152778
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007252_transformed.png",
+            "sha256": "b254d3af67e50cddb24f145f4ccc7eaa272fabf583ec008334fd772d2c2751c6"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007311_annotated.png",
+            "sha256": "41431604f77a1cf1b065c7ef042e4b0d504265bcf3283c5636558ffc201ba2a3"
+          },
+          "detection_count": 3,
+          "frame_index": 7311,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003060980902777778,
+            "fraction_grayscale_zero": 9.765625e-06,
+            "grayscale_percentiles_1_50_99": [
+              13.0,
+              45.0,
+              244.0
+            ],
+            "mean_grayscale_8bit": 63.48683376736111
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/raw/frame_000007311_transformed.png",
+            "sha256": "b77b37e94535be62c234076e2de78e23f224df1b5bee6cb24ebb0c3c321b3a05"
+          }
+        }
+      ],
+      "transformation_wall_seconds": 0.008393822000016371,
+      "variant": {
+        "method": "raw",
+        "name": "raw"
+      },
+      "variant_total_wall_seconds_including_io_and_warmup": 8.770486097000003,
+      "warmup": {
+        "frame_index": 0,
+        "saved_as_measurement": false,
+        "timing_excluded_from_prediction_statistics": true,
+        "wall_seconds_including_transform": 6.895596330999979
+      }
+    },
+    {
+      "detection_class_observation_totals": {
+        "bicycle": 1,
+        "car": 3,
+        "motorcycle": 4,
+        "person": 12,
+        "truck": 4
+      },
+      "detection_confidence_mean": 0.530289555589358,
+      "detections_path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_detections.jsonl.gz",
+      "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+      "formula": "output = round_clip_uint8(255 * (input / 255) ** gamma)",
+      "observation_totals_limits": "Frame-level observations; not physical units/counts/quality metrics",
+      "prediction_calls_measured": 15,
+      "prediction_wall_ms_mean": 27.36982393333468,
+      "prediction_wall_ms_median": 27.48440999999957,
+      "prediction_wall_seconds_total_excluding_warmup": 0.41054735900002015,
+      "resource": {
+        "cuda_peak_allocated_bytes": 166716416,
+        "cuda_peak_reserved_bytes": 207618048
+      },
+      "sample_indices": [
+        0,
+        7,
+        14,
+        29,
+        239,
+        2277,
+        2337,
+        2397,
+        2457,
+        2516,
+        7072,
+        7132,
+        7192,
+        7252,
+        7311
+      ],
+      "samples": [
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000000_annotated.png",
+            "sha256": "550689cb04802f5d12b9f7ac3b8deba2d6d69595001a8551c5c46f8ebdadea47"
+          },
+          "detection_count": 1,
+          "frame_index": 0,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0036241319444444446,
+            "fraction_grayscale_zero": 0.00014214409722222222,
+            "grayscale_percentiles_1_50_99": [
+              14.0,
+              37.0,
+              244.0
+            ],
+            "mean_grayscale_8bit": 61.69721137152778
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000000_transformed.png",
+            "sha256": "46422e7f4c7b13f9a5c5c3a5e3045247ad014e37faefa4451f12efbff913c839"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000007_annotated.png",
+            "sha256": "2d996b12a133593ad91f169b860902aaa5f1a53f591779fd1c8f91b075e91e6b"
+          },
+          "detection_count": 1,
+          "frame_index": 7,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003372395833333333,
+            "fraction_grayscale_zero": 0.00043294270833333336,
+            "grayscale_percentiles_1_50_99": [
+              13.0,
+              38.0,
+              243.0
+            ],
+            "mean_grayscale_8bit": 60.10417100694445
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000007_transformed.png",
+            "sha256": "6286d1cdf39d367708ab47393d8c1f9a0850c871a7bd1baeea7a03221ac518e3"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000014_annotated.png",
+            "sha256": "5b3cc65b99a6edca8b90aa8e8fb8eac5620d3edec7767814d01b910fc272fd9d"
+          },
+          "detection_count": 1,
+          "frame_index": 14,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0036447482638888888,
+            "fraction_grayscale_zero": 0.00021918402777777778,
+            "grayscale_percentiles_1_50_99": [
+              17.0,
+              41.0,
+              245.0
+            ],
+            "mean_grayscale_8bit": 63.50230360243056
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000014_transformed.png",
+            "sha256": "294dad0e59c8d7fbba62e83d4d3c6ad0ea994d88c69e11939de677a2216ddd23"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000029_annotated.png",
+            "sha256": "f92ed75eaf1776173e97dee8e66ea81f96ff60ac4d51e57ef09129841856621b"
+          },
+          "detection_count": 3,
+          "frame_index": 29,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.004075520833333333,
+            "fraction_grayscale_zero": 0.00016710069444444444,
+            "grayscale_percentiles_1_50_99": [
+              15.0,
+              36.0,
+              246.0
+            ],
+            "mean_grayscale_8bit": 56.584729817708336
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000029_transformed.png",
+            "sha256": "617649f94e76d413a545ceff79e890cf3f409c0efec18cd8b2ded210b42a9157"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000239_annotated.png",
+            "sha256": "eda2f80d01ace1ad255cdd3cbec0538ad524f2744543ea4e2e0ae37c420478f4"
+          },
+          "detection_count": 1,
+          "frame_index": 239,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0034765625,
+            "fraction_grayscale_zero": 8.680555555555556e-06,
+            "grayscale_percentiles_1_50_99": [
+              15.0,
+              37.0,
+              248.0
+            ],
+            "mean_grayscale_8bit": 55.135708550347225
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000000239_transformed.png",
+            "sha256": "301e2736bef36bd5947f7f682cec21a92d770ada36b08f294306379ee1ca1595"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002277_annotated.png",
+            "sha256": "81f3ba4fe5d61f8e751bff116842b9d74d27a9d7edc2d056aa1819fc5f15d32d"
+          },
+          "detection_count": 2,
+          "frame_index": 2277,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.001708984375,
+            "fraction_grayscale_zero": 7.595486111111111e-06,
+            "grayscale_percentiles_1_50_99": [
+              14.0,
+              51.0,
+              249.0
+            ],
+            "mean_grayscale_8bit": 79.6126443142361
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002277_transformed.png",
+            "sha256": "14448ec801632fa1ea513de053bc2f50ea590909b3e6f4e217f9e2a300b1e23b"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002337_annotated.png",
+            "sha256": "af89c79144dcaf6ca33b236db00ce937263de7ccaf7a4cb9f219c3dafb1e597f"
+          },
+          "detection_count": 2,
+          "frame_index": 2337,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.00248046875,
+            "fraction_grayscale_zero": 1.6276041666666666e-05,
+            "grayscale_percentiles_1_50_99": [
+              15.0,
+              41.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 61.746327039930556
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002337_transformed.png",
+            "sha256": "8a39cdcf917ac2235aaeff97d746a06e895f38c35f5ef6561ba3c0b00e0513ab"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002397_annotated.png",
+            "sha256": "d75321fb9f5a494342870c0db50cfabb097448abd450af65c7826f47d4f5003c"
+          },
+          "detection_count": 0,
+          "frame_index": 2397,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0019053819444444444,
+            "fraction_grayscale_zero": 1.0850694444444445e-05,
+            "grayscale_percentiles_1_50_99": [
+              17.0,
+              54.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 67.64734266493056
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002397_transformed.png",
+            "sha256": "d75321fb9f5a494342870c0db50cfabb097448abd450af65c7826f47d4f5003c"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002457_annotated.png",
+            "sha256": "c9ff8bd46b972e8b2fdf929134ee0d2a344be61e0e7832fcb3eab25381323b4a"
+          },
+          "detection_count": 0,
+          "frame_index": 2457,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0034895833333333333,
+            "fraction_grayscale_zero": 1.0850694444444444e-06,
+            "grayscale_percentiles_1_50_99": [
+              17.0,
+              57.0,
+              250.0
+            ],
+            "mean_grayscale_8bit": 77.37130099826389
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002457_transformed.png",
+            "sha256": "c9ff8bd46b972e8b2fdf929134ee0d2a344be61e0e7832fcb3eab25381323b4a"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002516_annotated.png",
+            "sha256": "7db97e92c78f32f81fd0c16e40eb9e85baae22ac0784534463b82e06e3f03594"
+          },
+          "detection_count": 1,
+          "frame_index": 2516,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.002797309027777778,
+            "fraction_grayscale_zero": 4.340277777777778e-05,
+            "grayscale_percentiles_1_50_99": [
+              15.0,
+              35.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 53.718114149305556
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000002516_transformed.png",
+            "sha256": "b14ae10dbb8c07f66da457084cc03c1b7313d3d4a569f7260938bdfd703a4198"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007072_annotated.png",
+            "sha256": "f99cabfb5939f76e6b86ff3d9c408783670cb8f774c304086a70668a65bc18a8"
+          },
+          "detection_count": 2,
+          "frame_index": 7072,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0038313802083333333,
+            "fraction_grayscale_zero": 6.727430555555556e-05,
+            "grayscale_percentiles_1_50_99": [
+              25.0,
+              81.0,
+              250.0
+            ],
+            "mean_grayscale_8bit": 94.4785329861111
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007072_transformed.png",
+            "sha256": "c579438bebcd647310dca89a5223107ec8d1ff1f3fd946d849b72f5db48898d7"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007132_annotated.png",
+            "sha256": "9d0e9ff2762efb0558301703ee9127df37bf3da2811fd195496aa671b3c9822b"
+          },
+          "detection_count": 2,
+          "frame_index": 7132,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003935546875,
+            "fraction_grayscale_zero": 1.0850694444444444e-06,
+            "grayscale_percentiles_1_50_99": [
+              27.0,
+              70.0,
+              250.0
+            ],
+            "mean_grayscale_8bit": 92.08938910590278
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007132_transformed.png",
+            "sha256": "75a71e6489555e4603c9e57c656573afc6d011d86de1fabde89f4dc183266ca0"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007192_annotated.png",
+            "sha256": "c727caccf492cbd336e93b6a4620b1ce20708f1823260ceb945d23c31c1a5f72"
+          },
+          "detection_count": 2,
+          "frame_index": 7192,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.002228732638888889,
+            "fraction_grayscale_zero": 0.0,
+            "grayscale_percentiles_1_50_99": [
+              25.0,
+              57.0,
+              249.0
+            ],
+            "mean_grayscale_8bit": 103.56476128472222
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007192_transformed.png",
+            "sha256": "3c264dc114c7de0f4589b493ed95ecfc126bad9aa4ef00a36ed83df53bcb044b"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007252_annotated.png",
+            "sha256": "2df5d8a353f3482ed704157ac1f962a06abac1912bf1a1fde2f002e777238627"
+          },
+          "detection_count": 3,
+          "frame_index": 7252,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.005478515625,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              29.0,
+              62.0,
+              251.0
+            ],
+            "mean_grayscale_8bit": 87.81012044270834
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007252_transformed.png",
+            "sha256": "cf057f6a08040cd5e328e63018f3359a9c76650aa6288d51ded5e256df2fcce8"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007311_annotated.png",
+            "sha256": "7b6027d750ee60fc2cc8d628a2f07890c9e49f53074277698e2a2bcfd4a6e841"
+          },
+          "detection_count": 3,
+          "frame_index": 7311,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0033778211805555554,
+            "fraction_grayscale_zero": 7.595486111111111e-06,
+            "grayscale_percentiles_1_50_99": [
+              31.0,
+              75.0,
+              248.0
+            ],
+            "mean_grayscale_8bit": 89.34404513888889
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/gamma_070/frame_000007311_transformed.png",
+            "sha256": "5700de1d2c19c7db4aab6c9de04cdfbdb3646ef0f726743e97445ac8907b5cf3"
+          }
+        }
+      ],
+      "transformation_wall_seconds": 0.6702000500000622,
+      "variant": {
+        "gamma": 0.7,
+        "method": "gamma",
+        "name": "gamma_070"
+      },
+      "variant_total_wall_seconds_including_io_and_warmup": 2.429693740999994,
+      "warmup": {
+        "frame_index": 0,
+        "saved_as_measurement": false,
+        "timing_excluded_from_prediction_statistics": true,
+        "wall_seconds_including_transform": 0.08112708400000201
+      }
+    },
+    {
+      "detection_class_observation_totals": {
+        "car": 2,
+        "motorcycle": 7,
+        "person": 13,
+        "truck": 4
+      },
+      "detection_confidence_mean": 0.5121164046801053,
+      "detections_path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_detections.jsonl.gz",
+      "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+      "formula": "output = round_clip_uint8(gain * input)",
+      "observation_totals_limits": "Frame-level observations; not physical units/counts/quality metrics",
+      "prediction_calls_measured": 15,
+      "prediction_wall_ms_mean": 27.39859893334066,
+      "prediction_wall_ms_median": 27.38826400002381,
+      "prediction_wall_seconds_total_excluding_warmup": 0.4109789840001099,
+      "resource": {
+        "cuda_peak_allocated_bytes": 166716416,
+        "cuda_peak_reserved_bytes": 207618048
+      },
+      "sample_indices": [
+        0,
+        7,
+        14,
+        29,
+        239,
+        2277,
+        2337,
+        2397,
+        2457,
+        2516,
+        7072,
+        7132,
+        7192,
+        7252,
+        7311
+      ],
+      "samples": [
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000000_annotated.png",
+            "sha256": "2f88c0b590d0dc62c492c347da9ff04465dff837bbeed00eadd0ff2d756db749"
+          },
+          "detection_count": 1,
+          "frame_index": 0,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.018905164930555555,
+            "fraction_grayscale_zero": 0.00016059027777777778,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              20.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 49.64587673611111
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000000_transformed.png",
+            "sha256": "5e3e0e1ce68bae972fe33591e6cbcda0a1387f6eb4f5159e1c394d69dad74f6d"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000007_annotated.png",
+            "sha256": "2cf554ab1b9fadee40e376c4c8be19cfe5b09d305876303aca01872107741813"
+          },
+          "detection_count": 1,
+          "frame_index": 7,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.017137586805555556,
+            "fraction_grayscale_zero": 0.0005013020833333333,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              22.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 47.86929144965278
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000007_transformed.png",
+            "sha256": "2ed587aaba68c594592a013c5834e1555bdc61a39d19b1c306f2aea9e9a3c5dc"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000014_annotated.png",
+            "sha256": "106d0c383ff8b3ed6d3e79e4ab327f75d1049ed1eb060d3976cf2b25bd258af1"
+          },
+          "detection_count": 2,
+          "frame_index": 14,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.018358289930555556,
+            "fraction_grayscale_zero": 0.0002463107638888889,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              23.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 50.65415256076389
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000014_transformed.png",
+            "sha256": "04fd4c5840af42904c350922950e461ebdf369cf98fce784105f7f8f5b47ef84"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000029_annotated.png",
+            "sha256": "bb30af9673fe8742cb3cef97c5208d86ef5121299b47e14d1e1f9ded344942ad"
+          },
+          "detection_count": 3,
+          "frame_index": 29,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.018397352430555555,
+            "fraction_grayscale_zero": 0.00018663194444444445,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              20.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 43.88068359375
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000029_transformed.png",
+            "sha256": "c8676c0a74055fd7154c96874252e2662552288fde83b83f4d8b1a22ff3b8b65"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000239_annotated.png",
+            "sha256": "a87fc956c0c98bb502b8183410aecf5effe2e08f2ec2469913c30964af373f1d"
+          },
+          "detection_count": 1,
+          "frame_index": 239,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.01757595486111111,
+            "fraction_grayscale_zero": 1.4105902777777777e-05,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              20.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 42.10897243923611
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000000239_transformed.png",
+            "sha256": "1eb7fbdec62e50f033b14fee01d1d07919497b9671daf03a9e6226dac3d955b2"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002277_annotated.png",
+            "sha256": "1298f7f89a8d06b585fcf6169ae5571b910f5f813c068fe0c41501d71c111c4d"
+          },
+          "detection_count": 1,
+          "frame_index": 2277,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.039606119791666665,
+            "fraction_grayscale_zero": 2.4956597222222224e-05,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              32.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 71.6604904513889
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002277_transformed.png",
+            "sha256": "8f6fb40192325bf8ca2d23194b80a710202712e93bb2895a1172f9556f2c986c"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002337_annotated.png",
+            "sha256": "8898d87cb58736be46c640ccce05e38a862ad635ae0de008b38108ef7c69c978"
+          },
+          "detection_count": 3,
+          "frame_index": 2337,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.01876736111111111,
+            "fraction_grayscale_zero": 1.736111111111111e-05,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              23.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 49.23805881076389
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002337_transformed.png",
+            "sha256": "630c818b575e72fef38511d608cf258839e153c80e4e50d5aa334e7873e45d94"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002397_annotated.png",
+            "sha256": "06ed3e83b40601eeb6decdc2ef2ae85c04cb0ee78bc9b4bd5b061833d9aa0f9a"
+          },
+          "detection_count": 1,
+          "frame_index": 2397,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.02135959201388889,
+            "fraction_grayscale_zero": 1.953125e-05,
+            "grayscale_percentiles_1_50_99": [
+              7.0,
+              35.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 55.18409071180555
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002397_transformed.png",
+            "sha256": "75e4ee34751754efa320c1d7dfde31641da4c52ee52331110af7cd8df86e64f0"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002457_annotated.png",
+            "sha256": "f2e424b32752834715f16efddde2af30364c9115cbd25aeecb69679f72ae9159"
+          },
+          "detection_count": 0,
+          "frame_index": 2457,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.022685546875,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              7.0,
+              38.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 66.8153515625
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002457_transformed.png",
+            "sha256": "f2e424b32752834715f16efddde2af30364c9115cbd25aeecb69679f72ae9159"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002516_annotated.png",
+            "sha256": "ff5b1e78ce67bffc4f1e52f061a044295e415b12f99bc7391f845830cf9ebf96"
+          },
+          "detection_count": 1,
+          "frame_index": 2516,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.01848198784722222,
+            "fraction_grayscale_zero": 6.184895833333334e-05,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              19.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 40.78109700520833
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000002516_transformed.png",
+            "sha256": "a55502a371973c312dc91fc59ad5394ec175302c99dda5beb08490ae240a572d"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007072_annotated.png",
+            "sha256": "edfbf31fc17978eef0b91389ed1b1aadb9f9ef182c46c69953c71fd0969b7c93"
+          },
+          "detection_count": 2,
+          "frame_index": 7072,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.019891493055555556,
+            "fraction_grayscale_zero": 7.378472222222222e-05,
+            "grayscale_percentiles_1_50_99": [
+              12.0,
+              63.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 84.96752387152777
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007072_transformed.png",
+            "sha256": "40d17609517e92a7c0483df8979e0a4d33cee1ada2dffaaf80426f88fc2a2b66"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007132_annotated.png",
+            "sha256": "ab1d657d1e81bf88ff2c6d59928c8c5030241551d5951df1180a4ae7894ccb59"
+          },
+          "detection_count": 2,
+          "frame_index": 7132,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.027090928819444443,
+            "fraction_grayscale_zero": 1.0850694444444444e-06,
+            "grayscale_percentiles_1_50_99": [
+              12.0,
+              50.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 82.09414930555556
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007132_transformed.png",
+            "sha256": "d123eda83be6354949a34b4d11afc96caccb2044d3ca20f40a4185cba45a5e9f"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007192_annotated.png",
+            "sha256": "b3d15e7076ab1ce32efab015cb32a0f2cf881d87d8c81cf5bbd164119b9174a4"
+          },
+          "detection_count": 3,
+          "frame_index": 7192,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.026923828125,
+            "fraction_grayscale_zero": 0.0,
+            "grayscale_percentiles_1_50_99": [
+              12.0,
+              38.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 101.04447374131945
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007192_transformed.png",
+            "sha256": "158f519b517eec8b24a1a3fdc60f960765c88f465d5932d44bfbf9e1519e7bc0"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007252_annotated.png",
+            "sha256": "7d8ffb2a167890404a4bec4abd6846e49a7b4acc5468355bc266eaa852195f50"
+          },
+          "detection_count": 3,
+          "frame_index": 7252,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.03822157118055555,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              14.0,
+              42.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 76.818046875
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007252_transformed.png",
+            "sha256": "d6edd8ebe5aa6062f106f8b437bb79498f28936418cbeda176735564ad054650"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007311_annotated.png",
+            "sha256": "094ed177fcf09d01fcf18ee4c2b33a8a272278f19e3d5a765f7e56bf00799156"
+          },
+          "detection_count": 2,
+          "frame_index": 7311,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.02385959201388889,
+            "fraction_grayscale_zero": 9.765625e-06,
+            "grayscale_percentiles_1_50_99": [
+              16.0,
+              56.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 77.92190212673611
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/exposure_125/frame_000007311_transformed.png",
+            "sha256": "e1df4b3b9d07f2a450d0a5c3453719df70daa7bc0a9c80c0cceef6f84790664d"
+          }
+        }
+      ],
+      "transformation_wall_seconds": 0.29982968199988136,
+      "variant": {
+        "gain": 1.25,
+        "method": "exposure",
+        "name": "exposure_125"
+      },
+      "variant_total_wall_seconds_including_io_and_warmup": 2.0482389160000025,
+      "warmup": {
+        "frame_index": 0,
+        "saved_as_measurement": false,
+        "timing_excluded_from_prediction_statistics": true,
+        "wall_seconds_including_transform": 0.05385086199999023
+      }
+    },
+    {
+      "detection_class_observation_totals": {
+        "car": 2,
+        "motorcycle": 4,
+        "person": 12,
+        "truck": 3
+      },
+      "detection_confidence_mean": 0.6022466392744155,
+      "detections_path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_detections.jsonl.gz",
+      "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+      "formula": "output = round_clip_uint8(pivot + factor * (input - pivot))",
+      "observation_totals_limits": "Frame-level observations; not physical units/counts/quality metrics",
+      "prediction_calls_measured": 15,
+      "prediction_wall_ms_mean": 27.314263133344717,
+      "prediction_wall_ms_median": 27.421212000035666,
+      "prediction_wall_seconds_total_excluding_warmup": 0.4097139470001707,
+      "resource": {
+        "cuda_peak_allocated_bytes": 166716416,
+        "cuda_peak_reserved_bytes": 207618048
+      },
+      "sample_indices": [
+        0,
+        7,
+        14,
+        29,
+        239,
+        2277,
+        2337,
+        2397,
+        2457,
+        2516,
+        7072,
+        7132,
+        7192,
+        7252,
+        7311
+      ],
+      "samples": [
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000000_annotated.png",
+            "sha256": "6a1ee287bfa10ee4ede23eaa337ab4414fd7043c9877c98652f859ddaee70d9c"
+          },
+          "detection_count": 1,
+          "frame_index": 0,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.012083333333333333,
+            "fraction_grayscale_zero": 0.5583962673611111,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 29.200270182291668
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000000_transformed.png",
+            "sha256": "cede8480242ab16ad72f8a499bdd27ef300b068d73dbc766e723bc48e6ac042f"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000007_annotated.png",
+            "sha256": "67963e03fe2e7361d0b2fa87ac749cc82b7a8e0637b67d655f20f8e327583bf3"
+          },
+          "detection_count": 1,
+          "frame_index": 7,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.011486545138888889,
+            "fraction_grayscale_zero": 0.5537185329861111,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 27.663377821180557
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000007_transformed.png",
+            "sha256": "19a1cf57d6660e57ff495b5e7c1ead97bb74e70890fe5b0a427c8332c57eeb33"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000014_annotated.png",
+            "sha256": "238f688b995ab94b08f443847c12933a7664c3eca8538de74f15905197a3c9c8"
+          },
+          "detection_count": 1,
+          "frame_index": 14,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.011858723958333333,
+            "fraction_grayscale_zero": 0.5485026041666666,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 28.693430989583334
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000014_transformed.png",
+            "sha256": "21710b308d30390cc08be4877f3893a259f90a950329f9209787344cd329ffc5"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000029_annotated.png",
+            "sha256": "d6aea719568710342ad29cef5a2c80d7690c345e493b1b99990af14f4ec9a39f"
+          },
+          "detection_count": 2,
+          "frame_index": 29,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.01263671875,
+            "fraction_grayscale_zero": 0.5840190972222222,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 23.614771050347223
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000029_transformed.png",
+            "sha256": "5cc7b0ca2491b707df2524b1233e3984321bab065d5d39b553f380e61689ec63"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000239_annotated.png",
+            "sha256": "970383162cf88d5ff169aa1379689b7059697dda4d934ce409a6c206e0e6060f"
+          },
+          "detection_count": 1,
+          "frame_index": 239,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.012612847222222221,
+            "fraction_grayscale_zero": 0.5822840711805556,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 21.767823350694446
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000000239_transformed.png",
+            "sha256": "4fbeae2b28ec1995094f6a5043ea7f4fdbb558cb712ef4091914509cde7940e4"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002277_annotated.png",
+            "sha256": "6150aff9c61fbed2c464b7fdf255f53f287c66b9ac75b4a62b8fb2c11df2ba33"
+          },
+          "detection_count": 1,
+          "frame_index": 2277,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.016829427083333334,
+            "fraction_grayscale_zero": 0.44458658854166666,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              4.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 50.66387803819445
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002277_transformed.png",
+            "sha256": "cd7ec0906d86b8573dd964858ce7d6cad6ac04cf54f033150297feb3ad3e7e83"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002337_annotated.png",
+            "sha256": "9b524ec082bc5d6eb68f1684b20f218a31d2a6ba1d62df63bdee723a434ec166"
+          },
+          "detection_count": 2,
+          "frame_index": 2337,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.011684027777777778,
+            "fraction_grayscale_zero": 0.5198448350694445,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 28.381151258680557
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002337_transformed.png",
+            "sha256": "3bc413d5feb2a4dd50708c1bbdbdeb247ec90947de3754ac6bcb6a4a648bdb9a"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002397_annotated.png",
+            "sha256": "d0edb0ab767d398242e2ba9e66289304c6ad83fbf403de712cf71cf49bf76f0b"
+          },
+          "detection_count": 0,
+          "frame_index": 2397,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.012396918402777778,
+            "fraction_grayscale_zero": 0.45597981770833335,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              3.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 32.520801866319445
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002397_transformed.png",
+            "sha256": "d0edb0ab767d398242e2ba9e66289304c6ad83fbf403de712cf71cf49bf76f0b"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002457_annotated.png",
+            "sha256": "58a022b804a9b709385b76afb34c277c534dc5050f287cdfb16b51bc52e09d80"
+          },
+          "detection_count": 0,
+          "frame_index": 2457,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.013626302083333333,
+            "fraction_grayscale_zero": 0.4392447916666667,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              6.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 43.845188802083335
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002457_transformed.png",
+            "sha256": "58a022b804a9b709385b76afb34c277c534dc5050f287cdfb16b51bc52e09d80"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002516_annotated.png",
+            "sha256": "86c397e09d93a9c28d9f01489a76db71a57c14eb030bad89ed17fe45faa0bb2c"
+          },
+          "detection_count": 1,
+          "frame_index": 2516,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.013008897569444445,
+            "fraction_grayscale_zero": 0.6034418402777778,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 20.86764431423611
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000002516_transformed.png",
+            "sha256": "f7d9b1d1680aece0f2c5697adc5e68f684a8a61f6beb780e564966a8a8a1823a"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007072_annotated.png",
+            "sha256": "680e31b1d51b2e12d69eb842e854f9a3f18e61f877c56487fbdd62d07aecf204"
+          },
+          "detection_count": 1,
+          "frame_index": 7072,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.014612630208333333,
+            "fraction_grayscale_zero": 0.2760915798611111,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              31.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 57.90223198784722
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007072_transformed.png",
+            "sha256": "fb3ff5c6ec2f4f62ccdf3f1b0bc68fe4f1364440e69c4c93696ac58b0839bef1"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007132_annotated.png",
+            "sha256": "e030c9a5608de7ec8af29943d32af2206e12cf2fb670b0ea74d768170e708ba4"
+          },
+          "detection_count": 2,
+          "frame_index": 7132,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.015385199652777778,
+            "fraction_grayscale_zero": 0.2787586805555556,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              18.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 55.11854275173611
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007132_transformed.png",
+            "sha256": "78e3eb310bcc34cbdc32574ff136672f69b0656a93ba6dcf3c5b07ca7990faef"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007192_annotated.png",
+            "sha256": "1abbd8464bb65254d5c37894134406e44cc73ce727a8726734833288f8daf617"
+          },
+          "detection_count": 3,
+          "frame_index": 7192,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.012745225694444445,
+            "fraction_grayscale_zero": 0.26971788194444446,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              8.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 76.95066840277778
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007192_transformed.png",
+            "sha256": "b14afc82c2b805f8d838ead5f947303c094f5b80ce8d8edd9e12e365b34b5389"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007252_annotated.png",
+            "sha256": "824e309a744418d2eb32d87c6c167b51583ec063a8d6d074b0a3a864e88cf854"
+          },
+          "detection_count": 2,
+          "frame_index": 7252,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.018414713541666666,
+            "fraction_grayscale_zero": 0.2873849826388889,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              12.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 50.52957248263889
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007252_transformed.png",
+            "sha256": "e4ec8c5acdce081ec8a2387c8eaa025972f64e59f9a86664f8b51ddd6fb4851c"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007311_annotated.png",
+            "sha256": "d18255f171ee907443c9f8bd4765ba1cafd2f3408c3eb7ba56d3fcd471433ec1"
+          },
+          "detection_count": 3,
+          "frame_index": 7311,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.013497178819444445,
+            "fraction_grayscale_zero": 0.28593098958333335,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              24.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 50.27712348090278
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/contrast_125/frame_000007311_transformed.png",
+            "sha256": "27d00fd78e22a4a090393478084b10040cbc702bd5821169adf27a7896767f6e"
+          }
+        }
+      ],
+      "transformation_wall_seconds": 0.4411891660000151,
+      "variant": {
+        "factor": 1.25,
+        "method": "contrast",
+        "name": "contrast_125",
+        "pivot": 128.0
+      },
+      "variant_total_wall_seconds_including_io_and_warmup": 1.9699197360000085,
+      "warmup": {
+        "frame_index": 0,
+        "saved_as_measurement": false,
+        "timing_excluded_from_prediction_statistics": true,
+        "wall_seconds_including_transform": 0.05096999800002777
+      }
+    },
+    {
+      "detection_class_observation_totals": {
+        "bicycle": 1,
+        "car": 3,
+        "motorcycle": 8,
+        "person": 14,
+        "truck": 4
+      },
+      "detection_confidence_mean": 0.4983913352092107,
+      "detections_path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_detections.jsonl.gz",
+      "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+      "formula": "output = round_clip_uint8(input + amount * (input - GaussianBlur(input, sigma, BORDER_REFLECT_101)))",
+      "observation_totals_limits": "Frame-level observations; not physical units/counts/quality metrics",
+      "prediction_calls_measured": 15,
+      "prediction_wall_ms_mean": 27.413756733327922,
+      "prediction_wall_ms_median": 27.497659000005115,
+      "prediction_wall_seconds_total_excluding_warmup": 0.41120635099991887,
+      "resource": {
+        "cuda_peak_allocated_bytes": 166716416,
+        "cuda_peak_reserved_bytes": 207618048
+      },
+      "sample_indices": [
+        0,
+        7,
+        14,
+        29,
+        239,
+        2277,
+        2337,
+        2397,
+        2457,
+        2516,
+        7072,
+        7132,
+        7192,
+        7252,
+        7311
+      ],
+      "samples": [
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000000_annotated.png",
+            "sha256": "1a5393aa2c673eea7f8357918bcececbb9016d2faa1a75b283fc3d7a5a15e22d"
+          },
+          "detection_count": 1,
+          "frame_index": 0,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009240451388888888,
+            "fraction_grayscale_zero": 0.0019900173611111112,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              16.0,
+              252.0
+            ],
+            "mean_grayscale_8bit": 40.22080729166667
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000000_transformed.png",
+            "sha256": "c0a8624c26bf64efad72b1ca5ec76daa922757ad49b0a70462bbb229ffc2605f"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000007_annotated.png",
+            "sha256": "11dd94d7f23fdbf70b931385ed1eee32247091e9d4896b4f790f73d7ab08b963"
+          },
+          "detection_count": 1,
+          "frame_index": 7,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009240451388888888,
+            "fraction_grayscale_zero": 0.004593098958333333,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              17.0,
+              251.0
+            ],
+            "mean_grayscale_8bit": 38.80978949652778
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000007_transformed.png",
+            "sha256": "53b174fee3aedd9e57ec5bd10e9d4f3cb3c484726067ca2544d916c213c52d8d"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000014_annotated.png",
+            "sha256": "4ee87090537219d7f7f61400676e8839ca35ed7a46771047a693cbc3a926a087"
+          },
+          "detection_count": 3,
+          "frame_index": 14,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009226345486111112,
+            "fraction_grayscale_zero": 0.0032356770833333335,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              18.0,
+              252.0
+            ],
+            "mean_grayscale_8bit": 40.992405598958335
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000014_transformed.png",
+            "sha256": "3ffbc4ce8a886873a16519cc190bf655f76941cd3ad60fc3dfd4d75eac2385d6"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000029_annotated.png",
+            "sha256": "8b1ca2b2298c7a60c7d412f694794b5f419fe4515cd55c5c36e8a36ca305a777"
+          },
+          "detection_count": 3,
+          "frame_index": 29,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009959852430555555,
+            "fraction_grayscale_zero": 0.0035470920138888887,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              15.0,
+              254.0
+            ],
+            "mean_grayscale_8bit": 35.608447265625
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000029_transformed.png",
+            "sha256": "49e50675061b6bb9267c0f4287425755cfea12df23cbb6a9c98fb30e8197d065"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000239_annotated.png",
+            "sha256": "95af333d106c0e98fb3f74adf3a5b72728a408fabcd9c35610899996389fd090"
+          },
+          "detection_count": 1,
+          "frame_index": 239,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.010353732638888889,
+            "fraction_grayscale_zero": 0.003140190972222222,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              15.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 34.15194552951389
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000000239_transformed.png",
+            "sha256": "ca249f4d5f24ca3815d2af1f8402590e368d0587163025cb58e5e89040248cfe"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002277_annotated.png",
+            "sha256": "2e179f9fc0916ff840492d43d0ee921baf0ee4d52a375262066d64fb9ffd951f"
+          },
+          "detection_count": 2,
+          "frame_index": 2277,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.008359375,
+            "fraction_grayscale_zero": 0.0006987847222222222,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              25.0,
+              253.0
+            ],
+            "mean_grayscale_8bit": 58.346432291666666
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002277_transformed.png",
+            "sha256": "cd55689bf3e4872d4d8742d7fc98a6cd655972fd14277f6dc6a9ce17e72f42e2"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002337_annotated.png",
+            "sha256": "53e9011b0ea8287ca97280820f8dc172c693f4801a2a508b0f1d4981ac2ad576"
+          },
+          "detection_count": 3,
+          "frame_index": 2337,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.00904296875,
+            "fraction_grayscale_zero": 0.001416015625,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              18.0,
+              254.0
+            ],
+            "mean_grayscale_8bit": 39.882724609375
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002337_transformed.png",
+            "sha256": "1f33ed0875d71cc1622cbd84bb8378b0ee5746616de8d16672d046f0bb32297c"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002397_annotated.png",
+            "sha256": "b8a219e0e704e3adbe9599fd3b39f3c3fa3447f53c11f1d5eb783fe890d628f9"
+          },
+          "detection_count": 2,
+          "frame_index": 2397,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.008967013888888889,
+            "fraction_grayscale_zero": 0.0016937934027777778,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              26.0,
+              253.0
+            ],
+            "mean_grayscale_8bit": 44.78251627604167
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002397_transformed.png",
+            "sha256": "e0c6a5d0d079b63b1c9ca7c0df88f11f16cf53f2e3317ffef1fff857d60ad515"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002457_annotated.png",
+            "sha256": "d7ef4e7fbfc4bdc6e6ae2e3bf9554924d9b7f8f81499e13ee49617589467cce9"
+          },
+          "detection_count": 0,
+          "frame_index": 2457,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009976128472222222,
+            "fraction_grayscale_zero": 0.0012890625,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              29.0,
+              254.0
+            ],
+            "mean_grayscale_8bit": 54.23024848090278
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002457_transformed.png",
+            "sha256": "d7ef4e7fbfc4bdc6e6ae2e3bf9554924d9b7f8f81499e13ee49617589467cce9"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002516_annotated.png",
+            "sha256": "21df81332096afd428e04fa16901fa190f45397475e6836d38034a1369e7bd80"
+          },
+          "detection_count": 1,
+          "frame_index": 2516,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009988064236111111,
+            "fraction_grayscale_zero": 0.002849392361111111,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              14.0,
+              254.0
+            ],
+            "mean_grayscale_8bit": 33.063563368055554
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000002516_transformed.png",
+            "sha256": "396dab4930d060895e96e0e92e024eb645b40c896f16500fcc61d6b34f3bf537"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007072_annotated.png",
+            "sha256": "2659983f7083794596848b0864310841ab9f9005f1657d4720fa386a8b7d40cf"
+          },
+          "detection_count": 2,
+          "frame_index": 7072,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009226345486111112,
+            "fraction_grayscale_zero": 0.0011762152777777778,
+            "grayscale_percentiles_1_50_99": [
+              9.0,
+              50.0,
+              253.0
+            ],
+            "mean_grayscale_8bit": 68.80019422743055
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007072_transformed.png",
+            "sha256": "17cb732ab9ce444037f923ddc3e5fe5da1fcba8be4e5f0bb1a37782be8e7be47"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007132_annotated.png",
+            "sha256": "cb3d58889b5a7163dcfa1be149d05a3ccb37c3b8a5f926e6aeac4f7786865ff8"
+          },
+          "detection_count": 2,
+          "frame_index": 7132,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.008883463541666666,
+            "fraction_grayscale_zero": 9.006076388888889e-05,
+            "grayscale_percentiles_1_50_99": [
+              10.0,
+              39.0,
+              253.0
+            ],
+            "mean_grayscale_8bit": 66.547490234375
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007132_transformed.png",
+            "sha256": "5dfadada835d634154210cd025e72209b70b7fc8645632e50f9cd0ad5eeff6ae"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007192_annotated.png",
+            "sha256": "e37e0cd159d8c540335fc4e5be160b935d344f315a0a1b7caad9cfed669fcfe3"
+          },
+          "detection_count": 3,
+          "frame_index": 7192,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0071690538194444445,
+            "fraction_grayscale_zero": 1.8446180555555556e-05,
+            "grayscale_percentiles_1_50_99": [
+              9.0,
+              30.0,
+              251.0
+            ],
+            "mean_grayscale_8bit": 82.17477647569444
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007192_transformed.png",
+            "sha256": "676b0a73fd85a31903772c24c4840448a33e4006329a81af3fbd124e4b241f11"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007252_annotated.png",
+            "sha256": "ddfbbf05b17bc529a216ca72d6813c2697eb3c6dc26bfd0fcba77343959576ff"
+          },
+          "detection_count": 3,
+          "frame_index": 7252,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.010054253472222222,
+            "fraction_grayscale_zero": 0.0004709201388888889,
+            "grayscale_percentiles_1_50_99": [
+              11.0,
+              33.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 62.55608181423611
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007252_transformed.png",
+            "sha256": "3a861e092f2d0c2dc44d23f47688f59fc14cb317309c29013484d5a3623c736a"
+          }
+        },
+        {
+          "annotated": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007311_annotated.png",
+            "sha256": "e439dac8e58449ffed64a263eb621e66885e86433b24043e7e0abdc2d1fd05f4"
+          },
+          "detection_count": 3,
+          "frame_index": 7311,
+          "photometric_descriptors": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.008835720486111111,
+            "fraction_grayscale_zero": 0.0005609809027777778,
+            "grayscale_percentiles_1_50_99": [
+              13.0,
+              44.0,
+              252.0
+            ],
+            "mean_grayscale_8bit": 63.30016167534722
+          },
+          "transformed": {
+            "path": "/kaggle/working/phase_7_night/20261014T060849_366767Z/unsharp_s1_a05/frame_000007311_transformed.png",
+            "sha256": "d6c0201ceae27dfa999fed38a050eeb2b1fe1438d893ca7ca557ea228ee6e85d"
+          }
+        }
+      ],
+      "transformation_wall_seconds": 0.6093609900000274,
+      "variant": {
+        "amount": 0.5,
+        "method": "unsharp",
+        "name": "unsharp_s1_a05",
+        "sigma": 1.0
+      },
+      "variant_total_wall_seconds_including_io_and_warmup": 2.397718324999971,
+      "warmup": {
+        "frame_index": 0,
+        "saved_as_measurement": false,
+        "timing_excluded_from_prediction_statistics": true,
+        "wall_seconds_including_transform": 0.07417625699997643
+      }
+    }
+  ]
+}

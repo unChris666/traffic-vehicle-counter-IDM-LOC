@@ -1,0 +1,34 @@
+{
+  "claim_type": "ENGINEERING_RECOMMENDATION_FROM_COMPLETED_SCOPED_EXPERIMENT_NOT_PRODUCTION_VALIDATION",
+  "phase_status": "COMPLETED_SCOPED_PHASE7_EXPERIMENT_WITH_EXPLICIT_LIMITATIONS",
+  "recommended_next_research_baseline": "raw",
+  "production_enhancement_selected": null,
+  "candidate_not_promoted": "gamma_070",
+  "gamma": 0.7,
+  "holdout_outcomes_used_to_retune": false,
+  "frozen_development_selection_path": "docs/evidence/phase_7/selection/TOR3-MALAM_DEV_shortlist_v1.json",
+  "final_comparison_path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/final_physical_passage_comparison.json",
+  "final_comparison_sha256": "07d6745582e5377730a6be7d5c4b2b995d0b6a35eeecccb6e2701877538a90d3",
+  "actual_temporal_report_sha256": "1bbb6bd1c392f24eb9fd74e8462aeb2e88385a798c4b6876f2585c59c99f3304",
+  "independent_temporal_audit_sha256": "769091f67a7cdc07a1d10002fc713d1eaeeac981b289b1240401cb9a6c9880d1",
+  "loop_wall_seconds": {
+    "raw": 673.548502413,
+    "gamma_070": 1205.2089724829998
+  },
+  "findings": [
+    "Gamma opens shadow/midtone pixels in actual review, while blur/glare and category ambiguity remain.",
+    "Both reviewed branches accept the same six motorcycle and one truck passages; one category-conflicting vehicle remains pending.",
+    "Gamma sole automatic acceptance uses valid measured vehicle BC but depends on a shorter vehicle episode after bicycle labels; a general improvement is not established.",
+    "Both holdout branches originally retain two machine pending cases; positive manual reviews resolve them without tuning.",
+    "Instrumented sequential gamma loop takes about1.79 times raw; no production throughput or monetary cost is claimed."
+  ],
+  "open_decisions": [
+    "Separate investigation of whole-episode category unanimity and global relation rejection outside the passage-local support window.",
+    "Final suitable vehicle ReID model/configuration, tested independently.",
+    "Jitter/duplicate controls, genuine-return automation and unresolved product taxonomy.",
+    "Missed physical passages and full-video completeness require wider audit; eight candidate cases are not ground truth.",
+    "Confirm exact eight-video inventory/metadata and review geometry per video before an authorized Phase8 task."
+  ],
+  "phase8_started": false,
+  "formal_ground_truth": false
+}

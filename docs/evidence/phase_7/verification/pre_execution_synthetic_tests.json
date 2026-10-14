@@ -1,0 +1,254 @@
+{
+  "claim_type": "ACTUALLY_EXECUTED_SYNTHETIC_SOFTWARE_CONTRACT_TESTS",
+  "scope": "Phase 7 transformations, controlled DEV sampling and detector-output gates; no actual-video/model results",
+  "fixture_controls_are_product_defaults": false,
+  "successful": true,
+  "tests_run": 60,
+  "tests_passed": 60,
+  "failures": [],
+  "errors": [],
+  "skipped": [],
+  "tests": [
+    {
+      "id": "__main__.ConfigurationTests.test_boolean_or_different_numeric_type_cannot_masquerade_as_frozen_setting",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.ConfigurationTests.test_changed_detector_settings_rejected_before_model_execution",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.ConfigurationTests.test_detector_asset_package_and_explicit_device_are_not_silently_replaced",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.ConfigurationTests.test_explicit_frozen_detection_control_is_accepted_without_mutation",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.ConfigurationTests.test_invalid_input_hash_and_nonpositive_or_oversized_budget_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.ConfigurationTests.test_missing_detector_in_detection_mode_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.ConfigurationTests.test_unknown_screen_mode_cannot_silently_run_later_phase",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.DetectionRowsAndStageTests.test_confidence_must_be_finite_probability",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.DetectionRowsAndStageTests.test_invalid_bbox_nan_outside_or_reversed_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.DetectionRowsAndStageTests.test_no_geometry_or_counting_from_detection_even_claimed_approval",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.DetectionRowsAndStageTests.test_only_implemented_screen_stages_pass_stage_gate",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.DetectionRowsAndStageTests.test_unknown_class_or_inconsistent_label_not_silently_mapped",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.DetectionRowsAndStageTests.test_valid_native_bbox_and_raw_class_mapping",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.ExplicitGpuGuardTests.test_explicit_cuda_probe_records_selected_device_without_inference",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.ExplicitGpuGuardTests.test_unavailable_selected_cuda_never_loads_weights_or_constructs_yolo",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_development_indices_returned_only_not_holdout",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_duplicate_unsorted_or_boolean_frame_indices_are_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_inclusive_touching_segment_boundary_is_leakage",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_overlap_is_rejected_even_without_overlapping_sampled_indices",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_plan_does_not_mutate_input",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_plan_identity_hash_or_native_dimensions_mismatch_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_samples_outside_own_segment_are_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_sampling_indices_are_original_native_indices_not_rebased",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_segment_bounds_require_valid_native_integer_frames",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SamplingPlanTests.test_within_split_overlap_is_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_all_variants_use_identical_dev_indices_not_holdout_and_record_warmup_separately",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_callback_cannot_change_raw_class_mapping_between_variants",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_callback_receives_documented_transform_of_same_native_source",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_callback_speed_descriptor_must_be_finite_not_fabricated_nan",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_decoder_keeps_native_frame_numbers_and_pixels",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_exact_helper_source_is_retained_with_bound_hash",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_fixture_results_cannot_claim_actual_inference_temporal_pipeline_or_counting",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_invalid_callback_bbox_fails_without_generating_count_evidence",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_model_setup_failure_is_retained_as_failure_never_cpu_fallback",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_photometric_mode_cannot_hide_detector_execution",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_retained_manifest_hashes_match_actual_written_artifacts",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_sample_budget_guard_fails_before_decode_or_any_detector_call",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_sampling_hash_mismatch_fails_before_decode_or_any_detector_call",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_serialized_native_records_have_input_provenance_and_no_count_authorization",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.SyntheticScreenTests.test_video_hash_mismatch_fails_before_decode_or_any_detector_call",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_contrast_identity_is_not_scene_dependent",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_contrast_uses_explicit_fixed_pivot",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_every_transform_keeps_input_immutable_shape_uint8_and_native_channels",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_exposure_clips_without_uint8_overflow",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_exposure_identity_preserves_bgr_order",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_gamma_identity_and_black_white_endpoints",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_gamma_is_monotonic_and_subunit_exponent_brightens_midtones",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_gamma_matches_documented_exponent_and_rounding",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_raw_is_bit_identical_separate_copy",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_transforms_reject_invalid_frame_dtype_and_shape",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_unsharp_matches_float_reference_with_reflect_border",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_unsharp_no_wrapping_at_negative_or_saturated_edges",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.TransformTests.test_unsharp_uniform_frame_is_unchanged",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.VariantValidationTests.test_missing_parameter_is_not_silently_defaulted",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.VariantValidationTests.test_nan_infinity_boolean_and_nonpositive_parameters_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.VariantValidationTests.test_one_explicit_raw_and_distinct_single_operation_variants_are_valid",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.VariantValidationTests.test_pivot_is_explicit_finite_in_intensity_range",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.VariantValidationTests.test_raw_required_and_duplicate_names_rejected",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.VariantValidationTests.test_sharpen_requires_positive_sigma_and_nonnegative_amount",
+      "status": "passed"
+    },
+    {
+      "id": "__main__.VariantValidationTests.test_unsupported_combination_and_hidden_operation_rejected",
+      "status": "passed"
+    }
+  ],
+  "output": "test_boolean_or_different_numeric_type_cannot_masquerade_as_frozen_setting (__main__.ConfigurationTests.test_boolean_or_different_numeric_type_cannot_masquerade_as_frozen_setting) ... ok\ntest_changed_detector_settings_rejected_before_model_execution (__main__.ConfigurationTests.test_changed_detector_settings_rejected_before_model_execution) ... ok\ntest_detector_asset_package_and_explicit_device_are_not_silently_replaced (__main__.ConfigurationTests.test_detector_asset_package_and_explicit_device_are_not_silently_replaced) ... ok\ntest_explicit_frozen_detection_control_is_accepted_without_mutation (__main__.ConfigurationTests.test_explicit_frozen_detection_control_is_accepted_without_mutation) ... ok\ntest_invalid_input_hash_and_nonpositive_or_oversized_budget_rejected (__main__.ConfigurationTests.test_invalid_input_hash_and_nonpositive_or_oversized_budget_rejected) ... ok\ntest_missing_detector_in_detection_mode_is_rejected (__main__.ConfigurationTests.test_missing_detector_in_detection_mode_is_rejected) ... ok\ntest_unknown_screen_mode_cannot_silently_run_later_phase (__main__.ConfigurationTests.test_unknown_screen_mode_cannot_silently_run_later_phase) ... ok\ntest_confidence_must_be_finite_probability (__main__.DetectionRowsAndStageTests.test_confidence_must_be_finite_probability) ... ok\ntest_invalid_bbox_nan_outside_or_reversed_rejected (__main__.DetectionRowsAndStageTests.test_invalid_bbox_nan_outside_or_reversed_rejected) ... ok\ntest_no_geometry_or_counting_from_detection_even_claimed_approval (__main__.DetectionRowsAndStageTests.test_no_geometry_or_counting_from_detection_even_claimed_approval) ... ok\ntest_only_implemented_screen_stages_pass_stage_gate (__main__.DetectionRowsAndStageTests.test_only_implemented_screen_stages_pass_stage_gate) ... ok\ntest_unknown_class_or_inconsistent_label_not_silently_mapped (__main__.DetectionRowsAndStageTests.test_unknown_class_or_inconsistent_label_not_silently_mapped) ... ok\ntest_valid_native_bbox_and_raw_class_mapping (__main__.DetectionRowsAndStageTests.test_valid_native_bbox_and_raw_class_mapping) ... ok\ntest_explicit_cuda_probe_records_selected_device_without_inference (__main__.ExplicitGpuGuardTests.test_explicit_cuda_probe_records_selected_device_without_inference) ... ok\ntest_unavailable_selected_cuda_never_loads_weights_or_constructs_yolo (__main__.ExplicitGpuGuardTests.test_unavailable_selected_cuda_never_loads_weights_or_constructs_yolo) ... ok\ntest_development_indices_returned_only_not_holdout (__main__.SamplingPlanTests.test_development_indices_returned_only_not_holdout) ... ok\ntest_duplicate_unsorted_or_boolean_frame_indices_are_rejected (__main__.SamplingPlanTests.test_duplicate_unsorted_or_boolean_frame_indices_are_rejected) ... ok\ntest_inclusive_touching_segment_boundary_is_leakage (__main__.SamplingPlanTests.test_inclusive_touching_segment_boundary_is_leakage) ... ok\ntest_overlap_is_rejected_even_without_overlapping_sampled_indices (__main__.SamplingPlanTests.test_overlap_is_rejected_even_without_overlapping_sampled_indices) ... ok\ntest_plan_does_not_mutate_input (__main__.SamplingPlanTests.test_plan_does_not_mutate_input) ... ok\ntest_plan_identity_hash_or_native_dimensions_mismatch_is_rejected (__main__.SamplingPlanTests.test_plan_identity_hash_or_native_dimensions_mismatch_is_rejected) ... ok\ntest_samples_outside_own_segment_are_rejected (__main__.SamplingPlanTests.test_samples_outside_own_segment_are_rejected) ... ok\ntest_sampling_indices_are_original_native_indices_not_rebased (__main__.SamplingPlanTests.test_sampling_indices_are_original_native_indices_not_rebased) ... ok\ntest_segment_bounds_require_valid_native_integer_frames (__main__.SamplingPlanTests.test_segment_bounds_require_valid_native_integer_frames) ... ok\ntest_within_split_overlap_is_rejected (__main__.SamplingPlanTests.test_within_split_overlap_is_rejected) ... ok\ntest_all_variants_use_identical_dev_indices_not_holdout_and_record_warmup_separately (__main__.SyntheticScreenTests.test_all_variants_use_identical_dev_indices_not_holdout_and_record_warmup_separately) ... ok\ntest_callback_cannot_change_raw_class_mapping_between_variants (__main__.SyntheticScreenTests.test_callback_cannot_change_raw_class_mapping_between_variants) ... ok\ntest_callback_receives_documented_transform_of_same_native_source (__main__.SyntheticScreenTests.test_callback_receives_documented_transform_of_same_native_source) ... ok\ntest_callback_speed_descriptor_must_be_finite_not_fabricated_nan (__main__.SyntheticScreenTests.test_callback_speed_descriptor_must_be_finite_not_fabricated_nan) ... ok\ntest_decoder_keeps_native_frame_numbers_and_pixels (__main__.SyntheticScreenTests.test_decoder_keeps_native_frame_numbers_and_pixels) ... ok\ntest_exact_helper_source_is_retained_with_bound_hash (__main__.SyntheticScreenTests.test_exact_helper_source_is_retained_with_bound_hash) ... ok\ntest_fixture_results_cannot_claim_actual_inference_temporal_pipeline_or_counting (__main__.SyntheticScreenTests.test_fixture_results_cannot_claim_actual_inference_temporal_pipeline_or_counting) ... ok\ntest_invalid_callback_bbox_fails_without_generating_count_evidence (__main__.SyntheticScreenTests.test_invalid_callback_bbox_fails_without_generating_count_evidence) ... ok\ntest_model_setup_failure_is_retained_as_failure_never_cpu_fallback (__main__.SyntheticScreenTests.test_model_setup_failure_is_retained_as_failure_never_cpu_fallback) ... ok\ntest_photometric_mode_cannot_hide_detector_execution (__main__.SyntheticScreenTests.test_photometric_mode_cannot_hide_detector_execution) ... ok\ntest_retained_manifest_hashes_match_actual_written_artifacts (__main__.SyntheticScreenTests.test_retained_manifest_hashes_match_actual_written_artifacts) ... ok\ntest_sample_budget_guard_fails_before_decode_or_any_detector_call (__main__.SyntheticScreenTests.test_sample_budget_guard_fails_before_decode_or_any_detector_call) ... ok\ntest_sampling_hash_mismatch_fails_before_decode_or_any_detector_call (__main__.SyntheticScreenTests.test_sampling_hash_mismatch_fails_before_decode_or_any_detector_call) ... ok\ntest_serialized_native_records_have_input_provenance_and_no_count_authorization (__main__.SyntheticScreenTests.test_serialized_native_records_have_input_provenance_and_no_count_authorization) ... ok\ntest_video_hash_mismatch_fails_before_decode_or_any_detector_call (__main__.SyntheticScreenTests.test_video_hash_mismatch_fails_before_decode_or_any_detector_call) ... ok\ntest_contrast_identity_is_not_scene_dependent (__main__.TransformTests.test_contrast_identity_is_not_scene_dependent) ... ok\ntest_contrast_uses_explicit_fixed_pivot (__main__.TransformTests.test_contrast_uses_explicit_fixed_pivot) ... ok\ntest_every_transform_keeps_input_immutable_shape_uint8_and_native_channels (__main__.TransformTests.test_every_transform_keeps_input_immutable_shape_uint8_and_native_channels) ... ok\ntest_exposure_clips_without_uint8_overflow (__main__.TransformTests.test_exposure_clips_without_uint8_overflow) ... ok\ntest_exposure_identity_preserves_bgr_order (__main__.TransformTests.test_exposure_identity_preserves_bgr_order) ... ok\ntest_gamma_identity_and_black_white_endpoints (__main__.TransformTests.test_gamma_identity_and_black_white_endpoints) ... ok\ntest_gamma_is_monotonic_and_subunit_exponent_brightens_midtones (__main__.TransformTests.test_gamma_is_monotonic_and_subunit_exponent_brightens_midtones) ... ok\ntest_gamma_matches_documented_exponent_and_rounding (__main__.TransformTests.test_gamma_matches_documented_exponent_and_rounding) ... ok\ntest_raw_is_bit_identical_separate_copy (__main__.TransformTests.test_raw_is_bit_identical_separate_copy) ... ok\ntest_transforms_reject_invalid_frame_dtype_and_shape (__main__.TransformTests.test_transforms_reject_invalid_frame_dtype_and_shape) ... ok\ntest_unsharp_matches_float_reference_with_reflect_border (__main__.TransformTests.test_unsharp_matches_float_reference_with_reflect_border) ... ok\ntest_unsharp_no_wrapping_at_negative_or_saturated_edges (__main__.TransformTests.test_unsharp_no_wrapping_at_negative_or_saturated_edges) ... ok\ntest_unsharp_uniform_frame_is_unchanged (__main__.TransformTests.test_unsharp_uniform_frame_is_unchanged) ... ok\ntest_missing_parameter_is_not_silently_defaulted (__main__.VariantValidationTests.test_missing_parameter_is_not_silently_defaulted) ... ok\ntest_nan_infinity_boolean_and_nonpositive_parameters_rejected (__main__.VariantValidationTests.test_nan_infinity_boolean_and_nonpositive_parameters_rejected) ... ok\ntest_one_explicit_raw_and_distinct_single_operation_variants_are_valid (__main__.VariantValidationTests.test_one_explicit_raw_and_distinct_single_operation_variants_are_valid) ... ok\ntest_pivot_is_explicit_finite_in_intensity_range (__main__.VariantValidationTests.test_pivot_is_explicit_finite_in_intensity_range) ... ok\ntest_raw_required_and_duplicate_names_rejected (__main__.VariantValidationTests.test_raw_required_and_duplicate_names_rejected) ... ok\ntest_sharpen_requires_positive_sigma_and_nonnegative_amount (__main__.VariantValidationTests.test_sharpen_requires_positive_sigma_and_nonnegative_amount) ... ok\ntest_unsupported_combination_and_hidden_operation_rejected (__main__.VariantValidationTests.test_unsupported_combination_and_hidden_operation_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 60 tests in 0.121s\n\nOK\n"
+}

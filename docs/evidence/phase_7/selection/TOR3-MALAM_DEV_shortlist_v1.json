@@ -1,0 +1,23 @@
+{
+  "status": "FROZEN_DEV_SHORTLIST",
+  "selection_basis": "DEVELOPMENT_ONLY",
+  "holdout_used": false,
+  "selected_variant": {
+    "name": "gamma_070",
+    "method": "gamma",
+    "gamma": 0.7
+  },
+  "source_detection_screen_run_id": "20261014T060849_366767Z",
+  "source_detection_screen_report_sha256": "59b5e8b1cae6d0a159a6062a815d5ace0dfcfc6319dd0312902cd0deb9019c2d",
+  "source_visual_review_path": "docs/evidence/phase_7/screening/20261014T060849_366767Z/visual_review/visual_review.json",
+  "source_visual_review_sha256": "7246fe63d1d7649032af3ca66f9fc8b27ee4d87a2322069180a1789f14cc247e",
+  "claim_type": "ENGINEERING_CANDIDATE_FOR_TEMPORAL_TEST_NOT_ACCEPTED_PRODUCTION_ENHANCEMENT",
+  "reason": "DEV review shows lifted shadow/midtone structure; gamma remains a probe because observed motorcycle14 loss and added car-like box2277 require temporal and holdout checks. No accepted-count or confidence-only selection.",
+  "recorded_regressions": [
+    "frame14 raw motorcycle detection absent in gamma",
+    "frame2277 added car-like bbox on close motorcycle; physical category unresolved",
+    "frame2337 small background motorcycle detection lost",
+    "frame7072 overlapping truck boxes persist"
+  ],
+  "selection_parameters_tuning_after_holdout_allowed": false
+}

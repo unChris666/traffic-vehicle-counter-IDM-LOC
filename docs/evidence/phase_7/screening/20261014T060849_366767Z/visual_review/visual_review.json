@@ -1,0 +1,3395 @@
+{
+  "review_version": "phase7_dev_visual_review_v1",
+  "source_run_id": "20261014T060849_366767Z",
+  "reviewer": "AI_ASSISTED_CODEX_ACTUALLY_VIEWED_RETAINED_IMAGES",
+  "scope": "15 DEV frames x five variants; all30 transformed/annotated native road/glare sheets viewed; six full native raw frames additionally viewed",
+  "source_video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+  "source_report_sha256": "59b5e8b1cae6d0a159a6062a815d5ace0dfcfc6319dd0312902cd0deb9019c2d",
+  "contact_index_sha256": "43bd32308a23251e5b6c6d8ec07f0f8b3131d1cbbdbc9f5a50657fbfd4a6fa71",
+  "native_crop_xyxy": [
+    0,
+    360,
+    1280,
+    700
+  ],
+  "crop_spatial_mapping": "sheet_xy translated to original native xy; no scaling/crop change between variants",
+  "full_native_raw_frames_additionally_opened": [
+    14,
+    2277,
+    2397,
+    7072,
+    7192,
+    7252
+  ],
+  "all_generated_sheets_actually_opened": true,
+  "holdout_enhancement_reviewed": false,
+  "new_model_or_tracker_or_encoder_execution": false,
+  "vehicle_counts_or_quality_metrics_reported": false,
+  "shortlist_proposal": {
+    "claim_type": "PROPOSAL_FOR_CONTROLLED_TEMPORAL_EXPERIMENT_NOT_PRODUCTION_SELECTION",
+    "variant": "gamma_070",
+    "parameters": {
+      "gamma": 0.7
+    },
+    "formula": "output = round_clip_uint8(255 * (input / 255) ** gamma)",
+    "reason": "Gamma visibly lifts shadow/midtone road and truck underbody in DEV samples (0/14/7072/7132/7311), with less highlight expansion than the tested exposure gain. This provides a specific visibility hypothesis worth testing on continuous tracks; it does not win on sparse detection counts.",
+    "raw_comparator_mandatory": true,
+    "material_regressions_and_unknowns": [
+      "Frame14 visible motor loses motorcycle bbox compared with raw.",
+      "Frame2277 added car bbox overlaps visible near-motor front; category/component identity unresolved.",
+      "Frame2337 small background motorcycle bbox absent; physical identity of tiny bbox unresolved.",
+      "Frame7072 duplicate overlapping truck bboxes persist.",
+      "Frame7252 tiny two-wheeler bicycle/motorcycle disagreement remains unresolved.",
+      "Blur and burned-in metadata occlusion remain; gamma makes dark texture/noise more visible."
+    ],
+    "others_deferred": [
+      {
+        "variant": "exposure_125",
+        "reason": "Stronger observed highlight expansion; raw car at7311 no longer emitted; no temporal benefit established."
+      },
+      {
+        "variant": "contrast_125",
+        "reason": "Visible shadow detail is crushed in multiple road samples; vehicle motorcycle bbox absent at14/29; single truck bbox at7072 is not proof of downstream benefit."
+      },
+      {
+        "variant": "unsharp_s1_a05",
+        "reason": "Does not brighten shadow materially or remove motion blur; extra car2277 and class disagreement2397 remain; temporal benefit unknown."
+      }
+    ],
+    "required_next_evidence": [
+      "Continuous raw vs gamma DEV replay with identical detector/tracker/ReID/counting controls and native geometry.",
+      "Compare same physical passages, measured vehicle BC crossing source, duplicates/merges, categories, missing support and regressions.",
+      "Freeze candidate before any hold-out enhancement/inference; no gamma production acceptance from this screening."
+    ]
+  },
+  "per_frame_reviews": [
+    {
+      "frame_index": 0,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000000000.png",
+      "raw_source_sha256": "bac61ff5623e40e14db8ee7eca10745394410745b370ee7247f68f611861ed16",
+      "visual_observation_id": "dev_visual_f0",
+      "photometric_observation": "Jalan bagian depan relatif kosong pada crop; lampu jauh dan area rumah kanan tetap terang. Gamma memperlihatkan tekstur aspal dan tepi gelap lebih jelas, sedangkan contrast menghitamkan shadow.",
+      "detection_observation": "Kelima varian hanya mengeluarkan person di area rumah kanan. Identitas fisik objek kecil tersebut belum dipastikan. Tidak ada dasar untuk menyimpulkan seluruh frame tidak mengandung kendaraan.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                882.2314453125,
+                441.5125732421875,
+                910.1748046875,
+                492.62384033203125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.5022339820861816,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0034353298611111112,
+            "fraction_grayscale_zero": 0.00019639756944444444,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              16.0,
+              240.0
+            ],
+            "mean_grayscale_8bit": 40.397962239583336
+          },
+          "transformed_sha256": "bac61ff5623e40e14db8ee7eca10745394410745b370ee7247f68f611861ed16",
+          "annotated_sha256": "22edc39f5a4cbfa3354f031602245cb707ff258e8d157e266324a39c7e942457"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                882.8494873046875,
+                441.68634033203125,
+                910.0892333984375,
+                493.30755615234375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.43016648292541504,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0036241319444444446,
+            "fraction_grayscale_zero": 0.00014214409722222222,
+            "grayscale_percentiles_1_50_99": [
+              14.0,
+              37.0,
+              244.0
+            ],
+            "mean_grayscale_8bit": 61.69721137152778
+          },
+          "transformed_sha256": "46422e7f4c7b13f9a5c5c3a5e3045247ad014e37faefa4451f12efbff913c839",
+          "annotated_sha256": "550689cb04802f5d12b9f7ac3b8deba2d6d69595001a8551c5c46f8ebdadea47"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                882.234130859375,
+                441.6666259765625,
+                909.927001953125,
+                492.719970703125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.5290034413337708,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.018905164930555555,
+            "fraction_grayscale_zero": 0.00016059027777777778,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              20.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 49.64587673611111
+          },
+          "transformed_sha256": "5e3e0e1ce68bae972fe33591e6cbcda0a1387f6eb4f5159e1c394d69dad74f6d",
+          "annotated_sha256": "2f88c0b590d0dc62c492c347da9ff04465dff837bbeed00eadd0ff2d756db749"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                882.042724609375,
+                441.4244384765625,
+                910.3455810546875,
+                491.11151123046875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.5305212736129761,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.012083333333333333,
+            "fraction_grayscale_zero": 0.5583962673611111,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 29.200270182291668
+          },
+          "transformed_sha256": "cede8480242ab16ad72f8a499bdd27ef300b068d73dbc766e723bc48e6ac042f",
+          "annotated_sha256": "6a1ee287bfa10ee4ede23eaa337ab4414fd7043c9877c98652f859ddaee70d9c"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                882.322265625,
+                441.5587158203125,
+                910.313232421875,
+                493.10076904296875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4684825837612152,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009240451388888888,
+            "fraction_grayscale_zero": 0.0019900173611111112,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              16.0,
+              252.0
+            ],
+            "mean_grayscale_8bit": 40.22080729166667
+          },
+          "transformed_sha256": "c0a8624c26bf64efad72b1ca5ec76daa922757ad49b0a70462bbb229ffc2605f",
+          "annotated_sha256": "1a5393aa2c673eea7f8357918bcececbb9016d2faa1a75b283fc3d7a5a15e22d"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000000000_transformed_comparison.png",
+          "sha256": "9a5941e18dd7f88f51023dd3eec017c6f3aa6c97c0a64d35d62853951114c7b5",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000000000_annotated_comparison.png",
+          "sha256": "e4cf307e4352708180760f65eb100164d4e61ee26a3b7fcc5ab6513eb00e8b1f",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 7,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000000007.png",
+      "raw_source_sha256": "fac8ba77a047cdbc12066813e783eca45c3c2f6ec7895abd8ffb1911cddb8e23",
+      "visual_observation_id": "dev_visual_f7",
+      "photometric_observation": "Motor/rider memasuki sisi kanan sangat dekat, terpotong frame dan sebagian tertutup teks; blur gerak tampak pada semua varian. Gamma membuka bagian gelap, tetapi tidak memulihkan detail yang sudah kabur.",
+      "detection_observation": "Kelima varian mengeluarkan person besar; tidak ada bbox motorcycle. Gamma/exposure/unsharp person bbox mencapai tepi kanan. Ini kasus masuk-frame dan komponen yang perlu replay kontinu.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                795.3199462890625,
+                217.8955078125,
+                1204.8834228515625,
+                718.3407592773438
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3180675804615021,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0032649739583333333,
+            "fraction_grayscale_zero": 0.0005164930555555555,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              17.0,
+              238.0
+            ],
+            "mean_grayscale_8bit": 38.96115668402778
+          },
+          "transformed_sha256": "fac8ba77a047cdbc12066813e783eca45c3c2f6ec7895abd8ffb1911cddb8e23",
+          "annotated_sha256": "b2cf0de86e487cf5d34d461a5e48cd0db262b61bf5db38fa7a0ac940696b0ed3"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                792.707763671875,
+                212.089111328125,
+                1278.450927734375,
+                720.0
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4866350293159485,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003372395833333333,
+            "fraction_grayscale_zero": 0.00043294270833333336,
+            "grayscale_percentiles_1_50_99": [
+              13.0,
+              38.0,
+              243.0
+            ],
+            "mean_grayscale_8bit": 60.10417100694445
+          },
+          "transformed_sha256": "6286d1cdf39d367708ab47393d8c1f9a0850c871a7bd1baeea7a03221ac518e3",
+          "annotated_sha256": "2d996b12a133593ad91f169b860902aaa5f1a53f591779fd1c8f91b075e91e6b"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                792.9718627929688,
+                214.9854736328125,
+                1278.347900390625,
+                720.0
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3531917929649353,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.017137586805555556,
+            "fraction_grayscale_zero": 0.0005013020833333333,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              22.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 47.86929144965278
+          },
+          "transformed_sha256": "2ed587aaba68c594592a013c5834e1555bdc61a39d19b1c306f2aea9e9a3c5dc",
+          "annotated_sha256": "2cf554ab1b9fadee40e376c4c8be19cfe5b09d305876303aca01872107741813"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                785.97314453125,
+                219.2075958251953,
+                1149.2867431640625,
+                700.1117553710938
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.620485782623291,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.011486545138888889,
+            "fraction_grayscale_zero": 0.5537185329861111,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 27.663377821180557
+          },
+          "transformed_sha256": "19a1cf57d6660e57ff495b5e7c1ead97bb74e70890fe5b0a427c8332c57eeb33",
+          "annotated_sha256": "67963e03fe2e7361d0b2fa87ac749cc82b7a8e0637b67d655f20f8e327583bf3"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                798.1105346679688,
+                216.7606201171875,
+                1278.220458984375,
+                720.0
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.2892571687698364,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009240451388888888,
+            "fraction_grayscale_zero": 0.004593098958333333,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              17.0,
+              251.0
+            ],
+            "mean_grayscale_8bit": 38.80978949652778
+          },
+          "transformed_sha256": "53b174fee3aedd9e57ec5bd10e9d4f3cb3c484726067ca2544d916c213c52d8d",
+          "annotated_sha256": "11dd94d7f23fdbf70b931385ed1eee32247091e9d4896b4f790f73d7ab08b963"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000000007_transformed_comparison.png",
+          "sha256": "dc62b179461e292f310f074fc97d3ec3b334406857c38d7a7aad5e779087b4a3",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000000007_annotated_comparison.png",
+          "sha256": "a6b38b573b164f84e54f547015cde6cbe7f4d1c143a8197efec28c430a3981a0",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 14,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000000014.png",
+      "raw_source_sha256": "df4ca9a21717703a515fc3c0f2728e4d2f0ecd4a815b1cf006d6da7c7bf00939",
+      "visual_observation_id": "dev_visual_f14",
+      "photometric_observation": "Satu motor/rider dekat terlihat bergerak ke kiri dengan blur kuat; body motor masih terlihat pada gambar raw dan gamma. Gamma mencerahkan aspal/body, contrast menggelapkan area bawah.",
+      "detection_observation": "Raw mempunyai motorcycle bbox confidence0.402; gamma dan contrast tidak mempunyai bbox motorcycle. Exposure mempertahankan bbox lebih kecil0.259, unsharp mempertahankan0.343. Kehilangan bbox kendaraan pada gamma adalah regresi per-frame yang konkret.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                558.5906372070312,
+                262.42877197265625,
+                754.2214965820312,
+                626.8065795898438
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.869486391544342,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                557.3563232421875,
+                457.1461181640625,
+                811.087890625,
+                688.4832763671875
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.40152281522750854,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003403862847222222,
+            "fraction_grayscale_zero": 0.00025390625,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              19.0,
+              240.0
+            ],
+            "mean_grayscale_8bit": 41.167186414930555
+          },
+          "transformed_sha256": "df4ca9a21717703a515fc3c0f2728e4d2f0ecd4a815b1cf006d6da7c7bf00939",
+          "annotated_sha256": "e78f786abfae0da40bbaae1112b61698f77c1a61d4272c283abb7e8d5359845e"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                558.5910034179688,
+                269.35125732421875,
+                755.2108764648438,
+                628.5589599609375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8723095059394836,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0036447482638888888,
+            "fraction_grayscale_zero": 0.00021918402777777778,
+            "grayscale_percentiles_1_50_99": [
+              17.0,
+              41.0,
+              245.0
+            ],
+            "mean_grayscale_8bit": 63.50230360243056
+          },
+          "transformed_sha256": "294dad0e59c8d7fbba62e83d4d3c6ad0ea994d88c69e11939de677a2216ddd23",
+          "annotated_sha256": "5b3cc65b99a6edca8b90aa8e8fb8eac5620d3edec7767814d01b910fc272fd9d"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                558.7130126953125,
+                263.5576171875,
+                754.6090087890625,
+                626.9481811523438
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8737314939498901,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                557.570068359375,
+                466.78082275390625,
+                770.2490234375,
+                649.1127319335938
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.25948941707611084,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.018358289930555556,
+            "fraction_grayscale_zero": 0.0002463107638888889,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              23.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 50.65415256076389
+          },
+          "transformed_sha256": "04fd4c5840af42904c350922950e461ebdf369cf98fce784105f7f8f5b47ef84",
+          "annotated_sha256": "106d0c383ff8b3ed6d3e79e4ab327f75d1049ed1eb060d3976cf2b25bd258af1"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                556.2186279296875,
+                293.714599609375,
+                750.3560791015625,
+                627.1334838867188
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8466575145721436,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.011858723958333333,
+            "fraction_grayscale_zero": 0.5485026041666666,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 28.693430989583334
+          },
+          "transformed_sha256": "21710b308d30390cc08be4877f3893a259f90a950329f9209787344cd329ffc5",
+          "annotated_sha256": "238f688b995ab94b08f443847c12933a7664c3eca8538de74f15905197a3c9c8"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                559.56103515625,
+                262.17755126953125,
+                754.086669921875,
+                627.0169677734375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8648329377174377,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                557.666259765625,
+                459.62628173828125,
+                808.443359375,
+                686.7062377929688
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.34263208508491516,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                882.7918090820312,
+                441.09185791015625,
+                911.5814819335938,
+                488.22589111328125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3046629726886749,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009226345486111112,
+            "fraction_grayscale_zero": 0.0032356770833333335,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              18.0,
+              252.0
+            ],
+            "mean_grayscale_8bit": 40.992405598958335
+          },
+          "transformed_sha256": "3ffbc4ce8a886873a16519cc190bf655f76941cd3ad60fc3dfd4d75eac2385d6",
+          "annotated_sha256": "4ee87090537219d7f7f61400676e8839ca35ed7a46771047a693cbc3a926a087"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000000014_transformed_comparison.png",
+          "sha256": "48920be9f2a45b49bcd11278621b336f48e00c1c150fe60e057fb2ed1c08ab07",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000000014_annotated_comparison.png",
+          "sha256": "c2e8125fcc6d0aa9f864443738b3a8975850233c3cf899f53aafaafaeae2c012",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 29,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000000029.png",
+      "raw_source_sha256": "4cf1676aa807136f109c11fd24dbe722d4898fbafbc57a0c557354e6ba204de9",
+      "visual_observation_id": "dev_visual_f29",
+      "photometric_observation": "Motor/rider kini lebih jauh ke kiri, body terlihat kecil dan sebagian gelap. Gamma mengangkat aspal/body shadow tanpa menghilangkan blur.",
+      "detection_observation": "Raw/gamma/exposure/unsharp mengeluarkan person+motorcycle di area motor tersebut; contrast mengeluarkan person tanpa motorcycle. Bbox motorcycle gamma lebih sempit daripada raw: BC/line-crossing tidak boleh dianggap otomatis ekuivalen.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                345.4574279785156,
+                327.9923095703125,
+                458.8141174316406,
+                549.50390625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.7798244953155518,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                383.49530029296875,
+                449.03948974609375,
+                481.65740966796875,
+                572.9745483398438
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.49622732400894165,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                881.9996337890625,
+                441.07501220703125,
+                910.6705322265625,
+                490.68023681640625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4769531488418579,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0038096788194444445,
+            "fraction_grayscale_zero": 0.00018771701388888888,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              16.0,
+              243.0
+            ],
+            "mean_grayscale_8bit": 35.79475260416667
+          },
+          "transformed_sha256": "4cf1676aa807136f109c11fd24dbe722d4898fbafbc57a0c557354e6ba204de9",
+          "annotated_sha256": "2d2f0c7edcf94572c244eefe433094934762ffbb519da52c39ad3b9534c99829"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                345.8115234375,
+                328.681640625,
+                469.103271484375,
+                547.961669921875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.7664523124694824,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                382.862548828125,
+                449.8813781738281,
+                462.4400634765625,
+                572.5166015625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.5503985285758972,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                882.43115234375,
+                441.2493896484375,
+                910.01220703125,
+                489.81622314453125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4301891624927521,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.004075520833333333,
+            "fraction_grayscale_zero": 0.00016710069444444444,
+            "grayscale_percentiles_1_50_99": [
+              15.0,
+              36.0,
+              246.0
+            ],
+            "mean_grayscale_8bit": 56.584729817708336
+          },
+          "transformed_sha256": "617649f94e76d413a545ceff79e890cf3f409c0efec18cd8b2ded210b42a9157",
+          "annotated_sha256": "f92ed75eaf1776173e97dee8e66ea81f96ff60ac4d51e57ef09129841856621b"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                345.514892578125,
+                327.0859375,
+                460.0963134765625,
+                548.989990234375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.7548062801361084,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                381.96026611328125,
+                450.5132141113281,
+                463.18585205078125,
+                572.845947265625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.5709244012832642,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                882.1903076171875,
+                441.26910400390625,
+                910.3345947265625,
+                490.61041259765625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4339657425880432,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.018397352430555555,
+            "fraction_grayscale_zero": 0.00018663194444444445,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              20.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 43.88068359375
+          },
+          "transformed_sha256": "c8676c0a74055fd7154c96874252e2662552288fde83b83f4d8b1a22ff3b8b65",
+          "annotated_sha256": "bb30af9673fe8742cb3cef97c5208d86ef5121299b47e14d1e1f9ded344942ad"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                345.3855895996094,
+                347.183837890625,
+                456.2217712402344,
+                552.6619873046875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8102582097053528,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                881.9879760742188,
+                440.95831298828125,
+                911.0421752929688,
+                490.85186767578125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.5419647693634033,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.01263671875,
+            "fraction_grayscale_zero": 0.5840190972222222,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 23.614771050347223
+          },
+          "transformed_sha256": "5cc7b0ca2491b707df2524b1233e3984321bab065d5d39b553f380e61689ec63",
+          "annotated_sha256": "d6aea719568710342ad29cef5a2c80d7690c345e493b1b99990af14f4ec9a39f"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                345.79693603515625,
+                327.846923828125,
+                458.6492919921875,
+                548.8875732421875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8042049407958984,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                382.7156982421875,
+                449.9051513671875,
+                467.6566162109375,
+                572.65087890625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.5436221361160278,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                881.7525634765625,
+                440.9661865234375,
+                910.7415771484375,
+                490.60308837890625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.515184760093689,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009959852430555555,
+            "fraction_grayscale_zero": 0.0035470920138888887,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              15.0,
+              254.0
+            ],
+            "mean_grayscale_8bit": 35.608447265625
+          },
+          "transformed_sha256": "49e50675061b6bb9267c0f4287425755cfea12df23cbb6a9c98fb30e8197d065",
+          "annotated_sha256": "8b1ca2b2298c7a60c7d412f694794b5f419fe4515cd55c5c36e8a36ca305a777"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000000029_transformed_comparison.png",
+          "sha256": "2c8b2a05382dd4e7a3670853ef188a49c5ef0d424fcd8e91ad8c3ee03c261fd4",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000000029_annotated_comparison.png",
+          "sha256": "cf93de5cd286ff187e968a27e16f434e9b8191a4c27328c4ab8ab1eed2a0abfd",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 239,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000000239.png",
+      "raw_source_sha256": "b8393145c249ebe86b492d24b04b105e283278d350f9fe1c2b34a158bbdb1230",
+      "visual_observation_id": "dev_visual_f239",
+      "photometric_observation": "Lampu dan siluet kecil terlihat jauh di kiri; bagian depan jalan gelap. Gamma membuka tekstur jalan; exposure membuat sumber lampu lebih dominan, contrast menghapus detail shadow.",
+      "detection_observation": "Semua varian hanya mengeluarkan person kecil di rumah kanan. Tipe dan jumlah kendaraan di sekitar lampu jauh UNKNOWN pada bukti sparse ini; tidak dilabeli false vehicle atau dihitung.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                884.558349609375,
+                440.7725830078125,
+                912.016357421875,
+                489.560302734375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.32981717586517334,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0032530381944444442,
+            "fraction_grayscale_zero": 1.4105902777777777e-05,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              16.0,
+              244.0
+            ],
+            "mean_grayscale_8bit": 34.37030490451389
+          },
+          "transformed_sha256": "b8393145c249ebe86b492d24b04b105e283278d350f9fe1c2b34a158bbdb1230",
+          "annotated_sha256": "a56e652615910c6c2702f88646f2a0025c8c46a9ac0979fbc9d7dbb44cc841f5"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                885.03173828125,
+                440.89111328125,
+                911.9224853515625,
+                489.5489501953125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.2971477806568146,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0034765625,
+            "fraction_grayscale_zero": 8.680555555555556e-06,
+            "grayscale_percentiles_1_50_99": [
+              15.0,
+              37.0,
+              248.0
+            ],
+            "mean_grayscale_8bit": 55.135708550347225
+          },
+          "transformed_sha256": "301e2736bef36bd5947f7f682cec21a92d770ada36b08f294306379ee1ca1595",
+          "annotated_sha256": "eda2f80d01ace1ad255cdd3cbec0538ad524f2744543ea4e2e0ae37c420478f4"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                884.7813720703125,
+                440.83843994140625,
+                912.16943359375,
+                490.35650634765625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3512725830078125,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.01757595486111111,
+            "fraction_grayscale_zero": 1.4105902777777777e-05,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              20.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 42.10897243923611
+          },
+          "transformed_sha256": "1eb7fbdec62e50f033b14fee01d1d07919497b9671daf03a9e6226dac3d955b2",
+          "annotated_sha256": "a87fc956c0c98bb502b8183410aecf5effe2e08f2ec2469913c30964af373f1d"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                884.745361328125,
+                440.65557861328125,
+                912.172119140625,
+                489.7191162109375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.49184727668762207,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.012612847222222221,
+            "fraction_grayscale_zero": 0.5822840711805556,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 21.767823350694446
+          },
+          "transformed_sha256": "4fbeae2b28ec1995094f6a5043ea7f4fdbb558cb712ef4091914509cde7940e4",
+          "annotated_sha256": "970383162cf88d5ff169aa1379689b7059697dda4d934ce409a6c206e0e6060f"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                884.7305908203125,
+                440.7467041015625,
+                912.0184326171875,
+                489.473876953125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.322109580039978,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.010353732638888889,
+            "fraction_grayscale_zero": 0.003140190972222222,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              15.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 34.15194552951389
+          },
+          "transformed_sha256": "ca249f4d5f24ca3815d2af1f8402590e368d0587163025cb58e5e89040248cfe",
+          "annotated_sha256": "95af333d106c0e98fb3f74adf3a5b72728a408fabcd9c35610899996389fd090"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000000239_transformed_comparison.png",
+          "sha256": "0f6ec31991f33d8b5b80e788b6d15bd0ec0d2df7d387464d2d30f43dcdf2f7f9",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000000239_annotated_comparison.png",
+          "sha256": "3f19a1333952edaed218f174000953257a181fe1276a02f998102dd8c3861570",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 2277,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000002277.png",
+      "raw_source_sha256": "05c74607bdbb21c9c821e5a935d9fd5c1b55c6c789ed63160752116a5266478d",
+      "visual_observation_id": "dev_visual_f2277",
+      "photometric_observation": "Motor/rider sangat dekat di kanan dengan body/area lampu depan tampak kabur, sebagian tertutup teks; sorotan jalan dan flare ungu sangat kuat. Gamma mengangkat body/shadow; exposure memperluas area putih jalan/lampu.",
+      "detection_observation": "Semua varian mengeluarkan person besar. Gamma dan unsharp menambah car bbox sekitar[688,456,763,545], tepat di area depan motor yang terlihat; ini konflik kategori/komponen, bukan mobil baru yang telah terbukti. Tidak ada motorcycle bbox pada kelima varian.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                724.9918212890625,
+                210.95867919921875,
+                1147.187744140625,
+                717.6384887695312
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.5601142644882202,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0016796875,
+            "fraction_grayscale_zero": 2.712673611111111e-05,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              26.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 58.48695529513889
+          },
+          "transformed_sha256": "05c74607bdbb21c9c821e5a935d9fd5c1b55c6c789ed63160752116a5266478d",
+          "annotated_sha256": "96e46e22a8ed124601d56651f35a0914dd08ecd3cee263e0c38f5220f006b421"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                724.2606201171875,
+                209.177490234375,
+                1147.5308837890625,
+                714.7769775390625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4596478343009949,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                688.4710693359375,
+                455.94287109375,
+                762.9654541015625,
+                544.53564453125
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.27126073837280273,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.001708984375,
+            "fraction_grayscale_zero": 7.595486111111111e-06,
+            "grayscale_percentiles_1_50_99": [
+              14.0,
+              51.0,
+              249.0
+            ],
+            "mean_grayscale_8bit": 79.6126443142361
+          },
+          "transformed_sha256": "14448ec801632fa1ea513de053bc2f50ea590909b3e6f4e217f9e2a300b1e23b",
+          "annotated_sha256": "81f3ba4fe5d61f8e751bff116842b9d74d27a9d7edc2d056aa1819fc5f15d32d"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                723.9014892578125,
+                210.58966064453125,
+                1145.8961181640625,
+                715.262451171875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4728061556816101,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.039606119791666665,
+            "fraction_grayscale_zero": 2.4956597222222224e-05,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              32.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 71.6604904513889
+          },
+          "transformed_sha256": "8f6fb40192325bf8ca2d23194b80a710202712e93bb2895a1172f9556f2c986c",
+          "annotated_sha256": "1298f7f89a8d06b585fcf6169ae5571b910f5f813c068fe0c41501d71c111c4d"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                714.616943359375,
+                216.45298767089844,
+                1141.824951171875,
+                714.133544921875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4489273428916931,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.016829427083333334,
+            "fraction_grayscale_zero": 0.44458658854166666,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              4.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 50.66387803819445
+          },
+          "transformed_sha256": "cd7ec0906d86b8573dd964858ce7d6cad6ac04cf54f033150297feb3ad3e7e83",
+          "annotated_sha256": "6150aff9c61fbed2c464b7fdf255f53f287c66b9ac75b4a62b8fb2c11df2ba33"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                721.4248046875,
+                211.2489471435547,
+                1143.613037109375,
+                717.6165161132812
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4662918448448181,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                688.7896728515625,
+                456.0170593261719,
+                760.9185791015625,
+                543.0
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.3581649363040924,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.008359375,
+            "fraction_grayscale_zero": 0.0006987847222222222,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              25.0,
+              253.0
+            ],
+            "mean_grayscale_8bit": 58.346432291666666
+          },
+          "transformed_sha256": "cd55689bf3e4872d4d8742d7fc98a6cd655972fd14277f6dc6a9ce17e72f42e2",
+          "annotated_sha256": "2e179f9fc0916ff840492d43d0ee921baf0ee4d52a375262066d64fb9ffd951f"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000002277_transformed_comparison.png",
+          "sha256": "365bfeb99cfed7d7ff338fb366c07836f0365b7d01b2a8d79a0fc3a0c30620f9",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000002277_annotated_comparison.png",
+          "sha256": "d2e6c34ae1697569f03428f88410a1cc185e4ba73f02c66cf6baa4041e7b3c7a",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 2337,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000002337.png",
+      "raw_source_sha256": "73d6774f0ae92ebc54d6a2cf4cc0c15a9de602af310199c88a9ac46f6eeeeb71",
+      "visual_observation_id": "dev_visual_f2337",
+      "photometric_observation": "Motor mendekat dengan lampu ungu tampak di kiri; area kecil di sekitar[496,430,519,463] dekat rumah tengah tetap gelap. Gamma memperjelas jalan tetapi tidak menyelesaikan glare.",
+      "detection_observation": "Kelima varian mengeluarkan person+motorcycle pada motor kiri. Raw/exposure/unsharp juga mengeluarkan motorcycle kecil di rumah tengah; gamma/contrast tidak. Identitas fisik bbox kecil tersebut UNKNOWN; hilangnya bbox belum otomatis baik/buruk.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                219.65518188476562,
+                394.04931640625,
+                272.21734619140625,
+                470.102294921875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.7398936748504639,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                221.2408447265625,
+                432.99462890625,
+                272.5361328125,
+                491.92864990234375
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.6463614702224731,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                496.04022216796875,
+                430.0229187011719,
+                519.1602783203125,
+                463.1313171386719
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.26022109389305115,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0020887586805555555,
+            "fraction_grayscale_zero": 1.8446180555555556e-05,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              19.0,
+              243.0
+            ],
+            "mean_grayscale_8bit": 40.09176106770833
+          },
+          "transformed_sha256": "73d6774f0ae92ebc54d6a2cf4cc0c15a9de602af310199c88a9ac46f6eeeeb71",
+          "annotated_sha256": "274b68153a026c951c6577c5b885c46e18bf36752a70988e9089e57db03d7ddd"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                219.76455688476562,
+                393.5302734375,
+                272.2972717285156,
+                470.4786376953125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.7383171319961548,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                223.25265502929688,
+                433.4432373046875,
+                272.2923889160156,
+                491.4967041015625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.666729748249054,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.00248046875,
+            "fraction_grayscale_zero": 1.6276041666666666e-05,
+            "grayscale_percentiles_1_50_99": [
+              15.0,
+              41.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 61.746327039930556
+          },
+          "transformed_sha256": "8a39cdcf917ac2235aaeff97d746a06e895f38c35f5ef6561ba3c0b00e0513ab",
+          "annotated_sha256": "af89c79144dcaf6ca33b236db00ce937263de7ccaf7a4cb9f219c3dafb1e597f"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                219.0037841796875,
+                393.950927734375,
+                272.76513671875,
+                469.9202880859375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.742628276348114,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                219.28814697265625,
+                433.830078125,
+                272.6199035644531,
+                491.793212890625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.6376603245735168,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                495.841796875,
+                429.5695495605469,
+                519.1551513671875,
+                463.2012023925781
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.2586963474750519,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.01876736111111111,
+            "fraction_grayscale_zero": 1.736111111111111e-05,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              23.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 49.23805881076389
+          },
+          "transformed_sha256": "630c818b575e72fef38511d608cf258839e153c80e4e50d5aa334e7873e45d94",
+          "annotated_sha256": "8898d87cb58736be46c640ccce05e38a862ad635ae0de008b38108ef7c69c978"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                219.09664916992188,
+                393.98846435546875,
+                272.1152648925781,
+                469.75653076171875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.7248764038085938,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                219.83181762695312,
+                432.727294921875,
+                272.4707336425781,
+                492.967041015625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.6359169483184814,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.011684027777777778,
+            "fraction_grayscale_zero": 0.5198448350694445,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 28.381151258680557
+          },
+          "transformed_sha256": "3bc413d5feb2a4dd50708c1bbdbdeb247ec90947de3754ac6bcb6a4a648bdb9a",
+          "annotated_sha256": "9b524ec082bc5d6eb68f1684b20f218a31d2a6ba1d62df63bdee723a434ec166"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                219.54473876953125,
+                393.9700622558594,
+                272.5780029296875,
+                470.5801696777344
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.7609567642211914,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                223.00668334960938,
+                434.13763427734375,
+                272.8302307128906,
+                491.28387451171875
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.6410801410675049,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                495.9136962890625,
+                430.2127685546875,
+                519.2208251953125,
+                462.740478515625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.3275933265686035,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.00904296875,
+            "fraction_grayscale_zero": 0.001416015625,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              18.0,
+              254.0
+            ],
+            "mean_grayscale_8bit": 39.882724609375
+          },
+          "transformed_sha256": "1f33ed0875d71cc1622cbd84bb8378b0ee5746616de8d16672d046f0bb32297c",
+          "annotated_sha256": "53e9011b0ea8287ca97280820f8dc172c693f4801a2a508b0f1d4981ac2ad576"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000002337_transformed_comparison.png",
+          "sha256": "29ce0eb5ee40639433d94370546c1e67a9298aaeb9e171b18501e19b82931e45",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000002337_annotated_comparison.png",
+          "sha256": "3c0c6d2af52617492b30a4c43a7142a0b67cc7a2ecd4cb6326e540007190f696",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 2397,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000002397.png",
+      "raw_source_sha256": "225e2a15f63ab7a3ad2b7418fba283229051abab3b3fd4094515d319d750633a",
+      "visual_observation_id": "dev_visual_f2397",
+      "photometric_observation": "Sorotan terang di kiri menutupi sebagian detail objek; terdapat objek kecil bercahaya di sebelah kiri sorotan. Exposure memperkuat glare/area putih; gamma mengangkat jalan tanpa mengungkap tipe objek secara pasti.",
+      "detection_observation": "Raw/gamma/contrast tidak mengeluarkan deteksi. Exposure mengeluarkan car sekitar[175,429,202,457]; unsharp motorcycle pada posisi hampir sama serta motorcycle kecil di rumah tengah. Perbedaan label wajib diselidiki temporal; objek/lampu UNKNOWN tidak dianggap false vehicle.",
+      "variants": {
+        "raw": {
+          "detections": [],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0016514756944444443,
+            "fraction_grayscale_zero": 1.953125e-05,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              28.0,
+              244.0
+            ],
+            "mean_grayscale_8bit": 44.96461154513889
+          },
+          "transformed_sha256": "225e2a15f63ab7a3ad2b7418fba283229051abab3b3fd4094515d319d750633a",
+          "annotated_sha256": "225e2a15f63ab7a3ad2b7418fba283229051abab3b3fd4094515d319d750633a"
+        },
+        "gamma_070": {
+          "detections": [],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0019053819444444444,
+            "fraction_grayscale_zero": 1.0850694444444445e-05,
+            "grayscale_percentiles_1_50_99": [
+              17.0,
+              54.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 67.64734266493056
+          },
+          "transformed_sha256": "d75321fb9f5a494342870c0db50cfabb097448abd450af65c7826f47d4f5003c",
+          "annotated_sha256": "d75321fb9f5a494342870c0db50cfabb097448abd450af65c7826f47d4f5003c"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                174.59515380859375,
+                428.50714111328125,
+                201.92413330078125,
+                457.46697998046875
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.27122604846954346,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.02135959201388889,
+            "fraction_grayscale_zero": 1.953125e-05,
+            "grayscale_percentiles_1_50_99": [
+              7.0,
+              35.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 55.18409071180555
+          },
+          "transformed_sha256": "75e4ee34751754efa320c1d7dfde31641da4c52ee52331110af7cd8df86e64f0",
+          "annotated_sha256": "06ed3e83b40601eeb6decdc2ef2ae85c04cb0ee78bc9b4bd5b061833d9aa0f9a"
+        },
+        "contrast_125": {
+          "detections": [],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.012396918402777778,
+            "fraction_grayscale_zero": 0.45597981770833335,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              3.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 32.520801866319445
+          },
+          "transformed_sha256": "d0edb0ab767d398242e2ba9e66289304c6ad83fbf403de712cf71cf49bf76f0b",
+          "annotated_sha256": "d0edb0ab767d398242e2ba9e66289304c6ad83fbf403de712cf71cf49bf76f0b"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                175.97793579101562,
+                428.53338623046875,
+                201.51705932617188,
+                458.17694091796875
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.2860868275165558,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                494.58197021484375,
+                430.30126953125,
+                518.7576904296875,
+                466.374267578125
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.2519087493419647,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.008967013888888889,
+            "fraction_grayscale_zero": 0.0016937934027777778,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              26.0,
+              253.0
+            ],
+            "mean_grayscale_8bit": 44.78251627604167
+          },
+          "transformed_sha256": "e0c6a5d0d079b63b1c9ca7c0df88f11f16cf53f2e3317ffef1fff857d60ad515",
+          "annotated_sha256": "b8a219e0e704e3adbe9599fd3b39f3c3fa3447f53c11f1d5eb783fe890d628f9"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000002397_transformed_comparison.png",
+          "sha256": "ab6a67a227a7e147137ad79a60a1fb5aec000648e60a5974cb737f9adf9151cf",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000002397_annotated_comparison.png",
+          "sha256": "2cb1f443e4e137b120c0e3c39c669c5a514d99bc3b9758aafd077fc9c1c2dec3",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 2457,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000002457.png",
+      "raw_source_sha256": "b05a31b50189986921492bac9f26a00677ff87190d0691c3ce9b10fec076cbaf",
+      "visual_observation_id": "dev_visual_f2457",
+      "photometric_observation": "Dua sumber lampu sangat terang terlihat mengarah ke kamera; body kendaraan di antaranya gelap dan tidak cukup rinci untuk menentukan kategorinya. Gamma tidak memulihkan detail di pusat lampu, exposure memperluas bidang terang.",
+      "detection_observation": "Kelima varian mempunyai nol deteksi pada frame ini. Ini kegagalan observasi sparse di kondisi glare, bukan bukti tidak ada kendaraan dan bukan missed-count yang telah diukur.",
+      "variants": {
+        "raw": {
+          "detections": [],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003095703125,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              30.0,
+              248.0
+            ],
+            "mean_grayscale_8bit": 54.46113606770833
+          },
+          "transformed_sha256": "b05a31b50189986921492bac9f26a00677ff87190d0691c3ce9b10fec076cbaf",
+          "annotated_sha256": "b05a31b50189986921492bac9f26a00677ff87190d0691c3ce9b10fec076cbaf"
+        },
+        "gamma_070": {
+          "detections": [],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0034895833333333333,
+            "fraction_grayscale_zero": 1.0850694444444444e-06,
+            "grayscale_percentiles_1_50_99": [
+              17.0,
+              57.0,
+              250.0
+            ],
+            "mean_grayscale_8bit": 77.37130099826389
+          },
+          "transformed_sha256": "c9ff8bd46b972e8b2fdf929134ee0d2a344be61e0e7832fcb3eab25381323b4a",
+          "annotated_sha256": "c9ff8bd46b972e8b2fdf929134ee0d2a344be61e0e7832fcb3eab25381323b4a"
+        },
+        "exposure_125": {
+          "detections": [],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.022685546875,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              7.0,
+              38.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 66.8153515625
+          },
+          "transformed_sha256": "f2e424b32752834715f16efddde2af30364c9115cbd25aeecb69679f72ae9159",
+          "annotated_sha256": "f2e424b32752834715f16efddde2af30364c9115cbd25aeecb69679f72ae9159"
+        },
+        "contrast_125": {
+          "detections": [],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.013626302083333333,
+            "fraction_grayscale_zero": 0.4392447916666667,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              6.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 43.845188802083335
+          },
+          "transformed_sha256": "58a022b804a9b709385b76afb34c277c534dc5050f287cdfb16b51bc52e09d80",
+          "annotated_sha256": "58a022b804a9b709385b76afb34c277c534dc5050f287cdfb16b51bc52e09d80"
+        },
+        "unsharp_s1_a05": {
+          "detections": [],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009976128472222222,
+            "fraction_grayscale_zero": 0.0012890625,
+            "grayscale_percentiles_1_50_99": [
+              5.0,
+              29.0,
+              254.0
+            ],
+            "mean_grayscale_8bit": 54.23024848090278
+          },
+          "transformed_sha256": "d7ef4e7fbfc4bdc6e6ae2e3bf9554924d9b7f8f81499e13ee49617589467cce9",
+          "annotated_sha256": "d7ef4e7fbfc4bdc6e6ae2e3bf9554924d9b7f8f81499e13ee49617589467cce9"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000002457_transformed_comparison.png",
+          "sha256": "6443acc95530fa19445517f61e3d08580a4d3036f86451053b11e54fe7443b9b",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000002457_annotated_comparison.png",
+          "sha256": "4508a52ee2ec3ad019b489ad19af0941d0a752c9a92855e0127e3e2ef0f57c32",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 2516,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000002516.png",
+      "raw_source_sha256": "9302c34f689151a2b20c34ec925311780b360ec130294f5d30fa34b250651cda",
+      "visual_observation_id": "dev_visual_f2516",
+      "photometric_observation": "Jalan depan kembali lebih gelap; lampu/siluet jauh tetap kecil. Gamma membuat permukaan jalan dan roadside lebih terlihat; contrast menghitamkan shadow.",
+      "detection_observation": "Kelima varian hanya mengeluarkan person kecil di rumah kanan. Belum ada bukti temporal untuk identitas kendaraan jauh atau manfaat downstream.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                886.16162109375,
+                443.244873046875,
+                913.896484375,
+                491.82568359375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.29677125811576843,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0026085069444444445,
+            "fraction_grayscale_zero": 6.618923611111112e-05,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              15.0,
+              243.0
+            ],
+            "mean_grayscale_8bit": 33.251690538194445
+          },
+          "transformed_sha256": "9302c34f689151a2b20c34ec925311780b360ec130294f5d30fa34b250651cda",
+          "annotated_sha256": "90fcb5a6c4560793abfa3000971d58d30ca69d8b9608203836af227e309fdfaf"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                886.51611328125,
+                443.47027587890625,
+                913.4166259765625,
+                491.87945556640625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3642626106739044,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.002797309027777778,
+            "fraction_grayscale_zero": 4.340277777777778e-05,
+            "grayscale_percentiles_1_50_99": [
+              15.0,
+              35.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 53.718114149305556
+          },
+          "transformed_sha256": "b14ae10dbb8c07f66da457084cc03c1b7313d3d4a569f7260938bdfd703a4198",
+          "annotated_sha256": "7db97e92c78f32f81fd0c16e40eb9e85baae22ac0784534463b82e06e3f03594"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                886.11865234375,
+                443.37860107421875,
+                913.61962890625,
+                491.54949951171875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.29537519812583923,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.01848198784722222,
+            "fraction_grayscale_zero": 6.184895833333334e-05,
+            "grayscale_percentiles_1_50_99": [
+              6.0,
+              19.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 40.78109700520833
+          },
+          "transformed_sha256": "a55502a371973c312dc91fc59ad5394ec175302c99dda5beb08490ae240a572d",
+          "annotated_sha256": "ff5b1e78ce67bffc4f1e52f061a044295e415b12f99bc7391f845830cf9ebf96"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                885.3408203125,
+                443.0693359375,
+                913.9141845703125,
+                492.1636962890625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.39937624335289,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.013008897569444445,
+            "fraction_grayscale_zero": 0.6034418402777778,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              0.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 20.86764431423611
+          },
+          "transformed_sha256": "f7d9b1d1680aece0f2c5697adc5e68f684a8a61f6beb780e564966a8a8a1823a",
+          "annotated_sha256": "86c397e09d93a9c28d9f01489a76db71a57c14eb030bad89ed17fe45faa0bb2c"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                885.8577880859375,
+                442.9033203125,
+                913.7169189453125,
+                491.98968505859375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.2921523451805115,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009988064236111111,
+            "fraction_grayscale_zero": 0.002849392361111111,
+            "grayscale_percentiles_1_50_99": [
+              4.0,
+              14.0,
+              254.0
+            ],
+            "mean_grayscale_8bit": 33.063563368055554
+          },
+          "transformed_sha256": "396dab4930d060895e96e0e92e024eb645b40c896f16500fcc61d6b34f3bf537",
+          "annotated_sha256": "21df81332096afd428e04fa16901fa190f45397475e6836d38034a1369e7bd80"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000002516_transformed_comparison.png",
+          "sha256": "c708d1c22c3d089e519622d361bec4a3e95967579bcd87b81a96f93c8d75bbac",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000002516_annotated_comparison.png",
+          "sha256": "1cbaabdaf4d043b1479c5b2cfdff874957eb3b408311eb6f6f592ff3650989c9",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 7072,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000007072.png",
+      "raw_source_sha256": "378eeb71b7ade9fe3112611472a2bca6d2645ddf2fc66245c4ea5a905c6f6358",
+      "visual_observation_id": "dev_visual_f7072",
+      "photometric_observation": "Satu truck sangat dekat memenuhi kanan frame; roda, underbody dan rangka samping tampak. Gamma memperlihatkan underbody/shadow lebih terang; exposure juga menaikkan jalan/lampu jauh. Blur dan objek terpotong tetap ada.",
+      "detection_observation": "Raw/gamma/exposure/unsharp mengeluarkan dua bbox truck yang tumpang tindih pada truck dekat yang sama; contrast satu bbox. Pengurangan bbox contrast belum membuktikan deduplikasi passage lebih baik. Gamma tidak menyelesaikan risiko duplikasi ini.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                369.6708984375,
+                4.04852294921875,
+                1275.6143798828125,
+                688.8754272460938
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.5909461379051208,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                365.40142822265625,
+                13.028564453125,
+                930.3936157226562,
+                588.908203125
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.32189157605171204,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0034776475694444442,
+            "fraction_grayscale_zero": 7.595486111111111e-05,
+            "grayscale_percentiles_1_50_99": [
+              9.0,
+              50.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 68.98214192708333
+          },
+          "transformed_sha256": "378eeb71b7ade9fe3112611472a2bca6d2645ddf2fc66245c4ea5a905c6f6358",
+          "annotated_sha256": "f5fe02e3f36afe95d7ac3624c97ddde3f5e2d5a689226afea16547d9682999c1"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                366.2298278808594,
+                11.9859619140625,
+                934.8209228515625,
+                585.2513427734375
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.651926577091217,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                365.59228515625,
+                6.30548095703125,
+                1280.0,
+                660.3976440429688
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.3519093990325928,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0038313802083333333,
+            "fraction_grayscale_zero": 6.727430555555556e-05,
+            "grayscale_percentiles_1_50_99": [
+              25.0,
+              81.0,
+              250.0
+            ],
+            "mean_grayscale_8bit": 94.4785329861111
+          },
+          "transformed_sha256": "c579438bebcd647310dca89a5223107ec8d1ff1f3fd946d849b72f5db48898d7",
+          "annotated_sha256": "f99cabfb5939f76e6b86ff3d9c408783670cb8f774c304086a70668a65bc18a8"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                374.8913879394531,
+                5.6356201171875,
+                1276.915771484375,
+                689.528564453125
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.49857357144355774,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                365.2225341796875,
+                12.77880859375,
+                932.683837890625,
+                588.8619384765625
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.41475069522857666,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.019891493055555556,
+            "fraction_grayscale_zero": 7.378472222222222e-05,
+            "grayscale_percentiles_1_50_99": [
+              12.0,
+              63.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 84.96752387152777
+          },
+          "transformed_sha256": "40d17609517e92a7c0483df8979e0a4d33cee1ada2dffaaf80426f88fc2a2b66",
+          "annotated_sha256": "edfbf31fc17978eef0b91389ed1b1aadb9f9ef182c46c69953c71fd0969b7c93"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                373.0396728515625,
+                0.0,
+                1276.3072509765625,
+                689.7591552734375
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.8153876066207886,
+              "detection_index": 0
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.014612630208333333,
+            "fraction_grayscale_zero": 0.2760915798611111,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              31.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 57.90223198784722
+          },
+          "transformed_sha256": "fb3ff5c6ec2f4f62ccdf3f1b0bc68fe4f1364440e69c4c93696ac58b0839bef1",
+          "annotated_sha256": "680e31b1d51b2e12d69eb842e854f9a3f18e61f877c56487fbdd62d07aecf204"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                371.1571044921875,
+                4.4259033203125,
+                1275.843505859375,
+                693.0843505859375
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.635918915271759,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                365.6478271484375,
+                12.7734375,
+                929.7286376953125,
+                589.7314453125
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.30729061365127563,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.009226345486111112,
+            "fraction_grayscale_zero": 0.0011762152777777778,
+            "grayscale_percentiles_1_50_99": [
+              9.0,
+              50.0,
+              253.0
+            ],
+            "mean_grayscale_8bit": 68.80019422743055
+          },
+          "transformed_sha256": "17cb732ab9ce444037f923ddc3e5fe5da1fcba8be4e5f0bb1a37782be8e7be47",
+          "annotated_sha256": "2659983f7083794596848b0864310841ab9f9005f1657d4720fa386a8b7d40cf"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000007072_transformed_comparison.png",
+          "sha256": "ccf71a112be293859ac70468bee8f1ca208258e83c88c7a1b611b823cde2b9d5",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000007072_annotated_comparison.png",
+          "sha256": "0deeae5f42139fab4ba2d133359da686ab1a4faa957fd5bf87dca9e536e84189",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 7132,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000007132.png",
+      "raw_source_sha256": "f5f409f162f4ac59482cd6f67d4d4a7044b3d6152d01cb511c7258244eaeb060",
+      "visual_observation_id": "dev_visual_f7132",
+      "photometric_observation": "Truck terlihat menjauh di kiri; chassis belakang/roda dan jalan terangkat pada gamma, tetapi detail masih kabur. Lampu rumah kanan dan glare jauh tetap kuat.",
+      "detection_observation": "Kelima varian mengeluarkan truck pada area truck dan person di rumah kanan, dengan bbox truck hampir sama. Perubahan confidence tidak dijadikan ukuran kualitas atau alasan pemilihan.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                240.61932373046875,
+                270.38555908203125,
+                629.2904052734375,
+                518.62353515625
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.7584840655326843,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                882.872802734375,
+                444.14306640625,
+                914.4085693359375,
+                492.0771484375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3852285146713257,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003388671875,
+            "fraction_grayscale_zero": 1.0850694444444444e-06,
+            "grayscale_percentiles_1_50_99": [
+              10.0,
+              40.0,
+              248.0
+            ],
+            "mean_grayscale_8bit": 66.73461588541667
+          },
+          "transformed_sha256": "f5f409f162f4ac59482cd6f67d4d4a7044b3d6152d01cb511c7258244eaeb060",
+          "annotated_sha256": "9fd4f3f44f3c6acee60a5f82f4431d5d817f12e5fe5d601e3f38fd3f9e33e5f8"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                240.6655731201172,
+                270.40972900390625,
+                629.8735961914062,
+                518.8253784179688
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.67921382188797,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                884.199951171875,
+                444.26031494140625,
+                914.174072265625,
+                491.87738037109375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.26793786883354187,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003935546875,
+            "fraction_grayscale_zero": 1.0850694444444444e-06,
+            "grayscale_percentiles_1_50_99": [
+              27.0,
+              70.0,
+              250.0
+            ],
+            "mean_grayscale_8bit": 92.08938910590278
+          },
+          "transformed_sha256": "75a71e6489555e4603c9e57c656573afc6d011d86de1fabde89f4dc183266ca0",
+          "annotated_sha256": "9d0e9ff2762efb0558301703ee9127df37bf3da2811fd195496aa671b3c9822b"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                240.1734619140625,
+                270.34234619140625,
+                633.8067016601562,
+                519.3976440429688
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.8130149841308594,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                883.7369384765625,
+                444.201904296875,
+                914.0528564453125,
+                491.7899169921875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.32763195037841797,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.027090928819444443,
+            "fraction_grayscale_zero": 1.0850694444444444e-06,
+            "grayscale_percentiles_1_50_99": [
+              12.0,
+              50.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 82.09414930555556
+          },
+          "transformed_sha256": "d123eda83be6354949a34b4d11afc96caccb2044d3ca20f40a4185cba45a5e9f",
+          "annotated_sha256": "ab1d657d1e81bf88ff2c6d59928c8c5030241551d5951df1180a4ae7894ccb59"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                240.08233642578125,
+                271.601318359375,
+                632.958740234375,
+                517.7821655273438
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.6315574645996094,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                883.672119140625,
+                444.18865966796875,
+                914.269775390625,
+                491.73382568359375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3535591959953308,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.015385199652777778,
+            "fraction_grayscale_zero": 0.2787586805555556,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              18.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 55.11854275173611
+          },
+          "transformed_sha256": "78e3eb310bcc34cbdc32574ff136672f69b0656a93ba6dcf3c5b07ca7990faef",
+          "annotated_sha256": "e030c9a5608de7ec8af29943d32af2206e12cf2fb670b0ea74d768170e708ba4"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                240.60784912109375,
+                270.37432861328125,
+                630.118896484375,
+                518.8770751953125
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.7255403995513916,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                883.0496826171875,
+                443.97393798828125,
+                914.3504638671875,
+                491.99603271484375
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3612879514694214,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.008883463541666666,
+            "fraction_grayscale_zero": 9.006076388888889e-05,
+            "grayscale_percentiles_1_50_99": [
+              10.0,
+              39.0,
+              253.0
+            ],
+            "mean_grayscale_8bit": 66.547490234375
+          },
+          "transformed_sha256": "5dfadada835d634154210cd025e72209b70b7fc8645632e50f9cd0ad5eeff6ae",
+          "annotated_sha256": "cb3d58889b5a7163dcfa1be149d05a3ccb37c3b8a5f926e6aeac4f7786865ff8"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000007132_transformed_comparison.png",
+          "sha256": "ee16be33723f60f4ff2413956223fdcd9e100829b87fdd922c5ce11e64d9aad6",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000007132_annotated_comparison.png",
+          "sha256": "5676fd4990c016f60cb1cb3fead159e6dc278246ef26a8db3b8a5fedeb7339ab",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 7192,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000007192.png",
+      "raw_source_sha256": "f62b3b21c959e75b0583a73890d9b7cc5ecc5059f570a08edbf0b40a6acf208c",
+      "visual_observation_id": "dev_visual_f7192",
+      "photometric_observation": "Motor/rider berjubah terang terlihat menjauh di kiri; jalan mendapat sorotan terang. Gamma memperlihatkan shadow sekitar roda/tepi jalan, exposure membuat jalan dan lampu rumah lebih putih.",
+      "detection_observation": "Kelima varian mengeluarkan person+motorcycle di motor kiri. Gamma tidak mengeluarkan person rumah kanan yang muncul pada raw/exposure/unsharp; contrast menambah motorcycle kecil sekitar[485,424,520,465]. Identitas objek kecil UNKNOWN.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                242.7562255859375,
+                356.0574951171875,
+                324.226806640625,
+                503.53277587890625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8368948698043823,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                253.9660186767578,
+                438.66021728515625,
+                318.66314697265625,
+                531.5662841796875
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.41492941975593567,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                885.7140502929688,
+                444.06451416015625,
+                914.1626586914062,
+                491.04608154296875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.2710258960723877,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0018565538194444445,
+            "fraction_grayscale_zero": 0.0,
+            "grayscale_percentiles_1_50_99": [
+              9.0,
+              30.0,
+              247.0
+            ],
+            "mean_grayscale_8bit": 82.31223198784723
+          },
+          "transformed_sha256": "f62b3b21c959e75b0583a73890d9b7cc5ecc5059f570a08edbf0b40a6acf208c",
+          "annotated_sha256": "a918903ce8bb3b85a0b9510250f0ecbff2dd749d8b466418665863752ba456bd"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                242.20550537109375,
+                355.5709228515625,
+                323.99652099609375,
+                503.66766357421875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8375946879386902,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                255.27755737304688,
+                438.40118408203125,
+                318.5235900878906,
+                531.490478515625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.4406455457210541,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.002228732638888889,
+            "fraction_grayscale_zero": 0.0,
+            "grayscale_percentiles_1_50_99": [
+              25.0,
+              57.0,
+              249.0
+            ],
+            "mean_grayscale_8bit": 103.56476128472222
+          },
+          "transformed_sha256": "3c264dc114c7de0f4589b493ed95ecfc126bad9aa4ef00a36ed83df53bcb044b",
+          "annotated_sha256": "c727caccf492cbd336e93b6a4620b1ce20708f1823260ceb945d23c31c1a5f72"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                243.03164672851562,
+                355.9970703125,
+                324.0212097167969,
+                503.0103759765625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8450824022293091,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                256.4228515625,
+                438.0986328125,
+                321.5445556640625,
+                531.2880249023438
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.4845455586910248,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                885.4737548828125,
+                444.20135498046875,
+                914.11572265625,
+                490.786376953125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.3232209086418152,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.026923828125,
+            "fraction_grayscale_zero": 0.0,
+            "grayscale_percentiles_1_50_99": [
+              12.0,
+              38.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 101.04447374131945
+          },
+          "transformed_sha256": "158f519b517eec8b24a1a3fdc60f960765c88f465d5932d44bfbf9e1519e7bc0",
+          "annotated_sha256": "b3d15e7076ab1ce32efab015cb32a0f2cf881d87d8c81cf5bbd164119b9174a4"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                242.44686889648438,
+                356.355712890625,
+                324.1064758300781,
+                503.0792236328125
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.8385010957717896,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                253.30450439453125,
+                436.98175048828125,
+                319.5294189453125,
+                531.3472290039062
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.41788822412490845,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                484.80023193359375,
+                424.04608154296875,
+                520.0905151367188,
+                465.03680419921875
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.25830990076065063,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.012745225694444445,
+            "fraction_grayscale_zero": 0.26971788194444446,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              8.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 76.95066840277778
+          },
+          "transformed_sha256": "b14afc82c2b805f8d838ead5f947303c094f5b80ce8d8edd9e12e365b34b5389",
+          "annotated_sha256": "1abbd8464bb65254d5c37894134406e44cc73ce727a8726734833288f8daf617"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                242.68572998046875,
+                355.90216064453125,
+                324.23046875,
+                503.6285400390625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.843445360660553,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                257.7030029296875,
+                441.46624755859375,
+                318.58642578125,
+                531.3298950195312
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.428719162940979,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                885.720458984375,
+                443.87896728515625,
+                914.168212890625,
+                490.90155029296875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.26782798767089844,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0071690538194444445,
+            "fraction_grayscale_zero": 1.8446180555555556e-05,
+            "grayscale_percentiles_1_50_99": [
+              9.0,
+              30.0,
+              251.0
+            ],
+            "mean_grayscale_8bit": 82.17477647569444
+          },
+          "transformed_sha256": "676b0a73fd85a31903772c24c4840448a33e4006329a81af3fbd124e4b241f11",
+          "annotated_sha256": "e37e0cd159d8c540335fc4e5be160b935d344f315a0a1b7caad9cfed669fcfe3"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000007192_transformed_comparison.png",
+          "sha256": "c03e18c7c0f17bda55ebf88267735bf8c10ecc51b05f8d4a6dd40342ea91bc04",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000007192_annotated_comparison.png",
+          "sha256": "bfb2c575867acb2f3f7c2cc65f1a10c3e88b28f52e1a6540332afa408594958e",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 7252,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000007252.png",
+      "raw_source_sha256": "b254d3af67e50cddb24f145f4ccc7eaa272fabf583ec008334fd772d2c2751c6",
+      "visual_observation_id": "dev_visual_f7252",
+      "photometric_observation": "Car putih tampak menjauh di tengah-kiri; two-wheeler kecil berada lebih jauh di kiri. Detail bodi car semakin pucat pada exposure. Gamma membuka jalan/roadside, tetapi tidak mengubah ketidakjelasan two-wheeler kecil.",
+      "detection_observation": "Kelima varian mengeluarkan car putih dan truck bbox di area gelap kanan car/roadside, yang belum terkonfirmasi sebagai unit truck tersendiri. Raw/gamma/unsharp memberi label bicycle pada objek kecil kiri; exposure motorcycle; contrast tidak. Kategori two-wheeler ini tetap OPEN.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                300.685791015625,
+                340.205810546875,
+                587.9039306640625,
+                543.1641845703125
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.9118568301200867,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                575.5994873046875,
+                389.12249755859375,
+                891.5665283203125,
+                525.3943481445312
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.5118714570999146,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                194.64105224609375,
+                429.95098876953125,
+                227.0865478515625,
+                475.27325439453125
+              ],
+              "class_id": 1,
+              "class_name": "bicycle",
+              "confidence": 0.3579713702201843,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.005066189236111111,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              11.0,
+              34.0,
+              249.0
+            ],
+            "mean_grayscale_8bit": 62.78486762152778
+          },
+          "transformed_sha256": "b254d3af67e50cddb24f145f4ccc7eaa272fabf583ec008334fd772d2c2751c6",
+          "annotated_sha256": "cbb776f5217d76c9000adfbe897e9ead953080ccce5c866f7ab6fc571d280a68"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                300.6317138671875,
+                339.97930908203125,
+                586.8008422851562,
+                543.5767211914062
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.9070389270782471,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                575.316162109375,
+                387.86602783203125,
+                889.5257568359375,
+                525.2974853515625
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.5317983031272888,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                195.28866577148438,
+                430.0132141113281,
+                226.47531127929688,
+                475.1326599121094
+              ],
+              "class_id": 1,
+              "class_name": "bicycle",
+              "confidence": 0.3537920117378235,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.005478515625,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              29.0,
+              62.0,
+              251.0
+            ],
+            "mean_grayscale_8bit": 87.81012044270834
+          },
+          "transformed_sha256": "cf057f6a08040cd5e328e63018f3359a9c76650aa6288d51ded5e256df2fcce8",
+          "annotated_sha256": "2df5d8a353f3482ed704157ac1f962a06abac1912bf1a1fde2f002e777238627"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                300.40655517578125,
+                340.13397216796875,
+                587.03271484375,
+                543.4464721679688
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.9098299145698547,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                574.9490966796875,
+                389.50616455078125,
+                896.079833984375,
+                525.0388793945312
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.5859478116035461,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                192.7939453125,
+                428.19049072265625,
+                230.52850341796875,
+                475.75921630859375
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.2721044421195984,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.03822157118055555,
+            "fraction_grayscale_zero": 2.170138888888889e-06,
+            "grayscale_percentiles_1_50_99": [
+              14.0,
+              42.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 76.818046875
+          },
+          "transformed_sha256": "d6edd8ebe5aa6062f106f8b437bb79498f28936418cbeda176735564ad054650",
+          "annotated_sha256": "7d8ffb2a167890404a4bec4abd6846e49a7b4acc5468355bc266eaa852195f50"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                300.3533935546875,
+                340.482177734375,
+                588.334228515625,
+                543.6697998046875
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.9175263047218323,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                572.20751953125,
+                388.6968994140625,
+                895.832763671875,
+                525.824462890625
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.4841338098049164,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.018414713541666666,
+            "fraction_grayscale_zero": 0.2873849826388889,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              12.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 50.52957248263889
+          },
+          "transformed_sha256": "e4ec8c5acdce081ec8a2387c8eaa025972f64e59f9a86664f8b51ddd6fb4851c",
+          "annotated_sha256": "824e309a744418d2eb32d87c6c167b51583ec063a8d6d074b0a3a864e88cf854"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                300.5155029296875,
+                340.06927490234375,
+                587.744140625,
+                543.6798095703125
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.9109252095222473,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                575.2099609375,
+                389.08282470703125,
+                893.118408203125,
+                524.7974243164062
+              ],
+              "class_id": 7,
+              "class_name": "truck",
+              "confidence": 0.5864005088806152,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                194.82708740234375,
+                429.91741943359375,
+                226.938720703125,
+                475.101318359375
+              ],
+              "class_id": 1,
+              "class_name": "bicycle",
+              "confidence": 0.37536048889160156,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.010054253472222222,
+            "fraction_grayscale_zero": 0.0004709201388888889,
+            "grayscale_percentiles_1_50_99": [
+              11.0,
+              33.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 62.55608181423611
+          },
+          "transformed_sha256": "3a861e092f2d0c2dc44d23f47688f59fc14cb317309c29013484d5a3623c736a",
+          "annotated_sha256": "ddfbbf05b17bc529a216ca72d6813c2697eb3c6dc26bfd0fcba77343959576ff"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000007252_transformed_comparison.png",
+          "sha256": "d5412ff7988c7350c82fa2b255d84e95590b5990b7db861b64327fb6c06a8c64",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000007252_annotated_comparison.png",
+          "sha256": "4da4927634fffb4266c99d923118bbb65eb3c812964224ca645f04119c6d8bbb",
+          "kind": "annotated"
+        }
+      ]
+    },
+    {
+      "frame_index": 7311,
+      "claim_type": "ACTUAL_AI_ASSISTED_VISUAL_OBSERVATION_WITH_LIMITS",
+      "raw_source_path": "source_frames/frame_000007311.png",
+      "raw_source_sha256": "b77b37e94535be62c234076e2de78e23f224df1b5bee6cb24ebb0c3c321b3a05",
+      "visual_observation_id": "dev_visual_f7311",
+      "photometric_observation": "Motor/rider dekat bergerak menjauh di tengah dengan blur; car putih lebih jauh di kiri terlihat bersama lampu belakang merah. Gamma membuka detail jalan sekaligus menjadikan tekstur/noise gelap lebih terlihat; exposure membuat highlight merah/putih lebih dominan.",
+      "detection_observation": "Raw/gamma/contrast/unsharp mengeluarkan motorcycle+person dekat dan car jauh. Exposure kehilangan bbox car yang masih terlihat. Gamma mempertahankan tiga jenis bbox ini, tetapi confidence lebih rendah tidak diperlakukan sebagai metrik keberhasilan/kegagalan.",
+      "variants": {
+        "raw": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                562.5338134765625,
+                457.47723388671875,
+                725.2401123046875,
+                623.6178588867188
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.6087035536766052,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                551.8057861328125,
+                327.0106201171875,
+                680.2752685546875,
+                555.95556640625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.5761390924453735,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                211.433837890625,
+                384.0440368652344,
+                325.93353271484375,
+                468.3392028808594
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.5341571569442749,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "raw/frame_detections.jsonl.gz",
+          "detections_sha256": "08119930f9a865818ab0fc53ed19de40ee8b88ca672c389dc325632ba2e7a93e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.003060980902777778,
+            "fraction_grayscale_zero": 9.765625e-06,
+            "grayscale_percentiles_1_50_99": [
+              13.0,
+              45.0,
+              244.0
+            ],
+            "mean_grayscale_8bit": 63.48683376736111
+          },
+          "transformed_sha256": "b77b37e94535be62c234076e2de78e23f224df1b5bee6cb24ebb0c3c321b3a05",
+          "annotated_sha256": "41431604f77a1cf1b065c7ef042e4b0d504265bcf3283c5636558ffc201ba2a3"
+        },
+        "gamma_070": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                562.1219482421875,
+                459.93023681640625,
+                725.3045654296875,
+                624.0272827148438
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.5504657626152039,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                552.4605712890625,
+                326.756103515625,
+                688.2752685546875,
+                556.72607421875
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4550807774066925,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                211.40228271484375,
+                383.00738525390625,
+                326.64727783203125,
+                468.6083984375
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.3660287857055664,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "gamma_070/frame_detections.jsonl.gz",
+          "detections_sha256": "4be08c4145689e4c078b47544ce83e30b11bf15efabbc425887bcf9f4e5478e6",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.0033778211805555554,
+            "fraction_grayscale_zero": 7.595486111111111e-06,
+            "grayscale_percentiles_1_50_99": [
+              31.0,
+              75.0,
+              248.0
+            ],
+            "mean_grayscale_8bit": 89.34404513888889
+          },
+          "transformed_sha256": "5700de1d2c19c7db4aab6c9de04cdfbdb3646ef0f726743e97445ac8907b5cf3",
+          "annotated_sha256": "7b6027d750ee60fc2cc8d628a2f07890c9e49f53074277698e2a2bcfd4a6e841"
+        },
+        "exposure_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                563.2106323242188,
+                458.2814636230469,
+                725.1981811523438,
+                624.9306640625
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.5736322402954102,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                553.4146728515625,
+                326.96929931640625,
+                678.1898193359375,
+                554.3706665039062
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4619145393371582,
+              "detection_index": 1
+            }
+          ],
+          "detections_reference": "exposure_125/frame_detections.jsonl.gz",
+          "detections_sha256": "21ab2c6ff0745eee514dfc60c8523acef6872ef3694663dba730056b1747d70e",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.02385959201388889,
+            "fraction_grayscale_zero": 9.765625e-06,
+            "grayscale_percentiles_1_50_99": [
+              16.0,
+              56.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 77.92190212673611
+          },
+          "transformed_sha256": "e1df4b3b9d07f2a450d0a5c3453719df70daa7bc0a9c80c0cceef6f84790664d",
+          "annotated_sha256": "094ed177fcf09d01fcf18ee4c2b33a8a272278f19e3d5a765f7e56bf00799156"
+        },
+        "contrast_125": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                211.4243621826172,
+                384.6279296875,
+                325.83404541015625,
+                468.0478515625
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.6796826124191284,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                561.6275634765625,
+                456.9664001464844,
+                724.368896484375,
+                624.5726318359375
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.6247085928916931,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                552.1727294921875,
+                327.24468994140625,
+                677.8148193359375,
+                554.2390747070312
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.5750928521156311,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "contrast_125/frame_detections.jsonl.gz",
+          "detections_sha256": "6dbd3f51bcb64800345612f7496f1b06ce1a952db577e075b57c869c54cc0168",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.013497178819444445,
+            "fraction_grayscale_zero": 0.28593098958333335,
+            "grayscale_percentiles_1_50_99": [
+              0.0,
+              24.0,
+              255.0
+            ],
+            "mean_grayscale_8bit": 50.27712348090278
+          },
+          "transformed_sha256": "27d00fd78e22a4a090393478084b10040cbc702bd5821169adf27a7896767f6e",
+          "annotated_sha256": "d18255f171ee907443c9f8bd4765ba1cafd2f3408c3eb7ba56d3fcd471433ec1"
+        },
+        "unsharp_s1_a05": {
+          "detections": [
+            {
+              "bbox_xyxy": [
+                562.0277099609375,
+                459.6065979003906,
+                725.2508544921875,
+                624.5343017578125
+              ],
+              "class_id": 3,
+              "class_name": "motorcycle",
+              "confidence": 0.6510921120643616,
+              "detection_index": 0
+            },
+            {
+              "bbox_xyxy": [
+                211.55181884765625,
+                383.9921875,
+                326.06402587890625,
+                468.221435546875
+              ],
+              "class_id": 2,
+              "class_name": "car",
+              "confidence": 0.5917103886604309,
+              "detection_index": 1
+            },
+            {
+              "bbox_xyxy": [
+                554.6629638671875,
+                327.7938232421875,
+                680.6492919921875,
+                555.4146728515625
+              ],
+              "class_id": 0,
+              "class_name": "person",
+              "confidence": 0.4269968569278717,
+              "detection_index": 2
+            }
+          ],
+          "detections_reference": "unsharp_s1_a05/frame_detections.jsonl.gz",
+          "detections_sha256": "c9e1ab9ebb982e2221871c6648b95ca5681fbb631e2cff87031d9e7a7a1ec763",
+          "photometric_descriptors_original": {
+            "claim_limits": "Pixel descriptors only; not visibility/detector/tracker/counting performance",
+            "fraction_grayscale_255": 0.008835720486111111,
+            "fraction_grayscale_zero": 0.0005609809027777778,
+            "grayscale_percentiles_1_50_99": [
+              13.0,
+              44.0,
+              252.0
+            ],
+            "mean_grayscale_8bit": 63.30016167534722
+          },
+          "transformed_sha256": "d6c0201ceae27dfa999fed38a050eeb2b1fe1438d893ca7ca557ea228ee6e85d",
+          "annotated_sha256": "e439dac8e58449ffed64a263eb621e66885e86433b24043e7e0abdc2d1fd05f4"
+        }
+      },
+      "actually_opened_contact_sheets": [
+        {
+          "path": "frame_000007311_transformed_comparison.png",
+          "sha256": "fda2f6c46e8334e923257240022d55936d60a6ac85a6163bb174ea7e1eefa623",
+          "kind": "transformed"
+        },
+        {
+          "path": "frame_000007311_annotated_comparison.png",
+          "sha256": "35b43b78ca6adcac03c37b66aab577347aad5d6c6d7a6e4243b5c67ffcfa958f",
+          "kind": "annotated"
+        }
+      ]
+    }
+  ],
+  "descriptive_frame_observation_totals": {
+    "raw": {
+      "bicycle": 1,
+      "car": 2,
+      "motorcycle": 6,
+      "person": 13,
+      "truck": 4
+    },
+    "gamma_070": {
+      "bicycle": 1,
+      "car": 3,
+      "motorcycle": 4,
+      "person": 12,
+      "truck": 4
+    },
+    "exposure_125": {
+      "car": 2,
+      "motorcycle": 7,
+      "person": 13,
+      "truck": 4
+    },
+    "contrast_125": {
+      "car": 2,
+      "motorcycle": 4,
+      "person": 12,
+      "truck": 3
+    },
+    "unsharp_s1_a05": {
+      "bicycle": 1,
+      "car": 3,
+      "motorcycle": 8,
+      "person": 14,
+      "truck": 4
+    }
+  },
+  "limits": [
+    "Sparse observations are not persistent tracks, unique physical vehicles or passage counts.",
+    "No ground truth, calibrated classification quality or accuracy/precision/recall/F1/MAPE result.",
+    "UNKNOWN small objects/headlights are not labeled false detections.",
+    "Prior Phase1 raw visual inspection means future hold-out is not blind; this review uses DEV enhancement only.",
+    "This review does not establish geometric alignment throughout a segment, tracker stability, ReID benefit, or counting improvement."
+  ]
+}

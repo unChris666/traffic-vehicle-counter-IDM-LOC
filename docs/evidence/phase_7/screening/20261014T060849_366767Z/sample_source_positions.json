@@ -1,0 +1,123 @@
+{
+  "backend": "FFMPEG",
+  "decode_completeness": "prefix through last DEV sample; not full video integrity proof",
+  "decode_method": "sequential_from_frame_zero_no_seek",
+  "decode_wall_seconds": 12.97236348499996,
+  "discarded_prefix_frames_may_include_holdout": true,
+  "fps_backend": 29.419969502218617,
+  "frame_count_backend": 9590.0,
+  "height": 720,
+  "holdout_prefix_read_is_not_evaluation": true,
+  "sample_positions": [
+    {
+      "backend_pos_frames_after_read": 1.0,
+      "backend_timestamp_seconds": 0.0,
+      "estimated_seconds_index_over_fps": 0.0,
+      "frame_index": 0
+    },
+    {
+      "backend_pos_frames_after_read": 8.0,
+      "backend_timestamp_seconds": 0.8344666666666667,
+      "estimated_seconds_index_over_fps": 0.23793362530413625,
+      "frame_index": 7
+    },
+    {
+      "backend_pos_frames_after_read": 15.0,
+      "backend_timestamp_seconds": 1.0681111111111112,
+      "estimated_seconds_index_over_fps": 0.4758672506082725,
+      "frame_index": 14
+    },
+    {
+      "backend_pos_frames_after_read": 30.0,
+      "backend_timestamp_seconds": 1.5687777777777778,
+      "estimated_seconds_index_over_fps": 0.9857250191171358,
+      "frame_index": 29
+    },
+    {
+      "backend_pos_frames_after_read": 240.0,
+      "backend_timestamp_seconds": 8.67828888888889,
+      "estimated_seconds_index_over_fps": 8.123733778241222,
+      "frame_index": 239
+    },
+    {
+      "backend_pos_frames_after_read": 2278.0,
+      "backend_timestamp_seconds": 78.40483333333334,
+      "estimated_seconds_index_over_fps": 77.39640925964547,
+      "frame_index": 2277
+    },
+    {
+      "backend_pos_frames_after_read": 2338.0,
+      "backend_timestamp_seconds": 80.4075,
+      "estimated_seconds_index_over_fps": 79.43584033368091,
+      "frame_index": 2337
+    },
+    {
+      "backend_pos_frames_after_read": 2398.0,
+      "backend_timestamp_seconds": 82.41016666666667,
+      "estimated_seconds_index_over_fps": 81.47527140771636,
+      "frame_index": 2397
+    },
+    {
+      "backend_pos_frames_after_read": 2458.0,
+      "backend_timestamp_seconds": 84.44622222222223,
+      "estimated_seconds_index_over_fps": 83.51470248175183,
+      "frame_index": 2457
+    },
+    {
+      "backend_pos_frames_after_read": 2517.0,
+      "backend_timestamp_seconds": 86.4156,
+      "estimated_seconds_index_over_fps": 85.52014303788668,
+      "frame_index": 2516
+    },
+    {
+      "backend_pos_frames_after_read": 7073.0,
+      "backend_timestamp_seconds": 241.05584444444446,
+      "estimated_seconds_index_over_fps": 240.38094259297878,
+      "frame_index": 7072
+    },
+    {
+      "backend_pos_frames_after_read": 7133.0,
+      "backend_timestamp_seconds": 243.05851111111113,
+      "estimated_seconds_index_over_fps": 242.42037366701425,
+      "frame_index": 7132
+    },
+    {
+      "backend_pos_frames_after_read": 7193.0,
+      "backend_timestamp_seconds": 245.0611777777778,
+      "estimated_seconds_index_over_fps": 244.45980474104968,
+      "frame_index": 7192
+    },
+    {
+      "backend_pos_frames_after_read": 7253.0,
+      "backend_timestamp_seconds": 247.06384444444447,
+      "estimated_seconds_index_over_fps": 246.49923581508514,
+      "frame_index": 7252
+    },
+    {
+      "backend_pos_frames_after_read": 7312.0,
+      "backend_timestamp_seconds": 249.03313333333335,
+      "estimated_seconds_index_over_fps": 248.50467637122,
+      "frame_index": 7311
+    }
+  ],
+  "sampled_indices": [
+    0,
+    7,
+    14,
+    29,
+    239,
+    2277,
+    2337,
+    2397,
+    2457,
+    2516,
+    7072,
+    7132,
+    7192,
+    7252,
+    7311
+  ],
+  "sequential_decoded_frames": 7312,
+  "timestamp_limits": "Backend POS_MSEC and index/FPS estimates are not verified source PTS",
+  "width": 1280
+}

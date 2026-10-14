@@ -1,0 +1,106 @@
+{
+  "contract_version": "phase7_night_temporal_v1",
+  "counting": {
+    "association": {
+      "component": {
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15,
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0
+      },
+      "same_vehicle": {
+        "max_center_distance_norm": 0.1,
+        "max_relative_motion_residual_norm": 0.01,
+        "min_common_frames": 2,
+        "min_consecutive_common_frames": 2,
+        "min_iou": 0.59
+      }
+    },
+    "calibration_path": "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json",
+    "calibration_sha256": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723",
+    "confirmation_observations": 1,
+    "geometry_source_sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+    "grouping_enabled": true,
+    "metric": "passage",
+    "neutral_band_px": 0.0,
+    "parameter_status": "FROZEN_PAGI_EXPERIMENT_CONTROLS_NOT_NIGHT_CALIBRATION",
+    "policy_version": "phase6_option_b_v1",
+    "source_path": "notebooks/phase_6_identity_resolution_helpers.py",
+    "source_sha256": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054"
+  },
+  "counting_scope": "DECLARED_DEV_AND_HOLDOUT_SAMPLING_WINDOWS_DYNAMIC_OBSERVED_IDS_FULL_HISTORY",
+  "detector": {
+    "baseline_provenance": "docs/evidence/phase_2/20261011T052950_360560Z_ed399fb8/detection_report.json",
+    "device": 0,
+    "package_version": "8.4.175",
+    "settings": {
+      "agnostic_nms": false,
+      "augment": false,
+      "batch": 1,
+      "classes": null,
+      "conf": 0.25,
+      "imgsz": 640,
+      "iou": 0.7,
+      "max_det": 300,
+      "nms": null,
+      "quantize": null,
+      "rect": true,
+      "seed": 0
+    },
+    "weights_bytes": 44255705,
+    "weights_path": "/kaggle/working/phase_7_assets/yolo26m.pt",
+    "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+    "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt"
+  },
+  "encoder": {
+    "bytes": 9873245,
+    "device": "cuda:0",
+    "final_vehicle_configuration": false,
+    "input_policy": "SAME_TRANSFORMED_FRAME_AS_DETECTOR",
+    "onnx_version": "1.20.1",
+    "ort_version": "1.24.4",
+    "path": "/kaggle/working/phase_7_assets/yolo26n-reid.onnx",
+    "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n-reid.onnx"
+  },
+  "expected_frame_count": 9590,
+  "expected_geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+  "expected_sampling_sha256": "23091cbc1afd5eb24f63bf6d81d2be0bdc1ab04b43a78b7d31e3e65882f6437f",
+  "expected_selection_sha256": "e1c7b5f1a212416ded809cf0558b8cdf2d63e3dea4b60b978ab2febf9e4bf123",
+  "expected_video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+  "frame_scope": "FULL_VIDEO_FROM_FRAME_ZERO_NO_TRACKER_RESET_WITHIN_VARIANT",
+  "geometry_path": "docs/evidence/phase_7/accepted_geometry/TOR3-MALAM-N1.json",
+  "holdout_policy": "FROZEN_DEV_SELECTION_BEFORE_ANY_HOLDOUT_MODEL_OUTCOME_REVIEW",
+  "output_root": "/kaggle/working/phase_7_night_temporal",
+  "repo_root": "/kaggle/working/phase7_temporal_source_snapshot_04ae48b87d52f592",
+  "result_semantics": "MACHINE_CANDIDATES_SEPARATE_FROM_EXPLICIT_PHYSICAL_PASSAGE_REVIEW_OFFLINE",
+  "sampling_path": "docs/evidence/phase_7/sampling/TOR3-MALAM_sampling_plan_v1.json",
+  "selection_path": "docs/evidence/phase_7/selection/TOR3-MALAM_DEV_shortlist_v1.json",
+  "tracker": {
+    "appearance_thresh": 0.8,
+    "device": "cuda:0",
+    "fuse_score": true,
+    "gmc_method": "none",
+    "match_thresh": 0.8,
+    "new_track_thresh": 0.25,
+    "proximity_thresh": 0.5,
+    "track_buffer": 30,
+    "track_high_thresh": 0.25,
+    "track_low_thresh": 0.1,
+    "tracker_type": "botsort",
+    "with_reid": true
+  },
+  "variants": [
+    {
+      "method": "raw",
+      "name": "raw"
+    },
+    {
+      "gamma": 0.7,
+      "method": "gamma",
+      "name": "gamma_070"
+    }
+  ],
+  "video_path": "/kaggle/input/datasets/chrisbiran/traffic-tracker-videos/TOR3-MALAM.mp4"
+}

@@ -1,0 +1,409 @@
+{
+  "schema_version": "phase7_explicit_physical_review_input_v1",
+  "source_run_id": "20261014T062858_002323Z",
+  "source_machine_decisions_sha256": "753c8a55a6feeef452ab5f1401beae1944f5cd68de852ae93416f2417b2a4bd3",
+  "source_identity": {
+    "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+    "height": 720,
+    "parent_run_id": "20261014T062858_002323Z",
+    "records_sha256": "b9804bd798674c13d93485170fc032a9f33557c14f61f22d51c78428f839ba2d",
+    "variant": "gamma_070",
+    "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "width": 1280
+  },
+  "reviewer": "CODEX_ASSISTED_ACTUAL_PIXEL_REVIEW_NOT_GROUND_TRUTH",
+  "scope": "eight same-physical-passage comparisons; no full-video count finalization",
+  "decisions": [
+    {
+      "candidate_id": "pc6b_2b52940ec6eeb392c33d5af3ca2dacd2b4c52f51b512fcf7a05ec6284b8b9019",
+      "disposition": "CONFIRM_PASSAGE",
+      "physical_unit_id": "manual_night_unit_dev_beginning_motorcycle_27",
+      "passage_id": "manual_night_passage_dev_beginning_motorcycle_27",
+      "category": "motorcycle",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true,
+      "reviewer": "CODEX_ASSISTED_ACTUAL_PIXEL_REVIEW_NOT_GROUND_TRUTH",
+      "reason": "One motorcycle with pink-shirt rider recedes from right foreground toward left background in raw and gamma. Raw IDs4/7/9 and gamma IDs4/6/7 overlap the same motorcycle at sampled times, not separate motorcycles. Vehicle BC crosses26→27 in both branches. Automatic duplicate/component ambiguity remains in both. Gamma loses the emitted motorcycle at14 despite raw4 being emitted; later gamma7 still supplies the same measured crossing. No new physical passage is established by extra IDs.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_beginning_motorcycle_27_pixels.png",
+          "sha256": "1e7dc2b1b359ad3eea4a1110ecd0704dde237ed8bfa9afc842bc533285a53020",
+          "frame_indices": [
+            13,
+            14,
+            20,
+            24,
+            26,
+            27,
+            30
+          ],
+          "observation": "One motorcycle with pink-shirt rider recedes from right foreground toward left background in raw and gamma. Raw IDs4/7/9 and gamma IDs4/6/7 overlap the same motorcycle at sampled times, not separate motorcycles. Vehicle BC crosses26→27 in both branches. Automatic duplicate/component ambiguity remains in both. Gamma loses the emitted motorcycle at14 despite raw4 being emitted; later gamma7 still supplies the same measured crossing. No new physical passage is established by extra IDs."
+        },
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_beginning_motorcycle_27_measured_overlay.png",
+          "sha256": "e7c5cab7bf2b1046a880d7c7b226c4cf8f5f9e5d94e2689b423fafeebe8f12bf",
+          "frame_indices": [
+            13,
+            14,
+            20,
+            24,
+            26,
+            27,
+            30
+          ],
+          "observation": "One motorcycle with pink-shirt rider recedes from right foreground toward left background in raw and gamma. Raw IDs4/7/9 and gamma IDs4/6/7 overlap the same motorcycle at sampled times, not separate motorcycles. Vehicle BC crosses26→27 in both branches. Automatic duplicate/component ambiguity remains in both. Gamma loses the emitted motorcycle at14 despite raw4 being emitted; later gamma7 still supplies the same measured crossing. No new physical passage is established by extra IDs."
+        }
+      ],
+      "manual_component_track_ids": [
+        2
+      ],
+      "manual_same_unit_vehicle_track_ids_observed": [
+        4,
+        6,
+        7
+      ],
+      "manual_links_semantics": "bounded photo annotations only; no replacement source trajectory, rider BC, merged bbox, or future-event identity claim"
+    },
+    {
+      "candidate_id": "pc6b_56d6221e9af83c3ffcdf6954a90520f4d30130311f77d10632074469add43b8e",
+      "disposition": "CONFIRM_PASSAGE",
+      "physical_unit_id": "manual_night_unit_dev_quarter_motorcycle_2297",
+      "passage_id": "manual_night_passage_dev_quarter_motorcycle_2297",
+      "category": "motorcycle",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true,
+      "reviewer": "CODEX_ASSISTED_ACTUAL_PIXEL_REVIEW_NOT_GROUND_TRUTH",
+      "reason": "One motorcycle with rider(s) and bright purple rear lamp recedes through both conditions. Raw409 and gamma432 refer to this same physical passage; vehicle BC crosses2296→2297. No separate car is visible at gamma's extra car detection on the motorcycle front at2277. Both machine candidates pending because admitted rider relation support begins later than passage2285–2297. Gamma's extra unconfirmed car label at2277 is a category regression on motorcycle pixels; glare/blur remain.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_quarter_motorcycle_2297_pixels.png",
+          "sha256": "9c7698b62d9f4d95be901473bca215073ec5af7d58b3ebb6f9e3f00d8a5995ca",
+          "frame_indices": [
+            2277,
+            2280,
+            2285,
+            2290,
+            2296,
+            2297,
+            2300
+          ],
+          "observation": "One motorcycle with rider(s) and bright purple rear lamp recedes through both conditions. Raw409 and gamma432 refer to this same physical passage; vehicle BC crosses2296→2297. No separate car is visible at gamma's extra car detection on the motorcycle front at2277. Both machine candidates pending because admitted rider relation support begins later than passage2285–2297. Gamma's extra unconfirmed car label at2277 is a category regression on motorcycle pixels; glare/blur remain."
+        },
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_quarter_motorcycle_2297_measured_overlay.png",
+          "sha256": "b82a471ab619e83eb825cf858ff7a296186e9cfc4ec9d3f54eecb53f8d16db5d",
+          "frame_indices": [
+            2277,
+            2280,
+            2285,
+            2290,
+            2296,
+            2297,
+            2300
+          ],
+          "observation": "One motorcycle with rider(s) and bright purple rear lamp recedes through both conditions. Raw409 and gamma432 refer to this same physical passage; vehicle BC crosses2296→2297. No separate car is visible at gamma's extra car detection on the motorcycle front at2277. Both machine candidates pending because admitted rider relation support begins later than passage2285–2297. Gamma's extra unconfirmed car label at2277 is a category regression on motorcycle pixels; glare/blur remain."
+        }
+      ],
+      "manual_component_track_ids": [
+        430
+      ],
+      "manual_same_unit_vehicle_track_ids_observed": [
+        432
+      ],
+      "manual_links_semantics": "bounded photo annotations only; no replacement source trajectory, rider BC, merged bbox, or future-event identity claim"
+    },
+    {
+      "candidate_id": "pc6b_684e1785324cfc1a0f8cc701ac1cf882ba2d7417df40b80acb755af463397daa",
+      "disposition": "CONFIRM_PASSAGE",
+      "physical_unit_id": "manual_night_unit_holdout_middle_motorcycle_4869",
+      "passage_id": "manual_night_passage_holdout_middle_motorcycle_4869",
+      "category": "motorcycle",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true,
+      "reviewer": "CODEX_ASSISTED_ACTUAL_PIXEL_REVIEW_NOT_GROUND_TRUTH",
+      "reason": "One motorcycle with red-shirt rider recedes through4855–4887. Raw564 and gamma587 correspond to the same bike, with proper measured vehicle BC4868→4869. The rider is not counted separately. Both remain machine pending for absent positive identity evidence. Gamma motorcycle emitted one frame later at4856 versus raw4855; the crossing endpoints remain identical. Gamma appears brighter, but the lamp/body blur remains and no accepted machine hold-out gain is established.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/holdout_middle_motorcycle_4869_pixels.png",
+          "sha256": "f875c7598d5481b1c1f310dab040857db9859ac2461ee917eadffb5c6b7afb06",
+          "frame_indices": [
+            4855,
+            4856,
+            4857,
+            4860,
+            4868,
+            4869,
+            4887
+          ],
+          "observation": "One motorcycle with red-shirt rider recedes through4855–4887. Raw564 and gamma587 correspond to the same bike, with proper measured vehicle BC4868→4869. The rider is not counted separately. Both remain machine pending for absent positive identity evidence. Gamma motorcycle emitted one frame later at4856 versus raw4855; the crossing endpoints remain identical. Gamma appears brighter, but the lamp/body blur remains and no accepted machine hold-out gain is established."
+        },
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/holdout_middle_motorcycle_4869_measured_overlay.png",
+          "sha256": "e3841d0afcaddf0c4b5650c6d7cb841f3abb7325e8002a876762a1b4fcd1df67",
+          "frame_indices": [
+            4855,
+            4856,
+            4857,
+            4860,
+            4868,
+            4869,
+            4887
+          ],
+          "observation": "One motorcycle with red-shirt rider recedes through4855–4887. Raw564 and gamma587 correspond to the same bike, with proper measured vehicle BC4868→4869. The rider is not counted separately. Both remain machine pending for absent positive identity evidence. Gamma motorcycle emitted one frame later at4856 versus raw4855; the crossing endpoints remain identical. Gamma appears brighter, but the lamp/body blur remains and no accepted machine hold-out gain is established."
+        }
+      ],
+      "manual_component_track_ids": [
+        585
+      ],
+      "manual_same_unit_vehicle_track_ids_observed": [
+        587
+      ],
+      "manual_links_semantics": "bounded photo annotations only; no replacement source trajectory, rider BC, merged bbox, or future-event identity claim"
+    },
+    {
+      "candidate_id": "pc6b_331f5fa30d13fec5056edf5d49acf6018599197060de683db2c5560feaa9b61d",
+      "disposition": "CONFIRM_PASSAGE",
+      "physical_unit_id": "manual_night_unit_dev_three_quarters_truck_7114",
+      "passage_id": "manual_night_passage_dev_three_quarters_truck_7114",
+      "category": "truck",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true,
+      "reviewer": "CODEX_ASSISTED_ACTUAL_PIXEL_REVIEW_NOT_GROUND_TRUTH",
+      "reason": "One loaded flatbed truck recedes through7071–7147. Duplicate cabin/front versus full-body boxes raw807/810 and gamma826/829 describe parts/extents of the same truck. The representative raw810/gamma829 measured vehicle BC crosses7113→7114; the later foreground motorcycle is a separate vehicle. Both pending due duplicate/identity competitor evidence. Gamma's crossing episode ends7126 versus raw7147, while later same physical truck observations occur in other episodes. Duplicate boxes are not resolved automatically. No extra truck is counted from cab/full-body detections.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_three_quarters_truck_7114_pixels.png",
+          "sha256": "2b4537e88008084932eb962b1609ccaa9d0472a6c03db1c1061acfb899bbf554",
+          "frame_indices": [
+            7071,
+            7072,
+            7073,
+            7080,
+            7113,
+            7114,
+            7126,
+            7147
+          ],
+          "observation": "One loaded flatbed truck recedes through7071–7147. Duplicate cabin/front versus full-body boxes raw807/810 and gamma826/829 describe parts/extents of the same truck. The representative raw810/gamma829 measured vehicle BC crosses7113→7114; the later foreground motorcycle is a separate vehicle. Both pending due duplicate/identity competitor evidence. Gamma's crossing episode ends7126 versus raw7147, while later same physical truck observations occur in other episodes. Duplicate boxes are not resolved automatically. No extra truck is counted from cab/full-body detections."
+        },
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_three_quarters_truck_7114_measured_overlay.png",
+          "sha256": "4db2e7716e5a720d2a684e7666308d6b185bcb86c6fcfc44930aec57fb26ead5",
+          "frame_indices": [
+            7071,
+            7072,
+            7073,
+            7080,
+            7113,
+            7114,
+            7126,
+            7147
+          ],
+          "observation": "One loaded flatbed truck recedes through7071–7147. Duplicate cabin/front versus full-body boxes raw807/810 and gamma826/829 describe parts/extents of the same truck. The representative raw810/gamma829 measured vehicle BC crosses7113→7114; the later foreground motorcycle is a separate vehicle. Both pending due duplicate/identity competitor evidence. Gamma's crossing episode ends7126 versus raw7147, while later same physical truck observations occur in other episodes. Duplicate boxes are not resolved automatically. No extra truck is counted from cab/full-body detections."
+        }
+      ],
+      "manual_component_track_ids": [],
+      "manual_same_unit_vehicle_track_ids_observed": [
+        826,
+        829
+      ],
+      "manual_links_semantics": "bounded photo annotations only; no replacement source trajectory, rider BC, merged bbox, or future-event identity claim"
+    },
+    {
+      "candidate_id": "pc6b_69a32d7844280932e66ae4aa740a50055dd38fbfab6186cca27d7bbc748a2070",
+      "disposition": "CONFIRM_PASSAGE",
+      "physical_unit_id": "manual_night_unit_dev_three_quarters_motorcycle_7170",
+      "passage_id": "manual_night_passage_dev_three_quarters_motorcycle_7170",
+      "category": "motorcycle",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true,
+      "reviewer": "CODEX_ASSISTED_ACTUAL_PIXEL_REVIEW_NOT_GROUND_TRUTH",
+      "reason": "One motorcycle with rider(s), including an orange head covering, recedes through7150–7172. Raw819/gamma841 supply vehicle BC7169→7170. The truck farther left/background is physically separate and must not be merged with this motorcycle. Raw current eligible episode starts7166 after earlier gaps; gamma's eligible episode starts7154 and has longer measured support. Both remain pending. Gamma admits a global component before its origin and flags truck/bus raw competitor boxes. Photo review resolves identity only for this measured passage, without bridging raw gaps or using rider BC.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_three_quarters_motorcycle_7170_pixels.png",
+          "sha256": "96d4ecd594d93ad975c4cb805a515c944917dc98bcc7e0f11b84b3c68283a9bd",
+          "frame_indices": [
+            7150,
+            7154,
+            7157,
+            7166,
+            7169,
+            7170,
+            7171,
+            7172
+          ],
+          "observation": "One motorcycle with rider(s), including an orange head covering, recedes through7150–7172. Raw819/gamma841 supply vehicle BC7169→7170. The truck farther left/background is physically separate and must not be merged with this motorcycle. Raw current eligible episode starts7166 after earlier gaps; gamma's eligible episode starts7154 and has longer measured support. Both remain pending. Gamma admits a global component before its origin and flags truck/bus raw competitor boxes. Photo review resolves identity only for this measured passage, without bridging raw gaps or using rider BC."
+        },
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_three_quarters_motorcycle_7170_measured_overlay.png",
+          "sha256": "c5788ae580f2f136af9a2d91fb7392bd7f9e085a967f4c2aa767cb93cdf98e3e",
+          "frame_indices": [
+            7150,
+            7154,
+            7157,
+            7166,
+            7169,
+            7170,
+            7171,
+            7172
+          ],
+          "observation": "One motorcycle with rider(s), including an orange head covering, recedes through7150–7172. Raw819/gamma841 supply vehicle BC7169→7170. The truck farther left/background is physically separate and must not be merged with this motorcycle. Raw current eligible episode starts7166 after earlier gaps; gamma's eligible episode starts7154 and has longer measured support. Both remain pending. Gamma admits a global component before its origin and flags truck/bus raw competitor boxes. Photo review resolves identity only for this measured passage, without bridging raw gaps or using rider BC."
+        }
+      ],
+      "manual_component_track_ids": [
+        835,
+        838
+      ],
+      "manual_same_unit_vehicle_track_ids_observed": [
+        841
+      ],
+      "manual_links_semantics": "bounded photo annotations only; no replacement source trajectory, rider BC, merged bbox, or future-event identity claim"
+    },
+    {
+      "candidate_id": "pc6b_01fefc507d8c639a5ad338efe777a5dec7ab759f5a5bac6b0eb27341568f7b86",
+      "disposition": "HOLD",
+      "physical_unit_id": "manual_night_unit_dev_three_quarters_car_conflict_7244",
+      "passage_id": "manual_night_passage_dev_three_quarters_car_conflict_7244",
+      "category": null,
+      "unit_confirmed": true,
+      "category_confirmed": false,
+      "identity_confirmed": true,
+      "reviewer": "CODEX_ASSISTED_ACTUAL_PIXEL_REVIEW_NOT_GROUND_TRUTH",
+      "reason": "One white enclosed passenger vehicle recedes through7210–7360. It is visually distinct from the earlier flatbed truck and motorcycle. Exact MPV/SUV business taxonomy is not asserted. Both vehicle BCs cross7243→7244. Frozen full-vehicle-episode unanimity fails: raw835 has truck7360; gamma856 crossing episode has truck7337. These are observed class flips on the distant passenger vehicle, not demonstrated physical category changes. Review must not erase CATEGORY_CONFLICT, even though near-frame appearance supports a passenger vehicle.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_three_quarters_car_conflict_7244_pixels.png",
+          "sha256": "16a22df256f4af37b58c27257cfc4ffc9e9a6eb53fc0986e59e3bd744675016b",
+          "frame_indices": [
+            7210,
+            7224,
+            7240,
+            7243,
+            7244,
+            7337,
+            7358,
+            7360
+          ],
+          "observation": "One white enclosed passenger vehicle recedes through7210–7360. It is visually distinct from the earlier flatbed truck and motorcycle. Exact MPV/SUV business taxonomy is not asserted. Both vehicle BCs cross7243→7244. Frozen full-vehicle-episode unanimity fails: raw835 has truck7360; gamma856 crossing episode has truck7337. These are observed class flips on the distant passenger vehicle, not demonstrated physical category changes. Review must not erase CATEGORY_CONFLICT, even though near-frame appearance supports a passenger vehicle."
+        },
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_three_quarters_car_conflict_7244_measured_overlay.png",
+          "sha256": "3db5452a3ff5726c3ef14eaa15b2c9f9b086420be1d5e8865aa5eb48ad7b69af",
+          "frame_indices": [
+            7210,
+            7224,
+            7240,
+            7243,
+            7244,
+            7337,
+            7358,
+            7360
+          ],
+          "observation": "One white enclosed passenger vehicle recedes through7210–7360. It is visually distinct from the earlier flatbed truck and motorcycle. Exact MPV/SUV business taxonomy is not asserted. Both vehicle BCs cross7243→7244. Frozen full-vehicle-episode unanimity fails: raw835 has truck7360; gamma856 crossing episode has truck7337. These are observed class flips on the distant passenger vehicle, not demonstrated physical category changes. Review must not erase CATEGORY_CONFLICT, even though near-frame appearance supports a passenger vehicle."
+        }
+      ],
+      "manual_component_track_ids": [],
+      "manual_same_unit_vehicle_track_ids_observed": [
+        856
+      ],
+      "manual_links_semantics": "bounded photo annotations only; no replacement source trajectory, rider BC, merged bbox, or future-event identity claim"
+    },
+    {
+      "candidate_id": "pc6b_70d5f26b55f80bfd8045afc8e78531cbd0e93da2cf93688f4b5e16946e8f7050",
+      "disposition": "CONFIRM_PASSAGE",
+      "physical_unit_id": "manual_night_unit_holdout_end_motorcycle_9356",
+      "passage_id": "manual_night_passage_holdout_end_motorcycle_9356",
+      "category": "motorcycle",
+      "unit_confirmed": true,
+      "category_confirmed": true,
+      "identity_confirmed": true,
+      "reviewer": "CODEX_ASSISTED_ACTUAL_PIXEL_REVIEW_NOT_GROUND_TRUTH",
+      "reason": "A motorcycle with bright headlamp moves from left/background toward right foreground, separately from the red motorcycle farther right. Raw1198/gamma1223 follow that same physical passage. Vehicle BC9355→9356 is A_TO_B; no rider BC or nearby red-bike BC substitutes for it. Both machine pending without positive identity evidence. Gamma9345 labels this track person before its clean vehicle episode9346; raw vehicle episode begins9345. Both preserve the same crossing. Bright glare and surrounding motorcycles remain difficult; no machine hold-out acceptance benefit is shown.",
+      "evidence": [
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/holdout_end_motorcycle_9356_pixels.png",
+          "sha256": "c6eefd6a8ddb74919497beeb9588c89b9476d02f74475c76bd30d6e1b6236207",
+          "frame_indices": [
+            9345,
+            9346,
+            9350,
+            9355,
+            9356,
+            9363
+          ],
+          "observation": "A motorcycle with bright headlamp moves from left/background toward right foreground, separately from the red motorcycle farther right. Raw1198/gamma1223 follow that same physical passage. Vehicle BC9355→9356 is A_TO_B; no rider BC or nearby red-bike BC substitutes for it. Both machine pending without positive identity evidence. Gamma9345 labels this track person before its clean vehicle episode9346; raw vehicle episode begins9345. Both preserve the same crossing. Bright glare and surrounding motorcycles remain difficult; no machine hold-out acceptance benefit is shown."
+        },
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/holdout_end_motorcycle_9356_measured_overlay.png",
+          "sha256": "e24ab63be6abf70d56af5a1c4e504efb6782eafbc1abbf3748b412ec9c5f6b99",
+          "frame_indices": [
+            9345,
+            9346,
+            9350,
+            9355,
+            9356,
+            9363
+          ],
+          "observation": "A motorcycle with bright headlamp moves from left/background toward right foreground, separately from the red motorcycle farther right. Raw1198/gamma1223 follow that same physical passage. Vehicle BC9355→9356 is A_TO_B; no rider BC or nearby red-bike BC substitutes for it. Both machine pending without positive identity evidence. Gamma9345 labels this track person before its clean vehicle episode9346; raw vehicle episode begins9345. Both preserve the same crossing. Bright glare and surrounding motorcycles remain difficult; no machine hold-out acceptance benefit is shown."
+        }
+      ],
+      "manual_component_track_ids": [],
+      "manual_same_unit_vehicle_track_ids_observed": [
+        1223
+      ],
+      "manual_links_semantics": "bounded photo annotations only; no replacement source trajectory, rider BC, merged bbox, or future-event identity claim"
+    }
+  ],
+  "automatic_events_preserved_without_reclassification": [
+    {
+      "candidate_id": "pc6b_b588c867c5777a206f2413155f1ae532f034614dfdf6a2c939b17a114c3a7359",
+      "event_id": "ce6b_b117c13a6a264e499d63b373e132bea29a8153b32e1f4fd598c1e2074bc4b38c",
+      "pixel_review_support": [
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_beginning_motorcycle_113_pixels.png",
+          "sha256": "a86133119cea5f1b6634c7d292c9c829439b0459c3947a199cfd7a2ce3e1414d",
+          "frame_indices": [
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            119
+          ],
+          "observation": "One motorcycle carrying rider(s) recedes through frames104–119 in both conditions. Person18 is part of that vehicle, not an independent counted vehicle. Gamma's accepted event uses motorcycle15 raw measured BC112→113. No distinct foreground motorcycle is merged in the inspected sequence. Gamma alone is machine accepted. This is sensitive to full-episode/global relation admission: raw local105–113 residual0.120785 passes0.15, but later115→116 raises full-episode residual to0.157327 and rejects the relation. Gamma15 becomes bicycle115/117, ending the relevant vehicle episode114; its admitted relation avoids that later interval. Gamma brightness does not remove motion blur. Not a demonstrated visibility/ReID performance gain."
+        },
+        {
+          "path": "docs/evidence/phase_7/temporal/20261014T062858_002323Z/temporal_review/dev_beginning_motorcycle_113_measured_overlay.png",
+          "sha256": "2928ab34a95b0e092d0f130bf56e8577de5eca60b5d27c8026c8ec23472f7976",
+          "frame_indices": [
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            119
+          ],
+          "observation": "One motorcycle carrying rider(s) recedes through frames104–119 in both conditions. Person18 is part of that vehicle, not an independent counted vehicle. Gamma's accepted event uses motorcycle15 raw measured BC112→113. No distinct foreground motorcycle is merged in the inspected sequence. Gamma alone is machine accepted. This is sensitive to full-episode/global relation admission: raw local105–113 residual0.120785 passes0.15, but later115→116 raises full-episode residual to0.157327 and rejects the relation. Gamma15 becomes bicycle115/117, ending the relevant vehicle episode114; its admitted relation avoids that later interval. Gamma brightness does not remove motion blur. Not a demonstrated visibility/ReID performance gain."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "passed": 28,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "accepted_artifact_source_hash",
+      "passed": true
+    },
+    {
+      "name": "proposal_source_hash_unchanged",
+      "passed": true
+    },
+    {
+      "name": "feedback_hash_bound",
+      "passed": true
+    },
+    {
+      "name": "feedback_proposal_hash_bound",
+      "passed": true
+    },
+    {
+      "name": "review_picture_hash_bound",
+      "passed": true
+    },
+    {
+      "name": "explicit_geometry_answer_retained",
+      "passed": true
+    },
+    {
+      "name": "explicit_direction_answer_retained",
+      "passed": true
+    },
+    {
+      "name": "proposal_stays_unapproved_historical",
+      "passed": true
+    },
+    {
+      "name": "new_acceptance_flags",
+      "passed": true
+    },
+    {
+      "name": "status_initial_experiment_only",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:normalized",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:line_endpoints_reference",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:side_a_polygon_reference",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:side_b_polygon_reference",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:rendered_native_pixels",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:line_polygon_endpoint_difference_reference",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:source_video",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:source_frame",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:thresholds",
+      "passed": true
+    },
+    {
+      "name": "preserved_exact:selected_anchor",
+      "passed": true
+    },
+    {
+      "name": "direction:A_TO_B",
+      "passed": true
+    },
+    {
+      "name": "direction:B_TO_A",
+      "passed": true
+    },
+    {
+      "name": "direction:scope",
+      "passed": true
+    },
+    {
+      "name": "sampling_plan_frozen_before_feedback",
+      "passed": true
+    },
+    {
+      "name": "from_draft_topology_valid",
+      "passed": true
+    },
+    {
+      "name": "from_draft_exact_line",
+      "passed": true
+    },
+    {
+      "name": "from_draft_source_video",
+      "passed": true
+    },
+    {
+      "name": "from_draft_accepted_status",
+      "passed": true
+    }
+  ],
+  "accepted_geometry": {
+    "path": "docs/evidence/phase_7/accepted_geometry/TOR3-MALAM-N1.json",
+    "sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4"
+  },
+  "verification_method": {
+    "path": "docs/evidence/phase_7/verification/check_accepted_n1.py",
+    "sha256": "a007ef0dba7c18fdcfd6050c236e55daa219b79ad519f544dc99dbb6b06bedee"
+  },
+  "retained_geometry_helper_sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+  "scope": "explicit feedback/source identity/exact coordinate/topology/API validation; no model or count performance"
+}

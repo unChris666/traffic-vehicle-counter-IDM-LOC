@@ -1,0 +1,137 @@
+{
+  "association": {
+    "component": {
+      "max_center_distance_norm": 0.51,
+      "max_relative_motion_residual_norm": 0.15,
+      "min_common_frames": 3,
+      "min_consecutive_common_frames": 3,
+      "min_first_bc_inside_second_fraction": 1.0
+    },
+    "same_vehicle": {
+      "max_center_distance_norm": 0.1,
+      "max_relative_motion_residual_norm": 0.01,
+      "min_common_frames": 2,
+      "min_consecutive_common_frames": 2,
+      "min_iou": 0.59
+    }
+  },
+  "confirmation_observations": 1,
+  "grouping_enabled": true,
+  "input_identity": {
+    "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+    "height": 720,
+    "parent_run_id": "20261014T062858_002323Z",
+    "records_sha256": "b9804bd798674c13d93485170fc032a9f33557c14f61f22d51c78428f839ba2d",
+    "variant": "gamma_070",
+    "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "width": 1280
+  },
+  "metric": "passage",
+  "neutral_band_px": 0.0,
+  "policy_version": "phase6_option_b_v1",
+  "scope": {
+    "association_frame_windows": [
+      [
+        0,
+        239
+      ],
+      [
+        2277,
+        2516
+      ],
+      [
+        4674,
+        4913
+      ],
+      [
+        7072,
+        7311
+      ],
+      [
+        9350,
+        9589
+      ]
+    ],
+    "track_ids": [
+      1,
+      2,
+      4,
+      6,
+      7,
+      11,
+      14,
+      15,
+      18,
+      28,
+      35,
+      36,
+      37,
+      40,
+      430,
+      432,
+      433,
+      434,
+      435,
+      437,
+      441,
+      443,
+      444,
+      445,
+      580,
+      585,
+      587,
+      591,
+      593,
+      826,
+      829,
+      830,
+      835,
+      838,
+      839,
+      841,
+      845,
+      847,
+      852,
+      853,
+      856,
+      857,
+      858,
+      859,
+      863,
+      865,
+      868,
+      869,
+      871,
+      873,
+      874,
+      875,
+      879,
+      883,
+      884,
+      887,
+      890,
+      1189,
+      1199,
+      1223,
+      1229,
+      1238,
+      1240,
+      1241,
+      1242,
+      1243,
+      1244,
+      1246,
+      1247,
+      1252,
+      1253,
+      1257,
+      1259,
+      1260,
+      1264,
+      1265,
+      1267,
+      1268,
+      1269
+    ]
+  }
+}
