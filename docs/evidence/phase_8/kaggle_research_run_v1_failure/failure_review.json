@@ -1,0 +1,18 @@
+{
+  "claim_type": "ACTUAL_KAGGLE_V1_FAILURE_REVIEW_BEFORE_MODEL_EXECUTION",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-full-video-research",
+  "kernel_version": 1,
+  "stage": "FULL_SOURCE_READINESS_CELL_BEFORE_SOFTWARE_GUARDS_AND_MODEL_INSTALL",
+  "confirmed_failure": "Eight canonical MP4 source paths do not exist in this runtime; all8 source checks FileNotFoundError.",
+  "source_video_integrity_failure_proven": false,
+  "actual_raw_dataset_mount_path": "UNKNOWN_PENDING_RUNTIME_DISCOVERY",
+  "geometry_asset_mount_observed": [
+    "Verified byte-identical native PNG dataset: /kaggle/input/tgdi-phase8-geometry-evidence-v1"
+  ],
+  "new_detector_tracker_encoder_execution": false,
+  "accepted_TGDI_passages_reported": null,
+  "completed_eight_video_results": false,
+  "full_readiness_path": "docs/evidence/phase_8/kaggle_research_run_v1_failure/actual_full_readiness.json",
+  "full_readiness_sha256": "452267566d6317c8e7154dce63301fb7ba345e405e8f484cbdf5bdbeebc29fa2",
+  "proposed_correction": "DiscoveractualavailableMP4sourcesandverifyexact8expectedSHA; materializepath-onlyeffectiveinputmanifestwithoutchangingcanonicalbytes or model/geometry/counting settings."
+}

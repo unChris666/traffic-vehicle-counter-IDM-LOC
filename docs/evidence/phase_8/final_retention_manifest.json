@@ -1,6 +1,6 @@
 {
   "claim_type": "FINAL_PHASE8_RESEARCH_SOURCE_AND_EVIDENCE_RETENTION_NOT_MODEL_QUALITY_OR_GROUND_TRUTH",
-  "captured_utc": "2026-10-15T08:16:24.539978+00:00",
+  "captured_utc": "2026-10-15T08:39:33.037734+00:00",
   "scope": "Phase8 code, actual eight-input preparation, source-bound geometry/user decisions and immutable historical evidence",
   "source_video_included": false,
   "model_weights_included": false,
@@ -20,8 +20,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "9482216152da3ef9f3296b98e41f8f84ba50719b3440d07d7821ce7a0245c70d",
-      "size_bytes": 13512
+      "sha256": "00f06f9db77d9f8d32330a23ef1a7e7ce2969a2862db72cd7eb292cb2b7d7d60",
+      "size_bytes": 13676
     },
     {
       "path": "docs/OPEN_DECISIONS.md",
@@ -30,13 +30,13 @@
     },
     {
       "path": "docs/PHASE_8_REVIEW.md",
-      "sha256": "10a7032884f082b8b36f517d49cb71d18eba61fe78b0c91b30e18a826fd8b114",
-      "size_bytes": 9157
+      "sha256": "3843465dbbeb682853edd00fb13276c9b01e09925d2cb3c3699ea98025140b53",
+      "size_bytes": 10621
     },
     {
       "path": "docs/PHASE_8_TASK.md",
-      "sha256": "973217d87642930faf4c663d6db3963584643b345684b6794d9ab8efb8025235",
-      "size_bytes": 8190
+      "sha256": "d09e9e410d1119a86239936dd0d0be73435721b0c5a60c75cd9ee4ef774d066f",
+      "size_bytes": 8723
     },
     {
       "path": "docs/PROJECT_CONTEXT.md",
@@ -45,8 +45,8 @@
     },
     {
       "path": "docs/evidence/phase_8/README.md",
-      "sha256": "1a16844981798a3b092c889283ec47f87aac4bfb05d63a00bd92e0c7b1aea001",
-      "size_bytes": 4195
+      "sha256": "cc6f3e14ee38c5466d1e557552fd7bd39b72d23fe3acf8066926dc2ff8b2372e",
+      "size_bytes": 4633
     },
     {
       "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json",
@@ -854,6 +854,31 @@
       "size_bytes": 4195
     },
     {
+      "path": "docs/evidence/phase_8/kaggle_research_run_v1_failure/actual_full_readiness.json",
+      "sha256": "452267566d6317c8e7154dce63301fb7ba345e405e8f484cbdf5bdbeebc29fa2",
+      "size_bytes": 32739
+    },
+    {
+      "path": "docs/evidence/phase_8/kaggle_research_run_v1_failure/execution_failure.json",
+      "sha256": "a6a5394f3afcdf74a2e217063ec09ee9fde56ea1a3572dd4276ccd040b511298",
+      "size_bytes": 8434
+    },
+    {
+      "path": "docs/evidence/phase_8/kaggle_research_run_v1_failure/failure_review.json",
+      "sha256": "45855c132bed02de240f8615954626c8e0df83a0c80e6535d64fa24532129596",
+      "size_bytes": 1170
+    },
+    {
+      "path": "docs/evidence/phase_8/kaggle_research_run_v1_failure/kernel.log.gz",
+      "sha256": "ab7621c78575b641b0cc4b2aec9c9150d3c2412071cbe7b5275d65ba7f95f3b3",
+      "size_bytes": 21366
+    },
+    {
+      "path": "docs/evidence/phase_8/kaggle_research_run_v1_failure/terminal_status_binding.json",
+      "sha256": "55e722e95d9742f610632d43543569605c3f9ebc00965406c3526ddf8d9a940e",
+      "size_bytes": 843
+    },
+    {
       "path": "docs/evidence/phase_8/kaggle_research_submission/kernel-metadata.json",
       "sha256": "f638ed6b675a4aeb5e988054319b6cad32671f4c16f761c892a675e9db448097",
       "size_bytes": 492
@@ -892,6 +917,26 @@
       "path": "docs/evidence/phase_8/kaggle_research_submission_v3/submission.json",
       "sha256": "d537174a3ce89e27df441eed4d8da27e8337ed1e44a73238e86897ade0a23f40",
       "size_bytes": 1984
+    },
+    {
+      "path": "docs/evidence/phase_8/kaggle_research_submission_v4/kernel-metadata.json",
+      "sha256": "3dc8df63524a563e5e5ff6d69c8cfe7c0b48a4d7e29ed852bb1de780d48c3f01",
+      "size_bytes": 543
+    },
+    {
+      "path": "docs/evidence/phase_8/kaggle_research_submission_v4/research_v4_submitted.ipynb.gz",
+      "sha256": "617048baef84dff45f1958d1dd3740ed961cbae3c77cf44b3b8462bc48459bc4",
+      "size_bytes": 235334
+    },
+    {
+      "path": "docs/evidence/phase_8/kaggle_research_submission_v4/source_bundle_manifest.json",
+      "sha256": "544ba9c557e8daea0009cac8c1d89e284829b15a81a830dc6e29202055d18d54",
+      "size_bytes": 16532
+    },
+    {
+      "path": "docs/evidence/phase_8/kaggle_research_submission_v4/submission.json",
+      "sha256": "bbd8dfba5dabe1124c0afb652d7499f6a78edabeff7bc7519695c7bfac1196e6",
+      "size_bytes": 2658
     },
     {
       "path": "docs/evidence/phase_8/kaggle_submission/download_attempts_v1/phase8_kaggle_download_attempt1.json",
@@ -1069,6 +1114,81 @@
       "size_bytes": 2398
     },
     {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/AGENTS.md.gz",
+      "sha256": "4c0019c87c165aeb586a6e56bfccbdbbcfb001f18abb5731d45a79bf80575ca5",
+      "size_bytes": 7378
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/README.md.gz",
+      "sha256": "67f8f48ea8601ff6567a93a1bf0146d32ce47a0c979b2958066ca331e6a9a6dc",
+      "size_bytes": 5521
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/docs__OPEN_DECISIONS.md.gz",
+      "sha256": "6bb94b5f0a4106be8c9e2f434477ae4a57841c80136adb5403cbb31e01248ace",
+      "size_bytes": 15894
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/docs__PHASE_8_REVIEW.md.gz",
+      "sha256": "0e607ee35e33065c2313f9046aac9f34cd1b599b63d0e4cd4bbe52409f67e536",
+      "size_bytes": 4144
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/docs__PHASE_8_TASK.md.gz",
+      "sha256": "1461bf27a734dc40f2fc618192e8fcd337519337e6acd6bcb4db4e88a0bd4d03",
+      "size_bytes": 3740
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/docs__PROJECT_CONTEXT.md.gz",
+      "sha256": "e073ce5ec2f6702238dfd4cb66e78aecf63b010a732a2933fcfb8bfefc872178",
+      "size_bytes": 9420
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/docs__evidence__phase_8__README.md.gz",
+      "sha256": "5f5cd24268a799298146e97ee904da4fe5f1802b7afcb9e787ab7c1a2afaf035",
+      "size_bytes": 2073
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/docs__evidence__phase_8__verification__check_phase8_artifacts.py.gz",
+      "sha256": "dfb5f9a47a969061499329d802f072c54ae84043f987c68fdcd823f493f91d26",
+      "size_bytes": 15580
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/docs__evidence__phase_8__verification__current_software_validation.json.gz",
+      "sha256": "2dffc8f93836932aadc6bdeecb3c9c149d55bcbd43ed5c538472618394e11aaf",
+      "size_bytes": 1072
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/context/docs__evidence__phase_8__verification__current_software_validation.log.gz.gz",
+      "sha256": "300f2873f099d693a8ca1cb9a10788875aa2a59e812a109e1926464f129894a3",
+      "size_bytes": 4107
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/current_software_validation.json",
+      "sha256": "ab3538bd9172901c9d6db130a44718ba642db1193f1c0d56d1ba716ae85bd5ef",
+      "size_bytes": 2208
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/current_software_validation.log.gz",
+      "sha256": "3ffeb6d39a0e27951ace476b92680274fbb6d45c79901322b07c0d462b8fda00",
+      "size_bytes": 4084
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/final_artifact_validation.json",
+      "sha256": "87fd775237bd3ddbd4a3e24ebbc776a963bd984d0b15161a164c28e4840d426d",
+      "size_bytes": 22345
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6/final_retention_manifest.json",
+      "sha256": "502da705459dc85bc68e1a1f9dbab3f292ec622da18da79c568c213642c4e063",
+      "size_bytes": 58671
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/delivery_a97f6d6_context_source_manifest.json",
+      "sha256": "71ec4822994898b4fbcc43a8e44aea64a26b17a43fbb2f22729eb9acb8148d5e",
+      "size_bytes": 4610
+    },
+    {
       "path": "docs/evidence/phase_8/source_retention/prepare_v1/build_phase8_kaggle_bundle.py.gz",
       "sha256": "4f2b27d4c3d50bd97a71820bae81844e4641b09fed57e9f5ed50abee179000b2",
       "size_bytes": 3614
@@ -1184,6 +1304,331 @@
       "size_bytes": 690
     },
     {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_5__accepted_geometry__TOR3-PAGI-G3.json.gz",
+      "sha256": "b9eacb2a749ac5acbe4b066ddc4ce62ee2f698d443122ab842a9fe6b240020f5",
+      "size_bytes": 2594
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_6__option_b_calibration__frozen_thresholds.json.gz",
+      "sha256": "0629ffc170f9aeb6c13185fbcd539b2193bbebeab985721ac83820ce36fd6a8f",
+      "size_bytes": 1284
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_6__option_b_verification__build_reviewed_comparison.py.gz",
+      "sha256": "adda2c2c97db0fff5da290ab70660e51845c5a4de4b0da4f0ebd21b0304f3928",
+      "size_bytes": 10794
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__accepted_geometry__TGDI-WEEKDAY-MALAM-G3-T1.json.gz",
+      "sha256": "2c760c4c6a51435c31f13793794f73d2c86c9b4de613894679a27da541265549",
+      "size_bytes": 2286
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__accepted_geometry__TGDI-WEEKDAY-PAGI-G3-T1.json.gz",
+      "sha256": "371dacec28f3133e7cb8bf030e73e7a0f0c60859dea55e61ca080389d71d60d5",
+      "size_bytes": 2277
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__accepted_geometry__TGDI-WEEKDAY-SIANG-G3-T1.json.gz",
+      "sha256": "291cfd01e0c5fc01fc2c6a96751c256c0258d62d0ced08b20858f3fa4d55b527",
+      "size_bytes": 2285
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__accepted_geometry__TGDI-WEEKDAY-SORE-G3-T1.json.gz",
+      "sha256": "d2e4792d1a707b2efe818201cfc5f569df8c617669e82e600488b9121a9ac736",
+      "size_bytes": 2285
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__accepted_geometry__TGDI-WEEKEND-MALAM-G3-T1.json.gz",
+      "sha256": "a9805acf9c45c088c714821005fb803d911054a4bfb8b4dd6c3c5d8ba86ceb4d",
+      "size_bytes": 2284
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__accepted_geometry__TGDI-WEEKEND-PAGI-G3-T1.json.gz",
+      "sha256": "3386b95c1ecb1696e8e24178bb0c0b6f8c0b5bf51fe62593c01712cb1081ac2b",
+      "size_bytes": 2277
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__accepted_geometry__TGDI-WEEKEND-SIANG-G3-T1.json.gz",
+      "sha256": "942e88a77fe4408ccaea785dffdfda144c62ebeca1092b0d612dc58b31435dc8",
+      "size_bytes": 2282
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__accepted_geometry__TGDI-WEEKEND-SORE-G3-T1.json.gz",
+      "sha256": "ba9922d50a9621bde9902b87fc7e19f4d7ac0e232c297fb6dc7af81df20b634b",
+      "size_bytes": 2285
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__authorization__dataset_clarification_20261015.json.gz",
+      "sha256": "52e53b9eee7c311faaaf9c813da5be23a0ff57794eaffdd65f95ab8549d15d6a",
+      "size_bytes": 481
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__config__batch_manifest_TGDI_G3_T1_v2.json.gz",
+      "sha256": "29029a75337a173762514f2567ac4c22d4194f895eeafe2d9aa7aad0eaad3efa",
+      "size_bytes": 3489
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__config__batch_manifest_v1.json.gz",
+      "sha256": "5d6cae7e14d513e1732f1e5318bc4a7f820f2fe49ddf5a387fb6a3227af22c3b",
+      "size_bytes": 2715
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__config__processing_profile_v1.json.gz",
+      "sha256": "ad578a09dcac8763e7ca3376b1ee8d1fc54dc6db82487d7d916e7f6f4376a931",
+      "size_bytes": 1655
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI-WEEKDAY-MALAM-G3-T1_review_v1.json.gz",
+      "sha256": "c1ef409d7c9c3c15acd0e2b6319afbe7a75a80cb46f5e40137623f144fb316c7",
+      "size_bytes": 748
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI-WEEKDAY-PAGI-G3-T1_review_v1.json.gz",
+      "sha256": "b8ff2524ae990fca983f2bf4349ca49faf6a0c8cc91a51e4cfb7387c712e52e9",
+      "size_bytes": 750
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI-WEEKDAY-SIANG-G3-T1_review_v1.json.gz",
+      "sha256": "c1bee210e478e4143617c9da4bba9f453e39fc34ca820293f784dd11ecd408b4",
+      "size_bytes": 753
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI-WEEKDAY-SORE-G3-T1_review_v1.json.gz",
+      "sha256": "f7d8068fd1a5a0a7b34a6a420650037e589d6876a22ff43ed19f81e20cf31c2d",
+      "size_bytes": 750
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI-WEEKEND-MALAM-G3-T1_review_v1.json.gz",
+      "sha256": "d6ae0fb331345bf1766da5ea59c58eb0f4342357e9ef5d87a19a9d24cf1633ba",
+      "size_bytes": 753
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI-WEEKEND-PAGI-G3-T1_review_v1.json.gz",
+      "sha256": "8ce68736a7d330adc279a446a8ac0537e06d38203b123a7a7b15673a9e24f70e",
+      "size_bytes": 751
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI-WEEKEND-SIANG-G3-T1_review_v1.json.gz",
+      "sha256": "f3cc2af5252d759c328d2aca999e536d8ff6c482172af019e40096b26653b0d3",
+      "size_bytes": 752
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI-WEEKEND-SORE-G3-T1_review_v1.json.gz",
+      "sha256": "9ec9a92b78bbd63d60b8b6148b34be485c05e926b1b53cf0a443a66495e60337",
+      "size_bytes": 752
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI_all_eight_user_confirmation_20261015.json.gz",
+      "sha256": "401e6af1510d6f7bd3822506017c06a9fab8e4452133f3fcc49521fffe529967",
+      "size_bytes": 990
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__feedback__TGDI_unknown_location_metadata_review_v1.json.gz",
+      "sha256": "3a22aca708ffa4fe97e47c467179389bc2f8ab3cd0e783fe9eb85f517c7364a8",
+      "size_bytes": 904
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__geometry_proposals__TGDI-WEEKDAY-MALAM-G3-T1.json.gz",
+      "sha256": "b23246396536123ee702ec339f8ca00414fc010dadbcc903bcf07a66768f23ca",
+      "size_bytes": 2034
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__geometry_proposals__TGDI-WEEKDAY-PAGI-G3-T1.json.gz",
+      "sha256": "8c53cf5f9b4532475fa2964ddcc65a36e7b8c604f477c0c345be75b4d9b3b34b",
+      "size_bytes": 2025
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__geometry_proposals__TGDI-WEEKDAY-SIANG-G3-T1.json.gz",
+      "sha256": "d9261997b32773e13613e181ea0138cd3a6112821b63a8b8aeaeba661a3d42e9",
+      "size_bytes": 2033
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__geometry_proposals__TGDI-WEEKDAY-SORE-G3-T1.json.gz",
+      "sha256": "30cef6b276a6ed715a8bacf847090b42f964b0458618241dafff5187054052a5",
+      "size_bytes": 2031
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__geometry_proposals__TGDI-WEEKEND-MALAM-G3-T1.json.gz",
+      "sha256": "9ac61262d607255e50b01ae40ebfd51334496e5e28b7b7ac5e281219ded58c99",
+      "size_bytes": 2034
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__geometry_proposals__TGDI-WEEKEND-PAGI-G3-T1.json.gz",
+      "sha256": "ffd0628753d49cd7983762935f126149b8506eff87456b9e34537eaf245b1a75",
+      "size_bytes": 2027
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__geometry_proposals__TGDI-WEEKEND-SIANG-G3-T1.json.gz",
+      "sha256": "d1e2c0c48bb9e15436229376370465a51d5e960b9d68e1407d8d7c46988872d2",
+      "size_bytes": 2033
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__geometry_proposals__TGDI-WEEKEND-SORE-G3-T1.json.gz",
+      "sha256": "6fe0c3bed9f4e734c3a56f66fa5e73089fd042a753078ab3225ad12c66f9a21e",
+      "size_bytes": 2032
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKDAY-MALAM__frame_000000000.png.gz",
+      "sha256": "8232fb702f4843b8d73ed62b5b3efa5fd3f9d679f312a1a51cdc70750ade8f4f",
+      "size_bytes": 372995
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKDAY-MALAM__source_inspection.json.gz",
+      "sha256": "3cff36f1d2f7f81bab23d25490c602dd9988b30501a3deac4564e01ef31a3954",
+      "size_bytes": 3034
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKDAY-PAGI__frame_000000000.png.gz",
+      "sha256": "dcb0f6068b8862e3660e82eec46d788a1e5aa64deadf479063f25dc3892b1af8",
+      "size_bytes": 477397
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKDAY-PAGI__source_inspection.json.gz",
+      "sha256": "79f58fa8fdd2667f38138de76d8e1448486983f5d2ca99106e49e41c1ba4ccfb",
+      "size_bytes": 3031
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKDAY-SIANG__frame_000000000.png.gz",
+      "sha256": "cebe17dd925fe63f11de9fe066cdbe266c48c740b8ace86b77e543eb6726ce42",
+      "size_bytes": 440689
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKDAY-SIANG__source_inspection.json.gz",
+      "sha256": "6555cd30bb7a38d7b9868f3605676b0f9c4a909abfe5a3439675e338ca2c69d8",
+      "size_bytes": 3032
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKDAY-SORE__frame_000000000.png.gz",
+      "sha256": "9a0f06f39e1bbde51ad29b58403c10aabb2834dd37cd235ad927e3d6f76f0422",
+      "size_bytes": 426078
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKDAY-SORE__source_inspection.json.gz",
+      "sha256": "90d765850cea696ed6230a40bfc2137f9e2610a85809cb6c06329bf4d2925f9f",
+      "size_bytes": 3027
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKEND-MALAM__frame_000000000.png.gz",
+      "sha256": "d26d68405f392dccaeea71d2710b7ca60660146de50ba2150433aaeb08c53b43",
+      "size_bytes": 347830
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKEND-MALAM__source_inspection.json.gz",
+      "sha256": "2632920b381952e6f69097c3d1df8820363cda48217c972a9bc08d26fd9f672b",
+      "size_bytes": 3034
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKEND-PAGI__frame_000000000.png.gz",
+      "sha256": "5b744496ee0f4cdc448b20d9afd7e15f9bee8b2606ddf16cc8351e86901b0fe9",
+      "size_bytes": 525629
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKEND-PAGI__source_inspection.json.gz",
+      "sha256": "7f4b2b2e957a419a41f0a3fd036493c0508a4e736e0fd551cbae8a6c5133c931",
+      "size_bytes": 3021
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKEND-SIANG__frame_000000000.png.gz",
+      "sha256": "c8a67a7d3131d26e3d2f96894b8f517e5226057ec2e26f7d7ca27943bae352a2",
+      "size_bytes": 492024
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKEND-SIANG__source_inspection.json.gz",
+      "sha256": "39f949baba412712de5ac4356613e989d17644109ae3393507af873bf9af89c8",
+      "size_bytes": 3018
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKEND-SORE__frame_000000000.png.gz",
+      "sha256": "7bfcaccf587162d5e87b440175a9e997e34154eea20351b5fb74ecc144b4c52c",
+      "size_bytes": 468751
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__input_preparation__TGDI-WEEKEND-SORE__source_inspection.json.gz",
+      "sha256": "8702d0d4d089b3c4d0d5b72bfee7ae9d30959c67c415ddeb17bd13cd0f89bc7e",
+      "size_bytes": 3027
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/docs__evidence__phase_8__verification__build_phase8_research_bundle.py.gz",
+      "sha256": "5986fe0f7bee83760925023c6233214bc4241b9349c96f6c108cce24e575381b",
+      "size_bytes": 5040
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__08_end_to_end_batch.ipynb.gz",
+      "sha256": "af2e37805a91f4d56dd202efb992e76b06e72d7bbdb02ecc55dff39cfe88e5bd",
+      "size_bytes": 5467
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_5_geometry_helpers.py.gz",
+      "sha256": "be05fe910c84e0bee19435a937853118ca37274ebfc1df429af46eb2fe57080a",
+      "size_bytes": 8010
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_6_counting_helpers.py.gz",
+      "sha256": "55d74241520eb21dc30e07c055e17bd3d5369b48cff5687116b038a69640b43e",
+      "size_bytes": 10893
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_6_identity_resolution_helpers.py.gz",
+      "sha256": "7fef5c6f381094d98d2765232b023999babb22d885c80378d61d40f6570b0bcf",
+      "size_bytes": 11843
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_7_night_helpers.py.gz",
+      "sha256": "9de59fd2c8ab997446234077be3ecf4a9dc55de2bb5e78cec15b12f1ea835f54",
+      "size_bytes": 9868
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_7_temporal_helpers.py.gz",
+      "sha256": "752b69a5046d33a87160e622732b1abcc44326a4bd6e129c7f4ac5061bd6b224",
+      "size_bytes": 14694
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_8_batch_helpers.py.gz",
+      "sha256": "4c901bf38d4888f6d75516396101ffdc54c7b34e7f0684a505db93f966fdf815",
+      "size_bytes": 10714
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_8_batch_tests.py.gz",
+      "sha256": "511f9c2b184fe36c6290fd77b2f92a672b98478add458d58f1dee3a44f08ee98",
+      "size_bytes": 6652
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_8_manifest_helpers.py.gz",
+      "sha256": "faf8494ebc391f4a03722aaf34dae841dc235c35ef033895452b25f1892daadf",
+      "size_bytes": 10781
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_8_manifest_tests.py.gz",
+      "sha256": "2cd9e78aa7aba2c7171a4ea61b09e20c2dc403a774b6890efe1379e5c52d83dc",
+      "size_bytes": 6855
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_8_pipeline_helpers.py.gz",
+      "sha256": "737867e50862346d0ab3b7e688e34bae2800a5e6d84a7c2fdbe944355b2a0031",
+      "size_bytes": 10626
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_8_pipeline_tests.py.gz",
+      "sha256": "790947a2226151de00035bf39573de025399473ef3c951e19c1b2f60a48efd7a",
+      "size_bytes": 5723
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_8_review_helpers.py.gz",
+      "sha256": "98c3693e41e1bcc18f5a306ffb1d0a1989fedd79e1b3bdac4d261bc740c1ab0a",
+      "size_bytes": 9184
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1/notebooks__phase_8_review_tests.py.gz",
+      "sha256": "3a3e745b3347ec6ecfe91ae5eb71273cd061f7de201d80ff57cdbcebed353679",
+      "size_bytes": 6249
+    },
+    {
+      "path": "docs/evidence/phase_8/source_retention/research_v1_source_manifest.json",
+      "sha256": "2fe29f4f1ead65260b289daa27f86a272aabad419a993d84f4b6de8848e2bd1f",
+      "size_bytes": 30666
+    },
+    {
       "path": "docs/evidence/phase_8/verification/TGDI_research_v2_full_source_preflight.json",
       "sha256": "e5a3a6a0367d44e81a4c3d55b31559e55fdf8e7842ac8ad7cd9a2f873bc409f6",
       "size_bytes": 35797
@@ -1220,18 +1665,18 @@
     },
     {
       "path": "docs/evidence/phase_8/verification/check_phase8_artifacts.py",
-      "sha256": "0c153fb240824b9dd2f34802ff75247e35e971f5e057ffdc15389ae8eb561f8c",
-      "size_bytes": 61267
+      "sha256": "c990245cc0f0216422f6666acf4714be28361a13ff29c9d23271a930e05e839a",
+      "size_bytes": 74325
     },
     {
       "path": "docs/evidence/phase_8/verification/current_software_validation.json",
-      "sha256": "ab3538bd9172901c9d6db130a44718ba642db1193f1c0d56d1ba716ae85bd5ef",
+      "sha256": "7630ee582d6f29f876e1dc4a824d671872f699c9186496b12aa72d8239c2ab66",
       "size_bytes": 2208
     },
     {
       "path": "docs/evidence/phase_8/verification/current_software_validation.log.gz",
-      "sha256": "3ffeb6d39a0e27951ace476b92680274fbb6d45c79901322b07c0d462b8fda00",
-      "size_bytes": 4084
+      "sha256": "5ae417402b6bc1ba61b4295e344482da21bf6e2fd3186538832c00d407d83933",
+      "size_bytes": 4282
     },
     {
       "path": "docs/evidence/phase_8/verification/initial_manifest_readiness.json",
@@ -1299,24 +1744,79 @@
       "size_bytes": 2119
     },
     {
+      "path": "docs/evidence/phase_8/verification/research_v4_actual_full_source_preflight.json",
+      "sha256": "1820d18847e861840d100d0112cc63441e1bb8ea577fd6578e8fd39106b65b00",
+      "size_bytes": 39915
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_mount_software_guard.json",
+      "sha256": "88714610bf05f71f0294875fd4a37493009f4e1a3f59b348a001df075b769844",
+      "size_bytes": 7792
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_source_mount_bootstrap_validation.json",
+      "sha256": "46e5c8d3bb9368a6cb0f8f784d9b60f8630add87cd31981333248b89fe47737f",
+      "size_bytes": 57369
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083514_874207Z.json",
+      "sha256": "2c9bf6f662a8ad2b7ad66aae90c1267f3d04f77502a24b72de76048ff0b12032",
+      "size_bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083545_450972Z.json",
+      "sha256": "a5056ee9e95afe9c6214d5cc7749affc943b556b4b82d88168bcceb0f0606b72",
+      "size_bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083615_953904Z.json",
+      "sha256": "2ab3149ddebdc725c693bbd8cf66544aa5636f9971edbdde00f7eeac7ee04eb1",
+      "size_bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083646_479843Z.json",
+      "sha256": "e37f9b166a17107b13064504c0296b549d4b03d7d6b235a626ddcd15deda64ef",
+      "size_bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083717_024219Z.json",
+      "sha256": "5bd5fb933404186c4f146be42a614c2058f1a25ece31d679a2e73cf48e973fc2",
+      "size_bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083747_711946Z.json",
+      "sha256": "9014dbe2b752e97345097a74c2329034e88aa8a97833a5dffda8092b6881c9d3",
+      "size_bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083818_639791Z.json",
+      "sha256": "bffa1d61ef6a2ca0dcfb3ce3a31ec61a8fc097f52c2937db1932c915c94a67f6",
+      "size_bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_summary.json",
+      "sha256": "606d550ccbff4f3a1b7f982bc19e85c9077b5830ca870c5985e8b7fbef403362",
+      "size_bytes": 3032
+    },
+    {
       "path": "docs/evidence/phase_8/verification/review_bridge_actual_validation.json",
       "sha256": "ff59f5a728a91076b9c89bb1b8c9e1c29cd84c935a3f77321e2f7bf08b7b49fc",
       "size_bytes": 2575
     },
     {
       "path": "notebooks/08_end_to_end_batch.ipynb",
-      "sha256": "3b03966e8dba5c72d90360005cf870305f9a8675c30e41fac376006d22cec903",
-      "size_bytes": 16271
+      "sha256": "a9d8271e4984f188417bb7661ec48ce9069887eb2025c61138e9d6498dba0ee3",
+      "size_bytes": 17580
     },
     {
       "path": "notebooks/phase_8_batch_helpers.py",
-      "sha256": "3e5c5f40ebaeae2f2c0bb08147b0c77b9b767dfdb883dfdefd716d689761baed",
-      "size_bytes": 39832
+      "sha256": "14f91ed0a26caaa6c10c2682d96d3289370335aad1d06ed663ef7823a15549b2",
+      "size_bytes": 48104
     },
     {
       "path": "notebooks/phase_8_batch_tests.py",
-      "sha256": "bee61fcaa83e2464dee49621c072babe39e3be64e927978585c891fd2e4fc567",
-      "size_bytes": 28359
+      "sha256": "2e8640601779d6920f8de33a54a95e46a0c47607deb78d4943cd377708bbc07e",
+      "size_bytes": 33673
     },
     {
       "path": "notebooks/phase_8_manifest_helpers.py",
@@ -1349,6 +1849,6 @@
       "size_bytes": 25018
     }
   ],
-  "artifact_count": 267,
-  "total_bytes": 61598932
+  "artifact_count": 367,
+  "total_bytes": 66026994
 }

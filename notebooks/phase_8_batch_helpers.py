@@ -77,6 +77,114 @@ def _module(name, repo_root):
     return importlib.import_module(name)
 
 
+def resolve_manifest_source_paths(manifest_path, output_root, *, dataset_root=None, input_root="/kaggle/input"):
+    """Resolve a mount relocation by exact eight-source SHA identity only.
+
+    Filenames are a secondary trace-consistency check; they never assign slots.
+    Searches stay inside the explicit input root. The original configuration is
+    immutable; the effective copy changes only videos[*].source_path.
+    """
+    manifest_path = Path(manifest_path).resolve()
+    original_bytes = manifest_path.read_bytes()
+    original = json.loads(original_bytes)
+    videos = original.get("videos")
+    _require(isinstance(videos, list) and len(videos) == 8, "Mount resolution requires exactly eight explicit video inputs")
+    expected, expected_names = {}, {}
+    for video in videos:
+        digest, path = video.get("source_sha256"), video.get("source_path")
+        _require(isinstance(digest, str) and len(digest) == 64 and all(c in "0123456789abcdef" for c in digest), "Every source requires a measured SHA256 before mount resolution")
+        _require(digest not in expected, "Manifest contains duplicate source SHA identities")
+        _require(isinstance(path, str) and path and Path(path).name, "Every source requires its original path/filename trace")
+        expected[digest] = video
+        expected_names[digest] = Path(path).name
+        declared = (video.get("metadata_confirmation") or {}).get("source_filename")
+        _require(declared is None or declared == Path(path).name, "Original source filename trace is inconsistent")
+    allowed = Path(input_root).resolve()
+    _require(allowed.is_dir(), "Explicit input root is unavailable: " + str(allowed))
+    candidates = []
+    for path in ([Path(dataset_root)] if dataset_root is not None else []) + [
+        allowed / "datasets/chrisbiran/tgdi-traffic-videos", allowed / "tgdi-traffic-videos",
+    ] + [Path(video["source_path"]).parent for video in videos]:
+        resolved = path.resolve()
+        if resolved.is_relative_to(allowed) and resolved.is_dir() and resolved not in candidates:
+            candidates.append(resolved)
+    extensions = {Path(video["source_path"]).suffix.lower() for video in videos}
+
+    def scan(roots):
+        found = set()
+        for root in roots:
+            for path in root.rglob("*"):
+                if path.is_file() and path.suffix.lower() in extensions:
+                    resolved = path.resolve()
+                    _require(resolved.is_relative_to(allowed), "Source symlink escapes the explicit input root")
+                    found.add(resolved)
+        return sorted(found)
+
+    files = scan(candidates)
+    strategy = "CONFIGURED_AND_KNOWN_DATASET_ROOTS"
+    if not files:
+        files = scan([allowed])
+        strategy = "BOUNDED_EXPLICIT_INPUT_ROOT_SEARCH"
+    matches = {}
+    for path in files:
+        digest = sha256_file(path)
+        _require(digest in expected, "Unexpected video bytes within source discovery scope: " + str(path))
+        _require(digest not in matches, "Ambiguous duplicate source SHA at multiple actual paths")
+        _require(path.name == expected_names[digest], "Source filename trace differs despite matching SHA; refusing reversed/renamed assignments")
+        matches[digest] = path
+    _require(set(matches) == set(expected), "Actual mounted inputs are missing one or more of the eight expected SHA identities")
+    effective = json.loads(json.dumps(original))
+    mapping = []
+    for video in effective["videos"]:
+        actual = str(matches[video["source_sha256"]])
+        mapping.append({"video_id": video["video_id"], "source_sha256": video["source_sha256"],
+            "original_source_path": video["source_path"], "effective_source_path": actual,
+            "filename_trace_verified": True})
+        video["source_path"] = actual
+    proof = json.loads(json.dumps(effective))
+    for before, after in zip(original["videos"], proof["videos"]):
+        after["source_path"] = before["source_path"]
+    _require(proof == original and manifest_path.read_bytes() == original_bytes, "Source resolution changed non-path configuration or the original manifest")
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S_%fZ")
+    target = Path(output_root) / timestamp
+    target.mkdir(parents=True, exist_ok=False)
+    effective_path = target / "runtime_effective_manifest.json"
+    effective_bytes = original_bytes if effective == original else (json.dumps(effective, indent=2, ensure_ascii=False, allow_nan=False) + "\n").encode()
+    effective_path.write_bytes(effective_bytes)
+    record = {"schema_version": "phase8_source_mount_resolution_v1", "claim_type": "ACTUAL_SOURCE_SHA_MOUNT_RESOLUTION_NOT_MODEL_EXECUTION",
+        "original_manifest_path": str(manifest_path), "original_manifest_sha256": sha256_file(manifest_path),
+        "effective_manifest_path": str(effective_path.resolve()), "effective_manifest_sha256": sha256_file(effective_path),
+        "input_root": str(allowed), "configured_dataset_root": str(dataset_root) if dataset_root is not None else None,
+        "examined_dataset_roots": [str(path) for path in candidates], "discovery_strategy": strategy,
+        "resolved_source_count": len(mapping), "relocated_source_count": sum(row["original_source_path"] != row["effective_source_path"] for row in mapping),
+        "source_mapping": mapping, "manifest_change_scope": "videos[*].source_path_ONLY",
+        "scientific_fields_changed": False, "actual_model_inference_executed": False,
+        "effective_dataset_root": os.path.commonpath([str(path.parent) for path in matches.values()]),
+        "record_path": str((target / "source_mount_resolution.json").resolve())}
+    _write_json(record["record_path"], record)
+    return record
+
+
+def _verify_source_resolution(record, manifest_path, manifest):
+    _require(isinstance(record, dict) and record.get("schema_version") == "phase8_source_mount_resolution_v1", "Invalid source relocation record")
+    _require(record.get("effective_manifest_sha256") == sha256_file(manifest_path), "Effective manifest differs from its relocation record")
+    _require(Path(record["effective_manifest_path"]).resolve() == Path(manifest_path).resolve(), "Effective manifest path differs from its relocation record")
+    original_path = Path(record["original_manifest_path"])
+    _require(sha256_file(original_path) == record.get("original_manifest_sha256"), "Original source manifest changed after relocation")
+    original = _read_json(original_path)
+    proof = json.loads(json.dumps(manifest))
+    mapping = record.get("source_mapping")
+    _require(isinstance(mapping, list) and len(mapping) == 8 and len(original.get("videos", [])) == len(proof.get("videos", [])) == 8,
+             "Relocation record requires all eight source mappings")
+    for before, after, row in zip(original["videos"], proof["videos"], mapping):
+        _require(row.get("video_id") == after["video_id"] == before["video_id"]
+                 and row.get("source_sha256") == after["source_sha256"] == before["source_sha256"]
+                 and row.get("original_source_path") == before["source_path"]
+                 and row.get("effective_source_path") == after["source_path"], "Relocation record source mapping mismatch")
+        after["source_path"] = before["source_path"]
+    _require(proof == original, "Runtime manifest changed scientific/business fields rather than only source paths")
+
+
 def discover_runtime():
     """Report observed devices; visibility alone never means both were used."""
     observed = {"python": platform.python_version(), "cpu_count": os.cpu_count(),
@@ -544,11 +652,15 @@ def _run_configured_video(video, profile, output_dir, *, repo_root):
     return result
 
 
-def run_batch(manifest_path, profile_path, output_root, *, repo_root=".", runner=None):
+def run_batch(manifest_path, profile_path, output_root, *, repo_root=".", runner=None, source_resolution=None):
     """Run one complete source at a time on explicit CUDA0 after strict preflight."""
     repo_root = Path(repo_root).resolve()
     manifest_path, profile_path = _resolve(manifest_path, repo_root), _resolve(profile_path, repo_root)
     manifest, profile = _read_json(manifest_path), _read_json(profile_path)
+    if source_resolution is not None:
+        if isinstance(source_resolution, (str, Path)):
+            source_resolution = _read_json(source_resolution)
+        _verify_source_resolution(source_resolution, manifest_path, manifest)
     _require(manifest.get("evidence_kind") == "ACTUAL_DATASET", "Synthetic fixtures cannot authorize actual model execution")
     validator = _module("phase_8_manifest_helpers", repo_root)
     readiness = validator.validate_manifest(manifest, repo_root=repo_root, check_files=True)
@@ -567,6 +679,9 @@ def run_batch(manifest_path, profile_path, output_root, *, repo_root=".", runner
     _write_json(output_dir / "input_manifest.json", manifest)
     _write_json(output_dir / "processing_profile.json", profile)
     _write_json(output_dir / "runtime.json", discover_runtime())
+    if source_resolution is not None:
+        _write_json(output_dir / "source_mount_resolution.json", source_resolution)
+        shutil.copyfile(source_resolution["original_manifest_path"], output_dir / "original_source_manifest.json")
     results = []
     effective_videos = readiness["effective_videos"]
     modes = {video["video_id"]: configured_execution_mode(video) for video in effective_videos}
@@ -592,5 +707,9 @@ def run_batch(manifest_path, profile_path, output_root, *, repo_root=".", runner
                   processing_profile_sha256=sha256_file(profile_path), output_directory=str(output_dir),
                   processing_assignment="sequential_cpu_cache_only" if all(mode == "verified_cache_replay" for mode in modes.values()) else "sequential_explicit_cuda0_for_new_inference",
                   execution_modes=modes, parallel_gpu_orchestration_implemented=False)
+    if source_resolution is not None:
+        report.update(original_manifest_sha256=source_resolution["original_manifest_sha256"],
+            effective_manifest_sha256=source_resolution["effective_manifest_sha256"],
+            source_mount_resolution=source_resolution, source_mount_resolution_sha256=sha256_file(output_dir / "source_mount_resolution.json"))
     write_batch_outputs(output_dir, report)
     return report

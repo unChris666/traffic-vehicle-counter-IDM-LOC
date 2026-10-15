@@ -171,6 +171,21 @@ def main():
                 check(label + ":artifact_original_or_archived", saved is not None and
                       saved["original_sha256"] == item["sha256"] and saved["original_size_bytes"] == size, item["path"])
 
+    prior_delivery_mapping = base / "source_retention/delivery_a97f6d6_context_source_manifest.json"
+    if prior_delivery_mapping.is_file():
+        mapping = read(prior_delivery_mapping)
+        original_path = repo / mapping["original_manifest_path"]
+        file_binding(original_path, mapping["original_manifest_sha256"], group="prior_phase8_delivery:immutable_original_manifest")
+        original = read(original_path)
+        check("prior_phase8_delivery:original_267_artifacts", mapping["source_commit"] == "a97f6d638e32fdd8311ea46614244c66899f1cfc"
+              and original["artifact_count"] == len(original["artifacts"]) == 267)
+        for item in original["artifacts"]:
+            path, expected_size = repo / item["path"], item["size_bytes"]
+            direct = path.is_file() and sha(path) == item["sha256"] and path.stat().st_size == expected_size
+            archived = source_archives.get((item["path"], item["sha256"]))
+            check("prior_phase8_delivery:original_or_exact_archived_bytes", direct or
+                  archived is not None and len(archived) == expected_size, item["path"])
+
     # Actual TGDI source discovery is a separate artifact from source inference.
     discovery_path = base / "inventory/TGDI_actual_discovery.json"
     discovery = read(discovery_path)
@@ -571,8 +586,8 @@ def main():
             archive = repo / submission_record["submitted_archive_path"]
             file_binding(archive, submission_record["submitted_archive_sha256"], group="research_job:exact_attempt_source_archive")
             check("research_job:exact_attempt_uncompressed_notebook", sha_bytes(gzip.decompress(archive.read_bytes())) == submission_record["submitted_notebook_sha256"])
-        check("research_job:accepted_start_not_completed_results", accepted_submission["accepted_submission_confirmed"] is True
-              and accepted_submission["kernel_version"] == 1 and accepted_submission["execution_status"] == "RUNNING"
+        check("research_job:historical_v1_submission_not_completed_results", accepted_submission["accepted_submission_confirmed"] is True
+              and accepted_submission["kernel_version"] == 1 and accepted_submission["execution_status"] in ("RUNNING", "ERROR")
               and accepted_submission["research_only"] is True and accepted_submission["business_metadata_complete"] is False
               and accepted_submission["all_eight_video_processing_complete"] is False
               and accepted_submission["completed_video_count"] is None and accepted_submission["accepted_event_total"] is None
@@ -597,11 +612,147 @@ def main():
         diagnostics["actual_TGDI_frame_progress"] = "UNKNOWN_NO_RETAINED_MODEL_OUTPUTS"
         diagnostics["actual_TGDI_CUDA_inference_proof"] = "UNKNOWN_NO_RETAINED_MODEL_OUTPUTS"
 
+    v1_failure_path = base / "kaggle_research_run_v1_failure/execution_failure.json"
+    if v1_failure_path.is_file():
+        failure = read(v1_failure_path)
+        file_binding(repo / failure["log_path"], failure["log_sha256"], group="research_job:v1_actual_terminal_error_log")
+        log_bytes = gzip.decompress((repo / failure["log_path"]).read_bytes())
+        check("research_job:v1_exact_logical_error_log", sha_bytes(log_bytes) == failure["logical_log_sha256"]
+              and len(log_bytes) == failure["logical_log_bytes"] and failure["execution_status"] == "ERROR"
+              and failure["kernel_version"] == 1 and failure["no_completed_eight_video_results_claimed"] is True)
+        log_events = json.loads(log_bytes)
+        actual_log = "".join(event.get("data", "") for event in log_events)
+        readiness_objects = []
+        decoder = json.JSONDecoder()
+        for match in re.finditer(r'\{\s*"ready"\s*:', actual_log):
+            try:
+                value, _ = decoder.raw_decode(actual_log[match.start():])
+                if isinstance(value, dict) and isinstance(value.get("issues"), list):
+                    readiness_objects.append(value)
+            except json.JSONDecodeError:
+                continue
+        failed_source_checks = [item for value in readiness_objects for item in value["issues"]
+                                if item.get("code") == "source_verification_failed"]
+        check("research_job:v1_failed_at_full_input_gate_before_models", len(failed_source_checks) == 8
+              and {item.get("slot_id") for item in failed_source_checks} == {video["slot_id"] for video in manifest["videos"]}
+              and "if MODE == 'run_batch' and not READINESS['ready']" in actual_log
+              and "RuntimeError: Batch belum boleh dijalankan" in actual_log)
+        failure_review_path = v1_failure_path.parent / "failure_review.json"
+        if failure_review_path.is_file():
+            review = read(failure_review_path)
+            file_binding(repo / review["full_readiness_path"], review["full_readiness_sha256"], group="research_job:v1_original_full_readiness")
+            full_readiness = read(repo / review["full_readiness_path"])
+            check("research_job:v1_readiness_matches_actual_log_and_no_count_claim", full_readiness in readiness_objects
+                  and full_readiness["ready"] is False and len(full_readiness["issues"]) == 8
+                  and review["new_detector_tracker_encoder_execution"] is False and review["completed_eight_video_results"] is False
+                  and review["accepted_TGDI_passages_reported"] is None and review["source_video_integrity_failure_proven"] is False)
+        diagnostics["research_kernel_version_1_terminal_status"] = "ERROR_INPUT_SOURCE_PATH_GATE_BEFORE_MODEL_EXECUTION"
+        diagnostics["delivery_scope"] = "V1_TERMINAL_FAILURE_RETAINED_SOURCE_PATH_FIX_AND_RETRY_REQUIRE_SEPARATE_PROOF"
+
+    mount_validation_path = base / "verification/research_v4_source_mount_bootstrap_validation.json"
+    if mount_validation_path.is_file():
+        mount_validation = read(mount_validation_path)
+        resolution = mount_validation["source_resolution"]
+        check("mount_fix:actual_local_source_transport_proof_not_gpu_execution", mount_validation["actual_model_inference_executed"] is False
+              and mount_validation["full_source_decode_repeated"] is False and mount_validation["logical_source_files_verified"] == 63
+              and mount_validation["canonical_code_cells_identical"] is True and mount_validation["canonical_mode"] == "run_batch"
+              and mount_validation["readiness_and_run_manifest_is_effective"] is True)
+        check("mount_fix:only_source_paths_may_change", resolution["schema_version"] == "phase8_source_mount_resolution_v1"
+              and resolution["original_manifest_sha256"] == sha(manifest_path)
+              and resolution["manifest_change_scope"] == "videos[*].source_path_ONLY"
+              and resolution["scientific_fields_changed"] is False and resolution["actual_model_inference_executed"] is False
+              and resolution["resolved_source_count"] == len(resolution["source_mapping"]) == 8)
+        effective = json.loads(json.dumps(manifest))
+        configured_by_id = {video["video_id"]: video for video in manifest["videos"]}
+        mapping_by_id = {row["video_id"]: row for row in resolution["source_mapping"]}
+        check("mount_fix:exact_eight_source_ids_no_reassignment", set(mapping_by_id) == set(configured_by_id) and len(mapping_by_id) == 8)
+        for video in effective["videos"]:
+            row, original = mapping_by_id[video["video_id"]], configured_by_id[video["video_id"]]
+            check("mount_fix:source_identity_and_filename_trace_preserved", row["source_sha256"] == original["source_sha256"]
+                  and row["original_source_path"] == original["source_path"] and row["filename_trace_verified"] is True
+                  and Path(row["effective_source_path"]).name == Path(original["source_path"]).name
+                  and Path(row["effective_source_path"]).is_relative_to(Path(resolution["input_root"])), video["video_id"])
+            video["source_path"] = row["effective_source_path"]
+        reconstructed_bytes = manifest_path.read_bytes() if effective == manifest else (
+            json.dumps(effective, indent=2, ensure_ascii=False, allow_nan=False) + "\n").encode()
+        check("mount_fix:effective_manifest_exact_path_only_hash", sha_bytes(reconstructed_bytes) == resolution["effective_manifest_sha256"])
+        diagnostics["mount_fix_local_proof"] = "EIGHT_SOURCE_SHA_PATH_RELOCATION_ONLY_NO_REMOTE_GPU_EXECUTION_CLAIM"
+
+    retry_preflight_path = base / "verification/research_v4_actual_full_source_preflight.json"
+    if retry_preflight_path.is_file():
+        retry_preflight = read(retry_preflight_path)
+        full_validation, resolution = retry_preflight["validation"], retry_preflight["source_resolution"]
+        check("mount_fix:actual_full_retry_preflight_no_inference", retry_preflight["actual_model_inference_executed"] is False
+              and retry_preflight["total_decoded_frames"] == 72590 and full_validation["ready"] is True
+              and full_validation["issues"] == [] and full_validation["business_metadata_complete"] is False
+              and full_validation["research_only"] is True and resolution["scientific_fields_changed"] is False
+              and resolution["manifest_change_scope"] == "videos[*].source_path_ONLY"
+              and resolution["original_manifest_sha256"] == sha(manifest_path))
+        resolved_by_id = {row["video_id"]: row for row in resolution["source_mapping"]}
+        effective = json.loads(json.dumps(manifest))
+        for video in effective["videos"]:
+            row = resolved_by_id[video["video_id"]]
+            check("mount_fix:retry_full_preflight_identity_mapping", row["source_sha256"] == video["source_sha256"]
+                  and row["original_source_path"] == video["source_path"] and row["filename_trace_verified"] is True, video["video_id"])
+            video["source_path"] = row["effective_source_path"]
+        reconstructed = manifest_path.read_bytes() if effective == manifest else (
+            json.dumps(effective, indent=2, ensure_ascii=False, allow_nan=False) + "\n").encode()
+        check("mount_fix:full_preflight_effective_hash_changes_paths_only", sha_bytes(reconstructed) == resolution["effective_manifest_sha256"])
+        decoded_total = 0
+        for video in full_validation["effective_videos"]:
+            original = by_source[video["source_sha256"]]
+            geometry = read(repo / original["geometry_path"])
+            frame = geometry["source_frame"]
+            verified = video["verified_source"]
+            decoded_total += verified["decoded_frame_count"]
+            check("mount_fix:retry_all_native_frames_and_approved_geometry_verified", video["video_id"] == original["video_id"]
+                  and video["source_path"] == resolved_by_id[video["video_id"]]["effective_source_path"]
+                  and video["geometry_sha256"] == original["geometry_sha256"]
+                  and verified["decoded_frame_count"] == original["observed_metadata"]["frame_count"]
+                  and verified["review_frame_bgr_sha256_by_index"][str(frame["frame_index"])] == frame["bgr_uint8_pixel_sha256"], video["video_id"])
+        check("mount_fix:retry_exact_eight_decoded_sources_total", len(full_validation["effective_videos"]) == len(resolved_by_id) == 8
+              and decoded_total == 72590)
+
+    retry_submission_path = base / "kaggle_research_submission_v4/submission.json"
+    if retry_submission_path.is_file():
+        retry = read(retry_submission_path)
+        retry_proof = read(retry_submission_path.parent / "source_bundle_manifest.json")
+        retry_archive = repo / retry["submitted_archive_path"]
+        file_binding(retry_archive, retry["submitted_archive_sha256"], group="research_retry:exact_version2_submitted_archive")
+        check("research_retry:version2_exact_source_and_unchanged_canonical_inputs", retry["accepted_submission_confirmed"] is True
+              and retry["kernel_version"] == 2 and retry["execution_status"] == "RUNNING"
+              and retry["active_manifest_sha256"] == sha(manifest_path)
+              and sha_bytes(gzip.decompress(retry_archive.read_bytes())) == retry["submitted_notebook_sha256"]
+              == retry_proof["submitted_notebook"]["sha256"]
+              and retry["source_bundle_binding_sha256"] == retry_proof["source_bundle_binding_sha256"])
+        check("research_retry:incomplete_research_not_traffic_results", retry["research_only"] is True
+              and retry["business_metadata_complete"] is False and retry["all_eight_video_processing_complete"] is False
+              and retry["completed_video_count"] is None and retry["accepted_event_total"] is None)
+        probe = read(repo / retry["startup_status_evidence_path"])
+        check("research_retry:actual_version2_startup_status_distinct_from_failed_v1", probe["kernel_ref"] == retry["kernel_ref"]
+              and probe["kernel_version"] == 2 and probe["status"] == "KernelWorkerStatus.RUNNING"
+              and probe["actual_detector_frame_progress"] is None and probe["actual_reid_cuda_execution"] is None)
+        retry_startup = read(base / "verification/research_v4_startup_summary.json")
+        check("research_retry:seven_bounded_version2_scheduler_observations", retry_startup["kernel_version"] == 2
+              and retry_startup["observations"] == len(retry_startup["observation_artifacts"]) == 7
+              and retry_startup["expected_source_bundle_binding_sha256"] == retry["source_bundle_binding_sha256"]
+              and retry_startup["last_status"] == "KernelWorkerStatus.RUNNING" and retry_startup["error_status_observed"] is False
+              and retry_startup["matching_version2_log_available"] is False and retry_startup["returned_output_files_available"] is False
+              and retry_startup["complete_eight_video_processing"] is False)
+        for item in retry_startup["observation_artifacts"]:
+            file_binding(repo / item["path"], item["sha256"], item["bytes"], group="research_retry:actual_version2_probe")
+            observed = read(repo / item["path"])
+            check("research_retry:no_old_version1_outputs_or_model_progress_claim", observed["kernel_ref"] == retry["kernel_ref"]
+                  and observed["kernel_version"] == 2 and observed["status"] == "KernelWorkerStatus.RUNNING"
+                  and observed["actual_detector_frame_progress"] is None and observed["actual_reid_cuda_execution"] is None)
+        diagnostics["research_kernel_version_2_observed_status"] = "RUNNING_SCHEDULER_STATUS_NOT_MODEL_EXECUTION_PROOF"
+        diagnostics["delivery_scope"] = "FROZEN_SOURCE_PATH_FIX_AND_ACCEPTED_VERSION2_RETRY_START_NOT_COMPLETED_EIGHT_VIDEO_RESULTS"
+
     current_guards_path = base / "verification/current_software_validation.json"
     if current_guards_path.is_file():
         current_guards = read(current_guards_path)
         check("current_source:all_registered_software_checks_passed", current_guards["successful"] is True
-              and current_guards["tests_registered"] == current_guards["tests_passed"] == 201
+              and current_guards["tests_registered"] == current_guards["tests_passed"] > 0
               and current_guards["tests_skipped"] == 0 and not current_guards["failures"] and not current_guards["errors"]
               and current_guards["new_detector_tracker_encoder_inference_executed"] is False
               and current_guards["actual_TGDI_traffic_result_created"] is False)

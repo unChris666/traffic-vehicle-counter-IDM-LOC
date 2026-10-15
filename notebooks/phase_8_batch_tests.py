@@ -458,6 +458,92 @@ class BatchContracts(unittest.TestCase):
         self.assertFalse(context["business_metadata_complete"])
         self.assertEqual(context["unknown_location_fields"], ["store_name"])
 
+    def _mount_fixture(self, *, custom_mount=False):
+        from phase_8_manifest_helpers import make_batch_manifest
+        input_root = self.root / "explicit_input_root"
+        dataset = input_root / ("other-mount/nested" if custom_mount else "tgdi-traffic-videos")
+        dataset.mkdir(parents=True)
+        manifest = make_batch_manifest()
+        manifest["claim_type"] = "SYNTHETIC_PATH_IDENTITY_FIXTURE_NOT_DECODED_VIDEO_OR_MODEL_RESULT"
+        for video in manifest["videos"]:
+            name = "SYNTHETIC-" + video["video_id"] + ".mp4"
+            data = ("SYNTHETIC_BYTE_PAYLOAD_NOT_DECODABLE_VIDEO_" + video["video_id"]).encode()
+            (dataset / name).write_bytes(data)
+            video.update(source_path="/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/" + name,
+                         source_sha256=hashlib.sha256(data).hexdigest(), metadata_confirmation={"source_filename": name})
+        path = self.root / "original_mount_manifest.json"; path.write_text(json.dumps(manifest))
+        return path, input_root, dataset
+
+    def _resolve_mount(self, path, input_root):
+        return batch.resolve_manifest_source_paths(path, self.root / "runtime_resolution", input_root=input_root,
+            dataset_root=input_root / "datasets/chrisbiran/tgdi-traffic-videos")
+
+    def test_relocated_sources_use_sha_and_preserve_original_manifest_bytes(self):
+        path, input_root, dataset = self._mount_fixture()
+        original = path.read_bytes()
+        record = self._resolve_mount(path, input_root)
+        self.assertEqual(record["resolved_source_count"], 8)
+        self.assertEqual(record["relocated_source_count"], 8)
+        self.assertEqual(path.read_bytes(), original)
+        effective = batch._read_json(record["effective_manifest_path"])
+        self.assertTrue(all(Path(video["source_path"]).parent == dataset for video in effective["videos"]))
+        self.assertIsNone(effective["location"]["latitude"])
+        batch._verify_source_resolution(record, record["effective_manifest_path"], effective)
+
+    def test_bounded_input_root_search_resolves_unexpected_mount_directory(self):
+        path, input_root, dataset = self._mount_fixture(custom_mount=True)
+        record = self._resolve_mount(path, input_root)
+        self.assertEqual(record["discovery_strategy"], "BOUNDED_EXPLICIT_INPUT_ROOT_SEARCH")
+        self.assertEqual(record["effective_dataset_root"], str(dataset))
+
+    def test_missing_source_sha_identity_rejected(self):
+        path, input_root, dataset = self._mount_fixture()
+        next(dataset.iterdir()).unlink()
+        with self.assertRaisesRegex(batch.BatchContractError, "missing one or more"):
+            self._resolve_mount(path, input_root)
+
+    def test_duplicate_actual_source_sha_rejected(self):
+        path, input_root, dataset = self._mount_fixture()
+        (dataset / "zz-duplicate.mp4").write_bytes(next(dataset.iterdir()).read_bytes())
+        with self.assertRaisesRegex(batch.BatchContractError, "duplicate source SHA"):
+            self._resolve_mount(path, input_root)
+
+    def test_unexpected_video_bytes_rejected(self):
+        path, input_root, dataset = self._mount_fixture()
+        (dataset / "EXTRA.mp4").write_bytes(b"SYNTHETIC_UNEXPECTED_SOURCE")
+        with self.assertRaisesRegex(batch.BatchContractError, "Unexpected video bytes"):
+            self._resolve_mount(path, input_root)
+
+    def test_reversed_filenames_do_not_reassign_slots(self):
+        path, input_root, dataset = self._mount_fixture()
+        first, second = sorted(dataset.iterdir())[:2]
+        one, two = first.read_bytes(), second.read_bytes(); first.write_bytes(two); second.write_bytes(one)
+        with self.assertRaisesRegex(batch.BatchContractError, "filename trace differs"):
+            self._resolve_mount(path, input_root)
+
+    def test_changed_source_bytes_rejected_even_with_same_filename(self):
+        path, input_root, dataset = self._mount_fixture()
+        first = next(dataset.iterdir()); first.write_bytes(first.read_bytes() + b"CORRUPTED")
+        with self.assertRaisesRegex(batch.BatchContractError, "Unexpected video bytes"):
+            self._resolve_mount(path, input_root)
+
+    def test_relocation_never_follows_source_symlink_outside_input_root(self):
+        path, input_root, dataset = self._mount_fixture()
+        outside = self.root / "OUTSIDE.mp4"; outside.write_bytes(b"SYNTHETIC_OUTSIDE_ALLOWED_ROOT")
+        (dataset / "outside.mp4").symlink_to(outside)
+        with self.assertRaisesRegex(batch.BatchContractError, "escapes the explicit input root"):
+            self._resolve_mount(path, input_root)
+
+    def test_effective_manifest_cannot_change_nonpath_fields(self):
+        path, input_root, dataset = self._mount_fixture()
+        record = self._resolve_mount(path, input_root)
+        effective = batch._read_json(record["effective_manifest_path"])
+        effective["videos"][0]["observed_metadata"]["width"] = 999
+        Path(record["effective_manifest_path"]).write_text(json.dumps(effective))
+        record["effective_manifest_sha256"] = batch.sha256_file(record["effective_manifest_path"])
+        with self.assertRaisesRegex(batch.BatchContractError, "changed scientific/business fields"):
+            batch._verify_source_resolution(record, record["effective_manifest_path"], effective)
+
 
 def run_tests():
     suite = unittest.defaultTestLoader.loadTestsFromTestCase(BatchContracts)

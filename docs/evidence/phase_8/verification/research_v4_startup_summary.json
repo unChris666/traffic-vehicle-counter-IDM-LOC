@@ -1,0 +1,64 @@
+{
+  "claim_type": "BOUNDED_ACTUAL_VERSION2_V4_STARTUP_STATUS_REVIEW_NOT_MODEL_EXECUTION_PROOF",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-full-video-research",
+  "kernel_version": 2,
+  "submission_packet": "V4",
+  "expected_source_bundle_binding_sha256": "c08bc7b3cdded8ec71131a35cfc0966431a275abd02ddc1a3f68bf7dbc0c6373",
+  "observations": 7,
+  "first_observed_at_utc": "2026-10-15T08:35:14.874235+00:00",
+  "last_observed_at_utc": "2026-10-15T08:38:18.639871+00:00",
+  "last_status": "KernelWorkerStatus.RUNNING",
+  "error_status_observed": false,
+  "matching_version2_log_available": false,
+  "returned_partial_log_available": false,
+  "returned_output_files_available": false,
+  "actual_detector_first_frame_or_first_1000_frames": "UNKNOWN_NO_MATCHING_PARTIAL_LOG_OR_ARTIFACTS_AVAILABLE",
+  "actual_reid_cuda_execution": "UNKNOWN_NO_MATCHING_PARTIAL_LOG_OR_ARTIFACTS_AVAILABLE",
+  "complete_eight_video_processing": false,
+  "no_further_probes_after_bound": true,
+  "source_or_model_configuration_modified": false,
+  "new_jobs_submitted_by_monitor": false,
+  "limits": [
+    "RUNNING is a Kaggle scheduler/session status and does not prove detector-frame processing or CUDA encoder kernel execution.",
+    "Public SDK returned no files or log during these seven startup observations.",
+    "The completed version1 failure log is not accepted as evidence of version2 execution.",
+    "These probes establish neither final success nor final failure of the version2 batch."
+  ],
+  "observation_artifacts": [
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083514_874207Z.json",
+      "sha256": "2c9bf6f662a8ad2b7ad66aae90c1267f3d04f77502a24b72de76048ff0b12032",
+      "bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083545_450972Z.json",
+      "sha256": "a5056ee9e95afe9c6214d5cc7749affc943b556b4b82d88168bcceb0f0606b72",
+      "bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083615_953904Z.json",
+      "sha256": "2ab3149ddebdc725c693bbd8cf66544aa5636f9971edbdde00f7eeac7ee04eb1",
+      "bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083646_479843Z.json",
+      "sha256": "e37f9b166a17107b13064504c0296b549d4b03d7d6b235a626ddcd15deda64ef",
+      "bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083717_024219Z.json",
+      "sha256": "5bd5fb933404186c4f146be42a614c2058f1a25ece31d679a2e73cf48e973fc2",
+      "bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083747_711946Z.json",
+      "sha256": "9014dbe2b752e97345097a74c2329034e88aa8a97833a5dffda8092b6881c9d3",
+      "bytes": 633
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v4_startup_20261015T083818_639791Z.json",
+      "sha256": "bffa1d61ef6a2ca0dcfb3ce3a31ec61a8fc097f52c2937db1932c915c94a67f6",
+      "bytes": 633
+    }
+  ]
+}

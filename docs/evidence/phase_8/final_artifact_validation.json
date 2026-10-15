@@ -1,9 +1,9 @@
 {
   "status": "PASS",
   "claim_type": "INDEPENDENT_SOFTWARE_SOURCE_AND_RETAINED_ARTIFACT_VALIDATION_NOT_MODEL_QUALITY",
-  "created_utc": "2026-10-15T08:16:24.740812+00:00",
-  "checks_passed": 52172,
-  "checks_total": 52172,
+  "created_utc": "2026-10-15T08:39:33.171682+00:00",
+  "checks_passed": 53309,
+  "checks_total": 53309,
   "check_groups": {
     "annotation:actual_native_sample_pixels": {
       "passed": 1,
@@ -62,8 +62,8 @@
       "total": 1
     },
     "documentation:local_link_exists": {
-      "passed": 208,
-      "total": 208
+      "passed": 213,
+      "total": 213
     },
     "final:artifact_count_size": {
       "passed": 1,
@@ -74,12 +74,12 @@
       "total": 1
     },
     "final:retained_artifact:exists": {
-      "passed": 267,
-      "total": 267
+      "passed": 367,
+      "total": 367
     },
     "final:retained_artifact:sha_and_bytes": {
-      "passed": 267,
-      "total": 267
+      "passed": 367,
+      "total": 367
     },
     "geometry:accepted_exact_original_source_and_coordinates": {
       "passed": 8,
@@ -277,6 +277,46 @@
       "passed": 1,
       "total": 1
     },
+    "mount_fix:actual_full_retry_preflight_no_inference": {
+      "passed": 1,
+      "total": 1
+    },
+    "mount_fix:actual_local_source_transport_proof_not_gpu_execution": {
+      "passed": 1,
+      "total": 1
+    },
+    "mount_fix:effective_manifest_exact_path_only_hash": {
+      "passed": 1,
+      "total": 1
+    },
+    "mount_fix:exact_eight_source_ids_no_reassignment": {
+      "passed": 1,
+      "total": 1
+    },
+    "mount_fix:full_preflight_effective_hash_changes_paths_only": {
+      "passed": 1,
+      "total": 1
+    },
+    "mount_fix:only_source_paths_may_change": {
+      "passed": 1,
+      "total": 1
+    },
+    "mount_fix:retry_all_native_frames_and_approved_geometry_verified": {
+      "passed": 8,
+      "total": 8
+    },
+    "mount_fix:retry_exact_eight_decoded_sources_total": {
+      "passed": 1,
+      "total": 1
+    },
+    "mount_fix:retry_full_preflight_identity_mapping": {
+      "passed": 8,
+      "total": 8
+    },
+    "mount_fix:source_identity_and_filename_trace_preserved": {
+      "passed": 8,
+      "total": 8
+    },
     "notebook:default_prepare_no_inference": {
       "passed": 1,
       "total": 1
@@ -465,6 +505,22 @@
       "passed": 18,
       "total": 18
     },
+    "prior_phase8_delivery:immutable_original_manifest:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "prior_phase8_delivery:immutable_original_manifest:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "prior_phase8_delivery:original_267_artifacts": {
+      "passed": 1,
+      "total": 1
+    },
+    "prior_phase8_delivery:original_or_exact_archived_bytes": {
+      "passed": 267,
+      "total": 267
+    },
     "profile:frozen_source:exists": {
       "passed": 5,
       "total": 5
@@ -529,10 +585,6 @@
       "passed": 1,
       "total": 1
     },
-    "research_job:accepted_start_not_completed_results": {
-      "passed": 1,
-      "total": 1
-    },
     "research_job:accepted_transport_only_preserves_all_logical_sources": {
       "passed": 1,
       "total": 1
@@ -561,6 +613,10 @@
       "passed": 2,
       "total": 2
     },
+    "research_job:historical_v1_submission_not_completed_results": {
+      "passed": 1,
+      "total": 1
+    },
     "research_job:probe_discloses_unknown_frame_and_cuda_progress": {
       "passed": 5,
       "total": 5
@@ -573,9 +629,73 @@
       "passed": 1,
       "total": 1
     },
+    "research_job:v1_actual_terminal_error_log:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:v1_actual_terminal_error_log:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:v1_exact_logical_error_log": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:v1_failed_at_full_input_gate_before_models": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:v1_original_full_readiness:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:v1_original_full_readiness:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:v1_readiness_matches_actual_log_and_no_count_claim": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_retry:actual_version2_probe:exists": {
+      "passed": 7,
+      "total": 7
+    },
+    "research_retry:actual_version2_probe:sha_and_bytes": {
+      "passed": 7,
+      "total": 7
+    },
+    "research_retry:actual_version2_startup_status_distinct_from_failed_v1": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_retry:exact_version2_submitted_archive:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_retry:exact_version2_submitted_archive:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_retry:incomplete_research_not_traffic_results": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_retry:no_old_version1_outputs_or_model_progress_claim": {
+      "passed": 7,
+      "total": 7
+    },
+    "research_retry:seven_bounded_version2_scheduler_observations": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_retry:version2_exact_source_and_unchanged_canonical_inputs": {
+      "passed": 1,
+      "total": 1
+    },
     "retention:no_video_weights_or_100MB_artifact": {
-      "passed": 267,
-      "total": 267
+      "passed": 367,
+      "total": 367
     },
     "review_bridge:actual_machine_pilot_present": {
       "passed": 1,
@@ -634,88 +754,88 @@
       "total": 8
     },
     "source_history:compressed_archive:exists": {
-      "passed": 21,
-      "total": 21
+      "passed": 95,
+      "total": 95
     },
     "source_history:compressed_archive:sha_and_bytes": {
-      "passed": 21,
-      "total": 21
+      "passed": 95,
+      "total": 95
     },
     "source_history:exact_original_logical_bytes": {
-      "passed": 21,
-      "total": 21
+      "passed": 95,
+      "total": 95
     },
     "source_history:unique_original_bindings": {
-      "passed": 2,
-      "total": 2
+      "passed": 4,
+      "total": 4
     },
     "submission:actual_packaging_claims": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "submission:base_builder_proof:exists": {
-      "passed": 2,
-      "total": 2
+      "passed": 3,
+      "total": 3
     },
     "submission:base_builder_proof:sha_and_bytes": {
-      "passed": 2,
-      "total": 2
+      "passed": 3,
+      "total": 3
     },
     "submission:builder_proof:exists": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "submission:builder_proof:sha_and_bytes": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "submission:bundle_actual_logical_bytes": {
-      "passed": 145,
-      "total": 145
+      "passed": 208,
+      "total": 208
     },
     "submission:bundle_binding_hash": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "submission:bundle_matches_canonical_or_retained_source": {
-      "passed": 145,
-      "total": 145
+      "passed": 208,
+      "total": 208
     },
     "submission:canonical_cells_preserved_after_bootstrap": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "submission:exact_kernel_metadata:exists": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "submission:exact_kernel_metadata:sha_and_bytes": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "submission:external_transport_exact_approved_asset_row": {
-      "passed": 8,
-      "total": 8
+      "passed": 16,
+      "total": 16
     },
     "submission:packaging_source_proof:exists": {
-      "passed": 145,
-      "total": 145
+      "passed": 208,
+      "total": 208
     },
     "submission:packaging_source_proof:sha_and_bytes": {
-      "passed": 145,
-      "total": 145
+      "passed": 208,
+      "total": 208
     },
     "submission:retained_hash_bound_source_bundle": {
       "passed": 1,
       "total": 1
     },
     "submission:submitted_archive_matches_packaging_proof": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "submission:submitted_archive_not_claimed_executed_notebook": {
-      "passed": 3,
-      "total": 3
+      "passed": 4,
+      "total": 4
     },
     "transport:actual_dataset_has_exact_nine_expanded_files": {
       "passed": 1,
@@ -746,12 +866,12 @@
       "total": 1
     },
     "transport:explicit_v3_source_binding": {
-      "passed": 1,
-      "total": 1
+      "passed": 2,
+      "total": 2
     },
     "transport:logical_source_plus_transport_binding": {
-      "passed": 1,
-      "total": 1
+      "passed": 2,
+      "total": 2
     },
     "transport:png_bound_to_exact_approved_source_frame": {
       "passed": 8,
@@ -845,18 +965,45 @@
         "original_sha256": "c68b649b5d8f9122819f673b277e8f78207cf53291fc4142815c65a5fd2fd5ce"
       },
       {
+        "path": "notebooks/08_end_to_end_batch.ipynb",
+        "original_sha256": "3b03966e8dba5c72d90360005cf870305f9a8675c30e41fac376006d22cec903"
+      },
+      {
+        "path": "notebooks/phase_8_batch_helpers.py",
+        "original_sha256": "3e5c5f40ebaeae2f2c0bb08147b0c77b9b767dfdb883dfdefd716d689761baed"
+      },
+      {
+        "path": "notebooks/phase_8_batch_tests.py",
+        "original_sha256": "bee61fcaa83e2464dee49621c072babe39e3be64e927978585c891fd2e4fc567"
+      },
+      {
+        "path": "notebooks/08_end_to_end_batch.ipynb",
+        "original_sha256": "3b03966e8dba5c72d90360005cf870305f9a8675c30e41fac376006d22cec903"
+      },
+      {
+        "path": "notebooks/phase_8_batch_helpers.py",
+        "original_sha256": "3e5c5f40ebaeae2f2c0bb08147b0c77b9b767dfdb883dfdefd716d689761baed"
+      },
+      {
+        "path": "notebooks/phase_8_batch_tests.py",
+        "original_sha256": "bee61fcaa83e2464dee49621c072babe39e3be64e927978585c891fd2e4fc567"
+      },
+      {
         "path": "docs/evidence/phase_8/verification/build_phase8_research_bundle.py",
         "original_sha256": "2234c9ad910288463e164b75235e3f1b196b09b097560d7c55ffedcb60d224e1"
       }
     ],
     "retained_actual_preparation_run_count": 2,
     "completed_kaggle_preparation_run": "docs/evidence/phase_8/preparation/kaggle_20261015T040402_298644Z",
-    "hash_bound_submitted_bundles": 3,
-    "delivery_scope": "FROZEN_DEVELOPMENT_AND_ACCEPTED_REMOTE_JOB_START_NOT_COMPLETED_EIGHT_VIDEO_RESULTS",
+    "hash_bound_submitted_bundles": 4,
+    "delivery_scope": "FROZEN_SOURCE_PATH_FIX_AND_ACCEPTED_VERSION2_RETRY_START_NOT_COMPLETED_EIGHT_VIDEO_RESULTS",
     "actual_TGDI_frame_progress": "UNKNOWN_NO_RETAINED_MODEL_OUTPUTS",
     "actual_TGDI_CUDA_inference_proof": "UNKNOWN_NO_RETAINED_MODEL_OUTPUTS",
+    "research_kernel_version_1_terminal_status": "ERROR_INPUT_SOURCE_PATH_GATE_BEFORE_MODEL_EXECUTION",
+    "mount_fix_local_proof": "EIGHT_SOURCE_SHA_PATH_RELOCATION_ONLY_NO_REMOTE_GPU_EXECUTION_CLAIM",
+    "research_kernel_version_2_observed_status": "RUNNING_SCHEDULER_STATUS_NOT_MODEL_EXECUTION_PROOF",
     "actual_full_scope_CPU_pilot_count": 1
   },
   "preliminary_only": false,
-  "checker_source_sha256": "0c153fb240824b9dd2f34802ff75247e35e971f5e057ffdc15389ae8eb561f8c"
+  "checker_source_sha256": "c990245cc0f0216422f6666acf4714be28361a13ff29c9d23271a930e05e839a"
 }
