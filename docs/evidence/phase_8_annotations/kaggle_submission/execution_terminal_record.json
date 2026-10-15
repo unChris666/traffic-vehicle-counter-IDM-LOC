@@ -1,0 +1,196 @@
+{
+  "claim_type": "ACTUAL_ANNOTATION_JOB_TERMINAL_RETRIEVAL_NOT_NEW_MODEL_EXECUTION",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-annotation-review",
+  "kernel_version": 1,
+  "status": "KernelWorkerStatus.COMPLETE",
+  "observed_at_utc": "2026-10-15T15:33:24.597515+00:00",
+  "source_bundle_matches_submitted": true,
+  "expected_source_bundle_binding_sha256": "4079a36a0643d7977d44de91aa5076666f0b859986fa7b7e0e817f41ad672723",
+  "execution_log_path": "docs/evidence/phase_8_annotations/kaggle_submission/execution.log.gz",
+  "execution_log_sha256": "03cab4ac82dd4989deed3bdd2b237465ac97f45f36551d105c3852c3d3008ec1",
+  "execution_log_logical_sha256": "c7c15c6aa8fb57b2487cfdcdac0d3e8aebd8605ed6d7cdb7d7ea116dbb5657c5",
+  "returned_file_count": 86,
+  "signed_urls_retained": false,
+  "all_eight_completed": true,
+  "rendered_frames": 72590,
+  "accepted_unchanged": 58,
+  "pending_unchanged": 1825,
+  "verified_original_payloads": 24,
+  "retained_run_path": "docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z",
+  "retained_batch_report_sha256": "d66a32f67a6b82aeb02359d0c04a0d4004e065ddd59a991600c2902e03ce32f3",
+  "output_directory": "/kaggle/working/phase_8_annotated_review_v1/20261015T150218_945772Z",
+  "all_verified_input_bytes_preserved": true,
+  "original_machine_aggregate_changed": false,
+  "new_detector_tracker_reid_or_counting_execution": false,
+  "download_checks": [
+    {
+      "path": "annotation_batch_report.json",
+      "sha256": "d66a32f67a6b82aeb02359d0c04a0d4004e065ddd59a991600c2902e03ce32f3",
+      "size_bytes": 70607,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "annotation_retention_manifest.json",
+      "sha256": "b9a84af72706ffa594465cc71e67064a08fdc91d4e932a06775b119deddf531a",
+      "size_bytes": 11981,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "input_hashes.json",
+      "sha256": "797131a9c40bb3262f1b95f975ae2cc5591eebd4b98ea4fb4dcdb18032eb03ed",
+      "size_bytes": 23785,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_malam/annotation_report.json",
+      "sha256": "45f5dba124d59d3d8398b20ebec2c2b061271ec645a7706a7ca42d22836c1bd9",
+      "size_bytes": 6197,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_malam/passage_display_index.json",
+      "sha256": "d1292ece26249da7e04dc15c3fae6556ae5b385c39f05a1ae699771b83c4adad",
+      "size_bytes": 83190,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_malam/preview_frame_000009021.png",
+      "sha256": "5c77391a909bf0c0f000caffaf90d8a93a1d7eb2f4d628b0141751ace9d4fb8c",
+      "size_bytes": 604193,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_pagi/annotation_report.json",
+      "sha256": "3cfaddbf04524771de8265cecfbe13be64d284ed9486576098797cb4bcc4ce0d",
+      "size_bytes": 6414,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_pagi/passage_display_index.json",
+      "sha256": "b20475703e9df0941b2170e7cd13ae9349e363d3ac171100418f5ed532453c96",
+      "size_bytes": 96393,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_pagi/preview_frame_000002363.png",
+      "sha256": "7c7f1062deb3bfd122e430ab49001d285be6b8736145142f443fd7f54149daf7",
+      "size_bytes": 649076,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_pagi/preview_frame_000002378.png",
+      "sha256": "a9f928595c286a076def24b45a924f004f9e9250006f8c1595a666f9e464338a",
+      "size_bytes": 657613,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_pagi/preview_frame_000009051.png",
+      "sha256": "80117bedfc5140c751785f737b399023dbae8ea71c4f185f57aebfd2b8dba19f",
+      "size_bytes": 706589,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_siang/annotation_report.json",
+      "sha256": "57ef7618dc57cd14bccf17991ce13502e9892dc9d6b5eb46d3851a9baec0f84d",
+      "size_bytes": 5507,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_siang/passage_display_index.json",
+      "sha256": "dcb690588c53c95c0480e7e49f8773ba3e8e2f09f66f7b923d18a9056f1654e1",
+      "size_bytes": 75292,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_sore/annotation_report.json",
+      "sha256": "78192a5157c9fd852740208237941a32bde8875145a35e00795e23fe39a9d72f",
+      "size_bytes": 6190,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekday_sore/passage_display_index.json",
+      "sha256": "4327ef11f02887e8d84fc9a5e874624267011ea08dfc8017845b9bd15dd8b2a2",
+      "size_bytes": 117143,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_malam/annotation_report.json",
+      "sha256": "d05ff20a54425d9daabbe3d4df873c7cf181382e6f9256d1080fc02b1e98e5cf",
+      "size_bytes": 6419,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_malam/passage_display_index.json",
+      "sha256": "2228109865ac7fba883ce37ab9f3206962c3e90f241eeead3ecdd697354c5bb1",
+      "size_bytes": 70908,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_pagi/annotation_report.json",
+      "sha256": "64d3e480cbec0b1db8f221b588aa2eb30e35c3b69063be15c54b12aa3fc5c344",
+      "size_bytes": 6186,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_pagi/passage_display_index.json",
+      "sha256": "50ca6399809b6160fc3a84d6d6072eea9805eef54ce0cbc0f5be5d324543d1b2",
+      "size_bytes": 79123,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_siang/annotation_report.json",
+      "sha256": "a73fee115fef4e577e8af14503d3b3908d3448ba724924075c1945adecb919f3",
+      "size_bytes": 6419,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_siang/passage_display_index.json",
+      "sha256": "cc664db9ebe10fd715dc2d8bad4d4f076988d6eb3c8ba62ca1d59ba73e9cdfbe",
+      "size_bytes": 78988,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_siang/preview_frame_000009123.png",
+      "sha256": "7191bfe7c58ce33223e662b5df9814d9feec8c3afaf8faf2f3c779ff8a72789c",
+      "size_bytes": 721443,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_sore/annotation_report.json",
+      "sha256": "119505e06077e5833b2330c862fec1132d11ad655036f3040b1602d72c4f3312",
+      "size_bytes": 6194,
+      "http_status": 200,
+      "status": "PASS"
+    },
+    {
+      "path": "weekend_sore/passage_display_index.json",
+      "sha256": "9e0306dadfd21701dbe31977f07086e833c03c8abca710a2ffa7f5d602dcc8d0",
+      "size_bytes": 80015,
+      "http_status": 200,
+      "status": "PASS"
+    }
+  ],
+  "full_mp4_downloads": false
+}

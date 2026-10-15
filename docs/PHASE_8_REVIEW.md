@@ -59,3 +59,13 @@ Perbaikan mencari delapan video aktual berdasarkan SHA sumber, lalu memeriksa je
 Setelah job selesai, unduh dan validasi kedelapan output, cache/appearance records, anotasi, event/keputusan/audit queue, resource dan dua CSV. Kegagalan/partial/pending tetap eksplisit. **Objektif Phase8 end-to-end belum dinyatakan selesai pada status RUNNING ini.** Full manual audit tetap Phase9 dan belum dimulai. Metadata bisnis tetap belum lengkap meskipun proses penelitian diizinkan.
 
 Tidak ada ground truth atau klaim accuracy/precision/recall/F1/MAPE. Phase9 audit menyeluruh dan fase modularisasi/UI/Docker/deployment belum dimulai. Bytes konteks dan seluruh bukti fase sebelumnya tetap dipertahankan melalui [arsip](evidence/phase_8/baseline_retention/context_retention_mapping.json).
+
+## Pembaruan hasil aktual dan anotasi review — 15 Oktober 2026
+
+Setelah snapshot startup di atas, kernel research versi2 selesai **COMPLETE**. Laporan output asli untuk run `20261015T083731_664817Z` menyatakan **8/8 video selesai, 72.590 frame**, dengan **58 accepted otomatis dan 1.825 kandidat pending**. Seluruh accepted berkategori motorcycle. Lima belas payload JSON yang diunduh cocok hash/ukurannya dengan manifest output asli; ringkasan dan byte laporan yang dipilih kini disimpan pada [baseline anotasi](evidence/phase_8_annotations/baseline/baseline_retention.json). Status hasil adalah `completed_research_snapshots_pending_audit`; subtotal ini belum menjadi jumlah kendaraan fisik yang tervalidasi.
+
+Pengguna kemudian meminta panel kategori × arah, warna/label bbox, nomor frame dan penjelas unit/rider. [Notebook08a](../notebooks/08a_annotation_review.ipynb) merender ulang sumber/cache/keputusan tersimpan ke output terpisah, tanpa model atau resolusi counting baru. [Kontrak visual dan validasi](ANNOTATED_VIDEO_REVIEW.md) menjelaskan replay final offline, pemisahan kategori mentah/final, komponen `+0`, pending dan batas review. Pergantian ID setelah oklusi tetap terbuka; renderer tidak menyambung identitas baru.
+
+[Arsip konteks sebelumnya](evidence/phase_8_annotations/baseline/context_retention_mapping.json) mempertahankan bytes dokumen pada delivery `467f3dc`; manifest/bukti eksekusi lama tetap utuh.
+
+**Anotasi aktual selesai:** [terminal record](evidence/phase_8_annotations/kaggle_submission/execution_terminal_record.json) memverifikasi delapan output baru dan72.590frame, dengan subtotal58accepted/1.825pending tetap. Salinan H.264 untuk review tersedia di [GitHub Release](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/tag/phase8-annotation-review-v1); SHA sumber dan hasil delivery dicatat terpisah. Ini pembaruan visual dan retensi, bukan perbaikan identitas atau audit fisik lengkap.

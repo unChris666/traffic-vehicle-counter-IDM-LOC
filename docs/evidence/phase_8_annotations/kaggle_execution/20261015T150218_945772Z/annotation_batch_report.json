@@ -1,0 +1,1711 @@
+{
+  "schema_version": "phase8_annotation_batch_v1",
+  "status": "completed_all_eight_render_only",
+  "started_utc": "2026-10-15T15:02:18.945963+00:00",
+  "donor_run_id": "20261015T083731_664817Z",
+  "donor_manifest_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+  "source_bundle_prefix": "c08bc7b3cdded8ec",
+  "source_run_root": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z",
+  "output_directory": "/kaggle/working/phase_8_annotated_review_v1/20261015T150218_945772Z",
+  "selected_video_ids": [
+    "weekday_pagi",
+    "weekday_siang",
+    "weekday_sore",
+    "weekday_malam",
+    "weekend_pagi",
+    "weekend_siang",
+    "weekend_sore",
+    "weekend_malam"
+  ],
+  "all_eight_selected": true,
+  "baseline_accepted": 58,
+  "baseline_pending": 1825,
+  "selected_expected_accepted": 58,
+  "selected_expected_pending": 1825,
+  "detector_tracker_encoder_counting_rerun": false,
+  "snapshot_kind": "machine",
+  "original_aggregates_changed": false,
+  "timeline_semantics": "FINAL_OFFLINE_ACCEPTED_SNAPSHOT_REPLAY_AT_STORED_GEOMETRY_CONFIRMATION_FRAME_NOT_CAUSAL_DECISION_AVAILABILITY",
+  "pending_semantics": "CANDIDATES_NOT_UNIQUE_PHYSICAL_VEHICLES_AND_EXCLUDED_FROM_ACCEPTED_PIVOT",
+  "identity_gap_semantics": "NO_NEW_ID_STITCHING_OR_COMPONENT_INFERENCE",
+  "runtime": {
+    "python": "3.13.15",
+    "opencv": "4.14.0",
+    "numpy": "2.1.3"
+  },
+  "controller_sha256": "268a2c9680b50c0ed2465db7be7f83439e19d3e68056d4dfe031f5729e3ef927",
+  "videos": [
+    {
+      "video_id": "weekday_pagi",
+      "status": "completed",
+      "expected_frame_count": 9052,
+      "accepted_total": 6,
+      "pending_count": 263,
+      "expected_pivot": {
+        "accepted_total": 6,
+        "by_category_direction": {
+          "motorcycle": {
+            "A_TO_B": 3,
+            "B_TO_A": 3
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          }
+        },
+        "by_category": {
+          "motorcycle": 6,
+          "car": 0,
+          "truck": 0
+        },
+        "by_direction": {
+          "A_TO_B": 3,
+          "B_TO_A": 3
+        },
+        "event_ids": [
+          "ce6b_3bc3b81a933889ae167f48646a02f0fbed2bb181f03b290cbaa49430c0609ac6",
+          "ce6b_4bf6c483728f67fdd2b315ab6e6e3c55565194ae9c401c3600ae628b7d3ae432",
+          "ce6b_57d19cca871f62b84177cec3237def34db1814ebccc941be54b4b7b642cf72bb",
+          "ce6b_64cc6a9cb78df7e74cc887fdf56fe218c54b6eca092c38511922b59ad9a6acc8",
+          "ce6b_b68d6f9360a010cc3be7e3377cd87df58e95238f807e72b35af3d3ab5bcd3727",
+          "ce6b_f87aec16327d46fe1e85b423b0865159d8d356fd8e1a6e7736866430e9a1d7bd"
+        ]
+      },
+      "category_uses_future_evidence_count": 6,
+      "render_report": {
+        "schema_version": "phase8_review_annotation_v1",
+        "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+        "video_id": "weekday_pagi",
+        "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+        "source_identity": {
+          "video_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+          "geometry_sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215",
+          "width": 640,
+          "height": 480,
+          "variant": "raw",
+          "parent_run_id": "phase8_20261015T083731_859575Z",
+          "records_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8"
+        },
+        "inputs": {
+          "video": {
+            "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-PAGI.mp4",
+            "sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+            "size_bytes": 50748314
+          },
+          "records": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/track_records.jsonl.gz",
+            "sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8",
+            "size_bytes": 15989978
+          },
+          "geometry": {
+            "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json",
+            "sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215",
+            "size_bytes": 6055
+          },
+          "decisions": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/counting/machine_passage_decisions.json.gz",
+            "sha256": "3e3adf0562d5a1782fb1336d5bd55ebc25595c56f77a34e6139492f32f439f55",
+            "size_bytes": 874273
+          },
+          "events": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/counting/machine_count_events.json.gz",
+            "sha256": "eb421939e94f7a2dfa76ffd19128fba9a10f9de70b5b68c8ae98df06fae1a726",
+            "size_bytes": 38039
+          },
+          "relations": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/counting/relations.json.gz",
+            "sha256": "e741445e524d0abba1831db5012362fd80078d8727757ed1c20a884930642055",
+            "size_bytes": 5571611
+          },
+          "ledger": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+            "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+            "size_bytes": 2476424
+          }
+        },
+        "source_image_region": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480,
+          "resized": false,
+          "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+        },
+        "canvas": {
+          "width": 1160,
+          "height": 720,
+          "sidebar_width": 520,
+          "footer_minimum_height": 240
+        },
+        "output_video": {
+          "path": "annotated_review.mp4",
+          "sha256": "6c9b4a384b7f35d6e98e7c5ac24a421bee7faa5d66a42e1ec3c85029fb2f24b2",
+          "size_bytes": 408283622,
+          "codec": "mp4v",
+          "frames_written": 9052,
+          "frames_redecoded": 9052,
+          "fps": 29.904049581962543,
+          "source_audio_preserved": false,
+          "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+        },
+        "final_accepted": 6,
+        "final_pending_candidates": 263,
+        "final_pivot": {
+          "motorcycle": {
+            "A_TO_B": 3,
+            "B_TO_A": 3
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "bus_angkot": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          },
+          "pedestrian": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          }
+        },
+        "decision_status_counts": {
+          "pending_review": 263,
+          "accepted": 6
+        },
+        "category_coverage": {
+          "motorcycle": "experimental_vehicle_passage",
+          "car": "experimental_vehicle_passage",
+          "truck": "experimental_vehicle_passage",
+          "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+          "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+        },
+        "source_pixel_hash_verified_every_frame": true,
+        "inputs_unchanged_after_render": true,
+        "new_detector_tracker_encoder_inference": false,
+        "counting_or_identity_resolver_rerun": false,
+        "occlusion_identity_recovery_modified": false,
+        "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+        "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+        "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+        "pending_excluded_from_pivot": true,
+        "previews": [
+          {
+            "path": "preview_frame_000000000.png",
+            "sha256": "7ee0394b74aadc726d1ed24c626499387528d9ec2845cf3ecdcf32bc0ff2ac51",
+            "frame_index": 0,
+            "accepted_so_far": 0,
+            "pending_so_far": 0
+          },
+          {
+            "path": "preview_frame_000002363.png",
+            "sha256": "7c7f1062deb3bfd122e430ab49001d285be6b8736145142f443fd7f54149daf7",
+            "frame_index": 2363,
+            "accepted_so_far": 0,
+            "pending_so_far": 85
+          },
+          {
+            "path": "preview_frame_000002378.png",
+            "sha256": "a9f928595c286a076def24b45a924f004f9e9250006f8c1595a666f9e464338a",
+            "frame_index": 2378,
+            "accepted_so_far": 0,
+            "pending_so_far": 85
+          },
+          {
+            "path": "preview_frame_000002431.png",
+            "sha256": "89189cbbd26f6bf09ae91d9e315edc471862ffd1764ad47e2d2b9a260bb7c029",
+            "frame_index": 2431,
+            "accepted_so_far": 0,
+            "pending_so_far": 87
+          },
+          {
+            "path": "preview_frame_000002432.png",
+            "sha256": "a1147b1f8a18ce06f244d5b450711ab66f199a98251d8a82820a6e575ff4c2fc",
+            "frame_index": 2432,
+            "accepted_so_far": 1,
+            "pending_so_far": 87
+          },
+          {
+            "path": "preview_frame_000009051.png",
+            "sha256": "80117bedfc5140c751785f737b399023dbae8ea71c4f185f57aebfd2b8dba19f",
+            "frame_index": 9051,
+            "accepted_so_far": 6,
+            "pending_so_far": 263
+          }
+        ],
+        "passage_display_index": {
+          "path": "passage_display_index.json",
+          "sha256": "b20475703e9df0941b2170e7cd13ae9349e363d3ac171100418f5ed532453c96"
+        },
+        "opencv_version": "4.14.0",
+        "render_and_decode_wall_seconds": 215.327411782,
+        "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      }
+    },
+    {
+      "video_id": "weekday_siang",
+      "status": "completed",
+      "expected_frame_count": 9128,
+      "accepted_total": 0,
+      "pending_count": 223,
+      "expected_pivot": {
+        "accepted_total": 0,
+        "by_category_direction": {
+          "motorcycle": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          }
+        },
+        "by_category": {
+          "motorcycle": 0,
+          "car": 0,
+          "truck": 0
+        },
+        "by_direction": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "event_ids": []
+      },
+      "category_uses_future_evidence_count": 0,
+      "render_report": {
+        "schema_version": "phase8_review_annotation_v1",
+        "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+        "video_id": "weekday_siang",
+        "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+        "source_identity": {
+          "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+          "geometry_sha256": "a6b680a4c514ac05e69be14b66322d30cb9b65b626b4605fa7fe9d4cd2593d22",
+          "width": 640,
+          "height": 480,
+          "variant": "raw",
+          "parent_run_id": "phase8_20261015T085213_690310Z",
+          "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+        },
+        "inputs": {
+          "video": {
+            "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-SIANG.mp4",
+            "sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+            "size_bytes": 51188204
+          },
+          "records": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_siang/track_records.jsonl.gz",
+            "sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b",
+            "size_bytes": 14972230
+          },
+          "geometry": {
+            "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SIANG-G3-T1.json",
+            "sha256": "a6b680a4c514ac05e69be14b66322d30cb9b65b626b4605fa7fe9d4cd2593d22",
+            "size_bytes": 6062
+          },
+          "decisions": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_siang/counting/machine_passage_decisions.json.gz",
+            "sha256": "df65e87ba75ac1e4fc80cf8ea5ed78ee47b6d396b326c0f077f27f423ec77bd2",
+            "size_bytes": 724345
+          },
+          "events": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_siang/counting/machine_count_events.json.gz",
+            "sha256": "125b140169e353811ed3044377273cdc3cc969154f330ae9f5ab5e32213064a0",
+            "size_bytes": 49
+          },
+          "relations": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_siang/counting/relations.json.gz",
+            "sha256": "2e9f35ad7297c0a5183474883b5a07c9bf61fff942d574b90d671b370bf4d566",
+            "size_bytes": 5766691
+          },
+          "ledger": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+            "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+            "size_bytes": 2476424
+          }
+        },
+        "source_image_region": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480,
+          "resized": false,
+          "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+        },
+        "canvas": {
+          "width": 1160,
+          "height": 720,
+          "sidebar_width": 520,
+          "footer_minimum_height": 240
+        },
+        "output_video": {
+          "path": "annotated_review.mp4",
+          "sha256": "a75dddbc0c424ffe104e9ba0a9573aff1d582751039e5bc88eeed598805617ea",
+          "size_bytes": 371607938,
+          "codec": "mp4v",
+          "frames_written": 9128,
+          "frames_redecoded": 9128,
+          "fps": 29.78121400353632,
+          "source_audio_preserved": false,
+          "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+        },
+        "final_accepted": 0,
+        "final_pending_candidates": 223,
+        "final_pivot": {
+          "motorcycle": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "bus_angkot": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          },
+          "pedestrian": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          }
+        },
+        "decision_status_counts": {
+          "pending_review": 223
+        },
+        "category_coverage": {
+          "motorcycle": "experimental_vehicle_passage",
+          "car": "experimental_vehicle_passage",
+          "truck": "experimental_vehicle_passage",
+          "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+          "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+        },
+        "source_pixel_hash_verified_every_frame": true,
+        "inputs_unchanged_after_render": true,
+        "new_detector_tracker_encoder_inference": false,
+        "counting_or_identity_resolver_rerun": false,
+        "occlusion_identity_recovery_modified": false,
+        "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+        "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+        "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+        "pending_excluded_from_pivot": true,
+        "previews": [
+          {
+            "path": "preview_frame_000000000.png",
+            "sha256": "9d38ff1aaa993456489c912af1afac4b5938d2654794ecde4a3bff58241d1ba7",
+            "frame_index": 0,
+            "accepted_so_far": 0,
+            "pending_so_far": 0
+          },
+          {
+            "path": "preview_frame_000009127.png",
+            "sha256": "1aee3795cb16fb653bb9b4ed7296af844e89679c0c4f21179ced10e42e7ece11",
+            "frame_index": 9127,
+            "accepted_so_far": 0,
+            "pending_so_far": 223
+          }
+        ],
+        "passage_display_index": {
+          "path": "passage_display_index.json",
+          "sha256": "dcb690588c53c95c0480e7e49f8773ba3e8e2f09f66f7b923d18a9056f1654e1"
+        },
+        "opencv_version": "4.14.0",
+        "render_and_decode_wall_seconds": 214.57295134600008,
+        "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      }
+    },
+    {
+      "video_id": "weekday_sore",
+      "status": "completed",
+      "expected_frame_count": 9077,
+      "accepted_total": 6,
+      "pending_count": 323,
+      "expected_pivot": {
+        "accepted_total": 6,
+        "by_category_direction": {
+          "motorcycle": {
+            "A_TO_B": 6,
+            "B_TO_A": 0
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          }
+        },
+        "by_category": {
+          "motorcycle": 6,
+          "car": 0,
+          "truck": 0
+        },
+        "by_direction": {
+          "A_TO_B": 6,
+          "B_TO_A": 0
+        },
+        "event_ids": [
+          "ce6b_158e52b95f3e82ae581d0cfa31b2c11e892724f78b6d1b0c0676b473495e0c89",
+          "ce6b_2a555ecf4934ce87cbe02e4e3b3f6993879c782646ccceffcb7a137fe96c4fa8",
+          "ce6b_2cffaff783b1206177bfd8fd93e710cbeb88dbb19e9e97fe15d65b3375e4d3e1",
+          "ce6b_7b1504b14775b8ccb7f5dfed45cd72cee5caa66e7f8c0a33e9949f4d296d19c8",
+          "ce6b_7c374269ac8ac1c796fa5c1a6b74adf9d3a89370f52633035aff0fc47f18fa9e",
+          "ce6b_9fd153bc448a4fe513875e22c59175cd4c82eda2d7a3a6f8d1a7b9241ce65197"
+        ]
+      },
+      "category_uses_future_evidence_count": 6,
+      "render_report": {
+        "schema_version": "phase8_review_annotation_v1",
+        "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+        "video_id": "weekday_sore",
+        "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+        "source_identity": {
+          "video_sha256": "d3b0d0f11302444ad64d7a8b2c81677de00693acc4793cd304b6de925d0e9197",
+          "geometry_sha256": "498531cf729056c9496601aa7c2fedb8b90ea8156faee1cbb758dae03859a535",
+          "width": 640,
+          "height": 480,
+          "variant": "raw",
+          "parent_run_id": "phase8_20261015T090656_099216Z",
+          "records_sha256": "ae44826af2e724bda2441f39548ab62b8dddfcfa898c64896e6d1165547a78cd"
+        },
+        "inputs": {
+          "video": {
+            "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-SORE.mp4",
+            "sha256": "d3b0d0f11302444ad64d7a8b2c81677de00693acc4793cd304b6de925d0e9197",
+            "size_bytes": 50881202
+          },
+          "records": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_sore/track_records.jsonl.gz",
+            "sha256": "ae44826af2e724bda2441f39548ab62b8dddfcfa898c64896e6d1165547a78cd",
+            "size_bytes": 11759796
+          },
+          "geometry": {
+            "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SORE-G3-T1.json",
+            "sha256": "498531cf729056c9496601aa7c2fedb8b90ea8156faee1cbb758dae03859a535",
+            "size_bytes": 6055
+          },
+          "decisions": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_sore/counting/machine_passage_decisions.json.gz",
+            "sha256": "4ce25954a5fc38540ddf9d2f7aabaf6513942ab9f75b50bb13f9fef0bed7475d",
+            "size_bytes": 930611
+          },
+          "events": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_sore/counting/machine_count_events.json.gz",
+            "sha256": "a6d465313df3a611598e0dbe2a28688a475d3834328fc78fb0f987ec73cef459",
+            "size_bytes": 45780
+          },
+          "relations": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_sore/counting/relations.json.gz",
+            "sha256": "8f3ed9cf3a35e647dc89e4a32378db209c582381d46516374c8281b02b3d5be2",
+            "size_bytes": 3755867
+          },
+          "ledger": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+            "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+            "size_bytes": 2476424
+          }
+        },
+        "source_image_region": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480,
+          "resized": false,
+          "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+        },
+        "canvas": {
+          "width": 1160,
+          "height": 720,
+          "sidebar_width": 520,
+          "footer_minimum_height": 240
+        },
+        "output_video": {
+          "path": "annotated_review.mp4",
+          "sha256": "4e7dca0abb2fef904e92e3e175039e917655d724f721c55feca45d7a33b296e1",
+          "size_bytes": 341533923,
+          "codec": "mp4v",
+          "frames_written": 9077,
+          "frames_redecoded": 9077,
+          "fps": 29.956869412720973,
+          "source_audio_preserved": false,
+          "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+        },
+        "final_accepted": 6,
+        "final_pending_candidates": 323,
+        "final_pivot": {
+          "motorcycle": {
+            "A_TO_B": 6,
+            "B_TO_A": 0
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "bus_angkot": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          },
+          "pedestrian": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          }
+        },
+        "decision_status_counts": {
+          "pending_review": 323,
+          "accepted": 6
+        },
+        "category_coverage": {
+          "motorcycle": "experimental_vehicle_passage",
+          "car": "experimental_vehicle_passage",
+          "truck": "experimental_vehicle_passage",
+          "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+          "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+        },
+        "source_pixel_hash_verified_every_frame": true,
+        "inputs_unchanged_after_render": true,
+        "new_detector_tracker_encoder_inference": false,
+        "counting_or_identity_resolver_rerun": false,
+        "occlusion_identity_recovery_modified": false,
+        "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+        "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+        "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+        "pending_excluded_from_pivot": true,
+        "previews": [
+          {
+            "path": "preview_frame_000000000.png",
+            "sha256": "a432c6b4bdecda9e0816bfcf281d23d5350403fa556216334550b0f9545a7cb1",
+            "frame_index": 0,
+            "accepted_so_far": 0,
+            "pending_so_far": 0
+          },
+          {
+            "path": "preview_frame_000001449.png",
+            "sha256": "ca296a00ebd28882c6cac037522ec302badbd568e4c6e69919fe8cf14b3790ac",
+            "frame_index": 1449,
+            "accepted_so_far": 0,
+            "pending_so_far": 23
+          },
+          {
+            "path": "preview_frame_000001487.png",
+            "sha256": "b9cb989cb5e8abaa9e84917b2ef4416c54e8654c863c8ff9441287e31f747bd4",
+            "frame_index": 1487,
+            "accepted_so_far": 0,
+            "pending_so_far": 23
+          },
+          {
+            "path": "preview_frame_000001488.png",
+            "sha256": "a77fe1000791243528492d0e12956056abc65f8b563d5ed45c2200bdad0acd1b",
+            "frame_index": 1488,
+            "accepted_so_far": 1,
+            "pending_so_far": 23
+          },
+          {
+            "path": "preview_frame_000009076.png",
+            "sha256": "8eada771f702ffbbc6b555a2f5ab2a447f8a65308aec1a8af6a45cc548ae38de",
+            "frame_index": 9076,
+            "accepted_so_far": 6,
+            "pending_so_far": 323
+          }
+        ],
+        "passage_display_index": {
+          "path": "passage_display_index.json",
+          "sha256": "4327ef11f02887e8d84fc9a5e874624267011ea08dfc8017845b9bd15dd8b2a2"
+        },
+        "opencv_version": "4.14.0",
+        "render_and_decode_wall_seconds": 210.741189834,
+        "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      }
+    },
+    {
+      "video_id": "weekday_malam",
+      "status": "completed",
+      "expected_frame_count": 9022,
+      "accepted_total": 7,
+      "pending_count": 221,
+      "expected_pivot": {
+        "accepted_total": 7,
+        "by_category_direction": {
+          "motorcycle": {
+            "A_TO_B": 4,
+            "B_TO_A": 3
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          }
+        },
+        "by_category": {
+          "motorcycle": 7,
+          "car": 0,
+          "truck": 0
+        },
+        "by_direction": {
+          "A_TO_B": 4,
+          "B_TO_A": 3
+        },
+        "event_ids": [
+          "ce6b_2973dea89a4dfe93e7c6f90e150b73dd279aa4da594b2578a22739ca5020d5ed",
+          "ce6b_29a2e3a20ba5605d3e8baaad11aebcbf364b4db783552d3056b8e3a001850393",
+          "ce6b_328c1b824200ad991b43a042fa677f18a418864108cf59b9861d072ba59c2389",
+          "ce6b_87c13e07ca93a363a3b55e3c9def067827b7d042f20e2a6091b9171b843894e7",
+          "ce6b_99c1f07a4cd0ce8a774b8abae87a1c85d88dbdeff09e136ae0b175edf802826b",
+          "ce6b_c892cc9bb47aa48295d30b292e421bb4cd8486c100a22cfac2e16dd60d1ce6d3",
+          "ce6b_f385732c46524a9166080cea2fecdfaa39e18cafee298601cc6fcf9fcf322c44"
+        ]
+      },
+      "category_uses_future_evidence_count": 7,
+      "render_report": {
+        "schema_version": "phase8_review_annotation_v1",
+        "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+        "video_id": "weekday_malam",
+        "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+        "source_identity": {
+          "video_sha256": "21436eab94addc8358998d5b02064fb952bc568a2884db91ba0ab4edd270ed51",
+          "geometry_sha256": "0da1040532bb4150fcfe7b4e3aa2aa306df31ff4283a43052d4a863fd4637b4d",
+          "width": 640,
+          "height": 480,
+          "variant": "raw",
+          "parent_run_id": "phase8_20261015T092008_920020Z",
+          "records_sha256": "84cd21c6d251f1cb24602335d90f30eb4c683e1d029055added675994d609466"
+        },
+        "inputs": {
+          "video": {
+            "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-MALAM.mp4",
+            "sha256": "21436eab94addc8358998d5b02064fb952bc568a2884db91ba0ab4edd270ed51",
+            "size_bytes": 50600176
+          },
+          "records": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_malam/track_records.jsonl.gz",
+            "sha256": "84cd21c6d251f1cb24602335d90f30eb4c683e1d029055added675994d609466",
+            "size_bytes": 11731347
+          },
+          "geometry": {
+            "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json",
+            "sha256": "0da1040532bb4150fcfe7b4e3aa2aa306df31ff4283a43052d4a863fd4637b4d",
+            "size_bytes": 6062
+          },
+          "decisions": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_malam/counting/machine_passage_decisions.json.gz",
+            "sha256": "bf42451d4ef8034ca78b743dc2ffb84b93dd3293b5ad086f4065b73a06e1bc69",
+            "size_bytes": 425218
+          },
+          "events": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_malam/counting/machine_count_events.json.gz",
+            "sha256": "ee53614ebc34ad97f792ddc978dc18bad816170ad6b688ebea4518badcc8cbaf",
+            "size_bytes": 26973
+          },
+          "relations": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_malam/counting/relations.json.gz",
+            "sha256": "f2e545b28296c4931061fe43aa5fa7f31e5af57a2243b996507e8ff365b3dae6",
+            "size_bytes": 3548079
+          },
+          "ledger": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+            "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+            "size_bytes": 2476424
+          }
+        },
+        "source_image_region": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480,
+          "resized": false,
+          "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+        },
+        "canvas": {
+          "width": 1160,
+          "height": 720,
+          "sidebar_width": 520,
+          "footer_minimum_height": 240
+        },
+        "output_video": {
+          "path": "annotated_review.mp4",
+          "sha256": "8845640df7d78ccffe3fadf5c7d09a7792e05d93903dca274450edadf080a270",
+          "size_bytes": 271448801,
+          "codec": "mp4v",
+          "frames_written": 9022,
+          "frames_redecoded": 9022,
+          "fps": 29.972440547996822,
+          "source_audio_preserved": false,
+          "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+        },
+        "final_accepted": 7,
+        "final_pending_candidates": 221,
+        "final_pivot": {
+          "motorcycle": {
+            "A_TO_B": 4,
+            "B_TO_A": 3
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "bus_angkot": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          },
+          "pedestrian": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          }
+        },
+        "decision_status_counts": {
+          "pending_review": 221,
+          "accepted": 7
+        },
+        "category_coverage": {
+          "motorcycle": "experimental_vehicle_passage",
+          "car": "experimental_vehicle_passage",
+          "truck": "experimental_vehicle_passage",
+          "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+          "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+        },
+        "source_pixel_hash_verified_every_frame": true,
+        "inputs_unchanged_after_render": true,
+        "new_detector_tracker_encoder_inference": false,
+        "counting_or_identity_resolver_rerun": false,
+        "occlusion_identity_recovery_modified": false,
+        "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+        "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+        "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+        "pending_excluded_from_pivot": true,
+        "previews": [
+          {
+            "path": "preview_frame_000000000.png",
+            "sha256": "3eab813fe7b942c76cd9d3b674b3b9f3670837838108c3a10c4113367a54e323",
+            "frame_index": 0,
+            "accepted_so_far": 0,
+            "pending_so_far": 0
+          },
+          {
+            "path": "preview_frame_000002645.png",
+            "sha256": "edd48545ab896d0e40a39740eaedbff7e0557788683824c68fc4ab5dddfd49ed",
+            "frame_index": 2645,
+            "accepted_so_far": 0,
+            "pending_so_far": 61
+          },
+          {
+            "path": "preview_frame_000002647.png",
+            "sha256": "aa5a8ac93f5ad4b5b0e7af90e7a5b61f41de5f89aa26eb5184c716a78ccf6341",
+            "frame_index": 2647,
+            "accepted_so_far": 0,
+            "pending_so_far": 61
+          },
+          {
+            "path": "preview_frame_000002648.png",
+            "sha256": "afaf8aeb7da92445b32f70b661361b47b2f559c99b9f198b86c2ec8776abc46e",
+            "frame_index": 2648,
+            "accepted_so_far": 1,
+            "pending_so_far": 61
+          },
+          {
+            "path": "preview_frame_000009021.png",
+            "sha256": "5c77391a909bf0c0f000caffaf90d8a93a1d7eb2f4d628b0141751ace9d4fb8c",
+            "frame_index": 9021,
+            "accepted_so_far": 7,
+            "pending_so_far": 221
+          }
+        ],
+        "passage_display_index": {
+          "path": "passage_display_index.json",
+          "sha256": "d1292ece26249da7e04dc15c3fae6556ae5b385c39f05a1ae699771b83c4adad"
+        },
+        "opencv_version": "4.14.0",
+        "render_and_decode_wall_seconds": 211.512460228,
+        "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      }
+    },
+    {
+      "video_id": "weekend_pagi",
+      "status": "completed",
+      "expected_frame_count": 9017,
+      "accepted_total": 5,
+      "pending_count": 216,
+      "expected_pivot": {
+        "accepted_total": 5,
+        "by_category_direction": {
+          "motorcycle": {
+            "A_TO_B": 2,
+            "B_TO_A": 3
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          }
+        },
+        "by_category": {
+          "motorcycle": 5,
+          "car": 0,
+          "truck": 0
+        },
+        "by_direction": {
+          "A_TO_B": 2,
+          "B_TO_A": 3
+        },
+        "event_ids": [
+          "ce6b_154a2c0ec3886fea17c4a871d678ebe2616874de9d8b70bcc946cda03a27cce8",
+          "ce6b_17a0e08dfc95a6264781629e4a5addbb4281971b6de986d43ca51cf8aed038c5",
+          "ce6b_53616a8f8c23a40dd648c1ff1bf6fdf89bb20ba422250c6c3a732da1ee064fb4",
+          "ce6b_7cbdbf1eaf3a71a144b5f412bb0f5ca77f8efb390752e38e15cf36d07f7bb2e7",
+          "ce6b_cecf638428e455a71a3b3dfbe5197130e4886e021c217c4fcf14efe823ddea95"
+        ]
+      },
+      "category_uses_future_evidence_count": 5,
+      "render_report": {
+        "schema_version": "phase8_review_annotation_v1",
+        "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+        "video_id": "weekend_pagi",
+        "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+        "source_identity": {
+          "video_sha256": "e71f46ac146e5a69db8dc0754dfb8b0b3f7a3429643872736335bfe34ebf1389",
+          "geometry_sha256": "10ff6daafeb7b468b26b130e0605b14e362f69ec11fc5386f21facdc19f8f25e",
+          "width": 640,
+          "height": 480,
+          "variant": "raw",
+          "parent_run_id": "phase8_20261015T093435_987683Z",
+          "records_sha256": "01af7eba90b66e7e75038fa14298f6004039a5d2c2d7cf3c079532a63fc0f716"
+        },
+        "inputs": {
+          "video": {
+            "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-PAGI.mp4",
+            "sha256": "e71f46ac146e5a69db8dc0754dfb8b0b3f7a3429643872736335bfe34ebf1389",
+            "size_bytes": 50550849
+          },
+          "records": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/track_records.jsonl.gz",
+            "sha256": "01af7eba90b66e7e75038fa14298f6004039a5d2c2d7cf3c079532a63fc0f716",
+            "size_bytes": 11088692
+          },
+          "geometry": {
+            "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json",
+            "sha256": "10ff6daafeb7b468b26b130e0605b14e362f69ec11fc5386f21facdc19f8f25e",
+            "size_bytes": 6055
+          },
+          "decisions": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/counting/machine_passage_decisions.json.gz",
+            "sha256": "08809afc806c46c487ab03f1fd5241b9b9d3655ea0c6657c48d29284fe39a08d",
+            "size_bytes": 748629
+          },
+          "events": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/counting/machine_count_events.json.gz",
+            "sha256": "a4120b325d1d9b213454263511b55eeaa716561dc7c0cc180ce27f6e385cf37f",
+            "size_bytes": 31342
+          },
+          "relations": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/counting/relations.json.gz",
+            "sha256": "68b0127385b925bb0cef2308c6f3176b98e027dddfd7ab2ec1bfd18d549f0976",
+            "size_bytes": 3458497
+          },
+          "ledger": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+            "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+            "size_bytes": 2476424
+          }
+        },
+        "source_image_region": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480,
+          "resized": false,
+          "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+        },
+        "canvas": {
+          "width": 1160,
+          "height": 720,
+          "sidebar_width": 520,
+          "footer_minimum_height": 240
+        },
+        "output_video": {
+          "path": "annotated_review.mp4",
+          "sha256": "17975b5a1783e762230cb9826a5269377f55e426c58e6dddbaaeb97e0796a3b6",
+          "size_bytes": 355686204,
+          "codec": "mp4v",
+          "frames_written": 9017,
+          "frames_redecoded": 9017,
+          "fps": 29.97655930800923,
+          "source_audio_preserved": false,
+          "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+        },
+        "final_accepted": 5,
+        "final_pending_candidates": 216,
+        "final_pivot": {
+          "motorcycle": {
+            "A_TO_B": 2,
+            "B_TO_A": 3
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "bus_angkot": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          },
+          "pedestrian": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          }
+        },
+        "decision_status_counts": {
+          "pending_review": 216,
+          "accepted": 5
+        },
+        "category_coverage": {
+          "motorcycle": "experimental_vehicle_passage",
+          "car": "experimental_vehicle_passage",
+          "truck": "experimental_vehicle_passage",
+          "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+          "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+        },
+        "source_pixel_hash_verified_every_frame": true,
+        "inputs_unchanged_after_render": true,
+        "new_detector_tracker_encoder_inference": false,
+        "counting_or_identity_resolver_rerun": false,
+        "occlusion_identity_recovery_modified": false,
+        "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+        "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+        "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+        "pending_excluded_from_pivot": true,
+        "previews": [
+          {
+            "path": "preview_frame_000000000.png",
+            "sha256": "9db6fa39767d388a48695840d512a459ab106ba259a0ac785a12cb10933f4562",
+            "frame_index": 0,
+            "accepted_so_far": 0,
+            "pending_so_far": 0
+          },
+          {
+            "path": "preview_frame_000000626.png",
+            "sha256": "adbaa17f660175290f70f84e60e6059519011e9d59162a00f6c040ad53cc04d4",
+            "frame_index": 626,
+            "accepted_so_far": 0,
+            "pending_so_far": 17
+          },
+          {
+            "path": "preview_frame_000000631.png",
+            "sha256": "d838362a8a739839dbe0755c5f8be1827b54fbf7210fa9b8e30bff4d7c0e8511",
+            "frame_index": 631,
+            "accepted_so_far": 0,
+            "pending_so_far": 17
+          },
+          {
+            "path": "preview_frame_000000632.png",
+            "sha256": "996ff0b042d3059140f4ca81d1b4094d8b7a63802c69c3cf3f77f22d7c33d069",
+            "frame_index": 632,
+            "accepted_so_far": 1,
+            "pending_so_far": 17
+          },
+          {
+            "path": "preview_frame_000009016.png",
+            "sha256": "f3ccd36ba3c8c6979bc5c74532554aa234a400290720cd8005ee1cc01ce57fa2",
+            "frame_index": 9016,
+            "accepted_so_far": 5,
+            "pending_so_far": 216
+          }
+        ],
+        "passage_display_index": {
+          "path": "passage_display_index.json",
+          "sha256": "50ca6399809b6160fc3a84d6d6072eea9805eef54ce0cbc0f5be5d324543d1b2"
+        },
+        "opencv_version": "4.14.0",
+        "render_and_decode_wall_seconds": 212.973696346,
+        "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      }
+    },
+    {
+      "video_id": "weekend_siang",
+      "status": "completed",
+      "expected_frame_count": 9124,
+      "accepted_total": 19,
+      "pending_count": 179,
+      "expected_pivot": {
+        "accepted_total": 19,
+        "by_category_direction": {
+          "motorcycle": {
+            "A_TO_B": 10,
+            "B_TO_A": 9
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          }
+        },
+        "by_category": {
+          "motorcycle": 19,
+          "car": 0,
+          "truck": 0
+        },
+        "by_direction": {
+          "A_TO_B": 10,
+          "B_TO_A": 9
+        },
+        "event_ids": [
+          "ce6b_037a1b3b2837d3ccd4dad396f4edde34a03a4669fd9e1b00a5881fbf7f534aad",
+          "ce6b_0b62137d074005e6c4bcf5448204777a0c09f763eaf3f95535e94ef5a871870a",
+          "ce6b_1b74374f41ac5014a65a08a7c76d7fe3ef1ee27431a8b84ef00641866450f0ed",
+          "ce6b_1cf333cfd78d72a161372e731981d68d72d266d06d8546b2e8d6735585357970",
+          "ce6b_2c970a43e1bcaf623e6ec18c8cea43d7c6282b83cebb081842dd561c29337e26",
+          "ce6b_33a68c7de01d229288c9c1edc581e19eacd9becf39278cb5b3e87278dfa71347",
+          "ce6b_37e9c8a6fca906172b2f90cc9ec1a1b9c8bd0164def1f7d6526c66c6a6afab6e",
+          "ce6b_3b28a13152e139a8d1b074c2dcc34059359bdf0f2d6e3c465581b7fad339a6e8",
+          "ce6b_45ecf052bc5b9e6fabf6d903241a1b1f6eecb614abae1ed3d6ad583bca0a4867",
+          "ce6b_56e2efc2bcd67a7a416df230e95a97dbe537aa488c9fa67de0a42894761b263f",
+          "ce6b_60064909ed37298d9946b955838656131b846d4d16aa97707542da88923e235a",
+          "ce6b_7190cccb8a0fd3979c5617f843dad7a1ad82dc46d57d26100c82c129ab5106e1",
+          "ce6b_99949c0c992b38c0d0d8302fd68a593c7705a2448876a801522c509fa26d0c55",
+          "ce6b_a7a2ff22ed5a9880023d4666b2b509074c92f36e6d3cfb592aa1e3e0c6582e09",
+          "ce6b_c0b6d3b0614714b7e3215c23d437d5315ae6471d5221b76e55eb89eb30acf049",
+          "ce6b_c4c7b09aefc1361c50cafde47ca8da53f30105e0c547a26743edea2ca7943d05",
+          "ce6b_d3b7646f6c087261ebdcd10ab85fe7e125298267e40059edcd99c0dde677e3ac",
+          "ce6b_dc5a4b5de115a6043edc454e4fab9785958124cf383361f77109d18be09436dd",
+          "ce6b_f48312f21f853dc4491a9ff03bb5f46b5b2eae12614a8cdcf0c5de52ed98b92e"
+        ]
+      },
+      "category_uses_future_evidence_count": 19,
+      "render_report": {
+        "schema_version": "phase8_review_annotation_v1",
+        "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+        "video_id": "weekend_siang",
+        "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+        "source_identity": {
+          "video_sha256": "9271275e03bd75b2c3e373a7d1babbf8a79e4795662f691b584056f261185c9c",
+          "geometry_sha256": "edd6ce5cab83c41568eb4d3dd6f34368b6beb0649e610b793c2ed2af3eae5839",
+          "width": 640,
+          "height": 480,
+          "variant": "raw",
+          "parent_run_id": "phase8_20261015T094649_587084Z",
+          "records_sha256": "9df3144b66ed617272800cf01cebbc1ed6195acb879fba47f9dc593cc1d9f8de"
+        },
+        "inputs": {
+          "video": {
+            "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-SIANG.mp4",
+            "sha256": "9271275e03bd75b2c3e373a7d1babbf8a79e4795662f691b584056f261185c9c",
+            "size_bytes": 51137139
+          },
+          "records": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_siang/track_records.jsonl.gz",
+            "sha256": "9df3144b66ed617272800cf01cebbc1ed6195acb879fba47f9dc593cc1d9f8de",
+            "size_bytes": 11310588
+          },
+          "geometry": {
+            "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SIANG-G3-T1.json",
+            "sha256": "edd6ce5cab83c41568eb4d3dd6f34368b6beb0649e610b793c2ed2af3eae5839",
+            "size_bytes": 6062
+          },
+          "decisions": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_siang/counting/machine_passage_decisions.json.gz",
+            "sha256": "9909022d8d9a2be19fa2bfdc5327588b153989696867d5a9103866755acb1c43",
+            "size_bytes": 832736
+          },
+          "events": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_siang/counting/machine_count_events.json.gz",
+            "sha256": "1b6d105db4509e2ae7fcc57361061730013addd83cb90fdb82f6c2b0e3e792a6",
+            "size_bytes": 119255
+          },
+          "relations": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_siang/counting/relations.json.gz",
+            "sha256": "11c15d0116c7fe2e3582b94c15f79afb852db9413dab70789c47e958b1723f17",
+            "size_bytes": 3526767
+          },
+          "ledger": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+            "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+            "size_bytes": 2476424
+          }
+        },
+        "source_image_region": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480,
+          "resized": false,
+          "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+        },
+        "canvas": {
+          "width": 1160,
+          "height": 720,
+          "sidebar_width": 520,
+          "footer_minimum_height": 240
+        },
+        "output_video": {
+          "path": "annotated_review.mp4",
+          "sha256": "c01719f8bbbc3646da6216c93952602632e0bbe044383cba172b5fa191e231b3",
+          "size_bytes": 346598793,
+          "codec": "mp4v",
+          "frames_written": 9124,
+          "frames_redecoded": 9124,
+          "fps": 29.983459365905848,
+          "source_audio_preserved": false,
+          "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+        },
+        "final_accepted": 19,
+        "final_pending_candidates": 179,
+        "final_pivot": {
+          "motorcycle": {
+            "A_TO_B": 10,
+            "B_TO_A": 9
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "bus_angkot": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          },
+          "pedestrian": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          }
+        },
+        "decision_status_counts": {
+          "pending_review": 179,
+          "accepted": 19
+        },
+        "category_coverage": {
+          "motorcycle": "experimental_vehicle_passage",
+          "car": "experimental_vehicle_passage",
+          "truck": "experimental_vehicle_passage",
+          "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+          "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+        },
+        "source_pixel_hash_verified_every_frame": true,
+        "inputs_unchanged_after_render": true,
+        "new_detector_tracker_encoder_inference": false,
+        "counting_or_identity_resolver_rerun": false,
+        "occlusion_identity_recovery_modified": false,
+        "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+        "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+        "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+        "pending_excluded_from_pivot": true,
+        "previews": [
+          {
+            "path": "preview_frame_000000000.png",
+            "sha256": "2ea75d330cff931516fc572cca83247c38d4b23524b981b89152d4a3b8f5048f",
+            "frame_index": 0,
+            "accepted_so_far": 0,
+            "pending_so_far": 0
+          },
+          {
+            "path": "preview_frame_000000074.png",
+            "sha256": "fd78c80ed99d8e9d9f22fade8d569f6dd9fcd56a7420bc81a9e3a6186f3b2b8c",
+            "frame_index": 74,
+            "accepted_so_far": 0,
+            "pending_so_far": 3
+          },
+          {
+            "path": "preview_frame_000000075.png",
+            "sha256": "af9eb6b0b578676df91eb74521d3f586c6ce96e3c9596fa8c1a6bb07a863045f",
+            "frame_index": 75,
+            "accepted_so_far": 0,
+            "pending_so_far": 3
+          },
+          {
+            "path": "preview_frame_000000077.png",
+            "sha256": "135244b2e8100a57252c5b8963760fcec6b0d9e8fd567bc927632c05c5d0bcb3",
+            "frame_index": 77,
+            "accepted_so_far": 0,
+            "pending_so_far": 3
+          },
+          {
+            "path": "preview_frame_000000078.png",
+            "sha256": "7a7222196870207d3031f2aff41d1d85529ecfdc536f451d78c32231aca9f7db",
+            "frame_index": 78,
+            "accepted_so_far": 1,
+            "pending_so_far": 3
+          },
+          {
+            "path": "preview_frame_000009123.png",
+            "sha256": "7191bfe7c58ce33223e662b5df9814d9feec8c3afaf8faf2f3c779ff8a72789c",
+            "frame_index": 9123,
+            "accepted_so_far": 19,
+            "pending_so_far": 179
+          }
+        ],
+        "passage_display_index": {
+          "path": "passage_display_index.json",
+          "sha256": "cc664db9ebe10fd715dc2d8bad4d4f076988d6eb3c8ba62ca1d59ba73e9cdfbe"
+        },
+        "opencv_version": "4.14.0",
+        "render_and_decode_wall_seconds": 211.92469550199985,
+        "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      }
+    },
+    {
+      "video_id": "weekend_sore",
+      "status": "completed",
+      "expected_frame_count": 9138,
+      "accepted_total": 3,
+      "pending_count": 227,
+      "expected_pivot": {
+        "accepted_total": 3,
+        "by_category_direction": {
+          "motorcycle": {
+            "A_TO_B": 3,
+            "B_TO_A": 0
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          }
+        },
+        "by_category": {
+          "motorcycle": 3,
+          "car": 0,
+          "truck": 0
+        },
+        "by_direction": {
+          "A_TO_B": 3,
+          "B_TO_A": 0
+        },
+        "event_ids": [
+          "ce6b_5a2010be557c82a2d668ddccea605dd543b61b2ef3067202c5a36d09b292843d",
+          "ce6b_7e5877eebcff6bb28ef6fb39bf54cb29768b8df6a78058cbbe09b31b3d953d22",
+          "ce6b_9d94f6429b6c835e7a44f5cd2ac0e0614aac9692b0a5ff2cb02f52996b8ea55e"
+        ]
+      },
+      "category_uses_future_evidence_count": 3,
+      "render_report": {
+        "schema_version": "phase8_review_annotation_v1",
+        "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+        "video_id": "weekend_sore",
+        "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+        "source_identity": {
+          "video_sha256": "706d2bbb32cf89fccd723816c655d6006a1f62acfef8adc75b78ab24b3550c29",
+          "geometry_sha256": "b71e65ab113a4cb474498f7ae71bbc6b3c6cc55aa739c4262bd8989f08ad24fc",
+          "width": 640,
+          "height": 480,
+          "variant": "raw",
+          "parent_run_id": "phase8_20261015T100010_460502Z",
+          "records_sha256": "58a362d9259ce21f80eada7a977f9893d2eb61d15b0914d0072103c8dea999f9"
+        },
+        "inputs": {
+          "video": {
+            "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-SORE.mp4",
+            "sha256": "706d2bbb32cf89fccd723816c655d6006a1f62acfef8adc75b78ab24b3550c29",
+            "size_bytes": 51247577
+          },
+          "records": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_sore/track_records.jsonl.gz",
+            "sha256": "58a362d9259ce21f80eada7a977f9893d2eb61d15b0914d0072103c8dea999f9",
+            "size_bytes": 14253292
+          },
+          "geometry": {
+            "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SORE-G3-T1.json",
+            "sha256": "b71e65ab113a4cb474498f7ae71bbc6b3c6cc55aa739c4262bd8989f08ad24fc",
+            "size_bytes": 6055
+          },
+          "decisions": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_sore/counting/machine_passage_decisions.json.gz",
+            "sha256": "b688e2d2a1eca4424baf5f85b8ea33e00db525ee2a602c8b7ae010fc49b913aa",
+            "size_bytes": 680616
+          },
+          "events": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_sore/counting/machine_count_events.json.gz",
+            "sha256": "a8c7513d95c80e4fb3937e63eb3c756f8547cb4f76871f5da945b770c43137b5",
+            "size_bytes": 8833
+          },
+          "relations": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_sore/counting/relations.json.gz",
+            "sha256": "fcd4a629de2b40a1ec6d55229bd70872f3e6d87e58f219c7df42f7ae33fe448d",
+            "size_bytes": 5519425
+          },
+          "ledger": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+            "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+            "size_bytes": 2476424
+          }
+        },
+        "source_image_region": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480,
+          "resized": false,
+          "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+        },
+        "canvas": {
+          "width": 1160,
+          "height": 720,
+          "sidebar_width": 520,
+          "footer_minimum_height": 240
+        },
+        "output_video": {
+          "path": "annotated_review.mp4",
+          "sha256": "67b8250050a8d97d622bb20b6519bc274db649ba85ad27afb269b0b57fab0629",
+          "size_bytes": 371112396,
+          "codec": "mp4v",
+          "frames_written": 9138,
+          "frames_redecoded": 9138,
+          "fps": 29.869969639352494,
+          "source_audio_preserved": false,
+          "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+        },
+        "final_accepted": 3,
+        "final_pending_candidates": 227,
+        "final_pivot": {
+          "motorcycle": {
+            "A_TO_B": 3,
+            "B_TO_A": 0
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "bus_angkot": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          },
+          "pedestrian": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          }
+        },
+        "decision_status_counts": {
+          "pending_review": 227,
+          "accepted": 3
+        },
+        "category_coverage": {
+          "motorcycle": "experimental_vehicle_passage",
+          "car": "experimental_vehicle_passage",
+          "truck": "experimental_vehicle_passage",
+          "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+          "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+        },
+        "source_pixel_hash_verified_every_frame": true,
+        "inputs_unchanged_after_render": true,
+        "new_detector_tracker_encoder_inference": false,
+        "counting_or_identity_resolver_rerun": false,
+        "occlusion_identity_recovery_modified": false,
+        "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+        "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+        "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+        "pending_excluded_from_pivot": true,
+        "previews": [
+          {
+            "path": "preview_frame_000000000.png",
+            "sha256": "02063a2e83483be1f6ee051ef69301236512d0ecbfa1881405c815b5358f89d5",
+            "frame_index": 0,
+            "accepted_so_far": 0,
+            "pending_so_far": 0
+          },
+          {
+            "path": "preview_frame_000001082.png",
+            "sha256": "863160e6f966b0d0983e79b59abcaa4e12fbfadae98f28bcfa33575ca83bd3cc",
+            "frame_index": 1082,
+            "accepted_so_far": 0,
+            "pending_so_far": 33
+          },
+          {
+            "path": "preview_frame_000001097.png",
+            "sha256": "4371c62d24900d7ca71e2910c31a6034290d039ca9d6b9c3677d5562ce9931eb",
+            "frame_index": 1097,
+            "accepted_so_far": 0,
+            "pending_so_far": 34
+          },
+          {
+            "path": "preview_frame_000001098.png",
+            "sha256": "c673a932c01d5f21806a837c6a7950b7ac28b426bdc2860d16e9c70e7ebadbe0",
+            "frame_index": 1098,
+            "accepted_so_far": 1,
+            "pending_so_far": 34
+          },
+          {
+            "path": "preview_frame_000009137.png",
+            "sha256": "a57511eb90d560e1d9f406592c0997a4acc20a873e5a8f6cc8fc882c827566fc",
+            "frame_index": 9137,
+            "accepted_so_far": 3,
+            "pending_so_far": 227
+          }
+        ],
+        "passage_display_index": {
+          "path": "passage_display_index.json",
+          "sha256": "9e0306dadfd21701dbe31977f07086e833c03c8abca710a2ffa7f5d602dcc8d0"
+        },
+        "opencv_version": "4.14.0",
+        "render_and_decode_wall_seconds": 221.24725496099995,
+        "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      }
+    },
+    {
+      "video_id": "weekend_malam",
+      "status": "completed",
+      "expected_frame_count": 9032,
+      "accepted_total": 12,
+      "pending_count": 173,
+      "expected_pivot": {
+        "accepted_total": 12,
+        "by_category_direction": {
+          "motorcycle": {
+            "A_TO_B": 3,
+            "B_TO_A": 9
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          }
+        },
+        "by_category": {
+          "motorcycle": 12,
+          "car": 0,
+          "truck": 0
+        },
+        "by_direction": {
+          "A_TO_B": 3,
+          "B_TO_A": 9
+        },
+        "event_ids": [
+          "ce6b_0a84fd9e3af404b9051c7cbc03250ca5020bf969085cd231c99e24b5ec28b09d",
+          "ce6b_122fc71305b0a573cf06635dca3a407d72864199b081ac649fcecb74ab6ce1e6",
+          "ce6b_292fcbdf54a7abe180636e9aa7b6798bd5dc9c2e93f53f829066c144ef52ccb4",
+          "ce6b_34e41a7ff665cacac409a1c786d00c40524a7966bff684cab1616ff7a8c3ef0e",
+          "ce6b_3b300de8fcc2b4dc87d1fff7cfe88ba82e2aa401175cdb65fe2f92d12beab2ca",
+          "ce6b_66783e65bbacb5fa177b90f55ae0debdd5101dcffe597c7c6c8185fbf053d163",
+          "ce6b_6ed9d1a256524854eb2fc38cc653f623d445bc8213723084a4dfa51d1337227c",
+          "ce6b_8e6e25fea3170c867bea628f6b2b4c66f3f4c924285ad488c649dde610a35c73",
+          "ce6b_a3de5197daac9d4c076ae3cd396c9c0c24c9498802c6c6681110b19810d30cf0",
+          "ce6b_e4f947f260dc3db26adee26904113bc0462ed0033aa15bfde0f030c019e8ba10",
+          "ce6b_ea6c4dca9e7094102cf3e13f42bb36c84df8e4d881fb7c19c7c377f447e4aca7",
+          "ce6b_ff645e51ef6aba87ce5a04d0f25c27f6a96bda8f37b8412b2d2bdc65c10260ac"
+        ]
+      },
+      "category_uses_future_evidence_count": 12,
+      "render_report": {
+        "schema_version": "phase8_review_annotation_v1",
+        "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+        "video_id": "weekend_malam",
+        "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+        "source_identity": {
+          "video_sha256": "bf42e9af8add96716f35b56f1480c42909faf7a7a7db7491218b6af4be3c4f71",
+          "geometry_sha256": "ae408de960b35d9c6ec8e94cc5a79d29ea9b52d42603c65553a4367ea2521255",
+          "width": 640,
+          "height": 480,
+          "variant": "raw",
+          "parent_run_id": "phase8_20261015T101427_513656Z",
+          "records_sha256": "34db71bfb06ef96a7902e88031195a771f03a7450f63daa6d5e83b66d5a6cac5"
+        },
+        "inputs": {
+          "video": {
+            "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-MALAM.mp4",
+            "sha256": "bf42e9af8add96716f35b56f1480c42909faf7a7a7db7491218b6af4be3c4f71",
+            "size_bytes": 50644636
+          },
+          "records": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_malam/track_records.jsonl.gz",
+            "sha256": "34db71bfb06ef96a7902e88031195a771f03a7450f63daa6d5e83b66d5a6cac5",
+            "size_bytes": 9086944
+          },
+          "geometry": {
+            "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-MALAM-G3-T1.json",
+            "sha256": "ae408de960b35d9c6ec8e94cc5a79d29ea9b52d42603c65553a4367ea2521255",
+            "size_bytes": 6062
+          },
+          "decisions": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_malam/counting/machine_passage_decisions.json.gz",
+            "sha256": "bc443e70c303f04ef2f44120fa6b6c2288079f5f94c733233c4b6dcde2f39dd7",
+            "size_bytes": 302438
+          },
+          "events": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_malam/counting/machine_count_events.json.gz",
+            "sha256": "eeb9c0895672edb2e3d96ded3c7c04664dee55457aa8ac8c8c11edfa9fbfc167",
+            "size_bytes": 25194
+          },
+          "relations": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_malam/counting/relations.json.gz",
+            "sha256": "26013a3ea557aa8ba9447912926930553a528af99abc53358885165d3df306d5",
+            "size_bytes": 2012371
+          },
+          "ledger": {
+            "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+            "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+            "size_bytes": 2476424
+          }
+        },
+        "source_image_region": {
+          "x": 0,
+          "y": 0,
+          "width": 640,
+          "height": 480,
+          "resized": false,
+          "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+        },
+        "canvas": {
+          "width": 1160,
+          "height": 720,
+          "sidebar_width": 520,
+          "footer_minimum_height": 240
+        },
+        "output_video": {
+          "path": "annotated_review.mp4",
+          "sha256": "225f8f55de68a9c8d317511b1e1ab194206c5fdfa7869b79caada5d91f576e39",
+          "size_bytes": 250135226,
+          "codec": "mp4v",
+          "frames_written": 9032,
+          "frames_redecoded": 9032,
+          "fps": 29.980012218750673,
+          "source_audio_preserved": false,
+          "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+        },
+        "final_accepted": 12,
+        "final_pending_candidates": 173,
+        "final_pivot": {
+          "motorcycle": {
+            "A_TO_B": 3,
+            "B_TO_A": 9
+          },
+          "car": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "truck": {
+            "A_TO_B": 0,
+            "B_TO_A": 0
+          },
+          "bus_angkot": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          },
+          "pedestrian": {
+            "A_TO_B": null,
+            "B_TO_A": null
+          }
+        },
+        "decision_status_counts": {
+          "pending_review": 173,
+          "accepted": 12
+        },
+        "category_coverage": {
+          "motorcycle": "experimental_vehicle_passage",
+          "car": "experimental_vehicle_passage",
+          "truck": "experimental_vehicle_passage",
+          "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+          "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+        },
+        "source_pixel_hash_verified_every_frame": true,
+        "inputs_unchanged_after_render": true,
+        "new_detector_tracker_encoder_inference": false,
+        "counting_or_identity_resolver_rerun": false,
+        "occlusion_identity_recovery_modified": false,
+        "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+        "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+        "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+        "pending_excluded_from_pivot": true,
+        "previews": [
+          {
+            "path": "preview_frame_000000000.png",
+            "sha256": "591934462c65d996eabb9381cc1dd79c5d826202cdfefd6deed3cc80bbd81789",
+            "frame_index": 0,
+            "accepted_so_far": 0,
+            "pending_so_far": 0
+          },
+          {
+            "path": "preview_frame_000000116.png",
+            "sha256": "8db774a522142a5f1afb726fbba2d5a450969dbebeb646219730d24be02dfaf3",
+            "frame_index": 116,
+            "accepted_so_far": 0,
+            "pending_so_far": 6
+          },
+          {
+            "path": "preview_frame_000000121.png",
+            "sha256": "53942954665a36f20423bfcc50c5c91d0cc59d60b827c89dbad0b7062fa6a00a",
+            "frame_index": 121,
+            "accepted_so_far": 0,
+            "pending_so_far": 6
+          },
+          {
+            "path": "preview_frame_000000125.png",
+            "sha256": "77f79a676f97ca7761fbf5e3dfe54d50f6ee5023763c1d0051f9d03cbd527c39",
+            "frame_index": 125,
+            "accepted_so_far": 0,
+            "pending_so_far": 6
+          },
+          {
+            "path": "preview_frame_000000126.png",
+            "sha256": "cb4650b8820a67a6333052882eecdc57d4a4d7efd0753374f30d7b5abfd4352f",
+            "frame_index": 126,
+            "accepted_so_far": 1,
+            "pending_so_far": 6
+          },
+          {
+            "path": "preview_frame_000009031.png",
+            "sha256": "24ef00ac18c361041953cbd16f081c956bf838312e6fa12ee0e5cf5e4449f283",
+            "frame_index": 9031,
+            "accepted_so_far": 12,
+            "pending_so_far": 173
+          }
+        ],
+        "passage_display_index": {
+          "path": "passage_display_index.json",
+          "sha256": "2228109865ac7fba883ce37ab9f3206962c3e90f241eeead3ecdd697354c5bb1"
+        },
+        "opencv_version": "4.14.0",
+        "render_and_decode_wall_seconds": 223.9780743209999,
+        "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      }
+    }
+  ],
+  "errors": [],
+  "all_verified_input_bytes_preserved": true,
+  "completed_video_count": 8,
+  "all_eight_annotation_videos_completed": true,
+  "selected_accepted_replayed": 58,
+  "selected_pending_retained": 1825,
+  "finished_utc": "2026-10-15T15:31:04.788892+00:00",
+  "wall_seconds": 1736.4056769269998
+}

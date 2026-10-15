@@ -1,0 +1,138 @@
+{
+  "claim_type": "ACTUAL_PHASE8_V2_OUTPUT_RETAINED_BEFORE_VISUAL_ONLY_REANNOTATION",
+  "created_at_utc": "2026-10-15T14:49:28.336580+00:00",
+  "source_kernel": "chrisbiran/phase-8-tgdi-full-video-research",
+  "source_kernel_version": 2,
+  "source_run_id": "20261015T083731_664817Z",
+  "source_batch_retention_manifest_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+  "new_model_inference_executed": false,
+  "visual_review_of_original_full_videos_performed": false,
+  "artifacts": [
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/batch_retention_manifest.json",
+      "original_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+      "original_size_bytes": 35959,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/batch_retention_manifest.json.gz",
+      "retained_sha256": "f0fce3fbcc085dc692fff4fe1cdbf5099ce6eb28fa6a6a94dffc2f3d0218bc08",
+      "retained_size_bytes": 8925,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/batch_report.json",
+      "original_sha256": "0b129b752ae528bcf426f76f6325c4eaa50c865a316a392d8e967ed9403b4280",
+      "original_size_bytes": 54228775,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/batch_report.json.gz",
+      "retained_sha256": "c491c8b0fd80bdc2a1d42a19ba3b783b9768da2c7e71343989e8a792915960f8",
+      "retained_size_bytes": 6661409,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+      "original_sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+      "original_size_bytes": 2476424,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/accepted_event_ledger.json.gz",
+      "retained_sha256": "a72332e3be6b31befcd2e9dd03f3af1b9e78390b315adda397660ac9f576d357",
+      "retained_size_bytes": 340272,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/per_video_results.json",
+      "original_sha256": "d5a7af9eb3dd512e0037dcc30647413f96712d1ef8789c2ec4be251a4b27a574",
+      "original_size_bytes": 237384,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/per_video_results.json.gz",
+      "retained_sha256": "187e676a8b9fcb88e5b03e8e5ef27bc489b2fdc8ef2d1ebc781bb63388bee4d1",
+      "retained_size_bytes": 18483,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/coverage.json",
+      "original_sha256": "76916210cbe9e40c9e690c4c5b7735285439ce6c7fd5f5886c74501c9d37b71d",
+      "original_size_bytes": 1202,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/coverage.json.gz",
+      "retained_sha256": "7c903aa99af41091c9617ac3042eade407fefb0f7f3497895f009c11257a4184",
+      "retained_size_bytes": 624,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/weekday_malam/report.json",
+      "original_sha256": "3ce5a02491c960d28aab2862b59750c101598077fd69fa6881c0800a1726a408",
+      "original_size_bytes": 23327,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/weekday_malam__report.json.gz",
+      "retained_sha256": "8c3c1f777734a16ae28a70029cf37c8f5950eefc9418a071ee6e723b0d0d9333",
+      "retained_size_bytes": 6562,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/report.json",
+      "original_sha256": "9d9650755654abf6d9fadfd3fe535622039189ae32f1f7a43320c71c9443ae05",
+      "original_size_bytes": 23317,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/weekday_pagi__report.json.gz",
+      "retained_sha256": "5a492f9aa3bfb24439c6d74a2b2fd80bb2a31dfc8266a049da4cdbeee5e3f188",
+      "retained_size_bytes": 6550,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/weekday_siang/report.json",
+      "original_sha256": "9e6d6a77e65fdf5d6b68fae439828523e983ae861d0283c639622bb78491c09f",
+      "original_size_bytes": 23299,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/weekday_siang__report.json.gz",
+      "retained_sha256": "85f9a37419ca2e61af1c0b06a59019e513b9de05fd13f2eeab3458b0bedae805",
+      "retained_size_bytes": 6554,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/weekday_sore/report.json",
+      "original_sha256": "196c290f1297c31eec8b6aadc08c34c0651310b01a3d8a2dcf5ee67e2ca39ecc",
+      "original_size_bytes": 23321,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/weekday_sore__report.json.gz",
+      "retained_sha256": "304787b2105d7e681919fb19662c7b18cef05cda9fdf82b71d557baf5fbde98c",
+      "retained_size_bytes": 6552,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/weekend_malam/report.json",
+      "original_sha256": "de181e330babc767693f0dceaacce6a6662b895e8b9c57032bfffa654c1ae1ba",
+      "original_size_bytes": 23329,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/weekend_malam__report.json.gz",
+      "retained_sha256": "ea860fbde834d2948e5ec4f991ec1ca2e28ac771cd53a8c1404c3274b85a20a9",
+      "retained_size_bytes": 6559,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/report.json",
+      "original_sha256": "a8aea7fc6ac4d8e0947d14d6bf722fee26739ab617e63d414d112811de7a432d",
+      "original_size_bytes": 23314,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/weekend_pagi__report.json.gz",
+      "retained_sha256": "c45d2a1da74708ec215a82736935faafda5e964c3be4aac0eef4596183cab65a",
+      "retained_size_bytes": 6556,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/weekend_siang/report.json",
+      "original_sha256": "b1cc9d35fb5be2287b6fba8149fa4032d47d30bd26da3a9e73fc799329da6e0a",
+      "original_size_bytes": 23321,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/weekend_siang__report.json.gz",
+      "retained_sha256": "a2d54cf38b445e6d8841629a6b0496414586a1f5aae3908a78e16a1a1267525f",
+      "retained_size_bytes": 6543,
+      "encoding": "gzip_of_exact_original_bytes"
+    },
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/weekend_sore/report.json",
+      "original_sha256": "5ab9b309cda74a344fea6c2b0c887a0d981a5b19c716324b00e8da026dfc7068",
+      "original_size_bytes": 23320,
+      "retained_path": "docs/evidence/phase_8_annotations/baseline/weekend_sore__report.json.gz",
+      "retained_sha256": "c7fb591f8c7ff6bba3b43889a99c9468bb77a94ae95b10110268ab5c4147bbca",
+      "retained_size_bytes": 6558,
+      "encoding": "gzip_of_exact_original_bytes"
+    }
+  ],
+  "external_original_references": [
+    {
+      "original_kaggle_output_path": "phase_8_tgdi_research/20261015T083731_664817Z/audit_queue.json",
+      "original_sha256": "1a7bfed07eb5f29918433a47f9f5821407b6e3b8f898a9b84840af9a847b42fb",
+      "original_size_bytes": 48464132,
+      "note": "Original audit_queue remains in Kaggle and local verified download; equivalent queue payload is also retained inside exact original batch_report.json.gz."
+    }
+  ],
+  "all_retained_original_payload_hashes_checked": true
+}

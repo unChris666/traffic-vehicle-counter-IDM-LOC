@@ -1,0 +1,172 @@
+{
+  "schema_version": "phase8_review_annotation_v1",
+  "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+  "video_id": "weekday_pagi",
+  "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+  "source_identity": {
+    "video_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+    "geometry_sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T083731_859575Z",
+    "records_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8"
+  },
+  "inputs": {
+    "video": {
+      "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-PAGI.mp4",
+      "sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+      "size_bytes": 50748314
+    },
+    "records": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/track_records.jsonl.gz",
+      "sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8",
+      "size_bytes": 15989978
+    },
+    "geometry": {
+      "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json",
+      "sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215",
+      "size_bytes": 6055
+    },
+    "decisions": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/counting/machine_passage_decisions.json.gz",
+      "sha256": "3e3adf0562d5a1782fb1336d5bd55ebc25595c56f77a34e6139492f32f439f55",
+      "size_bytes": 874273
+    },
+    "events": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/counting/machine_count_events.json.gz",
+      "sha256": "eb421939e94f7a2dfa76ffd19128fba9a10f9de70b5b68c8ae98df06fae1a726",
+      "size_bytes": 38039
+    },
+    "relations": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/counting/relations.json.gz",
+      "sha256": "e741445e524d0abba1831db5012362fd80078d8727757ed1c20a884930642055",
+      "size_bytes": 5571611
+    },
+    "ledger": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+      "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+      "size_bytes": 2476424
+    }
+  },
+  "source_image_region": {
+    "x": 0,
+    "y": 0,
+    "width": 640,
+    "height": 480,
+    "resized": false,
+    "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+  },
+  "canvas": {
+    "width": 1160,
+    "height": 720,
+    "sidebar_width": 520,
+    "footer_minimum_height": 240
+  },
+  "output_video": {
+    "path": "annotated_review.mp4",
+    "sha256": "6c9b4a384b7f35d6e98e7c5ac24a421bee7faa5d66a42e1ec3c85029fb2f24b2",
+    "size_bytes": 408283622,
+    "codec": "mp4v",
+    "frames_written": 9052,
+    "frames_redecoded": 9052,
+    "fps": 29.904049581962543,
+    "source_audio_preserved": false,
+    "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+  },
+  "final_accepted": 6,
+  "final_pending_candidates": 263,
+  "final_pivot": {
+    "motorcycle": {
+      "A_TO_B": 3,
+      "B_TO_A": 3
+    },
+    "car": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "truck": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "bus_angkot": {
+      "A_TO_B": null,
+      "B_TO_A": null
+    },
+    "pedestrian": {
+      "A_TO_B": null,
+      "B_TO_A": null
+    }
+  },
+  "decision_status_counts": {
+    "pending_review": 263,
+    "accepted": 6
+  },
+  "category_coverage": {
+    "motorcycle": "experimental_vehicle_passage",
+    "car": "experimental_vehicle_passage",
+    "truck": "experimental_vehicle_passage",
+    "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+    "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+  },
+  "source_pixel_hash_verified_every_frame": true,
+  "inputs_unchanged_after_render": true,
+  "new_detector_tracker_encoder_inference": false,
+  "counting_or_identity_resolver_rerun": false,
+  "occlusion_identity_recovery_modified": false,
+  "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+  "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+  "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+  "pending_excluded_from_pivot": true,
+  "previews": [
+    {
+      "path": "preview_frame_000000000.png",
+      "sha256": "7ee0394b74aadc726d1ed24c626499387528d9ec2845cf3ecdcf32bc0ff2ac51",
+      "frame_index": 0,
+      "accepted_so_far": 0,
+      "pending_so_far": 0
+    },
+    {
+      "path": "preview_frame_000002363.png",
+      "sha256": "7c7f1062deb3bfd122e430ab49001d285be6b8736145142f443fd7f54149daf7",
+      "frame_index": 2363,
+      "accepted_so_far": 0,
+      "pending_so_far": 85
+    },
+    {
+      "path": "preview_frame_000002378.png",
+      "sha256": "a9f928595c286a076def24b45a924f004f9e9250006f8c1595a666f9e464338a",
+      "frame_index": 2378,
+      "accepted_so_far": 0,
+      "pending_so_far": 85
+    },
+    {
+      "path": "preview_frame_000002431.png",
+      "sha256": "89189cbbd26f6bf09ae91d9e315edc471862ffd1764ad47e2d2b9a260bb7c029",
+      "frame_index": 2431,
+      "accepted_so_far": 0,
+      "pending_so_far": 87
+    },
+    {
+      "path": "preview_frame_000002432.png",
+      "sha256": "a1147b1f8a18ce06f244d5b450711ab66f199a98251d8a82820a6e575ff4c2fc",
+      "frame_index": 2432,
+      "accepted_so_far": 1,
+      "pending_so_far": 87
+    },
+    {
+      "path": "preview_frame_000009051.png",
+      "sha256": "80117bedfc5140c751785f737b399023dbae8ea71c4f185f57aebfd2b8dba19f",
+      "frame_index": 9051,
+      "accepted_so_far": 6,
+      "pending_so_far": 263
+    }
+  ],
+  "passage_display_index": {
+    "path": "passage_display_index.json",
+    "sha256": "b20475703e9df0941b2170e7cd13ae9349e363d3ac171100418f5ed532453c96"
+  },
+  "opencv_version": "4.14.0",
+  "render_and_decode_wall_seconds": 215.327411782,
+  "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+}

@@ -1,0 +1,882 @@
+{
+  "claim_type": "ACTUAL_PHASE8_V2_ANNOTATION_DONOR_CACHE_TRANSPORT_NO_MODEL_EXECUTION",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-full-video-research",
+  "kernel_version": 2,
+  "parent_run_id": "20261015T083731_664817Z",
+  "expected_source_bundle_binding_sha256": "c08bc7b3cdded8ec71131a35cfc0966431a275abd02ddc1a3f68bf7dbc0c6373",
+  "original_batch_manifest_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+  "original_batch_manifest_path": "/tmp/phase8-annotation-inputs/phase_8_tgdi_research/20261015T083731_664817Z/batch_retention_manifest.json",
+  "updated_at_utc": "2026-10-15T14:48:01.191197+00:00",
+  "wall_seconds": 2.577210961957462,
+  "files": [
+    {
+      "path": "accepted_event_ledger.json",
+      "bytes": 2476424,
+      "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "audit_queue.json",
+      "bytes": 48464132,
+      "sha256": "1a7bfed07eb5f29918433a47f9f5821407b6e3b8f898a9b84840af9a847b42fb",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "batch_report.json",
+      "bytes": 54228775,
+      "sha256": "0b129b752ae528bcf426f76f6325c4eaa50c865a316a392d8e967ed9403b4280",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "coverage.json",
+      "bytes": 1202,
+      "sha256": "76916210cbe9e40c9e690c4c5b7735285439ce6c7fd5f5886c74501c9d37b71d",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "input_manifest.json",
+      "bytes": 17783,
+      "sha256": "34a465a2a87cf88f21ff68e80fe3f5f4d6799492a004bd52c7f3a9b1e75f4dcd",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "original_source_manifest.json",
+      "bytes": 17943,
+      "sha256": "d3ab912965beea7cffbb159ed5b7c7fa8eeac2081b2ba7d872e8822fa416892d",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "per_video_results.json",
+      "bytes": 237384,
+      "sha256": "d5a7af9eb3dd512e0037dcc30647413f96712d1ef8789c2ec4be251a4b27a574",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "processing_profile.json",
+      "bytes": 3627,
+      "sha256": "cdd1776f30b3ce2af5f22aa415a4c87d7936c7fbb507bbf1423d557427b07f5a",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "runtime.json",
+      "bytes": 822,
+      "sha256": "36aa6cf575f943aaf276e05cda9b68f66a67f3ebcbaea097e95f296a62f4a0ac",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "source_mount_resolution.json",
+      "bytes": 4311,
+      "sha256": "b9857a95cfc7751f1964e70547d3bbd25d11a5a3ba78800817eb75993702b738",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/configuration.json",
+      "bytes": 3627,
+      "sha256": "fac40c663a185b511b41e4e9af9cf69f96d0956748c18de5f7d63c0d8cef5e4f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/counting_adapter_provenance.json",
+      "bytes": 397,
+      "sha256": "753601dbf18c8a9f29da99e7b4662da72605cf478d9905f90ee908396e83cdf6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/counting_configuration.json",
+      "bytes": 1114,
+      "sha256": "9114ccfcb1d134d6e0ae27e714ed5e8de36fc6277703a7f80dc2f6ad31d5766f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/counting_report.json",
+      "bytes": 8395,
+      "sha256": "8ca7e7452dff5c922aaf4a8a881b42ceac0919e0c24010742c0477ebdac14a97",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/episodes.json.gz",
+      "bytes": 30838634,
+      "sha256": "8d73432c690c29f058b1dbcc87332cef6609d739f65dc7582fa90ac1cb436fe8",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/machine_aggregate.json",
+      "bytes": 834,
+      "sha256": "5a44da9c661f5005cb9e022d3cb8e73697dd7956d0f5c2fcc90eaa3efe722e37",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/machine_count_events.json.gz",
+      "bytes": 26973,
+      "sha256": "ee53614ebc34ad97f792ddc978dc18bad816170ad6b688ebea4518badcc8cbaf",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/machine_passage_decisions.json.gz",
+      "bytes": 425218,
+      "sha256": "bf42451d4ef8034ca78b743dc2ffb84b93dd3293b5ad086f4065b73a06e1bc69",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/phase_8_snapshot.json",
+      "bytes": 19870,
+      "sha256": "cd710ccd35e13fff998d5567119316dc30cf5628ac708a182c4cc8ffc25e3622",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/relations.json.gz",
+      "bytes": 3548079,
+      "sha256": "f2e545b28296c4931061fe43aa5fa7f31e5af57a2243b996507e8ff365b3dae6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/counting/retention_manifest.json",
+      "bytes": 2118,
+      "sha256": "26f4651ecd0c4bd10d89a4872c9dffec783f714973ed01384396abeee5438d63",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/report.json",
+      "bytes": 23327,
+      "sha256": "3ce5a02491c960d28aab2862b59750c101598077fd69fa6881c0800a1726a408",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/retention_manifest.json",
+      "bytes": 3515,
+      "sha256": "9202a15fd612a25e1c656625535deaa421a69e148848b8fc30e7028cb6b63a83",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_malam/track_records.jsonl.gz",
+      "bytes": 11731347,
+      "sha256": "84cd21c6d251f1cb24602335d90f30eb4c683e1d029055added675994d609466",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/configuration.json",
+      "bytes": 3627,
+      "sha256": "fac40c663a185b511b41e4e9af9cf69f96d0956748c18de5f7d63c0d8cef5e4f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/counting_adapter_provenance.json",
+      "bytes": 397,
+      "sha256": "753601dbf18c8a9f29da99e7b4662da72605cf478d9905f90ee908396e83cdf6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/counting_configuration.json",
+      "bytes": 1114,
+      "sha256": "20e2b576b6179031289d9d3b0fc9681bc26d635e9d43017f00e1fbdd2ed14671",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/counting_report.json",
+      "bytes": 8390,
+      "sha256": "e6c51343d455f2164983a0dc98c529631146ca5a4cf79fa37582dda7501cca3c",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/episodes.json.gz",
+      "bytes": 30291843,
+      "sha256": "53e68365be4716e60e496775e0a696c26c521fe57e1c8dff3116e72311246e97",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/machine_aggregate.json",
+      "bytes": 757,
+      "sha256": "72473a95ebaa8d0b1b3c6172959e4b3c1317e7a1aac1a1690b1519c4e824ae31",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/machine_count_events.json.gz",
+      "bytes": 38039,
+      "sha256": "eb421939e94f7a2dfa76ffd19128fba9a10f9de70b5b68c8ae98df06fae1a726",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/machine_passage_decisions.json.gz",
+      "bytes": 874273,
+      "sha256": "3e3adf0562d5a1782fb1336d5bd55ebc25595c56f77a34e6139492f32f439f55",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/phase_8_snapshot.json",
+      "bytes": 22946,
+      "sha256": "e448267cef1a4c7e7336cf128ca63208acbed4638a0b9f9ec111599be340981b",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/relations.json.gz",
+      "bytes": 5571611,
+      "sha256": "e741445e524d0abba1831db5012362fd80078d8727757ed1c20a884930642055",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/counting/retention_manifest.json",
+      "bytes": 2118,
+      "sha256": "c2373f6aeca84c03e24db3ee20886b63c2b35f9f31e8377272789b1bd1f49f5b",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/report.json",
+      "bytes": 23317,
+      "sha256": "9d9650755654abf6d9fadfd3fe535622039189ae32f1f7a43320c71c9443ae05",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/retention_manifest.json",
+      "bytes": 3515,
+      "sha256": "c7dff065a2f2f5375049f69d928db12df29ae262c808b2e7d4dbc17b0324bf99",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_pagi/track_records.jsonl.gz",
+      "bytes": 15989978,
+      "sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/configuration.json",
+      "bytes": 3627,
+      "sha256": "fac40c663a185b511b41e4e9af9cf69f96d0956748c18de5f7d63c0d8cef5e4f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/counting_adapter_provenance.json",
+      "bytes": 397,
+      "sha256": "753601dbf18c8a9f29da99e7b4662da72605cf478d9905f90ee908396e83cdf6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/counting_configuration.json",
+      "bytes": 1114,
+      "sha256": "9326b6663cb68d4c58799e61148c3f92c1d34de0ae4334c6b1284827299bb301",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/counting_report.json",
+      "bytes": 8374,
+      "sha256": "76986398b93d37311d8f8ae988d9f9655879f0fa59f50d34c7e3c328764052dc",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/episodes.json.gz",
+      "bytes": 44021068,
+      "sha256": "3ec9a5733d556384ea142d86c35284a78ed71c4293b6eac69e324a987ff28830",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/machine_aggregate.json",
+      "bytes": 293,
+      "sha256": "a2b635aa45b1f98ecf6b3d91ac064a920ffbb3b050319a784722268adfe83dd3",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/machine_count_events.json.gz",
+      "bytes": 49,
+      "sha256": "125b140169e353811ed3044377273cdc3cc969154f330ae9f5ab5e32213064a0",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/machine_passage_decisions.json.gz",
+      "bytes": 724345,
+      "sha256": "df65e87ba75ac1e4fc80cf8ea5ed78ee47b6d396b326c0f077f27f423ec77bd2",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/phase_8_snapshot.json",
+      "bytes": 18944,
+      "sha256": "bbd3a3e2089461105e1a7bde0630a3a8e32a208a778e59c89194e787c6cf6a6c",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/relations.json.gz",
+      "bytes": 5766691,
+      "sha256": "2e9f35ad7297c0a5183474883b5a07c9bf61fff942d574b90d671b370bf4d566",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/counting/retention_manifest.json",
+      "bytes": 2115,
+      "sha256": "58b8b7a706d7f25391df077e88b1081bf46284d29acf59f3cceb8dcad9af86a4",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/report.json",
+      "bytes": 23299,
+      "sha256": "9e6d6a77e65fdf5d6b68fae439828523e983ae861d0283c639622bb78491c09f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/retention_manifest.json",
+      "bytes": 3512,
+      "sha256": "07b19f84632d21fb230d9b009c9b39ccda3af730a3d792fe6fb9b70e62bb6932",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_siang/track_records.jsonl.gz",
+      "bytes": 14972230,
+      "sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/configuration.json",
+      "bytes": 3627,
+      "sha256": "fac40c663a185b511b41e4e9af9cf69f96d0956748c18de5f7d63c0d8cef5e4f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/counting_adapter_provenance.json",
+      "bytes": 397,
+      "sha256": "753601dbf18c8a9f29da99e7b4662da72605cf478d9905f90ee908396e83cdf6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/counting_configuration.json",
+      "bytes": 1114,
+      "sha256": "fd50c43ab96a47fe6af912a38e4e7efb772bdea60797c4776178c1d698b85633",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/counting_report.json",
+      "bytes": 8389,
+      "sha256": "ceae281833e9f6581e2ff7684934863807e10677f3e32372789c22f2f41dd0e9",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/episodes.json.gz",
+      "bytes": 26117876,
+      "sha256": "544f1ba0bc3b0bd35554a82b96bdd3b8735b7df9ea95f681553e55c24a456eac",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/machine_aggregate.json",
+      "bytes": 757,
+      "sha256": "a5120dcaa6e89957778fc6c3febb742e05e190ef0b7fadffe53a020f6fb54291",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/machine_count_events.json.gz",
+      "bytes": 45780,
+      "sha256": "a6d465313df3a611598e0dbe2a28688a475d3834328fc78fb0f987ec73cef459",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/machine_passage_decisions.json.gz",
+      "bytes": 930611,
+      "sha256": "4ce25954a5fc38540ddf9d2f7aabaf6513942ab9f75b50bb13f9fef0bed7475d",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/phase_8_snapshot.json",
+      "bytes": 27566,
+      "sha256": "9d2ed343e9a2cf2d781c3689827a64dc425da278ea0fd574c5719810e93e7fc9",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/relations.json.gz",
+      "bytes": 3755867,
+      "sha256": "8f3ed9cf3a35e647dc89e4a32378db209c582381d46516374c8281b02b3d5be2",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/counting/retention_manifest.json",
+      "bytes": 2118,
+      "sha256": "d92f6937972e7db9268277be89535223f9dd63c1f2fd9caec079300aca6c7adf",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/report.json",
+      "bytes": 23321,
+      "sha256": "196c290f1297c31eec8b6aadc08c34c0651310b01a3d8a2dcf5ee67e2ca39ecc",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/retention_manifest.json",
+      "bytes": 3515,
+      "sha256": "1ad44bd06a37291176df5d99b782d3157d8089f0c35a823743e89ef2ec18ddef",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekday_sore/track_records.jsonl.gz",
+      "bytes": 11759796,
+      "sha256": "ae44826af2e724bda2441f39548ab62b8dddfcfa898c64896e6d1165547a78cd",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/configuration.json",
+      "bytes": 3627,
+      "sha256": "fac40c663a185b511b41e4e9af9cf69f96d0956748c18de5f7d63c0d8cef5e4f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/counting_adapter_provenance.json",
+      "bytes": 397,
+      "sha256": "753601dbf18c8a9f29da99e7b4662da72605cf478d9905f90ee908396e83cdf6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/counting_configuration.json",
+      "bytes": 1114,
+      "sha256": "a59f86897e27671b73d0cf5c1750fbef7391ed7ccece8269831522271d18da9f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/counting_report.json",
+      "bytes": 8395,
+      "sha256": "f3278e54565d5cf7a96f2d4345386864129bc5689fb3e04881a70ffd77e619db",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/machine_aggregate.json",
+      "bytes": 1221,
+      "sha256": "705c3464bff387d7aecfca479757d219b7f4da9f4e9deb24cc11545c3f02b46b",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/machine_count_events.json.gz",
+      "bytes": 25194,
+      "sha256": "eeb9c0895672edb2e3d96ded3c7c04664dee55457aa8ac8c8c11edfa9fbfc167",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/machine_passage_decisions.json.gz",
+      "bytes": 302438,
+      "sha256": "bc443e70c303f04ef2f44120fa6b6c2288079f5f94c733233c4b6dcde2f39dd7",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/phase_8_snapshot.json",
+      "bytes": 16944,
+      "sha256": "dcbabae17654c2d0ff73e967a58549148c7e82902b6531e610fe8d4edc3683a6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/relations.json.gz",
+      "bytes": 2012371,
+      "sha256": "26013a3ea557aa8ba9447912926930553a528af99abc53358885165d3df306d5",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/counting/retention_manifest.json",
+      "bytes": 2119,
+      "sha256": "8c47979f425110c41f24dd0716a08caf4844e4da5ec3b3023fbffaeca225d255",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/report.json",
+      "bytes": 23329,
+      "sha256": "de181e330babc767693f0dceaacce6a6662b895e8b9c57032bfffa654c1ae1ba",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/retention_manifest.json",
+      "bytes": 3515,
+      "sha256": "605125c036bb36beef6cae208a2b3c03c08e6fa62b709dc0e11d6bc7af1dda73",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_malam/track_records.jsonl.gz",
+      "bytes": 9086944,
+      "sha256": "34db71bfb06ef96a7902e88031195a771f03a7450f63daa6d5e83b66d5a6cac5",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/configuration.json",
+      "bytes": 3627,
+      "sha256": "fac40c663a185b511b41e4e9af9cf69f96d0956748c18de5f7d63c0d8cef5e4f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/counting_adapter_provenance.json",
+      "bytes": 397,
+      "sha256": "753601dbf18c8a9f29da99e7b4662da72605cf478d9905f90ee908396e83cdf6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/counting_configuration.json",
+      "bytes": 1114,
+      "sha256": "92d27cc4d27049afc6f2ca5b3aa82dc8ed975c3d84e6043c9082e43fce755a24",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/counting_report.json",
+      "bytes": 8387,
+      "sha256": "f58e1ef4f2ba02fc4e4bd0a73ac172c626d7736bca84aa1b5894ec5b02d4666e",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/episodes.json.gz",
+      "bytes": 21475319,
+      "sha256": "7b6370d497abcd0bec3acb8add7db664aaa8b5fe780bda400d9aecea304d9fd8",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/machine_aggregate.json",
+      "bytes": 680,
+      "sha256": "3fac85735885595ef991903d6af62b384ea64f81270f4bc9dab8efdba0d15d22",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/machine_count_events.json.gz",
+      "bytes": 31342,
+      "sha256": "a4120b325d1d9b213454263511b55eeaa716561dc7c0cc180ce27f6e385cf37f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/machine_passage_decisions.json.gz",
+      "bytes": 748629,
+      "sha256": "08809afc806c46c487ab03f1fd5241b9b9d3655ea0c6657c48d29284fe39a08d",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/phase_8_snapshot.json",
+      "bytes": 19173,
+      "sha256": "0cea352abfddca863b3ae8ae395e1704f47ccddfebaa0b648aeea66d86b448a1",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/relations.json.gz",
+      "bytes": 3458497,
+      "sha256": "68b0127385b925bb0cef2308c6f3176b98e027dddfd7ab2ec1bfd18d549f0976",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/counting/retention_manifest.json",
+      "bytes": 2118,
+      "sha256": "eb92eb90d40498cbe0f4043823454f4cb9e31dee9da5e9680af8db2238c8a9cf",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/report.json",
+      "bytes": 23314,
+      "sha256": "a8aea7fc6ac4d8e0947d14d6bf722fee26739ab617e63d414d112811de7a432d",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/retention_manifest.json",
+      "bytes": 3515,
+      "sha256": "6ead8e9f002fdc2014be7e106dda6714876071340886e01b0650abf36fd28382",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_pagi/track_records.jsonl.gz",
+      "bytes": 11088692,
+      "sha256": "01af7eba90b66e7e75038fa14298f6004039a5d2c2d7cf3c079532a63fc0f716",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/configuration.json",
+      "bytes": 3627,
+      "sha256": "fac40c663a185b511b41e4e9af9cf69f96d0956748c18de5f7d63c0d8cef5e4f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/counting_adapter_provenance.json",
+      "bytes": 397,
+      "sha256": "753601dbf18c8a9f29da99e7b4662da72605cf478d9905f90ee908396e83cdf6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/counting_configuration.json",
+      "bytes": 1114,
+      "sha256": "8f072eb4970a1c31bd52bbd4bd988e236e25597c43ee116cb7fcd8acfe229c45",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/counting_report.json",
+      "bytes": 8393,
+      "sha256": "57ae45df0de1ec55d2b0ee88fb525660182cd53800308c6751ad594b80233875",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/episodes.json.gz",
+      "bytes": 19424911,
+      "sha256": "a3b1b8755f2c631ad5e9637770d57b6b548bf3cc62317486f76e535c57d98bca",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/machine_aggregate.json",
+      "bytes": 1761,
+      "sha256": "2b5f2a45fa2cdc554ab40925bbbf2cadff2258f7bd2764cf293db911eeb4e182",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/machine_count_events.json.gz",
+      "bytes": 119255,
+      "sha256": "1b6d105db4509e2ae7fcc57361061730013addd83cb90fdb82f6c2b0e3e792a6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/machine_passage_decisions.json.gz",
+      "bytes": 832736,
+      "sha256": "9909022d8d9a2be19fa2bfdc5327588b153989696867d5a9103866755acb1c43",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/phase_8_snapshot.json",
+      "bytes": 18484,
+      "sha256": "2342d9d8a1c31e497106a3b05e0c829a6dc56ddc1bea8cff4736512cf5666911",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/relations.json.gz",
+      "bytes": 3526767,
+      "sha256": "11c15d0116c7fe2e3582b94c15f79afb852db9413dab70789c47e958b1723f17",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/counting/retention_manifest.json",
+      "bytes": 2120,
+      "sha256": "32a8a32eb2cb522ffbd26b36fba0f5574eea4e3c417194050f8a18f2ddc925c0",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/report.json",
+      "bytes": 23321,
+      "sha256": "b1cc9d35fb5be2287b6fba8149fa4032d47d30bd26da3a9e73fc799329da6e0a",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/retention_manifest.json",
+      "bytes": 3517,
+      "sha256": "6b6e06afbd879fd4c380cfab454212b9ff5c894879c7775d1a2e8bc9c2ee866b",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_siang/track_records.jsonl.gz",
+      "bytes": 11310588,
+      "sha256": "9df3144b66ed617272800cf01cebbc1ed6195acb879fba47f9dc593cc1d9f8de",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/configuration.json",
+      "bytes": 3627,
+      "sha256": "fac40c663a185b511b41e4e9af9cf69f96d0956748c18de5f7d63c0d8cef5e4f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/counting_adapter_provenance.json",
+      "bytes": 397,
+      "sha256": "753601dbf18c8a9f29da99e7b4662da72605cf478d9905f90ee908396e83cdf6",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/counting_configuration.json",
+      "bytes": 1114,
+      "sha256": "c1c06a56ec3188cd0e7ed6accd16ed4e64e57590628c4d14e51c8a243d81864b",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/counting_report.json",
+      "bytes": 8389,
+      "sha256": "834f77ead684b50d6afac750b8d8d9614b1b46ef396a28bf5e9936b0956e923b",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/episodes.json.gz",
+      "bytes": 38897811,
+      "sha256": "0511778f41c1634e016ddb385528d00be459692a149efe578ae5e3133156fc01",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/machine_aggregate.json",
+      "bytes": 526,
+      "sha256": "ed79f6b37c4b23055ec3a252c3a2a1c20e6da58442f00a0dcc25637dee41803c",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/machine_count_events.json.gz",
+      "bytes": 8833,
+      "sha256": "a8c7513d95c80e4fb3937e63eb3c756f8547cb4f76871f5da945b770c43137b5",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/machine_passage_decisions.json.gz",
+      "bytes": 680616,
+      "sha256": "b688e2d2a1eca4424baf5f85b8ea33e00db525ee2a602c8b7ae010fc49b913aa",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/phase_8_snapshot.json",
+      "bytes": 19712,
+      "sha256": "31e5a639be9b9cc6329f302194a0177e5541a56d70ad3cddd60413dfad178eaf",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/relations.json.gz",
+      "bytes": 5519425,
+      "sha256": "fcd4a629de2b40a1ec6d55229bd70872f3e6d87e58f219c7df42f7ae33fe448d",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/counting/retention_manifest.json",
+      "bytes": 2117,
+      "sha256": "a7942e1cdb31b3eb0f578049bf3cf42355b232af17a192f3e5b42a8bdb29234f",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/report.json",
+      "bytes": 23320,
+      "sha256": "5ab9b309cda74a344fea6c2b0c887a0d981a5b19c716324b00e8da026dfc7068",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/retention_manifest.json",
+      "bytes": 3514,
+      "sha256": "b7b0889a3805724590036045373c790b4bcdee4a9b2714d2802b867600bdfeee",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    },
+    {
+      "path": "weekend_sore/track_records.jsonl.gz",
+      "bytes": 14253292,
+      "sha256": "58a362d9259ce21f80eada7a977f9893d2eb61d15b0914d0072103c8dea999f9",
+      "status": "PASS",
+      "original_batch_manifest_hash_verified": true
+    }
+  ],
+  "verified_files": 121,
+  "verified_bytes": 456196664,
+  "all_requested_files_verified": true,
+  "signed_urls_retained": false,
+  "appearance_caches_downloaded": false,
+  "source_or_annotated_videos_downloaded": false,
+  "new_model_execution": false,
+  "additional_retained_originals": [
+    "accepted_event_ledger.json",
+    "audit_queue.json",
+    "batch_report.json",
+    "weekday_malam/counting/episodes.json.gz",
+    "weekday_pagi/counting/episodes.json.gz",
+    "weekday_siang/counting/episodes.json.gz",
+    "weekday_sore/counting/episodes.json.gz",
+    "weekend_pagi/counting/episodes.json.gz",
+    "weekend_siang/counting/episodes.json.gz",
+    "weekend_sore/counting/episodes.json.gz"
+  ],
+  "episodes_needed_by_current_renderer": false,
+  "episode_download_policy": "Stop further episode downloads after renderer clarification; any already completed episodes are optional original-byte extras not used by renderer",
+  "verified_batch_manifest_original": true
+}

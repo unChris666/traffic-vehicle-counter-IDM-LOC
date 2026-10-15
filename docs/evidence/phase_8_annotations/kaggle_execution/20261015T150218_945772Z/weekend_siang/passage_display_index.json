@@ -1,0 +1,2458 @@
+{
+  "schema_version": "phase8_review_annotation_v1",
+  "semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+  "events": [
+    {
+      "event_alias": "E001",
+      "unit_alias": "U006",
+      "event_id": "ce6b_d3b7646f6c087261ebdcd10ab85fe7e125298267e40059edcd99c0dde677e3ac",
+      "candidate_id": "pc6b_204288aaaa6ab74dae00fe6b61af2547453142af1461abf3bb40af145490f9f1",
+      "physical_unit_id": "pu6b_205b70cf2b493dba411d3e8e43703fe2e0776fdc7574c1ee470f631fa6b845ff",
+      "passage_id": "ps6b_8713bd294aee31775d83df47045cb30d819a23d4a5a8f4a33f6459c1391729c0",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 18,
+      "supporting_vehicle_track_ids": [
+        18
+      ],
+      "component_track_ids": [
+        19
+      ],
+      "activation_frame": 78,
+      "origin_frame": 74,
+      "crossing_start": 77,
+      "crossing_end": 78,
+      "category_latest_evidence_frame": 120,
+      "identity_latest_evidence_frame": 78,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E002",
+      "unit_alias": "U012",
+      "event_id": "ce6b_c0b6d3b0614714b7e3215c23d437d5315ae6471d5221b76e55eb89eb30acf049",
+      "candidate_id": "pc6b_ffd4cd78279b6534d00d0f5a0abc418995ebd29d7f1266100a859f8990d0cf70",
+      "physical_unit_id": "pu6b_4becfd1eeb6b84b454bae014ea9a34fbba7af29286a8580ada5577e0a8a4cafe",
+      "passage_id": "ps6b_53514948005bce7bcd3215a4f0f93eb8d86c3615eef651b09805065284804370",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 185,
+      "supporting_vehicle_track_ids": [
+        185
+      ],
+      "component_track_ids": [
+        186
+      ],
+      "activation_frame": 753,
+      "origin_frame": 742,
+      "crossing_start": 752,
+      "crossing_end": 753,
+      "category_latest_evidence_frame": 835,
+      "identity_latest_evidence_frame": 753,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E003",
+      "unit_alias": "U019",
+      "event_id": "ce6b_1b74374f41ac5014a65a08a7c76d7fe3ef1ee27431a8b84ef00641866450f0ed",
+      "candidate_id": "pc6b_1a07a6033047e2af81f09ff4f0c6fe4d52d9207a4a474106cd04b9db9afbee1c",
+      "physical_unit_id": "pu6b_fdd9039bf8973097c4d0e0c06c14fc6bbc678ba1ee0637a2e4b544aedbf06594",
+      "passage_id": "ps6b_b06ae36dce20d20a90b4aee489f2222f1ef0308d376d59395d2f339c40531946",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 246,
+      "supporting_vehicle_track_ids": [
+        246
+      ],
+      "component_track_ids": [
+        251
+      ],
+      "activation_frame": 920,
+      "origin_frame": 907,
+      "crossing_start": 919,
+      "crossing_end": 920,
+      "category_latest_evidence_frame": 1096,
+      "identity_latest_evidence_frame": 917,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E004",
+      "unit_alias": "U003",
+      "event_id": "ce6b_a7a2ff22ed5a9880023d4666b2b509074c92f36e6d3cfb592aa1e3e0c6582e09",
+      "candidate_id": "pc6b_c482c9f57fcebd02c917cbddd22a10f406adab7c2993e144dd27a7f357b6c952",
+      "physical_unit_id": "pu6b_1e63adf025b18479ec29ad9ffc625c5dd58183a4a5041c78c1d81d5661f32cde",
+      "passage_id": "ps6b_58ba8a4575704362a6e27e04102b1848e724dd7ba0aebd8a5408809fc485e8a4",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 526,
+      "supporting_vehicle_track_ids": [
+        526
+      ],
+      "component_track_ids": [
+        550
+      ],
+      "activation_frame": 1625,
+      "origin_frame": 1572,
+      "crossing_start": 1624,
+      "crossing_end": 1625,
+      "category_latest_evidence_frame": 1638,
+      "identity_latest_evidence_frame": 1588,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E005",
+      "unit_alias": "U013",
+      "event_id": "ce6b_7190cccb8a0fd3979c5617f843dad7a1ad82dc46d57d26100c82c129ab5106e1",
+      "candidate_id": "pc6b_4f25c3cb39ef54322c351c6f42132c3950cfeac93683a6fb1fe3d95deed353c2",
+      "physical_unit_id": "pu6b_6a63cb788667d2b4d46477ee0596432f4e132245c32f759117b7adf0ced43f87",
+      "passage_id": "ps6b_9eb5e41292bb5714da26cbe076abd58b50c677edf0daf759699ae6fcf6919dd9",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 645,
+      "supporting_vehicle_track_ids": [
+        645
+      ],
+      "component_track_ids": [
+        649,
+        651,
+        652
+      ],
+      "activation_frame": 2037,
+      "origin_frame": 2025,
+      "crossing_start": 2036,
+      "crossing_end": 2037,
+      "category_latest_evidence_frame": 2056,
+      "identity_latest_evidence_frame": 2037,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E006",
+      "unit_alias": "U005",
+      "event_id": "ce6b_45ecf052bc5b9e6fabf6d903241a1b1f6eecb614abae1ed3d6ad583bca0a4867",
+      "candidate_id": "pc6b_8b120234cc27903faf30a51198a72973c02c168c6216aa17e134e575ba6be6a7",
+      "physical_unit_id": "pu6b_2039d50cb64f4977fc559fdc22ea6c8a24cb98afc28e46493b5b0172c9686ed8",
+      "passage_id": "ps6b_759a859ab5750f43d4b6bd183099e2ba1ab70a8f2e4cad8c70bf257384288b09",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 1167,
+      "supporting_vehicle_track_ids": [
+        1167
+      ],
+      "component_track_ids": [
+        1169
+      ],
+      "activation_frame": 2935,
+      "origin_frame": 2906,
+      "crossing_start": 2934,
+      "crossing_end": 2935,
+      "category_latest_evidence_frame": 2948,
+      "identity_latest_evidence_frame": 2935,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E007",
+      "unit_alias": "U001",
+      "event_id": "ce6b_2c970a43e1bcaf623e6ec18c8cea43d7c6282b83cebb081842dd561c29337e26",
+      "candidate_id": "pc6b_a89ebabcac384afadbce4a84f16350ac9c236d3511935dc06e1ecd56c18e0f84",
+      "physical_unit_id": "pu6b_0f4d140bcd86e868939652735f44f1d6d01cf64dc1518ad5e32e17b0f673eb68",
+      "passage_id": "ps6b_c7be6c27164be4200f11c9cd5d99ee341e77a86f18b48d86b62f266155b3d855",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 1195,
+      "supporting_vehicle_track_ids": [
+        1195
+      ],
+      "component_track_ids": [
+        1205,
+        1214,
+        1220
+      ],
+      "activation_frame": 3004,
+      "origin_frame": 2939,
+      "crossing_start": 3003,
+      "crossing_end": 3004,
+      "category_latest_evidence_frame": 3034,
+      "identity_latest_evidence_frame": 2999,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E008",
+      "unit_alias": "U007",
+      "event_id": "ce6b_0b62137d074005e6c4bcf5448204777a0c09f763eaf3f95535e94ef5a871870a",
+      "candidate_id": "pc6b_6e5a6110c776b42fd1c17a846e2ec2fd8dfaebc4338c3770c61576c69a89f117",
+      "physical_unit_id": "pu6b_28d6d16bc85591f64602ba41ea3afc5fb007f42952474c618e92f9515b64c95d",
+      "passage_id": "ps6b_8992b869f4d7080cf53c89a34e938c658f6b11d884681570c17537fa81924813",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 1767,
+      "supporting_vehicle_track_ids": [
+        1767
+      ],
+      "component_track_ids": [
+        1778,
+        1786
+      ],
+      "activation_frame": 4233,
+      "origin_frame": 4152,
+      "crossing_start": 4232,
+      "crossing_end": 4233,
+      "category_latest_evidence_frame": 4246,
+      "identity_latest_evidence_frame": 4199,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E009",
+      "unit_alias": "U015",
+      "event_id": "ce6b_60064909ed37298d9946b955838656131b846d4d16aa97707542da88923e235a",
+      "candidate_id": "pc6b_0ad040a4ec48e8329eda999125b96800141dbf4f9ddc1bc91e24168e37f67d9b",
+      "physical_unit_id": "pu6b_a02c9e2e1d2cc5430e2544417dc7440f37bcabb14b702fd833bdcb71579b98ca",
+      "passage_id": "ps6b_6152213f96bf97232ec6cfc21a2034fbd1ca6b1b0d847cad9a4a583cd6a1206f",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 2157,
+      "supporting_vehicle_track_ids": [
+        2157
+      ],
+      "component_track_ids": [
+        2152
+      ],
+      "activation_frame": 5079,
+      "origin_frame": 5068,
+      "crossing_start": 5078,
+      "crossing_end": 5079,
+      "category_latest_evidence_frame": 5111,
+      "identity_latest_evidence_frame": 5079,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E010",
+      "unit_alias": "U018",
+      "event_id": "ce6b_1cf333cfd78d72a161372e731981d68d72d266d06d8546b2e8d6735585357970",
+      "candidate_id": "pc6b_e88a6eb7f6213d13b46ffd8c297be2ef36651da2ca90928fdc0e84ff4d602ce7",
+      "physical_unit_id": "pu6b_dfa55057d90d23078160d9b3d8e6d70488d623a0f459996a332248f28b7186d9",
+      "passage_id": "ps6b_f860cf8839ec7be3f1feda09d754814d2fd99aabd69cbe51698e8e024762ecb8",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 2346,
+      "supporting_vehicle_track_ids": [
+        2346
+      ],
+      "component_track_ids": [
+        2349
+      ],
+      "activation_frame": 5380,
+      "origin_frame": 5367,
+      "crossing_start": 5379,
+      "crossing_end": 5380,
+      "category_latest_evidence_frame": 5453,
+      "identity_latest_evidence_frame": 5371,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E011",
+      "unit_alias": "U017",
+      "event_id": "ce6b_99949c0c992b38c0d0d8302fd68a593c7705a2448876a801522c509fa26d0c55",
+      "candidate_id": "pc6b_108662a5155495267bb0553d81608cdc798120b7ea670b83b948813e237cf691",
+      "physical_unit_id": "pu6b_bd1880c0917a7cf1b3021705de072ed271bbf58e523f02c7f95dd9bfa4808a0f",
+      "passage_id": "ps6b_65179b927d0d1e66258aeb2571ffc874eb8448e371b26589c8360ab466a7a5f5",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 2488,
+      "supporting_vehicle_track_ids": [
+        2488
+      ],
+      "component_track_ids": [
+        2491,
+        2539
+      ],
+      "activation_frame": 5886,
+      "origin_frame": 5810,
+      "crossing_start": 5885,
+      "crossing_end": 5886,
+      "category_latest_evidence_frame": 5896,
+      "identity_latest_evidence_frame": 5886,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E012",
+      "unit_alias": "U008",
+      "event_id": "ce6b_37e9c8a6fca906172b2f90cc9ec1a1b9c8bd0164def1f7d6526c66c6a6afab6e",
+      "candidate_id": "pc6b_e5b408815eebc2991551633503e0b476331ec213fdcb23d63debf8d878b0ecee",
+      "physical_unit_id": "pu6b_2c82a41cd65db9b72ad139e2cbe7122c519b9db665b69c8842cf66d76d7dbb5f",
+      "passage_id": "ps6b_363a8efe1906c3f7110eccfd12aac07dd9793d598f50c8da2c4d1e372e7a6215",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 2748,
+      "supporting_vehicle_track_ids": [
+        2748
+      ],
+      "component_track_ids": [
+        2767,
+        2784,
+        2796
+      ],
+      "activation_frame": 6301,
+      "origin_frame": 6237,
+      "crossing_start": 6300,
+      "crossing_end": 6301,
+      "category_latest_evidence_frame": 6304,
+      "identity_latest_evidence_frame": 6301,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E013",
+      "unit_alias": "U010",
+      "event_id": "ce6b_33a68c7de01d229288c9c1edc581e19eacd9becf39278cb5b3e87278dfa71347",
+      "candidate_id": "pc6b_cb2548376f10da2658b58eef84354cf5d0d867523597174e60aabd92a1472fe7",
+      "physical_unit_id": "pu6b_46602964ac7cc0ae4381c7dfc29082f753b8fec6b82d79da5d4c1bf7bc25af6b",
+      "passage_id": "ps6b_2303ea5b46c6f774efbfba18ac020b6f7dd8c9fd098d43cd70f49e94c8b5b058",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 2985,
+      "supporting_vehicle_track_ids": [
+        2985
+      ],
+      "component_track_ids": [
+        2967,
+        3012
+      ],
+      "activation_frame": 7013,
+      "origin_frame": 6968,
+      "crossing_start": 7011,
+      "crossing_end": 7012,
+      "category_latest_evidence_frame": 7020,
+      "identity_latest_evidence_frame": 6996,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E014",
+      "unit_alias": "U009",
+      "event_id": "ce6b_037a1b3b2837d3ccd4dad396f4edde34a03a4669fd9e1b00a5881fbf7f534aad",
+      "candidate_id": "pc6b_2dd7ef332b223bd29d4a7abaf145abd77bf4a2bc1ba417e83537314f515f7f4a",
+      "physical_unit_id": "pu6b_3949df8d4e8c749152febe6028912caefe7dac4777d4b73deb0b6c6cb334b3a3",
+      "passage_id": "ps6b_1e60f902bf811694e7e2abffa6b2de1b1a09861c7c5adbae69732cc979a26692",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 3171,
+      "supporting_vehicle_track_ids": [
+        3171
+      ],
+      "component_track_ids": [
+        3150
+      ],
+      "activation_frame": 7762,
+      "origin_frame": 7678,
+      "crossing_start": 7761,
+      "crossing_end": 7762,
+      "category_latest_evidence_frame": 7775,
+      "identity_latest_evidence_frame": 7762,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E015",
+      "unit_alias": "U002",
+      "event_id": "ce6b_f48312f21f853dc4491a9ff03bb5f46b5b2eae12614a8cdcf0c5de52ed98b92e",
+      "candidate_id": "pc6b_ab44be1bca6cf695b4a0f8129f2ae72bf14e3b3a694685878486005753ad0e8e",
+      "physical_unit_id": "pu6b_1096a505bfdbf4bd49c140764fd775ebf5e3c712fb285343218e3b73d74aeac7",
+      "passage_id": "ps6b_f0434df7e8da3fff99f854c292e7ed70b52e245638ce27d6ad0d4cd44af8fae8",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 3260,
+      "supporting_vehicle_track_ids": [
+        3260
+      ],
+      "component_track_ids": [
+        3241,
+        3270,
+        3278
+      ],
+      "activation_frame": 8225,
+      "origin_frame": 8175,
+      "crossing_start": 8224,
+      "crossing_end": 8225,
+      "category_latest_evidence_frame": 8233,
+      "identity_latest_evidence_frame": 8225,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E016",
+      "unit_alias": "U014",
+      "event_id": "ce6b_56e2efc2bcd67a7a416df230e95a97dbe537aa488c9fa67de0a42894761b263f",
+      "candidate_id": "pc6b_59e18a1334d7b822dbfacc04f75ffe6e12f4e2fee9d9308bb3a0d7d50b217563",
+      "physical_unit_id": "pu6b_832f6c0d391313899a42a5b6896a11dbe4e0e2d7fccad036e87df23ad2b08847",
+      "passage_id": "ps6b_edf6f4083ab550b1e66fd0cc821e71940eb5246cf299b428e59bc9c1ecf80e39",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "source_vehicle_track_id": 3268,
+      "supporting_vehicle_track_ids": [
+        3268
+      ],
+      "component_track_ids": [
+        3298
+      ],
+      "activation_frame": 8324,
+      "origin_frame": 8272,
+      "crossing_start": 8323,
+      "crossing_end": 8324,
+      "category_latest_evidence_frame": 8332,
+      "identity_latest_evidence_frame": 8274,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E017",
+      "unit_alias": "U016",
+      "event_id": "ce6b_dc5a4b5de115a6043edc454e4fab9785958124cf383361f77109d18be09436dd",
+      "candidate_id": "pc6b_d781d2bea333018939bbaa9a2e84f7c018facc9ed1c912524ebfd12ba34ff28b",
+      "physical_unit_id": "pu6b_bbfaa3b1fbff66ebfffa0c2658ff1c5966182688aa5aa543204e888cef825a50",
+      "passage_id": "ps6b_0a4b1c2df279ebdf6889c405d36bc20f776027fa6c1082e1d6ddfa4c117f9c13",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 3372,
+      "supporting_vehicle_track_ids": [
+        3372
+      ],
+      "component_track_ids": [
+        3374
+      ],
+      "activation_frame": 8585,
+      "origin_frame": 8576,
+      "crossing_start": 8584,
+      "crossing_end": 8585,
+      "category_latest_evidence_frame": 8675,
+      "identity_latest_evidence_frame": 8585,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E018",
+      "unit_alias": "U011",
+      "event_id": "ce6b_3b28a13152e139a8d1b074c2dcc34059359bdf0f2d6e3c465581b7fad339a6e8",
+      "candidate_id": "pc6b_e69ebbf772583b79c910c03f90da863959431b5de3efe725537346c3c74e1d08",
+      "physical_unit_id": "pu6b_49b7d30fe59fe650ca4c6757edd159738ff00c5c21dc90ba8b8f213ffa38dfd5",
+      "passage_id": "ps6b_4d65d44cf90b0c5224d5466f81a89ac3760edb067454ab344221136ce3b9ee29",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 3386,
+      "supporting_vehicle_track_ids": [
+        3386
+      ],
+      "component_track_ids": [
+        3389
+      ],
+      "activation_frame": 8593,
+      "origin_frame": 8589,
+      "crossing_start": 8592,
+      "crossing_end": 8593,
+      "category_latest_evidence_frame": 8625,
+      "identity_latest_evidence_frame": 8591,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    },
+    {
+      "event_alias": "E019",
+      "unit_alias": "U004",
+      "event_id": "ce6b_c4c7b09aefc1361c50cafde47ca8da53f30105e0c547a26743edea2ca7943d05",
+      "candidate_id": "pc6b_2f193273da3482ecaf6e7fe3e7e40c97cf2f6f9a388ebd98e23f4eca0ee4e35f",
+      "physical_unit_id": "pu6b_1f313756c142690bb3ca9e308c111f0ce63435202a436d3d1a41fc25742723c6",
+      "passage_id": "ps6b_379a355322646a98347624d4407203d7f98f0cde83198742ba011bab93016166",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "source_vehicle_track_id": 3522,
+      "supporting_vehicle_track_ids": [
+        3522
+      ],
+      "component_track_ids": [
+        3523
+      ],
+      "activation_frame": 8811,
+      "origin_frame": 8799,
+      "crossing_start": 8810,
+      "crossing_end": 8811,
+      "category_latest_evidence_frame": 8937,
+      "identity_latest_evidence_frame": 8811,
+      "replay_is_causal": false,
+      "accepted_increment": 1,
+      "component_additional_increment": 0
+    }
+  ],
+  "pending_candidates": [
+    {
+      "candidate_id": "pc6b_f241c8af218a9f7d8381f9b5900287b10c6092b0b16931b015689730152be5d6",
+      "frame": 26,
+      "track_id": 5,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_01ea0a916fa36209f029e5a3c06eb50cb492aa0ce3b97b50bf35ae498d88d059",
+      "frame": 27,
+      "track_id": 5,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "GENUINE_RETURN_REVIEW_REQUIRED",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_8a4d00d4a1027eccb9ba356965fc9057cee8ab2fd23a42239c52aa543be2e8f3",
+      "frame": 35,
+      "track_id": 5,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "GENUINE_RETURN_REVIEW_REQUIRED",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_a1f44b8ab340555860d59f12a8e55834a198cf27d9d13c80bbaf987fbe566f7f",
+      "frame": 117,
+      "track_id": 24,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_27b24d52130f2049e193ffe8601bc9aae9a84e04da93de3de957d6631d2a41b2",
+      "frame": 129,
+      "track_id": 33,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d2ef61bf7386332779b4798e1e9926b01b60305f16eb5e8993a1445ca9132c67",
+      "frame": 142,
+      "track_id": 39,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_5ec20b82c43c15a079f3e2a87845b5f2483f32db4a8a221122b1ba8d44e53653",
+      "frame": 154,
+      "track_id": 49,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_3f1df59f0e56cd76a6f351c61ee66e46240235091b60ee56cb8c4e5f013165b6",
+      "frame": 162,
+      "track_id": 76,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_2abeede1c738d1eb1a6c1650aff737cc868768143dc0de590795e3e5a4138902",
+      "frame": 164,
+      "track_id": 71,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_4d60a63cda7659cd11c6350b27285fecc1952a37cb3d83908a731a4bdcd1c1b3",
+      "frame": 196,
+      "track_id": 99,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_5fbd9403001c2ad98f2254a636693aedf42e6d1e9f5aa6dfd907fc7637ef2995",
+      "frame": 371,
+      "track_id": 140,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d2bf6bad94efb30d966758e0231f7eabfb1b89b896aec5a002a47d5c5d4647fb",
+      "frame": 614,
+      "track_id": 175,
+      "category": "car",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_bc09bb2b256f865184ee016b1ab5ed2299ebc340b7f3133bb08b43e1a0b0906a",
+      "frame": 727,
+      "track_id": 180,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_24ec7422c55e3df83e9c088573401308b10550a780e47d5ecd931d95e140497c",
+      "frame": 774,
+      "track_id": 190,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_91357bbcba9fcf0e06c70ca6598bd6131dfd1ffb9e59517151ed9aefa249d730",
+      "frame": 783,
+      "track_id": 193,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_5e61cf5fcbb33ca57460a246ad7914da2fa6766f86edaa708dde82e3c81dbccf",
+      "frame": 839,
+      "track_id": 219,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_8b707fb9d61b0748f38c0e4f4cdcff346fb24e9b2e83bf0970cb9cef80d7d2d3",
+      "frame": 1274,
+      "track_id": 319,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_4dce085972f6a029452a586edeb0252f9ba23ce8bb4b7aec1097861dfdb60adf",
+      "frame": 1298,
+      "track_id": 385,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_70b4b824336d3f4d2ee9b749398d54d118a2f0710411f083721cba3db6a99eeb",
+      "frame": 1309,
+      "track_id": 391,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_cbb73805ebc4b17d7a383f8bc652e80f39c3f44fe07baf72769fc22a076ef2de",
+      "frame": 1324,
+      "track_id": 368,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_f4cf67bd8d65ef555e9fc4687d255ef0d84c48c326e63cfc98e28ca57dc65ed3",
+      "frame": 1334,
+      "track_id": 368,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_1a580b5152ec28b5479997aeb87878eb8222d767fea21f2927b88579ed70e15c",
+      "frame": 1394,
+      "track_id": 441,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_e7f291ef615829ad64fea11ffe3ef367bb17f9ff429714acaf14e092cd1ae478",
+      "frame": 1401,
+      "track_id": 436,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_553d726771fa94099fc731e823bfea3c7942d569d17dfaf4992ae0cbee0ca67a",
+      "frame": 1405,
+      "track_id": 441,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d7b7257cf8f0da12fbc9854522eba1eaf653d45e68c7f26f551d7427dd0b7c1a",
+      "frame": 1427,
+      "track_id": 449,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_3c768397510d40b0a378a9eacb5d5df75267914bde341e3fa1e5b61835932db7",
+      "frame": 1451,
+      "track_id": 454,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_47151e56602ae61e1956bb9b289ead6d1b83bacab7284eece951d7bb42003e72",
+      "frame": 1460,
+      "track_id": 454,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_54faa382d0bb46be8dfd10392495e616bb044c7fa244d5e51ad8fbfa31855686",
+      "frame": 1491,
+      "track_id": 466,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_923ccd7e5b9f6547836c271b64323647caced76988a5e322ccb70e9c06f58d77",
+      "frame": 1515,
+      "track_id": 480,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_403cfd7e45c7b8a53d50caed7a3d3a4e9eb0cd6720620a19ffa718c9de05f8a7",
+      "frame": 1530,
+      "track_id": 498,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_93dd1c946ebc2d6ac4d2b43994d1b66b3aa63ac674e09af580b4cd88e77d3de4",
+      "frame": 1556,
+      "track_id": 474,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_20d086a9872c74875c5f62a0f9f8b067d6c5354fb992031a991903f056c6f14c",
+      "frame": 1565,
+      "track_id": 541,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_7b8665986c7ec33397f3eb2fe0a044b703d1e4f287fbc5274ee1b1603aacc4fb",
+      "frame": 1670,
+      "track_id": 436,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "GENUINE_RETURN_REVIEW_REQUIRED",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_2b7d67311efd920359b99fb43cfaa07b946cc284e8028145a4670185a960c648",
+      "frame": 1814,
+      "track_id": 569,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_26fa25cfd3373b8942e37ba55c24a6286c182dc5c3655579c1b16a23d66b769c",
+      "frame": 1878,
+      "track_id": 581,
+      "category": "car",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_f7cba89282f8156289d3a870ca5d1866feacb4d70d03c4ba4068dcd8beb869e8",
+      "frame": 1941,
+      "track_id": 590,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_0439425dd2f0d8270bf89da0e7c22fb2167182e4b114926895c55cae607da471",
+      "frame": 1986,
+      "track_id": 608,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_652694046f095545087a43b3f8c607abe741af3d3774be21c4d1fe0de005f210",
+      "frame": 1988,
+      "track_id": 610,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_7c21b1ecc551d4af016f7cc376491c403e7b599378cf4534c10a151578b127d0",
+      "frame": 2054,
+      "track_id": 657,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_4e816b8e375221341837e76026f6e19702bdda8eeaecedf3bb3cfcbb430b1e2e",
+      "frame": 2152,
+      "track_id": 686,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_5c95865d7da6ca68da5924d339f2750056e89b36827120873bbb1deb5ac58c63",
+      "frame": 2441,
+      "track_id": 734,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_8d2d818bc3911e3832a8efd9753dea9d0c2040a30b1626cb86f6de826c811d7b",
+      "frame": 2530,
+      "track_id": 710,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_601026571b81f5ddb18a7a3372b35e85946a5b658029b6235340d07e92edcb6c",
+      "frame": 2551,
+      "track_id": 710,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "GENUINE_RETURN_REVIEW_REQUIRED",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_3c15070472f66e7e3ea00656e62c1580ce43c21a4ec14d7f0b492f3849fb63da",
+      "frame": 2554,
+      "track_id": 710,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "GENUINE_RETURN_REVIEW_REQUIRED",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_eb95e093086722671516b4c85e649da3599923aa55f3e373a361babd79b3268a",
+      "frame": 2588,
+      "track_id": 828,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_7e571e75979cfea1cf0a3e5670f92ff8e05befc44010200b99f710a41ea8e03d",
+      "frame": 2591,
+      "track_id": 850,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_b0c1d0259652794007fa051e8dcb782e2d984fbf32a7e5a7a2c10c616e53b989",
+      "frame": 2593,
+      "track_id": 761,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_60d19dbf85c24046a38ff2f6d1e4be426eaa66653049e23c96ab8152da43d135",
+      "frame": 2614,
+      "track_id": 873,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_708d16de05196031d676c8f73e84ace29e9e9594fa554af77af26300e5ba1d43",
+      "frame": 2615,
+      "track_id": 761,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_b4b3fab7fda673e6442804f8fd4a39446002ed17238246e05352016452a4216d",
+      "frame": 2634,
+      "track_id": 862,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_3c098bf7345869c459550d21004a535169f4103f95f0c4c7d838481f9825d088",
+      "frame": 2700,
+      "track_id": 768,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_afe928bd6376a2608f17b792cbd5ee69188a1145e400aa5d53fe3bf365df6e37",
+      "frame": 2709,
+      "track_id": 906,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_76607bc2c03a6942b1c5ea350af34da9d9c61c6bcbb798198c3dd5493793c7ad",
+      "frame": 2731,
+      "track_id": 932,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d9b5568522a0b89de61dc3e3db829adea173194531938e08407bb8d5c7ca3032",
+      "frame": 2743,
+      "track_id": 868,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_95ee232646d405ee675628b2c5801dacf5697cb0ab94054578adca9775f92f41",
+      "frame": 2778,
+      "track_id": 938,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_b8ca885c057638124e26a6b6c9f27894a2bd41e91bbc39bad748f86863b6e9c1",
+      "frame": 2799,
+      "track_id": 1037,
+      "category": "car",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_89c7a53cb350d7304ffaa4527d41c487b9b5a71d576231d056766d5a6c3f06a3",
+      "frame": 2819,
+      "track_id": 957,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_fca0e5fa9b46797d9757598ccf1120a653563dd38f166c81e7cfadedae064a45",
+      "frame": 2820,
+      "track_id": 1068,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_1dba92aeaffda07085301be636b0f3d528068d9c70a423074369d1fa84327e74",
+      "frame": 2843,
+      "track_id": 1036,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_8d8b4fdc588e623797e72f93bbc64df645e3c0d72938dbe5f6f43427ba87e765",
+      "frame": 2903,
+      "track_id": 1152,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_654d6345f3da03518d322889247e478e7099de9eec139cf10651cdfae1474bef",
+      "frame": 2957,
+      "track_id": 1177,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_1f837ded06c742b33b8040b9892a0d7b895e49e8a0f5fcc95f1896d92f21c341",
+      "frame": 2986,
+      "track_id": 1210,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_798b1a885730388a8188004407b9c76cc4a2c322678c51a5a73dfb600a5dfe0d",
+      "frame": 3069,
+      "track_id": 1216,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_02e150dd114baed25e65bf1c9246d8b364472a84289ad83e8d1f666dd696ac39",
+      "frame": 3127,
+      "track_id": 1216,
+      "category": "truck",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_76bb86764e6d597862a21b3558967c60101ed1b880857a9eac47f806e50d2804",
+      "frame": 3141,
+      "track_id": 1243,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_dd86d84817506cce949b85dd31c2bf18c130db80801ebef8228d25aefd9163e6",
+      "frame": 3143,
+      "track_id": 1289,
+      "category": "car",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_b86785ae1b14aee38e142b43b28b0422baf45f162b2c24981ef6200b962b6ed7",
+      "frame": 3295,
+      "track_id": 1278,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_1a565d693b7eb566b94f77a713252f704569603f9133a3ad038a13553b8d4c10",
+      "frame": 3305,
+      "track_id": 1353,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_731a2c3a6c15b85615e1f2ea0c27518483380705ab0e2b910782b2c0a58fff49",
+      "frame": 3307,
+      "track_id": 1243,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_fbe6c8bbf6da803bd991ba4ace6236deeafe5145164fb8bdcc140ab8594358fc",
+      "frame": 3384,
+      "track_id": 1335,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_b3799eb8c9c6c6f987a381cd07758d37daf6a4d313d989e76e966b1241529587",
+      "frame": 3613,
+      "track_id": 1429,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_97b096f9f2c3486cb615600466b9d8a78aba901e4dc6d09b5b1662fabf162e98",
+      "frame": 3634,
+      "track_id": 1444,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_b3ab6007f60266a8c0c56909834abdd44bb4ccee9ceffed3fbcba9ea9017edf0",
+      "frame": 3640,
+      "track_id": 1454,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_cba0f30761cedf7c4fba2283e7fe1e5b3c7753a9917a6657b3bd4621f6cfa776",
+      "frame": 3643,
+      "track_id": 1444,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_9155f508720f232c671cc49690cc227a2af0dde0da32750b347dbe7d29192b6a",
+      "frame": 3675,
+      "track_id": 1466,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_09eca16675cbe1f86b46c83d56e4bae46da645a2703a3638c1f765e99f5dd2db",
+      "frame": 3706,
+      "track_id": 1482,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_6dde0d5aa9cbea359e1a4c837134c00cf42361288949c84c6531689178b530e8",
+      "frame": 3736,
+      "track_id": 1495,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_de3cd30ddc822eec9dc1b5dd3f81f807293dfe2565e69ea751c11e63124cd8c7",
+      "frame": 3742,
+      "track_id": 1511,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_64683979bf115143b1e6039735a876c309ee749ab7749c172b7844923f636024",
+      "frame": 3744,
+      "track_id": 1466,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_461300053d5b459b4dc4a0a9363f9d7486fba2051e2740dcf684b5d2a5580b32",
+      "frame": 3788,
+      "track_id": 1545,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_2ab3d2d34e22545c84ba2eb36bf50bf63e2d5a5873db3dde9ebc76c49046d9f8",
+      "frame": 3822,
+      "track_id": 1511,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_75595062e583c8ff4bdbab3b12074e63accff05e445217aed4721f72414050ca",
+      "frame": 3824,
+      "track_id": 1585,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d5358281221c16876a85aafd3201fb82df4701e9c15ba8ff1698a634cb19438a",
+      "frame": 3858,
+      "track_id": 1625,
+      "category": null,
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "CATEGORY_CONFLICT"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_e6e5ac1fd089ca2c0405530e975291b0a263557d322ab813deeaaa183c2cf951",
+      "frame": 3902,
+      "track_id": 1625,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_70da6933c3f5163d808062dd410b47a90f1636fbd7869c1a17e7724e29fa3425",
+      "frame": 3939,
+      "track_id": 1676,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ecfa866b471356477ffa98266771ed220c01f7eb9222e8bae877dc0c90037f53",
+      "frame": 3984,
+      "track_id": 1696,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_88556f141303c99e2407830ce29f10e020024de97b96f9b53b8de2a7aa01d1de",
+      "frame": 4052,
+      "track_id": 1728,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_32552e8f09fe98ba755fddac7fe0b525f8d8b52bb242b8749254b8802ac18141",
+      "frame": 4068,
+      "track_id": 1741,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_99364545c014d0281058d97b9bea5def90c84e9e515e436236980cb4c1eca954",
+      "frame": 4083,
+      "track_id": 1744,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_703753933a29ae13158c0ed6f5a524c0b16b5b64843124bac2287d415e3be37b",
+      "frame": 4207,
+      "track_id": 1763,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ada862e90b79c6284a79452d9d88cf06a317bdf4941022ec22b8355bfb3fa9d6",
+      "frame": 4414,
+      "track_id": 1841,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_14d29c62c7b8296a4f03093a6480bdf39f00b62b57960f5eedc067b4e3fc5ab2",
+      "frame": 4482,
+      "track_id": 1845,
+      "category": "car",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_70f53379012df405d2974e0b2ce4111da1446c1b72b509de77668e6255177ab9",
+      "frame": 4564,
+      "track_id": 1854,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "TRANSITIVE_IDENTITY_CONFLICT",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_46831d603f7feb86c8f3d17d008e72c07a7c31cb3854865eaeeeee49bef1d092",
+      "frame": 4648,
+      "track_id": 1868,
+      "category": "truck",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_9c4f35b1fcf4288a986544deeba0f5a5a0eb8e36648c6cc0b6966098b81d2ce8",
+      "frame": 4669,
+      "track_id": 1877,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ec2b5adf16ebdbca658421ffd1bbc610f1ed3e8d420084c51097bf5815b969ee",
+      "frame": 4679,
+      "track_id": 1885,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_5014f247e3a2eee278919035825e16dd0629d846a2e2b5ee638940221ec35cab",
+      "frame": 4687,
+      "track_id": 1885,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_5069294d6b2638b4c7f107364bcde78efc318796e86839c4eece444643f5aed8",
+      "frame": 4700,
+      "track_id": 1900,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "ALTERNATIVE_ASSIGNMENT_AMBIGUITY",
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_4b9e8071a2c1453e712589ac6291dfd0ae52ea2072930090ddfc6fb0a42693f5",
+      "frame": 4738,
+      "track_id": 1911,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_e001e5dc9c9d0103590a8b800d8e1973ae7b599b324c044b828b2b0fcf5ee1a9",
+      "frame": 4754,
+      "track_id": 1928,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_c24648a61cba36da8d75a7340d709d393b6e06c2e552b61e5fcdb62c67f6aeb3",
+      "frame": 4770,
+      "track_id": 1941,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "ALTERNATIVE_ASSIGNMENT_AMBIGUITY",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_44b669f34e41636b0da7cd8b79ebc54e8a4f4a10553e709472dccbfa90ab7f40",
+      "frame": 4773,
+      "track_id": 1970,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ef75e5412acbe961409f13044db79c7fadf267e251a552422be0f338f6b565df",
+      "frame": 4781,
+      "track_id": 1974,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d5ba4e4a9d739faa1405f276be51e695c6298c01b1d3598e4ef90f7acbc700b5",
+      "frame": 4804,
+      "track_id": 2000,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_7a837cd92ad24daf163b8e0602f9cef22cd99a6b8b9b4f1e1d8246efe19e5adf",
+      "frame": 4954,
+      "track_id": 2062,
+      "category": "car",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_7f6a2a72be707aa3cb204d7fc252566aab0f66fe8ded70420c8427c0d60339f7",
+      "frame": 4959,
+      "track_id": 2078,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_8a565897464736b26ae8a53d6362627c89b1c3521b97527f7d70ab2a44b79310",
+      "frame": 4981,
+      "track_id": 2090,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_12cf2727549dd45df92c3d2adf6421c66b8bcd2ae086abadcc77323c3b287b0f",
+      "frame": 5009,
+      "track_id": 2100,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_9cb5ef16460ab886f18710a001db252d532e72432f0d7c6fcc2f5798ce24ad82",
+      "frame": 5010,
+      "track_id": 2100,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "GENUINE_RETURN_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d633e258e8457da9c759d00537acb723f4f4aea93b53396f2afa46d222b739a0",
+      "frame": 5022,
+      "track_id": 2112,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_372fca4f9cb428aa69d117f42dfc702c1fa6660810fd286c45365ce003674cfa",
+      "frame": 5047,
+      "track_id": 2130,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_3b42c841b7c6145af69cb9d8b982ae1c0aaf9f93736c68fecaef7b14e9a1c169",
+      "frame": 5103,
+      "track_id": 2173,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_2c4b7cdfd4e43a7e9bb45c42da8bbf44c948e77626227d838f88b1d56984c439",
+      "frame": 5116,
+      "track_id": 2199,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_f4f9e171a1b4ec8940582b8232c0498d97e2759f4d0b7275fca6ebff23ecfff7",
+      "frame": 5138,
+      "track_id": 2140,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d20164dfcb2fc26173e2d89d278831a3257cf9fdb9e2f447c7e60a38695222b8",
+      "frame": 5151,
+      "track_id": 2220,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_45707d4cd53eac228acddee6836d1e2cb00f02f5f32014d2ba4b62a5cee34af1",
+      "frame": 5163,
+      "track_id": 2223,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_7f8b389b010c597af2edc3131d549e852c9385199e824d3074fcb6c1974ac488",
+      "frame": 5164,
+      "track_id": 2232,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "ALTERNATIVE_ASSIGNMENT_AMBIGUITY",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_e0b3099e0bccd0122e03f4caa33696e281340f913b12b5474bee347c6d58350d",
+      "frame": 5168,
+      "track_id": 2264,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_eaf479fae54789c4369d3f38aff116ff16acfa6bcf3ff8575934aac92d4a0926",
+      "frame": 5221,
+      "track_id": 2220,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_cf2ceb4ba4d4f8eeadc861e8f466ce2acbcc1dc43cb3cde2ca4a51fc06a6078d",
+      "frame": 5329,
+      "track_id": 2336,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_bfb4a1e51d18587b5d5b3404727191d38ab9d5523559751e965837958a164156",
+      "frame": 5355,
+      "track_id": 2340,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_2c475ec66d1518520c1ff0864fb0c9be711a4782c04a398da1968c1c59f18a6a",
+      "frame": 5401,
+      "track_id": 2365,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_27c5073bdb4a9218d65394fdf9b8a241c04d602be2f2ff014d72222f77ccb79e",
+      "frame": 5423,
+      "track_id": 2382,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_9ec54fc73ff0550c89f290d0b0e6389957e9b89d8ecb710b4bafbba9972b8425",
+      "frame": 5623,
+      "track_id": 2418,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_985b07f17a6eb7344cfde9501b805f945c31f32d0664f15e7a8875d684cadeae",
+      "frame": 5674,
+      "track_id": 2436,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_e003e2e5c746cd021b14983cbdc6aae8cf3765a9680e478e77a80784a2e10582",
+      "frame": 5735,
+      "track_id": 2432,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_15d295e51d6ab86f3dbc4a5cbe658bef55f4ca5713a2592c086cfb8ccd30ca6c",
+      "frame": 5780,
+      "track_id": 2467,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_82c912a7ff5fc1b11cb158efac2e050370e529c0e3afd4450736523f9e91b96f",
+      "frame": 5831,
+      "track_id": 2471,
+      "category": "car",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d249cb4b741b260858c399f3006dbad0181609bf0edd9b886489a59afb1d1751",
+      "frame": 5861,
+      "track_id": 2507,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_a0483f1e8064cf5df9910af97662170ae27217f875f5696d0874b526ae45f733",
+      "frame": 5918,
+      "track_id": 2553,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_e6c39299109d8889623d09fa0ed92cc5c60cae16fd7c8a445f6a73b69d9ed2dc",
+      "frame": 5920,
+      "track_id": 2559,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_94df52422c6418f29bd705fca20a8a6a4394e78c98598d2f45d53c0ac17bc7c2",
+      "frame": 5922,
+      "track_id": 2553,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_558b26db3a3d6f209e012130f6508e95f0d8f3e2f0580a4efff843435e9544ae",
+      "frame": 6085,
+      "track_id": 2579,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_074d412c831a82662d4d5a68383de9444fd0467ff860c4ed01905ac766e907ab",
+      "frame": 6165,
+      "track_id": 2649,
+      "category": "car",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_a45e3d9f3a0b1b262b01daf39a780d54558122ea96d23f6b77e2ecd7f5daaac9",
+      "frame": 6180,
+      "track_id": 2683,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ae8d74a376473ed48e4720e9bf63d341ab9a3d1dfc7ce614860de610b69fd888",
+      "frame": 6180,
+      "track_id": 2670,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_71d501f7a299d70e9d69d54f6fe750c6ad111fd4f834b38e6418f66239008746",
+      "frame": 6184,
+      "track_id": 2672,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_d9d145fe304eda18f9d0b534c0338e28d1b42135ee9faee11082fc510f3236f9",
+      "frame": 6200,
+      "track_id": 2693,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_dc5263a4344a3992f329a4fe8ac62040ba6d0b004d9511a2a9cdfed0fdb3d9b8",
+      "frame": 6218,
+      "track_id": 2678,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_2ca3a5e54ab629f29dd67f5e6509807d3a7f2b40da0094971295b000cecb03d3",
+      "frame": 6219,
+      "track_id": 2678,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "GENUINE_RETURN_REVIEW_REQUIRED",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_e2f3cf7733c895c58b2f6dabe5071b75e165e6a086ef931c96fdd1579502c8a8",
+      "frame": 6220,
+      "track_id": 2678,
+      "category": null,
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "CATEGORY_CONFLICT",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "GENUINE_RETURN_REVIEW_REQUIRED",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_cc96a4ce2daa960e2d63cad18bd2e283c055ba24706f1a515cfdca9470c7c068",
+      "frame": 6225,
+      "track_id": 2739,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_107a88add70f59062a9456dbbf1c028c67b39d6ca8b91055b89bb61ca10f77d2",
+      "frame": 6251,
+      "track_id": 2716,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_45a56c1122e0ca83b17aaceadd28a9a7a55aa61fb6197e2cc8c816ab3732865a",
+      "frame": 6265,
+      "track_id": 2760,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "ALTERNATIVE_ASSIGNMENT_AMBIGUITY",
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_663c1b10e9714f7a20484df377a72ef6e4b4072241770de2d39664ff41774825",
+      "frame": 6304,
+      "track_id": 2748,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "GENUINE_RETURN_REVIEW_REQUIRED"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_f15d5184104acfb0ac286bf12ef7b783c904758161ea042ef7699a752e1ac9f1",
+      "frame": 6310,
+      "track_id": 2748,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_0bf7fc493cf0be8f213b57fd4f7765b60686163d2d128681aacfa7897c1c2755",
+      "frame": 6317,
+      "track_id": 2810,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_2fb1f371c198d5a5bade93a914031de9fe6f30eeed0ccdb58f4bfef87c914b71",
+      "frame": 6339,
+      "track_id": 2827,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_dcf6051f14a4a3b36ab5e43beb86ab65e3b1b0615ff367e87fdf44395b6f5b05",
+      "frame": 6342,
+      "track_id": 2835,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_9a797e3f184cd70ecf4b9032f9c7770e9a55db290a860ab62cd270cfa634d352",
+      "frame": 6389,
+      "track_id": 2859,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_dc3a4ce16ee60fbf45aadafc7cd92ff7236a7ca71e0b18f3d7a2fc01e36bdb30",
+      "frame": 6436,
+      "track_id": 2844,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_fa5564e01da37f356aa0e72063b891a43c3a86e0f2cabcdfd38c514d97bb8eac",
+      "frame": 6466,
+      "track_id": 2881,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_8bdde4953a7b45901a66deaa71e6542aaf707d4c5600071e3013267109856e22",
+      "frame": 6468,
+      "track_id": 2884,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ec901f1de8ee55370e2807e0befd0489bae97bb83eb1ed2862d33a2743d7745c",
+      "frame": 6619,
+      "track_id": 2900,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_0a4868d3265f323bf5b1b20b099ec8ab0f1d95c9a887416fc215ae93636edcd7",
+      "frame": 6802,
+      "track_id": 2938,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_85cac0c0b225b9a21ff4049e23629f514819053f13ba6cdb00ab37407912fc74",
+      "frame": 6860,
+      "track_id": 2901,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_a91f653bd3349a749470e51a2431a2f7cd02ad526ad57055f4ed2ee8d600d9ff",
+      "frame": 6899,
+      "track_id": 2951,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_0250414a6fb0de66299cf112a6e11bd94ef88a2a94ecd5c858ca0b6852a2788d",
+      "frame": 6937,
+      "track_id": 2929,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_e6ba5264332577aeef73bab9f98872192d5f946352323bab21b538fe2bdd012d",
+      "frame": 7071,
+      "track_id": 2984,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_0dcda686389144072aa80516bbd4213c69c3f8f8fc918c1c3cdc186b06593555",
+      "frame": 7090,
+      "track_id": 3026,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ccee59349dc0052f840ceea3feaaba81546932090344a41eff75bcc61a858418",
+      "frame": 7143,
+      "track_id": 3004,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_84be796ab895e81a12b3ef35ce608f38edbfb938f9fd3fbf78a32d5f46842cfd",
+      "frame": 7163,
+      "track_id": 3032,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_4e32f9ee42ea2ab89cac29a97e7439053a791393fdb07f16dc236315c575105b",
+      "frame": 7359,
+      "track_id": 3071,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_f7b2c1d3ce8247c54466eb7dd381d1f60cb0ee52af58de213126da4c0760d6b5",
+      "frame": 7517,
+      "track_id": 3087,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_aff555072ea804a8813c2e25642a817e85d2b2e09d03a5ac660f7dda3f472094",
+      "frame": 7522,
+      "track_id": 3111,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_1490db4c22989bc2060f81c9ddc58b73f09fc52c9d3dade7d43b5d542ebe6105",
+      "frame": 7584,
+      "track_id": 3134,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_2d8a25f35dd456ce24652eee2c42fa12ca7802a8ce2ba1aadcaf2c67c18e4a8b",
+      "frame": 7601,
+      "track_id": 3103,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_a297ac3fb1b67145c104950b5bedb9366d8ee6254e12682d63ec2dd7231af6b7",
+      "frame": 7726,
+      "track_id": 3166,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_16c5ab6e2cb562948fb96f4c59c4d5f37affa57b224710c57b29d08f366f14fb",
+      "frame": 7891,
+      "track_id": 3208,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_b53a363af4ef80f2d3375a35142485155f1e56cc76b77e10296f402e551d8908",
+      "frame": 7891,
+      "track_id": 3213,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_906169fc1fc6463e1655650f37ac342accb5f04953ea3121f5552221cea801bf",
+      "frame": 8274,
+      "track_id": 3264,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_f248cf9b897da175c38325f3db438c825bd1e53f7b49c08bd2c8e54b2ed0441b",
+      "frame": 8351,
+      "track_id": 3309,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_f1644e3264858fb1e9462f645fc55307d215bdf58429d0087fd459d0dbf7de16",
+      "frame": 8538,
+      "track_id": 3346,
+      "category": "car",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_8525da4899d3eb63cabd01931f0d68376a6f996578672b057e29be489a0598a6",
+      "frame": 8542,
+      "track_id": 3353,
+      "category": "motorcycle",
+      "diagnostic_type": "AMBIGUOUS_GAP",
+      "reasons": [
+        "AMBIGUOUS_GAP",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ab22443a5e8f205dddebbd2b096da264af3bfdb28618d13a04ee7da009c255e7",
+      "frame": 8558,
+      "track_id": 3359,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_ec62b6c423dced7bebace2389e4d3fcbe4d02096db8b2f498b2f1b216c21c1d5",
+      "frame": 8624,
+      "track_id": 3425,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_9bb1b4825fcf7ca0f0989d7ca8a96304c01580eb651f03796fae78ffe74f4646",
+      "frame": 8705,
+      "track_id": 3455,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW",
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_f25c1cbcd21e136ff644da491c6acaaabe166ed7c32f557d9fc710b2d1fcda4a",
+      "frame": 8761,
+      "track_id": 3448,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+      ]
+    },
+    {
+      "candidate_id": "pc6b_12c29cacc7349da37dcd2c40876d8266038fe9df574bfdc55304277513336ad8",
+      "frame": 8852,
+      "track_id": 3530,
+      "category": "motorcycle",
+      "diagnostic_type": "GEOMETRY_TRANSITION",
+      "reasons": [
+        "RAW_UNRESOLVED_VEHICLE_COMPETITOR",
+        "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE"
+      ]
+    }
+  ],
+  "final_pivot": {
+    "motorcycle": {
+      "A_TO_B": 10,
+      "B_TO_A": 9
+    },
+    "car": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "truck": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "bus_angkot": {
+      "A_TO_B": null,
+      "B_TO_A": null
+    },
+    "pedestrian": {
+      "A_TO_B": null,
+      "B_TO_A": null
+    }
+  },
+  "final_accepted": 19,
+  "final_pending": 179
+}

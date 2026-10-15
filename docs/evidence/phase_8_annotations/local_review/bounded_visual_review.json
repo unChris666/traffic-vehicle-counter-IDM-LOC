@@ -1,0 +1,84 @@
+{
+  "claim_type": "ACTUAL_LOCAL_FULL_VIDEO_REANNOTATION_WITH_BOUNDED_VISUAL_REVIEW",
+  "created_at_utc": "2026-10-15T15:01:48.249004+00:00",
+  "source_video_id": "weekday_pagi",
+  "frames_rendered_and_redecoded": 9052,
+  "accepted": 6,
+  "pending": 263,
+  "new_model_or_counting_execution": false,
+  "external_video": {
+    "path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/annotated_review.mp4",
+    "sha256": "ba3792545511323421e6c8521bd5ab595344929328353440a3c0246e18dd33e2",
+    "size_bytes": 408283621,
+    "committed_to_git": false
+  },
+  "reviewed_frame_indices": [
+    2363,
+    2432,
+    9051
+  ],
+  "observations": [
+    "Category/direction pivot at frame2432 is1/6; pending87/263 is separate.",
+    "Measured motorcycle sourceID1312 and associated personID1423 share display unitU002; component contribution+0, single eventE001.",
+    "Panel/footer lie outside native640x480 road region; bbox colours/filled labels, rawBC and crossingmarker are visible.",
+    "Some distant crowded-road bbox labels overlap or clip; near passage and panel remain readable.",
+    "Final frame9051 shows motorcycle3 A_TO_B +3 B_TO_A =6 accepted and263 pending, matching the original weekday_pagi snapshot."
+  ],
+  "review_scope": "Bounded actual preview review, not physical validation of all six accepted events or all eight videos.",
+  "files": [
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/annotation_report.json",
+      "sha256": "77a04a9b90bc3132e3e935e653f3fa727f122aacdf5076a0d49bc31db98f004e",
+      "size_bytes": 6631,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/annotation_report.json"
+    },
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/passage_display_index.json",
+      "sha256": "b20475703e9df0941b2170e7cd13ae9349e363d3ac171100418f5ed532453c96",
+      "size_bytes": 96393,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/passage_display_index.json"
+    },
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/preview_frame_000000000.png",
+      "sha256": "7ee0394b74aadc726d1ed24c626499387528d9ec2845cf3ecdcf32bc0ff2ac51",
+      "size_bytes": 658701,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/preview_frame_000000000.png"
+    },
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/preview_frame_000002431.png",
+      "sha256": "89189cbbd26f6bf09ae91d9e315edc471862ffd1764ad47e2d2b9a260bb7c029",
+      "size_bytes": 655483,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/preview_frame_000002431.png"
+    },
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/preview_frame_000002432.png",
+      "sha256": "a1147b1f8a18ce06f244d5b450711ab66f199a98251d8a82820a6e575ff4c2fc",
+      "size_bytes": 658610,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/preview_frame_000002432.png"
+    },
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/preview_frame_000004184.png",
+      "sha256": "42635aba03dcb7f406092481b32a8e63c4eae25f1ed0e348e203928c6f721664",
+      "size_bytes": 686486,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/preview_frame_000004184.png"
+    },
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/preview_frame_000004190.png",
+      "sha256": "cb1000d149c7ad5bab19b92d877f612fde5a7e088fbbb7466dbc3f0562143ac9",
+      "size_bytes": 705295,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/preview_frame_000004190.png"
+    },
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/preview_frame_000009051.png",
+      "sha256": "80117bedfc5140c751785f737b399023dbae8ea71c4f185f57aebfd2b8dba19f",
+      "size_bytes": 706589,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/preview_frame_000009051.png"
+    },
+    {
+      "path": "docs/evidence/phase_8_annotations/local_review/weekday_pagi/preview_frame_000002363.png",
+      "sha256": "7c7f1062deb3bfd122e430ab49001d285be6b8736145142f443fd7f54149daf7",
+      "size_bytes": 649076,
+      "original_local_path": "/tmp/phase8-annotation-local-validation/20261015T145800_856145Z/weekday_pagi/preview_frame_000002363.png"
+    }
+  ]
+}

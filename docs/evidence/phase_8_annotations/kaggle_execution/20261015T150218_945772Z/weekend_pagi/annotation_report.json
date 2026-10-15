@@ -1,0 +1,165 @@
+{
+  "schema_version": "phase8_review_annotation_v1",
+  "claim_type": "ACTUAL_RENDER_ONLY_RESULT_REPLAY_NOT_NEW_MODEL_OR_COUNTING_RUN",
+  "video_id": "weekend_pagi",
+  "timeline_semantics": "OFFLINE_FINAL_SNAPSHOT_REPLAY_AT_GEOMETRY_CONFIRMATION_NOT_CAUSAL_DECISION_TIME",
+  "source_identity": {
+    "video_sha256": "e71f46ac146e5a69db8dc0754dfb8b0b3f7a3429643872736335bfe34ebf1389",
+    "geometry_sha256": "10ff6daafeb7b468b26b130e0605b14e362f69ec11fc5386f21facdc19f8f25e",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T093435_987683Z",
+    "records_sha256": "01af7eba90b66e7e75038fa14298f6004039a5d2c2d7cf3c079532a63fc0f716"
+  },
+  "inputs": {
+    "video": {
+      "path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-PAGI.mp4",
+      "sha256": "e71f46ac146e5a69db8dc0754dfb8b0b3f7a3429643872736335bfe34ebf1389",
+      "size_bytes": 50550849
+    },
+    "records": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/track_records.jsonl.gz",
+      "sha256": "01af7eba90b66e7e75038fa14298f6004039a5d2c2d7cf3c079532a63fc0f716",
+      "size_bytes": 11088692
+    },
+    "geometry": {
+      "path": "/kaggle/working/annotation_source_snapshot_4079a36a0643d797/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json",
+      "sha256": "10ff6daafeb7b468b26b130e0605b14e362f69ec11fc5386f21facdc19f8f25e",
+      "size_bytes": 6055
+    },
+    "decisions": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/counting/machine_passage_decisions.json.gz",
+      "sha256": "08809afc806c46c487ab03f1fd5241b9b9d3655ea0c6657c48d29284fe39a08d",
+      "size_bytes": 748629
+    },
+    "events": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/counting/machine_count_events.json.gz",
+      "sha256": "a4120b325d1d9b213454263511b55eeaa716561dc7c0cc180ce27f6e385cf37f",
+      "size_bytes": 31342
+    },
+    "relations": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/counting/relations.json.gz",
+      "sha256": "68b0127385b925bb0cef2308c6f3176b98e027dddfd7ab2ec1bfd18d549f0976",
+      "size_bytes": 3458497
+    },
+    "ledger": {
+      "path": "/kaggle/input/notebooks/chrisbiran/phase-8-tgdi-full-video-research/phase_8_tgdi_research/20261015T083731_664817Z/accepted_event_ledger.json",
+      "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+      "size_bytes": 2476424
+    }
+  },
+  "source_image_region": {
+    "x": 0,
+    "y": 0,
+    "width": 640,
+    "height": 480,
+    "resized": false,
+    "coordinate_transform": "IDENTITY_NATIVE_TOP_LEFT"
+  },
+  "canvas": {
+    "width": 1160,
+    "height": 720,
+    "sidebar_width": 520,
+    "footer_minimum_height": 240
+  },
+  "output_video": {
+    "path": "annotated_review.mp4",
+    "sha256": "17975b5a1783e762230cb9826a5269377f55e426c58e6dddbaaeb97e0796a3b6",
+    "size_bytes": 355686204,
+    "codec": "mp4v",
+    "frames_written": 9017,
+    "frames_redecoded": 9017,
+    "fps": 29.97655930800923,
+    "source_audio_preserved": false,
+    "timestamp_semantics": "frame_index/FPS; source PTS unknown"
+  },
+  "final_accepted": 5,
+  "final_pending_candidates": 216,
+  "final_pivot": {
+    "motorcycle": {
+      "A_TO_B": 2,
+      "B_TO_A": 3
+    },
+    "car": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "truck": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "bus_angkot": {
+      "A_TO_B": null,
+      "B_TO_A": null
+    },
+    "pedestrian": {
+      "A_TO_B": null,
+      "B_TO_A": null
+    }
+  },
+  "decision_status_counts": {
+    "pending_review": 216,
+    "accepted": 5
+  },
+  "category_coverage": {
+    "motorcycle": "experimental_vehicle_passage",
+    "car": "experimental_vehicle_passage",
+    "truck": "experimental_vehicle_passage",
+    "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+    "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1"
+  },
+  "source_pixel_hash_verified_every_frame": true,
+  "inputs_unchanged_after_render": true,
+  "new_detector_tracker_encoder_inference": false,
+  "counting_or_identity_resolver_rerun": false,
+  "occlusion_identity_recovery_modified": false,
+  "category_color_basis": "CURRENT_RAW_MEASURED_CLASS",
+  "component_connector_policy": "ACCEPTED_EVENT_SUPPORTED_PASSAGE_LOCAL_MEASURED_COMMON_FRAMES_ONLY",
+  "accepted_increment_policy": "ONE_UNIQUE_EVENT_PER_PHYSICAL_UNIT_PASSAGE; COMPONENT_ADDITIONAL_INCREMENT_ZERO",
+  "pending_excluded_from_pivot": true,
+  "previews": [
+    {
+      "path": "preview_frame_000000000.png",
+      "sha256": "9db6fa39767d388a48695840d512a459ab106ba259a0ac785a12cb10933f4562",
+      "frame_index": 0,
+      "accepted_so_far": 0,
+      "pending_so_far": 0
+    },
+    {
+      "path": "preview_frame_000000626.png",
+      "sha256": "adbaa17f660175290f70f84e60e6059519011e9d59162a00f6c040ad53cc04d4",
+      "frame_index": 626,
+      "accepted_so_far": 0,
+      "pending_so_far": 17
+    },
+    {
+      "path": "preview_frame_000000631.png",
+      "sha256": "d838362a8a739839dbe0755c5f8be1827b54fbf7210fa9b8e30bff4d7c0e8511",
+      "frame_index": 631,
+      "accepted_so_far": 0,
+      "pending_so_far": 17
+    },
+    {
+      "path": "preview_frame_000000632.png",
+      "sha256": "996ff0b042d3059140f4ca81d1b4094d8b7a63802c69c3cf3f77f22d7c33d069",
+      "frame_index": 632,
+      "accepted_so_far": 1,
+      "pending_so_far": 17
+    },
+    {
+      "path": "preview_frame_000009016.png",
+      "sha256": "f3ccd36ba3c8c6979bc5c74532554aa234a400290720cd8005ee1cc01ce57fa2",
+      "frame_index": 9016,
+      "accepted_so_far": 5,
+      "pending_so_far": 216
+    }
+  ],
+  "passage_display_index": {
+    "path": "passage_display_index.json",
+    "sha256": "50ca6399809b6160fc3a84d6d6072eea9805eef54ce0cbc0f5be5d324543d1b2"
+  },
+  "opencv_version": "4.14.0",
+  "render_and_decode_wall_seconds": 212.973696346,
+  "software_source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+}

@@ -1,0 +1,151 @@
+{
+  "claim_type": "ACTUAL_LEDGER_TO_PANEL_RECONCILIATION_NOT_PHYSICAL_TRAFFIC_VALIDATION",
+  "created_at_utc": "2026-10-15T15:10:12.819116+00:00",
+  "donor_manifest_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+  "unique_namespaced_event_ids": 58,
+  "unique_video_unit_passage_keys": 58,
+  "pending_candidates_excluded": 1825,
+  "selected_snapshots": [
+    "machine"
+  ],
+  "category_direction_totals": [
+    {
+      "video_id": "weekday_pagi",
+      "accepted": 6,
+      "pending": 263,
+      "directions": {
+        "B_TO_A": 3,
+        "A_TO_B": 3
+      },
+      "categories": {
+        "motorcycle": 6
+      }
+    },
+    {
+      "video_id": "weekday_siang",
+      "accepted": 0,
+      "pending": 223,
+      "directions": {},
+      "categories": {}
+    },
+    {
+      "video_id": "weekday_sore",
+      "accepted": 6,
+      "pending": 323,
+      "directions": {
+        "A_TO_B": 6
+      },
+      "categories": {
+        "motorcycle": 6
+      }
+    },
+    {
+      "video_id": "weekday_malam",
+      "accepted": 7,
+      "pending": 221,
+      "directions": {
+        "B_TO_A": 3,
+        "A_TO_B": 4
+      },
+      "categories": {
+        "motorcycle": 7
+      }
+    },
+    {
+      "video_id": "weekend_pagi",
+      "accepted": 5,
+      "pending": 216,
+      "directions": {
+        "A_TO_B": 2,
+        "B_TO_A": 3
+      },
+      "categories": {
+        "motorcycle": 5
+      }
+    },
+    {
+      "video_id": "weekend_siang",
+      "accepted": 19,
+      "pending": 179,
+      "directions": {
+        "A_TO_B": 10,
+        "B_TO_A": 9
+      },
+      "categories": {
+        "motorcycle": 19
+      }
+    },
+    {
+      "video_id": "weekend_sore",
+      "accepted": 3,
+      "pending": 227,
+      "directions": {
+        "A_TO_B": 3
+      },
+      "categories": {
+        "motorcycle": 3
+      }
+    },
+    {
+      "video_id": "weekend_malam",
+      "accepted": 12,
+      "pending": 173,
+      "directions": {
+        "B_TO_A": 9,
+        "A_TO_B": 3
+      },
+      "categories": {
+        "motorcycle": 12
+      }
+    }
+  ],
+  "actual_local_confirmation_replay": {
+    "2431": {
+      "path": "preview_frame_000002431.png",
+      "sha256": "89189cbbd26f6bf09ae91d9e315edc471862ffd1764ad47e2d2b9a260bb7c029",
+      "frame_index": 2431,
+      "accepted_so_far": 0,
+      "pending_so_far": 87
+    },
+    "2432": {
+      "path": "preview_frame_000002432.png",
+      "sha256": "a1147b1f8a18ce06f244d5b450711ab66f199a98251d8a82820a6e575ff4c2fc",
+      "frame_index": 2432,
+      "accepted_so_far": 1,
+      "pending_so_far": 87
+    },
+    "9051": {
+      "path": "preview_frame_000009051.png",
+      "sha256": "80117bedfc5140c751785f737b399023dbae8ea71c4f185f57aebfd2b8dba19f",
+      "frame_index": 9051,
+      "accepted_so_far": 6,
+      "pending_so_far": 263
+    }
+  },
+  "local_final_accepted": 6,
+  "local_final_pending": 263,
+  "local_final_pivot": {
+    "motorcycle": {
+      "A_TO_B": 3,
+      "B_TO_A": 3
+    },
+    "car": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "truck": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    },
+    "bus_angkot": {
+      "A_TO_B": null,
+      "B_TO_A": null
+    },
+    "pedestrian": {
+      "A_TO_B": null,
+      "B_TO_A": null
+    }
+  },
+  "new_model_or_counting_execution": false,
+  "all_eight_new_videos_rendered_in_this_local_check": false
+}

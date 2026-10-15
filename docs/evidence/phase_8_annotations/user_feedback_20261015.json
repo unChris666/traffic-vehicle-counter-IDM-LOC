@@ -1,0 +1,34 @@
+{
+  "claim_type": "USER_REQUEST_AND_REPORTED_OBSERVATIONS_NOT_INDEPENDENT_PIXEL_AUDIT",
+  "retained_at_utc": "2026-10-15T14:51:05.662661+00:00",
+  "requested_visual_changes": [
+    "pivot panel by vehicle category and direction",
+    "distinct category bbox colours with filled ID/category labels",
+    "frame number and visible physical-unit/component interpretation"
+  ],
+  "user_reported_observations": [
+    {
+      "topic": "occlusion_identity",
+      "quote": "ada masalah ketika kendaraan tertutup agak lama maka ID akan berubah, sisanya sudah aman",
+      "status": "USER_REPORTED_OPEN_ISSUE"
+    },
+    {
+      "topic": "temporal_geometry",
+      "quote": "ini sudah aman",
+      "status": "USER_REPORTED_ACCEPTABLE_NOT_GENERAL_ROBUSTNESS_PROOF"
+    },
+    {
+      "topic": "crossing",
+      "quote": "ini belum dipastikan karena butuh panel",
+      "status": "REVIEW_PENDING"
+    },
+    {
+      "topic": "aggregation",
+      "quote": "ini belum dicek",
+      "status": "REVIEW_PENDING"
+    }
+  ],
+  "authorized_scope": "VISUAL_ANNOTATION_OF_RETAINED_PHASE8_RESULTS",
+  "counting_tracker_identity_parameters_changed": false,
+  "new_model_inference_requested": false
+}

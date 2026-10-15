@@ -1,0 +1,93 @@
+{
+  "accelerator": "CPU_ONLY",
+  "builder": {
+    "path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/verification/build_render_bundle.py",
+    "sha256": "45b95323cfe255d70d74e0963a51eaf26721dd9c49f8f016102d36e6fe5ce001"
+  },
+  "canonical_code_cells_modified": false,
+  "canonical_notebook_code_cells": 3,
+  "canonical_notebook_path": "notebooks/08a_annotation_review.ipynb",
+  "canonical_notebook_sha256": "30ac8fc73eea08e2a0f1b2e6fcbdb86d3051f036d358ef961f86cad04ffea2bc",
+  "claim_type": "ANNOTATION_SOURCE_PACKAGING_NOT_EXECUTION",
+  "counting_decisions_modified": false,
+  "kernel_metadata": {
+    "path": "/tmp/phase8-annotation-kaggle-v1/kernel-metadata.json",
+    "sha256": "6599d86c480755ebe92805b5062a48bd8d4ef424cfafe0c5b7c670798e8faf56"
+  },
+  "model_weights_bundled": false,
+  "new_model_execution": false,
+  "original_batch_manifest_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+  "original_input_mounts_read_only": true,
+  "original_parent_kernel": "chrisbiran/phase-8-tgdi-full-video-research",
+  "original_parent_kernel_version": 2,
+  "retained_model_caches_bundled": false,
+  "source_bundle_binding_sha256": "4079a36a0643d7977d44de91aa5076666f0b859986fa7b7e0e817f41ad672723",
+  "source_file_count": 14,
+  "source_files": {
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "0da1040532bb4150fcfe7b4e3aa2aa306df31ff4283a43052d4a863fd4637b4d"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SIANG-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "a6b680a4c514ac05e69be14b66322d30cb9b65b626b4605fa7fe9d4cd2593d22"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SORE-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "498531cf729056c9496601aa7c2fedb8b90ea8156faee1cbb758dae03859a535"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-MALAM-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "ae408de960b35d9c6ec8e94cc5a79d29ea9b52d42603c65553a4367ea2521255"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "10ff6daafeb7b468b26b130e0605b14e362f69ec11fc5386f21facdc19f8f25e"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SIANG-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "edd6ce5cab83c41568eb4d3dd6f34368b6beb0649e610b793c2ed2af3eae5839"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SORE-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "b71e65ab113a4cb474498f7ae71bbc6b3c6cc55aa739c4262bd8989f08ad24fc"
+    },
+    "notebooks/08a_annotation_review.ipynb": {
+      "bytes": 7197,
+      "sha256": "30ac8fc73eea08e2a0f1b2e6fcbdb86d3051f036d358ef961f86cad04ffea2bc"
+    },
+    "notebooks/phase_5_geometry_helpers.py": {
+      "bytes": 30807,
+      "sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9"
+    },
+    "notebooks/phase_8_annotation_batch.py": {
+      "bytes": 26340,
+      "sha256": "268a2c9680b50c0ed2465db7be7f83439e19d3e68056d4dfe031f5729e3ef927"
+    },
+    "notebooks/phase_8_annotation_batch_tests.py": {
+      "bytes": 9022,
+      "sha256": "51f01c0ce4ee8059ca443569fd3c2df5e35599b33f7f0b7834b0eb335ada2b29"
+    },
+    "notebooks/phase_8_annotation_helpers.py": {
+      "bytes": 44041,
+      "sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+    },
+    "notebooks/phase_8_annotation_tests.py": {
+      "bytes": 14802,
+      "sha256": "78032561aeeedaa3665766177fdbeb5048f062d032e3f69fae8046a5d1aa1687"
+    }
+  },
+  "source_videos_dataset": "chrisbiran/tgdi-traffic-videos",
+  "submission_folder": "/tmp/phase8-annotation-kaggle-v1",
+  "submitted_notebook": {
+    "bytes": 87591,
+    "path": "/tmp/phase8-annotation-kaggle-v1/phase8_tgdi_annotation_review.ipynb",
+    "sha256": "7c449d0230766a4293c8f1798df6c58c0d33df74a71a21bf1f5d736b73efa0b0"
+  },
+  "upload_performed": false,
+  "videos_bundled": false
+}

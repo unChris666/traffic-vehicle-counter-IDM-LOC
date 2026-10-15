@@ -1,0 +1,273 @@
+{
+  "actual_kaggle_status": "COMPLETE",
+  "kernel_version": 2,
+  "source_bundle_verified_from_actual_log": "c08bc7b3cdded8ec71131a35cfc0966431a275abd02ddc1a3f68bf7dbc0c6373",
+  "run_id": "20261015T083731_664817Z",
+  "output_directory": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z",
+  "batch_status": "completed_research_snapshots_pending_audit",
+  "all_eight_videos_processed": true,
+  "frames_total": 72590,
+  "accepted_observed_event_count": 58,
+  "pending_observed_count": 1825,
+  "ledger_length": 58,
+  "queue_length": 1825,
+  "business_result_complete": false,
+  "business_category_coverage_complete": false,
+  "per_video": [
+    {
+      "video_id": "weekday_pagi",
+      "status": "completed",
+      "frames": 9052,
+      "accepted": 6,
+      "pending": 263,
+      "accepted_by_category": {
+        "truck": 0,
+        "car": 0,
+        "motorcycle": 6
+      },
+      "actual_cuda_encoder_proof_in_report": true,
+      "actual_inference_status": "completed",
+      "annotated_video": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z/weekday_pagi/annotated.mp4",
+      "annotated_redecoded_frame_count": 9052
+    },
+    {
+      "video_id": "weekday_siang",
+      "status": "completed",
+      "frames": 9128,
+      "accepted": 0,
+      "pending": 223,
+      "accepted_by_category": {
+        "truck": 0,
+        "car": 0,
+        "motorcycle": 0
+      },
+      "actual_cuda_encoder_proof_in_report": true,
+      "actual_inference_status": "completed",
+      "annotated_video": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z/weekday_siang/annotated.mp4",
+      "annotated_redecoded_frame_count": 9128
+    },
+    {
+      "video_id": "weekday_sore",
+      "status": "completed",
+      "frames": 9077,
+      "accepted": 6,
+      "pending": 323,
+      "accepted_by_category": {
+        "truck": 0,
+        "car": 0,
+        "motorcycle": 6
+      },
+      "actual_cuda_encoder_proof_in_report": true,
+      "actual_inference_status": "completed",
+      "annotated_video": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z/weekday_sore/annotated.mp4",
+      "annotated_redecoded_frame_count": 9077
+    },
+    {
+      "video_id": "weekday_malam",
+      "status": "completed",
+      "frames": 9022,
+      "accepted": 7,
+      "pending": 221,
+      "accepted_by_category": {
+        "truck": 0,
+        "car": 0,
+        "motorcycle": 7
+      },
+      "actual_cuda_encoder_proof_in_report": true,
+      "actual_inference_status": "completed",
+      "annotated_video": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z/weekday_malam/annotated.mp4",
+      "annotated_redecoded_frame_count": 9022
+    },
+    {
+      "video_id": "weekend_pagi",
+      "status": "completed",
+      "frames": 9017,
+      "accepted": 5,
+      "pending": 216,
+      "accepted_by_category": {
+        "truck": 0,
+        "car": 0,
+        "motorcycle": 5
+      },
+      "actual_cuda_encoder_proof_in_report": true,
+      "actual_inference_status": "completed",
+      "annotated_video": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z/weekend_pagi/annotated.mp4",
+      "annotated_redecoded_frame_count": 9017
+    },
+    {
+      "video_id": "weekend_siang",
+      "status": "completed",
+      "frames": 9124,
+      "accepted": 19,
+      "pending": 179,
+      "accepted_by_category": {
+        "truck": 0,
+        "car": 0,
+        "motorcycle": 19
+      },
+      "actual_cuda_encoder_proof_in_report": true,
+      "actual_inference_status": "completed",
+      "annotated_video": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z/weekend_siang/annotated.mp4",
+      "annotated_redecoded_frame_count": 9124
+    },
+    {
+      "video_id": "weekend_sore",
+      "status": "completed",
+      "frames": 9138,
+      "accepted": 3,
+      "pending": 227,
+      "accepted_by_category": {
+        "truck": 0,
+        "car": 0,
+        "motorcycle": 3
+      },
+      "actual_cuda_encoder_proof_in_report": true,
+      "actual_inference_status": "completed",
+      "annotated_video": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z/weekend_sore/annotated.mp4",
+      "annotated_redecoded_frame_count": 9138
+    },
+    {
+      "video_id": "weekend_malam",
+      "status": "completed",
+      "frames": 9032,
+      "accepted": 12,
+      "pending": 173,
+      "accepted_by_category": {
+        "truck": 0,
+        "car": 0,
+        "motorcycle": 12
+      },
+      "actual_cuda_encoder_proof_in_report": true,
+      "actual_inference_status": "completed",
+      "annotated_video": "/kaggle/working/phase_8_tgdi_research/20261015T083731_664817Z/weekend_malam/annotated.mp4",
+      "annotated_redecoded_frame_count": 9032
+    }
+  ],
+  "pending_reasons_overlapping": {
+    "RAW_UNRESOLVED_VEHICLE_COMPETITOR": 1216,
+    "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE": 1184,
+    "AMBIGUOUS_GAP": 464,
+    "CATEGORY_CONFLICT": 341,
+    "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW": 168,
+    "GENUINE_RETURN_REVIEW_REQUIRED": 125,
+    "ALTERNATIVE_ASSIGNMENT_AMBIGUITY": 114,
+    "TRANSITIVE_IDENTITY_CONFLICT": 9
+  },
+  "hard_block_reasons_overlapping": {
+    "RAW_UNRESOLVED_VEHICLE_COMPETITOR": 1216,
+    "AMBIGUOUS_GAP": 464,
+    "CATEGORY_CONFLICT": 341,
+    "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW": 168,
+    "ALTERNATIVE_ASSIGNMENT_AMBIGUITY": 114,
+    "TRANSITIVE_IDENTITY_CONFLICT": 9
+  },
+  "manifest_subset_checks_passed": 15,
+  "manifest_subset_checks": [
+    {
+      "path": "batch_report.json",
+      "sha256": "0b129b752ae528bcf426f76f6325c4eaa50c865a316a392d8e967ed9403b4280",
+      "size_bytes": 54228775
+    },
+    {
+      "path": "audit_queue.json",
+      "sha256": "1a7bfed07eb5f29918433a47f9f5821407b6e3b8f898a9b84840af9a847b42fb",
+      "size_bytes": 48464132
+    },
+    {
+      "path": "source_mount_resolution.json",
+      "sha256": "b9857a95cfc7751f1964e70547d3bbd25d11a5a3ba78800817eb75993702b738",
+      "size_bytes": 4311
+    },
+    {
+      "path": "runtime.json",
+      "sha256": "36aa6cf575f943aaf276e05cda9b68f66a67f3ebcbaea097e95f296a62f4a0ac",
+      "size_bytes": 822
+    },
+    {
+      "path": "per_video_results.json",
+      "sha256": "d5a7af9eb3dd512e0037dcc30647413f96712d1ef8789c2ec4be251a4b27a574",
+      "size_bytes": 237384
+    },
+    {
+      "path": "accepted_event_ledger.json",
+      "sha256": "29c9a60b0a9cb418574f6e7549fdd8299edd88d606b132a9f839f8071f9a3b84",
+      "size_bytes": 2476424
+    },
+    {
+      "path": "coverage.json",
+      "sha256": "76916210cbe9e40c9e690c4c5b7735285439ce6c7fd5f5886c74501c9d37b71d",
+      "size_bytes": 1202
+    },
+    {
+      "path": "weekend_sore/report.json",
+      "sha256": "5ab9b309cda74a344fea6c2b0c887a0d981a5b19c716324b00e8da026dfc7068",
+      "size_bytes": 23320
+    },
+    {
+      "path": "weekend_siang/report.json",
+      "sha256": "b1cc9d35fb5be2287b6fba8149fa4032d47d30bd26da3a9e73fc799329da6e0a",
+      "size_bytes": 23321
+    },
+    {
+      "path": "weekend_pagi/report.json",
+      "sha256": "a8aea7fc6ac4d8e0947d14d6bf722fee26739ab617e63d414d112811de7a432d",
+      "size_bytes": 23314
+    },
+    {
+      "path": "weekend_malam/report.json",
+      "sha256": "de181e330babc767693f0dceaacce6a6662b895e8b9c57032bfffa654c1ae1ba",
+      "size_bytes": 23329
+    },
+    {
+      "path": "weekday_sore/report.json",
+      "sha256": "196c290f1297c31eec8b6aadc08c34c0651310b01a3d8a2dcf5ee67e2ca39ecc",
+      "size_bytes": 23321
+    },
+    {
+      "path": "weekday_siang/report.json",
+      "sha256": "9e6d6a77e65fdf5d6b68fae439828523e983ae861d0283c639622bb78491c09f",
+      "size_bytes": 23299
+    },
+    {
+      "path": "weekday_pagi/report.json",
+      "sha256": "9d9650755654abf6d9fadfd3fe535622039189ae32f1f7a43320c71c9443ae05",
+      "size_bytes": 23317
+    },
+    {
+      "path": "weekday_malam/report.json",
+      "sha256": "3ce5a02491c960d28aab2862b59750c101598077fd69fa6881c0800a1726a408",
+      "size_bytes": 23327
+    }
+  ],
+  "coverage": {
+    "coverage_by_category": {
+      "pedestrian": "UNSUPPORTED_IN_FROZEN_VEHICLE_RESOLVER",
+      "motorcycle": "ACCEPTED_PASSAGES_ONLY_PENDING_AND_MISSES_EXCLUDED",
+      "car": "ACCEPTED_PASSAGES_ONLY_PENDING_AND_MISSES_EXCLUDED",
+      "bus_angkot": "BUS_ANGKOT_TAXONOMY_UNRESOLVED",
+      "truck": "ACCEPTED_PASSAGES_ONLY_PENDING_AND_MISSES_EXCLUDED"
+    },
+    "zero_semantics": "ZERO_ACCEPTED_EVENTS_IN_SUPPORTED_COMPLETED_SLOT_NOT_PROOF_OF_NO_PHYSICAL_PASSAGES",
+    "null_semantics": "UNEXECUTED_FAILED_OR_UNSUPPORTED_CATEGORY_NO_FABRICATED_ZERO",
+    "total_semantics": "SUM_OF_FOUR_OBSERVED_RECORDINGS_NOT_EXTRAPOLATED_DAILY_COUNT",
+    "location": {
+      "store_code": "TGDI",
+      "store_name": null,
+      "latitude": null,
+      "longitude": null
+    },
+    "business_metadata_complete": false,
+    "unknown_location_fields": [
+      "store_name",
+      "latitude",
+      "longitude"
+    ],
+    "location_metadata_status": "UNKNOWN_DECLARED_RESEARCH_ONLY",
+    "research_only": true,
+    "location_metadata_review": {
+      "path": "docs/evidence/phase_8/feedback/TGDI_unknown_location_metadata_review_v1.json",
+      "sha256": "c698b91b17a5f12492e4546fcd32b4ceacbd425d6cdc34bbf59de1b5c745048b"
+    },
+    "business_result_complete": false
+  }
+}
