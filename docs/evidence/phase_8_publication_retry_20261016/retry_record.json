@@ -1,0 +1,55 @@
+{
+  "claim_type": "ACTUAL_RETRY_AFTER_USER_REPORTED_SECRET_SAVE_AND_ENVIRONMENT_PUBLICATION",
+  "recorded_at_utc": "2026-10-15T22:58:05.767888+00:00",
+  "user_date": "2026-10-16",
+  "user_timezone": "Asia/Jakarta",
+  "source_commit": "e8f9c6dc88701e15d8ab212f408b7fd53b2e070c",
+  "status": "BLOCKED_PUBLICATION",
+  "uploads_attempted": 8,
+  "http_status": 401,
+  "endpoint_host": "uploads.github.com",
+  "error_message": "Bad credentials",
+  "release_before_cleanup": {
+    "id": 414351275,
+    "tag_name": "phase8-annotation-review-v1",
+    "target_commitish": "e8f9c6dc88701e15d8ab212f408b7fd53b2e070c",
+    "draft": true,
+    "prerelease": false,
+    "html_url": "https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/tag/untagged-1cdb2e0617bae574e757"
+  },
+  "actual_uploaded_assets": 0,
+  "runtime_observation": {
+    "observations_current": true,
+    "spec_revision": "6",
+    "observed_spec_revision": "6",
+    "secret_names": [
+      "KAGGLE_API_TOKEN"
+    ],
+    "GH_TOKEN_ready_observed": false
+  },
+  "configuration_draft_observation": {
+    "revision": 11,
+    "GH_TOKEN_requirement_present": true,
+    "GH_TOKEN_has_saved_binding": false,
+    "allowed_domains": [
+      "api.github.com",
+      "uploads.github.com"
+    ]
+  },
+  "token_value_read_or_retained": false,
+  "token_validity_determined": false,
+  "all_eight_delivery_files_validated_by_publisher_before_upload": true,
+  "delivery_manifest_sha256": "78ac41ec32edff085083a218c1a9a1f8f61c8f32ead8609cf6f31a69bbea55b5",
+  "retained_frame_count": 72590,
+  "unchanged_accepted": 58,
+  "unchanged_pending": 1825,
+  "models_or_counting_rerun": false,
+  "new_secret_requested": false,
+  "required_next_action": "Use a task attached to the newly published environment; verify GH_TOKEN binding and actual upload before claiming publication.",
+  "cleanup": {
+    "empty_draft_created_by_this_retry_deleted": true,
+    "release_id": 414351275,
+    "http_status_after_delete": 404,
+    "published_or_user_assets_deleted": 0
+  }
+}
