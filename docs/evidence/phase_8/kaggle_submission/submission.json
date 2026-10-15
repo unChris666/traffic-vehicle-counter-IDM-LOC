@@ -1,0 +1,22 @@
+{
+  "claim_type": "ACTUAL_KAGGLE_PREPARE_SUBMISSION_NOT_TRAFFIC_RESULT",
+  "submitted_at_utc": "2026-10-15T04:03:20.702509+00:00",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-batch-preparation",
+  "kernel_version": 1,
+  "url": "https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-batch-preparation",
+  "command": "kaggle kernels push -p /tmp/phase8-kaggle-final -t 1200 --accelerator NvidiaTeslaT4",
+  "requested_accelerator": "NvidiaTeslaT4",
+  "timeout_seconds": 1200,
+  "mode": "prepare",
+  "dataset": "chrisbiran/tgdi-traffic-videos",
+  "actual_model_inference_requested": false,
+  "counting_requested": false,
+  "submitted_notebook_sha256": "824a43311340cdcd09a4a10ef98913a878f94b9104225b9fa3a8b30cb169879c",
+  "submitted_archive_sha256": "9d0e3997acebdcad7fa08e8685ab558e606630b0214ce821ebad683e6a90bed9",
+  "push_response": "Kernel version 1 successfully pushed.",
+  "execution_status": "COMPLETE",
+  "retained_preparation_run_path": "docs/evidence/phase_8/preparation/kaggle_20261015T040402_298644Z",
+  "retained_preparation_report_sha256": "30bbc6d1f3e762c4e23f31b4981ded667de24945a80d8fca6ca2d24a6edc9ce9",
+  "execution_log_path": "docs/evidence/phase_8/kaggle_submission/prepare_execution.log.gz",
+  "execution_log_sha256": "f2081655fa1ad9ba26f84fc1e696edc652d374f43abb0be83cc13fbca735d679"
+}

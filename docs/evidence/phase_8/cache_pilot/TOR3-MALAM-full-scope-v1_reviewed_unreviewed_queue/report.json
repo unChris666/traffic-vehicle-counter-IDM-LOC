@@ -1,0 +1,88 @@
+{
+  "accepted_events": 7,
+  "aggregate_semantics": "ACCEPTED_REVIEWED_PASSAGE_SUBTOTAL_PENDING_UNRESOLVED",
+  "claim_type": "EXECUTED_REVIEWED_OUTPUT_OVERLAY_NOT_AUTOMATIC_RESOLVER_RESULT",
+  "complete_eight_video_batch": false,
+  "decision_status_counts": {
+    "accepted": 7,
+    "pending_review": 49
+  },
+  "formal_ground_truth": false,
+  "full_video_source_scope": true,
+  "geometry_resolver_detector_tracker_encoder_rerun": false,
+  "manual_confirmation_candidates": 0,
+  "manual_confirmed_physical_passages": 0,
+  "manual_review_is_formal_ground_truth": false,
+  "method_sha256": "c69c8bdaea8d70bc6825ada865553f23260a6436e259356af21f089e332abbde",
+  "model_geometry_resolver_rerun": false,
+  "new_automatic_success_claimed": false,
+  "original_machine_artifacts_modified": false,
+  "overlay_policy": "phase8_guarded_full_video_review_overlay_v1",
+  "phase": 8,
+  "preserved_machine_accepted_events": 7,
+  "preserved_machine_event_ids": [
+    "ce6b_240f361b5597d9cb632d4bc8a443a143fa6261f7691cbbe154c81a6f5ae54e2b",
+    "ce6b_26fd01c3fa2ede4ada26064ca8af96266d37e6a1f7acbf1207cb01d742c8dc4b",
+    "ce6b_2b34c39227ba11bcf925007e9c61bc9dc7c56bdb887adb0f1c24dcf3d9139b98",
+    "ce6b_5b3a1ef272e5ecd8eededc5867535652c0d44fe3f22be56d0ea7834bc151f2fa",
+    "ce6b_6fe4f44f50f940ee1482bed98a3aae9f16d14899b7d6cf3c74e6009358881b39",
+    "ce6b_990649a65beda4bbf1ca7edc2ba11bf2a615419f490ed735f86b47cb9820fe37",
+    "ce6b_9b3275f02429403c78c77d631cef15fa21a9a68cd3aa8cdce9a64390f94cf161"
+  ],
+  "provenance_adapter": {
+    "adapted_source_sha256": "521624ba4c6c183f6adc29721ec64c75fed0b9535c03abd06ba06193c7943bc4",
+    "algorithm_category_geometry_identity_controls_changed": false,
+    "allowed_measurement_namespaces": [
+      "retained_phase_2_detection",
+      "retained_phase_7_detection",
+      "retained_phase_8_detection"
+    ],
+    "base_path": "docs/evidence/phase_6/option_b_verification/build_reviewed_comparison.py",
+    "base_source_sha256": "663a52190f8c495533d50b36509232dad0d3fb64e0d31c0c3d669415fb38e81b",
+    "frozen_predicate_sources": {
+      "notebooks/phase_5_geometry_helpers.py": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+      "notebooks/phase_6_counting_helpers.py": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5"
+    },
+    "historical_source_modified": false,
+    "new_guard": "observation.get(\"measurement_provenance\") not in ('retained_phase_2_detection', 'retained_phase_7_detection', 'retained_phase_8_detection')",
+    "old_guard": "observation.get(\"measurement_provenance\") != \"retained_phase_2_detection\"",
+    "production_substitution_count": 1
+  },
+  "raw_photo_verification": "native PNG BGR equals retained raw detector donor; no independent source-video decode",
+  "review_input_sha256": "ffed2b8741f952011179901c34cf95c6d6898e730b76b313b0b7db7f641fa72e",
+  "review_policy": "phase6_option_b_review_overlay_v1",
+  "reviewed_candidates": 0,
+  "source_identity": {
+    "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+    "height": 720,
+    "parent_run_id": "20261014T062858_002323Z",
+    "records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+    "variant": "raw",
+    "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "width": 1280
+  },
+  "source_machine_binding": {
+    "schema_version": "phase8_full_video_review_input_v1",
+    "scope": "full_video",
+    "source_configuration_sha256": "cefba5b6e1549e473f60d4da78905b382810d2ca44b100eaeddf8088f1a13f30",
+    "source_episodes_sha256": "f83cc35879ec2004dd6bf22f98cd50e5f15025eeeb6dffd55f47dc7cad5ce2be",
+    "source_identity": {
+      "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+      "height": 720,
+      "parent_run_id": "20261014T062858_002323Z",
+      "records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+      "variant": "raw",
+      "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+      "width": 1280
+    },
+    "source_machine_decisions_sha256": "e43458fba459ef8f5288faf2da2cb22c448e13738e7fd98e1aaa966011d8161c",
+    "source_machine_events_sha256": "a1d30547f139498b43aa3ff146842bdc7d8a4bae30d4cf7f664588b186ec0f40",
+    "source_machine_manifest_sha256": "10006ef1a763258808a6be5a764102025fe4a9bcb521f17000aace2f7c077ad5",
+    "source_processing_profile_sha256": "7eac141bac18d07d275bdfb0cecba2543600928ce637aea50eb0ec359959ea1f",
+    "source_run_id": "p8_25c6f16ca2d2ff84329a6d159d1c1c98d5b7bcb24bb4646946a8c713df124f16",
+    "source_snapshot_kind": "machine"
+  },
+  "source_policy_identity": "cfg6br_28ecec68ddeb0bc9282f9696571d50e34b47b881e6fae40c9f84cff1689d81db",
+  "source_run_id": "p8_25c6f16ca2d2ff84329a6d159d1c1c98d5b7bcb24bb4646946a8c713df124f16",
+  "whole_video_traffic_result": false
+}

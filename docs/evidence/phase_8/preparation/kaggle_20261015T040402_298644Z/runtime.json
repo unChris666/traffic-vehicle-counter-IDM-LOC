@@ -1,0 +1,33 @@
+{
+  "python": "3.13.15",
+  "cpu_count": 4,
+  "gpu_probe": "nvidia-smi",
+  "available_gpus": [
+    {
+      "index": 0,
+      "name": "Tesla T4",
+      "memory_mib": 15360
+    },
+    {
+      "index": 1,
+      "name": "Tesla T4",
+      "memory_mib": 15360
+    }
+  ],
+  "processing_assignment": "sequential_cuda0_only",
+  "parallel_gpu_orchestration_implemented": false,
+  "gpu_probe_exit_code": 0,
+  "available_gpu_count": 2,
+  "gpu_visibility_semantics": "NVIDIA_SMI_OBSERVATION_NOT_PYTORCH_CUDA_VISIBILITY_OR_DEVICE_EXECUTION_PROOF",
+  "installed_packages": {
+    "numpy": "2.1.3",
+    "opencv-python": "4.14.0.94",
+    "opencv-python-headless": "4.14.0.94",
+    "Pillow": "12.3.0",
+    "torch": "2.11.0+cu128",
+    "ultralytics": null,
+    "onnx": "1.22.0",
+    "onnxruntime-gpu": null,
+    "lap": null
+  }
+}

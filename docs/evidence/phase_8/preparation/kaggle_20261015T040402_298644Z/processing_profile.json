@@ -1,0 +1,99 @@
+{
+  "profile_version": "phase8_full_video_raw_b_v1",
+  "phase": 8,
+  "variant": {
+    "name": "raw",
+    "method": "raw"
+  },
+  "device": "cuda:0",
+  "execution_policy": "SEQUENTIAL_ONE_FULL_VIDEO_ON_CUDA0",
+  "frame_scope": "FRAME_ZERO_TO_DECODER_END",
+  "counting_scope": "ALL_MEASURED_TRACK_EPISODES_FULL_VIDEO",
+  "detector": {
+    "package_version": "8.4.175",
+    "device": 0,
+    "weights_path": "/kaggle/working/phase_8_assets/yolo26m.pt",
+    "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt",
+    "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+    "weights_bytes": 44255705,
+    "settings": {
+      "conf": 0.25,
+      "imgsz": 640,
+      "iou": 0.7,
+      "max_det": 300,
+      "quantize": null,
+      "nms": null,
+      "classes": null,
+      "rect": true,
+      "augment": false,
+      "agnostic_nms": false,
+      "batch": 1,
+      "seed": 0
+    },
+    "baseline_provenance": "docs/evidence/phase_2/20261011T052950_360560Z_ed399fb8/detection_report.json"
+  },
+  "tracker": {
+    "tracker_type": "botsort",
+    "track_high_thresh": 0.25,
+    "track_low_thresh": 0.1,
+    "new_track_thresh": 0.25,
+    "track_buffer": 30,
+    "match_thresh": 0.8,
+    "fuse_score": true,
+    "gmc_method": "none",
+    "proximity_thresh": 0.5,
+    "appearance_thresh": 0.8,
+    "with_reid": true,
+    "device": "cuda:0"
+  },
+  "encoder": {
+    "path": "/kaggle/working/phase_8_assets/yolo26n-reid.onnx",
+    "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n-reid.onnx",
+    "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+    "bytes": 9873245,
+    "device": "cuda:0",
+    "onnx_version": "1.20.1",
+    "ort_version": "1.24.4",
+    "input_policy": "SAME_TRANSFORMED_FRAME_AS_DETECTOR",
+    "final_vehicle_configuration": false,
+    "documented_training_domain": "MSMT17-v1 person; vehicle transfer unknown"
+  },
+  "counting": {
+    "policy_version": "phase6_option_b_v1",
+    "metric": "passage",
+    "neutral_band_px": 0.0,
+    "confirmation_observations": 1,
+    "association": {
+      "component": {
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0,
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15
+      },
+      "same_vehicle": {
+        "min_common_frames": 2,
+        "min_consecutive_common_frames": 2,
+        "min_iou": 0.59,
+        "max_center_distance_norm": 0.1,
+        "max_relative_motion_residual_norm": 0.01
+      }
+    },
+    "grouping_enabled": true
+  },
+  "source_bindings": {
+    "notebooks/phase_7_night_helpers.py": "6a31794bad0c5cd346575ad4602adb5d10f17bd14cc1094dd5f2b207b0935889",
+    "notebooks/phase_7_temporal_helpers.py": "2ef8de2d0d309b86bae6a75a2135c59d8dd09e203610fc444c6023c0614d9c74",
+    "notebooks/phase_5_geometry_helpers.py": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+    "notebooks/phase_6_identity_resolution_helpers.py": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054",
+    "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723"
+  },
+  "category_coverage": {
+    "motorcycle": "experimental_vehicle_passage",
+    "car": "experimental_vehicle_passage",
+    "truck": "experimental_vehicle_passage",
+    "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1",
+    "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN"
+  },
+  "result_semantics": "OFFLINE_MACHINE_SUBTOTAL_SEPARATE_FROM_REVIEW_NOT_COMPLETE_TRAFFIC_GROUND_TRUTH"
+}

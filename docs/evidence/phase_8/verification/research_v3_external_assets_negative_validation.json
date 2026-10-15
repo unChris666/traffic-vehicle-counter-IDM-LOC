@@ -1,0 +1,24 @@
+{
+  "claim_type": "ACTUAL_PRIVATE_NATIVE_FRAME_TRANSPORT_REJECTION_TESTS_NO_MODELS",
+  "source_packet_sha256": "650525664cb5c465f555129785efd82c71257dfee1be76e791203485669e49c1",
+  "tests": [
+    {
+      "case": "missing",
+      "passed": true,
+      "error": "Expected one mounted native-frame evidence dataset with the exact bound manifest SHA."
+    },
+    {
+      "case": "manifest_tamper",
+      "passed": true,
+      "error": "Expected one mounted native-frame evidence dataset with the exact bound manifest SHA."
+    },
+    {
+      "case": "png_tamper",
+      "passed": true,
+      "error": "Native-frame evidence PNG differs from the accepted original bytes."
+    }
+  ],
+  "successful": true,
+  "original_dataset_files_modified": false,
+  "actual_model_inference_executed": false
+}

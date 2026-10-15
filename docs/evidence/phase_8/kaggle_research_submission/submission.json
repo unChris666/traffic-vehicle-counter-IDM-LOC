@@ -1,0 +1,29 @@
+{
+  "claim_type": "ACTUAL_KAGGLE_FULL_VIDEO_RESEARCH_SUBMISSION_NOT_COMPLETED_TRAFFIC_RESULT",
+  "submitted_at_utc": "2026-10-15T07:59:29.624965+00:00",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-full-video-research",
+  "kernel_version": null,
+  "url": "https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-full-video-research",
+  "mode": "run_batch",
+  "timeout_seconds": 14400,
+  "requested_accelerator": "NvidiaTeslaT4",
+  "dataset": "chrisbiran/tgdi-traffic-videos",
+  "active_manifest_path": "docs/evidence/phase_8/config/batch_manifest_TGDI_G3_T1_v2.json",
+  "active_manifest_sha256": "d3ab912965beea7cffbb159ed5b7c7fa8eeac2081b2ba7d872e8822fa416892d",
+  "submitted_notebook_sha256": "dbc0ef65290f72af944e4cd949770a50ba5e397ccfad56c94adc55636da338da",
+  "submitted_archive_path": "docs/evidence/phase_8/kaggle_research_submission/research_v2_submitted.ipynb.gz",
+  "submitted_archive_sha256": "74dee2df6efd0007ecea0e43fc6725a7425674f349c5a3a497240fd0acc67714",
+  "source_bundle_binding_sha256": "59e44ded4f70cbe564ec030fbbf1f8498726f68863de0094c5fb515c1815083c",
+  "research_only": true,
+  "business_metadata_complete": false,
+  "all_eight_video_processing_complete": false,
+  "actual_new_model_inference_requested": true,
+  "processing_assignment": "SEQUENTIAL_ONE_FULL_VIDEO_ON_CUDA0",
+  "execution_status": "SUBMISSION_REJECTED_HTTP400",
+  "accepted_submission_confirmed": false,
+  "push_error": {
+    "http_status": 400,
+    "reason": "The kernel source must be less than 1 megabytes in size."
+  },
+  "attempt_status": "REJECTED_SOURCE_SIZE_LIMIT"
+}

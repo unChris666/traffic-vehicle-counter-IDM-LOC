@@ -1,0 +1,242 @@
+{
+  "draft_id": "TGDI-WEEKEND-SIANG-G3-T1",
+  "status": "ACCEPTED_INITIAL_RESEARCH_G3_T1",
+  "claim_type": "USER_APPROVED_GEOMETRY_FOR_INITIAL_RESEARCH",
+  "source_video": {
+    "filename": "TGDI-WEEKEND-SIANG.mp4",
+    "sha256": "9271275e03bd75b2c3e373a7d1babbf8a79e4795662f691b584056f261185c9c",
+    "size_bytes": 51137139,
+    "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-SIANG.mp4",
+    "native_width": 640,
+    "native_height": 480
+  },
+  "source_frame": {
+    "frame_index": 0,
+    "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000000000.png",
+    "sha256": "5ac38811beabd6e581503a5591be137bd9bc61f40d030b396448dcffbe693dd4",
+    "bgr_uint8_pixel_sha256": "2440edab0f0d2b0901f100cc2000276213df78654f66fd24fb47b9bcf021b34c",
+    "width": 640,
+    "height": 480,
+    "lossless": true,
+    "source": "actual_sequential_OpenCV_decode",
+    "coordinate_space": "native_full_frame_pixels",
+    "origin": "upper_left",
+    "x_axis": "right",
+    "y_axis": "down"
+  },
+  "template_source": {
+    "path": "docs/evidence/phase_5/accepted_geometry/TOR3-PAGI-G3.json",
+    "sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15"
+  },
+  "template_reference": {
+    "width": 960.0,
+    "height": 540.0,
+    "claim_type": "NEW_ENGINEERING_CANVAS_ACCEPTED_IN_G3_REVIEW_NOT_DISCOVERED_SOURCE_SIZE",
+    "reason": "Fits all supplied points and uses16:9 like this TOR3-PAGI frame"
+  },
+  "normalization_convention": "u=x/reference_width, v=y/reference_height; origin upper-left, x rightward, y downward; continuous image-edge coordinates",
+  "normalized": {
+    "line": {
+      "P1": [
+        0.0046875,
+        0.9564814814814815
+      ],
+      "P2": [
+        0.9754166666666666,
+        0.5655555555555555
+      ]
+    },
+    "side_a_polygon": [
+      [
+        0.0046875,
+        0.9564814814814815
+      ],
+      [
+        0.0046875,
+        0.6448148148148148
+      ],
+      [
+        0.5807291666666666,
+        0.3061111111111111
+      ],
+      [
+        0.9756250000000001,
+        0.5662962962962963
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        0.0046875,
+        0.9564814814814815
+      ],
+      [
+        0.9114583333333334,
+        0.5920825932680884
+      ],
+      [
+        0.9114583333333334,
+        0.9861111111111112
+      ],
+      [
+        0.0046875,
+        0.9861111111111112
+      ]
+    ],
+    "side_b_max_u": 0.9114583333333334
+  },
+  "line_endpoints_reference": {
+    "P1": [
+      4.5,
+      516.5
+    ],
+    "P2": [
+      936.4,
+      305.4
+    ]
+  },
+  "side_a_polygon_reference": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      4.5,
+      348.2
+    ],
+    [
+      557.5,
+      165.3
+    ],
+    [
+      936.6,
+      305.8
+    ]
+  ],
+  "side_b_polygon_reference": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      875.0,
+      319.72460036476775
+    ],
+    [
+      875.0,
+      532.5
+    ],
+    [
+      4.5,
+      532.5
+    ]
+  ],
+  "perimeter_labels": [
+    "P1A",
+    "P1B",
+    "P1D",
+    "P1C"
+  ],
+  "rendered_native_pixels": {
+    "width": 640,
+    "height": 480,
+    "line": {
+      "P1": [
+        3.0,
+        459.1111111111111
+      ],
+      "P2": [
+        624.2666666666667,
+        271.46666666666664
+      ]
+    },
+    "side_a_polygon": [
+      [
+        3.0,
+        459.1111111111111
+      ],
+      [
+        3.0,
+        309.5111111111111
+      ],
+      [
+        371.66666666666663,
+        146.93333333333334
+      ],
+      [
+        624.4000000000001,
+        271.8222222222222
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        3.0,
+        459.1111111111111
+      ],
+      [
+        583.3333333333334,
+        284.19964476868245
+      ],
+      [
+        583.3333333333334,
+        473.33333333333337
+      ],
+      [
+        3.0,
+        473.33333333333337
+      ]
+    ],
+    "side_b_max_x": 583.3333333333334
+  },
+  "line_polygon_endpoint_difference_reference": {
+    "line_P2": [
+      936.4,
+      305.4
+    ],
+    "polygon_A_right_vertex": [
+      936.6,
+      305.8
+    ],
+    "line_minus_polygon": [
+      -0.2,
+      -0.4
+    ],
+    "snapped": false
+  },
+  "transfer_policy": "Explicit full-frame normalized G3 projection only; no crop, rotation, snapping, stabilization or road alignment inferred. Aspect ratio/viewpoint may differ; per-video review required.",
+  "selected_anchor": "bottom_center",
+  "anchor_source": "Raw detector-linked measured emitted vehicle bbox bottom-center under existing frozen Bv1 contract; no image midpoint or rider BC substitution.",
+  "confirmed_direction_metadata": {
+    "A_TO_B": "approaching camera",
+    "B_TO_A": "moving away from camera"
+  },
+  "direction_review": {
+    "status": "USER_CONFIRMED_ALL_EIGHT_INITIAL_TRIAL",
+    "source_user_confirmation": {
+      "path": "docs/evidence/phase_8/feedback/TGDI_all_eight_user_confirmation_20261015.json",
+      "sha256": "791594449c3e1eeaefa99bc8acaf520b035eacc285a03daef76d9582a2a01e1b"
+    }
+  },
+  "geometry_review_confirmed": true,
+  "geometry_contract_accepted": true,
+  "counting_execution_allowed": true,
+  "approval_feedback": {
+    "path": "docs/evidence/phase_8/feedback/TGDI-WEEKEND-SIANG-G3-T1_review_v1.json",
+    "sha256": "6f29c8f75d841b2ab2a5fac4c6316f4f6b2f9394253c8653afe7cae3651bab82"
+  },
+  "preview": {
+    "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SIANG-G3-T1.png",
+    "sha256": "714c07b21e788b3fb0865f557cffe1c2d4e62d267597d97da55177703b6cbd9b",
+    "native_width": 640,
+    "native_height": 480
+  },
+  "review_questions": [
+    "Does the yellow finite line cross both intended traffic corridors?",
+    "Do A and B contain visible measured trajectory context before and after crossing?",
+    "Does the B right cap, burned-in map/text, parked objects or occlusion require a revision?",
+    "Confirm or revise A_TO_B and B_TO_A camera-approach semantics for this particular video."
+  ],
+  "source_proposal": {
+    "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SIANG-G3-T1.json",
+    "sha256": "1a233dbd052e1fc8596aaba8d07cb62bc93fb9a99b1c2376881b5dadcaa49e70"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "claim_type": "ACTUAL_LOCAL_SOFTWARE_GUARDS_AND_RETAINED_CACHE_CHECKS_NOT_TGDI_MODEL_RESULTS",
+  "created_at_utc": "2026-10-15T08:08:32.629305+00:00",
+  "invocation": "python -m unittest discover -s notebooks -p phase_8_*_tests.py -v",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "python_executable": "/workspace/.venvs/phase7-audit/bin/python",
+  "tests_registered": 201,
+  "tests_passed": 201,
+  "tests_skipped": 0,
+  "failures": [],
+  "errors": [],
+  "successful": true,
+  "wall_seconds": 10.566520076012239,
+  "method_sources": [
+    {
+      "path": "notebooks/phase_8_batch_helpers.py",
+      "sha256": "3e5c5f40ebaeae2f2c0bb08147b0c77b9b767dfdb883dfdefd716d689761baed"
+    },
+    {
+      "path": "notebooks/phase_8_batch_tests.py",
+      "sha256": "bee61fcaa83e2464dee49621c072babe39e3be64e927978585c891fd2e4fc567"
+    },
+    {
+      "path": "notebooks/phase_8_manifest_helpers.py",
+      "sha256": "0d6dbe9a895cb1aecd6af93779f26b62c0389efe219d23bf210ff1ec860e663f"
+    },
+    {
+      "path": "notebooks/phase_8_manifest_tests.py",
+      "sha256": "2cc9f91849b9695b3404126faf736797dfec6264aaaf287e6a8a55cd6a34cba9"
+    },
+    {
+      "path": "notebooks/phase_8_pipeline_helpers.py",
+      "sha256": "331116ac22c825c88b987e2e33b227113ed9843b58c96898f584897dac6aa124"
+    },
+    {
+      "path": "notebooks/phase_8_pipeline_tests.py",
+      "sha256": "1e6a79ae0cdc83cffe4a7d37562ad46fab003ab17ef1c7b7b7a4bceb6e3e027d"
+    },
+    {
+      "path": "notebooks/phase_8_review_helpers.py",
+      "sha256": "c69c8bdaea8d70bc6825ada865553f23260a6436e259356af21f089e332abbde"
+    },
+    {
+      "path": "notebooks/phase_8_review_tests.py",
+      "sha256": "a3d1f4d5e1ad56cb0de3970378297bd2db7b080ba0145a1f74ed651e02cf8cc7"
+    },
+    {
+      "path": "notebooks/08_end_to_end_batch.ipynb",
+      "sha256": "3b03966e8dba5c72d90360005cf870305f9a8675c30e41fac376006d22cec903"
+    }
+  ],
+  "execution_log": {
+    "path": "docs/evidence/phase_8/verification/current_software_validation.log.gz",
+    "sha256": "3ffeb6d39a0e27951ace476b92680274fbb6d45c79901322b07c0d462b8fda00"
+  },
+  "new_detector_tracker_encoder_inference_executed": false,
+  "actual_TGDI_traffic_result_created": false
+}

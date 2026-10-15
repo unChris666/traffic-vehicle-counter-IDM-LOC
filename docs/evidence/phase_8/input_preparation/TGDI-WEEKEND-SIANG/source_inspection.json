@@ -1,0 +1,233 @@
+{
+  "schema_version": "phase8_tgdi_input_preparation_v1",
+  "status": "ACTUAL_SEQUENTIAL_DECODE_COMPLETE",
+  "claim_type": "EXPERIMENT_RESULT",
+  "source_video": {
+    "filename": "TGDI-WEEKEND-SIANG.mp4",
+    "video_id": "TGDI-WEEKEND-SIANG",
+    "sha256": "9271275e03bd75b2c3e373a7d1babbf8a79e4795662f691b584056f261185c9c",
+    "size_bytes": 51137139,
+    "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-SIANG.mp4"
+  },
+  "filename_metadata": {
+    "store_code": "TGDI",
+    "day_type": "weekend",
+    "recording_period": "siang",
+    "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text"
+  },
+  "metadata": {
+    "width": 640,
+    "height": 480,
+    "aspect_ratio": "640:480",
+    "opencv_reported_width": 640.0,
+    "opencv_reported_height": 480.0,
+    "opencv_reported_fps": 29.983459365905848,
+    "opencv_reported_frame_count": 9124.0,
+    "decoded_frame_count": 9124,
+    "duration_estimate_seconds": 304.3011111111111,
+    "duration_estimate_method": "actual decoded frame count divided by OpenCV reported average FPS; source PTS/CFR/VFR status not validated",
+    "fourcc": "h264",
+    "ffprobe": {
+      "status": "observed_ffprobe_metadata",
+      "metadata": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+            "profile": "Baseline",
+            "codec_type": "video",
+            "codec_tag_string": "avc1",
+            "codec_tag": "0x31637661",
+            "width": 640,
+            "height": 480,
+            "coded_width": 640,
+            "coded_height": 480,
+            "closed_captions": 0,
+            "film_grain": 0,
+            "has_b_frames": 0,
+            "pix_fmt": "yuv420p",
+            "level": 30,
+            "color_range": "tv",
+            "color_space": "smpte170m",
+            "color_transfer": "bt709",
+            "color_primaries": "smpte170m",
+            "chroma_location": "left",
+            "field_order": "progressive",
+            "refs": 1,
+            "is_avc": "true",
+            "nal_length_size": "4",
+            "id": "0x1",
+            "r_frame_rate": "30/1",
+            "avg_frame_rate": "8211600/273871",
+            "time_base": "1/90000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 27387100,
+            "duration": "304.301111",
+            "bit_rate": "1213538",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "9124",
+            "extradata_size": 32,
+            "disposition": {
+              "default": 1,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "creation_time": "2026-09-19T05:09:49.000000Z",
+              "language": "eng",
+              "handler_name": "VideoHandle",
+              "vendor_id": "[0][0][0][0]"
+            }
+          }
+        ],
+        "format": {
+          "nb_streams": 2,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+          "format_long_name": "QuickTime / MOV",
+          "start_time": "0.000000",
+          "duration": "304.330431",
+          "size": "51137139",
+          "bit_rate": "1344253",
+          "probe_score": 100,
+          "tags": {
+            "major_brand": "mp42",
+            "minor_version": "0",
+            "compatible_brands": "isommp42",
+            "creation_time": "2026-09-19T05:09:49.000000Z",
+            "com.android.version": "15"
+          }
+        }
+      }
+    }
+  },
+  "decode": {
+    "method": "full sequential cv2.VideoCapture.read from frame zero; no seek",
+    "first_frame_index": 0,
+    "last_frame_index": 9123,
+    "successful_frames": 9124,
+    "first_false_read_at_index": 9124,
+    "terminal_false_read_reason": "not distinguished by OpenCV; metadata comparison retained",
+    "native_dimensions_consistent_over_all_decoded_frames": true,
+    "decode_loop_elapsed_seconds": 3.047173223050777
+  },
+  "retained_samples": [
+    {
+      "frame_index": 0,
+      "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000000000.png",
+      "sha256": "5ac38811beabd6e581503a5591be137bd9bc61f40d030b396448dcffbe693dd4",
+      "bgr_uint8_pixel_sha256": "2440edab0f0d2b0901f100cc2000276213df78654f66fd24fb47b9bcf021b34c",
+      "width": 640,
+      "height": 480,
+      "lossless": true,
+      "source": "actual_sequential_OpenCV_decode"
+    },
+    {
+      "frame_index": 15,
+      "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000000015.png",
+      "sha256": "bbef1886da0baf2865dde01fae05d90b16a4a2af81781cfb72e05541f6dc05dc",
+      "bgr_uint8_pixel_sha256": "9844a0afd2568ef3d98a1e8987bf051137b75e696ecb3bfbd44722c711a297df",
+      "width": 640,
+      "height": 480,
+      "lossless": true,
+      "source": "actual_sequential_OpenCV_decode"
+    },
+    {
+      "frame_index": 30,
+      "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000000030.png",
+      "sha256": "de72a602bc8a743bab7815fb88745cd6f420e3c3a2798e2e6c0b5e4f359c83b1",
+      "bgr_uint8_pixel_sha256": "65830ab53b7cee636c49eddfa5ef2d6a4029b0ebaee8a1e471258cda616f1513",
+      "width": 640,
+      "height": 480,
+      "lossless": true,
+      "source": "actual_sequential_OpenCV_decode"
+    },
+    {
+      "frame_index": 45,
+      "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000000045.png",
+      "sha256": "579757569436b2f8a15c13f661d792433445499d6328e6fa88b97f66fd1383a2",
+      "bgr_uint8_pixel_sha256": "67fe87451a48d942e3b3b9d2cdc9f740fc26adf6807be73fdcb5c555978dacc5",
+      "width": 640,
+      "height": 480,
+      "lossless": true,
+      "source": "actual_sequential_OpenCV_decode"
+    },
+    {
+      "frame_index": 59,
+      "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000000059.png",
+      "sha256": "60a5dee0fae1c619718a4d58029df9152bce357bf3a689ec3a2b531c9e0fad36",
+      "bgr_uint8_pixel_sha256": "53eaa7a6dd95f7a52e9079cc79e3c6bb1591f7b7cc8bf4af3c15d6e75921672e",
+      "width": 640,
+      "height": 480,
+      "lossless": true,
+      "source": "actual_sequential_OpenCV_decode"
+    },
+    {
+      "frame_index": 4562,
+      "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000004562.png",
+      "sha256": "f00d730bdec2133aab1ba04a775aaf1776a0f7f76a59f3373767f0cd1fc5b96c",
+      "bgr_uint8_pixel_sha256": "c7f1a0fe566f6a5a7e87753f3c12636e5adda05dcbca4c67d5b45682c81e18d5",
+      "width": 640,
+      "height": 480,
+      "lossless": true,
+      "source": "actual_sequential_OpenCV_decode"
+    },
+    {
+      "frame_index": 9123,
+      "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000009123.png",
+      "sha256": "29e606add34ff8910ccfa6c43be1e7c8332c3b1b21ca26342c7a7a50360b4772",
+      "bgr_uint8_pixel_sha256": "9335f144ad271db15823da327324df06a361128865c2a4711ea934b699050f19",
+      "width": 640,
+      "height": 480,
+      "lossless": true,
+      "source": "actual_sequential_OpenCV_decode"
+    }
+  ],
+  "beginning_temporal_contact_sheet": {
+    "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/beginning_temporal_contact_sheet.png",
+    "sha256": "2c7ebc7a3117acbd7c9bd0f718fcefaec5f28df57fbd5ba83be634d6efb4bd9b"
+  },
+  "beginning_middle_end_contact_sheet": {
+    "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/beginning_middle_end_contact_sheet.png",
+    "sha256": "cb5514ae4a9ecdd8fccf62c37632dfb9a53cdda6d93b553a2413ed02d45949d7"
+  },
+  "geometry_proposal": {
+    "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SIANG-G3-T1.json",
+    "sha256": "1a233dbd052e1fc8596aaba8d07cb62bc93fb9a99b1c2376881b5dadcaa49e70",
+    "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+  },
+  "camera_stability": {
+    "category": null,
+    "status": "NOT_ASSESSED_AUTOMATICALLY",
+    "limitation": "The five-frame beginning burst is retained for bounded qualitative review only, not full-video camera-stability proof."
+  },
+  "technical_issues": [],
+  "model_inference_executed": false,
+  "counting_executed": false,
+  "night_enhancement_executed": false,
+  "environment": {
+    "python": "3.12.14",
+    "opencv": "5.0.0",
+    "numpy": "2.5.3"
+  },
+  "source_inspection_path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/source_inspection.json"
+}

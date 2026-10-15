@@ -1,0 +1,862 @@
+{
+  "status": "PASS",
+  "claim_type": "INDEPENDENT_SOFTWARE_SOURCE_AND_RETAINED_ARTIFACT_VALIDATION_NOT_MODEL_QUALITY",
+  "created_utc": "2026-10-15T08:16:24.740812+00:00",
+  "checks_passed": 52172,
+  "checks_total": 52172,
+  "check_groups": {
+    "annotation:actual_native_sample_pixels": {
+      "passed": 1,
+      "total": 1
+    },
+    "annotation:actual_technical_scope_no_new_model_claim": {
+      "passed": 1,
+      "total": 1
+    },
+    "annotation:executed_source:exists": {
+      "passed": 2,
+      "total": 2
+    },
+    "annotation:executed_source:sha_and_bytes": {
+      "passed": 2,
+      "total": 2
+    },
+    "annotation:measured_donor_binding_not_identity_review": {
+      "passed": 1,
+      "total": 1
+    },
+    "annotation:native_retained_sample:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "annotation:native_retained_sample:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "annotation:retained_artifact:exists": {
+      "passed": 3,
+      "total": 3
+    },
+    "annotation:retained_artifact:sha_and_bytes": {
+      "passed": 3,
+      "total": 3
+    },
+    "current_source:actual_software_test_log:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "current_source:actual_software_test_log:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "current_source:actual_software_test_source:exists": {
+      "passed": 9,
+      "total": 9
+    },
+    "current_source:actual_software_test_source:sha_and_bytes": {
+      "passed": 9,
+      "total": 9
+    },
+    "current_source:all_registered_software_checks_passed": {
+      "passed": 1,
+      "total": 1
+    },
+    "documentation:local_link_exists": {
+      "passed": 208,
+      "total": 208
+    },
+    "final:artifact_count_size": {
+      "passed": 1,
+      "total": 1
+    },
+    "final:exact_file_set": {
+      "passed": 1,
+      "total": 1
+    },
+    "final:retained_artifact:exists": {
+      "passed": 267,
+      "total": 267
+    },
+    "final:retained_artifact:sha_and_bytes": {
+      "passed": 267,
+      "total": 267
+    },
+    "geometry:accepted_exact_original_source_and_coordinates": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:accepted_source_geometry:exists": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:accepted_source_geometry:sha_and_bytes": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:approved_initial_trial_same_proposal_coordinates": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:explicit_projection_only": {
+      "passed": 80,
+      "total": 80
+    },
+    "geometry:feedback_native_evidence:exists": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:feedback_native_evidence:sha_and_bytes": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:feedback_uses_exact_actual_source_frame": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:polygon_projection_cardinality": {
+      "passed": 16,
+      "total": 16
+    },
+    "geometry:source_bound_preview:exists": {
+      "passed": 24,
+      "total": 24
+    },
+    "geometry:source_bound_preview:sha_and_bytes": {
+      "passed": 24,
+      "total": 24
+    },
+    "geometry:source_bound_user_feedback:exists": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:source_bound_user_feedback:sha_and_bytes": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:source_specific_unapproved_no_inferred_direction": {
+      "passed": 8,
+      "total": 8
+    },
+    "geometry:user_feedback_exact_native_coordinates_and_direction": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:actual_eight_decoded_inputs": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:actual_native_and_all_frames": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:actual_preparation_validation_passed": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:beginning_middle_end_retained": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:confirmed_dataset_not_old_13": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:declared_total_frames": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:explicit_filename_mapping": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:full_source_report_consistency": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:geometry_proposal:exists": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:geometry_proposal:sha_and_bytes": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:listing:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:listing:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:location_unknown_not_inferred": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:manifest_matches_source_report": {
+      "passed": 16,
+      "total": 16
+    },
+    "inventory:manifest_observed_metadata": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:native_png:exists": {
+      "passed": 56,
+      "total": 56
+    },
+    "inventory:native_png:sha_and_bytes": {
+      "passed": 56,
+      "total": 56
+    },
+    "inventory:native_png_shape_pixels": {
+      "passed": 56,
+      "total": 56
+    },
+    "inventory:no_inference_or_counting_fabricated": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:source_inspection:exists": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:source_inspection:sha_and_bytes": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:source_slot_filename_identity": {
+      "passed": 8,
+      "total": 8
+    },
+    "inventory:unique_sources_and_slots": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:user_convention:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "inventory:user_convention:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:actual_completed_log:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:actual_completed_log:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:actual_completed_report:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:actual_completed_report:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:actual_submitted_notebook_identity": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:completed_execution_binding_present": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:exact_submitted_archive:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:exact_submitted_archive:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "kaggle:remote_report_audited_separately_from_local": {
+      "passed": 1,
+      "total": 1
+    },
+    "notebook:default_prepare_no_inference": {
+      "passed": 1,
+      "total": 1
+    },
+    "notebook:unexecuted_canonical_source": {
+      "passed": 1,
+      "total": 1
+    },
+    "notebook:valid_code_ast": {
+      "passed": 9,
+      "total": 9
+    },
+    "phase6A:artifact_original_or_archived": {
+      "passed": 103,
+      "total": 103
+    },
+    "phase6A:manifest_cardinality": {
+      "passed": 1,
+      "total": 1
+    },
+    "phase6B:archive:exists": {
+      "passed": 13,
+      "total": 13
+    },
+    "phase6B:archive:sha_and_bytes": {
+      "passed": 13,
+      "total": 13
+    },
+    "phase6B:archive_logical_original_bytes": {
+      "passed": 13,
+      "total": 13
+    },
+    "phase6B:artifact_original_or_archived": {
+      "passed": 172,
+      "total": 172
+    },
+    "phase6B:context_mapping_unique": {
+      "passed": 1,
+      "total": 1
+    },
+    "phase6B:manifest_cardinality": {
+      "passed": 1,
+      "total": 1
+    },
+    "phase6B:old_manifest_itself_unchanged": {
+      "passed": 1,
+      "total": 1
+    },
+    "phase7:archive:exists": {
+      "passed": 4,
+      "total": 4
+    },
+    "phase7:archive:sha_and_bytes": {
+      "passed": 4,
+      "total": 4
+    },
+    "phase7:archive_logical_original_bytes": {
+      "passed": 4,
+      "total": 4
+    },
+    "phase7:artifact_original_or_archived": {
+      "passed": 472,
+      "total": 472
+    },
+    "phase7:context_mapping_unique": {
+      "passed": 1,
+      "total": 1
+    },
+    "phase7:manifest_cardinality": {
+      "passed": 1,
+      "total": 1
+    },
+    "phase7:old_manifest_itself_unchanged": {
+      "passed": 1,
+      "total": 1
+    },
+    "pilot:accepted_only_typed_event_reconciliation": {
+      "passed": 7,
+      "total": 7
+    },
+    "pilot:actual_retained_cache:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "pilot:actual_retained_cache:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "pilot:all_frames_contiguous_source_identity": {
+      "passed": 9590,
+      "total": 9590
+    },
+    "pilot:crossing_uses_vehicle_source_raw_BC": {
+      "passed": 168,
+      "total": 168
+    },
+    "pilot:emitted_observation_direct_raw_index": {
+      "passed": 12479,
+      "total": 12479
+    },
+    "pilot:emitted_raw_bbox_class_provenance": {
+      "passed": 12479,
+      "total": 12479
+    },
+    "pilot:episode_identity": {
+      "passed": 1633,
+      "total": 1633
+    },
+    "pilot:episode_preserves_actual_source_raw_BC": {
+      "passed": 12479,
+      "total": 12479
+    },
+    "pilot:full_frame_count_not_five_windows": {
+      "passed": 1,
+      "total": 1
+    },
+    "pilot:machine_event_set_not_review_or_rerun_sum": {
+      "passed": 1,
+      "total": 1
+    },
+    "pilot:retained_outputs:exists": {
+      "passed": 13,
+      "total": 13
+    },
+    "pilot:retained_outputs:sha_and_bytes": {
+      "passed": 13,
+      "total": 13
+    },
+    "pilot:truthful_full_scope_replay_only": {
+      "passed": 1,
+      "total": 1
+    },
+    "pilot:unique_candidates_events": {
+      "passed": 1,
+      "total": 1
+    },
+    "preparation:actual_preparation_only": {
+      "passed": 2,
+      "total": 2
+    },
+    "preparation:actual_preparation_retained": {
+      "passed": 1,
+      "total": 1
+    },
+    "preparation:all_four_actual_guard_suites": {
+      "passed": 2,
+      "total": 2
+    },
+    "preparation:artifact_path_stays_in_run": {
+      "passed": 18,
+      "total": 18
+    },
+    "preparation:eight_sources_match_actual_input_bytes": {
+      "passed": 2,
+      "total": 2
+    },
+    "preparation:executed_source_methods:exists": {
+      "passed": 18,
+      "total": 18
+    },
+    "preparation:executed_source_methods:sha_and_bytes": {
+      "passed": 18,
+      "total": 18
+    },
+    "preparation:execution_remains_blocked": {
+      "passed": 2,
+      "total": 2
+    },
+    "preparation:guard_passed": {
+      "passed": 8,
+      "total": 8
+    },
+    "preparation:guard_passed_skipped_counts_explicit": {
+      "passed": 8,
+      "total": 8
+    },
+    "preparation:input_source_configuration_matches": {
+      "passed": 2,
+      "total": 2
+    },
+    "preparation:retained_actual_output:exists": {
+      "passed": 18,
+      "total": 18
+    },
+    "preparation:retained_actual_output:sha_and_bytes": {
+      "passed": 18,
+      "total": 18
+    },
+    "profile:frozen_source:exists": {
+      "passed": 5,
+      "total": 5
+    },
+    "profile:frozen_source:sha_and_bytes": {
+      "passed": 5,
+      "total": 5
+    },
+    "profile:full_video_raw_explicit_cuda0": {
+      "passed": 1,
+      "total": 1
+    },
+    "profile:unchanged_counting_controls": {
+      "passed": 1,
+      "total": 1
+    },
+    "profile:unchanged_detector_model_settings": {
+      "passed": 1,
+      "total": 1
+    },
+    "profile:unchanged_tracker_reid_controls": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:actual_full_source_preflight_no_model_execution": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:effective_approved_source_and_unknown_business_status": {
+      "passed": 8,
+      "total": 8
+    },
+    "research:location_metadata_review:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:location_metadata_review:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:source_user_confirmation:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:source_user_confirmation:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:supersedes_input_configuration:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:supersedes_input_configuration:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:unknown_metadata_explicit_not_product_complete": {
+      "passed": 1,
+      "total": 1
+    },
+    "research:user_unknown_location_review_bound_to_all_eight": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:accepted_start_not_completed_results": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:accepted_transport_only_preserves_all_logical_sources": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:actual_startup_probe:exists": {
+      "passed": 5,
+      "total": 5
+    },
+    "research_job:actual_startup_probe:sha_and_bytes": {
+      "passed": 5,
+      "total": 5
+    },
+    "research_job:bounded_scheduler_status_not_cuda_proof": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:exact_attempt_source_archive:exists": {
+      "passed": 2,
+      "total": 2
+    },
+    "research_job:exact_attempt_source_archive:sha_and_bytes": {
+      "passed": 2,
+      "total": 2
+    },
+    "research_job:exact_attempt_uncompressed_notebook": {
+      "passed": 2,
+      "total": 2
+    },
+    "research_job:probe_discloses_unknown_frame_and_cuda_progress": {
+      "passed": 5,
+      "total": 5
+    },
+    "research_job:rejected_packet_retained_not_executed": {
+      "passed": 1,
+      "total": 1
+    },
+    "research_job:source_and_native_asset_dataset_attached_private": {
+      "passed": 1,
+      "total": 1
+    },
+    "retention:no_video_weights_or_100MB_artifact": {
+      "passed": 267,
+      "total": 267
+    },
+    "review_bridge:actual_machine_pilot_present": {
+      "passed": 1,
+      "total": 1
+    },
+    "review_bridge:empty_overlay_preserves_machine_payloads": {
+      "passed": 1,
+      "total": 1
+    },
+    "review_bridge:executed_helper:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "review_bridge:executed_helper:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "review_bridge:executed_tests:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "review_bridge:executed_tests:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "review_bridge:retained_empty_overlay:exists": {
+      "passed": 8,
+      "total": 8
+    },
+    "review_bridge:retained_empty_overlay:sha_and_bytes": {
+      "passed": 8,
+      "total": 8
+    },
+    "review_bridge:technical_not_new_manual_evidence": {
+      "passed": 1,
+      "total": 1
+    },
+    "source:aggregation_validates_selected_machine_or_review_source": {
+      "passed": 1,
+      "total": 1
+    },
+    "source:frozen_review_algorithm:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "source:frozen_review_algorithm:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "source:unfiltered_full_counting_scope": {
+      "passed": 1,
+      "total": 1
+    },
+    "source:valid_python_ast": {
+      "passed": 8,
+      "total": 8
+    },
+    "source_history:compressed_archive:exists": {
+      "passed": 21,
+      "total": 21
+    },
+    "source_history:compressed_archive:sha_and_bytes": {
+      "passed": 21,
+      "total": 21
+    },
+    "source_history:exact_original_logical_bytes": {
+      "passed": 21,
+      "total": 21
+    },
+    "source_history:unique_original_bindings": {
+      "passed": 2,
+      "total": 2
+    },
+    "submission:actual_packaging_claims": {
+      "passed": 3,
+      "total": 3
+    },
+    "submission:base_builder_proof:exists": {
+      "passed": 2,
+      "total": 2
+    },
+    "submission:base_builder_proof:sha_and_bytes": {
+      "passed": 2,
+      "total": 2
+    },
+    "submission:builder_proof:exists": {
+      "passed": 3,
+      "total": 3
+    },
+    "submission:builder_proof:sha_and_bytes": {
+      "passed": 3,
+      "total": 3
+    },
+    "submission:bundle_actual_logical_bytes": {
+      "passed": 145,
+      "total": 145
+    },
+    "submission:bundle_binding_hash": {
+      "passed": 3,
+      "total": 3
+    },
+    "submission:bundle_matches_canonical_or_retained_source": {
+      "passed": 145,
+      "total": 145
+    },
+    "submission:canonical_cells_preserved_after_bootstrap": {
+      "passed": 3,
+      "total": 3
+    },
+    "submission:exact_kernel_metadata:exists": {
+      "passed": 3,
+      "total": 3
+    },
+    "submission:exact_kernel_metadata:sha_and_bytes": {
+      "passed": 3,
+      "total": 3
+    },
+    "submission:external_transport_exact_approved_asset_row": {
+      "passed": 8,
+      "total": 8
+    },
+    "submission:packaging_source_proof:exists": {
+      "passed": 145,
+      "total": 145
+    },
+    "submission:packaging_source_proof:sha_and_bytes": {
+      "passed": 145,
+      "total": 145
+    },
+    "submission:retained_hash_bound_source_bundle": {
+      "passed": 1,
+      "total": 1
+    },
+    "submission:submitted_archive_matches_packaging_proof": {
+      "passed": 3,
+      "total": 3
+    },
+    "submission:submitted_archive_not_claimed_executed_notebook": {
+      "passed": 3,
+      "total": 3
+    },
+    "transport:actual_dataset_has_exact_nine_expanded_files": {
+      "passed": 1,
+      "total": 1
+    },
+    "transport:actual_private_dataset_listing:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "transport:actual_private_dataset_listing:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "transport:byte_identical_native_png:exists": {
+      "passed": 8,
+      "total": 8
+    },
+    "transport:byte_identical_native_png:sha_and_bytes": {
+      "passed": 8,
+      "total": 8
+    },
+    "transport:exact_private_asset_manifest:exists": {
+      "passed": 1,
+      "total": 1
+    },
+    "transport:exact_private_asset_manifest:sha_and_bytes": {
+      "passed": 1,
+      "total": 1
+    },
+    "transport:explicit_v3_source_binding": {
+      "passed": 1,
+      "total": 1
+    },
+    "transport:logical_source_plus_transport_binding": {
+      "passed": 1,
+      "total": 1
+    },
+    "transport:png_bound_to_exact_approved_source_frame": {
+      "passed": 8,
+      "total": 8
+    },
+    "transport:private_original_eight_pngs_only": {
+      "passed": 1,
+      "total": 1
+    }
+  },
+  "failures": [],
+  "diagnostics": {
+    "model_tracker_encoder_resolver_execution": false,
+    "full_video_decode_execution": false,
+    "scope": "Phase8 code, actual eight-input preparation, source-bound geometry/user decisions and immutable historical evidence",
+    "actual_source_frame_count_from_retained_full_decode_reports": 72590,
+    "native_pngs_independently_read": 56,
+    "preparation_software_test_counts": [
+      {
+        "run": "docs/evidence/phase_8/preparation/codex_20261015T040405_920952Z/report.json",
+        "loaded": 171,
+        "passed": 171,
+        "skipped": 0
+      },
+      {
+        "run": "docs/evidence/phase_8/preparation/kaggle_20261015T040402_298644Z/report.json",
+        "loaded": 171,
+        "passed": 169,
+        "skipped": 2
+      }
+    ],
+    "historical_source_logical_archive_uses": [
+      {
+        "path": "notebooks/phase_8_manifest_helpers.py",
+        "original_sha256": "426113f5a8e0673fc02214fdad77b94a693d646e899833921553560bf014771f"
+      },
+      {
+        "path": "notebooks/phase_8_batch_helpers.py",
+        "original_sha256": "a028315263fbf1c5b33a5a22ddea704fe4122f8328e680247dc77ec37bff18f3"
+      },
+      {
+        "path": "notebooks/phase_8_manifest_tests.py",
+        "original_sha256": "c68b649b5d8f9122819f673b277e8f78207cf53291fc4142815c65a5fd2fd5ce"
+      },
+      {
+        "path": "notebooks/phase_8_batch_tests.py",
+        "original_sha256": "6852716db9d9faab409e7cabae09c8d0e7dc14ef807a1c5f5565058c92fbe5da"
+      },
+      {
+        "path": "notebooks/08_end_to_end_batch.ipynb",
+        "original_sha256": "23628641901c4fe6da7b6cd3aba9220bc504b7501ce3ec89aeb210313bd193e4"
+      },
+      {
+        "path": "notebooks/phase_8_manifest_helpers.py",
+        "original_sha256": "426113f5a8e0673fc02214fdad77b94a693d646e899833921553560bf014771f"
+      },
+      {
+        "path": "notebooks/phase_8_batch_helpers.py",
+        "original_sha256": "a028315263fbf1c5b33a5a22ddea704fe4122f8328e680247dc77ec37bff18f3"
+      },
+      {
+        "path": "notebooks/phase_8_manifest_tests.py",
+        "original_sha256": "c68b649b5d8f9122819f673b277e8f78207cf53291fc4142815c65a5fd2fd5ce"
+      },
+      {
+        "path": "notebooks/phase_8_batch_tests.py",
+        "original_sha256": "6852716db9d9faab409e7cabae09c8d0e7dc14ef807a1c5f5565058c92fbe5da"
+      },
+      {
+        "path": "notebooks/08_end_to_end_batch.ipynb",
+        "original_sha256": "23628641901c4fe6da7b6cd3aba9220bc504b7501ce3ec89aeb210313bd193e4"
+      },
+      {
+        "path": "notebooks/08_end_to_end_batch.ipynb",
+        "original_sha256": "23628641901c4fe6da7b6cd3aba9220bc504b7501ce3ec89aeb210313bd193e4"
+      },
+      {
+        "path": "notebooks/phase_8_batch_helpers.py",
+        "original_sha256": "a028315263fbf1c5b33a5a22ddea704fe4122f8328e680247dc77ec37bff18f3"
+      },
+      {
+        "path": "notebooks/phase_8_batch_tests.py",
+        "original_sha256": "6852716db9d9faab409e7cabae09c8d0e7dc14ef807a1c5f5565058c92fbe5da"
+      },
+      {
+        "path": "notebooks/phase_8_manifest_helpers.py",
+        "original_sha256": "426113f5a8e0673fc02214fdad77b94a693d646e899833921553560bf014771f"
+      },
+      {
+        "path": "notebooks/phase_8_manifest_tests.py",
+        "original_sha256": "c68b649b5d8f9122819f673b277e8f78207cf53291fc4142815c65a5fd2fd5ce"
+      },
+      {
+        "path": "docs/evidence/phase_8/verification/build_phase8_research_bundle.py",
+        "original_sha256": "2234c9ad910288463e164b75235e3f1b196b09b097560d7c55ffedcb60d224e1"
+      }
+    ],
+    "retained_actual_preparation_run_count": 2,
+    "completed_kaggle_preparation_run": "docs/evidence/phase_8/preparation/kaggle_20261015T040402_298644Z",
+    "hash_bound_submitted_bundles": 3,
+    "delivery_scope": "FROZEN_DEVELOPMENT_AND_ACCEPTED_REMOTE_JOB_START_NOT_COMPLETED_EIGHT_VIDEO_RESULTS",
+    "actual_TGDI_frame_progress": "UNKNOWN_NO_RETAINED_MODEL_OUTPUTS",
+    "actual_TGDI_CUDA_inference_proof": "UNKNOWN_NO_RETAINED_MODEL_OUTPUTS",
+    "actual_full_scope_CPU_pilot_count": 1
+  },
+  "preliminary_only": false,
+  "checker_source_sha256": "0c153fb240824b9dd2f34802ff75247e35e971f5e057ffdc15389ae8eb561f8c"
+}

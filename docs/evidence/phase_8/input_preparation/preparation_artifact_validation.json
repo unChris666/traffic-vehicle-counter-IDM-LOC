@@ -1,0 +1,1436 @@
+{
+  "status": "PASS",
+  "claim_type": "EXPERIMENT_RESULT",
+  "validation_scope": "Retained source-preparation artifact integrity, geometry validity, source identity, independently re-decoded beginning samples; no model-quality or traffic-count metric",
+  "checks_passed": 355,
+  "checks_total": 355,
+  "native_source_images_validated": 56,
+  "independent_beginning_source_samples_validated": 40,
+  "actual_full_decode_total_from_reports": 72590,
+  "independent_second_pass_full_video_decode_performed": false,
+  "model_inference_executed": false,
+  "checks": [
+    {
+      "check": "exactly_eight_actual_inputs",
+      "passed": true
+    },
+    {
+      "check": "eight_unique_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:complete_actual_source_size",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:actual_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:retained_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:decoded_count_matches_reported_metadata",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:no_inference_or_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:beginning_actual_middle_actual_end_retained",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:0:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:0:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:0:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:15:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:15:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:15:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:30:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:30:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:30:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:45:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:45:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:45:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:59:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:59:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:59:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:4526:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:4526:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:4526:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:9051:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:9051:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:9051:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:0:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:15:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:30:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:45:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:59:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:proposal_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:proposal_source_video_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:proposal_source_frame_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:finite_simple_nonoverlapping_geometry",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:normalized_projection_line_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:normalized_projection_side_a_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:normalized_projection_side_b_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:unapproved_proposal_cannot_enable_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:direction_not_inferred",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:native_preview_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:beginning_temporal_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-PAGI:beginning_middle_end_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:complete_actual_source_size",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:actual_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:retained_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:decoded_count_matches_reported_metadata",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:no_inference_or_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:beginning_actual_middle_actual_end_retained",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:0:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:0:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:0:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:15:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:15:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:15:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:30:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:30:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:30:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:45:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:45:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:45:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:59:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:59:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:59:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:4564:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:4564:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:4564:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:9127:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:9127:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:9127:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:0:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:15:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:30:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:45:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:59:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:proposal_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:proposal_source_video_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:proposal_source_frame_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:finite_simple_nonoverlapping_geometry",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:normalized_projection_line_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:normalized_projection_side_a_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:normalized_projection_side_b_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:unapproved_proposal_cannot_enable_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:direction_not_inferred",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:native_preview_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:beginning_temporal_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SIANG:beginning_middle_end_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:complete_actual_source_size",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:actual_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:retained_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:decoded_count_matches_reported_metadata",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:no_inference_or_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:beginning_actual_middle_actual_end_retained",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:0:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:0:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:0:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:15:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:15:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:15:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:30:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:30:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:30:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:45:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:45:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:45:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:59:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:59:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:59:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:4538:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:4538:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:4538:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:9076:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:9076:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:9076:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:0:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:15:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:30:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:45:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:59:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:proposal_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:proposal_source_video_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:proposal_source_frame_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:finite_simple_nonoverlapping_geometry",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:normalized_projection_line_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:normalized_projection_side_a_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:normalized_projection_side_b_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:unapproved_proposal_cannot_enable_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:direction_not_inferred",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:native_preview_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:beginning_temporal_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-SORE:beginning_middle_end_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:complete_actual_source_size",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:actual_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:retained_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:decoded_count_matches_reported_metadata",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:no_inference_or_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:beginning_actual_middle_actual_end_retained",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:0:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:0:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:0:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:15:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:15:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:15:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:30:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:30:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:30:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:45:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:45:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:45:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:59:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:59:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:59:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:4511:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:4511:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:4511:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:9021:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:9021:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:9021:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:0:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:15:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:30:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:45:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:59:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:proposal_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:proposal_source_video_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:proposal_source_frame_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:finite_simple_nonoverlapping_geometry",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:normalized_projection_line_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:normalized_projection_side_a_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:normalized_projection_side_b_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:unapproved_proposal_cannot_enable_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:direction_not_inferred",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:native_preview_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:beginning_temporal_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKDAY-MALAM:beginning_middle_end_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:complete_actual_source_size",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:actual_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:retained_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:decoded_count_matches_reported_metadata",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:no_inference_or_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:beginning_actual_middle_actual_end_retained",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:0:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:0:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:0:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:15:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:15:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:15:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:30:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:30:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:30:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:45:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:45:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:45:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:59:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:59:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:59:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:4508:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:4508:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:4508:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:9016:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:9016:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:9016:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:0:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:15:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:30:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:45:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:59:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:proposal_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:proposal_source_video_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:proposal_source_frame_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:finite_simple_nonoverlapping_geometry",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:normalized_projection_line_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:normalized_projection_side_a_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:normalized_projection_side_b_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:unapproved_proposal_cannot_enable_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:direction_not_inferred",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:native_preview_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:beginning_temporal_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-PAGI:beginning_middle_end_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:complete_actual_source_size",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:actual_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:retained_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:decoded_count_matches_reported_metadata",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:no_inference_or_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:beginning_actual_middle_actual_end_retained",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:0:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:0:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:0:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:15:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:15:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:15:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:30:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:30:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:30:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:45:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:45:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:45:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:59:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:59:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:59:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:4562:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:4562:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:4562:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:9123:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:9123:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:9123:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:0:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:15:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:30:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:45:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:59:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:proposal_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:proposal_source_video_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:proposal_source_frame_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:finite_simple_nonoverlapping_geometry",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:normalized_projection_line_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:normalized_projection_side_a_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:normalized_projection_side_b_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:unapproved_proposal_cannot_enable_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:direction_not_inferred",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:native_preview_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:beginning_temporal_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SIANG:beginning_middle_end_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:complete_actual_source_size",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:actual_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:retained_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:decoded_count_matches_reported_metadata",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:no_inference_or_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:beginning_actual_middle_actual_end_retained",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:0:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:0:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:0:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:15:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:15:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:15:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:30:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:30:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:30:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:45:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:45:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:45:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:59:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:59:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:59:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:4569:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:4569:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:4569:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:9137:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:9137:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:9137:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:0:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:15:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:30:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:45:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:59:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:proposal_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:proposal_source_video_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:proposal_source_frame_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:finite_simple_nonoverlapping_geometry",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:normalized_projection_line_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:normalized_projection_side_a_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:normalized_projection_side_b_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:unapproved_proposal_cannot_enable_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:direction_not_inferred",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:native_preview_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:beginning_temporal_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-SORE:beginning_middle_end_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:complete_actual_source_size",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:actual_source_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:retained_report_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:decoded_count_matches_reported_metadata",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:no_inference_or_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:beginning_actual_middle_actual_end_retained",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:0:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:0:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:0:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:15:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:15:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:15:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:30:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:30:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:30:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:45:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:45:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:45:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:59:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:59:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:59:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:4516:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:4516:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:4516:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:9031:native_png_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:9031:native_png_dimensions",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:9031:native_png_bgr_pixel_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:0:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:15:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:30:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:45:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:59:independent_source_decode_matches_sample",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:proposal_file_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:proposal_source_video_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:proposal_source_frame_bound",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:finite_simple_nonoverlapping_geometry",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:normalized_projection_line_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:normalized_projection_side_a_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:normalized_projection_side_b_exact",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:unapproved_proposal_cannot_enable_counting",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:direction_not_inferred",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:native_preview_sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:beginning_temporal_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "TGDI-WEEKEND-MALAM:beginning_middle_end_contact_sheet:sha256",
+      "passed": true
+    },
+    {
+      "check": "eight_video_overview_sha256",
+      "passed": true
+    }
+  ],
+  "inventory_path": "docs/evidence/phase_8/inventory/TGDI_actual_discovery.json",
+  "inventory_sha256": "3ed2582d9feac2f98efbe4d513b5b6d205fc24b53fe91d69303f285c7c99f232"
+}

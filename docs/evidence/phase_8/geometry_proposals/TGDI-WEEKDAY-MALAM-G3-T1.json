@@ -1,0 +1,228 @@
+{
+  "draft_id": "TGDI-WEEKDAY-MALAM-G3-T1",
+  "status": "PROPOSAL_NOT_HUMAN_APPROVED",
+  "claim_type": "PROPOSAL",
+  "source_video": {
+    "filename": "TGDI-WEEKDAY-MALAM.mp4",
+    "sha256": "21436eab94addc8358998d5b02064fb952bc568a2884db91ba0ab4edd270ed51",
+    "size_bytes": 50600176,
+    "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-MALAM.mp4"
+  },
+  "source_frame": {
+    "frame_index": 0,
+    "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-MALAM/frame_000000000.png",
+    "sha256": "9a47fc49f461c7a75d1158101cadfd0a080c13b577ffc3db48ed9c3ea476a52d",
+    "bgr_uint8_pixel_sha256": "1de12c0da7faf4279063a2a43d7193d8dbee1b005fed1e990b0e11e672462f28",
+    "width": 640,
+    "height": 480,
+    "lossless": true,
+    "source": "actual_sequential_OpenCV_decode",
+    "coordinate_space": "native_full_frame_pixels",
+    "origin": "upper_left",
+    "x_axis": "right",
+    "y_axis": "down"
+  },
+  "template_source": {
+    "path": "docs/evidence/phase_5/accepted_geometry/TOR3-PAGI-G3.json",
+    "sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15"
+  },
+  "template_reference": {
+    "width": 960.0,
+    "height": 540.0,
+    "claim_type": "NEW_ENGINEERING_CANVAS_ACCEPTED_IN_G3_REVIEW_NOT_DISCOVERED_SOURCE_SIZE",
+    "reason": "Fits all supplied points and uses16:9 like this TOR3-PAGI frame"
+  },
+  "normalization_convention": "u=x/reference_width, v=y/reference_height; origin upper-left, x rightward, y downward; continuous image-edge coordinates",
+  "normalized": {
+    "line": {
+      "P1": [
+        0.0046875,
+        0.9564814814814815
+      ],
+      "P2": [
+        0.9754166666666666,
+        0.5655555555555555
+      ]
+    },
+    "side_a_polygon": [
+      [
+        0.0046875,
+        0.9564814814814815
+      ],
+      [
+        0.0046875,
+        0.6448148148148148
+      ],
+      [
+        0.5807291666666666,
+        0.3061111111111111
+      ],
+      [
+        0.9756250000000001,
+        0.5662962962962963
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        0.0046875,
+        0.9564814814814815
+      ],
+      [
+        0.9114583333333334,
+        0.5920825932680884
+      ],
+      [
+        0.9114583333333334,
+        0.9861111111111112
+      ],
+      [
+        0.0046875,
+        0.9861111111111112
+      ]
+    ],
+    "side_b_max_u": 0.9114583333333334
+  },
+  "line_endpoints_reference": {
+    "P1": [
+      4.5,
+      516.5
+    ],
+    "P2": [
+      936.4,
+      305.4
+    ]
+  },
+  "side_a_polygon_reference": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      4.5,
+      348.2
+    ],
+    [
+      557.5,
+      165.3
+    ],
+    [
+      936.6,
+      305.8
+    ]
+  ],
+  "side_b_polygon_reference": [
+    [
+      4.5,
+      516.5
+    ],
+    [
+      875.0,
+      319.72460036476775
+    ],
+    [
+      875.0,
+      532.5
+    ],
+    [
+      4.5,
+      532.5
+    ]
+  ],
+  "perimeter_labels": [
+    "P1A",
+    "P1B",
+    "P1D",
+    "P1C"
+  ],
+  "rendered_native_pixels": {
+    "width": 640,
+    "height": 480,
+    "line": {
+      "P1": [
+        3.0,
+        459.1111111111111
+      ],
+      "P2": [
+        624.2666666666667,
+        271.46666666666664
+      ]
+    },
+    "side_a_polygon": [
+      [
+        3.0,
+        459.1111111111111
+      ],
+      [
+        3.0,
+        309.5111111111111
+      ],
+      [
+        371.66666666666663,
+        146.93333333333334
+      ],
+      [
+        624.4000000000001,
+        271.8222222222222
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        3.0,
+        459.1111111111111
+      ],
+      [
+        583.3333333333334,
+        284.19964476868245
+      ],
+      [
+        583.3333333333334,
+        473.33333333333337
+      ],
+      [
+        3.0,
+        473.33333333333337
+      ]
+    ],
+    "side_b_max_x": 583.3333333333334
+  },
+  "line_polygon_endpoint_difference_reference": {
+    "line_P2": [
+      936.4,
+      305.4
+    ],
+    "polygon_A_right_vertex": [
+      936.6,
+      305.8
+    ],
+    "line_minus_polygon": [
+      -0.2,
+      -0.4
+    ],
+    "snapped": false
+  },
+  "transfer_policy": "Explicit full-frame normalized G3 projection only; no crop, rotation, snapping, stabilization or road alignment inferred. Aspect ratio/viewpoint may differ; per-video review required.",
+  "selected_anchor": "bottom_center",
+  "anchor_source": "future raw detector-linked measured emitted vehicle bbox; no model, bbox or track BC produced by this preparation",
+  "confirmed_direction_metadata": null,
+  "direction_review": {
+    "A_TO_B": null,
+    "B_TO_A": null,
+    "status": "UNKNOWN_REQUIRES_PER_VIDEO_USER_REVIEW"
+  },
+  "geometry_review_confirmed": false,
+  "geometry_contract_accepted": false,
+  "counting_execution_allowed": false,
+  "approval_feedback": null,
+  "preview": {
+    "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-MALAM-G3-T1.png",
+    "sha256": "2092bd9e93380a35dffbc37ebb62b7ba571a4e1a564db13129938e302215cc9d",
+    "native_width": 640,
+    "native_height": 480
+  },
+  "review_questions": [
+    "Does the yellow finite line cross both intended traffic corridors?",
+    "Do A and B contain visible measured trajectory context before and after crossing?",
+    "Does the B right cap, burned-in map/text, parked objects or occlusion require a revision?",
+    "Confirm or revise A_TO_B and B_TO_A camera-approach semantics for this particular video."
+  ]
+}

@@ -1,0 +1,359 @@
+{
+  "actual_model_inference_executed": false,
+  "base_builder_sha256": "157a03bbbab8f5aa1adddc654db6c08d604100db275186caaf0f60db897aac31",
+  "bootstrap_parameter_overrides": {
+    "MANIFEST_PATH": "docs/evidence/phase_8/config/batch_manifest_TGDI_G3_T1_v2.json",
+    "MODE": "run_batch",
+    "OUTPUT_ROOT": "/kaggle/working/phase_8_tgdi_research"
+  },
+  "builder_sha256": "a3896801b1c1b5f3017452bfc396d17926c035b790b5d5e223ddbecef91ed1e6",
+  "business_metadata_complete": false,
+  "canonical_code_cells_modified": false,
+  "canonical_notebook_path": "notebooks/08_end_to_end_batch.ipynb",
+  "canonical_notebook_sha256": "3b03966e8dba5c72d90360005cf870305f9a8675c30e41fac376006d22cec903",
+  "claim_type": "SOURCE_PACKAGING_NOT_MODEL_EXECUTION",
+  "embedded_source_file_count": 55,
+  "external_native_frame_transport": {
+    "dataset_ref": "chrisbiran/tgdi-phase8-geometry-evidence-v1",
+    "dataset_root_candidates": [
+      "/kaggle/input/datasets/chrisbiran/tgdi-phase8-geometry-evidence-v1",
+      "/kaggle/input/tgdi-phase8-geometry-evidence-v1"
+    ],
+    "external_frame_count": 8,
+    "kind": "BYTE_IDENTICAL_NATIVE_PNG_PRIVATE_DATASET",
+    "manifest_filename": "geometry_frames_manifest.json",
+    "manifest_sha256": "5027f621712085b52f05f246b6593bbab5d6bdc2f26f3fe9419e9496451b6145",
+    "native_png_bytes_changed": false,
+    "source_manifest_sha256": "d3ab912965beea7cffbb159ed5b7c7fa8eeac2081b2ba7d872e8822fa416892d"
+  },
+  "external_optional_audit_previews": [
+    {
+      "native_height": 480,
+      "native_width": 640,
+      "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-PAGI-G3-T1.png",
+      "reason": "Optional overlay audit preview; native review PNG is bundled",
+      "sha256": "f42645b32ea6fec9665163e3feb021dd7d50be6cd6fa14cc716e802a4875797a"
+    },
+    {
+      "native_height": 480,
+      "native_width": 640,
+      "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-SIANG-G3-T1.png",
+      "reason": "Optional overlay audit preview; native review PNG is bundled",
+      "sha256": "da5e74fb502599b87605f27fb65e370416bc56a255a19972a1081ca08eed73fd"
+    },
+    {
+      "native_height": 480,
+      "native_width": 640,
+      "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-SORE-G3-T1.png",
+      "reason": "Optional overlay audit preview; native review PNG is bundled",
+      "sha256": "613c44af304fdca2fe7b64aa8d998739b854e9f684640fcb8fa0e2da6b769f56"
+    },
+    {
+      "native_height": 480,
+      "native_width": 640,
+      "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-MALAM-G3-T1.png",
+      "reason": "Optional overlay audit preview; native review PNG is bundled",
+      "sha256": "2092bd9e93380a35dffbc37ebb62b7ba571a4e1a564db13129938e302215cc9d"
+    },
+    {
+      "native_height": 480,
+      "native_width": 640,
+      "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-PAGI-G3-T1.png",
+      "reason": "Optional overlay audit preview; native review PNG is bundled",
+      "sha256": "d8e3b85ea056ec634ab30a715712733ffa61f58e1d6197be88dc02ba13a249ac"
+    },
+    {
+      "native_height": 480,
+      "native_width": 640,
+      "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SIANG-G3-T1.png",
+      "reason": "Optional overlay audit preview; native review PNG is bundled",
+      "sha256": "714c07b21e788b3fb0865f557cffe1c2d4e62d267597d97da55177703b6cbd9b"
+    },
+    {
+      "native_height": 480,
+      "native_width": 640,
+      "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SORE-G3-T1.png",
+      "reason": "Optional overlay audit preview; native review PNG is bundled",
+      "sha256": "da4726854a8105de64784ac04ff156473be428659149eb07a067e654a9d2194b"
+    },
+    {
+      "native_height": 480,
+      "native_width": 640,
+      "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-MALAM-G3-T1.png",
+      "reason": "Optional overlay audit preview; native review PNG is bundled",
+      "sha256": "d01645ca65ec0c2bbd310ee52bdceafa207722b683da3e34219795ea4c24f1b5"
+    }
+  ],
+  "kernel_metadata": {
+    "path": "/tmp/phase8-kaggle-research-v3/kernel-metadata.json",
+    "sha256": "3dc8df63524a563e5e5ff6d69c8cfe7c0b48a4d7e29ed852bb1de780d48c3f01"
+  },
+  "mode": "run_batch",
+  "model_weights_bundled": false,
+  "research_only": true,
+  "source_bundle_binding_sha256": "59e44ded4f70cbe564ec030fbbf1f8498726f68863de0094c5fb515c1815083c",
+  "source_bundle_transport_binding_sha256": "06cdc752447a0a4cf3823c691727c3d2b1b3b4454caa3ef3b474f026e5fc1a81",
+  "source_file_count": 63,
+  "source_files": {
+    "docs/evidence/phase_5/accepted_geometry/TOR3-PAGI-G3.json": {
+      "bytes": 6952,
+      "sha256": "8d9ab10d63b7e50205d6e778061c8f22f98daba619eb1176b59003fd33391c15"
+    },
+    "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json": {
+      "bytes": 2623,
+      "sha256": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723"
+    },
+    "docs/evidence/phase_6/option_b_verification/build_reviewed_comparison.py": {
+      "bytes": 41357,
+      "sha256": "663a52190f8c495533d50b36509232dad0d3fb64e0d31c0c3d669415fb38e81b"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "0da1040532bb4150fcfe7b4e3aa2aa306df31ff4283a43052d4a863fd4637b4d"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SIANG-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "a6b680a4c514ac05e69be14b66322d30cb9b65b626b4605fa7fe9d4cd2593d22"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SORE-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "498531cf729056c9496601aa7c2fedb8b90ea8156faee1cbb758dae03859a535"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-MALAM-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "ae408de960b35d9c6ec8e94cc5a79d29ea9b52d42603c65553a4367ea2521255"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "10ff6daafeb7b468b26b130e0605b14e362f69ec11fc5386f21facdc19f8f25e"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SIANG-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "edd6ce5cab83c41568eb4d3dd6f34368b6beb0649e610b793c2ed2af3eae5839"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SORE-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "b71e65ab113a4cb474498f7ae71bbc6b3c6cc55aa739c4262bd8989f08ad24fc"
+    },
+    "docs/evidence/phase_8/authorization/dataset_clarification_20261015.json": {
+      "bytes": 816,
+      "sha256": "f48c4f8fc98bc4ed95713c00653691446642fefd06dc0fdab2778ab4be99d481"
+    },
+    "docs/evidence/phase_8/config/batch_manifest_TGDI_G3_T1_v2.json": {
+      "bytes": 17943,
+      "sha256": "d3ab912965beea7cffbb159ed5b7c7fa8eeac2081b2ba7d872e8822fa416892d"
+    },
+    "docs/evidence/phase_8/config/batch_manifest_v1.json": {
+      "bytes": 15994,
+      "sha256": "7410e8d041144224fb93f5c819301aabd6789090b5e5c266c5554cd039e06459"
+    },
+    "docs/evidence/phase_8/config/processing_profile_v1.json": {
+      "bytes": 3627,
+      "sha256": "cdd1776f30b3ce2af5f22aa415a4c87d7936c7fbb507bbf1423d557427b07f5a"
+    },
+    "docs/evidence/phase_8/feedback/TGDI-WEEKDAY-MALAM-G3-T1_review_v1.json": {
+      "bytes": 1299,
+      "sha256": "2af62fb0e19ed4835b18f83771769ca7c2561508fcd39704b7f034cf3388c593"
+    },
+    "docs/evidence/phase_8/feedback/TGDI-WEEKDAY-PAGI-G3-T1_review_v1.json": {
+      "bytes": 1297,
+      "sha256": "312dd12b86702a86fd900a22e0c2dd48cf62a196ebbf285a296c7c925f061759"
+    },
+    "docs/evidence/phase_8/feedback/TGDI-WEEKDAY-SIANG-G3-T1_review_v1.json": {
+      "bytes": 1299,
+      "sha256": "7bf52500dfe6bdd072c804abb69bb4f329d2f7b9dc7f0eb655a0ecf536192060"
+    },
+    "docs/evidence/phase_8/feedback/TGDI-WEEKDAY-SORE-G3-T1_review_v1.json": {
+      "bytes": 1297,
+      "sha256": "92e852800da30325a486aa97922fd2c4c8071198a8c968f946a65fc6734a4dd1"
+    },
+    "docs/evidence/phase_8/feedback/TGDI-WEEKEND-MALAM-G3-T1_review_v1.json": {
+      "bytes": 1299,
+      "sha256": "23f9558dcbc24b2e8e97f7cc39df14604bdf976b3e7eff6396f46debf33344a3"
+    },
+    "docs/evidence/phase_8/feedback/TGDI-WEEKEND-PAGI-G3-T1_review_v1.json": {
+      "bytes": 1297,
+      "sha256": "4d65c4c4c859751501b29a5214db7cec87af0ad1e07df751af9a68bdefeaaaa2"
+    },
+    "docs/evidence/phase_8/feedback/TGDI-WEEKEND-SIANG-G3-T1_review_v1.json": {
+      "bytes": 1299,
+      "sha256": "6f29c8f75d841b2ab2a5fac4c6316f4f6b2f9394253c8653afe7cae3651bab82"
+    },
+    "docs/evidence/phase_8/feedback/TGDI-WEEKEND-SORE-G3-T1_review_v1.json": {
+      "bytes": 1297,
+      "sha256": "c96b93e538bf9843b8f913b87ec24049a6458fd722753a043a4cc0b9d86ca707"
+    },
+    "docs/evidence/phase_8/feedback/TGDI_all_eight_user_confirmation_20261015.json": {
+      "bytes": 1649,
+      "sha256": "791594449c3e1eeaefa99bc8acaf520b035eacc285a03daef76d9582a2a01e1b"
+    },
+    "docs/evidence/phase_8/feedback/TGDI_unknown_location_metadata_review_v1.json": {
+      "bytes": 1503,
+      "sha256": "c698b91b17a5f12492e4546fcd32b4ceacbd425d6cdc34bbf59de1b5c745048b"
+    },
+    "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-MALAM-G3-T1.json": {
+      "bytes": 5326,
+      "sha256": "4aaac40543dcfb395e1d1d277702944eb44a7abf9c8b1a5aebe1e0382aec0201"
+    },
+    "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-PAGI-G3-T1.json": {
+      "bytes": 5321,
+      "sha256": "06a305ddaed8bf91ee8232e025ffb63981e36fdd7190ee27366ff27cde59318e"
+    },
+    "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-SIANG-G3-T1.json": {
+      "bytes": 5326,
+      "sha256": "86073942d07a9123b99b08eaffd61d5f8f44369139847f93f460ed692760c330"
+    },
+    "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-SORE-G3-T1.json": {
+      "bytes": 5321,
+      "sha256": "d8f9f18650f70dee2aa88481a901143eafa33f9f7ff46def3b43d992b496862e"
+    },
+    "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-MALAM-G3-T1.json": {
+      "bytes": 5326,
+      "sha256": "47552f73b038b7b1a8684ef3a1af744ef636cfee987adde41c80e60070731fe2"
+    },
+    "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-PAGI-G3-T1.json": {
+      "bytes": 5321,
+      "sha256": "b4b0e095d0e14aaaf8c49be8f51abb7792893126db1e27be71c321d3ee15a21d"
+    },
+    "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SIANG-G3-T1.json": {
+      "bytes": 5326,
+      "sha256": "1a233dbd052e1fc8596aaba8d07cb62bc93fb9a99b1c2376881b5dadcaa49e70"
+    },
+    "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SORE-G3-T1.json": {
+      "bytes": 5321,
+      "sha256": "0622d3a9051cae89aed62e060bb37579b463909cfdc77f0c3a7890613c042853"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-MALAM/frame_000000000.png": {
+      "bytes": 409913,
+      "sha256": "9a47fc49f461c7a75d1158101cadfd0a080c13b577ffc3db48ed9c3ea476a52d"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-MALAM/source_inspection.json": {
+      "bytes": 8950,
+      "sha256": "f203df94dc0cf82f1966bc662aabf6cbafc040a89c5b1919bc5fdf78b350f555"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-PAGI/frame_000000000.png": {
+      "bytes": 513159,
+      "sha256": "52b8cae0e4ad3b320e189c1b1bf276bf4fd16008f215cfadeb7afad75912a965"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-PAGI/source_inspection.json": {
+      "bytes": 8930,
+      "sha256": "742585a8403c4e35cfaded5fe9619062702c8b541b35dbc1d5147362d9baf640"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-SIANG/frame_000000000.png": {
+      "bytes": 479048,
+      "sha256": "6f4a1eff8388bce64cd67f35828a98c7ff0c6148b9bbe4d1fdecb7a2c99a2139"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-SIANG/source_inspection.json": {
+      "bytes": 8941,
+      "sha256": "a410b9c555329aa59d8a92a8bdb85c878252cd13c7441bb40331cd3bd9a7d07e"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-SORE/frame_000000000.png": {
+      "bytes": 458249,
+      "sha256": "58a8d898fd49d0c6ebbf9f06cb5b14430aa1e8a7df6e54874c448f86481c02b0"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-SORE/source_inspection.json": {
+      "bytes": 8927,
+      "sha256": "2882d47e76cfa3fab007fe0272029d39a028ba82c7df57f13243bae150af9137"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-MALAM/frame_000000000.png": {
+      "bytes": 384584,
+      "sha256": "105ac47c81c5fd1f4009c273dde15856dbaef4e51931497782e4413867497b19"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-MALAM/source_inspection.json": {
+      "bytes": 8943,
+      "sha256": "829aebc963c4d6bedf42e3875e218ee0d89b434be59b137f35db6170ce6db7c6"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-PAGI/frame_000000000.png": {
+      "bytes": 562618,
+      "sha256": "fc45a6dee3bf791a98f7894d60abb67517e3034dde24d11140e2e8f49d3e42f6"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-PAGI/source_inspection.json": {
+      "bytes": 8927,
+      "sha256": "09037facb4f9e470aaf596722c30624efe9fad880c3067724b30d16c74c265d3"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000000000.png": {
+      "bytes": 531311,
+      "sha256": "5ac38811beabd6e581503a5591be137bd9bc61f40d030b396448dcffbe693dd4"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/source_inspection.json": {
+      "bytes": 8939,
+      "sha256": "31174af665268b9e333858ad947568761ac4e7006676133386c3ddca84fe4e8b"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SORE/frame_000000000.png": {
+      "bytes": 508637,
+      "sha256": "f88f618eb0b374c5612b6e33b32ccb33e490b50d7e6d9d871f539e100837db3b"
+    },
+    "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SORE/source_inspection.json": {
+      "bytes": 8928,
+      "sha256": "b72b5e59e70316f8c14a5860cb4887ea9726c595de5906ee7a2ffc087e929941"
+    },
+    "notebooks/08_end_to_end_batch.ipynb": {
+      "bytes": 16271,
+      "sha256": "3b03966e8dba5c72d90360005cf870305f9a8675c30e41fac376006d22cec903"
+    },
+    "notebooks/phase_5_geometry_helpers.py": {
+      "bytes": 30807,
+      "sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9"
+    },
+    "notebooks/phase_6_counting_helpers.py": {
+      "bytes": 43656,
+      "sha256": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5"
+    },
+    "notebooks/phase_6_identity_resolution_helpers.py": {
+      "bytes": 48503,
+      "sha256": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054"
+    },
+    "notebooks/phase_7_night_helpers.py": {
+      "bytes": 33940,
+      "sha256": "6a31794bad0c5cd346575ad4602adb5d10f17bd14cc1094dd5f2b207b0935889"
+    },
+    "notebooks/phase_7_temporal_helpers.py": {
+      "bytes": 50246,
+      "sha256": "2ef8de2d0d309b86bae6a75a2135c59d8dd09e203610fc444c6023c0614d9c74"
+    },
+    "notebooks/phase_8_batch_helpers.py": {
+      "bytes": 39832,
+      "sha256": "3e5c5f40ebaeae2f2c0bb08147b0c77b9b767dfdb883dfdefd716d689761baed"
+    },
+    "notebooks/phase_8_batch_tests.py": {
+      "bytes": 28359,
+      "sha256": "bee61fcaa83e2464dee49621c072babe39e3be64e927978585c891fd2e4fc567"
+    },
+    "notebooks/phase_8_manifest_helpers.py": {
+      "bytes": 38877,
+      "sha256": "0d6dbe9a895cb1aecd6af93779f26b62c0389efe219d23bf210ff1ec860e663f"
+    },
+    "notebooks/phase_8_manifest_tests.py": {
+      "bytes": 36038,
+      "sha256": "2cc9f91849b9695b3404126faf736797dfec6264aaaf287e6a8a55cd6a34cba9"
+    },
+    "notebooks/phase_8_pipeline_helpers.py": {
+      "bytes": 36587,
+      "sha256": "331116ac22c825c88b987e2e33b227113ed9843b58c96898f584897dac6aa124"
+    },
+    "notebooks/phase_8_pipeline_tests.py": {
+      "bytes": 23440,
+      "sha256": "1e6a79ae0cdc83cffe4a7d37562ad46fab003ab17ef1c7b7b7a4bceb6e3e027d"
+    },
+    "notebooks/phase_8_review_helpers.py": {
+      "bytes": 34424,
+      "sha256": "c69c8bdaea8d70bc6825ada865553f23260a6436e259356af21f089e332abbde"
+    },
+    "notebooks/phase_8_review_tests.py": {
+      "bytes": 25018,
+      "sha256": "a3d1f4d5e1ad56cb0de3970378297bd2db7b080ba0145a1f74ed651e02cf8cc7"
+    }
+  },
+  "submission_folder": "/tmp/phase8-kaggle-research-v3",
+  "submitted_notebook": {
+    "bytes": 328853,
+    "path": "/tmp/phase8-kaggle-research-v3/phase8_tgdi_research.ipynb",
+    "sha256": "650525664cb5c465f555129785efd82c71257dfee1be76e791203485669e49c1"
+  },
+  "upload_performed": false,
+  "videos_bundled": false
+}

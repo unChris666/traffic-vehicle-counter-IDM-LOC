@@ -1,0 +1,36 @@
+{
+  "association": {
+    "component": {
+      "max_center_distance_norm": 0.51,
+      "max_relative_motion_residual_norm": 0.15,
+      "min_common_frames": 3,
+      "min_consecutive_common_frames": 3,
+      "min_first_bc_inside_second_fraction": 1.0
+    },
+    "same_vehicle": {
+      "max_center_distance_norm": 0.1,
+      "max_relative_motion_residual_norm": 0.01,
+      "min_common_frames": 2,
+      "min_consecutive_common_frames": 2,
+      "min_iou": 0.59
+    }
+  },
+  "confirmation_observations": 1,
+  "grouping_enabled": true,
+  "input_identity": {
+    "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+    "height": 720,
+    "parent_run_id": "20261014T062858_002323Z",
+    "records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+    "variant": "raw",
+    "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "width": 1280
+  },
+  "metric": "passage",
+  "neutral_band_px": 0.0,
+  "policy_version": "phase6_option_b_v1",
+  "scope": {
+    "association_frame_windows": null,
+    "track_ids": null
+  }
+}

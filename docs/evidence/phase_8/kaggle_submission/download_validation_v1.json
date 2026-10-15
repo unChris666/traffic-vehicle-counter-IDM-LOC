@@ -1,0 +1,84 @@
+{
+  "artifact_checks": [
+    {
+      "original_bytes_preserved": true,
+      "path": "discovered_videos.json",
+      "sha256": "112f72c7e51f0c0d8fe6f0deabf6d25e8239b79b1069afcc95295a451e90379c",
+      "size_bytes": 5717,
+      "status": "PASS"
+    },
+    {
+      "original_bytes_preserved": true,
+      "path": "effective_video_configuration.json",
+      "sha256": "8113f0d8f77075ad1be2decb2019d0f0a8dd72bd1a2c5034b7ad03ffa8de242c",
+      "size_bytes": 15001,
+      "status": "PASS"
+    },
+    {
+      "original_bytes_preserved": true,
+      "path": "input_manifest.json",
+      "sha256": "7410e8d041144224fb93f5c819301aabd6789090b5e5c266c5554cd039e06459",
+      "size_bytes": 15994,
+      "status": "PASS"
+    },
+    {
+      "original_bytes_preserved": true,
+      "path": "processing_profile.json",
+      "sha256": "cdd1776f30b3ce2af5f22aa415a4c87d7936c7fbb507bbf1423d557427b07f5a",
+      "size_bytes": 3627,
+      "status": "PASS"
+    },
+    {
+      "original_bytes_preserved": true,
+      "path": "readiness.json",
+      "sha256": "c13e01d380e10ce01c0395b83ba266d52d5c69452a16e8da2dcbdf4c3e90e810",
+      "size_bytes": 18994,
+      "status": "PASS"
+    },
+    {
+      "original_bytes_preserved": true,
+      "path": "report.json",
+      "sha256": "30bbc6d1f3e762c4e23f31b4981ded667de24945a80d8fca6ca2d24a6edc9ce9",
+      "size_bytes": 21578,
+      "status": "PASS"
+    },
+    {
+      "original_bytes_preserved": true,
+      "path": "runtime.json",
+      "sha256": "73f730caad8a1ac83005aa5a18763c1fea182e609aac3ec2f4436d26cdd7664d",
+      "size_bytes": 809,
+      "status": "PASS"
+    },
+    {
+      "original_bytes_preserved": true,
+      "path": "software_guards.json",
+      "sha256": "5df565c046a068930a618d8df17ad440f91ef6011e452e31f41e887e98410616",
+      "size_bytes": 24960,
+      "status": "PASS"
+    },
+    {
+      "original_bytes_preserved": true,
+      "path": "source_provenance.json",
+      "sha256": "3ac774097ba2f274920ac8fe4436d0649f52735729c51aed2a490685c510eb3d",
+      "size_bytes": 2398,
+      "status": "PASS"
+    }
+  ],
+  "claim_type": "ACTUAL_ORIGINAL_KAGGLE_OUTPUT_BYTES_JSON_AND_RETAINED_MANIFEST_VERIFICATION",
+  "downloaded_json_files": 10,
+  "execution_log_path": "docs/evidence/phase_8/kaggle_submission/prepare_execution.log.gz",
+  "execution_log_sha256": "f2081655fa1ad9ba26f84fc1e696edc652d374f43abb0be83cc13fbca735d679",
+  "kernel_log_logical_bytes": 126685,
+  "kernel_log_logical_sha256": "cacab902d8f20a98fc6c1d5454c71867fc2a3edb896c76b65c70e7df7f018da7",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-batch-preparation",
+  "kernel_version": 1,
+  "manifest_bound_artifact_count": 9,
+  "manifest_sha256": "e44e8bb560e544e50fe8d74bf99a6ee9e33bc7ed6e34d21765465a5f67157545",
+  "reconstructed_output_files": false,
+  "recovery_note": "Three original JSON outputs returned HTTP502/332-byte HTML on earlier attempts; a fresh SDK output listing and plain GET without cachebuster/custom headers retrieved HTTP200 original JSON bytes. All nine original manifest bindings pass; all ten JSON originals are preserved unchanged.",
+  "retained_preparation_run_path": "docs/evidence/phase_8/preparation/kaggle_20261015T040402_298644Z",
+  "retrieved_at_utc": "2026-10-15T07:52:57.107103+00:00",
+  "run_id": "20261015T040402_298644Z",
+  "signed_urls_retained": false,
+  "success": true
+}

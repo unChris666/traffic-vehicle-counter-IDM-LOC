@@ -1,0 +1,29 @@
+{
+  "schema_version": "phase8_geometry_review_v1",
+  "claim_type": "ACTUAL_USER_GEOMETRY_REVIEW",
+  "approved": true,
+  "reviewer": "user",
+  "reviewed_at": "2026-10-15T07:50:31.191961+00:00",
+  "observation": "User accepts exact G3-T1 line/A/B for initialtrial on all8 TGDI and confirms both direction meanings; no coordinate changes.",
+  "source_video_sha256": "9271275e03bd75b2c3e373a7d1babbf8a79e4795662f691b584056f261185c9c",
+  "geometry_coordinates_sha256": "42c5638f89675ba25ed950ea5834d741ddec4678f5b7f3f9c528991b0ccad452",
+  "confirmed_direction_metadata": {
+    "A_TO_B": "approaching camera",
+    "B_TO_A": "moving away from camera"
+  },
+  "evidence_frames": [
+    {
+      "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/frame_000000000.png",
+      "sha256": "5ac38811beabd6e581503a5591be137bd9bc61f40d030b396448dcffbe693dd4",
+      "frame_index": 0
+    }
+  ],
+  "source_user_confirmation": {
+    "path": "docs/evidence/phase_8/feedback/TGDI_all_eight_user_confirmation_20261015.json",
+    "sha256": "791594449c3e1eeaefa99bc8acaf520b035eacc285a03daef76d9582a2a01e1b"
+  },
+  "source_proposal": {
+    "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SIANG-G3-T1.json",
+    "sha256": "1a233dbd052e1fc8596aaba8d07cb62bc93fb9a99b1c2376881b5dadcaa49e70"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "accepted_events": 7,
+  "aggregate_semantics": "ACCEPTED_MACHINE_PASSAGE_SUBTOTAL_NOT_ALL_TRAFFIC",
+  "all_source_episode_count": 1633,
+  "appearance_features_used": false,
+  "appearance_used_by_b_resolver": false,
+  "association_frame_windows": null,
+  "association_window_policy": "all_measured_common_frames_of_complete_selected_episodes",
+  "cache_provenance": {
+    "appearance_execution": {
+      "actual_cuda_execution_confirmed": true,
+      "association_status": "executed_nonempty_feature_pairs",
+      "encoder_calls": 7077,
+      "finite_nonzero_features_produced": 13760,
+      "status": "executed_actual_cuda"
+    },
+    "appearance_limits": "Feature hashes/norms and observer assertions retained; full embedding/cost matrices are not independent numeric proof",
+    "appearance_records_path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_7/temporal/20261014T062858_002323Z/raw/appearance_records.jsonl.gz",
+    "appearance_records_sha256": "6c6f0c40b61ed383eb382d3157e988180e765bb83827d15f93070dd3c7130d09",
+    "frame_count": 9590,
+    "geometry_path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_7/accepted_geometry/TOR3-MALAM-N1.json",
+    "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+    "measurement_provenance": "retained_phase_7_detection",
+    "new_detector_tracker_encoder_inference": false,
+    "records_path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_7/temporal/20261014T062858_002323Z/raw/track_records.jsonl.gz",
+    "records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+    "source_phase": 7,
+    "source_report_path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_7/temporal/20261014T062858_002323Z/report.json",
+    "source_report_sha256": "1bbb6bd1c392f24eb9fd74e8462aeb2e88385a798c4b6876f2585c59c99f3304"
+  },
+  "category_coverage": {
+    "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+    "car": "experimental_vehicle_passage",
+    "motorcycle": "experimental_vehicle_passage",
+    "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1",
+    "truck": "experimental_vehicle_passage"
+  },
+  "claim_type": "EXECUTED_OPTION_B_SOFTWARE_EXPERIMENT_NOT_A_BENCHMARK",
+  "complete_eight_video_batch": false,
+  "component_person_episodes": 71,
+  "configuration": {
+    "category_coverage": {
+      "bus_angkot": "BUS_ANGKOT_MAPPING_OPEN",
+      "car": "experimental_vehicle_passage",
+      "motorcycle": "experimental_vehicle_passage",
+      "pedestrian": "NOT_IMPLEMENTED_BY_FROZEN_B_V1",
+      "truck": "experimental_vehicle_passage"
+    },
+    "counting": {
+      "association": {
+        "component": {
+          "max_center_distance_norm": 0.51,
+          "max_relative_motion_residual_norm": 0.15,
+          "min_common_frames": 3,
+          "min_consecutive_common_frames": 3,
+          "min_first_bc_inside_second_fraction": 1.0
+        },
+        "same_vehicle": {
+          "max_center_distance_norm": 0.1,
+          "max_relative_motion_residual_norm": 0.01,
+          "min_common_frames": 2,
+          "min_consecutive_common_frames": 2,
+          "min_iou": 0.59
+        }
+      },
+      "confirmation_observations": 1,
+      "grouping_enabled": true,
+      "metric": "passage",
+      "neutral_band_px": 0.0,
+      "policy_version": "phase6_option_b_v1"
+    },
+    "counting_scope": "ALL_MEASURED_TRACK_EPISODES_FULL_VIDEO",
+    "detector": {
+      "baseline_provenance": "docs/evidence/phase_2/20261011T052950_360560Z_ed399fb8/detection_report.json",
+      "device": 0,
+      "package_version": "8.4.175",
+      "settings": {
+        "agnostic_nms": false,
+        "augment": false,
+        "batch": 1,
+        "classes": null,
+        "conf": 0.25,
+        "imgsz": 640,
+        "iou": 0.7,
+        "max_det": 300,
+        "nms": null,
+        "quantize": null,
+        "rect": true,
+        "seed": 0
+      },
+      "weights_bytes": 44255705,
+      "weights_path": "/kaggle/working/phase_8_assets/yolo26m.pt",
+      "weights_sha256": "401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7",
+      "weights_url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26m.pt"
+    },
+    "device": "cuda:0",
+    "encoder": {
+      "bytes": 9873245,
+      "device": "cuda:0",
+      "documented_training_domain": "MSMT17-v1 person; vehicle transfer unknown",
+      "final_vehicle_configuration": false,
+      "input_policy": "SAME_TRANSFORMED_FRAME_AS_DETECTOR",
+      "onnx_version": "1.20.1",
+      "ort_version": "1.24.4",
+      "path": "/kaggle/working/phase_8_assets/yolo26n-reid.onnx",
+      "sha256": "8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb",
+      "url": "https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo26n-reid.onnx"
+    },
+    "execution_policy": "SEQUENTIAL_ONE_FULL_VIDEO_ON_CUDA0",
+    "frame_scope": "FRAME_ZERO_TO_DECODER_END",
+    "phase": 8,
+    "profile_version": "phase8_full_video_raw_b_v1",
+    "result_semantics": "OFFLINE_MACHINE_SUBTOTAL_SEPARATE_FROM_REVIEW_NOT_COMPLETE_TRAFFIC_GROUND_TRUTH",
+    "source_bindings": {
+      "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723",
+      "notebooks/phase_5_geometry_helpers.py": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+      "notebooks/phase_6_identity_resolution_helpers.py": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054",
+      "notebooks/phase_7_night_helpers.py": "6a31794bad0c5cd346575ad4602adb5d10f17bd14cc1094dd5f2b207b0935889",
+      "notebooks/phase_7_temporal_helpers.py": "2ef8de2d0d309b86bae6a75a2135c59d8dd09e203610fc444c6023c0614d9c74"
+    },
+    "tracker": {
+      "appearance_thresh": 0.8,
+      "device": "cuda:0",
+      "fuse_score": true,
+      "gmc_method": "none",
+      "match_thresh": 0.8,
+      "new_track_thresh": 0.25,
+      "proximity_thresh": 0.5,
+      "track_buffer": 30,
+      "track_high_thresh": 0.25,
+      "track_low_thresh": 0.1,
+      "tracker_type": "botsort",
+      "with_reid": true
+    },
+    "variant": {
+      "method": "raw",
+      "name": "raw"
+    }
+  },
+  "counting_replay_wall_seconds": 8.291438039042987,
+  "counting_scope": "ALL_MEASURED_TRACK_EPISODES_FULL_VIDEO",
+  "decision_status_counts": {
+    "accepted": 7,
+    "pending_review": 49
+  },
+  "detector_tracker_encoder_rerun": false,
+  "episode_count": 1633,
+  "episode_family_counts": {
+    "other": 122,
+    "person": 744,
+    "vehicle": 767
+  },
+  "execution_kind": "ACTUAL_RETAINED_SOURCE_COUNTING_REPLAY",
+  "geometry_diagnostic_counts": {
+    "AMBIGUOUS_GAP": 14,
+    "GEOMETRY_TRANSITION": 42,
+    "ORIGIN_ESTABLISHED": 737
+  },
+  "geometry_path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_7/accepted_geometry/TOR3-MALAM-N1.json",
+  "grouping_enabled": true,
+  "identity_support_policy": "PASSAGE_LOCAL_RELATION_EVIDENCE_REQUIRED_GLOBAL_GRAPH_EXPLORATORY",
+  "input_identity": {
+    "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+    "height": 720,
+    "parent_run_id": "20261014T062858_002323Z",
+    "records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+    "variant": "raw",
+    "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "width": 1280
+  },
+  "manual_review_status": "PENDING_NEW_FULL_SCOPE_AUDIT_NO_OLD_OVERLAY_REUSE",
+  "old_events_or_review_overlays_copied": false,
+  "phase": 8,
+  "physical_identity_or_counting_accuracy_established": false,
+  "policy_version": "phase6_option_b_v1",
+  "records_path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_7/temporal/20261014T062858_002323Z/raw/track_records.jsonl.gz",
+  "relation_status_counts": {
+    "REJECTED": 1454,
+    "SUPPORTED": 82,
+    "UNRESOLVED": 35
+  },
+  "run_id": "p8_25c6f16ca2d2ff84329a6d159d1c1c98d5b7bcb24bb4646946a8c713df124f16",
+  "scope": {
+    "association_frame_windows": null,
+    "track_ids": null
+  },
+  "snapshot_id": "p8_25c6f16ca2d2ff84329a6d159d1c1c98d5b7bcb24bb4646946a8c713df124f16",
+  "source_adapter": {
+    "adapted_source_sha256": "e2588f99c29fc577a85f3fb21053edc130d9203b15a42cc4bef142e6ae7b4b47",
+    "base_source_sha256": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054",
+    "behavior_changes": "SOURCE_PROVENANCE_ENUM_ONLY_NO_ALGORITHM_OR_THRESHOLD_CHANGE",
+    "from": "\"retained_phase_2_detection\"",
+    "literal_substitution_count": 1,
+    "to": "\"retained_phase_7_detection\""
+  },
+  "source_frame_count": 9590,
+  "source_identity": {
+    "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+    "height": 720,
+    "parent_run_id": "20261014T062858_002323Z",
+    "records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+    "variant": "raw",
+    "video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+    "width": 1280
+  },
+  "source_measured_observation_count": 12479,
+  "status": "completed_full_video_machine_snapshot_review_pending"
+}

@@ -1,0 +1,19 @@
+{
+  "adapted_source_sha256": "521624ba4c6c183f6adc29721ec64c75fed0b9535c03abd06ba06193c7943bc4",
+  "algorithm_category_geometry_identity_controls_changed": false,
+  "allowed_measurement_namespaces": [
+    "retained_phase_2_detection",
+    "retained_phase_7_detection",
+    "retained_phase_8_detection"
+  ],
+  "base_path": "docs/evidence/phase_6/option_b_verification/build_reviewed_comparison.py",
+  "base_source_sha256": "663a52190f8c495533d50b36509232dad0d3fb64e0d31c0c3d669415fb38e81b",
+  "frozen_predicate_sources": {
+    "notebooks/phase_5_geometry_helpers.py": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+    "notebooks/phase_6_counting_helpers.py": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5"
+  },
+  "historical_source_modified": false,
+  "new_guard": "observation.get(\"measurement_provenance\") not in ('retained_phase_2_detection', 'retained_phase_7_detection', 'retained_phase_8_detection')",
+  "old_guard": "observation.get(\"measurement_provenance\") != \"retained_phase_2_detection\"",
+  "production_substitution_count": 1
+}

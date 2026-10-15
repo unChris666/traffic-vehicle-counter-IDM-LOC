@@ -1,0 +1,68 @@
+{
+  "claim_type": "ACTUAL_LOCAL_BUNDLE_VALIDATION_NO_MODELS_NO_UPLOAD",
+  "source_bundle_binding_sha256": "e7871390823fdc9c5aeaf32119089e51454184163b9c3bce887b6ecbb0f76a72",
+  "submitted_notebook_sha256": "824a43311340cdcd09a4a10ef98913a878f94b9104225b9fa3a8b30cb169879c",
+  "checks": [
+    {
+      "name": "all_source_bytes_match_bound_hashes",
+      "passed": true
+    },
+    {
+      "name": "canonical_cells_preserved",
+      "passed": true
+    },
+    {
+      "name": "source_binding_matches_manifest",
+      "passed": true
+    },
+    {
+      "name": "force_prepare_no_model_route",
+      "passed": true
+    },
+    {
+      "name": "submitted_file_sha_matches_manifest",
+      "passed": true
+    },
+    {
+      "name": "idempotent_extract",
+      "passed": true
+    },
+    {
+      "name": "reject_unsafe_path_../outside.py",
+      "passed": true
+    },
+    {
+      "name": "reject_unsafe_path_/tmp/outside.py",
+      "passed": true
+    },
+    {
+      "name": "reject_unsafe_path_notebooks\\outside.py",
+      "passed": true
+    },
+    {
+      "name": "reject_tampered_payload",
+      "passed": true
+    }
+  ],
+  "passed": 10,
+  "total": 10,
+  "successful": true,
+  "metadata": {
+    "id": "chrisbiran/phase-8-tgdi-batch-preparation",
+    "title": "Phase 8 TGDI batch preparation",
+    "code_file": "phase8_tgdi_prepare.ipynb",
+    "language": "python",
+    "kernel_type": "notebook",
+    "is_private": true,
+    "enable_gpu": true,
+    "enable_tpu": false,
+    "enable_internet": true,
+    "dataset_sources": [
+      "chrisbiran/tgdi-traffic-videos"
+    ],
+    "kernel_sources": [],
+    "competition_sources": [],
+    "model_sources": [],
+    "keywords": []
+  }
+}

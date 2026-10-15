@@ -1,0 +1,83 @@
+{
+  "annotation_semantics": "OFFLINE_MACHINE_DECISIONS_NOT_MANUAL_AUDIT_OR_MODEL_ACCURACY",
+  "claim_type": "ACTUAL_TOR3_RETAINED_CACHE_TECHNICAL_REGRESSION_NOT_TGDI_BATCH_RESULT",
+  "codec": "mp4v",
+  "fps": 29.419969502218617,
+  "frames_written_and_redecoded": 9590,
+  "geometry_sha256": "89ff1d6201fba37d6edb9501f1524a5c96781ff1b9f442f25b728cb4d543c7a4",
+  "height": 720,
+  "independent_decoded_frame_count": 9590,
+  "independent_first_crossing_middle_last_checks": [
+    {
+      "decoded_pixel_sha256": "c199e992e54f17a83b8dd504ac99aef8375b5e1a8de3549620143d754ebb2e4b",
+      "frame_index": 0,
+      "height": 720,
+      "width": 1280
+    },
+    {
+      "decoded_pixel_sha256": "1f33e30d7f63c053f6b02f2c71296652328a657b9635c4bebdceb77a4fa8dddb",
+      "frame_index": 898,
+      "height": 720,
+      "width": 1280
+    },
+    {
+      "decoded_pixel_sha256": "9843c7778e7eee6ecb9a9e4c226d03a9695aa1df416a76689c8d260846a18b93",
+      "frame_index": 4795,
+      "height": 720,
+      "width": 1280
+    },
+    {
+      "decoded_pixel_sha256": "2cb8eea7448bcdfaada3bc8d0396d3232f37833b8020016f5a5afc907fff6334",
+      "frame_index": 9589,
+      "height": 720,
+      "width": 1280
+    }
+  ],
+  "machine_decisions_sha256": "e43458fba459ef8f5288faf2da2cb22c448e13738e7fd98e1aaa966011d8161c",
+  "new_detector_tracker_encoder_inference": false,
+  "output_retention": "EXTERNAL_TEMPORARY_MP4_NOT_COMMITTED_TO_GITHUB",
+  "path": "/tmp/phase8-tor3-fullscope-annotated.mp4",
+  "phase": 8,
+  "process_peak_rss_bytes": 102785024,
+  "retained_native_annotated_sample": {
+    "decoded_pixel_sha256": "1f33e30d7f63c053f6b02f2c71296652328a657b9635c4bebdceb77a4fa8dddb",
+    "frame_index": 898,
+    "height": 720,
+    "path": "docs/evidence/phase_8/pilot_annotation/frame_000000898_annotated.png",
+    "sha256": "1fa1541773de7217bea6487042aa77f44953ff68e43c65cd510247d91b38aa54",
+    "width": 1280
+  },
+  "sample_source_binding": {
+    "cache_detector_input_frame_pixel_sha256": "2610a8c5f7e8c8d919315d6509fa8bbb373189c6ccdbd3a59e295133b6cb4b5d",
+    "emitted_source_track_ids": [
+      198,
+      185,
+      202
+    ],
+    "frame_index": 898,
+    "source_cache_match": true,
+    "source_decoded_pixel_sha256": "2610a8c5f7e8c8d919315d6509fa8bbb373189c6ccdbd3a59e295133b6cb4b5d"
+  },
+  "sha256": "5658eb6d893d6da019613783246bf8f43c0cf3cb4ac9b7eb499768beb6b6ebe2",
+  "software_sources": {
+    "notebooks/phase_8_pipeline_helpers.py": "331116ac22c825c88b987e2e33b227113ed9843b58c96898f584897dac6aa124",
+    "notebooks/phase_8_pipeline_tests.py": "1e6a79ae0cdc83cffe4a7d37562ad46fab003ab17ef1c7b7b7a4bceb6e3e027d"
+  },
+  "source_audio_preserved": false,
+  "source_records_sha256": "62aef3929aa906f7f3b3b349ede47604be7d4e77c872d23157c60b88b36286da",
+  "source_video_sha256": "a92e693b208813cccbac3921a5169b08443fdf425e352168d0ae9db3fe4f2082",
+  "timestamp_semantics": "presentation index/FPS; not preserved authoritative source PTS",
+  "visual_overlay_check": {
+    "claim_limit": "Annotation/source-linkage check only; physical passage correctness not established",
+    "frame_index": 898,
+    "geometry_outlines_visible": true,
+    "opened_native_png": true,
+    "visible_labels": [
+      "ID202 motorcycle accepted",
+      "ID185 person track",
+      "ID198 car track"
+    ]
+  },
+  "wall_seconds": 78.50337398401462,
+  "width": 1280
+}

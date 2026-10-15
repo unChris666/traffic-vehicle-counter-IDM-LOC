@@ -1,0 +1,137 @@
+{
+  "claim_type": "ACTUAL_KAGGLE_PREPARE_OUTPUT_DOWNLOAD_WITH_HTTP_AND_JSON_VALIDATION",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-batch-preparation",
+  "kernel_version": 1,
+  "retrieved_at_utc": "2026-10-15T04:12:32.619477+00:00",
+  "downloaded_files": [
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/discovered_videos.json",
+      "sha256": "112f72c7e51f0c0d8fe6f0deabf6d25e8239b79b1069afcc95295a451e90379c",
+      "size_bytes": 5717,
+      "status": "PASS",
+      "existing_verified_json": true
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/input_manifest.json",
+      "sha256": "7410e8d041144224fb93f5c819301aabd6789090b5e5c266c5554cd039e06459",
+      "size_bytes": 15994,
+      "status": "PASS",
+      "existing_verified_json": true
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/processing_profile.json",
+      "sha256": "cdd1776f30b3ce2af5f22aa415a4c87d7936c7fbb507bbf1423d557427b07f5a",
+      "size_bytes": 3627,
+      "status": "PASS",
+      "existing_verified_json": true
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/readiness.json",
+      "sha256": "c13e01d380e10ce01c0395b83ba266d52d5c69452a16e8da2dcbdf4c3e90e810",
+      "size_bytes": 18994,
+      "status": "PASS",
+      "existing_verified_json": true
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/runtime.json",
+      "sha256": "73f730caad8a1ac83005aa5a18763c1fea182e609aac3ec2f4436d26cdd7664d",
+      "size_bytes": 809,
+      "status": "PASS",
+      "existing_verified_json": true
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/software_guards.json",
+      "sha256": "5df565c046a068930a618d8df17ad440f91ef6011e452e31f41e887e98410616",
+      "size_bytes": 24960,
+      "status": "PASS",
+      "existing_verified_json": true
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/source_provenance.json",
+      "sha256": "3ac774097ba2f274920ac8fe4436d0649f52735729c51aed2a490685c510eb3d",
+      "size_bytes": 2398,
+      "status": "PASS",
+      "existing_verified_json": true
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/report.json",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 2,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 3,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 4,
+          "status_code": 502,
+          "size_bytes": 332
+        }
+      ],
+      "status": "FAILED"
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/effective_video_configuration.json",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 2,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 3,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 4,
+          "status_code": 502,
+          "size_bytes": 332
+        }
+      ],
+      "status": "FAILED"
+    },
+    {
+      "path": "phase_8_batch/preparation/20261015T040402_298644Z/retention_manifest.json",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 2,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 3,
+          "status_code": 502,
+          "size_bytes": 332
+        },
+        {
+          "attempt": 4,
+          "status_code": 502,
+          "size_bytes": 332
+        }
+      ],
+      "status": "FAILED"
+    }
+  ],
+  "signed_urls_retained": false,
+  "success": false
+}

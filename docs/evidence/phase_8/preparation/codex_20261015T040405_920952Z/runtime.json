@@ -1,0 +1,22 @@
+{
+  "python": "3.12.14",
+  "cpu_count": 5,
+  "gpu_probe": "nvidia-smi",
+  "available_gpus": [],
+  "processing_assignment": "sequential_cuda0_only",
+  "parallel_gpu_orchestration_implemented": false,
+  "gpu_probe_status": "NVIDIA_SMI_UNAVAILABLE_GPU_INFORMATION_UNKNOWN",
+  "available_gpu_count": null,
+  "gpu_visibility_semantics": "NVIDIA_SMI_OBSERVATION_NOT_PYTORCH_CUDA_VISIBILITY_OR_DEVICE_EXECUTION_PROOF",
+  "installed_packages": {
+    "numpy": "2.5.3",
+    "opencv-python": null,
+    "opencv-python-headless": "5.0.0.93",
+    "Pillow": "12.3.0",
+    "torch": null,
+    "ultralytics": null,
+    "onnx": null,
+    "onnxruntime-gpu": null,
+    "lap": null
+  }
+}

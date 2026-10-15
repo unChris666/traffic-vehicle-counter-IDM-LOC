@@ -1,0 +1,47 @@
+{
+  "claim_type": "BOUNDED_ACTUAL_REMOTE_STARTUP_STATUS_REVIEW_NOT_MODEL_EXECUTION_PROOF",
+  "kernel_ref": "chrisbiran/phase-8-tgdi-full-video-research",
+  "kernel_version": 1,
+  "observations": 5,
+  "first_observed_at_utc": "2026-10-15T08:07:25.406121+00:00",
+  "last_observed_at_utc": "2026-10-15T08:10:03.094841+00:00",
+  "last_status": "KernelWorkerStatus.RUNNING",
+  "startup_failure_visible": false,
+  "partial_log_available": false,
+  "output_files_available": false,
+  "actual_detector_first_frame_or_first_1000_frames": "UNKNOWN_NO_PARTIAL_LOG_OR_ARTIFACTS_RETURNED_BY_API",
+  "actual_reid_cuda_execution": "UNKNOWN_NO_PARTIAL_LOG_OR_ARTIFACTS_RETURNED_BY_API",
+  "complete_eight_video_processing": false,
+  "limits": [
+    "Kaggle RUNNING is scheduler/session status, not evidence of an executed detector or CUDA encoder kernel.",
+    "No model/source configuration was modified and no run was restarted.",
+    "These bounded startup probes do not establish final success or failure."
+  ],
+  "observation_artifacts": [
+    {
+      "path": "docs/evidence/phase_8/verification/research_v3_startup_20261015T080725_406093Z.json",
+      "sha256": "0c7a8eab53b04d61af859019228ab28950372f8eb60a0db396ef11ea75ecdf52",
+      "bytes": 505
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v3_startup_20261015T080831_386641Z.json",
+      "sha256": "7705128101a914480e1664e5b8f0e135a92b840a18b8732d2199241469581976",
+      "bytes": 469
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v3_startup_20261015T080901_881992Z.json",
+      "sha256": "ae3346826ad31911ef289e4a2dfbea57401ad839d7add1eb5306474220d16c1f",
+      "bytes": 469
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v3_startup_20261015T080932_474290Z.json",
+      "sha256": "5f5c6746c083fe80a018e7e632209f3b5850025e5053d3b2e1a61486710085b0",
+      "bytes": 469
+    },
+    {
+      "path": "docs/evidence/phase_8/verification/research_v3_startup_20261015T081003_094780Z.json",
+      "sha256": "0122dc3910da4cc35f97f2c31fe48f03c2573cc7d6fd178758f7120685860340",
+      "bytes": 469
+    }
+  ]
+}

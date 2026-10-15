@@ -1,0 +1,265 @@
+{
+  "schema_version": "phase8_tgdi_actual_discovery_v1",
+  "status": "ACTUAL_8_VIDEO_SOURCE_DECODE_COMPLETED",
+  "claim_type": "EXPERIMENT_RESULT",
+  "created_at_utc": "2026-10-15T03:43:41.015178+00:00",
+  "dataset_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos",
+  "listing_path": "docs/evidence/phase_8/inventory/tgdi_kaggle_file_listing_20261015.csv",
+  "listing_sha256": "da3d7d6fb4ffec32bd621605f1aa44b9bc5e68df9687d3a28907c796a6ccf10c",
+  "video_count": 8,
+  "store_code": "TGDI",
+  "store_name": null,
+  "latitude": null,
+  "longitude": null,
+  "unprovided_store_metadata_policy": "Do not infer business name or location from burned-in video text",
+  "filename_grammar_provenance": "docs/evidence/phase_8/authorization/dataset_clarification_20261015.json",
+  "videos": [
+    {
+      "filename": "TGDI-WEEKDAY-PAGI.mp4",
+      "video_id": "TGDI-WEEKDAY-PAGI",
+      "sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+      "size_bytes": 50748314,
+      "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-PAGI.mp4",
+      "store_code": "TGDI",
+      "day_type": "weekday",
+      "recording_period": "pagi",
+      "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text",
+      "width": 640,
+      "height": 480,
+      "opencv_fps": 29.904049581962543,
+      "reported_frame_count": 9052.0,
+      "decoded_frame_count": 9052,
+      "duration_estimate_seconds": 302.70147777777777,
+      "codec_fourcc": "h264",
+      "source_inspection": {
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-PAGI/source_inspection.json",
+        "sha256": "742585a8403c4e35cfaded5fe9619062702c8b541b35dbc1d5147362d9baf640"
+      },
+      "geometry_proposal": {
+        "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-PAGI-G3-T1.json",
+        "sha256": "06a305ddaed8bf91ee8232e025ffb63981e36fdd7190ee27366ff27cde59318e",
+        "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+      },
+      "model_inference_executed": false,
+      "counting_executed": false
+    },
+    {
+      "filename": "TGDI-WEEKDAY-SIANG.mp4",
+      "video_id": "TGDI-WEEKDAY-SIANG",
+      "sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "size_bytes": 51188204,
+      "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-SIANG.mp4",
+      "store_code": "TGDI",
+      "day_type": "weekday",
+      "recording_period": "siang",
+      "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text",
+      "width": 640,
+      "height": 480,
+      "opencv_fps": 29.78121400353632,
+      "reported_frame_count": 9128.0,
+      "decoded_frame_count": 9128,
+      "duration_estimate_seconds": 306.50194444444446,
+      "codec_fourcc": "h264",
+      "source_inspection": {
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-SIANG/source_inspection.json",
+        "sha256": "a410b9c555329aa59d8a92a8bdb85c878252cd13c7441bb40331cd3bd9a7d07e"
+      },
+      "geometry_proposal": {
+        "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-SIANG-G3-T1.json",
+        "sha256": "86073942d07a9123b99b08eaffd61d5f8f44369139847f93f460ed692760c330",
+        "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+      },
+      "model_inference_executed": false,
+      "counting_executed": false
+    },
+    {
+      "filename": "TGDI-WEEKDAY-SORE.mp4",
+      "video_id": "TGDI-WEEKDAY-SORE",
+      "sha256": "d3b0d0f11302444ad64d7a8b2c81677de00693acc4793cd304b6de925d0e9197",
+      "size_bytes": 50881202,
+      "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-SORE.mp4",
+      "store_code": "TGDI",
+      "day_type": "weekday",
+      "recording_period": "sore",
+      "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text",
+      "width": 640,
+      "height": 480,
+      "opencv_fps": 29.956869412720973,
+      "reported_frame_count": 9077.0,
+      "decoded_frame_count": 9077,
+      "duration_estimate_seconds": 303.0022888888889,
+      "codec_fourcc": "h264",
+      "source_inspection": {
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-SORE/source_inspection.json",
+        "sha256": "2882d47e76cfa3fab007fe0272029d39a028ba82c7df57f13243bae150af9137"
+      },
+      "geometry_proposal": {
+        "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-SORE-G3-T1.json",
+        "sha256": "d8f9f18650f70dee2aa88481a901143eafa33f9f7ff46def3b43d992b496862e",
+        "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+      },
+      "model_inference_executed": false,
+      "counting_executed": false
+    },
+    {
+      "filename": "TGDI-WEEKDAY-MALAM.mp4",
+      "video_id": "TGDI-WEEKDAY-MALAM",
+      "sha256": "21436eab94addc8358998d5b02064fb952bc568a2884db91ba0ab4edd270ed51",
+      "size_bytes": 50600176,
+      "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-MALAM.mp4",
+      "store_code": "TGDI",
+      "day_type": "weekday",
+      "recording_period": "malam",
+      "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text",
+      "width": 640,
+      "height": 480,
+      "opencv_fps": 29.972440547996822,
+      "reported_frame_count": 9022.0,
+      "decoded_frame_count": 9022,
+      "duration_estimate_seconds": 301.0098555555556,
+      "codec_fourcc": "h264",
+      "source_inspection": {
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-MALAM/source_inspection.json",
+        "sha256": "f203df94dc0cf82f1966bc662aabf6cbafc040a89c5b1919bc5fdf78b350f555"
+      },
+      "geometry_proposal": {
+        "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKDAY-MALAM-G3-T1.json",
+        "sha256": "4aaac40543dcfb395e1d1d277702944eb44a7abf9c8b1a5aebe1e0382aec0201",
+        "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+      },
+      "model_inference_executed": false,
+      "counting_executed": false
+    },
+    {
+      "filename": "TGDI-WEEKEND-PAGI.mp4",
+      "video_id": "TGDI-WEEKEND-PAGI",
+      "sha256": "e71f46ac146e5a69db8dc0754dfb8b0b3f7a3429643872736335bfe34ebf1389",
+      "size_bytes": 50550849,
+      "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-PAGI.mp4",
+      "store_code": "TGDI",
+      "day_type": "weekend",
+      "recording_period": "pagi",
+      "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text",
+      "width": 640,
+      "height": 480,
+      "opencv_fps": 29.97655930800923,
+      "reported_frame_count": 9017.0,
+      "decoded_frame_count": 9017,
+      "duration_estimate_seconds": 300.80170000000004,
+      "codec_fourcc": "h264",
+      "source_inspection": {
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-PAGI/source_inspection.json",
+        "sha256": "09037facb4f9e470aaf596722c30624efe9fad880c3067724b30d16c74c265d3"
+      },
+      "geometry_proposal": {
+        "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-PAGI-G3-T1.json",
+        "sha256": "b4b0e095d0e14aaaf8c49be8f51abb7792893126db1e27be71c321d3ee15a21d",
+        "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+      },
+      "model_inference_executed": false,
+      "counting_executed": false
+    },
+    {
+      "filename": "TGDI-WEEKEND-SIANG.mp4",
+      "video_id": "TGDI-WEEKEND-SIANG",
+      "sha256": "9271275e03bd75b2c3e373a7d1babbf8a79e4795662f691b584056f261185c9c",
+      "size_bytes": 51137139,
+      "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-SIANG.mp4",
+      "store_code": "TGDI",
+      "day_type": "weekend",
+      "recording_period": "siang",
+      "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text",
+      "width": 640,
+      "height": 480,
+      "opencv_fps": 29.983459365905848,
+      "reported_frame_count": 9124.0,
+      "decoded_frame_count": 9124,
+      "duration_estimate_seconds": 304.3011111111111,
+      "codec_fourcc": "h264",
+      "source_inspection": {
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SIANG/source_inspection.json",
+        "sha256": "31174af665268b9e333858ad947568761ac4e7006676133386c3ddca84fe4e8b"
+      },
+      "geometry_proposal": {
+        "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SIANG-G3-T1.json",
+        "sha256": "1a233dbd052e1fc8596aaba8d07cb62bc93fb9a99b1c2376881b5dadcaa49e70",
+        "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+      },
+      "model_inference_executed": false,
+      "counting_executed": false
+    },
+    {
+      "filename": "TGDI-WEEKEND-SORE.mp4",
+      "video_id": "TGDI-WEEKEND-SORE",
+      "sha256": "706d2bbb32cf89fccd723816c655d6006a1f62acfef8adc75b78ab24b3550c29",
+      "size_bytes": 51247577,
+      "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-SORE.mp4",
+      "store_code": "TGDI",
+      "day_type": "weekend",
+      "recording_period": "sore",
+      "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text",
+      "width": 640,
+      "height": 480,
+      "opencv_fps": 29.869969639352494,
+      "reported_frame_count": 9138.0,
+      "decoded_frame_count": 9138,
+      "duration_estimate_seconds": 305.9259888888889,
+      "codec_fourcc": "h264",
+      "source_inspection": {
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-SORE/source_inspection.json",
+        "sha256": "b72b5e59e70316f8c14a5860cb4887ea9726c595de5906ee7a2ffc087e929941"
+      },
+      "geometry_proposal": {
+        "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-SORE-G3-T1.json",
+        "sha256": "0622d3a9051cae89aed62e060bb37579b463909cfdc77f0c3a7890613c042853",
+        "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+      },
+      "model_inference_executed": false,
+      "counting_executed": false
+    },
+    {
+      "filename": "TGDI-WEEKEND-MALAM.mp4",
+      "video_id": "TGDI-WEEKEND-MALAM",
+      "sha256": "bf42e9af8add96716f35b56f1480c42909faf7a7a7db7491218b6af4be3c4f71",
+      "size_bytes": 50644636,
+      "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-MALAM.mp4",
+      "store_code": "TGDI",
+      "day_type": "weekend",
+      "recording_period": "malam",
+      "provenance": "user-confirmed KODETOKO-KATEGORI-KEADAAN filename grammar; not derived from video creation date or embedded text",
+      "width": 640,
+      "height": 480,
+      "opencv_fps": 29.980012218750673,
+      "reported_frame_count": 9032.0,
+      "decoded_frame_count": 9032,
+      "duration_estimate_seconds": 301.2673888888889,
+      "codec_fourcc": "h264",
+      "source_inspection": {
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKEND-MALAM/source_inspection.json",
+        "sha256": "829aebc963c4d6bedf42e3875e218ee0d89b434be59b137f35db6170ce6db7c6"
+      },
+      "geometry_proposal": {
+        "path": "docs/evidence/phase_8/geometry_proposals/TGDI-WEEKEND-MALAM-G3-T1.json",
+        "sha256": "47552f73b038b7b1a8684ef3a1af744ef636cfee987adde41c80e60070731fe2",
+        "status": "PROPOSAL_NOT_HUMAN_APPROVED"
+      },
+      "model_inference_executed": false,
+      "counting_executed": false
+    }
+  ],
+  "geometry_overview": {
+    "path": "docs/evidence/phase_8/geometry_proposals/TGDI_eight_video_G3_T1_overview.png",
+    "sha256": "9d0e1cb45390383c5a5ee90b658b659aa1568b762bff9af25095d85652522369"
+  },
+  "builder": {
+    "path": "docs/evidence/phase_8/verification/build_tgdi_preparation.py",
+    "sha256": "1a1843ba478ef1ad4aa197baa0a447d4341baa61defee1388d53da51cbbc481d"
+  },
+  "limitations": [
+    "No detector/tracker/ReID inference or counting ran during source preparation.",
+    "All eight geometries are source-bound proposals requiring per-video review; none is accepted.",
+    "Approaching/away semantics are unknown for all eight until per-video direction review.",
+    "Samples support bounded review only; camera shake and full-video geometry alignment have not been quantified.",
+    "Frame index/FPS is an estimated timeline; source PTS and CFR/VFR status remain unvalidated."
+  ]
+}

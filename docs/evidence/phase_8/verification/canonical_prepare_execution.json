@@ -1,0 +1,117 @@
+{
+  "claim_type": "ACTUAL_CODEX_NBCLIENT_CANONICAL_PREPARE_EXECUTION_NO_ACTUAL_VIDEO_MODELS_OR_COUNTING",
+  "canonical_source_path": "notebooks/08_end_to_end_batch.ipynb",
+  "canonical_source_sha256": "23628641901c4fe6da7b6cd3aba9220bc504b7501ce3ec89aeb210313bd193e4",
+  "canonical_cells_changed": false,
+  "parameter_overrides": {
+    "REPO_ROOT": "/workspace/traffic-vehicle-counter-IDM-LOC",
+    "DATASET_ROOT": "/tmp/phase8-tgdi-source",
+    "OUTPUT_ROOT": "/tmp/phase8-final-canonical-local/outputs",
+    "MODE": "prepare"
+  },
+  "python_executable": "/workspace/.venvs/traffic-inspection/bin/python",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "nbclient_version": "0.11.0",
+  "kernel_interpreter": "/workspace/.venvs/traffic-inspection/bin/python",
+  "execution_wall_seconds": 10.3569261499797,
+  "canonical_code_cells_executed": 9,
+  "parameter_override_code_cells": 1,
+  "source_dataset_full_decode_executed": false,
+  "source_dataset_metadata_discovery_and_sha_executed": true,
+  "original_output_directory": "/tmp/phase8-final-canonical-local/outputs/preparation/20261015T040405_920952Z",
+  "retained_output_directory": "docs/evidence/phase_8/preparation/codex_20261015T040405_920952Z",
+  "retention_byte_checks": [
+    {
+      "path": "retention_manifest.json",
+      "sha256": "6b46cbd0a8981ad55014f23bc3db0b5553ea889dc0e89034cd835f35934c736f",
+      "bytes_preserved": true
+    },
+    {
+      "path": "report.json",
+      "sha256": "0f094c60a410c6d31acaa2cb63c0140eacbead8dda0c6505b612fff2e9a99601",
+      "bytes_preserved": true
+    },
+    {
+      "path": "source_provenance.json",
+      "sha256": "163d26859f7e528dc89f987140c7271698dc86b72306a36177f8fcef17d27e99",
+      "bytes_preserved": true
+    },
+    {
+      "path": "software_guards.json",
+      "sha256": "903bbc64437677c1f6048cc823d5de8b41c2f8cc201e4b8a0de2fb9fc125b2d1",
+      "bytes_preserved": true
+    },
+    {
+      "path": "runtime.json",
+      "sha256": "92f6db6513b0f3bdf4acb3de83a7eb851fb49cb9149da4886bd18320c6658f49",
+      "bytes_preserved": true
+    },
+    {
+      "path": "effective_video_configuration.json",
+      "sha256": "8113f0d8f77075ad1be2decb2019d0f0a8dd72bd1a2c5034b7ad03ffa8de242c",
+      "bytes_preserved": true
+    },
+    {
+      "path": "readiness.json",
+      "sha256": "c13e01d380e10ce01c0395b83ba266d52d5c69452a16e8da2dcbdf4c3e90e810",
+      "bytes_preserved": true
+    },
+    {
+      "path": "discovered_videos.json",
+      "sha256": "21841e1aa4d4b5eb391e70ffcdcec73e49b42eacc132042bb6b855e11b8178ca",
+      "bytes_preserved": true
+    },
+    {
+      "path": "processing_profile.json",
+      "sha256": "cdd1776f30b3ce2af5f22aa415a4c87d7936c7fbb507bbf1423d557427b07f5a",
+      "bytes_preserved": true
+    },
+    {
+      "path": "input_manifest.json",
+      "sha256": "7410e8d041144224fb93f5c819301aabd6789090b5e5c266c5554cd039e06459",
+      "bytes_preserved": true
+    }
+  ],
+  "all_original_output_bytes_preserved": true,
+  "software_guards": {
+    "phase_8_manifest_tests": {
+      "tests_run": 64,
+      "tests_passed": 64,
+      "tests_skipped": 0,
+      "successful": true
+    },
+    "phase_8_pipeline_tests": {
+      "tests_run": 37,
+      "tests_passed": 37,
+      "tests_skipped": 0,
+      "successful": true
+    },
+    "phase_8_batch_tests": {
+      "tests_run": 45,
+      "tests_passed": 45,
+      "tests_skipped": 0,
+      "successful": true
+    },
+    "phase_8_review_tests": {
+      "tests_run": 25,
+      "tests_passed": 25,
+      "tests_skipped": 0,
+      "successful": true
+    }
+  },
+  "software_guards_scope": "synthetic software fixtures plus optional retained TOR3 source integrity checks; no actual TGDI model run",
+  "discovered_actual_video_count": 8,
+  "readiness": false,
+  "actual_model_inference_executed": false,
+  "traffic_result_created": false,
+  "complete_eight_video_processing": false,
+  "executed_notebook": {
+    "path": "docs/evidence/phase_8/verification/canonical_prepare_executed.ipynb.gz",
+    "sha256": "a3c915e85d97ea7dc3e180ef5b6ca64c60b6237b08fb949621aa955ee223d8cd",
+    "logical_notebook_sha256": "6e482261ce8abbea89ff3d3047f643e1f5ebc48fba98b69288cbee388f272f8b"
+  },
+  "execution_log": {
+    "path": "docs/evidence/phase_8/verification/canonical_prepare_execution.log.gz",
+    "sha256": "9494e70fb3eb78b7c03393a576f83e3fd62c85e3366e28e87b7632ee6dd1c335"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "actual_model_inference_executed": false,
+  "builder": {
+    "path": "/workspace/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8/verification/build_phase8_kaggle_bundle.py",
+    "sha256": "157a03bbbab8f5aa1adddc654db6c08d604100db275186caaf0f60db897aac31"
+  },
+  "canonical_code_cells_modified": false,
+  "canonical_notebook_code_cells": 9,
+  "canonical_notebook_path": "notebooks/08_end_to_end_batch.ipynb",
+  "canonical_notebook_sha256": "23628641901c4fe6da7b6cd3aba9220bc504b7501ce3ec89aeb210313bd193e4",
+  "claim_type": "SOURCE_PACKAGING_NOT_EXECUTION",
+  "kernel_metadata": {
+    "path": "/tmp/phase8-kaggle-final/kernel-metadata.json",
+    "sha256": "075550cc074a2200229410b61fbe5360dc91784e351af3a52aab7cc7e49a2bfc"
+  },
+  "mode": "prepare",
+  "model_weights_bundled": false,
+  "source_bundle_binding_sha256": "e7871390823fdc9c5aeaf32119089e51454184163b9c3bce887b6ecbb0f76a72",
+  "source_file_count": 19,
+  "source_files": {
+    "docs/evidence/phase_6/option_b_calibration/frozen_thresholds.json": {
+      "bytes": 2623,
+      "sha256": "f907c70b97b8d3aa85e94eb65e3c0b51653fea41ae9e51f378588a8ccba32723"
+    },
+    "docs/evidence/phase_6/option_b_verification/build_reviewed_comparison.py": {
+      "bytes": 41357,
+      "sha256": "663a52190f8c495533d50b36509232dad0d3fb64e0d31c0c3d669415fb38e81b"
+    },
+    "docs/evidence/phase_8/authorization/dataset_clarification_20261015.json": {
+      "bytes": 816,
+      "sha256": "f48c4f8fc98bc4ed95713c00653691446642fefd06dc0fdab2778ab4be99d481"
+    },
+    "docs/evidence/phase_8/config/batch_manifest_v1.json": {
+      "bytes": 15994,
+      "sha256": "7410e8d041144224fb93f5c819301aabd6789090b5e5c266c5554cd039e06459"
+    },
+    "docs/evidence/phase_8/config/processing_profile_v1.json": {
+      "bytes": 3627,
+      "sha256": "cdd1776f30b3ce2af5f22aa415a4c87d7936c7fbb507bbf1423d557427b07f5a"
+    },
+    "notebooks/08_end_to_end_batch.ipynb": {
+      "bytes": 15963,
+      "sha256": "23628641901c4fe6da7b6cd3aba9220bc504b7501ce3ec89aeb210313bd193e4"
+    },
+    "notebooks/phase_5_geometry_helpers.py": {
+      "bytes": 30807,
+      "sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9"
+    },
+    "notebooks/phase_6_counting_helpers.py": {
+      "bytes": 43656,
+      "sha256": "99a98807d315b42bd3995b8e68afc749e47c76b03b39329dbb5f4b867661f4c5"
+    },
+    "notebooks/phase_6_identity_resolution_helpers.py": {
+      "bytes": 48503,
+      "sha256": "18949e7a44b6d73b9d50269f9d4569fbda781ba48269046b982287376ec3f054"
+    },
+    "notebooks/phase_7_night_helpers.py": {
+      "bytes": 33940,
+      "sha256": "6a31794bad0c5cd346575ad4602adb5d10f17bd14cc1094dd5f2b207b0935889"
+    },
+    "notebooks/phase_7_temporal_helpers.py": {
+      "bytes": 50246,
+      "sha256": "2ef8de2d0d309b86bae6a75a2135c59d8dd09e203610fc444c6023c0614d9c74"
+    },
+    "notebooks/phase_8_batch_helpers.py": {
+      "bytes": 37115,
+      "sha256": "a028315263fbf1c5b33a5a22ddea704fe4122f8328e680247dc77ec37bff18f3"
+    },
+    "notebooks/phase_8_batch_tests.py": {
+      "bytes": 23703,
+      "sha256": "6852716db9d9faab409e7cabae09c8d0e7dc14ef807a1c5f5565058c92fbe5da"
+    },
+    "notebooks/phase_8_manifest_helpers.py": {
+      "bytes": 32926,
+      "sha256": "426113f5a8e0673fc02214fdad77b94a693d646e899833921553560bf014771f"
+    },
+    "notebooks/phase_8_manifest_tests.py": {
+      "bytes": 26552,
+      "sha256": "c68b649b5d8f9122819f673b277e8f78207cf53291fc4142815c65a5fd2fd5ce"
+    },
+    "notebooks/phase_8_pipeline_helpers.py": {
+      "bytes": 36587,
+      "sha256": "331116ac22c825c88b987e2e33b227113ed9843b58c96898f584897dac6aa124"
+    },
+    "notebooks/phase_8_pipeline_tests.py": {
+      "bytes": 23440,
+      "sha256": "1e6a79ae0cdc83cffe4a7d37562ad46fab003ab17ef1c7b7b7a4bceb6e3e027d"
+    },
+    "notebooks/phase_8_review_helpers.py": {
+      "bytes": 34424,
+      "sha256": "c69c8bdaea8d70bc6825ada865553f23260a6436e259356af21f089e332abbde"
+    },
+    "notebooks/phase_8_review_tests.py": {
+      "bytes": 25018,
+      "sha256": "a3d1f4d5e1ad56cb0de3970378297bd2db7b080ba0145a1f74ed651e02cf8cc7"
+    }
+  },
+  "submission_folder": "/tmp/phase8-kaggle-final",
+  "submitted_notebook": {
+    "bytes": 209876,
+    "path": "/tmp/phase8-kaggle-final/phase8_tgdi_prepare.ipynb",
+    "sha256": "824a43311340cdcd09a4a10ef98913a878f94b9104225b9fa3a8b30cb169879c"
+  },
+  "upload_performed": false,
+  "videos_bundled": false
+}
