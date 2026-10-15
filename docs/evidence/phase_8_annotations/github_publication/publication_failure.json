@@ -1,0 +1,47 @@
+{
+  "claim_type": "ACTUAL_GITHUB_RELEASE_UPLOAD_FAILURE_NOT_PUBLISHED_VIDEO",
+  "observed_at_utc": "2026-10-15T21:59:55.912511+00:00",
+  "repository": "unChris666/traffic-vehicle-counter-IDM-LOC",
+  "source_commit": "f66f203c517be7ab796b5d21e41892e2b56d77d6",
+  "source_commit_pushed_and_confirmed_by_github_api": true,
+  "release": {
+    "id": 414312416,
+    "tag_name": "phase8-annotation-review-v1",
+    "target_commitish": "f66f203c517be7ab796b5d21e41892e2b56d77d6",
+    "draft": true,
+    "prerelease": false,
+    "html_url": "https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/tag/untagged-2e2530490c1412607812"
+  },
+  "actual_asset_count": 0,
+  "failed_endpoint_host": "uploads.github.com",
+  "http_status": 401,
+  "error_message": "Bad credentials",
+  "failed_video_upload_count": 8,
+  "all_eight_original_and_delivery_video_sha_verified_locally": true,
+  "github_repository_api_and_git_push_work": true,
+  "videos_published_to_github": false,
+  "video_count_prepared": 8,
+  "prepared_browser_bytes": 997409597,
+  "rendered_frames": 72590,
+  "accepted_unchanged": 58,
+  "pending_unchanged": 1825,
+  "environment_secret_draft": {
+    "status": "saved",
+    "requires_publish": true,
+    "secret_name": "GH_TOKEN",
+    "allowed_domains": [
+      "api.github.com",
+      "uploads.github.com"
+    ],
+    "required_repository_permission": "Contents: Read and write",
+    "applied_or_published": false
+  },
+  "retry_requires_model_or_counting_rerun": false,
+  "own_empty_draft_cleanup": {
+    "deleted": true,
+    "release_id": 414312416,
+    "verified_http_status_after_delete": 404,
+    "published_assets_deleted": 0,
+    "reason": "Remove only the empty unpublished draft created by this failed upload, enabling clean retry"
+  }
+}

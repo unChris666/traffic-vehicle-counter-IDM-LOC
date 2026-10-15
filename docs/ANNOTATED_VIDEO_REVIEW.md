@@ -53,20 +53,20 @@ Validasi perubahan ini menilai rekonsiliasi angka, provenance, frame alignment, 
 
 ## Video yang dapat diakses setelah sesi Kaggle
 
-Delapan MP4 tersedia sebagai aset [GitHub Release Phase 8 annotation review v1](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/tag/phase8-annotation-review-v1). Buka release lalu pilih video di **Assets**, atau gunakan tautan berikut. Penyimpanan aset release terpisah dari riwayat Git; video sumber dan bobot model tidak dimasukkan ke repository.
+Delapan MP4 sudah selesai dirender dalam versi tersimpan [Kaggle annotation output](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-annotation-review/output). Output versi notebook tetap tersedia setelah sesi interaktif berakhir. **Belum ada MP4 yang berhasil diunggah ke GitHub.** Target delivery berikutnya adalah GitHub Releases agar video tidak dimasukkan ke riwayat Git; lihat status autentikasi di bawah.
 
 | Video | Accepted | Pending | MP4 |
 |---|---:|---:|---|
-| WEEKDAY-PAGI | 6 | 263 | [Buka/unduh](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-annotation-review-v1/TGDI-WEEKDAY-PAGI-annotated-review.mp4) |
-| WEEKDAY-SIANG | 0 | 223 | [Buka/unduh](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-annotation-review-v1/TGDI-WEEKDAY-SIANG-annotated-review.mp4) |
-| WEEKDAY-SORE | 6 | 323 | [Buka/unduh](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-annotation-review-v1/TGDI-WEEKDAY-SORE-annotated-review.mp4) |
-| WEEKDAY-MALAM | 7 | 221 | [Buka/unduh](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-annotation-review-v1/TGDI-WEEKDAY-MALAM-annotated-review.mp4) |
-| WEEKEND-PAGI | 5 | 216 | [Buka/unduh](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-annotation-review-v1/TGDI-WEEKEND-PAGI-annotated-review.mp4) |
-| WEEKEND-SIANG | 19 | 179 | [Buka/unduh](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-annotation-review-v1/TGDI-WEEKEND-SIANG-annotated-review.mp4) |
-| WEEKEND-SORE | 3 | 227 | [Buka/unduh](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-annotation-review-v1/TGDI-WEEKEND-SORE-annotated-review.mp4) |
-| WEEKEND-MALAM | 12 | 173 | [Buka/unduh](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-annotation-review-v1/TGDI-WEEKEND-MALAM-annotated-review.mp4) |
+| WEEKDAY-PAGI | 6 | 263 | `TGDI-WEEKDAY-PAGI-annotated-review.mp4` — siap lokal, belum diunggah |
+| WEEKDAY-SIANG | 0 | 223 | `TGDI-WEEKDAY-SIANG-annotated-review.mp4` — siap lokal, belum diunggah |
+| WEEKDAY-SORE | 6 | 323 | `TGDI-WEEKDAY-SORE-annotated-review.mp4` — siap lokal, belum diunggah |
+| WEEKDAY-MALAM | 7 | 221 | `TGDI-WEEKDAY-MALAM-annotated-review.mp4` — siap lokal, belum diunggah |
+| WEEKEND-PAGI | 5 | 216 | `TGDI-WEEKEND-PAGI-annotated-review.mp4` — siap lokal, belum diunggah |
+| WEEKEND-SIANG | 19 | 179 | `TGDI-WEEKEND-SIANG-annotated-review.mp4` — siap lokal, belum diunggah |
+| WEEKEND-SORE | 3 | 227 | `TGDI-WEEKEND-SORE-annotated-review.mp4` — siap lokal, belum diunggah |
+| WEEKEND-MALAM | 12 | 173 | `TGDI-WEEKEND-MALAM-annotated-review.mp4` — siap lokal, belum diunggah |
 
-Salinan delivery menggunakan H.264/yuv420p dengan `faststart`, pada canvas, jumlah frame dan cadence yang sama. Ini kompresi lossy untuk distribusi; byte/piksel terkompresinya berbeda dari MP4 renderer asli. SHA sumber dan hasil dicatat terpisah pada [delivery manifest](evidence/phase_8_annotations/github_publication/delivery_manifest.json), sementara tanda terima publikasi mengikat aset aktual ke commit sumber. Tidak ada frame dipotong atau keputusan counting dihitung ulang. GitHub dapat mengunduh MP4 alih-alih memutarnya inline; berkas tetap tersedia setelah runtime Kaggle berakhir.
+Salinan delivery menggunakan H.264/yuv420p dengan `faststart`, pada canvas, jumlah frame dan cadence yang sama. Ini kompresi lossy untuk distribusi; byte/piksel terkompresinya berbeda dari MP4 renderer asli. SHA sumber dan hasil dicatat terpisah pada [delivery manifest](evidence/phase_8_annotations/github_publication/delivery_manifest.json), Publikasi yang berhasil nantinya menghasilkan tanda terima yang mengikat aset aktual ke commit sumber; tanda terima sukses belum ada. Tidak ada frame dipotong atau keputusan counting dihitung ulang. Setelah publikasi berhasil, GitHub dapat menawarkan unduhan MP4 alih-alih pemutaran inline. Saat ini akses persisten tersedia melalui output versi Kaggle tersebut.
 
 Untuk review berikutnya, sebutkan nama video, nomor frame, ID track/unit/event, serta apakah masalahnya salah gabung, duplikasi, kategori atau crossing. Pending tidak masuk pivot accepted. Panel memilih satu snapshot final offline; machine dan reviewed tidak dijumlahkan.
 
@@ -88,3 +88,12 @@ python docs/evidence/phase_8_annotations/verification/publish_github_release.py 
 ```
 
 Tambahkan `--publish` pada perintah yang sama untuk mengunggah. Helper memverifikasi delapan SHA/ukuran, membuat draft, mengunggah video beserta manifest/checksum, memeriksa ukuran dan digest server jika tersedia, lalu menerbitkan release dan menyimpan receipt. Tanpa `--publish`, tidak ada penulisan ke GitHub. Release/tag yang sudah ada ditolak agar tidak tertimpa. Jika upload terputus, draft tetap perlu diperiksa; jangan membuat klaim bahwa publikasi sudah selesai. Langkah ini hanya mengirim hasil yang sudah ada, tanpa menjalankan ulang model/counting.
+
+
+## Status upload GitHub
+
+**ACTUAL FAILURE:** repository API, commit dan Git push berhasil, tetapi kedelapan upload aset mengembalikan `401 Bad credentials` dari `uploads.github.com`. [Bukti kegagalan](evidence/phase_8_annotations/github_publication/publication_failure.json) mempertahankan ID draft, nol aset, commit sumber, serta status konfigurasi. Draft kosong yang dibuat percobaan ini dihapus setelah diverifikasi tidak mempunyai aset; tidak ada video hasil pengguna yang dihapus.
+
+Draf environment sudah **saved**, dengan kebutuhan secret `GH_TOKEN` untuk `api.github.com` dan `uploads.github.com`; `requires_publish=true`. Ini belum menerapkan kredensial. Di **Environment settings → Secrets**, isi token GitHub untuk repository ini dengan **Contents: Read and write**, kemudian simpan dan **Publish** environment. Jangan menaruh token dalam chat, notebook atau repository. Kredensial Kaggle yang ada tetap dipertahankan.
+
+Setelah kredensial aktif, gunakan helper publikasi di atas dengan `--publish` dan SHA commit sumber terbaru yang sudah di-push. Semua video/manifest telah disiapkan; YOLO/tracker/ReID/counting tidak perlu dijalankan ulang. Jika workspace berganti, unduh kembali output versi Kaggle yang sudah selesai dan verifikasi SHA menggunakan manifest tersimpan sebelum menyiapkan kembali salinan delivery.

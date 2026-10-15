@@ -85,6 +85,8 @@ def main():
     parser.add_argument("--repo", type=Path, default=Path("."))
     parser.add_argument("--capture", action="store_true")
     parser.add_argument("--preliminary", action="store_true", help="Audit available evidence; never capture or claim remote completion")
+    parser.add_argument("--publication-blocked", action="store_true",
+                        help="Retain verified completed render with an actual upload/auth failure; final status remains BLOCKED_PUBLICATION")
     args = parser.parse_args()
     if args.capture and args.preliminary:
         parser.error("A final capture cannot use preliminary mode")
@@ -642,7 +644,55 @@ def main():
         diagnostics["H264_visual_review_video_count_not_all_eight"] = 2
 
     receipt_path = publication_root / "publication_receipt.json"
-    check("github_release:actual_publication_receipt_required_for_final", receipt_path.is_file() or args.preliminary)
+    check("github_release:actual_publication_receipt_required_for_final", receipt_path.is_file() or args.preliminary or args.publication_blocked)
+    if args.publication_blocked:
+        check("github_release:blocked_mode_must_not_conceal_successful_receipt", not receipt_path.is_file())
+        failure_path = publication_root / "publication_failure.json"
+        check("github_release:actual_auth_failure_record_required_for_blocked_mode", failure_path.is_file())
+        failure = read(failure_path)
+        attempted_release = failure["release"]
+        secret_draft = failure["environment_secret_draft"]
+        cleanup = failure["own_empty_draft_cleanup"]
+        check("github_release:actual_zero_asset_401_failure_not_published", failure["claim_type"] ==
+                  "ACTUAL_GITHUB_RELEASE_UPLOAD_FAILURE_NOT_PUBLISHED_VIDEO"
+              and failure["repository"] == "unChris666/traffic-vehicle-counter-IDM-LOC"
+              and failure["failed_endpoint_host"] == "uploads.github.com" and failure["http_status"] == 401
+              and failure["error_message"] == "Bad credentials" and failure["actual_asset_count"] == 0
+              and failure["failed_video_upload_count"] == 8 and failure["videos_published_to_github"] is False
+              and failure["github_repository_api_and_git_push_work"] is True
+              and failure["source_commit_pushed_and_confirmed_by_github_api"] is True
+              and failure["retry_requires_model_or_counting_rerun"] is False)
+        check("github_release:blocked_failure_binds_eight_ready_local_derivatives", delivery_complete and len(delivery_assets) == 8
+              and failure["all_eight_original_and_delivery_video_sha_verified_locally"] is True
+              and failure["video_count_prepared"] == 8 and failure["prepared_browser_bytes"] == delivery["total_browser_delivery_bytes"]
+              and failure["rendered_frames"] == 72590 and failure["accepted_unchanged"] == 58 and failure["pending_unchanged"] == 1825)
+        check("github_release:only_own_empty_unpublished_draft_cleaned", attempted_release["draft"] is True
+              and attempted_release["prerelease"] is False and attempted_release["tag_name"] == "phase8-annotation-review-v1"
+              and attempted_release["target_commitish"] == failure["source_commit"]
+              and cleanup["deleted"] is True and cleanup["release_id"] == attempted_release["id"]
+              and cleanup["verified_http_status_after_delete"] == 404 and cleanup["published_assets_deleted"] == 0)
+        check("github_release:auth_requirement_saved_not_applied_or_secret_value", secret_draft["status"] == "saved"
+              and secret_draft["requires_publish"] is True and secret_draft["applied_or_published"] is False
+              and secret_draft["secret_name"] == "GH_TOKEN"
+              and set(secret_draft["allowed_domains"]) == {"api.github.com", "uploads.github.com"}
+              and secret_draft["required_repository_permission"] == "Contents: Read and write"
+              and not set(secret_draft).intersection({"value", "secret", "token", "secret_value"}))
+        attempted_commit = failure["source_commit"]
+        check("github_release:failed_attempt_uses_full_source_commit", re.fullmatch(r"[0-9a-f]{40}", attempted_commit) is not None)
+        # The retry publisher fix was prepared after this actual failed upload;
+        # do not claim it was executed or compare it with the historical helper.
+        attempted_paths = set(package["source_files"]) | {
+            str(BASE / "verification/prepare_github_videos.py"), str(delivery_path.relative_to(repo))}
+        for name in sorted(attempted_paths):
+            blob = subprocess.run(["git", "show", attempted_commit + ":" + name], cwd=repo, capture_output=True, check=False)
+            check("github_release:failed_attempt_committed_exact_renderer_delivery_source", blob.returncode == 0
+                  and digest(blob.stdout) == sha(repo / name), name)
+        diagnostics["github_release_published_browser_video_count"] = 0
+        diagnostics["github_video_publication_complete"] = False
+        diagnostics["github_upload_failure_http_status"] = 401
+        diagnostics["github_upload_auth_requirement_applied_or_published"] = False
+        diagnostics["github_publication_failure_record_sha256"] = sha(failure_path)
+        diagnostics["github_failed_attempt_source_commit"] = attempted_commit
     if receipt_path.is_file():
         receipt = read(receipt_path)
         release = receipt["release"]
@@ -723,6 +773,8 @@ def main():
         manifest = {"claim_type": "ANNOTATION_ONLY_FINAL_RETENTION_NOT_NEW_COUNTING_OR_PHYSICAL_GROUND_TRUTH",
                     "captured_utc": datetime.now(timezone.utc).isoformat(), "source_videos_included": False,
                     "rendered_MP4s_included": False, "model_weights_included": False,
+                    "github_video_publication_complete": receipt_path.is_file() and not args.publication_blocked,
+                    "publication_status": "BLOCKED_PUBLICATION" if args.publication_blocked else "PUBLISHED",
                     "excluded_recursive_outputs": [str(FINAL_MANIFEST), str(FINAL_VALIDATION)],
                     "artifacts": [{"path": str(path), "sha256": sha(repo / path), "size_bytes": (repo / path).stat().st_size} for path in files]}
         manifest.update(artifact_count=len(manifest["artifacts"]), total_bytes=sum(item["size_bytes"] for item in manifest["artifacts"]))
@@ -734,7 +786,10 @@ def main():
             bound(repo / item["path"], item["sha256"], item["size_bytes"], group="final:retained_artifact")
     elif not args.preliminary:
         check("final:manifest_captured_after_freeze", False)
-    result = {"status": "PASS" if not failures else "FAIL", "claim_type": "INDEPENDENT_RETAINED_ANNOTATION_ARTIFACT_AUDIT_NOT_MODEL_OR_COUNTING_QUALITY",
+    status = "FAIL" if failures else "BLOCKED_PUBLICATION" if args.publication_blocked else "PASS"
+    result = {"status": status, "artifact_checks_status": "PASS" if not failures else "FAIL",
+              "publication_status": "BLOCKED_PUBLICATION" if args.publication_blocked else "PUBLISHED" if receipt_path.is_file() else "NOT_YET_VERIFIED",
+              "claim_type": "INDEPENDENT_RETAINED_ANNOTATION_ARTIFACT_AUDIT_NOT_MODEL_OR_COUNTING_QUALITY",
               "created_utc": datetime.now(timezone.utc).isoformat(), "preliminary_only": args.preliminary,
               "checks_passed": sum(passed.values()), "checks_total": sum(totals.values()),
               "groups": {group: {"passed": passed[group], "total": totals[group]} for group in sorted(totals)},

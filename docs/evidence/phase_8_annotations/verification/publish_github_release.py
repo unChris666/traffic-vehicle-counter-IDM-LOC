@@ -104,7 +104,10 @@ def main() -> None:
             future.result()
             print(f"Uploaded {futures[future]['filename']}", flush=True)
     gh('release', 'upload', args.tag, str(args.manifest), str(checksums), '--repo', args.repo)
-    release = gh('api', f'repos/{args.repo}/releases/tags/{args.tag}', parse=True)
+    created = gh('api', f'repos/{args.repo}/releases?per_page=100', parse=True)
+    release_id = next(r['id'] for r in created if r['tag_name'] == args.tag)
+    # Draft releases are retrieved by ID; /releases/tags may return 404 until published.
+    release = gh('api', f'repos/{args.repo}/releases/{release_id}', parse=True)
     uploaded = {a['name']: a for a in release['assets']}
     receipt_assets = []
     for asset, path in checked:
@@ -126,7 +129,7 @@ def main() -> None:
             'digest': remote_asset.get('digest'), 'uploaded_file_sha256': sha(extra), 'verified_remote_sha256': sha(extra),
             'verification_method': method, 'browser_download_url': remote_asset['browser_download_url']})
     gh('release', 'edit', args.tag, '--repo', args.repo, '--draft=false', '--latest')
-    release = gh('api', f'repos/{args.repo}/releases/tags/{args.tag}', parse=True)
+    release = gh('api', f'repos/{args.repo}/releases/{release_id}', parse=True)
     if release['draft'] or release['target_commitish'] != args.source_commit:
         raise ValueError('Published release/source binding differs')
     resolved = gh('api', f'repos/{args.repo}/commits/{args.tag}', parse=True)['sha']
