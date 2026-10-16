@@ -6,7 +6,7 @@ Folder ini sejajar dengan `docs/` dan `notebooks/` agar hasil mudah ditemukan.
 
 [review.html](review.html) adalah file mandiri dengan delapan frame TGDI asli, polygon A/B, garis dan margin yang bisa diedit. Halaman ini tidak menjalankan model atau menghitung kendaraan.
 
-1. Download `review.html` melalui tombol **Download raw file** di GitHub. Simpan dengan ekstensi `.html`, lalu buka di browser desktop. Tidak perlu server, Kaggle, atau koneksi internet setelah file tersimpan.
+1. Unduh [review.zip](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/raw/refs/heads/main/results/review.zip), ekstrak, lalu buka `review.html` di browser desktop. Alternatif: download file HTML melalui tombol **Download raw file** di GitHub; jika browser menampilkan kode, simpan dengan nama `review.html`. Tidak perlu server, Kaggle, atau koneksi internet setelah file tersimpan.
 2. Pilih video. Edit titik melalui drag atau tabel koordinat native; atur margin garis. X ke kanan, Y ke bawah; frame TGDI 640×480.
 3. Gunakan **Unduh JSON video ini** atau **Unduh JSON semua video** untuk mengirim koordinat hasil review. Simpan satu video atau seluruh konfigurasi sesuai tombol yang tersedia. Ekspor belum otomatis mengubah konfigurasi pipeline.
 4. Berikan JSON hasil ekspor beserta catatan per video. Nilai margin dipilih untuk review, belum berarti threshold counting telah diuji.
