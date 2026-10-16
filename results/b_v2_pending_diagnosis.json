@@ -1,0 +1,45 @@
+{
+  "claim_type": "READ_ONLY_DIAGNOSIS_OF_ACTUAL_RETAINED_B_V1_NOT_A_B_V2_EXPERIMENT",
+  "recorded_at_utc": "2026-10-16T16:36:36.745919+00:00",
+  "source_run_id": "20261015T083731_664817Z",
+  "source_file": "docs/evidence/phase_8_annotations/baseline/batch_report.json.gz",
+  "uncompressed_source_sha256": "0b129b752ae528bcf426f76f6325c4eaa50c865a316a392d8e967ed9403b4280",
+  "uncompressed_source_size_bytes": 54228775,
+  "source_sha_verified": true,
+  "pending_candidate_count": 1825,
+  "accepted_event_count": 58,
+  "pending_diagnostic_types": {
+    "GEOMETRY_TRANSITION": 1361,
+    "AMBIGUOUS_GAP": 464
+  },
+  "reasons_overlapping": {
+    "RAW_UNRESOLVED_VEHICLE_COMPETITOR": 1216,
+    "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE": 1184,
+    "AMBIGUOUS_GAP": 464,
+    "CATEGORY_CONFLICT": 341,
+    "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW": 168,
+    "GENUINE_RETURN_REVIEW_REQUIRED": 125,
+    "ALTERNATIVE_ASSIGNMENT_AMBIGUITY": 114,
+    "TRANSITIVE_IDENTITY_CONFLICT": 9
+  },
+  "single_reason_only": {
+    "RAW_UNRESOLVED_VEHICLE_COMPETITOR": 367,
+    "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE": 69,
+    "IDENTITY_RELATION_OUTSIDE_PASSAGE_WINDOW": 33,
+    "AMBIGUOUS_GAP": 30,
+    "CATEGORY_CONFLICT": 3,
+    "ALTERNATIVE_ASSIGNMENT_AMBIGUITY": 1,
+    "GENUINE_RETURN_REVIEW_REQUIRED": 1
+  },
+  "top_two_reason_names": [
+    "NO_POSITIVE_PHYSICAL_IDENTITY_EVIDENCE",
+    "RAW_UNRESOLVED_VEHICLE_COMPETITOR"
+  ],
+  "top_two_union_candidates": 1721,
+  "top_two_union_percent_of_pending": 94.3014,
+  "top_two_intersection_candidates": 679,
+  "only_top_two_reasons_candidates": 844,
+  "interpretation": "Reason counts overlap. Candidates are not unique physical vehicles. Union coverage prioritizes investigation; it does not predict recovered counts or reliability. No model or counting replay was executed.",
+  "user_requested_timeout_60_policy": "AUTOMATIC_INCREMENT_REQUESTED_NOT_IMPLEMENTED",
+  "new_policy_parameters_selected": false
+}
