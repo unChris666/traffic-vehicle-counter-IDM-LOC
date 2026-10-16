@@ -1,0 +1,1213 @@
+{
+  "schema_version": "phase8_github_browser_delivery_v1",
+  "status": "completed_all_eight_verified",
+  "claim_type": "ACTUAL_ANNOTATED_VIDEO_DELIVERY_TRANSCODE_NOT_NEW_SCIENTIFIC_RUN",
+  "started_utc": "2026-10-16T15:05:17.633124+00:00",
+  "original_retention_manifest": {
+    "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/annotation_retention_manifest.json",
+    "sha256": "b9a84af72706ffa594465cc71e67064a08fdc91d4e932a06775b119deddf531a",
+    "size_bytes": 11981
+  },
+  "original_annotation_batch_report": {
+    "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/annotation_batch_report.json",
+    "sha256": "d66a32f67a6b82aeb02359d0c04a0d4004e065ddd59a991600c2902e03ce32f3",
+    "size_bytes": 70607
+  },
+  "codec_parameters": {
+    "encoder": "libx264",
+    "codec": "h264",
+    "crf": 18,
+    "preset": "fast",
+    "pixel_format": "yuv420p",
+    "encoder_threads": 2,
+    "decoder_threads": 1,
+    "maximum_parallel_encoders": 2,
+    "fps_mode": "passthrough",
+    "encoder_time_base": "demux",
+    "movflags": "+faststart",
+    "audio": "none",
+    "cuts_or_filters": false,
+    "resize_or_crop": false
+  },
+  "actual_parallel_encoder_limit": 2,
+  "original_video_root": "/home/runner/work/_temp/phase8-publication-38920905688-1/original",
+  "browser_video_root": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser",
+  "tool_versions": {
+    "path": "tool_versions.json",
+    "sha256": "40b08babf6e393a94136bf6f94ae618a56352e43924a12d1fd3f4fca2f5a0e12",
+    "size_bytes": 3788
+  },
+  "delivery_helper": {
+    "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/verification/prepare_github_videos.py",
+    "sha256": "9e2d00a31f41ac28faa873565660bb2c198953c298ad7adca839bd18e3868d73",
+    "size_bytes": 19776
+  },
+  "models_tracker_reid_counting_rerun": false,
+  "original_aggregates_changed": false,
+  "expected_full_frame_count": 72590,
+  "unchanged_accepted": 58,
+  "unchanged_pending": 1825,
+  "assets": [
+    {
+      "video_id": "weekday_pagi",
+      "filename": "TGDI-WEEKDAY-PAGI-annotated-review.mp4",
+      "source_annotation": {
+        "retention_path": "weekday_pagi/annotated_review.mp4",
+        "sha256": "6c9b4a384b7f35d6e98e7c5ac24a421bee7faa5d66a42e1ec3c85029fb2f24b2",
+        "size_bytes": 408283622
+      },
+      "original_report": {
+        "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/weekday_pagi/annotation_report.json",
+        "sha256": "3cfaddbf04524771de8265cecfbe13be64d284ed9486576098797cb4bcc4ce0d",
+        "size_bytes": 6414
+      },
+      "frame_count": 9052,
+      "documented_original_fps": 29.904049581962543,
+      "width": 1160,
+      "height": 720,
+      "accepted": 6,
+      "pending": 263,
+      "final_pivot": {
+        "motorcycle": {
+          "A_TO_B": 3,
+          "B_TO_A": 3
+        },
+        "car": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "truck": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "bus_angkot": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        },
+        "pedestrian": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        }
+      },
+      "status": "completed_verified",
+      "path": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKDAY-PAGI-annotated-review.mp4",
+      "sha256": "e62011d8943968dd883451ee4bd374d161d913c2ef80f5c4791149812f6c413f",
+      "size_bytes": 146333042,
+      "started_utc": "2026-10-16T15:05:26.191323+00:00",
+      "finished_utc": "2026-10-16T15:08:33.122866+00:00",
+      "transcode_and_probe_wall_seconds": 186.931548912,
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-n",
+        "-threads",
+        "1",
+        "-i",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/original/weekday_pagi.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-sn",
+        "-dn",
+        "-map_metadata",
+        "-1",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-filter_threads",
+        "1",
+        "-filter_complex_threads",
+        "1",
+        "-fps_mode",
+        "passthrough",
+        "-enc_time_base",
+        "demux",
+        "-movflags",
+        "+faststart",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKDAY-PAGI-annotated-review.encoding.mp4"
+      ],
+      "encoder_returncode": 0,
+      "source_codec": "mpeg4",
+      "output_codec": "h264",
+      "pixel_format": "yuv420p",
+      "source_full_decoded_frame_count": 9052,
+      "output_full_decoded_frame_count": 9052,
+      "presentation_timestamps_preserved_exactly": true,
+      "presentation_timestamps_exact_sha256": "ce72c82ae30b05035e847190aea99368120dd0129685d1e09443ea38eecacd4b",
+      "source_rational_fps": "3738/125",
+      "output_rational_fps": "3738/125",
+      "fps_documentary_float_minus_stored_rational": 4.958196254278846e-05,
+      "faststart_moov_before_mdat": true,
+      "top_level_mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size_bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size_bytes": 109680
+        },
+        {
+          "type": "free",
+          "offset": 109712,
+          "size_bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 109720,
+          "size_bytes": 146223322
+        }
+      ],
+      "proofs": {
+        "source_probe": {
+          "path": "probes/weekday_pagi_source.json",
+          "sha256": "36edd5fc3d58c2c2fa9b4ea75bc9bac492fe0fcc6ff9bec252f97a9732da9972",
+          "size_bytes": 117900
+        },
+        "browser_probe": {
+          "path": "probes/weekday_pagi_browser.json",
+          "sha256": "a4d012cd6b52949aeb36997be6bb679205466af1dd695b98adfd6edc40f8c63f",
+          "size_bytes": 117929
+        },
+        "codec_log": {
+          "path": "codec_logs/weekday_pagi.log",
+          "sha256": "115bdbb266d55a6d2c9185b3c35ac4c3de3b8e330cafb4af7231bae934842b30",
+          "size_bytes": 34677
+        }
+      },
+      "original_annotation_unchanged_after_encoding": true,
+      "lossless_copy": false,
+      "delivery_conversion": "LOSSY_H264_VISUAL_COPY_OF_ORIGINAL_MP4V_ANNOTATED_RESULT",
+      "new_detector_tracker_encoder_counting_execution": false
+    },
+    {
+      "video_id": "weekday_siang",
+      "filename": "TGDI-WEEKDAY-SIANG-annotated-review.mp4",
+      "source_annotation": {
+        "retention_path": "weekday_siang/annotated_review.mp4",
+        "sha256": "a75dddbc0c424ffe104e9ba0a9573aff1d582751039e5bc88eeed598805617ea",
+        "size_bytes": 371607938
+      },
+      "original_report": {
+        "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/weekday_siang/annotation_report.json",
+        "sha256": "57ef7618dc57cd14bccf17991ce13502e9892dc9d6b5eb46d3851a9baec0f84d",
+        "size_bytes": 5507
+      },
+      "frame_count": 9128,
+      "documented_original_fps": 29.78121400353632,
+      "width": 1160,
+      "height": 720,
+      "accepted": 0,
+      "pending": 223,
+      "final_pivot": {
+        "motorcycle": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "car": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "truck": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "bus_angkot": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        },
+        "pedestrian": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        }
+      },
+      "status": "completed_verified",
+      "path": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKDAY-SIANG-annotated-review.mp4",
+      "sha256": "f3b67de6c583d38e5b1548e891725f1c3af111cb3d0f682bd7070be57c1fed42",
+      "size_bytes": 133939964,
+      "started_utc": "2026-10-16T15:05:25.612542+00:00",
+      "finished_utc": "2026-10-16T15:08:26.293590+00:00",
+      "transcode_and_probe_wall_seconds": 180.68105048400002,
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-n",
+        "-threads",
+        "1",
+        "-i",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/original/weekday_siang.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-sn",
+        "-dn",
+        "-map_metadata",
+        "-1",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-filter_threads",
+        "1",
+        "-filter_complex_threads",
+        "1",
+        "-fps_mode",
+        "passthrough",
+        "-enc_time_base",
+        "demux",
+        "-movflags",
+        "+faststart",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKDAY-SIANG-annotated-review.encoding.mp4"
+      ],
+      "encoder_returncode": 0,
+      "source_codec": "mpeg4",
+      "output_codec": "h264",
+      "pixel_format": "yuv420p",
+      "source_full_decoded_frame_count": 9128,
+      "output_full_decoded_frame_count": 9128,
+      "presentation_timestamps_preserved_exactly": true,
+      "presentation_timestamps_exact_sha256": "e105b30b0728134417d9d23c3a7ab53fe3c56c0e2b8cf1f9ded82f5c95ec1c52",
+      "source_rational_fps": "29781/1000",
+      "output_rational_fps": "29781/1000",
+      "fps_documentary_float_minus_stored_rational": 0.0002140035363211723,
+      "faststart_moov_before_mdat": true,
+      "top_level_mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size_bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size_bytes": 111348
+        },
+        {
+          "type": "free",
+          "offset": 111380,
+          "size_bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 111388,
+          "size_bytes": 133828576
+        }
+      ],
+      "proofs": {
+        "source_probe": {
+          "path": "probes/weekday_siang_source.json",
+          "sha256": "6c7dee0366cadf8be1de5038d23ed559c70590b037bf90822939c5f7d38cc9e7",
+          "size_bytes": 118897
+        },
+        "browser_probe": {
+          "path": "probes/weekday_siang_browser.json",
+          "sha256": "0494e2e5c5d6c277b5c6f8764d70fa187c2c50eea24501fb2a4d1e5e358fd5c4",
+          "size_bytes": 118926
+        },
+        "codec_log": {
+          "path": "codec_logs/weekday_siang.log",
+          "sha256": "97c56bf4bf0ae7498a21280d7a2f18b3daf1cfc257db9be8da714597e8f84346",
+          "size_bytes": 33499
+        }
+      },
+      "original_annotation_unchanged_after_encoding": true,
+      "lossless_copy": false,
+      "delivery_conversion": "LOSSY_H264_VISUAL_COPY_OF_ORIGINAL_MP4V_ANNOTATED_RESULT",
+      "new_detector_tracker_encoder_counting_execution": false
+    },
+    {
+      "video_id": "weekday_sore",
+      "filename": "TGDI-WEEKDAY-SORE-annotated-review.mp4",
+      "source_annotation": {
+        "retention_path": "weekday_sore/annotated_review.mp4",
+        "sha256": "4e7dca0abb2fef904e92e3e175039e917655d724f721c55feca45d7a33b296e1",
+        "size_bytes": 341533923
+      },
+      "original_report": {
+        "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/weekday_sore/annotation_report.json",
+        "sha256": "78192a5157c9fd852740208237941a32bde8875145a35e00795e23fe39a9d72f",
+        "size_bytes": 6190
+      },
+      "frame_count": 9077,
+      "documented_original_fps": 29.956869412720973,
+      "width": 1160,
+      "height": 720,
+      "accepted": 6,
+      "pending": 323,
+      "final_pivot": {
+        "motorcycle": {
+          "A_TO_B": 6,
+          "B_TO_A": 0
+        },
+        "car": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "truck": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "bus_angkot": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        },
+        "pedestrian": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        }
+      },
+      "status": "completed_verified",
+      "path": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKDAY-SORE-annotated-review.mp4",
+      "sha256": "729e1243cdb4c03d6d31b9fce9b26918aa252e5bac4e24676dd46999e20b3b75",
+      "size_bytes": 123996157,
+      "started_utc": "2026-10-16T15:08:34.083575+00:00",
+      "finished_utc": "2026-10-16T15:11:34.260279+00:00",
+      "transcode_and_probe_wall_seconds": 180.17670394000004,
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-n",
+        "-threads",
+        "1",
+        "-i",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/original/weekday_sore.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-sn",
+        "-dn",
+        "-map_metadata",
+        "-1",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-filter_threads",
+        "1",
+        "-filter_complex_threads",
+        "1",
+        "-fps_mode",
+        "passthrough",
+        "-enc_time_base",
+        "demux",
+        "-movflags",
+        "+faststart",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKDAY-SORE-annotated-review.encoding.mp4"
+      ],
+      "encoder_returncode": 0,
+      "source_codec": "mpeg4",
+      "output_codec": "h264",
+      "pixel_format": "yuv420p",
+      "source_full_decoded_frame_count": 9077,
+      "output_full_decoded_frame_count": 9077,
+      "presentation_timestamps_preserved_exactly": true,
+      "presentation_timestamps_exact_sha256": "add5e787520bf60575d94d5caab4f72e850749814d8219b8b2539c61b2043d40",
+      "source_rational_fps": "29957/1000",
+      "output_rational_fps": "29957/1000",
+      "fps_documentary_float_minus_stored_rational": -0.00013058727902759415,
+      "faststart_moov_before_mdat": true,
+      "top_level_mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size_bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size_bytes": 108728
+        },
+        {
+          "type": "free",
+          "offset": 108760,
+          "size_bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 108768,
+          "size_bytes": 123887389
+        }
+      ],
+      "proofs": {
+        "source_probe": {
+          "path": "probes/weekday_sore_source.json",
+          "sha256": "0a4d7dd312cdc14cc59f58ba908180271a3ee27af35abcf9dd75e425cf77f2f5",
+          "size_bytes": 118233
+        },
+        "browser_probe": {
+          "path": "probes/weekday_sore_browser.json",
+          "sha256": "a2fb8dd38c7bdafce3c406a735137180d66d0ea3fade4386ce899fddb8b51b5b",
+          "size_bytes": 118262
+        },
+        "codec_log": {
+          "path": "codec_logs/weekday_sore.log",
+          "sha256": "2f621a3c7d794c076a6dd64bd8c95bbbf822a1ab17a17438305add9da4a382b7",
+          "size_bytes": 33301
+        }
+      },
+      "original_annotation_unchanged_after_encoding": true,
+      "lossless_copy": false,
+      "delivery_conversion": "LOSSY_H264_VISUAL_COPY_OF_ORIGINAL_MP4V_ANNOTATED_RESULT",
+      "new_detector_tracker_encoder_counting_execution": false
+    },
+    {
+      "video_id": "weekday_malam",
+      "filename": "TGDI-WEEKDAY-MALAM-annotated-review.mp4",
+      "source_annotation": {
+        "retention_path": "weekday_malam/annotated_review.mp4",
+        "sha256": "8845640df7d78ccffe3fadf5c7d09a7792e05d93903dca274450edadf080a270",
+        "size_bytes": 271448801
+      },
+      "original_report": {
+        "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/weekday_malam/annotation_report.json",
+        "sha256": "45f5dba124d59d3d8398b20ebec2c2b061271ec645a7706a7ca42d22836c1bd9",
+        "size_bytes": 6197
+      },
+      "frame_count": 9022,
+      "documented_original_fps": 29.972440547996822,
+      "width": 1160,
+      "height": 720,
+      "accepted": 7,
+      "pending": 221,
+      "final_pivot": {
+        "motorcycle": {
+          "A_TO_B": 4,
+          "B_TO_A": 3
+        },
+        "car": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "truck": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "bus_angkot": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        },
+        "pedestrian": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        }
+      },
+      "status": "completed_verified",
+      "path": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKDAY-MALAM-annotated-review.mp4",
+      "sha256": "59fef75aecc0fffc1f2de461ddb79c3ebebb964f59d733e10fb3042b4c307e84",
+      "size_bytes": 103430437,
+      "started_utc": "2026-10-16T15:08:42.251833+00:00",
+      "finished_utc": "2026-10-16T15:11:43.879061+00:00",
+      "transcode_and_probe_wall_seconds": 181.62722512799996,
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-n",
+        "-threads",
+        "1",
+        "-i",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/original/weekday_malam.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-sn",
+        "-dn",
+        "-map_metadata",
+        "-1",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-filter_threads",
+        "1",
+        "-filter_complex_threads",
+        "1",
+        "-fps_mode",
+        "passthrough",
+        "-enc_time_base",
+        "demux",
+        "-movflags",
+        "+faststart",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKDAY-MALAM-annotated-review.encoding.mp4"
+      ],
+      "encoder_returncode": 0,
+      "source_codec": "mpeg4",
+      "output_codec": "h264",
+      "pixel_format": "yuv420p",
+      "source_full_decoded_frame_count": 9022,
+      "output_full_decoded_frame_count": 9022,
+      "presentation_timestamps_preserved_exactly": true,
+      "presentation_timestamps_exact_sha256": "db8f39dca095f4855ec7194ac09977a2c7e35a99ea193c4705a1d4ad91756172",
+      "source_rational_fps": "7493/250",
+      "output_rational_fps": "7493/250",
+      "fps_documentary_float_minus_stored_rational": 0.0004405479968205839,
+      "faststart_moov_before_mdat": true,
+      "top_level_mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size_bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size_bytes": 105256
+        },
+        {
+          "type": "free",
+          "offset": 105288,
+          "size_bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 105296,
+          "size_bytes": 103325141
+        }
+      ],
+      "proofs": {
+        "source_probe": {
+          "path": "probes/weekday_malam_source.json",
+          "sha256": "1a8485af11078057eb4e56cc1a08c5013808391f1329ad94c0b5254085792aaf",
+          "size_bytes": 117514
+        },
+        "browser_probe": {
+          "path": "probes/weekday_malam_browser.json",
+          "sha256": "ef2a1789e2e321ff08245d78c379a0ecd64ed4362690b906c9f00316a677d29c",
+          "size_bytes": 117543
+        },
+        "codec_log": {
+          "path": "codec_logs/weekday_malam.log",
+          "sha256": "0b3e88fca120e12bf799a266962ae63efcddf9ceb2984f6e950cd8537a14e025",
+          "size_bytes": 34383
+        }
+      },
+      "original_annotation_unchanged_after_encoding": true,
+      "lossless_copy": false,
+      "delivery_conversion": "LOSSY_H264_VISUAL_COPY_OF_ORIGINAL_MP4V_ANNOTATED_RESULT",
+      "new_detector_tracker_encoder_counting_execution": false
+    },
+    {
+      "video_id": "weekend_pagi",
+      "filename": "TGDI-WEEKEND-PAGI-annotated-review.mp4",
+      "source_annotation": {
+        "retention_path": "weekend_pagi/annotated_review.mp4",
+        "sha256": "17975b5a1783e762230cb9826a5269377f55e426c58e6dddbaaeb97e0796a3b6",
+        "size_bytes": 355686204
+      },
+      "original_report": {
+        "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/weekend_pagi/annotation_report.json",
+        "sha256": "64d3e480cbec0b1db8f221b588aa2eb30e35c3b69063be15c54b12aa3fc5c344",
+        "size_bytes": 6186
+      },
+      "frame_count": 9017,
+      "documented_original_fps": 29.97655930800923,
+      "width": 1160,
+      "height": 720,
+      "accepted": 5,
+      "pending": 216,
+      "final_pivot": {
+        "motorcycle": {
+          "A_TO_B": 2,
+          "B_TO_A": 3
+        },
+        "car": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "truck": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "bus_angkot": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        },
+        "pedestrian": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        }
+      },
+      "status": "completed_verified",
+      "path": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKEND-PAGI-annotated-review.mp4",
+      "sha256": "148bb2713b402d961d32f03c4e613b72eda7f81552e36fe5c5c6e467c7d622ad",
+      "size_bytes": 132619674,
+      "started_utc": "2026-10-16T15:11:42.182526+00:00",
+      "finished_utc": "2026-10-16T15:14:41.587010+00:00",
+      "transcode_and_probe_wall_seconds": 179.40448677400002,
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-n",
+        "-threads",
+        "1",
+        "-i",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/original/weekend_pagi.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-sn",
+        "-dn",
+        "-map_metadata",
+        "-1",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-filter_threads",
+        "1",
+        "-filter_complex_threads",
+        "1",
+        "-fps_mode",
+        "passthrough",
+        "-enc_time_base",
+        "demux",
+        "-movflags",
+        "+faststart",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKEND-PAGI-annotated-review.encoding.mp4"
+      ],
+      "encoder_returncode": 0,
+      "source_codec": "mpeg4",
+      "output_codec": "h264",
+      "pixel_format": "yuv420p",
+      "source_full_decoded_frame_count": 9017,
+      "output_full_decoded_frame_count": 9017,
+      "presentation_timestamps_preserved_exactly": true,
+      "presentation_timestamps_exact_sha256": "b601b17c54cd418c8551ba39796086213b6ba0474f83edbd2dfd0f454aec29e0",
+      "source_rational_fps": "29977/1000",
+      "output_rational_fps": "29977/1000",
+      "fps_documentary_float_minus_stored_rational": -0.00044069199077156895,
+      "faststart_moov_before_mdat": true,
+      "top_level_mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size_bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size_bytes": 107620
+        },
+        {
+          "type": "free",
+          "offset": 107652,
+          "size_bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 107660,
+          "size_bytes": 132512014
+        }
+      ],
+      "proofs": {
+        "source_probe": {
+          "path": "probes/weekend_pagi_source.json",
+          "sha256": "39c30d9697e3a53c3802e28970c9339ef4e21f63daa7e5e2accae4351ee923a1",
+          "size_bytes": 117453
+        },
+        "browser_probe": {
+          "path": "probes/weekend_pagi_browser.json",
+          "sha256": "bf75eaa96ed907be46984bd30d65c61e556f0d4b2b99f0251894646fbf0e58b1",
+          "size_bytes": 117482
+        },
+        "codec_log": {
+          "path": "codec_logs/weekend_pagi.log",
+          "sha256": "fc0c8f82ba20204e69cb90251556457724cd9f6138b68b626e5979e57a441fe5",
+          "size_bytes": 33203
+        }
+      },
+      "original_annotation_unchanged_after_encoding": true,
+      "lossless_copy": false,
+      "delivery_conversion": "LOSSY_H264_VISUAL_COPY_OF_ORIGINAL_MP4V_ANNOTATED_RESULT",
+      "new_detector_tracker_encoder_counting_execution": false
+    },
+    {
+      "video_id": "weekend_siang",
+      "filename": "TGDI-WEEKEND-SIANG-annotated-review.mp4",
+      "source_annotation": {
+        "retention_path": "weekend_siang/annotated_review.mp4",
+        "sha256": "c01719f8bbbc3646da6216c93952602632e0bbe044383cba172b5fa191e231b3",
+        "size_bytes": 346598793
+      },
+      "original_report": {
+        "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/weekend_siang/annotation_report.json",
+        "sha256": "a73fee115fef4e577e8af14503d3b3908d3448ba724924075c1945adecb919f3",
+        "size_bytes": 6419
+      },
+      "frame_count": 9124,
+      "documented_original_fps": 29.983459365905848,
+      "width": 1160,
+      "height": 720,
+      "accepted": 19,
+      "pending": 179,
+      "final_pivot": {
+        "motorcycle": {
+          "A_TO_B": 10,
+          "B_TO_A": 9
+        },
+        "car": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "truck": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "bus_angkot": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        },
+        "pedestrian": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        }
+      },
+      "status": "completed_verified",
+      "path": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKEND-SIANG-annotated-review.mp4",
+      "sha256": "42b4d61afe6e709810bdb4c99284ca66d3db79ce6c3156a2df9c10dabfa78e6c",
+      "size_bytes": 125603128,
+      "started_utc": "2026-10-16T15:11:53.438042+00:00",
+      "finished_utc": "2026-10-16T15:14:44.608579+00:00",
+      "transcode_and_probe_wall_seconds": 171.17054174999998,
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-n",
+        "-threads",
+        "1",
+        "-i",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/original/weekend_siang.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-sn",
+        "-dn",
+        "-map_metadata",
+        "-1",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-filter_threads",
+        "1",
+        "-filter_complex_threads",
+        "1",
+        "-fps_mode",
+        "passthrough",
+        "-enc_time_base",
+        "demux",
+        "-movflags",
+        "+faststart",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKEND-SIANG-annotated-review.encoding.mp4"
+      ],
+      "encoder_returncode": 0,
+      "source_codec": "mpeg4",
+      "output_codec": "h264",
+      "pixel_format": "yuv420p",
+      "source_full_decoded_frame_count": 9124,
+      "output_full_decoded_frame_count": 9124,
+      "presentation_timestamps_preserved_exactly": true,
+      "presentation_timestamps_exact_sha256": "bc61da0aed4b4f9ab119ac220ebcdb0403063928230d1df923df4999cb033214",
+      "source_rational_fps": "29983/1000",
+      "output_rational_fps": "29983/1000",
+      "fps_documentary_float_minus_stored_rational": 0.0004593659058471644,
+      "faststart_moov_before_mdat": true,
+      "top_level_mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size_bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size_bytes": 108756
+        },
+        {
+          "type": "free",
+          "offset": 108788,
+          "size_bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 108796,
+          "size_bytes": 125494332
+        }
+      ],
+      "proofs": {
+        "source_probe": {
+          "path": "probes/weekend_siang_source.json",
+          "sha256": "6b93d6613b2f894911129c3c54a66bf1c5af992b334baf5c0958a53ff4777fc8",
+          "size_bytes": 118845
+        },
+        "browser_probe": {
+          "path": "probes/weekend_siang_browser.json",
+          "sha256": "26715c7588f351b3b92c6ae629576060e906c9a1243d55fc7378ee73e015891e",
+          "size_bytes": 118874
+        },
+        "codec_log": {
+          "path": "codec_logs/weekend_siang.log",
+          "sha256": "fc43f25801c1fb7601ef7bedd0b4fb859abf8da4eaa4d987ffa4ea90aa639779",
+          "size_bytes": 32128
+        }
+      },
+      "original_annotation_unchanged_after_encoding": true,
+      "lossless_copy": false,
+      "delivery_conversion": "LOSSY_H264_VISUAL_COPY_OF_ORIGINAL_MP4V_ANNOTATED_RESULT",
+      "new_detector_tracker_encoder_counting_execution": false
+    },
+    {
+      "video_id": "weekend_sore",
+      "filename": "TGDI-WEEKEND-SORE-annotated-review.mp4",
+      "source_annotation": {
+        "retention_path": "weekend_sore/annotated_review.mp4",
+        "sha256": "67b8250050a8d97d622bb20b6519bc274db649ba85ad27afb269b0b57fab0629",
+        "size_bytes": 371112396
+      },
+      "original_report": {
+        "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/weekend_sore/annotation_report.json",
+        "sha256": "119505e06077e5833b2330c862fec1132d11ad655036f3040b1602d72c4f3312",
+        "size_bytes": 6194
+      },
+      "frame_count": 9138,
+      "documented_original_fps": 29.869969639352494,
+      "width": 1160,
+      "height": 720,
+      "accepted": 3,
+      "pending": 227,
+      "final_pivot": {
+        "motorcycle": {
+          "A_TO_B": 3,
+          "B_TO_A": 0
+        },
+        "car": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "truck": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "bus_angkot": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        },
+        "pedestrian": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        }
+      },
+      "status": "completed_verified",
+      "path": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKEND-SORE-annotated-review.mp4",
+      "sha256": "2c508e3f6e3d83e8e321bae2ddf4cc7c771fb51b9d14e6b3fab314d2daad32c0",
+      "size_bytes": 138982706,
+      "started_utc": "2026-10-16T15:14:49.946678+00:00",
+      "finished_utc": "2026-10-16T15:17:54.494508+00:00",
+      "transcode_and_probe_wall_seconds": 184.54783415499992,
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-n",
+        "-threads",
+        "1",
+        "-i",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/original/weekend_sore.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-sn",
+        "-dn",
+        "-map_metadata",
+        "-1",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-filter_threads",
+        "1",
+        "-filter_complex_threads",
+        "1",
+        "-fps_mode",
+        "passthrough",
+        "-enc_time_base",
+        "demux",
+        "-movflags",
+        "+faststart",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKEND-SORE-annotated-review.encoding.mp4"
+      ],
+      "encoder_returncode": 0,
+      "source_codec": "mpeg4",
+      "output_codec": "h264",
+      "pixel_format": "yuv420p",
+      "source_full_decoded_frame_count": 9138,
+      "output_full_decoded_frame_count": 9138,
+      "presentation_timestamps_preserved_exactly": true,
+      "presentation_timestamps_exact_sha256": "a9898daecbf922b1367027fc38f4594a8720331b57945cf921cc843eb5568788",
+      "source_rational_fps": "2987/100",
+      "output_rational_fps": "2987/100",
+      "fps_documentary_float_minus_stored_rational": -3.036064750716605e-05,
+      "faststart_moov_before_mdat": true,
+      "top_level_mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size_bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size_bytes": 110344
+        },
+        {
+          "type": "free",
+          "offset": 110376,
+          "size_bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 110384,
+          "size_bytes": 138872322
+        }
+      ],
+      "proofs": {
+        "source_probe": {
+          "path": "probes/weekend_sore_source.json",
+          "sha256": "cd6559b641e8f826f71f0e381601c4dd7a62c9c3c438a6a6e04aee29ee91d1ad",
+          "size_bytes": 117353
+        },
+        "browser_probe": {
+          "path": "probes/weekend_sore_browser.json",
+          "sha256": "921333a4332e9651de43aabd0cc4f8aaaa0feaa8577004e2bf1c07b97d1907f0",
+          "size_bytes": 117382
+        },
+        "codec_log": {
+          "path": "codec_logs/weekend_sore.log",
+          "sha256": "c28fbe1f33f0f3450e80cf5d289ccf317ea4c6a2bbe29128abfc7ae35a216f9f",
+          "size_bytes": 34283
+        }
+      },
+      "original_annotation_unchanged_after_encoding": true,
+      "lossless_copy": false,
+      "delivery_conversion": "LOSSY_H264_VISUAL_COPY_OF_ORIGINAL_MP4V_ANNOTATED_RESULT",
+      "new_detector_tracker_encoder_counting_execution": false
+    },
+    {
+      "video_id": "weekend_malam",
+      "filename": "TGDI-WEEKEND-MALAM-annotated-review.mp4",
+      "source_annotation": {
+        "retention_path": "weekend_malam/annotated_review.mp4",
+        "sha256": "225f8f55de68a9c8d317511b1e1ab194206c5fdfa7869b79caada5d91f576e39",
+        "size_bytes": 250135226
+      },
+      "original_report": {
+        "path": "/home/runner/work/traffic-vehicle-counter-IDM-LOC/traffic-vehicle-counter-IDM-LOC/docs/evidence/phase_8_annotations/kaggle_execution/20261015T150218_945772Z/weekend_malam/annotation_report.json",
+        "sha256": "d05ff20a54425d9daabbe3d4df873c7cf181382e6f9256d1080fc02b1e98e5cf",
+        "size_bytes": 6419
+      },
+      "frame_count": 9032,
+      "documented_original_fps": 29.980012218750673,
+      "width": 1160,
+      "height": 720,
+      "accepted": 12,
+      "pending": 173,
+      "final_pivot": {
+        "motorcycle": {
+          "A_TO_B": 3,
+          "B_TO_A": 9
+        },
+        "car": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "truck": {
+          "A_TO_B": 0,
+          "B_TO_A": 0
+        },
+        "bus_angkot": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        },
+        "pedestrian": {
+          "A_TO_B": null,
+          "B_TO_A": null
+        }
+      },
+      "status": "completed_verified",
+      "path": "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKEND-MALAM-annotated-review.mp4",
+      "sha256": "5899e8695083458b3f1074b74b55ef79ee27320dd499bce19ab9f1c5d6b4d814",
+      "size_bytes": 92505301,
+      "started_utc": "2026-10-16T15:14:52.525802+00:00",
+      "finished_utc": "2026-10-16T15:17:46.157953+00:00",
+      "transcode_and_probe_wall_seconds": 173.63215069699993,
+      "command": [
+        "ffmpeg",
+        "-nostdin",
+        "-hide_banner",
+        "-loglevel",
+        "info",
+        "-n",
+        "-threads",
+        "1",
+        "-i",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/original/weekend_malam.mp4",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-sn",
+        "-dn",
+        "-map_metadata",
+        "-1",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "fast",
+        "-crf",
+        "18",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-filter_threads",
+        "1",
+        "-filter_complex_threads",
+        "1",
+        "-fps_mode",
+        "passthrough",
+        "-enc_time_base",
+        "demux",
+        "-movflags",
+        "+faststart",
+        "/home/runner/work/_temp/phase8-publication-38920905688-1/browser/TGDI-WEEKEND-MALAM-annotated-review.encoding.mp4"
+      ],
+      "encoder_returncode": 0,
+      "source_codec": "mpeg4",
+      "output_codec": "h264",
+      "pixel_format": "yuv420p",
+      "source_full_decoded_frame_count": 9032,
+      "output_full_decoded_frame_count": 9032,
+      "presentation_timestamps_preserved_exactly": true,
+      "presentation_timestamps_exact_sha256": "ab11e78e9e316291f8b14d875b97085f0b7dca6c840f499c0548abba6875eb50",
+      "source_rational_fps": "1499/50",
+      "output_rational_fps": "1499/50",
+      "fps_documentary_float_minus_stored_rational": 1.221875067258793e-05,
+      "faststart_moov_before_mdat": true,
+      "top_level_mp4_atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "size_bytes": 32
+        },
+        {
+          "type": "moov",
+          "offset": 32,
+          "size_bytes": 103604
+        },
+        {
+          "type": "free",
+          "offset": 103636,
+          "size_bytes": 8
+        },
+        {
+          "type": "mdat",
+          "offset": 103644,
+          "size_bytes": 92401657
+        }
+      ],
+      "proofs": {
+        "source_probe": {
+          "path": "probes/weekend_malam_source.json",
+          "sha256": "d5ec6ea6dc72fe0161d562cf7e45aa315ca0bf718fb456a85aab84197b9700ab",
+          "size_bytes": 115974
+        },
+        "browser_probe": {
+          "path": "probes/weekend_malam_browser.json",
+          "sha256": "2457e4d41956939d1e1228ad39ee28d5bc3a5fca9378fcd26c8bf08e6c9bc3a5",
+          "size_bytes": 116002
+        },
+        "codec_log": {
+          "path": "codec_logs/weekend_malam.log",
+          "sha256": "6183522b9015a78168659bc74f101785b46f422a48b216172db3646831b29d8f",
+          "size_bytes": 33009
+        }
+      },
+      "original_annotation_unchanged_after_encoding": true,
+      "lossless_copy": false,
+      "delivery_conversion": "LOSSY_H264_VISUAL_COPY_OF_ORIGINAL_MP4V_ANNOTATED_RESULT",
+      "new_detector_tracker_encoder_counting_execution": false
+    }
+  ],
+  "completed_video_count": 8,
+  "completed_frame_count": 72590,
+  "finished_utc": "2026-10-16T15:17:54.497920+00:00",
+  "all_source_sha_verified": true,
+  "all_output_full_frame_counts_preserved": true,
+  "all_presentation_timestamps_preserved_exactly": true,
+  "all_outputs_h264_yuv420p_faststart": true,
+  "total_source_annotation_bytes": 2716406903,
+  "total_browser_delivery_bytes": 997410409
+}
