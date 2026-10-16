@@ -1,0 +1,33 @@
+name: Publish existing Phase 8 annotated videos
+
+on:
+  repository_dispatch:
+    types: [phase8-publish-results-v1]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase8-annotated-video-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'unChris666/traffic-vehicle-counter-IDM-LOC'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Check out the exact dispatched publication source
+        # Official actions/checkout v4 commit, independently checked via GitHub API.
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.event.client_payload.source_commit }}
+          persist-credentials: false
+      - name: Install the delivery codec
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg
+      - name: Verify upload authorization and publish retained results
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/phase8_publish_results.py
