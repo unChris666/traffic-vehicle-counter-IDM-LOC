@@ -1,0 +1,822 @@
+{
+  "claim_type": "ACTUAL_READ_ONLY_KAGGLE_TERMINAL_RETRIEVAL_AND_CACHE_REPLAY_COMPARISON",
+  "kernel": "chrisbiran/phase-8-tgdi-b-v2-review",
+  "expected_version": 1,
+  "expected_source_binding_sha256": "d8ca2ed2dc9e3c59f4921a4c976348d4fdf11bbb093b1853a8173cc2c52b8e08",
+  "published_code_commit": "24599e7cc2024750052e810ff470b7dc141fca9f",
+  "status": "completed_verified",
+  "poll_interval_seconds": 55,
+  "status_observations": [
+    {
+      "time_utc": "2026-10-18T03:20:34.543368+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:21:11.962107+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:22:07.191288+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:23:02.388216+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:23:57.648286+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:24:52.925952+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:25:48.198633+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:26:43.480297+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:27:38.949048+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:28:34.261074+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:29:29.483205+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:30:24.669374+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:31:19.990344+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:32:15.259761+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:33:10.462306+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:34:05.649161+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:35:00.942408+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:35:56.172020+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:36:51.631439+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:37:46.902002+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:38:42.112260+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:39:37.393631+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:40:32.683332+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:41:27.879850+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:42:23.177190+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:43:18.410003+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:44:13.737274+00:00",
+      "status": "RUNNING"
+    },
+    {
+      "time_utc": "2026-10-18T03:45:09.011747+00:00",
+      "status": "COMPLETE"
+    }
+  ],
+  "artifact_verifications": [
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/retention_manifest.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/retention_manifest.json",
+      "sha256": "5d1210b504dd2b91e0aee99fcd54fe98c4cc5b74228062cff4f0dfe6d7d31d39",
+      "size_bytes": 8677,
+      "matches_remote_retention_manifest": false
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/batch_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/batch_report.json",
+      "sha256": "68b460eb22b1670e71887311ba01afdcd05648f6e21149b7ed5b8db667727eca",
+      "size_bytes": 41590,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot.json",
+      "sha256": "d938dcd3af127f866a8380596807b3eacadf3d50aa7c3e4cc8d6afcaecac3a0e",
+      "size_bytes": 1673,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_batch.py.gz",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_batch.py.gz",
+      "sha256": "fe188c803c9c47dd21cd6e237ec326dca4f54665eec1cb524d4f8755f7523c8b",
+      "size_bytes": 5694,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "sha256": "e13a1f6bcfcb1f177577893ead4423168548229683a657c20cf5df0804d7fa68",
+      "size_bytes": 9220,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_counting.py.gz",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_counting.py.gz",
+      "sha256": "85ba805d2b3e325aea2a38ed20eae389e682a7c7ae4b49b2486083007e7585f3",
+      "size_bytes": 8508,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_5_geometry_helpers.py.gz",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_5_geometry_helpers.py.gz",
+      "sha256": "f18232b26b90c842fc135991971e5a55fc836179f2bdb3cc2e984e8bd7a229d3",
+      "size_bytes": 8010,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_annotation_helpers.py.gz",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_annotation_helpers.py.gz",
+      "sha256": "f7a5b850aabce4a59224eed2e4e3da5dd6850b7eff1bd611ca69ff2b6d0628f2",
+      "size_bytes": 12429,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_annotation_batch.py.gz",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_annotation_batch.py.gz",
+      "sha256": "de1442f19ac0960e0a587eddb4dbaa03d743022b3199dcee23f009790da63d95",
+      "size_bytes": 7506,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/annotation_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/annotation_report.json",
+      "sha256": "5dcff50cae2b8f1b9bb53d89b87131dd18a0812dd78f2bc31e9401faa488667e",
+      "size_bytes": 2888,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/geometry.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/geometry.json",
+      "sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+      "size_bytes": 3940,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/counting_result.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/counting_result.json",
+      "sha256": "e33e09e2460170ff010c2381e37e88e3f89bb92ea70b04acd867d639158553f1",
+      "size_bytes": 4346248,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/annotation_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/annotation_report.json",
+      "sha256": "87c62c5817f5626544a3360645eb42c1e14e297afb73181a061e7253b8d36810",
+      "size_bytes": 2900,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/geometry.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/geometry.json",
+      "sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "size_bytes": 3945,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/annotation_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/annotation_report.json",
+      "sha256": "f18ce75e7296dede2b2c76fe608592eacd5950b14e62c396a962927d3a03993d",
+      "size_bytes": 2893,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/counting_result.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/counting_result.json",
+      "sha256": "127e357c4570fe32db0b1ed1e19688921dbc6857c789190bdd61785c38b6233f",
+      "size_bytes": 4220417,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/geometry.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/geometry.json",
+      "sha256": "1aa7e508dc5a68120faeca4aaf91c5c1475af7c521d5fab8924dc4974888dde0",
+      "size_bytes": 3940,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/counting_result.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/counting_result.json",
+      "sha256": "7fc10774490381cd3f73d90d1faa52a1566872c861b568886fe448458d8a887a",
+      "size_bytes": 3986983,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/annotation_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/annotation_report.json",
+      "sha256": "98097283a8392d94c6ea32ede91b46e05f1b8fb5f4c6cccae480d30494b17b2b",
+      "size_bytes": 2895,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/counting_result.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/counting_result.json",
+      "sha256": "caa5689fafe58125c67fe678ae298a2e67427a63fad9496d24edba067bcd3cb0",
+      "size_bytes": 2958171,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/geometry.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/geometry.json",
+      "sha256": "6b37590673df49ce7e78328279cb3a5fbe2fe84d360d13eeadc472bb4b4d9d40",
+      "size_bytes": 3945,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/annotation_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/annotation_report.json",
+      "sha256": "b1a980d40ec8a3c97ad29747529124c56b4c1dc3bccb8009f95164df722f5a04",
+      "size_bytes": 2893,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/geometry.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/geometry.json",
+      "sha256": "623ed8bdfa3609653ada783833d6945109bcecac288a4b117e4edea16ceaf2b2",
+      "size_bytes": 3940,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/counting_result.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/counting_result.json",
+      "sha256": "8b71c0d264ba6c2d3959e665ac2e3b294f0b865158b51b830f3cef3f33881470",
+      "size_bytes": 3244495,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/annotation_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/annotation_report.json",
+      "sha256": "e5a36bdb699bc8e5895e90208e3e84bbd03b54a06ee5f40e3aa58abb975d902f",
+      "size_bytes": 2900,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/geometry.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/geometry.json",
+      "sha256": "e51a30e23ba57e6c30b14ae88ed7716103993105e375c855b1ebd00f4d2a7de2",
+      "size_bytes": 3945,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/counting_result.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/counting_result.json",
+      "sha256": "75763d1fd0c0e2a8d31e6cd42306e90811242a97724699681b1a047322449b54",
+      "size_bytes": 3651559,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/annotation_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/annotation_report.json",
+      "sha256": "15c87b422d6f20d329256e67d72c4ef2b81fc1d816b44f3f6c395a59aedb52a5",
+      "size_bytes": 2893,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/counting_result.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/counting_result.json",
+      "sha256": "6d7e405205386227df733e1d5d78444fc75f11cc9d9dce0f0d773bf2740cdac8",
+      "size_bytes": 3668157,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/geometry.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/geometry.json",
+      "sha256": "56b3ba8d1a12eef5a2062a7d3f710129ec60dfa2be84b2625907e7b56fa936aa",
+      "size_bytes": 3940,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/annotation_report.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/annotation_report.json",
+      "sha256": "9fcef5419680a12e478ba66d34808f2a8ad02acd8fe469d56b940dc13254ca2e",
+      "size_bytes": 2894,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/geometry.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/geometry.json",
+      "sha256": "0df9ffe51efdd5832784b91f1cf617bc00b323efc86454daf0e717c2d434fa19",
+      "size_bytes": 3945,
+      "matches_remote_retention_manifest": true
+    },
+    {
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/counting_result.json",
+      "local_path": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/counting_result.json",
+      "sha256": "99545188aec0fffdd422b7a62de59081ac907fd01fbb4aaaae27e8ba828f933d",
+      "size_bytes": 3251441,
+      "matches_remote_retention_manifest": true
+    }
+  ],
+  "errors": [],
+  "new_model_or_counting_execution_by_retriever": false,
+  "remote_mutations": false,
+  "video_bulk_downloaded": false,
+  "current_status": "COMPLETE",
+  "terminal_status": "COMPLETE",
+  "pulled_kernel_source_files": [
+    {
+      "path": "/tmp/phase8-bv2-kaggle-output/kernel_source/kernel-metadata.json",
+      "sha256": "895c433bea606114ea8fba547940004a463759d2f208f9a3c67743273f9c043c",
+      "size_bytes": 668
+    },
+    {
+      "path": "/tmp/phase8-bv2-kaggle-output/kernel_source/phase-8-tgdi-b-v2-review.ipynb",
+      "sha256": "7e3b629e0fde0a4fa708b56a84152d822f00dc4b571a417c2def97a93697fb48",
+      "size_bytes": 152403
+    }
+  ],
+  "pulled_notebook_matches_submitted_bytes": false,
+  "pulled_notebook_contains_expected_binding": true,
+  "output_listing_pages": 1,
+  "output_file_count": 89,
+  "output_file_paths": [
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/b_v2_source_provenance.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SIANG-G3-T1.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SORE-G3-T1.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-MALAM-G3-T1.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SIANG-G3-T1.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SORE-G3-T1.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/08b_counting_b_v2_replay.ipynb",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_5_geometry_helpers.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_8_annotation_batch.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_8_annotation_helpers.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_8_b_v2_annotation.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_8_b_v2_annotation_tests.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_8_b_v2_batch.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_8_b_v2_batch_tests.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_8_b_v2_counting.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/__pycache__/phase_8_b_v2_counting_tests.cpython-313.pyc",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_5_geometry_helpers.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_8_annotation_batch.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_8_annotation_helpers.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_8_b_v2_annotation.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_8_b_v2_annotation_tests.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_8_b_v2_batch.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_8_b_v2_batch_tests.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_8_b_v2_counting.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/notebooks/phase_8_b_v2_counting_tests.py",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/config/geometry_manifest.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/config/policy.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/geometry/TGDI-WEEKDAY-MALAM-BV2.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/geometry/TGDI-WEEKDAY-PAGI-BV2.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/geometry/TGDI-WEEKDAY-SIANG-BV2.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/geometry/TGDI-WEEKDAY-SORE-BV2.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/geometry/TGDI-WEEKEND-MALAM-BV2.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/geometry/TGDI-WEEKEND-PAGI-BV2.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/geometry/TGDI-WEEKEND-SIANG-BV2.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/geometry/TGDI-WEEKEND-SORE-BV2.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/input/TGDI-WEEKDAY-PAGI-geometry-review.json",
+    "b_v2_source_snapshot_d8ca2ed2dc9e3c59/results/b_v2/input/user_decisions.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/batch_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/retention_manifest.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_5_geometry_helpers.py.gz",
+    "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_annotation_batch.py.gz",
+    "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_annotation_helpers.py.gz",
+    "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_annotation.py.gz",
+    "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_batch.py.gz",
+    "results/phase_8_b_v2/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_counting.py.gz",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/annotation_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/counting_result.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/geometry.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/weekday_malam-b-v2-annotated.ffmpeg.log",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/weekday_malam-b-v2-annotated.mp4",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/annotation_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/counting_result.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/geometry.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/weekday_pagi-b-v2-annotated.ffmpeg.log",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/weekday_pagi-b-v2-annotated.mp4",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/annotation_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/counting_result.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/geometry.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/weekday_siang-b-v2-annotated.ffmpeg.log",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/weekday_siang-b-v2-annotated.mp4",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/annotation_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/counting_result.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/geometry.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/weekday_sore-b-v2-annotated.ffmpeg.log",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/weekday_sore-b-v2-annotated.mp4",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/annotation_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/counting_result.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/geometry.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/weekend_malam-b-v2-annotated.ffmpeg.log",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/weekend_malam-b-v2-annotated.mp4",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/annotation_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/counting_result.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/geometry.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/weekend_pagi-b-v2-annotated.ffmpeg.log",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/weekend_pagi-b-v2-annotated.mp4",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/annotation_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/counting_result.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/geometry.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/weekend_siang-b-v2-annotated.ffmpeg.log",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/weekend_siang-b-v2-annotated.mp4",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/annotation_report.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/counting_result.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/geometry.json",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/weekend_sore-b-v2-annotated.ffmpeg.log",
+    "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/weekend_sore-b-v2-annotated.mp4"
+  ],
+  "kernel_log": {
+    "path": "/tmp/phase8-bv2-kaggle-output/kernel.log",
+    "sha256": "072b262861de46d29c8cb233152150af15d5486aab9cc77f34ecdb332e42ab90",
+    "size_bytes": 36485,
+    "url_redactions": 0,
+    "contains_expected_source_binding": true
+  },
+  "actual_output_prefix": "results/phase_8_b_v2/20261018T030959_217892Z/",
+  "actual_retention_manifest_sha256": "5d1210b504dd2b91e0aee99fcd54fe98c4cc5b74228062cff4f0dfe6d7d31d39",
+  "actual_run_id": "20261018T030959_217892Z",
+  "actual_kaggle_batch_report": "/tmp/phase8-bv2-kaggle-output/results/phase_8_b_v2/20261018T030959_217892Z/batch_report.json",
+  "actual_render_video_count": 8,
+  "executed_source_comparison": [
+    {
+      "source_name": "phase_8_b_v2_batch.py",
+      "sha256": "34853db725f03932740cffbf2f823caf148f5c8b4ee05abb5800261026b0c902",
+      "size_bytes": 18322,
+      "matches_submitted_source": true
+    },
+    {
+      "source_name": "phase_8_b_v2_counting.py",
+      "sha256": "b8e1ed7c815c38d4c2c8c86285c75ea3c14f2857f46cb690183f08235f8205db",
+      "size_bytes": 33089,
+      "matches_submitted_source": true
+    },
+    {
+      "source_name": "phase_8_b_v2_annotation.py",
+      "sha256": "e5b4d1a70b3ef05a93d88e0489f3fe66b447a91927fce1f08bb8c5490673b70b",
+      "size_bytes": 29890,
+      "matches_submitted_source": true
+    },
+    {
+      "source_name": "phase_5_geometry_helpers.py",
+      "sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+      "size_bytes": 30807,
+      "matches_submitted_source": true
+    },
+    {
+      "source_name": "phase_8_annotation_batch.py",
+      "sha256": "268a2c9680b50c0ed2465db7be7f83439e19d3e68056d4dfe031f5729e3ef927",
+      "size_bytes": 26340,
+      "matches_submitted_source": true
+    },
+    {
+      "source_name": "phase_8_annotation_helpers.py",
+      "sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305",
+      "size_bytes": 44041,
+      "matches_submitted_source": true
+    }
+  ],
+  "completed_utc": "2026-10-18T03:45:17.016672+00:00",
+  "actual_aggregates_match_local": true,
+  "video_comparisons": [
+    {
+      "video_id": "weekday_pagi",
+      "aggregate_equal": true,
+      "source_identity_equal": true,
+      "frames": 9052,
+      "actual_aggregate": {
+        "total": 526,
+        "by_category": {
+          "car": 132,
+          "motorcycle": 370,
+          "truck": 24
+        },
+        "by_direction": {
+          "A_TO_B": 293,
+          "B_TO_A": 233
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 371,
+          "LINE_MARGIN": 150,
+          "OCCLUSION_DIFF_POLYGON": 5
+        },
+        "measured_total": 137,
+        "inferred_total": 389,
+        "pending": 17,
+        "cancelled": 2
+      },
+      "counting_result_byte_identical_to_local": true
+    },
+    {
+      "video_id": "weekday_siang",
+      "aggregate_equal": true,
+      "source_identity_equal": true,
+      "frames": 9128,
+      "actual_aggregate": {
+        "total": 613,
+        "by_category": {
+          "car": 177,
+          "motorcycle": 363,
+          "truck": 73
+        },
+        "by_direction": {
+          "A_TO_B": 345,
+          "B_TO_A": 268
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 465,
+          "LINE_MARGIN": 139,
+          "OCCLUSION_DIFF_POLYGON": 9
+        },
+        "measured_total": 122,
+        "inferred_total": 491,
+        "pending": 102,
+        "cancelled": 3
+      },
+      "counting_result_byte_identical_to_local": true
+    },
+    {
+      "video_id": "weekday_sore",
+      "aggregate_equal": true,
+      "source_identity_equal": true,
+      "frames": 9077,
+      "actual_aggregate": {
+        "total": 466,
+        "by_category": {
+          "car": 122,
+          "motorcycle": 312,
+          "truck": 32
+        },
+        "by_direction": {
+          "A_TO_B": 248,
+          "B_TO_A": 218
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 328,
+          "LINE_MARGIN": 133,
+          "OCCLUSION_DIFF_POLYGON": 5
+        },
+        "measured_total": 116,
+        "inferred_total": 350,
+        "pending": 40,
+        "cancelled": 6
+      },
+      "counting_result_byte_identical_to_local": true
+    },
+    {
+      "video_id": "weekday_malam",
+      "aggregate_equal": true,
+      "source_identity_equal": true,
+      "frames": 9022,
+      "actual_aggregate": {
+        "total": 394,
+        "by_category": {
+          "car": 84,
+          "motorcycle": 295,
+          "truck": 15
+        },
+        "by_direction": {
+          "A_TO_B": 211,
+          "B_TO_A": 183
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 285,
+          "LINE_MARGIN": 108,
+          "OCCLUSION_DIFF_POLYGON": 1
+        },
+        "measured_total": 83,
+        "inferred_total": 311,
+        "pending": 6,
+        "cancelled": 2
+      },
+      "counting_result_byte_identical_to_local": true
+    },
+    {
+      "video_id": "weekend_pagi",
+      "aggregate_equal": true,
+      "source_identity_equal": true,
+      "frames": 9017,
+      "actual_aggregate": {
+        "total": 440,
+        "by_category": {
+          "car": 93,
+          "motorcycle": 297,
+          "truck": 50
+        },
+        "by_direction": {
+          "A_TO_B": 270,
+          "B_TO_A": 170
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 308,
+          "LINE_MARGIN": 130,
+          "OCCLUSION_DIFF_POLYGON": 2
+        },
+        "measured_total": 121,
+        "inferred_total": 319,
+        "pending": 15,
+        "cancelled": 0
+      },
+      "counting_result_byte_identical_to_local": true
+    },
+    {
+      "video_id": "weekend_siang",
+      "aggregate_equal": true,
+      "source_identity_equal": true,
+      "frames": 9124,
+      "actual_aggregate": {
+        "total": 477,
+        "by_category": {
+          "car": 73,
+          "motorcycle": 369,
+          "truck": 35
+        },
+        "by_direction": {
+          "A_TO_B": 340,
+          "B_TO_A": 137
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 333,
+          "LINE_MARGIN": 143,
+          "OCCLUSION_DIFF_POLYGON": 1
+        },
+        "measured_total": 136,
+        "inferred_total": 341,
+        "pending": 11,
+        "cancelled": 0
+      },
+      "counting_result_byte_identical_to_local": true
+    },
+    {
+      "video_id": "weekend_sore",
+      "aggregate_equal": true,
+      "source_identity_equal": true,
+      "frames": 9138,
+      "actual_aggregate": {
+        "total": 493,
+        "by_category": {
+          "car": 95,
+          "motorcycle": 364,
+          "truck": 34
+        },
+        "by_direction": {
+          "A_TO_B": 343,
+          "B_TO_A": 150
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 352,
+          "LINE_MARGIN": 138,
+          "OCCLUSION_DIFF_POLYGON": 3
+        },
+        "measured_total": 129,
+        "inferred_total": 364,
+        "pending": 49,
+        "cancelled": 5
+      },
+      "counting_result_byte_identical_to_local": true
+    },
+    {
+      "video_id": "weekend_malam",
+      "aggregate_equal": true,
+      "source_identity_equal": true,
+      "frames": 9032,
+      "actual_aggregate": {
+        "total": 308,
+        "by_category": {
+          "car": 65,
+          "motorcycle": 231,
+          "truck": 12
+        },
+        "by_direction": {
+          "A_TO_B": 118,
+          "B_TO_A": 190
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 225,
+          "LINE_MARGIN": 83
+        },
+        "measured_total": 54,
+        "inferred_total": 254,
+        "pending": 4,
+        "cancelled": 0
+      },
+      "counting_result_byte_identical_to_local": true
+    }
+  ],
+  "remote_video_metadata": [
+    {
+      "video_id": "weekday_pagi",
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_pagi/weekday_pagi-b-v2-annotated.mp4",
+      "sha256": "2fd46c62294700bb482a5501687b416f1c3e86bd4e9dc6d95a062618561ee134",
+      "size_bytes": 131710518,
+      "frames": 9052,
+      "kaggle_capability_host": "www.kaggleusercontent.com"
+    },
+    {
+      "video_id": "weekday_siang",
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_siang/weekday_siang-b-v2-annotated.mp4",
+      "sha256": "d14218753b76306b9c976823f1675bf06e4aca6c9400630a5bdec731d7847c89",
+      "size_bytes": 119401110,
+      "frames": 9128,
+      "kaggle_capability_host": "www.kaggleusercontent.com"
+    },
+    {
+      "video_id": "weekday_sore",
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_sore/weekday_sore-b-v2-annotated.mp4",
+      "sha256": "74adf8852c86e68c28129fe9e1a3f4ea3a5d3a78e882fe7b7e52f139ce4c4c79",
+      "size_bytes": 107020944,
+      "frames": 9077,
+      "kaggle_capability_host": "www.kaggleusercontent.com"
+    },
+    {
+      "video_id": "weekday_malam",
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekday_malam/weekday_malam-b-v2-annotated.mp4",
+      "sha256": "f33f9dd8de6df2176cbb907fb6b4f668ce0549e5ffa608afd977ede19575615e",
+      "size_bytes": 90683196,
+      "frames": 9022,
+      "kaggle_capability_host": "www.kaggleusercontent.com"
+    },
+    {
+      "video_id": "weekend_pagi",
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_pagi/weekend_pagi-b-v2-annotated.mp4",
+      "sha256": "4e99756c4d47eb1aa014cd7bb93cf683d210a753e4c4e6e7d13b21facd63579b",
+      "size_bytes": 117294955,
+      "frames": 9017,
+      "kaggle_capability_host": "www.kaggleusercontent.com"
+    },
+    {
+      "video_id": "weekend_siang",
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_siang/weekend_siang-b-v2-annotated.mp4",
+      "sha256": "a01f0b10f0963b5f37522710a9fc44066b1f5bdc6a86598c3828a92a6cd26d90",
+      "size_bytes": 106408428,
+      "frames": 9124,
+      "kaggle_capability_host": "www.kaggleusercontent.com"
+    },
+    {
+      "video_id": "weekend_sore",
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_sore/weekend_sore-b-v2-annotated.mp4",
+      "sha256": "2c058e57e1b290a67b74db88200c50e571e3054f7873bc4ff8bbbca354b7ecc3",
+      "size_bytes": 122768697,
+      "frames": 9138,
+      "kaggle_capability_host": "www.kaggleusercontent.com"
+    },
+    {
+      "video_id": "weekend_malam",
+      "remote_path": "results/phase_8_b_v2/20261018T030959_217892Z/weekend_malam/weekend_malam-b-v2-annotated.mp4",
+      "sha256": "7c83773e8c0e886f4adb6a8d6acef5943d29fd44ed3ca818c73e62048c03801c",
+      "size_bytes": 77331728,
+      "frames": 9032,
+      "kaggle_capability_host": "www.kaggleusercontent.com"
+    }
+  ],
+  "private_capability_payload_path": "/tmp/phase8-bv2-publication-downloads.json",
+  "private_capability_payload_mode": "0600",
+  "private_capability_payload_rows": 8,
+  "source_bundle_binding_verified_from_log": true,
+  "frames_processed": 72590,
+  "operational_total": 3717,
+  "pending_total": 244,
+  "measured_total": 898,
+  "inferred_total": 2819,
+  "timeout_total": 2667
+}

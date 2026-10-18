@@ -1,6 +1,6 @@
 # B v2 — geometri pengguna, counting dan log passage
 
-**Status 18 Oktober 2026:** kode dan replay CPU lokal delapan video selesai; annotated video sedang dijalankan dalam [notebook Kaggle B v2](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-b-v2-review). Status terminal dan tautan video aktual akan dicatat setelah output tersedia. Eksekusi baru memakai cache model Phase 8 yang sudah selesai, tanpa inference YOLO/BoT-SORT/ReID ulang.
+**Status 18 Oktober 2026:** kode, replay CPU, dan render seluruh delapan annotated video selesai dalam [notebook Kaggle B v2](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-b-v2-review). Sebanyak 72.590 frame ditulis dan didecode kembali; seluruh counting result identik byte dengan replay lokal. Publikasi GitHub Release sedang diselesaikan. Eksekusi baru memakai cache model Phase 8 yang sudah selesai, tanpa inference YOLO/BoT-SORT/ReID ulang.
 
 [Notebook sumber](../../notebooks/08b_counting_b_v2_replay.ipynb) · [Kontrak yang diterapkan](../../docs/B_V2_COUNTING_CONTRACT.md) · [Geometri delapan video](config/geometry_manifest.json) · [Policy eksplisit](config/policy.json) · [Input asli pengguna](input/TGDI-WEEKDAY-PAGI-geometry-review.json)
 
@@ -26,6 +26,8 @@ Pending B v2 dimaksudkan sebagai keputusan per unit/passage. Audit aktual menemu
 **Kasus yang perlu direview:** [kendaraan di tepi kanan dan dua estimasi timeout](review/timeout_edge_car/review.md), ID 2/frame 76 dan ID 34/frame 201. Enam sampel aktual memperlihatkan kendaraan serupa di dekat bangunan yang sama; kedua event tidak mempunyai crossing/pita/destination yang teramati. Dugaan kendaraan diam serta fragmentasi ID memerlukan review kontinu, bukan disimpulkan sebagai ground truth.
 
 [Ringkasan aktual lokal](execution/local_replay_summary.json) dan arsip byte laporan/event beserta source_snapshot berada di execution/. Manifest retensi mengikat bytes asal dan gzip tersimpan. Ini bukan eksperimen ablation satu faktor: geometri dan beberapa aturan counting berubah bersamaan.
+
+[Bukti eksekusi Kaggle aktual](kaggle_execution/execution_summary.json): run `20261018T030959_217892Z`, waktu batch aktual sekitar 34,2 menit pada CPU, delapan MP4 total 872.619.576 byte. Runtime ini mencakup verifikasi/replay/render/decode tanpa inference model baru; bukan benchmark perbandingan kecepatan. [Delivery manifest](delivery_manifest.json) mengikat checksum video Kaggle ke sumber program yang dieksekusi.
 
 ## Preview aktual panel baru
 
