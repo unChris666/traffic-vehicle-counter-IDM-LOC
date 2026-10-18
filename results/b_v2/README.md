@@ -1,10 +1,25 @@
 # B v2 — geometri pengguna, counting dan log passage
 
-**Status 18 Oktober 2026:** kode, replay CPU, dan render seluruh delapan annotated video selesai dalam [notebook Kaggle B v2](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-b-v2-review). Sebanyak 72.590 frame ditulis dan didecode kembali; seluruh counting result identik byte dengan replay lokal. Publikasi GitHub Release sedang diselesaikan. Eksekusi baru memakai cache model Phase 8 yang sudah selesai, tanpa inference YOLO/BoT-SORT/ReID ulang.
+**Status 18 Oktober 2026:** kode, replay CPU, dan render seluruh delapan annotated video selesai dalam [notebook Kaggle B v2](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-b-v2-review). Sebanyak 72.590 frame ditulis dan didecode kembali; seluruh counting result identik byte dengan replay lokal. **Delapan video telah dipublikasikan ke [GitHub Release B v2](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/tag/phase8-b-v2-tgdi-review-v1)**; workflow sukses dan checksum server cocok dengan output Kaggle. Eksekusi baru memakai cache model Phase 8 yang sudah selesai, tanpa inference YOLO/BoT-SORT/ReID ulang.
 
 [Notebook sumber](../../notebooks/08b_counting_b_v2_replay.ipynb) · [Kontrak yang diterapkan](../../docs/B_V2_COUNTING_CONTRACT.md) · [Geometri delapan video](config/geometry_manifest.json) · [Policy eksplisit](config/policy.json) · [Input asli pengguna](input/TGDI-WEEKDAY-PAGI-geometry-review.json)
 
 Geometri native 640×480 memakai margin 25px per sisi (pita 50px). Clock 60 frame dimulai ulang setiap pengukuran di polygon asal. Jalur garis, polygon setelah occlusion tanpa sampel pita, serta timeout estimasi mempunyai log berbeda. Passage balik yang sah boleh dihitung lagi; upgrade bukti satu passage tidak menambah event kedua. Motorcycle+rider menjadi satu bbox tampilan ketika relasi komponen didukung, dengan BC kendaraan mentah tetap sebagai anchor.
+
+## Video anotasi B v2 — hasil aktual
+
+MP4 tersimpan sebagai release asset sehingga tetap tersedia setelah sesi Kaggle berakhir. [Receipt publikasi](publication/publication_receipt.json) dan [verifikasi unduhan/checksum](publication/retrieval_verification.json) mengikat delapan video ke run Kaggle yang selesai. Video B v1 tetap terpisah.
+
+| Video | Anotasi B v2 |
+|---|---|
+| TGDI-WEEKDAY-PAGI | [Buka/unduh MP4](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-b-v2-tgdi-review-v1/TGDI-WEEKDAY-PAGI-b-v2-annotated.mp4) |
+| TGDI-WEEKDAY-SIANG | [Buka/unduh MP4](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-b-v2-tgdi-review-v1/TGDI-WEEKDAY-SIANG-b-v2-annotated.mp4) |
+| TGDI-WEEKDAY-SORE | [Buka/unduh MP4](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-b-v2-tgdi-review-v1/TGDI-WEEKDAY-SORE-b-v2-annotated.mp4) |
+| TGDI-WEEKDAY-MALAM | [Buka/unduh MP4](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-b-v2-tgdi-review-v1/TGDI-WEEKDAY-MALAM-b-v2-annotated.mp4) |
+| TGDI-WEEKEND-PAGI | [Buka/unduh MP4](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-b-v2-tgdi-review-v1/TGDI-WEEKEND-PAGI-b-v2-annotated.mp4) |
+| TGDI-WEEKEND-SIANG | [Buka/unduh MP4](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-b-v2-tgdi-review-v1/TGDI-WEEKEND-SIANG-b-v2-annotated.mp4) |
+| TGDI-WEEKEND-SORE | [Buka/unduh MP4](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-b-v2-tgdi-review-v1/TGDI-WEEKEND-SORE-b-v2-annotated.mp4) |
+| TGDI-WEEKEND-MALAM | [Buka/unduh MP4](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/download/phase8-b-v2-tgdi-review-v1/TGDI-WEEKEND-MALAM-b-v2-annotated.mp4) |
 
 ## Hasil replay lokal aktual
 
@@ -57,4 +72,14 @@ Jangan arahkan output ke input lama. Source/model caches diverifikasi sebelum re
 
 ## Validasi
 
-Tiga suite menghitung 45 uji counting, 25 uji renderer, 15 uji batch; seluruh 85 lulus tanpa skip. Pengujian mencakup timeout/return, rekonsiliasi event, finite endpoints, sumber BC, kategori pita, raw detection linkage, bbox rider, dan encode/decode H.264 sintetis. Validasi packaging menguji 22 guard dan source 30 file. Uji ini memverifikasi software; tidak mengukur counting accuracy. Publisher terpisah mempunyai 20 uji offline dan tidak menjalankan ulang pipeline. Satu annotated video lokal penuh (weekday_pagi, 9.052 frame) juga selesai di-encode dan di-decode kembali; [laporan aktualnya](execution/local_annotation/annotation_report.json) terpisah dari batch replay tanpa render. Video publik harus memakai checksum output Kaggle aktual.
+Tiga suite menghitung 45 uji counting, 25 uji renderer, 15 uji batch; seluruh 85 lulus tanpa skip. Pengujian mencakup timeout/return, rekonsiliasi event, finite endpoints, sumber BC, kategori pita, raw detection linkage, bbox rider, dan encode/decode H.264 sintetis. Validasi packaging menguji 22 guard dan source 30 file. Uji ini memverifikasi software; tidak mengukur counting accuracy. Publisher terpisah mempunyai 20 uji offline dan tidak menjalankan ulang pipeline. Satu annotated video lokal penuh (weekday_pagi, 9.052 frame) juga selesai di-encode dan di-decode kembali; [laporan aktualnya](execution/local_annotation/annotation_report.json) terpisah dari batch replay tanpa render. Video publik memakai checksum output Kaggle aktual; checksum encode lokal memang berbeda dan tidak dipakai untuk asset Kaggle.
+
+## Audit akhir retained evidence
+
+Setelah semua bukti tersedia, jalankan pemeriksa read-only berikut untuk memverifikasi input, sumber, ledger, render Kaggle, publikasi dan manifest retensi tanpa model atau replay baru:
+
+```bash
+python results/b_v2/verification/check_b_v2_artifacts.py --require-published
+```
+
+[Hasil audit terakhir](verification/final_validation.json) memuat pemeriksaan serta keterbatasan diagnostik/timeout secara eksplisit. Keberhasilan software dan transport tidak menjadi klaim reliabilitas counting produksi.

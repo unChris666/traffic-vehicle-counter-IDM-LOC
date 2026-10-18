@@ -1,6 +1,6 @@
 # Results — pintu masuk hasil dan review
 
-**B v2 terbaru:** [kode, geometri baru, preview dan hasil replay](b_v2/README.md) · [notebook Kaggle](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-b-v2-review). Video di tabel Phase 8 lama di bawah tetap snapshot B v1.
+**B v2 terbaru:** [delapan video anotasi di GitHub Release](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/tag/phase8-b-v2-tgdi-review-v1) · [indeks per video, hasil dan audit](b_v2/README.md) · [notebook Kaggle](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-b-v2-review). Render delapan video selesai; log kendaraan lewat berada di bawah accepted dan di atas pending. Total operasional memasukkan estimasi timeout yang tetap perlu direview. Video di tabel lama di bawah tetap snapshot B v1.
 
 Folder ini sejajar dengan `docs/` dan `notebooks/` agar hasil mudah ditemukan.
 
@@ -17,7 +17,7 @@ Gambar bawaan adalah frame 0, bukan keseluruhan video. Cocokkan posisi jalan ter
 
 [Analisis SWOT, contoh kasus, dan prioritas Pareto B v2](../docs/B_V2_GEOMETRY_REVIEW.md) · [Diagnosis pending aktual](b_v2_pending_diagnosis.json)
 
-## Video anotasi Phase 8
+## Video anotasi Phase 8 — baseline B v1
 
 Delapan MP4 aktual tersedia pada [GitHub Release phase8-annotation-review-v1](https://github.com/unChris666/traffic-vehicle-counter-IDM-LOC/releases/tag/phase8-annotation-review-v1). Buka bagian **Assets** atau pilih tautan di bawah. MP4 tetap berada di GitHub Releases; folder `results/` menyediakan indeks yang mudah ditemukan, bukan salinan video di riwayat Git.
 

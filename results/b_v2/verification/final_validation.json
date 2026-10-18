@@ -1,0 +1,2265 @@
+{
+  "schema_version": "b_v2_retained_artifact_validation_v1",
+  "claim_type": "READ_ONLY_INTEGRITY_OF_RETAINED_EVIDENCE_NOT_PERFORMANCE",
+  "checked_at_utc": "2026-10-18T03:54:48.537908+00:00",
+  "status": "PASS",
+  "require_published": true,
+  "no_model_replay_media_tests_or_network_execution": true,
+  "source_commit": "24599e7cc2024750052e810ff470b7dc141fca9f",
+  "stages": {
+    "local_cache_replay": "RETAINED_ACTUAL_EXECUTION_CHECKED",
+    "kaggle_render_execution": "ACTUAL_COMPLETE_EIGHT_VIDEO_RENDER_RETAINED_AND_CHECKED",
+    "github_publication": "ACTUAL_FINAL_PUBLICATION_RECEIPT_AND_SERVER_ASSETS_CHECKED",
+    "final_retention_manifest": "RETAINED_MANIFEST_CHECKED"
+  },
+  "facts": {
+    "known_limitations": {
+      "pending_diagnostic_reset_reuses_two_unit_passage_keys": [
+        {
+          "video_id": "weekend_sore",
+          "physical_unit_id": "retained-clique:3651,3670",
+          "passage_id": "retained-clique:3651,3670:passage:1",
+          "pending_frames": [
+            5404,
+            5443
+          ]
+        },
+        {
+          "video_id": "weekend_sore",
+          "physical_unit_id": "track:4123",
+          "passage_id": "track:4123:passage:1",
+          "pending_frames": [
+            6460,
+            6588
+          ]
+        }
+      ],
+      "pending_rows_are_not_unique_passage_count": true,
+      "bounded_accepted_ledger_in_these_retained_outputs_has_no_duplicate_key": true,
+      "sampled_timeout_physical_validity_requires_further_audit": {
+        "source": "results/b_v2/review/timeout_edge_car/review.json",
+        "raw_track_ids": [
+          2,
+          34
+        ],
+        "two_actual_estimates_without_observed_band_or_destination": true,
+        "stationary_vehicle_or_same_physical_identity_hypotheses_unconfirmed": true,
+        "formal_ground_truth": false
+      }
+    },
+    "actual_local_replay": {
+      "frames": 72590,
+      "operational_events": 3717,
+      "measured_events": 898,
+      "inferred_events": 2819,
+      "estimated_timeout_events": 2667,
+      "pending_decision_rows": 244,
+      "unique_pending_unit_passage_keys": 242
+    },
+    "actual_kaggle_execution": {
+      "run_id": "20261018T030959_217892Z",
+      "rendered_videos": 8,
+      "frames_written_and_redecoded": 72590,
+      "video_bytes": 872619576,
+      "counting_results_exact_byte_equal_to_local": true,
+      "new_model_inference": false
+    }
+  },
+  "check_count": 548,
+  "failed_count": 0,
+  "checks": [
+    {
+      "name": "user_upload_exact_sha",
+      "passed": true
+    },
+    {
+      "name": "original_export_preserved_not_rewritten",
+      "passed": true
+    },
+    {
+      "name": "eight_unique_geometry_bindings",
+      "passed": true
+    },
+    {
+      "name": "shared_template_authorized",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:geometry_hash_source",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:native_points_no_rescale",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:finite_margin_25_50",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:template_anchor_direction",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:geometry_hash_source",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:native_points_no_rescale",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:finite_margin_25_50",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:template_anchor_direction",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:geometry_hash_source",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:native_points_no_rescale",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:finite_margin_25_50",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:template_anchor_direction",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:geometry_hash_source",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:native_points_no_rescale",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:finite_margin_25_50",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:template_anchor_direction",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:geometry_hash_source",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:native_points_no_rescale",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:finite_margin_25_50",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:template_anchor_direction",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:geometry_hash_source",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:native_points_no_rescale",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:finite_margin_25_50",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:template_anchor_direction",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:geometry_hash_source",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:native_points_no_rescale",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:finite_margin_25_50",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:template_anchor_direction",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:geometry_hash_source",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:native_points_no_rescale",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:finite_margin_25_50",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:template_anchor_direction",
+      "passed": true
+    },
+    {
+      "name": "policy_matches_user_clock_margin",
+      "passed": true
+    },
+    {
+      "name": "baseline_commit_and_two_context_archives",
+      "passed": true
+    },
+    {
+      "name": "baseline:AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "baseline:docs/COUNTING_LOGIC.md",
+      "passed": true
+    },
+    {
+      "name": "all_historical_python_sources_unchanged",
+      "passed": true,
+      "detail": 22
+    },
+    {
+      "name": "actual_local_25_exact_retained_artifacts",
+      "passed": true
+    },
+    {
+      "name": "retained:batch_report.json",
+      "passed": true
+    },
+    {
+      "name": "retained:retention_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "retained:source_snapshot/phase_5_geometry_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "retained:source_snapshot/phase_8_annotation_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "retained:source_snapshot/phase_8_annotation_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "retained:source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "passed": true
+    },
+    {
+      "name": "retained:source_snapshot/phase_8_b_v2_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "retained:source_snapshot/phase_8_b_v2_counting.py.gz",
+      "passed": true
+    },
+    {
+      "name": "retained:source_snapshot.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekday_malam/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekday_malam/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekday_pagi/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekday_pagi/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekday_siang/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekday_siang/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekday_sore/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekday_sore/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekend_malam/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekend_malam/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekend_pagi/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekend_pagi/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekend_siang/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekend_siang/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekend_sore/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "retained:weekend_sore/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:batch_report.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:source_snapshot/phase_5_geometry_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "run_retention:source_snapshot/phase_8_annotation_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "run_retention:source_snapshot/phase_8_annotation_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "run_retention:source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "passed": true
+    },
+    {
+      "name": "run_retention:source_snapshot/phase_8_b_v2_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "run_retention:source_snapshot/phase_8_b_v2_counting.py.gz",
+      "passed": true
+    },
+    {
+      "name": "run_retention:source_snapshot.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekday_malam/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekday_malam/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekday_pagi/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekday_pagi/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekday_siang/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekday_siang/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekday_sore/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekday_sore/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekend_malam/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekend_malam/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekend_pagi/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekend_pagi/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekend_siang/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekend_siang/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekend_sore/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "run_retention:weekend_sore/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "six_executed_source_snapshots",
+      "passed": true
+    },
+    {
+      "name": "executed_source:notebooks/phase_8_b_v2_batch.py",
+      "passed": true
+    },
+    {
+      "name": "executed_source:notebooks/phase_8_b_v2_counting.py",
+      "passed": true
+    },
+    {
+      "name": "executed_source:notebooks/phase_8_b_v2_annotation.py",
+      "passed": true
+    },
+    {
+      "name": "executed_source:notebooks/phase_5_geometry_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "executed_source:notebooks/phase_8_annotation_batch.py",
+      "passed": true
+    },
+    {
+      "name": "executed_source:notebooks/phase_8_annotation_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "batch_all_eight_no_model_execution",
+      "passed": true
+    },
+    {
+      "name": "batch_control_hashes",
+      "passed": true
+    },
+    {
+      "name": "batch_video_ids",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:source_identity_and_frame_scope",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:policy_identity",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:copied_geometry_exact",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:unique_active_events_and_passages",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:event_routes_inference_flags",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:raw_vehicle_BC_references",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:log_plus1_upgrade0_cancel_minus1_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:cancelled_excluded",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:pending_reason_rows_well_formed",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:open_presence_EOF_diagnostics_retained",
+      "passed": true
+    },
+    {
+      "name": "weekday_pagi:recomputed_aggregates",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:source_identity_and_frame_scope",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:policy_identity",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:copied_geometry_exact",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:unique_active_events_and_passages",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:event_routes_inference_flags",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:raw_vehicle_BC_references",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:log_plus1_upgrade0_cancel_minus1_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:cancelled_excluded",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:pending_reason_rows_well_formed",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:open_presence_EOF_diagnostics_retained",
+      "passed": true
+    },
+    {
+      "name": "weekday_siang:recomputed_aggregates",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:source_identity_and_frame_scope",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:policy_identity",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:copied_geometry_exact",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:unique_active_events_and_passages",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:event_routes_inference_flags",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:raw_vehicle_BC_references",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:log_plus1_upgrade0_cancel_minus1_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:cancelled_excluded",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:pending_reason_rows_well_formed",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:open_presence_EOF_diagnostics_retained",
+      "passed": true
+    },
+    {
+      "name": "weekday_sore:recomputed_aggregates",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:source_identity_and_frame_scope",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:policy_identity",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:copied_geometry_exact",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:unique_active_events_and_passages",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:event_routes_inference_flags",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:raw_vehicle_BC_references",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:log_plus1_upgrade0_cancel_minus1_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:cancelled_excluded",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:pending_reason_rows_well_formed",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:open_presence_EOF_diagnostics_retained",
+      "passed": true
+    },
+    {
+      "name": "weekday_malam:recomputed_aggregates",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:source_identity_and_frame_scope",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:policy_identity",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:copied_geometry_exact",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:unique_active_events_and_passages",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:event_routes_inference_flags",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:raw_vehicle_BC_references",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:log_plus1_upgrade0_cancel_minus1_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:cancelled_excluded",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:pending_reason_rows_well_formed",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:open_presence_EOF_diagnostics_retained",
+      "passed": true
+    },
+    {
+      "name": "weekend_pagi:recomputed_aggregates",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:source_identity_and_frame_scope",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:policy_identity",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:copied_geometry_exact",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:unique_active_events_and_passages",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:event_routes_inference_flags",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:raw_vehicle_BC_references",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:log_plus1_upgrade0_cancel_minus1_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:cancelled_excluded",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:pending_reason_rows_well_formed",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:open_presence_EOF_diagnostics_retained",
+      "passed": true
+    },
+    {
+      "name": "weekend_siang:recomputed_aggregates",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:source_identity_and_frame_scope",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:policy_identity",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:copied_geometry_exact",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:unique_active_events_and_passages",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:event_routes_inference_flags",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:raw_vehicle_BC_references",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:log_plus1_upgrade0_cancel_minus1_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:cancelled_excluded",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:pending_reason_rows_well_formed",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:open_presence_EOF_diagnostics_retained",
+      "passed": true
+    },
+    {
+      "name": "weekend_sore:recomputed_aggregates",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:source_identity_and_frame_scope",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:policy_identity",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:copied_geometry_exact",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:unique_active_events_and_passages",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:event_routes_inference_flags",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:raw_vehicle_BC_references",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:log_plus1_upgrade0_cancel_minus1_reconcile",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:cancelled_excluded",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:pending_reason_rows_well_formed",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:open_presence_EOF_diagnostics_retained",
+      "passed": true
+    },
+    {
+      "name": "weekend_malam:recomputed_aggregates",
+      "passed": true
+    },
+    {
+      "name": "actual_summary_recomputed_72590_frames_3717_events",
+      "passed": true
+    },
+    {
+      "name": "summary_is_not_performance_or_same_pending_denominator",
+      "passed": true
+    },
+    {
+      "name": "known_exact_two_repeated_pending_keys_visible_not_hidden",
+      "passed": true
+    },
+    {
+      "name": "derived_pending_audit_244_rows_242_keys_exact_case_no_active_count",
+      "passed": true
+    },
+    {
+      "name": "pending_duplicate_bounded_log_case:retained-clique:3651,3670",
+      "passed": true
+    },
+    {
+      "name": "pending_duplicate_bounded_log_case:track:4123",
+      "passed": true
+    },
+    {
+      "name": "pending_audit_source:results/b_v2/execution/local_20261018T030911_956653Z/weekday_malam/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "pending_audit_source:results/b_v2/execution/local_20261018T030911_956653Z/weekday_pagi/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "pending_audit_source:results/b_v2/execution/local_20261018T030911_956653Z/weekday_siang/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "pending_audit_source:results/b_v2/execution/local_20261018T030911_956653Z/weekday_sore/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "pending_audit_source:results/b_v2/execution/local_20261018T030911_956653Z/weekend_malam/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "pending_audit_source:results/b_v2/execution/local_20261018T030911_956653Z/weekend_pagi/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "pending_audit_source:results/b_v2/execution/local_20261018T030911_956653Z/weekend_siang/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "pending_audit_source:results/b_v2/execution/local_20261018T030911_956653Z/weekend_sore/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "four_retained_suites_105_tests_no_failures_errors_skips",
+      "passed": true
+    },
+    {
+      "name": "tested_source:phase_8_b_v2_counting_tests",
+      "passed": true
+    },
+    {
+      "name": "tested_source:phase_8_b_v2_annotation_tests",
+      "passed": true
+    },
+    {
+      "name": "tested_source:phase_8_b_v2_batch_tests",
+      "passed": true
+    },
+    {
+      "name": "tested_source:b_v2_publication_tests",
+      "passed": true
+    },
+    {
+      "name": "submitted_notebook_exact_sha_and_canonical_cells",
+      "passed": true
+    },
+    {
+      "name": "exact_30_files_bundle_binding",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SIANG-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SORE-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-MALAM-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SIANG-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SORE-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/08b_counting_b_v2_replay.ipynb",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_5_geometry_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_8_annotation_batch.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_8_annotation_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_8_b_v2_annotation.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_8_b_v2_annotation_tests.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_8_b_v2_batch.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_8_b_v2_batch_tests.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_8_b_v2_counting.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:notebooks/phase_8_b_v2_counting_tests.py",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/config/geometry_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/config/policy.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/geometry/TGDI-WEEKDAY-MALAM-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/geometry/TGDI-WEEKDAY-PAGI-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/geometry/TGDI-WEEKDAY-SIANG-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/geometry/TGDI-WEEKDAY-SORE-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/geometry/TGDI-WEEKEND-MALAM-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/geometry/TGDI-WEEKEND-PAGI-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/geometry/TGDI-WEEKEND-SIANG-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/geometry/TGDI-WEEKEND-SORE-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/input/TGDI-WEEKDAY-PAGI-geometry-review.json",
+      "passed": true
+    },
+    {
+      "name": "submitted_payload:results/b_v2/input/user_decisions.json",
+      "passed": true
+    },
+    {
+      "name": "CPU_private_no_network_readonly_inputs_packet",
+      "passed": true
+    },
+    {
+      "name": "retained_packet_checks_all_pass",
+      "passed": true
+    },
+    {
+      "name": "bundle_builder_bound",
+      "passed": true
+    },
+    {
+      "name": "preview_actual_source_identity",
+      "passed": true
+    },
+    {
+      "name": "three_actual_preview_routes",
+      "passed": true
+    },
+    {
+      "name": "preview:TGDI-WEEKDAY-PAGI-ESTIMATED_TIMEOUT-frame-76.png",
+      "passed": true
+    },
+    {
+      "name": "preview:TGDI-WEEKDAY-PAGI-LINE_MARGIN-frame-110.png",
+      "passed": true
+    },
+    {
+      "name": "preview:TGDI-WEEKDAY-PAGI-OCCLUSION_DIFF_POLYGON-frame-326.png",
+      "passed": true
+    },
+    {
+      "name": "separate_actual_local_annotation_report_retained_exact",
+      "passed": true
+    },
+    {
+      "name": "local_annotation_full_9052_frames_and_unchanged_ledger",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_is_sparse_evidence_not_ground_truth",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_source:actual_counting_result",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_source:actual_geometry",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_six_actual_frames",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_PNG:0",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_PNG:16",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_PNG:76",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_PNG:110",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_PNG:141",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_PNG:201",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_two_actual_timeout_events_unmeasured",
+      "passed": true
+    },
+    {
+      "name": "bounded_review_retained_89_measured_links_not_full_video_audit",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:batch_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:retention_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:source_snapshot/phase_5_geometry_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:source_snapshot/phase_8_annotation_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:source_snapshot/phase_8_annotation_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:source_snapshot/phase_8_b_v2_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:source_snapshot/phase_8_b_v2_counting.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:source_snapshot.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_malam/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_malam/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_malam/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_pagi/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_pagi/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_pagi/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_siang/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_siang/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_siang/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_sore/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_sore/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekday_sore/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_malam/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_malam/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_malam/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_pagi/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_pagi/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_pagi/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_siang/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_siang/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_siang/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_sore/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_sore/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:retained_exact_bytes:weekend_sore/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:33_actual_artifacts_unique",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:batch_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:source_snapshot/phase_5_geometry_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:source_snapshot/phase_8_annotation_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:source_snapshot/phase_8_annotation_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:source_snapshot/phase_8_b_v2_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:source_snapshot/phase_8_b_v2_counting.py.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:source_snapshot.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_malam/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_malam/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_malam/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_pagi/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_pagi/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_pagi/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_siang/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_siang/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_siang/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_sore/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_sore/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekday_sore/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_malam/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_malam/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_malam/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_pagi/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_pagi/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_pagi/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_siang/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_siang/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_siang/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_sore/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_sore/counting_result.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:original_run_manifest:weekend_sore/geometry.json",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_complete_terminal_and_original_manifest",
+      "passed": true
+    },
+    {
+      "name": "kaggle:all_eight_rendered_redecoded_no_new_models",
+      "passed": true
+    },
+    {
+      "name": "kaggle:exact_six_executed_sources",
+      "passed": true
+    },
+    {
+      "name": "kaggle:executed_source:notebooks/phase_8_b_v2_batch.py",
+      "passed": true
+    },
+    {
+      "name": "kaggle:executed_source:notebooks/phase_8_b_v2_counting.py",
+      "passed": true
+    },
+    {
+      "name": "kaggle:executed_source:notebooks/phase_8_b_v2_annotation.py",
+      "passed": true
+    },
+    {
+      "name": "kaggle:executed_source:notebooks/phase_5_geometry_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "kaggle:executed_source:notebooks/phase_8_annotation_batch.py",
+      "passed": true
+    },
+    {
+      "name": "kaggle:executed_source:notebooks/phase_8_annotation_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "kaggle:supporting_exact_bytes:kernel.log.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:supporting_exact_bytes:kernel-metadata.json.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:supporting_exact_bytes:phase-8-tgdi-b-v2-review.ipynb.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:supporting_exact_bytes:phase8-bv2-kaggle-live-log-proof.json.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:supporting_exact_bytes:phase8-bv2-kaggle-live-log-events.json.gz",
+      "passed": true
+    },
+    {
+      "name": "kaggle:pulled_notebook_normalized_json_same_all_cell_sources",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_log_executed_source_binding",
+      "passed": true
+    },
+    {
+      "name": "kaggle:eight_video_sets_match",
+      "passed": true
+    },
+    {
+      "name": "kaggle:counting_result_exact_equal_local:weekday_pagi",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_annotation_full_H264_frames:weekday_pagi",
+      "passed": true
+    },
+    {
+      "name": "kaggle:render_ledger_reconciles:weekday_pagi",
+      "passed": true
+    },
+    {
+      "name": "kaggle:MP4_actual_output_delivery_binding:weekday_pagi",
+      "passed": true
+    },
+    {
+      "name": "kaggle:counting_result_exact_equal_local:weekday_siang",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_annotation_full_H264_frames:weekday_siang",
+      "passed": true
+    },
+    {
+      "name": "kaggle:render_ledger_reconciles:weekday_siang",
+      "passed": true
+    },
+    {
+      "name": "kaggle:MP4_actual_output_delivery_binding:weekday_siang",
+      "passed": true
+    },
+    {
+      "name": "kaggle:counting_result_exact_equal_local:weekday_sore",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_annotation_full_H264_frames:weekday_sore",
+      "passed": true
+    },
+    {
+      "name": "kaggle:render_ledger_reconciles:weekday_sore",
+      "passed": true
+    },
+    {
+      "name": "kaggle:MP4_actual_output_delivery_binding:weekday_sore",
+      "passed": true
+    },
+    {
+      "name": "kaggle:counting_result_exact_equal_local:weekday_malam",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_annotation_full_H264_frames:weekday_malam",
+      "passed": true
+    },
+    {
+      "name": "kaggle:render_ledger_reconciles:weekday_malam",
+      "passed": true
+    },
+    {
+      "name": "kaggle:MP4_actual_output_delivery_binding:weekday_malam",
+      "passed": true
+    },
+    {
+      "name": "kaggle:counting_result_exact_equal_local:weekend_pagi",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_annotation_full_H264_frames:weekend_pagi",
+      "passed": true
+    },
+    {
+      "name": "kaggle:render_ledger_reconciles:weekend_pagi",
+      "passed": true
+    },
+    {
+      "name": "kaggle:MP4_actual_output_delivery_binding:weekend_pagi",
+      "passed": true
+    },
+    {
+      "name": "kaggle:counting_result_exact_equal_local:weekend_siang",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_annotation_full_H264_frames:weekend_siang",
+      "passed": true
+    },
+    {
+      "name": "kaggle:render_ledger_reconciles:weekend_siang",
+      "passed": true
+    },
+    {
+      "name": "kaggle:MP4_actual_output_delivery_binding:weekend_siang",
+      "passed": true
+    },
+    {
+      "name": "kaggle:counting_result_exact_equal_local:weekend_sore",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_annotation_full_H264_frames:weekend_sore",
+      "passed": true
+    },
+    {
+      "name": "kaggle:render_ledger_reconciles:weekend_sore",
+      "passed": true
+    },
+    {
+      "name": "kaggle:MP4_actual_output_delivery_binding:weekend_sore",
+      "passed": true
+    },
+    {
+      "name": "kaggle:counting_result_exact_equal_local:weekend_malam",
+      "passed": true
+    },
+    {
+      "name": "kaggle:actual_annotation_full_H264_frames:weekend_malam",
+      "passed": true
+    },
+    {
+      "name": "kaggle:render_ledger_reconciles:weekend_malam",
+      "passed": true
+    },
+    {
+      "name": "kaggle:MP4_actual_output_delivery_binding:weekend_malam",
+      "passed": true
+    },
+    {
+      "name": "kaggle:all_delivered_video_bytes_and_frames",
+      "passed": true
+    },
+    {
+      "name": "publication:actual_final_release_and_executed_source",
+      "passed": true
+    },
+    {
+      "name": "publication:workflow_completed_success",
+      "passed": true
+    },
+    {
+      "name": "publication:actual_upload_probe_before_bulk_native_token",
+      "passed": true
+    },
+    {
+      "name": "publication:transport_only_no_models_counting_encoding",
+      "passed": true
+    },
+    {
+      "name": "publication:delivery_manifest_and_six_executed_sources",
+      "passed": true
+    },
+    {
+      "name": "publication:executed_source:notebooks/phase_5_geometry_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "publication:executed_source:notebooks/phase_8_annotation_batch.py",
+      "passed": true
+    },
+    {
+      "name": "publication:executed_source:notebooks/phase_8_annotation_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "publication:executed_source:notebooks/phase_8_b_v2_annotation.py",
+      "passed": true
+    },
+    {
+      "name": "publication:executed_source:notebooks/phase_8_b_v2_batch.py",
+      "passed": true
+    },
+    {
+      "name": "publication:executed_source:notebooks/phase_8_b_v2_counting.py",
+      "passed": true
+    },
+    {
+      "name": "publication:delivery_commit_source:.github/scripts/phase8_publish_b_v2.py",
+      "passed": true
+    },
+    {
+      "name": "publication:delivery_commit_source:.github/workflows/phase8-publish-b-v2.yml",
+      "passed": true
+    },
+    {
+      "name": "publication:exact_eight_videos_eleven_assets",
+      "passed": true
+    },
+    {
+      "name": "publication:MP4_server_digest_size_final_URL:weekday_pagi",
+      "passed": true
+    },
+    {
+      "name": "publication:video_counts_from_actual_frozen_ledger:weekday_pagi",
+      "passed": true
+    },
+    {
+      "name": "publication:MP4_server_digest_size_final_URL:weekday_siang",
+      "passed": true
+    },
+    {
+      "name": "publication:video_counts_from_actual_frozen_ledger:weekday_siang",
+      "passed": true
+    },
+    {
+      "name": "publication:MP4_server_digest_size_final_URL:weekday_sore",
+      "passed": true
+    },
+    {
+      "name": "publication:video_counts_from_actual_frozen_ledger:weekday_sore",
+      "passed": true
+    },
+    {
+      "name": "publication:MP4_server_digest_size_final_URL:weekday_malam",
+      "passed": true
+    },
+    {
+      "name": "publication:video_counts_from_actual_frozen_ledger:weekday_malam",
+      "passed": true
+    },
+    {
+      "name": "publication:MP4_server_digest_size_final_URL:weekend_pagi",
+      "passed": true
+    },
+    {
+      "name": "publication:video_counts_from_actual_frozen_ledger:weekend_pagi",
+      "passed": true
+    },
+    {
+      "name": "publication:MP4_server_digest_size_final_URL:weekend_siang",
+      "passed": true
+    },
+    {
+      "name": "publication:video_counts_from_actual_frozen_ledger:weekend_siang",
+      "passed": true
+    },
+    {
+      "name": "publication:MP4_server_digest_size_final_URL:weekend_sore",
+      "passed": true
+    },
+    {
+      "name": "publication:video_counts_from_actual_frozen_ledger:weekend_sore",
+      "passed": true
+    },
+    {
+      "name": "publication:MP4_server_digest_size_final_URL:weekend_malam",
+      "passed": true
+    },
+    {
+      "name": "publication:video_counts_from_actual_frozen_ledger:weekend_malam",
+      "passed": true
+    },
+    {
+      "name": "publication:verified_actual_eight_Kaggle_downloads",
+      "passed": true
+    },
+    {
+      "name": "publication:supplemental:delivery_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "publication:supplemental:SHA256SUMS",
+      "passed": true
+    },
+    {
+      "name": "publication:receipt_uploaded_exact_server_digest",
+      "passed": true
+    },
+    {
+      "name": "publication:retained_totals_72590_3717_898_2819",
+      "passed": true
+    },
+    {
+      "name": "final_manifest_exact_path_set",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:.github/scripts/phase8_publish_b_v2.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:.github/workflows/phase8-publish-b-v2.yml",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:AGENTS.md",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:docs/B_V2_COUNTING_CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:docs/COUNTING_LOGIC.md",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:notebooks/08b_counting_b_v2_replay.ipynb",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:notebooks/phase_8_b_v2_annotation.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:notebooks/phase_8_b_v2_annotation_tests.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:notebooks/phase_8_b_v2_batch.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:notebooks/phase_8_b_v2_batch_tests.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:notebooks/phase_8_b_v2_counting.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:notebooks/phase_8_b_v2_counting_tests.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/README.md",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/README.md",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/baseline/AGENTS.md.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/baseline/context_retention_mapping.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/baseline/docs__COUNTING_LOGIC.md.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/config/geometry_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/config/policy.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/delivery_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/batch_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/retained_bytes_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/retention_manifest.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/source_snapshot.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/source_snapshot/phase_5_geometry_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/source_snapshot/phase_8_annotation_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/source_snapshot/phase_8_annotation_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/source_snapshot/phase_8_b_v2_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/source_snapshot/phase_8_b_v2_counting.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekday_malam/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekday_malam/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekday_pagi/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekday_pagi/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekday_siang/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekday_siang/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekday_sore/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekday_sore/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekend_malam/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekend_malam/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekend_pagi/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekend_pagi/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekend_siang/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekend_siang/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekend_sore/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_20261018T030911_956653Z/weekend_sore/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_annotation/annotation_report.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_annotation/retention_proof.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/execution/local_replay_summary.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/geometry/TGDI-WEEKDAY-MALAM-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/geometry/TGDI-WEEKDAY-PAGI-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/geometry/TGDI-WEEKDAY-SIANG-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/geometry/TGDI-WEEKDAY-SORE-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/geometry/TGDI-WEEKEND-MALAM-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/geometry/TGDI-WEEKEND-PAGI-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/geometry/TGDI-WEEKEND-SIANG-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/geometry/TGDI-WEEKEND-SORE-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/input/TGDI-WEEKDAY-PAGI-geometry-review.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/input/user_decisions.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/batch_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/retained_bytes_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/retention_manifest.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/source_snapshot.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/source_snapshot/phase_5_geometry_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/source_snapshot/phase_8_annotation_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/source_snapshot/phase_8_annotation_helpers.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_batch.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/source_snapshot/phase_8_b_v2_counting.py.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_malam/annotation_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_malam/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_malam/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_pagi/annotation_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_pagi/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_pagi/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_siang/annotation_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_siang/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_siang/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_sore/annotation_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_sore/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_sore/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_malam/annotation_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_malam/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_malam/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_pagi/annotation_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_pagi/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_pagi/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_siang/annotation_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_siang/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_siang/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_sore/annotation_report.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_sore/counting_result.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_sore/geometry.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/execution_summary.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/retrieval_proof.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/supporting/kernel-metadata.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/supporting/kernel.log.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/supporting/phase-8-tgdi-b-v2-review.ipynb.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/supporting/phase8-bv2-kaggle-live-log-events.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/supporting/phase8-bv2-kaggle-live-log-proof.json.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_execution/supporting_retention_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_submission/kernel-metadata.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_submission/source_bundle_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_submission/submission.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/kaggle_submission/submitted_notebook.ipynb.gz",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/previews/TGDI-WEEKDAY-PAGI-ESTIMATED_TIMEOUT-frame-76.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/previews/TGDI-WEEKDAY-PAGI-LINE_MARGIN-frame-110.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/previews/TGDI-WEEKDAY-PAGI-OCCLUSION_DIFF_POLYGON-frame-326.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/previews/preview_proof.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/publication/SHA256SUMS",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/publication/delivery_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/publication/publication_receipt.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/publication/release_api_snapshot.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/publication/resolved_tag_commit.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/publication/retrieval_verification.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/publication/workflow_jobs.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/publication/workflow_run.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/review/timeout_edge_car/review.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/review/timeout_edge_car/review.md",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/review/timeout_edge_car/source_frame_000000000.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/review/timeout_edge_car/source_frame_000000016.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/review/timeout_edge_car/source_frame_000000076.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/review/timeout_edge_car/source_frame_000000110.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/review/timeout_edge_car/source_frame_000000141.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/review/timeout_edge_car/source_frame_000000201.png",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/build_kaggle_bundle.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/bundle_validation.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/check_b_v2_artifacts.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/download_proof.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/github_credential_probe.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/pending_decision_audit.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/phase8_publication_tests.py",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/software_validation.json",
+      "passed": true
+    },
+    {
+      "name": "final_manifest:results/b_v2/verification/submitted_packet_verification.json",
+      "passed": true
+    }
+  ]
+}
