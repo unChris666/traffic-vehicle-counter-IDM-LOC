@@ -1,0 +1,101 @@
+{
+  "schema_version": "phase8_b_v2_annotation_v1",
+  "claim_type": "ACTUAL_B_V2_LEDGER_RENDER_NOT_MODEL_INFERENCE",
+  "semantics": "OFFLINE_LEDGER_LOG_REPLAY_NOT_AN_ONLINE_DECISION_OR_ACCURACY_MEASUREMENT",
+  "source_identity": {
+    "video_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+    "geometry_sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T083731_859575Z",
+    "records_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8"
+  },
+  "output_video": {
+    "path": "/tmp/phase8-bv2-local-annotated/TGDI-WEEKDAY-PAGI-b-v2-annotated.mp4",
+    "sha256": "057e607ed16c70e9f2961a1789ebbe35e44adcf84b3bb6abd8748e59cd298151",
+    "size_bytes": 128527477,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "frames_written": 9052,
+    "frames_redecoded": 9052,
+    "fps": 29.904049581962543,
+    "width": 1160,
+    "height": 960,
+    "audio_preserved": false
+  },
+  "source_image_region": {
+    "x": 0,
+    "y": 0,
+    "width": 640,
+    "height": 480,
+    "resized": false
+  },
+  "final_accepted": 526,
+  "final_pending": 17,
+  "final_pivot": {
+    "motorcycle": {
+      "A_TO_B": 222,
+      "B_TO_A": 148
+    },
+    "car": {
+      "A_TO_B": 62,
+      "B_TO_A": 70
+    },
+    "truck": {
+      "A_TO_B": 9,
+      "B_TO_A": 15
+    }
+  },
+  "route_counts": {
+    "LINE_MARGIN": 150,
+    "OCCLUSION_DIFF_POLYGON": 5,
+    "ESTIMATED_TIMEOUT": 371
+  },
+  "final_measured": 137,
+  "final_inferred": 389,
+  "frame_pixel_and_raw_link_verified_every_frame": true,
+  "inputs_unchanged_after_render": true,
+  "new_detector_tracker_encoder_inference": false,
+  "counting_rerun_by_renderer": false,
+  "component_policy": "SUPPORT_FRAME_PERSON_MOTORCYCLE_UNION_DISPLAY_ONLY_RAW_VEHICLE_BC_PRESERVED",
+  "pending_excluded_from_pivot": true,
+  "ffmpeg_command": [
+    "/usr/bin/ffmpeg",
+    "-v",
+    "error",
+    "-nostdin",
+    "-n",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "bgr24",
+    "-s:v",
+    "1160x960",
+    "-r",
+    "29.904049581962543",
+    "-i",
+    "pipe:0",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "veryfast",
+    "-crf",
+    "18",
+    "-threads",
+    "2",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "/tmp/phase8-bv2-local-annotated/TGDI-WEEKDAY-PAGI-b-v2-annotated.mp4"
+  ],
+  "codec_log": {
+    "path": "/tmp/phase8-bv2-local-annotated/TGDI-WEEKDAY-PAGI-b-v2-annotated.ffmpeg.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "opencv_version": "5.0.0",
+  "software_source_sha256": "e5b4d1a70b3ef05a93d88e0489f3fe66b447a91927fce1f08bb8c5490673b70b",
+  "render_and_decode_wall_seconds": 102.81868724100059
+}

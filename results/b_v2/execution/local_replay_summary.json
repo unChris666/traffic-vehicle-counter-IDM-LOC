@@ -7,7 +7,6 @@
   "operational_total": 3717,
   "measured_total": 898,
   "inferred_total": 2819,
-  "pending_unit_passage_decisions": 244,
   "by_route": {
     "ESTIMATED_TIMEOUT": 2667,
     "LINE_MARGIN": 1024,
@@ -43,7 +42,7 @@
         "pending": 17,
         "cancelled": 2
       },
-      "pending_unit_passage_decisions": 17
+      "pending_decision_rows": 17
     },
     {
       "video_id": "weekday_siang",
@@ -69,7 +68,7 @@
         "pending": 102,
         "cancelled": 3
       },
-      "pending_unit_passage_decisions": 102
+      "pending_decision_rows": 102
     },
     {
       "video_id": "weekday_sore",
@@ -95,7 +94,7 @@
         "pending": 40,
         "cancelled": 6
       },
-      "pending_unit_passage_decisions": 40
+      "pending_decision_rows": 40
     },
     {
       "video_id": "weekday_malam",
@@ -121,7 +120,7 @@
         "pending": 6,
         "cancelled": 2
       },
-      "pending_unit_passage_decisions": 6
+      "pending_decision_rows": 6
     },
     {
       "video_id": "weekend_pagi",
@@ -147,7 +146,7 @@
         "pending": 15,
         "cancelled": 0
       },
-      "pending_unit_passage_decisions": 15
+      "pending_decision_rows": 15
     },
     {
       "video_id": "weekend_siang",
@@ -173,7 +172,7 @@
         "pending": 11,
         "cancelled": 0
       },
-      "pending_unit_passage_decisions": 11
+      "pending_decision_rows": 11
     },
     {
       "video_id": "weekend_sore",
@@ -199,7 +198,7 @@
         "pending": 49,
         "cancelled": 5
       },
-      "pending_unit_passage_decisions": 49
+      "pending_decision_rows": 49
     },
     {
       "video_id": "weekend_malam",
@@ -224,12 +223,16 @@
         "pending": 4,
         "cancelled": 0
       },
-      "pending_unit_passage_decisions": 4
+      "pending_decision_rows": 4
     }
   ],
   "new_model_inference": false,
   "all_executed_sources_unchanged": true,
-  "rendered_full_videos_locally": false,
   "performance_improvement_established": false,
-  "pending_denominator_differs_from_b_v1": true
+  "pending_denominator_differs_from_b_v1": true,
+  "rendered_full_videos_in_this_batch": false,
+  "pending_decision_rows": 244,
+  "pending_distinct_unit_passage_keys": 242,
+  "pending_diagnostic_duplicate_rows": 2,
+  "pending_count_note": "Derived audit: 244 retained decision rows,242 unique(unit_id,passage_id) keys; two repeated diagnostic rows in weekend_sore. Retained execution reports are unchanged."
 }

@@ -10,7 +10,7 @@ Geometri native 640×480 memakai margin 25px per sisi (pita 50px). Clock 60 fram
 
 Seluruh 72.590 frame direplay dari cache yang SHA-nya terverifikasi. Total operasional **3.717** terdiri dari **898 crossing terukur dan 2.819 inferensi**. Berdasarkan jalur: **1.024 LINE_MARGIN** (termasuk 126 yang crossing-nya tidak terlihat kontinu), **26 OCCLUSION_DIFF_POLYGON**, dan **2.667 ESTIMATED_TIMEOUT**. Angka ini hasil aturan yang diminta, belum jumlah kendaraan fisik yang tervalidasi. Kontribusi timeout yang besar perlu diaudit; penambahan event otomatis tidak membuktikan peningkatan akurasi.
 
-| Video | Operasional | Terukur | Inferensi | Timeout | Pending unit/passage |
+| Video | Operasional | Terukur | Inferensi | Timeout | Baris pending |
 |---|---:|---:|---:|---:|---:|
 | weekday_pagi | 526 | 137 | 389 | 371 | 17 |
 | weekday_siang | 613 | 122 | 491 | 465 | 102 |
@@ -21,7 +21,9 @@ Seluruh 72.590 frame direplay dari cache yang SHA-nya terverifikasi. Total opera
 | weekend_sore | 493 | 129 | 364 | 352 | 49 |
 | weekend_malam | 308 | 54 | 254 | 225 | 4 |
 
-Pending B v2 adalah keputusan per unit/passage. Angka 244 tidak dapat dibandingkan langsung sebagai persentase perbaikan terhadap 1.825 diagnostik/kandidat B v1. Kasus kehadiran awal tanpa bukti passage atau yang belum selesai di akhir video tetap ada dalam open_passage_diagnostics, bukan disembunyikan sebagai nol. Semua snapshot B v1 tetap terpisah.
+Pending B v2 dimaksudkan sebagai keputusan per unit/passage. Audit aktual menemukan **244 baris pending untuk 242 kunci unit/passage berbeda**: dua kunci di weekend_sore mempunyai baris diagnostik berulang. Laporan eksekusi asli dipertahankan; keterbatasan ini dicatat, bukan dihapus dari bukti. Angka tersebut tidak dapat dibandingkan langsung sebagai persentase perbaikan terhadap 1.825 diagnostik/kandidat B v1. Kasus kehadiran awal tanpa bukti passage atau yang belum selesai di akhir video tetap ada dalam open_passage_diagnostics, bukan disembunyikan sebagai nol. Semua snapshot B v1 tetap terpisah.
+
+**Kasus yang perlu direview:** [kendaraan di tepi kanan dan dua estimasi timeout](review/timeout_edge_car/review.md), ID 2/frame 76 dan ID 34/frame 201. Enam sampel aktual memperlihatkan kendaraan serupa di dekat bangunan yang sama; kedua event tidak mempunyai crossing/pita/destination yang teramati. Dugaan kendaraan diam serta fragmentasi ID memerlukan review kontinu, bukan disimpulkan sebagai ground truth.
 
 [Ringkasan aktual lokal](execution/local_replay_summary.json) dan arsip byte laporan/event beserta source_snapshot berada di execution/. Manifest retensi mengikat bytes asal dan gzip tersimpan. Ini bukan eksperimen ablation satu faktor: geometri dan beberapa aturan counting berubah bersamaan.
 
@@ -53,4 +55,4 @@ Jangan arahkan output ke input lama. Source/model caches diverifikasi sebelum re
 
 ## Validasi
 
-Tiga suite menghitung 45 uji counting, 25 uji renderer, 15 uji batch; seluruh 85 lulus tanpa skip. Pengujian mencakup timeout/return, rekonsiliasi event, finite endpoints, sumber BC, kategori pita, raw detection linkage, bbox rider, dan encode/decode H.264 sintetis. Validasi packaging menguji 22 guard dan source 30 file. Uji ini memverifikasi software; tidak mengukur counting accuracy. Publisher terpisah mempunyai 20 uji offline dan tidak menjalankan ulang pipeline.
+Tiga suite menghitung 45 uji counting, 25 uji renderer, 15 uji batch; seluruh 85 lulus tanpa skip. Pengujian mencakup timeout/return, rekonsiliasi event, finite endpoints, sumber BC, kategori pita, raw detection linkage, bbox rider, dan encode/decode H.264 sintetis. Validasi packaging menguji 22 guard dan source 30 file. Uji ini memverifikasi software; tidak mengukur counting accuracy. Publisher terpisah mempunyai 20 uji offline dan tidak menjalankan ulang pipeline. Satu annotated video lokal penuh (weekday_pagi, 9.052 frame) juga selesai di-encode dan di-decode kembali; [laporan aktualnya](execution/local_annotation/annotation_report.json) terpisah dari batch replay tanpa render. Video publik harus memakai checksum output Kaggle aktual.

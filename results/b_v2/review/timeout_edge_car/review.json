@@ -1,0 +1,5028 @@
+{
+  "schema_version": "phase8_b_v2_bounded_timeout_edge_car_review_v1",
+  "claim_type": "ACTUAL_RETAINED_EVENT_AND_SPARSE_FRAME_REVIEW_NOT_GROUND_TRUTH",
+  "recorded_at_utc": "2026-10-18T03:26:46.657724+00:00",
+  "review_scope": {
+    "video_id": "weekday_pagi",
+    "sampled_source_frame_indices": [
+      0,
+      16,
+      76,
+      110,
+      141,
+      201
+    ],
+    "source_interval_frame_indices": [
+      0,
+      201
+    ],
+    "full_interval_visually_reviewed": false,
+    "formal_ground_truth": false,
+    "frozen_source_or_counting_result_modified": false,
+    "model_tracker_reid_or_counting_rerun": false
+  },
+  "source_video": {
+    "filename": "TGDI-WEEKDAY-PAGI.mp4",
+    "sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+    "size_bytes": 50748314
+  },
+  "source_cache": {
+    "filename": "track_records.jsonl.gz",
+    "sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8",
+    "source_measurement_provenance": "retained_phase_8_detection"
+  },
+  "actual_counting_result": {
+    "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekday_pagi/counting_result.json.gz",
+    "uncompressed_sha256": "e33e09e2460170ff010c2381e37e88e3f89bb92ea70b04acd867d639158553f1",
+    "compressed_sha256": "2580d323698ed66939441fb48b1088074ab68ef1a3ea0a33f219ede6dbedab12"
+  },
+  "actual_geometry": {
+    "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekday_pagi/geometry.json.gz",
+    "p1": [
+      1.6843836743086256,
+      429.99451694264724
+    ],
+    "p2": [
+      617.3266166341112,
+      1.3159337646671785
+    ],
+    "line_margin_half_width_px": 25,
+    "uncompressed_sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+    "compressed_sha256": "b9be80633405e6c3b0cf23bd6b304771a8d730803dee7b6592ce2de12742429e"
+  },
+  "decode_tool": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "sample_images": [
+    {
+      "frame_index": 0,
+      "path": "results/b_v2/review/timeout_edge_car/source_frame_000000000.png",
+      "sha256": "0eea3ccbdc1b4a9c92615a9f71db6966aafdbbec3f89e4763dfff60a54df8105",
+      "width": 640,
+      "height": 480,
+      "rgb_uint8_pixel_sha256": "c383d499e072faae78fbe813f78832cf772a7c8bcc0aab546b17366f586afe7c",
+      "pixel_hash_convention": "row-major RGB uint8, 640x480x3, decoded from retained lossless PNG",
+      "extraction": "FFmpeg full-source decode/select zero-based frame index; no resize or enhancement"
+    },
+    {
+      "frame_index": 16,
+      "path": "results/b_v2/review/timeout_edge_car/source_frame_000000016.png",
+      "sha256": "b79b5a58a85a08aa5dc3c94efcfd0c850ec82e8e74debb24a4b1f3c610f9cb8d",
+      "width": 640,
+      "height": 480,
+      "rgb_uint8_pixel_sha256": "023a525c7ebaf3ec429273dde379511989bfa85eb67af31bb5e006047e492081",
+      "pixel_hash_convention": "row-major RGB uint8, 640x480x3, decoded from retained lossless PNG",
+      "extraction": "FFmpeg full-source decode/select zero-based frame index; no resize or enhancement"
+    },
+    {
+      "frame_index": 76,
+      "path": "results/b_v2/review/timeout_edge_car/source_frame_000000076.png",
+      "sha256": "3120d97f3a4e461d8cc491c0ded704ad2e579270ae75d163665cdcad5d2abc2f",
+      "width": 640,
+      "height": 480,
+      "rgb_uint8_pixel_sha256": "23971ad42149c973b19e125047d0b9484c46146d129698800db37cb72c436210",
+      "pixel_hash_convention": "row-major RGB uint8, 640x480x3, decoded from retained lossless PNG",
+      "extraction": "FFmpeg full-source decode/select zero-based frame index; no resize or enhancement"
+    },
+    {
+      "frame_index": 110,
+      "path": "results/b_v2/review/timeout_edge_car/source_frame_000000110.png",
+      "sha256": "c05ab7b9d4dae040e2956f224e0e92099626556acd69f4ac664a744cbc16d7eb",
+      "width": 640,
+      "height": 480,
+      "rgb_uint8_pixel_sha256": "d010ca4a15aff6acb67707ee5de0fd9aa31c9d4be50c97998a1a3c734dc676a7",
+      "pixel_hash_convention": "row-major RGB uint8, 640x480x3, decoded from retained lossless PNG",
+      "extraction": "FFmpeg full-source decode/select zero-based frame index; no resize or enhancement"
+    },
+    {
+      "frame_index": 141,
+      "path": "results/b_v2/review/timeout_edge_car/source_frame_000000141.png",
+      "sha256": "5eea713e4951ff23a38130c65b501900c9b6858f3343ab229a1869a0b3154bf2",
+      "width": 640,
+      "height": 480,
+      "rgb_uint8_pixel_sha256": "72240f5e6f4a838d2a2fbc94e6cbd05801bf6ddd890eb8d2553ffe657f28d114",
+      "pixel_hash_convention": "row-major RGB uint8, 640x480x3, decoded from retained lossless PNG",
+      "extraction": "FFmpeg full-source decode/select zero-based frame index; no resize or enhancement"
+    },
+    {
+      "frame_index": 201,
+      "path": "results/b_v2/review/timeout_edge_car/source_frame_000000201.png",
+      "sha256": "ecd3e0aa2df8d0907c918c2552f51cffd15b82266cc13b77d993d6de204d1ad6",
+      "width": 640,
+      "height": 480,
+      "rgb_uint8_pixel_sha256": "5d10cd24aa19fea44dd43abedf11270765f2dcc37dc95a9e1dc1812825d8724b",
+      "pixel_hash_convention": "row-major RGB uint8, 640x480x3, decoded from retained lossless PNG",
+      "extraction": "FFmpeg full-source decode/select zero-based frame index; no resize or enhancement"
+    }
+  ],
+  "sample_source_frames": [
+    {
+      "frame_index": 0,
+      "target_observations": [
+        {
+          "frame_index": 0,
+          "emitted_observation": {
+            "track_id": 2,
+            "frame_index": 0,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              593.8604125976562,
+              178.96340942382812,
+              639.7515258789062,
+              306.1930847167969
+            ],
+            "bbox": [
+              593.8604125976562,
+              178.96340942382812,
+              639.7515258789062,
+              306.1930847167969
+            ],
+            "center": [
+              616.8059692382812,
+              242.5782470703125
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.8592313528060913,
+            "timestamp_estimate_from_index_fps_seconds": 0.0,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          "linked_raw_detection": {
+            "bbox_xyxy_pixels": [
+              593.8604125976562,
+              178.96340942382812,
+              639.7515258789062,
+              306.1930847167969
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.8592313528060913
+          },
+          "measured_vehicle_bc": [
+            616.8059692382812,
+            306.1930847167969
+          ],
+          "signed_line_distance_px": 249.90040394455255,
+          "line_projection": 0.7672008994979413,
+          "inside_finite_25px_halfwidth_band": false
+        }
+      ],
+      "emitted_track_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "frame_index": 16,
+      "target_observations": [
+        {
+          "frame_index": 16,
+          "emitted_observation": {
+            "track_id": 2,
+            "frame_index": 16,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              596.190673828125,
+              174.70391845703125,
+              639.694580078125,
+              273.8653564453125
+            ],
+            "bbox": [
+              596.4912719726562,
+              174.85450744628906,
+              639.7151489257812,
+              283.75958251953125
+            ],
+            "center": [
+              617.942626953125,
+              224.28463745117188
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.7245612740516663,
+            "timestamp_estimate_from_index_fps_seconds": 0.5350445917415427,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          "linked_raw_detection": {
+            "bbox_xyxy_pixels": [
+              596.190673828125,
+              174.70391845703125,
+              639.694580078125,
+              273.8653564453125
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.7245612740516663
+          },
+          "measured_vehicle_bc": [
+            617.942626953125,
+            273.8653564453125
+          ],
+          "signed_line_distance_px": 224.02012158304257,
+          "line_projection": 0.7930688434253741,
+          "inside_finite_25px_halfwidth_band": false
+        }
+      ],
+      "emitted_track_ids": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        12,
+        5
+      ]
+    },
+    {
+      "frame_index": 76,
+      "target_observations": [
+        {
+          "frame_index": 76,
+          "emitted_observation": {
+            "track_id": 34,
+            "frame_index": 76,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              595.9720458984375,
+              141.93414306640625,
+              639.7713623046875,
+              254.33184814453125
+            ],
+            "bbox": [
+              595.5318603515625,
+              144.18589782714844,
+              639.7659301757812,
+              262.99615478515625
+            ],
+            "center": [
+              617.8717041015625,
+              198.13299560546875
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.6073814034461975,
+            "timestamp_estimate_from_index_fps_seconds": 2.541461810772328,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          "linked_raw_detection": {
+            "bbox_xyxy_pixels": [
+              595.9720458984375,
+              141.93414306640625,
+              639.7713623046875,
+              254.33184814453125
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.6073814034461975
+          },
+          "measured_vehicle_bc": [
+            617.8717041015625,
+            254.33184814453125
+          ],
+          "signed_line_distance_px": 207.94938968504417,
+          "line_projection": 0.8078702283295411,
+          "inside_finite_25px_halfwidth_band": false
+        }
+      ],
+      "emitted_track_ids": [
+        1,
+        3,
+        6,
+        14,
+        30,
+        34,
+        36,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "frame_index": 110,
+      "target_observations": [
+        {
+          "frame_index": 110,
+          "emitted_observation": {
+            "track_id": 34,
+            "frame_index": 110,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              586.5963745117188,
+              146.19815063476562,
+              639.7151489257812,
+              273.68658447265625
+            ],
+            "bbox": [
+              586.5069580078125,
+              146.70440673828125,
+              639.7156982421875,
+              274.144287109375
+            ],
+            "center": [
+              613.15576171875,
+              209.94236755371094
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.8680920600891113,
+            "timestamp_estimate_from_index_fps_seconds": 3.678431568223106,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          "linked_raw_detection": {
+            "bbox_xyxy_pixels": [
+              586.5963745117188,
+              146.19815063476562,
+              639.7151489257812,
+              273.68658447265625
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.8680920600891113
+          },
+          "measured_vehicle_bc": [
+            613.15576171875,
+            273.68658447265625
+          ],
+          "signed_line_distance_px": 221.1380589885788,
+          "line_projection": 0.7879685250353542,
+          "inside_finite_25px_halfwidth_band": false
+        }
+      ],
+      "emitted_track_ids": [
+        30,
+        34,
+        43,
+        54,
+        57
+      ]
+    },
+    {
+      "frame_index": 141,
+      "target_observations": [
+        {
+          "frame_index": 141,
+          "emitted_observation": {
+            "track_id": 34,
+            "frame_index": 141,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              593.09326171875,
+              142.30914306640625,
+              639.751953125,
+              205.84423828125
+            ],
+            "bbox": [
+              592.0567626953125,
+              142.48199462890625,
+              639.7572631835938,
+              206.90509033203125
+            ],
+            "center": [
+              616.422607421875,
+              174.07669067382812
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.6704064607620239,
+            "timestamp_estimate_from_index_fps_seconds": 4.715080464722345,
+            "emitted": true,
+            "is_activated": true,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          "linked_raw_detection": {
+            "bbox_xyxy_pixels": [
+              593.09326171875,
+              142.30914306640625,
+              639.751953125,
+              205.84423828125
+            ],
+            "class_id": 2,
+            "class_name": "car",
+            "confidence": 0.6704064607620239
+          },
+          "measured_vehicle_bc": [
+            616.422607421875,
+            205.84423828125
+          ],
+          "signed_line_distance_px": 167.3299001292214,
+          "line_projection": 0.843218766851013,
+          "inside_finite_25px_halfwidth_band": false
+        }
+      ],
+      "emitted_track_ids": [
+        34,
+        43,
+        54,
+        61,
+        63,
+        68,
+        66,
+        73
+      ]
+    },
+    {
+      "frame_index": 201,
+      "target_observations": [],
+      "emitted_track_ids": [
+        61,
+        66,
+        73,
+        92,
+        43,
+        98,
+        88
+      ]
+    }
+  ],
+  "target_observations_within_bounded_scope": [
+    {
+      "frame_index": 0,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 0,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          593.8604125976562,
+          178.96340942382812,
+          639.7515258789062,
+          306.1930847167969
+        ],
+        "bbox": [
+          593.8604125976562,
+          178.96340942382812,
+          639.7515258789062,
+          306.1930847167969
+        ],
+        "center": [
+          616.8059692382812,
+          242.5782470703125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8592313528060913,
+        "timestamp_estimate_from_index_fps_seconds": 0.0,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          593.8604125976562,
+          178.96340942382812,
+          639.7515258789062,
+          306.1930847167969
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8592313528060913
+      },
+      "measured_vehicle_bc": [
+        616.8059692382812,
+        306.1930847167969
+      ],
+      "signed_line_distance_px": 249.90040394455255,
+      "line_projection": 0.7672008994979413,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 1,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 1,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          594.2332153320312,
+          172.8736572265625,
+          639.7470092773438,
+          301.07537841796875
+        ],
+        "bbox": [
+          594.1838989257812,
+          173.6789093017578,
+          639.7476196289062,
+          301.7521057128906
+        ],
+        "center": [
+          616.9901123046875,
+          236.97451782226562
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8396479487419128,
+        "timestamp_estimate_from_index_fps_seconds": 0.03344028698384642,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          594.2332153320312,
+          172.8736572265625,
+          639.7470092773438,
+          301.07537841796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8396479487419128
+      },
+      "measured_vehicle_bc": [
+        616.9901123046875,
+        301.07537841796875
+      ],
+      "signed_line_distance_px": 245.80577483127033,
+      "line_projection": 0.7713005734713023,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 2,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 2,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          593.590576171875,
+          174.10830688476562,
+          639.7457275390625,
+          303.27227783203125
+        ],
+        "bbox": [
+          593.7367553710938,
+          173.7326202392578,
+          639.7459106445312,
+          302.698486328125
+        ],
+        "center": [
+          616.6681518554688,
+          238.69029235839844
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8387606739997864,
+        "timestamp_estimate_from_index_fps_seconds": 0.06688057396769284,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          593.590576171875,
+          174.10830688476562,
+          639.7457275390625,
+          303.27227783203125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8387606739997864
+      },
+      "measured_vehicle_bc": [
+        616.6681518554688,
+        303.27227783203125
+      ],
+      "signed_line_distance_px": 247.42468631328086,
+      "line_projection": 0.769274959932904,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 3,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 3,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          593.4654541015625,
+          176.62252807617188,
+          639.7451171875,
+          304.2767333984375
+        ],
+        "bbox": [
+          593.496826171875,
+          175.7553253173828,
+          639.7449951171875,
+          303.8415832519531
+        ],
+        "center": [
+          616.6052856445312,
+          240.4496307373047
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8260517120361328,
+        "timestamp_estimate_from_index_fps_seconds": 0.10032086095153926,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          593.4654541015625,
+          176.62252807617188,
+          639.7451171875,
+          304.2767333984375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8260517120361328
+      },
+      "measured_vehicle_bc": [
+        616.6052856445312,
+        304.2767333984375
+      ],
+      "signed_line_distance_px": 248.21307079589562,
+      "line_projection": 0.7684410797116037,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 4,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 4,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          593.9007568359375,
+          176.735107421875,
+          639.7427978515625,
+          305.0405578613281
+        ],
+        "bbox": [
+          593.7472534179688,
+          176.5385284423828,
+          639.7431030273438,
+          304.7905578613281
+        ],
+        "center": [
+          616.82177734375,
+          240.88783264160156
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8280308246612549,
+        "timestamp_estimate_from_index_fps_seconds": 0.13376114793538568,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          593.9007568359375,
+          176.735107421875,
+          639.7427978515625,
+          305.0405578613281
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8280308246612549
+      },
+      "measured_vehicle_bc": [
+        616.82177734375,
+        305.0405578613281
+      ],
+      "signed_line_distance_px": 248.96361416298015,
+      "line_projection": 0.7680960896292858,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 5,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 5,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          593.9948120117188,
+          177.3948974609375,
+          639.7584838867188,
+          305.1473388671875
+        ],
+        "bbox": [
+          593.9083862304688,
+          177.259765625,
+          639.7537231445312,
+          305.1705017089844
+        ],
+        "center": [
+          616.8766479492188,
+          241.2711181640625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8298279643058777,
+        "timestamp_estimate_from_index_fps_seconds": 0.1672014349192321,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          593.9948120117188,
+          177.3948974609375,
+          639.7584838867188,
+          305.1473388671875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8298279643058777
+      },
+      "measured_vehicle_bc": [
+        616.8766479492188,
+        305.1473388671875
+      ],
+      "signed_line_distance_px": 249.08259881382625,
+      "line_projection": 0.7680747774760592,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 6,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 6,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          594.05517578125,
+          177.4105224609375,
+          639.756103515625,
+          305.52978515625
+        ],
+        "bbox": [
+          594.0090942382812,
+          177.5027618408203,
+          639.7557983398438,
+          305.5494079589844
+        ],
+        "center": [
+          616.9056396484375,
+          241.47015380859375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8263756036758423,
+        "timestamp_estimate_from_index_fps_seconds": 0.20064172190307852,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          594.05517578125,
+          177.4105224609375,
+          639.756103515625,
+          305.52978515625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8263756036758423
+      },
+      "measured_vehicle_bc": [
+        616.9056396484375,
+        305.52978515625
+      ],
+      "signed_line_distance_px": 249.4130206613391,
+      "line_projection": 0.767815177204851,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 7,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 7,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          594.6224975585938,
+          178.19198608398438,
+          639.7359008789062,
+          306.0470886230469
+        ],
+        "bbox": [
+          594.4368286132812,
+          178.10736083984375,
+          639.7425537109375,
+          306.0216979980469
+        ],
+        "center": [
+          617.17919921875,
+          242.11953735351562
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8186329007148743,
+        "timestamp_estimate_from_index_fps_seconds": 0.23408200888692493,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          594.6224975585938,
+          178.19198608398438,
+          639.7359008789062,
+          306.0470886230469
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8186329007148743
+      },
+      "measured_vehicle_bc": [
+        617.17919921875,
+        306.0470886230469
+      ],
+      "signed_line_distance_px": 249.99386641273284,
+      "line_projection": 0.7677203941147994,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 8,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 8,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          595.80419921875,
+          176.29351806640625,
+          639.7366943359375,
+          303.01922607421875
+        ],
+        "bbox": [
+          595.4007568359375,
+          177.01278686523438,
+          639.7382202148438,
+          304.1087646484375
+        ],
+        "center": [
+          617.7704467773438,
+          239.6563720703125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8114058971405029,
+        "timestamp_estimate_from_index_fps_seconds": 0.26752229587077136,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          595.80419921875,
+          176.29351806640625,
+          639.7366943359375,
+          303.01922607421875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8114058971405029
+      },
+      "measured_vehicle_bc": [
+        617.7704467773438,
+        303.01922607421875
+      ],
+      "signed_line_distance_px": 247.8469021520347,
+      "line_projection": 0.7706735459091525,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 9,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 9,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          596.5491943359375,
+          174.24560546875,
+          639.733154296875,
+          303.194580078125
+        ],
+        "bbox": [
+          596.2578125,
+          175.20193481445312,
+          639.7342529296875,
+          303.5076599121094
+        ],
+        "center": [
+          618.1411743164062,
+          238.7200927734375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8324348330497742,
+        "timestamp_estimate_from_index_fps_seconds": 0.3009625828546178,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.5491943359375,
+          174.24560546875,
+          639.733154296875,
+          303.194580078125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8324348330497742
+      },
+      "measured_vehicle_bc": [
+        618.1411743164062,
+        303.194580078125
+      ],
+      "signed_line_distance_px": 248.20265111961493,
+      "line_projection": 0.7709455257898449,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 10,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 10,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          596.373046875,
+          175.99038696289062,
+          639.7099609375,
+          305.2831726074219
+        ],
+        "bbox": [
+          596.4379272460938,
+          175.7022705078125,
+          639.717041015625,
+          304.6864929199219
+        ],
+        "center": [
+          618.04150390625,
+          240.63677978515625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8066786527633667,
+        "timestamp_estimate_from_index_fps_seconds": 0.3344028698384642,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.373046875,
+          175.99038696289062,
+          639.7099609375,
+          305.2831726074219
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8066786527633667
+      },
+      "measured_vehicle_bc": [
+        618.04150390625,
+        305.2831726074219
+      ],
+      "signed_line_distance_px": 249.85970333555076,
+      "line_projection": 0.7692455808151712,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 11,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 11,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          596.5952758789062,
+          178.39239501953125,
+          639.7532348632812,
+          306.72198486328125
+        ],
+        "bbox": [
+          596.6412353515625,
+          177.4964599609375,
+          639.7401733398438,
+          306.08856201171875
+        ],
+        "center": [
+          618.1742553710938,
+          242.55718994140625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8061755895614624,
+        "timestamp_estimate_from_index_fps_seconds": 0.3678431568223106,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.5952758789062,
+          178.39239501953125,
+          639.7532348632812,
+          306.72198486328125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8061755895614624
+      },
+      "measured_vehicle_bc": [
+        618.1742553710938,
+        306.72198486328125
+      ],
+      "signed_line_distance_px": 251.11632491498096,
+      "line_projection": 0.7682948364067,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 12,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 12,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          596.11669921875,
+          182.94522094726562,
+          639.7633056640625,
+          310.9025573730469
+        ],
+        "bbox": [
+          596.3814086914062,
+          181.20884704589844,
+          639.755615234375,
+          309.3996276855469
+        ],
+        "center": [
+          617.9400024414062,
+          246.92388916015625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8378900289535522,
+        "timestamp_estimate_from_index_fps_seconds": 0.40128344380615705,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.11669921875,
+          182.94522094726562,
+          639.7633056640625,
+          310.9025573730469
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8378900289535522
+      },
+      "measured_vehicle_bc": [
+        617.9400024414062,
+        310.9025573730469
+      ],
+      "signed_line_distance_px": 254.413259476083,
+      "line_projection": 0.7648541748081384,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 13,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 13,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          596.6597900390625,
+          180.147705078125,
+          639.7567138671875,
+          306.15814208984375
+        ],
+        "bbox": [
+          596.6383666992188,
+          180.72146606445312,
+          639.7569580078125,
+          307.4620056152344
+        ],
+        "center": [
+          618.208251953125,
+          243.15292358398438
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8209016919136047,
+        "timestamp_estimate_from_index_fps_seconds": 0.4347237307900035,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.6597900390625,
+          180.147705078125,
+          639.7567138671875,
+          306.15814208984375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8209016919136047
+      },
+      "measured_vehicle_bc": [
+        618.208251953125,
+        306.15814208984375
+      ],
+      "signed_line_distance_px": 250.67303307889765,
+      "line_projection": 0.7687615138516507,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 14,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 14,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          596.6620483398438,
+          175.27716064453125,
+          639.7295532226562,
+          303.22247314453125
+        ],
+        "bbox": [
+          596.7267456054688,
+          177.2574462890625,
+          639.7391967773438,
+          304.74688720703125
+        ],
+        "center": [
+          618.19580078125,
+          239.24981689453125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8218268752098083,
+        "timestamp_estimate_from_index_fps_seconds": 0.46816401777384986,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.6620483398438,
+          175.27716064453125,
+          639.7295532226562,
+          303.22247314453125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8218268752098083
+      },
+      "measured_vehicle_bc": [
+        618.19580078125,
+        303.22247314453125
+      ],
+      "signed_line_distance_px": 248.25675674896976,
+      "line_projection": 0.7709840367038129,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 15,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 15,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          596.87646484375,
+          174.34817504882812,
+          639.76318359375,
+          302.6505432128906
+        ],
+        "bbox": [
+          596.8941650390625,
+          175.34060668945312,
+          639.7549438476562,
+          303.3500061035156
+        ],
+        "center": [
+          618.31982421875,
+          238.49935913085938
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7358334064483643,
+        "timestamp_estimate_from_index_fps_seconds": 0.5016043047576964,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.87646484375,
+          174.34817504882812,
+          639.76318359375,
+          302.6505432128906
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7358334064483643
+      },
+      "measured_vehicle_bc": [
+        618.31982421875,
+        302.6505432128906
+      ],
+      "signed_line_distance_px": 247.85827211986972,
+      "line_projection": 0.7715553572668407,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 16,
+      "emitted_observation": {
+        "track_id": 2,
+        "frame_index": 16,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          596.190673828125,
+          174.70391845703125,
+          639.694580078125,
+          273.8653564453125
+        ],
+        "bbox": [
+          596.4912719726562,
+          174.85450744628906,
+          639.7151489257812,
+          283.75958251953125
+        ],
+        "center": [
+          617.942626953125,
+          224.28463745117188
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7245612740516663,
+        "timestamp_estimate_from_index_fps_seconds": 0.5350445917415427,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.190673828125,
+          174.70391845703125,
+          639.694580078125,
+          273.8653564453125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7245612740516663
+      },
+      "measured_vehicle_bc": [
+        617.942626953125,
+        273.8653564453125
+      ],
+      "signed_line_distance_px": 224.02012158304257,
+      "line_projection": 0.7930688434253741,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 70,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 70,
+        "original_detection_index": 5,
+        "raw_bbox": [
+          600.7752685546875,
+          134.1109619140625,
+          639.7606201171875,
+          227.6492919921875
+        ],
+        "bbox": [
+          601.3402709960938,
+          134.31170654296875,
+          639.76220703125,
+          233.74349975585938
+        ],
+        "center": [
+          620.2679443359375,
+          180.880126953125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6297040581703186,
+        "timestamp_estimate_from_index_fps_seconds": 2.340820088869249,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          600.7752685546875,
+          134.1109619140625,
+          639.7606201171875,
+          227.6492919921875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6297040581703186
+      },
+      "measured_vehicle_bc": [
+        620.2679443359375,
+        227.6492919921875
+      ],
+      "signed_line_distance_px": 187.42158860823096,
+      "line_projection": 0.8308160531618582,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 71,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 71,
+        "original_detection_index": 5,
+        "raw_bbox": [
+          598.05419921875,
+          137.32168579101562,
+          639.6903076171875,
+          235.91317749023438
+        ],
+        "bbox": [
+          598.85693359375,
+          136.78567504882812,
+          639.7078857421875,
+          235.5268096923828
+        ],
+        "center": [
+          618.8722534179688,
+          186.617431640625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.473978728055954,
+        "timestamp_estimate_from_index_fps_seconds": 2.374260375853096,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          598.05419921875,
+          137.32168579101562,
+          639.6903076171875,
+          235.91317749023438
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.473978728055954
+      },
+      "measured_vehicle_bc": [
+        618.8722534179688,
+        235.91317749023438
+      ],
+      "signed_line_distance_px": 193.405821220336,
+      "line_projection": 0.8229945391968333,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 72,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 72,
+        "original_detection_index": 5,
+        "raw_bbox": [
+          596.3863525390625,
+          142.93753051757812,
+          639.7618408203125,
+          238.83944702148438
+        ],
+        "bbox": [
+          596.73193359375,
+          141.98912048339844,
+          639.741943359375,
+          238.374267578125
+        ],
+        "center": [
+          618.0740966796875,
+          190.88848876953125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.5827672481536865,
+        "timestamp_estimate_from_index_fps_seconds": 2.4077006628369424,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.3863525390625,
+          142.93753051757812,
+          639.7618408203125,
+          238.83944702148438
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.5827672481536865
+      },
+      "measured_vehicle_bc": [
+        618.0740966796875,
+        238.83944702148438
+      ],
+      "signed_line_distance_px": 195.35117912714583,
+      "line_projection": 0.8198924283487123,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 73,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 73,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          595.150634765625,
+          143.78143310546875,
+          639.730224609375,
+          269.05035400390625
+        ],
+        "bbox": [
+          595.1793823242188,
+          144.05992126464844,
+          639.732666015625,
+          262.5990905761719
+        ],
+        "center": [
+          617.4404296875,
+          206.4158935546875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.4955543279647827,
+        "timestamp_estimate_from_index_fps_seconds": 2.4411409498207886,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          595.150634765625,
+          143.78143310546875,
+          639.730224609375,
+          269.05035400390625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.4955543279647827
+      },
+      "measured_vehicle_bc": [
+        617.4404296875,
+        269.05035400390625
+      ],
+      "signed_line_distance_px": 219.78171217515924,
+      "line_projection": 0.7961871355418645,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 74,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 74,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          595.361572265625,
+          146.8101806640625,
+          639.7615966796875,
+          269.40460205078125
+        ],
+        "bbox": [
+          594.8486938476562,
+          146.79446411132812,
+          639.7513427734375,
+          270.3388366699219
+        ],
+        "center": [
+          617.5615844726562,
+          208.10739135742188
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7642846703529358,
+        "timestamp_estimate_from_index_fps_seconds": 2.474581236804635,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          595.361572265625,
+          146.8101806640625,
+          639.7615966796875,
+          269.40460205078125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7642846703529358
+      },
+      "measured_vehicle_bc": [
+        617.5615844726562,
+        269.40460205078125
+      ],
+      "signed_line_distance_px": 220.14165774053149,
+      "line_projection": 0.7960498341912859,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 75,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 75,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          596.3489990234375,
+          145.01785278320312,
+          639.7545166015625,
+          268.8968200683594
+        ],
+        "bbox": [
+          595.4862060546875,
+          146.50149536132812,
+          639.7536010742188,
+          272.394287109375
+        ],
+        "center": [
+          618.0517578125,
+          206.95733642578125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6676883697509766,
+        "timestamp_estimate_from_index_fps_seconds": 2.5080215237884813,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          596.3489990234375,
+          145.01785278320312,
+          639.7545166015625,
+          268.8968200683594
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6676883697509766
+      },
+      "measured_vehicle_bc": [
+        618.0517578125,
+        268.8968200683594
+      ],
+      "signed_line_distance_px": 220.00504486018895,
+      "line_projection": 0.7969728343626882,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 76,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 76,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          595.9720458984375,
+          141.93414306640625,
+          639.7713623046875,
+          254.33184814453125
+        ],
+        "bbox": [
+          595.5318603515625,
+          144.18589782714844,
+          639.7659301757812,
+          262.99615478515625
+        ],
+        "center": [
+          617.8717041015625,
+          198.13299560546875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6073814034461975,
+        "timestamp_estimate_from_index_fps_seconds": 2.541461810772328,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          595.9720458984375,
+          141.93414306640625,
+          639.7713623046875,
+          254.33184814453125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6073814034461975
+      },
+      "measured_vehicle_bc": [
+        617.8717041015625,
+        254.33184814453125
+      ],
+      "signed_line_distance_px": 207.94938968504417,
+      "line_projection": 0.8078702283295411,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 77,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 77,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          595.8707885742188,
+          141.64797973632812,
+          639.7222290039062,
+          262.37579345703125
+        ],
+        "bbox": [
+          595.5175170898438,
+          142.9274444580078,
+          639.7372436523438,
+          264.23211669921875
+        ],
+        "center": [
+          617.7965087890625,
+          202.0118865966797
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6817861199378967,
+        "timestamp_estimate_from_index_fps_seconds": 2.5749020977561745,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          595.8707885742188,
+          141.64797973632812,
+          639.7222290039062,
+          262.37579345703125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6817861199378967
+      },
+      "measured_vehicle_bc": [
+        617.7965087890625,
+        262.37579345703125
+      ],
+      "signed_line_distance_px": 214.50769737476298,
+      "line_projection": 0.8016607748558628,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 78,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 78,
+        "original_detection_index": 5,
+        "raw_bbox": [
+          595.8604736328125,
+          142.5389404296875,
+          639.7515869140625,
+          265.51165771484375
+        ],
+        "bbox": [
+          595.5374145507812,
+          143.0328369140625,
+          639.7461547851562,
+          266.6387939453125
+        ],
+        "center": [
+          617.8060302734375,
+          204.02529907226562
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6886399984359741,
+        "timestamp_estimate_from_index_fps_seconds": 2.6083423847400207,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          595.8604736328125,
+          142.5389404296875,
+          639.7515869140625,
+          265.51165771484375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6886399984359741
+      },
+      "measured_vehicle_bc": [
+        617.8060302734375,
+        265.51165771484375
+      ],
+      "signed_line_distance_px": 217.08659019696015,
+      "line_projection": 0.7992825553276247,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 79,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 79,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          594.7764282226562,
+          142.6466064453125,
+          639.7592163085938,
+          265.7585144042969
+        ],
+        "bbox": [
+          594.8475952148438,
+          143.10153198242188,
+          639.7546997070312,
+          267.53729248046875
+        ],
+        "center": [
+          617.267822265625,
+          204.2025604248047
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7304911613464355,
+        "timestamp_estimate_from_index_fps_seconds": 2.6417826717238673,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          594.7764282226562,
+          142.6466064453125,
+          639.7592163085938,
+          265.7585144042969
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7304911613464355
+      },
+      "measured_vehicle_bc": [
+        617.267822265625,
+        265.7585144042969
+      ],
+      "signed_line_distance_px": 216.98162592523235,
+      "line_projection": 0.7985057593821403,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 80,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 80,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          594.078125,
+          141.62371826171875,
+          639.751953125,
+          264.52838134765625
+        ],
+        "bbox": [
+          594.1470947265625,
+          142.41342163085938,
+          639.7531127929688,
+          266.884521484375
+        ],
+        "center": [
+          616.9150390625,
+          203.0760498046875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7414941787719727,
+        "timestamp_estimate_from_index_fps_seconds": 2.6752229587077134,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          594.078125,
+          141.62371826171875,
+          639.751953125,
+          264.52838134765625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7414941787719727
+      },
+      "measured_vehicle_bc": [
+        616.9150390625,
+        264.52838134765625
+      ],
+      "signed_line_distance_px": 215.77052476905115,
+      "line_projection": 0.7990568505340925,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 81,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 81,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          591.9943237304688,
+          139.06744384765625,
+          639.7406616210938,
+          261.743408203125
+        ],
+        "bbox": [
+          592.53076171875,
+          140.4300994873047,
+          639.7449951171875,
+          264.6341552734375
+        ],
+        "center": [
+          615.8674926757812,
+          200.40542602539062
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7744093537330627,
+        "timestamp_estimate_from_index_fps_seconds": 2.70866324569156,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          591.9943237304688,
+          139.06744384765625,
+          639.7406616210938,
+          261.743408203125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7744093537330627
+      },
+      "measured_vehicle_bc": [
+        615.8674926757812,
+        261.743408203125
+      ],
+      "signed_line_distance_px": 212.88643387614113,
+      "line_projection": 0.8000322652171674,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 82,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 82,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          592.9710693359375,
+          141.77102661132812,
+          639.7508544921875,
+          270.9820556640625
+        ],
+        "bbox": [
+          592.5709228515625,
+          141.42770385742188,
+          639.7485961914062,
+          269.7265319824219
+        ],
+        "center": [
+          616.3609619140625,
+          206.3765411376953
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8154273629188538,
+        "timestamp_estimate_from_index_fps_seconds": 2.7421035326754066,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          592.9710693359375,
+          141.77102661132812,
+          639.7508544921875,
+          270.9820556640625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8154273629188538
+      },
+      "measured_vehicle_bc": [
+        616.3609619140625,
+        270.9820556640625
+      ],
+      "signed_line_distance_px": 220.75012713015857,
+      "line_projection": 0.7935348677640678,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 83,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 83,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          592.4649658203125,
+          148.40365600585938,
+          639.7568359375,
+          274.7776184082031
+        ],
+        "bbox": [
+          592.2876586914062,
+          146.10580444335938,
+          639.7539672851562,
+          274.04168701171875
+        ],
+        "center": [
+          616.1109008789062,
+          211.59063720703125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.828669011592865,
+        "timestamp_estimate_from_index_fps_seconds": 2.775543819659253,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          592.4649658203125,
+          148.40365600585938,
+          639.7568359375,
+          274.7776184082031
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.828669011592865
+      },
+      "measured_vehicle_bc": [
+        616.1109008789062,
+        274.7776184082031
+      ],
+      "signed_line_distance_px": 223.72206960900073,
+      "line_projection": 0.7903701809940041,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 84,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 84,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          592.165283203125,
+          148.44952392578125,
+          639.7552490234375,
+          275.172607421875
+        ],
+        "bbox": [
+          592.0059814453125,
+          147.9481658935547,
+          639.7549438476562,
+          275.85052490234375
+        ],
+        "center": [
+          615.9602661132812,
+          211.81106567382812
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8420486450195312,
+        "timestamp_estimate_from_index_fps_seconds": 2.8089841066430994,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          592.165283203125,
+          148.44952392578125,
+          639.7552490234375,
+          275.172607421875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8420486450195312
+      },
+      "measured_vehicle_bc": [
+        615.9602661132812,
+        275.172607421875
+      ],
+      "signed_line_distance_px": 223.9601409117473,
+      "line_projection": 0.7899045281021666,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 85,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 85,
+        "original_detection_index": 0,
+        "raw_bbox": [
+          590.8367919921875,
+          147.611328125,
+          639.757080078125,
+          275.96282958984375
+        ],
+        "bbox": [
+          591.0494384765625,
+          148.06784057617188,
+          639.7565307617188,
+          276.9407958984375
+        ],
+        "center": [
+          615.2969360351562,
+          211.78707885742188
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8016254305839539,
+        "timestamp_estimate_from_index_fps_seconds": 2.8424243936269455,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          590.8367919921875,
+          147.611328125,
+          639.757080078125,
+          275.96282958984375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8016254305839539
+      },
+      "measured_vehicle_bc": [
+        615.2969360351562,
+        275.96282958984375
+      ],
+      "signed_line_distance_px": 224.22959201488175,
+      "line_projection": 0.7885769677442311,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 86,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 86,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          590.5135498046875,
+          147.517822265625,
+          639.7501220703125,
+          276.287841796875
+        ],
+        "bbox": [
+          590.4927368164062,
+          148.01707458496094,
+          639.7525634765625,
+          277.4638671875
+        ],
+        "center": [
+          615.1318359375,
+          211.90283203125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8125040531158447,
+        "timestamp_estimate_from_index_fps_seconds": 2.875864680610792,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          590.5135498046875,
+          147.517822265625,
+          639.7501220703125,
+          276.287841796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8125040531158447
+      },
+      "measured_vehicle_bc": [
+        615.1318359375,
+        276.287841796875
+      ],
+      "signed_line_distance_px": 224.4019708317634,
+      "line_projection": 0.7881487931978897,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 87,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 87,
+        "original_detection_index": 0,
+        "raw_bbox": [
+          588.9672241210938,
+          145.670166015625,
+          639.7539672851562,
+          273.70855712890625
+        ],
+        "bbox": [
+          589.2918090820312,
+          146.75267028808594,
+          639.7535400390625,
+          275.86883544921875
+        ],
+        "center": [
+          614.360595703125,
+          209.68936157226562
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8359382748603821,
+        "timestamp_estimate_from_index_fps_seconds": 2.9093049675946387,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.9672241210938,
+          145.670166015625,
+          639.7539672851562,
+          273.70855712890625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8359382748603821
+      },
+      "measured_vehicle_bc": [
+        614.360595703125,
+        273.70855712890625
+      ],
+      "signed_line_distance_px": 221.84456783118173,
+      "line_projection": 0.7892697912206914,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 88,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 88,
+        "original_detection_index": 0,
+        "raw_bbox": [
+          587.6947021484375,
+          144.83517456054688,
+          639.7547607421875,
+          273.5118713378906
+        ],
+        "bbox": [
+          588.0253295898438,
+          145.68795776367188,
+          639.75439453125,
+          275.02813720703125
+        ],
+        "center": [
+          613.7247314453125,
+          209.17352294921875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8197281956672668,
+        "timestamp_estimate_from_index_fps_seconds": 2.942745254578485,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.6947021484375,
+          144.83517456054688,
+          639.7547607421875,
+          273.5118713378906
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8197281956672668
+      },
+      "measured_vehicle_bc": [
+        613.7247314453125,
+        273.5118713378906
+      ],
+      "signed_line_distance_px": 221.31980611757743,
+      "line_projection": 0.7887240192839756,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 89,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 89,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.9039306640625,
+          145.1641845703125,
+          639.7550048828125,
+          273.21600341796875
+        ],
+        "bbox": [
+          587.0463256835938,
+          145.4787139892578,
+          639.7548828125,
+          274.43841552734375
+        ],
+        "center": [
+          613.3294677734375,
+          209.19009399414062
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8432304859161377,
+        "timestamp_estimate_from_index_fps_seconds": 2.9761855415623315,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.9039306640625,
+          145.1641845703125,
+          639.7550048828125,
+          273.21600341796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8432304859161377
+      },
+      "measured_vehicle_bc": [
+        613.3294677734375,
+        273.21600341796875
+      ],
+      "signed_line_distance_px": 220.85113655874278,
+      "line_projection": 0.788516995888186,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 90,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 90,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          587.0771484375,
+          146.064697265625,
+          639.714599609375,
+          274.0123291015625
+        ],
+        "bbox": [
+          586.8043212890625,
+          145.97645568847656,
+          639.7288818359375,
+          274.6692199707031
+        ],
+        "center": [
+          613.3958740234375,
+          210.03851318359375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8426148295402527,
+        "timestamp_estimate_from_index_fps_seconds": 3.0096258285461777,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.0771484375,
+          146.064697265625,
+          639.714599609375,
+          274.0123291015625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8426148295402527
+      },
+      "measured_vehicle_bc": [
+        613.3958740234375,
+        274.0123291015625
+      ],
+      "signed_line_distance_px": 221.54258894229375,
+      "line_projection": 0.7879830662760458,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 91,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 91,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          589.5782470703125,
+          147.70355224609375,
+          639.7564697265625,
+          274.1400146484375
+        ],
+        "bbox": [
+          588.3687133789062,
+          147.2325439453125,
+          639.7460327148438,
+          274.7839660644531
+        ],
+        "center": [
+          614.6673583984375,
+          210.92178344726562
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8313316702842712,
+        "timestamp_estimate_from_index_fps_seconds": 3.0430661155300243,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          589.5782470703125,
+          147.70355224609375,
+          639.7564697265625,
+          274.1400146484375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8313316702842712
+      },
+      "measured_vehicle_bc": [
+        614.6673583984375,
+        274.1400146484375
+      ],
+      "signed_line_distance_px": 222.37393719485075,
+      "line_projection": 0.789276720158818,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 92,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 92,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          591.0157470703125,
+          147.786376953125,
+          639.7530517578125,
+          274.78466796875
+        ],
+        "bbox": [
+          589.95947265625,
+          147.74989318847656,
+          639.7505493164062,
+          275.1984558105469
+        ],
+        "center": [
+          615.3843994140625,
+          211.2855224609375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.859017014503479,
+        "timestamp_estimate_from_index_fps_seconds": 3.076506402513871,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          591.0157470703125,
+          147.786376953125,
+          639.7530517578125,
+          274.78466796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.859017014503479
+      },
+      "measured_vehicle_bc": [
+        615.3843994140625,
+        274.78466796875
+      ],
+      "signed_line_distance_px": 223.31271091571872,
+      "line_projection": 0.7895700700620721,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 93,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 93,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          589.8628540039062,
+          148.0946044921875,
+          639.7581176757812,
+          274.1700439453125
+        ],
+        "bbox": [
+          589.8098754882812,
+          148.1317596435547,
+          639.755615234375,
+          274.90435791015625
+        ],
+        "center": [
+          614.8104858398438,
+          211.13232421875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8756119608879089,
+        "timestamp_estimate_from_index_fps_seconds": 3.109946689497717,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          589.8628540039062,
+          148.0946044921875,
+          639.7581176757812,
+          274.1700439453125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8756119608879089
+      },
+      "measured_vehicle_bc": [
+        614.8104858398438,
+        274.1700439453125
+      ],
+      "signed_line_distance_px": 222.48036794000706,
+      "line_projection": 0.7894104176771728,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 94,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 94,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          589.970947265625,
+          146.59136962890625,
+          639.757080078125,
+          272.5318603515625
+        ],
+        "bbox": [
+          589.8333740234375,
+          147.263916015625,
+          639.7568359375,
+          273.6647644042969
+        ],
+        "center": [
+          614.864013671875,
+          209.56161499023438
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8545739650726318,
+        "timestamp_estimate_from_index_fps_seconds": 3.1433869764815636,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          589.970947265625,
+          146.59136962890625,
+          639.757080078125,
+          272.5318603515625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8545739650726318
+      },
+      "measured_vehicle_bc": [
+        614.864013671875,
+        272.5318603515625
+      ],
+      "signed_line_distance_px": 221.16657732831317,
+      "line_projection": 0.7907168026214209,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 95,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 95,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          589.710693359375,
+          144.55340576171875,
+          639.75732421875,
+          271.12017822265625
+        ],
+        "bbox": [
+          589.6797485351562,
+          145.57244873046875,
+          639.7573852539062,
+          272.22760009765625
+        ],
+        "center": [
+          614.7340087890625,
+          207.8367919921875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8619781136512756,
+        "timestamp_estimate_from_index_fps_seconds": 3.17682726346541,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          589.710693359375,
+          144.55340576171875,
+          639.75732421875,
+          271.12017822265625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8619781136512756
+      },
+      "measured_vehicle_bc": [
+        614.7340087890625,
+        271.12017822265625
+      ],
+      "signed_line_distance_px": 219.93378960686996,
+      "line_projection": 0.7916498861671009,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 96,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 96,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          589.9376831054688,
+          143.78094482421875,
+          639.7572631835938,
+          271.03204345703125
+        ],
+        "bbox": [
+          589.7793579101562,
+          144.41529846191406,
+          639.757568359375,
+          271.6023864746094
+        ],
+        "center": [
+          614.8474731445312,
+          207.406494140625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8620322942733765,
+        "timestamp_estimate_from_index_fps_seconds": 3.2102675504492564,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          589.9376831054688,
+          143.78094482421875,
+          639.7572631835938,
+          271.03204345703125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8620322942733765
+      },
+      "measured_vehicle_bc": [
+        614.8474731445312,
+        271.03204345703125
+      ],
+      "signed_line_distance_px": 219.92629848264394,
+      "line_projection": 0.7918411417275112,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 97,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 97,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          590.187744140625,
+          147.94537353515625,
+          639.756103515625,
+          274.74114990234375
+        ],
+        "bbox": [
+          589.990478515625,
+          146.72186279296875,
+          639.7568359375,
+          273.79449462890625
+        ],
+        "center": [
+          614.971923828125,
+          211.34326171875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8459307551383972,
+        "timestamp_estimate_from_index_fps_seconds": 3.243707837433103,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          590.187744140625,
+          147.94537353515625,
+          639.756103515625,
+          274.74114990234375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8459307551383972
+      },
+      "measured_vehicle_bc": [
+        614.971923828125,
+        274.74114990234375
+      ],
+      "signed_line_distance_px": 223.0412972789753,
+      "line_projection": 0.7891519993405862,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 98,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 98,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          590.7615356445312,
+          148.66015625,
+          639.7581176757812,
+          274.39117431640625
+        ],
+        "bbox": [
+          590.4564819335938,
+          148.0699005126953,
+          639.7578735351562,
+          274.379638671875
+        ],
+        "center": [
+          615.2598266601562,
+          211.52566528320312
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8792105913162231,
+        "timestamp_estimate_from_index_fps_seconds": 3.277148124416949,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          590.7615356445312,
+          148.66015625,
+          639.7581176757812,
+          274.39117431640625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8792105913162231
+      },
+      "measured_vehicle_bc": [
+        615.2598266601562,
+        274.39117431640625
+      ],
+      "signed_line_distance_px": 222.91860525595445,
+      "line_projection": 0.789733526369605,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 99,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 99,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          590.5635375976562,
+          146.802490234375,
+          639.7551879882812,
+          272.789794921875
+        ],
+        "bbox": [
+          590.5060424804688,
+          147.341796875,
+          639.7562866210938,
+          273.5184326171875
+        ],
+        "center": [
+          615.1593627929688,
+          209.796142578125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8569515347480774,
+        "timestamp_estimate_from_index_fps_seconds": 3.3105884114007957,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          590.5635375976562,
+          146.802490234375,
+          639.7551879882812,
+          272.789794921875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8569515347480774
+      },
+      "measured_vehicle_bc": [
+        615.1593627929688,
+        272.789794921875
+      ],
+      "signed_line_distance_px": 221.54702276275734,
+      "line_projection": 0.7908434209790606,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 100,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 100,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          590.015380859375,
+          143.87335205078125,
+          639.750732421875,
+          271.4329833984375
+        ],
+        "bbox": [
+          590.1640014648438,
+          145.11964416503906,
+          639.752685546875,
+          272.2772521972656
+        ],
+        "center": [
+          614.883056640625,
+          207.65316772460938
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8488397598266602,
+        "timestamp_estimate_from_index_fps_seconds": 3.344028698384642,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          590.015380859375,
+          143.87335205078125,
+          639.750732421875,
+          271.4329833984375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8488397598266602
+      },
+      "measured_vehicle_bc": [
+        614.883056640625,
+        271.4329833984375
+      ],
+      "signed_line_distance_px": 220.27566391842734,
+      "line_projection": 0.7915746655200302,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 101,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 101,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          589.002685546875,
+          144.60986328125,
+          639.7225341796875,
+          272.82989501953125
+        ],
+        "bbox": [
+          589.3694458007812,
+          144.7631072998047,
+          639.7327880859375,
+          272.7174987792969
+        ],
+        "center": [
+          614.3626098632812,
+          208.71987915039062
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8593583703041077,
+        "timestamp_estimate_from_index_fps_seconds": 3.3774689853684885,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          589.002685546875,
+          144.60986328125,
+          639.7225341796875,
+          272.82989501953125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8593583703041077
+      },
+      "measured_vehicle_bc": [
+        614.3626098632812,
+        272.82989501953125
+      ],
+      "signed_line_distance_px": 221.12464332847026,
+      "line_projection": 0.7899412848222667,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 102,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 102,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          588.22265625,
+          145.457763671875,
+          639.7210693359375,
+          272.8173522949219
+        ],
+        "bbox": [
+          588.5606079101562,
+          145.1885986328125,
+          639.7243041992188,
+          272.8676452636719
+        ],
+        "center": [
+          613.9718627929688,
+          209.13755798339844
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8721303939819336,
+        "timestamp_estimate_from_index_fps_seconds": 3.4109092723523347,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.22265625,
+          145.457763671875,
+          639.7210693359375,
+          272.8173522949219
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8721303939819336
+      },
+      "measured_vehicle_bc": [
+        613.9718627929688,
+        272.8173522949219
+      ],
+      "signed_line_distance_px": 220.89106595662798,
+      "line_projection": 0.7895233891711868,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 103,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 103,
+        "original_detection_index": 0,
+        "raw_bbox": [
+          588.0274047851562,
+          146.28799438476562,
+          639.7183227539062,
+          274.333251953125
+        ],
+        "bbox": [
+          588.1307983398438,
+          145.9019317626953,
+          639.7193603515625,
+          273.91552734375
+        ],
+        "center": [
+          613.8728637695312,
+          210.3106231689453
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8889181017875671,
+        "timestamp_estimate_from_index_fps_seconds": 3.4443495593361813,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.0274047851562,
+          146.28799438476562,
+          639.7183227539062,
+          274.333251953125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8889181017875671
+      },
+      "measured_vehicle_bc": [
+        613.8728637695312,
+        274.333251953125
+      ],
+      "signed_line_distance_px": 222.07852051042138,
+      "line_projection": 0.7882604074904144,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 104,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 104,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          587.3820190429688,
+          146.5577392578125,
+          639.7586059570312,
+          274.20806884765625
+        ],
+        "bbox": [
+          587.55224609375,
+          146.3498077392578,
+          639.7439575195312,
+          274.2192077636719
+        ],
+        "center": [
+          613.5703125,
+          210.38290405273438
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8776969313621521,
+        "timestamp_estimate_from_index_fps_seconds": 3.477789846320028,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.3820190429688,
+          146.5577392578125,
+          639.7586059570312,
+          274.20806884765625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8776969313621521
+      },
+      "measured_vehicle_bc": [
+        613.5703125,
+        274.20806884765625
+      ],
+      "signed_line_distance_px": 221.80290226020924,
+      "line_projection": 0.7880247916883667,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 105,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 105,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          586.8526611328125,
+          148.79782104492188,
+          639.7266845703125,
+          276.25018310546875
+        ],
+        "bbox": [
+          586.9945678710938,
+          147.99620056152344,
+          639.7325439453125,
+          275.6696472167969
+        ],
+        "center": [
+          613.2896728515625,
+          212.5240020751953
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8744358420372009,
+        "timestamp_estimate_from_index_fps_seconds": 3.511230133303874,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.8526611328125,
+          148.79782104492188,
+          639.7266845703125,
+          276.25018310546875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8744358420372009
+      },
+      "measured_vehicle_bc": [
+        613.2896728515625,
+        276.25018310546875
+      ],
+      "signed_line_distance_px": 223.31840095789858,
+      "line_projection": 0.786162282381708,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 106,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 106,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.7245483398438,
+          150.55917358398438,
+          639.7352905273438,
+          278.7066650390625
+        ],
+        "bbox": [
+          586.7083129882812,
+          149.77728271484375,
+          639.7338256835938,
+          277.8271484375
+        ],
+        "center": [
+          613.2299194335938,
+          214.63291931152344
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8872597813606262,
+        "timestamp_estimate_from_index_fps_seconds": 3.5446704202877206,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.7245483398438,
+          150.55917358398438,
+          639.7352905273438,
+          278.7066650390625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8872597813606262
+      },
+      "measured_vehicle_bc": [
+        613.2299194335938,
+        278.7066650390625
+      ],
+      "signed_line_distance_px": 225.30017191884772,
+      "line_projection": 0.7842257768328214,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 107,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 107,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.5693359375,
+          149.59042358398438,
+          639.73095703125,
+          275.80908203125
+        ],
+        "bbox": [
+          586.5090942382812,
+          149.7992706298828,
+          639.7315673828125,
+          276.7119140625
+        ],
+        "center": [
+          613.150146484375,
+          212.6997528076172
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8814409971237183,
+        "timestamp_estimate_from_index_fps_seconds": 3.5781107072715668,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.5693359375,
+          149.59042358398438,
+          639.73095703125,
+          275.80908203125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8814409971237183
+      },
+      "measured_vehicle_bc": [
+        613.150146484375,
+        275.80908203125
+      ],
+      "signed_line_distance_px": 222.87668126530133,
+      "line_projection": 0.7863456437900236,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 108,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 108,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.52294921875,
+          148.42465209960938,
+          639.717041015625,
+          275.0254211425781
+        ],
+        "bbox": [
+          586.414306640625,
+          149.01763916015625,
+          639.7216186523438,
+          275.7439270019531
+        ],
+        "center": [
+          613.1199951171875,
+          211.72503662109375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8922889232635498,
+        "timestamp_estimate_from_index_fps_seconds": 3.6115509942554134,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.52294921875,
+          148.42465209960938,
+          639.717041015625,
+          275.0254211425781
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8922889232635498
+      },
+      "measured_vehicle_bc": [
+        613.1199951171875,
+        275.0254211425781
+      ],
+      "signed_line_distance_px": 222.2163393532426,
+      "line_projection": 0.7869095867111969,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 109,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 109,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.7962646484375,
+          146.77133178710938,
+          639.7186279296875,
+          274.2838439941406
+        ],
+        "bbox": [
+          586.5690307617188,
+          147.6173858642578,
+          639.7188720703125,
+          274.8749084472656
+        ],
+        "center": [
+          613.2574462890625,
+          210.527587890625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8730347752571106,
+        "timestamp_estimate_from_index_fps_seconds": 3.64499128123926,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.7962646484375,
+          146.77133178710938,
+          639.7186279296875,
+          274.2838439941406
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8730347752571106
+      },
+      "measured_vehicle_bc": [
+        613.2574462890625,
+        274.2838439941406
+      ],
+      "signed_line_distance_px": 221.68630646228843,
+      "line_projection": 0.787624819122708,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 110,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 110,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.5963745117188,
+          146.19815063476562,
+          639.7151489257812,
+          273.68658447265625
+        ],
+        "bbox": [
+          586.5069580078125,
+          146.70440673828125,
+          639.7156982421875,
+          274.144287109375
+        ],
+        "center": [
+          613.15576171875,
+          209.94236755371094
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8680920600891113,
+        "timestamp_estimate_from_index_fps_seconds": 3.678431568223106,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.5963745117188,
+          146.19815063476562,
+          639.7151489257812,
+          273.68658447265625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8680920600891113
+      },
+      "measured_vehicle_bc": [
+        613.15576171875,
+        273.68658447265625
+      ],
+      "signed_line_distance_px": 221.1380589885788,
+      "line_projection": 0.7879685250353542,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 111,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 111,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.6121215820312,
+          146.25286865234375,
+          639.7145385742188,
+          273.75634765625
+        ],
+        "bbox": [
+          586.5023193359375,
+          146.3931121826172,
+          639.714111328125,
+          273.9084777832031
+        ],
+        "center": [
+          613.163330078125,
+          210.00460815429688
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8698399662971497,
+        "timestamp_estimate_from_index_fps_seconds": 3.7118718552069527,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.6121215820312,
+          146.25286865234375,
+          639.7145385742188,
+          273.75634765625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8698399662971497
+      },
+      "measured_vehicle_bc": [
+        613.163330078125,
+        273.75634765625
+      ],
+      "signed_line_distance_px": 221.1996350349161,
+      "line_projection": 0.7879236646099113,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 112,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 112,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.6693115234375,
+          146.19683837890625,
+          639.7213134765625,
+          273.70794677734375
+        ],
+        "bbox": [
+          586.5463256835938,
+          146.24014282226562,
+          639.7180786132812,
+          273.7852783203125
+        ],
+        "center": [
+          613.1953125,
+          209.952392578125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8779136538505554,
+        "timestamp_estimate_from_index_fps_seconds": 3.745312142190799,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.6693115234375,
+          146.19683837890625,
+          639.7213134765625,
+          273.70794677734375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8779136538505554
+      },
+      "measured_vehicle_bc": [
+        613.1953125,
+        273.70794677734375
+      ],
+      "signed_line_distance_px": 221.17819045682728,
+      "line_projection": 0.7879955187988872,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 113,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 113,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.6817626953125,
+          146.14373779296875,
+          639.7222900390625,
+          273.80975341796875
+        ],
+        "bbox": [
+          586.5784301757812,
+          146.1499786376953,
+          639.7203369140625,
+          273.8050842285156
+        ],
+        "center": [
+          613.2020263671875,
+          209.97674560546875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8795377612113953,
+        "timestamp_estimate_from_index_fps_seconds": 3.7787524291746455,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.6817626953125,
+          146.14373779296875,
+          639.7222900390625,
+          273.80975341796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8795377612113953
+      },
+      "measured_vehicle_bc": [
+        613.2020263671875,
+        273.80975341796875
+      ],
+      "signed_line_distance_px": 221.26557473541678,
+      "line_projection": 0.7879253156323442,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 114,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 114,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.7044677734375,
+          146.07772827148438,
+          639.7191162109375,
+          273.5170593261719
+        ],
+        "bbox": [
+          586.61181640625,
+          146.0753173828125,
+          639.7191162109375,
+          273.6188659667969
+        ],
+        "center": [
+          613.2117919921875,
+          209.79739379882812
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8770492076873779,
+        "timestamp_estimate_from_index_fps_seconds": 3.812192716158492,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.7044677734375,
+          146.07772827148438,
+          639.7191162109375,
+          273.5170593261719
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8770492076873779
+      },
+      "measured_vehicle_bc": [
+        613.2117919921875,
+        273.5170593261719
+      ],
+      "signed_line_distance_px": 221.03095522556717,
+      "line_projection": 0.7881589480630041,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 115,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 115,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.4468994140625,
+          146.09344482421875,
+          639.7164306640625,
+          273.58380126953125
+        ],
+        "bbox": [
+          586.4598999023438,
+          146.060546875,
+          639.7169799804688,
+          273.59228515625
+        ],
+        "center": [
+          613.0816650390625,
+          209.838623046875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8704094886779785,
+        "timestamp_estimate_from_index_fps_seconds": 3.8456330031423382,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.4468994140625,
+          146.09344482421875,
+          639.7164306640625,
+          273.58380126953125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8704094886779785
+      },
+      "measured_vehicle_bc": [
+        613.0816650390625,
+        273.58380126953125
+      ],
+      "signed_line_distance_px": 221.0113688066122,
+      "line_projection": 0.7879657600373995,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 116,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 116,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          586.59521484375,
+          146.9720458984375,
+          639.7154541015625,
+          274.803466796875
+        ],
+        "bbox": [
+          586.5050048828125,
+          146.6383819580078,
+          639.7155151367188,
+          274.3884582519531
+        ],
+        "center": [
+          613.1553344726562,
+          210.88775634765625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8758624792098999,
+        "timestamp_estimate_from_index_fps_seconds": 3.879073290126185,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.59521484375,
+          146.9720458984375,
+          639.7154541015625,
+          274.803466796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8758624792098999
+      },
+      "measured_vehicle_bc": [
+        613.1553344726562,
+        274.803466796875
+      ],
+      "signed_line_distance_px": 222.0543860965277,
+      "line_projection": 0.7871173114553565,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 117,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 117,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          586.80078125,
+          147.32159423828125,
+          639.721923828125,
+          274.690185546875
+        ],
+        "bbox": [
+          586.6627197265625,
+          147.08934020996094,
+          639.7192993164062,
+          274.61383056640625
+        ],
+        "center": [
+          613.2613525390625,
+          211.00588989257812
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8612678647041321,
+        "timestamp_estimate_from_index_fps_seconds": 3.912513577110031,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          586.80078125,
+          147.32159423828125,
+          639.721923828125,
+          274.690185546875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8612678647041321
+      },
+      "measured_vehicle_bc": [
+        613.2613525390625,
+        274.690185546875
+      ],
+      "signed_line_distance_px": 222.02200344536237,
+      "line_projection": 0.7873195757611177,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 118,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 118,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          587.059326171875,
+          146.10134887695312,
+          639.756103515625,
+          274.022705078125
+        ],
+        "bbox": [
+          586.8973388671875,
+          146.4530029296875,
+          639.7433471679688,
+          274.2547607421875
+        ],
+        "center": [
+          613.40771484375,
+          210.06202697753906
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8716042637825012,
+        "timestamp_estimate_from_index_fps_seconds": 3.9459538640938776,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.059326171875,
+          146.10134887695312,
+          639.756103515625,
+          274.022705078125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8716042637825012
+      },
+      "measured_vehicle_bc": [
+        613.40771484375,
+        274.022705078125
+      ],
+      "signed_line_distance_px": 221.55787019071593,
+      "line_projection": 0.7879881157565851,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 119,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 119,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          587.4321899414062,
+          145.54959106445312,
+          639.7188110351562,
+          273.69476318359375
+        ],
+        "bbox": [
+          587.2354736328125,
+          145.84768676757812,
+          639.727783203125,
+          273.8998718261719
+        ],
+        "center": [
+          613.5755004882812,
+          209.62217712402344
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8661878108978271,
+        "timestamp_estimate_from_index_fps_seconds": 3.979394151077724,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.4321899414062,
+          145.54959106445312,
+          639.7188110351562,
+          273.69476318359375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8661878108978271
+      },
+      "measured_vehicle_bc": [
+        613.5755004882812,
+        273.69476318359375
+      ],
+      "signed_line_distance_px": 221.38462172021858,
+      "line_projection": 0.788421459688498,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 120,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 120,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          587.2967529296875,
+          146.63055419921875,
+          639.7227783203125,
+          274.2315673828125
+        ],
+        "bbox": [
+          587.2747802734375,
+          146.33383178710938,
+          639.7244873046875,
+          274.11871337890625
+        ],
+        "center": [
+          613.509765625,
+          210.43106079101562
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8592450022697449,
+        "timestamp_estimate_from_index_fps_seconds": 4.012834438061571,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.2967529296875,
+          146.63055419921875,
+          639.7227783203125,
+          274.2315673828125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8592450022697449
+      },
+      "measured_vehicle_bc": [
+        613.509765625,
+        274.2315673828125
+      ],
+      "signed_line_distance_px": 221.78758813668077,
+      "line_projection": 0.7879406585025591,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 121,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 121,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          587.51318359375,
+          147.34707641601562,
+          639.7265625,
+          274.85772705078125
+        ],
+        "bbox": [
+          587.432861328125,
+          146.99447631835938,
+          639.7257690429688,
+          274.6152038574219
+        ],
+        "center": [
+          613.619873046875,
+          211.10240173339844
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8609588742256165,
+        "timestamp_estimate_from_index_fps_seconds": 4.046274725045417,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.51318359375,
+          147.34707641601562,
+          639.7265625,
+          274.85772705078125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8609588742256165
+      },
+      "measured_vehicle_bc": [
+        613.619873046875,
+        274.85772705078125
+      ],
+      "signed_line_distance_px": 222.36436562211253,
+      "line_projection": 0.7875841529134577,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 122,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 122,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.586669921875,
+          147.64181518554688,
+          639.731201171875,
+          275.3857421875
+        ],
+        "bbox": [
+          587.5409545898438,
+          147.43894958496094,
+          639.7293090820312,
+          275.1502380371094
+        ],
+        "center": [
+          613.658935546875,
+          211.51377868652344
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8559255003929138,
+        "timestamp_estimate_from_index_fps_seconds": 4.079715012029263,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.586669921875,
+          147.64181518554688,
+          639.731201171875,
+          275.3857421875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8559255003929138
+      },
+      "measured_vehicle_bc": [
+        613.658935546875,
+        275.3857421875
+      ],
+      "signed_line_distance_px": 222.8200035215825,
+      "line_projection": 0.7872246873867108,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 123,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 123,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          587.8641357421875,
+          147.04714965820312,
+          639.7249755859375,
+          274.4034118652344
+        ],
+        "bbox": [
+          587.7645874023438,
+          147.21148681640625,
+          639.7265014648438,
+          274.6997375488281
+        ],
+        "center": [
+          613.7945556640625,
+          210.72528076171875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8621794581413269,
+        "timestamp_estimate_from_index_fps_seconds": 4.113155299013109,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.8641357421875,
+          147.04714965820312,
+          639.7249755859375,
+          274.4034118652344
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8621794581413269
+      },
+      "measured_vehicle_bc": [
+        613.7945556640625,
+        274.4034118652344
+      ],
+      "signed_line_distance_px": 222.0913498395811,
+      "line_projection": 0.7881213020973518,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 124,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 124,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.9304809570312,
+          146.33261108398438,
+          639.7561645507812,
+          274.4165954589844
+        ],
+        "bbox": [
+          587.8915405273438,
+          146.64974975585938,
+          639.7461547851562,
+          274.5337829589844
+        ],
+        "center": [
+          613.8433227539062,
+          210.37460327148438
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8668956160545349,
+        "timestamp_estimate_from_index_fps_seconds": 4.146595585996956,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.9304809570312,
+          146.33261108398438,
+          639.7561645507812,
+          274.4165954589844
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8668956160545349
+      },
+      "measured_vehicle_bc": [
+        613.8433227539062,
+        274.4165954589844
+      ],
+      "signed_line_distance_px": 222.13003590074035,
+      "line_projection": 0.7881646076982248,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 125,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 125,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.8701171875,
+          147.1563720703125,
+          639.7213134765625,
+          274.7676086425781
+        ],
+        "bbox": [
+          587.897216796875,
+          146.98040771484375,
+          639.7304077148438,
+          274.7008972167969
+        ],
+        "center": [
+          613.7957153320312,
+          210.9619903564453
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.867928147315979,
+        "timestamp_estimate_from_index_fps_seconds": 4.1800358729808025,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.8701171875,
+          147.1563720703125,
+          639.7213134765625,
+          274.7676086425781
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.867928147315979
+      },
+      "measured_vehicle_bc": [
+        613.7957153320312,
+        274.7676086425781
+      ],
+      "signed_line_distance_px": 222.39089116964192,
+      "line_projection": 0.7878451564839531,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 126,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 126,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.2257690429688,
+          148.14242553710938,
+          639.7605590820312,
+          275.8476867675781
+        ],
+        "bbox": [
+          587.4706420898438,
+          147.75738525390625,
+          639.7504272460938,
+          275.47637939453125
+        ],
+        "center": [
+          613.4931640625,
+          211.99505615234375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8601959943771362,
+        "timestamp_estimate_from_index_fps_seconds": 4.213476159964649,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.2257690429688,
+          148.14242553710938,
+          639.7605590820312,
+          275.8476867675781
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8601959943771362
+      },
+      "measured_vehicle_bc": [
+        613.4931640625,
+        275.8476867675781
+      ],
+      "signed_line_distance_px": 223.1043724575623,
+      "line_projection": 0.7866914749258017,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 127,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 127,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.2017822265625,
+          147.3572998046875,
+          639.7237548828125,
+          274.87225341796875
+        ],
+        "bbox": [
+          587.2930908203125,
+          147.53004455566406,
+          639.733642578125,
+          275.1217956542969
+        ],
+        "center": [
+          613.4627685546875,
+          211.11477661132812
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8515105843544006,
+        "timestamp_estimate_from_index_fps_seconds": 4.246916446948496,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.2017822265625,
+          147.3572998046875,
+          639.7237548828125,
+          274.87225341796875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8515105843544006
+      },
+      "measured_vehicle_bc": [
+        613.4627685546875,
+        274.87225341796875
+      ],
+      "signed_line_distance_px": 222.28651266262688,
+      "line_projection": 0.7874012267659909,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 128,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 128,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.18212890625,
+          147.26773071289062,
+          639.721923828125,
+          274.74835205078125
+        ],
+        "bbox": [
+          587.2129516601562,
+          147.38107299804688,
+          639.7260131835938,
+          274.9013671875
+        ],
+        "center": [
+          613.4520263671875,
+          211.00804138183594
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8596606254577637,
+        "timestamp_estimate_from_index_fps_seconds": 4.280356733932342,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.18212890625,
+          147.26773071289062,
+          639.721923828125,
+          274.74835205078125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8596606254577637
+      },
+      "measured_vehicle_bc": [
+        613.4520263671875,
+        274.74835205078125
+      ],
+      "signed_line_distance_px": 222.1786944130734,
+      "line_projection": 0.787483853123542,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 129,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 129,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.1895751953125,
+          147.24053955078125,
+          639.7261962890625,
+          274.3048095703125
+        ],
+        "bbox": [
+          587.1884155273438,
+          147.30435180664062,
+          639.7258911132812,
+          274.5223083496094
+        ],
+        "center": [
+          613.4578857421875,
+          210.77267456054688
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8231099247932434,
+        "timestamp_estimate_from_index_fps_seconds": 4.313797020916188,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.1895751953125,
+          147.24053955078125,
+          639.7261962890625,
+          274.3048095703125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8231099247932434
+      },
+      "measured_vehicle_bc": [
+        613.4578857421875,
+        274.3048095703125
+      ],
+      "signed_line_distance_px": 221.81804878998432,
+      "line_projection": 0.7878281158983691,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 130,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 130,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.2393798828125,
+          146.34182739257812,
+          639.7059326171875,
+          272.788818359375
+        ],
+        "bbox": [
+          587.2130126953125,
+          146.67909240722656,
+          639.7125244140625,
+          273.37493896484375
+        ],
+        "center": [
+          613.47265625,
+          209.56532287597656
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8246945142745972,
+        "timestamp_estimate_from_index_fps_seconds": 4.347237307900035,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.2393798828125,
+          146.34182739257812,
+          639.7059326171875,
+          272.788818359375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8246945142745972
+      },
+      "measured_vehicle_bc": [
+        613.47265625,
+        272.788818359375
+      ],
+      "signed_line_distance_px": 220.5823884960264,
+      "line_projection": 0.7889990272825442,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 131,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 131,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          588.1466064453125,
+          143.6334228515625,
+          639.7239990234375,
+          268.17291259765625
+        ],
+        "bbox": [
+          587.8226318359375,
+          144.6489715576172,
+          639.7194213867188,
+          269.88653564453125
+        ],
+        "center": [
+          613.935302734375,
+          205.90316772460938
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.5883718729019165,
+        "timestamp_estimate_from_index_fps_seconds": 4.380677594883881,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.1466064453125,
+          143.6334228515625,
+          639.7239990234375,
+          268.17291259765625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.5883718729019165
+      },
+      "measured_vehicle_bc": [
+        613.935302734375,
+        268.17291259765625
+      ],
+      "signed_line_distance_px": 217.05870768771368,
+      "line_projection": 0.7930211352018562,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 132,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 132,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          588.3466186523438,
+          143.3460693359375,
+          639.7157592773438,
+          269.27056884765625
+        ],
+        "bbox": [
+          588.1865234375,
+          143.69578552246094,
+          639.7166748046875,
+          269.3088684082031
+        ],
+        "center": [
+          614.0311889648438,
+          206.30831909179688
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6624271869659424,
+        "timestamp_estimate_from_index_fps_seconds": 4.414117881867727,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.3466186523438,
+          143.3460693359375,
+          639.7157592773438,
+          269.27056884765625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6624271869659424
+      },
+      "measured_vehicle_bc": [
+        614.0311889648438,
+        269.27056884765625
+      ],
+      "signed_line_distance_px": 218.01429319049092,
+      "line_projection": 0.7922899265396351,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 133,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 133,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          588.4623413085938,
+          146.131591796875,
+          639.7417602539062,
+          271.89495849609375
+        ],
+        "bbox": [
+          588.3975830078125,
+          145.1933135986328,
+          639.73291015625,
+          270.84759521484375
+        ],
+        "center": [
+          614.10205078125,
+          209.01327514648438
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7627798914909363,
+        "timestamp_estimate_from_index_fps_seconds": 4.4475581688515735,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.4623413085938,
+          146.131591796875,
+          639.7417602539062,
+          271.89495849609375
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7627798914909363
+      },
+      "measured_vehicle_bc": [
+        614.10205078125,
+        271.89495849609375
+      ],
+      "signed_line_distance_px": 220.20849520213937,
+      "line_projection": 0.7903684069585418,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 134,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 134,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          588.9813232421875,
+          148.14315795898438,
+          639.7227783203125,
+          273.6885681152344
+        ],
+        "bbox": [
+          588.817626953125,
+          147.1006622314453,
+          639.7264404296875,
+          272.63275146484375
+        ],
+        "center": [
+          614.35205078125,
+          210.91586303710938
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8005537986755371,
+        "timestamp_estimate_from_index_fps_seconds": 4.480998455835421,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.9813232421875,
+          148.14315795898438,
+          639.7227783203125,
+          273.6885681152344
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8005537986755371
+      },
+      "measured_vehicle_bc": [
+        614.35205078125,
+        273.6885681152344
+      ],
+      "signed_line_distance_px": 221.82328100021567,
+      "line_projection": 0.7892756696158723,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 135,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 135,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          588.5083618164062,
+          148.37890625,
+          639.7448120117188,
+          273.48681640625
+        ],
+        "bbox": [
+          588.656982421875,
+          147.97918701171875,
+          639.7386474609375,
+          273.1813659667969
+        ],
+        "center": [
+          614.1265869140625,
+          210.932861328125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7755367755889893,
+        "timestamp_estimate_from_index_fps_seconds": 4.514438742819267,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.5083618164062,
+          148.37890625,
+          639.7448120117188,
+          273.48681640625
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7755367755889893
+      },
+      "measured_vehicle_bc": [
+        614.1265869140625,
+        273.48681640625
+      ],
+      "signed_line_distance_px": 221.52887657305595,
+      "line_projection": 0.7891827054415068,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 136,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 136,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.7364501953125,
+          146.22463989257812,
+          639.7213134765625,
+          272.2571716308594
+        ],
+        "bbox": [
+          588.0814819335938,
+          146.87896728515625,
+          639.7276000976562,
+          272.5750732421875
+        ],
+        "center": [
+          613.7288818359375,
+          209.24090576171875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8483224511146545,
+        "timestamp_estimate_from_index_fps_seconds": 4.547879029803113,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.7364501953125,
+          146.22463989257812,
+          639.7213134765625,
+          272.2571716308594
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8483224511146545
+      },
+      "measured_vehicle_bc": [
+        613.7288818359375,
+        272.2571716308594
+      ],
+      "signed_line_distance_px": 220.29250646844648,
+      "line_projection": 0.7896842833109181,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 137,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 137,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.22607421875,
+          145.67742919921875,
+          639.70361328125,
+          267.11798095703125
+        ],
+        "bbox": [
+          587.5258178710938,
+          146.09869384765625,
+          639.7117919921875,
+          268.9518737792969
+        ],
+        "center": [
+          613.46484375,
+          206.397705078125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7594947814941406,
+        "timestamp_estimate_from_index_fps_seconds": 4.58131931678696,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.22607421875,
+          145.67742919921875,
+          639.70361328125,
+          267.11798095703125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7594947814941406
+      },
+      "measured_vehicle_bc": [
+        613.46484375,
+        267.11798095703125
+      ],
+      "signed_line_distance_px": 215.9241425099672,
+      "line_projection": 0.7933100438038118,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 138,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 138,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          587.8028564453125,
+          145.87310791015625,
+          639.7418212890625,
+          247.95867919921875
+        ],
+        "bbox": [
+          587.6943969726562,
+          145.93116760253906,
+          639.73095703125,
+          254.79336547851562
+        ],
+        "center": [
+          613.7723388671875,
+          196.9158935546875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8509302139282227,
+        "timestamp_estimate_from_index_fps_seconds": 4.614759603770806,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          587.8028564453125,
+          145.87310791015625,
+          639.7418212890625,
+          247.95867919921875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.8509302139282227
+      },
+      "measured_vehicle_bc": [
+        613.7723388671875,
+        247.95867919921875
+      ],
+      "signed_line_distance_px": 200.37674276445554,
+      "line_projection": 0.8082403523799081,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 139,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 139,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          588.4033813476562,
+          144.69479370117188,
+          639.7590942382812,
+          223.24270629882812
+        ],
+        "bbox": [
+          588.1567993164062,
+          145.04945373535156,
+          639.7496948242188,
+          232.1834259033203
+        ],
+        "center": [
+          614.0812377929688,
+          183.96875
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7786298990249634,
+        "timestamp_estimate_from_index_fps_seconds": 4.648199890754652,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          588.4033813476562,
+          144.69479370117188,
+          639.7590942382812,
+          223.24270629882812
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7786298990249634
+      },
+      "measured_vehicle_bc": [
+        614.0812377929688,
+        223.24270629882812
+      ],
+      "signed_line_distance_px": 180.27005421981926,
+      "line_projection": 0.8274047972951605,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 140,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 140,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          590.5413818359375,
+          142.90809631347656,
+          639.7703857421875,
+          212.7389373779297
+        ],
+        "bbox": [
+          589.748779296875,
+          143.41595458984375,
+          639.7642211914062,
+          216.55247497558594
+        ],
+        "center": [
+          615.1558837890625,
+          177.82351684570312
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7263243794441223,
+        "timestamp_estimate_from_index_fps_seconds": 4.681640177738498,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          590.5413818359375,
+          142.90809631347656,
+          639.7703857421875,
+          212.7389373779297
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.7263243794441223
+      },
+      "measured_vehicle_bc": [
+        615.1558837890625,
+        212.7389373779297
+      ],
+      "signed_line_distance_px": 172.26420338473238,
+      "line_projection": 0.8365812640111546,
+      "inside_finite_25px_halfwidth_band": false
+    },
+    {
+      "frame_index": 141,
+      "emitted_observation": {
+        "track_id": 34,
+        "frame_index": 141,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          593.09326171875,
+          142.30914306640625,
+          639.751953125,
+          205.84423828125
+        ],
+        "bbox": [
+          592.0567626953125,
+          142.48199462890625,
+          639.7572631835938,
+          206.90509033203125
+        ],
+        "center": [
+          616.422607421875,
+          174.07669067382812
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6704064607620239,
+        "timestamp_estimate_from_index_fps_seconds": 4.715080464722345,
+        "emitted": true,
+        "is_activated": true,
+        "measurement_provenance": "retained_phase_8_detection"
+      },
+      "linked_raw_detection": {
+        "bbox_xyxy_pixels": [
+          593.09326171875,
+          142.30914306640625,
+          639.751953125,
+          205.84423828125
+        ],
+        "class_id": 2,
+        "class_name": "car",
+        "confidence": 0.6704064607620239
+      },
+      "measured_vehicle_bc": [
+        616.422607421875,
+        205.84423828125
+      ],
+      "signed_line_distance_px": 167.3299001292214,
+      "line_projection": 0.843218766851013,
+      "inside_finite_25px_halfwidth_band": false
+    }
+  ],
+  "retained_events": [
+    {
+      "event_id": "b_v2_68bf3096ed180e09befd4ace",
+      "physical_unit_id": "track:2",
+      "passage_id": "track:2:passage:1",
+      "track_id": 2,
+      "category": "car",
+      "direction": "B_TO_A",
+      "route": "ESTIMATED_TIMEOUT",
+      "status": "accepted",
+      "accepted_count_event": true,
+      "activation_frame": 76,
+      "decision_frame": 76,
+      "source_identity": {
+        "video_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+        "geometry_sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T083731_859575Z",
+        "records_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8"
+      },
+      "namespace": "cc2adde0aff6b1284122e6d2d9438416fd5ad2bc23006ea66dc0a878568436b0",
+      "evidence": {
+        "measured_crossing": false,
+        "band_observed": false,
+        "category_basis": {
+          "policy": "matching_observed_endpoints",
+          "origin_class": "car",
+          "destination_class": "car",
+          "source": "timeout_origin_and_latest"
+        },
+        "source_refs": [
+          {
+            "frame_index": 0,
+            "track_id": 2,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              593.8604125976562,
+              178.96340942382812,
+              639.7515258789062,
+              306.1930847167969
+            ],
+            "point": [
+              616.8059692382812,
+              306.1930847167969
+            ],
+            "class_name": "car",
+            "observed": true,
+            "emitted": true
+          },
+          {
+            "frame_index": 16,
+            "track_id": 2,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              596.190673828125,
+              174.70391845703125,
+              639.694580078125,
+              273.8653564453125
+            ],
+            "point": [
+              617.942626953125,
+              273.8653564453125
+            ],
+            "class_name": "car",
+            "observed": true,
+            "emitted": true
+          }
+        ],
+        "source_frames": [
+          0,
+          16
+        ],
+        "crossing_pairs": [],
+        "gaps": [],
+        "raw_track_changes": [],
+        "identity_conflicts": [],
+        "origin_polygon": "B",
+        "destination_polygon": null,
+        "destination_observed_ref": null,
+        "last_observed_origin_frame": 16,
+        "timeout_frames": 60,
+        "direction_assumed": true,
+        "id_change_proven": false,
+        "physical_identity_basis": "caller_known_unit_or_raw_track_assumption",
+        "finite_segment_crossing_unobserved": true,
+        "anchor": "raw_vehicle_bbox_bottom_center"
+      }
+    },
+    {
+      "event_id": "b_v2_96ffb884da2f9c8c566a0548",
+      "physical_unit_id": "track:34",
+      "passage_id": "track:34:passage:1",
+      "track_id": 34,
+      "category": "car",
+      "direction": "B_TO_A",
+      "route": "ESTIMATED_TIMEOUT",
+      "status": "accepted",
+      "accepted_count_event": true,
+      "activation_frame": 201,
+      "decision_frame": 201,
+      "source_identity": {
+        "video_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+        "geometry_sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T083731_859575Z",
+        "records_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8"
+      },
+      "namespace": "cc2adde0aff6b1284122e6d2d9438416fd5ad2bc23006ea66dc0a878568436b0",
+      "evidence": {
+        "measured_crossing": false,
+        "band_observed": false,
+        "category_basis": {
+          "policy": "matching_observed_endpoints",
+          "origin_class": "car",
+          "destination_class": "car",
+          "source": "timeout_origin_and_latest"
+        },
+        "source_refs": [
+          {
+            "frame_index": 70,
+            "track_id": 34,
+            "original_detection_index": 5,
+            "raw_bbox": [
+              600.7752685546875,
+              134.1109619140625,
+              639.7606201171875,
+              227.6492919921875
+            ],
+            "point": [
+              620.2679443359375,
+              227.6492919921875
+            ],
+            "class_name": "car",
+            "observed": true,
+            "emitted": true
+          },
+          {
+            "frame_index": 141,
+            "track_id": 34,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              593.09326171875,
+              142.30914306640625,
+              639.751953125,
+              205.84423828125
+            ],
+            "point": [
+              616.422607421875,
+              205.84423828125
+            ],
+            "class_name": "car",
+            "observed": true,
+            "emitted": true
+          }
+        ],
+        "source_frames": [
+          70,
+          141
+        ],
+        "crossing_pairs": [],
+        "gaps": [],
+        "raw_track_changes": [],
+        "identity_conflicts": [],
+        "origin_polygon": "B",
+        "destination_polygon": null,
+        "destination_observed_ref": null,
+        "last_observed_origin_frame": 141,
+        "timeout_frames": 60,
+        "direction_assumed": true,
+        "id_change_proven": false,
+        "physical_identity_basis": "caller_known_unit_or_raw_track_assumption",
+        "finite_segment_crossing_unobserved": true,
+        "anchor": "raw_vehicle_bbox_bottom_center"
+      }
+    }
+  ],
+  "observations": [
+    {
+      "claim_type": "FACT_RETAINED_OUTPUT",
+      "statement": "Dua ID raw berbeda menghasilkan dua event ESTIMATED_TIMEOUT car B_TO_A, masing-masing frame76 dan201; kedua event tidak memiliki band/crossing/destination yang teramati."
+    },
+    {
+      "claim_type": "BOUNDED_VISUAL_OBSERVATION",
+      "statement": "Pada keenam sampel, kendaraan dengan kaca depan bermotif kotak terlihat di tepi kanan dekat bangunan/pagar yang sama. Kendaraan jalan lain menutupi sebagian tampilan kendaraan tepi kanan pada beberapa sampel."
+    },
+    {
+      "claim_type": "FACT_RETAINED_MEASUREMENT",
+      "statement": "ID2 BC frame0=(616.806,306.193), frame16=(617.943,273.865). Jarak normal garis tetap jauh di sisi B:249.900->224.020px, di luar margin25px. Raw bbox menyusut vertikal; perubahan BC tidak dengan sendirinya membuktikan kendaraan bergerak di jalan."
+    }
+  ],
+  "hypotheses": [
+    {
+      "claim_type": "HYPOTHESIS_UNTESTED",
+      "statement": "Kendaraan tepi kanan mungkin parkir/stasioner; variasi bbox akibat occlusion dan/atau perubahan framing kamera mungkin memenuhi syarat approaching."
+    },
+    {
+      "claim_type": "HYPOTHESIS_UNTESTED",
+      "statement": "ID2 dan34 mungkin fragmen kendaraan fisik yang sama, sehingga kedua timeout mungkin duplikasi tanpa passage nyata."
+    }
+  ],
+  "limits": [
+    "Enam frame statis tidak membuktikan kecepatan kendaraan, status parkir selama seluruh interval, maupun kesamaan fisik ID2/34.",
+    "Tidak ada formal ground truth atau estimasi accuracy/counting performance.",
+    "Review tidak mengubah event, subtotal, parameter, atau enam sumber program yang dibekukan."
+  ],
+  "recommended_audit": [
+    "Review kontinu frame0-201 dengan raw bbox/ID2/34 dan semua kendaraan di dekatnya.",
+    "Bedakan gerak kendaraan dari perubahan bbox akibat occlusion serta gerak kamera, terutama objek tepi frame.",
+    "Periksa apakah kedua ID mengacu kendaraan yang sama dan apakah ada passage fisik; simpan keputusan manual terpisah.",
+    "Gunakan kasus negatif kendaraan parkir/berhenti dan kasus positif kendaraan bergerak untuk eksperimen timeout berikutnya; jangan memilih threshold dari kasus tunggal."
+  ]
+}

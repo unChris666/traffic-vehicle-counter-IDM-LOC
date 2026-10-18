@@ -1,0 +1,231 @@
+{
+  "claim_type": "ACTUAL_READ_ONLY_DERIVED_PENDING_DECISION_AUDIT_NOT_CORRECTED_EXECUTION",
+  "checked_at_utc": "2026-10-18T03:23:38.736779+00:00",
+  "source_run_id": "20261018T030911_956653Z",
+  "executed_source_commit": "24599e7cc2024750052e810ff470b7dc141fca9f",
+  "source_artifacts": [
+    {
+      "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekday_malam/counting_result.json.gz",
+      "retained_sha256": "f4cf2998bdb95ed3ed1c7e427e8f155d934d58cf0e7881731bb6e530ea45a3f9",
+      "original_sha256": "caa5689fafe58125c67fe678ae298a2e67427a63fad9496d24edba067bcd3cb0"
+    },
+    {
+      "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekday_pagi/counting_result.json.gz",
+      "retained_sha256": "2580d323698ed66939441fb48b1088074ab68ef1a3ea0a33f219ede6dbedab12",
+      "original_sha256": "e33e09e2460170ff010c2381e37e88e3f89bb92ea70b04acd867d639158553f1"
+    },
+    {
+      "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekday_siang/counting_result.json.gz",
+      "retained_sha256": "6abe9f8951ceaa9fda7d1885d5c1269034ee3dd55370ade4198e4afe174aa04b",
+      "original_sha256": "127e357c4570fe32db0b1ed1e19688921dbc6857c789190bdd61785c38b6233f"
+    },
+    {
+      "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekday_sore/counting_result.json.gz",
+      "retained_sha256": "3309ec4b7c30d777ad84283f4b210919717778fe2ac006686257d16e8388f2ed",
+      "original_sha256": "7fc10774490381cd3f73d90d1faa52a1566872c861b568886fe448458d8a887a"
+    },
+    {
+      "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekend_malam/counting_result.json.gz",
+      "retained_sha256": "570504ad97b0dbc5bc5436e3fa91d0e858894f312593da401ca445f5098b4d06",
+      "original_sha256": "99545188aec0fffdd422b7a62de59081ac907fd01fbb4aaaae27e8ba828f933d"
+    },
+    {
+      "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekend_pagi/counting_result.json.gz",
+      "retained_sha256": "0c7a63d9c6d16d70bdb4112c51e77daa523cf82bd8bdc6052ddf0c3a642b1331",
+      "original_sha256": "8b71c0d264ba6c2d3959e665ac2e3b294f0b865158b51b830f3cef3f33881470"
+    },
+    {
+      "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekend_siang/counting_result.json.gz",
+      "retained_sha256": "b19c9d5b9193b40999c9099f4494b7bb2e8a40f94d2bc74a61442b7b89537b1b",
+      "original_sha256": "75763d1fd0c0e2a8d31e6cd42306e90811242a97724699681b1a047322449b54"
+    },
+    {
+      "path": "results/b_v2/execution/local_20261018T030911_956653Z/weekend_sore/counting_result.json.gz",
+      "retained_sha256": "b740e254a2256c62b17aa75595379c8322277dadcd43fd50f45a4034b2b38b75",
+      "original_sha256": "6d7e405205386227df733e1d5d78444fc75f11cc9d9dce0f0d773bf2740cdac8"
+    }
+  ],
+  "pending_decision_rows": 244,
+  "unique_pending_unit_passage_keys": 242,
+  "repeated_pending_excess_rows": 2,
+  "accepted_events": 3717,
+  "passage_log_net_delta": 3717,
+  "per_video": [
+    {
+      "video_id": "weekday_malam",
+      "pending_decision_rows": 6,
+      "unique_pending_unit_passage_keys": 6,
+      "repeated_pending_excess_rows": 0,
+      "accepted_events": 394,
+      "accepted_event_ids_unique": true,
+      "accepted_unit_passage_keys_unique": true,
+      "passage_log_net_delta": 394
+    },
+    {
+      "video_id": "weekday_pagi",
+      "pending_decision_rows": 17,
+      "unique_pending_unit_passage_keys": 17,
+      "repeated_pending_excess_rows": 0,
+      "accepted_events": 526,
+      "accepted_event_ids_unique": true,
+      "accepted_unit_passage_keys_unique": true,
+      "passage_log_net_delta": 526
+    },
+    {
+      "video_id": "weekday_siang",
+      "pending_decision_rows": 102,
+      "unique_pending_unit_passage_keys": 102,
+      "repeated_pending_excess_rows": 0,
+      "accepted_events": 613,
+      "accepted_event_ids_unique": true,
+      "accepted_unit_passage_keys_unique": true,
+      "passage_log_net_delta": 613
+    },
+    {
+      "video_id": "weekday_sore",
+      "pending_decision_rows": 40,
+      "unique_pending_unit_passage_keys": 40,
+      "repeated_pending_excess_rows": 0,
+      "accepted_events": 466,
+      "accepted_event_ids_unique": true,
+      "accepted_unit_passage_keys_unique": true,
+      "passage_log_net_delta": 466
+    },
+    {
+      "video_id": "weekend_malam",
+      "pending_decision_rows": 4,
+      "unique_pending_unit_passage_keys": 4,
+      "repeated_pending_excess_rows": 0,
+      "accepted_events": 308,
+      "accepted_event_ids_unique": true,
+      "accepted_unit_passage_keys_unique": true,
+      "passage_log_net_delta": 308
+    },
+    {
+      "video_id": "weekend_pagi",
+      "pending_decision_rows": 15,
+      "unique_pending_unit_passage_keys": 15,
+      "repeated_pending_excess_rows": 0,
+      "accepted_events": 440,
+      "accepted_event_ids_unique": true,
+      "accepted_unit_passage_keys_unique": true,
+      "passage_log_net_delta": 440
+    },
+    {
+      "video_id": "weekend_siang",
+      "pending_decision_rows": 11,
+      "unique_pending_unit_passage_keys": 11,
+      "repeated_pending_excess_rows": 0,
+      "accepted_events": 477,
+      "accepted_event_ids_unique": true,
+      "accepted_unit_passage_keys_unique": true,
+      "passage_log_net_delta": 477
+    },
+    {
+      "video_id": "weekend_sore",
+      "pending_decision_rows": 49,
+      "unique_pending_unit_passage_keys": 47,
+      "repeated_pending_excess_rows": 2,
+      "accepted_events": 493,
+      "accepted_event_ids_unique": true,
+      "accepted_unit_passage_keys_unique": true,
+      "passage_log_net_delta": 493
+    }
+  ],
+  "exact_repeated_pending_keys": [
+    {
+      "video_id": "weekend_sore",
+      "physical_unit_id": "retained-clique:3651,3670",
+      "passage_id": "retained-clique:3651,3670:passage:1",
+      "pending_frames": [
+        5404,
+        5443
+      ],
+      "pending_reasons": [
+        [
+          "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+        ],
+        [
+          "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+        ]
+      ],
+      "accepted_event_ids": [],
+      "cancelled_event_ids": [],
+      "passage_log_transitions": [
+        {
+          "frame_index": 5404,
+          "status": "pending",
+          "event_id": null,
+          "count_delta": 0
+        },
+        {
+          "frame_index": 5443,
+          "status": "pending",
+          "event_id": null,
+          "count_delta": 0
+        }
+      ],
+      "passage_log_net_delta": 0
+    },
+    {
+      "video_id": "weekend_sore",
+      "physical_unit_id": "track:4123",
+      "passage_id": "track:4123:passage:1",
+      "pending_frames": [
+        6460,
+        6588
+      ],
+      "pending_reasons": [
+        [
+          "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+        ],
+        [
+          "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+        ]
+      ],
+      "accepted_event_ids": [],
+      "cancelled_event_ids": [
+        "b_v2_173533f36e064f41020a4cf2"
+      ],
+      "passage_log_transitions": [
+        {
+          "frame_index": 6215,
+          "status": "pending",
+          "event_id": null,
+          "count_delta": 0
+        },
+        {
+          "frame_index": 6447,
+          "status": "accepted",
+          "event_id": "b_v2_173533f36e064f41020a4cf2",
+          "count_delta": 1
+        },
+        {
+          "frame_index": 6460,
+          "status": "cancelled",
+          "event_id": "b_v2_173533f36e064f41020a4cf2",
+          "count_delta": -1
+        },
+        {
+          "frame_index": 6460,
+          "status": "pending",
+          "event_id": null,
+          "count_delta": 0
+        },
+        {
+          "frame_index": 6588,
+          "status": "pending",
+          "event_id": null,
+          "count_delta": 0
+        }
+      ],
+      "passage_log_net_delta": 0
+    }
+  ],
+  "diagnosis": "Aborted band/contact attempts can reset the state using the same passage ordinal while clearing its pending_decision pointer. A later pending decision is appended; earlier pending rows remain retained. This repeats diagnostic rows without creating a new accepted passage.",
+  "bounded_impact": "In these eight retained results all active accepted event IDs and unit/passage keys are unique and net log delta equals the final aggregate. The two repeated pending keys have no active accepted event and net zero count contribution. This is a diagnostic-row duplication limitation, not proof of general counting correctness.",
+  "raw_results_modified": false,
+  "frozen_source_modified": false,
+  "model_or_replay_executed_for_this_audit": false,
+  "recommendation": "Report244 pending decision rows and242 unique unit/passage keys. Preserve raw results and address diagnostic key reuse in a separate versioned change."
+}

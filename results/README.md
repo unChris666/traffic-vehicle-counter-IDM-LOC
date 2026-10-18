@@ -36,6 +36,6 @@ Delapan MP4 aktual tersedia pada [GitHub Release phase8-annotation-review-v1](ht
 
 ## Hasil berikutnya
 
-Gunakan `results/` sebagai pintu masuk publikasi selanjutnya: tautan release, nama video, versi/run, ringkasan, serta rujukan manifest/checksum. Pisahkan setiap versi hasil; jangan menimpa baseline. Video besar tetap di release assets, sedangkan indeks dan laporan kecil berada di folder ini. Perubahan notebook uploader atau counting Phase 8 belum dilakukan dalam tugas ini.
+Gunakan `results/` sebagai pintu masuk publikasi selanjutnya: tautan release, nama video, versi/run, ringkasan, serta rujukan manifest/checksum. Pisahkan setiap versi hasil; jangan menimpa baseline. Video besar tetap di release assets, sedangkan indeks dan laporan kecil berada di folder ini. Counting dan uploader B v2 kini tersedia pada indeks terbaru di atas; tabel video B v1 tetap sebagai pembanding historis.
 
 [Validasi editor](verification/README.md): pengujian geometri dan alur browser disimpan terpisah dari hasil counting.
