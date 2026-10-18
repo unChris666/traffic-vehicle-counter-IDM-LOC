@@ -1,0 +1,376 @@
+{
+  "claim_type": "INDEPENDENT_ACTUAL_SUBMITTED_PACKET_VERIFICATION_NOT_EXECUTION",
+  "verified_at_utc": "2026-10-18T03:15:10.544985+00:00",
+  "submitted_packet_directory": "/tmp/phase8-bv2-kaggle-final",
+  "source_bundle_binding_sha256": "d8ca2ed2dc9e3c59f4921a4c976348d4fdf11bbb093b1853a8173cc2c52b8e08",
+  "checks": [
+    {
+      "name": "submitted_notebook_actual_sha_and_size",
+      "passed": true
+    },
+    {
+      "name": "submitted_kernel_metadata_actual_sha",
+      "passed": true
+    },
+    {
+      "name": "current_builder_actual_sha",
+      "passed": true
+    },
+    {
+      "name": "canonical_notebook_current_sha",
+      "passed": true
+    },
+    {
+      "name": "all_canonical_cells_unchanged",
+      "passed": true
+    },
+    {
+      "name": "exact_30_manifest_payload_paths",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SIANG-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SORE-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-MALAM-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SIANG-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SORE-G3-T1.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/08b_counting_b_v2_replay.ipynb",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_5_geometry_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_8_annotation_batch.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_8_annotation_helpers.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_8_b_v2_annotation.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_8_b_v2_annotation_tests.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_8_b_v2_batch.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_8_b_v2_batch_tests.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_8_b_v2_counting.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:notebooks/phase_8_b_v2_counting_tests.py",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/config/geometry_manifest.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/config/policy.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/geometry/TGDI-WEEKDAY-MALAM-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/geometry/TGDI-WEEKDAY-PAGI-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/geometry/TGDI-WEEKDAY-SIANG-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/geometry/TGDI-WEEKDAY-SORE-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/geometry/TGDI-WEEKEND-MALAM-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/geometry/TGDI-WEEKEND-PAGI-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/geometry/TGDI-WEEKEND-SIANG-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/geometry/TGDI-WEEKEND-SORE-BV2.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/input/TGDI-WEEKDAY-PAGI-geometry-review.json",
+      "passed": true
+    },
+    {
+      "name": "current_manifest_payload_exact:results/b_v2/input/user_decisions.json",
+      "passed": true
+    },
+    {
+      "name": "binding_matches_current_payload_and_manifest",
+      "passed": true
+    },
+    {
+      "name": "new_private_CPU_kernel_no_network",
+      "passed": true
+    },
+    {
+      "name": "latest_validator_notebook_is_byte_identical_to_submitted",
+      "passed": true
+    },
+    {
+      "name": "packet_manifest_differs_only_at_three_absolute_output_paths",
+      "passed": true
+    }
+  ],
+  "check_count": 40,
+  "submitted_notebook_bytes": 153788,
+  "submitted_packet_total_bytes": 161207,
+  "latest_validator_notebook_bytes": 153788,
+  "latest_validator_packet_total_bytes": 161255,
+  "size_difference_explanation": "Both notebooks are byte-identical (153788 bytes). The validator reported the sum of notebook, metadata, and manifest; the final packet total differs from the validator packet by48 bytes because absolute submission-folder paths in the manifest differ.",
+  "source_files": [
+    {
+      "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json",
+      "sha256": "0da1040532bb4150fcfe7b4e3aa2aa306df31ff4283a43052d4a863fd4637b4d",
+      "size_bytes": 6062
+    },
+    {
+      "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json",
+      "sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215",
+      "size_bytes": 6055
+    },
+    {
+      "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SIANG-G3-T1.json",
+      "sha256": "a6b680a4c514ac05e69be14b66322d30cb9b65b626b4605fa7fe9d4cd2593d22",
+      "size_bytes": 6062
+    },
+    {
+      "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SORE-G3-T1.json",
+      "sha256": "498531cf729056c9496601aa7c2fedb8b90ea8156faee1cbb758dae03859a535",
+      "size_bytes": 6055
+    },
+    {
+      "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-MALAM-G3-T1.json",
+      "sha256": "ae408de960b35d9c6ec8e94cc5a79d29ea9b52d42603c65553a4367ea2521255",
+      "size_bytes": 6062
+    },
+    {
+      "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json",
+      "sha256": "10ff6daafeb7b468b26b130e0605b14e362f69ec11fc5386f21facdc19f8f25e",
+      "size_bytes": 6055
+    },
+    {
+      "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SIANG-G3-T1.json",
+      "sha256": "edd6ce5cab83c41568eb4d3dd6f34368b6beb0649e610b793c2ed2af3eae5839",
+      "size_bytes": 6062
+    },
+    {
+      "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SORE-G3-T1.json",
+      "sha256": "b71e65ab113a4cb474498f7ae71bbc6b3c6cc55aa739c4262bd8989f08ad24fc",
+      "size_bytes": 6055
+    },
+    {
+      "path": "notebooks/08b_counting_b_v2_replay.ipynb",
+      "sha256": "094fa2fc902a650668655d0a677877092ce4b0900abbdc4a20008bf4a48460a1",
+      "size_bytes": 8849
+    },
+    {
+      "path": "notebooks/phase_5_geometry_helpers.py",
+      "sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+      "size_bytes": 30807
+    },
+    {
+      "path": "notebooks/phase_8_annotation_batch.py",
+      "sha256": "268a2c9680b50c0ed2465db7be7f83439e19d3e68056d4dfe031f5729e3ef927",
+      "size_bytes": 26340
+    },
+    {
+      "path": "notebooks/phase_8_annotation_helpers.py",
+      "sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305",
+      "size_bytes": 44041
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_annotation.py",
+      "sha256": "e5b4d1a70b3ef05a93d88e0489f3fe66b447a91927fce1f08bb8c5490673b70b",
+      "size_bytes": 29890
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_annotation_tests.py",
+      "sha256": "58f2b593002a71fcb1bb1f0f7b25a3aeb51c41099f5e4c59b8e08fe99c576291",
+      "size_bytes": 16689
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_batch.py",
+      "sha256": "34853db725f03932740cffbf2f823caf148f5c8b4ee05abb5800261026b0c902",
+      "size_bytes": 18322
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_batch_tests.py",
+      "sha256": "837513c4622b72f0da97287a0561c1c659db8c696a172ad4c97d861abe9afacb",
+      "size_bytes": 8755
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_counting.py",
+      "sha256": "b8e1ed7c815c38d4c2c8c86285c75ea3c14f2857f46cb690183f08235f8205db",
+      "size_bytes": 33089
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_counting_tests.py",
+      "sha256": "5d5e83a3b0a85950cdcbdb93ecf331032fd858c07b4bb18a950fcb369cb9662c",
+      "size_bytes": 18731
+    },
+    {
+      "path": "results/b_v2/config/geometry_manifest.json",
+      "sha256": "6b6818d565fb6b20b60b84f6af9f00cf83cfd7844e3c629ab2b0ece379cd67f2",
+      "size_bytes": 3393
+    },
+    {
+      "path": "results/b_v2/config/policy.json",
+      "sha256": "9cb4279c6e17f0f725f67e1a75fdaeb0d1b3fc9106378440be0de4fbc3b0522f",
+      "size_bytes": 851
+    },
+    {
+      "path": "results/b_v2/geometry/TGDI-WEEKDAY-MALAM-BV2.json",
+      "sha256": "6b37590673df49ce7e78328279cb3a5fbe2fe84d360d13eeadc472bb4b4d9d40",
+      "size_bytes": 3945
+    },
+    {
+      "path": "results/b_v2/geometry/TGDI-WEEKDAY-PAGI-BV2.json",
+      "sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+      "size_bytes": 3940
+    },
+    {
+      "path": "results/b_v2/geometry/TGDI-WEEKDAY-SIANG-BV2.json",
+      "sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "size_bytes": 3945
+    },
+    {
+      "path": "results/b_v2/geometry/TGDI-WEEKDAY-SORE-BV2.json",
+      "sha256": "1aa7e508dc5a68120faeca4aaf91c5c1475af7c521d5fab8924dc4974888dde0",
+      "size_bytes": 3940
+    },
+    {
+      "path": "results/b_v2/geometry/TGDI-WEEKEND-MALAM-BV2.json",
+      "sha256": "0df9ffe51efdd5832784b91f1cf617bc00b323efc86454daf0e717c2d434fa19",
+      "size_bytes": 3945
+    },
+    {
+      "path": "results/b_v2/geometry/TGDI-WEEKEND-PAGI-BV2.json",
+      "sha256": "623ed8bdfa3609653ada783833d6945109bcecac288a4b117e4edea16ceaf2b2",
+      "size_bytes": 3940
+    },
+    {
+      "path": "results/b_v2/geometry/TGDI-WEEKEND-SIANG-BV2.json",
+      "sha256": "e51a30e23ba57e6c30b14ae88ed7716103993105e375c855b1ebd00f4d2a7de2",
+      "size_bytes": 3945
+    },
+    {
+      "path": "results/b_v2/geometry/TGDI-WEEKEND-SORE-BV2.json",
+      "sha256": "56b3ba8d1a12eef5a2062a7d3f710129ec60dfa2be84b2625907e7b56fa936aa",
+      "size_bytes": 3940
+    },
+    {
+      "path": "results/b_v2/input/TGDI-WEEKDAY-PAGI-geometry-review.json",
+      "sha256": "13f774f029c4d5e724d24ffb5fb6767b8cd62d96d3b1431e76bc0b849f9a064f",
+      "size_bytes": 4900
+    },
+    {
+      "path": "results/b_v2/input/user_decisions.json",
+      "sha256": "6db11eca0ec6cc149494442bd3f0326b4f59fd32c82625535e60e9cf7e736669",
+      "size_bytes": 770
+    }
+  ],
+  "six_new_module_hashes": [
+    {
+      "path": "notebooks/phase_8_b_v2_annotation.py",
+      "sha256": "e5b4d1a70b3ef05a93d88e0489f3fe66b447a91927fce1f08bb8c5490673b70b",
+      "size_bytes": 29890
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_annotation_tests.py",
+      "sha256": "58f2b593002a71fcb1bb1f0f7b25a3aeb51c41099f5e4c59b8e08fe99c576291",
+      "size_bytes": 16689
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_batch.py",
+      "sha256": "34853db725f03932740cffbf2f823caf148f5c8b4ee05abb5800261026b0c902",
+      "size_bytes": 18322
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_batch_tests.py",
+      "sha256": "837513c4622b72f0da97287a0561c1c659db8c696a172ad4c97d861abe9afacb",
+      "size_bytes": 8755
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_counting.py",
+      "sha256": "b8e1ed7c815c38d4c2c8c86285c75ea3c14f2857f46cb690183f08235f8205db",
+      "size_bytes": 33089
+    },
+    {
+      "path": "notebooks/phase_8_b_v2_counting_tests.py",
+      "sha256": "5d5e83a3b0a85950cdcbdb93ecf331032fd858c07b4bb18a950fcb369cb9662c",
+      "size_bytes": 18731
+    }
+  ],
+  "actual_replay_or_submission_executed": false,
+  "packet_manifest_path_only_differences": [
+    {
+      "field": "kernel_metadata.path",
+      "submitted": "/tmp/phase8-bv2-kaggle-final/kernel-metadata.json",
+      "latest_validator": "/tmp/phase8-bv2-kaggle-bundle-check-wph66_hz/kernel-metadata.json"
+    },
+    {
+      "field": "submission_folder",
+      "submitted": "/tmp/phase8-bv2-kaggle-final",
+      "latest_validator": "/tmp/phase8-bv2-kaggle-bundle-check-wph66_hz"
+    },
+    {
+      "field": "submitted_notebook.path",
+      "submitted": "/tmp/phase8-bv2-kaggle-final/phase8_tgdi_b_v2_review.ipynb",
+      "latest_validator": "/tmp/phase8-bv2-kaggle-bundle-check-wph66_hz/phase8_tgdi_b_v2_review.ipynb"
+    }
+  ]
+}

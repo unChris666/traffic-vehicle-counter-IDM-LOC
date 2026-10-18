@@ -1,0 +1,118 @@
+{
+  "claim_type": "ACTUAL_PACKET_BUILD_BOOTSTRAP_AND_SYNTHETIC_SOFTWARE_VALIDATION_NOT_VIDEO_EXECUTION",
+  "checked_utc": "2026-10-18T03:14:10.927164+00:00",
+  "builder_sha256": "a08bffc2ab9e17d877304bb9465cff209b87f3f7cddae0e87d5419157873ca27",
+  "source_bundle_binding_sha256": "d8ca2ed2dc9e3c59f4921a4c976348d4fdf11bbb093b1853a8173cc2c52b8e08",
+  "checks": [
+    {
+      "name": "source_file_count_30",
+      "passed": true
+    },
+    {
+      "name": "canonical_cells_exactly_unchanged",
+      "passed": true
+    },
+    {
+      "name": "private_dedicated_CPU_no_internet",
+      "passed": true
+    },
+    {
+      "name": "read_only_original_inputs",
+      "passed": true
+    },
+    {
+      "name": "entire_packet_under_1_MB",
+      "passed": true
+    },
+    {
+      "name": "source_file_SHA_bindings",
+      "passed": true
+    },
+    {
+      "name": "reject_unsafe_path_'../escape.py'",
+      "passed": true
+    },
+    {
+      "name": "reject_unsafe_path_'/tmp/escape.py'",
+      "passed": true
+    },
+    {
+      "name": "reject_unsafe_path_'x\\\\y.py'",
+      "passed": true
+    },
+    {
+      "name": "reject_unsafe_path_'x/../y.py'",
+      "passed": true
+    },
+    {
+      "name": "reject_unsafe_path_'./x.py'",
+      "passed": true
+    },
+    {
+      "name": "reject_forbidden_import_import torch",
+      "passed": true
+    },
+    {
+      "name": "reject_forbidden_import_from ultralytics import YOLO",
+      "passed": true
+    },
+    {
+      "name": "reject_forbidden_import_import onnxruntime",
+      "passed": true
+    },
+    {
+      "name": "reject_forbidden_import_import requests",
+      "passed": true
+    },
+    {
+      "name": "reject_forbidden_import___import__('torch')",
+      "passed": true
+    },
+    {
+      "name": "reject_forbidden_import_importlib.import_module('kaggle')",
+      "passed": true
+    },
+    {
+      "name": "extracted_sources_SHA_exact",
+      "passed": true
+    },
+    {
+      "name": "bootstrap_did_not_run_models_or_counting",
+      "passed": true
+    },
+    {
+      "name": "all_three_packaged_suites_pass_no_skips",
+      "passed": true
+    },
+    {
+      "name": "bootstrap_exact_idempotence",
+      "passed": true
+    },
+    {
+      "name": "bootstrap_rejects_altered_existing_snapshot",
+      "passed": true
+    }
+  ],
+  "check_count": 22,
+  "software_results": [
+    {
+      "module": "phase_8_b_v2_counting_tests",
+      "tests_run": 45,
+      "skipped": 0
+    },
+    {
+      "module": "phase_8_b_v2_annotation_tests",
+      "tests_run": 25,
+      "skipped": 0
+    },
+    {
+      "module": "phase_8_b_v2_batch_tests",
+      "tests_run": 15,
+      "skipped": 0
+    }
+  ],
+  "actual_video_replay_executed": false,
+  "detector_tracker_reid_executed": false,
+  "upload_or_submission_performed": false,
+  "packet_directory": "/tmp/phase8-bv2-kaggle-bundle-check-wph66_hz"
+}

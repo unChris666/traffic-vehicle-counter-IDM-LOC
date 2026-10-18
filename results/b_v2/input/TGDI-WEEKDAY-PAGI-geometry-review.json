@@ -1,0 +1,178 @@
+{
+  "schema_version": "geometry_review_v1",
+  "claim_type": "USER_GEOMETRY_REVIEW_DRAFT",
+  "exported_at_utc": "2026-10-18T02:27:54.077Z",
+  "coordinate_convention": {
+    "origin": "upper_left",
+    "x_axis": "right",
+    "y_axis": "down",
+    "native_units": "continuous_image_edge_pixels",
+    "normalized": "u=x/native_width, v=y/native_height",
+    "display_scaling_changes_coordinates": false
+  },
+  "counting_policy_changed": false,
+  "videos": [
+    {
+      "video_id": "TGDI-WEEKDAY-PAGI",
+      "source_identity_status": "RETAINED_SOURCE_REFERENCE",
+      "source_video": {
+        "filename": "TGDI-WEEKDAY-PAGI.mp4",
+        "sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+        "size_bytes": 50748314,
+        "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-PAGI.mp4",
+        "native_width": 640,
+        "native_height": 480
+      },
+      "source_frame": {
+        "frame_index": 0,
+        "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-PAGI/frame_000000000.png",
+        "sha256": "52b8cae0e4ad3b320e189c1b1bf276bf4fd16008f215cfadeb7afad75912a965",
+        "bgr_uint8_pixel_sha256": "14e0d1cc17f2e49227c5ec0ce4445d8e8bcffbc5a8c2b50a23a2b6b4776d43e9",
+        "width": 640,
+        "height": 480,
+        "lossless": true,
+        "source": "actual_sequential_OpenCV_decode",
+        "coordinate_space": "native_full_frame_pixels",
+        "origin": "upper_left",
+        "x_axis": "right",
+        "y_axis": "down"
+      },
+      "base_geometry": {
+        "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json",
+        "sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215",
+        "status": "ACCEPTED_INITIAL_RESEARCH_G3_T1"
+      },
+      "geometry_native": {
+        "width": 640,
+        "height": 480,
+        "line": {
+          "P1": [
+            1.6843836743086256,
+            429.99451694264724
+          ],
+          "P2": [
+            617.3266166341112,
+            1.3159337646671785
+          ]
+        },
+        "side_a_polygon": [
+          [
+            0,
+            396.30661256716746
+          ],
+          [
+            0,
+            98.1686588441715
+          ],
+          [
+            147.38357150200474,
+            0.47373615528018426
+          ],
+          [
+            572.6904492649327,
+            0.47373615528018426
+          ]
+        ],
+        "side_b_polygon": [
+          [
+            0,
+            466.209014146288
+          ],
+          [
+            639.2236044001233,
+            18.159885952407063
+          ],
+          [
+            635.0126452143518,
+            317.982234894177
+          ],
+          [
+            418.56934306569343,
+            478.8419782870929
+          ]
+        ]
+      },
+      "geometry_normalized": {
+        "line": {
+          "P1": [
+            0.0026318494911072273,
+            0.8958219102971817
+          ],
+          "P2": [
+            0.9645728384907988,
+            0.0027415286763899554
+          ]
+        },
+        "side_a_polygon": [
+          [
+            0,
+            0.8256387761815989
+          ],
+          [
+            0,
+            0.20451803925869064
+          ],
+          [
+            0.23028683047188242,
+            0.000986950323500384
+          ],
+          [
+            0.8948288269764573,
+            0.000986950323500384
+          ]
+        ],
+        "side_b_polygon": [
+          [
+            0,
+            0.9712687794714333
+          ],
+          [
+            0.9987868818751927,
+            0.03783309573418138
+          ],
+          [
+            0.9922072581474246,
+            0.6624629893628687
+          ],
+          [
+            0.654014598540146,
+            0.9975874547647768
+          ]
+        ]
+      },
+      "line_margin": {
+        "half_width_px": 25,
+        "full_width_px": 50,
+        "coordinate_space": "native_full_frame_pixels",
+        "perpendicular_to_line": true,
+        "cap": "flat",
+        "extent": "finite_segment_only",
+        "status": "PROPOSAL_FOR_VISUAL_REVIEW_NOT_COUNTING_POLICY"
+      },
+      "direction_metadata": {
+        "A_TO_B": "approaching camera",
+        "B_TO_A": "moving away from camera"
+      },
+      "anchor": {
+        "selected": "bottom_center",
+        "measurement_source": "raw_detector_linked_emitted_vehicle_bbox",
+        "union_bbox_is_crossing_source": false
+      },
+      "user_review": {
+        "confirmed": true,
+        "scope": "GEOMETRY_ON_THIS_IMAGE_ONLY_NOT_TEMPORAL_OR_COUNTING_APPROVAL",
+        "notes": ""
+      },
+      "status": "USER_GEOMETRY_REVIEW_CONFIRMED_LOCAL",
+      "pipeline_approval": false,
+      "counting_execution_allowed": false,
+      "geometry_validation": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "overlap_area_px2": 0,
+        "arithmetic_epsilon": 1e-8
+      }
+    }
+  ]
+}

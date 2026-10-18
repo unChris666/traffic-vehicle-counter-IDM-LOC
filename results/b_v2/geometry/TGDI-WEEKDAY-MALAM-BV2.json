@@ -1,0 +1,157 @@
+{
+  "draft_id": "TGDI-WEEKDAY-MALAM-USER-BV2-v1",
+  "status": "USER_AUTHORIZED_SHARED_TEMPLATE_EXPERIMENT",
+  "claim_type": "USER_PROVIDED_GEOMETRY_SHARED_ACROSS_EIGHT_TGDI_INPUTS_NOT_ROBUSTNESS_RESULT",
+  "source_video": {
+    "filename": "TGDI-WEEKDAY-MALAM.mp4",
+    "sha256": "21436eab94addc8358998d5b02064fb952bc568a2884db91ba0ab4edd270ed51",
+    "size_bytes": 50600176,
+    "kaggle_path": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-MALAM.mp4",
+    "native_width": 640,
+    "native_height": 480
+  },
+  "source_frame": {
+    "frame_index": 0,
+    "path": "docs/evidence/phase_8/input_preparation/TGDI-WEEKDAY-MALAM/frame_000000000.png",
+    "sha256": "9a47fc49f461c7a75d1158101cadfd0a080c13b577ffc3db48ed9c3ea476a52d",
+    "bgr_uint8_pixel_sha256": "1de12c0da7faf4279063a2a43d7193d8dbee1b005fed1e990b0e11e672462f28",
+    "width": 640,
+    "height": 480,
+    "lossless": true,
+    "source": "actual_sequential_OpenCV_decode",
+    "coordinate_space": "native_full_frame_pixels",
+    "origin": "upper_left",
+    "x_axis": "right",
+    "y_axis": "down"
+  },
+  "user_template": {
+    "path": "results/b_v2/input/TGDI-WEEKDAY-PAGI-geometry-review.json",
+    "sha256": "13f774f029c4d5e724d24ffb5fb6767b8cd62d96d3b1431e76bc0b849f9a064f",
+    "reference_video": "TGDI-WEEKDAY-PAGI",
+    "reference_width": 640,
+    "reference_height": 480,
+    "application_scope": "ALL_EIGHT_TGDI_AS_USER_REQUESTED"
+  },
+  "base_geometry": {
+    "path": "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json",
+    "sha256": "0da1040532bb4150fcfe7b4e3aa2aa306df31ff4283a43052d4a863fd4637b4d"
+  },
+  "normalized": {
+    "line": {
+      "P1": [
+        0.0026318494911072273,
+        0.8958219102971817
+      ],
+      "P2": [
+        0.9645728384907988,
+        0.0027415286763899554
+      ]
+    },
+    "side_a_polygon": [
+      [
+        0,
+        0.8256387761815989
+      ],
+      [
+        0,
+        0.20451803925869064
+      ],
+      [
+        0.23028683047188242,
+        0.000986950323500384
+      ],
+      [
+        0.8948288269764573,
+        0.000986950323500384
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        0,
+        0.9712687794714333
+      ],
+      [
+        0.9987868818751927,
+        0.03783309573418138
+      ],
+      [
+        0.9922072581474246,
+        0.6624629893628687
+      ],
+      [
+        0.654014598540146,
+        0.9975874547647768
+      ]
+    ]
+  },
+  "rendered_native_pixels": {
+    "width": 640,
+    "height": 480,
+    "line": {
+      "P1": [
+        1.6843836743086256,
+        429.99451694264724
+      ],
+      "P2": [
+        617.3266166341112,
+        1.3159337646671785
+      ]
+    },
+    "side_a_polygon": [
+      [
+        0,
+        396.30661256716746
+      ],
+      [
+        0,
+        98.1686588441715
+      ],
+      [
+        147.38357150200474,
+        0.47373615528018426
+      ],
+      [
+        572.6904492649327,
+        0.47373615528018426
+      ]
+    ],
+    "side_b_polygon": [
+      [
+        0,
+        466.209014146288
+      ],
+      [
+        639.2236044001233,
+        18.159885952407063
+      ],
+      [
+        635.0126452143518,
+        317.982234894177
+      ],
+      [
+        418.56934306569343,
+        478.8419782870929
+      ]
+    ]
+  },
+  "line_margin_half_width_px": 25.0,
+  "line_margin": {
+    "half_width_px": 25,
+    "full_width_px": 50,
+    "coordinate_space": "native_full_frame_pixels",
+    "perpendicular_to_line": true,
+    "cap": "flat",
+    "extent": "finite_segment_only",
+    "status": "PROPOSAL_FOR_VISUAL_REVIEW_NOT_COUNTING_POLICY"
+  },
+  "selected_anchor": "bottom_center",
+  "anchor_source": "raw_detector_linked_emitted_vehicle_bbox",
+  "confirmed_direction_metadata": {
+    "A_TO_B": "approaching camera",
+    "B_TO_A": "moving away from camera"
+  },
+  "geometry_review_confirmed": true,
+  "counting_execution_allowed": true,
+  "geometry_contract": "docs/B_V2_COUNTING_CONTRACT.md",
+  "temporal_robustness_validated": false
+}

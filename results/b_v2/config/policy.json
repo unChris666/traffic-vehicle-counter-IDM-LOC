@@ -1,0 +1,20 @@
+{
+  "schema_version": "phase8_b_v2_policy_v1",
+  "policy_version": "phase8_b_v2_v1",
+  "line_margin_half_width_px": 25.0,
+  "timeout_frames": 60,
+  "timeout_clock": "last_observed_origin",
+  "category_policy": "band_majority_ties_pending",
+  "supported_categories": [
+    "motorcycle",
+    "car",
+    "truck"
+  ],
+  "identity_policy": "SUPPORTED_CLIQUE_DUPLICATES_ELSE_STABLE_RAW_TRACK_ID_ASSUMPTION",
+  "component_policy": "RETAINED_SUPPORTED_COMPONENT_OF_LOCAL_FRAMES_DISPLAY_UNION_RAW_VEHICLE_BC",
+  "return_policy": "NEW_MEASURED_REVERSE_PASSAGE_ALLOWED",
+  "timeout_evidence_kind": "ESTIMATED_TIMEOUT_NOT_PROVEN_ID_CHANGE",
+  "execution": "OFFLINE_REPLAY_FROZEN_MODEL_CACHE",
+  "user_timer_clarification": "Sejak terakhir terlihat di polygon asal",
+  "source_template_sha256": "13f774f029c4d5e724d24ffb5fb6767b8cd62d96d3b1431e76bc0b849f9a064f"
+}

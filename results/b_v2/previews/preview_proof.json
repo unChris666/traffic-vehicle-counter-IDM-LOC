@@ -1,0 +1,66 @@
+{
+  "claim_type": "ACTUAL_TGDI_SOURCE_CACHE_B_V2_PREVIEW_NOT_SYNTHETIC",
+  "source_run_id": "20261018T030911_956653Z",
+  "actual_source_identity": {
+    "video_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+    "geometry_sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T083731_859575Z",
+    "records_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8"
+  },
+  "previews": [
+    {
+      "path": "results/b_v2/previews/TGDI-WEEKDAY-PAGI-ESTIMATED_TIMEOUT-frame-76.png",
+      "sha256": "9737ea335498dd9b5ff398a1b4afa98117f8d89832ec8e7400ea0dfcb0a18476",
+      "frame_index": 76,
+      "route_example": "ESTIMATED_TIMEOUT",
+      "canvas_width": 1160,
+      "canvas_height": 960,
+      "accepted_so_far": 1,
+      "measured_so_far": 0,
+      "inferred_so_far": 1,
+      "panel_sections_y": {
+        "accepted": 135,
+        "passage_log": 420,
+        "pending": 750
+      },
+      "source_pixel_sha_verified_by_renderer": true
+    },
+    {
+      "path": "results/b_v2/previews/TGDI-WEEKDAY-PAGI-LINE_MARGIN-frame-110.png",
+      "sha256": "085ecbdf2e425195129387052f82f7a3ffcad43077bbf8d8343c708611e4d6ea",
+      "frame_index": 110,
+      "route_example": "LINE_MARGIN",
+      "canvas_width": 1160,
+      "canvas_height": 960,
+      "accepted_so_far": 3,
+      "measured_so_far": 1,
+      "inferred_so_far": 2,
+      "panel_sections_y": {
+        "accepted": 135,
+        "passage_log": 420,
+        "pending": 750
+      },
+      "source_pixel_sha_verified_by_renderer": true
+    },
+    {
+      "path": "results/b_v2/previews/TGDI-WEEKDAY-PAGI-OCCLUSION_DIFF_POLYGON-frame-326.png",
+      "sha256": "02de7c75804271135f335f9a2e2ab4d17198073f7a20cd492ed1c5fe6721f434",
+      "frame_index": 326,
+      "route_example": "OCCLUSION_DIFF_POLYGON",
+      "canvas_width": 1160,
+      "canvas_height": 960,
+      "accepted_so_far": 14,
+      "measured_so_far": 3,
+      "inferred_so_far": 11,
+      "panel_sections_y": {
+        "accepted": 135,
+        "passage_log": 420,
+        "pending": 750
+      },
+      "source_pixel_sha_verified_by_renderer": true
+    }
+  ]
+}

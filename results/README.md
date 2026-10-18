@@ -1,5 +1,7 @@
 # Results — pintu masuk hasil dan review
 
+**B v2 terbaru:** [kode, geometri baru, preview dan hasil replay](b_v2/README.md) · [notebook Kaggle](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-b-v2-review). Video di tabel Phase 8 lama di bawah tetap snapshot B v1.
+
 Folder ini sejajar dengan `docs/` dan `notebooks/` agar hasil mudah ditemukan.
 
 ## Editor geometri
