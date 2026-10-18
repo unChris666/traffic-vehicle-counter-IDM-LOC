@@ -1,0 +1,164 @@
+{
+  "claim_type": "READ_ONLY_PENDING_REVIEW_INDEX_DERIVED_FROM_RETAINED_ACTUAL_KAGGLE_RESULTS",
+  "created_at_utc": "2026-10-18T04:52:53.592919+00:00",
+  "source_commit": "53fb714c607d6873550eb7c5e31425fb023dd3c5",
+  "actual_kaggle_run_id": "20261018T030959_217892Z",
+  "pending_decision_rows": 244,
+  "distinct_unit_passage_keys": 242,
+  "extra_repeated_diagnostic_rows": 2,
+  "raw_reason_row_memberships": {
+    "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE": 168,
+    "CATEGORY_ENDPOINT_CONFLICT": 30,
+    "TIMEOUT_RAW_TRACK_HANDOFF_UNRESOLVED": 13,
+    "NO_VALID_FINITE_LINE_OR_OCCLUSION_EVIDENCE": 19,
+    "RAW_TRACK_CHANGED_DURING_PASSAGE": 9,
+    "UNSUPPORTED_CATEGORY_TAXONOMY_OPEN": 6,
+    "CATEGORY_TIE_IN_BAND": 1
+  },
+  "unique_key_reason_memberships": {
+    "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE": 166,
+    "CATEGORY_ENDPOINT_CONFLICT": 30,
+    "TIMEOUT_RAW_TRACK_HANDOFF_UNRESOLVED": 13,
+    "NO_VALID_FINITE_LINE_OR_OCCLUSION_EVIDENCE": 19,
+    "RAW_TRACK_CHANGED_DURING_PASSAGE": 9,
+    "UNSUPPORTED_CATEGORY_TAXONOMY_OPEN": 6,
+    "CATEGORY_TIE_IN_BAND": 1
+  },
+  "reason_memberships_can_overlap": true,
+  "per_video": {
+    "weekday_pagi": {
+      "raw_rows": 17,
+      "unique_unit_passage_keys": 17
+    },
+    "weekday_siang": {
+      "raw_rows": 102,
+      "unique_unit_passage_keys": 102
+    },
+    "weekday_sore": {
+      "raw_rows": 40,
+      "unique_unit_passage_keys": 40
+    },
+    "weekday_malam": {
+      "raw_rows": 6,
+      "unique_unit_passage_keys": 6
+    },
+    "weekend_pagi": {
+      "raw_rows": 15,
+      "unique_unit_passage_keys": 15
+    },
+    "weekend_siang": {
+      "raw_rows": 11,
+      "unique_unit_passage_keys": 11
+    },
+    "weekend_sore": {
+      "raw_rows": 49,
+      "unique_unit_passage_keys": 47
+    },
+    "weekend_malam": {
+      "raw_rows": 4,
+      "unique_unit_passage_keys": 4
+    }
+  },
+  "accepted_raw_categories": {
+    "car": 841,
+    "truck": 275,
+    "motorcycle": 2601
+  },
+  "no_accepted_person_category": true,
+  "physical_role_correctness_established": false,
+  "source_artifacts": [
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_pagi/counting_result.json.gz",
+      "retained_sha256": "2580d323698ed66939441fb48b1088074ab68ef1a3ea0a33f219ede6dbedab12",
+      "original_sha256": "e33e09e2460170ff010c2381e37e88e3f89bb92ea70b04acd867d639158553f1"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_pagi/annotation_report.json.gz",
+      "retained_sha256": "71eea4bed0c66c694d039cc0909a4f4fe1757361f0797847abe629799e60dcf2",
+      "original_sha256": "5dcff50cae2b8f1b9bb53d89b87131dd18a0812dd78f2bc31e9401faa488667e"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_siang/counting_result.json.gz",
+      "retained_sha256": "6abe9f8951ceaa9fda7d1885d5c1269034ee3dd55370ade4198e4afe174aa04b",
+      "original_sha256": "127e357c4570fe32db0b1ed1e19688921dbc6857c789190bdd61785c38b6233f"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_siang/annotation_report.json.gz",
+      "retained_sha256": "178f1b0151e465137d3e710d7eecb9a2a24fc1626d9c1d215a3e04c4a48fac9d",
+      "original_sha256": "87c62c5817f5626544a3360645eb42c1e14e297afb73181a061e7253b8d36810"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_sore/counting_result.json.gz",
+      "retained_sha256": "3309ec4b7c30d777ad84283f4b210919717778fe2ac006686257d16e8388f2ed",
+      "original_sha256": "7fc10774490381cd3f73d90d1faa52a1566872c861b568886fe448458d8a887a"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_sore/annotation_report.json.gz",
+      "retained_sha256": "3e06085368a669a144f72125928bd310fc4fcfc577358a17e61d1ab72e529deb",
+      "original_sha256": "f18ce75e7296dede2b2c76fe608592eacd5950b14e62c396a962927d3a03993d"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_malam/counting_result.json.gz",
+      "retained_sha256": "f4cf2998bdb95ed3ed1c7e427e8f155d934d58cf0e7881731bb6e530ea45a3f9",
+      "original_sha256": "caa5689fafe58125c67fe678ae298a2e67427a63fad9496d24edba067bcd3cb0"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekday_malam/annotation_report.json.gz",
+      "retained_sha256": "7a1215f867e3c89ff34019be6f8e4dfcfa2c740dcdf7a82f5a01a1e65ee7ee44",
+      "original_sha256": "98097283a8392d94c6ea32ede91b46e05f1b8fb5f4c6cccae480d30494b17b2b"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_pagi/counting_result.json.gz",
+      "retained_sha256": "0c7a63d9c6d16d70bdb4112c51e77daa523cf82bd8bdc6052ddf0c3a642b1331",
+      "original_sha256": "8b71c0d264ba6c2d3959e665ac2e3b294f0b865158b51b830f3cef3f33881470"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_pagi/annotation_report.json.gz",
+      "retained_sha256": "f010b1f39d556a43c8f6cb2c9df89daae0c3bb93cd6bf05b651d55ba8e9ed979",
+      "original_sha256": "b1a980d40ec8a3c97ad29747529124c56b4c1dc3bccb8009f95164df722f5a04"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_siang/counting_result.json.gz",
+      "retained_sha256": "b19c9d5b9193b40999c9099f4494b7bb2e8a40f94d2bc74a61442b7b89537b1b",
+      "original_sha256": "75763d1fd0c0e2a8d31e6cd42306e90811242a97724699681b1a047322449b54"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_siang/annotation_report.json.gz",
+      "retained_sha256": "a5f049593c335df3722eecedc8c301147aff2db1c9c218e5bc5d15a6e6d4da58",
+      "original_sha256": "e5a36bdb699bc8e5895e90208e3e84bbd03b54a06ee5f40e3aa58abb975d902f"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_sore/counting_result.json.gz",
+      "retained_sha256": "b740e254a2256c62b17aa75595379c8322277dadcd43fd50f45a4034b2b38b75",
+      "original_sha256": "6d7e405205386227df733e1d5d78444fc75f11cc9d9dce0f0d773bf2740cdac8"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_sore/annotation_report.json.gz",
+      "retained_sha256": "875558adb74e48d2ac2a7fa57926e5d782b5ad7fef161eec2d3d71b256fb920f",
+      "original_sha256": "15c87b422d6f20d329256e67d72c4ef2b81fc1d816b44f3f6c395a59aedb52a5"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_malam/counting_result.json.gz",
+      "retained_sha256": "570504ad97b0dbc5bc5436e3fa91d0e858894f312593da401ca445f5098b4d06",
+      "original_sha256": "99545188aec0fffdd422b7a62de59081ac907fd01fbb4aaaae27e8ba828f933d"
+    },
+    {
+      "path": "results/b_v2/kaggle_execution/20261018T030959_217892Z/weekend_malam/annotation_report.json.gz",
+      "retained_sha256": "1be494de6837b8715bdb3fd3417018e677b1f4f58ac619065c992e054101bcff",
+      "original_sha256": "9fcef5419680a12e478ba66d34808f2a8ad02acd8fe469d56b940dc13254ca2e"
+    }
+  ],
+  "csv": {
+    "path": "results/b_v2_pending_review/pending_review.csv",
+    "sha256": "902b8a17434489a56b39cf69ddd1383265c49b3a218ec8f1f9d52c1deca00b30",
+    "size_bytes": 127804,
+    "rows": 242,
+    "one_row_per": "video_id+physical_unit_id+passage_id"
+  },
+  "timestamp_basis": "frame_index / retained annotation FPS, zero-based; estimated time, not source PTS",
+  "manual_review_fields_initially_empty": true,
+  "manual_fields_automatically_imported_by_pipeline": false,
+  "model_tracker_reid_counting_or_video_render_rerun": false,
+  "accepted_or_pending_source_decisions_changed": false,
+  "known_identity_diagnostic_duplicate_keys_preserved_in_source": true
+}
