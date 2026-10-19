@@ -1,0 +1,30 @@
+{
+  "claim_type": "ACTUAL_OFFICIAL_KAGGLE_SDK_VERSION_SELECTION_DIAGNOSIS",
+  "recorded_at_utc": "2026-10-19T07:21:54.977132+00:00",
+  "kernel": "chrisbiran/phase-8-tgdi-b-v3-review",
+  "diagnosis": [
+    {
+      "request_field": "ApiListKernelSessionOutputRequest.version_label",
+      "requested_value": "2",
+      "http_status": 404,
+      "safe_response_message": "Kernel version with label 2 not found."
+    },
+    {
+      "request_field": "ApiGetKernelRequest.kernel_slug",
+      "requested_value": "phase-8-tgdi-b-v3-review/2",
+      "http_status": 403,
+      "interpretation": "Numeric slash selector not used for attribution."
+    },
+    {
+      "request_field": "ApiGetKernelRequest.kernel_slug",
+      "requested_value": "phase-8-tgdi-b-v3-review",
+      "observed_current_version_number": 2,
+      "observed_ref": "chrisbiran/phase-8-tgdi-b-v3-review",
+      "remote_code_cell_count": 4,
+      "remote_code_cells_sha256": "9a15e2ec29bf016007427ca830a999d8aa6cedfdb0e020598a78123bca02233a",
+      "matches_submitted_version2_code_cells": true
+    }
+  ],
+  "resolution": "Use latest-session output API and require official GetKernel current_version_number=2 plus exact submitted code-cell hash before and after retrieval, then verify actual source bundle, nine executable snapshots and two configurations. Do not describe version_label as a numeric pin.",
+  "signed_urls_or_credentials_retained": false
+}

@@ -7,13 +7,14 @@ from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit
 from concurrent.futures import ThreadPoolExecutor
 import requests
-from kaggle.api.kaggle_api_extended import KaggleApi, ApiListKernelSessionOutputRequest
+from kaggle.api.kaggle_api_extended import KaggleApi, ApiListKernelSessionOutputRequest, ApiGetKernelRequest
 
 KERNEL='chrisbiran/phase-8-tgdi-b-v3-review'
 HOST='www.kaggleusercontent.com'
 VIDEOS=tuple(f'{d}_{p}' for d in ('weekday','weekend') for p in ('pagi','siang','sore','malam'))
 SOURCE_COMMIT='ee4bda7795fcf7b43b9dd57561ee140c60d9aa9d'
 BUNDLE='2476763591f2212e9b70622753f7e01173c536c63fc2fd10f1f79ac44f4954de'
+EXPECTED_CODE_CELLS_SHA256='9a15e2ec29bf016007427ca830a999d8aa6cedfdb0e020598a78123bca02233a'
 
 def now(): return datetime.now(timezone.utc).isoformat()
 def sha(data): return hashlib.sha256(data).hexdigest()
@@ -47,7 +48,8 @@ def log_mode(args):
     except requests.RequestException as error: stream_error=type(error).__name__
     finally: signal.alarm(0);signal.signal(signal.SIGALRM,previous)
     result={'claim_type':'ACTUAL_OFFICIAL_KAGGLE_LOG_STREAM_BOUNDED_READ','recorded_at_utc':now(),
-        'kernel':KERNEL,'status_at_read_start':str(status.status),'requested_version':2,
+        'kernel':KERNEL,'status_at_read_start':str(status.status),'expected_submission_version':2,
+        'stream_version_selection':'LATEST_SESSION_WITH_EXPECTED_BUNDLE_IN_LOG_NOT_NUMERIC_PIN',
         'stream_finished':finished,'stream_error_type':stream_error,'events_retained':len(lines),'seconds_bound':args.seconds,'signed_urls_or_credentials_retained':False,
         'log':''.join(lines)}
     if args.proof: write(args.proof,result)
@@ -65,7 +67,8 @@ def listing(client):
     with client.build_kaggle_client() as sdk:
         while True:
             req=ApiListKernelSessionOutputRequest();req.user_name=owner;req.kernel_slug=slug
-            req.version_label='2';req.page_size=100
+            # SDK version_label is a named label, not numeric version; require observed version2 around retrieval.
+            req.page_size=100
             if token:req.page_token=token
             response=sdk.kernels.kernels_api_client.list_kernel_session_output(req)
             for item in response.files or []:
@@ -94,11 +97,28 @@ def download(row,root):
     response.close();temp.replace(target)
     return {'path':row['name'],'size_bytes':count,'sha256':digest.hexdigest()}
 
+def observed_latest_identity(client):
+    owner,slug=KERNEL.split('/')
+    with client.build_kaggle_client() as sdk:
+        req=ApiGetKernelRequest();req.user_name=owner;req.kernel_slug=slug
+        response=sdk.kernels.kernels_api_client.get_kernel(req)
+    require(response.metadata.current_version_number==2 and response.metadata.ref==KERNEL,
+        'Observed latest kernel version differs from expected submission2')
+    notebook=json.loads(response.blob.source)
+    code_cells=[''.join(cell['source']) for cell in notebook['cells'] if cell['cell_type']=='code']
+    digest=sha(json.dumps(code_cells,separators=(',',':')).encode())
+    require(digest==EXPECTED_CODE_CELLS_SHA256,'Observed remote notebook code cells differ from submitted packet')
+    return {'claim_type':'ACTUAL_OFFICIAL_GET_KERNEL_LATEST_METADATA',
+        'recorded_at_utc':now(),'current_version_number':response.metadata.current_version_number,
+        'ref':response.metadata.ref,'remote_code_cell_count':len(code_cells),
+        'remote_code_cells_sha256':digest,'matches_submitted_version2_code_cells':True}
+
 def fetch_mode(args):
     root=Path(args.output).resolve();root.mkdir(parents=True,exist_ok=True)
     client=api();status=client.kernels_status(KERNEL)
     require(str(status.status).endswith('.COMPLETE') or str(status.status).endswith('.COMPLETED'),
         'Kernel is not terminal-complete; no metadata fetched')
+    identity_before=observed_latest_identity(client)
     rows,logs=listing(client)
     require(rows,'No completed output files')
     mp4=[r for r in rows if r['name'].endswith('-b-v3-annotated.mp4')]
@@ -118,8 +138,12 @@ def fetch_mode(args):
     if logs:
         p=root/'official_kernel_log_redacted.txt';p.write_text('\n'.join(logs),encoding='utf-8')
         retained.append({'path':p.name,'size_bytes':p.stat().st_size,'sha256':sha(p.read_bytes()),'url_redacted':True})
+    identity_after=observed_latest_identity(client)
     proof={'claim_type':'ACTUAL_OFFICIAL_KAGGLE_VERSION_2_METADATA_RETRIEVAL','recorded_at_utc':now(),
-        'kernel':KERNEL,'requested_version':2,'status_at_retrieval':str(status.status),
+        'kernel':KERNEL,'expected_submission_version':2,'observed_current_version_before':identity_before,
+        'observed_current_version_after':identity_after,
+        'output_api_version_selection':'LATEST_SESSION_OUTPUT_BOUND_TO_OBSERVED_VERSION_2_AND_EXACT_CODE_CELLS_NOT_NUMERIC_VERSION_LABEL',
+        'status_at_retrieval':str(status.status),
         'retrieval_helper':{'path':'results/b_v3/verification/retrieve_kaggle_execution.py','sha256':sha(Path(__file__).read_bytes())},
         'executed_source_commit':SOURCE_COMMIT,'expected_source_bundle_binding_sha256':BUNDLE,
         'downloaded_metadata_files':retained,'omitted_non_metadata_files':omitted,'mp4_listed_not_downloaded':8,
@@ -239,7 +263,7 @@ def retain_mode(args):
     metadata=Path(args.output).resolve();target=Path(args.retained).resolve()
     require(not target.exists(),'Retention target must be new')
     fetch_proof=json.loads((metadata/'metadata_retrieval.json').read_text())
-    require(fetch_proof['kernel']==KERNEL and fetch_proof['requested_version']==2,'Wrong retrieved execution')
+    require(fetch_proof['kernel']==KERNEL and fetch_proof['expected_submission_version']==2,'Wrong retrieved execution')
     require(fetch_proof['signed_urls_or_credentials_retained'] is False,'Unsafe metadata provenance')
     target.mkdir(parents=True)
     mappings=[]
