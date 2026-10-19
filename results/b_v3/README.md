@@ -2,7 +2,7 @@
 
 **EXPERIMENT RESULT — replay lokal selesai:** delapan video TGDI, **72.590 frame**, **3.500 passage operasional**: 895 crossing terukur dan 2.605 inferensi, termasuk 2.454 timeout. Subtotal kendaraan 3.500; pedestrian 0. Nol pedestrian tidak membuktikan ketiadaan pedestrian: role `person` belum otomatis terpisah dari rider. Hasil belum merupakan hitungan fisik yang sudah diaudit.
 
-Kode/config revisi sudah di GitHub. Notebook Kaggle **version 2** sedang merender delapan video dari pengukuran model lama; hasil render/publikasi penuh belum dinyatakan selesai pada status ini. Versi 1 berhenti sebelum tes/counting karena root snapshot tertimpa sel parameter; kegagalan dan perbaikannya disimpan. Detector, tracker, dan ReID tidak dijalankan ulang.
+**Kaggle version2 COMPLETE:** delapan video telah dirender dan seluruh 72.590 frame output dibaca ulang. Ledger delapan video persis sama byte demi byte dengan replay lokal. [Bukti perbandingan](verification/actual_kaggle_local_comparison.json), [manifest delapan MP4](delivery_manifest.json), dan [retensi eksekusi aktual](kaggle_execution/v2/retention_manifest.json) tersedia. Publikasi video ke GitHub masih berjalan pada status ini. Versi 1 berhenti sebelum tes/counting karena root snapshot tertimpa sel parameter; kegagalan dan perbaikannya disimpan. Detector, tracker, dan ReID tidak dijalankan ulang.
 
 ## Mulai review
 
