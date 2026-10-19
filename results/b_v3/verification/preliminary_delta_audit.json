@@ -1,0 +1,1078 @@
+{
+  "claim_type": "READ_ONLY_MECHANICAL_BASELINE_TO_SUPERSEDED_RUN_A_DELTA_NOT_PHYSICAL_ACCURACY",
+  "recorded_at_utc": "2026-10-19T04:52:09.964392+00:00",
+  "new_run_id": "20261019T044702_541665Z",
+  "baseline_kaggle_run_id": "20261018T030959_217892Z",
+  "key_matching": "physical_unit_id + final integer passage ordinal; reviewed renamed units require manual correspondence",
+  "causal_findings": {
+    "clique_events_removed": 68,
+    "clique_operational_units_affected": 62,
+    "clique_removed_routes": {
+      "LINE_MARGIN": 27,
+      "ESTIMATED_TIMEOUT": 41
+    },
+    "all_clique_losses_have_unit_level_unresolved_duplicate_reason": true,
+    "root_cause": "new core concurrence guard received association_verified=False despite actual retained positive relations; adapter fix requires exact-source-frame supported clique",
+    "other_removed_keys": 2,
+    "reviewed_renamed_unit_added_keys": 4,
+    "shared_keys_semantic_changes": "only raw93 timeout decision284\u2192264 after later car alias excluded",
+    "unexplained_clique_losses": 0
+  },
+  "physical_limits": [
+    "68 removed events do not establish68physicallyvalidpassages; this is softwarecausality",
+    "reviewed4149 truck secondB_TO_A timeout@7509 notvisuallyverifiedgenuinereturn",
+    "reviewed4149 motorcycle timeout@7691 notmeasuredcrossing",
+    "73/93 positivepairreviewdoesnotsettle73/77or73/87earlierconflicts"
+  ],
+  "videos": [
+    {
+      "video_id": "weekday_malam",
+      "old_original_bytes_sha256": "caa5689fafe58125c67fe678ae298a2e67427a63fad9496d24edba067bcd3cb0",
+      "new_original_bytes_sha256": "4b961ca4ba64395fdd01468cd673407e5dae5566ae23d7871585557e127e9c1f",
+      "baseline_total": 394,
+      "run_a_total": 388,
+      "removed": [
+        {
+          "normalized_key": [
+            "retained-clique:2887,2940",
+            "2"
+          ],
+          "old_event_id": "b_v2_6bce80fd97f97c91ac46f2e1",
+          "track_id": 2887,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 6393,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2948,2998",
+            "1"
+          ],
+          "old_event_id": "b_v2_09435c2728c582e95ad839d9",
+          "track_id": 2948,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 6381,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3652,3672",
+            "1"
+          ],
+          "old_event_id": "b_v2_7aef29af0ecd20a0748d1edd",
+          "track_id": 3652,
+          "route": "LINE_MARGIN",
+          "decision_frame": 7831,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3676,3693",
+            "1"
+          ],
+          "old_event_id": "b_v2_9b7e2e20d114a916fb930100",
+          "track_id": 3676,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 7997,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3725,3790",
+            "1"
+          ],
+          "old_event_id": "b_v2_12310a05397fd726f086cb2f",
+          "track_id": 3725,
+          "route": "LINE_MARGIN",
+          "decision_frame": 7992,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3959,3964",
+            "1"
+          ],
+          "old_event_id": "b_v2_380497c35807964650f17e13",
+          "track_id": 3959,
+          "route": "LINE_MARGIN",
+          "decision_frame": 8295,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        }
+      ],
+      "added": [],
+      "changed_shared": []
+    },
+    {
+      "video_id": "weekday_pagi",
+      "old_original_bytes_sha256": "e33e09e2460170ff010c2381e37e88e3f89bb92ea70b04acd867d639158553f1",
+      "new_original_bytes_sha256": "74aada73d9a1184e982cb1acc13d20b1e258cc089a5912bdd8e137aaa42e8312",
+      "baseline_total": 526,
+      "run_a_total": 515,
+      "removed": [
+        {
+          "normalized_key": [
+            "retained-clique:1305,1330",
+            "1"
+          ],
+          "old_event_id": "b_v2_1cba88d8ffa06360ada6ddc6",
+          "track_id": 1305,
+          "route": "LINE_MARGIN",
+          "decision_frame": 2283,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:154,166",
+            "1"
+          ],
+          "old_event_id": "b_v2_43071c4c1bd913bbd1f3b8de",
+          "track_id": 154,
+          "route": "LINE_MARGIN",
+          "decision_frame": 331,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:154,166",
+            "2"
+          ],
+          "old_event_id": "b_v2_5fdb0eea78f3cae320681b09",
+          "track_id": 154,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 441,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1944,2027",
+            "1"
+          ],
+          "old_event_id": "b_v2_67b94fca467504d028be9c0f",
+          "track_id": 1944,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 3468,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2183,2190",
+            "1"
+          ],
+          "old_event_id": "b_v2_a40404d000d48963f8764189",
+          "track_id": 2183,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 3831,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2271,2284",
+            "1"
+          ],
+          "old_event_id": "b_v2_f5caaf7918d267045d843aad",
+          "track_id": 2271,
+          "route": "LINE_MARGIN",
+          "decision_frame": 3978,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2698,2719",
+            "1"
+          ],
+          "old_event_id": "b_v2_36575e5a83e2f8512bccfd03",
+          "track_id": 2698,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 4944,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3618,3669",
+            "1"
+          ],
+          "old_event_id": "b_v2_87bc17bf7b762f867336d613",
+          "track_id": 3618,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 6996,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3926,3975",
+            "1"
+          ],
+          "old_event_id": "b_v2_7793209b9ff0f4032074d034",
+          "track_id": 3926,
+          "route": "LINE_MARGIN",
+          "decision_frame": 7331,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:4334,4347",
+            "1"
+          ],
+          "old_event_id": "b_v2_c42f956798f84ae1162e2e69",
+          "track_id": 4334,
+          "route": "LINE_MARGIN",
+          "decision_frame": 7871,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:629,636",
+            "1"
+          ],
+          "old_event_id": "b_v2_2784962cc40bcae2ce006fd2",
+          "track_id": 629,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 944,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "track:2473",
+            "1"
+          ],
+          "old_event_id": "b_v2_cae042d95db273645d9d5b6b",
+          "track_id": 2473,
+          "route": "LINE_MARGIN",
+          "decision_frame": 4241,
+          "unit_level_current_pending_reasons": []
+        }
+      ],
+      "added": [
+        {
+          "event_id": "b_v3_dab1834adbdf2dcb2dbd5a2d",
+          "physical_unit_id": "reviewed:pagi:motorcycle2473",
+          "passage_id": "reviewed:pagi:motorcycle2473:episode:reviewed:2473-2507-vehicle:passage:1",
+          "track_id": 2473,
+          "category": "motorcycle",
+          "direction": "B_TO_A",
+          "route": "LINE_MARGIN",
+          "decision_frame": 4241
+        }
+      ],
+      "changed_shared": [
+        {
+          "normalized_key": [
+            "track:93",
+            "1"
+          ],
+          "changes": {
+            "decision_frame": [
+              284,
+              264
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "video_id": "weekday_siang",
+      "old_original_bytes_sha256": "127e357c4570fe32db0b1ed1e19688921dbc6857c789190bdd61785c38b6233f",
+      "new_original_bytes_sha256": "d19162bd3bed3113cc114455af91113fd03aaace1a97b9798e2591d08059fac3",
+      "baseline_total": 613,
+      "run_a_total": 603,
+      "removed": [
+        {
+          "normalized_key": [
+            "retained-clique:2383,2524",
+            "1"
+          ],
+          "old_event_id": "b_v2_ecd2d90563fa6a0d13110fdb",
+          "track_id": 2383,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 4103,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2535,2539",
+            "1"
+          ],
+          "old_event_id": "b_v2_5b3ca342a5bfb31fb2e54e85",
+          "track_id": 2535,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 4128,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2577,2581",
+            "1"
+          ],
+          "old_event_id": "b_v2_2f7e669be97f69e2718d2259",
+          "track_id": 2577,
+          "route": "LINE_MARGIN",
+          "decision_frame": 4178,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2597,2600",
+            "1"
+          ],
+          "old_event_id": "b_v2_8d4949a318fbb14b1b16fc2f",
+          "track_id": 2597,
+          "route": "LINE_MARGIN",
+          "decision_frame": 4260,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2708,2714",
+            "1"
+          ],
+          "old_event_id": "b_v2_d4fdb17004504a1500ed27f3",
+          "track_id": 2708,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 4489,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2828,2860",
+            "1"
+          ],
+          "old_event_id": "b_v2_7b733121104de48b627c790c",
+          "track_id": 2828,
+          "route": "LINE_MARGIN",
+          "decision_frame": 4737,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2828,2860",
+            "2"
+          ],
+          "old_event_id": "b_v2_3b1309d3337ef79b4f4bcdeb",
+          "track_id": 2828,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 5498,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3454,3466",
+            "1"
+          ],
+          "old_event_id": "b_v2_f5bbe49395a442f08822880a",
+          "track_id": 3454,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 6232,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3557,3574",
+            "1"
+          ],
+          "old_event_id": "b_v2_aee72d63fa1e8d1cf0760f4b",
+          "track_id": 3557,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 6475,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3582,3587",
+            "1"
+          ],
+          "old_event_id": "b_v2_9019406edfeb652a4c5ba063",
+          "track_id": 3582,
+          "route": "LINE_MARGIN",
+          "decision_frame": 6353,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:4876,4927",
+            "1"
+          ],
+          "old_event_id": "b_v2_ec36e6bff7b7ed2f999178fe",
+          "track_id": 4876,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 8054,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:70,87",
+            "1"
+          ],
+          "old_event_id": "b_v2_7a92a55cd81e3dde8b38d68a",
+          "track_id": 70,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 161,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "track:4149",
+            "1"
+          ],
+          "old_event_id": "b_v2_14aaf3762b893d4c72769dde",
+          "track_id": 4149,
+          "route": "LINE_MARGIN",
+          "decision_frame": 7422,
+          "unit_level_current_pending_reasons": []
+        }
+      ],
+      "added": [
+        {
+          "event_id": "b_v3_6a69d22cd2bdbeebdaafbaa1",
+          "physical_unit_id": "reviewed:siang:4149-motorcycle",
+          "passage_id": "reviewed:siang:4149-motorcycle:episode:reviewed:4149-motorcycle-from7611:passage:1",
+          "track_id": 4149,
+          "category": "motorcycle",
+          "direction": "A_TO_B",
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 7691
+        },
+        {
+          "event_id": "b_v3_ceebd4c093a19eb6cfba0596",
+          "physical_unit_id": "reviewed:siang:4149-truck",
+          "passage_id": "reviewed:siang:4149-truck:episode:reviewed:4149-truck-before7449:passage:1",
+          "track_id": 4149,
+          "category": "truck",
+          "direction": "A_TO_B",
+          "route": "LINE_MARGIN",
+          "decision_frame": 7422
+        },
+        {
+          "event_id": "b_v3_139b1386fef45e1d01ab8481",
+          "physical_unit_id": "reviewed:siang:4149-truck",
+          "passage_id": "reviewed:siang:4149-truck:episode:reviewed:4149-truck-before7449:passage:2",
+          "track_id": 4149,
+          "category": "truck",
+          "direction": "B_TO_A",
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 7509
+        }
+      ],
+      "changed_shared": []
+    },
+    {
+      "video_id": "weekday_sore",
+      "old_original_bytes_sha256": "7fc10774490381cd3f73d90d1faa52a1566872c861b568886fe448458d8a887a",
+      "new_original_bytes_sha256": "cf52e4c72b2cd19fbf3954dc68355b8385c01b832c3c68153ea238d388b14ddc",
+      "baseline_total": 466,
+      "run_a_total": 449,
+      "removed": [
+        {
+          "normalized_key": [
+            "retained-clique:1102,1105",
+            "1"
+          ],
+          "old_event_id": "b_v2_132ffe84c6a812977f4cfa20",
+          "track_id": 1102,
+          "route": "LINE_MARGIN",
+          "decision_frame": 2767,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1475,1482",
+            "1"
+          ],
+          "old_event_id": "b_v2_4c57e6cda6dccb8f5c354f0a",
+          "track_id": 1475,
+          "route": "LINE_MARGIN",
+          "decision_frame": 4046,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1475,1482",
+            "2"
+          ],
+          "old_event_id": "b_v2_7a19e5531c78ab01cc51ff9d",
+          "track_id": 1475,
+          "route": "LINE_MARGIN",
+          "decision_frame": 4130,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1905,1967",
+            "2"
+          ],
+          "old_event_id": "b_v2_95c373f34f519173b40d1cd3",
+          "track_id": 1905,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 4773,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2034,2093",
+            "1"
+          ],
+          "old_event_id": "b_v2_d253cdac3b7841c8e283dc13",
+          "track_id": 2034,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 5174,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2149,2217",
+            "1"
+          ],
+          "old_event_id": "b_v2_b8613bd0271ca01ed0840293",
+          "track_id": 2149,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 5214,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2425,2436",
+            "1"
+          ],
+          "old_event_id": "b_v2_3674744d7610b4851745a828",
+          "track_id": 2425,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 5459,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2632,2634",
+            "1"
+          ],
+          "old_event_id": "b_v2_ada5a8e8a11c748b15c3f620",
+          "track_id": 2632,
+          "route": "LINE_MARGIN",
+          "decision_frame": 5636,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:314,327",
+            "1"
+          ],
+          "old_event_id": "b_v2_75092accfcfa2e761c57ece2",
+          "track_id": 314,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 1009,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3241,3255",
+            "1"
+          ],
+          "old_event_id": "b_v2_b8eb26cb910a37a71fc55ea8",
+          "track_id": 3241,
+          "route": "LINE_MARGIN",
+          "decision_frame": 7164,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3246,3256",
+            "1"
+          ],
+          "old_event_id": "b_v2_095ddcd208c2f4c61a539c16",
+          "track_id": 3246,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 7469,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3288,3290",
+            "1"
+          ],
+          "old_event_id": "b_v2_3c1f6bc15d9c6e851445ce33",
+          "track_id": 3288,
+          "route": "LINE_MARGIN",
+          "decision_frame": 7476,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3288,3290",
+            "2"
+          ],
+          "old_event_id": "b_v2_224b453561f34fea578ef970",
+          "track_id": 3288,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 7709,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3422,3472",
+            "1"
+          ],
+          "old_event_id": "b_v2_a7e2aac9358a70505667a62f",
+          "track_id": 3422,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 7706,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:433,465",
+            "1"
+          ],
+          "old_event_id": "b_v2_301d08a2b120fc1d4e13b768",
+          "track_id": 433,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 1704,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:740,771",
+            "1"
+          ],
+          "old_event_id": "b_v2_d2686ecc05a4b5dec7a2649d",
+          "track_id": 740,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 2125,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:780,800",
+            "1"
+          ],
+          "old_event_id": "b_v2_3fa1862fd6083a5f80005169",
+          "track_id": 780,
+          "route": "LINE_MARGIN",
+          "decision_frame": 2114,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        }
+      ],
+      "added": [],
+      "changed_shared": []
+    },
+    {
+      "video_id": "weekend_malam",
+      "old_original_bytes_sha256": "99545188aec0fffdd422b7a62de59081ac907fd01fbb4aaaae27e8ba828f933d",
+      "new_original_bytes_sha256": "bb224dc377475f270f31ffc75d893ecaddbe3afca647acd9c737033573106bbf",
+      "baseline_total": 308,
+      "run_a_total": 305,
+      "removed": [
+        {
+          "normalized_key": [
+            "retained-clique:1133,1135",
+            "1"
+          ],
+          "old_event_id": "b_v2_476aa3558c7a06d9978bad33",
+          "track_id": 1133,
+          "route": "LINE_MARGIN",
+          "decision_frame": 2327,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1133,1135",
+            "2"
+          ],
+          "old_event_id": "b_v2_3d46e8f8c2b643767df36033",
+          "track_id": 1133,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 2413,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:945,961",
+            "1"
+          ],
+          "old_event_id": "b_v2_0d97ea44859cef863b3288ba",
+          "track_id": 945,
+          "route": "LINE_MARGIN",
+          "decision_frame": 2167,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        }
+      ],
+      "added": [],
+      "changed_shared": []
+    },
+    {
+      "video_id": "weekend_pagi",
+      "old_original_bytes_sha256": "8b71c0d264ba6c2d3959e665ac2e3b294f0b865158b51b830f3cef3f33881470",
+      "new_original_bytes_sha256": "8f4641c098477d37b91f34afc8a733870ef4dc55e1daeb95167add4146ae3f6e",
+      "baseline_total": 440,
+      "run_a_total": 432,
+      "removed": [
+        {
+          "normalized_key": [
+            "retained-clique:1299,1303",
+            "1"
+          ],
+          "old_event_id": "b_v2_7832049533239a7c0f2ff230",
+          "track_id": 1299,
+          "route": "LINE_MARGIN",
+          "decision_frame": 3772,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1453,1478",
+            "1"
+          ],
+          "old_event_id": "b_v2_69714b991f451e49424bab64",
+          "track_id": 1453,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 4062,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1679,1729",
+            "1"
+          ],
+          "old_event_id": "b_v2_b259f76204a86fc688c0b4f5",
+          "track_id": 1679,
+          "route": "LINE_MARGIN",
+          "decision_frame": 4459,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1679,1729",
+            "2"
+          ],
+          "old_event_id": "b_v2_7c0ddd261e2b9280e7a0a9fa",
+          "track_id": 1679,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 4771,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2214,2222",
+            "1"
+          ],
+          "old_event_id": "b_v2_8b76f5c89473f4eb13b88c0f",
+          "track_id": 2214,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 5225,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2220,2243",
+            "2"
+          ],
+          "old_event_id": "b_v2_672688f24a769a8c4aac4996",
+          "track_id": 2220,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 5329,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2681,2683",
+            "1"
+          ],
+          "old_event_id": "b_v2_07e2705fe1feb31f83394667",
+          "track_id": 2681,
+          "route": "LINE_MARGIN",
+          "decision_frame": 6323,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:799,807",
+            "1"
+          ],
+          "old_event_id": "b_v2_9c580fa970ee3b3c04f53995",
+          "track_id": 799,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 1949,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        }
+      ],
+      "added": [],
+      "changed_shared": []
+    },
+    {
+      "video_id": "weekend_siang",
+      "old_original_bytes_sha256": "75763d1fd0c0e2a8d31e6cd42306e90811242a97724699681b1a047322449b54",
+      "new_original_bytes_sha256": "e089a4d1cb8d6616637b2dffd180b65becc1f4fd800eba5d1f15b7864291d75a",
+      "baseline_total": 477,
+      "run_a_total": 474,
+      "removed": [
+        {
+          "normalized_key": [
+            "retained-clique:1394,1408",
+            "1"
+          ],
+          "old_event_id": "b_v2_5e1fa8445765d30b7c4a4333",
+          "track_id": 1394,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 3603,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2432,2460",
+            "1"
+          ],
+          "old_event_id": "b_v2_9512a63ab177018c9cf19eaa",
+          "track_id": 2432,
+          "route": "LINE_MARGIN",
+          "decision_frame": 5717,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:754,769",
+            "1"
+          ],
+          "old_event_id": "b_v2_9d8d58428c5ffa10a10d1b8e",
+          "track_id": 754,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 2566,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        }
+      ],
+      "added": [],
+      "changed_shared": []
+    },
+    {
+      "video_id": "weekend_sore",
+      "old_original_bytes_sha256": "6d7e405205386227df733e1d5d78444fc75f11cc9d9dce0f0d773bf2740cdac8",
+      "new_original_bytes_sha256": "8242df4559053ee85e5adb9d69994d8cc3a07f652e417f4cf38b4c2acf60f556",
+      "baseline_total": 493,
+      "run_a_total": 485,
+      "removed": [
+        {
+          "normalized_key": [
+            "retained-clique:1229,1577",
+            "1"
+          ],
+          "old_event_id": "b_v2_0a71723e3a81b9f5f5b6d148",
+          "track_id": 1229,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 2037,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:1825,1901",
+            "1"
+          ],
+          "old_event_id": "b_v2_39855a32ac2758b63b2fbedc",
+          "track_id": 1825,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 2385,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:190,342",
+            "1"
+          ],
+          "old_event_id": "b_v2_c7bb5b37d32d9cdbf3923d6f",
+          "track_id": 190,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 814,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2237,2239",
+            "1"
+          ],
+          "old_event_id": "b_v2_b9ba2ceabee280c5cf2e4129",
+          "track_id": 2237,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 2783,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:2669,2673",
+            "1"
+          ],
+          "old_event_id": "b_v2_ebf19d9de34ea5fd67712469",
+          "track_id": 2669,
+          "route": "LINE_MARGIN",
+          "decision_frame": 3423,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:3175,3180",
+            "1"
+          ],
+          "old_event_id": "b_v2_3e35c0d8cd7b534e7280432d",
+          "track_id": 3175,
+          "route": "LINE_MARGIN",
+          "decision_frame": 4727,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:4795,4904",
+            "1"
+          ],
+          "old_event_id": "b_v2_489d354a64dac7436e57e619",
+          "track_id": 4795,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 7738,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        },
+        {
+          "normalized_key": [
+            "retained-clique:579,617",
+            "1"
+          ],
+          "old_event_id": "b_v2_37eff92103b2f10f986ec904",
+          "track_id": 579,
+          "route": "ESTIMATED_TIMEOUT",
+          "decision_frame": 1099,
+          "unit_level_current_pending_reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ]
+        }
+      ],
+      "added": [],
+      "changed_shared": []
+    }
+  ]
+}

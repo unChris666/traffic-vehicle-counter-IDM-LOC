@@ -1,0 +1,43 @@
+name: Publish retained Phase 8 B v3 review videos
+
+on:
+  repository_dispatch:
+    types: [phase8-publish-b-v3-v1]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: phase8-b-v3-video-publication
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.repository == 'unChris666/traffic-vehicle-counter-IDM-LOC'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - name: Validate the dispatch commit before checkout
+        id: guard
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+          from pathlib import Path
+          event = json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())
+          assert os.environ['GITHUB_REPOSITORY'] == 'unChris666/traffic-vehicle-counter-IDM-LOC'
+          assert event.get('action') == 'phase8-publish-b-v3-v1'
+          commit = event.get('client_payload', {}).get('source_commit')
+          assert isinstance(commit, str) and re.fullmatch('[0-9a-f]{40}', commit)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('source_commit=' + commit + '\n')
+          PY
+      - name: Check out the exact delivery manifest and publisher
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ steps.guard.outputs.source_commit }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify upload authorization and publish existing MP4 outputs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 .github/scripts/phase8_publish_b_v3.py

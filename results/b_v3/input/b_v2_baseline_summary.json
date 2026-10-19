@@ -1,0 +1,238 @@
+{
+  "claim_type": "ACTUAL_LOCAL_EIGHT_VIDEO_FROZEN_CACHE_REPLAY_NOT_ACCURACY",
+  "source_run_id": "20261018T030911_956653Z",
+  "source_manifest_sha256": "6b6818d565fb6b20b60b84f6af9f00cf83cfd7844e3c629ab2b0ece379cd67f2",
+  "policy_sha256": "9cb4279c6e17f0f725f67e1a75fdaeb0d1b3fc9106378440be0de4fbc3b0522f",
+  "frames_processed": 72590,
+  "operational_total": 3717,
+  "measured_total": 898,
+  "inferred_total": 2819,
+  "by_route": {
+    "ESTIMATED_TIMEOUT": 2667,
+    "LINE_MARGIN": 1024,
+    "OCCLUSION_DIFF_POLYGON": 26
+  },
+  "by_category": {
+    "car": 841,
+    "motorcycle": 2601,
+    "truck": 275
+  },
+  "per_video": [
+    {
+      "video_id": "weekday_pagi",
+      "frames": 9052,
+      "aggregate": {
+        "total": 526,
+        "by_category": {
+          "car": 132,
+          "motorcycle": 370,
+          "truck": 24
+        },
+        "by_direction": {
+          "A_TO_B": 293,
+          "B_TO_A": 233
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 371,
+          "LINE_MARGIN": 150,
+          "OCCLUSION_DIFF_POLYGON": 5
+        },
+        "measured_total": 137,
+        "inferred_total": 389,
+        "pending": 17,
+        "cancelled": 2
+      },
+      "pending_decision_rows": 17
+    },
+    {
+      "video_id": "weekday_siang",
+      "frames": 9128,
+      "aggregate": {
+        "total": 613,
+        "by_category": {
+          "car": 177,
+          "motorcycle": 363,
+          "truck": 73
+        },
+        "by_direction": {
+          "A_TO_B": 345,
+          "B_TO_A": 268
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 465,
+          "LINE_MARGIN": 139,
+          "OCCLUSION_DIFF_POLYGON": 9
+        },
+        "measured_total": 122,
+        "inferred_total": 491,
+        "pending": 102,
+        "cancelled": 3
+      },
+      "pending_decision_rows": 102
+    },
+    {
+      "video_id": "weekday_sore",
+      "frames": 9077,
+      "aggregate": {
+        "total": 466,
+        "by_category": {
+          "car": 122,
+          "motorcycle": 312,
+          "truck": 32
+        },
+        "by_direction": {
+          "A_TO_B": 248,
+          "B_TO_A": 218
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 328,
+          "LINE_MARGIN": 133,
+          "OCCLUSION_DIFF_POLYGON": 5
+        },
+        "measured_total": 116,
+        "inferred_total": 350,
+        "pending": 40,
+        "cancelled": 6
+      },
+      "pending_decision_rows": 40
+    },
+    {
+      "video_id": "weekday_malam",
+      "frames": 9022,
+      "aggregate": {
+        "total": 394,
+        "by_category": {
+          "car": 84,
+          "motorcycle": 295,
+          "truck": 15
+        },
+        "by_direction": {
+          "A_TO_B": 211,
+          "B_TO_A": 183
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 285,
+          "LINE_MARGIN": 108,
+          "OCCLUSION_DIFF_POLYGON": 1
+        },
+        "measured_total": 83,
+        "inferred_total": 311,
+        "pending": 6,
+        "cancelled": 2
+      },
+      "pending_decision_rows": 6
+    },
+    {
+      "video_id": "weekend_pagi",
+      "frames": 9017,
+      "aggregate": {
+        "total": 440,
+        "by_category": {
+          "car": 93,
+          "motorcycle": 297,
+          "truck": 50
+        },
+        "by_direction": {
+          "A_TO_B": 270,
+          "B_TO_A": 170
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 308,
+          "LINE_MARGIN": 130,
+          "OCCLUSION_DIFF_POLYGON": 2
+        },
+        "measured_total": 121,
+        "inferred_total": 319,
+        "pending": 15,
+        "cancelled": 0
+      },
+      "pending_decision_rows": 15
+    },
+    {
+      "video_id": "weekend_siang",
+      "frames": 9124,
+      "aggregate": {
+        "total": 477,
+        "by_category": {
+          "car": 73,
+          "motorcycle": 369,
+          "truck": 35
+        },
+        "by_direction": {
+          "A_TO_B": 340,
+          "B_TO_A": 137
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 333,
+          "LINE_MARGIN": 143,
+          "OCCLUSION_DIFF_POLYGON": 1
+        },
+        "measured_total": 136,
+        "inferred_total": 341,
+        "pending": 11,
+        "cancelled": 0
+      },
+      "pending_decision_rows": 11
+    },
+    {
+      "video_id": "weekend_sore",
+      "frames": 9138,
+      "aggregate": {
+        "total": 493,
+        "by_category": {
+          "car": 95,
+          "motorcycle": 364,
+          "truck": 34
+        },
+        "by_direction": {
+          "A_TO_B": 343,
+          "B_TO_A": 150
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 352,
+          "LINE_MARGIN": 138,
+          "OCCLUSION_DIFF_POLYGON": 3
+        },
+        "measured_total": 129,
+        "inferred_total": 364,
+        "pending": 49,
+        "cancelled": 5
+      },
+      "pending_decision_rows": 49
+    },
+    {
+      "video_id": "weekend_malam",
+      "frames": 9032,
+      "aggregate": {
+        "total": 308,
+        "by_category": {
+          "car": 65,
+          "motorcycle": 231,
+          "truck": 12
+        },
+        "by_direction": {
+          "A_TO_B": 118,
+          "B_TO_A": 190
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 225,
+          "LINE_MARGIN": 83
+        },
+        "measured_total": 54,
+        "inferred_total": 254,
+        "pending": 4,
+        "cancelled": 0
+      },
+      "pending_decision_rows": 4
+    }
+  ],
+  "new_model_inference": false,
+  "all_executed_sources_unchanged": true,
+  "performance_improvement_established": false,
+  "pending_denominator_differs_from_b_v1": true,
+  "rendered_full_videos_in_this_batch": false,
+  "pending_decision_rows": 244,
+  "pending_distinct_unit_passage_keys": 242,
+  "pending_diagnostic_duplicate_rows": 2,
+  "pending_count_note": "Derived audit: 244 retained decision rows,242 unique(unit_id,passage_id) keys; two repeated diagnostic rows in weekend_sore. Retained execution reports are unchanged."
+}

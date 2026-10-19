@@ -1,0 +1,15 @@
+{
+  "claim_type": "ACTUAL_LOCAL_PREFLIGHT_FAILURE_BEFORE_COUNTING_REPLAY",
+  "recorded_at_utc": "2026-10-19T04:46:39.704100+00:00",
+  "command": "/workspace/.venvs/traffic-inspection/bin/python notebooks/phase_8_b_v3_batch.py --repo-root . --source-run-root /tmp/phase8-bv3-donor --source-video-root /tmp/phase8-bv3-source-videos --output-root /tmp/phase8-bv3-local --no-render",
+  "exit_code": 1,
+  "error_type": "ValueError",
+  "error": "Retained artifact symlink escapes the donor root",
+  "observed_call_path": "prepare_b_v3_batch -> baseline._bound(Path(repo_root), evidence path) -> donor._relative_path",
+  "diagnosis": "A relative repo root was passed into a containment guard that expects an absolute resolved root. Valid evidence path was rejected.",
+  "counting_started": false,
+  "model_inference_started": false,
+  "source_caches_modified": false,
+  "batch_source_bytes_captured_after_failure_sha256": "09e5a28ad6bc8a8b79e43cf521e03043af4cc89c6b3fb96776b8b52f68e5379d",
+  "note": "Captured bytes at investigation time; source fix is kept separate and must be retested."
+}

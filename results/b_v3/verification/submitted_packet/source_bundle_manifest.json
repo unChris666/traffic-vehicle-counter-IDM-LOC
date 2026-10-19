@@ -1,0 +1,211 @@
+{
+  "accelerator": "CPU_ONLY",
+  "baseline_reference_path": "results/b_v3/input/b_v2_baseline_summary.json",
+  "baseline_reference_sha256": "aaafa5c9928c9a00be6a4d7f4f21177cfbd466eadad0585f5bec1d56bb686932",
+  "builder": {
+    "path": "/workspace/traffic-vehicle-counter-IDM-LOC/results/b_v3/verification/build_kaggle_bundle.py",
+    "sha256": "e50bee7e6cd0bd8f84d3acd4717f9ccd799c5bd717343b2ead15467457e05ea3"
+  },
+  "canonical_code_cells_modified": false,
+  "canonical_notebook_code_cells": 3,
+  "canonical_notebook_path": "notebooks/08c_reviewed_identity_replay.ipynb",
+  "canonical_notebook_sha256": "afddbab219b00ef029934a0eacf2ec95688243e885c04671e8db1e5050d071d3",
+  "claim_type": "B_V3_SOURCE_PACKAGING_NOT_EXECUTION",
+  "credentials_bundled": false,
+  "dedicated_kernel": "chrisbiran/phase-8-tgdi-b-v3-review",
+  "kernel_metadata": {
+    "path": "/tmp/phase8-bv3-kaggle-final/kernel-metadata.json",
+    "sha256": "0bc3e44910dbe2ff1bb0cdcdb6e06e34104901594c777b770465e74041b7cd63"
+  },
+  "model_weights_bundled": false,
+  "new_counting_execution": false,
+  "new_model_execution": false,
+  "original_batch_manifest_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+  "original_input_mounts_read_only": true,
+  "original_machine_events_or_decisions_modified": false,
+  "original_parent_kernel": "chrisbiran/phase-8-tgdi-full-video-research",
+  "original_parent_kernel_version": 2,
+  "retained_model_caches_bundled": false,
+  "review_decisions_path": "results/b_v3/input/review_decisions.json",
+  "review_decisions_sha256": "a3ecf3429a6dd61e68b62e2acf772bd97c5080e9bbc92c61e543921c2e761805",
+  "review_evidence_json_count": 1,
+  "review_evidence_json_paths": [
+    "results/b_v3/review/pedestrian_role/review.json"
+  ],
+  "review_png_pixels_bundled": false,
+  "revision_policy_path": "results/b_v3/config/policy.json",
+  "revision_policy_sha256": "59b8d34ceed6a7d4c910f891b6ab6464a2283b10a26c6050eb58d950dfb4b64a",
+  "source_bundle_binding_sha256": "bd478a1d54a74220c8005026752002619ef58d79c5b53dcb375cec53e824dfef",
+  "source_file_count": 40,
+  "source_files": {
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-MALAM-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "0da1040532bb4150fcfe7b4e3aa2aa306df31ff4283a43052d4a863fd4637b4d"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-PAGI-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "1d3042e5600b6456bb307738e1967f5836fba3aa39a12f6c7b6c3837327ef215"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SIANG-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "a6b680a4c514ac05e69be14b66322d30cb9b65b626b4605fa7fe9d4cd2593d22"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKDAY-SORE-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "498531cf729056c9496601aa7c2fedb8b90ea8156faee1cbb758dae03859a535"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-MALAM-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "ae408de960b35d9c6ec8e94cc5a79d29ea9b52d42603c65553a4367ea2521255"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-PAGI-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "10ff6daafeb7b468b26b130e0605b14e362f69ec11fc5386f21facdc19f8f25e"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SIANG-G3-T1.json": {
+      "bytes": 6062,
+      "sha256": "edd6ce5cab83c41568eb4d3dd6f34368b6beb0649e610b793c2ed2af3eae5839"
+    },
+    "docs/evidence/phase_8/accepted_geometry/TGDI-WEEKEND-SORE-G3-T1.json": {
+      "bytes": 6055,
+      "sha256": "b71e65ab113a4cb474498f7ae71bbc6b3c6cc55aa739c4262bd8989f08ad24fc"
+    },
+    "notebooks/08c_reviewed_identity_replay.ipynb": {
+      "bytes": 5236,
+      "sha256": "afddbab219b00ef029934a0eacf2ec95688243e885c04671e8db1e5050d071d3"
+    },
+    "notebooks/phase_5_geometry_helpers.py": {
+      "bytes": 30807,
+      "sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9"
+    },
+    "notebooks/phase_8_annotation_batch.py": {
+      "bytes": 26340,
+      "sha256": "268a2c9680b50c0ed2465db7be7f83439e19d3e68056d4dfe031f5729e3ef927"
+    },
+    "notebooks/phase_8_annotation_helpers.py": {
+      "bytes": 44041,
+      "sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+    },
+    "notebooks/phase_8_b_v2_annotation.py": {
+      "bytes": 29890,
+      "sha256": "e5b4d1a70b3ef05a93d88e0489f3fe66b447a91927fce1f08bb8c5490673b70b"
+    },
+    "notebooks/phase_8_b_v2_annotation_tests.py": {
+      "bytes": 16689,
+      "sha256": "58f2b593002a71fcb1bb1f0f7b25a3aeb51c41099f5e4c59b8e08fe99c576291"
+    },
+    "notebooks/phase_8_b_v2_batch.py": {
+      "bytes": 18322,
+      "sha256": "34853db725f03932740cffbf2f823caf148f5c8b4ee05abb5800261026b0c902"
+    },
+    "notebooks/phase_8_b_v2_batch_tests.py": {
+      "bytes": 8755,
+      "sha256": "837513c4622b72f0da97287a0561c1c659db8c696a172ad4c97d861abe9afacb"
+    },
+    "notebooks/phase_8_b_v2_counting.py": {
+      "bytes": 33089,
+      "sha256": "b8e1ed7c815c38d4c2c8c86285c75ea3c14f2857f46cb690183f08235f8205db"
+    },
+    "notebooks/phase_8_b_v2_counting_tests.py": {
+      "bytes": 18731,
+      "sha256": "5d5e83a3b0a85950cdcbdb93ecf331032fd858c07b4bb18a950fcb369cb9662c"
+    },
+    "notebooks/phase_8_b_v3_annotation.py": {
+      "bytes": 39180,
+      "sha256": "ca78f5d109e66ea4d0256f52078225d15836889ea42bc85ccab6bc5331537ea5"
+    },
+    "notebooks/phase_8_b_v3_annotation_tests.py": {
+      "bytes": 28041,
+      "sha256": "7f9559009e7b641f7c7956899398c4a41107202d02881690b80c74f540857007"
+    },
+    "notebooks/phase_8_b_v3_batch.py": {
+      "bytes": 33901,
+      "sha256": "d499d29bd6140da5d423266da85c85552513fbe44d1538e2dbe97b8a8e9a74dd"
+    },
+    "notebooks/phase_8_b_v3_batch_tests.py": {
+      "bytes": 15493,
+      "sha256": "13dd115e0645efab9fab8056a52300679d5dc1a6c593f70745314592a9f32b42"
+    },
+    "notebooks/phase_8_b_v3_counting.py": {
+      "bytes": 45203,
+      "sha256": "29cb1bdfd0ab27acd6a16c648ba711e6c90eeaa5807591360bad71d880a618d7"
+    },
+    "notebooks/phase_8_b_v3_counting_tests.py": {
+      "bytes": 40545,
+      "sha256": "e35fe544c411edc8ffdc8db25d489311ace86e7b90274a43c982a8cabc87bc69"
+    },
+    "results/b_v2/config/geometry_manifest.json": {
+      "bytes": 3393,
+      "sha256": "6b6818d565fb6b20b60b84f6af9f00cf83cfd7844e3c629ab2b0ece379cd67f2"
+    },
+    "results/b_v2/config/policy.json": {
+      "bytes": 851,
+      "sha256": "9cb4279c6e17f0f725f67e1a75fdaeb0d1b3fc9106378440be0de4fbc3b0522f"
+    },
+    "results/b_v2/geometry/TGDI-WEEKDAY-MALAM-BV2.json": {
+      "bytes": 3945,
+      "sha256": "6b37590673df49ce7e78328279cb3a5fbe2fe84d360d13eeadc472bb4b4d9d40"
+    },
+    "results/b_v2/geometry/TGDI-WEEKDAY-PAGI-BV2.json": {
+      "bytes": 3940,
+      "sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab"
+    },
+    "results/b_v2/geometry/TGDI-WEEKDAY-SIANG-BV2.json": {
+      "bytes": 3945,
+      "sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1"
+    },
+    "results/b_v2/geometry/TGDI-WEEKDAY-SORE-BV2.json": {
+      "bytes": 3940,
+      "sha256": "1aa7e508dc5a68120faeca4aaf91c5c1475af7c521d5fab8924dc4974888dde0"
+    },
+    "results/b_v2/geometry/TGDI-WEEKEND-MALAM-BV2.json": {
+      "bytes": 3945,
+      "sha256": "0df9ffe51efdd5832784b91f1cf617bc00b323efc86454daf0e717c2d434fa19"
+    },
+    "results/b_v2/geometry/TGDI-WEEKEND-PAGI-BV2.json": {
+      "bytes": 3940,
+      "sha256": "623ed8bdfa3609653ada783833d6945109bcecac288a4b117e4edea16ceaf2b2"
+    },
+    "results/b_v2/geometry/TGDI-WEEKEND-SIANG-BV2.json": {
+      "bytes": 3945,
+      "sha256": "e51a30e23ba57e6c30b14ae88ed7716103993105e375c855b1ebd00f4d2a7de2"
+    },
+    "results/b_v2/geometry/TGDI-WEEKEND-SORE-BV2.json": {
+      "bytes": 3940,
+      "sha256": "56b3ba8d1a12eef5a2062a7d3f710129ec60dfa2be84b2625907e7b56fa936aa"
+    },
+    "results/b_v2/input/TGDI-WEEKDAY-PAGI-geometry-review.json": {
+      "bytes": 4900,
+      "sha256": "13f774f029c4d5e724d24ffb5fb6767b8cd62d96d3b1431e76bc0b849f9a064f"
+    },
+    "results/b_v2/input/user_decisions.json": {
+      "bytes": 770,
+      "sha256": "6db11eca0ec6cc149494442bd3f0326b4f59fd32c82625535e60e9cf7e736669"
+    },
+    "results/b_v3/config/policy.json": {
+      "bytes": 1951,
+      "sha256": "59b8d34ceed6a7d4c910f891b6ab6464a2283b10a26c6050eb58d950dfb4b64a"
+    },
+    "results/b_v3/input/b_v2_baseline_summary.json": {
+      "bytes": 5876,
+      "sha256": "aaafa5c9928c9a00be6a4d7f4f21177cfbd466eadad0585f5bec1d56bb686932"
+    },
+    "results/b_v3/input/review_decisions.json": {
+      "bytes": 16165,
+      "sha256": "a3ecf3429a6dd61e68b62e2acf772bd97c5080e9bbc92c61e543921c2e761805"
+    },
+    "results/b_v3/review/pedestrian_role/review.json": {
+      "bytes": 3957,
+      "sha256": "2801bf4b100df340567b3c97f09d55a32e62c2299b97269055c23d85d6ef6fd1"
+    }
+  },
+  "source_videos_dataset": "chrisbiran/tgdi-traffic-videos",
+  "submission_folder": "/tmp/phase8-bv3-kaggle-final",
+  "submitted_notebook": {
+    "bytes": 226548,
+    "path": "/tmp/phase8-bv3-kaggle-final/phase8_tgdi_b_v3_review.ipynb",
+    "sha256": "b0c373f11902b4a033aa7c09d610cdfb033dff789d1b37c0851a19f575c6dd4a"
+  },
+  "upload_performed": false,
+  "videos_bundled": false
+}

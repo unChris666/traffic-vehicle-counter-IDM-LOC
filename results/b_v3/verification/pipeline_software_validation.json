@@ -1,0 +1,39 @@
+{
+  "claim_type": "ACTUAL_SOFTWARE_TEST_EXECUTION_NOT_VIDEO_ACCURACY",
+  "recorded_at_utc": "2026-10-19T04:57:04.182753+00:00",
+  "status": "PASS",
+  "tests": 151,
+  "modules": [
+    {
+      "module": "phase_8_b_v3_counting_tests",
+      "tests": 85,
+      "source_sha256": "e35fe544c411edc8ffdc8db25d489311ace86e7b90274a43c982a8cabc87bc69",
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "module": "phase_8_b_v3_annotation_tests",
+      "tests": 41,
+      "source_sha256": "7f9559009e7b641f7c7956899398c4a41107202d02881690b80c74f540857007",
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "module": "phase_8_b_v3_batch_tests",
+      "tests": 25,
+      "source_sha256": "13dd115e0645efab9fab8056a52300679d5dc1a6c593f70745314592a9f32b42",
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "executables": {
+    "notebooks/phase_8_b_v3_annotation.py": "ca78f5d109e66ea4d0256f52078225d15836889ea42bc85ccab6bc5331537ea5",
+    "notebooks/phase_8_b_v3_counting.py": "29cb1bdfd0ab27acd6a16c648ba711e6c90eeaa5807591360bad71d880a618d7",
+    "notebooks/phase_8_b_v3_batch.py": "d499d29bd6140da5d423266da85c85552513fbe44d1538e2dbe97b8a8e9a74dd"
+  },
+  "wall_seconds": 0.5457035460021871,
+  "new_model_inference": false
+}

@@ -1,0 +1,35 @@
+{
+  "claim_type": "ACTUAL_EXECUTED_SOFTWARE_TESTS_NOT_TRAFFIC_ACCURACY",
+  "status": "PASS",
+  "checked_at_utc": "2026-10-19T04:45:49.701224+00:00",
+  "command": "PYTHONPATH=notebooks /workspace/.venvs/traffic-inspection/bin/python -m unittest phase_8_b_v3_counting_tests phase_8_b_v3_annotation_tests phase_8_b_v3_batch_tests -q",
+  "total_tests": 140,
+  "suites": [
+    {
+      "module": "phase_8_b_v3_counting_tests",
+      "tests": 80,
+      "source_sha256": "a4e27e658696c2643720087e45c128a547ffca9accadc1de066d06181b9ff08a",
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "module": "phase_8_b_v3_annotation_tests",
+      "tests": 41,
+      "source_sha256": "7f9559009e7b641f7c7956899398c4a41107202d02881690b80c74f540857007",
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "module": "phase_8_b_v3_batch_tests",
+      "tests": 19,
+      "source_sha256": "282986269b32b967fa8825b687bdacb47f9b8f940dff963d88abc21e6585a5a2",
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "all_assertions_completed": true,
+  "new_model_inference": false
+}

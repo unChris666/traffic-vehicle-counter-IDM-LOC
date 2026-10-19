@@ -1,0 +1,126 @@
+{
+  "claim_type": "AI_ASSISTED_PIXELS_REVIEW_NOT_USER_LABEL_OR_AUTOMATIC_MODEL_ROLE",
+  "video_id": "weekday_pagi",
+  "video_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+  "source_records_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8",
+  "positive_person_roles": [
+    {
+      "track_id": 3,
+      "role": "pedestrian",
+      "observation": "Child standing/walking beside the road; no motorcycle membership in the three inspected frames."
+    },
+    {
+      "track_id": 6,
+      "role": "pedestrian",
+      "observation": "Woman standing beside the road near the child; not seated on the passing motorcycle in the inspected frames."
+    }
+  ],
+  "reviewed_frame_indices": [
+    0,
+    38,
+    76
+  ],
+  "effective_scope": {
+    "start_frame": 0,
+    "end_frame": 76,
+    "extent_basis": "Bounded identity/role assumption between the three reviewed source anchors; not full-video identity verification."
+  },
+  "images": [
+    {
+      "path": "results/b_v3/review/pedestrian_role/TGDI-WEEKDAY-PAGI-frame-0.png",
+      "sha256": "52b8cae0e4ad3b320e189c1b1bf276bf4fd16008f215cfadeb7afad75912a965",
+      "frame_index": 0,
+      "raw_bgr_pixel_sha256": "14e0d1cc17f2e49227c5ec0ce4445d8e8bcffbc5a8c2b50a23a2b6b4776d43e9",
+      "verified_decode_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 3,
+          "class_name": "person",
+          "raw_bbox": [
+            39.73572540283203,
+            225.6914825439453,
+            94.82530975341797,
+            370.20672607421875
+          ],
+          "original_detection_index": 2
+        },
+        {
+          "track_id": 6,
+          "class_name": "person",
+          "raw_bbox": [
+            0.19005584716796875,
+            162.31973266601562,
+            53.089500427246094,
+            368.2595520019531
+          ],
+          "original_detection_index": 5
+        }
+      ]
+    },
+    {
+      "path": "results/b_v3/review/pedestrian_role/TGDI-WEEKDAY-PAGI-frame-38.png",
+      "sha256": "fc0abfb068e735082c039e62570141660922e3c19c0e90d229a6efdec8869b59",
+      "frame_index": 38,
+      "raw_bgr_pixel_sha256": "24d29ce60e76ef8f2ba92b209fd58590c127010aaf0d264c84fb26c177ad3d88",
+      "verified_decode_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 3,
+          "class_name": "person",
+          "raw_bbox": [
+            52.40147399902344,
+            216.57400512695312,
+            98.45347595214844,
+            337.1050720214844
+          ],
+          "original_detection_index": 3
+        },
+        {
+          "track_id": 6,
+          "class_name": "person",
+          "raw_bbox": [
+            0.06893157958984375,
+            154.17666625976562,
+            60.193965911865234,
+            346.6259460449219
+          ],
+          "original_detection_index": 4
+        }
+      ]
+    },
+    {
+      "path": "results/b_v3/review/pedestrian_role/TGDI-WEEKDAY-PAGI-frame-76.png",
+      "sha256": "ffc843aacdf90642a2d219c8f8d19b779327255d7a7eb5490727dd94107769ae",
+      "frame_index": 76,
+      "raw_bgr_pixel_sha256": "1348105eedbf698be1b7d116892022be4c5e037e9c83893696acba530b0e07eb",
+      "verified_decode_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 3,
+          "class_name": "person",
+          "raw_bbox": [
+            46.73885726928711,
+            182.042236328125,
+            105.78656005859375,
+            331.08392333984375
+          ],
+          "original_detection_index": 2
+        },
+        {
+          "track_id": 6,
+          "class_name": "person",
+          "raw_bbox": [
+            0.0,
+            117.82330322265625,
+            56.65009307861328,
+            309.3052978515625
+          ],
+          "original_detection_index": 6
+        }
+      ]
+    }
+  ],
+  "crossing_or_traffic_accuracy_established": false,
+  "raw_person_beyond_review_scope_not_automatically_classified": true,
+  "new_model_inference": false
+}

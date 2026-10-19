@@ -1,0 +1,49 @@
+{
+  "claim_type": "ACTUAL_OFFLINE_PACKAGING_PUBLICATION_SOFTWARE_TESTS_NOT_VIDEO_EXECUTION",
+  "recorded_at_utc": "2026-10-19T04:52:02.527979+00:00",
+  "tests_run": 51,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "status": "PASS",
+  "remote_uploads_downloads_submissions_performed": false,
+  "synthetic_fixtures_are_not_video_evidence": true,
+  "preflight_helper_validation": "PY_COMPILE_ONLY_PENDING_ACTUAL_PACKET_FREEZE",
+  "source_files": [
+    {
+      "path": "results/b_v3/verification/build_kaggle_bundle.py",
+      "sha256": "e50bee7e6cd0bd8f84d3acd4717f9ccd799c5bd717343b2ead15467457e05ea3",
+      "bytes": 18687
+    },
+    {
+      "path": "results/b_v3/verification/verify_submitted_packet.py",
+      "sha256": "e5bf9532fa4ebccd351b203e2a90a786d58a1cfea545027b6f506e0ddf2ace5d",
+      "bytes": 7749
+    },
+    {
+      "path": "results/b_v3/verification/preflight_kaggle_packet.py",
+      "sha256": "68a5cd58fdf92d1bc8e03da54a387185860315f0df3bca7cb861ada8c32a7cdd",
+      "bytes": 6162
+    },
+    {
+      "path": "results/b_v3/verification/kaggle_bundle_tests.py",
+      "sha256": "83f527baf4cfc5a2a2532f4e337172b4e329f164b7d09d00ae3cb3676cfeab29",
+      "bytes": 16240
+    },
+    {
+      "path": "results/b_v3/verification/phase8_publication_tests.py",
+      "sha256": "21eda34d185e3864f89a79eecdb6c2f6ed7412c0e39dd1e51fdfe330cad44888",
+      "bytes": 16310
+    },
+    {
+      "path": ".github/scripts/phase8_publish_b_v3.py",
+      "sha256": "2d55ee79d255b3470afb6f534078b716a1098560f6fde7703e756f317b0191bc",
+      "bytes": 26117
+    },
+    {
+      "path": ".github/workflows/phase8-publish-b-v3.yml",
+      "sha256": "98497f72a649f20cf7db504e6762b352fb47fbb801f06256270a31ef6d618dbf",
+      "bytes": 1557
+    }
+  ]
+}
