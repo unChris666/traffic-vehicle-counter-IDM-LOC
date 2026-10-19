@@ -36,6 +36,14 @@ def preflight(*, repo_root, packet_dir, source_run_root, source_video_root, snap
         # code and all embedded bytes equal trusted current repository files.
         exec(builder.cell_source(notebook["cells"][1]), namespace)
     snapshot = namespace["REPO_ROOT"]
+    # The actual parameter cell follows bootstrap remotely. Execute it here so
+    # a hardcoded checkout cannot silently replace the verified source root.
+    parameters = [cell for cell in notebook["cells"] if cell.get("id") == "bv3-01"]
+    if len(parameters) != 1:
+        raise ValueError("Expected one canonical parameter cell")
+    exec(builder.cell_source(parameters[0]), namespace)
+    if namespace["REPO_ROOT"] != snapshot:
+        raise ValueError("Canonical parameters replaced the verified snapshot root")
     if not snapshot.is_relative_to(parent):
         raise ValueError("Extracted snapshot escapes its new parent")
     if any(name.startswith("phase_8_") or name == "phase_5_geometry_helpers" for name in sys.modules):
@@ -71,7 +79,8 @@ def preflight(*, repo_root, packet_dir, source_run_root, source_video_root, snap
         "revision_policy_sha256": prepared["policy_sha256"],
         "compact_baseline_sha256": prepared["b_v2_reference"]["sha256"],
         "native_png_files_bundled_or_required_by_prepare": False,
-        "only_bootstrap_cell_executed": True, "canonical_notebook_code_cells_executed": False,
+        "only_bootstrap_and_parameter_cells_executed": True, "canonical_parameter_cell_executed": True,
+        "canonical_test_and_replay_cells_executed": False,
         "counting_rendering_detector_tracker_reid_executed": False,
         "review_source_anchor_replay_performed": False,
         "remote_submission_performed": False,

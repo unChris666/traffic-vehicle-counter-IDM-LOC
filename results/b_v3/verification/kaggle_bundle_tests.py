@@ -124,6 +124,17 @@ class PacketGuards(unittest.TestCase):
         self.assertFalse(proof["new_b_v3_counting_executed_by_bootstrap"])
         self.assertFalse(proof["new_detector_tracker_reid_inference"])
 
+    def test_actual_canonical_parameters_preserve_injected_verified_snapshot(self):
+        canonical = json.loads((HERE.parents[2] / builder.NOTEBOOK).read_text())
+        cell = next(cell for cell in canonical["cells"] if cell.get("id") == "bv3-01")
+        snapshot = self.base / "verified-snapshot"
+        store(snapshot, "results/b_v3/input/review_decisions.json", b"{}\n")
+        namespace = {"REPO_ROOT": snapshot}
+        with patch("sys.path", list(__import__("sys").path)):
+            exec(builder.cell_source(cell), namespace)
+        self.assertEqual(namespace["REPO_ROOT"], snapshot)
+        self.assertTrue((namespace["REPO_ROOT"] / "results/b_v3/input/review_decisions.json").is_file())
+
     def test_bootstrap_rejects_changed_payload_before_extraction(self):
         self.build()
         notebook = json.loads((self.output / "phase8_tgdi_b_v3_review.ipynb").read_text())

@@ -1,0 +1,4553 @@
+{
+  "schema_version": "phase8_b_v3_actual_annotated_preview_proof_v1",
+  "claim_type": "ACTUAL_RETAINED_PIXELS_RENDER_NOT_NEW_COUNTING_OR_INFERENCE",
+  "execution_run_id": "20261019T045405_106031Z",
+  "renderer_sha256": "ca78f5d109e66ea4d0256f52078225d15836889ea42bc85ccab6bc5331537ea5",
+  "new_counting_execution": false,
+  "new_detector_tracker_reid_execution": false,
+  "videos": [
+    {
+      "video_id": "weekday_pagi",
+      "source_identity": {
+        "video_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+        "geometry_sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T083731_859575Z",
+        "records_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8"
+      },
+      "source_video": "/tmp/phase8-bv3-source-videos/TGDI-WEEKDAY-PAGI.mp4",
+      "retained_records": "/tmp/phase8-bv3-donor/weekday_pagi/track_records.jsonl.gz",
+      "counting_result_sha256": "8aeda78b49f6d11e5959cf94c1e69faf117dea2cf8d7ac8043cce04cff5b3c83",
+      "geometry_sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+      "fps": 29.904049581962543,
+      "frames": [
+        {
+          "frame_index": 0,
+          "timestamp_approx_seconds": 0.0,
+          "source_frame_pixel_sha256": "14e0d1cc17f2e49227c5ec0ce4445d8e8bcffbc5a8c2b50a23a2b6b4776d43e9",
+          "retained_detector_input_pixel_sha256": "14e0d1cc17f2e49227c5ec0ce4445d8e8bcffbc5a8c2b50a23a2b6b4776d43e9",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-PAGI-B-V3-frame-000000.png",
+          "output_sha256": "e6cafb63af1046e3b6373b04eb507d1d294c6f0e70c8c49ebefdeb5a6bd00d75",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 0,
+            "accepted_final": 485,
+            "vehicle_so_far": 0,
+            "vehicle_final": 485,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 0,
+            "inferred_so_far": 0,
+            "pending_so_far": 0,
+            "pending_final": 431
+          },
+          "display_units": [
+            {
+              "track_id": 1,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:1",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                77.45060729980469,
+                210.006103515625,
+                161.9127655029297,
+                272.98431396484375
+              ],
+              "raw_vehicle_bbox": [
+                77.45060729980469,
+                210.006103515625,
+                161.9127655029297,
+                272.98431396484375
+              ],
+              "vehicle_bc": [
+                119.68168640136719,
+                272.98431396484375
+              ],
+              "counting_bc": [
+                119.68168640136719,
+                272.98431396484375
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 1"
+            },
+            {
+              "track_id": 2,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:2",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1000",
+              "passage_id": "track:2:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                593.8604125976562,
+                178.96340942382812,
+                639.7515258789062,
+                306.1930847167969
+              ],
+              "raw_vehicle_bbox": [
+                593.8604125976562,
+                178.96340942382812,
+                639.7515258789062,
+                306.1930847167969
+              ],
+              "vehicle_bc": [
+                616.8059692382812,
+                306.1930847167969
+              ],
+              "counting_bc": [
+                616.8059692382812,
+                306.1930847167969
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1000 | car | raw 2"
+            },
+            {
+              "track_id": 3,
+              "class_name": "pedestrian",
+              "raw_class_name": "person",
+              "role": "pedestrian",
+              "physical_unit_id": "reviewed:pagi:pedestrian3",
+              "episode_id": "reviewed:pedestrian3:0-76",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                39.73572540283203,
+                225.6914825439453,
+                94.82530975341797,
+                370.20672607421875
+              ],
+              "raw_vehicle_bbox": [
+                39.73572540283203,
+                225.6914825439453,
+                94.82530975341797,
+                370.20672607421875
+              ],
+              "vehicle_bc": null,
+              "counting_bc": [
+                67.280517578125,
+                370.20672607421875
+              ],
+              "person_bc": [
+                67.280517578125,
+                370.20672607421875
+              ],
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | pedestrian | raw 3"
+            },
+            {
+              "track_id": 4,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                157.5413818359375,
+                212.58099365234375,
+                183.16912841796875,
+                260.46551513671875
+              ],
+              "raw_vehicle_bbox": [
+                157.5413818359375,
+                212.58099365234375,
+                183.16912841796875,
+                260.46551513671875
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4"
+            },
+            {
+              "track_id": 5,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:5",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                157.48583984375,
+                230.80770874023438,
+                184.43975830078125,
+                262.3152770996094
+              ],
+              "raw_vehicle_bbox": [
+                157.48583984375,
+                230.80770874023438,
+                184.43975830078125,
+                262.3152770996094
+              ],
+              "vehicle_bc": [
+                170.96279907226562,
+                262.3152770996094
+              ],
+              "counting_bc": [
+                170.96279907226562,
+                262.3152770996094
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 5"
+            },
+            {
+              "track_id": 6,
+              "class_name": "pedestrian",
+              "raw_class_name": "person",
+              "role": "pedestrian",
+              "physical_unit_id": "reviewed:pagi:pedestrian6",
+              "episode_id": "reviewed:pedestrian6:0-76",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                0.19005584716796875,
+                162.31973266601562,
+                53.089500427246094,
+                368.2595520019531
+              ],
+              "raw_vehicle_bbox": [
+                0.19005584716796875,
+                162.31973266601562,
+                53.089500427246094,
+                368.2595520019531
+              ],
+              "vehicle_bc": null,
+              "counting_bc": [
+                26.63977813720703,
+                368.2595520019531
+              ],
+              "person_bc": [
+                26.63977813720703,
+                368.2595520019531
+              ],
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | pedestrian | raw 6"
+            },
+            {
+              "track_id": 7,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:7",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                69.62188720703125,
+                210.64889526367188,
+                97.04365539550781,
+                253.90786743164062
+              ],
+              "raw_vehicle_bbox": [
+                69.62188720703125,
+                210.64889526367188,
+                97.04365539550781,
+                253.90786743164062
+              ],
+              "vehicle_bc": [
+                83.33277130126953,
+                253.90786743164062
+              ],
+              "counting_bc": [
+                83.33277130126953,
+                253.90786743164062
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 7"
+            },
+            {
+              "track_id": 8,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:8",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                0.0,
+                235.54527282714844,
+                37.396759033203125,
+                368.52001953125
+              ],
+              "raw_vehicle_bbox": [
+                0.0,
+                235.54527282714844,
+                37.396759033203125,
+                368.52001953125
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 8"
+            },
+            {
+              "track_id": 9,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:9",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                69.90374755859375,
+                211.2889404296875,
+                95.99583435058594,
+                240.23410034179688
+              ],
+              "raw_vehicle_bbox": [
+                69.90374755859375,
+                211.2889404296875,
+                95.99583435058594,
+                240.23410034179688
+              ],
+              "vehicle_bc": [
+                82.94979095458984,
+                240.23410034179688
+              ],
+              "counting_bc": [
+                82.94979095458984,
+                240.23410034179688
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 9"
+            }
+          ],
+          "recent_logs": [],
+          "recent_pending": []
+        },
+        {
+          "frame_index": 38,
+          "timestamp_approx_seconds": 1.270730905386164,
+          "source_frame_pixel_sha256": "24d29ce60e76ef8f2ba92b209fd58590c127010aaf0d264c84fb26c177ad3d88",
+          "retained_detector_input_pixel_sha256": "24d29ce60e76ef8f2ba92b209fd58590c127010aaf0d264c84fb26c177ad3d88",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-PAGI-B-V3-frame-000038.png",
+          "output_sha256": "59aa6f45ecc0ffbc16078ff5dfa6e4ab41a1406ac94d9e704ed3d0113e4fdd27",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 0,
+            "accepted_final": 485,
+            "vehicle_so_far": 0,
+            "vehicle_final": 485,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 0,
+            "inferred_so_far": 0,
+            "pending_so_far": 0,
+            "pending_final": 431
+          },
+          "display_units": [
+            {
+              "track_id": 1,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:1",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                84.33705139160156,
+                201.7860107421875,
+                159.0214080810547,
+                258.8857421875
+              ],
+              "raw_vehicle_bbox": [
+                84.33705139160156,
+                201.7860107421875,
+                159.0214080810547,
+                258.8857421875
+              ],
+              "vehicle_bc": [
+                121.67922973632812,
+                258.8857421875
+              ],
+              "counting_bc": [
+                121.67922973632812,
+                258.8857421875
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 1"
+            },
+            {
+              "track_id": 3,
+              "class_name": "pedestrian",
+              "raw_class_name": "person",
+              "role": "pedestrian",
+              "physical_unit_id": "reviewed:pagi:pedestrian3",
+              "episode_id": "reviewed:pedestrian3:0-76",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                52.40147399902344,
+                216.57400512695312,
+                98.45347595214844,
+                337.1050720214844
+              ],
+              "raw_vehicle_bbox": [
+                52.40147399902344,
+                216.57400512695312,
+                98.45347595214844,
+                337.1050720214844
+              ],
+              "vehicle_bc": null,
+              "counting_bc": [
+                75.42747497558594,
+                337.1050720214844
+              ],
+              "person_bc": [
+                75.42747497558594,
+                337.1050720214844
+              ],
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | pedestrian | raw 3"
+            },
+            {
+              "track_id": 7,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:7",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                76.31298828125,
+                203.6353759765625,
+                99.65960693359375,
+                233.79541015625
+              ],
+              "raw_vehicle_bbox": [
+                76.31298828125,
+                203.6353759765625,
+                99.65960693359375,
+                233.79541015625
+              ],
+              "vehicle_bc": [
+                87.98629760742188,
+                233.79541015625
+              ],
+              "counting_bc": [
+                87.98629760742188,
+                233.79541015625
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 7"
+            },
+            {
+              "track_id": 12,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:12",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                145.67984008789062,
+                203.95816040039062,
+                199.26071166992188,
+                241.31915283203125
+              ],
+              "raw_vehicle_bbox": [
+                145.67984008789062,
+                203.95816040039062,
+                199.26071166992188,
+                241.31915283203125
+              ],
+              "vehicle_bc": [
+                172.47027587890625,
+                241.31915283203125
+              ],
+              "counting_bc": [
+                172.47027587890625,
+                241.31915283203125
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 12"
+            },
+            {
+              "track_id": 6,
+              "class_name": "pedestrian",
+              "raw_class_name": "person",
+              "role": "pedestrian",
+              "physical_unit_id": "reviewed:pagi:pedestrian6",
+              "episode_id": "reviewed:pedestrian6:0-76",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                0.06893157958984375,
+                154.17666625976562,
+                60.193965911865234,
+                346.6259460449219
+              ],
+              "raw_vehicle_bbox": [
+                0.06893157958984375,
+                154.17666625976562,
+                60.193965911865234,
+                346.6259460449219
+              ],
+              "vehicle_bc": null,
+              "counting_bc": [
+                30.13144874572754,
+                346.6259460449219
+              ],
+              "person_bc": [
+                30.13144874572754,
+                346.6259460449219
+              ],
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | pedestrian | raw 6"
+            },
+            {
+              "track_id": 14,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "track:14",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                283.03094482421875,
+                0.847198486328125,
+                638.1770629882812,
+                416.8707580566406
+              ],
+              "raw_vehicle_bbox": [
+                283.03094482421875,
+                0.847198486328125,
+                638.1770629882812,
+                416.8707580566406
+              ],
+              "vehicle_bc": [
+                460.60400390625,
+                416.8707580566406
+              ],
+              "counting_bc": [
+                460.60400390625,
+                416.8707580566406
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | truck | raw 14"
+            }
+          ],
+          "recent_logs": [],
+          "recent_pending": []
+        },
+        {
+          "frame_index": 219,
+          "timestamp_approx_seconds": 7.323422849462366,
+          "source_frame_pixel_sha256": "7c41daf2c5704f7f8229fa4d20fbf81e4ffbaf403a3d016f39576f9d163c2142",
+          "retained_detector_input_pixel_sha256": "7c41daf2c5704f7f8229fa4d20fbf81e4ffbaf403a3d016f39576f9d163c2142",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-PAGI-B-V3-frame-000219.png",
+          "output_sha256": "34ecc4abac09ed89570868485f74b000fb4d370e775f7dee900c3f4bf5316e93",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 6,
+            "accepted_final": 485,
+            "vehicle_so_far": 6,
+            "vehicle_final": 485,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 1,
+            "inferred_so_far": 5,
+            "pending_so_far": 4,
+            "pending_final": 431
+          },
+          "display_units": [
+            {
+              "track_id": 61,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:61",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                38.04853057861328,
+                220.97177124023438,
+                82.95415496826172,
+                344.0656433105469
+              ],
+              "raw_vehicle_bbox": [
+                38.04853057861328,
+                220.97177124023438,
+                82.95415496826172,
+                344.0656433105469
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 61"
+            },
+            {
+              "track_id": 66,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:66",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                0.07575225830078125,
+                159.12673950195312,
+                42.152896881103516,
+                341.9215087890625
+              ],
+              "raw_vehicle_bbox": [
+                0.07575225830078125,
+                159.12673950195312,
+                42.152896881103516,
+                341.9215087890625
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 66"
+            },
+            {
+              "track_id": 73,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "reviewed:pagi:vehicle73-car-episode",
+              "episode_id": "reviewed:73-main-and93-late",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                87.85189819335938,
+                172.77432250976562,
+                217.63742065429688,
+                289.9294738769531
+              ],
+              "raw_vehicle_bbox": [
+                87.85189819335938,
+                172.77432250976562,
+                217.63742065429688,
+                289.9294738769531
+              ],
+              "vehicle_bc": [
+                152.74465942382812,
+                289.9294738769531
+              ],
+              "counting_bc": [
+                152.74465942382812,
+                289.9294738769531
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 73"
+            },
+            {
+              "track_id": 43,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "track:43",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "T1000",
+              "passage_id": "track:43:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                56.030582427978516,
+                186.67991638183594,
+                110.30160522460938,
+                248.19261169433594
+              ],
+              "raw_vehicle_bbox": [
+                56.030582427978516,
+                186.67991638183594,
+                110.30160522460938,
+                248.19261169433594
+              ],
+              "vehicle_bc": [
+                83.16609382629395,
+                248.19261169433594
+              ],
+              "counting_bc": [
+                83.16609382629395,
+                248.19261169433594
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "T1000 | truck | raw 43"
+            },
+            {
+              "track_id": 98,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:98",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                176.28536987304688,
+                177.9691162109375,
+                255.275390625,
+                327.2132263183594
+              ],
+              "raw_vehicle_bbox": [
+                176.28536987304688,
+                177.9691162109375,
+                255.275390625,
+                327.2132263183594
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 98"
+            },
+            {
+              "track_id": 103,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:103",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1000",
+              "passage_id": "track:103:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                175.56134033203125,
+                260.14990234375,
+                279.71063232421875,
+                375.0323486328125
+              ],
+              "raw_vehicle_bbox": [
+                175.56134033203125,
+                260.14990234375,
+                279.71063232421875,
+                375.0323486328125
+              ],
+              "vehicle_bc": [
+                227.635986328125,
+                375.0323486328125
+              ],
+              "counting_bc": [
+                227.635986328125,
+                375.0323486328125
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1000 | motorcycle | raw 103"
+            },
+            {
+              "track_id": 105,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:105",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1004",
+              "passage_id": "track:105:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                390.02325439453125,
+                183.63320922851562,
+                614.3766479492188,
+                309.96435546875
+              ],
+              "raw_vehicle_bbox": [
+                390.02325439453125,
+                183.63320922851562,
+                614.3766479492188,
+                309.96435546875
+              ],
+              "vehicle_bc": [
+                502.199951171875,
+                309.96435546875
+              ],
+              "counting_bc": [
+                502.199951171875,
+                309.96435546875
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1004 | car | raw 105"
+            },
+            {
+              "track_id": 110,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:110",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1001",
+              "passage_id": "track:110:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                379.67755126953125,
+                246.13343811035156,
+                576.4892578125,
+                390.0177001953125
+              ],
+              "raw_vehicle_bbox": [
+                379.67755126953125,
+                246.13343811035156,
+                576.4892578125,
+                390.0177001953125
+              ],
+              "vehicle_bc": [
+                478.0834045410156,
+                390.0177001953125
+              ],
+              "counting_bc": [
+                478.0834045410156,
+                390.0177001953125
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1001 | motorcycle | raw 110"
+            },
+            {
+              "track_id": 114,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:114",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                322.7429504394531,
+                179.097900390625,
+                402.5359191894531,
+                307.688232421875
+              ],
+              "raw_vehicle_bbox": [
+                322.7429504394531,
+                212.95899963378906,
+                402.5359191894531,
+                307.688232421875
+              ],
+              "vehicle_bc": [
+                362.6394348144531,
+                307.688232421875
+              ],
+              "counting_bc": [
+                362.6394348144531,
+                307.688232421875
+              ],
+              "person_bc": null,
+              "component_track_ids": [
+                113
+              ],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 114 | riders 113 (+0)"
+            },
+            {
+              "track_id": 88,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:88",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1003",
+              "passage_id": "track:88:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                587.1121826171875,
+                165.83486938476562,
+                639.7078857421875,
+                287.1530456542969
+              ],
+              "raw_vehicle_bbox": [
+                587.1121826171875,
+                165.83486938476562,
+                639.7078857421875,
+                287.1530456542969
+              ],
+              "vehicle_bc": [
+                613.4100341796875,
+                287.1530456542969
+              ],
+              "counting_bc": [
+                613.4100341796875,
+                287.1530456542969
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1003 | car | raw 88"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 204,
+              "physical_unit_id": "track:68",
+              "track_id": 68,
+              "passage_id": "track:68:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_6e34811bbaf07883fdd655d1",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 68 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2001",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 201,
+              "physical_unit_id": "track:34",
+              "track_id": 34,
+              "passage_id": "track:34:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_e954604fa5f84d842953cf02",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 34 car; B_TO_A; CHANGE_ID",
+              "display_id": "C1001",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 142,
+              "physical_unit_id": "track:14",
+              "track_id": 14,
+              "passage_id": "track:14:episode:unreviewed-vehicle:passage:1",
+              "category": "truck",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_c7af5d7960090b5d5575282c",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 14 truck; B_TO_A; CHANGE_ID",
+              "display_id": "T1001",
+              "display_status": "final_active_passage",
+              "display_category": "truck",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 110,
+              "physical_unit_id": "track:43",
+              "track_id": 43,
+              "passage_id": "track:43:episode:unreviewed-vehicle:passage:1",
+              "category": "truck",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "LINE_MARGIN",
+              "status": "accepted",
+              "event_id": "b_v3_5b86cd2a1193046282651050",
+              "requested_label": "CROSSING_LINE",
+              "count_delta": 1,
+              "measured_crossing": true,
+              "message": "ID 43 truck; B_TO_A; CROSSING_LINE",
+              "display_id": "T1000",
+              "display_status": "final_active_passage",
+              "display_category": "truck",
+              "display_direction": "B_TO_A"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 219,
+              "track_id": 73,
+              "reasons": [
+                "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+              ]
+            },
+            {
+              "frame_index": 142,
+              "track_id": 3,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 221,
+          "timestamp_approx_seconds": 7.390303423430059,
+          "source_frame_pixel_sha256": "57ed98eaec2ddc47469974266525ef598c740daeaa6d689785c7439118abcdff",
+          "retained_detector_input_pixel_sha256": "57ed98eaec2ddc47469974266525ef598c740daeaa6d689785c7439118abcdff",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-PAGI-B-V3-frame-000221.png",
+          "output_sha256": "7e65edd973b282dcb466e4ad0a87134c50c5a1d12372000157175445a1d67a47",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 6,
+            "accepted_final": 485,
+            "vehicle_so_far": 6,
+            "vehicle_final": 485,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 1,
+            "inferred_so_far": 5,
+            "pending_so_far": 4,
+            "pending_final": 431
+          },
+          "display_units": [
+            {
+              "track_id": 61,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:61",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                37.91584014892578,
+                221.65525817871094,
+                83.08848571777344,
+                342.83056640625
+              ],
+              "raw_vehicle_bbox": [
+                37.91584014892578,
+                221.65525817871094,
+                83.08848571777344,
+                342.83056640625
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 61"
+            },
+            {
+              "track_id": 66,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:66",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                0.06461715698242188,
+                160.0140380859375,
+                41.55474090576172,
+                340.78094482421875
+              ],
+              "raw_vehicle_bbox": [
+                0.06461715698242188,
+                160.0140380859375,
+                41.55474090576172,
+                340.78094482421875
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 66"
+            },
+            {
+              "track_id": 73,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "reviewed:pagi:vehicle73-car-episode",
+              "episode_id": "reviewed:73-main-and93-late",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                86.63916015625,
+                174.04931640625,
+                209.06832885742188,
+                289.26806640625
+              ],
+              "raw_vehicle_bbox": [
+                86.63916015625,
+                174.04931640625,
+                209.06832885742188,
+                289.26806640625
+              ],
+              "vehicle_bc": [
+                147.85374450683594,
+                289.26806640625
+              ],
+              "counting_bc": [
+                147.85374450683594,
+                289.26806640625
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | truck | raw 73"
+            },
+            {
+              "track_id": 43,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "track:43",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "T1000",
+              "passage_id": "track:43:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                56.43209457397461,
+                189.7584228515625,
+                107.81146240234375,
+                248.063232421875
+              ],
+              "raw_vehicle_bbox": [
+                56.43209457397461,
+                189.7584228515625,
+                107.81146240234375,
+                248.063232421875
+              ],
+              "vehicle_bc": [
+                82.12177848815918,
+                248.063232421875
+              ],
+              "counting_bc": [
+                82.12177848815918,
+                248.063232421875
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "T1000 | truck | raw 43"
+            },
+            {
+              "track_id": 98,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:98",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                164.44219970703125,
+                180.4443359375,
+                239.2091064453125,
+                322.415283203125
+              ],
+              "raw_vehicle_bbox": [
+                164.44219970703125,
+                180.4443359375,
+                239.2091064453125,
+                322.415283203125
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 98"
+            },
+            {
+              "track_id": 103,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:103",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1000",
+              "passage_id": "track:103:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                162.38113403320312,
+                235.8277587890625,
+                261.9107971191406,
+                369.0982666015625
+              ],
+              "raw_vehicle_bbox": [
+                162.38113403320312,
+                235.8277587890625,
+                261.9107971191406,
+                369.0982666015625
+              ],
+              "vehicle_bc": [
+                212.14596557617188,
+                369.0982666015625
+              ],
+              "counting_bc": [
+                212.14596557617188,
+                369.0982666015625
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1000 | motorcycle | raw 103"
+            },
+            {
+              "track_id": 105,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:105",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1004",
+              "passage_id": "track:105:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                325.2965087890625,
+                183.68972778320312,
+                625.0001220703125,
+                312.3631286621094
+              ],
+              "raw_vehicle_bbox": [
+                325.2965087890625,
+                183.68972778320312,
+                625.0001220703125,
+                312.3631286621094
+              ],
+              "vehicle_bc": [
+                475.1483154296875,
+                312.3631286621094
+              ],
+              "counting_bc": [
+                475.1483154296875,
+                312.3631286621094
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1004 | car | raw 105"
+            },
+            {
+              "track_id": 110,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:110",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1001",
+              "passage_id": "track:110:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                331.1209716796875,
+                236.4166259765625,
+                521.712158203125,
+                381.25994873046875
+              ],
+              "raw_vehicle_bbox": [
+                331.1209716796875,
+                236.4166259765625,
+                521.712158203125,
+                381.25994873046875
+              ],
+              "vehicle_bc": [
+                426.41656494140625,
+                381.25994873046875
+              ],
+              "counting_bc": [
+                426.41656494140625,
+                381.25994873046875
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1001 | motorcycle | raw 110"
+            },
+            {
+              "track_id": 88,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:88",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1003",
+              "passage_id": "track:88:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                586.8927612304688,
+                166.73995971679688,
+                639.7588500976562,
+                295.4814147949219
+              ],
+              "raw_vehicle_bbox": [
+                586.8927612304688,
+                166.73995971679688,
+                639.7588500976562,
+                295.4814147949219
+              ],
+              "vehicle_bc": [
+                613.3258056640625,
+                295.4814147949219
+              ],
+              "counting_bc": [
+                613.3258056640625,
+                295.4814147949219
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1003 | car | raw 88"
+            },
+            {
+              "track_id": 113,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:113",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                351.7215881347656,
+                178.86138916015625,
+                404.4121398925781,
+                282.5469970703125
+              ],
+              "raw_vehicle_bbox": [
+                351.7215881347656,
+                178.86138916015625,
+                404.4121398925781,
+                282.5469970703125
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 113"
+            },
+            {
+              "track_id": 121,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:121",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                370.5245056152344,
+                160.966064453125,
+                477.4918518066406,
+                331.2896423339844
+              ],
+              "raw_vehicle_bbox": [
+                370.5245056152344,
+                160.966064453125,
+                477.4918518066406,
+                331.2896423339844
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 121"
+            },
+            {
+              "track_id": 93,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "reviewed:pagi:vehicle73-car-episode",
+              "episode_id": "reviewed:73-main-and93-late",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                86.6128158569336,
+                174.11907958984375,
+                208.93502807617188,
+                289.2177734375
+              ],
+              "raw_vehicle_bbox": [
+                86.6128158569336,
+                174.11907958984375,
+                208.93502807617188,
+                289.2177734375
+              ],
+              "vehicle_bc": [
+                147.77392196655273,
+                289.2177734375
+              ],
+              "counting_bc": [
+                147.77392196655273,
+                289.2177734375
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 93"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 204,
+              "physical_unit_id": "track:68",
+              "track_id": 68,
+              "passage_id": "track:68:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_6e34811bbaf07883fdd655d1",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 68 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2001",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 201,
+              "physical_unit_id": "track:34",
+              "track_id": 34,
+              "passage_id": "track:34:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_e954604fa5f84d842953cf02",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 34 car; B_TO_A; CHANGE_ID",
+              "display_id": "C1001",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 142,
+              "physical_unit_id": "track:14",
+              "track_id": 14,
+              "passage_id": "track:14:episode:unreviewed-vehicle:passage:1",
+              "category": "truck",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_c7af5d7960090b5d5575282c",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 14 truck; B_TO_A; CHANGE_ID",
+              "display_id": "T1001",
+              "display_status": "final_active_passage",
+              "display_category": "truck",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 110,
+              "physical_unit_id": "track:43",
+              "track_id": 43,
+              "passage_id": "track:43:episode:unreviewed-vehicle:passage:1",
+              "category": "truck",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "LINE_MARGIN",
+              "status": "accepted",
+              "event_id": "b_v3_5b86cd2a1193046282651050",
+              "requested_label": "CROSSING_LINE",
+              "count_delta": 1,
+              "measured_crossing": true,
+              "message": "ID 43 truck; B_TO_A; CROSSING_LINE",
+              "display_id": "T1000",
+              "display_status": "final_active_passage",
+              "display_category": "truck",
+              "display_direction": "B_TO_A"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 219,
+              "track_id": 73,
+              "reasons": [
+                "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+              ]
+            },
+            {
+              "frame_index": 142,
+              "track_id": 3,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 4241,
+          "timestamp_approx_seconds": 141.82025709849268,
+          "source_frame_pixel_sha256": "95e4be0a260f69c2f5bc4052b6611eeba4bd89b3d5c9c5e4a8bb5e7ebb4ca2ae",
+          "retained_detector_input_pixel_sha256": "95e4be0a260f69c2f5bc4052b6611eeba4bd89b3d5c9c5e4a8bb5e7ebb4ca2ae",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-PAGI-B-V3-frame-004241.png",
+          "output_sha256": "30cfb1afec8ba41b85648cf132aaf926c725de26fb089b4456cb666b6a76dedd",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 228,
+            "accepted_final": 485,
+            "vehicle_so_far": 228,
+            "vehicle_final": 485,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 66,
+            "inferred_so_far": 162,
+            "pending_so_far": 187,
+            "pending_final": 431
+          },
+          "display_units": [
+            {
+              "track_id": 2313,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:2313",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                59.26689529418945,
+                189.82574462890625,
+                101.50190734863281,
+                254.07415771484375
+              ],
+              "raw_vehicle_bbox": [
+                59.26689529418945,
+                189.82574462890625,
+                101.50190734863281,
+                254.07415771484375
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 2313"
+            },
+            {
+              "track_id": 2441,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:2441",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1067",
+              "passage_id": "track:2441:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                132.97052001953125,
+                219.7688446044922,
+                154.4169921875,
+                248.31028747558594
+              ],
+              "raw_vehicle_bbox": [
+                132.97052001953125,
+                219.7688446044922,
+                154.4169921875,
+                248.31028747558594
+              ],
+              "vehicle_bc": [
+                143.69375610351562,
+                248.31028747558594
+              ],
+              "counting_bc": [
+                143.69375610351562,
+                248.31028747558594
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1067 | motorcycle | raw 2441"
+            },
+            {
+              "track_id": 2443,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:2443",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                129.52694702148438,
+                192.77334594726562,
+                155.25540161132812,
+                231.23843383789062
+              ],
+              "raw_vehicle_bbox": [
+                129.52694702148438,
+                192.77334594726562,
+                155.25540161132812,
+                231.23843383789062
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 2443"
+            },
+            {
+              "track_id": 2345,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "retained-clique:2345,2517",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1060",
+              "passage_id": "retained-clique:2345,2517:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                67.06358337402344,
+                221.29861450195312,
+                94.43553161621094,
+                254.07559204101562
+              ],
+              "raw_vehicle_bbox": [
+                67.06358337402344,
+                221.29861450195312,
+                94.43553161621094,
+                254.07559204101562
+              ],
+              "vehicle_bc": [
+                80.74955749511719,
+                254.07559204101562
+              ],
+              "counting_bc": [
+                80.74955749511719,
+                254.07559204101562
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1060 | motorcycle | raw 2345"
+            },
+            {
+              "track_id": 2473,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "reviewed:pagi:motorcycle2473",
+              "episode_id": "reviewed:2473-2507-vehicle",
+              "display_id": "M1068",
+              "passage_id": "reviewed:pagi:motorcycle2473:episode:reviewed:2473-2507-vehicle:passage:1",
+              "display_bbox": [
+                166.58644104003906,
+                185.533203125,
+                199.98129272460938,
+                271.6658020019531
+              ],
+              "raw_vehicle_bbox": [
+                169.70169067382812,
+                223.56436157226562,
+                199.98129272460938,
+                271.6658020019531
+              ],
+              "vehicle_bc": [
+                184.84149169921875,
+                271.6658020019531
+              ],
+              "counting_bc": [
+                184.84149169921875,
+                271.6658020019531
+              ],
+              "person_bc": null,
+              "component_track_ids": [
+                2471
+              ],
+              "component_additional_increment": 0,
+              "label": "M1068 | motorcycle | raw 2473 | riders 2471 (+0)"
+            },
+            {
+              "track_id": 2324,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:2324",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1035",
+              "passage_id": "track:2324:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                617.4298095703125,
+                162.77166748046875,
+                639.7548828125,
+                277.59112548828125
+              ],
+              "raw_vehicle_bbox": [
+                617.4298095703125,
+                162.77166748046875,
+                639.7548828125,
+                277.59112548828125
+              ],
+              "vehicle_bc": [
+                628.5923461914062,
+                277.59112548828125
+              ],
+              "counting_bc": [
+                628.5923461914062,
+                277.59112548828125
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1035 | car | raw 2324"
+            },
+            {
+              "track_id": 2498,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:2498",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                0.041596412658691406,
+                214.41293334960938,
+                7.9405059814453125,
+                265.0001220703125
+              ],
+              "raw_vehicle_bbox": [
+                0.041596412658691406,
+                214.41293334960938,
+                7.9405059814453125,
+                265.0001220703125
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 2498"
+            },
+            {
+              "track_id": 2491,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:2491",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                89.68846130371094,
+                198.98318481445312,
+                114.71128845214844,
+                223.816650390625
+              ],
+              "raw_vehicle_bbox": [
+                89.68846130371094,
+                198.98318481445312,
+                114.71128845214844,
+                223.816650390625
+              ],
+              "vehicle_bc": [
+                102.19987487792969,
+                223.816650390625
+              ],
+              "counting_bc": [
+                102.19987487792969,
+                223.816650390625
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 2491"
+            },
+            {
+              "track_id": 2502,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:2502",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                158.36813354492188,
+                215.78884887695312,
+                172.60684204101562,
+                237.5450439453125
+              ],
+              "raw_vehicle_bbox": [
+                158.36813354492188,
+                215.78884887695312,
+                172.60684204101562,
+                237.5450439453125
+              ],
+              "vehicle_bc": [
+                165.48748779296875,
+                237.5450439453125
+              ],
+              "counting_bc": [
+                165.48748779296875,
+                237.5450439453125
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 2502"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 4241,
+              "physical_unit_id": "reviewed:pagi:motorcycle2473",
+              "track_id": 2473,
+              "passage_id": "reviewed:pagi:motorcycle2473:episode:reviewed:2473-2507-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "reviewed:2473-2507-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "LINE_MARGIN",
+              "status": "accepted",
+              "event_id": "b_v3_2c8b94ef5f74c301bec480da",
+              "requested_label": "CROSSING_LINE",
+              "count_delta": 1,
+              "measured_crossing": true,
+              "message": "ID 2473 motorcycle; B_TO_A; CROSSING_LINE",
+              "display_id": "M1068",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 4224,
+              "physical_unit_id": "track:2409",
+              "track_id": 2409,
+              "passage_id": "track:2409:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_82e87f3fccec9e577cbb71eb",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 2409 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2029",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 4215,
+              "physical_unit_id": "track:2445",
+              "track_id": 2445,
+              "passage_id": "track:2445:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_f4d38a9d89e8addfb54e8e98",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 2445 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2028",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 4209,
+              "physical_unit_id": "track:2439",
+              "track_id": 2439,
+              "passage_id": "track:2439:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_bc5e1025a10f0eb4d26d3a93",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 2439 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2079",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 4217,
+              "track_id": 2458,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            },
+            {
+              "frame_index": 4197,
+              "track_id": 2443,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 4254,
+          "timestamp_approx_seconds": 142.25498082928266,
+          "source_frame_pixel_sha256": "60799adb4ceb13c6fc4daffba905feb8f4ff34003234b6921206033b173f1ca2",
+          "retained_detector_input_pixel_sha256": "60799adb4ceb13c6fc4daffba905feb8f4ff34003234b6921206033b173f1ca2",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-PAGI-B-V3-frame-004254.png",
+          "output_sha256": "24fef27888deff4a2a0e52783ba8cddd4ded9446360873c314b740617f5c77bd",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 229,
+            "accepted_final": 485,
+            "vehicle_so_far": 229,
+            "vehicle_final": 485,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 66,
+            "inferred_so_far": 163,
+            "pending_so_far": 187,
+            "pending_final": 431
+          },
+          "display_units": [
+            {
+              "track_id": 2313,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:2313",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                59.18339538574219,
+                189.50930786132812,
+                101.43910217285156,
+                253.41607666015625
+              ],
+              "raw_vehicle_bbox": [
+                59.18339538574219,
+                189.50930786132812,
+                101.43910217285156,
+                253.41607666015625
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 2313"
+            },
+            {
+              "track_id": 2441,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:2441",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1067",
+              "passage_id": "track:2441:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                125.28953552246094,
+                218.77496337890625,
+                143.0320587158203,
+                242.77435302734375
+              ],
+              "raw_vehicle_bbox": [
+                125.28953552246094,
+                218.77496337890625,
+                143.0320587158203,
+                242.77435302734375
+              ],
+              "vehicle_bc": [
+                134.16079711914062,
+                242.77435302734375
+              ],
+              "counting_bc": [
+                134.16079711914062,
+                242.77435302734375
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1067 | motorcycle | raw 2441"
+            },
+            {
+              "track_id": 2443,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:2443",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                121.09136962890625,
+                193.61111450195312,
+                144.49075317382812,
+                230.21725463867188
+              ],
+              "raw_vehicle_bbox": [
+                121.09136962890625,
+                193.61111450195312,
+                144.49075317382812,
+                230.21725463867188
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 2443"
+            },
+            {
+              "track_id": 2345,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "retained-clique:2345,2517",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1060",
+              "passage_id": "retained-clique:2345,2517:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                66.23341369628906,
+                219.57455444335938,
+                93.25032043457031,
+                253.81680297851562
+              ],
+              "raw_vehicle_bbox": [
+                66.23341369628906,
+                219.57455444335938,
+                93.25032043457031,
+                253.81680297851562
+              ],
+              "vehicle_bc": [
+                79.74186706542969,
+                253.81680297851562
+              ],
+              "counting_bc": [
+                79.74186706542969,
+                253.81680297851562
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1060 | motorcycle | raw 2345"
+            },
+            {
+              "track_id": 2473,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "reviewed:pagi:motorcycle2473",
+              "episode_id": "reviewed:2473-2507-vehicle",
+              "display_id": "M1068",
+              "passage_id": "reviewed:pagi:motorcycle2473:episode:reviewed:2473-2507-vehicle:passage:1",
+              "display_bbox": [
+                153.775146484375,
+                188.8514404296875,
+                182.61419677734375,
+                258.00714111328125
+              ],
+              "raw_vehicle_bbox": [
+                155.18115234375,
+                219.72637939453125,
+                180.1492919921875,
+                258.00714111328125
+              ],
+              "vehicle_bc": [
+                167.66522216796875,
+                258.00714111328125
+              ],
+              "counting_bc": [
+                167.66522216796875,
+                258.00714111328125
+              ],
+              "person_bc": null,
+              "component_track_ids": [
+                2471
+              ],
+              "component_additional_increment": 0,
+              "label": "M1068 | motorcycle | raw 2473 | riders 2471 (+0)"
+            },
+            {
+              "track_id": 2324,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:2324",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1035",
+              "passage_id": "track:2324:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                617.2901611328125,
+                163.18978881835938,
+                639.7569580078125,
+                276.8554992675781
+              ],
+              "raw_vehicle_bbox": [
+                617.2901611328125,
+                163.18978881835938,
+                639.7569580078125,
+                276.8554992675781
+              ],
+              "vehicle_bc": [
+                628.5235595703125,
+                276.8554992675781
+              ],
+              "counting_bc": [
+                628.5235595703125,
+                276.8554992675781
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1035 | car | raw 2324"
+            },
+            {
+              "track_id": 2491,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:2491",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                88.81118774414062,
+                198.80877685546875,
+                113.13323974609375,
+                223.19403076171875
+              ],
+              "raw_vehicle_bbox": [
+                88.81118774414062,
+                198.80877685546875,
+                113.13323974609375,
+                223.19403076171875
+              ],
+              "vehicle_bc": [
+                100.97221374511719,
+                223.19403076171875
+              ],
+              "counting_bc": [
+                100.97221374511719,
+                223.19403076171875
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 2491"
+            },
+            {
+              "track_id": 2508,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:2508",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M2082",
+              "passage_id": "track:2508:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                196.30477905273438,
+                208.57659912109375,
+                212.09652709960938,
+                234.74774169921875
+              ],
+              "raw_vehicle_bbox": [
+                196.30477905273438,
+                208.57659912109375,
+                212.09652709960938,
+                234.74774169921875
+              ],
+              "vehicle_bc": [
+                204.20065307617188,
+                234.74774169921875
+              ],
+              "counting_bc": [
+                204.20065307617188,
+                234.74774169921875
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M2082 | motorcycle | raw 2508"
+            },
+            {
+              "track_id": 2510,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:2510",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                146.20697021484375,
+                192.65054321289062,
+                159.8907470703125,
+                213.33444213867188
+              ],
+              "raw_vehicle_bbox": [
+                146.20697021484375,
+                192.65054321289062,
+                159.8907470703125,
+                213.33444213867188
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 2510"
+            },
+            {
+              "track_id": 2507,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:2507",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                144.55419921875,
+                192.73594665527344,
+                159.59356689453125,
+                231.3098602294922
+              ],
+              "raw_vehicle_bbox": [
+                144.55419921875,
+                192.73594665527344,
+                159.59356689453125,
+                231.3098602294922
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 2507"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 4249,
+              "physical_unit_id": "track:2449",
+              "track_id": 2449,
+              "passage_id": "track:2449:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_a86de7f154420d82ec93e33d",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 2449 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2080",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 4241,
+              "physical_unit_id": "reviewed:pagi:motorcycle2473",
+              "track_id": 2473,
+              "passage_id": "reviewed:pagi:motorcycle2473:episode:reviewed:2473-2507-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "reviewed:2473-2507-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "LINE_MARGIN",
+              "status": "accepted",
+              "event_id": "b_v3_2c8b94ef5f74c301bec480da",
+              "requested_label": "CROSSING_LINE",
+              "count_delta": 1,
+              "measured_crossing": true,
+              "message": "ID 2473 motorcycle; B_TO_A; CROSSING_LINE",
+              "display_id": "M1068",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 4224,
+              "physical_unit_id": "track:2409",
+              "track_id": 2409,
+              "passage_id": "track:2409:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_82e87f3fccec9e577cbb71eb",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 2409 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2029",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 4215,
+              "physical_unit_id": "track:2445",
+              "track_id": 2445,
+              "passage_id": "track:2445:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_f4d38a9d89e8addfb54e8e98",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 2445 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2028",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 4217,
+              "track_id": 2458,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            },
+            {
+              "frame_index": 4197,
+              "track_id": 2443,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 7422,
+          "timestamp_approx_seconds": 248.19380999410814,
+          "source_frame_pixel_sha256": "1c34d6626a41224c06241be4a3dfca0de0e845a9515aee4bef1b27e5f8caa29f",
+          "retained_detector_input_pixel_sha256": "1c34d6626a41224c06241be4a3dfca0de0e845a9515aee4bef1b27e5f8caa29f",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-PAGI-B-V3-frame-007422.png",
+          "output_sha256": "96718ccaab56dff3634bb03fa754ffc64f29641f998db42ff1aa127dac4c1465",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 391,
+            "accepted_final": 485,
+            "vehicle_so_far": 391,
+            "vehicle_final": 485,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 110,
+            "inferred_so_far": 281,
+            "pending_so_far": 347,
+            "pending_final": 431
+          },
+          "display_units": [
+            {
+              "track_id": 4013,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4013",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1050",
+              "passage_id": "track:4013:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                113.82608032226562,
+                160.51629638671875,
+                226.34408569335938,
+                242.33026123046875
+              ],
+              "raw_vehicle_bbox": [
+                113.82608032226562,
+                160.51629638671875,
+                226.34408569335938,
+                242.33026123046875
+              ],
+              "vehicle_bc": [
+                170.0850830078125,
+                242.33026123046875
+              ],
+              "counting_bc": [
+                170.0850830078125,
+                242.33026123046875
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1050 | car | raw 4013"
+            },
+            {
+              "track_id": 4041,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4041",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C2050",
+              "passage_id": "track:4041:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                84.14378356933594,
+                172.33877563476562,
+                122.69598388671875,
+                203.52993774414062
+              ],
+              "raw_vehicle_bbox": [
+                84.14378356933594,
+                172.33877563476562,
+                122.69598388671875,
+                203.52993774414062
+              ],
+              "vehicle_bc": [
+                103.41988372802734,
+                203.52993774414062
+              ],
+              "counting_bc": [
+                103.41988372802734,
+                203.52993774414062
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C2050 | car | raw 4041"
+            },
+            {
+              "track_id": 4054,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4054",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                586.6799926757812,
+                226.74240112304688,
+                639.7149047851562,
+                315.3234558105469
+              ],
+              "raw_vehicle_bbox": [
+                586.6799926757812,
+                226.74240112304688,
+                639.7149047851562,
+                315.3234558105469
+              ],
+              "vehicle_bc": [
+                613.1974487304688,
+                315.3234558105469
+              ],
+              "counting_bc": [
+                613.1974487304688,
+                315.3234558105469
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 4054"
+            },
+            {
+              "track_id": 4002,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4002",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                596.9805908203125,
+                121.0425033569336,
+                639.7847900390625,
+                287.1416320800781
+              ],
+              "raw_vehicle_bbox": [
+                596.9805908203125,
+                121.0425033569336,
+                639.7847900390625,
+                287.1416320800781
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4002"
+            },
+            {
+              "track_id": 4066,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4066",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                323.73260498046875,
+                164.65774536132812,
+                371.15277099609375,
+                251.301025390625
+              ],
+              "raw_vehicle_bbox": [
+                323.73260498046875,
+                184.83935546875,
+                371.15277099609375,
+                251.301025390625
+              ],
+              "vehicle_bc": [
+                347.44268798828125,
+                251.301025390625
+              ],
+              "counting_bc": [
+                347.44268798828125,
+                251.301025390625
+              ],
+              "person_bc": null,
+              "component_track_ids": [
+                4068,
+                4073
+              ],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 4066 | riders 4068,4073 (+0)"
+            },
+            {
+              "track_id": 4078,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4078",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                83.99464416503906,
+                197.09967041015625,
+                103.27232360839844,
+                218.69171142578125
+              ],
+              "raw_vehicle_bbox": [
+                83.99464416503906,
+                197.09967041015625,
+                103.27232360839844,
+                218.69171142578125
+              ],
+              "vehicle_bc": [
+                93.63348388671875,
+                218.69171142578125
+              ],
+              "counting_bc": [
+                93.63348388671875,
+                218.69171142578125
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 4078"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 7422,
+              "physical_unit_id": "track:3737",
+              "track_id": 3737,
+              "passage_id": "track:3737:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_d154e00dc752ebab42778052",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 3737 car; B_TO_A; CHANGE_ID",
+              "display_id": "C1051",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 7411,
+              "physical_unit_id": "track:4013",
+              "track_id": 4013,
+              "passage_id": "track:4013:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "LINE_MARGIN",
+              "status": "accepted",
+              "event_id": "b_v3_497c5ccdc6e2529f65832537",
+              "requested_label": "CROSSING_LINE",
+              "count_delta": 1,
+              "measured_crossing": true,
+              "message": "ID 4013 car; B_TO_A; CROSSING_LINE",
+              "display_id": "C1050",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 7403,
+              "physical_unit_id": "track:3988",
+              "track_id": 3988,
+              "passage_id": "track:3988:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_7b652efc242a917e1e09174d",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 3988 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2167",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7377,
+              "physical_unit_id": "track:3957",
+              "track_id": 3957,
+              "passage_id": "track:3957:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_f24808e6fa90b5982114cf35",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 3957 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2166",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 7408,
+              "track_id": 3723,
+              "reasons": [
+                "RETURN_TIMEOUT_REQUIRES_NEW_PASSAGE_EVIDENCE"
+              ]
+            },
+            {
+              "frame_index": 7404,
+              "track_id": 3988,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 7611,
+          "timestamp_approx_seconds": 254.5140242340551,
+          "source_frame_pixel_sha256": "a94d7043576f1915921c3af472224b720942a0eb2beee0806ff16ee190cbc954",
+          "retained_detector_input_pixel_sha256": "a94d7043576f1915921c3af472224b720942a0eb2beee0806ff16ee190cbc954",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-PAGI-B-V3-frame-007611.png",
+          "output_sha256": "521f1bdbab5d5122231d2bf2be22ff6ab165e41e2471026e3f93edd2c6213b4f",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 401,
+            "accepted_final": 485,
+            "vehicle_so_far": 401,
+            "vehicle_final": 485,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 112,
+            "inferred_so_far": 289,
+            "pending_so_far": 355,
+            "pending_final": 431
+          },
+          "display_units": [
+            {
+              "track_id": 4013,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4013",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1050",
+              "passage_id": "track:4013:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                61.70524978637695,
+                179.02186584472656,
+                81.42848205566406,
+                196.51942443847656
+              ],
+              "raw_vehicle_bbox": [
+                61.70524978637695,
+                179.02186584472656,
+                81.42848205566406,
+                196.51942443847656
+              ],
+              "vehicle_bc": [
+                71.56686592102051,
+                196.51942443847656
+              ],
+              "counting_bc": [
+                71.56686592102051,
+                196.51942443847656
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1050 | car | raw 4013"
+            },
+            {
+              "track_id": 4152,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4152",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1053",
+              "passage_id": "track:4152:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                139.31793212890625,
+                157.39175415039062,
+                323.74395751953125,
+                283.05548095703125
+              ],
+              "raw_vehicle_bbox": [
+                139.31793212890625,
+                157.39175415039062,
+                323.74395751953125,
+                283.05548095703125
+              ],
+              "vehicle_bc": [
+                231.53094482421875,
+                283.05548095703125
+              ],
+              "counting_bc": [
+                231.53094482421875,
+                283.05548095703125
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1053 | car | raw 4152"
+            },
+            {
+              "track_id": 4108,
+              "class_name": "truck",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4108",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "T1010",
+              "passage_id": "track:4108:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                82.09410095214844,
+                163.0697021484375,
+                135.0252227783203,
+                215.86758422851562
+              ],
+              "raw_vehicle_bbox": [
+                82.09410095214844,
+                163.0697021484375,
+                135.0252227783203,
+                215.86758422851562
+              ],
+              "vehicle_bc": [
+                108.55966186523438,
+                215.86758422851562
+              ],
+              "counting_bc": [
+                108.55966186523438,
+                215.86758422851562
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "T1010 | truck | raw 4108"
+            },
+            {
+              "track_id": 4146,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4146",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                75.76083374023438,
+                178.6610107421875,
+                84.8668212890625,
+                203.84759521484375
+              ],
+              "raw_vehicle_bbox": [
+                75.76083374023438,
+                178.6610107421875,
+                84.8668212890625,
+                203.84759521484375
+              ],
+              "vehicle_bc": [
+                80.31382751464844,
+                203.84759521484375
+              ],
+              "counting_bc": [
+                80.31382751464844,
+                203.84759521484375
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 4146"
+            },
+            {
+              "track_id": 4168,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "track:4168",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                82.18450927734375,
+                163.15185546875,
+                135.05776977539062,
+                216.224365234375
+              ],
+              "raw_vehicle_bbox": [
+                82.18450927734375,
+                163.15185546875,
+                135.05776977539062,
+                216.224365234375
+              ],
+              "vehicle_bc": [
+                108.62113952636719,
+                216.224365234375
+              ],
+              "counting_bc": [
+                108.62113952636719,
+                216.224365234375
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | truck | raw 4168"
+            },
+            {
+              "track_id": 4169,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4169",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                474.7286376953125,
+                82.66912841796875,
+                639.6878662109375,
+                389.241943359375
+              ],
+              "raw_vehicle_bbox": [
+                474.7286376953125,
+                82.66912841796875,
+                639.6878662109375,
+                389.241943359375
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4169"
+            },
+            {
+              "track_id": 4166,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4166",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1107",
+              "passage_id": "track:4166:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                427.80108642578125,
+                204.18765258789062,
+                639.3386840820312,
+                410.4786682128906
+              ],
+              "raw_vehicle_bbox": [
+                427.80108642578125,
+                204.18765258789062,
+                639.3386840820312,
+                410.4786682128906
+              ],
+              "vehicle_bc": [
+                533.5698852539062,
+                410.4786682128906
+              ],
+              "counting_bc": [
+                533.5698852539062,
+                410.4786682128906
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1107 | motorcycle | raw 4166"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 7601,
+              "physical_unit_id": "track:4123",
+              "track_id": 4123,
+              "passage_id": "track:4123:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_55c25269e9fd64e0746ca18e",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4123 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2172",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7590,
+              "physical_unit_id": "track:4105",
+              "track_id": 4105,
+              "passage_id": "track:4105:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_e1dbf8d4d38a38599ea57ce1",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4105 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2171",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7577,
+              "physical_unit_id": "track:4112",
+              "track_id": 4112,
+              "passage_id": "track:4112:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_115d5a31fe142c24a08e7fde",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4112 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2170",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7558,
+              "physical_unit_id": "track:4041",
+              "track_id": 4041,
+              "passage_id": "track:4041:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_5987daa3239e78c0833f7aa8",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4041 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2050",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 7578,
+              "track_id": 4120,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            },
+            {
+              "frame_index": 7553,
+              "track_id": 4084,
+              "reasons": [
+                "CATEGORY_ENDPOINT_CONFLICT"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "video_id": "weekday_siang",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "source_video": "/tmp/phase8-bv3-source-videos/TGDI-WEEKDAY-SIANG.mp4",
+      "retained_records": "/tmp/phase8-bv3-donor/weekday_siang/track_records.jsonl.gz",
+      "counting_result_sha256": "3fbbcfe070e0f83094990238e2308ef9ac3b4544a5bfd5263cd5b9ea66be9f45",
+      "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "fps": 29.78121400353632,
+      "frames": [
+        {
+          "frame_index": 7422,
+          "timestamp_approx_seconds": 249.2175100423605,
+          "source_frame_pixel_sha256": "9d8895b789b081ae7114abbf5469d924c8bae4f85174b00b41167186df762b49",
+          "retained_detector_input_pixel_sha256": "9d8895b789b081ae7114abbf5469d924c8bae4f85174b00b41167186df762b49",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-SIANG-B-V3-frame-007422.png",
+          "output_sha256": "dcd83930cd53544f4e6c50720a16205545d41f2fa4727a838e86f7cb1d66ad08",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 477,
+            "accepted_final": 584,
+            "vehicle_so_far": 477,
+            "vehicle_final": 584,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 100,
+            "inferred_so_far": 377,
+            "pending_so_far": 361,
+            "pending_final": 430
+          },
+          "display_units": [
+            {
+              "track_id": 4271,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4271",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                21.685659408569336,
+                176.1646728515625,
+                50.272361755371094,
+                220.87469482421875
+              ],
+              "raw_vehicle_bbox": [
+                21.685659408569336,
+                176.1646728515625,
+                50.272361755371094,
+                220.87469482421875
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4271"
+            },
+            {
+              "track_id": 4281,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4281",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1081",
+              "passage_id": "track:4281:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                24.42436408996582,
+                202.07833862304688,
+                48.45042419433594,
+                231.91015625
+              ],
+              "raw_vehicle_bbox": [
+                24.42436408996582,
+                202.07833862304688,
+                48.45042419433594,
+                231.91015625
+              ],
+              "vehicle_bc": [
+                36.43739414215088,
+                231.91015625
+              ],
+              "counting_bc": [
+                36.43739414215088,
+                231.91015625
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1081 | motorcycle | raw 4281"
+            },
+            {
+              "track_id": 4306,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4306",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1082",
+              "passage_id": "track:4306:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                91.4912109375,
+                165.74978637695312,
+                140.0888671875,
+                255.7154541015625
+              ],
+              "raw_vehicle_bbox": [
+                91.4912109375,
+                206.13372802734375,
+                140.0888671875,
+                255.7154541015625
+              ],
+              "vehicle_bc": [
+                115.7900390625,
+                255.7154541015625
+              ],
+              "counting_bc": [
+                115.7900390625,
+                255.7154541015625
+              ],
+              "person_bc": null,
+              "component_track_ids": [
+                4283
+              ],
+              "component_additional_increment": 0,
+              "label": "M1082 | motorcycle | raw 4306 | riders 4283 (+0)"
+            },
+            {
+              "track_id": 4228,
+              "class_name": "truck",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4228",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "T1046",
+              "passage_id": "track:4228:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                585.76611328125,
+                179.74362182617188,
+                639.734130859375,
+                263.0081481933594
+              ],
+              "raw_vehicle_bbox": [
+                585.76611328125,
+                179.74362182617188,
+                639.734130859375,
+                263.0081481933594
+              ],
+              "vehicle_bc": [
+                612.7501220703125,
+                263.0081481933594
+              ],
+              "counting_bc": [
+                612.7501220703125,
+                263.0081481933594
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "T1046 | truck | raw 4228"
+            },
+            {
+              "track_id": 4238,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4238",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                546.02783203125,
+                161.39840698242188,
+                598.8043212890625,
+                262.4112854003906
+              ],
+              "raw_vehicle_bbox": [
+                546.02783203125,
+                161.39840698242188,
+                598.8043212890625,
+                262.4112854003906
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4238"
+            },
+            {
+              "track_id": 4149,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "reviewed:siang:4149-truck",
+              "episode_id": "reviewed:4149-truck-before7449",
+              "display_id": "T2013",
+              "passage_id": "reviewed:siang:4149-truck:episode:reviewed:4149-truck-before7449:passage:1",
+              "display_bbox": [
+                206.87994384765625,
+                150.8978271484375,
+                373.11468505859375,
+                262.787353515625
+              ],
+              "raw_vehicle_bbox": [
+                206.87994384765625,
+                150.8978271484375,
+                373.11468505859375,
+                262.787353515625
+              ],
+              "vehicle_bc": [
+                289.997314453125,
+                262.787353515625
+              ],
+              "counting_bc": [
+                289.997314453125,
+                262.787353515625
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "T2013 | truck | raw 4149"
+            },
+            {
+              "track_id": 4215,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4215",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                429.67425537109375,
+                150.90203857421875,
+                562.4736938476562,
+                256.6864929199219
+              ],
+              "raw_vehicle_bbox": [
+                429.67425537109375,
+                150.90203857421875,
+                562.4736938476562,
+                256.6864929199219
+              ],
+              "vehicle_bc": [
+                496.073974609375,
+                256.6864929199219
+              ],
+              "counting_bc": [
+                496.073974609375,
+                256.6864929199219
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 4215"
+            },
+            {
+              "track_id": 4327,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4327",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                52.98499298095703,
+                183.48092651367188,
+                75.63666534423828,
+                205.64944458007812
+              ],
+              "raw_vehicle_bbox": [
+                52.98499298095703,
+                183.48092651367188,
+                75.63666534423828,
+                205.64944458007812
+              ],
+              "vehicle_bc": [
+                64.31082916259766,
+                205.64944458007812
+              ],
+              "counting_bc": [
+                64.31082916259766,
+                205.64944458007812
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 4327"
+            },
+            {
+              "track_id": 4296,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "retained-clique:4296,4363",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                123.88101196289062,
+                170.94888305664062,
+                184.59307861328125,
+                225.43453979492188
+              ],
+              "raw_vehicle_bbox": [
+                123.88101196289062,
+                170.94888305664062,
+                184.59307861328125,
+                225.43453979492188
+              ],
+              "vehicle_bc": [
+                154.23704528808594,
+                225.43453979492188
+              ],
+              "counting_bc": [
+                154.23704528808594,
+                225.43453979492188
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | truck | raw 4296"
+            },
+            {
+              "track_id": 4320,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4320",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                70.51680755615234,
+                193.38473510742188,
+                87.2201156616211,
+                213.02999877929688
+              ],
+              "raw_vehicle_bbox": [
+                70.51680755615234,
+                193.38473510742188,
+                87.2201156616211,
+                213.02999877929688
+              ],
+              "vehicle_bc": [
+                78.86846160888672,
+                213.02999877929688
+              ],
+              "counting_bc": [
+                78.86846160888672,
+                213.02999877929688
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 4320"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 7422,
+              "physical_unit_id": "track:4284",
+              "track_id": 4284,
+              "passage_id": "track:4284:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_c6a7521bc022d703191ebf3b",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4284 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2197",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7422,
+              "physical_unit_id": "reviewed:siang:4149-truck",
+              "track_id": 4149,
+              "passage_id": "reviewed:siang:4149-truck:episode:reviewed:4149-truck-before7449:passage:1",
+              "category": "truck",
+              "episode_id": "reviewed:4149-truck-before7449",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "LINE_MARGIN",
+              "status": "accepted",
+              "event_id": "b_v3_ddbf771c36e2521543afff66",
+              "requested_label": "CROSSING_LINE",
+              "count_delta": 1,
+              "measured_crossing": true,
+              "message": "ID 4149 truck; A_TO_B; CROSSING_LINE",
+              "display_id": "T2013",
+              "display_status": "final_active_passage",
+              "display_category": "truck",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7413,
+              "physical_unit_id": "track:4200",
+              "track_id": 4200,
+              "passage_id": "track:4200:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_77400803501ca64b0a0f87bf",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4200 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2196",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7412,
+              "physical_unit_id": "track:4213",
+              "track_id": 4213,
+              "passage_id": "track:4213:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_aeca568f0309cb822420f5e4",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4213 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2053",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 7418,
+              "track_id": 4269,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            },
+            {
+              "frame_index": 7405,
+              "track_id": 4237,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 7449,
+          "timestamp_approx_seconds": 250.12412184122115,
+          "source_frame_pixel_sha256": "8f8fa8799b36058f28ce80e5eebb3521861714f83978e019e07c9f76165b1b19",
+          "retained_detector_input_pixel_sha256": "8f8fa8799b36058f28ce80e5eebb3521861714f83978e019e07c9f76165b1b19",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-SIANG-B-V3-frame-007449.png",
+          "output_sha256": "fbcde770ba10068ceddd0ec3ebc62ee2da20ac2a59e22758200bb701c280a372",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 480,
+            "accepted_final": 584,
+            "vehicle_so_far": 480,
+            "vehicle_final": 584,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 100,
+            "inferred_so_far": 380,
+            "pending_so_far": 361,
+            "pending_final": 430
+          },
+          "display_units": [
+            {
+              "track_id": 4271,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4271",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                25.036474227905273,
+                176.988037109375,
+                47.098365783691406,
+                212.14312744140625
+              ],
+              "raw_vehicle_bbox": [
+                25.036474227905273,
+                176.988037109375,
+                47.098365783691406,
+                212.14312744140625
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4271"
+            },
+            {
+              "track_id": 4281,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4281",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1081",
+              "passage_id": "track:4281:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                26.550844192504883,
+                193.41717529296875,
+                46.41534423828125,
+                219.80239868164062
+              ],
+              "raw_vehicle_bbox": [
+                26.550844192504883,
+                193.41717529296875,
+                46.41534423828125,
+                219.80239868164062
+              ],
+              "vehicle_bc": [
+                36.483094215393066,
+                219.80239868164062
+              ],
+              "counting_bc": [
+                36.483094215393066,
+                219.80239868164062
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1081 | motorcycle | raw 4281"
+            },
+            {
+              "track_id": 4306,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4306",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1082",
+              "passage_id": "track:4306:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                60.03946304321289,
+                176.43919372558594,
+                89.2894287109375,
+                229.77557373046875
+              ],
+              "raw_vehicle_bbox": [
+                62.74097442626953,
+                198.47738647460938,
+                88.3474349975586,
+                229.77557373046875
+              ],
+              "vehicle_bc": [
+                75.54420471191406,
+                229.77557373046875
+              ],
+              "counting_bc": [
+                75.54420471191406,
+                229.77557373046875
+              ],
+              "person_bc": null,
+              "component_track_ids": [
+                4283
+              ],
+              "component_additional_increment": 0,
+              "label": "M1082 | motorcycle | raw 4306 | riders 4283 (+0)"
+            },
+            {
+              "track_id": 4149,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "reviewed:siang:4149-truck",
+              "episode_id": "reviewed:4149-truck-before7449",
+              "display_id": "T2013",
+              "passage_id": "reviewed:siang:4149-truck:episode:reviewed:4149-truck-before7449:passage:1",
+              "display_bbox": [
+                345.2908935546875,
+                112.13217163085938,
+                639.1156005859375,
+                293.2093505859375
+              ],
+              "raw_vehicle_bbox": [
+                345.2908935546875,
+                112.13217163085938,
+                639.1156005859375,
+                293.2093505859375
+              ],
+              "vehicle_bc": [
+                492.2032470703125,
+                293.2093505859375
+              ],
+              "counting_bc": [
+                492.2032470703125,
+                293.2093505859375
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "T2013 | truck | raw 4149"
+            },
+            {
+              "track_id": 4344,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4344",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1084",
+              "passage_id": "track:4344:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                215.21055603027344,
+                225.34011840820312,
+                374.9415283203125,
+                396.3363952636719
+              ],
+              "raw_vehicle_bbox": [
+                215.21055603027344,
+                225.34011840820312,
+                374.9415283203125,
+                396.3363952636719
+              ],
+              "vehicle_bc": [
+                295.07604217529297,
+                396.3363952636719
+              ],
+              "counting_bc": [
+                295.07604217529297,
+                396.3363952636719
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1084 | motorcycle | raw 4344"
+            },
+            {
+              "track_id": 4296,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "retained-clique:4296,4363",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                133.173583984375,
+                164.7168731689453,
+                241.496337890625,
+                235.0235137939453
+              ],
+              "raw_vehicle_bbox": [
+                133.173583984375,
+                164.7168731689453,
+                241.496337890625,
+                235.0235137939453
+              ],
+              "vehicle_bc": [
+                187.3349609375,
+                235.0235137939453
+              ],
+              "counting_bc": [
+                187.3349609375,
+                235.0235137939453
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | truck | raw 4296"
+            },
+            {
+              "track_id": 4353,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4353",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                243.17581176757812,
+                143.13946533203125,
+                339.3468933105469,
+                322.80810546875
+              ],
+              "raw_vehicle_bbox": [
+                243.17581176757812,
+                143.13946533203125,
+                339.3468933105469,
+                322.80810546875
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4353"
+            },
+            {
+              "track_id": 4357,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4357",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                93.30850219726562,
+                189.1016845703125,
+                112.72793579101562,
+                216.70697021484375
+              ],
+              "raw_vehicle_bbox": [
+                93.30850219726562,
+                189.1016845703125,
+                112.72793579101562,
+                216.70697021484375
+              ],
+              "vehicle_bc": [
+                103.01821899414062,
+                216.70697021484375
+              ],
+              "counting_bc": [
+                103.01821899414062,
+                216.70697021484375
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 4357"
+            },
+            {
+              "track_id": 4361,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4361",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1085",
+              "passage_id": "track:4361:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                463.7149658203125,
+                211.3386688232422,
+                639.58349609375,
+                397.13958740234375
+              ],
+              "raw_vehicle_bbox": [
+                463.7149658203125,
+                211.3386688232422,
+                639.58349609375,
+                397.13958740234375
+              ],
+              "vehicle_bc": [
+                551.6492309570312,
+                397.13958740234375
+              ],
+              "counting_bc": [
+                551.6492309570312,
+                397.13958740234375
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1085 | motorcycle | raw 4361"
+            },
+            {
+              "track_id": 4362,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4362",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                528.1973876953125,
+                141.30056762695312,
+                590.0257568359375,
+                184.49008178710938
+              ],
+              "raw_vehicle_bbox": [
+                528.1973876953125,
+                141.30056762695312,
+                590.0257568359375,
+                184.49008178710938
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4362"
+            },
+            {
+              "track_id": 4342,
+              "class_name": "person",
+              "raw_class_name": "person",
+              "role": "unknown_person",
+              "physical_unit_id": "person-track:4342",
+              "episode_id": "unreviewed-person",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                61.08325958251953,
+                176.302734375,
+                89.26642608642578,
+                199.73175048828125
+              ],
+              "raw_vehicle_bbox": [
+                61.08325958251953,
+                176.302734375,
+                89.26642608642578,
+                199.73175048828125
+              ],
+              "vehicle_bc": null,
+              "counting_bc": null,
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "person | role unknown | not counted | raw 4342"
+            },
+            {
+              "track_id": 4363,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "retained-clique:4296,4363",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                133.203369140625,
+                164.39706420898438,
+                241.66522216796875,
+                235.04733276367188
+              ],
+              "raw_vehicle_bbox": [
+                133.203369140625,
+                164.39706420898438,
+                241.66522216796875,
+                235.04733276367188
+              ],
+              "vehicle_bc": [
+                187.43429565429688,
+                235.04733276367188
+              ],
+              "counting_bc": [
+                187.43429565429688,
+                235.04733276367188
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 4363"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 7448,
+              "physical_unit_id": "track:4309",
+              "track_id": 4309,
+              "passage_id": "track:4309:episode:unreviewed-vehicle:passage:1",
+              "category": "truck",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_e8cd97b100021aecbe26f4dd",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4309 truck; A_TO_B; CHANGE_ID",
+              "display_id": "T2014",
+              "display_status": "final_active_passage",
+              "display_category": "truck",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7441,
+              "physical_unit_id": "track:4283",
+              "track_id": 4283,
+              "passage_id": "track:4283:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_c562c16eb8534438e34d1713",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4283 motorcycle; B_TO_A; CHANGE_ID",
+              "display_id": "M1083",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 7436,
+              "physical_unit_id": "track:4285",
+              "track_id": 4285,
+              "passage_id": "track:4285:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_bc37eed1c23fcc11438689fd",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4285 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2198",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7422,
+              "physical_unit_id": "track:4284",
+              "track_id": 4284,
+              "passage_id": "track:4284:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_c6a7521bc022d703191ebf3b",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4284 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2197",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 7418,
+              "track_id": 4269,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            },
+            {
+              "frame_index": 7405,
+              "track_id": 4237,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            }
+          ]
+        },
+        {
+          "frame_index": 7611,
+          "timestamp_approx_seconds": 255.56379263438504,
+          "source_frame_pixel_sha256": "7038d5722554e839f31f9c11e0ef1344a579d260dff6395a0509d7f09f61fb81",
+          "retained_detector_input_pixel_sha256": "7038d5722554e839f31f9c11e0ef1344a579d260dff6395a0509d7f09f61fb81",
+          "pixel_sha_matched": true,
+          "source_raw_detection_links_verified": true,
+          "output_path": "results/b_v3/review/annotated_previews/TGDI-WEEKDAY-SIANG-B-V3-frame-007611.png",
+          "output_sha256": "5ab02fab4807914766f689d819f79735f044ecce5a1429da38833197fe106e3e",
+          "canvas_width": 1160,
+          "canvas_height": 960,
+          "source_image_resized": false,
+          "panel_sections_y": {
+            "accepted": 135,
+            "passage_log": 420,
+            "pending": 750
+          },
+          "operational_replay_counts": {
+            "accepted_so_far": 495,
+            "accepted_final": 584,
+            "vehicle_so_far": 495,
+            "vehicle_final": 584,
+            "pedestrian_so_far": 0,
+            "pedestrian_final": 0,
+            "measured_so_far": 106,
+            "inferred_so_far": 389,
+            "pending_so_far": 374,
+            "pending_final": 430
+          },
+          "display_units": [
+            {
+              "track_id": 4480,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "retained-clique:4480,4552",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1082",
+              "passage_id": "retained-clique:4480,4552:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                58.09307861328125,
+                145.69338989257812,
+                217.86248779296875,
+                263.0126647949219
+              ],
+              "raw_vehicle_bbox": [
+                58.09307861328125,
+                145.69338989257812,
+                217.86248779296875,
+                263.0126647949219
+              ],
+              "vehicle_bc": [
+                137.977783203125,
+                263.0126647949219
+              ],
+              "counting_bc": [
+                137.977783203125,
+                263.0126647949219
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1082 | car | raw 4480"
+            },
+            {
+              "track_id": 4344,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4344",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "M1084",
+              "passage_id": "track:4344:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                19.29329490661621,
+                179.92510986328125,
+                31.474760055541992,
+                203.92721557617188
+              ],
+              "raw_vehicle_bbox": [
+                19.29329490661621,
+                179.92510986328125,
+                31.474760055541992,
+                203.92721557617188
+              ],
+              "vehicle_bc": [
+                25.3840274810791,
+                203.92721557617188
+              ],
+              "counting_bc": [
+                25.3840274810791,
+                203.92721557617188
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M1084 | motorcycle | raw 4344"
+            },
+            {
+              "track_id": 4541,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4541",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1085",
+              "passage_id": "track:4541:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                221.73828125,
+                162.84579467773438,
+                399.99072265625,
+                257.2618713378906
+              ],
+              "raw_vehicle_bbox": [
+                221.73828125,
+                162.84579467773438,
+                399.99072265625,
+                257.2618713378906
+              ],
+              "vehicle_bc": [
+                310.864501953125,
+                257.2618713378906
+              ],
+              "counting_bc": [
+                310.864501953125,
+                257.2618713378906
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1085 | car | raw 4541"
+            },
+            {
+              "track_id": 4513,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "track:4513",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                581.3701171875,
+                158.8857879638672,
+                639.6851806640625,
+                256.54144287109375
+              ],
+              "raw_vehicle_bbox": [
+                585.1785888671875,
+                173.20330810546875,
+                639.6851806640625,
+                256.54144287109375
+              ],
+              "vehicle_bc": [
+                612.431884765625,
+                256.54144287109375
+              ],
+              "counting_bc": [
+                612.431884765625,
+                256.54144287109375
+              ],
+              "person_bc": null,
+              "component_track_ids": [
+                4455
+              ],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | motorcycle | raw 4513 | riders 4455 (+0)"
+            },
+            {
+              "track_id": 4525,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4525",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "C1083",
+              "passage_id": "track:4525:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                428.956787109375,
+                128.08067321777344,
+                581.453125,
+                247.7338409423828
+              ],
+              "raw_vehicle_bbox": [
+                428.956787109375,
+                128.08067321777344,
+                581.453125,
+                247.7338409423828
+              ],
+              "vehicle_bc": [
+                505.2049560546875,
+                247.7338409423828
+              ],
+              "counting_bc": [
+                505.2049560546875,
+                247.7338409423828
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "C1083 | car | raw 4525"
+            },
+            {
+              "track_id": 4546,
+              "class_name": "truck",
+              "raw_class_name": "truck",
+              "role": "vehicle",
+              "physical_unit_id": "track:4546",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": "T1050",
+              "passage_id": "track:4546:episode:unreviewed-vehicle:passage:1",
+              "display_bbox": [
+                429.14666748046875,
+                129.0127716064453,
+                581.7803344726562,
+                247.6128692626953
+              ],
+              "raw_vehicle_bbox": [
+                429.14666748046875,
+                129.0127716064453,
+                581.7803344726562,
+                247.6128692626953
+              ],
+              "vehicle_bc": [
+                505.4635009765625,
+                247.6128692626953
+              ],
+              "counting_bc": [
+                505.4635009765625,
+                247.6128692626953
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "T1050 | truck | raw 4546"
+            },
+            {
+              "track_id": 4549,
+              "class_name": "car",
+              "raw_class_name": "car",
+              "role": "vehicle",
+              "physical_unit_id": "track:4549",
+              "episode_id": "unreviewed-vehicle",
+              "display_id": null,
+              "passage_id": null,
+              "display_bbox": [
+                38.14000701904297,
+                176.43731689453125,
+                60.97113800048828,
+                195.39553833007812
+              ],
+              "raw_vehicle_bbox": [
+                38.14000701904297,
+                176.43731689453125,
+                60.97113800048828,
+                195.39553833007812
+              ],
+              "vehicle_bc": [
+                49.555572509765625,
+                195.39553833007812
+              ],
+              "counting_bc": [
+                49.555572509765625,
+                195.39553833007812
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "passage unresolved | car | raw 4549"
+            },
+            {
+              "track_id": 4149,
+              "class_name": "motorcycle",
+              "raw_class_name": "motorcycle",
+              "role": "vehicle",
+              "physical_unit_id": "reviewed:siang:4149-motorcycle",
+              "episode_id": "reviewed:4149-motorcycle-from7611",
+              "display_id": "M2213",
+              "passage_id": "reviewed:siang:4149-motorcycle:episode:reviewed:4149-motorcycle-from7611:passage:1",
+              "display_bbox": [
+                30.98601531982422,
+                179.95306396484375,
+                44.074790954589844,
+                200.70526123046875
+              ],
+              "raw_vehicle_bbox": [
+                30.98601531982422,
+                179.95306396484375,
+                44.074790954589844,
+                200.70526123046875
+              ],
+              "vehicle_bc": [
+                37.53040313720703,
+                200.70526123046875
+              ],
+              "counting_bc": [
+                37.53040313720703,
+                200.70526123046875
+              ],
+              "person_bc": null,
+              "component_track_ids": [],
+              "component_additional_increment": 0,
+              "label": "M2213 | motorcycle | raw 4149"
+            }
+          ],
+          "recent_logs": [
+            {
+              "frame_index": 7604,
+              "physical_unit_id": "retained-clique:4480,4552",
+              "track_id": 4480,
+              "passage_id": "retained-clique:4480,4552:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "LINE_MARGIN",
+              "status": "accepted",
+              "event_id": "b_v3_168af536619879dee33d37e5",
+              "requested_label": "CROSSING_LINE",
+              "count_delta": 1,
+              "measured_crossing": true,
+              "message": "ID 4480 car; B_TO_A; CROSSING_LINE",
+              "display_id": "C1082",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 7571,
+              "physical_unit_id": "track:4435",
+              "track_id": 4435,
+              "passage_id": "track:4435:episode:unreviewed-vehicle:passage:1",
+              "category": "car",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_7ad28bd91180cee6c15af079",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4435 car; A_TO_B; CHANGE_ID",
+              "display_id": "C2055",
+              "display_status": "final_active_passage",
+              "display_category": "car",
+              "display_direction": "A_TO_B"
+            },
+            {
+              "frame_index": 7567,
+              "physical_unit_id": "track:4351",
+              "track_id": 4351,
+              "passage_id": "track:4351:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "B_TO_A",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_0103d63c12fedf418465b0cc",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4351 motorcycle; B_TO_A; CHANGE_ID",
+              "display_id": "M1086",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "B_TO_A"
+            },
+            {
+              "frame_index": 7563,
+              "physical_unit_id": "track:4422",
+              "track_id": 4422,
+              "passage_id": "track:4422:episode:unreviewed-vehicle:passage:1",
+              "category": "motorcycle",
+              "episode_id": "unreviewed-vehicle",
+              "role": "vehicle",
+              "direction": "A_TO_B",
+              "route": "ESTIMATED_TIMEOUT",
+              "status": "accepted",
+              "event_id": "b_v3_8be6a315674a183784b2bf6b",
+              "requested_label": "CHANGE_ID (ESTIMASI)",
+              "count_delta": 1,
+              "measured_crossing": false,
+              "message": "ID 4422 motorcycle; A_TO_B; CHANGE_ID",
+              "display_id": "M2203",
+              "display_status": "final_active_passage",
+              "display_category": "motorcycle",
+              "display_direction": "A_TO_B"
+            }
+          ],
+          "recent_pending": [
+            {
+              "frame_index": 7609,
+              "track_id": 4377,
+              "reasons": [
+                "RETURN_TIMEOUT_REQUIRES_NEW_PASSAGE_EVIDENCE"
+              ]
+            },
+            {
+              "frame_index": 7579,
+              "track_id": 4371,
+              "reasons": [
+                "PERSON_ROLE_UNRESOLVED"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
