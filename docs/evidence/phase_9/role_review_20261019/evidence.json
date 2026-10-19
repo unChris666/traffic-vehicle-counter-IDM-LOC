@@ -1,0 +1,1994 @@
+{
+  "claim_type": "ACTUAL_READ_ONLY_RETAINED_EVIDENCE_AND_BOUNDED_USER_ROLE_REVIEW_NOT_NEW_MODEL_EXPERIMENT",
+  "recorded_at_utc": "2026-10-19T09:25:38.190626+00:00",
+  "video_id": "weekday_siang",
+  "filename": "TGDI-WEEKDAY-SIANG.mp4",
+  "frame_count": 9128,
+  "frame_indices_zero_based": true,
+  "user_annotation_version": "V2",
+  "inspected_machine_ledger": "Bv3 run20261019T045405_106031Z",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "source_records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b",
+  "source_relations_sha256": "2e9f35ad7297c0a5183474883b5a07c9bf61fff942d574b90d671b370bf4d566",
+  "source_counting_result_sha256": "3fbbcfe070e0f83094990238e2308ef9ac3b4544a5bfd5263cd5b9ea66be9f45",
+  "raw_frame_images": [
+    {
+      "frame_index": 57,
+      "path": "frame-57.png",
+      "png_sha256": "33569e65dbdf2417b668a70e853d51613e66cfa4c2ee7ceacc13e79693cf3f84",
+      "raw_bgr_pixel_sha256": "2925814e5e4ffd8427afc64c6dc1f0c2070951e9a0713d015e4bae9f61ee0efb",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 54,
+          "frame_index": 57,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            241.61477661132812,
+            75.62858581542969,
+            374.4785461425781,
+            479.22027587890625
+          ],
+          "bbox": [
+            240.77694702148438,
+            76.9906234741211,
+            373.02728271484375,
+            480.66583251953125
+          ],
+          "center": [
+            308.0466613769531,
+            277.42443084716797
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.9289875626564026,
+          "timestamp_estimate_from_index_fps_seconds": 1.913958242039147,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 82,
+      "path": "frame-82.png",
+      "png_sha256": "da9a38616949a98402a7b8824761220ea4b9413441e1074cbb0a223456425f1c",
+      "raw_bgr_pixel_sha256": "58a8bb81536acf0752cd1b920e15d96eb030128631617b0723f7fdd26756614e",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 54,
+          "frame_index": 82,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            111.2750015258789,
+            129.8212432861328,
+            220.90255737304688,
+            473.41412353515625
+          ],
+          "bbox": [
+            110.98114776611328,
+            129.71900939941406,
+            218.61502075195312,
+            474.2160949707031
+          ],
+          "center": [
+            166.0887794494629,
+            301.61768341064453
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8850762844085693,
+          "timestamp_estimate_from_index_fps_seconds": 2.753413611354562,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 107,
+      "path": "frame-107.png",
+      "png_sha256": "525295ec85571198bc41acd653759ff01cfb78d223db84b29daf8b283d3ee252",
+      "raw_bgr_pixel_sha256": "c5658391d94ecf2b4006178f4c67b1a7d6fd17cf22c6ce33a00d974d7f1e5b07",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 54,
+          "frame_index": 107,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            56.123382568359375,
+            148.498046875,
+            139.6717529296875,
+            350.31439208984375
+          ],
+          "bbox": [
+            55.71969223022461,
+            148.9444580078125,
+            140.69705200195312,
+            348.9068908691406
+          ],
+          "center": [
+            97.89756774902344,
+            249.40621948242188
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8389119505882263,
+          "timestamp_estimate_from_index_fps_seconds": 3.5928689806699774,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 188,
+      "path": "frame-188.png",
+      "png_sha256": "d71c1d36e6607d29ad35cb6023c6042643f8afbaa45cfa98bd112e4ac7c87bb9",
+      "raw_bgr_pixel_sha256": "b85c7a4b725bc6b2c001273d991bc4bb5b133e95bc21694cbacb4c051aea2465",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 54,
+          "frame_index": 188,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            30.960777282714844,
+            191.9345245361328,
+            76.21846771240234,
+            324.99053955078125
+          ],
+          "bbox": [
+            30.647777557373047,
+            191.7863311767578,
+            75.4930648803711,
+            324.45660400390625
+          ],
+          "center": [
+            53.589622497558594,
+            258.46253204345703
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.826567530632019,
+          "timestamp_estimate_from_index_fps_seconds": 6.312704377251923,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 166,
+          "frame_index": 188,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            587.8818359375,
+            200.81900024414062,
+            639.74267578125,
+            289.3401794433594
+          ],
+          "bbox": [
+            588.5528564453125,
+            200.10919189453125,
+            639.7470703125,
+            289.0229187011719
+          ],
+          "center": [
+            613.812255859375,
+            245.07958984375
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8041331171989441,
+          "timestamp_estimate_from_index_fps_seconds": 6.312704377251923,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 226,
+      "path": "frame-226.png",
+      "png_sha256": "f60d368633191b845716f5b2372b2ad68c9d8ef54a2b1a282e2e8aece44b5aa8",
+      "raw_bgr_pixel_sha256": "aff1c229e9dc0218c8d0469fb1b098fd1f0e0840c6806b55dd0dc41d4e93a348",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 54,
+          "frame_index": 226,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            26.712928771972656,
+            195.736328125,
+            63.602577209472656,
+            304.4847717285156
+          ],
+          "bbox": [
+            26.740888595581055,
+            195.8808135986328,
+            63.54115676879883,
+            304.8575439453125
+          ],
+          "center": [
+            45.157752990722656,
+            250.1105499267578
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7975561618804932,
+          "timestamp_estimate_from_index_fps_seconds": 7.588676538611354,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 185,
+          "frame_index": 226,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            285.31890869140625,
+            228.40972900390625,
+            404.8497314453125,
+            346.522705078125
+          ],
+          "bbox": [
+            283.1891174316406,
+            225.47755432128906,
+            406.57421875,
+            347.27081298828125
+          ],
+          "center": [
+            345.0843200683594,
+            287.4662170410156
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.841830849647522,
+          "timestamp_estimate_from_index_fps_seconds": 7.588676538611354,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 166,
+          "frame_index": 226,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            297.2215576171875,
+            175.1077880859375,
+            373.08233642578125,
+            309.8464660644531
+          ],
+          "bbox": [
+            297.7994079589844,
+            175.0294189453125,
+            375.3464050292969,
+            314.1514587402344
+          ],
+          "center": [
+            335.1519470214844,
+            242.4771270751953
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8148959279060364,
+          "timestamp_estimate_from_index_fps_seconds": 7.588676538611354,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 251,
+      "path": "frame-251.png",
+      "png_sha256": "884a5b22aa1d9696cdfff385278ca749967d2bc4e37dd02c0e0c90e21c722bb6",
+      "raw_bgr_pixel_sha256": "8ee60ca4a11c94afdaa9228b36132168d5cfe35c4fc1df264960d3f708208e32",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 54,
+          "frame_index": 251,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            24.67672348022461,
+            205.24862670898438,
+            58.213321685791016,
+            302.3326721191406
+          ],
+          "bbox": [
+            24.586502075195312,
+            205.03445434570312,
+            58.35865020751953,
+            301.9490051269531
+          ],
+          "center": [
+            41.44502258300781,
+            253.7906494140625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.8271583318710327,
+          "timestamp_estimate_from_index_fps_seconds": 8.42813190792677,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 185,
+          "frame_index": 251,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            134.9884033203125,
+            241.08328247070312,
+            176.05081176757812,
+            291.6332092285156
+          ],
+          "bbox": [
+            134.09996032714844,
+            240.65036010742188,
+            174.99131774902344,
+            291.2401428222656
+          ],
+          "center": [
+            155.5196075439453,
+            266.3582458496094
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7443207502365112,
+          "timestamp_estimate_from_index_fps_seconds": 8.42813190792677,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 166,
+          "frame_index": 251,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            132.96742248535156,
+            211.18948364257812,
+            170.83473205566406,
+            276.93951416015625
+          ],
+          "bbox": [
+            132.35354614257812,
+            211.2078399658203,
+            170.4123992919922,
+            275.76507568359375
+          ],
+          "center": [
+            151.9010772705078,
+            244.0644989013672
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7191232442855835,
+          "timestamp_estimate_from_index_fps_seconds": 8.42813190792677,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 273,
+      "path": "frame-273.png",
+      "png_sha256": "ad4972cb92a4cd8861e620704e4591910058f448401e3fdd65e502e8d3d104d3",
+      "raw_bgr_pixel_sha256": "3d689289a09a1474e904cd6031b2b91ed7683f678f656c52e4cf5be516d43136",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 54,
+          "frame_index": 273,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            23.89704132080078,
+            208.52752685546875,
+            56.710174560546875,
+            295.55450439453125
+          ],
+          "bbox": [
+            24.109683990478516,
+            208.5228729248047,
+            56.7608757019043,
+            295.09039306640625
+          ],
+          "center": [
+            40.30360794067383,
+            252.041015625
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7955866456031799,
+          "timestamp_estimate_from_index_fps_seconds": 9.166852632924336,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 185,
+          "frame_index": 273,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            95.72711944580078,
+            238.48910522460938,
+            115.70438385009766,
+            271.141845703125
+          ],
+          "bbox": [
+            95.78474426269531,
+            238.7776641845703,
+            115.27645111083984,
+            271.2958068847656
+          ],
+          "center": [
+            105.71575164794922,
+            254.8154754638672
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.6614887118339539,
+          "timestamp_estimate_from_index_fps_seconds": 9.166852632924336,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 166,
+          "frame_index": 273,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            90.39559936523438,
+            215.91497802734375,
+            116.37576293945312,
+            262.314453125
+          ],
+          "bbox": [
+            90.07240295410156,
+            216.2008514404297,
+            115.87010192871094,
+            262.46728515625
+          ],
+          "center": [
+            103.38568115234375,
+            239.11471557617188
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7284931540489197,
+          "timestamp_estimate_from_index_fps_seconds": 9.166852632924336,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 296,
+      "path": "frame-296.png",
+      "png_sha256": "286b2a4a92fb57c2c542b791d177bdf2b8f48b5ed56071a293dde00a30209b38",
+      "raw_bgr_pixel_sha256": "809b88e77b6ffdd7c96af1f5ad57df57025c57334fd440d6c3a318f59b6ba27a",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 54,
+          "frame_index": 296,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            23.07345199584961,
+            210.68701171875,
+            48.48325729370117,
+            289.5913391113281
+          ],
+          "bbox": [
+            23.205425262451172,
+            210.6575927734375,
+            48.557594299316406,
+            289.38714599609375
+          ],
+          "center": [
+            35.77835464477539,
+            250.13917541503906
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7915960550308228,
+          "timestamp_estimate_from_index_fps_seconds": 9.939151572694517,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 166,
+          "frame_index": 296,
+          "original_detection_index": 9,
+          "raw_bbox": [
+            72.30360412597656,
+            234.505859375,
+            89.33073425292969,
+            259.6518859863281
+          ],
+          "bbox": [
+            71.95899200439453,
+            231.670166015625,
+            89.41767120361328,
+            257.987060546875
+          ],
+          "center": [
+            80.81716918945312,
+            247.07887268066406
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.5267859697341919,
+          "timestamp_estimate_from_index_fps_seconds": 9.939151572694517,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 1089,
+      "path": "frame-1089.png",
+      "png_sha256": "4a75bac941dfb46845b9ad5ce06fa4675a0c2b8642ecd1a749663c1edc3742c7",
+      "raw_bgr_pixel_sha256": "0290f53a476666f9c94f24256fd71bed6bda30f47e20ff4bc03b9130fcd3c94a",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 856,
+          "frame_index": 1089,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            356.1246337890625,
+            207.86614990234375,
+            443.6666259765625,
+            286.1782531738281
+          ],
+          "bbox": [
+            355.9927062988281,
+            204.89308166503906,
+            446.51824951171875,
+            285.4849548339844
+          ],
+          "center": [
+            399.8956298828125,
+            247.02220153808594
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8695339560508728,
+          "timestamp_estimate_from_index_fps_seconds": 36.56667588737949,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 857,
+          "frame_index": 1089,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            368.67547607421875,
+            197.52401733398438,
+            402.75738525390625,
+            268.7176208496094
+          ],
+          "bbox": [
+            372.5750732421875,
+            195.49171447753906,
+            404.4970703125,
+            267.6380920410156
+          ],
+          "center": [
+            385.7164306640625,
+            233.12081909179688
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.5775805115699768,
+          "timestamp_estimate_from_index_fps_seconds": 36.56667588737949,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 1107,
+      "path": "frame-1107.png",
+      "png_sha256": "5cbb41cb51cffc9eef7653fead0292e378e337e2f8a5413eaa8c19b58bf81dfc",
+      "raw_bgr_pixel_sha256": "1aff8c7705f1906d8d4bde529c6388609a4d7871958148c7a4f047a5843163a1",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 856,
+          "frame_index": 1107,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            415.77227783203125,
+            201.43844604492188,
+            530.7405395507812,
+            290.37139892578125
+          ],
+          "bbox": [
+            415.9893798828125,
+            201.3022003173828,
+            530.878662109375,
+            290.2422180175781
+          ],
+          "center": [
+            473.25640869140625,
+            245.90492248535156
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.8828149437904358,
+          "timestamp_estimate_from_index_fps_seconds": 37.17108375328659,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 857,
+          "frame_index": 1107,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            448.1492614746094,
+            182.96603393554688,
+            483.2700500488281,
+            268.9850158691406
+          ],
+          "bbox": [
+            448.0115051269531,
+            182.647705078125,
+            482.4966125488281,
+            268.5157165527344
+          ],
+          "center": [
+            465.70965576171875,
+            225.97552490234375
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.7125155329704285,
+          "timestamp_estimate_from_index_fps_seconds": 37.17108375328659,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 5003,
+      "path": "frame-5003.png",
+      "png_sha256": "2744d8390df5a0e22b05de3eb821a47fc378a336717aaf551ad1820c049d6b9a",
+      "raw_bgr_pixel_sha256": "4afc0ce9cef99ba1628ce923691d2efaa752eca4a9490ac0d0a255d2bd9ade61",
+      "matches_retained_detector_input_pixel_sha256": true,
+      "observations": [
+        {
+          "track_id": 3025,
+          "frame_index": 5003,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            207.84580993652344,
+            99.28178405761719,
+            392.9290771484375,
+            479.42364501953125
+          ],
+          "bbox": [
+            202.9530792236328,
+            101.98916625976562,
+            399.6916809082031,
+            479.44085693359375
+          ],
+          "center": [
+            300.38744354248047,
+            289.3527145385742
+          ],
+          "class_id": 0,
+          "class_name": "person",
+          "confidence": 0.9409692287445068,
+          "timestamp_estimate_from_index_fps_seconds": 167.99180850740092,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    }
+  ],
+  "actual_retained_component_relations": [
+    {
+      "claim_type": "EXPERIMENTAL_MEASURED_RELATION_NOT_GROUND_TRUTH",
+      "features": {
+        "appearance_features_used": false,
+        "association_frame_windows": null,
+        "center_distance_norm_max": 0.18641088010916362,
+        "common_frame_indices": [
+          1100,
+          1101,
+          1102,
+          1103,
+          1104,
+          1105,
+          1106,
+          1107,
+          1108,
+          1109,
+          1110,
+          1111,
+          1112,
+          1113
+        ],
+        "common_frames": 14,
+        "consecutive_common_frames_max": 14,
+        "consecutive_motion_pairs": 13,
+        "first_bc_inside_second_fraction": 1.0,
+        "iou_max": 0.2636073245406555,
+        "iou_min": 0.19992470952236288,
+        "kind": "COMPONENT_OF",
+        "relative_motion_residual_norm_max": 0.046708266877327334
+      },
+      "first_episode_id": "ve6b_806f73ed55896c98152c7d8d450fe032c2015bdc0806854d71d10efd21dec45f",
+      "first_track_id": 857,
+      "reasons": [],
+      "relation_id": "ur6b_0b821582a55382cbb1532a9c058ba2c0c06a0b1d17ef0f4cd8763231d9809514",
+      "second_episode_id": "ve6b_d1e8c74a9375227d0ce24113cdfcc0e67a93531a0de48dcaa202f796923f30ed",
+      "second_track_id": 856,
+      "status": "SUPPORTED",
+      "thresholds": {
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15,
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0
+      },
+      "type": "COMPONENT_OF"
+    },
+    {
+      "claim_type": "EXPERIMENTAL_MEASURED_RELATION_NOT_GROUND_TRUTH",
+      "features": {
+        "appearance_features_used": false,
+        "association_frame_windows": null,
+        "center_distance_norm_max": 0.47404482544335597,
+        "common_frame_indices": [
+          215,
+          216,
+          217,
+          218,
+          219,
+          220,
+          221,
+          222,
+          223,
+          224,
+          225,
+          226,
+          227,
+          228,
+          229,
+          230,
+          231,
+          232,
+          233,
+          234,
+          235,
+          236,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251,
+          252,
+          253,
+          254,
+          255,
+          256,
+          257,
+          258,
+          259,
+          260,
+          261,
+          262,
+          263,
+          264,
+          265,
+          266,
+          267,
+          268,
+          269,
+          270,
+          271,
+          272,
+          273,
+          274,
+          275,
+          276,
+          277,
+          278,
+          279,
+          280,
+          281,
+          282,
+          283,
+          284,
+          285,
+          286,
+          287,
+          288,
+          289,
+          290,
+          291,
+          292
+        ],
+        "common_frames": 78,
+        "consecutive_common_frames_max": 78,
+        "consecutive_motion_pairs": 77,
+        "first_bc_inside_second_fraction": 1.0,
+        "iou_max": 0.5125175589453261,
+        "iou_min": 0.23802707443438972,
+        "kind": "COMPONENT_OF",
+        "relative_motion_residual_norm_max": 0.18584997760240216
+      },
+      "first_episode_id": "ve6b_dfcdfd7792fb9aef28aed5fc4de266428171789eeaeea22ccc2c24c346ee14b4",
+      "first_track_id": 166,
+      "reasons": [
+        "RELATIVE_MOTION_CONTRADICTION"
+      ],
+      "relation_id": "ur6b_1f3b33d7b33690ce8c04f870e4c5d56ebc5d28da3e1ad1ca7035f4ee2ad25bd4",
+      "second_episode_id": "ve6b_093bb091f609169005abce54ecba5b37fc01daf4b6a0750691f2707fa06cdde1",
+      "second_track_id": 185,
+      "status": "REJECTED",
+      "thresholds": {
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15,
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0
+      },
+      "type": "COMPONENT_OF"
+    },
+    {
+      "claim_type": "EXPERIMENTAL_MEASURED_RELATION_NOT_GROUND_TRUTH",
+      "features": {
+        "appearance_features_used": false,
+        "association_frame_windows": null,
+        "center_distance_norm_max": 0.40309831563165194,
+        "common_frame_indices": [
+          1082,
+          1083,
+          1084,
+          1085,
+          1086,
+          1087,
+          1088,
+          1089,
+          1090,
+          1091,
+          1092,
+          1093,
+          1094,
+          1095,
+          1096,
+          1097
+        ],
+        "common_frames": 16,
+        "consecutive_common_frames_max": 16,
+        "consecutive_motion_pairs": 15,
+        "first_bc_inside_second_fraction": 1.0,
+        "iou_max": 0.28772365521026977,
+        "iou_min": 0.17508124540170608,
+        "kind": "COMPONENT_OF",
+        "relative_motion_residual_norm_max": 0.17950175037709812
+      },
+      "first_episode_id": "ve6b_5a72bbcbc1a76613fe75986a08ce7c70dea107b22e88ff2703b30e05ec1c1cee",
+      "first_track_id": 857,
+      "reasons": [
+        "RELATIVE_MOTION_CONTRADICTION"
+      ],
+      "relation_id": "ur6b_2e6daa3c087a0cfc1afd2aca850670e469a201f0a6afd3da0b085061fd87c96f",
+      "second_episode_id": "ve6b_d1e8c74a9375227d0ce24113cdfcc0e67a93531a0de48dcaa202f796923f30ed",
+      "second_track_id": 856,
+      "status": "REJECTED",
+      "thresholds": {
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15,
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0
+      },
+      "type": "COMPONENT_OF"
+    },
+    {
+      "claim_type": "EXPERIMENTAL_MEASURED_RELATION_NOT_GROUND_TRUTH",
+      "features": {
+        "appearance_features_used": false,
+        "association_frame_windows": null,
+        "center_distance_norm_max": 0.2936355567348353,
+        "common_frame_indices": [
+          295
+        ],
+        "common_frames": 1,
+        "consecutive_common_frames_max": 1,
+        "consecutive_motion_pairs": 0,
+        "first_bc_inside_second_fraction": 1.0,
+        "iou_max": 0.4160130424584062,
+        "iou_min": 0.4160130424584062,
+        "kind": "COMPONENT_OF",
+        "relative_motion_residual_norm_max": null
+      },
+      "first_episode_id": "ve6b_e7d593db13d587c08ec61b0210ce2fd3299f705720191eb40eef9192496943a3",
+      "first_track_id": 166,
+      "reasons": [
+        "INSUFFICIENT_COMMON_OBSERVATIONS",
+        "INSUFFICIENT_CONSECUTIVE_COMMON_OBSERVATIONS",
+        "NO_CONSECUTIVE_MOTION_EVIDENCE"
+      ],
+      "relation_id": "ur6b_400eec531bafe73e391ec424ac0afc438f63dadc0203ead5f6ae951c6749f540",
+      "second_episode_id": "ve6b_093bb091f609169005abce54ecba5b37fc01daf4b6a0750691f2707fa06cdde1",
+      "second_track_id": 185,
+      "status": "REJECTED",
+      "thresholds": {
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15,
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0
+      },
+      "type": "COMPONENT_OF"
+    },
+    {
+      "claim_type": "EXPERIMENTAL_MEASURED_RELATION_NOT_GROUND_TRUTH",
+      "features": {
+        "appearance_features_used": false,
+        "association_frame_windows": null,
+        "center_distance_norm_max": 0.3741133625104822,
+        "common_frame_indices": [
+          297,
+          298
+        ],
+        "common_frames": 2,
+        "consecutive_common_frames_max": 2,
+        "consecutive_motion_pairs": 1,
+        "first_bc_inside_second_fraction": 1.0,
+        "iou_max": 0.46307601997567166,
+        "iou_min": 0.38979973952185426,
+        "kind": "COMPONENT_OF",
+        "relative_motion_residual_norm_max": 0.045676023493975065
+      },
+      "first_episode_id": "ve6b_69c056197fb588cd2b38d96854e94771bc24bafb39d20fbcb151c54cdcd62ff1",
+      "first_track_id": 166,
+      "reasons": [
+        "INSUFFICIENT_COMMON_OBSERVATIONS",
+        "INSUFFICIENT_CONSECUTIVE_COMMON_OBSERVATIONS"
+      ],
+      "relation_id": "ur6b_409c563c332fc81d17d773c012914e5ce0e2959d908d994c6db36f3e94a31c34",
+      "second_episode_id": "ve6b_61abbac07b324bab961012df6f816f8d6d367d970cec5e35d27b80eb0821b3d4",
+      "second_track_id": 185,
+      "status": "REJECTED",
+      "thresholds": {
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15,
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0
+      },
+      "type": "COMPONENT_OF"
+    },
+    {
+      "claim_type": "EXPERIMENTAL_MEASURED_RELATION_NOT_GROUND_TRUTH",
+      "features": {
+        "appearance_features_used": false,
+        "association_frame_windows": null,
+        "center_distance_norm_max": 0.2250684084072937,
+        "common_frame_indices": [
+          1119,
+          1120,
+          1121,
+          1122,
+          1123,
+          1124,
+          1125,
+          1126,
+          1127,
+          1128,
+          1129,
+          1130,
+          1131,
+          1132,
+          1133,
+          1134,
+          1135,
+          1136,
+          1137,
+          1138,
+          1139,
+          1140,
+          1141,
+          1142,
+          1143
+        ],
+        "common_frames": 25,
+        "consecutive_common_frames_max": 25,
+        "consecutive_motion_pairs": 24,
+        "first_bc_inside_second_fraction": 0.68,
+        "iou_max": 0.47943355530523607,
+        "iou_min": 0.22114001028360136,
+        "kind": "COMPONENT_OF",
+        "relative_motion_residual_norm_max": 0.13026581997047149
+      },
+      "first_episode_id": "ve6b_1cd7f5d9e2802e7669b8da884ad2be6659cc825c3d413458e27d6aa4aeb51f15",
+      "first_track_id": 857,
+      "reasons": [
+        "PERSON_POSITION_NOT_SUPPORTED"
+      ],
+      "relation_id": "ur6b_4e9806347a8316ce600d6a1afe7f99ba4917f47a863040e2aeae517c030e872d",
+      "second_episode_id": "ve6b_6cd6969e002dda0020aa3d6eb16dff6703d2086133e5a217f2695f9bad23302c",
+      "second_track_id": 856,
+      "status": "REJECTED",
+      "thresholds": {
+        "max_center_distance_norm": 0.51,
+        "max_relative_motion_residual_norm": 0.15,
+        "min_common_frames": 3,
+        "min_consecutive_common_frames": 3,
+        "min_first_bc_inside_second_fraction": 1.0
+      },
+      "type": "COMPONENT_OF"
+    }
+  ],
+  "actual_retained_vehicle_events": [
+    {
+      "event_id": "b_v3_5c0ec71d32e0a4d16cab3f32",
+      "physical_unit_id": "track:185",
+      "passage_id": "track:185:episode:unreviewed-vehicle:passage:1",
+      "track_id": 185,
+      "episode_id": "unreviewed-vehicle",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "route": "LINE_MARGIN",
+      "status": "accepted",
+      "accepted_count_event": true,
+      "activation_frame": 251,
+      "decision_frame": 251,
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "namespace": "f2f6f4dbfdaea58789899986ebfff654d141028e8a79d32e67927cddd87d5398",
+      "evidence": {
+        "measured_crossing": true,
+        "band_observed": true,
+        "category_basis": {
+          "policy": "band_majority_ties_pending",
+          "votes": {
+            "motorcycle": 13
+          },
+          "source": "observed_object_BC_inside_finite_band",
+          "reviewed_category_attribution": false
+        },
+        "source_refs": [
+          {
+            "frame_index": 214,
+            "track_id": 185,
+            "original_detection_index": 3,
+            "raw_bbox": [
+              510.4429931640625,
+              214.33970642089844,
+              639.7294921875,
+              400.6895751953125
+            ],
+            "point": [
+              575.0862426757812,
+              400.6895751953125
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7775223255157471,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 237,
+            "track_id": 185,
+            "original_detection_index": 5,
+            "raw_bbox": [
+              198.051513671875,
+              234.2794952392578,
+              263.7280578613281,
+              306.96099853515625
+            ],
+            "point": [
+              230.88978576660156,
+              306.96099853515625
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7728268504142761,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 238,
+            "track_id": 185,
+            "original_detection_index": 9,
+            "raw_bbox": [
+              192.22840881347656,
+              240.37826538085938,
+              254.84251403808594,
+              304.8305969238281
+            ],
+            "point": [
+              223.53546142578125,
+              304.8305969238281
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.5589056611061096,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 239,
+            "track_id": 185,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              186.46780395507812,
+              236.63584899902344,
+              247.75833129882812,
+              303.20263671875
+            ],
+            "point": [
+              217.11306762695312,
+              303.20263671875
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7602413296699524,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 240,
+            "track_id": 185,
+            "original_detection_index": 6,
+            "raw_bbox": [
+              178.2327880859375,
+              223.3118133544922,
+              246.5972900390625,
+              302.26800537109375
+            ],
+            "point": [
+              212.4150390625,
+              302.26800537109375
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.6608575582504272,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 241,
+            "track_id": 185,
+            "original_detection_index": 6,
+            "raw_bbox": [
+              175.8321533203125,
+              236.1868896484375,
+              231.99029541015625,
+              300.8348388671875
+            ],
+            "point": [
+              203.91122436523438,
+              300.8348388671875
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7270392775535583,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 242,
+            "track_id": 185,
+            "original_detection_index": 5,
+            "raw_bbox": [
+              170.05377197265625,
+              236.76446533203125,
+              225.81109619140625,
+              299.01385498046875
+            ],
+            "point": [
+              197.93243408203125,
+              299.01385498046875
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7380300760269165,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 243,
+            "track_id": 185,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              163.72317504882812,
+              237.02044677734375,
+              219.61880493164062,
+              297.1885986328125
+            ],
+            "point": [
+              191.67098999023438,
+              297.1885986328125
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7561304569244385,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 244,
+            "track_id": 185,
+            "original_detection_index": 3,
+            "raw_bbox": [
+              160.51846313476562,
+              235.00146484375,
+              214.28976440429688,
+              295.21075439453125
+            ],
+            "point": [
+              187.40411376953125,
+              295.21075439453125
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7638905644416809,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 245,
+            "track_id": 185,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              158.0904541015625,
+              235.09707641601562,
+              204.37664794921875,
+              294.3599548339844
+            ],
+            "point": [
+              181.23355102539062,
+              294.3599548339844
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7211651802062988,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 246,
+            "track_id": 185,
+            "original_detection_index": 6,
+            "raw_bbox": [
+              151.9400177001953,
+              234.0081787109375,
+              202.3448944091797,
+              293.46240234375
+            ],
+            "point": [
+              177.1424560546875,
+              293.46240234375
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.6222954988479614,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 247,
+            "track_id": 185,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              148.62168884277344,
+              236.08401489257812,
+              197.75599670410156,
+              292.8159484863281
+            ],
+            "point": [
+              173.1888427734375,
+              292.8159484863281
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7072499394416809,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 248,
+            "track_id": 185,
+            "original_detection_index": 3,
+            "raw_bbox": [
+              144.31036376953125,
+              237.273681640625,
+              190.3502197265625,
+              292.6572265625
+            ],
+            "point": [
+              167.33029174804688,
+              292.6572265625
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7928062677383423,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 249,
+            "track_id": 185,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              141.90142822265625,
+              238.77395629882812,
+              185.614990234375,
+              292.6690368652344
+            ],
+            "point": [
+              163.75820922851562,
+              292.6690368652344
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7543820738792419,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 250,
+            "track_id": 185,
+            "original_detection_index": 6,
+            "raw_bbox": [
+              137.1563262939453,
+              239.6696014404297,
+              179.95289611816406,
+              292.14434814453125
+            ],
+            "point": [
+              158.5546112060547,
+              292.14434814453125
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7363947033882141,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 251,
+            "track_id": 185,
+            "original_detection_index": 5,
+            "raw_bbox": [
+              134.9884033203125,
+              241.08328247070312,
+              176.05081176757812,
+              291.6332092285156
+            ],
+            "point": [
+              155.5196075439453,
+              291.6332092285156
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.7443207502365112,
+            "measurement_provenance": "retained_phase_8_detection"
+          }
+        ],
+        "source_frames": [
+          214,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251
+        ],
+        "crossing_pairs": [
+          {
+            "first": {
+              "frame_index": 242,
+              "track_id": 185,
+              "original_detection_index": 5,
+              "raw_bbox": [
+                170.05377197265625,
+                236.76446533203125,
+                225.81109619140625,
+                299.01385498046875
+              ],
+              "point": [
+                197.93243408203125,
+                299.01385498046875
+              ],
+              "class_name": "motorcycle",
+              "effective_class_name": "motorcycle",
+              "resolved_class_name": null,
+              "role": "vehicle",
+              "episode_id": "unreviewed-vehicle",
+              "association_verified": false,
+              "association_id": null,
+              "observed": true,
+              "emitted": true,
+              "class_id": 3,
+              "confidence": 0.7380300760269165,
+              "measurement_provenance": "retained_phase_8_detection"
+            },
+            "second": {
+              "frame_index": 243,
+              "track_id": 185,
+              "original_detection_index": 2,
+              "raw_bbox": [
+                163.72317504882812,
+                237.02044677734375,
+                219.61880493164062,
+                297.1885986328125
+              ],
+              "point": [
+                191.67098999023438,
+                297.1885986328125
+              ],
+              "class_name": "motorcycle",
+              "effective_class_name": "motorcycle",
+              "resolved_class_name": null,
+              "role": "vehicle",
+              "episode_id": "unreviewed-vehicle",
+              "association_verified": false,
+              "association_id": null,
+              "observed": true,
+              "emitted": true,
+              "class_id": 3,
+              "confidence": 0.7561304569244385,
+              "measurement_provenance": "retained_phase_8_detection"
+            },
+            "intersection": {
+              "kind": "proper",
+              "point": [
+                192.1934707340319,
+                297.3409055575671
+              ],
+              "t": 0.916555871754563,
+              "u": 0.3094477228175511
+            },
+            "proof": "opposite_signed_measured_endpoints"
+          }
+        ],
+        "gaps": [],
+        "raw_track_changes": [],
+        "identity_conflicts": [],
+        "origin_polygon": "B",
+        "destination_polygon": null,
+        "destination_observed_ref": null,
+        "last_observed_origin_frame": 237,
+        "timeout_frames": null,
+        "direction_assumed": false,
+        "id_change_proven": false,
+        "physical_identity_basis": "raw_track_assumption",
+        "association_id": null,
+        "reviewed_category_attribution": false,
+        "finite_segment_crossing_unobserved": false,
+        "anchor": "raw_vehicle_bbox_bottom_center"
+      },
+      "display_id": "M1006"
+    },
+    {
+      "event_id": "b_v3_6153a76106ebe944bee1324c",
+      "physical_unit_id": "track:166",
+      "passage_id": "track:166:episode:unreviewed-vehicle:passage:1",
+      "track_id": 166,
+      "episode_id": "unreviewed-vehicle",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "route": "OCCLUSION_DIFF_POLYGON",
+      "status": "accepted",
+      "accepted_count_event": true,
+      "activation_frame": 273,
+      "decision_frame": 296,
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "namespace": "f2f6f4dbfdaea58789899986ebfff654d141028e8a79d32e67927cddd87d5398",
+      "evidence": {
+        "measured_crossing": false,
+        "band_observed": false,
+        "category_basis": {
+          "policy": "matching_observed_endpoints",
+          "origin_class": "motorcycle",
+          "destination_class": "motorcycle",
+          "origin_raw_class": "motorcycle",
+          "destination_raw_class": "motorcycle",
+          "source": "measured_endpoints_no_sample_in_band"
+        },
+        "source_refs": [
+          {
+            "frame_index": 188,
+            "track_id": 166,
+            "original_detection_index": 5,
+            "raw_bbox": [
+              587.8818359375,
+              200.81900024414062,
+              639.74267578125,
+              289.3401794433594
+            ],
+            "point": [
+              613.812255859375,
+              289.3401794433594
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.8041331171989441,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 213,
+            "track_id": 166,
+            "original_detection_index": 10,
+            "raw_bbox": [
+              583.9190673828125,
+              203.5606689453125,
+              639.81396484375,
+              283.76654052734375
+            ],
+            "point": [
+              611.8665161132812,
+              283.76654052734375
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.5303714275360107,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 296,
+            "track_id": 166,
+            "original_detection_index": 9,
+            "raw_bbox": [
+              72.30360412597656,
+              234.505859375,
+              89.33073425292969,
+              259.6518859863281
+            ],
+            "point": [
+              80.81716918945312,
+              259.6518859863281
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.5267859697341919,
+            "measurement_provenance": "retained_phase_8_detection"
+          }
+        ],
+        "source_frames": [
+          188,
+          213,
+          296
+        ],
+        "crossing_pairs": [],
+        "gaps": [
+          {
+            "from_frame": 213,
+            "to_frame": 296,
+            "missing_source_frames": 82
+          }
+        ],
+        "raw_track_changes": [],
+        "identity_conflicts": [],
+        "origin_polygon": "B",
+        "destination_polygon": "A",
+        "destination_observed_ref": {
+          "frame_index": 296,
+          "track_id": 166,
+          "original_detection_index": 9,
+          "raw_bbox": [
+            72.30360412597656,
+            234.505859375,
+            89.33073425292969,
+            259.6518859863281
+          ],
+          "point": [
+            80.81716918945312,
+            259.6518859863281
+          ],
+          "class_name": "motorcycle",
+          "effective_class_name": "motorcycle",
+          "resolved_class_name": null,
+          "role": "vehicle",
+          "episode_id": "unreviewed-vehicle",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "class_id": 3,
+          "confidence": 0.5267859697341919,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        "last_observed_origin_frame": 213,
+        "timeout_frames": null,
+        "direction_assumed": false,
+        "id_change_proven": false,
+        "physical_identity_basis": "raw_track_assumption",
+        "association_id": null,
+        "reviewed_category_attribution": false,
+        "finite_segment_crossing_unobserved": true,
+        "anchor": "raw_vehicle_bbox_bottom_center"
+      },
+      "previous_evidence_route": "ESTIMATED_TIMEOUT",
+      "display_id": "M1007"
+    },
+    {
+      "event_id": "b_v3_f45bb6f30c8f1a5e66d5240e",
+      "physical_unit_id": "track:856",
+      "passage_id": "track:856:episode:unreviewed-vehicle:passage:1",
+      "track_id": 856,
+      "episode_id": "unreviewed-vehicle",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "direction": "B_TO_A",
+      "route": "ESTIMATED_TIMEOUT",
+      "status": "accepted",
+      "accepted_count_event": true,
+      "activation_frame": 1203,
+      "decision_frame": 1203,
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "namespace": "f2f6f4dbfdaea58789899986ebfff654d141028e8a79d32e67927cddd87d5398",
+      "evidence": {
+        "measured_crossing": false,
+        "band_observed": false,
+        "category_basis": {
+          "policy": "matching_observed_endpoints",
+          "origin_class": "motorcycle",
+          "destination_class": "motorcycle",
+          "origin_raw_class": "motorcycle",
+          "destination_raw_class": "motorcycle",
+          "source": "timeout_origin_and_latest"
+        },
+        "source_refs": [
+          {
+            "frame_index": 1082,
+            "track_id": 856,
+            "original_detection_index": 8,
+            "raw_bbox": [
+              338.5489807128906,
+              226.51300048828125,
+              381.3918762207031,
+              271.68695068359375
+            ],
+            "point": [
+              359.9704284667969,
+              271.68695068359375
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.3305858075618744,
+            "measurement_provenance": "retained_phase_8_detection"
+          },
+          {
+            "frame_index": 1143,
+            "track_id": 856,
+            "original_detection_index": 7,
+            "raw_bbox": [
+              533.854736328125,
+              188.68228149414062,
+              639.574951171875,
+              289.5081787109375
+            ],
+            "point": [
+              586.71484375,
+              289.5081787109375
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.45464619994163513,
+            "measurement_provenance": "retained_phase_8_detection"
+          }
+        ],
+        "source_frames": [
+          1082,
+          1143
+        ],
+        "crossing_pairs": [],
+        "gaps": [
+          {
+            "from_frame": 1113,
+            "to_frame": 1119,
+            "missing_source_frames": 5
+          }
+        ],
+        "raw_track_changes": [],
+        "identity_conflicts": [],
+        "origin_polygon": "B",
+        "destination_polygon": null,
+        "destination_observed_ref": null,
+        "last_observed_origin_frame": 1143,
+        "timeout_frames": 60,
+        "direction_assumed": true,
+        "id_change_proven": false,
+        "physical_identity_basis": "raw_track_assumption",
+        "association_id": null,
+        "reviewed_category_attribution": false,
+        "finite_segment_crossing_unobserved": true,
+        "anchor": "raw_vehicle_bbox_bottom_center"
+      },
+      "display_id": "M1021"
+    }
+  ],
+  "bounded_user_reviews_not_applied_to_machine_ledger": [
+    {
+      "case": "person54",
+      "frames": [
+        57,
+        107
+      ],
+      "role": "PEDESTRIAN",
+      "parent_vehicle": null,
+      "business_rule": "Handcart vendor counts only as pedestrian; cart adds no motorcycle unit.",
+      "claim_type": "USER_REVIEW",
+      "role_does_not_itself_validate_passage": true
+    },
+    {
+      "case": "person166",
+      "frames": [
+        226,
+        226
+      ],
+      "role": "RIDER",
+      "parent_vehicle_raw_track_id": 185,
+      "claim_type": "USER_REVIEW",
+      "role_does_not_itself_validate_passage": true
+    },
+    {
+      "case": "person857",
+      "frames": [
+        1089,
+        1089
+      ],
+      "role": "RIDER",
+      "parent_vehicle_raw_track_id": 856,
+      "claim_type": "USER_REVIEW",
+      "role_does_not_itself_validate_passage": true
+    },
+    {
+      "case": "person3025",
+      "frames": [
+        5003,
+        5003
+      ],
+      "role": "PEDESTRIAN",
+      "parent_vehicle": null,
+      "claim_type": "USER_REVIEW",
+      "user_corrected_original_frame_50003_to_5003": true,
+      "role_does_not_itself_validate_passage": true
+    }
+  ],
+  "label_usability_reproduction": {
+    "path": "current-v3-frame-226-local-render.png",
+    "sha256": "301f9f3cd92e6d5224f822f61afede8588424b0067e376a43e0799858b535af5",
+    "claim_type": "LOCAL_FROZEN_RENDERER_REPRODUCTION_NOT_EXTRACTED_RELEASE_MP4_FRAME",
+    "frame_index": 226,
+    "opencv": "5.0.0",
+    "source_fps_observed": 29.78121400353632,
+    "raw_ids_present_in_labels": true,
+    "visual_observation": "Labels overlap and some other labels obscure text; no universal ID absence asserted."
+  },
+  "decode_method": "Sequential decode with exact BGR pixel SHA matching cache; mismatching random-seek images excluded.",
+  "visual_review_scope": "Eleven sampled source frames, not every frame in each interval.",
+  "new_detector_tracker_reid_or_counting_execution": false,
+  "machine_ledger_modified": false,
+  "source_or_parameters_modified": false,
+  "no_new_accuracy_claim": true
+}
