@@ -1,0 +1,60 @@
+{
+  "case_count": 6,
+  "cases": [
+    {
+      "case": "altered BC uses display union instead of raw measurement",
+      "expected_rejection_fragment": "raw BC not display union",
+      "observed_failures": [
+        "raw BC not display union: weekday_pagi/b_v3_16da798d36e3d1f1ea50c568/0/2"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "duplicate display ID across passages",
+      "expected_rejection_fragment": "unique passage display IDs",
+      "observed_failures": [
+        "weekday_pagi unique passage display IDs",
+        "weekday_pagi final display assignment matches ledger",
+        "weekday_pagi category/direction display format: C1000"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "vehicle receives raw person source",
+      "expected_rejection_fragment": "rider/person cannot supply vehicle BC",
+      "observed_failures": [
+        "rider/person cannot supply vehicle BC: weekday_pagi/b_v3_16da798d36e3d1f1ea50c568/0/2"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "pending added to accepted subtotal",
+      "expected_rejection_fragment": "independent aggregate reconciliation",
+      "observed_failures": [
+        "weekday_pagi independent aggregate reconciliation"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "same event retained in cancelled and active",
+      "expected_rejection_fragment": "cancelled excluded from active",
+      "observed_failures": [
+        "weekday_pagi cancelled excluded from active",
+        "weekday_pagi independent aggregate reconciliation"
+      ],
+      "status": "PASS"
+    },
+    {
+      "case": "measured crossing bridges missing source frame",
+      "expected_rejection_fragment": "crossing never spans observation gap",
+      "observed_failures": [
+        "weekday_pagi crossing never spans observation gap"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "checker_sha256": "09b7c059fd686ee90fdb6fccbd777bf67c33b200571377e822f8a4c8a47b435d",
+  "claim_type": "ACTUAL_CHECKER_NEGATIVE_CONTROL_EXECUTION_NOT_COUNTING_ACCURACY",
+  "new_counting_detector_tracker_reid_execution": false,
+  "status": "PASS"
+}

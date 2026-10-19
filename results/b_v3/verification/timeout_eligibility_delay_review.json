@@ -1,0 +1,1071 @@
+{
+  "checker_invariant": "activation_frame >= last_observed_origin_frame + timeout_frames, rather than equality; a deadline is a minimum elapsed gate and not a guaranteed acceptance time.",
+  "claim_type": "ACTUAL_RETAINED_REFERENCE_REVIEW_NOT_VISUAL_PHYSICAL_IDENTITY_REVIEW",
+  "core_source_sha256": "29cb1bdfd0ab27acd6a16c648ba711e6c90eeaa5807591360bad71d880a618d7",
+  "counting_rerun_performed_for_this_review": false,
+  "declared_scope_frames": [
+    6370,
+    6446
+  ],
+  "event": {
+    "accepted_count_event": true,
+    "activation_frame": 6446,
+    "category": "motorcycle",
+    "decision_frame": 6446,
+    "direction": "A_TO_B",
+    "display_id": "M2179",
+    "episode_id": "unreviewed-vehicle",
+    "event_id": "b_v3_cc15edff598c27e9d27ed90f",
+    "evidence": {
+      "anchor": "raw_vehicle_bbox_bottom_center",
+      "association_id": null,
+      "band_observed": false,
+      "category_basis": {
+        "destination_class": "motorcycle",
+        "destination_raw_class": "motorcycle",
+        "origin_class": "motorcycle",
+        "origin_raw_class": "motorcycle",
+        "policy": "matching_observed_endpoints",
+        "source": "timeout_origin_and_latest"
+      },
+      "crossing_pairs": [],
+      "destination_observed_ref": null,
+      "destination_polygon": null,
+      "direction_assumed": true,
+      "finite_segment_crossing_unobserved": true,
+      "gaps": [
+        {
+          "from_frame": 6370,
+          "missing_source_frames": 75,
+          "to_frame": 6446
+        }
+      ],
+      "id_change_proven": false,
+      "identity_conflicts": [],
+      "last_observed_origin_frame": 6370,
+      "measured_crossing": false,
+      "origin_polygon": "A",
+      "physical_identity_basis": "raw_track_assumption",
+      "raw_track_changes": [],
+      "reviewed_category_attribution": false,
+      "source_frames": [
+        6370,
+        6446
+      ],
+      "source_refs": [
+        {
+          "association_id": null,
+          "association_verified": false,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.2666896879673004,
+          "effective_class_name": "motorcycle",
+          "emitted": true,
+          "episode_id": "unreviewed-vehicle",
+          "frame_index": 6370,
+          "measurement_provenance": "retained_phase_8_detection",
+          "observed": true,
+          "original_detection_index": 7,
+          "point": [
+            157.60931396484375,
+            233.71728515625
+          ],
+          "raw_bbox": [
+            145.93234252929688,
+            200.7430419921875,
+            169.28628540039062,
+            233.71728515625
+          ],
+          "resolved_class_name": null,
+          "role": "vehicle",
+          "track_id": 2845
+        },
+        {
+          "association_id": null,
+          "association_verified": false,
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.5174289345741272,
+          "effective_class_name": "motorcycle",
+          "emitted": true,
+          "episode_id": "unreviewed-vehicle",
+          "frame_index": 6446,
+          "measurement_provenance": "retained_phase_8_detection",
+          "observed": true,
+          "original_detection_index": 4,
+          "point": [
+            617.0208740234375,
+            348.59979248046875
+          ],
+          "raw_bbox": [
+            594.2257080078125,
+            174.7383575439453,
+            639.8160400390625,
+            348.59979248046875
+          ],
+          "resolved_class_name": null,
+          "role": "vehicle",
+          "track_id": 2845
+        }
+      ],
+      "timeout_frames": 60
+    },
+    "namespace": "6e1357478248d75c61076674ae078ab7a687ab85f919253948f1e1428f81cada",
+    "passage_id": "track:2845:episode:unreviewed-vehicle:passage:1",
+    "physical_unit_id": "track:2845",
+    "role": "vehicle",
+    "route": "ESTIMATED_TIMEOUT",
+    "source_identity": {
+      "geometry_sha256": "e51a30e23ba57e6c30b14ae88ed7716103993105e375c855b1ebd00f4d2a7de2",
+      "height": 480,
+      "parent_run_id": "phase8_20261015T094649_587084Z",
+      "records_sha256": "9df3144b66ed617272800cf01cebbc1ed6195acb879fba47f9dc593cc1d9f8de",
+      "variant": "raw",
+      "video_sha256": "9271275e03bd75b2c3e373a7d1babbf8a79e4795662f691b584056f261185c9c",
+      "width": 640
+    },
+    "status": "accepted",
+    "track_id": 2845
+  },
+  "facts": [
+    "Original raw tracker ID2845 is motorcycle at6370, person continuously6371..6445, motorcycle at6446.",
+    "Vehicle state therefore has75missing vehicle-BC frames; person measurements are separate unknown-person observations.",
+    "The only vehicle observation at6370 cannot establish movement toward the line by itself.",
+    "The timeout core requires elapsed frames at least60 and eligibility including approaching evidence; acceptance occurs6446, not the earliest deadline6430.",
+    "Event remains ESTIMATED_TIMEOUT, measured_crossing=false, id_change_proven=false.",
+    "Its separate unknown-person passage is pending PERSON_ROLE_UNRESOLVED at6421."
+  ],
+  "frozen_core_modified": false,
+  "phase_9_action": "Review the same physical vehicle/rider around6370..6446, resolve role/identity and whether this timeout corresponds to a real passage before final business acceptance.",
+  "physical_identity": "UNKNOWN_WITHOUT_PIXEL_REVIEW",
+  "raw_observations_in_declared_scope": [
+    {
+      "class_name": "motorcycle",
+      "frame_index": 6370,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        145.93234252929688,
+        200.7430419921875,
+        169.28628540039062,
+        233.71728515625
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6371,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        146.42359924316406,
+        199.656982421875,
+        169.95143127441406,
+        233.82476806640625
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6372,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        146.98251342773438,
+        199.38262939453125,
+        171.91574096679688,
+        232.86721801757812
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6373,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        147.72702026367188,
+        199.05801391601562,
+        172.33917236328125,
+        233.08682250976562
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6374,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        148.53958129882812,
+        198.8714599609375,
+        173.11422729492188,
+        233.893798828125
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6375,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        149.3828125,
+        198.5555419921875,
+        173.5882568359375,
+        234.390625
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6376,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        150.8833770751953,
+        197.940185546875,
+        176.1373748779297,
+        234.75021362304688
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6377,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        154.6484832763672,
+        197.87046813964844,
+        178.79237365722656,
+        234.8432159423828
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6378,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        155.50253295898438,
+        197.64395141601562,
+        179.53958129882812,
+        234.59872436523438
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6379,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        155.87033081054688,
+        197.67703247070312,
+        179.77273559570312,
+        235.16586303710938
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6380,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        154.93798828125,
+        197.69186401367188,
+        180.59506225585938,
+        235.06552124023438
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6381,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        162.57440185546875,
+        198.04867553710938,
+        184.388916015625,
+        234.10275268554688
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6382,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        161.81024169921875,
+        196.4515380859375,
+        185.7696533203125,
+        235.54660034179688
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6383,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        163.38949584960938,
+        196.58212280273438,
+        186.14077758789062,
+        237.74325561523438
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6384,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        164.6641845703125,
+        195.94326782226562,
+        189.19171142578125,
+        237.26016235351562
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6385,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        165.52734375,
+        196.22610473632812,
+        189.2747802734375,
+        236.52261352539062
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6386,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        168.22238159179688,
+        195.56204223632812,
+        191.11441040039062,
+        236.197998046875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6387,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        169.07017517089844,
+        195.78622436523438,
+        192.6332550048828,
+        236.35110473632812
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6388,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        168.44894409179688,
+        194.9832000732422,
+        194.73727416992188,
+        237.32359313964844
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6389,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        172.4549560546875,
+        195.16366577148438,
+        196.740478515625,
+        238.30029296875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6390,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        173.57290649414062,
+        194.86904907226562,
+        197.65850830078125,
+        239.04727172851562
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6391,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        176.97174072265625,
+        194.88467407226562,
+        199.86822509765625,
+        238.15194702148438
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6392,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        179.28988647460938,
+        194.37368774414062,
+        202.94595336914062,
+        238.42318725585938
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6393,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        181.55972290039062,
+        194.08221435546875,
+        204.38217163085938,
+        239.15972900390625
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6394,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        182.16744995117188,
+        193.62734985351562,
+        208.30801391601562,
+        238.20822143554688
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6395,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        185.4405059814453,
+        193.47479248046875,
+        211.5845489501953,
+        239.3831787109375
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6396,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        188.09686279296875,
+        193.3150634765625,
+        214.53823852539062,
+        243.18048095703125
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6397,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        189.41622924804688,
+        192.97714233398438,
+        216.00161743164062,
+        240.389892578125
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6398,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        192.2266082763672,
+        192.61383056640625,
+        218.06776428222656,
+        240.81048583984375
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6399,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        194.74771118164062,
+        192.0711669921875,
+        221.69039916992188,
+        241.13214111328125
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6400,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        196.85008239746094,
+        191.497802734375,
+        225.08924865722656,
+        242.68765258789062
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6401,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        199.32748413085938,
+        191.5136260986328,
+        225.19003295898438,
+        242.8362579345703
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6402,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        202.96896362304688,
+        191.14450073242188,
+        231.49163818359375,
+        244.81338500976562
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6403,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        204.80606079101562,
+        190.946044921875,
+        233.22207641601562,
+        244.39764404296875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6404,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        207.47935485839844,
+        190.66519165039062,
+        240.3384246826172,
+        243.97845458984375
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6405,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        210.84588623046875,
+        190.46688842773438,
+        241.0506591796875,
+        245.92904663085938
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6406,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        211.861328125,
+        189.849853515625,
+        242.94378662109375,
+        246.93194580078125
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6407,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        211.61178588867188,
+        189.71755981445312,
+        247.75650024414062,
+        246.54739379882812
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6408,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        221.3624267578125,
+        190.109375,
+        252.79254150390625,
+        249.15545654296875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6409,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        224.53952026367188,
+        188.6292724609375,
+        255.89443969726562,
+        248.74224853515625
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6410,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        228.2041015625,
+        188.23513793945312,
+        260.6573486328125,
+        251.25137329101562
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6411,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        231.48748779296875,
+        187.105712890625,
+        263.9449462890625,
+        252.394775390625
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6412,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        235.11618041992188,
+        186.73538208007812,
+        269.1251525878906,
+        254.47811889648438
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6413,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        239.51486206054688,
+        186.63067626953125,
+        281.2926330566406,
+        254.279052734375
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6414,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        244.34791564941406,
+        186.42526245117188,
+        281.1680908203125,
+        253.07046508789062
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6415,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        249.33859252929688,
+        185.1331787109375,
+        283.1486511230469,
+        253.65475463867188
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6416,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        253.58297729492188,
+        184.97604370117188,
+        289.1157531738281,
+        255.12008666992188
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6417,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        257.0328369140625,
+        184.7972412109375,
+        292.729736328125,
+        255.53628540039062
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6418,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        264.65643310546875,
+        183.76882934570312,
+        297.91363525390625,
+        254.67684936523438
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6419,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        268.18707275390625,
+        182.60330200195312,
+        305.89056396484375,
+        261.2580871582031
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6420,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        274.5782775878906,
+        182.5404052734375,
+        312.4880676269531,
+        260.3173828125
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6421,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        281.75506591796875,
+        180.50540161132812,
+        322.27264404296875,
+        264.46527099609375
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6422,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        288.612060546875,
+        180.93832397460938,
+        329.0421142578125,
+        263.2413635253906
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6423,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        294.68939208984375,
+        179.39517211914062,
+        334.87225341796875,
+        266.2644958496094
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6424,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        301.0443115234375,
+        179.0665283203125,
+        340.46435546875,
+        267.2493591308594
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6425,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        309.9758605957031,
+        178.18280029296875,
+        354.4921569824219,
+        269.6174621582031
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6426,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        319.2103271484375,
+        176.96099853515625,
+        365.73089599609375,
+        270.4110107421875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6427,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        327.2875671386719,
+        175.58108520507812,
+        371.2594299316406,
+        270.3598327636719
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6428,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        335.9652099609375,
+        174.641845703125,
+        379.58251953125,
+        275.8358154296875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6429,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        345.696044921875,
+        174.05105590820312,
+        388.74658203125,
+        277.7414245605469
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6430,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        355.5167236328125,
+        172.3704833984375,
+        401.0362548828125,
+        285.35479736328125
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6431,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        365.6584777832031,
+        170.0833740234375,
+        412.0968933105469,
+        282.0461120605469
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6432,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        377.01593017578125,
+        169.14675903320312,
+        421.53851318359375,
+        287.4553527832031
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6433,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        389.23583984375,
+        167.05844116210938,
+        433.8504638671875,
+        288.6577453613281
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6434,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        402.3455810546875,
+        164.7684326171875,
+        449.27294921875,
+        290.4202880859375
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6435,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        416.3874206542969,
+        162.35467529296875,
+        461.9306945800781,
+        293.3147277832031
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6436,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        431.1192626953125,
+        159.48895263671875,
+        480.65185546875,
+        299.7389831542969
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6437,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        447.61328125,
+        157.26025390625,
+        501.1026611328125,
+        302.384033203125
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6438,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        466.3221435546875,
+        155.93218994140625,
+        521.7154541015625,
+        304.9564208984375
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6439,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        484.397705078125,
+        153.64627075195312,
+        543.96142578125,
+        310.27581787109375
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6440,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        505.09014892578125,
+        150.01821899414062,
+        568.9519653320312,
+        315.3997497558594
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6441,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        527.2550048828125,
+        146.81781005859375,
+        596.0042724609375,
+        319.4716796875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6442,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        548.923095703125,
+        144.08856201171875,
+        631.953369140625,
+        323.1990966796875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6443,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        573.548583984375,
+        141.6630859375,
+        639.760986328125,
+        322.20166015625
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6444,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        565.009521484375,
+        139.0135498046875,
+        639.7984619140625,
+        305.04412841796875
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "person",
+      "frame_index": 6445,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        582.6094970703125,
+        136.08175659179688,
+        639.7491455078125,
+        309.3912048339844
+      ],
+      "track_id": 2845
+    },
+    {
+      "class_name": "motorcycle",
+      "frame_index": 6446,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        594.2257080078125,
+        174.7383575439453,
+        639.8160400390625,
+        348.59979248046875
+      ],
+      "track_id": 2845
+    }
+  ],
+  "risk": "A long class/role handoff can reconnect sparse vehicle observations under one raw ID. A single raw ID is an operational assumption, not physical identity verification.",
+  "run_id": "20261019T045405_106031Z",
+  "source_records_sha256": "9df3144b66ed617272800cf01cebbc1ed6195acb879fba47f9dc593cc1d9f8de",
+  "video_id": "weekend_siang"
+}
