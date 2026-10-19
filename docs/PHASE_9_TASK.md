@@ -4,6 +4,8 @@
 
 **FACT — kesiapan teknis saat ini:** snapshot revisi `20261019T045405_106031Z` telah mereplay seluruh delapan video/72.590 frame dari cache terverifikasi, tanpa detector/tracker/ReID ulang. [Retensi aktual](../results/b_v3/execution/final_20261019T045405_106031Z/) dan [audit independen](../results/b_v3/verification/final_delta_audit.json) menyediakan event, pending, konfigurasi, source SHA, serta rekonsiliasi baseline. **Phase 9 sudah dapat dimulai untuk audit snapshot ini**; pending tidak perlu nol. Izin memulai audit bukan kesimpulan siap produksi dan bukan pernyataan audit telah selesai. Render penuh/publikasi anotasi mempunyai bukti delivery tersendiri; replay lokal yang dirujuk di sini tidak merender delapan video.
 
+**FACT — anotasi untuk audit sudah tersedia:** [delapan video B v3 di GitHub](../results/b_v3/VIDEOS.md), [hasil Kaggle yang identik dengan replay lokal](../results/b_v3/verification/actual_kaggle_local_comparison.json), dan [checksum publikasi](../results/b_v3/publication/final_verification.json). Video tidak bergantung pada masa aktif sesi Kaggle. Phase 9 belum dinyatakan selesai.
+
 ## Objektif
 
 Membangun referensi audit yang dapat ditelusuri tanpa menyebutnya ground truth formal. Pastikan setiap event yang direview mewakili passage fisik yang dimaksud, dan catat passage yang terlewat atau dihitung keliru. Tujuan bukan membuat pending nol.

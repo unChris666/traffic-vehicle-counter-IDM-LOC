@@ -38,3 +38,5 @@ B v2 melaporkan242 kunci pending dengan scope lama. B v3 juga menampilkan unknow
 3. Pertahankan snapshot B v2/B v3, catat perubahan per passage fisik dan regresi. Turunnya pending bukan kriteria keberhasilan tunggal; accepted yang salah, kendaraan terlewat, dan role yang salah harus ikut dicari.
 
 Berkas per-video yang perlu direview ada pada [snapshot aktual](execution/final_20261019T045405_106031Z/): `pending_groups.json.gz`, `person_role_review_queue.json.gz`, `counting_result.json.gz`, dan `comparison_b_v2.json.gz`. Preview anotasi berada di [annotated_previews](review/annotated_previews/). Status render penuh Kaggle dan publikasi video harus mengikuti bukti delivery tersendiri; replay lokal ini tidak merender delapan video.
+
+**Update delivery aktual:** delapan anotasi penuh sudah terbit di [GitHub](VIDEOS.md); [bukti Kaggle/local](verification/actual_kaggle_local_comparison.json) identik untuk seluruh ledger dan [verifikasi publikasi](publication/final_verification.json) cocok untuk semua aset. Daftar kelompok di atas tetap mengacu pada snapshot keputusan yang sama.
