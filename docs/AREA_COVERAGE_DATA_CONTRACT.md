@@ -1,5 +1,24 @@
 # Area Coverage — kontrak data dan provenance
 
+## LI-4 implemented offline package
+
+`li4_package_v1` adalah manifest paket view/export baru dengan package_status
+SUCCEEDED_WITH_WARNINGS terpisah dari analysis_status PARTIAL pada pilot ini.
+Seluruh source packet LI-3 berada di snapshot/ dan source_manifest_sha256
+mengikat snapshot tersebut. Files daftar lengkap, hash/bytes dan verifier
+LI-3 reused; semantic verifier merekonstruksi exports dari stored outcomes,
+bukan rerouting. Proyeksi display dipin lewat versi pyproj/PROJ manifest.
+
+`li4_view_v1` summary dan buildings JSON/CSV/GeoJSON memakai source_row_index
+untuk 2623 rows; selected denominator tetap 1322. Route GeoJSON memuat stored
+candidate saja termasuk over-time, connector GeoJSON adalah ledger terpisah.
+Geometry interchange EPSG:4326 [lon,lat]. CSV empty cell=null; structured JSON
+aman; formula-like strings escaped. Capacity hanya per decision+unit,
+mixed_unit_total/final_business_capacity null; unknown capacity counts berbeda
+dari unknown access. review.html embedded tanpa network/CDN. Build atomic di
+direktori baru; gagal write/verify tidak menerbitkan output sukses.
+[Kontrak scope, bukti, dan batas](LI_4_REVIEW.md).
+
 ## LI-3 serialization yang diimplementasikan
 
 `li3_pilot_config_v1` membekukan N1 scope, policy v8_li3, bbox, source-cache

@@ -1,5 +1,15 @@
 # Location Intelligent — roadmap implementasi
 
+## Update LI-4 terbaru — 23 Oktober 2026
+
+LI-4 scope terbatas selesai: paket N1 mandiri, peta/tabel/CSV/GeoJSON,
+rekonsiliasi seluruh 2623 source rows dan reopen offline. **PASS packaging;
+analysis tetap PARTIAL**, unknown tidak dipromosikan. 228 tes PASS.
+[Review dan batas pengujian browser](LI_4_REVIEW.md). Tidak menjalankan sumber,
+routing atau Traffic ulang. LI-5 belum dimulai; perlakuan universe/predicate/
+boundary/union/coverage Recount perlu disepakati. Tabel historis di bawah
+mempertahankan status sebelum implementasi terbaru.
+
 ## Update LI-3 terbaru
 
 Brief owner sudah dijalankan pada N1: source/graph/connectors/pilot/replay

@@ -367,3 +367,13 @@ shared elements cocok; non-atomic warning dan raw failures tetap disimpan.
 selected;2623source rows accounted.201tests PASS;21calculation artifacts
 replay identik tanpa network. **Pilot PARTIAL**, bukan production/ETA/
 population approval. [Review](LI_3_REVIEW.md).
+
+## D36 — LI-4 terbatas pada snapshot N1 yang dibekukan
+
+23 Oktober 2026, keputusan owner: lanjut persistence/map/table/export tanpa
+menunggu seluruh unknown. Semua source rows direkonsiliasi; view/export sama;
+reopen tanpa re-fetch; export failure tidak sukses; unknown tidak menjadi
+zero/accepted; mixed capacity units tidak dijumlahkan; experimental label wajib.
+Review sumber akses tetap pekerjaan terpisah. Implementasi dan bukti:
+[LI_4_REVIEW](LI_4_REVIEW.md). Tidak mengubah izin motor, threshold atau unit
+bisnis. Tidak mengesahkan produksi, LI-5, Recount atau PPAC.

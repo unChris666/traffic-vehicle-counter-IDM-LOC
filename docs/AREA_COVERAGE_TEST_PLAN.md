@@ -1,5 +1,16 @@
 # Area Coverage — rencana verifikasi
 
+## LI-4 executed scope — 23 Oktober 2026
+
+228 PASS =158 existing LI +43 LI-3 +27 LI-4. New suite:
+`li4_package_tests.py`; browser smoke: `li4_browser_smoke.cjs`. Gate mencakup
+source-row reconciliation, export/view equivalence, unknown/null dan units,
+relocation, checksum failures, partial-write rollback, final verification
+failure, read-only archived CLI dan HTML/CSV injection. Actual packet reopen
+memblok socket; desktop/mobile HTML tests offline. File navigation di managed
+browser diblok, sehingga DOM/interaksi diuji dengan setContent. Tidak mengklaim
+user-device test atau field accessibility validation. [Bukti](LI_4_REVIEW.md).
+
 ## LI-3 actual validation
 
 201tests PASS:158existing pada system Python dan43LI-3 offline tests pada

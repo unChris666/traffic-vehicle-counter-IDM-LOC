@@ -1,0 +1,42 @@
+// Usage: node notebooks/li4_browser_smoke.cjs PACKAGE_DIR OUTPUT_DIR
+// Loads retained HTML bytes with setContent: file:// navigation is blocked in this managed browser.
+const {chromium}=require('playwright');
+const fs=require('fs'),path=require('path');
+const root=path.resolve(process.argv[2]||''),out=path.resolve(process.argv[3]||'');
+if(process.argv.length!==4)throw Error('Provide package and output directories');
+fs.mkdirSync(out,{recursive:true});
+(async()=>{
+const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
+const context=await browser.newContext({viewport:{width:1440,height:1080}});
+await context.setOffline(true);
+const page=await context.newPage(),errors=[],requests=[];
+page.on('pageerror',e=>errors.push(e.message));
+page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
+await page.setContent(require('fs').readFileSync(path.join(root,'review.html'),'utf8'),{waitUntil:'load'});
+await page.waitForFunction(()=>window.LI4_QA&&window.LI4_QA.summary.source_records===2623);
+const sourceManifest=JSON.parse(fs.readFileSync(path.join(root,'manifest.json'),'utf8'));
+const all=await page.locator('#visible').textContent();
+await page.selectOption('#filter','ACCESS_UNVERIFIED');
+if(await page.evaluate(()=>LI4_QA.filteredRows)!==620)throw Error('Unknown filter mismatch');
+await page.locator('#rows button').first().click();
+if(!(await page.locator('#detail').textContent()).includes('"total_time_min": null'))throw Error('Unknown time became numeric');
+await page.selectOption('#filter','ACCEPTED');
+await page.locator('#rows button').first().click();
+if(!(await page.locator('#detail').textContent()).includes('"route_available": true'))throw Error('Missing accepted route');
+await page.click('#fit-route');
+await page.selectOption('#filter','ACCESS_UNVERIFIED');
+if(await page.evaluate(()=>LI4_QA.selectedRow)!==null)throw Error('Filtered-out selection was retained');
+await page.selectOption('#filter','ACCEPTED');await page.locator('#rows button').first().click();await page.click('#fit-route');
+await page.screenshot({path:path.join(out,'desktop.png'),fullPage:true});
+await page.selectOption('#filter','');
+await page.fill('#search','EVIDENCE_INCOMPLETE');
+const searchCount=await page.evaluate(()=>LI4_QA.filteredRows);
+await page.fill('#search','');await page.click('#next');
+if(!(await page.locator('#page').textContent()).includes('2/'))throw Error('Pagination failed');
+await page.setViewportSize({width:390,height:844});
+if(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth))throw Error('Mobile horizontal overflow');
+await page.screenshot({path:path.join(out,'mobile.png'),fullPage:true});
+if(errors.length||requests.length)throw Error(JSON.stringify({errors,requests}));
+console.log(JSON.stringify({status:'PASS',offline:true,method:'local HTML bytes via setContent; not file navigation',source_manifest_sha256:sourceManifest.source_manifest_sha256,browser:browser.version(),playwright:require('playwright/package.json').version,node:process.version,all,unknown_filter:620,searchCount,pageErrors:errors,networkRequests:requests}));
+await browser.close();
+})().catch(e=>{console.error(e);process.exit(1);});

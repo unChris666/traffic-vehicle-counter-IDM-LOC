@@ -84,3 +84,12 @@ JSON bukan pengukuran transfer network/biaya. Tidak memasang OSMnx.
 Masih belum ada graph motor nyata, automatic entrance/barrier adapter atau
 conditional/restriction parser. LI-3 full belum selesai; PPAC/UI/Traffic tidak
 dijalankan. Semua status harus dibaca sesuai batas ini.
+
+## LI-4 N1 offline review — 23 Oktober 2026
+
+[Paket mandiri](li4_n1_20261023_v1/README.md) ·
+[Review HTML](li4_n1_20261023_v1/review.html) ·
+[Bukti QA](li4_n1_20261023_validation/receipt.json) ·
+[Review engineering](../../docs/LI_4_REVIEW.md).
+PASS packaging/reconciliation, analysis PARTIAL. Semua 2623 source rows
+dipertahankan; tidak mengambil data atau menjalankan routing ulang.

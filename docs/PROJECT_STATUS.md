@@ -1,5 +1,15 @@
 # Location Intelligent — status proyek terverifikasi
 
+## Status terbaru — LI-4 terbatas, 23 Oktober 2026
+
+**LI-4 PASS untuk offline persistence/review/export N1; analisis PARTIAL.**
+Paket 2623 source rows, 1322 selected, 648 stored routes; hasil tetap
+641 accepted-scenario/620 unverified/54 no-valid-connector/7 over-time.
+228 tes PASS; manifest paket/sumber verified dan relocated reopen tanpa network.
+Browser QA offline memakai local HTML bytes (file navigation diblok oleh
+managed browser). [Review](LI_4_REVIEW.md). LI-5/Recount/PPAC belum dimulai.
+Tidak mengubah policy/model/source snapshot. Bagian berikut adalah riwayat.
+
 ## Terbaru — LI-3 N1 actual pilot
 
 LI-3 source/graph/connectors/replay sudah diimplementasikan dan pilot nyata

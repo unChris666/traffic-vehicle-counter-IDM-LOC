@@ -1,0 +1,52 @@
+{
+  "analysis_status": "PARTIAL",
+  "artifacts": {
+    "browser.json": "29dc24d57716b0ce57c8d5a9dc03c620b50bd8396ce1bc2d4d7232ab97f47ddd",
+    "build.json": "bef8f94e4854f6cf71ca834feb43c3854d4b95877117d557342b4d96180832d0",
+    "desktop.png": "8adb4b9e7c291033a02af29943c9e6a56df3d6f4625390f85dc4f8e343915f4c",
+    "existing-li-tests.log": "56fd4c3e72187b08c3f213a03d833353da6181bfb708b6376a7f028d5d79a5be",
+    "li3-tests.log": "f09b127de244399a964f3614d27d7d5dfa8bd9f6c6c241e3d2bd1337f910cd69",
+    "li4-tests.log": "5d9604303f13be882244ac1feaf28d34a2dfda2ffe1538b150cbd91a9a02bb7b",
+    "mobile.png": "56ae4a4eb7d266016ef92dedf4d5952dee770b44596716d9a0220549bef10906",
+    "relocated-reopen.json": "fa470a1ca4f4c9975bbdb1bd745a5a45e43c429b891d1832effe98009f3562cb"
+  },
+  "browser_field_validation": false,
+  "browser_method": "Offline local HTML bytes loaded via setContent; file:// navigation blocked by managed browser policy",
+  "capacity_unit_business_validation": false,
+  "code_sha256": {
+    "li4_browser_smoke.cjs": "800cbfb64cdd42cb1fba4e4c5a695608e244ea5145fcc44d07c6631999603f86",
+    "li4_package_tests.py": "3cbe08d77a41b6fed3e0598cc3272ecef47bf89822ff34d37b4f8587c923c535",
+    "location_intelligent_li4.html": "5d1895738bb04bd0c01cc1d05ed20d65ba59936f741c5bd9933965a3ddee0392",
+    "location_intelligent_li4.py": "bb2e790194041ef2eef55951e19405369436f9e0f27e0c1aa1fe38adbf10a72f"
+  },
+  "commands": [
+    "PROJ_NETWORK=OFF /workspace/.venvs/location-intelligent-sources/bin/python -B notebooks/location_intelligent_li4.py build --source results/location_intelligent/li3_n1_20261022_v1 --output results/location_intelligent/li4_n1_20261023_v1",
+    "PROJ_NETWORK=OFF /usr/bin/python3 -B -m unittest discover -s notebooks -p location_intelligent_*tests.py",
+    "PROJ_NETWORK=OFF /workspace/.venvs/location-intelligent-sources/bin/python -B -m unittest discover -s notebooks -p li3_*tests.py",
+    "PROJ_NETWORK=OFF /workspace/.venvs/location-intelligent-sources/bin/python -B -m unittest discover -s notebooks -p li4_*tests.py",
+    "node notebooks/li4_browser_smoke.cjs results/location_intelligent/li4_n1_20261023_v1 /workspace/scratch/li4/final-browser"
+  ],
+  "date": "2026-10-23",
+  "excluded": 1301,
+  "inference_routing_or_retrieval_run": false,
+  "package_manifest_sha256": "909987bb3114316f513d3035a92d1ff21a4fce5b4aa0ae1c3dc7deee5a0be166",
+  "package_status": "SUCCEEDED_WITH_WARNINGS",
+  "schema_version": "li4_quality_receipt_v1",
+  "scope": "Frozen N1 packet presentation/export only",
+  "selected": 1322,
+  "source_manifest_sha256": "0f309776b1e6302aa67183818b0354725ff9d07a4338f1b723241b5e53676eb9",
+  "source_rows": 2623,
+  "status": "PASS_LIMITED_SCOPE",
+  "stored_connectors": 9119,
+  "stored_routes": 648,
+  "tests": {
+    "errors": 0,
+    "existing_li": 158,
+    "failures": 0,
+    "li3": 43,
+    "li4": 27,
+    "skips": 0,
+    "total": 228
+  },
+  "timezone": "Asia/Jakarta"
+}

@@ -1,5 +1,15 @@
 # Location Intelligent / Area Coverage — arsitektur integrasi
 
+## LI-4 boundary terbaru
+
+`notebooks/location_intelligent_li4.py` membaca verified frozen LI-3, menyalin
+source packet, join stored decisions/selection/capacity, mengekspor geometri
+stored path via display-only transform, dan mempublikasikan paket setelah
+verify. `location_intelligent_li4.html` adalah derived offline review view,
+bukan production UI/framework. Tidak memanggil routing/acquisition/Traffic.
+Peta, tabel dan ekspor berasal dari dataset kanonis sama. Snapshot LI-3 tidak
+diubah. [Review LI-4](LI_4_REVIEW.md); review sumber akses terpisah.
+
 ## Implementasi LI-3 aktual
 
 Helper baru tetap di notebooks/: source I/O, OSM normalization/restrictions,
