@@ -1,0 +1,290 @@
+{
+  "schema_version": "phase8_b_v4_review_overlay_v1",
+  "donor_manifest_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+  "purpose": "SOURCE_BOUND_P1_REVIEW_ASSISTED_EXPERIMENT_NOT_MACHINE_PREDICTION",
+  "videos": [
+    {
+      "video_id": "weekday_siang",
+      "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b",
+      "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "reviews": [
+        {
+          "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+          "human_confirmation_status": "NOT_NEWLY_ADJUDICATED_BY_USER",
+          "reviewed_decision_authority": {
+            "path": "results/b_v8/fixtures/blocker4843/user_task.txt",
+            "sha256": "aaa148b2963de6af9e7864623c60c32e365e07d7284f664e4b8b4fe08a533077",
+            "kind": "EXPLICIT_USER_INSTRUCTION"
+          },
+          "reviewer": "CODEX_SOURCE_PIXELS_REVIEW",
+          "source_review_is_formal_ground_truth": false,
+          "scope_extent_is_engineering_assumption": true,
+          "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+          "type": "SAME_VEHICLE",
+          "scopes": [
+            {
+              "track_id": 4808,
+              "start_frame": 7860,
+              "end_frame": 7907,
+              "raw_family": "vehicle",
+              "physical_unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+              "episode_id": "reviewed-red-episode"
+            },
+            {
+              "track_id": 4843,
+              "start_frame": 7928,
+              "end_frame": 7955,
+              "raw_family": "vehicle",
+              "physical_unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+              "episode_id": "reviewed-red-episode"
+            }
+          ],
+          "confirmed_frames": [
+            7860,
+            7888,
+            7899,
+            7904,
+            7907,
+            7928,
+            7930,
+            7935,
+            7950,
+            7955
+          ],
+          "evidence": [
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7860,
+              "source_frame_pixel_sha256": "126fa1c413b5adfca04b031b2217067ca617933d1e27d84500f5b895317c1743"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7888,
+              "source_frame_pixel_sha256": "4101f6171e7407e0bc70ca4cecfa4cba50d127b1b190d3398a7aab127d444adf"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7899,
+              "source_frame_pixel_sha256": "3082e021b26635bc4e3e7ad565670f3915c60ec2927d656cfe300fbdcf30d6de"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7904,
+              "source_frame_pixel_sha256": "6a6a648d0561a23a5a2a8356d4f63d21928e96389953a5417bb4562ae5d070c9"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7907,
+              "source_frame_pixel_sha256": "2b1c7e2258cc143ddfa1c04a5e27a45cc421ad73061f436758a335c640753b76"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7928,
+              "source_frame_pixel_sha256": "3292d668d2682dd56c0c687cb23568ddc5ea28fbf7e96c6ad98e10c247783c42"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7930,
+              "source_frame_pixel_sha256": "f00ebe6f3463c44af135789f87bcfd9a8c86ff7d891d4afc5276eb1a77798d35"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7935,
+              "source_frame_pixel_sha256": "52854cda30e24c9704421c299aa36c6d6585411c7d787c01abbff0610f9eae24"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7950,
+              "source_frame_pixel_sha256": "b153e2fa5c14668807c4ef42d04ca7d459359b9d4be57adef0f7cef493b4a049"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7955,
+              "source_frame_pixel_sha256": "d26854c1c24bfe703bf70a6b1dd6e0601e605c54c4cfe95ccafa5ebc22e42f75"
+            }
+          ],
+          "observation": "Red motorcycle with dark-shirt rider/tan trousers approaches as4808 before SUV occlusion and appears as4843 afterward. Both source scopes represent one reviewed physical passage; bounding boxes remain detector measurements.",
+          "decision": "One eligible red motorcycle passage; retain inferred LINE_MARGIN across source gap7907\u21927928, never measured.",
+          "provenance_boundary": "The user supplied the physical-case counting decision. Raw-ID assignment and bounded scopes are AI pixel adjudication, not a new user raw-ID label.",
+          "scope_extent_note": "Bounded visual and retained-measurement adjudication; no raw-ID-global extension."
+        },
+        {
+          "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+          "human_confirmation_status": "NOT_NEWLY_ADJUDICATED_BY_USER",
+          "reviewed_decision_authority": {
+            "path": "results/b_v8/fixtures/blocker4843/user_task.txt",
+            "sha256": "aaa148b2963de6af9e7864623c60c32e365e07d7284f664e4b8b4fe08a533077",
+            "kind": "EXPLICIT_USER_INSTRUCTION"
+          },
+          "reviewer": "CODEX_SOURCE_PIXELS_REVIEW",
+          "source_review_is_formal_ground_truth": false,
+          "scope_extent_is_engineering_assumption": true,
+          "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+          "type": "SPLIT_IDENTITY",
+          "scopes": [
+            {
+              "track_id": 4843,
+              "start_frame": 7874,
+              "end_frame": 7905,
+              "raw_family": "vehicle",
+              "physical_unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+              "episode_id": "reviewed-blue-before-episode"
+            }
+          ],
+          "confirmed_frames": [
+            7874,
+            7888,
+            7899,
+            7905
+          ],
+          "evidence": [
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7874,
+              "source_frame_pixel_sha256": "0a832635a4299b538981cd968cf6fe912a13061dc4abbb7fff4d2aae2ff1474b"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7888,
+              "source_frame_pixel_sha256": "4101f6171e7407e0bc70ca4cecfa4cba50d127b1b190d3398a7aab127d444adf"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7899,
+              "source_frame_pixel_sha256": "3082e021b26635bc4e3e7ad565670f3915c60ec2927d656cfe300fbdcf30d6de"
+            },
+            {
+              "path": "results/b_v8/fixtures/blocker4843/pixel_evidence.json",
+              "sha256": "fc78bf105ff8c987396b121da586fbacef840e42e40cca027662e246445a9d8e",
+              "frame_index": 7905,
+              "source_frame_pixel_sha256": "18e8a828289c313efc5c60aad2a2bea207740eec72268af0b512729ce599777b"
+            }
+          ],
+          "observation": "Blue motorcycle is co-present with the red4808 motor before SUV occlusion. Its raw4843 interval is distinct from the red motorcycle afterward.",
+          "decision": "Do not carry this blue origin/timer into red4843 post-occlusion context. Destination-only blue4913 must not supply a crossing without independent identity/passage evidence.",
+          "positive_link_to_destination_track_created": false,
+          "scope_extent_note": "Bounded visual and retained-measurement adjudication; no raw-ID-global extension."
+        },
+        {
+          "review_id": "P1-AI-SIANG-54-PEDESTRIAN-57-140",
+          "type": "PEDESTRIAN_ROLE",
+          "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+          "human_confirmation_status": "NOT_NEWLY_ADJUDICATED_BY_USER",
+          "confirmed_frames": [
+            57,
+            82,
+            100,
+            103,
+            104,
+            105,
+            107,
+            111,
+            112,
+            120,
+            127,
+            135
+          ],
+          "scopes": [
+            {
+              "track_id": 54,
+              "start_frame": 57,
+              "end_frame": 140,
+              "raw_family": "person"
+            }
+          ],
+          "physical_unit_id": "reviewed-pedestrian:p1:siang:54",
+          "episode_id": "p1-reviewed-pedestrian:54:57-140",
+          "scope_extent_basis": "Bounded P1 AI temporal pixels review57\u2013140; preexisting user role57\u2013107 retained separately; no label after140 and no bypass of Bv7 geometry.",
+          "evidence": [
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 57,
+              "source_frame_pixel_sha256": "2925814e5e4ffd8427afc64c6dc1f0c2070951e9a0713d015e4bae9f61ee0efb"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 82,
+              "source_frame_pixel_sha256": "58a8bb81536acf0752cd1b920e15d96eb030128631617b0723f7fdd26756614e"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 100,
+              "source_frame_pixel_sha256": "6d1fa2931b79168c2a6ee71c29652f12bc4f2d047af1b079d74b75f5dff1c415"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 103,
+              "source_frame_pixel_sha256": "de68831096022b07f2113fe190db742ed05da68e7c32321093c3d8342ada10a9"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 104,
+              "source_frame_pixel_sha256": "aaddc35d44b3ecc674b7b2f1dd48ce4e03c5af064d57a2bacb943de7d17d4868"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 105,
+              "source_frame_pixel_sha256": "c65e5e1e9f906eb31a77f4d3c81082f7c4a6958158a5d027f1ac7ded8bf4e8fa"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 107,
+              "source_frame_pixel_sha256": "c5658391d94ecf2b4006178f4c67b1a7d6fd17cf22c6ce33a00d974d7f1e5b07"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 111,
+              "source_frame_pixel_sha256": "0806650d14b5f7bce09537e093907f9b05b3f458fac9beec42c7ef5aa3281cf5"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 112,
+              "source_frame_pixel_sha256": "823f64d42a9a5aa52c57c815e17cf05971815833244f501301f6ceff58ae90ea"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 120,
+              "source_frame_pixel_sha256": "6395e645e25e672792212091ab955bcec8235135495f0aee2eea4e8831fc8aef"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 127,
+              "source_frame_pixel_sha256": "9e58c3cbff25c1b07610ed8a7df98006bd4afb91e7bf642eb621fa63bf30325a"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 135,
+              "source_frame_pixel_sha256": "ba0ef698be0b124ab00809a4571b77b2f88810a18e643d4bc33416e5b0e2b96b"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

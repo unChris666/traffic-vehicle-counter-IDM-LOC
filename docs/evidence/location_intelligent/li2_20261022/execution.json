@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Jakarta",
+  "python": "3.13.5",
+  "test_command": "PROJ_NETWORK=OFF PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B -m unittest discover -s notebooks -p 'location_intelligent_*tests.py' -v",
+  "tests": {
+    "LI0": 49,
+    "LI1": 40,
+    "LI2": 41,
+    "total": 130,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "cli_command": [
+    "/usr/bin/python3",
+    "-B",
+    "notebooks/location_intelligent_routing.py",
+    "--context",
+    "notebooks/fixtures/li1/context.json",
+    "--manifest",
+    "notebooks/fixtures/li1/manifest.json",
+    "--buildings",
+    "docs/evidence/location_intelligent/li01_20261022/li1_fixture_result.json",
+    "--graph",
+    "notebooks/fixtures/li2/graph.json",
+    "--config",
+    "notebooks/fixtures/li2/config.json",
+    "--root",
+    "notebooks/fixtures/li1"
+  ],
+  "cli_environment": "Only PROJ_NETWORK=OFF and PYTHONDONTWRITEBYTECODE=1; no inherited credentials",
+  "cli_exit_code": 3,
+  "routing_gate": "PASS",
+  "accessibility_gate": "BLOCKED",
+  "overall_status": "PARTIAL",
+  "summary": {
+    "accepted_accessible": null,
+    "accounted_routes": 5,
+    "input_selected_buildings": 5,
+    "no_route": 0,
+    "not_evaluated": 0,
+    "policy_unresolved": 5,
+    "reason_counts": {
+      "REFERENCE_WITHIN_TIME": 5
+    },
+    "reference_time_limit": 0,
+    "reference_within_time": 5,
+    "route_found": 5
+  },
+  "identical_runs": {
+    "count": 2,
+    "comparison": "Complete stdout bytes; no fields excluded",
+    "sha256": [
+      "7f41c2d5a245bb5a73f8f861370909de641e7a1855ee9d3a4eac4670f9ebb984",
+      "7f41c2d5a245bb5a73f8f861370909de641e7a1855ee9d3a4eac4670f9ebb984"
+    ]
+  },
+  "actual_source_graph_validated": false,
+  "live_source_calls": false,
+  "graph_data_origin": "SYNTHETIC_FIXTURE"
+}

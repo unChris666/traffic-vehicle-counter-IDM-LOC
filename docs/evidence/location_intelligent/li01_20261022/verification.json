@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "date": "2026-10-22",
+  "timezone": "Asia/Jakarta",
+  "li0_status": "PASS",
+  "li1_status": "PASS_SYNTHETIC_OFFLINE_ONLY",
+  "test_count": 89,
+  "historical_protected_files_unchanged": 121,
+  "li0_pre_repair_archived_files_verified": 9,
+  "relative_document_links_verified": 96,
+  "all_fixture_rows_reconciled": true,
+  "live_source_calls": false,
+  "historical_full_audit_rerun": false,
+  "errors": [],
+  "files": [
+    {
+      "path": "notebooks/location_intelligent_validator.py",
+      "sha256": "898edfca2c183101fba7887c6e1c505d2343c07eee82ef4c5bd5b232f9d257c0"
+    },
+    {
+      "path": "notebooks/location_intelligent_validator_tests.py",
+      "sha256": "e499e481450b7ffabe336bd8edcea4cea91b24a449fc8eb117e206e230684ca0"
+    },
+    {
+      "path": "notebooks/location_intelligent_buildings.py",
+      "sha256": "723ea39afcac220c4dc4065f5f4a09aeab2a1c5892bedee6c3047a53bd041c22"
+    },
+    {
+      "path": "notebooks/location_intelligent_buildings_tests.py",
+      "sha256": "a17944d87ca0f44f24dd749af136d9772400da736d84293f8037e669f40a63d0"
+    },
+    {
+      "path": "notebooks/fixtures/li1/buildings.geojson",
+      "sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c"
+    },
+    {
+      "path": "notebooks/fixtures/li1/context.json",
+      "sha256": "d17a332808f917012083445489fae1614db6286ac09ffa694f8cb56ffe439aeb"
+    },
+    {
+      "path": "notebooks/fixtures/li1/empty.geojson",
+      "sha256": "a55b431e78049bb7fdc7330ffdf2c9f8e87712545ebba199445408d48694225a"
+    },
+    {
+      "path": "notebooks/fixtures/li1/expected.json",
+      "sha256": "e66c791e9172203758b53f8368164e9afdfb951eb4ef35ff3d9edb8fe8a62100"
+    },
+    {
+      "path": "notebooks/fixtures/li1/invalid_buildings.geojson",
+      "sha256": "6ab2a2991059a67658d2c006a2d4974621713998354bac19a8db6f91aa69726b"
+    },
+    {
+      "path": "notebooks/fixtures/li1/invalid_manifest.json",
+      "sha256": "9328e7147c8c935e2c28d0ad616d341351871839479be0791768544f9e7afa30"
+    },
+    {
+      "path": "notebooks/fixtures/li1/manifest.json",
+      "sha256": "d4a31298f85e0c03f676f052eca36a063e2a881b3859e0c7fccafe4aafb17cae"
+    },
+    {
+      "path": "docs/LOCATION_INTELLIGENT_OVERVIEW.md",
+      "sha256": "f8b848cec81827194af1e42bc7ac5b5b300902d124ba08a49044094984057dbf"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_SPEC.md",
+      "sha256": "ac9fbd37cdcdcae78c304a3d2325c375c58dacaafbb25924d0a7bc06a1470aa1"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_ARCHITECTURE.md",
+      "sha256": "ece6311f0eb2901cd1d9d499520541506741b89ac47d0404443385cc0d53d5aa"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_DATA_CONTRACT.md",
+      "sha256": "d252f4282df285d37ab6dbe48fa3aee0f14c7c5a17398ec001030bd5b525e5be"
+    },
+    {
+      "path": "docs/PPAC_SPEC.md",
+      "sha256": "8f0e8d1b1d56f542c89b93dbaeb49b2e676fbc9c6931d8713afe7a5c6393fb2d"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_TEST_PLAN.md",
+      "sha256": "1d8d9591aa046c5177fd19cfa4c685b96721bff2da28181b018a563dd5445a7a"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_DECISIONS.md",
+      "sha256": "6c1ff044bc4ee7b30c2da9c7c8e48f823031ec4bdcf80b48c3225753effb5511"
+    },
+    {
+      "path": "docs/DATA_SOURCE_INVENTORY.md",
+      "sha256": "b69ad341feaf152d7f7498b2ac391dbe6e1a9382b0229e6e9106538cd1122c49"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_ROADMAP.md",
+      "sha256": "2a3f9fede17ecf2d6f61673ceb657bdc8738807586977244eae6f3102c965da4"
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "sha256": "c4f3ed8ef30b2b30a55237b2854cc37d923cd81d6b8af09eb98780382e144de1"
+    }
+  ]
+}

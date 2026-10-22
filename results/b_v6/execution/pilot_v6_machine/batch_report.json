@@ -1,0 +1,61 @@
+{
+  "schema_version": "phase9_b_v6_batch_v1",
+  "status": "completed_scoped_user_policy_replay_pending_review",
+  "run_id": "pilot_v6_machine",
+  "branch": "machine",
+  "videos": [
+    {
+      "video_id": "weekday_siang",
+      "status": "completed",
+      "frames": 9128,
+      "aggregate": {
+        "total": 74,
+        "by_category": {
+          "car": 2,
+          "motorcycle": 71,
+          "truck": 1
+        },
+        "by_direction": {
+          "A_TO_B": 28,
+          "B_TO_A": 46
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 5,
+          "LINE_MARGIN": 69
+        },
+        "measured_total": 66,
+        "inferred_total": 8,
+        "pending": 24,
+        "invalid": 84,
+        "invalid_reasons": {
+          "INVALID_AMBIGUOUS_UNIT": 84
+        },
+        "cancelled": 50,
+        "vehicle_total": 74,
+        "pedestrian_total": 0
+      },
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      }
+    }
+  ],
+  "output_directory": "/workspace/traffic-vehicle-counter-IDM-LOC/results/b_v6/execution/pilot_v6_machine",
+  "new_model_execution": false,
+  "new_enhancement_execution": false,
+  "new_counting_policy_replay": true,
+  "old_results_modified": false,
+  "production_ready": false,
+  "physical_accuracy_established": false,
+  "policy_sha256": "88123a9441a6ea75aa23c033858327baf1f08c86b8390133bd3832df52b16384",
+  "frames_processed": 9128,
+  "all_selected_completed": true,
+  "all_eight_completed": false,
+  "wall_seconds": 165.54623063200415,
+  "inputs_and_sources_unchanged": true
+}

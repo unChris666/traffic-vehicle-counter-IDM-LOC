@@ -1,0 +1,86 @@
+{
+  "status": "REJECTED_DEVELOPMENT_CANDIDATE_NOT_FINAL",
+  "proposal": {
+    "relations": [],
+    "audit": [
+      {
+        "first_event_id": "b_v6_5b7c1ee459f68ff171c6ee56",
+        "second_event_id": "b_v6_0614016fdf79d30943e54c1e",
+        "first_track_id": 1049,
+        "second_track_id": 1123,
+        "first_physical_episode_id": "b5-physical-context:4070ab79702fc2b503b2c10c",
+        "second_physical_episode_id": "b5-physical-context:8908b456fafd9f6606f94219",
+        "status": "REJECTED",
+        "reason": "BIDIRECTIONAL_OBSERVED_BOX_GATE_FAILED",
+        "gap_source_frames": 13,
+        "first_fit": {
+          "reference_frame": 1334.0,
+          "center": [
+            109.18430938720704,
+            252.3809326171875
+          ],
+          "velocity_px_per_source_frame": [
+            0.8345268249511719,
+            -0.1360565185546875
+          ]
+        },
+        "second_fit": {
+          "reference_frame": 1351.0,
+          "center": [
+            133.844734954834,
+            255.2189147949219
+          ],
+          "velocity_px_per_source_frame": [
+            1.2515392303466797,
+            -0.1468017578125
+          ]
+        },
+        "observed_normal_progress": [
+          0.5184137165060496,
+          0.9368427810441906
+        ],
+        "heading_dot": 1.064416396288725,
+        "first_support_frames": [
+          1332,
+          1333,
+          1334,
+          1335,
+          1336
+        ],
+        "second_support_frames": [
+          1349,
+          1350,
+          1351,
+          1352,
+          1353
+        ],
+        "forward_prediction": [
+          121.70221176147462,
+          250.3400848388672
+        ],
+        "backward_prediction": [
+          115.0716464996338,
+          257.4209411621094
+        ],
+        "forward_inside_observed_box": false,
+        "backward_inside_observed_box": true
+      }
+    ],
+    "controls": {
+      "schema_version": "phase8_b_v7_handoff_policy_v1",
+      "window_observations": 5,
+      "window_requirement": "CONSECUTIVE_OBSERVED_VEHICLE_MEASUREMENTS_BOTH_SIDES",
+      "fit": "OLS_CENTER_CONSTANT_VELOCITY_BIDIRECTIONAL",
+      "spatial_gate": "EACH_PREDICTED_CENTER_INSIDE_OTHER_OBSERVED_ENDPOINT_BOX",
+      "gap_limit": "INHERIT_EXISTING_TIMEOUT_SOURCE_FRAMES",
+      "direction_gate": "OBSERVED_LINE_NORMAL_MOTION_AND_EVENT_DIRECTIONS_AGREE",
+      "scope": "ACTIVE_CANDIDATE_PAIR_AT_LEAST_ONE_ESTIMATE_NO_OVERLAPPING_CONTEXT_LIFETIMES",
+      "identity_effect": "UNVERIFIED_CONFLICT_NO_ALIAS_NO_MEASURED_CROSSING_UPGRADE",
+      "disposition": "EXISTING_INVALID_PLUS_ZERO_FOR_EXPLICIT_PAIR_ONLY",
+      "window_rationale": "FIVE_IS_DECLARED_RESEARCH_SAMPLE_SUPPORT_NOT_TUNED_ON_TARGET_OR_PRODUCTION_DEFAULT",
+      "spatial_rationale": "OBSERVED_BOX_EXTENT_IS_GEOMETRIC_TOLERANCE_NOT_VALIDATED_IDENTITY_THRESHOLD"
+    }
+  },
+  "observed_issue": "Requiring an extrapolated center inside other box ignores source extent; no threshold or measurement changed",
+  "source_sha256": "cde3f9a0580d314477d5cfba91c7e0678d866e39ee11e4610d2605515581bdf5"
+}

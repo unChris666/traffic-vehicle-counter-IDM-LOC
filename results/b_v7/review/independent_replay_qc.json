@@ -1,0 +1,1019 @@
+{
+  "schema_version": "phase9_bv7_independent_replay_qc_v1",
+  "baseline_path": "results/b_v6/execution/pilot_v6_machine_final/weekday_siang/counting_result.json.gz",
+  "baseline_sha256": "82f80239e25e64386f0423a18817b2f87eac98b0e88e9d93081994d5b436ee3e",
+  "candidate_path": "results/b_v7/execution/pilot_v7_machine_final/weekday_siang/counting_result.json.gz",
+  "candidate_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "review_type": "RETAINED_SOURCE_IMAGE_REVIEW_PLUS_EVENT_SCOPE_COMPARISON",
+  "baseline_aggregate": {
+    "total": 74,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 71,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 28,
+      "B_TO_A": 46
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 5,
+      "LINE_MARGIN": 69
+    },
+    "measured_total": 66,
+    "inferred_total": 8,
+    "pending": 24,
+    "invalid": 84,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 84
+    },
+    "cancelled": 50,
+    "vehicle_total": 74,
+    "pedestrian_total": 0
+  },
+  "candidate_aggregate": {
+    "total": 72,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 69,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 26,
+      "B_TO_A": 46
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 4,
+      "LINE_MARGIN": 68
+    },
+    "measured_total": 66,
+    "inferred_total": 6,
+    "pending": 24,
+    "invalid": 86,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 86
+    },
+    "cancelled": 52,
+    "vehicle_total": 72,
+    "pedestrian_total": 0
+  },
+  "source_identity_equal": true,
+  "full_identity_assignments_equal": true,
+  "pending_decisions_exactly_equal": true,
+  "accepted_events_removed": [
+    {
+      "event_id": "b_v6_5b7c1ee459f68ff171c6ee56",
+      "track_id": 1049,
+      "physical_unit_id": "track:1049",
+      "episode_id": "unreviewed-vehicle",
+      "passage_id": "track:1049:episode:unreviewed-vehicle:passage:1",
+      "activation_frame": 1396,
+      "decision_frame": 1396,
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "display_id": "M2008",
+      "measured_crossing": false
+    },
+    {
+      "event_id": "b_v6_0614016fdf79d30943e54c1e",
+      "track_id": 1123,
+      "physical_unit_id": "track:1123",
+      "episode_id": "unreviewed-vehicle",
+      "passage_id": "track:1123:episode:unreviewed-vehicle:passage:1",
+      "activation_frame": 1396,
+      "decision_frame": 1396,
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "LINE_MARGIN",
+      "display_id": "M2007",
+      "measured_crossing": false
+    }
+  ],
+  "accepted_events_added": [],
+  "accepted_events_changed": [
+    {
+      "before": {
+        "event_id": "b_v6_f0b3ad3e7afccc08b7cc7678",
+        "track_id": 3333,
+        "physical_unit_id": "track:3333",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:3333:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 5795,
+        "decision_frame": 5795,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2018",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_75222811a1c19b1499f108fd",
+        "track_id": 3333,
+        "physical_unit_id": "track:3333",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:3333:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 5795,
+        "decision_frame": 5795,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2016",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_49f5ec6170afe7350417ef0f",
+        "track_id": 2551,
+        "physical_unit_id": "track:2551",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:2551:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 4145,
+        "decision_frame": 4145,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "ESTIMATED_TIMEOUT",
+        "display_id": "M2017",
+        "measured_crossing": false
+      },
+      "after": {
+        "event_id": "b_v7_d1783d7d57b51318fae13178",
+        "track_id": 2551,
+        "physical_unit_id": "track:2551",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:2551:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 4145,
+        "decision_frame": 4145,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "ESTIMATED_TIMEOUT",
+        "display_id": "M2015",
+        "measured_crossing": false
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_0a319d3a17f83cd92affde45",
+        "track_id": 2317,
+        "physical_unit_id": "track:2317",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:2317:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 3296,
+        "decision_frame": 3296,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2016",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_b5283d1376bb92d2f76d41d5",
+        "track_id": 2317,
+        "physical_unit_id": "track:2317",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:2317:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 3296,
+        "decision_frame": 3296,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2014",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_011a9261c978f339107847ad",
+        "track_id": 1912,
+        "physical_unit_id": "track:1912",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1912:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 2299,
+        "decision_frame": 2299,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2015",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_89166c483b18d623f58a4f80",
+        "track_id": 1912,
+        "physical_unit_id": "track:1912",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1912:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 2299,
+        "decision_frame": 2299,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2013",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_430e97a31d96bc45eabb51a9",
+        "track_id": 4843,
+        "physical_unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4843:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 7935,
+        "decision_frame": 7935,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2024",
+        "measured_crossing": false
+      },
+      "after": {
+        "event_id": "b_v7_6d62f4150ad7d92c9611ded5",
+        "track_id": 4843,
+        "physical_unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4843:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 7935,
+        "decision_frame": 7935,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2022",
+        "measured_crossing": false
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_abe79e3a23aa2cd4f8062371",
+        "track_id": 3752,
+        "physical_unit_id": "track:3752",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:3752:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 6659,
+        "decision_frame": 6659,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2020",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_9382451b82d8ffe936dabf66",
+        "track_id": 3752,
+        "physical_unit_id": "track:3752",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:3752:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 6659,
+        "decision_frame": 6659,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2018",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_e098a1baea406cd7d37465a7",
+        "track_id": 1496,
+        "physical_unit_id": "track:1496",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1496:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1701,
+        "decision_frame": 1701,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2012",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_4e46c8c2cec487c7c827b868",
+        "track_id": 1496,
+        "physical_unit_id": "track:1496",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1496:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1701,
+        "decision_frame": 1701,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2010",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_0d98f4a7b76174fb5e50a309",
+        "track_id": 5244,
+        "physical_unit_id": "track:5244",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:5244:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 8948,
+        "decision_frame": 8948,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2025",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_4169e2b84e2a1b81512b7b3a",
+        "track_id": 5244,
+        "physical_unit_id": "track:5244",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:5244:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 8948,
+        "decision_frame": 8948,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2023",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_41b459b0bd689e1a9ca99859",
+        "track_id": 1201,
+        "physical_unit_id": "track:1201",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1201:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1509,
+        "decision_frame": 1509,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2011",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_f2d6c583a7c828873bb83479",
+        "track_id": 1201,
+        "physical_unit_id": "track:1201",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1201:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1509,
+        "decision_frame": 1509,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2009",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_b1a27ed09b3270d8ea5d2154",
+        "track_id": 1145,
+        "physical_unit_id": "track:1145",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1145:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1448,
+        "decision_frame": 1448,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2010",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_2b31ec224fb9f21111958c02",
+        "track_id": 1145,
+        "physical_unit_id": "track:1145",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1145:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1448,
+        "decision_frame": 1448,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2008",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_89731c2d68b384832e2ded51",
+        "track_id": 4412,
+        "physical_unit_id": "track:4412",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4412:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 7562,
+        "decision_frame": 7562,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2022",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_a0af81e2be36f0826763942e",
+        "track_id": 4412,
+        "physical_unit_id": "track:4412",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4412:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 7562,
+        "decision_frame": 7562,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2020",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_25ddbc7ceda64ee76544e02d",
+        "track_id": 3763,
+        "physical_unit_id": "track:3763",
+        "episode_id": "unreviewed-vehicle|b4-raw:3763:start:6659",
+        "passage_id": "track:3763:episode:unreviewed-vehicle|b4-raw:3763:start:6659:passage:1",
+        "activation_frame": 6718,
+        "decision_frame": 6718,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2021",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_72bcea2c47eea18c01bedcb9",
+        "track_id": 3763,
+        "physical_unit_id": "track:3763",
+        "episode_id": "unreviewed-vehicle|b4-raw:3763:start:6659",
+        "passage_id": "track:3763:episode:unreviewed-vehicle|b4-raw:3763:start:6659:passage:1",
+        "activation_frame": 6718,
+        "decision_frame": 6718,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2019",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_dccb6f1879b87d19d4bd6b84",
+        "track_id": 1628,
+        "physical_unit_id": "track:1628",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1628:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1897,
+        "decision_frame": 1897,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2013",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_652b742eac83891638a8e17f",
+        "track_id": 1628,
+        "physical_unit_id": "track:1628",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1628:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1897,
+        "decision_frame": 1897,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2011",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_6d68488866f9a8942fcdfc0a",
+        "track_id": 4798,
+        "physical_unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4798:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 7894,
+        "decision_frame": 7894,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2023",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_69e1361c7171621b5da0f89f",
+        "track_id": 4798,
+        "physical_unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4798:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 7894,
+        "decision_frame": 7894,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2021",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_688f58f7627f554de21d7fde",
+        "track_id": 1179,
+        "physical_unit_id": "track:1179",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1179:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1422,
+        "decision_frame": 1422,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2009",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_a14cfe59f0e07ff216d69cd6",
+        "track_id": 1179,
+        "physical_unit_id": "track:1179",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1179:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1422,
+        "decision_frame": 1422,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2007",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_7c54cf3312f213724f062cd7",
+        "track_id": 1611,
+        "physical_unit_id": "track:1611",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1611:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1926,
+        "decision_frame": 1926,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2014",
+        "measured_crossing": true
+      },
+      "after": {
+        "event_id": "b_v7_16b7bc2f72290cd2157f7375",
+        "track_id": 1611,
+        "physical_unit_id": "track:1611",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:1611:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 1926,
+        "decision_frame": 1926,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2012",
+        "measured_crossing": true
+      }
+    },
+    {
+      "before": {
+        "event_id": "b_v6_fa20fc7a0dbd753a22330ca9",
+        "track_id": 3670,
+        "physical_unit_id": "track:3670",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:3670:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 6506,
+        "decision_frame": 6506,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2019",
+        "measured_crossing": false
+      },
+      "after": {
+        "event_id": "b_v7_7ed0f38a6777ca1896a1d146",
+        "track_id": 3670,
+        "physical_unit_id": "track:3670",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:3670:episode:unreviewed-vehicle:passage:1",
+        "activation_frame": 6506,
+        "decision_frame": 6506,
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "display_id": "M2017",
+        "measured_crossing": false
+      }
+    }
+  ],
+  "accepted_events_with_source_or_counting_changes": [],
+  "display_only_renumberings": [
+    {
+      "track_id": 1145,
+      "passage_id": "track:1145:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2010",
+      "candidate_display_id": "M2008",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 1179,
+      "passage_id": "track:1179:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2009",
+      "candidate_display_id": "M2007",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 1201,
+      "passage_id": "track:1201:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2011",
+      "candidate_display_id": "M2009",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 1496,
+      "passage_id": "track:1496:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2012",
+      "candidate_display_id": "M2010",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 1611,
+      "passage_id": "track:1611:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2014",
+      "candidate_display_id": "M2012",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 1628,
+      "passage_id": "track:1628:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2013",
+      "candidate_display_id": "M2011",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 1912,
+      "passage_id": "track:1912:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2015",
+      "candidate_display_id": "M2013",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 2317,
+      "passage_id": "track:2317:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2016",
+      "candidate_display_id": "M2014",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 2551,
+      "passage_id": "track:2551:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2017",
+      "candidate_display_id": "M2015",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 3333,
+      "passage_id": "track:3333:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2018",
+      "candidate_display_id": "M2016",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 3670,
+      "passage_id": "track:3670:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2019",
+      "candidate_display_id": "M2017",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 3752,
+      "passage_id": "track:3752:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2020",
+      "candidate_display_id": "M2018",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 3763,
+      "passage_id": "track:3763:episode:unreviewed-vehicle|b4-raw:3763:start:6659:passage:1",
+      "baseline_display_id": "M2021",
+      "candidate_display_id": "M2019",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 4412,
+      "passage_id": "track:4412:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2022",
+      "candidate_display_id": "M2020",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 4798,
+      "passage_id": "track:4798:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2023",
+      "candidate_display_id": "M2021",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 4843,
+      "passage_id": "track:4843:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2024",
+      "candidate_display_id": "M2022",
+      "source_event_content_except_display_and_namespace_equal": true
+    },
+    {
+      "track_id": 5244,
+      "passage_id": "track:5244:episode:unreviewed-vehicle:passage:1",
+      "baseline_display_id": "M2025",
+      "candidate_display_id": "M2023",
+      "source_event_content_except_display_and_namespace_equal": true
+    }
+  ],
+  "new_invalid_decisions": [
+    {
+      "frame_index": 9127,
+      "decision_frame": 9127,
+      "candidate_decision_frame": 1396,
+      "track_id": 1049,
+      "physical_unit_id": "track:1049",
+      "episode_id": "unreviewed-vehicle",
+      "passage_id": "track:1049:episode:unreviewed-vehicle:passage:1",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "status": "invalid",
+      "invalid_reason": "INVALID_AMBIGUOUS_UNIT",
+      "reasons": [
+        "INVALID_AMBIGUOUS_UNIT"
+      ],
+      "count_delta": 0,
+      "accepted_count_event": false,
+      "display_id": null,
+      "source_event_id": "b_v7_5016d91c73c059d9f0eb00c4",
+      "cancelled_candidate_event_id": "b_v7_5016d91c73c059d9f0eb00c4",
+      "source_ref": {
+        "frame_index": 1336,
+        "track_id": 1049,
+        "original_detection_index": 11,
+        "raw_bbox": [
+          100.72224426269531,
+          239.31097412109375,
+          117.27763366699219,
+          266.05865478515625
+        ],
+        "point": [
+          108.99993896484375,
+          266.05865478515625
+        ],
+        "class_name": "motorcycle",
+        "effective_class_name": "motorcycle",
+        "resolved_class_name": null,
+        "role": "vehicle",
+        "episode_id": "unreviewed-vehicle",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 3,
+        "confidence": 0.29515787959098816,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:4070ab79702fc2b503b2c10c",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "physical_episodes_merged": false,
+      "invalid_scope": "THIS_CANDIDATE_PASSAGE_NOT_GLOBAL_RAW_ID",
+      "relation_ids": [
+        "b7-motion-conflict:9469399bd6b172e8c787ee4a"
+      ],
+      "never_published": true,
+      "finalization_mode": "OFFLINE_BEFORE_PUBLICATION",
+      "reason_evidence": [
+        {
+          "reason": "INVALID_AMBIGUOUS_UNIT",
+          "relation_ids": [
+            "b7-motion-conflict:9469399bd6b172e8c787ee4a"
+          ],
+          "intentional_exclusion_not_zero_traffic": true,
+          "trajectory_compatibility_is_not_identity_proof": true
+        }
+      ]
+    },
+    {
+      "frame_index": 9127,
+      "decision_frame": 9127,
+      "candidate_decision_frame": 1396,
+      "track_id": 1123,
+      "physical_unit_id": "track:1123",
+      "episode_id": "unreviewed-vehicle",
+      "passage_id": "track:1123:episode:unreviewed-vehicle:passage:1",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "status": "invalid",
+      "invalid_reason": "INVALID_AMBIGUOUS_UNIT",
+      "reasons": [
+        "INVALID_AMBIGUOUS_UNIT"
+      ],
+      "count_delta": 0,
+      "accepted_count_event": false,
+      "display_id": null,
+      "source_event_id": "b_v7_d6b98f28e0c1730d3c593a19",
+      "cancelled_candidate_event_id": "b_v7_d6b98f28e0c1730d3c593a19",
+      "source_ref": {
+        "frame_index": 1396,
+        "track_id": 1123,
+        "original_detection_index": 0,
+        "raw_bbox": [
+          253.146728515625,
+          243.27520751953125,
+          346.200927734375,
+          321.7071533203125
+        ],
+        "point": [
+          299.673828125,
+          321.7071533203125
+        ],
+        "class_name": "motorcycle",
+        "effective_class_name": "motorcycle",
+        "resolved_class_name": null,
+        "role": "vehicle",
+        "episode_id": "unreviewed-vehicle",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 3,
+        "confidence": 0.8676779270172119,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:8908b456fafd9f6606f94219",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "physical_episodes_merged": false,
+      "invalid_scope": "THIS_CANDIDATE_PASSAGE_NOT_GLOBAL_RAW_ID",
+      "relation_ids": [
+        "b7-motion-conflict:9469399bd6b172e8c787ee4a"
+      ],
+      "never_published": true,
+      "finalization_mode": "OFFLINE_BEFORE_PUBLICATION",
+      "reason_evidence": [
+        {
+          "reason": "INVALID_AMBIGUOUS_UNIT",
+          "relation_ids": [
+            "b7-motion-conflict:9469399bd6b172e8c787ee4a"
+          ],
+          "intentional_exclusion_not_zero_traffic": true,
+          "trajectory_compatibility_is_not_identity_proof": true
+        }
+      ]
+    }
+  ],
+  "regression_controls": [
+    {
+      "track_id": 4251,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 4281,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 4149,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 4367,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 4934,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 4946,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 4953,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 2445,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 4552,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 4480,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 1101,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    },
+    {
+      "track_id": 1070,
+      "exact_source_decisions_and_assignments_unchanged": true,
+      "accepted_before": 0,
+      "accepted_after": 0
+    }
+  ],
+  "published_log_total": 72,
+  "legacy_qc_inventory_reconciliation": {
+    "pending": {
+      "baseline_case_count": 68,
+      "candidate_case_count": 68,
+      "case_ids_equal": true,
+      "changed_source_dispositions": []
+    },
+    "cancellations": {
+      "baseline_case_count": 16,
+      "candidate_case_count": 16,
+      "case_ids_equal": true,
+      "changed_source_dispositions": []
+    },
+    "discovery": {
+      "baseline_case_count": 10,
+      "candidate_case_count": 10,
+      "case_ids_equal": true,
+      "changed_source_dispositions": []
+    }
+  },
+  "legacy_inventory_reference_duplicate_blockers": 0,
+  "legacy_inventory_reference_controls_requiring_review": 0,
+  "target_scope_gate": "PASS_SCOPED_DUPLICATE_PREVENTION_WITH_INTENTIONAL_COVERAGE_LOSS",
+  "target_physical_passages_in_source_review": 1,
+  "target_published_events_after": 0,
+  "target_intentional_physical_passage_coverage_loss": 1,
+  "new_source_confirmed_duplicates_from_candidate": 0,
+  "new_distinct_vehicle_suppression_observed_in_actual_delta": 0,
+  "no_global_error_rate_established": true,
+  "preexisting_unresolved_identity_contamination_event": [
+    {
+      "event_id": "b_v7_6d62f4150ad7d92c9611ded5",
+      "track_id": 4843,
+      "physical_unit_id": "track:4843",
+      "episode_id": "unreviewed-vehicle",
+      "passage_id": "track:4843:episode:unreviewed-vehicle:passage:1",
+      "activation_frame": 7935,
+      "decision_frame": 7935,
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "LINE_MARGIN",
+      "display_id": "M2022",
+      "measured_crossing": false
+    }
+  ],
+  "overall_p0_gate": "BLOCKED",
+  "overall_p0_reason": "4843 origin and destination source boxes refer to different physical motorcycles across occlusion; current accepted inferred event remains unresolved.",
+  "all_eight_baseline_inferred_review_reference": "all_baseline_inferred_review.json",
+  "new_blocker_evidence_reference": "independent_4843_identity_review.json",
+  "negative_actual_source_controls": [
+    {
+      "tracks": [
+        1123,
+        1101
+      ],
+      "frame": 1376,
+      "verdict": "DISTINCT_CO_PRESENT_FOLLOWING_MOTORCYCLES"
+    },
+    {
+      "tracks": [
+        1123,
+        1070
+      ],
+      "frames": [
+        1355,
+        1376
+      ],
+      "verdict": "DISTINCT_OPPOSITE_DIRECTION_MOTORCYCLES"
+    }
+  ],
+  "actual_negative_control_limit": "Raw1101 and1070 have no baseline active accepted event. Actual source review proves distinct physical units and preservation of assignments; preservation of accepted close-following/return counts is demonstrated only by the synthetic controls, not by these two source units.",
+  "reviewer_exposure": "Known development case and retained annotations were reviewed; not blind or held-out.",
+  "model_tracker_reid_counting_enhancement_executed_by_qc": false,
+  "accuracy_zero_mistakes_or_production_reliability_claimed": false
+}

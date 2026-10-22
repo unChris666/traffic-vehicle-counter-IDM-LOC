@@ -1,0 +1,193 @@
+{
+  "export": {
+    "schema_version": "phase8_b_v6_audit_export_v1",
+    "source_identity": {
+      "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "width": 640,
+      "height": 480,
+      "variant": "raw",
+      "parent_run_id": "phase8_20261015T085213_690310Z",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    "branch": "machine",
+    "accepted": 74,
+    "invalid": 84,
+    "pending": 24,
+    "not_eligible": 17,
+    "measured": 66,
+    "inferred": 8,
+    "categories": [
+      "motorcycle",
+      "car",
+      "truck",
+      "bus",
+      "pedestrian"
+    ],
+    "invalid_contribution": 0,
+    "pending_contribution": 0,
+    "deliberate_ambiguity_exclusions_are_not_zero_actual_traffic": true,
+    "new_counting_or_model_execution": false,
+    "machine_and_reviewed_not_added": true,
+    "files": [
+      {
+        "path": "accepted_events.csv",
+        "bytes": 844991,
+        "sha256": "d12dce4ebb03fdadce26e34b15bd4c68c546857735aeaf0528995808ce623cbe"
+      },
+      {
+        "path": "invalid_passages.csv",
+        "bytes": 167406,
+        "sha256": "79201240804700caada27b58d0b61ffb5a2061d174590a0803c1f37d7fe1e6c8"
+      },
+      {
+        "path": "not_eligible_passages.csv",
+        "bytes": 36350,
+        "sha256": "221ba97056b398a12520e23f2e5095f2bfe9b82cc75eb66d2349ea7fc9ea1715"
+      },
+      {
+        "path": "pending_passages.csv",
+        "bytes": 50781,
+        "sha256": "29d2d038c3ad08ca4af904764d033930c02094e9684bc9b16d81ec60b7ac5e68"
+      },
+      {
+        "path": "summary_pivot.csv",
+        "bytes": 2493,
+        "sha256": "b745a61a5cdf0269166d366878349976d0bdb1cb2a66fd5dad2feb71ef0e7f55"
+      }
+    ],
+    "manifest_self_excluded": true
+  },
+  "render": {
+    "schema_version": "phase8_b_v6_annotation_v1",
+    "claim_type": "ACTUAL_B_V6_LEDGER_RENDER_NOT_MODEL_INFERENCE",
+    "semantics": "Offline final accepted ledger replay; cancelled/invalid source candidates are audit-only +0 at every frame. Measured/inferred remains source-time scoped.",
+    "source_identity": {
+      "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "width": 640,
+      "height": 480,
+      "variant": "raw",
+      "parent_run_id": "phase8_20261015T085213_690310Z",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    "output_video": {
+      "path": "/workspace/traffic-vehicle-counter-IDM-LOC/results/b_v6/videos/TGDI-WEEKDAY-SIANG-b-v6-annotated.mp4",
+      "sha256": "81567c628a01d840bf22194c26cb8ab4ab89a1d1eade975d2402c9bdbfc4af8c",
+      "size_bytes": 144310297,
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "frames_written": 9128,
+      "frames_redecoded": 9128,
+      "fps": 29.78121400353632,
+      "width": 1280,
+      "height": 1450,
+      "audio_preserved": false
+    },
+    "source_image_region": {
+      "x": 0,
+      "y": 0,
+      "width": 640,
+      "height": 480,
+      "resized": false
+    },
+    "final_accepted": 74,
+    "final_pending": 24,
+    "final_invalid": 84,
+    "final_not_eligible": 17,
+    "final_vehicle": 74,
+    "final_pedestrian": 0,
+    "final_pivot": {
+      "motorcycle": {
+        "A_TO_B": 26,
+        "B_TO_A": 45
+      },
+      "car": {
+        "A_TO_B": 2,
+        "B_TO_A": 0
+      },
+      "truck": {
+        "A_TO_B": 0,
+        "B_TO_A": 1
+      },
+      "bus": {
+        "A_TO_B": 0,
+        "B_TO_A": 0
+      },
+      "pedestrian": {
+        "A_TO_B": 0,
+        "B_TO_A": 0
+      }
+    },
+    "route_counts": {
+      "LINE_MARGIN": 69,
+      "OCCLUSION_DIFF_POLYGON": 0,
+      "ESTIMATED_TIMEOUT": 5
+    },
+    "final_measured": 66,
+    "final_inferred": 8,
+    "frame_pixel_and_raw_link_verified_every_frame": true,
+    "inputs_unchanged_after_render": true,
+    "new_detector_tracker_encoder_inference": false,
+    "counting_rerun_by_renderer": false,
+    "component_policy": "EXACT_FRAME_POSITIVE_RIDER_PARENT_ASSIGNMENT_UNION_RAW_PARENT_BC_PRESERVED",
+    "display_id_policy": "RAW_ID_FIRST_WITH_OFFLINE_PREACTIVATION_VS_COUNTED_STATUS",
+    "label_layout_policy": "FIXED_FONT_COLLISION_FREE_OR_RESERVED_OUTSIDE_SOURCE_CALLOUT",
+    "maximum_visible_units": 20,
+    "pending_excluded_from_pivot": true,
+    "invalid_excluded_from_pivot": true,
+    "categories": [
+      "motorcycle",
+      "car",
+      "truck",
+      "bus",
+      "pedestrian"
+    ],
+    "maximum_overflow_callouts": 4,
+    "layout_audit": {
+      "path": "/workspace/traffic-vehicle-counter-IDM-LOC/results/b_v6/videos/TGDI-WEEKDAY-SIANG-b-v6-annotated.labels.jsonl.gz",
+      "sha256": "adf46b7a24ca969ea7f0021ed8929c7c10577a2797563f2a54ec48f32af45349"
+    },
+    "review_source_sha256": null,
+    "ffmpeg_command": [
+      "/usr/bin/ffmpeg",
+      "-v",
+      "error",
+      "-nostdin",
+      "-n",
+      "-f",
+      "rawvideo",
+      "-pix_fmt",
+      "bgr24",
+      "-s:v",
+      "1280x1450",
+      "-r",
+      "29.78121400353632",
+      "-i",
+      "pipe:0",
+      "-an",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "veryfast",
+      "-crf",
+      "18",
+      "-threads",
+      "2",
+      "-pix_fmt",
+      "yuv420p",
+      "-movflags",
+      "+faststart",
+      "/workspace/traffic-vehicle-counter-IDM-LOC/results/b_v6/videos/TGDI-WEEKDAY-SIANG-b-v6-annotated.mp4"
+    ],
+    "codec_log": {
+      "path": "/workspace/traffic-vehicle-counter-IDM-LOC/results/b_v6/videos/TGDI-WEEKDAY-SIANG-b-v6-annotated.ffmpeg.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "opencv_version": "5.0.0",
+    "software_source_sha256": "61b12160886565578ca46da85a3fdb49fa8ca0a4e3ae30748684de0dd18b03a6",
+    "render_and_decode_wall_seconds": 195.26748693100672
+  },
+  "counting_replay": false,
+  "new_model_execution": false
+}

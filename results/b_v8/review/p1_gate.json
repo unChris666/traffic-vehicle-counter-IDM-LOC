@@ -1,0 +1,73 @@
+{
+  "schema_version": "b_v8_p1_gate_v1",
+  "decision": "PASS",
+  "scope": "REVIEW_ASSISTED_TGDI_WEEKDAY_SIANG_DEVELOPMENT_PILOT",
+  "selected_run": "pilot_p1_reviewed_v3",
+  "criteria": [
+    {
+      "criterion": "B v7 duplicate guards preserved",
+      "status": "PASS",
+      "evidence": "Inherited tests, immutable source hashes and 13 source-normalized control groups"
+    },
+    {
+      "criterion": "blocker4843 red exactly one",
+      "status": "PASS",
+      "evidence": "Clean red4808-to-red4843 identity proof; one inferred event in selected full replay"
+    },
+    {
+      "criterion": "Blue destination presence not counted",
+      "status": "PASS",
+      "evidence": "Zero unsupported blue events"
+    },
+    {
+      "criterion": "Applicable regression suites pass",
+      "status": "PASS",
+      "evidence": "302 tests including 211 inherited B v5/v6/v7 tests"
+    },
+    {
+      "criterion": "Auditable pending reduction",
+      "status": "PASS",
+      "evidence": "24 to 1:22 components +0,1 measured pedestrian,1 unknown retained"
+    },
+    {
+      "criterion": "Explicit final dispositions",
+      "status": "PASS",
+      "evidence": "All24 baseline pending source cases reconciled"
+    },
+    {
+      "criterion": "No unsupported improvement claim",
+      "status": "PASS",
+      "evidence": "Components +0 are not recovered vehicles; reviewed output is not automatic prediction"
+    },
+    {
+      "criterion": "Event-level reconciliation",
+      "status": "PASS",
+      "evidence": "70 unchanged,2 changed,0 removed,2 added;17 display renumberings exported"
+    },
+    {
+      "criterion": "Historical isolation",
+      "status": "PASS",
+      "evidence": "Frozen historical inputs and per-run retention independently checked by final verification"
+    },
+    {
+      "criterion": "Gate matches scope",
+      "status": "PASS",
+      "evidence": "PASS reviewed single-video development pilot only; automation/production not established"
+    }
+  ],
+  "evidence_qc": "full_pilot_v3_qc.json",
+  "final_integrity_verification": "../verification/final_verification.json",
+  "pending_remaining": {
+    "raw_track_id": 3185,
+    "candidate_frame": 5579,
+    "decision": "PENDING",
+    "required_evidence": "Positive person role and physical identity around5579; earlier rider5394 does not label whole raw history"
+  },
+  "machine_baseline_promoted": false,
+  "automatic_machine_baseline_blocker4843_fixed": false,
+  "production_ready": false,
+  "formal_ground_truth_or_accuracy_established": false,
+  "additional_physical_vehicle_recovered_with_review": 1,
+  "additional_pedestrian_passage_with_review": 1,
+  "no_new_detector_tracker_reid_or_enhancement": true
+}

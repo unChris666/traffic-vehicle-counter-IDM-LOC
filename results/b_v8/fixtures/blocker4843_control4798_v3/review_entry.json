@@ -1,0 +1,66 @@
+{
+  "review_id": "p1-reviewed-distinct-foreground-episode-v3",
+  "type": "SPLIT_IDENTITY",
+  "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+  "human_confirmation_status": "NOT_NEWLY_ADJUDICATED_BY_USER",
+  "scopes": [
+    {
+      "track_id": 4798,
+      "start_frame": 7796,
+      "end_frame": 7903,
+      "raw_family": "vehicle",
+      "physical_unit_id": "review:TGDI_SIANG:distinct_foreground_motorcycle",
+      "episode_id": "reviewed-distinct-foreground-episode"
+    }
+  ],
+  "confirmed_frames": [
+    7796,
+    7820,
+    7850,
+    7888,
+    7899,
+    7903
+  ],
+  "evidence": [
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v3/pixel_evidence.json",
+      "sha256": "d4b5d330e146bdda48f83fe6df3d8877da493cdb7ef318aaafc96d930f7a04b7",
+      "frame_index": 7796,
+      "source_frame_pixel_sha256": "ac5f6cbc425d623ddc7aaec0a00984ce07371544ceb23a400f9cedac47517889"
+    },
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v3/pixel_evidence.json",
+      "sha256": "d4b5d330e146bdda48f83fe6df3d8877da493cdb7ef318aaafc96d930f7a04b7",
+      "frame_index": 7820,
+      "source_frame_pixel_sha256": "fb6157165a067d7c559114c632e05e26e8d71c894ff5b2dcc9d408a3880d8c7d"
+    },
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v3/pixel_evidence.json",
+      "sha256": "d4b5d330e146bdda48f83fe6df3d8877da493cdb7ef318aaafc96d930f7a04b7",
+      "frame_index": 7850,
+      "source_frame_pixel_sha256": "773f168960e8738fcf9aeba31d20328c656e2c75ed11dc00096e772de2e2a7d2"
+    },
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v3/pixel_evidence.json",
+      "sha256": "d4b5d330e146bdda48f83fe6df3d8877da493cdb7ef318aaafc96d930f7a04b7",
+      "frame_index": 7888,
+      "source_frame_pixel_sha256": "4101f6171e7407e0bc70ca4cecfa4cba50d127b1b190d3398a7aab127d444adf"
+    },
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v3/pixel_evidence.json",
+      "sha256": "d4b5d330e146bdda48f83fe6df3d8877da493cdb7ef318aaafc96d930f7a04b7",
+      "frame_index": 7899,
+      "source_frame_pixel_sha256": "3082e021b26635bc4e3e7ad565670f3915c60ec2927d656cfe300fbdcf30d6de"
+    },
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v3/pixel_evidence.json",
+      "sha256": "d4b5d330e146bdda48f83fe6df3d8877da493cdb7ef318aaafc96d930f7a04b7",
+      "frame_index": 7903,
+      "source_frame_pixel_sha256": "94a2a393f429e435f9abf3b706e79ec114798f5c5dcd3f1b6110157697a421ee"
+    }
+  ],
+  "observation": "The foreground dark motorcycle4798 coexists with the red4808 and blue4843 before SUV occlusion; it is a separate physical unit from the reviewed red passage.",
+  "scope_basis": "Complete continuous108-observation vehicle context7796–7903, bounded AI source-pixel identity review; separate from red and blue in co-present7888/7899/7903. Keep the eligible observed history together rather than splitting midway through its existing crossing. Continuity between anchors is an explicit engineering assumption.",
+  "not_a_post_occlusion_alias_to_4874": true,
+  "no_global_raw_id_label": true
+}

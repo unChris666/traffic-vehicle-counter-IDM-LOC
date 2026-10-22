@@ -1,0 +1,3330 @@
+{
+  "schema_version": "phase9_p0_qc_source_comparison_v1",
+  "claim_type": "DOCUMENTARY_SOURCE_COMPARISON_NOT_PHYSICAL_GROUND_TRUTH_OR_ACCURACY",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "old_branch": "machine",
+  "new_branch": "machine",
+  "branch_totals_must_not_be_added": true,
+  "old_aggregate": {
+    "total": 172,
+    "by_category": {
+      "car": 16,
+      "motorcycle": 146,
+      "truck": 10
+    },
+    "by_direction": {
+      "A_TO_B": 78,
+      "B_TO_A": 94
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 34,
+      "LINE_MARGIN": 138
+    },
+    "measured_total": 121,
+    "inferred_total": 51,
+    "pending": 68,
+    "cancelled": 0,
+    "vehicle_total": 172,
+    "pedestrian_total": 0
+  },
+  "new_aggregate": {
+    "total": 117,
+    "by_category": {
+      "car": 4,
+      "motorcycle": 112,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 53,
+      "B_TO_A": 64
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 9,
+      "LINE_MARGIN": 108
+    },
+    "measured_total": 98,
+    "inferred_total": 19,
+    "pending": 65,
+    "cancelled": 11,
+    "vehicle_total": 117,
+    "pedestrian_total": 0
+  },
+  "all_121_old_measured_events_required_to_survive": false,
+  "reason_not_preservation_invariant": "Measured pairs can be duplicate components of one physical unit.",
+  "pending_case_count": 68,
+  "cancellation_case_count": 16,
+  "discovery_case_count": 10,
+  "pending_documentary_status_counts": {
+    "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT": 30,
+    "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR": 38
+  },
+  "cancellation_documentary_status_counts": {
+    "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED": 15,
+    "SOURCE_WITNESS_STILL_REPRESENTED_CHECK_CANONICAL_UNIT": 1
+  },
+  "pending": [
+    {
+      "case_id": "ROLE-01",
+      "group": "roles",
+      "raw_track_id": 12,
+      "baseline_passage_id": "person-track:12:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 41,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:12:episode:unreviewed-person:passage:1",
+          "track_id": 12,
+          "frame_index": 41
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 41,
+          "track_id": 12,
+          "physical_unit_id": "person-track:12",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:0a5edf8f2ff746612dd64f5e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-02",
+      "group": "roles",
+      "raw_track_id": 54,
+      "baseline_passage_id": "person-track:54:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "REUSE_EXISTING_MEASURED_PEDESTRIAN_ADJUDICATION",
+      "qc_proposed_count_delta": 1,
+      "baseline_decision_frame": 127,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:54:episode:unreviewed-person:passage:1",
+          "track_id": 54,
+          "frame_index": 127
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 127,
+          "track_id": 54,
+          "physical_unit_id": "person-track:54",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:5d8f83b3c8f32f699edecd2f",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-03",
+      "group": "roles",
+      "raw_track_id": 375,
+      "baseline_passage_id": "person-track:375:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 510,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:375:episode:unreviewed-person:passage:1",
+          "track_id": 375,
+          "frame_index": 510
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 510,
+          "track_id": 375,
+          "physical_unit_id": "person-track:375",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:72614958bc4c54972c3847e0",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "COMPETING_COMPONENT_PARENTS"
+          ],
+          "p0_component_parent_remap_source": "EXACT_FRAME_RETAINED_COMPONENT_RELATION"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-04",
+      "group": "roles",
+      "raw_track_id": 385,
+      "baseline_passage_id": "person-track:385:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 1044,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:385:episode:unreviewed-person:passage:1",
+          "track_id": 385,
+          "frame_index": 1044
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 1044,
+          "track_id": 385,
+          "physical_unit_id": "person-track:385",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:8309c878237191482e95fdf9",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-05",
+      "group": "roles",
+      "raw_track_id": 1486,
+      "baseline_passage_id": "person-track:1486:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 1677,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED",
+            "RAW_CONTEXT_CHANGED_WITHOUT_PHYSICAL_CONTINUITY_PROOF"
+          ],
+          "passage_id": "person-track:1486:episode:unreviewed-person:passage:1",
+          "track_id": 1486,
+          "frame_index": 1677
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 1677,
+          "track_id": 1486,
+          "physical_unit_id": "person-track:1486",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:e8cccde889b8b6808d4f7fba",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-06",
+      "group": "roles",
+      "raw_track_id": 1651,
+      "baseline_passage_id": "person-track:1651:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 1983,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 1923,
+          "track_id": 1651,
+          "physical_unit_id": "person-track:1651",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:180755e248ed5e0d9d49308b",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-07",
+      "group": "roles",
+      "raw_track_id": 1686,
+      "baseline_passage_id": "person-track:1686:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 2002,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:1686:episode:unreviewed-person:passage:1",
+          "track_id": 1686,
+          "frame_index": 2002
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 2002,
+          "track_id": 1686,
+          "physical_unit_id": "person-track:1686",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:608eddd8cb25b7fc9c8f6d84",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-08",
+      "group": "roles",
+      "raw_track_id": 1687,
+      "baseline_passage_id": "person-track:1687:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 2003,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:1687:episode:unreviewed-person:passage:1",
+          "track_id": 1687,
+          "frame_index": 2003
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 2003,
+          "track_id": 1687,
+          "physical_unit_id": "person-track:1687",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:78c3c39dbdfabbf63681e3e7",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-09",
+      "group": "roles",
+      "raw_track_id": 1826,
+      "baseline_passage_id": "person-track:1826:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 2199,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:1826:episode:unreviewed-person:passage:1",
+          "track_id": 1826,
+          "frame_index": 2199
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 2139,
+          "track_id": 1826,
+          "physical_unit_id": "person-track:1826",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:e48c298023938e50bcc4d2b9",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-10",
+      "group": "roles",
+      "raw_track_id": 1948,
+      "baseline_passage_id": "person-track:1948:episode:unreviewed-vehicle|b4-raw:1948:start:2290:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 2350,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:1948:episode:unreviewed-vehicle|b4-raw:1948:start:2290:passage:1",
+          "track_id": 1948,
+          "frame_index": 2350
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 2350,
+          "track_id": 1948,
+          "physical_unit_id": "person-track:1948",
+          "episode_id": "unreviewed-vehicle|b4-raw:1948:start:2290",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:cec57621cda96eb0ee1e279a",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "RAW_VEHICLE_AFTER_BOUNDED_COMPONENT_CONTEXT_NO_ORIGIN_INHERITANCE",
+          "identity_timeout_hold": [],
+          "source_bound_episode_id_before_context_split": "unreviewed-person"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-11",
+      "group": "roles",
+      "raw_track_id": 2195,
+      "baseline_passage_id": "person-track:2195:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 3116,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:2195:episode:unreviewed-person:passage:1",
+          "track_id": 2195,
+          "frame_index": 3116
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 3116,
+          "track_id": 2195,
+          "physical_unit_id": "person-track:2195",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:a26ca9a992f9dea7548a6448",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-12",
+      "group": "roles",
+      "raw_track_id": 2531,
+      "baseline_passage_id": "person-track:2531:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NON_INDEPENDENT_OCCUPANT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 3997,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:2531:episode:unreviewed-person:passage:1",
+          "track_id": 2531,
+          "frame_index": 3997
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 3997,
+          "track_id": 2531,
+          "physical_unit_id": "person-track:2531",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:e3f55a0ab683497f26ee0d95",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-13",
+      "group": "roles",
+      "raw_track_id": 2958,
+      "baseline_passage_id": "person-track:2958:episode:unreviewed-person:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "HOLD_NO_PROMOTION",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 5034,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4974,
+          "track_id": 2958,
+          "physical_unit_id": "person-track:2958",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:d7ff8a98d50392ecd749b2ef",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-14",
+      "group": "roles",
+      "raw_track_id": 3239,
+      "baseline_passage_id": "person-track:3239:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 5494,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:3239:episode:unreviewed-person:passage:1",
+          "track_id": 3239,
+          "frame_index": 5494
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 5494,
+          "track_id": 3239,
+          "physical_unit_id": "person-track:3239",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:1b222022064913f858578d31",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-15",
+      "group": "roles",
+      "raw_track_id": 3185,
+      "baseline_passage_id": "person-track:3185:episode:unreviewed-person:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "HOLD_NO_PROMOTION",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 5579,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:3185:episode:unreviewed-person:passage:1",
+          "track_id": 3185,
+          "frame_index": 5579
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 5579,
+          "track_id": 3185,
+          "physical_unit_id": "person-track:3185",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:0ef5e704b3ed778f0477033a",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-16",
+      "group": "roles",
+      "raw_track_id": 3446,
+      "baseline_passage_id": "person-track:3446:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 6105,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:3446:episode:unreviewed-person:passage:1",
+          "track_id": 3446,
+          "frame_index": 6105
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6105,
+          "track_id": 3446,
+          "physical_unit_id": "person-track:3446",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:2243d35356259198b96f3028",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-17",
+      "group": "roles",
+      "raw_track_id": 3434,
+      "baseline_passage_id": "person-track:3434:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "INELIGIBLE_NO_PASSAGE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 6371,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6311,
+          "track_id": 3434,
+          "physical_unit_id": "person-track:3434",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:a99f5f09d8b69d3afdeefea9",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-18",
+      "group": "roles",
+      "raw_track_id": 3593,
+      "baseline_passage_id": "person-track:3593:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "INELIGIBLE_NO_PASSAGE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 6440,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6380,
+          "track_id": 3593,
+          "physical_unit_id": "person-track:3593",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:d728a87298911c3cc59ca2fd",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-19",
+      "group": "roles",
+      "raw_track_id": 3844,
+      "baseline_passage_id": "person-track:3844:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 6717,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:3844:episode:unreviewed-person:passage:1",
+          "track_id": 3844,
+          "frame_index": 6717
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6717,
+          "track_id": 3844,
+          "physical_unit_id": "person-track:3844",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:945280b1204fcc438f455302",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-20",
+      "group": "roles",
+      "raw_track_id": 4094,
+      "baseline_passage_id": "person-track:4094:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7063,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:4094:episode:unreviewed-person:passage:1",
+          "track_id": 4094,
+          "frame_index": 7063
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7063,
+          "track_id": 4094,
+          "physical_unit_id": "person-track:4094",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:614127b4f167a14c19500ad2",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-21",
+      "group": "roles",
+      "raw_track_id": 4198,
+      "baseline_passage_id": "person-track:4198:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7329,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:4198:episode:unreviewed-person:passage:1",
+          "track_id": 4198,
+          "frame_index": 7329
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7329,
+          "track_id": 4198,
+          "physical_unit_id": "person-track:4198",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:ef115a1cc1a009b90ec8636b",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-22",
+      "group": "roles",
+      "raw_track_id": 4244,
+      "baseline_passage_id": "person-track:4244:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7363,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:4244:episode:unreviewed-person:passage:1",
+          "track_id": 4244,
+          "frame_index": 7363
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7363,
+          "track_id": 4244,
+          "physical_unit_id": "person-track:4244",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:14b75e6465acb12d6c16f087",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-23",
+      "group": "roles",
+      "raw_track_id": 4115,
+      "baseline_passage_id": "person-track:4115:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "INELIGIBLE_NO_PASSAGE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7386,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7326,
+          "track_id": 4115,
+          "physical_unit_id": "person-track:4115",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:a65a8d365868110fed6c3378",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-24",
+      "group": "roles",
+      "raw_track_id": 4175,
+      "baseline_passage_id": "person-track:4175:episode:unreviewed-vehicle|b4-raw:4175:start:7311:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7414,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT"
+          ],
+          "passage_id": "person-track:4175:episode:unreviewed-vehicle|b4-raw:4175:start:7311:passage:1",
+          "track_id": 4175,
+          "frame_index": 7414
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7354,
+          "track_id": 4175,
+          "physical_unit_id": "person-track:4175",
+          "episode_id": "unreviewed-vehicle|b4-raw:4175:start:7311",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:22802c06feb683b60bd33c6b",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "RAW_VEHICLE_AFTER_BOUNDED_COMPONENT_CONTEXT_NO_ORIGIN_INHERITANCE",
+          "identity_timeout_hold": [],
+          "source_bound_episode_id_before_context_split": "unreviewed-person"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-25",
+      "group": "roles",
+      "raw_track_id": 4283,
+      "baseline_passage_id": "person-track:4283:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7451,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:4283:episode:unreviewed-person:passage:1",
+          "track_id": 4283,
+          "frame_index": 7451
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7451,
+          "track_id": 4283,
+          "physical_unit_id": "person-track:4283",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:eb7e9acfdb7dbe2084fa6c39",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-26",
+      "group": "roles",
+      "raw_track_id": 4397,
+      "baseline_passage_id": "person-track:4397:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NON_INDEPENDENT_OCCUPANT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7503,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:4397:episode:unreviewed-person:passage:1",
+          "track_id": 4397,
+          "frame_index": 7503
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7503,
+          "track_id": 4397,
+          "physical_unit_id": "person-track:4397",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:f578f7b7cd4d557218b5bcdb",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-27",
+      "group": "roles",
+      "raw_track_id": 4561,
+      "baseline_passage_id": "person-track:4561:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7685,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:4561:episode:unreviewed-person:passage:1",
+          "track_id": 4561,
+          "frame_index": 7685
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7685,
+          "track_id": 4561,
+          "physical_unit_id": "person-track:4561",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:8a7d43bff9f558d2090ff06c",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-28",
+      "group": "roles",
+      "raw_track_id": 4725,
+      "baseline_passage_id": "person-track:4725:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "INELIGIBLE_NO_PASSAGE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7945,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7885,
+          "track_id": 4725,
+          "physical_unit_id": "person-track:4725",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:8f216eb349bd293d23e1743f",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "ROLE-29",
+      "group": "roles",
+      "raw_track_id": 4938,
+      "baseline_passage_id": "person-track:4938:episode:unreviewed-person:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RIDER_COMPONENT_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 8012,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ],
+          "passage_id": "person-track:4938:episode:unreviewed-person:passage:1",
+          "track_id": 4938,
+          "frame_index": 8012
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 8012,
+          "track_id": 4938,
+          "physical_unit_id": "person-track:4938",
+          "episode_id": "unreviewed-person",
+          "role": "unknown_person",
+          "category": "person",
+          "raw_category": "person",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:37a93c02018780895125f1b1",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-01",
+      "group": "identity",
+      "raw_track_id": 228,
+      "baseline_passage_id": "track:228:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 336,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 276,
+          "track_id": 228,
+          "physical_unit_id": "track:228",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "truck",
+          "raw_category": "truck",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:3c9123a2d09d4b54b751a794",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:228",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-02",
+      "group": "identity",
+      "raw_track_id": 340,
+      "baseline_passage_id": "track:340:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 520,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 460,
+          "track_id": 340,
+          "physical_unit_id": "track:340",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:fe1159433a743c9eae424e34",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:340",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-03",
+      "group": "identity",
+      "raw_track_id": 387,
+      "baseline_passage_id": "track:387:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 541,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 481,
+          "track_id": 387,
+          "physical_unit_id": "track:387",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:a29b8d8ecb37306f61899c7c",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:387",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-04",
+      "group": "identity",
+      "raw_track_id": 756,
+      "baseline_passage_id": "track:756:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 1072,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 1012,
+          "track_id": 756,
+          "physical_unit_id": "track:756",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:0e10cc257a5b8f68d43f7f11",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:756",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-05",
+      "group": "identity",
+      "raw_track_id": 1134,
+      "baseline_passage_id": "track:1134:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 1427,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 1367,
+          "track_id": 1134,
+          "physical_unit_id": "track:1134",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:2eef6b85d5ddfba93c0b93c8",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:1134",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-06",
+      "group": "identity",
+      "raw_track_id": 1210,
+      "baseline_passage_id": "track:1210:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "KEEP_PENDING_FOR_PHYSICAL_PASSAGE_RECONCILIATION",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 1567,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT"
+          ],
+          "passage_id": "track:1210:episode:unreviewed-vehicle:passage:1",
+          "track_id": 1210,
+          "frame_index": 1567
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 1511,
+          "track_id": 1210,
+          "physical_unit_id": "track:1210",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "motorcycle",
+          "raw_category": "motorcycle",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:4eedfbccaadba0d77eff0011",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:1210",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-07",
+      "group": "identity",
+      "raw_track_id": 1304,
+      "baseline_passage_id": "track:1304:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 1712,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 1652,
+          "track_id": 1304,
+          "physical_unit_id": "track:1304",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:606614a4ae4dbe4883673d28",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:1304",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-08",
+      "group": "identity",
+      "raw_track_id": 1648,
+      "baseline_passage_id": "retained-clique:1648,1720:episode:unreviewed-vehicle|b4-raw:1648:start:1951:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 2078,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 2018,
+          "track_id": 1648,
+          "physical_unit_id": "track:1648",
+          "episode_id": "unreviewed-vehicle|b4-raw:1648:start:1951",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:7ecc5e2cb3dc986608f73a85",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "RAW_VEHICLE_AFTER_BOUNDED_COMPONENT_CONTEXT_NO_ORIGIN_INHERITANCE",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "source_bound_episode_id_before_context_split": "unreviewed-vehicle",
+          "p0_historical_unit_hypothesis": "retained-clique:1648,1720",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-09",
+      "group": "identity",
+      "raw_track_id": 1745,
+      "baseline_passage_id": "retained-clique:1745,1758:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 2191,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 2131,
+          "track_id": 1745,
+          "physical_unit_id": "track:1745",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:aca044cea182b20547a2ce0c",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "retained-clique:1745,1758",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-10",
+      "group": "identity",
+      "raw_track_id": 1843,
+      "baseline_passage_id": "track:1843:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 2211,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 2151,
+          "track_id": 1843,
+          "physical_unit_id": "track:1843",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:3396a94ff39fd2df2bbdd36b",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:1843",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-11",
+      "group": "identity",
+      "raw_track_id": 1837,
+      "baseline_passage_id": "track:1837:episode:unreviewed-vehicle|b4-raw:1837:start:2239:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 2413,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 2353,
+          "track_id": 1837,
+          "physical_unit_id": "track:1837",
+          "episode_id": "unreviewed-vehicle|b4-raw:1837:start:2239",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:040a56494a24e45790c56e41",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "RAW_VEHICLE_AFTER_BOUNDED_COMPONENT_CONTEXT_NO_ORIGIN_INHERITANCE",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "source_bound_episode_id_before_context_split": "unreviewed-vehicle",
+          "p0_historical_unit_hypothesis": "track:1837",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-12",
+      "group": "identity",
+      "raw_track_id": 2282,
+      "baseline_passage_id": "track:2282:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 3201,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 3141,
+          "track_id": 2282,
+          "physical_unit_id": "track:2282",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "truck",
+          "raw_category": "truck",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:435659db8f7a1837cb13f5d8",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD",
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ],
+          "p0_historical_unit_hypothesis": "track:2282",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-13",
+      "group": "identity",
+      "raw_track_id": 1214,
+      "baseline_passage_id": "track:1214:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 3346,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 3286,
+          "track_id": 1214,
+          "physical_unit_id": "track:1214",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "motorcycle",
+          "raw_category": "motorcycle",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:2330aec10ec8d1716fcbd781",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:1214",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-14",
+      "group": "identity",
+      "raw_track_id": 2374,
+      "baseline_passage_id": "track:2374:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 3617,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 3557,
+          "track_id": 2374,
+          "physical_unit_id": "track:2374",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:a54fe77c1438647aaadc6116",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD",
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ],
+          "p0_historical_unit_hypothesis": "track:2374",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-15",
+      "group": "identity",
+      "raw_track_id": 2445,
+      "baseline_passage_id": "track:2445:episode:unreviewed-vehicle:passage:2",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "CLOSE_INVALID_COMBINED_TIMEOUT_CANDIDATE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 4036,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 3976,
+          "track_id": 2445,
+          "physical_unit_id": "track:2445",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "motorcycle",
+          "raw_category": "motorcycle",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:3faffd9644b90f94967f7a09",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:2445",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-16",
+      "group": "identity",
+      "raw_track_id": 2413,
+      "baseline_passage_id": "track:2413:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 4039,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 3979,
+          "track_id": 2413,
+          "physical_unit_id": "track:2413",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:aa30740b1ac59c92e230a8a9",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:2413",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-17",
+      "group": "identity",
+      "raw_track_id": 2535,
+      "baseline_passage_id": "retained-clique:2535,2539:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 4128,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4068,
+          "track_id": 2535,
+          "physical_unit_id": "track:2535",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:ff8f5bda1c1014fafad155de",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "retained-clique:2535,2539",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-18",
+      "group": "identity",
+      "raw_track_id": 2560,
+      "baseline_passage_id": "track:2560:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "RESOLVE_AS_SAME_PASSAGE_NO_ADDITIONAL_COUNT",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 4152,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4092,
+          "track_id": 2560,
+          "physical_unit_id": "track:2560",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "truck",
+          "raw_category": "truck",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:bbff9cc8980c5916cc1e9c81",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD",
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ],
+          "p0_historical_unit_hypothesis": "track:2560",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-19",
+      "group": "identity",
+      "raw_track_id": 2544,
+      "baseline_passage_id": "track:2544:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 4181,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4121,
+          "track_id": 2544,
+          "physical_unit_id": "track:2544",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:e0497bc47b96b9d853a8a2d0",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:2544",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-20",
+      "group": "identity",
+      "raw_track_id": 2708,
+      "baseline_passage_id": "retained-clique:2708,2714:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 4489,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4429,
+          "track_id": 2708,
+          "physical_unit_id": "track:2708",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:f49bb1f21f2d55af09336f59",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "retained-clique:2708,2714",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-21",
+      "group": "identity",
+      "raw_track_id": 2722,
+      "baseline_passage_id": "track:2722:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 4546,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4486,
+          "track_id": 2722,
+          "physical_unit_id": "track:2722",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:826dc0e3db4683de99012897",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:2722",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-22",
+      "group": "identity",
+      "raw_track_id": 2931,
+      "baseline_passage_id": "retained-clique:2931,3016:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 5051,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4991,
+          "track_id": 2931,
+          "physical_unit_id": "track:2931",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:2df8e09399c78e7e187519d3",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "retained-clique:2931,3016",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-23",
+      "group": "identity",
+      "raw_track_id": 3253,
+      "baseline_passage_id": "track:3253:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 6144,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6084,
+          "track_id": 3253,
+          "physical_unit_id": "track:3253",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:7783ab50a3ad493bf3924580",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:3253",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-24",
+      "group": "identity",
+      "raw_track_id": 3557,
+      "baseline_passage_id": "retained-clique:3557,3574:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 6475,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6415,
+          "track_id": 3557,
+          "physical_unit_id": "track:3557",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:01c237ac2fe12b7795553a20",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "retained-clique:3557,3574",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-25",
+      "group": "identity",
+      "raw_track_id": 3678,
+      "baseline_passage_id": "track:3678:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 6579,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6519,
+          "track_id": 3678,
+          "physical_unit_id": "track:3678",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:926278fa08ebd3444bd39d6b",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:3678",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-26",
+      "group": "identity",
+      "raw_track_id": 3778,
+      "baseline_passage_id": "track:3778:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 6683,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6623,
+          "track_id": 3778,
+          "physical_unit_id": "track:3778",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "truck",
+          "raw_category": "truck",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:b245579843f433819e65444d",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD",
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ],
+          "p0_historical_unit_hypothesis": "track:3778",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-27",
+      "group": "identity",
+      "raw_track_id": 3976,
+      "baseline_passage_id": "track:3976:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7098,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7038,
+          "track_id": 3976,
+          "physical_unit_id": "track:3976",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:c673f2e0c7dfaba47bb57384",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:3976",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-28",
+      "group": "identity",
+      "raw_track_id": 4200,
+      "baseline_passage_id": "track:4200:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "KEEP_PENDING_FOR_PHYSICAL_PASSAGE_RECONCILIATION",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 7413,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT"
+          ],
+          "passage_id": "track:4200:episode:unreviewed-vehicle:passage:1",
+          "track_id": 4200,
+          "frame_index": 7413
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7353,
+          "track_id": 4200,
+          "physical_unit_id": "track:4200",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "motorcycle",
+          "raw_category": "motorcycle",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:8698fcda6894f7665681f5f2",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:4200",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-29",
+      "group": "identity",
+      "raw_track_id": 4525,
+      "baseline_passage_id": "track:4525:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7677,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7617,
+          "track_id": 4525,
+          "physical_unit_id": "track:4525",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:3646f59e52c8c331a4b166b6",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:4525",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-30",
+      "group": "identity",
+      "raw_track_id": 4808,
+      "baseline_passage_id": "track:4808:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "KEEP_PENDING_FOR_PHYSICAL_PASSAGE_RECONCILIATION",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 7964,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT"
+          ],
+          "passage_id": "track:4808:episode:unreviewed-vehicle:passage:1",
+          "track_id": 4808,
+          "frame_index": 7964
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7907,
+          "track_id": 4808,
+          "physical_unit_id": "track:4808",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "motorcycle",
+          "raw_category": "motorcycle",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:9504e9cb7aa9444dd531ae2d",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:4808",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "IDENTITY-31",
+      "group": "identity",
+      "raw_track_id": 4944,
+      "baseline_passage_id": "track:4944:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "NOT_ELIGIBLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 8156,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 8096,
+          "track_id": 4944,
+          "physical_unit_id": "track:4944",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:75dfbe3a6cd02df7d9d3c0ec",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+          ],
+          "p0_historical_unit_hypothesis": "track:4944",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "QC_DUP_2549",
+      "group": "duplicates",
+      "raw_track_id": 2549,
+      "baseline_passage_id": "retained-clique:2549,2561:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "ONE_PHYSICAL_MINIVAN_PASSAGE_IDENTITY_RESOLVED_CATEGORY_OPEN",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 4129,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ],
+          "passage_id": "track:2549:episode:unreviewed-vehicle:passage:1",
+          "track_id": 2549,
+          "frame_index": 4129
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4129,
+          "track_id": 2549,
+          "physical_unit_id": "track:2549",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:1a201cdee191420047b6abeb",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "retained-clique:2549,2561",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "QC_DUP_2615",
+      "group": "duplicates",
+      "raw_track_id": 2615,
+      "baseline_passage_id": "track:2615:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "INELIGIBLE_STATIONARY_PARKED_VEHICLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 4450,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 4390,
+          "track_id": 2615,
+          "physical_unit_id": "track:2615",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:d24a02e81970eee7da5e2ad6",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "track:2615",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "QC_DUP_3582",
+      "group": "duplicates",
+      "raw_track_id": 3582,
+      "baseline_passage_id": "retained-clique:3582,3587:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "ACCEPT_ONE_CAR_MEASURED_PASSAGE_AFTER_SCOPED_DUPLICATE_REVIEW",
+      "qc_proposed_count_delta": 1,
+      "baseline_decision_frame": 6354,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6354,
+          "track_id": 3582,
+          "physical_unit_id": "track:3582",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:aa8b474383132282c5289cc2",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "retained-clique:3582,3587",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "QC_DUP_3761",
+      "group": "duplicates",
+      "raw_track_id": 3761,
+      "baseline_passage_id": "track:3761:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "ONE_MOVING_PICKUP_PASSAGE_SPLIT_LATER_PARKED_OBJECT_CATEGORY_OPEN",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 6779,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ],
+          "passage_id": "track:3761:episode:unreviewed-vehicle:passage:1",
+          "track_id": 3761,
+          "frame_index": 6779
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 6779,
+          "track_id": 3761,
+          "physical_unit_id": "track:3761",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "truck",
+          "raw_category": "truck",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:3fee6f0d086f1e54e830578f",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "track:3761",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "QC_DUP_4115",
+      "group": "duplicates",
+      "raw_track_id": 4115,
+      "baseline_passage_id": "track:4115:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "ONE_PASSENGER_MINIVAN_PASSAGE_IDENTITY_RESOLVED_CATEGORY_OPEN",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 7228,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ],
+          "passage_id": "track:4115:episode:unreviewed-vehicle:passage:1",
+          "track_id": 4115,
+          "frame_index": 7228
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7228,
+          "track_id": 4115,
+          "physical_unit_id": "track:4115",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "truck",
+          "raw_category": "truck",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:a65a8d365868110fed6c3378",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "track:4115",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "QC_DUP_4774",
+      "group": "duplicates",
+      "raw_track_id": 4774,
+      "baseline_passage_id": "track:4774:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "UNRESOLVED",
+      "qc_recommended_action": "ONE_CARGO_VAN_PASSAGE_PRIMARY_4774_CATEGORY_OPEN",
+      "qc_proposed_count_delta": null,
+      "baseline_decision_frame": 7862,
+      "documentary_status": "DECISION_CONTAINS_EXACT_BASELINE_MEASUREMENT",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [
+        {
+          "status": "pending",
+          "reasons": [
+            "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE"
+          ],
+          "passage_id": "track:4774:episode:unreviewed-vehicle:passage:1",
+          "track_id": 4774,
+          "frame_index": 7862
+        }
+      ],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7862,
+          "track_id": 4774,
+          "physical_unit_id": "track:4774",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "truck",
+          "raw_category": "truck",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:7ac57ea829ab2c7b268e4fba",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "track:4774",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "QC_DUP_4820",
+      "group": "duplicates",
+      "raw_track_id": 4820,
+      "baseline_passage_id": "track:4820:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "DUPLICATE_OF_PRIMARY_4774_SAME_PASSAGE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 7902,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 7843,
+          "track_id": 4820,
+          "physical_unit_id": "track:4820",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "truck",
+          "raw_category": "truck",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:929809f48ab6daeeeba5ffdb",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ],
+          "p0_historical_unit_hypothesis": "track:4820",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    },
+    {
+      "case_id": "QC_DUP_4990",
+      "group": "duplicates",
+      "raw_track_id": 4990,
+      "baseline_passage_id": "track:4990:episode:unreviewed-vehicle:passage:1",
+      "qc_status": "QC_RECOMMEND_CLOSE",
+      "qc_recommended_action": "INELIGIBLE_STATIONARY_PARKED_VEHICLE_PLUS_ZERO",
+      "qc_proposed_count_delta": 0,
+      "baseline_decision_frame": 8642,
+      "documentary_status": "OBSERVED_ASSIGNMENT_RETAINED_NO_EVENT_OR_DECISION_AT_EXACT_ANCHOR",
+      "new_event_candidates": [],
+      "new_exact_anchor_decisions": [],
+      "new_frame_assignments": [
+        {
+          "frame_index": 8582,
+          "track_id": 4990,
+          "physical_unit_id": "track:4990",
+          "episode_id": "unreviewed-vehicle",
+          "role": "vehicle",
+          "category": "car",
+          "raw_category": "car",
+          "review_refs": [],
+          "association_verified": false,
+          "association_id": null,
+          "physical_episode_id": "b5-physical-context:553d1ab44c1993b56dcee73b",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": [],
+          "p0_historical_unit_hypothesis": "track:4990",
+          "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+        }
+      ],
+      "physical_resolution": "NOT_AUTOMATICALLY_ADJUDICATED_BY_DOCUMENTARY_JOIN"
+    }
+  ],
+  "cancellations": [
+    {
+      "case_id": "ACCEPTED-QC-2536",
+      "baseline_event_id": "b_v4_5e4c21680a5d9c91c87c3c17",
+      "raw_track_id": 2536,
+      "qc_reason": "STATIONARY_NO_PASSAGE",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        4114
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-2584",
+      "baseline_event_id": "b_v4_e3b7ab7ca31b581c8cbab805",
+      "raw_track_id": 2584,
+      "qc_reason": "STATIONARY_NO_PASSAGE",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        4213
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-2680",
+      "baseline_event_id": "b_v4_9a994ea2601196a65d1cf2f5",
+      "raw_track_id": 2680,
+      "qc_reason": "STATIONARY_NO_PASSAGE",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        4385
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-3512",
+      "baseline_event_id": "b_v4_ea61e3f1d25914ef9c0f308b",
+      "raw_track_id": 3512,
+      "qc_reason": "STATIONARY_NO_PASSAGE",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        6236
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-4569",
+      "baseline_event_id": "b_v4_938da4e9f8e9b98ee8dfaa21",
+      "raw_track_id": 4569,
+      "qc_reason": "STATIONARY_NO_PASSAGE",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        7630
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-4627",
+      "baseline_event_id": "b_v4_22bbc8c891b0874f1c005f79",
+      "raw_track_id": 4627,
+      "qc_reason": "MIXED_OBJECT_AND_STATIONARY_CONTEXT",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        7687
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-2583",
+      "baseline_event_id": "b_v4_1769ec6ceecb8e059a136b02",
+      "raw_track_id": 2583,
+      "qc_reason": "MIXED_PHYSICAL_OBJECTS",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        4254
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-1107",
+      "baseline_event_id": "b_v4_e2b66ac5f9c97d80aef01fa0",
+      "raw_track_id": 1107,
+      "qc_reason": "MIXED_PHYSICAL_OBJECTS_AND_DIRECTION",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        1418
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-4567",
+      "baseline_event_id": "b_v4_ed9b5cc77c20a9b569d3b16c",
+      "raw_track_id": 4567,
+      "qc_reason": "MIXED_PHYSICAL_OBJECTS",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        7663
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-4541",
+      "baseline_event_id": "b_v4_ac3d9770f1ccddf74e6cf5a3",
+      "raw_track_id": 4541,
+      "qc_reason": "NO_NEW_REVERSE_PASSAGE",
+      "qc_keep_event_id": null,
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        7626
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-4367",
+      "baseline_event_id": "b_v4_47fc124d1c152e35d5279f24",
+      "raw_track_id": 4367,
+      "qc_reason": "COMPLETED_PASSAGE_NEW_ID_FALSE_RETURN",
+      "qc_keep_event_id": "b_v4_7db107c2dd42da1384e17ab8",
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        7466
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-2697",
+      "baseline_event_id": "b_v4_62da8c728ff84b129fe94f72",
+      "raw_track_id": 2697,
+      "qc_reason": "DUPLICATE_CROSS_CATEGORY",
+      "qc_keep_event_id": "b_v4_3c7caa66fa93cbb9a74726f7",
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        4401
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-4934",
+      "baseline_event_id": "b_v4_79df78b67ef9702aaf26b597",
+      "raw_track_id": 4934,
+      "qc_reason": "DUPLICATE_COMPONENT_HISTORY",
+      "qc_keep_event_id": "b_v4_edc780363e53fd85668c505e",
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        8001
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-4946",
+      "baseline_event_id": "b_v4_b308dfdf8372cf3b62346c09",
+      "raw_track_id": 4946,
+      "qc_reason": "DUPLICATE_COMPONENT_HISTORY",
+      "qc_keep_event_id": "b_v4_edc780363e53fd85668c505e",
+      "source_witness_basis": "LAST_OBSERVED_SOURCE_MEASUREMENT_BEFORE_ACTIVATION",
+      "baseline_source_witness_frames": [
+        8015
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-4281",
+      "baseline_event_id": "b_v4_90e26422bae172b528349fb5",
+      "raw_track_id": 4281,
+      "qc_reason": "DUPLICATE_SAME_PHYSICAL_MOTORCYCLE",
+      "qc_keep_event_id": "b_v4_2749e461446564058a9407fd",
+      "source_witness_basis": "ACTIVATION_FRAME_SOURCE_MEASUREMENT",
+      "baseline_source_witness_frames": [
+        7371
+      ],
+      "documentary_status": "SOURCE_WITNESS_STILL_REPRESENTED_CHECK_CANONICAL_UNIT",
+      "new_event_candidates": [
+        {
+          "event_id": "b_v5_96fac29bf3e76e7f18709543",
+          "track_id": 4281,
+          "physical_unit_id": "track:4281",
+          "episode_id": "unreviewed-vehicle",
+          "passage_id": "track:4281:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "direction": "B_TO_A",
+          "route": "LINE_MARGIN",
+          "activation_frame": 7381,
+          "decision_frame": 7381,
+          "measured_crossing": false,
+          "shared_source_measurements": 7,
+          "shared_source_frames": [
+            7360,
+            7362,
+            7364,
+            7366,
+            7367,
+            7368,
+            7371
+          ],
+          "is_documentary_counterpart_not_physical_gt": true,
+          "retains_old_source_decision_witness": true,
+          "shares_qc_canonical_keep_source_measurement": false,
+          "same_direction_as_cancelled_baseline": true,
+          "same_category_as_cancelled_baseline": true
+        }
+      ],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    },
+    {
+      "case_id": "ACCEPTED-QC-3555",
+      "baseline_event_id": "b_v4_31bbc8c53bb5213f9eeae1cf",
+      "raw_track_id": 3555,
+      "qc_reason": "CARGO_COMPONENT_NOT_TRUCK_UNIT",
+      "qc_keep_event_id": "b_v4_1624d487f9ecd14a20e7f8e7",
+      "source_witness_basis": "ACTIVATION_FRAME_SOURCE_MEASUREMENT",
+      "baseline_source_witness_frames": [
+        6269
+      ],
+      "documentary_status": "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED",
+      "new_event_candidates": [],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    }
+  ],
+  "discovery": [
+    {
+      "case_id": "NO-CANDIDATE-49",
+      "raw_track_ids": [
+        49
+      ],
+      "qc_status": "VISIBLE_PASSAGE_POLICY_COVERAGE_GAP",
+      "qc_action": "PROPOSE_BAND_BORN_MEASURED_CROSSING_EXPERIMENT_NOT_TIMEOUT_RELAXATION",
+      "comparison_source_frames": [
+        24,
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        40,
+        44
+      ],
+      "comparison_frame_basis": "EXPLICIT_REVIEW_FRAME_LIST",
+      "assignment_count_in_reviewed_frames": 9,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "29": [
+          "track:49"
+        ],
+        "30": [
+          "track:49"
+        ],
+        "31": [
+          "track:49"
+        ],
+        "32": [
+          "track:49"
+        ],
+        "33": [
+          "track:49"
+        ],
+        "34": [
+          "track:49"
+        ],
+        "36": [
+          "track:49"
+        ],
+        "40": [
+          "track:49"
+        ],
+        "44": [
+          "track:49"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "NO-CANDIDATE-4552",
+      "raw_track_ids": [
+        4480,
+        4552
+      ],
+      "qc_status": "CONFIRMED_WRONG_UNIT_GROUP_COVERAGE_HOLE_PASSAGE_GATE_OPEN",
+      "qc_action": "SPLIT_MOTOR_EPISODE_4552_FROM_CAR4480_AND_LATER_CAR4552_NO_GLOBAL_ALIAS",
+      "comparison_source_frames": [
+        7600,
+        7605,
+        7610,
+        7615,
+        7620,
+        7625,
+        7630,
+        7636,
+        7637,
+        7640,
+        7650,
+        7660
+      ],
+      "comparison_frame_basis": "EXPLICIT_REVIEW_FRAME_LIST",
+      "assignment_count_in_reviewed_frames": 19,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "7600": [
+          "track:4480"
+        ],
+        "7605": [
+          "track:4480"
+        ],
+        "7610": [
+          "track:4480"
+        ],
+        "7615": [
+          "track:4480",
+          "track:4552"
+        ],
+        "7620": [
+          "track:4480",
+          "track:4552"
+        ],
+        "7625": [
+          "track:4480",
+          "track:4552"
+        ],
+        "7630": [
+          "track:4480",
+          "track:4552"
+        ],
+        "7636": [
+          "track:4480",
+          "track:4552"
+        ],
+        "7637": [
+          "track:4480",
+          "track:4552"
+        ],
+        "7640": [
+          "track:4480"
+        ],
+        "7650": [
+          "track:4480"
+        ],
+        "7660": [
+          "track:4480"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "NO-CANDIDATE-13-24",
+      "raw_track_ids": [
+        13,
+        24
+      ],
+      "qc_status": "UNRESOLVED_CLIP_START_OR_BAND_BORN",
+      "qc_action": "NO_AUTOMATIC_PLUS_ONE_WITHOUT_PASSAGE_EVIDENCE",
+      "comparison_source_frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "comparison_frame_basis": "RETAINED_SCOPE_RANGE_NOT_CONTINUOUS_VISUAL_REVIEW",
+      "assignment_count_in_reviewed_frames": 6,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "3": [
+          "track:13"
+        ],
+        "4": [
+          "track:13"
+        ],
+        "9": [
+          "track:24"
+        ],
+        "10": [
+          "track:24"
+        ],
+        "11": [
+          "track:24"
+        ],
+        "12": [
+          "track:24"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "NO-CANDIDATE-2643",
+      "raw_track_ids": [
+        2632,
+        2643
+      ],
+      "qc_status": "ALREADY_REPRESENTED_BY_ACCEPTED_TIMEOUT",
+      "qc_action": "POSSIBLE_EVIDENCE_UPGRADE_PLUS_ZERO_NOT_NEW_PASSAGE",
+      "comparison_source_frames": [
+        4282,
+        4283
+      ],
+      "comparison_frame_basis": "RETAINED_GEOMETRY_DIAGNOSTIC_PAIR_FRAMES",
+      "assignment_count_in_reviewed_frames": 2,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "4282": [
+          "track:2643"
+        ],
+        "4283": [
+          "track:2643"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "NO-CANDIDATE-3255",
+      "raw_track_ids": [
+        3224,
+        3255
+      ],
+      "qc_status": "ALREADY_REPRESENTED_BY_ACCEPTED_TIMEOUT",
+      "qc_action": "POSSIBLE_EVIDENCE_UPGRADE_PLUS_ZERO_NOT_NEW_PASSAGE",
+      "comparison_source_frames": [
+        5478,
+        5479
+      ],
+      "comparison_frame_basis": "RETAINED_GEOMETRY_DIAGNOSTIC_PAIR_FRAMES",
+      "assignment_count_in_reviewed_frames": 2,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "5478": [
+          "track:3255"
+        ],
+        "5479": [
+          "track:3255"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "NO-CANDIDATE-5298",
+      "raw_track_ids": [
+        5298
+      ],
+      "qc_status": "EOF_CONFIRMATION_INCOMPLETE",
+      "qc_action": "KEEP_UNRESOLVED_NO_POST_EOF_FRAMES",
+      "comparison_source_frames": [
+        9125,
+        9126
+      ],
+      "comparison_frame_basis": "RETAINED_GEOMETRY_DIAGNOSTIC_PAIR_FRAMES",
+      "assignment_count_in_reviewed_frames": 2,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "9125": [
+          "track:5298"
+        ],
+        "9126": [
+          "track:5298"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "NO-CANDIDATE-763",
+      "raw_track_ids": [
+        763,
+        816,
+        856
+      ],
+      "qc_status": "KNOWN_WHITE_SCOOTER_HISTORY_UNRESOLVED",
+      "qc_action": "TRACE_BOUNDED_PHYSICAL_EPISODES_WITHOUT_GLOBAL_ALIAS",
+      "comparison_source_frames": [
+        1025,
+        1026,
+        1027,
+        1028
+      ],
+      "comparison_frame_basis": "RETAINED_GEOMETRY_DIAGNOSTIC_PAIR_FRAMES",
+      "assignment_count_in_reviewed_frames": 4,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "1025": [
+          "track:763"
+        ],
+        "1026": [
+          "track:763"
+        ],
+        "1027": [
+          "track:763"
+        ],
+        "1028": [
+          "track:763"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "DIAGNOSTIC-ONLY-2771",
+      "raw_track_ids": [
+        2750,
+        2771
+      ],
+      "qc_status": "SOURCE_REVIEW_DUPLICATE_OF_ACCEPTED2750",
+      "qc_action": "NO_ADDITIONAL_PASSAGE_PLUS_ZERO",
+      "comparison_source_frames": [
+        4509,
+        4510
+      ],
+      "comparison_frame_basis": "RETAINED_GEOMETRY_DIAGNOSTIC_PAIR_FRAMES",
+      "assignment_count_in_reviewed_frames": 4,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "4509": [
+          "track:2750",
+          "track:2771"
+        ],
+        "4510": [
+          "track:2750",
+          "track:2771"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "DIAGNOSTIC-ONLY-4614",
+      "raw_track_ids": [
+        4614
+      ],
+      "qc_status": "SOURCE_REVIEW_MOVING_APPROACH_BAND_BORN_POLICY_OPEN",
+      "qc_action": "NO_AUTOMATIC_COUNT_FROM_TINY_NEAR_LINE_PAIR",
+      "comparison_source_frames": [
+        7651,
+        7652
+      ],
+      "comparison_frame_basis": "RETAINED_GEOMETRY_DIAGNOSTIC_PAIR_FRAMES",
+      "assignment_count_in_reviewed_frames": 2,
+      "new_event_candidates": [],
+      "physical_units_by_reviewed_frame": {
+        "7651": [
+          "track:4614"
+        ],
+        "7652": [
+          "track:4614"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    },
+    {
+      "case_id": "DIAGNOSTIC-ONLY-4709",
+      "raw_track_ids": [
+        4630,
+        4709
+      ],
+      "qc_status": "SOURCE_REVIEW_DUPLICATE_CANDIDATE_AND_BAND_BORN_POLICY_OPEN",
+      "qc_action": "ONE_PHYSICAL_CANDIDATE4630_4709_NOT_PLUS_TWO",
+      "comparison_source_frames": [
+        7711,
+        7712
+      ],
+      "comparison_frame_basis": "RETAINED_GEOMETRY_DIAGNOSTIC_PAIR_FRAMES",
+      "assignment_count_in_reviewed_frames": 3,
+      "new_event_candidates": [
+        {
+          "event_id": "b_v5_7089bc79cf1cb45210e09e78",
+          "track_id": 4630,
+          "physical_unit_id": "track:4630",
+          "episode_id": "unreviewed-vehicle",
+          "passage_id": "track:4630:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "direction": "A_TO_B",
+          "route": "LINE_MARGIN",
+          "activation_frame": 7736,
+          "decision_frame": 7736,
+          "measured_crossing": false,
+          "matching_reviewed_source_frames": [
+            7711
+          ]
+        }
+      ],
+      "physical_units_by_reviewed_frame": {
+        "7711": [
+          "track:4630",
+          "track:4709"
+        ],
+        "7712": [
+          "track:4709"
+        ]
+      },
+      "physical_resolution": "POLICY_OR_SOURCE_REVIEW_REQUIRED_NO_AUTOMATIC_MISSED_PLUS_ONE"
+    }
+  ]
+}

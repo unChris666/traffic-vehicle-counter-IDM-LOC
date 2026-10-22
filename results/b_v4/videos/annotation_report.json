@@ -1,0 +1,119 @@
+{
+  "schema_version": "phase8_b_v4_annotation_v1",
+  "claim_type": "ACTUAL_B_V4_LEDGER_RENDER_NOT_MODEL_INFERENCE",
+  "semantics": "OFFLINE_LEDGER_LOG_REPLAY_NOT_AN_ONLINE_DECISION_OR_ACCURACY_MEASUREMENT",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "output_video": {
+    "path": "/tmp/bv4-rendered/TGDI-WEEKDAY-SIANG-b-v4-machine.mp4",
+    "sha256": "868dd096e305102171de3946bd1384ef30d6a37a9ccce49c6b7efd9a557b3f13",
+    "size_bytes": 144935634,
+    "codec": "h264",
+    "pixel_format": "yuv420p",
+    "frames_written": 9128,
+    "frames_redecoded": 9128,
+    "fps": 29.78121400353632,
+    "width": 1280,
+    "height": 1160,
+    "audio_preserved": false
+  },
+  "source_image_region": {
+    "x": 0,
+    "y": 0,
+    "width": 640,
+    "height": 480,
+    "resized": false
+  },
+  "final_accepted": 172,
+  "final_pending": 68,
+  "final_vehicle": 172,
+  "final_pedestrian": 0,
+  "final_pivot": {
+    "motorcycle": {
+      "A_TO_B": 67,
+      "B_TO_A": 79
+    },
+    "car": {
+      "A_TO_B": 6,
+      "B_TO_A": 10
+    },
+    "truck": {
+      "A_TO_B": 5,
+      "B_TO_A": 5
+    },
+    "pedestrian": {
+      "A_TO_B": 0,
+      "B_TO_A": 0
+    }
+  },
+  "route_counts": {
+    "LINE_MARGIN": 138,
+    "OCCLUSION_DIFF_POLYGON": 0,
+    "ESTIMATED_TIMEOUT": 34
+  },
+  "final_measured": 121,
+  "final_inferred": 51,
+  "frame_pixel_and_raw_link_verified_every_frame": true,
+  "inputs_unchanged_after_render": true,
+  "new_detector_tracker_encoder_inference": false,
+  "counting_rerun_by_renderer": false,
+  "component_policy": "EXACT_FRAME_POSITIVE_RIDER_PARENT_ASSIGNMENT_UNION_RAW_PARENT_BC_PRESERVED",
+  "display_id_policy": "RAW_ID_FIRST_WITH_OFFLINE_PREACTIVATION_VS_COUNTED_STATUS",
+  "label_layout_policy": "FIXED_FONT_COLLISION_FREE_OR_RESERVED_OUTSIDE_SOURCE_CALLOUT",
+  "maximum_visible_units": 20,
+  "pending_excluded_from_pivot": true,
+  "maximum_overflow_callouts": 4,
+  "layout_audit": {
+    "path": "/tmp/bv4-rendered/TGDI-WEEKDAY-SIANG-b-v4-machine.labels.jsonl.gz",
+    "sha256": "e3d5ddf454b4b0b887bb84d3fce906caefeed677521a34c37bdd9c47af79fb99"
+  },
+  "review_source_sha256": null,
+  "ffmpeg_command": [
+    "/usr/bin/ffmpeg",
+    "-v",
+    "error",
+    "-nostdin",
+    "-n",
+    "-f",
+    "rawvideo",
+    "-pix_fmt",
+    "bgr24",
+    "-s:v",
+    "1280x1160",
+    "-r",
+    "29.78121400353632",
+    "-i",
+    "pipe:0",
+    "-an",
+    "-c:v",
+    "libx264",
+    "-preset",
+    "veryfast",
+    "-crf",
+    "18",
+    "-threads",
+    "2",
+    "-pix_fmt",
+    "yuv420p",
+    "-movflags",
+    "+faststart",
+    "/tmp/bv4-rendered/TGDI-WEEKDAY-SIANG-b-v4-machine.mp4"
+  ],
+  "codec_log": {
+    "path": "/tmp/bv4-rendered/TGDI-WEEKDAY-SIANG-b-v4-machine.ffmpeg.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "opencv_version": "5.0.0",
+  "software_source_sha256": "22b28bf14653aef98293431ad91000450a6aab6a09014525d02e6ef4b39a4b86",
+  "render_and_decode_wall_seconds": 143.3275162869977,
+  "retained_video_path": "results/b_v4/videos/TGDI-WEEKDAY-SIANG-b-v4-machine.mp4",
+  "video_is_git_blob": false,
+  "github_publication_status": "NOT_PUBLISHED_NEW_B_V4_VIDEO"
+}

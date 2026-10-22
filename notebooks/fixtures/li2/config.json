@@ -1,0 +1,36 @@
+{
+  "analysis_run_id": "li1-synthetic-001",
+  "connector_policy": "EXPLICIT_FIXTURE_ACCESS_AND_N1_ROAD_CLASS",
+  "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+  "graph_hash": "786a2c6c7d5e0c439118cf1ff7fb5df7e8a47b83baf27d47016898f9a5d3dda4",
+  "parameters": {
+    "max_building_to_road_m": {
+      "unit": "m",
+      "value": 125.0
+    },
+    "max_target_snap_m": {
+      "unit": "m",
+      "value": 50.0
+    },
+    "max_travel_min": {
+      "unit": "min",
+      "value": 10.0
+    },
+    "motorcycle_speed_kmh": {
+      "unit": "km/h",
+      "value": 7.0
+    }
+  },
+  "path_weight": "travel_time_s",
+  "policy_refs": {
+    "D02": "docs/AREA_COVERAGE_DECISIONS.md:D02:OPEN_REFERENCE_ONLY",
+    "D03": "docs/AREA_COVERAGE_DECISIONS.md:D03:OPEN_REFERENCE_ONLY",
+    "D05": "docs/AREA_COVERAGE_DECISIONS.md:D05:OPEN_REFERENCE_ONLY",
+    "D10": "docs/AREA_COVERAGE_DECISIONS.md:D10:OPEN_REFERENCE_ONLY"
+  },
+  "profile": "N1_REFERENCE_ONLY",
+  "schema_version": "li_routing_config_v1",
+  "selection_hash": "073a6bacb168f119b6e191dd6b76a56a8161aee41a88af6e234f24bdc96b8716",
+  "target_connector_policy": "OMIT_N1_REFERENCE_REPORT_OFFSET",
+  "version": "fixture-reference-1"
+}

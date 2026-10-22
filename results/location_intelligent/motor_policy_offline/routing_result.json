@@ -1,0 +1,445 @@
+{
+  "diagnostics": [],
+  "limitations": [
+    "Offline scenario on explicit evidence; not proof of real/legal access",
+    "No automatic entrance/barrier/conditional parser or source retrieval",
+    "Node-bound connectors only; adapters must split edges for interior access points"
+  ],
+  "live_readiness": "NOT_VERIFIED",
+  "physical_access_validated": false,
+  "provenance": {
+    "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+    "effective_policy": {
+      "baseline": {
+        "candidate_selection": "NEAREST_REACHABLE",
+        "preserve_existing_inputs_and_outputs": true,
+        "profile": "N1_REFERENCE_ONLY",
+        "target_connector": "OMITTED_WITH_OFFSET_DIAGNOSTIC",
+        "threshold_rule": "round(total_min, 3) < 10"
+      },
+      "capacity_reference": {
+        "allow_mixed_unit_total": false,
+        "apartment": {
+          "average_area_m2": 45.0,
+          "net_ratio": 0.7,
+          "occupancy": 0.7
+        },
+        "dormitory": {
+          "average_area_m2": 15.0,
+          "net_ratio": 0.7,
+          "occupancy": 0.75
+        },
+        "estimate_level_from_height": true,
+        "floor_height_m": 3.0,
+        "hotel": {
+          "average_area_m2": 30.0,
+          "guests_per_occupied_room": 2.0,
+          "net_ratio": 0.65,
+          "occupancy": 0.45
+        },
+        "profile": "N1_SPLIT_REFERENCE_ONLY",
+        "standard_residential_value": 4
+      },
+      "connectors": {
+        "building_access": "USE_EVIDENCE_OR_EXPLICIT_OWNER_ACCEPTED_ASSUMPTION",
+        "candidate_comparison_precision": "FULL_PRECISION_BEFORE_THRESHOLD_ROUND",
+        "candidate_distance_is_access_evidence": false,
+        "candidate_selection": "HIGHEST_VALID_ACCESS_CLASS_THEN_MINIMUM_TOTAL_TIME",
+        "distance_measure": "PROJECTED_POINT_TO_ROAD_GEOMETRY_DISTANCE",
+        "distance_status": "EXPERIMENTAL_CANDIDATE_SEARCH_LIMIT",
+        "entrance_assumption_overrides_access_restrictions": false,
+        "entrance_candidate_distance_rule": null,
+        "entrance_location_claim_type": "OWNER_ACCEPTED_ASSUMPTION_NOT_OBSERVATION",
+        "entrance_location_policy": "ASSUME_ROAD_FACING_BUILDING_LOCATION_IS_ENTRANCE",
+        "highest_class_vs_minimum_time_precedence": "CLASS_RANK_BEFORE_TOTAL_TIME",
+        "highest_class_vs_valid_access_precedence": "VALID_ACCESS_BEFORE_CLASS_RANK",
+        "infer_straight_line_access": false,
+        "link_class_mapping": "USE_PARENT_CLASS",
+        "max_building_to_road_m": {
+          "unit": "m",
+          "value": 125.0
+        },
+        "max_target_snap_m": {
+          "limit_type": "UNBOUNDED",
+          "unit": "m",
+          "value": null
+        },
+        "reference_search_origin": "BUILDING_REPRESENTATIVE_POINT",
+        "require_access_evidence": true,
+        "road_class_hierarchy": [
+          [
+            "primary"
+          ],
+          [
+            "secondary"
+          ],
+          [
+            "tertiary"
+          ],
+          [
+            "unclassified",
+            "residential",
+            "living_street"
+          ],
+          [
+            "service"
+          ],
+          [
+            "track",
+            "path"
+          ]
+        ],
+        "road_facing_location_method": "FACE_HIGHEST_ROAD_CLASS",
+        "store_entrance": "USE_EVIDENCE_OR_EXPLICIT_OWNER_ACCEPTED_ASSUMPTION",
+        "target_connector_cost_model": "CONNECTOR_DISTANCE_AT_REFERENCE_CONSTANT_SPEED",
+        "target_snap_search_scope": "AVAILABLE_GRAPH_ONLY",
+        "unknown_access_usable": false,
+        "unreachable_higher_class": "TRY_NEXT_REACHABLE_CLASS"
+      },
+      "decision_basis": "Owner clarification: D02/D03/D05/D10, 2026-10-22",
+      "evidence": {
+        "accepted_evidence_specification": null,
+        "exclusion_is_proof_of_physical_inaccessibility": false,
+        "freshness_policy": null,
+        "owner_accepted_assumptions": [
+          "MAPPED_ALLEY_USABLE_UNLESS_PROHIBITED",
+          "GATE_PASSABLE_IF_NO_CLOSURE_INFORMATION",
+          "ROAD_FACING_BUILDING_LOCATION_IS_ENTRANCE"
+        ],
+        "unknown_access_status": "UNVERIFIED_EXCLUDED_FROM_ROUTING"
+      },
+      "motorcycle_access": {
+        "cross_unverified_barriers": false,
+        "gates_and_prohibitions": "GATE_ASSUMED_PASSABLE_UNLESS_CLOSED_OR_PROHIBITED",
+        "invent_u_turns_or_reverse_edges": false,
+        "mapped_alley_missing_motorcycle_permission": "ASSUME_USABLE_UNLESS_PROHIBITED",
+        "no_route_policy": "EXCLUDE_FROM_COUNT_WITH_REASON",
+        "park_and_walk_policy": "MOTORCYCLE_ONLY_NO_WALKING_LEG",
+        "pedestrian_only_usable": false,
+        "private_access_usable": false,
+        "provider_tag_mapping": null,
+        "respect_direction": true,
+        "stairs_usable": false,
+        "turn_restriction_model": null,
+        "unknown_access_usable": false,
+        "verified_motorcycle_alley_usable": true
+      },
+      "policy_version": "motorcycle_experiment_v7",
+      "schema_version": "li_access_policy_v1",
+      "sources": {
+        "buildings": {
+          "planned_release": "2026-10-21.0",
+          "planned_schema_version": "2.0.0",
+          "provider": "OVERTURE_MAPS",
+          "reference_n1_release": "2026-08-19.0",
+          "status": "PLANNED_NOT_ACQUIRED_OR_ADAPTER_VALIDATED"
+        },
+        "provenance": {
+          "record_extent_request_filter_versions_and_missing_reasons": true,
+          "record_raw_and_normalized_checksums": true
+        },
+        "roads_access_barriers_turns": {
+          "library": "OSMNX",
+          "network_filter_is_complete_motorcycle_profile": false,
+          "network_type": "drive_service",
+          "overpass_endpoint": null,
+          "planned_library_version": "2.1.1",
+          "provider": "OPENSTREETMAP_VIA_OVERPASS",
+          "restriction_relation_acquisition": null,
+          "server_version": null,
+          "snapshot_as_of": null,
+          "status": "PLANNED_NOT_ACQUIRED_OR_ADAPTER_VALIDATED"
+        },
+        "target": {
+          "coordinate_source": null,
+          "provider": "EXPLICIT_TARGET_INPUT",
+          "source_version_or_as_of": null
+        }
+      },
+      "status": "PARTIALLY_DECIDED_NOT_INTEGRATED",
+      "travel": {
+        "direction": "building_to_store",
+        "max_travel_min": {
+          "unit": "min",
+          "value": 10.0
+        },
+        "mode": "motorcycle",
+        "reference_constant_speed": {
+          "unit": "km/h",
+          "value": 7.0
+        },
+        "segment_speed_model": "ALL_SEGMENTS_USE_REFERENCE_CONSTANT_SPEED",
+        "speed_status": "N1_ASSUMPTION_NOT_VALIDATED_FOR_MOTORCYCLE",
+        "threshold_comparison": "<=",
+        "threshold_rounding": "PYTHON_ROUND_HALF_EVEN_TOTAL_MINUTES_BEFORE_COMPARISON",
+        "threshold_status": "TEMPORARY_BUSINESS_SCENARIO_NOT_VALIDATED"
+      }
+    },
+    "graph_hash": "9ddbac43f6abe7f251005bf76a359d42d2c4dc7db0892eaf3f78f46f48217eec",
+    "graph_id": "synthetic-directed-001",
+    "policy_hash": "2af3f5c44cd31bba4455a7f5ec4b8d16f6cc96244b35dba4e1d887f000aba346",
+    "selection_hash": "073a6bacb168f119b6e191dd6b76a56a8161aee41a88af6e234f24bdc96b8716"
+  },
+  "routes": [
+    {
+      "building_id": "standard-100",
+      "candidates": [
+        {
+          "building_connector_id": "standard-100high",
+          "building_connector_m": 250.79872404781858,
+          "class_rank": 0,
+          "network_distance_m": 270.0,
+          "network_edges": [
+            "access-AB",
+            "network-BT-fast"
+          ],
+          "target_connector_id": "target",
+          "target_connector_m": 0.0,
+          "threshold_time_min": 4,
+          "total_distance_m": 520.7987240478186,
+          "total_time_min": 4.463989063267017,
+          "within_time": true
+        },
+        {
+          "building_connector_id": "standard-100low",
+          "building_connector_m": 19.999999649822712,
+          "class_rank": 4,
+          "network_distance_m": 20.0,
+          "network_edges": [
+            "network-BT-fast"
+          ],
+          "target_connector_id": "target",
+          "target_connector_m": 0.0,
+          "threshold_time_min": 0,
+          "total_distance_m": 39.99999964982271,
+          "total_time_min": 0.34285713985562327,
+          "within_time": true
+        }
+      ],
+      "physical_access_validated": false,
+      "reason": "SCENARIO_WITHIN_TIME",
+      "route_found": true,
+      "scenario_accessible": true,
+      "selected_candidate": {
+        "building_connector_id": "standard-100high",
+        "building_connector_m": 250.79872404781858,
+        "class_rank": 0,
+        "network_distance_m": 270.0,
+        "network_edges": [
+          "access-AB",
+          "network-BT-fast"
+        ],
+        "target_connector_id": "target",
+        "target_connector_m": 0.0,
+        "threshold_time_min": 4,
+        "total_distance_m": 520.7987240478186,
+        "total_time_min": 4.463989063267017,
+        "within_time": true
+      }
+    },
+    {
+      "building_id": "apartment-600",
+      "candidates": [
+        {
+          "building_connector_id": "apartment-600high",
+          "building_connector_m": 200.99751192918143,
+          "class_rank": 0,
+          "network_distance_m": 270.0,
+          "network_edges": [
+            "access-AB",
+            "network-BT-fast"
+          ],
+          "target_connector_id": "target",
+          "target_connector_m": 0.0,
+          "threshold_time_min": 4,
+          "total_distance_m": 470.9975119291814,
+          "total_time_min": 4.037121530821556,
+          "within_time": true
+        },
+        {
+          "building_connector_id": "apartment-600low",
+          "building_connector_m": 53.851647753347486,
+          "class_rank": 4,
+          "network_distance_m": 20.0,
+          "network_edges": [
+            "network-BT-fast"
+          ],
+          "target_connector_id": "target",
+          "target_connector_m": 0.0,
+          "threshold_time_min": 1,
+          "total_distance_m": 73.85164775334749,
+          "total_time_min": 0.6330141236001213,
+          "within_time": true
+        }
+      ],
+      "physical_access_validated": false,
+      "reason": "SCENARIO_WITHIN_TIME",
+      "route_found": true,
+      "scenario_accessible": true,
+      "selected_candidate": {
+        "building_connector_id": "apartment-600high",
+        "building_connector_m": 200.99751192918143,
+        "class_rank": 0,
+        "network_distance_m": 270.0,
+        "network_edges": [
+          "access-AB",
+          "network-BT-fast"
+        ],
+        "target_connector_id": "target",
+        "target_connector_m": 0.0,
+        "threshold_time_min": 4,
+        "total_distance_m": 470.9975119291814,
+        "total_time_min": 4.037121530821556,
+        "within_time": true
+      }
+    },
+    {
+      "building_id": "dormitory-600",
+      "candidates": [
+        {
+          "building_connector_id": "dormitory-600high",
+          "building_connector_m": 151.32745895736286,
+          "class_rank": 0,
+          "network_distance_m": 270.0,
+          "network_edges": [
+            "access-AB",
+            "network-BT-fast"
+          ],
+          "target_connector_id": "target",
+          "target_connector_m": 0.0,
+          "threshold_time_min": 4,
+          "total_distance_m": 421.32745895736286,
+          "total_time_min": 3.6113782196345388,
+          "within_time": true
+        },
+        {
+          "building_connector_id": "dormitory-600low",
+          "building_connector_m": 101.98039026489228,
+          "class_rank": 4,
+          "network_distance_m": 20.0,
+          "network_edges": [
+            "network-BT-fast"
+          ],
+          "target_connector_id": "target",
+          "target_connector_m": 0.0,
+          "threshold_time_min": 1,
+          "total_distance_m": 121.98039026489228,
+          "total_time_min": 1.0455462022705053,
+          "within_time": true
+        }
+      ],
+      "physical_access_validated": false,
+      "reason": "SCENARIO_WITHIN_TIME",
+      "route_found": true,
+      "scenario_accessible": true,
+      "selected_candidate": {
+        "building_connector_id": "dormitory-600high",
+        "building_connector_m": 151.32745895736286,
+        "class_rank": 0,
+        "network_distance_m": 270.0,
+        "network_edges": [
+          "access-AB",
+          "network-BT-fast"
+        ],
+        "target_connector_id": "target",
+        "target_connector_m": 0.0,
+        "threshold_time_min": 4,
+        "total_distance_m": 421.32745895736286,
+        "total_time_min": 3.6113782196345388,
+        "within_time": true
+      }
+    },
+    {
+      "building_id": "hotel-700",
+      "candidates": [
+        {
+          "building_connector_id": "hotel-700high",
+          "building_connector_m": 101.98038939275102,
+          "class_rank": 0,
+          "network_distance_m": 270.0,
+          "network_edges": [
+            "access-AB",
+            "network-BT-fast"
+          ],
+          "target_connector_id": "target",
+          "target_connector_m": 0.0,
+          "threshold_time_min": 3,
+          "total_distance_m": 371.980389392751,
+          "total_time_min": 3.1884033376521517,
+          "within_time": true
+        }
+      ],
+      "physical_access_validated": false,
+      "reason": "SCENARIO_WITHIN_TIME",
+      "route_found": true,
+      "scenario_accessible": true,
+      "selected_candidate": {
+        "building_connector_id": "hotel-700high",
+        "building_connector_m": 101.98038939275102,
+        "class_rank": 0,
+        "network_distance_m": 270.0,
+        "network_edges": [
+          "access-AB",
+          "network-BT-fast"
+        ],
+        "target_connector_id": "target",
+        "target_connector_m": 0.0,
+        "threshold_time_min": 3,
+        "total_distance_m": 371.980389392751,
+        "total_time_min": 3.1884033376521517,
+        "within_time": true
+      }
+    },
+    {
+      "building_id": "legacy-fallback",
+      "candidates": [
+        {
+          "building_connector_id": "legacy-fallbackhigh",
+          "building_connector_m": 53.85164793945495,
+          "class_rank": 0,
+          "network_distance_m": 270.0,
+          "network_edges": [
+            "access-AB",
+            "network-BT-fast"
+          ],
+          "target_connector_id": "target",
+          "target_connector_m": 0.0,
+          "threshold_time_min": 3,
+          "total_distance_m": 323.85164793945495,
+          "total_time_min": 2.775871268052471,
+          "within_time": true
+        }
+      ],
+      "physical_access_validated": false,
+      "reason": "SCENARIO_WITHIN_TIME",
+      "route_found": true,
+      "scenario_accessible": true,
+      "selected_candidate": {
+        "building_connector_id": "legacy-fallbackhigh",
+        "building_connector_m": 53.85164793945495,
+        "class_rank": 0,
+        "network_distance_m": 270.0,
+        "network_edges": [
+          "access-AB",
+          "network-BT-fast"
+        ],
+        "target_connector_id": "target",
+        "target_connector_m": 0.0,
+        "threshold_time_min": 3,
+        "total_distance_m": 323.85164793945495,
+        "total_time_min": 2.775871268052471,
+        "within_time": true
+      }
+    }
+  ],
+  "schema_version": "li_motor_routing_v1",
+  "status": "SUCCEEDED",
+  "summary": {
+    "accounted": 5,
+    "input_selected": 5,
+    "no_route": 0,
+    "not_evaluated": 0,
+    "scenario_accepted": 5,
+    "unknown_edge_permissions": 0
+  }
+}

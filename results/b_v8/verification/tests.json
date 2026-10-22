@@ -1,0 +1,83 @@
+[
+  {
+    "group": "inherited_b_v5_v6_v7",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v7_handoff_tests phase_8_b_v7_counting_tests phase_8_b_v7_batch_tests phase_9_v7_compare_tests phase_8_b_v6_identity_tests phase_8_b_v6_counting_tests phase_8_b_v6_batch_tests phase_8_b_v6_annotation_tests phase_9_v6_qc_review_tests phase_8_b_v5_identity_tests phase_8_b_v5_counting_tests phase_8_b_v5_batch_tests",
+    "returncode": 0,
+    "tests": 211,
+    "wall_seconds": 6.034790054000041,
+    "status": "PASS",
+    "log": "inherited_tests.log"
+  },
+  {
+    "group": "phase_8_b_v8_review_tests",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v8_review_tests",
+    "returncode": 0,
+    "tests": 21,
+    "wall_seconds": 0.1599799410032574,
+    "status": "PASS",
+    "log": "phase_8_b_v8_review_tests.log"
+  },
+  {
+    "group": "phase_8_b_v8_finalize_tests",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v8_finalize_tests",
+    "returncode": 0,
+    "tests": 21,
+    "wall_seconds": 0.12185694900108501,
+    "status": "PASS",
+    "log": "phase_8_b_v8_finalize_tests.log"
+  },
+  {
+    "group": "phase_8_b_v8_batch_tests",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v8_batch_tests",
+    "returncode": 0,
+    "tests": 18,
+    "wall_seconds": 0.25429262800025754,
+    "status": "PASS",
+    "log": "phase_8_b_v8_batch_tests.log"
+  },
+  {
+    "group": "phase_8_b_v8_replay_tests",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v8_replay_tests",
+    "returncode": 0,
+    "tests": 7,
+    "wall_seconds": 0.5704174560014508,
+    "status": "PASS",
+    "log": "phase_8_b_v8_replay_tests.log"
+  },
+  {
+    "group": "phase_9_v8_compare_tests",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_9_v8_compare_tests",
+    "returncode": 0,
+    "tests": 10,
+    "wall_seconds": 0.10394646399799967,
+    "status": "PASS",
+    "log": "phase_9_v8_compare_tests.log"
+  },
+  {
+    "group": "phase_8_b_v8_competitor_tests",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v8_competitor_tests",
+    "returncode": 0,
+    "tests": 5,
+    "wall_seconds": 0.3946376239982783,
+    "status": "PASS",
+    "log": "phase_8_b_v8_competitor_tests.log"
+  },
+  {
+    "group": "phase_8_b_v8_recovery_tests",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v8_recovery_tests",
+    "returncode": 0,
+    "tests": 5,
+    "wall_seconds": 0.5996607599954586,
+    "status": "PASS",
+    "log": "phase_8_b_v8_recovery_tests.log"
+  },
+  {
+    "group": "phase_9_v8_qc_tests",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_9_v8_qc_tests",
+    "returncode": 0,
+    "tests": 4,
+    "wall_seconds": 0.16010867300065001,
+    "status": "PASS",
+    "log": "phase_9_v8_qc_tests.log"
+  }
+]

@@ -1,0 +1,44 @@
+{
+  "schema_version": "phase9_b_v6_p0_gate_v1",
+  "decision": "BLOCKED_CONFIRMED_PHYSICAL_DUPLICATE",
+  "scoped_implementation_regressions": "PASS",
+  "new_software_tests": 81,
+  "inherited_software_tests": 65,
+  "full_pilot_replay": "PASS_9128_SOURCE_FRAMES_SAME_CACHE",
+  "production_ready": false,
+  "p0_milestone_can_be_closed": false,
+  "p1_research_can_address_blocker_but_is_not_p0_acceptance": true,
+  "active_counting_result": "results/b_v6/execution/pilot_v6_machine_final/weekday_siang/counting_result.json.gz",
+  "active_counting_sha256": "82f80239e25e64386f0423a18817b2f87eac98b0e88e9d93081994d5b436ee3e",
+  "aggregate": {
+    "total": 74,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 71,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 28,
+      "B_TO_A": 46
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 5,
+      "LINE_MARGIN": 69
+    },
+    "measured_total": 66,
+    "inferred_total": 8,
+    "pending": 24,
+    "invalid": 84,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 84
+    },
+    "cancelled": 50,
+    "vehicle_total": 74,
+    "pedestrian_total": 0
+  },
+  "intentional_invalid_are_candidate_scopes_not_physical_vehicle_counts": true,
+  "confirmed_blocker_case": "red_motorcycle_1049_1123_occlusion",
+  "fixture": "review/regression_fixture_1049_1123.json",
+  "new_model_tracker_reid_or_enhancement_execution": false,
+  "next_action": "Source-bound temporal handoff conflict experiment before timeout finalization, with distinct-vehicle negative controls; replay same cache and re-audit."
+}

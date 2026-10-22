@@ -1,0 +1,62 @@
+{
+  "analysis_run_id": "li0-synthetic-001",
+  "artifacts": [],
+  "context_hash": "c9d04b4cf0c42bf72e9e37f9c5eab822b1cb6d01948cdcfa4f04c8e4ce716940",
+  "modules": [
+    {
+      "analysis_run_id": "li0-synthetic-001",
+      "artifact_refs": [],
+      "config_hash": "c554552f813b9beae8b958ef3ed60506b0fc2ae7e27a9c6e4fc60a1f354d30cf",
+      "context_hash": "c9d04b4cf0c42bf72e9e37f9c5eab822b1cb6d01948cdcfa4f04c8e4ce716940",
+      "engine": null,
+      "error": null,
+      "finished_at": null,
+      "module": "area_coverage",
+      "module_run_id": "area-input-001",
+      "required_inputs": [
+        "fixture-buildings"
+      ],
+      "started_at": null,
+      "status": "NOT_RUN"
+    }
+  ],
+  "schema_version": "location_intelligent_v1",
+  "sources": [
+    {
+      "acquired_at": "2026-10-21T00:00:00Z",
+      "acquisition_mode": "SYNTHETIC_FIXTURE",
+      "availability": "AVAILABLE",
+      "byte_count": 675,
+      "coverage": {
+        "completeness": "COMPLETE",
+        "scope": "Synthetic building-selection fixture; no real-source coverage claim"
+      },
+      "crs": "EPSG:4326",
+      "fingerprint": {
+        "algorithm": "sha256",
+        "value": "ffeb854137996897f8aaae79c564dcb31f1e81d0c5c4205fc08174c6dbe28699"
+      },
+      "freshness": "UNKNOWN",
+      "inventory_id": "SRC04",
+      "kind": "LOCAL_FILE",
+      "locator": "buildings.geojson",
+      "provenance": {
+        "dependencies": [],
+        "description": "Hand-authored fixture; not retrieved from Overture or any live provider",
+        "origin": "SYNTHETIC_FIXTURE"
+      },
+      "provider": "SYNTHETIC",
+      "row_count": 1,
+      "schema_version": "li0_building_fixture_v1",
+      "source_as_of": null,
+      "source_ref_id": "fixture-buildings",
+      "source_version": "fixture-1",
+      "units": {
+        "coordinates": "degree"
+      },
+      "unknown_reasons": {
+        "source_as_of": "No observed real-world source vintage for synthetic fixture"
+      }
+    }
+  ]
+}

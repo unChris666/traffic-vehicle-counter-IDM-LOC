@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "kernel": "chrisbiran/b-v8-nighttime-input-inspection",
+  "executed_version": 1,
+  "kernel_result": "COMPLETE",
+  "dataset_sources": [
+    "chrisbiran/video-traffic-malam"
+  ],
+  "actual_mounted_path": "/kaggle/input/datasets/chrisbiran/video-traffic-malam",
+  "environment": {
+    "python": "3.13.15",
+    "opencv": "4.14.0",
+    "execution_context": "actual_kaggle_mount",
+    "actual_dataset_directory": "/kaggle/input/datasets/chrisbiran/video-traffic-malam",
+    "kaggle_input_exists": true,
+    "cpu_count": 4,
+    "kaggle_input_top_level_actual": [
+      "datasets"
+    ],
+    "gpu_required_for_inspection": false
+  },
+  "videos": [
+    {
+      "filename": "F1YV-WEEKDAY-MALAM.mp4",
+      "source_sha256": "12faf5b13dc16674eb63e7441ce7a484746220dd75bc0484ab0d98d47ac13e43",
+      "decoded_frames": 9131,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "F1YV-WEEKEND-MALAM.mp4",
+      "source_sha256": "0ffe42942967b09793da0229ccdbcf111573cb52a0a94b32d5bf4bc777f1fa88",
+      "decoded_frames": 9079,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "FMMQ-MALAM.mp4",
+      "source_sha256": "a028c3c9c8d13f3b1f9239b1d5515a356872b0ade3bc3ca3d9133e6b98f7759d",
+      "decoded_frames": 8861,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "FMMQ-WEEKDAY-MALAM.mp4",
+      "source_sha256": "33c26d76c5bac43e27b3cacf79db9abb52129516fa8b52236b4100d00c1f7845",
+      "decoded_frames": 8882,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "TC0Q-WEEKDAY-MALAM.mp4",
+      "source_sha256": "501026a5b3451149dde2c304f4e12169c0f3218737bc2689fb1658e2774056b4",
+      "decoded_frames": 8583,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "TC0Q-WEEKEND-MALAM.mp4",
+      "source_sha256": "950449e8397a78b6223766822b623bf55b1ed593adef6fbdc5a8fe200c5f75b5",
+      "decoded_frames": 8483,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "TKVQ-WEEKDAY-MALAM.mp4",
+      "source_sha256": "2fa18fad1b5e46f5d17a46503bb21e6d6552038293b4407dc14e4fbd2bfda97e",
+      "decoded_frames": 9037,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "TKVQ-WEEKEND-MALAM.mp4",
+      "source_sha256": "82b8973c280440a77515a9be1381c503829d25561adcd2c358d4f3a5fb40efee",
+      "decoded_frames": 9323,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "TQHD-WEEKDAY-MALAM.mp4",
+      "source_sha256": "d28add553b084e3e38d81f7b6e9aaa793f32a0b2dffcc6e8e7e7cae2fd07a638",
+      "decoded_frames": 8847,
+      "sample_pixels_match_codex": true
+    },
+    {
+      "filename": "TQHD-WEEKEND-MALAM.mp4",
+      "source_sha256": "8d32848b5ce35f40547e92f346076515c0a27270fe2d5e44e1990d9e6a01801e",
+      "decoded_frames": 8973,
+      "sample_pixels_match_codex": true
+    }
+  ],
+  "total_frames_decoded": 89199,
+  "unreadable_or_mismatched": [],
+  "unsupported": [],
+  "new_model_execution": false,
+  "baseline_notebook_preserved": "notebooks/09e_p1_pending_recovery.ipynb",
+  "continuation_notebook": "notebooks/09f_nighttime_validation.ipynb"
+}

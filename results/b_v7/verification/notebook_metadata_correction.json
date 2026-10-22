@@ -1,0 +1,11 @@
+{
+  "operation": "POST_EXECUTION_NOTEBOOK_CELL_ID_METADATA_CORRECTION",
+  "path": "notebooks/09d_motion_handoff_replay.ipynb",
+  "before_sha256": "136c436a2af510e510b5f5db413411f8abaa6c9d547dd0245771ffa7123d66c6",
+  "after_sha256": "76f2de269845d576c0643222a91116bd9844b29fe5a0591cdfb402c2927091aa",
+  "only_new_fields": "cells[*].id",
+  "executed_snapshot_modified": false,
+  "code_cells_changed": false,
+  "reason": "nbformat4.5 requires persistent cell IDs; eliminate actual MissingIDFieldWarning without changing executable cells",
+  "replay_repeated": false
+}

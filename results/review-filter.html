@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="id"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review-Filter · Video Malam</title>
+<style>
+:root{color-scheme:dark;font:15px system-ui;background:#101620;color:#e6edf7}body{max-width:1400px;margin:auto;padding:24px}h1{margin:0}p{color:#b7c7da;line-height:1.6}.card{background:#1a2433;border:1px solid #35465f;border-radius:12px;padding:18px;margin:16px 0}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}.views{display:grid;grid-template-columns:1fr 1fr;gap:16px}canvas{width:100%;background:#080d15}button,select,input{font:inherit}button,select{background:#243951;color:white;border:1px solid #587498;border-radius:6px;padding:10px}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}label{display:block;margin:12px 0}input[type=range]{width:min(600px,80%);vertical-align:middle}output{display:inline-block;min-width:55px}#status{white-space:pre-wrap}small{color:#b7c7da}video{position:fixed;left:0;bottom:0;width:1px;height:1px;opacity:.01;pointer-events:none}.tag{color:#7fe4c4}@media(max-width:800px){.views{grid-template-columns:1fr}}
+</style>
+<h1>Review-Filter <span class="tag">malam</span></h1>
+<p>Pilih video asli dari perangkat. Bandingkan frame yang sama, simpan pengaturan per video dan delapan profil kondisi. Ini pratinjau preprocessing; bukan hasil deteksi atau counting.</p>
+<div class="card">
+ <label>1. Buka video asli <input id="files" type="file" accept="video/*" multiple></label>
+ <div class="row"><select id="videoList" aria-label="Video aktif"><option>Pilih file video dahulu</option></select><button id="play" disabled>Putar</button><button id="pause" disabled>Jeda</button></div>
+ <label>Posisi preview <input id="seek" type="range" min="0" max="1" step=".01" value="0"><output id="time">0 s</output></label>
+ <small>Timestamp browser adalah posisi preview. Nomor frame sumber dan hash decoded pixel untuk eksperimen ditentukan kembali melalui decoder Python.</small>
+</div>
+<div class="views"><div class="card"><h2>Raw</h2><canvas id="rawCanvas"></canvas></div><div class="card"><h2>Preview filter</h2><canvas id="filteredCanvas"></canvas></div></div>
+<div class="card">
+ <label>2. Kondisi video (pilih berdasarkan review, bukan tebakan filename) <select id="condition"><option value="">Belum ditetapkan</option></select></label>
+ <div id="controls"></div>
+ <div class="row"><button id="reset">Reset video ke raw</button><button id="loadProfile">Terapkan profil kondisi ke video</button><button id="saveProfile">Simpan setelan video sebagai profil kondisi</button></div>
+ <p>Urutan tetap: gamma → exposure digital → brightness → shadows → sharpness. Gamma memakai eksponen langsung (di bawah1 mencerahkan midtone, di atas1 menggelapkan); exposure dalam EV digital; brightness adalah offset intensitas; shadows mengangkat/menurunkan nilai gelap per channel; sharpness memakai unsharp 3×3. Semua default identitas/raw. Filter tidak melakukan crop atau resize.</p>
+ <small>Profil weekday/weekend × pagi/siang/sore/malam tersimpan terpisah. Setelan per video adalah snapshot eksplisit: mengubah profil tidak diam-diam mengubah video lain. Tidak ada pemaksaan jumlah video menjadi delapan.</small>
+</div>
+<div class="card">
+ <div class="row"><button id="export" disabled>3. Ekspor konfigurasi JSON</button><label>Impor konfigurasi <input id="import" type="file" accept="application/json"></label><button id="capture" disabled>Simpan before/after PNG</button></div>
+ <p id="status" role="status">Belum ada video dipilih. File asli tetap lokal; halaman tidak mengunggah video atau mengubah file asli.</p>
+ <small>Buka melalui localhost bila browser menolak hashing file. Pengaturan terakhir disimpan di browser ini; ekspor JSON untuk dibawa ke Kaggle. Raw baseline harus tetap diuji. Keandalan malam belum dibuktikan.</small>
+</div>
+<video id="video" muted playsinline></video>
+<script id="filter-contract">
+/* Explicit counterpart of notebooks/nighttime_review_filter.py. No CSS filters. */
+(function(root) {
+ 'use strict';
+ const order=['gamma','exposure','brightness','shadows','sharpness'];
+ const conditions=['weekday','weekend'].flatMap(d=>['pagi','siang','sore','malam'].map(p=>d+'_'+p));
+ const raw={gamma:1,exposure:0,sharpness:0,brightness:0,shadows:0};
+ const ranges={gamma:[.2,3],exposure:[-3,3],sharpness:[0,2],brightness:[-100,100],shadows:[-100,100]};
+ function validate(s) {
+  if(!s || Object.keys(s).sort().join()!==Object.keys(raw).sort().join())throw Error('Lima parameter wajib lengkap');
+  for(const [key,[lo,hi]] of Object.entries(ranges))if(typeof s[key]!=='number'||!Number.isFinite(s[key])||s[key]<lo||s[key]>hi)throw Error('Nilai tidak valid: '+key);
+  return {...s};
+ }
+ function apply(rgb,width,height,settings) {
+  const s=validate(settings);
+  if(!Number.isInteger(width)||!Number.isInteger(height)||width<1||height<1||rgb.length!==width*height*3)throw Error('Dimensi RGB tidak valid');
+  const q=x=>Math.floor(Math.max(0,Math.min(255,x))+.5);
+  let out=Uint8Array.from(rgb);
+  const stages=[s.gamma!==1?x=>255*Math.pow(x/255,s.gamma):null,s.exposure?x=>x*Math.pow(2,s.exposure):null,
+   s.brightness?x=>x+s.brightness:null,s.shadows?x=>x+.64*s.shadows*Math.pow(1-x/255,2):null];
+  for(const fn of stages)if(fn)out=out.map(x=>q(fn(x)));
+  if(s.sharpness) {
+   const prior=out;out=new Uint8Array(prior.length);const weights=[1,2,1];
+   for(let y=0;y<height;y++)for(let x=0;x<width;x++)for(let c=0;c<3;c++) {
+    let smooth=0;
+    for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++) {
+     const xx=Math.max(0,Math.min(width-1,x+i)),yy=Math.max(0,Math.min(height-1,y+j));
+     smooth+=prior[(yy*width+xx)*3+c]*weights[j+1]*weights[i+1]/16;
+    }
+    const k=(y*width+x)*3+c;out[k]=q(prior[k]+s.sharpness*(prior[k]-smooth));
+   }
+  }
+  return out;
+ }
+ const api={schema:'night_review_filter_v1',order,conditions,raw,ranges,validate,apply};
+ if(typeof module!=='undefined'&&module.exports)module.exports=api;else root.NightFilter=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script>
+<script>
+'use strict';
+const F=NightFilter,$=id=>document.getElementById(id),video=$('video');
+let config={schema_version:F.schema,operation_order:F.order,profiles:Object.fromEntries(F.conditions.map(k=>[k,{...F.raw}])),videos:[]};
+let active=null,files=[],urls=[],generation=0,lastDraw=0;
+const status=text=>$('status').textContent=text;
+function validateConfig(c){
+ if(c.schema_version!==F.schema||JSON.stringify(c.operation_order)!==JSON.stringify(F.order))throw Error('Schema/urutan filter tidak cocok');
+ if(Object.keys(c.profiles||{}).sort().join()!==[...F.conditions].sort().join())throw Error('Delapan profil independen wajib lengkap');
+ for(const s of Object.values(c.profiles))F.validate(s);
+ const hashes=new Set();if(!Array.isArray(c.videos))throw Error('Daftar video wajib eksplisit');
+ for(const v of c.videos){if(!/^[a-f0-9]{64}$/.test(v.source_sha256)||hashes.has(v.source_sha256)||typeof v.filename!=='string'||!v.filename)throw Error('Identitas video tidak valid');hashes.add(v.source_sha256);if(v.condition!==null&&!F.conditions.includes(v.condition))throw Error('Kondisi tidak dikenal');F.validate(v.settings);}
+ return c;
+}
+try{const c=localStorage.getItem('night_review_filter_v1');if(c)config=validateConfig(JSON.parse(c));}catch(e){status('Konfigurasi lama tidak dipakai: '+e.message);}
+function persist(){try{localStorage.setItem('night_review_filter_v1',JSON.stringify(config));}catch(e){status('Ekspor JSON diperlukan; penyimpanan browser gagal: '+e.message);}}
+for(const c of F.conditions){const o=document.createElement('option');o.value=c;o.textContent=c.replaceAll('_',' / ');$('condition').append(o);}
+const specs={gamma:[.2,3,.05,'eksponen'],exposure:[-3,3,.1,'EV digital'],brightness:[-100,100,1,'offset'],shadows:[-100,100,1,'level'],sharpness:[0,2,.05,'amount']};
+for(const key of F.order){const [min,max,step,unit]=specs[key],l=document.createElement('label');l.textContent=key+' · '+unit+' ';const input=document.createElement('input');input.type='range';input.id=key;input.min=min;input.max=max;input.step=step;input.value=F.raw[key];const out=document.createElement('output');out.id=key+'Value';out.value=F.raw[key];l.append(input,out);$('controls').append(l);input.addEventListener('input',()=>{out.value=input.value;if(active){active.settings[key]=Number(input.value);persist();draw();}});}
+function sync(){for(const key of F.order){$(key).value=active?active.settings[key]:F.raw[key];$(key+'Value').value=$(key).value;}$('condition').value=active?.condition||'';}
+function draw(){
+ if(!active||video.readyState<2)return;
+ const w=video.videoWidth,h=video.videoHeight,raw=$('rawCanvas'),filtered=$('filteredCanvas');
+ if(!w||!h)return;
+ if(raw.width!==w||raw.height!==h){raw.width=filtered.width=w;raw.height=filtered.height=h;}
+ const rc=raw.getContext('2d',{willReadFrequently:true});rc.drawImage(video,0,0,w,h);
+ const im=rc.getImageData(0,0,w,h),rgb=new Uint8Array(w*h*3);
+ for(let i=0,j=0;i<im.data.length;i+=4){rgb[j++]=im.data[i];rgb[j++]=im.data[i+1];rgb[j++]=im.data[i+2];}
+ const out=F.apply(rgb,w,h,active.settings);
+ for(let i=0,j=0;i<im.data.length;i+=4){im.data[i]=out[j++];im.data[i+1]=out[j++];im.data[i+2]=out[j++];}
+ filtered.getContext('2d').putImageData(im,0,0);$('time').value=video.currentTime.toFixed(2)+' s';$('seek').value=video.currentTime;
+}
+function tick(now){if(!video.paused&&now-lastDraw>150){draw();lastDraw=now;}requestAnimationFrame(tick);}requestAnimationFrame(tick);
+async function select(index){
+ const token=++generation;active=null;video.pause();$('export').disabled=$('capture').disabled=true;
+ const file=files[index];if(!file)return;status('Menghitung SHA256 file asli…');
+ try{if(!crypto.subtle)throw Error('Hashing memerlukan localhost atau browser dengan secure context');const bytes=new Uint8Array(await crypto.subtle.digest('SHA-256',await file.arrayBuffer()));if(token!==generation)return;
+ const sha=Array.from(bytes,x=>x.toString(16).padStart(2,'0')).join('');active=config.videos.find(v=>v.source_sha256===sha);
+ if(!active){active={filename:file.name,size_bytes:file.size,source_sha256:sha,condition:null,settings:{...F.raw}};config.videos.push(active);}
+ sync();persist();video.src=urls[index];video.load();$('play').disabled=$('pause').disabled=false;$('export').disabled=false;
+ status(file.name+'\nSHA256: '+sha+'\nPreview disimpan per video. Pilih kondisi bila sudah diketahui.');
+ }catch(e){status(e.message);}
+}
+$('files').onchange=e=>{urls.forEach(u=>URL.revokeObjectURL(u));files=Array.from(e.target.files);urls=files.map(f=>URL.createObjectURL(f));$('videoList').replaceChildren();files.forEach((f,i)=>{const o=document.createElement('option');o.value=i;o.textContent=f.name;$('videoList').append(o);});select(0);};
+$('videoList').onchange=e=>select(Number(e.target.value));video.onloadedmetadata=()=>{$('seek').max=Number.isFinite(video.duration)?video.duration:0;draw();};video.onloadeddata=()=>{
+ // Present the first decoded frame before exposing preview/capture. readyState alone
+ // can precede a drawable frame in Chromium, producing a transparent canvas.
+ const presented=()=>{video.pause();draw();$('capture').disabled=false;};
+ if(video.requestVideoFrameCallback)video.requestVideoFrameCallback(presented);
+ video.play().then(()=>{if(!video.requestVideoFrameCallback)presented();}).catch(e=>status('Preview belum siap: tekan Putar. '+e.message));
+};video.onseeked=draw;video.onerror=()=>{status('Browser tidak dapat mendecode video ini; gunakan frame native dari notebook.');$('capture').disabled=true;};
+$('seek').oninput=e=>{video.pause();video.currentTime=Number(e.target.value);};$('play').onclick=()=>video.play().catch(e=>status(e.message));$('pause').onclick=()=>{video.pause();draw();};
+$('condition').onchange=e=>{if(active){active.condition=e.target.value||null;persist();}};
+$('reset').onclick=()=>{if(active){active.settings={...F.raw};sync();persist();draw();}};
+$('loadProfile').onclick=()=>{if(!active?.condition){status('Pilih kondisi video dahulu.');return;}active.settings={...config.profiles[active.condition]};sync();persist();draw();};
+$('saveProfile').onclick=()=>{if(!active?.condition){status('Pilih kondisi video dahulu.');return;}config.profiles[active.condition]={...active.settings};persist();status('Profil '+active.condition+' disimpan. Video lain tidak diubah.');};
+function download(blob,name){const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),3000);}
+$('export').onclick=()=>{try{validateConfig(config);download(new Blob([JSON.stringify(config,null,2)+'\n'],{type:'application/json'}),'night-review-filter.json');}catch(e){status(e.message);}};
+$('import').onchange=async e=>{try{const next=validateConfig(JSON.parse(await e.target.files[0].text()));if(active&&!next.videos.some(v=>v.source_sha256===active.source_sha256))throw Error('Konfigurasi tidak memuat SHA video aktif; pilih video yang sesuai');config=next;if(active)active=config.videos.find(v=>v.source_sha256===active.source_sha256);sync();persist();draw();status('Konfigurasi diimpor; video tetap dicocokkan dengan SHA256.');}catch(e){status(e.message);}};
+$('capture').onclick=()=>{if(!active)return;video.pause();draw();const raw=$('rawCanvas'),out=$('filteredCanvas'),c=document.createElement('canvas');c.width=raw.width*2;c.height=raw.height+28;const x=c.getContext('2d');x.fillStyle='#152238';x.fillRect(0,0,c.width,c.height);x.fillStyle='white';x.font='14px sans-serif';x.fillText('RAW | '+video.currentTime.toFixed(3)+'s',8,19);x.fillText('FILTER | '+JSON.stringify(active.settings),raw.width+8,19);x.drawImage(raw,0,28);x.drawImage(out,raw.width,28);c.toBlob(b=>download(b,active.filename+'-preview.png'));};
+sync();
+</script>
+</html>

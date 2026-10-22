@@ -1,0 +1,210 @@
+{
+  "schema_version": "phase9_b_v8_p1_source_qc_v1",
+  "baseline_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "candidate_sha256": "d4fa07ee5cad0f4d418af3703a9f8cac1f740509093b02d9138c31ad527e700b",
+  "candidate_path": "results/b_v8/execution/pilot_p1_reviewed_v3/weekday_siang/counting_result.json.gz",
+  "baseline_branch": "machine",
+  "candidate_branch": "review_assisted",
+  "baseline_aggregate": {
+    "total": 72,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 69,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 26,
+      "B_TO_A": 46
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 4,
+      "LINE_MARGIN": 68
+    },
+    "measured_total": 66,
+    "inferred_total": 6,
+    "pending": 24,
+    "invalid": 86,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 86
+    },
+    "cancelled": 52,
+    "vehicle_total": 72,
+    "pedestrian_total": 0
+  },
+  "candidate_aggregate": {
+    "total": 74,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 70,
+      "pedestrian": 1,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 27,
+      "B_TO_A": 47
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 4,
+      "LINE_MARGIN": 70
+    },
+    "measured_total": 67,
+    "inferred_total": 7,
+    "pending": 1,
+    "invalid": 83,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 83
+    },
+    "cancelled": 50,
+    "vehicle_total": 73,
+    "pedestrian_total": 1
+  },
+  "source_identity_unchanged": true,
+  "event_count_changes": {
+    "unchanged": 70,
+    "changed": 2,
+    "removed": 0,
+    "added": 2
+  },
+  "display_id_renumberings": 17,
+  "category_changed_events": 0,
+  "direction_changed_events": 0,
+  "existing_event_evidence_level_transitions": {},
+  "pending_dispositions": {
+    "accepted": 1,
+    "pending": 1,
+    "resolved_not_eligible": 22
+  },
+  "unresolved_pending_reconciliation": [],
+  "unmatched_new_pending": [],
+  "reviewed_component_closures": 22,
+  "all_component_closures_have_plus_zero": true,
+  "measured_source_refs_verified_against_frozen_cache": 1043,
+  "source_frames_verified": 998,
+  "regression_controls": [
+    {
+      "raw_track_id": 1049,
+      "unchanged_source_counting_decisions": false,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": true,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 1123,
+      "unchanged_source_counting_decisions": false,
+      "baseline_accepted": 0,
+      "candidate_accepted": 1,
+      "expected_source_review_change": true,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4251,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4281,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4149,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4367,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4934,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4946,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4953,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 2445,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4552,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 4480,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0,
+      "expected_source_review_change": false,
+      "control_pass": true
+    },
+    {
+      "raw_track_id": 3563,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 1,
+      "candidate_accepted": 1,
+      "expected_source_review_change": false,
+      "control_pass": true
+    }
+  ],
+  "relation_identifiers_joined_by": "EXACT_ENDPOINT_RAW_MEASUREMENTS_PHYSICAL_CONTEXTS_SUPPORT_AND_PROVENANCE",
+  "baseline_handoff_relation_source_ids": {
+    "b7-motion-conflict:9469399bd6b172e8c787ee4a": "handoff-source:08a35ed98dd47f4012b31c405c05428f50f92789a6ceb847feb72831431e921f"
+  },
+  "candidate_handoff_relation_source_ids": {},
+  "red_exactly_one_clean_inferred_passage": true,
+  "distinct_foreground_passage_kept": true,
+  "unsupported_blue_destination_presence_events": 0,
+  "additional_handoff_recovery_accepted": 1,
+  "additional_handoff_has_one_clean_inferred_event": true,
+  "published_log_total": 74,
+  "source_review_independent_from_implementation_reference": "independent_source_verification.json",
+  "additional_foreground_pixels_reviewed_by": "PRIMARY_ENGINEER_AI_REVIEW_NOT_NEW_HUMAN_CONFIRMATION",
+  "full_replay_comparison_performed_by": "PRIMARY_ENGINEER_READ_ONLY_QC",
+  "new_model_execution": false,
+  "new_counting_execution_by_qc": false,
+  "formal_ground_truth_or_accuracy_established": false,
+  "reviewed_red_reconstruction_is_net_new_aggregate_passage": false,
+  "known_intentional_exclusion_1049_1123_still_not_recovered": false,
+  "automatic_machine_baseline_p0_blocker_fixed": false,
+  "scoped_checks_pass": true
+}

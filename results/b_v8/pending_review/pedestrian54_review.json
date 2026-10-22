@@ -1,0 +1,618 @@
+{
+  "schema_version": "phase9_b_v8_positive_role_review_v1",
+  "case_id": "P1-PENDING-54-POSITIVE-PEDESTRIAN-ROLE",
+  "claim_type": "AI_PIXELS_REVIEW_WITH_PREEXISTING_USER_ROLE_ASSERTION_NOT_AUTOMATIC_MODEL_PREDICTION",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "raw_track_id": 54,
+  "role": "PEDESTRIAN",
+  "proposed_interval": {
+    "start_frame": 57,
+    "end_frame": 140,
+    "scope_extent_is_engineering_assumption": true,
+    "scope_basis": "Bounded temporal pixel review; all these frames have the same walking cart-pusher in retainedsource sheets, not an every-frame annotation and not global rawID"
+  },
+  "actual_positive_pixel_frames_viewed": [
+    57,
+    92,
+    100,
+    102,
+    103,
+    104,
+    105,
+    107,
+    111,
+    112,
+    120,
+    127,
+    135,
+    140
+  ],
+  "reviewer_origin": "AI_PIXELS_REVIEW",
+  "user_role_source": "docs/PHASE_9_ROLE_REVIEW_WORKFLOW.md records user54PEDESTRIAN57-107; new interval is AI bounded review, not newuserconfirmation",
+  "proposed_count_delta": null,
+  "acceptance_required": "Replay current Bv7 engine guards on bounded role, do notcopyold+1",
+  "historical_event_documentary_only": {
+    "event_id": "b_v4_255e5f0b4c75267cb777301c",
+    "physical_unit_id": "reviewed-pedestrian:siang:54",
+    "passage_id": "reviewed-pedestrian:siang:54:episode:phase9-ai-reviewed-role:54:33-140:passage:1",
+    "track_id": 54,
+    "episode_id": "phase9-ai-reviewed-role:54:33-140",
+    "role": "pedestrian",
+    "category": "pedestrian",
+    "direction": "B_TO_A",
+    "route": "LINE_MARGIN",
+    "status": "accepted",
+    "accepted_count_event": true,
+    "activation_frame": 112,
+    "decision_frame": 112,
+    "source_identity": {
+      "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "width": 640,
+      "height": 480,
+      "variant": "raw",
+      "parent_run_id": "phase8_20261015T085213_690310Z",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    "namespace": "a991e81e5505dafa863bbbeb3e9f5389a18482e8bbd1fb6e838c3787428ef582",
+    "evidence": {
+      "measured_crossing": true,
+      "band_observed": true,
+      "category_basis": {
+        "policy": "band_majority_ties_pending",
+        "votes": {
+          "pedestrian": 7
+        },
+        "source": "observed_object_BC_inside_finite_band",
+        "reviewed_category_attribution": true
+      },
+      "source_refs": [
+        {
+          "frame_index": 104,
+          "track_id": 54,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            60.80107116699219,
+            149.89556884765625,
+            159.9114227294922,
+            400.30364990234375
+          ],
+          "point": [
+            110.35624694824219,
+            400.30364990234375
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 104,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.762773871421814,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        },
+        {
+          "frame_index": 105,
+          "track_id": 54,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            59.464385986328125,
+            149.70278930664062,
+            149.56546020507812,
+            356.9990539550781
+          ],
+          "point": [
+            104.51492309570312,
+            356.9990539550781
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 105,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.8589383363723755,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        },
+        {
+          "frame_index": 106,
+          "track_id": 54,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            57.8290901184082,
+            148.4775390625,
+            143.67543029785156,
+            349.05230712890625
+          ],
+          "point": [
+            100.75226020812988,
+            349.05230712890625
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 106,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.8599869608879089,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        },
+        {
+          "frame_index": 107,
+          "track_id": 54,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            56.123382568359375,
+            148.498046875,
+            139.6717529296875,
+            350.31439208984375
+          ],
+          "point": [
+            97.89756774902344,
+            350.31439208984375
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 107,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.8389119505882263,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        },
+        {
+          "frame_index": 108,
+          "track_id": 54,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            55.017608642578125,
+            147.25863647460938,
+            135.72320556640625,
+            344.2615661621094
+          ],
+          "point": [
+            95.37040710449219,
+            344.2615661621094
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 108,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.8686017394065857,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        },
+        {
+          "frame_index": 109,
+          "track_id": 54,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            53.93667984008789,
+            147.25775146484375,
+            133.14370727539062,
+            344.1737976074219
+          ],
+          "point": [
+            93.54019355773926,
+            344.1737976074219
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 109,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.8731203675270081,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        },
+        {
+          "frame_index": 110,
+          "track_id": 54,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            53.36119079589844,
+            147.234375,
+            132.87112426757812,
+            340.9030456542969
+          ],
+          "point": [
+            93.11615753173828,
+            340.9030456542969
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 110,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.8695492148399353,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        },
+        {
+          "frame_index": 111,
+          "track_id": 54,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            52.58174133300781,
+            148.57620239257812,
+            132.70034790039062,
+            339.3924560546875
+          ],
+          "point": [
+            92.64104461669922,
+            339.3924560546875
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 111,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.8757697939872742,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        },
+        {
+          "frame_index": 112,
+          "track_id": 54,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            51.41970443725586,
+            150.84222412109375,
+            130.845947265625,
+            337.11614990234375
+          ],
+          "point": [
+            91.13282585144043,
+            337.11614990234375
+          ],
+          "class_name": "person",
+          "effective_class_name": "pedestrian",
+          "resolved_class_name": "pedestrian",
+          "role": "pedestrian",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "review_refs": [
+            {
+              "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+              "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+              "source_frame": 112,
+              "track_id": 54,
+              "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+              "scope_extent_is_engineering_assumption": true,
+              "review_branch": "review_assisted",
+              "not_automatic_model_role_prediction": true
+            }
+          ],
+          "class_id": 0,
+          "confidence": 0.8749642968177795,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      ],
+      "source_frames": [
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "crossing_pairs": [
+        {
+          "first": {
+            "frame_index": 104,
+            "track_id": 54,
+            "original_detection_index": 4,
+            "raw_bbox": [
+              60.80107116699219,
+              149.89556884765625,
+              159.9114227294922,
+              400.30364990234375
+            ],
+            "point": [
+              110.35624694824219,
+              400.30364990234375
+            ],
+            "class_name": "person",
+            "effective_class_name": "pedestrian",
+            "resolved_class_name": "pedestrian",
+            "role": "pedestrian",
+            "episode_id": "phase9-ai-reviewed-role:54:33-140",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "review_refs": [
+              {
+                "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+                "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+                "source_frame": 104,
+                "track_id": 54,
+                "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+                "scope_extent_is_engineering_assumption": true,
+                "review_branch": "review_assisted",
+                "not_automatic_model_role_prediction": true
+              }
+            ],
+            "class_id": 0,
+            "confidence": 0.762773871421814,
+            "measurement_provenance": "retained_phase_8_detection",
+            "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+            "identity_episode_boundary": false,
+            "identity_episode_reason": "INITIAL_OBSERVATION",
+            "identity_timeout_hold": []
+          },
+          "second": {
+            "frame_index": 105,
+            "track_id": 54,
+            "original_detection_index": 2,
+            "raw_bbox": [
+              59.464385986328125,
+              149.70278930664062,
+              149.56546020507812,
+              356.9990539550781
+            ],
+            "point": [
+              104.51492309570312,
+              356.9990539550781
+            ],
+            "class_name": "person",
+            "effective_class_name": "pedestrian",
+            "resolved_class_name": "pedestrian",
+            "role": "pedestrian",
+            "episode_id": "phase9-ai-reviewed-role:54:33-140",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "review_refs": [
+              {
+                "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+                "reviews_sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+                "source_frame": 105,
+                "track_id": 54,
+                "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+                "scope_extent_is_engineering_assumption": true,
+                "review_branch": "review_assisted",
+                "not_automatic_model_role_prediction": true
+              }
+            ],
+            "class_id": 0,
+            "confidence": 0.8589383363723755,
+            "measurement_provenance": "retained_phase_8_detection",
+            "physical_episode_id": "b4-physical-episode:0fd484c3516fbf60d826132e",
+            "identity_episode_boundary": false,
+            "identity_episode_reason": "INITIAL_OBSERVATION",
+            "identity_timeout_hold": []
+          },
+          "intersection": {
+            "kind": "proper",
+            "point": [
+              104.68674068482105,
+              358.272821933231
+            ],
+            "t": 0.9705858477538041,
+            "u": 0.16730878990434334
+          },
+          "proof": "opposite_signed_measured_endpoints"
+        }
+      ],
+      "gaps": [],
+      "raw_track_changes": [],
+      "identity_conflicts": [],
+      "origin_polygon": "B",
+      "destination_polygon": null,
+      "destination_observed_ref": null,
+      "last_observed_origin_frame": 104,
+      "timeout_frames": null,
+      "direction_assumed": false,
+      "id_change_proven": false,
+      "physical_identity_basis": "raw_track_assumption",
+      "association_id": null,
+      "reviewed_category_attribution": true,
+      "finite_segment_crossing_unobserved": false,
+      "anchor": "raw_person_bbox_bottom_center"
+    },
+    "display_id": "P1000"
+  },
+  "historical_result_path": "results/b_v4/execution/pilot_review_final/weekday_siang/counting_result.json.gz",
+  "historical_result_sha256": "20ce35bd3d38cb3afbde49203528d4ced8d87b5d263ee09ea27f0844d184d827",
+  "evidence": [
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-02-raw54.jpg",
+      "sha256": "a62a45a0a91509049313acbfec25c8081db6ec8b94a3799dbe232483754cb4cc"
+    },
+    {
+      "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/raw-contact-S1-cross54-01.jpg",
+      "sha256": "853e4b1d1fafadf83eedf15a988e82c561986443303972644fb98e69b86d156f"
+    },
+    {
+      "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/raw-contact-S1-cross54-02.jpg",
+      "sha256": "6f8f71a386f823f935bf000bb1e948dccff7ccaba8acbee9ecdf4c629796fa04"
+    },
+    {
+      "path": "docs/PHASE_9_ROLE_REVIEW_WORKFLOW.md",
+      "sha256": "34608b75e8a8351c0a8c31c7046fa27744541af7950f750b3414ac47d8b30e0a"
+    }
+  ],
+  "measurement_warning": "RawBC104y400.3036\u2192105y356.9991 is a 43.3px bbox-bottom change. Existingproper finitecrossingclassification is a rawBC mathematical observation, not proofthatfeet crossedat105 or robustnessagainstbboxtruncation/watermark. Letcurrentwholeboxmotion/eligibilityguard decide; rolealoneisnot+1.",
+  "no_pipeline_or_model_execution": true,
+  "scope_does_not_label_raw54_after140": true
+}

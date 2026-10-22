@@ -1,0 +1,69 @@
+{
+  "schema_version": "phase9_b_v8_p1_batch_v1",
+  "run_id": "pilot_p1_reviewed_v1",
+  "status": "completed_p1_reviewed_replay_pending_qc",
+  "branch": "review_assisted",
+  "videos": [
+    {
+      "video_id": "weekday_siang",
+      "status": "completed",
+      "frames": 9128,
+      "aggregate": {
+        "total": 72,
+        "by_category": {
+          "car": 2,
+          "motorcycle": 68,
+          "pedestrian": 1,
+          "truck": 1
+        },
+        "by_direction": {
+          "A_TO_B": 25,
+          "B_TO_A": 47
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 4,
+          "LINE_MARGIN": 68
+        },
+        "measured_total": 67,
+        "inferred_total": 5,
+        "pending": 1,
+        "invalid": 86,
+        "invalid_reasons": {
+          "INVALID_AMBIGUOUS_UNIT": 86
+        },
+        "cancelled": 53,
+        "vehicle_total": 71,
+        "pedestrian_total": 1
+      },
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "branch": "review_assisted"
+    }
+  ],
+  "output_directory": "/workspace/traffic-vehicle-counter-IDM-LOC/results/b_v8/execution/pilot_p1_reviewed_v1",
+  "policy_sha256": "07efb7177a8a4b194953c4e230c3cc8e0d2f23f150c92bbd4f70711fdaab47f5",
+  "effective_policy_sha256": "adc58b92a07f7d93d81faace52156723a1acf6ed38934c8b984c15848511e20f",
+  "baseline_result_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "machine_baseline_replayed": false,
+  "machine_baseline_is_retained_b_v7": true,
+  "new_detector_tracker_reid_execution": false,
+  "new_enhancement_execution": false,
+  "new_counting_policy_replay": true,
+  "new_reviewed_adjudications_applied": true,
+  "qc_adjudications_used_as_machine_predictions": false,
+  "old_results_modified": false,
+  "production_ready": false,
+  "physical_accuracy_established": false,
+  "frames_processed": 9128,
+  "all_selected_completed": true,
+  "all_eight_completed": false,
+  "wall_seconds": 202.6289056789974,
+  "inputs_and_sources_unchanged": true
+}

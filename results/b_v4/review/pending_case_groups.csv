@@ -1,0 +1,4 @@
+group,reason,count,example_raw_id,example_decision_frame,recommendation,required_evidence
+Peran person,PERSON_ROLE_UNRESOLVED,29,54,127,RIDER +0; PEDESTRIAN positif hanya pada scope berbukti. Geometry tetap wajib.,"Klip sebelum/sesudah, parent motorcycle, frame sumber"
+Kontinuitas identitas untuk timeout,IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT,31,228,336,Pertahankan pending sampai hubungan episode terverifikasi; timer tidak membuat alias.,"Akhir episode asal/awal kandidat pengganti, trajectory, koeksistensi; contoh228 belum diadjudikasi visual"
+Duplikasi identitas dalam passage,UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE,8,2549,4129,Putuskan satu atau dua unit fisik dari bukti; satu unit/passage maksimal satu event.,Klip pasangan2549/2561; jangan gabung hanya dari bbox bertumpuk; belum diadjudikasi visual

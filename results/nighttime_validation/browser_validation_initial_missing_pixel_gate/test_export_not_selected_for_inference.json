@@ -1,0 +1,200 @@
+{
+  "schema_version": "night_review_filter_v1",
+  "operation_order": [
+    "gamma",
+    "exposure",
+    "brightness",
+    "shadows",
+    "sharpness"
+  ],
+  "profiles": {
+    "weekday_pagi": {
+      "gamma": 1,
+      "exposure": 0,
+      "sharpness": 0,
+      "brightness": 0,
+      "shadows": 0
+    },
+    "weekday_siang": {
+      "gamma": 1,
+      "exposure": 0,
+      "sharpness": 0,
+      "brightness": 0,
+      "shadows": 0
+    },
+    "weekday_sore": {
+      "gamma": 1,
+      "exposure": 0,
+      "sharpness": 0,
+      "brightness": 0,
+      "shadows": 0
+    },
+    "weekday_malam": {
+      "gamma": 0.7,
+      "exposure": 0.3,
+      "sharpness": 0.5,
+      "brightness": 4,
+      "shadows": 12
+    },
+    "weekend_pagi": {
+      "gamma": 1,
+      "exposure": 0,
+      "sharpness": 0,
+      "brightness": 0,
+      "shadows": 0
+    },
+    "weekend_siang": {
+      "gamma": 1,
+      "exposure": 0,
+      "sharpness": 0,
+      "brightness": 0,
+      "shadows": 0
+    },
+    "weekend_sore": {
+      "gamma": 1,
+      "exposure": 0,
+      "sharpness": 0,
+      "brightness": 0,
+      "shadows": 0
+    },
+    "weekend_malam": {
+      "gamma": 1.1,
+      "exposure": 0,
+      "sharpness": 0,
+      "brightness": 0,
+      "shadows": 0
+    }
+  },
+  "videos": [
+    {
+      "filename": "F1YV-WEEKDAY-MALAM.mp4",
+      "size_bytes": 15605045,
+      "source_sha256": "12faf5b13dc16674eb63e7441ce7a484746220dd75bc0484ab0d98d47ac13e43",
+      "condition": "weekday_malam",
+      "settings": {
+        "gamma": 0.7,
+        "exposure": 0.3,
+        "sharpness": 0.5,
+        "brightness": 4,
+        "shadows": 12
+      }
+    },
+    {
+      "filename": "F1YV-WEEKEND-MALAM.mp4",
+      "size_bytes": 15611820,
+      "source_sha256": "0ffe42942967b09793da0229ccdbcf111573cb52a0a94b32d5bf4bc777f1fa88",
+      "condition": "weekend_malam",
+      "settings": {
+        "gamma": 1.1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    },
+    {
+      "filename": "FMMQ-MALAM.mp4",
+      "size_bytes": 52799979,
+      "source_sha256": "a028c3c9c8d13f3b1f9239b1d5515a356872b0ade3bc3ca3d9133e6b98f7759d",
+      "condition": null,
+      "settings": {
+        "gamma": 1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    },
+    {
+      "filename": "FMMQ-WEEKDAY-MALAM.mp4",
+      "size_bytes": 52851773,
+      "source_sha256": "33c26d76c5bac43e27b3cacf79db9abb52129516fa8b52236b4100d00c1f7845",
+      "condition": null,
+      "settings": {
+        "gamma": 1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    },
+    {
+      "filename": "TC0Q-WEEKDAY-MALAM.mp4",
+      "size_bytes": 21039450,
+      "source_sha256": "501026a5b3451149dde2c304f4e12169c0f3218737bc2689fb1658e2774056b4",
+      "condition": null,
+      "settings": {
+        "gamma": 1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    },
+    {
+      "filename": "TC0Q-WEEKEND-MALAM.mp4",
+      "size_bytes": 21104726,
+      "source_sha256": "950449e8397a78b6223766822b623bf55b1ed593adef6fbdc5a8fe200c5f75b5",
+      "condition": null,
+      "settings": {
+        "gamma": 1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    },
+    {
+      "filename": "TKVQ-WEEKDAY-MALAM.mp4",
+      "size_bytes": 31478469,
+      "source_sha256": "2fa18fad1b5e46f5d17a46503bb21e6d6552038293b4407dc14e4fbd2bfda97e",
+      "condition": null,
+      "settings": {
+        "gamma": 1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    },
+    {
+      "filename": "TKVQ-WEEKEND-MALAM.mp4",
+      "size_bytes": 32500804,
+      "source_sha256": "82b8973c280440a77515a9be1381c503829d25561adcd2c358d4f3a5fb40efee",
+      "condition": null,
+      "settings": {
+        "gamma": 1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    },
+    {
+      "filename": "TQHD-WEEKDAY-MALAM.mp4",
+      "size_bytes": 20906777,
+      "source_sha256": "d28add553b084e3e38d81f7b6e9aaa793f32a0b2dffcc6e8e7e7cae2fd07a638",
+      "condition": null,
+      "settings": {
+        "gamma": 1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    },
+    {
+      "filename": "TQHD-WEEKEND-MALAM.mp4",
+      "size_bytes": 20853894,
+      "source_sha256": "8d32848b5ce35f40547e92f346076515c0a27270fe2d5e44e1990d9e6a01801e",
+      "condition": null,
+      "settings": {
+        "gamma": 1,
+        "exposure": 0,
+        "sharpness": 0,
+        "brightness": 0,
+        "shadows": 0
+      }
+    }
+  ]
+}

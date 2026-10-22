@@ -1,0 +1,105 @@
+{
+  "schema_version": "bv7_independent_retained_evidence_verification_v1",
+  "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+  "source_video_sha256_matches": true,
+  "files": [
+    {
+      "path": "results/b_v7/review/inferred_source_368.jpg",
+      "sha256": "9c694162db47cfe5fcb5a0db68369d1da3a4c9c1988ef9151ef7e82f549217be",
+      "retained_receipt_sha256_matches": true
+    },
+    {
+      "path": "results/b_v7/review/inferred_source_717.jpg",
+      "sha256": "2bfaf129dad9b397d7c9bcf610cc9cfef49aab92831e856aeb2ffc0319fd5c74",
+      "retained_receipt_sha256_matches": true
+    },
+    {
+      "path": "results/b_v7/review/inferred_source_2551.jpg",
+      "sha256": "e09bf62814a04bd238c6c273f20eb4ad1e554b32cea593b884a012ec6bbe8544",
+      "retained_receipt_sha256_matches": true
+    },
+    {
+      "path": "results/b_v7/review/inferred_source_3211.jpg",
+      "sha256": "245d187ca07e04ed46ef8179947df009d3f663e559699a59b977c30f68844e6d",
+      "retained_receipt_sha256_matches": true
+    },
+    {
+      "path": "results/b_v7/review/inferred_source_3670.jpg",
+      "sha256": "76631d5818c9be19a0f0870cfd14b66f9ff14328f131ee9faebf7535af65fd9f",
+      "retained_receipt_sha256_matches": true
+    },
+    {
+      "path": "results/b_v7/review/inferred_source_4843.jpg",
+      "sha256": "e215b117af4a0c287b4412b4a7088edf1f40c86f87c118ce220ab21394b131ca",
+      "retained_receipt_sha256_matches": true
+    },
+    {
+      "path": "results/b_v7/review/inferred_detail_4843.jpg",
+      "sha256": "ad6997c23f0d8e8576c7664fdafe4aeedada34f34d11ce88cefa71831ffb2af9",
+      "retained_receipt_sha256_matches": true
+    },
+    {
+      "path": "results/b_v7/review/all_baseline_inferred_review.json",
+      "sha256": "c76a00ace934f91680c7bd1828fd01acd0fa0ff9750d82734eea18ec458925c9"
+    },
+    {
+      "path": "results/b_v7/review/independent_4843_identity_review.json",
+      "sha256": "e5e920105fbfe32abff7edb4fa3a635eb3a19985b238457f0aa6f0ca52ba4147"
+    }
+  ],
+  "directly_viewed_source_sheets": [
+    "inferred_source_368.jpg",
+    "inferred_source_717.jpg",
+    "inferred_source_2551.jpg",
+    "inferred_source_3211.jpg",
+    "inferred_source_3670.jpg",
+    "inferred_source_4843.jpg",
+    "inferred_detail_4843.jpg",
+    "../fixtures/1049_1123_v1/source_motorcycle_controls.jpg"
+  ],
+  "independent_new_decode_claimed": false,
+  "new_model_inference": false,
+  "new_counting_execution": false,
+  "retained_target_fixture_manifest": [
+    {
+      "path": "baseline_fixture_result.json.gz",
+      "hash_matches": true
+    },
+    {
+      "path": "baseline_fullvideo_events.json",
+      "hash_matches": true
+    },
+    {
+      "path": "counting_frames_selected_tracks.json.gz",
+      "hash_matches": true
+    },
+    {
+      "path": "fixture_manifest.json",
+      "hash_matches": true
+    },
+    {
+      "path": "geometry.json",
+      "hash_matches": true
+    },
+    {
+      "path": "policy.json",
+      "hash_matches": true
+    },
+    {
+      "path": "source_decode_receipt.json",
+      "hash_matches": true
+    },
+    {
+      "path": "source_identity.json",
+      "hash_matches": true
+    },
+    {
+      "path": "source_motorcycle_controls.jpg",
+      "hash_matches": true
+    },
+    {
+      "path": "source_records_1272_1424.json.gz",
+      "hash_matches": true
+    }
+  ]
+}

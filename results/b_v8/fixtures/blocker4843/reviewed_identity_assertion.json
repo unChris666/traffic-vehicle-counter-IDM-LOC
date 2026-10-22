@@ -1,0 +1,227 @@
+{
+  "schema_version": "phase9_b_v8_blocker4843_source_review_assertion_v1",
+  "case_id": "blocker4843",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "review_origin": "AI_PIXELS_REVIEW_WITH_EXPLICIT_USER_PHYSICAL_PASSAGE_DECISION",
+  "human_confirmation_status": "NOT_NEWLY_ADJUDICATED_BY_USER",
+  "formal_ground_truth": false,
+  "source_scopes": {
+    "red_before": {
+      "track_id": 4808,
+      "start_frame": 7860,
+      "end_frame": 7907,
+      "source_observation_count": 48
+    },
+    "red_after": {
+      "track_id": 4843,
+      "start_frame": 7928,
+      "end_frame": 7955,
+      "source_observation_count": 22
+    },
+    "blue_before": {
+      "track_id": 4843,
+      "start_frame": 7874,
+      "end_frame": 7905,
+      "source_observation_count": 32
+    },
+    "blue_after_unlinked": {
+      "track_id": 4913,
+      "start_frame": 7950,
+      "end_frame": 7964,
+      "source_observation_count": 15
+    }
+  },
+  "physical_identity_review": {
+    "same_physical_unit_groups": [
+      [
+        "red_before",
+        "red_after"
+      ]
+    ],
+    "distinct_co_present_physical_units": [
+      [
+        "red_before",
+        "blue_before"
+      ]
+    ],
+    "blue_before_to_blue_after_identity_link": "NOT_ESTABLISHED_NOT_CREATED"
+  },
+  "expected_counting_outcome_not_executed_here": {
+    "red_reviewed_passage_accepted": 1,
+    "red_maximum_accepted_per_passage": 1,
+    "red_direction": "A_TO_B",
+    "red_route": "LINE_MARGIN",
+    "red_measured_crossing": false,
+    "blue_destination_presence_accepted": 0,
+    "blue_crossing_or_return_inferred_from_destination_presence": false,
+    "conservative_blue_status": "Existing noneligible/invalid/pending contract as supported; no forced acceptedcount"
+  },
+  "geometry_witnesses": {
+    "red_last_pre_gap": {
+      "frame_index": 7907,
+      "track_id": 4808,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        198.37655639648438,
+        193.436767578125,
+        243.74075317382812,
+        247.04437255859375
+      ],
+      "point": [
+        221.05865478515625,
+        247.04437255859375
+      ],
+      "class_name": "motorcycle",
+      "class_id": 3,
+      "confidence": 0.649865984916687,
+      "observed": true,
+      "emitted": true,
+      "observed_basis": "EXACT_RETAINED_DETECTION_INDEX_BBOX_CLASS_MATCH",
+      "measurement_provenance": "retained_phase_8_detection",
+      "roi": null,
+      "finite_band": {
+        "inside": true,
+        "projection": 0.3793358227466334,
+        "signed_distance_px": -24.781529375521448
+      }
+    },
+    "red_first_post_gap": {
+      "frame_index": 7928,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        297.0770568847656,
+        192.04519653320312,
+        386.4894714355469,
+        279.0119934082031
+      ],
+      "point": [
+        341.78326416015625,
+        279.0119934082031
+      ],
+      "class_name": "motorcycle",
+      "class_id": 3,
+      "confidence": 0.8269786238670349,
+      "observed": true,
+      "emitted": true,
+      "observed_basis": "EXACT_RETAINED_DETECTION_INDEX_BBOX_CLASS_MATCH",
+      "measurement_provenance": "retained_phase_8_detection",
+      "roi": "B",
+      "finite_band": {
+        "inside": false,
+        "projection": 0.48704977795205934,
+        "signed_distance_px": 70.43827895988336
+      }
+    },
+    "red_destination_confirmation": {
+      "frame_index": 7935,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        339.47021484375,
+        194.80825805664062,
+        446.837890625,
+        287.7295227050781
+      ],
+      "point": [
+        393.154052734375,
+        287.7295227050781
+      ],
+      "class_name": "motorcycle",
+      "class_id": 3,
+      "confidence": 0.7652793526649475,
+      "observed": true,
+      "emitted": true,
+      "observed_basis": "EXACT_RETAINED_DETECTION_INDEX_BBOX_CLASS_MATCH",
+      "measurement_provenance": "retained_phase_8_detection",
+      "roi": "B",
+      "finite_band": {
+        "inside": false,
+        "projection": 0.5366055099433349,
+        "signed_distance_px": 106.94708592850193
+      }
+    },
+    "blue_destination_first": {
+      "frame_index": 7950,
+      "track_id": 4913,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        457.2235412597656,
+        213.01962280273438,
+        504.9732971191406,
+        282.6453552246094
+      ],
+      "point": [
+        481.0984191894531,
+        282.6453552246094
+      ],
+      "class_name": "motorcycle",
+      "class_id": 3,
+      "confidence": 0.3279099762439728,
+      "observed": true,
+      "emitted": true,
+      "observed_basis": "EXACT_RETAINED_DETECTION_INDEX_BBOX_CLASS_MATCH",
+      "measurement_provenance": "retained_phase_8_detection",
+      "roi": "B",
+      "finite_band": {
+        "inside": false,
+        "projection": 0.6366831088835949,
+        "signed_distance_px": 153.02870761814856
+      }
+    },
+    "blue_destination_last": {
+      "frame_index": 7964,
+      "track_id": 4913,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        616.7862548828125,
+        244.61196899414062,
+        639.7647705078125,
+        310.6612854003906
+      ],
+      "point": [
+        628.2755126953125,
+        310.6612854003906
+      ],
+      "class_name": "motorcycle",
+      "class_id": 3,
+      "confidence": 0.5444267392158508,
+      "observed": true,
+      "emitted": true,
+      "observed_basis": "EXACT_RETAINED_DETECTION_INDEX_BBOX_CLASS_MATCH",
+      "measurement_provenance": "retained_phase_8_detection",
+      "roi": "B",
+      "finite_band": {
+        "inside": false,
+        "projection": 0.7763442719133693,
+        "signed_distance_px": 260.1212684110611
+      }
+    }
+  },
+  "red_observed_gap": {
+    "from_frame": 7907,
+    "to_frame": 7928,
+    "missing_source_frames": 20,
+    "synthetic_bc_created": false,
+    "promote_gap_to_measured_allowed": false
+  },
+  "raw4843_identity_boundary": {
+    "blue_last_observed_frame": 7905,
+    "red_first_observed_frame": 7928,
+    "transfer_origin_timer_from_blue_to_red_allowed": false
+  },
+  "new_counting_or_model_execution": false,
+  "source_images_reviewed": [
+    "source_contact_1.jpg",
+    "source_contact_2.jpg",
+    "source_contact_3.jpg"
+  ]
+}

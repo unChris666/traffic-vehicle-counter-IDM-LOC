@@ -1,0 +1,448 @@
+{
+  "claim_type": "ACTUAL_FROZEN_CACHE_REPLAY_NOT_GROUND_TRUTH",
+  "video_id": "weekday_siang",
+  "baseline": {
+    "total": 584,
+    "by_category": {
+      "car": 169,
+      "motorcycle": 342,
+      "truck": 73
+    },
+    "by_direction": {
+      "A_TO_B": 327,
+      "B_TO_A": 257
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 437,
+      "LINE_MARGIN": 138,
+      "OCCLUSION_DIFF_POLYGON": 9
+    },
+    "measured_total": 121,
+    "inferred_total": 463,
+    "pending": 430,
+    "cancelled": 1,
+    "vehicle_total": 584,
+    "pedestrian_total": 0
+  },
+  "baseline_reference": {
+    "path": "results/b_v3/execution/final_20261019T045405_106031Z/weekday_siang/counting_result.json.gz",
+    "sha256": "c2167de7dfd91b8dadbdb53dc7ab0b4db721af243243002693881c0f990ed484",
+    "decoded_sha256": "3fbbcfe070e0f83094990238e2308ef9ac3b4544a5bfd5263cd5b9ea66be9f45"
+  },
+  "variants": {
+    "pilot_machine_final": {
+      "aggregate": {
+        "total": 172,
+        "by_category": {
+          "car": 16,
+          "motorcycle": 146,
+          "truck": 10
+        },
+        "by_direction": {
+          "A_TO_B": 78,
+          "B_TO_A": 94
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 34,
+          "LINE_MARGIN": 138
+        },
+        "measured_total": 121,
+        "inferred_total": 51,
+        "pending": 68,
+        "cancelled": 0,
+        "vehicle_total": 172,
+        "pedestrian_total": 0
+      },
+      "pending_reasons": {
+        "PERSON_ROLE_UNRESOLVED": 29,
+        "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT": 31,
+        "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE": 8
+      },
+      "decision_statuses": {
+        "pending": 68,
+        "resolved_not_eligible": 16
+      },
+      "unknown_person_role_keys": 866,
+      "wall_seconds": 29.736933428997872,
+      "measured_witnesses": 121,
+      "baseline_measured_witnesses_preserved": 121,
+      "lost_baseline_measured_witnesses": [],
+      "new_measured_witnesses": [],
+      "role_candidate_statuses": {
+        "REJECTED": 1395,
+        "SUPPORTED": 741
+      },
+      "role_application_statuses": {
+        "NOT_APPLIED_REJECTED_OR_COMPETING_PARENT": 1408,
+        "APPLIED_EXACT_OBSERVED_FRAME_SCOPE": 728
+      },
+      "alias_context_alignments": 4,
+      "original_inputs_unchanged": true,
+      "source_files_unchanged": true
+    },
+    "pilot_review_final": {
+      "aggregate": {
+        "total": 173,
+        "by_category": {
+          "car": 16,
+          "motorcycle": 146,
+          "pedestrian": 1,
+          "truck": 10
+        },
+        "by_direction": {
+          "A_TO_B": 78,
+          "B_TO_A": 95
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 34,
+          "LINE_MARGIN": 139
+        },
+        "measured_total": 122,
+        "inferred_total": 51,
+        "pending": 67,
+        "cancelled": 0,
+        "vehicle_total": 172,
+        "pedestrian_total": 1
+      },
+      "pending_reasons": {
+        "PERSON_ROLE_UNRESOLVED": 28,
+        "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT": 31,
+        "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE": 8
+      },
+      "decision_statuses": {
+        "pending": 67,
+        "resolved_not_eligible": 16
+      },
+      "unknown_person_role_keys": 866,
+      "wall_seconds": 31.342811312002596,
+      "measured_witnesses": 122,
+      "baseline_measured_witnesses_preserved": 121,
+      "lost_baseline_measured_witnesses": [],
+      "new_measured_witnesses": [
+        [
+          54,
+          54,
+          104,
+          105
+        ]
+      ],
+      "role_candidate_statuses": {
+        "REJECTED": 1395,
+        "SUPPORTED": 741
+      },
+      "role_application_statuses": {
+        "NOT_APPLIED_REJECTED_OR_COMPETING_PARENT": 1408,
+        "APPLIED_EXACT_OBSERVED_FRAME_SCOPE": 728
+      },
+      "alias_context_alignments": 4,
+      "original_inputs_unchanged": true,
+      "source_files_unchanged": true
+    },
+    "pilot_max_final": {
+      "aggregate": {
+        "total": 172,
+        "by_category": {
+          "car": 16,
+          "motorcycle": 146,
+          "truck": 10
+        },
+        "by_direction": {
+          "A_TO_B": 78,
+          "B_TO_A": 94
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 34,
+          "LINE_MARGIN": 138
+        },
+        "measured_total": 121,
+        "inferred_total": 51,
+        "pending": 87,
+        "cancelled": 0,
+        "vehicle_total": 172,
+        "pedestrian_total": 0
+      },
+      "pending_reasons": {
+        "PERSON_ROLE_UNRESOLVED": 47,
+        "NO_VALID_FINITE_LINE_OR_OCCLUSION_EVIDENCE": 1,
+        "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT": 31,
+        "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE": 8
+      },
+      "decision_statuses": {
+        "pending": 87,
+        "resolved_not_eligible": 20
+      },
+      "unknown_person_role_keys": 874,
+      "wall_seconds": 30.872922199007007,
+      "measured_witnesses": 121,
+      "baseline_measured_witnesses_preserved": 121,
+      "lost_baseline_measured_witnesses": [],
+      "new_measured_witnesses": [],
+      "role_candidate_statuses": {
+        "REJECTED": 1479,
+        "SUPPORTED": 657
+      },
+      "role_application_statuses": {
+        "NOT_APPLIED_REJECTED_OR_COMPETING_PARENT": 1490,
+        "APPLIED_EXACT_OBSERVED_FRAME_SCOPE": 646
+      },
+      "alias_context_alignments": 3,
+      "original_inputs_unchanged": true,
+      "source_files_unchanged": true
+    }
+  },
+  "focal_events": {
+    "pilot_machine_final": [
+      {
+        "event_id": "b_v4_f253c348bd8e43f2804d1c5d",
+        "display_id": "M1004",
+        "track_id": 185,
+        "physical_unit_id": "track:185",
+        "episode_id": "unreviewed-vehicle",
+        "category": "motorcycle",
+        "direction": "B_TO_A",
+        "route": "LINE_MARGIN",
+        "activation_frame": 251,
+        "decision_frame": 251,
+        "raw_track_ids": [
+          185
+        ],
+        "source_frames": [
+          214,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251
+        ],
+        "measured": true
+      },
+      {
+        "event_id": "b_v4_7db107c2dd42da1384e17ab8",
+        "display_id": "T2003",
+        "track_id": 4149,
+        "physical_unit_id": "reviewed:siang:4149-truck",
+        "episode_id": "reviewed:4149-truck-before7449|b4-raw:4149:start:7213",
+        "category": "truck",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "activation_frame": 7422,
+        "decision_frame": 7422,
+        "raw_track_ids": [
+          4149
+        ],
+        "source_frames": [
+          7213,
+          7402,
+          7404,
+          7405,
+          7406,
+          7407,
+          7408,
+          7409,
+          7410,
+          7411,
+          7412,
+          7413,
+          7414,
+          7415,
+          7416,
+          7417,
+          7418,
+          7419,
+          7420,
+          7421,
+          7422
+        ],
+        "measured": true
+      }
+    ],
+    "pilot_review_final": [
+      {
+        "event_id": "b_v4_255e5f0b4c75267cb777301c",
+        "display_id": "P1000",
+        "track_id": 54,
+        "physical_unit_id": "reviewed-pedestrian:siang:54",
+        "episode_id": "phase9-ai-reviewed-role:54:33-140",
+        "category": "pedestrian",
+        "direction": "B_TO_A",
+        "route": "LINE_MARGIN",
+        "activation_frame": 112,
+        "decision_frame": 112,
+        "raw_track_ids": [
+          54
+        ],
+        "source_frames": [
+          104,
+          105,
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112
+        ],
+        "measured": true
+      },
+      {
+        "event_id": "b_v4_26c3a2622facd08a57a97de2",
+        "display_id": "M1004",
+        "track_id": 185,
+        "physical_unit_id": "track:185",
+        "episode_id": "unreviewed-vehicle",
+        "category": "motorcycle",
+        "direction": "B_TO_A",
+        "route": "LINE_MARGIN",
+        "activation_frame": 251,
+        "decision_frame": 251,
+        "raw_track_ids": [
+          185
+        ],
+        "source_frames": [
+          214,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251
+        ],
+        "measured": true
+      },
+      {
+        "event_id": "b_v4_bc4bf197960b3b93d9d635a2",
+        "display_id": "T2003",
+        "track_id": 4149,
+        "physical_unit_id": "reviewed:siang:4149-truck",
+        "episode_id": "reviewed:4149-truck-before7449|b4-raw:4149:start:7213",
+        "category": "truck",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "activation_frame": 7422,
+        "decision_frame": 7422,
+        "raw_track_ids": [
+          4149
+        ],
+        "source_frames": [
+          7213,
+          7402,
+          7404,
+          7405,
+          7406,
+          7407,
+          7408,
+          7409,
+          7410,
+          7411,
+          7412,
+          7413,
+          7414,
+          7415,
+          7416,
+          7417,
+          7418,
+          7419,
+          7420,
+          7421,
+          7422
+        ],
+        "measured": true
+      }
+    ],
+    "pilot_max_final": [
+      {
+        "event_id": "b_v4_af44a2f14abe64c64bb0cdb5",
+        "display_id": "M1004",
+        "track_id": 185,
+        "physical_unit_id": "track:185",
+        "episode_id": "unreviewed-vehicle",
+        "category": "motorcycle",
+        "direction": "B_TO_A",
+        "route": "LINE_MARGIN",
+        "activation_frame": 251,
+        "decision_frame": 251,
+        "raw_track_ids": [
+          185
+        ],
+        "source_frames": [
+          214,
+          237,
+          238,
+          239,
+          240,
+          241,
+          242,
+          243,
+          244,
+          245,
+          246,
+          247,
+          248,
+          249,
+          250,
+          251
+        ],
+        "measured": true
+      },
+      {
+        "event_id": "b_v4_ee6838c1c1b60302755aec91",
+        "display_id": "T2003",
+        "track_id": 4149,
+        "physical_unit_id": "reviewed:siang:4149-truck",
+        "episode_id": "reviewed:4149-truck-before7449|b4-raw:4149:start:7213",
+        "category": "truck",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "activation_frame": 7422,
+        "decision_frame": 7422,
+        "raw_track_ids": [
+          4149
+        ],
+        "source_frames": [
+          7213,
+          7402,
+          7404,
+          7405,
+          7406,
+          7407,
+          7408,
+          7409,
+          7410,
+          7411,
+          7412,
+          7413,
+          7414,
+          7415,
+          7416,
+          7417,
+          7418,
+          7419,
+          7420,
+          7421,
+          7422
+        ],
+        "measured": true
+      }
+    ]
+  },
+  "physical_white_scooter_predecessor_763_816_856": "UNRESOLVED_NO_AUTOMATIC_ALIAS_OR_PHYSICAL_COUNT_DELTA"
+}

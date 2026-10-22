@@ -1,0 +1,126 @@
+{
+  "schema_version": "phase8_b_v4_review_overlay_v1",
+  "donor_manifest_sha256": "79e8cf19747c63b34f8389d8f525925fd0c69e966f3d12ffb89716a5c89bd0dc",
+  "videos": [
+    {
+      "video_id": "weekday_siang",
+      "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b",
+      "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "reviews": [
+        {
+          "review_id": "PHASE9-AI-SIANG-54-PEDESTRIAN-33-140",
+          "type": "PEDESTRIAN_ROLE",
+          "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+          "human_confirmation_status": "NOT_NEWLY_ADJUDICATED_BY_USER",
+          "confirmed_frames": [
+            33,
+            57,
+            82,
+            100,
+            103,
+            104,
+            105,
+            107,
+            111,
+            112,
+            120,
+            127,
+            135
+          ],
+          "scopes": [
+            {
+              "track_id": 54,
+              "start_frame": 33,
+              "end_frame": 140,
+              "raw_family": "person"
+            }
+          ],
+          "physical_unit_id": "reviewed-pedestrian:siang:54",
+          "episode_id": "phase9-ai-reviewed-role:54:33-140",
+          "scope_extent_basis": "Bounded Phase9 retained source images and prior user pedestrian review57-107. No propagation through remaining raw54 history. Raw detector BC crossing is geometric; feet are partly obscured by overlay.",
+          "evidence": [
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 33,
+              "source_frame_pixel_sha256": "d8344c5dd5559b3fc97e19b8eaf365b170e0339d2c99b6196f08ce3459e5e92c"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 57,
+              "source_frame_pixel_sha256": "2925814e5e4ffd8427afc64c6dc1f0c2070951e9a0713d015e4bae9f61ee0efb"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 82,
+              "source_frame_pixel_sha256": "58a8bb81536acf0752cd1b920e15d96eb030128631617b0723f7fdd26756614e"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 100,
+              "source_frame_pixel_sha256": "6d1fa2931b79168c2a6ee71c29652f12bc4f2d047af1b079d74b75f5dff1c415"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 103,
+              "source_frame_pixel_sha256": "de68831096022b07f2113fe190db742ed05da68e7c32321093c3d8342ada10a9"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 104,
+              "source_frame_pixel_sha256": "aaddc35d44b3ecc674b7b2f1dd48ce4e03c5af064d57a2bacb943de7d17d4868"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 105,
+              "source_frame_pixel_sha256": "c65e5e1e9f906eb31a77f4d3c81082f7c4a6958158a5d027f1ac7ded8bf4e8fa"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 107,
+              "source_frame_pixel_sha256": "c5658391d94ecf2b4006178f4c67b1a7d6fd17cf22c6ce33a00d974d7f1e5b07"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 111,
+              "source_frame_pixel_sha256": "0806650d14b5f7bce09537e093907f9b05b3f458fac9beec42c7ef5aa3281cf5"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 112,
+              "source_frame_pixel_sha256": "823f64d42a9a5aa52c57c815e17cf05971815833244f501301f6ceff58ae90ea"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 120,
+              "source_frame_pixel_sha256": "6395e645e25e672792212091ab955bcec8235135495f0aee2eea4e8831fc8aef"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 127,
+              "source_frame_pixel_sha256": "9e58c3cbff25c1b07610ed8a7df98006bd4afb91e7bf642eb621fa63bf30325a"
+            },
+            {
+              "path": "results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/evidence/source_pixel_checks.json",
+              "sha256": "75a7a9df24e430b1d4b6a97187e00dafc6ca0d2912cc16cb355ef5d49087ec3b",
+              "frame_index": 135,
+              "source_frame_pixel_sha256": "ba0ef698be0b124ab00809a4571b77b2f88810a18e643d4bc33416e5b0e2b96b"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

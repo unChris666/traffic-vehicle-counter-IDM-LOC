@@ -1,0 +1,2188 @@
+{
+  "schema_version": "phase9_b_v8_pending_adjudications_v1",
+  "baseline_result_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "decision_origin": "AI_PIXELS_REVIEW_NOT_AUTOMATIC_MODEL_PREDICTION",
+  "adjudications": [
+    {
+      "adjudication_id": "p1-pending:5af37f793b2f7bf0cf18",
+      "baseline_candidate_scope": {
+        "track_id": 12,
+        "physical_unit_id": "person-track:12",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:12:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 41,
+        "track_id": 12,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          117.84103393554688,
+          194.3105010986328,
+          136.0236053466797,
+          240.35426330566406
+        ],
+        "point": [
+          126.93231964111328,
+          240.35426330566406
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.5593153834342957,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:0a5edf8f2ff746612dd64f5e",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 3,
+        "end_frame": 41,
+        "exact_source_frames_viewed": [
+          3,
+          13,
+          16,
+          22,
+          32,
+          41
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          3,
+          13,
+          16,
+          22,
+          32,
+          41
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        3,
+        13,
+        16,
+        22,
+        32,
+        41
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-01-raw12.jpg",
+          "sha256": "153a227d84f10116526bc24e91d4d0aa5f41aa7439a71ccf88efabecf0021aa4"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        11
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:b44b5c2fcbfec92cd1e2",
+      "baseline_candidate_scope": {
+        "track_id": 375,
+        "physical_unit_id": "person-track:375",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:375:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 510,
+        "track_id": 375,
+        "original_detection_index": 5,
+        "raw_bbox": [
+          116.51437377929688,
+          215.65985107421875,
+          143.69265747070312,
+          267.28533935546875
+        ],
+        "point": [
+          130.103515625,
+          267.28533935546875
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.7199984788894653,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:72614958bc4c54972c3847e0",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": [
+          "COMPETING_COMPONENT_PARENTS"
+        ]
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 460,
+        "end_frame": 515,
+        "exact_source_frames_viewed": [
+          460,
+          473,
+          486,
+          500,
+          510,
+          515
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          460,
+          473,
+          486,
+          500,
+          510,
+          515
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        460,
+        473,
+        486,
+        500,
+        510,
+        515
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-03-raw375.jpg",
+          "sha256": "3107370260d1c334b3c771b80d816569d670961d811d4608ecbb5fce81528897"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        381
+      ],
+      "parent_attribution_status": "PARTIAL_SCOPE_PHYSICAL_COMPONENT_POSITIVE_RAW_PARENT_UNRESOLVED_AT_OCCLUSION",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:6616df16cea24b090f31",
+      "baseline_candidate_scope": {
+        "track_id": 385,
+        "physical_unit_id": "person-track:385",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:385:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 1044,
+        "track_id": 385,
+        "original_detection_index": 10,
+        "raw_bbox": [
+          61.35145568847656,
+          203.85116577148438,
+          84.77264404296875,
+          234.16775512695312
+        ],
+        "point": [
+          73.06204986572266,
+          234.16775512695312
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.4783151149749756,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:8309c878237191482e95fdf9",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 983,
+        "end_frame": 1053,
+        "exact_source_frames_viewed": [
+          983,
+          1000,
+          1017,
+          1035,
+          1044,
+          1053
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          983,
+          1000,
+          1017,
+          1035,
+          1044,
+          1053
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        983,
+        1000,
+        1017,
+        1035,
+        1044,
+        1053
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-04-raw385.jpg",
+          "sha256": "c01ccccc5e079d668e678b29b3f7c6fcf2936c7f3bf2137bf9c9bd271394d246"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        744
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:923cd3347c23a1dcb6f1",
+      "baseline_candidate_scope": {
+        "track_id": 1486,
+        "physical_unit_id": "person-track:1486",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:1486:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 1677,
+        "track_id": 1486,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          102.59984588623047,
+          198.37716674804688,
+          159.25958251953125,
+          297.8859558105469
+        ],
+        "point": [
+          130.92971420288086,
+          297.8859558105469
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.8332829475402832,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:e8cccde889b8b6808d4f7fba",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 1651,
+        "end_frame": 1747,
+        "exact_source_frames_viewed": [
+          1651,
+          1675,
+          1677,
+          1699,
+          1723,
+          1747
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          1651,
+          1675,
+          1677,
+          1699,
+          1723,
+          1747
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        1651,
+        1675,
+        1677,
+        1699,
+        1723,
+        1747
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-05-raw1486.jpg",
+          "sha256": "bcaa20b04916365f8b7b6de7aa84c76ab96380d08ae692d85512d1123d979394"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        1483
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:cd3c703620988eb109c8",
+      "baseline_candidate_scope": {
+        "track_id": 1686,
+        "physical_unit_id": "person-track:1686",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:1686:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 2002,
+        "track_id": 1686,
+        "original_detection_index": 9,
+        "raw_bbox": [
+          108.17709350585938,
+          199.76666259765625,
+          147.6056671142578,
+          298.8780517578125
+        ],
+        "point": [
+          127.8913803100586,
+          298.8780517578125
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.34302574396133423,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:608eddd8cb25b7fc9c8f6d84",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 1977,
+        "end_frame": 2027,
+        "exact_source_frames_viewed": [
+          1977,
+          1982,
+          1987,
+          1995,
+          2002,
+          2027
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          1977,
+          1982,
+          1987,
+          1995,
+          2002
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        1977,
+        1982,
+        1987,
+        1995,
+        2002
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-07-raw1686.jpg",
+          "sha256": "9748dcd5a902ae337af9b4cded5abfce54c0826117fae7631e5cba76f8ae345e"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        1688
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:7192618cf852c51c9169",
+      "baseline_candidate_scope": {
+        "track_id": 1687,
+        "physical_unit_id": "person-track:1687",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:1687:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 2003,
+        "track_id": 1687,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          107.94661712646484,
+          196.69625854492188,
+          167.55941772460938,
+          292.9311218261719
+        ],
+        "point": [
+          137.7530174255371,
+          292.9311218261719
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.8220898509025574,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:78c3c39dbdfabbf63681e3e7",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 1977,
+        "end_frame": 2073,
+        "exact_source_frames_viewed": [
+          1977,
+          2001,
+          2003,
+          2025,
+          2049,
+          2073
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          1977,
+          2001,
+          2003,
+          2025,
+          2049,
+          2073
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        1977,
+        2001,
+        2003,
+        2025,
+        2049,
+        2073
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-08-raw1687.jpg",
+          "sha256": "669cfcbb5e8afcc9091dd76038ae2b2d897de6ddbb78f10cdcc97b5794898e9c"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        1688
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:a98c5cefee64b0c31bc7",
+      "baseline_candidate_scope": {
+        "track_id": 1826,
+        "physical_unit_id": "person-track:1826",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:1826:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 2139,
+        "track_id": 1826,
+        "original_detection_index": 5,
+        "raw_bbox": [
+          288.20111083984375,
+          175.54241943359375,
+          339.4390869140625,
+          332.2564697265625
+        ],
+        "point": [
+          313.8200988769531,
+          332.2564697265625
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.37053874135017395,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:e48c298023938e50bcc4d2b9",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 2114,
+        "end_frame": 2139,
+        "exact_source_frames_viewed": [
+          2114,
+          2130,
+          2132,
+          2134,
+          2137,
+          2139
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          2130,
+          2132,
+          2134,
+          2137,
+          2139
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        2130,
+        2132,
+        2134,
+        2137,
+        2139
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-09-raw1826.jpg",
+          "sha256": "356cdfcca396b40becfc299f49b748b61f2fb802f1b8b4907c068aa8d5182551"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        1822
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:c5b426dd08110ae8fb8c",
+      "baseline_candidate_scope": {
+        "track_id": 1948,
+        "physical_unit_id": "person-track:1948",
+        "episode_id": "unreviewed-vehicle|b4-raw:1948:start:2290",
+        "passage_id": "person-track:1948:episode:unreviewed-vehicle|b4-raw:1948:start:2290:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 2350,
+        "track_id": 1948,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          466.6385498046875,
+          180.677490234375,
+          520.73046875,
+          262.23114013671875
+        ],
+        "point": [
+          493.68450927734375,
+          262.23114013671875
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-vehicle|b4-raw:1948:start:2290",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.7523854970932007,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:cec57621cda96eb0ee1e279a",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "RAW_VEHICLE_AFTER_BOUNDED_COMPONENT_CONTEXT_NO_ORIGIN_INHERITANCE",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 2281,
+        "end_frame": 2350,
+        "exact_source_frames_viewed": [
+          2281,
+          2306,
+          2321,
+          2325,
+          2336,
+          2350
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          2281,
+          2306,
+          2321,
+          2336,
+          2350
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        2281,
+        2306,
+        2321,
+        2336,
+        2350
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-10-raw1948.jpg",
+          "sha256": "3b649f469eeec5ef25ade33b284c754ad8249fcb92c5fbbce0f18ca5fb0baf87"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        1944
+      ],
+      "parent_attribution_status": "PARTIAL_SCOPE_PHYSICAL_COMPONENT_POSITIVE_RAW_PARENT_UNRESOLVED_AT_OCCLUSION",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:e1cc71a11feed85d62f9",
+      "baseline_candidate_scope": {
+        "track_id": 2195,
+        "physical_unit_id": "person-track:2195",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:2195:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 3116,
+        "track_id": 2195,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          306.1914367675781,
+          184.06576538085938,
+          343.7742614746094,
+          257.8353576660156
+        ],
+        "point": [
+          324.98284912109375,
+          257.8353576660156
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.6843065023422241,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:a26ca9a992f9dea7548a6448",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 3046,
+        "end_frame": 3118,
+        "exact_source_frames_viewed": [
+          3046,
+          3066,
+          3082,
+          3098,
+          3116,
+          3118
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          3046,
+          3066,
+          3082,
+          3098,
+          3116,
+          3118
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        3046,
+        3066,
+        3082,
+        3098,
+        3116,
+        3118
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-11-raw2195.jpg",
+          "sha256": "29990ebb9f6f899d9d50e77a143ace04bee7ba12df1d12e2e4e68889c4297b6b"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        2211
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:df12f1cc2eca3651f76f",
+      "baseline_candidate_scope": {
+        "track_id": 2531,
+        "physical_unit_id": "person-track:2531",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:2531:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 3997,
+        "track_id": 2531,
+        "original_detection_index": 5,
+        "raw_bbox": [
+          215.44134521484375,
+          202.30702209472656,
+          256.7569580078125,
+          227.6815643310547
+        ],
+        "point": [
+          236.09915161132812,
+          227.6815643310547
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.3359313905239105,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:e3f55a0ab683497f26ee0d95",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "VEHICLE_OCCUPANT",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 3972,
+        "end_frame": 3997,
+        "exact_source_frames_viewed": [
+          3972,
+          3987,
+          3989,
+          3991,
+          3994,
+          3997
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          3987,
+          3989,
+          3991,
+          3994,
+          3997
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        3987,
+        3989,
+        3991,
+        3994,
+        3997
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-12-raw2531.jpg",
+          "sha256": "96e2a06282f8f6ef0497eb79f8e7a9ad93a2837338fc0ffbc4574380dd89e593"
+        }
+      ],
+      "related_vehicle_raw_ids": [],
+      "parent_attribution_status": "NOT_APPLICABLE_OR_UNRESOLVED",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:f9c401c6d3884256da60",
+      "baseline_candidate_scope": {
+        "track_id": 3239,
+        "physical_unit_id": "person-track:3239",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:3239:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 5494,
+        "track_id": 3239,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          131.746337890625,
+          195.84823608398438,
+          157.68035888671875,
+          266.2856140136719
+        ],
+        "point": [
+          144.71334838867188,
+          266.2856140136719
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.6474765539169312,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:1b222022064913f858578d31",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 5461,
+        "end_frame": 5498,
+        "exact_source_frames_viewed": [
+          5461,
+          5470,
+          5479,
+          5489,
+          5494,
+          5498
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          5461,
+          5470,
+          5479,
+          5489,
+          5494,
+          5498
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        5461,
+        5470,
+        5479,
+        5489,
+        5494,
+        5498
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-14-raw3239.jpg",
+          "sha256": "cd6738755305f3f4494ddf312ca3c70f259dad673c94b5a4ae5e0bac43d44155"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        3205
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:cd87e9049b2052e56470",
+      "baseline_candidate_scope": {
+        "track_id": 3446,
+        "physical_unit_id": "person-track:3446",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:3446:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 6105,
+        "track_id": 3446,
+        "original_detection_index": 0,
+        "raw_bbox": [
+          138.59832763671875,
+          173.77987670898438,
+          187.1693115234375,
+          281.3253173828125
+        ],
+        "point": [
+          162.88381958007812,
+          281.3253173828125
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.8523356914520264,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:2243d35356259198b96f3028",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 6080,
+        "end_frame": 6113,
+        "exact_source_frames_viewed": [
+          6080,
+          6082,
+          6090,
+          6098,
+          6105,
+          6113
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          6082,
+          6090,
+          6098,
+          6105,
+          6113
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        6082,
+        6090,
+        6098,
+        6105,
+        6113
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-16-raw3446.jpg",
+          "sha256": "a754fde791916d65b58516c846cf19f90fce6ad0a538bc394c646a38a3a5889f"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        3450
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:c8095d17cacd93d0c946",
+      "baseline_candidate_scope": {
+        "track_id": 3555,
+        "physical_unit_id": "track:3555",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:3555:episode:unreviewed-vehicle:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 6269,
+        "track_id": 3555,
+        "original_detection_index": 6,
+        "raw_bbox": [
+          87.94622802734375,
+          159.47366333007812,
+          202.77511596679688,
+          294.812744140625
+        ],
+        "point": [
+          145.3606719970703,
+          294.812744140625
+        ],
+        "class_name": "truck",
+        "effective_class_name": "truck",
+        "resolved_class_name": null,
+        "role": "vehicle",
+        "episode_id": "unreviewed-vehicle",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 7,
+        "confidence": 0.47444429993629456,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:232862eee93ad1824008b128",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "CARGO",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 6269,
+        "end_frame": 6269
+      },
+      "positive_source_frames": [
+        6269
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/b_v8/pending_review/cargo3555_review.json",
+          "sha256": "1bcf114c1f95bfb2ef2ea6ca8656e02c0441b692695cd413767b6d26ec8cfdb3"
+        },
+        {
+          "path": "results/b_v8/pending_review/evidence/source-frame-006269.png",
+          "sha256": "f3a4b5971f09e333c66df0c212d83364098dd0a460c83811c6ce7fcde71845a0"
+        },
+        {
+          "path": "results/b_v8/pending_review/evidence/cargo6269_decode_receipt.json",
+          "sha256": "37c90057cfa908d4e76f2ed1e9da210dd38c722f3fc6fc8b206251e3b26d62fb"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/unmatched/evidence/box-motor-1.jpg",
+          "sha256": "e4241f5c051a741c970e6a0353ea6f6d9dfaa3b16113236628af6a0d14a5956d"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        3563
+      ],
+      "parent_attribution_status": "SOURCE_SHEET_AND_EXISTING_MEASURED_PARENT_PASSAGE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:47bdb960ad3dd40d7a99",
+      "baseline_candidate_scope": {
+        "track_id": 3844,
+        "physical_unit_id": "person-track:3844",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:3844:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 6717,
+        "track_id": 3844,
+        "original_detection_index": 4,
+        "raw_bbox": [
+          309.13763427734375,
+          182.866943359375,
+          330.26800537109375,
+          248.85577392578125
+        ],
+        "point": [
+          319.70281982421875,
+          248.85577392578125
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.5946200489997864,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:945280b1204fcc438f455302",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 6695,
+        "end_frame": 6726,
+        "exact_source_frames_viewed": [
+          6695,
+          6703,
+          6711,
+          6717,
+          6718,
+          6726
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          6695,
+          6703,
+          6711,
+          6717,
+          6718,
+          6726
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        6695,
+        6703,
+        6711,
+        6717,
+        6718,
+        6726
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-19-raw3844.jpg",
+          "sha256": "5551c969c0594d12108432987d0f514d0bf479c0a0f2e16e01bd66e043978a67"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        3789
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:42adbb8966e9084b14ff",
+      "baseline_candidate_scope": {
+        "track_id": 4094,
+        "physical_unit_id": "person-track:4094",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:4094:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 7063,
+        "track_id": 4094,
+        "original_detection_index": 2,
+        "raw_bbox": [
+          138.60330200195312,
+          161.37533569335938,
+          179.28073120117188,
+          285.4450988769531
+        ],
+        "point": [
+          158.9420166015625,
+          285.4450988769531
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.7519322037696838,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:614127b4f167a14c19500ad2",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 7034,
+        "end_frame": 7073,
+        "exact_source_frames_viewed": [
+          7034,
+          7042,
+          7051,
+          7060,
+          7063,
+          7073
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          7034,
+          7042,
+          7051,
+          7060,
+          7063,
+          7073
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        7034,
+        7042,
+        7051,
+        7060,
+        7063,
+        7073
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-20-raw4094.jpg",
+          "sha256": "8ddd37efce3096cb51a955c53d66836718e0401d53e8b96937ae83fb67e1c8dd"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        4089
+      ],
+      "parent_attribution_status": "PARTIAL_SCOPE_PHYSICAL_COMPONENT_POSITIVE_RAW_PARENT_UNRESOLVED_AT_OCCLUSION",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:8065e8b72c48af38715f",
+      "baseline_candidate_scope": {
+        "track_id": 4198,
+        "physical_unit_id": "person-track:4198",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:4198:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 7329,
+        "track_id": 4198,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          584.84912109375,
+          127.90253448486328,
+          639.6832275390625,
+          286.205322265625
+        ],
+        "point": [
+          612.2661743164062,
+          286.205322265625
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.8161819577217102,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:ef115a1cc1a009b90ec8636b",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 7259,
+        "end_frame": 7329,
+        "exact_source_frames_viewed": [
+          7259,
+          7277,
+          7298,
+          7304,
+          7313,
+          7329
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          7259,
+          7277,
+          7298,
+          7304,
+          7313,
+          7329
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        7259,
+        7277,
+        7298,
+        7304,
+        7313,
+        7329
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-21-raw4198.jpg",
+          "sha256": "f84a1fd77fbbe7b24f42e522164529e95be314983408377c7ee6e41d3f2f0b27"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        4166
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:11e14f9c060072678c5d",
+      "baseline_candidate_scope": {
+        "track_id": 4244,
+        "physical_unit_id": "person-track:4244",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:4244:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 7363,
+        "track_id": 4244,
+        "original_detection_index": 3,
+        "raw_bbox": [
+          104.41719818115234,
+          142.70602416992188,
+          169.19815063476562,
+          290.7500915527344
+        ],
+        "point": [
+          136.80767440795898,
+          290.7500915527344
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.8453525900840759,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:14b75e6465acb12d6c16f087",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 7343,
+        "end_frame": 7397,
+        "exact_source_frames_viewed": [
+          7343,
+          7355,
+          7363,
+          7367,
+          7379,
+          7397
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          7343,
+          7355,
+          7363,
+          7367,
+          7379,
+          7397
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        7343,
+        7355,
+        7363,
+        7367,
+        7379,
+        7397
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-22-raw4244.jpg",
+          "sha256": "afdbbfdbf88f4ed7a2e5ff3f55b1866d8b7fd875bc64832c73b00684163572cc"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        4251
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:a135e22a3f5496543150",
+      "baseline_candidate_scope": {
+        "track_id": 4175,
+        "physical_unit_id": "person-track:4175",
+        "episode_id": "unreviewed-vehicle|b4-raw:4175:start:7311",
+        "passage_id": "person-track:4175:episode:unreviewed-vehicle|b4-raw:4175:start:7311:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 7354,
+        "track_id": 4175,
+        "original_detection_index": 9,
+        "raw_bbox": [
+          188.76809692382812,
+          168.40078735351562,
+          218.85598754882812,
+          218.83047485351562
+        ],
+        "point": [
+          203.81204223632812,
+          218.83047485351562
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-vehicle|b4-raw:4175:start:7311",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.3179463744163513,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:22802c06feb683b60bd33c6b",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "RAW_VEHICLE_AFTER_BOUNDED_COMPONENT_CONTEXT_NO_ORIGIN_INHERITANCE",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 7300,
+        "end_frame": 7354,
+        "exact_source_frames_viewed": [
+          7300,
+          7317,
+          7329,
+          7330,
+          7342,
+          7354
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          7300,
+          7317,
+          7329,
+          7330,
+          7342,
+          7354
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        7300,
+        7317,
+        7329,
+        7330,
+        7342,
+        7354
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-24-raw4175.jpg",
+          "sha256": "fd0ea0ff6e82c4d943271c9f192f8e730a17d67f5819bbbb0db0723d1e6f3289"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        4200
+      ],
+      "parent_attribution_status": "PARTIAL_SCOPE_PHYSICAL_COMPONENT_POSITIVE_RAW_PARENT_UNRESOLVED_AT_OCCLUSION",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:a829a070f6633db5d8d8",
+      "baseline_candidate_scope": {
+        "track_id": 4283,
+        "physical_unit_id": "person-track:4283",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:4283:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 7451,
+        "track_id": 4283,
+        "original_detection_index": 12,
+        "raw_bbox": [
+          59.84819793701172,
+          175.2088623046875,
+          86.7914047241211,
+          213.70849609375
+        ],
+        "point": [
+          73.3198013305664,
+          213.70849609375
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.2943371832370758,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:eb7e9acfdb7dbe2084fa6c39",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 7385,
+        "end_frame": 7482,
+        "exact_source_frames_viewed": [
+          7385,
+          7408,
+          7431,
+          7451,
+          7456,
+          7482
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          7385,
+          7408,
+          7431,
+          7451,
+          7456,
+          7482
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        7385,
+        7408,
+        7431,
+        7451,
+        7456,
+        7482
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-25-raw4283.jpg",
+          "sha256": "46945dfc3f1db63871603b7f9f6bfb6239d1b7b940296fa6ce15f21605cbffde"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        4306
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:7a77400e43b4dc29ad1a",
+      "baseline_candidate_scope": {
+        "track_id": 4397,
+        "physical_unit_id": "person-track:4397",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:4397:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 7503,
+        "track_id": 4397,
+        "original_detection_index": 7,
+        "raw_bbox": [
+          387.373291015625,
+          151.3984375,
+          423.92083740234375,
+          186.42437744140625
+        ],
+        "point": [
+          405.6470642089844,
+          186.42437744140625
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.6443306803703308,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:f578f7b7cd4d557218b5bcdb",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "VEHICLE_OCCUPANT",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 7484,
+        "end_frame": 7518,
+        "exact_source_frames_viewed": [
+          7484,
+          7492,
+          7501,
+          7503,
+          7510,
+          7518
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          7484,
+          7492,
+          7501,
+          7503,
+          7510,
+          7518
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        7484,
+        7492,
+        7501,
+        7503,
+        7510,
+        7518
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-26-raw4397.jpg",
+          "sha256": "46f060d0f2ca4bc6d30e988ee48135387bcd5ef2b2beac0aea325081bad43f73"
+        }
+      ],
+      "related_vehicle_raw_ids": [],
+      "parent_attribution_status": "NOT_APPLICABLE_OR_UNRESOLVED",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:7489725d1be044d47faf",
+      "baseline_candidate_scope": {
+        "track_id": 4561,
+        "physical_unit_id": "person-track:4561",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:4561:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 7685,
+        "track_id": 4561,
+        "original_detection_index": 8,
+        "raw_bbox": [
+          560.861328125,
+          140.01226806640625,
+          631.259765625,
+          223.45205688476562
+        ],
+        "point": [
+          596.060546875,
+          223.45205688476562
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.5416891574859619,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:8a7d43bff9f558d2090ff06c",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 7617,
+        "end_frame": 7685,
+        "exact_source_frames_viewed": [
+          7617,
+          7642,
+          7656,
+          7660,
+          7671,
+          7685
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          7617,
+          7642,
+          7656,
+          7660,
+          7671,
+          7685
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        7617,
+        7642,
+        7656,
+        7660,
+        7671,
+        7685
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-27-raw4561.jpg",
+          "sha256": "1b3520662b8191190fbe54c53469b189955832f6cf3b45082f7b28841e9032ab"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        4558
+      ],
+      "parent_attribution_status": "PARTIAL_SCOPE_PHYSICAL_COMPONENT_POSITIVE_RAW_PARENT_UNRESOLVED_AT_OCCLUSION",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    },
+    {
+      "adjudication_id": "p1-pending:08f5709a3b02a9fc7bae",
+      "baseline_candidate_scope": {
+        "track_id": 4938,
+        "physical_unit_id": "person-track:4938",
+        "episode_id": "unreviewed-person",
+        "passage_id": "person-track:4938:episode:unreviewed-person:passage:1"
+      },
+      "baseline_source_ref": {
+        "frame_index": 8012,
+        "track_id": 4938,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          152.97927856445312,
+          151.86346435546875,
+          201.92422485351562,
+          256.8907165527344
+        ],
+        "point": [
+          177.45175170898438,
+          256.8907165527344
+        ],
+        "class_name": "person",
+        "effective_class_name": "person",
+        "resolved_class_name": null,
+        "role": "unknown_person",
+        "episode_id": "unreviewed-person",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 0,
+        "confidence": 0.7691676020622253,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:37a93c02018780895125f1b1",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "reviewed_role": "RIDER_PASSENGER",
+      "reviewer_origin": "AI_PIXELS_REVIEW",
+      "role_scope": {
+        "start_frame": 7993,
+        "end_frame": 8033,
+        "exact_source_frames_viewed": [
+          7993,
+          8004,
+          8012,
+          8013,
+          8022,
+          8033
+        ],
+        "scope_basis": "TEMPORAL_SAMPLE_REVIEW_ONLY_NOT_EVERY_FRAME_OR_WHOLE_RAW_ID",
+        "apply_globally": false,
+        "positive_raw_person_sample_frames": [
+          7993,
+          8004,
+          8012,
+          8013,
+          8022,
+          8033
+        ],
+        "only_apply_to_emitted_raw_person_observations": true
+      },
+      "positive_source_frames": [
+        7993,
+        8004,
+        8012,
+        8013,
+        8022,
+        8033
+      ],
+      "proof_artifacts": [
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/per_case_decisions.jsonl",
+          "sha256": "1ad66cbdbaa96cf2f75d8da762b841ab0f1829645853def2c9e6cf69f48e1461"
+        },
+        {
+          "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-29-raw4938.jpg",
+          "sha256": "75433238c5f261ae510ed2fa1d82a33ad538ef0fa49aecadc13f032652307098"
+        }
+      ],
+      "related_vehicle_raw_ids": [
+        4953
+      ],
+      "parent_attribution_status": "SOURCE_SAMPLES_POSITIVE",
+      "source_identity": {
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "width": 640,
+        "height": 480,
+        "variant": "raw",
+        "parent_run_id": "phase8_20261015T085213_690310Z",
+        "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+      },
+      "scope": "EXACT_PENDING_CANDIDATE_ONLY_NO_RAW_ID_GLOBAL_ROLE",
+      "reason": "REVIEWED_NON_INDEPENDENT_COMPONENT",
+      "source_video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+    }
+  ]
+}

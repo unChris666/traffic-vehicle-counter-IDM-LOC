@@ -1,0 +1,23 @@
+test_decision_provenance_does_not_rewrite_candidate_time_or_source (phase_8_b_v8_batch_tests.P1BatchGuards.test_decision_provenance_does_not_rewrite_candidate_time_or_source) ... ok
+test_different_baseline_source_is_rejected (phase_8_b_v8_batch_tests.P1BatchGuards.test_different_baseline_source_is_rejected) ... ok
+test_foreign_review_manifest_digest_is_rejected (phase_8_b_v8_batch_tests.P1BatchGuards.test_foreign_review_manifest_digest_is_rejected) ... ok
+test_missing_or_foreign_pending_source_proof_is_rejected (phase_8_b_v8_batch_tests.P1BatchGuards.test_missing_or_foreign_pending_source_proof_is_rejected) ... ok
+test_namespace_rename_changes_event_references_not_physical_identity (phase_8_b_v8_batch_tests.P1BatchGuards.test_namespace_rename_changes_event_references_not_physical_identity) ... ok
+test_output_cannot_enter_old_results_or_new_fixture_inputs (phase_8_b_v8_batch_tests.P1BatchGuards.test_output_cannot_enter_old_results_or_new_fixture_inputs) ... ok
+test_output_cannot_enter_source_or_reuse_previous_run (phase_8_b_v8_batch_tests.P1BatchGuards.test_output_cannot_enter_source_or_reuse_previous_run) ... ok
+test_pending_adjudications_bind_exact_baseline_result (phase_8_b_v8_batch_tests.P1BatchGuards.test_pending_adjudications_bind_exact_baseline_result) ... ok
+test_pending_source_proof_is_bound_and_guarded_before_replay (phase_8_b_v8_batch_tests.P1BatchGuards.test_pending_source_proof_is_bound_and_guarded_before_replay) ... ok
+test_preserves_machine_controls_and_binds_reviewed_branch_inputs (phase_8_b_v8_batch_tests.P1BatchGuards.test_preserves_machine_controls_and_binds_reviewed_branch_inputs) ... ok
+test_retained_machine_baseline_must_match_its_gate (phase_8_b_v8_batch_tests.P1BatchGuards.test_retained_machine_baseline_must_match_its_gate) ... ok
+test_review_data_cannot_be_declared_machine_predictions (phase_8_b_v8_batch_tests.P1BatchGuards.test_review_data_cannot_be_declared_machine_predictions) ... ok
+test_review_source_bindings_and_video_selection_are_enforced (phase_8_b_v8_batch_tests.P1BatchGuards.test_review_source_bindings_and_video_selection_are_enforced) ... ok
+test_reviewed_replay_cannot_pretend_to_be_machine_branch (phase_8_b_v8_batch_tests.P1BatchGuards.test_reviewed_replay_cannot_pretend_to_be_machine_branch) ... ok
+test_run_identifier_must_not_escape_output (phase_8_b_v8_batch_tests.P1BatchGuards.test_run_identifier_must_not_escape_output) ... ok
+test_runner_orders_review_identity_count_and_finalization_with_separate_baseline (phase_8_b_v8_batch_tests.P1BatchGuards.test_runner_orders_review_identity_count_and_finalization_with_separate_baseline) ... ok
+test_timer_or_handoff_control_change_is_rejected (phase_8_b_v8_batch_tests.P1BatchGuards.test_timer_or_handoff_control_change_is_rejected) ... ok
+test_unknown_pending_schema_is_rejected_before_replay (phase_8_b_v8_batch_tests.P1BatchGuards.test_unknown_pending_schema_is_rejected_before_replay) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.059s
+
+OK

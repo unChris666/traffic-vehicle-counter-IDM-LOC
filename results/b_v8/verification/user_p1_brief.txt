@@ -1,0 +1,278 @@
+# P1 Development Task — Pending Reduction and Conservative Passage Recovery
+## Location: Traffic Counter | Baseline: B v7
+
+### 1. Mission
+
+Continue the Traffic Counter project into P1 development while preserving all existing B v7 safeguards.
+
+The primary objectives are:
+
+1. Reduce unresolved pending cases through evidence-based review and deterministic decision rules.
+2. Recover additional physical passages only when the available evidence supports the decision.
+3. Prevent duplicate accepted events for a single physical passage.
+4. Prefer conservative undercounting over false-positive counts, duplicate counts, or unsupported identity merges.
+5. Improve coverage, event provenance, taxonomy decisions, and auditability without silently changing the established counting contract.
+
+Work autonomously within the existing repository and project conventions. Inspect the actual implementation and evidence before making changes. Do not stop after creating a plan: investigate, implement, test, replay when possible, and report the result.
+
+Do not ask for approval for routine, reversible engineering decisions. If a required artifact or ground-truth decision is unavailable, complete all useful work that remains possible and report the exact limitation.
+
+### 2. Establish the Actual B v7 Baseline
+
+Before modifying anything:
+
+1. Read `AGENTS.md`, `CODEX_WORKFLOW.md`, the active phase documentation, the counting contract, and the existing B v7 experiment report.
+2. Inspect the current Git branch, commit, `git status --short`, and available source files.
+3. Locate the B v7 implementation, regression suite, pending-case inventory, QC evidence, event exports, cached measurements, and relevant source videos.
+4. Verify which implementation and input artifacts produced the current B v7 results.
+5. Record baseline counts for accepted, measured, estimated, pending, invalid/+0, and independently verified physical passages where such ground truth exists.
+6. Identify all existing safeguards related to duplicate suppression, identity ambiguity, event finalization, direction, rider/person roles, and measured-versus-estimated provenance.
+
+Do not assume that the latest public repository snapshot and the actual experiment workspace are identical.
+
+Preserve user changes, prior experiment snapshots, audit evidence, and historical outputs. Develop P1 using the repository's established isolated-experiment convention. Never silently replace B v7 with an unvalidated candidate.
+
+If the actual B v7 baseline or required evidence cannot be verified, document the discrepancy before changing code.
+
+### 3. Non-Negotiable Safety Policy
+
+Maintain every relevant B v7 safeguard.
+
+Use this decision priority:
+
+**Priority 1 — Prevent duplicate accepted events.**
+
+One verified physical passage must produce no more than one accepted count, regardless of how many raw track IDs, candidate events, timeouts, inferred crossings, or decision frames are involved.
+
+**Priority 2 — Avoid unsupported counts and identity merges.**
+
+Do not accept a passage merely because a track exists, appears on the destination side, has a compatible category, or resembles another vehicle.
+
+Do not merge two identities simply because doing so would eliminate a duplicate. When the evidence is ambiguous, conservative suppression is preferable to an unsupported accepted event.
+
+**Priority 3 — Reduce pending through defensible finalization.**
+
+Review pending cases systematically. Where evidence and the existing policy support a final decision, resolve the case. Use accepted only for an eligible, sufficiently supported passage. Use invalid/+0 for a conservatively excluded candidate when the established counting contract allows it.
+
+Do not keep every difficult case pending indefinitely merely because it is difficult. However, do not relabel pending cases solely to improve a dashboard metric.
+
+Every resolved case must have an explicit reason and evidence provenance. Cases that cannot be responsibly resolved under the existing contract must remain pending, with the missing evidence and next action documented.
+
+**Priority 4 — Recover additional coverage.**
+
+Recover true passages when sufficient evidence exists. Do not weaken duplicate safeguards to maximize recall.
+
+Undercounting is an accepted trade-off. It must be measured and reported rather than hidden.
+
+Do not claim improved accuracy merely because accepted events decrease, pending decreases, or invalid/+0 increases.
+
+### 4. Required Reviewer Decision: Case `blocker4843`
+
+Treat `blocker4843` as a named regression fixture and source-review case, not as a production-specific ID rule.
+
+The supplied reviewer decision is:
+
+- The target red motorcycle passage must be counted exactly once.
+- A destination-side observation classified as a red motorcycle is acceptable when it represents that same physical passage. Perfect destination-side appearance or color consistency is not a prerequisite for retaining the single valid count.
+- A blue motorcycle also appears on the destination side but is moving away from the crossing line.
+- A genuine U-turn is possible, but the supplied review considers it a low-probability explanation.
+- Presence on the destination side alone is not proof that the blue motorcycle crossed the counting line or made a genuine return passage.
+
+Implement and test the following expected behavior:
+
+1. The verified red motorcycle passage produces exactly one accepted event.
+2. Duplicate candidate events associated with that same passage cannot independently produce another accepted count.
+3. The blue motorcycle must not be counted as having crossed merely because it appears on the destination side.
+4. Accept a separate blue-motorcycle passage or genuine return only when the evidence satisfies the existing crossing and passage rules.
+5. If the blue motorcycle's crossing status remains ambiguous, preserve the conservative non-count outcome, using the appropriate invalid/+0 or pending state under the existing contract.
+6. Report any uncertainty caused by missing or insufficient source evidence.
+
+Use the available reviewed video, event records, and temporal evidence to construct or update the fixture. Do not invent visual evidence that is not present in the artifacts.
+
+Do not hardcode red/blue labels, raw track IDs, frame numbers, or case identifiers into runtime counting logic. Case-specific identifiers belong in tests and audit references only.
+
+### 5. P1 Workstream A — Systematic Pending Reduction
+
+Locate the authoritative B v7 pending inventory and construct a reproducible pending-case review workflow.
+
+For each case, record as applicable:
+
+- Stable case and candidate identifiers.
+- Raw track IDs and final passage IDs.
+- First and last relevant frame.
+- Origin/destination and crossing-line evidence.
+- Category and direction evidence.
+- Track continuity, disappearance, reappearance, and occlusion context.
+- Relationship to other candidate events.
+- Available visual or temporal review evidence.
+- Previous state and reason.
+- Final state and reason, when resolved.
+- Whether the final decision is machine-generated, human-reviewed, or manually adjusted under an explicit audit process.
+
+Classify pending cases into actionable groups using the existing taxonomy and contract. Candidate groups may include verified passages, duplicate candidates, ambiguous identity handoffs, role ambiguity, genuine crossing uncertainty, band-born tracks, taxonomy uncertainty, and insufficient evidence. These are investigation categories, not permission to invent new accepted states.
+
+Prioritize cases that can be resolved reliably using existing retained measurements and evidence.
+
+For each case:
+
+- Promote to accepted only when passage eligibility and evidence requirements are satisfied.
+- Resolve confirmed duplicates under the existing duplicate-suppression contract.
+- Finalize ambiguous cases as invalid/+0 only when the conservative decision is permitted by the existing contract and its reason is recorded.
+- Retain pending only when necessary evidence or a defensible decision is still unavailable.
+- Never treat a change in raw track ID or decision frame as a new physical passage without evidence.
+
+If P1 discovers that the current contract itself prevents responsible pending resolution, identify the smallest explicit contract change required. Do not silently change the meaning of existing statuses.
+
+The goal is to reduce pending cases through defensible closure, not merely to move unresolved records between status labels.
+
+### 6. P1 Workstream B — Conservative Coverage Recovery
+
+Investigate the P1 coverage issues documented by the current project, especially:
+
+- Verified distinct physical passages that were previously suppressed.
+- Tracks appearing at the camera boundary or otherwise lacking a complete observed history.
+- Ambiguous vehicle-versus-rider/person roles.
+- Category and subtype assignments that lack sufficient evidence.
+- Temporal identity handoffs that cannot be safely decided using endpoint bounding-box similarity alone.
+- Offline finalization and decision-timestamp provenance.
+
+Only recover a distinct physical passage when the available evidence supports its eligibility.
+
+A newly recovered passage must not be fabricated from an inferred trajectory. If a crossing cannot be measured, retain the correct estimated/inferred classification when permitted by the contract, or exclude it conservatively.
+
+Do not introduce a new global association threshold solely to recover one example. Any proposed trajectory or identity logic must include negative controls and measurable regression impacts.
+
+Keep Vehicle-ReID changes, new model inference, and night-video generalization isolated unless the evidence establishes that they are necessary for this particular P1 task. Do not rerun expensive inference when verified frozen measurements are sufficient.
+
+### 7. Regression Tests and Required Controls
+
+Preserve and execute the existing B v7 regression suite.
+
+Add or update deterministic tests for:
+
+1. `blocker4843`: one accepted red-motorcycle passage, with no duplicate accepted event.
+2. The blue motorcycle appearing on the destination side while moving away from the line.
+3. A genuine return passage that actually satisfies the counting geometry and evidence rules.
+4. Two different motorcycles following closely in the same direction.
+5. Different vehicles moving in opposite directions.
+6. Different vehicles with similar category, appearance, and trajectory.
+7. Same-vehicle identity changes during occlusion.
+8. Motorcycle/rider role ambiguity.
+9. Duplicate candidates originating from timeout and inferred-event paths.
+10. Pending resolution to accepted or invalid/+0 with auditable reasons.
+11. Cases that lack enough evidence and must remain pending.
+12. Previously reviewed B v5/B v6/B v7 controls that are available and applicable in the repository.
+
+For every test, distinguish the expected physical-passage outcome from the number of raw tracks or candidate events.
+
+The candidate must retain all existing B v7 safety regressions. A failure is not resolved by deleting the test, changing the reviewed interpretation without evidence, or broadening a threshold until the test passes.
+
+### 8. Frozen Replay and Quantitative Evaluation
+
+Use identical frozen inputs for baseline and candidate comparisons wherever available.
+
+Prefer replaying cached detections/tracks and temporal measurements so that changes in counting policy can be evaluated independently of changes in model inference.
+
+When the necessary measurements and videos are available, replay the same source scope and produce an event-level comparison.
+
+Report:
+
+- Accepted total.
+- Measured accepted.
+- Estimated accepted, broken down by existing evidence type.
+- Pending total.
+- Invalid/+0 total.
+- Pending cases resolved and their final dispositions.
+- Newly recovered, suppressed, merged, or reclassified candidate events.
+- Duplicate accepted events confirmed by review.
+- Distinct physical passages deliberately excluded or incorrectly suppressed.
+- False identity merges, if any are established.
+- Category and direction changes.
+- Cases that remain unresolved and the evidence required to resolve them.
+
+Compare physical-passage groups, not only raw track IDs or aggregate totals.
+
+A reduction in pending must be accompanied by a reconciliation of where the cases went. Distinguish:
+
+- Passage recovered with sufficient evidence.
+- Confirmed duplicate excluded.
+- Ambiguous candidate conservatively finalized as invalid/+0.
+- Pending retained because required evidence is unavailable.
+
+Do not report invalid/+0 as recovered vehicle counts. Do not add accepted, pending, and invalid together to claim a total number of physical vehicles.
+
+If full-video replay is unavailable, complete the unit and regression tests that can be run, and keep the full-video validation gate explicitly BLOCKED.
+
+### 9. Auditability and Provenance
+
+Preserve or improve existing audit metadata.
+
+Every final decision should retain the available references to:
+
+- Baseline and candidate experiment versions.
+- Input video or frozen measurement identity.
+- Candidate event and final passage identifiers.
+- Source frame range and evidence references.
+- Previous status and new status.
+- Decision reason and evidence type.
+- Decision origin: machine, human review, manual adjustment, or offline finalization.
+- Relevant configuration and rule version.
+- Finalization metadata, using existing project conventions.
+
+Do not misuse a candidate frame index as proof of the time at which an offline decision was finalized.
+
+Do not mix machine-generated results with reviewed or manually adjusted results without preserving their identities and provenance.
+
+### 10. Acceptance Criteria
+
+P1 should be assessed against the following criteria:
+
+1. All relevant B v7 duplicate-protection safeguards remain in place.
+2. `blocker4843` produces exactly one accepted event for the verified red-motorcycle passage under the reviewed fixture.
+3. The blue motorcycle does not receive an unsupported crossing count simply because it appears on the destination side.
+4. The existing applicable B v7 regression suite passes.
+5. The candidate reduces pending cases relative to the verified baseline through individually auditable decisions, or explicitly reports why the target could not be achieved.
+6. Every resolved pending case has an explicit disposition and reason.
+7. No false improvement is claimed by relabeling unresolved candidates or counting invalid cases as physical passages.
+8. Candidate-versus-baseline differences are reconciled using event-level evidence.
+9. Changes remain isolated from the historical B v7 baseline.
+10. The final gate reflects the actual tests, available evidence, and unresolved blockers.
+
+Do not declare P1 complete merely because the pending count decreases. Do not declare the system production-reliable on the basis of synthetic tests or a single reviewed video.
+
+### 11. Execution and Deliverables
+
+Start with inspection and baseline capture. Then proceed through implementation, testing, replay, audit, and reporting within the confirmed scope.
+
+Deliver:
+
+- Isolated P1 source changes.
+- A reproducible pending-case triage result.
+- Updated tests and logs.
+- Baseline-versus-candidate comparison.
+- Event-level audit records for changed decisions.
+- An updated engineering report documenting trade-offs and limitations.
+- A clear P1 decision: PASS, PARTIAL, or BLOCKED, with the criteria behind it.
+
+Follow existing repository paths and naming conventions. Do not create a redundant parallel framework or overwrite user modifications.
+
+### 12. Final Report Requirements
+
+Return a concise, technically precise report containing:
+
+1. Verified baseline and source artifacts.
+2. Root causes investigated.
+3. Exact changes and affected files.
+4. Pending baseline versus candidate, with dispositions reconciled.
+5. The `blocker4843` result and evidence.
+6. Duplicate-prevention and negative-control test results.
+7. Full-video replay results, if actually executed.
+8. Recovered passages versus deliberately excluded candidates.
+9. Unresolved cases and limitations.
+10. P1 status and remaining work.
+
+Separate FACT, ASSUMPTION, PROPOSAL, and EXPERIMENT RESULT.
+
+Do not invent test outcomes, ground truth, or accuracy improvements.
+
+**Final engineering principle:** Preserve B v7's safeguards. Resolve as many pending cases as the evidence and existing contract responsibly allow. Prefer an explicit, auditable undercount over a duplicate or unsupported accepted count. Do not sacrifice these requirements to improve headline metrics.

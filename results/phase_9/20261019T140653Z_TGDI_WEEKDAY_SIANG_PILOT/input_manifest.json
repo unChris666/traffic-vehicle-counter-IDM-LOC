@@ -1,0 +1,440 @@
+{
+  "audit_id": "20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT",
+  "status": "COMPLETE_SCOPE",
+  "scope_type": "TARGETED_DEVELOPMENT_PILOT_NOT_FULL_VIDEO",
+  "recorded_at_utc": "2026-10-19T14:21:18.505661+00:00",
+  "review_timezone": "Asia/Jakarta",
+  "scope_decision": "USER: Selesaikan pilot dan daftar perbaikan dahulu (Rekomendasi)",
+  "baseline": {
+    "local_run_id": "20261019T045405_106031Z",
+    "retention_manifest": "results/b_v3/execution/final_20261019T045405_106031Z/retained_bytes_manifest.json",
+    "retention_manifest_sha256": "9a17a01b62516c25ecf37f4764315ea8b93dc2b5882faf2e775374f8e2cafb33",
+    "executed_source_commit": "ee4bda7795fcf7b43b9dd57561ee140c60d9aa9d",
+    "kaggle_run_id": "20261019T070846_020453Z",
+    "kaggle_version": 2,
+    "policy_uri": "results/b_v3/config/policy.json",
+    "policy_sha256": "59b8d34ceed6a7d4c910f891b6ab6464a2283b10a26c6050eb58d950dfb4b64a",
+    "review_manifest_uri": "results/b_v3/input/review_decisions.json",
+    "review_manifest_sha256": "a3ecf3429a6dd61e68b62e2acf772bd97c5080e9bbc92c61e543921c2e761805",
+    "baseline_totals_read_from_retained_report": {
+      "frames": 72590,
+      "operational": 3500,
+      "measured": 895,
+      "inferred": 2605,
+      "timeout": 2454,
+      "pending_unique_software_keys": 2890
+    },
+    "no_reexecution": true
+  },
+  "assessment_policy": {
+    "source": "LATEST_USER_DECISIONS_IN_CONVERSATION_NOT_REPLACEMENT_OF_EXECUTED_POLICY",
+    "timeout_frames": 60,
+    "clock": "SOURCE_FRAMES_SINCE_LAST_OBSERVED_ORIGIN_OF_VERIFIED_PHYSICAL_CANDIDATE",
+    "relevant_identity_conflict_holds_estimate": true,
+    "stationary_origin_observations_reset": true,
+    "verified_handoff_continues_same_episode_clock": true,
+    "completed_passage_not_reopened_by_timeout_or_raw_id_change": true,
+    "new_destination_fragment_moving_away_not_eligible_for_new_count": true,
+    "measured_and_inferred_separate": true,
+    "rider_additional_count": 0,
+    "pedestrian_inferred_routes": "OPEN",
+    "vehicle_reid_final": "OPEN"
+  },
+  "inputs": [
+    {
+      "video_key": "weekday_pagi",
+      "source_uri": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-PAGI.mp4",
+      "resolved_local_path": "/tmp/phase8-bv3-source-videos/TGDI-WEEKDAY-PAGI.mp4",
+      "source_file_sha256": "e5e8ad36ffc8a262bd3ebdfa5cc174dcb7ab6abcd46e1f513ad199e69fdd982d",
+      "source_size_bytes": 50748314,
+      "metadata_from_retained_inspection": {
+        "width": 640,
+        "height": 480,
+        "fps": 29.904049581962543,
+        "frame_count": 9052
+      },
+      "readiness": "VERIFIED",
+      "frame_index_base": 0,
+      "end_inclusive": true,
+      "cache_uri": "/tmp/phase8-bv3-donor/weekday_pagi/track_records.jsonl.gz",
+      "cache_file_sha256": "dd5112f54a7cce78d0b49f35c1a0d55539fcac42150728a095e86a0423d51dd8",
+      "relations_file_sha256": "e741445e524d0abba1831db5012362fd80078d8727757ed1c20a884930642055",
+      "geometry_uri": "results/b_v2/geometry/TGDI-WEEKDAY-PAGI-BV2.json",
+      "geometry_sha256": "a8ac42171b777bee8e61e0415c29c818ba2dd67f1a4a2453218551a7a683d1ab",
+      "visual_audit_scope": "NOT_REVIEWED_IN_THIS_AUDIT"
+    },
+    {
+      "video_key": "weekday_siang",
+      "source_uri": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-SIANG.mp4",
+      "resolved_local_path": "/tmp/phase8-bv3-source-videos/TGDI-WEEKDAY-SIANG.mp4",
+      "source_file_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "source_size_bytes": 51188204,
+      "metadata_from_retained_inspection": {
+        "width": 640,
+        "height": 480,
+        "fps": 29.78121400353632,
+        "frame_count": 9128
+      },
+      "readiness": "VERIFIED",
+      "frame_index_base": 0,
+      "end_inclusive": true,
+      "cache_uri": "/tmp/phase8-bv3-donor/weekday_siang/track_records.jsonl.gz",
+      "cache_file_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b",
+      "relations_file_sha256": "2e9f35ad7297c0a5183474883b5a07c9bf61fff942d574b90d671b370bf4d566",
+      "geometry_uri": "results/b_v2/geometry/TGDI-WEEKDAY-SIANG-BV2.json",
+      "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+      "visual_audit_scope": "TARGETED_PILOT_SAMPLES"
+    },
+    {
+      "video_key": "weekday_sore",
+      "source_uri": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-SORE.mp4",
+      "resolved_local_path": "/tmp/phase8-bv3-source-videos/TGDI-WEEKDAY-SORE.mp4",
+      "source_file_sha256": "d3b0d0f11302444ad64d7a8b2c81677de00693acc4793cd304b6de925d0e9197",
+      "source_size_bytes": 50881202,
+      "metadata_from_retained_inspection": {
+        "width": 640,
+        "height": 480,
+        "fps": 29.956869412720973,
+        "frame_count": 9077
+      },
+      "readiness": "VERIFIED",
+      "frame_index_base": 0,
+      "end_inclusive": true,
+      "cache_uri": "/tmp/phase8-bv3-donor/weekday_sore/track_records.jsonl.gz",
+      "cache_file_sha256": "ae44826af2e724bda2441f39548ab62b8dddfcfa898c64896e6d1165547a78cd",
+      "relations_file_sha256": "8f3ed9cf3a35e647dc89e4a32378db209c582381d46516374c8281b02b3d5be2",
+      "geometry_uri": "results/b_v2/geometry/TGDI-WEEKDAY-SORE-BV2.json",
+      "geometry_sha256": "1aa7e508dc5a68120faeca4aaf91c5c1475af7c521d5fab8924dc4974888dde0",
+      "visual_audit_scope": "NOT_REVIEWED_IN_THIS_AUDIT"
+    },
+    {
+      "video_key": "weekday_malam",
+      "source_uri": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKDAY-MALAM.mp4",
+      "resolved_local_path": "/tmp/phase8-bv3-source-videos/TGDI-WEEKDAY-MALAM.mp4",
+      "source_file_sha256": "21436eab94addc8358998d5b02064fb952bc568a2884db91ba0ab4edd270ed51",
+      "source_size_bytes": 50600176,
+      "metadata_from_retained_inspection": {
+        "width": 640,
+        "height": 480,
+        "fps": 29.972440547996822,
+        "frame_count": 9022
+      },
+      "readiness": "VERIFIED",
+      "frame_index_base": 0,
+      "end_inclusive": true,
+      "cache_uri": "/tmp/phase8-bv3-donor/weekday_malam/track_records.jsonl.gz",
+      "cache_file_sha256": "84cd21c6d251f1cb24602335d90f30eb4c683e1d029055added675994d609466",
+      "relations_file_sha256": "f2e545b28296c4931061fe43aa5fa7f31e5af57a2243b996507e8ff365b3dae6",
+      "geometry_uri": "results/b_v2/geometry/TGDI-WEEKDAY-MALAM-BV2.json",
+      "geometry_sha256": "6b37590673df49ce7e78328279cb3a5fbe2fe84d360d13eeadc472bb4b4d9d40",
+      "visual_audit_scope": "NOT_REVIEWED_IN_THIS_AUDIT"
+    },
+    {
+      "video_key": "weekend_pagi",
+      "source_uri": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-PAGI.mp4",
+      "resolved_local_path": "/tmp/phase8-bv3-source-videos/TGDI-WEEKEND-PAGI.mp4",
+      "source_file_sha256": "e71f46ac146e5a69db8dc0754dfb8b0b3f7a3429643872736335bfe34ebf1389",
+      "source_size_bytes": 50550849,
+      "metadata_from_retained_inspection": {
+        "width": 640,
+        "height": 480,
+        "fps": 29.97655930800923,
+        "frame_count": 9017
+      },
+      "readiness": "VERIFIED",
+      "frame_index_base": 0,
+      "end_inclusive": true,
+      "cache_uri": "/tmp/phase8-bv3-donor/weekend_pagi/track_records.jsonl.gz",
+      "cache_file_sha256": "01af7eba90b66e7e75038fa14298f6004039a5d2c2d7cf3c079532a63fc0f716",
+      "relations_file_sha256": "68b0127385b925bb0cef2308c6f3176b98e027dddfd7ab2ec1bfd18d549f0976",
+      "geometry_uri": "results/b_v2/geometry/TGDI-WEEKEND-PAGI-BV2.json",
+      "geometry_sha256": "623ed8bdfa3609653ada783833d6945109bcecac288a4b117e4edea16ceaf2b2",
+      "visual_audit_scope": "NOT_REVIEWED_IN_THIS_AUDIT"
+    },
+    {
+      "video_key": "weekend_siang",
+      "source_uri": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-SIANG.mp4",
+      "resolved_local_path": "/tmp/phase8-bv3-source-videos/TGDI-WEEKEND-SIANG.mp4",
+      "source_file_sha256": "9271275e03bd75b2c3e373a7d1babbf8a79e4795662f691b584056f261185c9c",
+      "source_size_bytes": 51137139,
+      "metadata_from_retained_inspection": {
+        "width": 640,
+        "height": 480,
+        "fps": 29.983459365905848,
+        "frame_count": 9124
+      },
+      "readiness": "VERIFIED",
+      "frame_index_base": 0,
+      "end_inclusive": true,
+      "cache_uri": "/tmp/phase8-bv3-donor/weekend_siang/track_records.jsonl.gz",
+      "cache_file_sha256": "9df3144b66ed617272800cf01cebbc1ed6195acb879fba47f9dc593cc1d9f8de",
+      "relations_file_sha256": "11c15d0116c7fe2e3582b94c15f79afb852db9413dab70789c47e958b1723f17",
+      "geometry_uri": "results/b_v2/geometry/TGDI-WEEKEND-SIANG-BV2.json",
+      "geometry_sha256": "e51a30e23ba57e6c30b14ae88ed7716103993105e375c855b1ebd00f4d2a7de2",
+      "visual_audit_scope": "NOT_REVIEWED_IN_THIS_AUDIT"
+    },
+    {
+      "video_key": "weekend_sore",
+      "source_uri": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-SORE.mp4",
+      "resolved_local_path": "/tmp/phase8-bv3-source-videos/TGDI-WEEKEND-SORE.mp4",
+      "source_file_sha256": "706d2bbb32cf89fccd723816c655d6006a1f62acfef8adc75b78ab24b3550c29",
+      "source_size_bytes": 51247577,
+      "metadata_from_retained_inspection": {
+        "width": 640,
+        "height": 480,
+        "fps": 29.869969639352494,
+        "frame_count": 9138
+      },
+      "readiness": "VERIFIED",
+      "frame_index_base": 0,
+      "end_inclusive": true,
+      "cache_uri": "/tmp/phase8-bv3-donor/weekend_sore/track_records.jsonl.gz",
+      "cache_file_sha256": "58a362d9259ce21f80eada7a977f9893d2eb61d15b0914d0072103c8dea999f9",
+      "relations_file_sha256": "fcd4a629de2b40a1ec6d55229bd70872f3e6d87e58f219c7df42f7ae33fe448d",
+      "geometry_uri": "results/b_v2/geometry/TGDI-WEEKEND-SORE-BV2.json",
+      "geometry_sha256": "56b3ba8d1a12eef5a2062a7d3f710129ec60dfa2be84b2625907e7b56fa936aa",
+      "visual_audit_scope": "NOT_REVIEWED_IN_THIS_AUDIT"
+    },
+    {
+      "video_key": "weekend_malam",
+      "source_uri": "/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos/TGDI-WEEKEND-MALAM.mp4",
+      "resolved_local_path": "/tmp/phase8-bv3-source-videos/TGDI-WEEKEND-MALAM.mp4",
+      "source_file_sha256": "bf42e9af8add96716f35b56f1480c42909faf7a7a7db7491218b6af4be3c4f71",
+      "source_size_bytes": 50644636,
+      "metadata_from_retained_inspection": {
+        "width": 640,
+        "height": 480,
+        "fps": 29.980012218750673,
+        "frame_count": 9032
+      },
+      "readiness": "VERIFIED",
+      "frame_index_base": 0,
+      "end_inclusive": true,
+      "cache_uri": "/tmp/phase8-bv3-donor/weekend_malam/track_records.jsonl.gz",
+      "cache_file_sha256": "34db71bfb06ef96a7902e88031195a771f03a7450f63daa6d5e83b66d5a6cac5",
+      "relations_file_sha256": "26013a3ea557aa8ba9447912926930553a528af99abc53358885165d3df306d5",
+      "geometry_uri": "results/b_v2/geometry/TGDI-WEEKEND-MALAM-BV2.json",
+      "geometry_sha256": "0df9ffe51efdd5832784b91f1cf617bc00b323efc86454daf0e717c2d434fa19",
+      "visual_audit_scope": "NOT_REVIEWED_IN_THIS_AUDIT"
+    }
+  ],
+  "pilot_annotation": {
+    "status": "VERIFIED_DOWNLOADED_PUBLISHED_ASSET",
+    "file_path": "/tmp/phase9-annotated/TGDI-WEEKDAY-SIANG-b-v3-annotated.mp4",
+    "file_size_bytes": 122934659,
+    "file_sha256": "d8b7d58f39001eb29a080c4a6cd8c76c7653c3226232881bd6ec57acac79252a",
+    "expected_sha256": "d8b7d58f39001eb29a080c4a6cd8c76c7653c3226232881bd6ec57acac79252a",
+    "release_tag": "phase8-b-v3-tgdi-review-v1",
+    "filename": "TGDI-WEEKDAY-SIANG-b-v3-annotated.mp4",
+    "download_method": "gh release download; original published bytes; no reencoding",
+    "decoded_frame_count": 9128,
+    "metadata": {
+      "width": 1160,
+      "height": 960,
+      "fps": 29.781214003979198,
+      "frame_count_reported": 9128
+    },
+    "selected_output_frames": [
+      127,
+      226,
+      273,
+      296,
+      1203,
+      5003,
+      9127
+    ],
+    "model_or_counting_execution": false,
+    "renderer_execution": false
+  },
+  "other_seven_annotations": "RETAINED_PUBLICATION_METADATA_VERIFIED_NOT_DOWNLOADED_OR_VISUALLY_REVIEWED_NOW",
+  "retained_input_hash_check_summary": {
+    "status": "PASS",
+    "checks_total": 303,
+    "checks_passed": 303,
+    "checks_failed": 0,
+    "original_videos_verified": 8,
+    "original_video_bytes": 406998097,
+    "source_snapshots_verified": 9,
+    "pilot_ready_for_read_only_audit": true
+  },
+  "pixel_source_verification": {
+    "native_frames_sampled_and_visually_inspected": 70,
+    "all_native_sample_indices": [
+      0,
+      33,
+      57,
+      82,
+      100,
+      103,
+      104,
+      105,
+      107,
+      111,
+      112,
+      120,
+      127,
+      135,
+      140,
+      160,
+      175,
+      188,
+      199,
+      213,
+      215,
+      226,
+      240,
+      242,
+      243,
+      251,
+      260,
+      273,
+      280,
+      292,
+      296,
+      301,
+      315,
+      330,
+      900,
+      940,
+      980,
+      1000,
+      1010,
+      1020,
+      1030,
+      1040,
+      1050,
+      1060,
+      1070,
+      1080,
+      1082,
+      1089,
+      1097,
+      1100,
+      1107,
+      1113,
+      1119,
+      1128,
+      1143,
+      1150,
+      1170,
+      1203,
+      1220,
+      1240,
+      4950,
+      4986,
+      4995,
+      5003,
+      5010,
+      5025,
+      5040,
+      5053,
+      5070,
+      5100
+    ],
+    "each_matches_retained_detector_input_bgr_pixel_sha256": true,
+    "native_resolution": [
+      640,
+      480
+    ],
+    "method": "SEQUENTIAL_OPENCV_DECODE_FROM_ZERO",
+    "source_frames_decoded_not_equivalent_to_frames_visually_reviewed": true,
+    "output_frames_decoded": 9128,
+    "published_output_frames_visually_reviewed": [
+      127,
+      226,
+      273,
+      296,
+      1203,
+      5003,
+      9127
+    ],
+    "source_distinct_frame_indices_decoded_for_extraction": 5101,
+    "source_decode_passes_inclusive": [
+      [
+        0,
+        5100
+      ],
+      [
+        0,
+        1080
+      ]
+    ]
+  },
+  "reviewers": [
+    {
+      "role": "PRIMARY",
+      "source_type": "AI_ASSISTED_PIXELS_REVIEW"
+    },
+    {
+      "role": "INDEPENDENT_CHALLENGER",
+      "source_type": "AI_ASSISTED_PIXELS_REVIEW"
+    },
+    {
+      "role": "PRIOR_USER_LABELS",
+      "source_type": "USER_REVIEW",
+      "new_human_adjudication_during_this_run": false
+    }
+  ],
+  "raw_first_status": "ALREADY_EXPOSED",
+  "review_exposure_note": "Known historical/user cases and record summaries; no blind/unbiased inventory claim. Source-only contact sheets inspected before publication-overlay frames.",
+  "cache_availability": {
+    "frame_count": 9128,
+    "raw_detections_count": 75850,
+    "emitted_track_observations_count": 70231,
+    "assigned_observations_count": 75850,
+    "raw_detection_class_counts": {
+      "motorcycle": 30208,
+      "truck": 8740,
+      "person": 21039,
+      "car": 15176,
+      "bicycle": 170,
+      "bowl": 5,
+      "handbag": 258,
+      "umbrella": 4,
+      "backpack": 174,
+      "traffic light": 5,
+      "fire hydrant": 8,
+      "bottle": 2,
+      "bird": 1,
+      "boat": 9,
+      "bus": 42,
+      "train": 6,
+      "parking meter": 2,
+      "bench": 1
+    },
+    "retained_confidence_range": [
+      0.2500171661376953,
+      0.969395101070404
+    ],
+    "retained_detector_conf_setting": 0.25,
+    "limitations": [
+      "Raw detections are retained outputs after detector configuration conf=0.25 and NMS; missing lower confidence predictions cannot be recovered from these records.",
+      "Appearance records are referenced by original report but not downloaded to local donor root; no appearance-model inference or new identity similarity analysis performed.",
+      "No video has been decoded anew by this hash/record verification; metadata comes from retained execution/source-inspection evidence.",
+      "Original source videos have exact SHA identity; temporary local paths are not portable and must be resolved by hash if workspace replaced."
+    ]
+  },
+  "no_new_pipeline_execution": {
+    "detector": false,
+    "tracker": false,
+    "reid": false,
+    "counting_state_machine": false,
+    "enhancement": false,
+    "annotation_renderer": false
+  },
+  "limitations": [
+    "Targeted objects only; not exhaustive inventory of every object even in sampled temporal windows.",
+    "70 native frames and 7 annotation frames visually reviewed; no full-video visual audit.",
+    "Existing cached detections filtered conf0.25; lower-score outputs unavailable.",
+    "Appearance embeddings not available locally; no new ReID contribution experiment.",
+    "Night visual audit and new enhancement experiments NOT_RUN/NOT_REVIEWED.",
+    "Reviewed decisions are AI-assisted proposals/assessments and do not mutate Bv3 events."
+  ],
+  "prior_user_review_binding": {
+    "annotation_version": "V2",
+    "current_machine_snapshot": "B v3",
+    "binding_method": "MATCHING_SOURCE_VIDEO_SHA256_RETAINED_TRACK_RECORDS_AND_BOUNDED_FRAME_REFERENCES",
+    "prior_review_evidence_uri": "docs/evidence/phase_9/role_review_20261019/evidence.json",
+    "not_assumed_same_counting_decisions": true
+  }
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "claim_type": "EXPERIMENTAL_MEASURED_RELATION_NOT_GROUND_TRUTH",
+    "features": {
+      "appearance_features_used": false,
+      "association_frame_windows": null,
+      "center_distance_norm_max": 0.0015857620706383113,
+      "common_frame_indices": [
+        4401
+      ],
+      "common_frames": 1,
+      "consecutive_common_frames_max": 1,
+      "consecutive_motion_pairs": 0,
+      "first_bc_inside_second_fraction": 0.0,
+      "iou_max": 0.9932715765654825,
+      "iou_min": 0.9932715765654825,
+      "kind": "SAME_VEHICLE",
+      "relative_motion_residual_norm_max": null
+    },
+    "first_episode_id": "ve6b_36bf2cff389ea6d18eceae901d70d7ee24a1e9350b3739a080fe926d5ad4d088",
+    "first_track_id": 2697,
+    "reasons": [
+      "INSUFFICIENT_COMMON_OBSERVATIONS",
+      "INSUFFICIENT_CONSECUTIVE_COMMON_OBSERVATIONS",
+      "NO_CONSECUTIVE_MOTION_EVIDENCE"
+    ],
+    "relation_id": "ur6b_6909cc2f3b45b36424a94b86683c0fc74c0b04939428e4d7f1fb28690ba02c6d",
+    "second_episode_id": "ve6b_5952dc4071c6086ae971f3713a24cbc6336183f90ee7870dbbd9e574a5dfbc6b",
+    "second_track_id": 2706,
+    "status": "REJECTED",
+    "thresholds": {
+      "max_center_distance_norm": 0.1,
+      "max_relative_motion_residual_norm": 0.01,
+      "min_common_frames": 2,
+      "min_consecutive_common_frames": 2,
+      "min_iou": 0.59
+    },
+    "type": "SAME_VEHICLE"
+  }
+]

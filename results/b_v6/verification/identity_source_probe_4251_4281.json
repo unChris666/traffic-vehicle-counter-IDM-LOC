@@ -1,0 +1,107 @@
+{
+  "source_cache_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b",
+  "source_window": [
+    7358,
+    7382
+  ],
+  "source_frame_equals_local_plus": 7358,
+  "selected_raw_ids": [
+    4251,
+    4281
+  ],
+  "raw_detection_links_verified": true,
+  "scope": "ISOLATED_MEASUREMENT_PROBE_NOT_FULL_HISTORY_COUNTING",
+  "ambiguity_relations": [
+    {
+      "type": "SAME_UNIT",
+      "relation_type": "SAME_UNIT",
+      "relation_id": "b6-unit-ambiguity:50e3a39a22a97012558e102d",
+      "candidate_kind": "POSSIBLE_SCOPED_UNIT_OR_COMPONENT_AMBIGUITY",
+      "verified": false,
+      "first_track_id": 4251,
+      "second_track_id": 4281,
+      "first_physical_episode_id": "b5-physical-context:2654087345f3ef9bddd0ceb3",
+      "second_physical_episode_id": "b5-physical-context:80e342a20762cf3da4b6e8ea",
+      "first_unit_id": "track:4251",
+      "second_unit_id": "track:4281",
+      "first_episode_id": "unreviewed-vehicle",
+      "second_episode_id": "unreviewed-vehicle",
+      "support_frames": [
+        2,
+        3,
+        4
+      ],
+      "start_frame": 2,
+      "end_frame": 4,
+      "verification_basis": "EXACT_OBSERVED_HIGH_OVERLAP_SAME_CATEGORY_CONFLICT_NOT_ALIAS",
+      "claim_type": "USER_AUTHORIZED_INVALID_AMBIGUITY_NOT_SAME_PHYSICAL_UNIT_ASSERTION",
+      "earlier_frames_reassigned": false
+    },
+    {
+      "type": "SAME_UNIT",
+      "relation_type": "SAME_UNIT",
+      "relation_id": "b6-unit-ambiguity:572c03c34e84e9e8d0524a9f",
+      "candidate_kind": "POSSIBLE_SCOPED_UNIT_OR_COMPONENT_AMBIGUITY",
+      "verified": false,
+      "first_track_id": 4251,
+      "second_track_id": 4281,
+      "first_physical_episode_id": "b5-physical-context:2654087345f3ef9bddd0ceb3",
+      "second_physical_episode_id": "b5-physical-context:80e342a20762cf3da4b6e8ea",
+      "first_unit_id": "track:4251",
+      "second_unit_id": "track:4281",
+      "first_episode_id": "unreviewed-vehicle",
+      "second_episode_id": "unreviewed-vehicle",
+      "support_frames": [
+        6
+      ],
+      "start_frame": 6,
+      "end_frame": 6,
+      "verification_basis": "EXACT_OBSERVED_HIGH_OVERLAP_SAME_CATEGORY_CONFLICT_NOT_ALIAS",
+      "claim_type": "USER_AUTHORIZED_INVALID_AMBIGUITY_NOT_SAME_PHYSICAL_UNIT_ASSERTION",
+      "earlier_frames_reassigned": false
+    },
+    {
+      "type": "SAME_UNIT",
+      "relation_type": "SAME_UNIT",
+      "relation_id": "b6-unit-ambiguity:eed0e615ca80cdcdb23ad891",
+      "candidate_kind": "POSSIBLE_SCOPED_UNIT_OR_COMPONENT_AMBIGUITY",
+      "verified": false,
+      "first_track_id": 4251,
+      "second_track_id": 4281,
+      "first_physical_episode_id": "b5-physical-context:2654087345f3ef9bddd0ceb3",
+      "second_physical_episode_id": "b5-physical-context:80e342a20762cf3da4b6e8ea",
+      "first_unit_id": "track:4251",
+      "second_unit_id": "track:4281",
+      "first_episode_id": "unreviewed-vehicle",
+      "second_episode_id": "unreviewed-vehicle",
+      "support_frames": [
+        8,
+        9,
+        11
+      ],
+      "start_frame": 8,
+      "end_frame": 11,
+      "verification_basis": "EXACT_OBSERVED_HIGH_OVERLAP_SAME_CATEGORY_CONFLICT_NOT_ALIAS",
+      "claim_type": "USER_AUTHORIZED_INVALID_AMBIGUITY_NOT_SAME_PHYSICAL_UNIT_ASSERTION",
+      "earlier_frames_reassigned": false
+    }
+  ],
+  "support_global_source_frames": [
+    [
+      7360,
+      7361,
+      7362
+    ],
+    [
+      7364
+    ],
+    [
+      7366,
+      7367,
+      7369
+    ]
+  ],
+  "source_boxes_roles_not_rewritten": true,
+  "same_unit_asserted": false,
+  "new_model_executed": false
+}

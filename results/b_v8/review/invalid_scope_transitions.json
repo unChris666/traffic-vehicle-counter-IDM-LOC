@@ -1,0 +1,244 @@
+{
+  "removed_invalid_candidate_scopes": [
+    {
+      "frame_index": 9127,
+      "decision_frame": 9127,
+      "candidate_decision_frame": 1396,
+      "track_id": 1123,
+      "physical_unit_id": "track:1123",
+      "episode_id": "unreviewed-vehicle",
+      "passage_id": "track:1123:episode:unreviewed-vehicle:passage:1",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "status": "invalid",
+      "invalid_reason": "INVALID_AMBIGUOUS_UNIT",
+      "reasons": [
+        "INVALID_AMBIGUOUS_UNIT"
+      ],
+      "count_delta": 0,
+      "accepted_count_event": false,
+      "display_id": null,
+      "source_event_id": "b_v7_d6b98f28e0c1730d3c593a19",
+      "cancelled_candidate_event_id": "b_v7_d6b98f28e0c1730d3c593a19",
+      "source_ref": {
+        "frame_index": 1396,
+        "track_id": 1123,
+        "original_detection_index": 0,
+        "raw_bbox": [
+          253.146728515625,
+          243.27520751953125,
+          346.200927734375,
+          321.7071533203125
+        ],
+        "point": [
+          299.673828125,
+          321.7071533203125
+        ],
+        "class_name": "motorcycle",
+        "effective_class_name": "motorcycle",
+        "resolved_class_name": null,
+        "role": "vehicle",
+        "episode_id": "unreviewed-vehicle",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 3,
+        "confidence": 0.8676779270172119,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:8908b456fafd9f6606f94219",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "physical_episodes_merged": false,
+      "invalid_scope": "THIS_CANDIDATE_PASSAGE_NOT_GLOBAL_RAW_ID",
+      "relation_ids": [
+        "b7-motion-conflict:9469399bd6b172e8c787ee4a"
+      ],
+      "never_published": true,
+      "finalization_mode": "OFFLINE_BEFORE_PUBLICATION",
+      "reason_evidence": [
+        {
+          "reason": "INVALID_AMBIGUOUS_UNIT",
+          "relation_ids": [
+            "b7-motion-conflict:9469399bd6b172e8c787ee4a"
+          ],
+          "intentional_exclusion_not_zero_traffic": true,
+          "trajectory_compatibility_is_not_identity_proof": true
+        }
+      ]
+    },
+    {
+      "frame_index": 7964,
+      "track_id": 4808,
+      "physical_unit_id": "track:4808",
+      "passage_id": "track:4808:episode:unreviewed-vehicle:passage:1",
+      "episode_id": "unreviewed-vehicle",
+      "role": "vehicle",
+      "status": "invalid",
+      "reasons": [
+        "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT",
+        "INVALID_AMBIGUOUS_UNIT"
+      ],
+      "source_ref": {
+        "frame_index": 7907,
+        "track_id": 4808,
+        "original_detection_index": 1,
+        "raw_bbox": [
+          198.37655639648438,
+          193.436767578125,
+          243.74075317382812,
+          247.04437255859375
+        ],
+        "point": [
+          221.05865478515625,
+          247.04437255859375
+        ],
+        "class_name": "motorcycle",
+        "effective_class_name": "motorcycle",
+        "resolved_class_name": null,
+        "role": "vehicle",
+        "episode_id": "unreviewed-vehicle",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 3,
+        "confidence": 0.649865984916687,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:9504e9cb7aa9444dd531ae2d",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": [
+          "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+        ]
+      },
+      "reason_evidence": [
+        {
+          "reason": "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT",
+          "frame_index": 7964,
+          "source_ref": {
+            "frame_index": 7907,
+            "track_id": 4808,
+            "original_detection_index": 1,
+            "raw_bbox": [
+              198.37655639648438,
+              193.436767578125,
+              243.74075317382812,
+              247.04437255859375
+            ],
+            "point": [
+              221.05865478515625,
+              247.04437255859375
+            ],
+            "class_name": "motorcycle",
+            "effective_class_name": "motorcycle",
+            "resolved_class_name": null,
+            "role": "vehicle",
+            "episode_id": "unreviewed-vehicle",
+            "association_verified": false,
+            "association_id": null,
+            "observed": true,
+            "emitted": true,
+            "class_id": 3,
+            "confidence": 0.649865984916687,
+            "measurement_provenance": "retained_phase_8_detection",
+            "physical_episode_id": "b5-physical-context:9504e9cb7aa9444dd531ae2d",
+            "identity_episode_boundary": false,
+            "identity_episode_reason": "INITIAL_OBSERVATION",
+            "identity_timeout_hold": [
+              "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+            ]
+          }
+        },
+        {
+          "reason": "INVALID_AMBIGUOUS_UNIT",
+          "relation_ids": [],
+          "intentional_exclusion_not_zero_traffic": true
+        }
+      ],
+      "latest_frame_index": 9127,
+      "display_id": null,
+      "invalid_reason": "INVALID_AMBIGUOUS_UNIT",
+      "count_delta": 0,
+      "accepted_count_event": false,
+      "physical_episodes_merged": false,
+      "invalid_scope": "THIS_CANDIDATE_PASSAGE_NOT_GLOBAL_RAW_ID",
+      "relation_ids": []
+    },
+    {
+      "frame_index": 9127,
+      "decision_frame": 9127,
+      "candidate_decision_frame": 1396,
+      "track_id": 1049,
+      "physical_unit_id": "track:1049",
+      "episode_id": "unreviewed-vehicle",
+      "passage_id": "track:1049:episode:unreviewed-vehicle:passage:1",
+      "role": "vehicle",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "status": "invalid",
+      "invalid_reason": "INVALID_AMBIGUOUS_UNIT",
+      "reasons": [
+        "INVALID_AMBIGUOUS_UNIT"
+      ],
+      "count_delta": 0,
+      "accepted_count_event": false,
+      "display_id": null,
+      "source_event_id": "b_v7_5016d91c73c059d9f0eb00c4",
+      "cancelled_candidate_event_id": "b_v7_5016d91c73c059d9f0eb00c4",
+      "source_ref": {
+        "frame_index": 1336,
+        "track_id": 1049,
+        "original_detection_index": 11,
+        "raw_bbox": [
+          100.72224426269531,
+          239.31097412109375,
+          117.27763366699219,
+          266.05865478515625
+        ],
+        "point": [
+          108.99993896484375,
+          266.05865478515625
+        ],
+        "class_name": "motorcycle",
+        "effective_class_name": "motorcycle",
+        "resolved_class_name": null,
+        "role": "vehicle",
+        "episode_id": "unreviewed-vehicle",
+        "association_verified": false,
+        "association_id": null,
+        "observed": true,
+        "emitted": true,
+        "class_id": 3,
+        "confidence": 0.29515787959098816,
+        "measurement_provenance": "retained_phase_8_detection",
+        "physical_episode_id": "b5-physical-context:4070ab79702fc2b503b2c10c",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": []
+      },
+      "physical_episodes_merged": false,
+      "invalid_scope": "THIS_CANDIDATE_PASSAGE_NOT_GLOBAL_RAW_ID",
+      "relation_ids": [
+        "b7-motion-conflict:9469399bd6b172e8c787ee4a"
+      ],
+      "never_published": true,
+      "finalization_mode": "OFFLINE_BEFORE_PUBLICATION",
+      "reason_evidence": [
+        {
+          "reason": "INVALID_AMBIGUOUS_UNIT",
+          "relation_ids": [
+            "b7-motion-conflict:9469399bd6b172e8c787ee4a"
+          ],
+          "intentional_exclusion_not_zero_traffic": true,
+          "trajectory_compatibility_is_not_identity_proof": true
+        }
+      ]
+    }
+  ],
+  "new_invalid_candidate_scopes": [],
+  "invalid_scope_delta_is_not_physical_vehicle_recovery_count": true
+}

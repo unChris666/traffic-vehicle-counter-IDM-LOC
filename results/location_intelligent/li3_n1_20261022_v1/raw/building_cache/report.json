@@ -1,0 +1,59 @@
+{
+  "bounded_acquisition_scope_complete": true,
+  "capacity_by_unit": {
+    "GUESTS_ESTIMATED": {
+      "buildings": 0,
+      "known_subtotal": 0,
+      "unknown_buildings": 0
+    },
+    "N1_STANDARD_VALUE_UNIT_UNRESOLVED": {
+      "buildings": 1322,
+      "known_subtotal": 5288,
+      "unknown_buildings": 0
+    },
+    "OCCUPIED_DWELLING_UNITS_ESTIMATED": {
+      "buildings": 0,
+      "known_subtotal": 0,
+      "unknown_buildings": 0
+    },
+    "OCCUPIED_ROOMS_ESTIMATED": {
+      "buildings": 0,
+      "known_subtotal": 0,
+      "unknown_buildings": 0
+    }
+  },
+  "capacity_status": "SUCCEEDED",
+  "limitations": [
+    "N1 technical location only, not TGDI",
+    "Provider critical columns/types validated; not exhaustive official JSON Schema validation",
+    "Null-subtype legacy residential fallback is not positive residential classification",
+    "Capacity estimates are split reference units, not observed population or final business demand"
+  ],
+  "motor_routing_executed_on_real_graph": false,
+  "null_subtype_selected_count": 1322,
+  "observed_height_count": 0,
+  "observed_num_floors_count": 0,
+  "partition_verification_sha256": "1dc768d976b8cb7230134afec0e8f91f4fd90cfb765969137bb588f2529388cb",
+  "provider_schema_version": "2.0.0",
+  "raw_probe_rows": 2623,
+  "raw_probe_sha256": "807044614b4e338fb184f6ffc33c28f318de704f36c36745c08a2fd6ea75cf04",
+  "raw_probe_truncated": false,
+  "release": "2026-10-21.0",
+  "schema_validation_scope": "Consumed Parquet columns/types and downstream canonical geometry; not full official schema validation",
+  "selection_status": "SUCCEEDED",
+  "selection_summary": {
+    "accounted_records": 2623,
+    "complete_for_selection": true,
+    "excluded": 1301,
+    "reason_counts": {
+      "AREA_NOT_ABOVE_MIN": 623,
+      "AREA_NOT_BELOW_MAX": 2,
+      "CLASS_UNSUPPORTED": 3,
+      "OUTSIDE_RADIUS": 673
+    },
+    "rejected": 0,
+    "selected": 1322,
+    "source_records": 2623
+  },
+  "spatial_completeness_verified": false
+}

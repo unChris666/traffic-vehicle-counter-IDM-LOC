@@ -1,0 +1,46 @@
+{
+  "schema_version": "nighttime_readiness_v1",
+  "overall_status": "PARTIAL",
+  "dataset_accessible": true,
+  "actual_kaggle_mount_verified": true,
+  "dataset": "chrisbiran/video-traffic-malam",
+  "kernel": "chrisbiran/b-v8-nighttime-input-inspection",
+  "kernel_version": 1,
+  "kernel_state": "COMPLETE",
+  "actual_video_files_inspected": 10,
+  "actual_source_frames_decoded": 89199,
+  "representative_native_frames_reviewed": 50,
+  "additional_temporal_anchor_images": 12,
+  "unsupported_or_failed_decode_files": 0,
+  "original_videos_unchanged": true,
+  "review_filter": {
+    "standalone_page": "results/review-filter.html",
+    "eight_independent_condition_profiles": true,
+    "per_video_source_hash_binding": true,
+    "actual_browser_files_tested": 10,
+    "all_eight_profile_edits_tested": true,
+    "software_tests_passed": 16,
+    "browser_test_passed": true,
+    "same_decoded_pixels_browser_python_transform_equal": true,
+    "browser_source_decode_bit_identical_to_opencv": false,
+    "actual_model_pipeline_integration_validated": false,
+    "test_recipe_promoted_to_selected_settings": false
+  },
+  "smoke_test": {
+    "status": "NOT_RUN_BLOCKED_BEFORE_INFERENCE",
+    "decode_and_filter_tests_are_not_end_to_end_smoke": true,
+    "blockers": [
+      "selected_review_filter_configuration_missing",
+      "per_source_native_geometry_and_direction_review_missing",
+      "night_source_adapter_for_scoped_b_v8_batch_not_validated",
+      "gpu_models_and_frozen_smoke_configuration_not_yet_verified"
+    ]
+  },
+  "baselines_b_v7_b_v8_unchanged": true,
+  "area_coverage_modified": false,
+  "ppac_modified": false,
+  "new_detector_tracker_reid_counting_inference": false,
+  "nighttime_counting_reliable_established": false,
+  "evidence_report": "inspection_report.md",
+  "full_review": "../../docs/NIGHTTIME_VALIDATION_REVIEW.md"
+}

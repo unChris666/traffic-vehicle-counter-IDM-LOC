@@ -1,0 +1,40 @@
+{
+  "schema_version": "b_v8_night_staged_plan_v1",
+  "status": "BLOCKED_BEFORE_INFERENCE",
+  "designated_dataset": "chrisbiran/video-traffic-malam",
+  "proposed_first_video": {
+    "filename": "F1YV-WEEKDAY-MALAM.mp4",
+    "source_sha256": "12faf5b13dc16674eb63e7441ce7a484746220dd75bc0484ab0d98d47ac13e43",
+    "selection_basis": "Actual640x480sample with street lighting, visible traffic and glare; severe-dark/occlusion videos retained for expansion",
+    "frame_start": 0,
+    "frame_end_inclusive": 599,
+    "source_frames": 600,
+    "scope_status": "PROPOSAL_TECHNICAL_SMOKE_NOT_ACCURACY_SAMPLE"
+  },
+  "branches": [
+    "raw_identity_transform",
+    "one_explicit_reviewed_filter_recipe_on_identical_source_scope"
+  ],
+  "settings_not_selected_by_browser_test": true,
+  "required_before_model_loading": [
+    "Saved per-source Review-Filter JSON; test_export_not_selected_for_inference.json is software-test evidence only",
+    "Reviewed native SideA/SideB/counting geometry and direction for selected new source",
+    "Source-bound night adapter and isolated configuration for B v8/B v7 safeguards; do not bypass existingTGDI9128frame restriction",
+    "Freeze detector/tracker/ReID/counting controls and record actual GPU/model availability"
+  ],
+  "source_specific_overlay_transfer_prohibited": true,
+  "existing_fullvideo_phase8_helper_is_frozen_b_v1_not_latest_b_v8": true,
+  "old_b_v8_scope": "TGDI_WEEKDAY_SIANG_9128_FRAME_CACHE_REVIEW_ASSISTED",
+  "do_not_remove_old_scope_guard": true,
+  "expected_smoke_outputs": [
+    "raw/filtered native before-after",
+    "detector and encoder preprocessing fingerprints",
+    "detection/track measurement cache",
+    "separate measured/inferred/pending/invalid decisions",
+    "annotated clip and panel/event reconciliation",
+    "actual runtime/resource report and source/config snapshots"
+  ],
+  "expand_only_after": "End-to-end smoke passes and source-level error review; expand by observed darkness/glare/occlusion/geometry risk, not assumed8slots",
+  "new_detector_tracker_reid_counting_or_enhancement_inference_executed": false,
+  "area_coverage_or_ppac_changes": false
+}

@@ -1,0 +1,31 @@
+{
+  "baseline_accepted": 2,
+  "candidate_aggregate": {
+    "total": 0,
+    "by_category": {},
+    "by_direction": {},
+    "by_route": {},
+    "measured_total": 0,
+    "inferred_total": 0,
+    "pending": 0,
+    "invalid": 2,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 2
+    },
+    "cancelled": 2,
+    "vehicle_total": 0,
+    "pedestrian_total": 0
+  },
+  "candidate_result_sha256": "1786fd3d5a417740761c56499b8e67279f6827622f0e6373bd4b0326c6cec8ee",
+  "policy_sha256_semantic": "d5837a067819589418f942798880f7909c9b0d028aefffc112a5b90c6309f0a4",
+  "policy_scope": "Retained Bv6 fixturepolicy plus exactfrozen v7_handoff controls; fixture event namespace differs fullvideo policy",
+  "source_frames": 153,
+  "baseline_decision_frames": [
+    1396,
+    1396
+  ],
+  "candidate_invalid_finalization_frame": 1424,
+  "identity_merged": false,
+  "measured_crossing_upgraded": false,
+  "production_validated": false
+}

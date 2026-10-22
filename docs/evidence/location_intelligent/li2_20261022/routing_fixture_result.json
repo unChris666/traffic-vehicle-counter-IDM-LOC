@@ -1,0 +1,1208 @@
+{
+  "accessibility_gate": "BLOCKED",
+  "diagnostics": [
+    {
+      "code": "POLICY_UNRESOLVED",
+      "message": "D02/D03/D05/D10 remain OPEN; reference counts are not approved accessibility."
+    }
+  ],
+  "input_file_sha256": {
+    "buildings": "e4b9a8ef13ca700317abbe1aec84a0d010ea162b49ec842dd9724b1d1b1a4ab1",
+    "config": "7e96b93e600d0f55fc3905581b9c16e06dc226d313f26ffe5ffbe31af806ca14",
+    "context": "d17a332808f917012083445489fae1614db6286ac09ffa694f8cb56ffe439aeb",
+    "graph": "d62d8fd4c7b5f4abeffb9dd1cfaf751a51ac26fb98b5f29acdfaaa97425bd267",
+    "manifest": "d4a31298f85e0c03f676f052eca36a063e2a881b3859e0c7fccafe4aafb17cae"
+  },
+  "li0": {
+    "diagnostics": [
+      {
+        "blocking": false,
+        "code": "FRESHNESS_UNKNOWN",
+        "message": "Freshness is unverified; offline does not automatically mean stale.",
+        "path": "manifest.sources[0]",
+        "severity": "UNKNOWN"
+      },
+      {
+        "blocking": false,
+        "code": "VALUE_UNKNOWN",
+        "message": "Value remains unknown; supply evidence before using it.",
+        "path": "manifest.sources[0].source_as_of",
+        "severity": "UNKNOWN"
+      }
+    ],
+    "limitations": [
+      "No source retrieval or live authorization check.",
+      "No payload geometry/schema, geographic coverage or calculation validation.",
+      "No capacity, routing, Recount, Traffic or PPAC readiness claim."
+    ],
+    "live_readiness": "NOT_VERIFIED",
+    "offline_readiness": "READY",
+    "readiness_scope": "LI1_BUILDING_SELECTION_INPUT_CONTRACT_ONLY",
+    "schema_version": "location_intelligent_validation_v1",
+    "validation_status": "VALID",
+    "verified_local_source_count": 1
+  },
+  "limitations": [
+    "N1 reference/fixture diagnostics only; no approved business accessibility.",
+    "Declared graph coverage and access permission are not real-world/legal access proof."
+  ],
+  "live_readiness": "NOT_VERIFIED",
+  "provenance": {
+    "analysis_run_id": "li1-synthetic-001",
+    "constant_speed_mps": 1.9444444444444444,
+    "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+    "graph_hash": "786a2c6c7d5e0c439118cf1ff7fb5df7e8a47b83baf27d47016898f9a5d3dda4",
+    "graph_id": "synthetic-directed-001",
+    "graph_provenance": {
+      "description": "Hand-authored nodes/edges and connector permissions; not a real road/legal-access dataset",
+      "origin": "SYNTHETIC_FIXTURE",
+      "source_as_of": null,
+      "source_version": "fixture-1"
+    },
+    "metric_crs": "EPSG:32748",
+    "n1_network_cost_model_matches": true,
+    "path_weight": "travel_time_s",
+    "policy_refs": {
+      "D02": "docs/AREA_COVERAGE_DECISIONS.md:D02:OPEN_REFERENCE_ONLY",
+      "D03": "docs/AREA_COVERAGE_DECISIONS.md:D03:OPEN_REFERENCE_ONLY",
+      "D05": "docs/AREA_COVERAGE_DECISIONS.md:D05:OPEN_REFERENCE_ONLY",
+      "D10": "docs/AREA_COVERAGE_DECISIONS.md:D10:OPEN_REFERENCE_ONLY"
+    },
+    "profile": "N1_REFERENCE_ONLY",
+    "routing_config_hash": "d0103ff6f9c8f3983945523cd1521f6e56c5f7d62aa76b0fc49a3c3c6fbd5095",
+    "selection_hash": "073a6bacb168f119b6e191dd6b76a56a8161aee41a88af6e234f24bdc96b8716",
+    "target": {
+      "crs": "EPSG:4326",
+      "latitude": -6.43,
+      "longitude": 106.81,
+      "store_code": "SYNTHETIC",
+      "store_name": "LI-0 synthetic fixture only",
+      "unknown_reasons": {}
+    }
+  },
+  "routes": [
+    {
+      "accessibility_reason": "POLICY_UNRESOLVED",
+      "accessible": null,
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "standard-100",
+      "building_point_m": [
+        700181.7953814851,
+        9288907.726777423
+      ],
+      "candidate_diagnostics": [
+        {
+          "distance_m": 3.958120942115784e-09,
+          "edge": {
+            "edge_id": "network-BT-fast",
+            "key": "0",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "CONNECTOR_REJECTED"
+        },
+        {
+          "distance_m": 3.501772880554199e-07,
+          "edge": {
+            "edge_id": "network-BT-slow",
+            "key": "1",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "CONNECTOR_REJECTED"
+        }
+      ],
+      "candidates": [
+        {
+          "access_point_m": [
+            700181.7953814851,
+            9288927.726777073
+          ],
+          "building_connector_distance_m": 19.999999649822712,
+          "building_connector_time_s": 10.285714105623109,
+          "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+          "diagnostic_distance_including_target_m": 39.99999965378082,
+          "diagnostic_time_including_target_min": 0.3428571398895499,
+          "edge": {
+            "edge_id": "access-AB",
+            "key": "0",
+            "u": "A",
+            "v": "B"
+          },
+          "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+          "graph_cost_time_s": 20.571428393372997,
+          "network": {
+            "distance_m": 20.0,
+            "edges": [
+              "network-BT-fast"
+            ],
+            "nodes": [
+              "B",
+              "T"
+            ],
+            "time_s": 10.285714285714286,
+            "weight": "travel_time_s",
+            "weight_value": 10.285714285714286
+          },
+          "network_reference_time_s": 10.285714285714286,
+          "partial_edge_distance_m": 3.958111616242377e-09,
+          "partial_edge_fraction": 1.5832446464969507e-11,
+          "partial_edge_reference_time_s": 2.0356002597817937e-09,
+          "reason": "DIRECTED_PATH_FOUND",
+          "reference_accessible": true,
+          "road_coordinates_m": [
+            [
+              700181.7953814851,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288907.726777073
+            ]
+          ],
+          "road_geometry": {
+            "coordinates": [
+              [
+                106.80999936025025,
+                -6.429819167375593
+              ],
+              [
+                106.80999936025022,
+                -6.429819167375593
+              ],
+              [
+                106.81,
+                -6.429999999999996
+              ]
+            ],
+            "type": "LineString"
+          },
+          "road_type": "street",
+          "route_found": true,
+          "threshold_time_min": 0.343,
+          "total_reference_time_min": 0.3428571398895499,
+          "total_road_distance_m": 39.99999965378082
+        }
+      ],
+      "coverage_status": "COMPLETE",
+      "reason": "REFERENCE_WITHIN_TIME",
+      "reference_accessible": true,
+      "route_found": true,
+      "route_geometry": {
+        "coordinates": [
+          [
+            106.80999936025025,
+            -6.429819167375593
+          ],
+          [
+            106.80999936025022,
+            -6.429819167375593
+          ],
+          [
+            106.81,
+            -6.429999999999996
+          ]
+        ],
+        "type": "LineString"
+      },
+      "route_geometry_crs": "EPSG:4326",
+      "route_geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+      "selected_candidate": {
+        "access_point_m": [
+          700181.7953814851,
+          9288927.726777073
+        ],
+        "building_connector_distance_m": 19.999999649822712,
+        "building_connector_time_s": 10.285714105623109,
+        "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+        "diagnostic_distance_including_target_m": 39.99999965378082,
+        "diagnostic_time_including_target_min": 0.3428571398895499,
+        "edge": {
+          "edge_id": "access-AB",
+          "key": "0",
+          "u": "A",
+          "v": "B"
+        },
+        "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+        "graph_cost_time_s": 20.571428393372997,
+        "network": {
+          "distance_m": 20.0,
+          "edges": [
+            "network-BT-fast"
+          ],
+          "nodes": [
+            "B",
+            "T"
+          ],
+          "time_s": 10.285714285714286,
+          "weight": "travel_time_s",
+          "weight_value": 10.285714285714286
+        },
+        "network_reference_time_s": 10.285714285714286,
+        "partial_edge_distance_m": 3.958111616242377e-09,
+        "partial_edge_fraction": 1.5832446464969507e-11,
+        "partial_edge_reference_time_s": 2.0356002597817937e-09,
+        "reason": "DIRECTED_PATH_FOUND",
+        "reference_accessible": true,
+        "road_coordinates_m": [
+          [
+            700181.7953814851,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288907.726777073
+          ]
+        ],
+        "road_geometry": {
+          "coordinates": [
+            [
+              106.80999936025025,
+              -6.429819167375593
+            ],
+            [
+              106.80999936025022,
+              -6.429819167375593
+            ],
+            [
+              106.81,
+              -6.429999999999996
+            ]
+          ],
+          "type": "LineString"
+        },
+        "road_type": "street",
+        "route_found": true,
+        "threshold_time_min": 0.343,
+        "total_reference_time_min": 0.3428571398895499,
+        "total_road_distance_m": 39.99999965378082
+      },
+      "source_row_index": 0,
+      "target_connection": {
+        "connector_included_in_reference": false,
+        "node_id": "T",
+        "omitted_connector_distance_m": 0.0,
+        "omitted_connector_time_s": 0.0,
+        "snap_distance_m": 0.0,
+        "snap_status": "WITHIN_DECLARED_FIXTURE_LIMIT"
+      },
+      "unresolved_decisions": [
+        "D02",
+        "D03",
+        "D05",
+        "D10"
+      ]
+    },
+    {
+      "accessibility_reason": "POLICY_UNRESOLVED",
+      "accessible": null,
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "apartment-600",
+      "building_point_m": [
+        700231.7953818092,
+        9288907.72677875
+      ],
+      "candidate_diagnostics": [
+        {
+          "distance_m": 50.00000032805838,
+          "edge": {
+            "edge_id": "network-BT-fast",
+            "key": "0",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "CONNECTOR_REJECTED"
+        },
+        {
+          "distance_m": 30.000000328058377,
+          "edge": {
+            "edge_id": "network-BT-slow",
+            "key": "1",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "CONNECTOR_REJECTED"
+        }
+      ],
+      "candidates": [
+        {
+          "access_point_m": [
+            700231.7953818092,
+            9288927.726777073
+          ],
+          "building_connector_distance_m": 19.999998323619366,
+          "building_connector_time_s": 10.285713423575674,
+          "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+          "diagnostic_distance_including_target_m": 89.99999865167774,
+          "diagnostic_time_including_target_min": 0.7714285598715235,
+          "edge": {
+            "edge_id": "access-AB",
+            "key": "0",
+            "u": "A",
+            "v": "B"
+          },
+          "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+          "graph_cost_time_s": 46.28571359229141,
+          "network": {
+            "distance_m": 20.0,
+            "edges": [
+              "network-BT-fast"
+            ],
+            "nodes": [
+              "B",
+              "T"
+            ],
+            "time_s": 10.285714285714286,
+            "weight": "travel_time_s",
+            "weight_value": 10.285714285714286
+          },
+          "network_reference_time_s": 10.285714285714286,
+          "partial_edge_distance_m": 50.00000032805838,
+          "partial_edge_fraction": 0.2000000013122335,
+          "partial_edge_reference_time_s": 25.714285883001452,
+          "reason": "DIRECTED_PATH_FOUND",
+          "reference_accessible": true,
+          "road_coordinates_m": [
+            [
+              700231.7953818092,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288907.726777073
+            ]
+          ],
+          "road_geometry": {
+            "coordinates": [
+              [
+                106.81045129583407,
+                -6.429817567308181
+              ],
+              [
+                106.80999936025022,
+                -6.429819167375593
+              ],
+              [
+                106.81,
+                -6.429999999999996
+              ]
+            ],
+            "type": "LineString"
+          },
+          "road_type": "street",
+          "route_found": true,
+          "threshold_time_min": 0.771,
+          "total_reference_time_min": 0.7714285598715235,
+          "total_road_distance_m": 89.99999865167774
+        }
+      ],
+      "coverage_status": "COMPLETE",
+      "reason": "REFERENCE_WITHIN_TIME",
+      "reference_accessible": true,
+      "route_found": true,
+      "route_geometry": {
+        "coordinates": [
+          [
+            106.81045129583407,
+            -6.429817567308181
+          ],
+          [
+            106.80999936025022,
+            -6.429819167375593
+          ],
+          [
+            106.81,
+            -6.429999999999996
+          ]
+        ],
+        "type": "LineString"
+      },
+      "route_geometry_crs": "EPSG:4326",
+      "route_geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+      "selected_candidate": {
+        "access_point_m": [
+          700231.7953818092,
+          9288927.726777073
+        ],
+        "building_connector_distance_m": 19.999998323619366,
+        "building_connector_time_s": 10.285713423575674,
+        "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+        "diagnostic_distance_including_target_m": 89.99999865167774,
+        "diagnostic_time_including_target_min": 0.7714285598715235,
+        "edge": {
+          "edge_id": "access-AB",
+          "key": "0",
+          "u": "A",
+          "v": "B"
+        },
+        "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+        "graph_cost_time_s": 46.28571359229141,
+        "network": {
+          "distance_m": 20.0,
+          "edges": [
+            "network-BT-fast"
+          ],
+          "nodes": [
+            "B",
+            "T"
+          ],
+          "time_s": 10.285714285714286,
+          "weight": "travel_time_s",
+          "weight_value": 10.285714285714286
+        },
+        "network_reference_time_s": 10.285714285714286,
+        "partial_edge_distance_m": 50.00000032805838,
+        "partial_edge_fraction": 0.2000000013122335,
+        "partial_edge_reference_time_s": 25.714285883001452,
+        "reason": "DIRECTED_PATH_FOUND",
+        "reference_accessible": true,
+        "road_coordinates_m": [
+          [
+            700231.7953818092,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288907.726777073
+          ]
+        ],
+        "road_geometry": {
+          "coordinates": [
+            [
+              106.81045129583407,
+              -6.429817567308181
+            ],
+            [
+              106.80999936025022,
+              -6.429819167375593
+            ],
+            [
+              106.81,
+              -6.429999999999996
+            ]
+          ],
+          "type": "LineString"
+        },
+        "road_type": "street",
+        "route_found": true,
+        "threshold_time_min": 0.771,
+        "total_reference_time_min": 0.7714285598715235,
+        "total_road_distance_m": 89.99999865167774
+      },
+      "source_row_index": 1,
+      "target_connection": {
+        "connector_included_in_reference": false,
+        "node_id": "T",
+        "omitted_connector_distance_m": 0.0,
+        "omitted_connector_time_s": 0.0,
+        "snap_distance_m": 0.0,
+        "snap_status": "WITHIN_DECLARED_FIXTURE_LIMIT"
+      },
+      "unresolved_decisions": [
+        "D02",
+        "D03",
+        "D05",
+        "D10"
+      ]
+    },
+    {
+      "accessibility_reason": "POLICY_UNRESOLVED",
+      "accessible": null,
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "dormitory-600",
+      "building_point_m": [
+        700281.7953818094,
+        9288907.72677875
+      ],
+      "candidate_diagnostics": [
+        {
+          "distance_m": 100.00000032817479,
+          "edge": {
+            "edge_id": "network-BT-fast",
+            "key": "0",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "CONNECTOR_REJECTED"
+        },
+        {
+          "distance_m": 80.00000032817479,
+          "edge": {
+            "edge_id": "network-BT-slow",
+            "key": "1",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "CONNECTOR_REJECTED"
+        }
+      ],
+      "candidates": [
+        {
+          "access_point_m": [
+            700281.7953818094,
+            9288927.726777073
+          ],
+          "building_connector_distance_m": 19.999998323619366,
+          "building_connector_time_s": 10.285713423575674,
+          "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+          "diagnostic_distance_including_target_m": 139.99999865179416,
+          "diagnostic_time_including_target_min": 1.1999999884439498,
+          "edge": {
+            "edge_id": "access-AB",
+            "key": "0",
+            "u": "A",
+            "v": "B"
+          },
+          "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+          "graph_cost_time_s": 71.99999930663701,
+          "network": {
+            "distance_m": 20.0,
+            "edges": [
+              "network-BT-fast"
+            ],
+            "nodes": [
+              "B",
+              "T"
+            ],
+            "time_s": 10.285714285714286,
+            "weight": "travel_time_s",
+            "weight_value": 10.285714285714286
+          },
+          "network_reference_time_s": 10.285714285714286,
+          "partial_edge_distance_m": 100.00000032817479,
+          "partial_edge_fraction": 0.4000000013126992,
+          "partial_edge_reference_time_s": 51.42857159734704,
+          "reason": "DIRECTED_PATH_FOUND",
+          "reference_accessible": true,
+          "road_coordinates_m": [
+            [
+              700281.7953818094,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288907.726777073
+            ]
+          ],
+          "road_geometry": {
+            "coordinates": [
+              [
+                106.81090323130014,
+                -6.429815966841837
+              ],
+              [
+                106.80999936025022,
+                -6.429819167375593
+              ],
+              [
+                106.81,
+                -6.429999999999996
+              ]
+            ],
+            "type": "LineString"
+          },
+          "road_type": "street",
+          "route_found": true,
+          "threshold_time_min": 1.2,
+          "total_reference_time_min": 1.1999999884439498,
+          "total_road_distance_m": 139.99999865179416
+        }
+      ],
+      "coverage_status": "COMPLETE",
+      "reason": "REFERENCE_WITHIN_TIME",
+      "reference_accessible": true,
+      "route_found": true,
+      "route_geometry": {
+        "coordinates": [
+          [
+            106.81090323130014,
+            -6.429815966841837
+          ],
+          [
+            106.80999936025022,
+            -6.429819167375593
+          ],
+          [
+            106.81,
+            -6.429999999999996
+          ]
+        ],
+        "type": "LineString"
+      },
+      "route_geometry_crs": "EPSG:4326",
+      "route_geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+      "selected_candidate": {
+        "access_point_m": [
+          700281.7953818094,
+          9288927.726777073
+        ],
+        "building_connector_distance_m": 19.999998323619366,
+        "building_connector_time_s": 10.285713423575674,
+        "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+        "diagnostic_distance_including_target_m": 139.99999865179416,
+        "diagnostic_time_including_target_min": 1.1999999884439498,
+        "edge": {
+          "edge_id": "access-AB",
+          "key": "0",
+          "u": "A",
+          "v": "B"
+        },
+        "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+        "graph_cost_time_s": 71.99999930663701,
+        "network": {
+          "distance_m": 20.0,
+          "edges": [
+            "network-BT-fast"
+          ],
+          "nodes": [
+            "B",
+            "T"
+          ],
+          "time_s": 10.285714285714286,
+          "weight": "travel_time_s",
+          "weight_value": 10.285714285714286
+        },
+        "network_reference_time_s": 10.285714285714286,
+        "partial_edge_distance_m": 100.00000032817479,
+        "partial_edge_fraction": 0.4000000013126992,
+        "partial_edge_reference_time_s": 51.42857159734704,
+        "reason": "DIRECTED_PATH_FOUND",
+        "reference_accessible": true,
+        "road_coordinates_m": [
+          [
+            700281.7953818094,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288907.726777073
+          ]
+        ],
+        "road_geometry": {
+          "coordinates": [
+            [
+              106.81090323130014,
+              -6.429815966841837
+            ],
+            [
+              106.80999936025022,
+              -6.429819167375593
+            ],
+            [
+              106.81,
+              -6.429999999999996
+            ]
+          ],
+          "type": "LineString"
+        },
+        "road_type": "street",
+        "route_found": true,
+        "threshold_time_min": 1.2,
+        "total_reference_time_min": 1.1999999884439498,
+        "total_road_distance_m": 139.99999865179416
+      },
+      "source_row_index": 2,
+      "target_connection": {
+        "connector_included_in_reference": false,
+        "node_id": "T",
+        "omitted_connector_distance_m": 0.0,
+        "omitted_connector_time_s": 0.0,
+        "snap_distance_m": 0.0,
+        "snap_status": "WITHIN_DECLARED_FIXTURE_LIMIT"
+      },
+      "unresolved_decisions": [
+        "D02",
+        "D03",
+        "D05",
+        "D10"
+      ]
+    },
+    {
+      "accessibility_reason": "POLICY_UNRESOLVED",
+      "accessible": null,
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "hotel-700",
+      "building_point_m": [
+        700331.7953820145,
+        9288907.72677889
+      ],
+      "candidate_diagnostics": [
+        {
+          "distance_m": 150.0000005332986,
+          "edge": {
+            "edge_id": "network-BT-fast",
+            "key": "0",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "ACCESS_DISTANCE_EXCEEDED"
+        },
+        {
+          "distance_m": 130.0000005332986,
+          "edge": {
+            "edge_id": "network-BT-slow",
+            "key": "1",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "ACCESS_DISTANCE_EXCEEDED"
+        }
+      ],
+      "candidates": [
+        {
+          "access_point_m": [
+            700331.7953820145,
+            9288927.726777073
+          ],
+          "building_connector_distance_m": 19.99999818392098,
+          "building_connector_time_s": 10.28571335173079,
+          "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+          "diagnostic_distance_including_target_m": 189.99999871721957,
+          "diagnostic_time_including_target_min": 1.6285714175761679,
+          "edge": {
+            "edge_id": "access-AB",
+            "key": "0",
+            "u": "A",
+            "v": "B"
+          },
+          "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+          "graph_cost_time_s": 97.71428505457008,
+          "network": {
+            "distance_m": 20.0,
+            "edges": [
+              "network-BT-fast"
+            ],
+            "nodes": [
+              "B",
+              "T"
+            ],
+            "time_s": 10.285714285714286,
+            "weight": "travel_time_s",
+            "weight_value": 10.285714285714286
+          },
+          "network_reference_time_s": 10.285714285714286,
+          "partial_edge_distance_m": 150.0000005332986,
+          "partial_edge_fraction": 0.6000000021331944,
+          "partial_edge_reference_time_s": 77.14285741712499,
+          "reason": "DIRECTED_PATH_FOUND",
+          "reference_accessible": true,
+          "road_coordinates_m": [
+            [
+              700331.7953820145,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288907.726777073
+            ]
+          ],
+          "road_geometry": {
+            "coordinates": [
+              [
+                106.81135516665321,
+                -6.429814365976546
+              ],
+              [
+                106.80999936025022,
+                -6.429819167375593
+              ],
+              [
+                106.81,
+                -6.429999999999996
+              ]
+            ],
+            "type": "LineString"
+          },
+          "road_type": "street",
+          "route_found": true,
+          "threshold_time_min": 1.629,
+          "total_reference_time_min": 1.6285714175761679,
+          "total_road_distance_m": 189.99999871721957
+        }
+      ],
+      "coverage_status": "COMPLETE",
+      "reason": "REFERENCE_WITHIN_TIME",
+      "reference_accessible": true,
+      "route_found": true,
+      "route_geometry": {
+        "coordinates": [
+          [
+            106.81135516665321,
+            -6.429814365976546
+          ],
+          [
+            106.80999936025022,
+            -6.429819167375593
+          ],
+          [
+            106.81,
+            -6.429999999999996
+          ]
+        ],
+        "type": "LineString"
+      },
+      "route_geometry_crs": "EPSG:4326",
+      "route_geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+      "selected_candidate": {
+        "access_point_m": [
+          700331.7953820145,
+          9288927.726777073
+        ],
+        "building_connector_distance_m": 19.99999818392098,
+        "building_connector_time_s": 10.28571335173079,
+        "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+        "diagnostic_distance_including_target_m": 189.99999871721957,
+        "diagnostic_time_including_target_min": 1.6285714175761679,
+        "edge": {
+          "edge_id": "access-AB",
+          "key": "0",
+          "u": "A",
+          "v": "B"
+        },
+        "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+        "graph_cost_time_s": 97.71428505457008,
+        "network": {
+          "distance_m": 20.0,
+          "edges": [
+            "network-BT-fast"
+          ],
+          "nodes": [
+            "B",
+            "T"
+          ],
+          "time_s": 10.285714285714286,
+          "weight": "travel_time_s",
+          "weight_value": 10.285714285714286
+        },
+        "network_reference_time_s": 10.285714285714286,
+        "partial_edge_distance_m": 150.0000005332986,
+        "partial_edge_fraction": 0.6000000021331944,
+        "partial_edge_reference_time_s": 77.14285741712499,
+        "reason": "DIRECTED_PATH_FOUND",
+        "reference_accessible": true,
+        "road_coordinates_m": [
+          [
+            700331.7953820145,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288907.726777073
+          ]
+        ],
+        "road_geometry": {
+          "coordinates": [
+            [
+              106.81135516665321,
+              -6.429814365976546
+            ],
+            [
+              106.80999936025022,
+              -6.429819167375593
+            ],
+            [
+              106.81,
+              -6.429999999999996
+            ]
+          ],
+          "type": "LineString"
+        },
+        "road_type": "street",
+        "route_found": true,
+        "threshold_time_min": 1.629,
+        "total_reference_time_min": 1.6285714175761679,
+        "total_road_distance_m": 189.99999871721957
+      },
+      "source_row_index": 3,
+      "target_connection": {
+        "connector_included_in_reference": false,
+        "node_id": "T",
+        "omitted_connector_distance_m": 0.0,
+        "omitted_connector_time_s": 0.0,
+        "snap_distance_m": 0.0,
+        "snap_status": "WITHIN_DECLARED_FIXTURE_LIMIT"
+      },
+      "unresolved_decisions": [
+        "D02",
+        "D03",
+        "D05",
+        "D10"
+      ]
+    },
+    {
+      "accessibility_reason": "POLICY_UNRESOLVED",
+      "accessible": null,
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "legacy-fallback",
+      "building_point_m": [
+        700381.7953814832,
+        9288907.726777423
+      ],
+      "candidate_diagnostics": [
+        {
+          "distance_m": 200.00000000197906,
+          "edge": {
+            "edge_id": "network-BT-fast",
+            "key": "0",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "ACCESS_DISTANCE_EXCEEDED"
+        },
+        {
+          "distance_m": 180.00000000197906,
+          "edge": {
+            "edge_id": "network-BT-slow",
+            "key": "1",
+            "u": "B",
+            "v": "T"
+          },
+          "reason": "ACCESS_DISTANCE_EXCEEDED"
+        }
+      ],
+      "candidates": [
+        {
+          "access_point_m": [
+            700381.7953814832,
+            9288927.726777073
+          ],
+          "building_connector_distance_m": 19.999999649822712,
+          "building_connector_time_s": 10.285714105623109,
+          "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+          "diagnostic_distance_including_target_m": 239.99999965180177,
+          "diagnostic_time_including_target_min": 2.0571428541583012,
+          "edge": {
+            "edge_id": "access-AB",
+            "key": "0",
+            "u": "A",
+            "v": "B"
+          },
+          "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+          "graph_cost_time_s": 123.42857124949808,
+          "network": {
+            "distance_m": 20.0,
+            "edges": [
+              "network-BT-fast"
+            ],
+            "nodes": [
+              "B",
+              "T"
+            ],
+            "time_s": 10.285714285714286,
+            "weight": "travel_time_s",
+            "weight_value": 10.285714285714286
+          },
+          "network_reference_time_s": 10.285714285714286,
+          "partial_edge_distance_m": 200.00000000197906,
+          "partial_edge_fraction": 0.8000000000079163,
+          "partial_edge_reference_time_s": 102.85714285816066,
+          "reason": "DIRECTED_PATH_FOUND",
+          "reference_accessible": true,
+          "road_coordinates_m": [
+            [
+              700381.7953814832,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288927.726777073
+            ],
+            [
+              700181.7953814812,
+              9288907.726777073
+            ]
+          ],
+          "road_geometry": {
+            "coordinates": [
+              [
+                106.81180710188472,
+                -6.429812764712339
+              ],
+              [
+                106.80999936025022,
+                -6.429819167375593
+              ],
+              [
+                106.81,
+                -6.429999999999996
+              ]
+            ],
+            "type": "LineString"
+          },
+          "road_type": "street",
+          "route_found": true,
+          "threshold_time_min": 2.057,
+          "total_reference_time_min": 2.0571428541583012,
+          "total_road_distance_m": 239.99999965180177
+        }
+      ],
+      "coverage_status": "COMPLETE",
+      "reason": "REFERENCE_WITHIN_TIME",
+      "reference_accessible": true,
+      "route_found": true,
+      "route_geometry": {
+        "coordinates": [
+          [
+            106.81180710188472,
+            -6.429812764712339
+          ],
+          [
+            106.80999936025022,
+            -6.429819167375593
+          ],
+          [
+            106.81,
+            -6.429999999999996
+          ]
+        ],
+        "type": "LineString"
+      },
+      "route_geometry_crs": "EPSG:4326",
+      "route_geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+      "selected_candidate": {
+        "access_point_m": [
+          700381.7953814832,
+          9288927.726777073
+        ],
+        "building_connector_distance_m": 19.999999649822712,
+        "building_connector_time_s": 10.285714105623109,
+        "connector_status": "EXPLICIT_FIXTURE_PERMISSION_NOT_PHYSICAL_PROOF",
+        "diagnostic_distance_including_target_m": 239.99999965180177,
+        "diagnostic_time_including_target_min": 2.0571428541583012,
+        "edge": {
+          "edge_id": "access-AB",
+          "key": "0",
+          "u": "A",
+          "v": "B"
+        },
+        "geometry_status": "AVAILABLE_ROAD_GEOMETRY",
+        "graph_cost_time_s": 123.42857124949808,
+        "network": {
+          "distance_m": 20.0,
+          "edges": [
+            "network-BT-fast"
+          ],
+          "nodes": [
+            "B",
+            "T"
+          ],
+          "time_s": 10.285714285714286,
+          "weight": "travel_time_s",
+          "weight_value": 10.285714285714286
+        },
+        "network_reference_time_s": 10.285714285714286,
+        "partial_edge_distance_m": 200.00000000197906,
+        "partial_edge_fraction": 0.8000000000079163,
+        "partial_edge_reference_time_s": 102.85714285816066,
+        "reason": "DIRECTED_PATH_FOUND",
+        "reference_accessible": true,
+        "road_coordinates_m": [
+          [
+            700381.7953814832,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288907.726777073
+          ]
+        ],
+        "road_geometry": {
+          "coordinates": [
+            [
+              106.81180710188472,
+              -6.429812764712339
+            ],
+            [
+              106.80999936025022,
+              -6.429819167375593
+            ],
+            [
+              106.81,
+              -6.429999999999996
+            ]
+          ],
+          "type": "LineString"
+        },
+        "road_type": "street",
+        "route_found": true,
+        "threshold_time_min": 2.057,
+        "total_reference_time_min": 2.0571428541583012,
+        "total_road_distance_m": 239.99999965180177
+      },
+      "source_row_index": 4,
+      "target_connection": {
+        "connector_included_in_reference": false,
+        "node_id": "T",
+        "omitted_connector_distance_m": 0.0,
+        "omitted_connector_time_s": 0.0,
+        "snap_distance_m": 0.0,
+        "snap_status": "WITHIN_DECLARED_FIXTURE_LIMIT"
+      },
+      "unresolved_decisions": [
+        "D02",
+        "D03",
+        "D05",
+        "D10"
+      ]
+    }
+  ],
+  "routing_gate": "PASS",
+  "schema_version": "location_intelligent_routing_v1",
+  "status": "PARTIAL",
+  "summary": {
+    "accepted_accessible": null,
+    "accounted_routes": 5,
+    "input_selected_buildings": 5,
+    "no_route": 0,
+    "not_evaluated": 0,
+    "policy_unresolved": 5,
+    "reason_counts": {
+      "REFERENCE_WITHIN_TIME": 5
+    },
+    "reference_time_limit": 0,
+    "reference_within_time": 5,
+    "route_found": 5
+  },
+  "unresolved_decisions": [
+    "D02",
+    "D03",
+    "D05",
+    "D10"
+  ]
+}

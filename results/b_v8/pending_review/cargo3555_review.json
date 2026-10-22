@@ -1,0 +1,485 @@
+{
+  "schema_version": "phase9_b_v8_cargo_component_review_v1",
+  "case_id": "P1-PENDING-CARGO-3555",
+  "claim_type": "AI_REVIEW_OF_ACTUAL_RETAINED_TEMPORAL_SOURCE_SHEET_NOT_FORMAL_GROUND_TRUTH",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "baseline_result_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "baseline_pending_candidate": {
+    "frame_index": 6269,
+    "track_id": 3555,
+    "physical_unit_id": "track:3555",
+    "passage_id": "track:3555:episode:unreviewed-vehicle:passage:1",
+    "episode_id": "unreviewed-vehicle",
+    "role": "vehicle",
+    "status": "pending",
+    "reasons": [
+      "INFERRED_ROUTE_PHYSICAL_MOTION_UNRESOLVED"
+    ],
+    "source_ref": {
+      "frame_index": 6269,
+      "track_id": 3555,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        87.94622802734375,
+        159.47366333007812,
+        202.77511596679688,
+        294.812744140625
+      ],
+      "point": [
+        145.3606719970703,
+        294.812744140625
+      ],
+      "class_name": "truck",
+      "effective_class_name": "truck",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 7,
+      "confidence": 0.47444429993629456,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b5-physical-context:232862eee93ad1824008b128",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": []
+    },
+    "reason_evidence": [
+      {
+        "reason": "INFERRED_ROUTE_PHYSICAL_MOTION_UNRESOLVED",
+        "frame_index": 6269,
+        "source_ref": {
+          "frame_index": 6269,
+          "track_id": 3555,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            87.94622802734375,
+            159.47366333007812,
+            202.77511596679688,
+            294.812744140625
+          ],
+          "point": [
+            145.3606719970703,
+            294.812744140625
+          ],
+          "class_name": "truck",
+          "effective_class_name": "truck",
+          "resolved_class_name": null,
+          "role": "vehicle",
+          "episode_id": "unreviewed-vehicle",
+          "association_verified": false,
+          "association_id": null,
+          "observed": true,
+          "emitted": true,
+          "class_id": 7,
+          "confidence": 0.47444429993629456,
+          "measurement_provenance": "retained_phase_8_detection",
+          "physical_episode_id": "b5-physical-context:232862eee93ad1824008b128",
+          "identity_episode_boundary": false,
+          "identity_episode_reason": "INITIAL_OBSERVATION",
+          "identity_timeout_hold": []
+        }
+      }
+    ],
+    "latest_frame_index": 6366,
+    "display_id": null
+  },
+  "baseline_parent_accepted_event": {
+    "event_id": "b_v7_1cf785d86d631ac0e103f6b7",
+    "display_id": "M1033",
+    "physical_unit_id": "track:3563",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:3563:episode:unreviewed-vehicle:passage:1",
+    "track_id": 3563,
+    "category": "motorcycle",
+    "direction": "B_TO_A",
+    "route": "LINE_MARGIN",
+    "decision_frame": 6267
+  },
+  "parent_measured_crossing": true,
+  "parent_crossing_pair_frames": [
+    [
+      6260,
+      6261
+    ]
+  ],
+  "evidence": [
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/unmatched/evidence/box-motor-1.jpg",
+      "sha256": "e4241f5c051a741c970e6a0353ea6f6d9dfaa3b16113236628af6a0d14a5956d",
+      "frames_shown": [
+        6200,
+        6210,
+        6220,
+        6230,
+        6240,
+        6250,
+        6260,
+        6270,
+        6280,
+        6290,
+        6300,
+        6310
+      ],
+      "viewed_in_this_review": true,
+      "positive_cargo_motorcycle_frames": [
+        6240,
+        6250,
+        6260,
+        6270,
+        6280,
+        6290,
+        6300
+      ],
+      "observation": "A loaded motorcycle with very large tied cardboard boxes moves away from the camera. Wheels/rider/motorcycle are visible beneath the boxes at6240\u20136260; boxes and motorcycle move together through6270\u20136300. No separate truck body or independent truck is present in this target unit."
+    }
+  ],
+  "prior_source_review_reference": {
+    "path": "results/phase_9/20261020_QC_BV4_SIANG/accepted_event_actions.jsonl",
+    "case_id": "ACCEPTED-QC-3555",
+    "reason": "CARGO_COMPONENT_NOT_TRUCK_UNIT",
+    "baseline_role_or_category_prediction_is_not_identity_proof": true
+  },
+  "candidate_source_ref_verified_exactly": true,
+  "actual_source_observations": [
+    {
+      "frame_index": 6245,
+      "detector_input_frame_pixel_sha256": "fba28d597928fe1fc5dda12aaeb75d90a62df17d574ffefa10e90b7bf14272ce",
+      "source_observations": [
+        {
+          "track_id": 3555,
+          "frame_index": 6245,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            240.90899658203125,
+            98.708984375,
+            501.4266357421875,
+            379.066650390625
+          ],
+          "bbox": [
+            243.1273956298828,
+            97.63629150390625,
+            507.8580627441406,
+            381.2245788574219
+          ],
+          "center": [
+            371.1678161621094,
+            238.8878173828125
+          ],
+          "class_id": 7,
+          "class_name": "truck",
+          "confidence": 0.2942145764827728,
+          "timestamp_estimate_from_index_fps_seconds": 209.69595125499075,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 6250,
+      "detector_input_frame_pixel_sha256": "62e75057b0f7ffdc7e8bdcfa8c6db0f83fef247fe9fdd02ac82f67f6797a4a39",
+      "source_observations": [
+        {
+          "track_id": 3555,
+          "frame_index": 6250,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            189.02247619628906,
+            119.67767333984375,
+            387.6907958984375,
+            351.9913330078125
+          ],
+          "bbox": [
+            190.07167053222656,
+            119.23725891113281,
+            390.02105712890625,
+            352.575439453125
+          ],
+          "center": [
+            288.3566360473633,
+            235.83450317382812
+          ],
+          "class_id": 7,
+          "class_name": "truck",
+          "confidence": 0.5507656931877136,
+          "timestamp_estimate_from_index_fps_seconds": 209.86384232885382,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 6260,
+      "detector_input_frame_pixel_sha256": "f0ba5827256ca3ee43e9aff7105e39a4491785e3e88433af46b98193544f33cd",
+      "source_observations": [
+        {
+          "track_id": 3563,
+          "frame_index": 6260,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            127.8605728149414,
+            233.6107635498047,
+            242.53860473632812,
+            313.30474853515625
+          ],
+          "bbox": [
+            128.1483154296875,
+            233.83152770996094,
+            239.45843505859375,
+            313.44439697265625
+          ],
+          "center": [
+            185.19958877563477,
+            273.45775604248047
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.7154960632324219,
+          "timestamp_estimate_from_index_fps_seconds": 210.19962447658,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 6269,
+      "detector_input_frame_pixel_sha256": "f8f6a8d96def915996f11c7ddab08f78d643bce3f38e786ebcc3663b58552c2f",
+      "source_observations": [
+        {
+          "track_id": 3563,
+          "frame_index": 6269,
+          "original_detection_index": 7,
+          "raw_bbox": [
+            94.0560302734375,
+            233.22329711914062,
+            175.56448364257812,
+            294.4241638183594
+          ],
+          "bbox": [
+            94.38982391357422,
+            232.7410125732422,
+            172.48904418945312,
+            294.19415283203125
+          ],
+          "center": [
+            134.8102569580078,
+            263.82373046875
+          ],
+          "class_id": 3,
+          "class_name": "motorcycle",
+          "confidence": 0.3408082127571106,
+          "timestamp_estimate_from_index_fps_seconds": 210.50182840953354,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        },
+        {
+          "track_id": 3555,
+          "frame_index": 6269,
+          "original_detection_index": 6,
+          "raw_bbox": [
+            87.94622802734375,
+            159.47366333007812,
+            202.77511596679688,
+            294.812744140625
+          ],
+          "bbox": [
+            86.20564270019531,
+            159.04054260253906,
+            202.25393676757812,
+            295.453369140625
+          ],
+          "center": [
+            145.3606719970703,
+            227.14320373535156
+          ],
+          "class_id": 7,
+          "class_name": "truck",
+          "confidence": 0.47444429993629456,
+          "timestamp_estimate_from_index_fps_seconds": 210.50182840953354,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 6280,
+      "detector_input_frame_pixel_sha256": "ab4ef592a5c41d0f643970dad32f5b27e71315ab2f362817fa24cdf13129a66a",
+      "source_observations": [
+        {
+          "track_id": 3555,
+          "frame_index": 6280,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            61.18861389160156,
+            169.88626098632812,
+            153.40260314941406,
+            280.3458251953125
+          ],
+          "bbox": [
+            60.445430755615234,
+            169.7335968017578,
+            152.85311889648438,
+            279.98577880859375
+          ],
+          "center": [
+            107.29560852050781,
+            225.1160430908203
+          ],
+          "class_id": 7,
+          "class_name": "truck",
+          "confidence": 0.60597825050354,
+          "timestamp_estimate_from_index_fps_seconds": 210.87118877203233,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 6300,
+      "detector_input_frame_pixel_sha256": "d37ffb37157b1562a642ea197fb99ef11138f5c4de593e7431cb49c6b1de731c",
+      "source_observations": [
+        {
+          "track_id": 3555,
+          "frame_index": 6300,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            33.844974517822266,
+            180.04885864257812,
+            98.76544189453125,
+            260.6238098144531
+          ],
+          "bbox": [
+            33.85696792602539,
+            179.91680908203125,
+            97.83971405029297,
+            260.11761474609375
+          ],
+          "center": [
+            66.30520820617676,
+            220.33633422851562
+          ],
+          "class_id": 7,
+          "class_name": "truck",
+          "confidence": 0.6892288327217102,
+          "timestamp_estimate_from_index_fps_seconds": 211.54275306748465,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 6330,
+      "detector_input_frame_pixel_sha256": "222fe95a88e82e03fb115f8b533aaf597fa916b4c5b92ff41c18262a20f3491f",
+      "source_observations": [
+        {
+          "track_id": 3555,
+          "frame_index": 6330,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            19.219741821289062,
+            187.27560424804688,
+            65.06647491455078,
+            244.17471313476562
+          ],
+          "bbox": [
+            19.400117874145508,
+            187.64430236816406,
+            64.97180938720703,
+            244.3323974609375
+          ],
+          "center": [
+            42.14310836791992,
+            215.72515869140625
+          ],
+          "class_id": 7,
+          "class_name": "truck",
+          "confidence": 0.5446138381958008,
+          "timestamp_estimate_from_index_fps_seconds": 212.55009951066316,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    },
+    {
+      "frame_index": 6366,
+      "detector_input_frame_pixel_sha256": "ab5cb9f19856f760e4cdfd50932e54b0337df5ef01ab503ca72237ae9712e5e6",
+      "source_observations": [
+        {
+          "track_id": 3555,
+          "frame_index": 6366,
+          "original_detection_index": 10,
+          "raw_bbox": [
+            16.48954963684082,
+            194.21182250976562,
+            50.06715393066406,
+            235.30691528320312
+          ],
+          "bbox": [
+            16.46767807006836,
+            193.80279541015625,
+            49.888404846191406,
+            235.34776306152344
+          ],
+          "center": [
+            33.27835178375244,
+            214.75936889648438
+          ],
+          "class_id": 7,
+          "class_name": "truck",
+          "confidence": 0.2702299952507019,
+          "timestamp_estimate_from_index_fps_seconds": 213.75891524247737,
+          "emitted": true,
+          "is_activated": true,
+          "measurement_provenance": "retained_phase_8_detection"
+        }
+      ]
+    }
+  ],
+  "proposed_disposition": "NOT_ELIGIBLE_COMPONENT_PLUS_ZERO",
+  "proposed_reason": "VERIFIED_CARGO_COMPONENT_NOT_INDEPENDENT_TRUCK",
+  "decision_origin": "AI_SOURCE_REVIEW_ADJUDICATION_NOT_MACHINE_PREDICTION",
+  "count_delta": 0,
+  "parent_vehicle_raw_id": 3563,
+  "physical_unit_count_effect": "Keep existing measured motorcycle3563 +1 unchanged; cargo3555 +0; do not create newmotorcycle or truckevent",
+  "scope": {
+    "baseline_candidate_passage_id": "track:3555:episode:unreviewed-vehicle:passage:1",
+    "baseline_physical_episode_id": "b5-physical-context:232862eee93ad1824008b128",
+    "source_ref_frame": 6269,
+    "positive_temporal_window": [
+      6240,
+      6300
+    ],
+    "apply_globally_to_raw_id": false,
+    "reviewed_scope_does_not_assert_identity_outside_window": true
+  },
+  "safeguards": [
+    "Do not replace motorcycle BC with cargo BC.",
+    "Do not relabel all truck detections as cargo.",
+    "Do not suppress an adjacent independent truck because it overlaps the loaded motorcycle.",
+    "Do not infer a new passage from a component classification."
+  ],
+  "limitations": [
+    "The source sheet is a temporal sample, not every frame of the rawID lifetime.",
+    "Positive component proof closes only this existing pending candidate; no global rawID alias is authorized.",
+    "This review does not establish full-video counting accuracy."
+  ],
+  "pipeline_or_historical_outputs_modified": false
+}

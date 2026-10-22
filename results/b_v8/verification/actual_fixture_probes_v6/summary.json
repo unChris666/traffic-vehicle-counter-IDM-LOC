@@ -1,0 +1,345 @@
+[
+  {
+    "fixture": "blocker4843",
+    "branch": "baseline",
+    "source_frame_window": [
+      7796,
+      8010
+    ],
+    "aggregate": {
+      "total": 3,
+      "by_category": {
+        "motorcycle": 3
+      },
+      "by_direction": {
+        "A_TO_B": 3
+      },
+      "by_route": {
+        "ESTIMATED_TIMEOUT": 1,
+        "LINE_MARGIN": 2
+      },
+      "measured_total": 1,
+      "inferred_total": 2,
+      "pending": 0,
+      "invalid": 0,
+      "invalid_reasons": {},
+      "cancelled": 0,
+      "vehicle_total": 3,
+      "pedestrian_total": 0
+    },
+    "actual_replayed_frame_history": [
+      0,
+      8010
+    ],
+    "source_scene_filtered_to_raw_tracks": [
+      4798,
+      4808,
+      4843,
+      4913
+    ],
+    "events": [
+      {
+        "track_id": 4798,
+        "physical_unit_id": "track:4798",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "decision_frame": 7894,
+        "measured_crossing": true,
+        "source_tracks": [
+          4798
+        ]
+      },
+      {
+        "track_id": 4843,
+        "physical_unit_id": "track:4843",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "decision_frame": 7935,
+        "measured_crossing": false,
+        "source_tracks": [
+          4843
+        ]
+      },
+      {
+        "track_id": 4808,
+        "physical_unit_id": "track:4808",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "ESTIMATED_TIMEOUT",
+        "decision_frame": 7964,
+        "measured_crossing": false,
+        "source_tracks": [
+          4808
+        ]
+      }
+    ]
+  },
+  {
+    "fixture": "blocker4843",
+    "branch": "reviewed",
+    "source_frame_window": [
+      7796,
+      8010
+    ],
+    "aggregate": {
+      "total": 2,
+      "by_category": {
+        "motorcycle": 2
+      },
+      "by_direction": {
+        "A_TO_B": 2
+      },
+      "by_route": {
+        "LINE_MARGIN": 2
+      },
+      "measured_total": 1,
+      "inferred_total": 1,
+      "pending": 0,
+      "invalid": 0,
+      "invalid_reasons": {},
+      "cancelled": 0,
+      "vehicle_total": 2,
+      "pedestrian_total": 0
+    },
+    "actual_replayed_frame_history": [
+      0,
+      8010
+    ],
+    "source_scene_filtered_to_raw_tracks": [
+      4798,
+      4808,
+      4843,
+      4913
+    ],
+    "events": [
+      {
+        "track_id": 4798,
+        "physical_unit_id": "review:TGDI_SIANG:distinct_foreground_motorcycle",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "decision_frame": 7894,
+        "measured_crossing": true,
+        "source_tracks": [
+          4798
+        ]
+      },
+      {
+        "track_id": 4843,
+        "physical_unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "decision_frame": 7935,
+        "measured_crossing": false,
+        "source_tracks": [
+          4808,
+          4843
+        ]
+      }
+    ]
+  },
+  {
+    "fixture": "pedestrian54",
+    "branch": "baseline",
+    "source_frame_window": [
+      0,
+      220
+    ],
+    "aggregate": {
+      "total": 0,
+      "by_category": {},
+      "by_direction": {},
+      "by_route": {},
+      "measured_total": 0,
+      "inferred_total": 0,
+      "pending": 1,
+      "invalid": 0,
+      "invalid_reasons": {},
+      "cancelled": 0,
+      "vehicle_total": 0,
+      "pedestrian_total": 0
+    },
+    "actual_replayed_frame_history": [
+      0,
+      220
+    ],
+    "source_scene_filtered_to_raw_tracks": [
+      54
+    ],
+    "events": []
+  },
+  {
+    "fixture": "pedestrian54",
+    "branch": "reviewed",
+    "source_frame_window": [
+      0,
+      220
+    ],
+    "aggregate": {
+      "total": 1,
+      "by_category": {
+        "pedestrian": 1
+      },
+      "by_direction": {
+        "B_TO_A": 1
+      },
+      "by_route": {
+        "LINE_MARGIN": 1
+      },
+      "measured_total": 1,
+      "inferred_total": 0,
+      "pending": 0,
+      "invalid": 0,
+      "invalid_reasons": {},
+      "cancelled": 0,
+      "vehicle_total": 0,
+      "pedestrian_total": 1
+    },
+    "actual_replayed_frame_history": [
+      0,
+      220
+    ],
+    "source_scene_filtered_to_raw_tracks": [
+      54
+    ],
+    "events": [
+      {
+        "track_id": 54,
+        "physical_unit_id": "reviewed-pedestrian:p1:siang:54",
+        "category": "pedestrian",
+        "direction": "B_TO_A",
+        "route": "LINE_MARGIN",
+        "decision_frame": 112,
+        "measured_crossing": true,
+        "source_tracks": [
+          54
+        ]
+      }
+    ]
+  },
+  {
+    "fixture": "handoff_recovery",
+    "branch": "baseline",
+    "source_frame_window": [
+      0,
+      1450
+    ],
+    "aggregate": {
+      "total": 1,
+      "by_category": {
+        "motorcycle": 1
+      },
+      "by_direction": {
+        "A_TO_B": 1
+      },
+      "by_route": {
+        "ESTIMATED_TIMEOUT": 1
+      },
+      "measured_total": 0,
+      "inferred_total": 1,
+      "pending": 0,
+      "invalid": 3,
+      "invalid_reasons": {
+        "INVALID_AMBIGUOUS_UNIT": 3
+      },
+      "cancelled": 2,
+      "vehicle_total": 1,
+      "pedestrian_total": 0
+    },
+    "actual_replayed_frame_history": [
+      0,
+      1450
+    ],
+    "source_scene_filtered_to_raw_tracks": [
+      1049,
+      1070,
+      1101,
+      1123
+    ],
+    "events": [
+      {
+        "track_id": 1101,
+        "physical_unit_id": "track:1101",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "ESTIMATED_TIMEOUT",
+        "decision_frame": 1445,
+        "measured_crossing": false,
+        "source_tracks": [
+          1101
+        ]
+      }
+    ]
+  },
+  {
+    "fixture": "handoff_recovery",
+    "branch": "reviewed",
+    "source_frame_window": [
+      0,
+      1450
+    ],
+    "aggregate": {
+      "total": 2,
+      "by_category": {
+        "motorcycle": 2
+      },
+      "by_direction": {
+        "A_TO_B": 2
+      },
+      "by_route": {
+        "ESTIMATED_TIMEOUT": 1,
+        "LINE_MARGIN": 1
+      },
+      "measured_total": 0,
+      "inferred_total": 2,
+      "pending": 0,
+      "invalid": 1,
+      "invalid_reasons": {
+        "INVALID_AMBIGUOUS_UNIT": 1
+      },
+      "cancelled": 0,
+      "vehicle_total": 2,
+      "pedestrian_total": 0
+    },
+    "actual_replayed_frame_history": [
+      0,
+      1450
+    ],
+    "source_scene_filtered_to_raw_tracks": [
+      1049,
+      1070,
+      1101,
+      1123
+    ],
+    "events": [
+      {
+        "track_id": 1123,
+        "physical_unit_id": "review:TGDI_SIANG:recovered_handoff_passage",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "decision_frame": 1396,
+        "measured_crossing": false,
+        "source_tracks": [
+          1049,
+          1123
+        ]
+      },
+      {
+        "track_id": 1101,
+        "physical_unit_id": "track:1101",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "ESTIMATED_TIMEOUT",
+        "decision_frame": 1445,
+        "measured_crossing": false,
+        "source_tracks": [
+          1101
+        ]
+      }
+    ]
+  }
+]

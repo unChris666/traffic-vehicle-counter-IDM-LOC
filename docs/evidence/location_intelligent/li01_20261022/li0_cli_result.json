@@ -1,0 +1,29 @@
+{
+  "diagnostics": [
+    {
+      "blocking": false,
+      "code": "FRESHNESS_UNKNOWN",
+      "message": "Freshness is unverified; offline does not automatically mean stale.",
+      "path": "manifest.sources[0]",
+      "severity": "UNKNOWN"
+    },
+    {
+      "blocking": false,
+      "code": "VALUE_UNKNOWN",
+      "message": "Value remains unknown; supply evidence before using it.",
+      "path": "manifest.sources[0].source_as_of",
+      "severity": "UNKNOWN"
+    }
+  ],
+  "limitations": [
+    "No source retrieval or live authorization check.",
+    "No payload geometry/schema, geographic coverage or calculation validation.",
+    "No capacity, routing, Recount, Traffic or PPAC readiness claim."
+  ],
+  "live_readiness": "NOT_VERIFIED",
+  "offline_readiness": "READY",
+  "readiness_scope": "LI1_BUILDING_SELECTION_INPUT_CONTRACT_ONLY",
+  "schema_version": "location_intelligent_validation_v1",
+  "validation_status": "VALID",
+  "verified_local_source_count": 1
+}

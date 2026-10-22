@@ -1,0 +1,23 @@
+{
+  "capacity_by_unit": null,
+  "capacity_status": "BLOCKED",
+  "limitations": [
+    "N1 technical location only, not TGDI",
+    "Provider critical columns/types validated; not exhaustive official JSON Schema validation",
+    "Null-subtype legacy residential fallback is not positive residential classification",
+    "Capacity estimates are split reference units, not observed population or final business demand"
+  ],
+  "motor_routing_executed_on_real_graph": false,
+  "null_subtype_selected_count": 0,
+  "observed_height_count": 0,
+  "observed_num_floors_count": 0,
+  "provider_schema_version": "2.0.0",
+  "raw_probe_rows": 2623,
+  "raw_probe_sha256": "807044614b4e338fb184f6ffc33c28f318de704f36c36745c08a2fd6ea75cf04",
+  "raw_probe_truncated": false,
+  "release": "2026-10-21.0",
+  "schema_validation_scope": "Consumed Parquet columns/types and downstream canonical geometry; not full official schema validation",
+  "selection_status": "BLOCKED",
+  "selection_summary": null,
+  "spatial_completeness_verified": false
+}

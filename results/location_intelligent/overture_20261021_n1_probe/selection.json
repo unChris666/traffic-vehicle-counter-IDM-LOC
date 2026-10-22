@@ -1,0 +1,58 @@
+{
+  "analysis_run_id": "li-overture-20261021-n1-technical-probe",
+  "diagnostics": [
+    {
+      "code": "LI0_GATE_BLOCKED",
+      "message": "Correct invalid or unavailable required LI-0 inputs first."
+    }
+  ],
+  "li0": {
+    "diagnostics": [
+      {
+        "blocking": false,
+        "code": "FRESHNESS_UNKNOWN",
+        "message": "Freshness is unverified; offline does not automatically mean stale.",
+        "path": "manifest.sources[0]",
+        "severity": "UNKNOWN"
+      },
+      {
+        "blocking": true,
+        "code": "SOURCE_COVERAGE_INCOMPLETE",
+        "message": "Resolve partial/unknown coverage before the offline input gate.",
+        "path": "manifest.sources[0]",
+        "severity": "BLOCKER"
+      },
+      {
+        "blocking": false,
+        "code": "VALUE_UNKNOWN",
+        "message": "Value remains unknown; supply evidence before using it.",
+        "path": "manifest.sources[0].source_as_of",
+        "severity": "UNKNOWN"
+      }
+    ],
+    "limitations": [
+      "No source retrieval or live authorization check.",
+      "No payload geometry/schema, geographic coverage or calculation validation.",
+      "No capacity, routing, Recount, Traffic or PPAC readiness claim."
+    ],
+    "live_readiness": "NOT_VERIFIED",
+    "offline_readiness": "BLOCKED",
+    "readiness_scope": "LI1_BUILDING_SELECTION_INPUT_CONTRACT_ONLY",
+    "schema_version": "location_intelligent_validation_v1",
+    "validation_status": "VALID",
+    "verified_local_source_count": 1
+  },
+  "limitations": [
+    "Reference building selection only; not routing/accessibility or capacity.",
+    "Declared coverage is not verified geographic completeness.",
+    "Synthetic fixtures do not validate live Overture integration."
+  ],
+  "live_readiness": "NOT_VERIFIED",
+  "reject_ledger": [],
+  "rule_version": "N1_BUILDING_SELECTION_V1",
+  "schema_version": "location_intelligent_building_selection_v1",
+  "selected": [],
+  "snapshot": null,
+  "status": "BLOCKED",
+  "summary": null
+}

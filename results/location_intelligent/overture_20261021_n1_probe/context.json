@@ -1,0 +1,36 @@
+{
+  "analysis_run_id": "li-overture-20261021-n1-technical-probe",
+  "config": {
+    "area_coverage": {
+      "metric_crs": "EPSG:32748",
+      "parameters": {
+        "building_radius_m": {
+          "unit": "m",
+          "value": 400.0
+        },
+        "max_area_m2": {
+          "unit": "m2",
+          "value": 550.0
+        },
+        "min_area_m2": {
+          "unit": "m2",
+          "value": 45.0
+        }
+      },
+      "unresolved_decisions": []
+    },
+    "version": "li1-fixture-config-1"
+  },
+  "context_hash": "66c96171c2942d7104aea5dfec4a1d5c74ad57f5c2f63fa37f6c84af08f0de9c",
+  "created_at": "2026-10-22T03:40:24.973406Z",
+  "parent_analysis_run_id": null,
+  "schema_version": "location_intelligent_v1",
+  "target": {
+    "crs": "EPSG:4326",
+    "latitude": -6.430669461543375,
+    "longitude": 106.8101931806858,
+    "store_code": "N1-TECHNICAL-PILOT",
+    "store_name": "Owner-approved N1 technical location; not TGDI",
+    "unknown_reasons": {}
+  }
+}

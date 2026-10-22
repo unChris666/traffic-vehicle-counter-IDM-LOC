@@ -1,0 +1,38 @@
+[
+  {
+    "group": "b_v7",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v7_handoff_tests phase_8_b_v7_counting_tests phase_8_b_v7_batch_tests",
+    "returncode": 0,
+    "tests": 51,
+    "wall_seconds": 3.870883183000842,
+    "status": "PASS",
+    "log": "b_v7_tests.log"
+  },
+  {
+    "group": "b_v6",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v6_identity_tests phase_8_b_v6_counting_tests phase_8_b_v6_batch_tests phase_8_b_v6_annotation_tests phase_9_v6_qc_review_tests",
+    "returncode": 0,
+    "tests": 81,
+    "wall_seconds": 1.7327978790017369,
+    "status": "PASS",
+    "log": "b_v6_tests.log"
+  },
+  {
+    "group": "b_v5",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_8_b_v5_identity_tests phase_8_b_v5_counting_tests phase_8_b_v5_batch_tests",
+    "returncode": 0,
+    "tests": 65,
+    "wall_seconds": 0.3504163099987636,
+    "status": "PASS",
+    "log": "b_v5_tests.log"
+  },
+  {
+    "group": "b_v7_comparison",
+    "command": "cd notebooks && /workspace/.venvs/traffic-inspection/bin/python -m unittest -v phase_9_v7_compare_tests",
+    "returncode": 0,
+    "tests": 14,
+    "wall_seconds": 0.16620645800139755,
+    "status": "PASS",
+    "log": "comparison_tests.log"
+  }
+]

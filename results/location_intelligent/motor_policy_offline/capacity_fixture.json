@@ -1,0 +1,103 @@
+{
+  "final_business_capacity": null,
+  "limitations": [
+    "Standard value4 has no approved household/population unit",
+    "Not observed occupancy; no mixed-unit total",
+    "Capacity describes selected buildings, not accessible buildings"
+  ],
+  "mixed_unit_total": null,
+  "policy_hash": "2af3f5c44cd31bba4455a7f5ec4b8d16f6cc96244b35dba4e1d887f000aba346",
+  "profile": "N1_SPLIT_REFERENCE_ONLY",
+  "rows": [
+    {
+      "building_id": "standard-100",
+      "building_type": "standard_residential",
+      "capacity_reference_rounded": 4,
+      "capacity_unrounded": 4,
+      "claim_type": "REFERENCE_ESTIMATE_NOT_OBSERVATION",
+      "gross_floor_area_m2": null,
+      "level": null,
+      "level_source": "UNKNOWN",
+      "occupied_units_or_rooms_unrounded": null,
+      "reason": "REFERENCE_FORMULA",
+      "unit": "N1_STANDARD_VALUE_UNIT_UNRESOLVED"
+    },
+    {
+      "building_id": "apartment-600",
+      "building_type": "apartment",
+      "capacity_reference_rounded": null,
+      "capacity_unrounded": null,
+      "claim_type": "REFERENCE_ESTIMATE_NOT_OBSERVATION",
+      "gross_floor_area_m2": null,
+      "level": null,
+      "level_source": "UNKNOWN",
+      "occupied_units_or_rooms_unrounded": null,
+      "reason": "MISSING_LEVEL",
+      "unit": "OCCUPIED_DWELLING_UNITS_ESTIMATED"
+    },
+    {
+      "building_id": "dormitory-600",
+      "building_type": "dormitory",
+      "capacity_reference_rounded": null,
+      "capacity_unrounded": null,
+      "claim_type": "REFERENCE_ESTIMATE_NOT_OBSERVATION",
+      "gross_floor_area_m2": null,
+      "level": null,
+      "level_source": "UNKNOWN",
+      "occupied_units_or_rooms_unrounded": null,
+      "reason": "MISSING_LEVEL",
+      "unit": "OCCUPIED_ROOMS_ESTIMATED"
+    },
+    {
+      "building_id": "hotel-700",
+      "building_type": "hotel",
+      "capacity_reference_rounded": null,
+      "capacity_unrounded": null,
+      "claim_type": "REFERENCE_ESTIMATE_NOT_OBSERVATION",
+      "gross_floor_area_m2": null,
+      "level": null,
+      "level_source": "UNKNOWN",
+      "occupied_units_or_rooms_unrounded": null,
+      "reason": "MISSING_LEVEL",
+      "unit": "GUESTS_ESTIMATED"
+    },
+    {
+      "building_id": "legacy-fallback",
+      "building_type": "standard_residential",
+      "capacity_reference_rounded": 4,
+      "capacity_unrounded": 4,
+      "claim_type": "REFERENCE_ESTIMATE_NOT_OBSERVATION",
+      "gross_floor_area_m2": null,
+      "level": null,
+      "level_source": "UNKNOWN",
+      "occupied_units_or_rooms_unrounded": null,
+      "reason": "REFERENCE_FORMULA",
+      "unit": "N1_STANDARD_VALUE_UNIT_UNRESOLVED"
+    }
+  ],
+  "schema_version": "li_capacity_reference_v1",
+  "selection_hash": "073a6bacb168f119b6e191dd6b76a56a8161aee41a88af6e234f24bdc96b8716",
+  "status": "PARTIAL",
+  "summary_by_unit": {
+    "GUESTS_ESTIMATED": {
+      "buildings": 1,
+      "known_subtotal": 0,
+      "unknown_buildings": 1
+    },
+    "N1_STANDARD_VALUE_UNIT_UNRESOLVED": {
+      "buildings": 2,
+      "known_subtotal": 8,
+      "unknown_buildings": 0
+    },
+    "OCCUPIED_DWELLING_UNITS_ESTIMATED": {
+      "buildings": 1,
+      "known_subtotal": 0,
+      "unknown_buildings": 1
+    },
+    "OCCUPIED_ROOMS_ESTIMATED": {
+      "buildings": 1,
+      "known_subtotal": 0,
+      "unknown_buildings": 1
+    }
+  }
+}

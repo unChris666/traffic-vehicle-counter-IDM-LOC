@@ -1,0 +1,52 @@
+{
+  "tests": [
+    {
+      "command": [
+        "/workspace/.venvs/traffic-inspection/bin/python",
+        "-m",
+        "unittest",
+        "phase_8_b_v4_identity_tests",
+        "phase_8_b_v4_counting_tests",
+        "phase_8_b_v4_batch_tests",
+        "phase_8_b_v4_annotation_tests"
+      ],
+      "returncode": 0,
+      "log": "results/b_v4/verification/tests-1.log",
+      "sha256": "32d48ba94e7aeed5dd3810f0788ca9b0dd8f490fd0cb5efe85345222b1aae14d"
+    },
+    {
+      "command": [
+        "/workspace/.venvs/traffic-inspection/bin/python",
+        "-m",
+        "unittest",
+        "phase_8_b_v3_counting_tests",
+        "phase_8_b_v3_batch_tests",
+        "phase_8_b_v3_annotation_tests",
+        "phase_8_b_v2_counting_tests",
+        "phase_8_b_v2_batch_tests",
+        "phase_8_b_v2_annotation_tests"
+      ],
+      "returncode": 0,
+      "log": "results/b_v4/verification/tests-2.log",
+      "sha256": "6cd9d7114dfc894e18ac6f993e2d07b5fd29cf12bfd0a3ba0b2749345218d40d"
+    },
+    {
+      "notebook_cells_compile": "PASS"
+    }
+  ],
+  "b_v3_executables_unchanged": {
+    "phase_8_b_v3_counting.py": "29cb1bdfd0ab27acd6a16c648ba711e6c90eeaa5807591360bad71d880a618d7",
+    "phase_8_b_v3_batch.py": "d499d29bd6140da5d423266da85c85552513fbe44d1538e2dbe97b8a8e9a74dd",
+    "phase_8_b_v3_annotation.py": "ca78f5d109e66ea4d0256f52078225d15836889ea42bc85ccab6bc5331537ea5"
+  },
+  "new_source_sha256": {
+    "phase_8_b_v4_annotation.py": "22b28bf14653aef98293431ad91000450a6aab6a09014525d02e6ef4b39a4b86",
+    "phase_8_b_v4_annotation_tests.py": "b0b115c964318baf641b5f207f81864efd69ca74996fc05956a1066932b9695d",
+    "phase_8_b_v4_batch.py": "7367caaf3f905eefe4fcef043486f5e088d07d128846d9963833f67c71a86531",
+    "phase_8_b_v4_batch_tests.py": "2bb49608f294bd4ab07b859dc47e6ab4f8b92f0edea6883a09584d9750ce34db",
+    "phase_8_b_v4_counting.py": "569a7735642f4ba50f1b345c5b6516c1353893edcfd88360e5194e1b29913976",
+    "phase_8_b_v4_counting_tests.py": "989770642299f52ed8ee196b04b55ed02ba1f3e809436a96f947eeca987665de",
+    "phase_8_b_v4_identity.py": "9fc016fad87e8259181160aa503969daf6e8315202dbb208ed04876a8953f405",
+    "phase_8_b_v4_identity_tests.py": "d29f13178528721f11643cf2956733dd9886226f574ffd3babb376e1341dfa5f"
+  }
+}

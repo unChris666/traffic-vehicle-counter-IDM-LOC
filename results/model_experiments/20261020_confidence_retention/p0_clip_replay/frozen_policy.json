@@ -1,0 +1,117 @@
+{
+  "base_b_v2_policy_sha256": "9cb4279c6e17f0f725f67e1a75fdaeb0d1b3fc9106378440be0de4fbc3b0522f",
+  "base_b_v3_policy_sha256": "59b8d34ceed6a7d4c910f891b6ab6464a2283b10a26c6050eb58d950dfb4b64a",
+  "base_b_v4_policy_sha256": "36950946d5de4e8588c1e596c16aa46df16ce2073b1395b18d2e66f9696cc898",
+  "category_policy": "band_majority_ties_pending",
+  "component_policy": "RETAINED_SUPPORTED_COMPONENT_OF_LOCAL_FRAMES_DISPLAY_UNION_RAW_VEHICLE_BC",
+  "display_category_prefixes": {
+    "car": "C",
+    "motorcycle": "M",
+    "pedestrian": "P",
+    "truck": "T"
+  },
+  "eligibility": {
+    "current_observation_guard": "NO_TIMEOUT_WHILE_CURRENT_MEASUREMENT_REMAINS_VISIBLE",
+    "finite_projection_required": true,
+    "min_contiguous_observations": 3,
+    "min_toward_progress_px": 25.0,
+    "numeric_provenance": "25px reuses current native640 margin; 3 observations is an explicit new research control, not a tuned default",
+    "progress_basis": "NET_DISPLACEMENT_OVER_CONTIGUOUS_MEASURED_SOURCE_FRAMES",
+    "schema_version": "phase8_b_v4_eligibility_policy_v1",
+    "status": "EXPERIMENTAL_CANDIDATE_NOT_VALIDATED_PRODUCTION_DEFAULT"
+  },
+  "execution": "OFFLINE_REPLAY_FROZEN_MODEL_CACHE_NO_INFERENCE",
+  "identity": {
+    "appearance_features_used": false,
+    "automatic_handoff": "DISABLED_WITHOUT_POSITIVE_SOURCE_BOUND_ASSOCIATION",
+    "category_is_identity_gate": false,
+    "component_bc_inside_fraction": 1.0,
+    "component_center_limit": 0.51,
+    "component_motion_limit": 0.15,
+    "component_motion_profile": "median_temporal_v1",
+    "control_provenance": {
+      "component_controls": "FROZEN_PHASE8_COMPONENT_3_0.15_1.0_0.51_REUSED",
+      "component_motion_profile": "NEW_PROPOSAL_MEDIAN_VS_RETAINED_MAX_ABLATION",
+      "max_center_jump_norm": "NEW_PROPOSAL_CONTEXT_DISCONTINUITY_CONTROL_NOT_IDENTITY_PROOF",
+      "max_unobserved_frames": "EXISTING_TIMEOUT_HORIZON_REUSED_AS_EXPERIMENT_NOT_VALIDATED_IDENTITY_LIFECYCLE",
+      "possible_handoff_controls": "FROZEN_SAME_VEHICLE_CENTER_0.1_IOU_0.59_REUSED_FOR_HOLD_ONLY"
+    },
+    "cross_category_candidate_policy": "EXACT_FRAME_HIGH_IOU_HOLDS_WEAK_COVARIATION_AUDIT_ONLY",
+    "cross_category_candidate_profile": "p0_v2_high_iou_hold_weak_covariation_audit",
+    "historical_unit_policy": "HYPOTHESIS_ONLY_ISOLATE_RAW_CONTEXT_UNTIL_SCOPED_POSITIVE_PROOF",
+    "max_center_jump_norm": 1.0,
+    "max_unobserved_frames": 60,
+    "min_component_run": 3,
+    "negative_relation_policy": "DISJOINT_COPRESENCE_IS_A_CONSTRAINT_NOT_GLOBAL_PHYSICAL_TRUTH",
+    "possible_handoff_center_limit": 0.1,
+    "possible_handoff_min_iou": 0.59,
+    "role_propagation": "EXACT_OBSERVED_CONSECUTIVE_SUPPORTED_RUN_ONLY",
+    "same_unit_scope": "EXACT_FRAME_PROOF_OR_SOURCE_BOUND_REVIEW_NO_RETROACTIVE_ASSIGNMENT",
+    "schema_version": "phase8_b_v5_identity_policy_v1",
+    "status": "EXPERIMENTAL_CANDIDATE_NOT_VALIDATED_PRODUCTION_DEFAULT",
+    "unknown_person_is_pedestrian": false
+  },
+  "identity_policy": "SOURCE_FRAME_BOUND_USER_REVIEW_ELSE_RETAINED_CLIQUE_OPERATIONAL_ASSUMPTION",
+  "line_margin_half_width_px": 25.0,
+  "p0_counting": {
+    "anchor_quality": "WHOLE_BOX_TOWARD_SUPPORT_OVER_CONTIGUOUS_RUN",
+    "apply_inferred_anchor_guard": true,
+    "apply_measured_anchor_guard": false,
+    "band_born_route": "UNCHANGED_OPEN_P1",
+    "category_conflict": "PENDING_NOT_ARBITRARY_CATEGORY_WINNER",
+    "finalization": "VERIFIED_EPISODE_SCOPED_RELATIONS_ONLY",
+    "minimum_corner_progress_px_for_measured": 0.0,
+    "relation_support": "WITHIN_BOTH_CANDIDATE_WINDOWS_NO_FUTURE_BACKPROPAGATION",
+    "schema_version": "phase8_b_v5_p0_counting_policy_v1",
+    "status": "EXPERIMENTAL_RESEARCH_NOT_PRODUCTION_VALIDATED",
+    "timeout_corner_progress": "REUSE_EXPLICIT_ELIGIBILITY_DISPLACEMENT"
+  },
+  "passage_display_id": {
+    "bus_prefix": "OPEN_UNDEFINED",
+    "digits": 4,
+    "first_digit_A_TO_B": [
+      2,
+      4,
+      6,
+      8
+    ],
+    "first_digit_B_TO_A": [
+      1,
+      3,
+      5,
+      7,
+      9
+    ],
+    "leading_zero": false,
+    "prefixes": {
+      "car": "C",
+      "motorcycle": "M",
+      "pedestrian": "P",
+      "truck": "T"
+    },
+    "scope": "PER_VIDEO_PASSAGE_NOT_PHYSICAL_IDENTITY"
+  },
+  "pedestrian_route_policy_status": "CONSERVATIVE_RESEARCH_CONTROL_PENDING_USER_PREFERENCE_NOT_IMPLIED_APPROVAL",
+  "pedestrian_routes": "measured_only",
+  "person_role_policy": "POSITIVE_PEDESTRIAN_ONLY_RIDER_PLUS_ZERO_UNKNOWN_ROLE_QUEUE",
+  "policy_version": "phase9_p0_research_v1",
+  "qc_adjudications_used_as_machine_predictions": false,
+  "return_policy": "NEW_MEASURED_REVERSE_PASSAGE_ALLOWED",
+  "return_timeout_policy": "require_new_passage_evidence",
+  "return_timeout_policy_status": "CONSERVATIVE_RESEARCH_CONTROL_PENDING_USER_PREFERENCE_NOT_IMPLIED_APPROVAL",
+  "schema_version": "phase8_b_v5_p0_policy_v1",
+  "selected_profile": "p0_v2_strong_conflict_holds_measured_bc_unchanged",
+  "selection_basis": "v1 cross-category false holds and whole-box measured-guard regressions reviewed on actual source; no claim production optimum",
+  "source_template_sha256": "13f774f029c4d5e724d24ffb5fb6767b8cd62d96d3b1431e76bc0b849f9a064f",
+  "status": "EXPERIMENTAL_NOT_PRODUCTION_VALIDATED",
+  "supported_categories": [
+    "motorcycle",
+    "car",
+    "truck",
+    "pedestrian"
+  ],
+  "timeout_clock": "last_observed_origin",
+  "timeout_evidence_kind": "ESTIMATED_TIMEOUT_NOT_PROVEN_ID_CHANGE",
+  "timeout_frames": 60,
+  "user_timer_clarification": "Sejak terakhir terlihat di polygon asal"
+}

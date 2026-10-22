@@ -1,0 +1,32 @@
+{
+  "path": "/workspace/traffic-vehicle-counter-IDM-LOC/results/b_v7/execution/pilot_v7_machine_final/weekday_siang/counting_result.json.gz",
+  "sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "branch": "machine",
+  "aggregate": {
+    "total": 72,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 69,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 26,
+      "B_TO_A": 46
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 4,
+      "LINE_MARGIN": 68
+    },
+    "measured_total": 66,
+    "inferred_total": 6,
+    "pending": 24,
+    "invalid": 86,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 86
+    },
+    "cancelled": 52,
+    "vehicle_total": 72,
+    "pedestrian_total": 0
+  },
+  "replayed_in_p1": false
+}

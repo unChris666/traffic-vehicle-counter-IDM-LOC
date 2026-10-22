@@ -1,0 +1,753 @@
+{
+  "audit_id": "20261020_QC_BV4_SIANG",
+  "video_id": "weekday_siang",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "baseline_aggregate": {
+    "total": 172,
+    "by_category": {
+      "car": 16,
+      "motorcycle": 146,
+      "truck": 10
+    },
+    "by_direction": {
+      "A_TO_B": 78,
+      "B_TO_A": 94
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 34,
+      "LINE_MARGIN": 138
+    },
+    "measured_total": 121,
+    "inferred_total": 51,
+    "pending": 68,
+    "cancelled": 0,
+    "vehicle_total": 172,
+    "pedestrian_total": 0
+  },
+  "input_artifacts": [
+    {
+      "path": "/tmp/qc-source/TGDI-WEEKDAY-SIANG.mp4",
+      "sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+      "bytes": 51188204,
+      "readiness": "VERIFIED"
+    },
+    {
+      "path": "/tmp/qc-donor/phase_8_tgdi_research/20261015T083731_664817Z/weekday_siang/track_records.jsonl.gz",
+      "sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b",
+      "bytes": 14972230,
+      "readiness": "VERIFIED"
+    },
+    {
+      "path": "results/b_v4/README.md",
+      "sha256": "1cf9c0000720c5541c82c8a57b99126f85e8b94de76018b5d35bbffa1ac4f171",
+      "bytes": 2275,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/REVIEW_360.md",
+      "sha256": "c643adc082fe63d8c8dc0a9d12419d1a2225421bbd60b89b567b30982855067a",
+      "bytes": 10685,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/artifact_manifest.json",
+      "sha256": "11d66da3ca63bc592dcbe8acb43ac2479978a900677c1fe70890f9c4c376d213",
+      "bytes": 30149,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/config/policy.json",
+      "sha256": "36950946d5de4e8588c1e596c16aa46df16ce2073b1395b18d2e66f9696cc898",
+      "bytes": 3883,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/config/policy_retained_max_ablation.json",
+      "sha256": "eeef02137a759720c2599f702ee12793e011cef6fe49f73cf4d68941f9c39b26",
+      "bytes": 3882,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/base_review_decisions.json.gz",
+      "sha256": "89c3fd328e5ee2183cc790557a84ced8da767bf7ed417213747220e66269473e",
+      "bytes": 4311,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/batch_report.json.gz",
+      "sha256": "43777e44597504f6af569d5c20e273e12b673abee336781ad605b9e3436188ef",
+      "bytes": 4021,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/policy.json.gz",
+      "sha256": "988daed4b7a767c15150c2940220066338aac3d2646d8b7ab8ff46b59d9bb339",
+      "bytes": 1835,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/retention_manifest.json.gz",
+      "sha256": "fec931a4b89d3ba9c2b6adab222cdfedd1f8cf6a6d0c635b4c7b403872dce2aa",
+      "bytes": 1839,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/08d_episode_eligibility_role_replay.ipynb.gz",
+      "sha256": "ab9912ce29490455bd166bbfcbfd04cd91c29116729f3605b2c5940e656af99c",
+      "bytes": 3088,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_5_geometry_helpers.py.gz",
+      "sha256": "be05fe910c84e0bee19435a937853118ca37274ebfc1df429af46eb2fe57080a",
+      "bytes": 8010,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_annotation_batch.py.gz",
+      "sha256": "ebad5488594f1782a9436719cc8b734652dd7e144f8596f1dda42309c01adb07",
+      "bytes": 7506,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_annotation_helpers.py.gz",
+      "sha256": "cdd2bac3bd201a00b193e04783f64d1bacef9f1769251d69af650e6daa07a880",
+      "bytes": 12429,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "sha256": "446f64e4c1a66d6a1049ef0a4025016f3edba094fcef795f4cbfa6d43c1292cc",
+      "bytes": 9220,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v2_batch.py.gz",
+      "sha256": "4d92c618b40b20b00cb41080784029cc4efa52d6eaffc07546715da98128ff54",
+      "bytes": 5694,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v2_counting.py.gz",
+      "sha256": "f9b604c5f87e55ff7d1d69834478e01ca6f93e8f91cd37bbbabd7c6b718fd5c6",
+      "bytes": 8508,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v3_annotation.py.gz",
+      "sha256": "7660a7cd958790fbf370a51c8833bec0a36e10389d69bde8d67fdfcfe5e28d0e",
+      "bytes": 11422,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v3_batch.py.gz",
+      "sha256": "9b6a769f591ed3132e6e700439ce858c205cc6ae0afe09a472ab32d2cf7c0ec6",
+      "bytes": 9432,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v3_counting.py.gz",
+      "sha256": "3827c30b2f3e9c587afbe3a26f6e20b00842af3d8a941d480cf30d562ee02b2d",
+      "bytes": 11180,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v4_annotation.py.gz",
+      "sha256": "de5f8f9a10c4d9095e096c1f5c6345ffe33df39cef85661f9ba9d10eea0dc269",
+      "bytes": 10339,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v4_batch.py.gz",
+      "sha256": "63078b663f227d212801a0ea65b63162c9f349569b4de4186d49e4a01572f67e",
+      "bytes": 7305,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v4_counting.py.gz",
+      "sha256": "a828c9ffc2188569898eb24119d8b2f876eca45acdcc958103a5c979c976338a",
+      "bytes": 13445,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot/phase_8_b_v4_identity.py.gz",
+      "sha256": "90b0ac23a453eab95db1035ab2276d085cb73dd8497e46dd529e6e6abb7f7639",
+      "bytes": 8362,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/source_snapshot.json.gz",
+      "sha256": "65020967ead8141e298f9457ccd649b3f697f52b00bc9d73cf4e0ad07042b334",
+      "bytes": 992,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/adapter_audit.json.gz",
+      "sha256": "c726589dcf67ca9c3ff086f79a0be9b07f4b5d4a5b5e0d76a68ab10185f17532",
+      "bytes": 8565,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/alias_context_audit.json.gz",
+      "sha256": "875f60f9febbc2590971472657cbde8b8c67f5a0f1ba825b404024147303f538",
+      "bytes": 568,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/comparison_b_v3.json.gz",
+      "sha256": "6943bc137e5ce89758047c4654d23aca486595e99de5434378137c3ae1bef98c",
+      "bytes": 47515,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/counting_result.json.gz",
+      "sha256": "f1d77e9aef58186552eec638c8bf49ecf2663c02d347e1ab7108c05e912031de",
+      "bytes": 6281649,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/eligibility_audit.json.gz",
+      "sha256": "8735514f9be0e84a5bec0f0f498fc1dc2cdb368e7bd764f029fc144b7f8eaf4a",
+      "bytes": 5220561,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/episode_audit.json.gz",
+      "sha256": "fae8fb9d89798a7aa2489eb16f1a700f300b7372428cf01ba1ce3d91265c7809",
+      "bytes": 122989,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/frame_assignments.json.gz",
+      "sha256": "c4f0f755e771b3f3492d3c7d2a26ec8e621ba5a5989bdc36a9f8be951774b120",
+      "bytes": 603771,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/geometry.json.gz",
+      "sha256": "7f8c21fa4770f5e5b499eb1121302ead2c5cd2beedd64f54150cd8225fbec71f",
+      "bytes": 1715,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/handoff_audit.json.gz",
+      "sha256": "b0434003ec0d7c8715cdb306d1a3213a95a3051e4d6f8585ef1502d354194ca1",
+      "bytes": 61513,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/pending_groups.json.gz",
+      "sha256": "01d4d8b663563c9d7020123e673d07e984fd5e19eb7f481b2bb7f1724f776801",
+      "bytes": 1813,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/person_role_review_queue.json.gz",
+      "sha256": "a5113d8aadb3956ed796ea49db2c97a0dc5800133565a81d8ada14b852122307",
+      "bytes": 10687,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_machine_final/weekday_siang/role_audit.json.gz",
+      "sha256": "5b0763b84f7ce6126789ff0b53a5ed6e59f821cc80ca9ddfdcb072f771484c11",
+      "bytes": 132097,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/base_review_decisions.json.gz",
+      "sha256": "89c3fd328e5ee2183cc790557a84ced8da767bf7ed417213747220e66269473e",
+      "bytes": 4311,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/batch_report.json.gz",
+      "sha256": "90fc5a142c478798021d0b98ccb9313c97b9632ee8b5f5064bdf3227383cba8d",
+      "bytes": 4031,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/policy.json.gz",
+      "sha256": "c7358090c2d536ca9698bb08bbb5c9414191e6e03e3779e520267a01f3f76a03",
+      "bytes": 1833,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/retention_manifest.json.gz",
+      "sha256": "136fa9c7088f5a55ecbddfec9ea871e6810ba66be2ce53820ec3c026b102b69f",
+      "bytes": 1838,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/08d_episode_eligibility_role_replay.ipynb.gz",
+      "sha256": "ab9912ce29490455bd166bbfcbfd04cd91c29116729f3605b2c5940e656af99c",
+      "bytes": 3088,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_5_geometry_helpers.py.gz",
+      "sha256": "be05fe910c84e0bee19435a937853118ca37274ebfc1df429af46eb2fe57080a",
+      "bytes": 8010,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_annotation_batch.py.gz",
+      "sha256": "ebad5488594f1782a9436719cc8b734652dd7e144f8596f1dda42309c01adb07",
+      "bytes": 7506,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_annotation_helpers.py.gz",
+      "sha256": "cdd2bac3bd201a00b193e04783f64d1bacef9f1769251d69af650e6daa07a880",
+      "bytes": 12429,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "sha256": "446f64e4c1a66d6a1049ef0a4025016f3edba094fcef795f4cbfa6d43c1292cc",
+      "bytes": 9220,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v2_batch.py.gz",
+      "sha256": "4d92c618b40b20b00cb41080784029cc4efa52d6eaffc07546715da98128ff54",
+      "bytes": 5694,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v2_counting.py.gz",
+      "sha256": "f9b604c5f87e55ff7d1d69834478e01ca6f93e8f91cd37bbbabd7c6b718fd5c6",
+      "bytes": 8508,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v3_annotation.py.gz",
+      "sha256": "7660a7cd958790fbf370a51c8833bec0a36e10389d69bde8d67fdfcfe5e28d0e",
+      "bytes": 11422,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v3_batch.py.gz",
+      "sha256": "9b6a769f591ed3132e6e700439ce858c205cc6ae0afe09a472ab32d2cf7c0ec6",
+      "bytes": 9432,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v3_counting.py.gz",
+      "sha256": "3827c30b2f3e9c587afbe3a26f6e20b00842af3d8a941d480cf30d562ee02b2d",
+      "bytes": 11180,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v4_annotation.py.gz",
+      "sha256": "de5f8f9a10c4d9095e096c1f5c6345ffe33df39cef85661f9ba9d10eea0dc269",
+      "bytes": 10339,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v4_batch.py.gz",
+      "sha256": "63078b663f227d212801a0ea65b63162c9f349569b4de4186d49e4a01572f67e",
+      "bytes": 7305,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v4_counting.py.gz",
+      "sha256": "a828c9ffc2188569898eb24119d8b2f876eca45acdcc958103a5c979c976338a",
+      "bytes": 13445,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot/phase_8_b_v4_identity.py.gz",
+      "sha256": "90b0ac23a453eab95db1035ab2276d085cb73dd8497e46dd529e6e6abb7f7639",
+      "bytes": 8362,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/source_snapshot.json.gz",
+      "sha256": "65020967ead8141e298f9457ccd649b3f697f52b00bc9d73cf4e0ad07042b334",
+      "bytes": 992,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/adapter_audit.json.gz",
+      "sha256": "c726589dcf67ca9c3ff086f79a0be9b07f4b5d4a5b5e0d76a68ab10185f17532",
+      "bytes": 8565,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/alias_context_audit.json.gz",
+      "sha256": "c6085b11b02f5df2259b2e02e0a76fb6b176a07c98a066c32108301dedab91e0",
+      "bytes": 515,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/comparison_b_v3.json.gz",
+      "sha256": "c88a7ae58927770fba3c6d41782c119657e12a05214a040eba59a56ee6d9a1c9",
+      "bytes": 47516,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/counting_result.json.gz",
+      "sha256": "f0f751ecd2b44a2cc02088bf30804bfe86ae48556f52d0c35bb9d244c25e9ed5",
+      "bytes": 6360697,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/eligibility_audit.json.gz",
+      "sha256": "7ad55d4b7d53d3dbdcd05844aeaedc68d85ba89bf6712904b53dc9961b3cc36a",
+      "bytes": 5309635,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/episode_audit.json.gz",
+      "sha256": "bab9ab39ecddba5d0933fec84e89f31c9fb48f21efcb1af70f173e5f0bf34091",
+      "bytes": 121035,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/frame_assignments.json.gz",
+      "sha256": "5755a6fffea09466af52f599827b39935d89dee63da28a711972e1d7430a9528",
+      "bytes": 591816,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/geometry.json.gz",
+      "sha256": "7f8c21fa4770f5e5b499eb1121302ead2c5cd2beedd64f54150cd8225fbec71f",
+      "bytes": 1715,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/handoff_audit.json.gz",
+      "sha256": "6af736b53e3fa9d35707756b38c8234437bed2cc22e693bc7c1a404693cbd87a",
+      "bytes": 61015,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/pending_groups.json.gz",
+      "sha256": "eafbbc0aa201a5a32c1bba440e04d15d7a4cef6497699a42d4584c3f6a440902",
+      "bytes": 2199,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/person_role_review_queue.json.gz",
+      "sha256": "85830be37c0c8de856af597300f701c01c782680dfdedb44f36c3b12a4caa4c6",
+      "bytes": 10823,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_max_final/weekday_siang/role_audit.json.gz",
+      "sha256": "30d51709fe8e78a647b43701ef9a401cee39556030add5e788d2aada97aa65b1",
+      "bytes": 131701,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/base_review_decisions.json.gz",
+      "sha256": "89c3fd328e5ee2183cc790557a84ced8da767bf7ed417213747220e66269473e",
+      "bytes": 4311,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/batch_report.json.gz",
+      "sha256": "379a50eca96237e1161bcaed24819eeabfe98a9cc6fc77e8e02ab69140d2e3ef",
+      "bytes": 4072,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/policy.json.gz",
+      "sha256": "2184d60b41072050dda27bbc75a25b8bb7b2b89560ab795696f549f9cacda1dd",
+      "bytes": 1880,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/retention_manifest.json.gz",
+      "sha256": "a727aede8c013ce584e83a25f3b9fce760418fcac36c99cbc1c411e5c807908b",
+      "bytes": 1901,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/review_overlay.json.gz",
+      "sha256": "9e83c99dbac8ae6cc34397acc1d230eed8962e65e25fdd1c92a438770ef0170e",
+      "bytes": 1583,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/08d_episode_eligibility_role_replay.ipynb.gz",
+      "sha256": "ab9912ce29490455bd166bbfcbfd04cd91c29116729f3605b2c5940e656af99c",
+      "bytes": 3088,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_5_geometry_helpers.py.gz",
+      "sha256": "be05fe910c84e0bee19435a937853118ca37274ebfc1df429af46eb2fe57080a",
+      "bytes": 8010,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_annotation_batch.py.gz",
+      "sha256": "ebad5488594f1782a9436719cc8b734652dd7e144f8596f1dda42309c01adb07",
+      "bytes": 7506,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_annotation_helpers.py.gz",
+      "sha256": "cdd2bac3bd201a00b193e04783f64d1bacef9f1769251d69af650e6daa07a880",
+      "bytes": 12429,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v2_annotation.py.gz",
+      "sha256": "446f64e4c1a66d6a1049ef0a4025016f3edba094fcef795f4cbfa6d43c1292cc",
+      "bytes": 9220,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v2_batch.py.gz",
+      "sha256": "4d92c618b40b20b00cb41080784029cc4efa52d6eaffc07546715da98128ff54",
+      "bytes": 5694,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v2_counting.py.gz",
+      "sha256": "f9b604c5f87e55ff7d1d69834478e01ca6f93e8f91cd37bbbabd7c6b718fd5c6",
+      "bytes": 8508,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v3_annotation.py.gz",
+      "sha256": "7660a7cd958790fbf370a51c8833bec0a36e10389d69bde8d67fdfcfe5e28d0e",
+      "bytes": 11422,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v3_batch.py.gz",
+      "sha256": "9b6a769f591ed3132e6e700439ce858c205cc6ae0afe09a472ab32d2cf7c0ec6",
+      "bytes": 9432,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v3_counting.py.gz",
+      "sha256": "3827c30b2f3e9c587afbe3a26f6e20b00842af3d8a941d480cf30d562ee02b2d",
+      "bytes": 11180,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v4_annotation.py.gz",
+      "sha256": "de5f8f9a10c4d9095e096c1f5c6345ffe33df39cef85661f9ba9d10eea0dc269",
+      "bytes": 10339,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v4_batch.py.gz",
+      "sha256": "63078b663f227d212801a0ea65b63162c9f349569b4de4186d49e4a01572f67e",
+      "bytes": 7305,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v4_counting.py.gz",
+      "sha256": "a828c9ffc2188569898eb24119d8b2f876eca45acdcc958103a5c979c976338a",
+      "bytes": 13445,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot/phase_8_b_v4_identity.py.gz",
+      "sha256": "90b0ac23a453eab95db1035ab2276d085cb73dd8497e46dd529e6e6abb7f7639",
+      "bytes": 8362,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/source_snapshot.json.gz",
+      "sha256": "65020967ead8141e298f9457ccd649b3f697f52b00bc9d73cf4e0ad07042b334",
+      "bytes": 992,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/adapter_audit.json.gz",
+      "sha256": "7b3081e1f79ddfcceced873545df273cf8519c447b96b7aac6548801de71e62c",
+      "bytes": 8664,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/alias_context_audit.json.gz",
+      "sha256": "875f60f9febbc2590971472657cbde8b8c67f5a0f1ba825b404024147303f538",
+      "bytes": 568,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/comparison_b_v3.json.gz",
+      "sha256": "8d07e05d73b3bdb563e98a0ec858fe352e4defbb81bbbcdfa779ba8ec01a2c26",
+      "bytes": 47682,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/counting_result.json.gz",
+      "sha256": "20ce35bd3d38cb3afbde49203528d4ced8d87b5d263ee09ea27f0844d184d827",
+      "bytes": 6367393,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/eligibility_audit.json.gz",
+      "sha256": "58e084c008d7bb2396f88305ede8d8e8090b58d590c65a3448508aada00a2486",
+      "bytes": 5302857,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/episode_audit.json.gz",
+      "sha256": "73bf54bed9bee2d046789f8c25b761bde092de3244ac3bbbd3e8c9d3913f4e72",
+      "bytes": 123120,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/frame_assignments.json.gz",
+      "sha256": "2953f979aa691f097a7b935df4971a4017de841456d48b2c13b94c07faecab41",
+      "bytes": 605498,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/geometry.json.gz",
+      "sha256": "7f8c21fa4770f5e5b499eb1121302ead2c5cd2beedd64f54150cd8225fbec71f",
+      "bytes": 1715,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/handoff_audit.json.gz",
+      "sha256": "b0434003ec0d7c8715cdb306d1a3213a95a3051e4d6f8585ef1502d354194ca1",
+      "bytes": 61513,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/pending_groups.json.gz",
+      "sha256": "09e52185e964d04723ed3a70f7fc7e7a03606b6389080b45d668d2c49e66a0b0",
+      "bytes": 1807,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/person_role_review_queue.json.gz",
+      "sha256": "1abb7a64bea235009c6ccb107d7eee7ce96958bed5f28386d60a010616759e8b",
+      "bytes": 10690,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/pilot_review_final/weekday_siang/role_audit.json.gz",
+      "sha256": "5b0763b84f7ce6126789ff0b53a5ed6e59f821cc80ca9ddfdcb072f771484c11",
+      "bytes": 132097,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/execution/retained_bytes_manifest.json",
+      "sha256": "275976871d98f16cd62e1092ace8bae6b5174067c69f068c181a83e45bc5837e",
+      "bytes": 47281,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/input/review_decisions.json",
+      "sha256": "1e926a497858ec16eadb33c6173c1f08a0ad920f4eecbbcbac2e2e69e9dabf0b",
+      "bytes": 6582,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/previews/manifest.json",
+      "sha256": "b15aacc104cee362a8165ea92a064c8f4858883b1a5dac92093669b6d3111e0c",
+      "bytes": 33584,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/previews/pilot_machine_final-frame-000226.png",
+      "sha256": "56bae62686bad61a1a06bb1e16f7b1a1abf9d0eb17763f35caac1f2bc902392e",
+      "bytes": 668519,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/previews/pilot_machine_final-frame-000273.png",
+      "sha256": "770deb6fb7ae27d34c8961308f0762060a4be07701f2bac87edd739204b3b094",
+      "bytes": 659327,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/previews/pilot_machine_final-frame-001089.png",
+      "sha256": "5c45c291e4c16fe3e3c1dbc30654745fb7a9be8b86bfd46a1161ec764a57b790",
+      "bytes": 686860,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/previews/pilot_machine_final-frame-005003.png",
+      "sha256": "2f26c7132ac62be3cccdcdf689d39fc1e511e2288f32652ac19167a65f5bf46d",
+      "bytes": 696953,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/previews/pilot_review_final-frame-000127.png",
+      "sha256": "97ef7a6b96d22e5dba27f254b817aba4393f0e33939e66e6e9199a3baeecb9ff",
+      "bytes": 668548,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/review/pending_case_groups.csv",
+      "sha256": "63eddd00fbd0161fc331f9bd0ab3338bbcfaf8cdd5506b80c0204afd551850a9",
+      "bytes": 821,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/verification/comparison_summary.json",
+      "sha256": "6d99bd153805398f8efeac5466028a9e960193565825668cb03adc3298f2110c",
+      "bytes": 11049,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/verification/phase9_evidence_preservation.json",
+      "sha256": "f79c8ee40b2db59e9ecd4ef26948563cf40e9ee54cba97a8ac3ef1603e57363b",
+      "bytes": 3100,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/verification/retained_bytes_validation.json",
+      "sha256": "d94332ddfb70dd21ca0073a961dddb254e21f73f85b2e32b600d50cfa1765eeb",
+      "bytes": 70,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/verification/software_validation.json",
+      "sha256": "1997d48fb402e8dee1c18a0ec2e8a2e075f49bbb91a4d984fa0ca80912ca6b66",
+      "bytes": 2233,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/verification/tests-1.log",
+      "sha256": "32d48ba94e7aeed5dd3810f0788ca9b0dd8f490fd0cb5efe85345222b1aae14d",
+      "bytes": 201,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/verification/tests-2.log",
+      "sha256": "6cd9d7114dfc894e18ac6f993e2d07b5fd29cf12bfd0a3ba0b2749345218d40d",
+      "bytes": 336,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/videos/TGDI-WEEKDAY-SIANG-b-v4-machine.ffmpeg.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/videos/TGDI-WEEKDAY-SIANG-b-v4-machine.labels.jsonl.gz",
+      "sha256": "e3d5ddf454b4b0b887bb84d3fce906caefeed677521a34c37bdd9c47af79fb99",
+      "bytes": 4174371,
+      "readiness": "AVAILABLE_HASHED"
+    },
+    {
+      "path": "results/b_v4/videos/annotation_report.json",
+      "sha256": "137126b5120c3eebb168908b26b01a4e4339e28a3e79a007e60f5d28c9024f01",
+      "bytes": 3475,
+      "readiness": "AVAILABLE_HASHED"
+    }
+  ],
+  "pipeline_run": "NOT_RUN_QC_ONLY",
+  "actual_source_restored_from_kaggle": true
+}

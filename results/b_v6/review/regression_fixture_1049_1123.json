@@ -1,0 +1,57 @@
+{
+  "schema_version": "phase9_source_regression_case_v1",
+  "case_id": "red_motorcycle_1049_1123_occlusion",
+  "claim_type": "SOURCE_SCOPED_QC_NOT_GLOBAL_RAW_ID_LABEL",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "source_frames": [
+    1300,
+    1312,
+    1320,
+    1328,
+    1336,
+    1340,
+    1344,
+    1349,
+    1355
+  ],
+  "expected_maximum_active_events_for_one_physical_passage": 1,
+  "observed_active_events": 2,
+  "status": "FAIL_CONFIRMED_PHYSICAL_DUPLICATE",
+  "correct_canonical_event_not_selected": true,
+  "events": [
+    {
+      "event_id": "b_v6_0614016fdf79d30943e54c1e",
+      "track_id": 1123,
+      "display_id": "M2007",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "LINE_MARGIN",
+      "activation_frame": 1396
+    },
+    {
+      "event_id": "b_v6_5b7c1ee459f68ff171c6ee56",
+      "track_id": 1049,
+      "display_id": "M2008",
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "activation_frame": 1396
+    }
+  ],
+  "measured_crossing": false,
+  "evidence_image": "review/independent_inferred_1049_1123_continuity.jpg",
+  "evidence_image_sha256": "3b5e5a7c3eb86910614825889fbb427252d5b3331f9d1ca275be5228e46fd876",
+  "endpoint_gap_frames": 13,
+  "endpoint_iou": 0.0,
+  "endpoint_normalized_jump": 0.6429919913800478,
+  "runtime_raw_id_exception_added": false,
+  "model_changes": false
+}

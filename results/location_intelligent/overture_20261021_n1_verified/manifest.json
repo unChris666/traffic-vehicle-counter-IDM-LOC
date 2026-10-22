@@ -1,0 +1,62 @@
+{
+  "analysis_run_id": "li-overture-20261021-n1-technical-probe",
+  "artifacts": [],
+  "context_hash": "caeebd85e0539e7095e1e3f65f6abaa9510fa7bd1c3c7d7ccde7c88e45cb7cb4",
+  "modules": [
+    {
+      "analysis_run_id": "li-overture-20261021-n1-technical-probe",
+      "artifact_refs": [],
+      "config_hash": "118d0123db42180cae0125478330077a8d122d07c34c3544877d44825eb3fd7c",
+      "context_hash": "caeebd85e0539e7095e1e3f65f6abaa9510fa7bd1c3c7d7ccde7c88e45cb7cb4",
+      "engine": null,
+      "error": null,
+      "finished_at": null,
+      "module": "area_coverage",
+      "module_run_id": "li1-selection-001",
+      "required_inputs": [
+        "overture-bounded-probe"
+      ],
+      "started_at": null,
+      "status": "NOT_RUN"
+    }
+  ],
+  "schema_version": "location_intelligent_v1",
+  "sources": [
+    {
+      "acquired_at": "2026-10-22T03:42:15.844465Z",
+      "acquisition_mode": "LIVE_ACQUIRED",
+      "availability": "AVAILABLE",
+      "byte_count": 3335844,
+      "coverage": {
+        "completeness": "COMPLETE",
+        "scope": "Complete bounded query only after all STAC partition bboxes verified; bbox=[106.8064931806858, -6.434369461543375, 106.8138931806858, -6.426969461543375]; not physical building completeness"
+      },
+      "crs": "EPSG:4326",
+      "fingerprint": {
+        "algorithm": "sha256",
+        "value": "afd437a0a58af8890f31d50815b2354499d6f7819fe0ab79b0834affc025f724"
+      },
+      "freshness": "UNKNOWN",
+      "inventory_id": "SRC04",
+      "kind": "LOCAL_FILE",
+      "locator": "buildings.geojson",
+      "provenance": {
+        "dependencies": [],
+        "description": "Normalized actual Overture WKB, class/subtype and source attributes; original probe SHA256=807044614b4e338fb184f6ffc33c28f318de704f36c36745c08a2fd6ea75cf04",
+        "origin": "LIVE_ACQUIRED"
+      },
+      "provider": "OVERTURE_MAPS",
+      "row_count": 2623,
+      "schema_version": "li_building_snapshot_v1",
+      "source_as_of": null,
+      "source_ref_id": "overture-bounded-probe",
+      "source_version": "2026-10-21.0",
+      "units": {
+        "coordinates": "degree"
+      },
+      "unknown_reasons": {
+        "source_as_of": "Release date known; per-feature observation vintage varies"
+      }
+    }
+  ]
+}

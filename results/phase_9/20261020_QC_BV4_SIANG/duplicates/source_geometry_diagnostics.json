@@ -1,0 +1,1732 @@
+{
+  "claim_type": "SOURCE_MEASUREMENT_AUDIT_DIAGNOSTICS_NO_COUNTING_REPLAY",
+  "tracks": [
+    {
+      "track_id": 2549,
+      "first": {
+        "frame_index": 4064,
+        "track_id": 2549,
+        "original_detection_index": 1,
+        "class_name": "car",
+        "raw_bbox": [
+          516.6241455078125,
+          222.5950927734375,
+          639.7764892578125,
+          478.5584716796875
+        ],
+        "point": [
+          578.2003173828125,
+          478.5584716796875
+        ],
+        "signed_distance_px": 369.2919469897973,
+        "polygon": null
+      },
+      "last": {
+        "frame_index": 4497,
+        "track_id": 2549,
+        "original_detection_index": 11,
+        "class_name": "car",
+        "raw_bbox": [
+          11.452037811279297,
+          211.6221160888672,
+          26.63534164428711,
+          226.0083770751953
+        ],
+        "point": [
+          19.043689727783203,
+          226.0083770751953
+        ],
+        "signed_distance_px": -157.48193982716046,
+        "polygon": "A"
+      },
+      "observations": 391,
+      "polygons": {
+        "null": 38,
+        "B": 24,
+        "A": 329
+      },
+      "in_band_category_votes": {
+        "car": 16
+      },
+      "in_band_frames": [
+        4111,
+        4112,
+        4113,
+        4114,
+        4115,
+        4116,
+        4117,
+        4118,
+        4119,
+        4120,
+        4121,
+        4122,
+        4123,
+        4124,
+        4125,
+        4126
+      ],
+      "crossings": [
+        {
+          "first": {
+            "frame_index": 4117,
+            "track_id": 2549,
+            "original_detection_index": 3,
+            "class_name": "car",
+            "raw_bbox": [
+              97.29106903076172,
+              161.56442260742188,
+              272.6845703125,
+              305.5074768066406
+            ],
+            "point": [
+              184.98781967163086,
+              305.5074768066406
+            ],
+            "signed_distance_px": 2.58439243785791,
+            "polygon": null
+          },
+          "second": {
+            "frame_index": 4118,
+            "track_id": 2549,
+            "original_detection_index": 4,
+            "class_name": "car",
+            "raw_bbox": [
+              95.97325897216797,
+              162.174072265625,
+              266.94256591796875,
+              304.44268798828125
+            ],
+            "point": [
+              181.45791244506836,
+              304.44268798828125
+            ],
+            "signed_distance_px": -0.3065191642941082,
+            "polygon": null
+          },
+          "intersection": {
+            "kind": "proper",
+            "point": [
+              181.83218338864071,
+              304.5555860023576
+            ],
+            "t": 0.8939714503667521,
+            "u": 0.2926176764193735
+          }
+        }
+      ],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2557,
+      "first": {
+        "frame_index": 4081,
+        "track_id": 2557,
+        "original_detection_index": 0,
+        "class_name": "bus",
+        "raw_bbox": [
+          228.7501983642578,
+          13.57220458984375,
+          637.9255981445312,
+          474.3567199707031
+        ],
+        "point": [
+          433.33789825439453,
+          474.3567199707031
+        ],
+        "signed_distance_px": 283.0652012939162,
+        "polygon": null
+      },
+      "last": {
+        "frame_index": 4082,
+        "track_id": 2557,
+        "original_detection_index": 3,
+        "class_name": "truck",
+        "raw_bbox": [
+          219.30535888671875,
+          24.038299560546875,
+          637.465576171875,
+          479.6671447753906
+        ],
+        "point": [
+          428.3854675292969,
+          479.6671447753906
+        ],
+        "signed_distance_px": 284.5932478259044,
+        "polygon": null
+      },
+      "observations": 2,
+      "polygons": {
+        "null": 2
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2560,
+      "first": {
+        "frame_index": 4088,
+        "track_id": 2560,
+        "original_detection_index": 2,
+        "class_name": "truck",
+        "raw_bbox": [
+          182.57830810546875,
+          65.04293823242188,
+          637.4705810546875,
+          408.9541931152344
+        ],
+        "point": [
+          410.0244445800781,
+          408.9541931152344
+        ],
+        "signed_distance_px": 216.07053304393992,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 4092,
+        "track_id": 2560,
+        "original_detection_index": 3,
+        "class_name": "truck",
+        "raw_bbox": [
+          162.5286865234375,
+          91.25784301757812,
+          547.308837890625,
+          379.37481689453125
+        ],
+        "point": [
+          354.91876220703125,
+          379.37481689453125
+        ],
+        "signed_distance_px": 160.3071921272094,
+        "polygon": "B"
+      },
+      "observations": 5,
+      "polygons": {
+        "B": 5
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2561,
+      "first": {
+        "frame_index": 4095,
+        "track_id": 2561,
+        "original_detection_index": 4,
+        "class_name": "car",
+        "raw_bbox": [
+          151.03536987304688,
+          106.2298583984375,
+          487.5999450683594,
+          362.70635986328125
+        ],
+        "point": [
+          319.3176574707031,
+          362.70635986328125
+        ],
+        "signed_distance_px": 126.28469666345,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 4099,
+        "track_id": 2561,
+        "original_detection_index": 3,
+        "class_name": "truck",
+        "raw_bbox": [
+          137.44345092773438,
+          123.62593841552734,
+          425.4676818847656,
+          347.7640686035156
+        ],
+        "point": [
+          281.45556640625,
+          347.7640686035156
+        ],
+        "signed_distance_px": 92.38678896473095,
+        "polygon": "B"
+      },
+      "observations": 5,
+      "polygons": {
+        "B": 5
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2615,
+      "first": {
+        "frame_index": 4236,
+        "track_id": 2615,
+        "original_detection_index": 2,
+        "class_name": "truck",
+        "raw_bbox": [
+          430.58660888671875,
+          173.55410766601562,
+          574.76904296875,
+          282.66009521484375
+        ],
+        "point": [
+          502.6778259277344,
+          282.66009521484375
+        ],
+        "signed_distance_px": 165.3719004738078,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 4390,
+        "track_id": 2615,
+        "original_detection_index": 7,
+        "class_name": "car",
+        "raw_bbox": [
+          429.38299560546875,
+          156.9141845703125,
+          553.1121215820312,
+          233.57296752929688
+        ],
+        "point": [
+          491.24755859375,
+          233.57296752929688
+        ],
+        "signed_distance_px": 118.55688639026008,
+        "polygon": "B"
+      },
+      "observations": 146,
+      "polygons": {
+        "B": 146
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2640,
+      "first": {
+        "frame_index": 4265,
+        "track_id": 2640,
+        "original_detection_index": 5,
+        "class_name": "car",
+        "raw_bbox": [
+          433.77044677734375,
+          185.11688232421875,
+          584.7915649414062,
+          287.9987487792969
+        ],
+        "point": [
+          509.281005859375,
+          287.9987487792969
+        ],
+        "signed_distance_px": 173.52632276378344,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 4270,
+        "track_id": 2640,
+        "original_detection_index": 7,
+        "class_name": "car",
+        "raw_bbox": [
+          434.77337646484375,
+          194.25656127929688,
+          585.06201171875,
+          297.80096435546875
+        ],
+        "point": [
+          509.9176940917969,
+          297.80096435546875
+        ],
+        "signed_distance_px": 181.93434855534153,
+        "polygon": "B"
+      },
+      "observations": 6,
+      "polygons": {
+        "B": 6
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2644,
+      "first": {
+        "frame_index": 4282,
+        "track_id": 2644,
+        "original_detection_index": 5,
+        "class_name": "truck",
+        "raw_bbox": [
+          433.9744873046875,
+          184.409912109375,
+          586.1015625,
+          303.1728210449219
+        ],
+        "point": [
+          510.03802490234375,
+          303.1728210449219
+        ],
+        "signed_distance_px": 186.41153175913317,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 4287,
+        "track_id": 2644,
+        "original_detection_index": 5,
+        "class_name": "truck",
+        "raw_bbox": [
+          434.16021728515625,
+          183.13186645507812,
+          585.9721069335938,
+          299.4375
+        ],
+        "point": [
+          510.066162109375,
+          299.4375
+        ],
+        "signed_distance_px": 183.3622130392126,
+        "polygon": "B"
+      },
+      "observations": 6,
+      "polygons": {
+        "B": 6
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2652,
+      "first": {
+        "frame_index": 4303,
+        "track_id": 2652,
+        "original_detection_index": 7,
+        "class_name": "car",
+        "raw_bbox": [
+          433.58819580078125,
+          178.85101318359375,
+          584.5721435546875,
+          294.4717712402344
+        ],
+        "point": [
+          509.0801696777344,
+          294.4717712402344
+        ],
+        "signed_distance_px": 178.72365530423806,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 4307,
+        "track_id": 2652,
+        "original_detection_index": 7,
+        "class_name": "car",
+        "raw_bbox": [
+          433.9119873046875,
+          175.28366088867188,
+          584.7982177734375,
+          294.2436218261719
+        ],
+        "point": [
+          509.3551025390625,
+          294.2436218261719
+        ],
+        "signed_distance_px": 178.69352870618658,
+        "polygon": "B"
+      },
+      "observations": 5,
+      "polygons": {
+        "B": 5
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2657,
+      "first": {
+        "frame_index": 4311,
+        "track_id": 2657,
+        "original_detection_index": 6,
+        "class_name": "truck",
+        "raw_bbox": [
+          432.9581298828125,
+          185.71646118164062,
+          585.1668701171875,
+          292.2655944824219
+        ],
+        "point": [
+          509.0625,
+          292.2655944824219
+        ],
+        "signed_distance_px": 176.90305588861196,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 4313,
+        "track_id": 2657,
+        "original_detection_index": 7,
+        "class_name": "truck",
+        "raw_bbox": [
+          431.7066650390625,
+          186.0391845703125,
+          581.8275146484375,
+          291.39044189453125
+        ],
+        "point": [
+          506.76708984375,
+          291.39044189453125
+        ],
+        "signed_distance_px": 174.87319685115318,
+        "polygon": "B"
+      },
+      "observations": 3,
+      "polygons": {
+        "B": 3
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 2679,
+      "first": {
+        "frame_index": 4345,
+        "track_id": 2679,
+        "original_detection_index": 0,
+        "class_name": "person",
+        "raw_bbox": [
+          497.51373291015625,
+          141.52093505859375,
+          639.8046264648438,
+          334.02081298828125
+        ],
+        "point": [
+          568.6591796875,
+          334.02081298828125
+        ],
+        "signed_distance_px": 245.22480667991135,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 4357,
+        "track_id": 2679,
+        "original_detection_index": 4,
+        "class_name": "truck",
+        "raw_bbox": [
+          428.47857666015625,
+          150.40408325195312,
+          578.95556640625,
+          271.50457763671875
+        ],
+        "point": [
+          503.7170715332031,
+          271.50457763671875
+        ],
+        "signed_distance_px": 156.8109622647289,
+        "polygon": "B"
+      },
+      "observations": 7,
+      "polygons": {
+        "B": 7
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 3582,
+      "first": {
+        "frame_index": 6306,
+        "track_id": 3582,
+        "original_detection_index": 2,
+        "class_name": "car",
+        "raw_bbox": [
+          518.2740478515625,
+          234.7907257080078,
+          639.7545166015625,
+          477.40350341796875
+        ],
+        "point": [
+          579.0142822265625,
+          477.40350341796875
+        ],
+        "signed_distance_px": 368.80924348406035,
+        "polygon": null
+      },
+      "last": {
+        "frame_index": 6405,
+        "track_id": 3582,
+        "original_detection_index": 6,
+        "class_name": "person",
+        "raw_bbox": [
+          32.040870666503906,
+          191.9556884765625,
+          55.978904724121094,
+          241.03094482421875
+        ],
+        "point": [
+          44.0098876953125,
+          241.03094482421875
+        ],
+        "signed_distance_px": -130.88723899025047,
+        "polygon": "A"
+      },
+      "observations": 98,
+      "polygons": {
+        "null": 22,
+        "B": 25,
+        "A": 51
+      },
+      "in_band_category_votes": {
+        "car": 9,
+        "truck": 1
+      },
+      "in_band_frames": [
+        6343,
+        6344,
+        6345,
+        6346,
+        6347,
+        6348,
+        6349,
+        6350,
+        6351,
+        6352
+      ],
+      "crossings": [
+        {
+          "first": {
+            "frame_index": 6346,
+            "track_id": 3582,
+            "original_detection_index": 2,
+            "class_name": "car",
+            "raw_bbox": [
+              92.562255859375,
+              172.33309936523438,
+              292.28076171875,
+              301.50054931640625
+            ],
+            "point": [
+              192.4215087890625,
+              301.50054931640625
+            ],
+            "signed_distance_px": 3.543925773182443,
+            "polygon": null
+          },
+          "second": {
+            "frame_index": 6347,
+            "track_id": 3582,
+            "original_detection_index": 2,
+            "class_name": "car",
+            "raw_bbox": [
+              89.93923950195312,
+              172.74920654296875,
+              284.0887756347656,
+              298.64849853515625
+            ],
+            "point": [
+              187.01400756835938,
+              298.64849853515625
+            ],
+            "signed_distance_px": -1.8866166438400291,
+            "polygon": null
+          },
+          "intersection": {
+            "kind": "proper",
+            "point": [
+              188.89261950454187,
+              299.63932524449507
+            ],
+            "t": 0.6525914910587435,
+            "u": 0.30408608410472177
+          }
+        }
+      ],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 3587,
+      "first": {
+        "frame_index": 6312,
+        "track_id": 3587,
+        "original_detection_index": 4,
+        "class_name": "truck",
+        "raw_bbox": [
+          347.734375,
+          134.57818603515625,
+          639.3515625,
+          422.43145751953125
+        ],
+        "point": [
+          493.54296875,
+          422.43145751953125
+        ],
+        "signed_distance_px": 274.85556906600453,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 6324,
+        "track_id": 3587,
+        "original_detection_index": 0,
+        "class_name": "truck",
+        "raw_bbox": [
+          193.7950439453125,
+          110.97615051269531,
+          638.4130249023438,
+          422.50347900390625
+        ],
+        "point": [
+          416.1040344238281,
+          422.50347900390625
+        ],
+        "signed_distance_px": 230.66382925466428,
+        "polygon": "B"
+      },
+      "observations": 4,
+      "polygons": {
+        "B": 3,
+        "null": 1
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 3761,
+      "first": {
+        "frame_index": 6584,
+        "track_id": 3761,
+        "original_detection_index": 8,
+        "class_name": "car",
+        "raw_bbox": [
+          73.05949401855469,
+          203.79415893554688,
+          89.26762390136719,
+          225.72039794921875
+        ],
+        "point": [
+          81.16355895996094,
+          225.72039794921875
+        ],
+        "signed_distance_px": -122.22118237321826,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 6815,
+        "track_id": 3761,
+        "original_detection_index": 2,
+        "class_name": "car",
+        "raw_bbox": [
+          433.0078125,
+          158.53973388671875,
+          538.0972900390625,
+          223.549072265625
+        ],
+        "point": [
+          485.55255126953125,
+          223.549072265625
+        ],
+        "signed_distance_px": 107.0764691433937,
+        "polygon": "B"
+      },
+      "observations": 226,
+      "polygons": {
+        "A": 172,
+        "null": 17,
+        "B": 37
+      },
+      "in_band_category_votes": {
+        "car": 4,
+        "truck": 11
+      },
+      "in_band_frames": [
+        6761,
+        6762,
+        6763,
+        6764,
+        6765,
+        6767,
+        6768,
+        6770,
+        6771,
+        6772,
+        6773,
+        6774,
+        6775,
+        6776,
+        6777
+      ],
+      "crossings": [
+        {
+          "first": {
+            "frame_index": 6770,
+            "track_id": 3761,
+            "original_detection_index": 0,
+            "class_name": "truck",
+            "raw_bbox": [
+              176.46893310546875,
+              163.05624389648438,
+              310.12579345703125,
+              259.61566162109375
+            ],
+            "point": [
+              243.29736328125,
+              259.61566162109375
+            ],
+            "signed_distance_px": -1.757040559646475,
+            "polygon": null
+          },
+          "second": {
+            "frame_index": 6771,
+            "track_id": 3761,
+            "original_detection_index": 0,
+            "class_name": "truck",
+            "raw_bbox": [
+              179.27047729492188,
+              162.02120971679688,
+              314.86328125,
+              260.21453857421875
+            ],
+            "point": [
+              247.06687927246094,
+              260.21453857421875
+            ],
+            "signed_distance_px": 0.8884391028531416,
+            "polygon": null
+          },
+          "intersection": {
+            "kind": "proper",
+            "point": [
+              245.8009517913713,
+              260.01341599123464
+            ],
+            "t": 0.6641671015479682,
+            "u": 0.3965234271590361
+          }
+        }
+      ],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 3829,
+      "first": {
+        "frame_index": 6682,
+        "track_id": 3829,
+        "original_detection_index": 8,
+        "class_name": "car",
+        "raw_bbox": [
+          91.88037109375,
+          192.48451232910156,
+          135.291259765625,
+          230.4883270263672
+        ],
+        "point": [
+          113.5858154296875,
+          230.4883270263672
+        ],
+        "signed_distance_px": -99.78135976695586,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 6684,
+        "track_id": 3829,
+        "original_detection_index": 7,
+        "class_name": "car",
+        "raw_bbox": [
+          92.79832458496094,
+          191.3325958251953,
+          136.1141357421875,
+          230.21253967285156
+        ],
+        "point": [
+          114.45623016357422,
+          230.21253967285156
+        ],
+        "signed_distance_px": -99.51030496948313,
+        "polygon": "A"
+      },
+      "observations": 3,
+      "polygons": {
+        "A": 3
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 3845,
+      "first": {
+        "frame_index": 6696,
+        "track_id": 3845,
+        "original_detection_index": 6,
+        "class_name": "car",
+        "raw_bbox": [
+          97.731689453125,
+          188.59202575683594,
+          147.07803344726562,
+          231.19407653808594
+        ],
+        "point": [
+          122.40486145019531,
+          231.19407653808594
+        ],
+        "signed_distance_px": -94.1627276255965,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 6700,
+        "track_id": 3845,
+        "original_detection_index": 6,
+        "class_name": "car",
+        "raw_bbox": [
+          99.59957885742188,
+          177.59478759765625,
+          148.67921447753906,
+          221.8768310546875
+        ],
+        "point": [
+          124.13939666748047,
+          221.8768310546875
+        ],
+        "signed_distance_px": -100.81777635623459,
+        "polygon": "A"
+      },
+      "observations": 5,
+      "polygons": {
+        "A": 5
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4115,
+      "first": {
+        "frame_index": 7083,
+        "track_id": 4115,
+        "original_detection_index": 3,
+        "class_name": "car",
+        "raw_bbox": [
+          116.76495361328125,
+          172.45826721191406,
+          151.18765258789062,
+          219.9557647705078
+        ],
+        "point": [
+          133.97630310058594,
+          219.9557647705078
+        ],
+        "signed_distance_px": -96.77320991243352,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 7326,
+        "track_id": 4115,
+        "original_detection_index": 2,
+        "class_name": "person",
+        "raw_bbox": [
+          573.5701904296875,
+          162.74652099609375,
+          609.0784912109375,
+          207.9296875
+        ],
+        "point": [
+          591.3243408203125,
+          207.9296875
+        ],
+        "signed_distance_px": 154.69945268598553,
+        "polygon": "B"
+      },
+      "observations": 237,
+      "polygons": {
+        "A": 110,
+        "null": 30,
+        "B": 97
+      },
+      "in_band_category_votes": {
+        "truck": 20,
+        "car": 6
+      },
+      "in_band_frames": [
+        7200,
+        7201,
+        7202,
+        7203,
+        7204,
+        7205,
+        7206,
+        7207,
+        7208,
+        7209,
+        7211,
+        7212,
+        7213,
+        7214,
+        7215,
+        7216,
+        7217,
+        7218,
+        7219,
+        7220,
+        7221,
+        7222,
+        7223,
+        7224,
+        7225,
+        7226
+      ],
+      "crossings": [
+        {
+          "first": {
+            "frame_index": 7214,
+            "track_id": 4115,
+            "original_detection_index": 6,
+            "class_name": "truck",
+            "raw_bbox": [
+              177.62472534179688,
+              149.1997833251953,
+              327.82464599609375,
+              254.09349060058594
+            ],
+            "point": [
+              252.7246856689453,
+              254.09349060058594
+            ],
+            "signed_distance_px": -0.9017745793138576,
+            "polygon": null
+          },
+          "second": {
+            "frame_index": 7215,
+            "track_id": 4115,
+            "original_detection_index": 4,
+            "class_name": "truck",
+            "raw_bbox": [
+              178.3759765625,
+              148.036865234375,
+              330.99371337890625,
+              254.11376953125
+            ],
+            "point": [
+              254.68484497070312,
+              254.11376953125
+            ],
+            "signed_distance_px": 0.234959013105094,
+            "polygon": null
+          },
+          "intersection": {
+            "kind": "proper",
+            "point": [
+              254.27968663092912,
+              254.1095779444372
+            ],
+            "t": 0.7933033608999648,
+            "u": 0.41029560584599023
+          }
+        }
+      ],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4129,
+      "first": {
+        "frame_index": 7113,
+        "track_id": 4129,
+        "original_detection_index": 4,
+        "class_name": "truck",
+        "raw_bbox": [
+          103.3135986328125,
+          169.12832641601562,
+          170.75079345703125,
+          223.66635131835938
+        ],
+        "point": [
+          137.03219604492188,
+          223.66635131835938
+        ],
+        "signed_distance_px": -91.98188566773577,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 7121,
+        "track_id": 4129,
+        "original_detection_index": 5,
+        "class_name": "car",
+        "raw_bbox": [
+          106.45120239257812,
+          167.48153686523438,
+          177.4114990234375,
+          224.97494506835938
+        ],
+        "point": [
+          141.9313507080078,
+          224.97494506835938
+        ],
+        "signed_distance_px": -88.108467618145,
+        "polygon": "A"
+      },
+      "observations": 9,
+      "polygons": {
+        "A": 9
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4132,
+      "first": {
+        "frame_index": 7127,
+        "track_id": 4132,
+        "original_detection_index": 5,
+        "class_name": "truck",
+        "raw_bbox": [
+          109.16683959960938,
+          166.68429565429688,
+          182.98199462890625,
+          226.2330322265625
+        ],
+        "point": [
+          146.0744171142578,
+          226.2330322265625
+        ],
+        "signed_distance_px": -84.7085485571706,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 7132,
+        "track_id": 4132,
+        "original_detection_index": 4,
+        "class_name": "truck",
+        "raw_bbox": [
+          111.27584075927734,
+          166.043701171875,
+          187.39035034179688,
+          227.30120849609375
+        ],
+        "point": [
+          149.3330955505371,
+          227.30120849609375
+        ],
+        "signed_distance_px": -81.96984500466709,
+        "polygon": "A"
+      },
+      "observations": 6,
+      "polygons": {
+        "A": 6
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4143,
+      "first": {
+        "frame_index": 7135,
+        "track_id": 4143,
+        "original_detection_index": 3,
+        "class_name": "truck",
+        "raw_bbox": [
+          112.9259033203125,
+          166.1980438232422,
+          190.11322021484375,
+          228.2676544189453
+        ],
+        "point": [
+          151.51956176757812,
+          228.2676544189453
+        ],
+        "signed_distance_px": -79.92731966160318,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 7152,
+        "track_id": 4143,
+        "original_detection_index": 5,
+        "class_name": "car",
+        "raw_bbox": [
+          122.28557586669922,
+          164.55352783203125,
+          208.2056884765625,
+          231.3115234375
+        ],
+        "point": [
+          165.24563217163086,
+          231.3115234375
+        ],
+        "signed_distance_px": -69.58589054171986,
+        "polygon": "A"
+      },
+      "observations": 18,
+      "polygons": {
+        "A": 18
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4168,
+      "first": {
+        "frame_index": 7194,
+        "track_id": 4168,
+        "original_detection_index": 4,
+        "class_name": "car",
+        "raw_bbox": [
+          154.82769775390625,
+          153.15846252441406,
+          277.1763610839844,
+          241.6194305419922
+        ],
+        "point": [
+          216.0020294189453,
+          241.6194305419922
+        ],
+        "signed_distance_px": -32.12301846036705,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 7199,
+        "track_id": 4168,
+        "original_detection_index": 6,
+        "class_name": "car",
+        "raw_bbox": [
+          159.37451171875,
+          152.8455810546875,
+          287.9009704589844,
+          244.36090087890625
+        ],
+        "point": [
+          223.6377410888672,
+          244.36090087890625
+        ],
+        "signed_distance_px": -25.509960234418546,
+        "polygon": null
+      },
+      "observations": 6,
+      "polygons": {
+        "A": 3,
+        "null": 3
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4170,
+      "first": {
+        "frame_index": 7205,
+        "track_id": 4170,
+        "original_detection_index": 5,
+        "class_name": "car",
+        "raw_bbox": [
+          166.16851806640625,
+          150.22872924804688,
+          303.006591796875,
+          246.59637451171875
+        ],
+        "point": [
+          234.58755493164062,
+          246.59637451171875
+        ],
+        "signed_distance_px": -17.418375276227838,
+        "polygon": null
+      },
+      "last": {
+        "frame_index": 7209,
+        "track_id": 4170,
+        "original_detection_index": 4,
+        "class_name": "truck",
+        "raw_bbox": [
+          170.97613525390625,
+          150.8621826171875,
+          313.79095458984375,
+          251.12942504882812
+        ],
+        "point": [
+          242.383544921875,
+          251.12942504882812
+        ],
+        "signed_distance_px": -9.243466257991411,
+        "polygon": null
+      },
+      "observations": 5,
+      "polygons": {
+        "null": 5
+      },
+      "in_band_category_votes": {
+        "car": 2,
+        "truck": 3
+      },
+      "in_band_frames": [
+        7205,
+        7206,
+        7207,
+        7208,
+        7209
+      ],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4774,
+      "first": {
+        "frame_index": 7761,
+        "track_id": 4774,
+        "original_detection_index": 10,
+        "class_name": "car",
+        "raw_bbox": [
+          85.22975158691406,
+          170.64935302734375,
+          134.1988983154297,
+          210.27362060546875
+        ],
+        "point": [
+          109.71432495117188,
+          210.27362060546875
+        ],
+        "signed_distance_px": -118.58287212533105,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 7903,
+        "track_id": 4774,
+        "original_detection_index": 5,
+        "class_name": "truck",
+        "raw_bbox": [
+          449.86090087890625,
+          91.29801177978516,
+          630.7404174804688,
+          173.14663696289062
+        ],
+        "point": [
+          540.3006591796875,
+          173.14663696289062
+        ],
+        "signed_distance_px": 96.99828134924206,
+        "polygon": "B"
+      },
+      "observations": 137,
+      "polygons": {
+        "A": 80,
+        "null": 16,
+        "B": 41
+      },
+      "in_band_category_votes": {
+        "car": 10,
+        "truck": 6
+      },
+      "in_band_frames": [
+        7845,
+        7846,
+        7847,
+        7848,
+        7849,
+        7850,
+        7851,
+        7852,
+        7853,
+        7854,
+        7855,
+        7856,
+        7858,
+        7859,
+        7860,
+        7861
+      ],
+      "crossings": [
+        {
+          "first": {
+            "frame_index": 7853,
+            "track_id": 4774,
+            "original_detection_index": 5,
+            "class_name": "truck",
+            "raw_bbox": [
+              185.65826416015625,
+              150.2847137451172,
+              331.35809326171875,
+              248.33970642089844
+            ],
+            "point": [
+              258.5081787109375,
+              248.33970642089844
+            ],
+            "signed_distance_px": -2.3187716667215503,
+            "polygon": null
+          },
+          "second": {
+            "frame_index": 7854,
+            "track_id": 4774,
+            "original_detection_index": 9,
+            "class_name": "car",
+            "raw_bbox": [
+              187.03758239746094,
+              149.75741577148438,
+              336.2236328125,
+              249.56393432617188
+            ],
+            "point": [
+              261.63060760498047,
+              249.56393432617188
+            ],
+            "signed_distance_px": 0.47013898305786855,
+            "polygon": null
+          },
+          "intersection": {
+            "kind": "proper",
+            "point": [
+              261.1042459787907,
+              249.3575608224306
+            ],
+            "t": 0.8314255843603086,
+            "u": 0.42138087417635056
+          }
+        }
+      ],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4809,
+      "first": {
+        "frame_index": 7810,
+        "track_id": 4809,
+        "original_detection_index": 6,
+        "class_name": "car",
+        "raw_bbox": [
+          117.8219223022461,
+          162.67105102539062,
+          196.82571411132812,
+          222.5413818359375
+        ],
+        "point": [
+          157.3238182067871,
+          222.5413818359375
+        ],
+        "signed_distance_px": -81.30987450856895,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 7819,
+        "track_id": 4809,
+        "original_detection_index": 10,
+        "class_name": "car",
+        "raw_bbox": [
+          128.50115966796875,
+          160.65914916992188,
+          216.1085205078125,
+          226.45260620117188
+        ],
+        "point": [
+          172.30484008789062,
+          226.45260620117188
+        ],
+        "signed_distance_px": -69.53953331868924,
+        "polygon": "A"
+      },
+      "observations": 10,
+      "polygons": {
+        "A": 10
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4820,
+      "first": {
+        "frame_index": 7830,
+        "track_id": 4820,
+        "original_detection_index": 10,
+        "class_name": "car",
+        "raw_bbox": [
+          140.644775390625,
+          157.64825439453125,
+          244.92218017578125,
+          232.1142578125
+        ],
+        "point": [
+          192.78347778320312,
+          232.1142578125
+        ],
+        "signed_distance_px": -53.191204728857294,
+        "polygon": "A"
+      },
+      "last": {
+        "frame_index": 7843,
+        "track_id": 4820,
+        "original_detection_index": 9,
+        "class_name": "truck",
+        "raw_bbox": [
+          163.07525634765625,
+          154.86578369140625,
+          288.05853271484375,
+          240.5335693359375
+        ],
+        "point": [
+          225.56689453125,
+          240.5335693359375
+        ],
+        "signed_distance_px": -27.548491916320813,
+        "polygon": null
+      },
+      "observations": 14,
+      "polygons": {
+        "A": 13,
+        "null": 1
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 4990,
+      "first": {
+        "frame_index": 8098,
+        "track_id": 4990,
+        "original_detection_index": 2,
+        "class_name": "truck",
+        "raw_bbox": [
+          467.6498718261719,
+          144.34283447265625,
+          584.671630859375,
+          261.34893798828125
+        ],
+        "point": [
+          526.1607513427734,
+          261.34893798828125
+        ],
+        "signed_distance_px": 161.30168756080616,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 8582,
+        "track_id": 4990,
+        "original_detection_index": 3,
+        "class_name": "car",
+        "raw_bbox": [
+          441.0740966796875,
+          169.01763916015625,
+          516.7634887695312,
+          244.6092529296875
+        ],
+        "point": [
+          478.9187927246094,
+          244.6092529296875
+        ],
+        "signed_distance_px": 120.56881848042633,
+        "polygon": "B"
+      },
+      "observations": 476,
+      "polygons": {
+        "B": 476
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 5110,
+      "first": {
+        "frame_index": 8368,
+        "track_id": 5110,
+        "original_detection_index": 3,
+        "class_name": "truck",
+        "raw_bbox": [
+          436.18670654296875,
+          159.01675415039062,
+          588.1509399414062,
+          264.31573486328125
+        ],
+        "point": [
+          512.1688232421875,
+          264.31573486328125
+        ],
+        "signed_distance_px": 155.7410021597583,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 8369,
+        "track_id": 5110,
+        "original_detection_index": 4,
+        "class_name": "truck",
+        "raw_bbox": [
+          436.13531494140625,
+          157.13735961914062,
+          587.334228515625,
+          264.1516418457031
+        ],
+        "point": [
+          511.7347717285156,
+          264.1516418457031
+        ],
+        "signed_distance_px": 155.35830938986746,
+        "polygon": "B"
+      },
+      "observations": 2,
+      "polygons": {
+        "B": 2
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 5112,
+      "first": {
+        "frame_index": 8378,
+        "track_id": 5112,
+        "original_detection_index": 4,
+        "class_name": "truck",
+        "raw_bbox": [
+          436.326171875,
+          164.92852783203125,
+          588.764404296875,
+          269.52679443359375
+        ],
+        "point": [
+          512.5452880859375,
+          269.52679443359375
+        ],
+        "signed_distance_px": 160.2325893395179,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 8386,
+        "track_id": 5112,
+        "original_detection_index": 3,
+        "class_name": "truck",
+        "raw_bbox": [
+          436.11151123046875,
+          162.80508422851562,
+          588.5361938476562,
+          269.7463073730469
+        ],
+        "point": [
+          512.3238525390625,
+          269.7463073730469
+        ],
+        "signed_distance_px": 160.286198312065,
+        "polygon": "B"
+      },
+      "observations": 9,
+      "polygons": {
+        "B": 9
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 5120,
+      "first": {
+        "frame_index": 8433,
+        "track_id": 5120,
+        "original_detection_index": 3,
+        "class_name": "truck",
+        "raw_bbox": [
+          435.9244079589844,
+          163.68997192382812,
+          589.4700927734375,
+          269.9132385253906
+        ],
+        "point": [
+          512.6972503662109,
+          269.9132385253906
+        ],
+        "signed_distance_px": 160.63656093292659,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 8434,
+        "track_id": 5120,
+        "original_detection_index": 1,
+        "class_name": "truck",
+        "raw_bbox": [
+          436.2616271972656,
+          147.55764770507812,
+          589.7098388671875,
+          267.4842224121094
+        ],
+        "point": [
+          512.9857330322266,
+          267.4842224121094
+        ],
+        "signed_distance_px": 158.80803234146168,
+        "polygon": "B"
+      },
+      "observations": 2,
+      "polygons": {
+        "B": 2
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    },
+    {
+      "track_id": 5124,
+      "first": {
+        "frame_index": 8447,
+        "track_id": 5124,
+        "original_detection_index": 2,
+        "class_name": "truck",
+        "raw_bbox": [
+          436.62384033203125,
+          147.76467895507812,
+          589.7897338867188,
+          265.9118347167969
+        ],
+        "point": [
+          513.206787109375,
+          265.9118347167969
+        ],
+        "signed_distance_px": 157.64396657450146,
+        "polygon": "B"
+      },
+      "last": {
+        "frame_index": 8448,
+        "track_id": 5124,
+        "original_detection_index": 4,
+        "class_name": "truck",
+        "raw_bbox": [
+          436.3190612792969,
+          145.34384155273438,
+          589.742431640625,
+          264.4158935546875
+        ],
+        "point": [
+          513.0307464599609,
+          264.4158935546875
+        ],
+        "signed_distance_px": 156.31572537692665,
+        "polygon": "B"
+      },
+      "observations": 2,
+      "polygons": {
+        "B": 2
+      },
+      "in_band_category_votes": {},
+      "in_band_frames": [],
+      "crossings": [],
+      "existing_accepted_events": []
+    }
+  ]
+}

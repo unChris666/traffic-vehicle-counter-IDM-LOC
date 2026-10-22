@@ -1,0 +1,14 @@
+{
+  "schema_version": "b_v8_selected_delivery_v1",
+  "run_directory": "execution/pilot_p1_reviewed_v3",
+  "baseline_path": "results/b_v7/execution/pilot_v7_machine_final/weekday_siang/counting_result.json.gz",
+  "baseline_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "candidate_sha256": "d4fa07ee5cad0f4d418af3703a9f8cac1f740509093b02d9138c31ad527e700b",
+  "policy_path": "config/policy_v5.json",
+  "overlay_path": "config/review_overlay_v5.json",
+  "pending_adjudications_path": "config/pending_adjudications.json",
+  "comparison_directory": "comparison/pilot_p1_reviewed_v3",
+  "gate_path": "review/p1_gate.json",
+  "branch": "review_assisted",
+  "machine_and_reviewed_may_be_added": false
+}

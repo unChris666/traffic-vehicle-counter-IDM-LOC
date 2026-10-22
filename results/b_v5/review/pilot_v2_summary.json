@@ -1,0 +1,540 @@
+{
+  "old_aggregate": {
+    "total": 172,
+    "by_category": {
+      "car": 16,
+      "motorcycle": 146,
+      "truck": 10
+    },
+    "by_direction": {
+      "A_TO_B": 78,
+      "B_TO_A": 94
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 34,
+      "LINE_MARGIN": 138
+    },
+    "measured_total": 121,
+    "inferred_total": 51,
+    "pending": 68,
+    "cancelled": 0,
+    "vehicle_total": 172,
+    "pedestrian_total": 0
+  },
+  "new_aggregate": {
+    "total": 117,
+    "by_category": {
+      "car": 4,
+      "motorcycle": 112,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 53,
+      "B_TO_A": 64
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 9,
+      "LINE_MARGIN": 108
+    },
+    "measured_total": 98,
+    "inferred_total": 19,
+    "pending": 65,
+    "cancelled": 11,
+    "vehicle_total": 117,
+    "pedestrian_total": 0
+  },
+  "old_measured_pairs_without_exact_new_active_counterpart": 23,
+  "lost_measured_source_rows": [
+    {
+      "old_event_id": "b_v4_4e9cfa3993076bb977436caf",
+      "raw_track_id": 643,
+      "old_category": "truck",
+      "activation_frame": 956,
+      "cancelled_counterparts": [
+        {
+          "track_id": 643,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 1036,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        },
+        {
+          "frame_index": 956,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_254c4e07efa0b1f17f4dba70",
+      "raw_track_id": 643,
+      "old_category": "motorcycle",
+      "activation_frame": 1035,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 1036,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        },
+        {
+          "frame_index": 956,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_8c8e065101ca12a23bdddaf9",
+      "raw_track_id": 1070,
+      "old_category": "motorcycle",
+      "activation_frame": 1343,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 1344,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_a3fa1c87318232777d645700",
+      "raw_track_id": 1460,
+      "old_category": "motorcycle",
+      "activation_frame": 1760,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 1761,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_9d1ca82e9526871c08937dec",
+      "raw_track_id": 1536,
+      "old_category": "motorcycle",
+      "activation_frame": 1851,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 1852,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_679d91cd95b5698e3f11ed9b",
+      "raw_track_id": 1734,
+      "old_category": "motorcycle",
+      "activation_frame": 2048,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 2050,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_9c7ffa39328cf5a44ff34bb8",
+      "raw_track_id": 1944,
+      "old_category": "motorcycle",
+      "activation_frame": 2330,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 2330,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_5f9d3e2ea4aa99e8137aadc5",
+      "raw_track_id": 2342,
+      "old_category": "motorcycle",
+      "activation_frame": 3485,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 3485,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_6232d0e35f8f5dd6c99a4e6c",
+      "raw_track_id": 2577,
+      "old_category": "car",
+      "activation_frame": 4178,
+      "cancelled_counterparts": [
+        {
+          "track_id": 2577,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 4178,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_1a583c74462e783aa2423419",
+      "raw_track_id": 2597,
+      "old_category": "car",
+      "activation_frame": 4260,
+      "cancelled_counterparts": [
+        {
+          "track_id": 2597,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 4260,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_3c7caa66fa93cbb9a74726f7",
+      "raw_track_id": 2706,
+      "old_category": "car",
+      "activation_frame": 4434,
+      "cancelled_counterparts": [
+        {
+          "track_id": 2706,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 4434,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_8ba8a36c7065b882d07882e3",
+      "raw_track_id": 2828,
+      "old_category": "truck",
+      "activation_frame": 4737,
+      "cancelled_counterparts": [
+        {
+          "track_id": 2828,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 4737,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_3f327c84af7ea5cf17a62a9f",
+      "raw_track_id": 2574,
+      "old_category": "motorcycle",
+      "activation_frame": 4822,
+      "cancelled_counterparts": [
+        {
+          "track_id": 2574,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 4822,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_fe447f0c04dd48b43c4714a4",
+      "raw_track_id": 3185,
+      "old_category": "motorcycle",
+      "activation_frame": 5424,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 5425,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED",
+            "RAW_CONTEXT_CHANGED_WITHOUT_PHYSICAL_CONTINUITY_PROOF"
+          ]
+        },
+        {
+          "frame_index": 5579,
+          "reasons": [
+            "PERSON_ROLE_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_0593220c948f37f2a253a5dd",
+      "raw_track_id": 3205,
+      "old_category": "motorcycle",
+      "activation_frame": 5490,
+      "cancelled_counterparts": [],
+      "new_decisions": [],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_7db107c2dd42da1384e17ab8",
+      "raw_track_id": 4149,
+      "old_category": "truck",
+      "activation_frame": 7422,
+      "cancelled_counterparts": [
+        {
+          "track_id": 4149,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 7422,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_c4f2dd03ee707b5d30081eaa",
+      "raw_track_id": 4377,
+      "old_category": "truck",
+      "activation_frame": 7485,
+      "cancelled_counterparts": [
+        {
+          "track_id": 4377,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 7485,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_b9ff0eb644f1694c3e24a080",
+      "raw_track_id": 4480,
+      "old_category": "car",
+      "activation_frame": 7604,
+      "cancelled_counterparts": [
+        {
+          "track_id": 4480,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 7604,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_0061b3dc6f1f9cd69a0db972",
+      "raw_track_id": 4743,
+      "old_category": "motorcycle",
+      "activation_frame": 7763,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 7764,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_9d3e4dab2acfaaffacc681ab",
+      "raw_track_id": 4864,
+      "old_category": "truck",
+      "activation_frame": 7932,
+      "cancelled_counterparts": [
+        {
+          "track_id": 4864,
+          "reason": "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+        }
+      ],
+      "new_decisions": [
+        {
+          "frame_index": 7932,
+          "reasons": [
+            "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_5533c9d469d713c01dc0f72f",
+      "raw_track_id": 5041,
+      "old_category": "motorcycle",
+      "activation_frame": 8259,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 8260,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_8cf214dde0fec2174b860fe7",
+      "raw_track_id": 5042,
+      "old_category": "motorcycle",
+      "activation_frame": 8270,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 8250,
+          "reasons": [
+            "RAW_CONTEXT_CHANGED_WITHOUT_PHYSICAL_CONTINUITY_PROOF",
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    },
+    {
+      "old_event_id": "b_v4_04a51080b4f57e377c7c5713",
+      "raw_track_id": 4986,
+      "old_category": "motorcycle",
+      "activation_frame": 8808,
+      "cancelled_counterparts": [],
+      "new_decisions": [
+        {
+          "frame_index": 8808,
+          "reasons": [
+            "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED"
+          ]
+        }
+      ],
+      "physical_verdict": "REQUIRES_CANONICAL_PASSAGE_REVIEW_NOT_AUTOMATIC_MISS_LABEL"
+    }
+  ],
+  "pending_reason_memberships": {
+    "PERSON_ROLE_UNRESOLVED": 22,
+    "ORIGIN_TIMER_CONTEXT_CONTINUITY_UNRESOLVED": 15,
+    "RAW_CONTEXT_CHANGED_WITHOUT_PHYSICAL_CONTINUITY_PROOF": 6,
+    "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT": 9,
+    "UNRESOLVED_DUPLICATE_IDENTITY_IN_PASSAGE": 4,
+    "INFERRED_ROUTE_PHYSICAL_MOTION_UNRESOLVED": 4,
+    "CROSS_CATEGORY_UNIT_OR_COMPONENT_UNRESOLVED": 11
+  },
+  "qc_cancellation_source_status_counts": {
+    "NO_ACCEPTED_SOURCE_COUNTERPART_CHECK_HELD_OR_REMOVED": 15,
+    "SOURCE_WITNESS_STILL_REPRESENTED_CHECK_CANONICAL_UNIT": 1
+  },
+  "remaining_qc_cancellation_counterparts": [
+    {
+      "case_id": "ACCEPTED-QC-4281",
+      "baseline_event_id": "b_v4_90e26422bae172b528349fb5",
+      "raw_track_id": 4281,
+      "qc_reason": "DUPLICATE_SAME_PHYSICAL_MOTORCYCLE",
+      "qc_keep_event_id": "b_v4_2749e461446564058a9407fd",
+      "source_witness_basis": "ACTIVATION_FRAME_SOURCE_MEASUREMENT",
+      "baseline_source_witness_frames": [
+        7371
+      ],
+      "documentary_status": "SOURCE_WITNESS_STILL_REPRESENTED_CHECK_CANONICAL_UNIT",
+      "new_event_candidates": [
+        {
+          "event_id": "b_v5_96fac29bf3e76e7f18709543",
+          "track_id": 4281,
+          "physical_unit_id": "track:4281",
+          "episode_id": "unreviewed-vehicle",
+          "passage_id": "track:4281:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "direction": "B_TO_A",
+          "route": "LINE_MARGIN",
+          "activation_frame": 7381,
+          "decision_frame": 7381,
+          "measured_crossing": false,
+          "shared_source_measurements": 7,
+          "shared_source_frames": [
+            7360,
+            7362,
+            7364,
+            7366,
+            7367,
+            7368,
+            7371
+          ],
+          "is_documentary_counterpart_not_physical_gt": true,
+          "retains_old_source_decision_witness": true,
+          "shares_qc_canonical_keep_source_measurement": false,
+          "same_direction_as_cancelled_baseline": true,
+          "same_category_as_cancelled_baseline": true
+        }
+      ],
+      "physical_resolution": "REQUIRES_SOURCE_REVIEW_NOT_EVENT_HASH_OR_RAW_ID_COMPARISON"
+    }
+  ],
+  "qc_case_inventory_complete": true,
+  "unverified_source_matches_are_not_physical_accuracy": true
+}

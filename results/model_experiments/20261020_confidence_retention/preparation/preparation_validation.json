@@ -1,0 +1,16 @@
+{
+  "status": "PREPARATION_VALIDATED_ACTUAL_KAGGLE_RUNNING",
+  "software_guard_tests_passed": 7,
+  "software_guard_log": "software_tests.log",
+  "upstream_low_stage_diagnostic": "low_stage_configuration_diagnostic.json",
+  "local_runtime": {
+    "cuda_available": false,
+    "torch": "2.13.0+cpu",
+    "ultralytics": "8.4.175",
+    "onnxruntime": "1.24.4"
+  },
+  "execution_device_requested": "KaggleCUDA0",
+  "actual_kernel": "chrisbiran/phase-9-tgdi-confidence-retention-after-p0",
+  "full_video_counting_executed_by_helper": false,
+  "old_pipeline_or_baseline_modified": false
+}

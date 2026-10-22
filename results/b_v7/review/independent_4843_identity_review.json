@@ -1,0 +1,86 @@
+{
+  "case_id": "V7-QC-NEW-4843-CROSS-OBJECT-AFTER-OCCLUSION",
+  "claim_type": "SOURCE_SCOPED_MANUAL_QC_NOT_FORMAL_GROUND_TRUTH",
+  "status": "CONFIRMED_RAW_MEASUREMENT_IDENTITY_CONTAMINATION_PREEXISTING_IN_BV6",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "baseline_event_id": "b_v6_430e97a31d96bc45eabb51a9",
+  "raw_ids_in_visual_scope": [
+    4808,
+    4843,
+    4913
+  ],
+  "frames": [
+    7888,
+    7899,
+    7905,
+    7928,
+    7935,
+    7950
+  ],
+  "observations": [
+    {
+      "frames": [
+        7888,
+        7899,
+        7905
+      ],
+      "fact": "Dua motor fisik terpisah terlihat bersamaan: motor merah raw4808 dan motor biru raw4843."
+    },
+    {
+      "frames": [
+        7915,
+        7920
+      ],
+      "fact": "SUV hitam bergerak berlawanan arah dan menutup pandangan terhadap kedua motor."
+    },
+    {
+      "frames": [
+        7928,
+        7935
+      ],
+      "fact": "BBox raw4843 setelah occlusion mencakup motor merah; bukti sebelum gap untuk raw4843 berasal dari motor biru. Box yang saling berdekatan dapat juga mencakup komponen motor sebelah; tidak ada dasar untuk menyebut seluruh riwayat satu unit fisik yang bersih."
+    },
+    {
+      "frames": [
+        7950
+      ],
+      "fact": "Motor merah dan biru kembali terlihat terpisah; raw4843 mencakup motor merah di kanan dan raw4913 terletak pada motor biru di kiri."
+    }
+  ],
+  "retained_event": {
+    "direction": "A_TO_B",
+    "route": "LINE_MARGIN",
+    "activation_frame": 7935,
+    "measured_crossing": false,
+    "gap": {
+      "from_frame": 7905,
+      "to_frame": 7928,
+      "missing_source_frames": 22
+    },
+    "crossing_pairs": [],
+    "last_observed_origin_frame": 7899,
+    "destination_frame": 7935,
+    "same_physical_context_across_gap": "b5-physical-context:35cba772ddac6b2230428223"
+  },
+  "implication": "Identitas sumber origin dan destination tidak bisa dianggap satu kendaraan hanya karena rawID dan kelas tetap. Event inferred aktif memerlukan pemisahan/review episode; bukan bukti crossing terukur. Ini masalah retained baseline, bukan regresi baru handoff lintas-ID Bv7.",
+  "not_claimed": [
+    "Tidak menetapkan alias otomatis4808→4843 atau4843→4913 dari thumbnail saja.",
+    "Tidak menetapkan jumlah hitungan palsu global atau missed passage global.",
+    "Tidak mengubah event, kategori, pipeline atau hasil baseline."
+  ],
+  "recommended_next_experiment": "Gunakan fixture perubahan identitas dengan rawID dan kelas tetap sepanjang occlusion; pisahkan context origin/destination bila evidence visual/association bertentangan. Uji kendaraan berdekatan sebagai kontrol negatif dan jangan menaikkan status inferred menjadi measured.",
+  "evidence_files": [
+    "inferred_source_4843.jpg",
+    "inferred_detail_4843.jpg",
+    "secondary_inferred_decode_receipt.json",
+    "secondary_detail_decode_receipt.json"
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "date": "2026-10-22",
+  "timezone": "Asia/Jakarta",
+  "li2_gate": "PARTIAL",
+  "routing_subset_gate": "PASS",
+  "accessibility_gate": "BLOCKED",
+  "tests": 130,
+  "test_failures": 0,
+  "test_errors": 0,
+  "test_skipped": 0,
+  "protected_files_unchanged": 156,
+  "historical_context_documents_archived": 10,
+  "document_links_checked": 110,
+  "route_rows_reconciled": 5,
+  "identical_complete_outputs_verified": true,
+  "live_source_validation": false,
+  "traffic_inference": false,
+  "historical_full_audit_rerun": false,
+  "errors": [],
+  "files": [
+    {
+      "path": "notebooks/location_intelligent_routing.py",
+      "sha256": "b314c6a32dd6f0a23f8d1560b81364c1b32267b864ad53a7f82f14bd15f9d726"
+    },
+    {
+      "path": "notebooks/location_intelligent_routing_tests.py",
+      "sha256": "f3bcf9a14e94ebc5972edcdc56ccaa53765488275453abb1db2084666396f0d9"
+    },
+    {
+      "path": "notebooks/fixtures/li2/config.json",
+      "sha256": "7e96b93e600d0f55fc3905581b9c16e06dc226d313f26ffe5ffbe31af806ca14"
+    },
+    {
+      "path": "notebooks/fixtures/li2/graph.json",
+      "sha256": "d62d8fd4c7b5f4abeffb9dd1cfaf751a51ac26fb98b5f29acdfaaa97425bd267"
+    },
+    {
+      "path": "docs/LOCATION_INTELLIGENT_OVERVIEW.md",
+      "sha256": "edc63fd24f69819783d9885725dce8a2181a3aef3b0694e2d29b3693672b5cc1"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_SPEC.md",
+      "sha256": "ac9fbd37cdcdcae78c304a3d2325c375c58dacaafbb25924d0a7bc06a1470aa1"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_ARCHITECTURE.md",
+      "sha256": "8c2391364285adec98b4fa3d8b03d6799423107f290043fddf0321476a56d077"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_DATA_CONTRACT.md",
+      "sha256": "246030ea43f7cfc0a698a23fcd5f28ad740e38a1b4d556a6b9e126d21d8fbf5e"
+    },
+    {
+      "path": "docs/PPAC_SPEC.md",
+      "sha256": "8f0e8d1b1d56f542c89b93dbaeb49b2e676fbc9c6931d8713afe7a5c6393fb2d"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_TEST_PLAN.md",
+      "sha256": "cb6b6a496f0105ee91754905278c1b1085891757096c3d1f3c4145332f6df0ea"
+    },
+    {
+      "path": "docs/AREA_COVERAGE_DECISIONS.md",
+      "sha256": "3ede79b5d298c0cab6b1e1d903464422884566fc9ad6c5ad092d65445690d96f"
+    },
+    {
+      "path": "docs/DATA_SOURCE_INVENTORY.md",
+      "sha256": "b69ad341feaf152d7f7498b2ac391dbe6e1a9382b0229e6e9106538cd1122c49"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_ROADMAP.md",
+      "sha256": "cb992a4dc28a87853f8f7b2c8a232b5b336944639673aafe44bafd42a8c7fd87"
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "sha256": "72037c9fb517b86f472c5d66723396822076172f956ee84f86303c07287ebdf0"
+    }
+  ]
+}

@@ -1,0 +1,3055 @@
+[
+  {
+    "case_id": "IDENTITY-01",
+    "track_id": 228,
+    "member_track_ids": [
+      228
+    ],
+    "physical_unit_id": "track:228",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:228:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 336,
+    "first_frame": 268,
+    "last_frame": 276,
+    "source_ref": {
+      "frame_index": 276,
+      "track_id": 228,
+      "original_detection_index": 9,
+      "raw_bbox": [
+        462.1654968261719,
+        166.32379150390625,
+        572.70849609375,
+        228.07086181640625
+      ],
+      "point": [
+        517.4369964599609,
+        228.07086181640625
+      ],
+      "class_name": "truck",
+      "effective_class_name": "truck",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 7,
+      "confidence": 0.4020023047924042,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:9d9dda5e8a6abbb76034f119",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 214,
+        "second_track_id": 228,
+        "first_episode_id": "b4-physical-episode:5b7fff40364f0832ed2b29b5",
+        "second_episode_id": "b4-physical-episode:9d9dda5e8a6abbb76034f119",
+        "last_first_frame": 253,
+        "first_second_frame": 268,
+        "gap_source_frames": 15,
+        "endpoint_center_distance_norm": 0.015440828605345156,
+        "endpoint_iou": 0.9434613678023825,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      248,
+      253,
+      268,
+      276,
+      306,
+      336
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:9d9dda5e8a6abbb76034f119"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-01.jpg",
+    "contact_sheet_sha256": "c2e75fd070af845df0b9f1b967893a4d983bdb295839358021c8b16e0b6440a7"
+  },
+  {
+    "case_id": "IDENTITY-02",
+    "track_id": 340,
+    "member_track_ids": [
+      340
+    ],
+    "physical_unit_id": "track:340",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:340:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 520,
+    "first_frame": 410,
+    "last_frame": 460,
+    "source_ref": {
+      "frame_index": 460,
+      "track_id": 340,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        437.9237060546875,
+        187.5305938720703,
+        538.794921875,
+        245.65843200683594
+      ],
+      "point": [
+        488.35931396484375,
+        245.65843200683594
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.7492287755012512,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:4a442cc10a90ee6afb937c29",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 311,
+        "second_track_id": 340,
+        "first_episode_id": "b4-physical-episode:dd6f4256964df0bae9410e58",
+        "second_episode_id": "b4-physical-episode:4a442cc10a90ee6afb937c29",
+        "last_first_frame": 393,
+        "first_second_frame": 410,
+        "gap_source_frames": 17,
+        "endpoint_center_distance_norm": 0.0815198069774228,
+        "endpoint_iou": 0.6482694190425893,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 324,
+        "second_track_id": 340,
+        "first_episode_id": "b4-physical-episode:0e33a43f1093b4ceeb6e6b5a",
+        "second_episode_id": "b4-physical-episode:4a442cc10a90ee6afb937c29",
+        "last_first_frame": 402,
+        "first_second_frame": 410,
+        "gap_source_frames": 8,
+        "endpoint_center_distance_norm": 0.07215985731530525,
+        "endpoint_iou": 0.7552845770463655,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      390,
+      393,
+      402,
+      410,
+      420,
+      460,
+      490,
+      520
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:4a442cc10a90ee6afb937c29"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-02.jpg",
+    "contact_sheet_sha256": "e2cfd55c939ec584cf7d6ba51696886d9c822aa69607991d19accd061e2ab2ec"
+  },
+  {
+    "case_id": "IDENTITY-03",
+    "track_id": 387,
+    "member_track_ids": [
+      387
+    ],
+    "physical_unit_id": "track:387",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:387:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 541,
+    "first_frame": 464,
+    "last_frame": 481,
+    "source_ref": {
+      "frame_index": 481,
+      "track_id": 387,
+      "original_detection_index": 8,
+      "raw_bbox": [
+        433.7962646484375,
+        196.63076782226562,
+        494.6685791015625,
+        256.2813415527344
+      ],
+      "point": [
+        464.232421875,
+        256.2813415527344
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.5260508060455322,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:fb1f5c1ce127a1c0da20123b",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 374,
+        "second_track_id": 387,
+        "first_episode_id": "b4-physical-episode:d08fa7376c42d0813cae81fd",
+        "second_episode_id": "b4-physical-episode:fb1f5c1ce127a1c0da20123b",
+        "last_first_frame": 456,
+        "first_second_frame": 464,
+        "gap_source_frames": 8,
+        "endpoint_center_distance_norm": 0.05598010784997558,
+        "endpoint_iou": 0.7066938091356644,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      444,
+      456,
+      464,
+      474,
+      481,
+      511,
+      541
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:fb1f5c1ce127a1c0da20123b"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-03.jpg",
+    "contact_sheet_sha256": "a120e11ae9f2b4be1495ed34cb125093e145c7d9e9db8701dc199d27e376e4ac"
+  },
+  {
+    "case_id": "IDENTITY-04",
+    "track_id": 756,
+    "member_track_ids": [
+      756
+    ],
+    "physical_unit_id": "track:756",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:756:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 1072,
+    "first_frame": 997,
+    "last_frame": 1012,
+    "source_ref": {
+      "frame_index": 1012,
+      "track_id": 756,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        435.18060302734375,
+        177.28488159179688,
+        545.4791259765625,
+        277.593505859375
+      ],
+      "point": [
+        490.3298645019531,
+        277.593505859375
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.5306892395019531,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:50eeacee91c6a71f017a1b31",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 385,
+        "second_track_id": 756,
+        "first_episode_id": "b4-physical-episode:b4863a91b80fe93772832b72",
+        "second_episode_id": "b4-physical-episode:50eeacee91c6a71f017a1b31",
+        "last_first_frame": 965,
+        "first_second_frame": 997,
+        "gap_source_frames": 32,
+        "endpoint_center_distance_norm": 0.0694517221225217,
+        "endpoint_iou": 0.7630452020916424,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 711,
+        "second_track_id": 756,
+        "first_episode_id": "b4-physical-episode:ea53495e48d4543669b669ec",
+        "second_episode_id": "b4-physical-episode:50eeacee91c6a71f017a1b31",
+        "last_first_frame": 940,
+        "first_second_frame": 997,
+        "gap_source_frames": 57,
+        "endpoint_center_distance_norm": 0.04567293604856653,
+        "endpoint_iou": 0.8179307482452587,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 756,
+        "second_track_id": 759,
+        "first_episode_id": "b4-physical-episode:50eeacee91c6a71f017a1b31",
+        "second_episode_id": "b4-physical-episode:d550b3b2e98826a5a3f5061f",
+        "last_first_frame": 1012,
+        "first_second_frame": 1023,
+        "gap_source_frames": 11,
+        "endpoint_center_distance_norm": 0.08109293130631223,
+        "endpoint_iou": 0.7300966317387931,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 756,
+        "second_track_id": 808,
+        "first_episode_id": "b4-physical-episode:50eeacee91c6a71f017a1b31",
+        "second_episode_id": "b4-physical-episode:322d3b2bfbf8468f7aac3daa",
+        "last_first_frame": 1012,
+        "first_second_frame": 1037,
+        "gap_source_frames": 25,
+        "endpoint_center_distance_norm": 0.08722542222894981,
+        "endpoint_iou": 0.7212852944833048,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      940,
+      965,
+      977,
+      997,
+      1007,
+      1012,
+      1023,
+      1037,
+      1042,
+      1072
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:50eeacee91c6a71f017a1b31"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-04.jpg",
+    "contact_sheet_sha256": "6cacc473082c7cadcf3fe028e540e49e852b9254ca01b63cc76221267b6c0eb1"
+  },
+  {
+    "case_id": "IDENTITY-05",
+    "track_id": 1134,
+    "member_track_ids": [
+      1134
+    ],
+    "physical_unit_id": "track:1134",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:1134:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 1427,
+    "first_frame": 1355,
+    "last_frame": 1367,
+    "source_ref": {
+      "frame_index": 1367,
+      "track_id": 1134,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        442.10211181640625,
+        180.75897216796875,
+        527.5625,
+        243.53668212890625
+      ],
+      "point": [
+        484.8323059082031,
+        243.53668212890625
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.7636975646018982,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:dadf2329e453a757d25e4814",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 1098,
+        "second_track_id": 1134,
+        "first_episode_id": "b4-physical-episode:693945fa8e283bc590f8308a",
+        "second_episode_id": "b4-physical-episode:dadf2329e453a757d25e4814",
+        "last_first_frame": 1329,
+        "first_second_frame": 1355,
+        "gap_source_frames": 26,
+        "endpoint_center_distance_norm": 0.00539120069043606,
+        "endpoint_iou": 0.9771857252353467,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      1329,
+      1335,
+      1355,
+      1365,
+      1367,
+      1397,
+      1427
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:dadf2329e453a757d25e4814"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-05.jpg",
+    "contact_sheet_sha256": "6da085980d21f4ca8dd5576b2284f186e91418f00c7b59dc4200f1d311b3f2b1"
+  },
+  {
+    "case_id": "IDENTITY-06",
+    "track_id": 1210,
+    "member_track_ids": [
+      1210
+    ],
+    "physical_unit_id": "track:1210",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:1210:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 1567,
+    "first_frame": 1434,
+    "last_frame": 1511,
+    "source_ref": {
+      "frame_index": 1511,
+      "track_id": 1210,
+      "original_detection_index": 9,
+      "raw_bbox": [
+        186.26705932617188,
+        236.92669677734375,
+        202.22174072265625,
+        269.2752685546875
+      ],
+      "point": [
+        194.24440002441406,
+        269.2752685546875
+      ],
+      "class_name": "motorcycle",
+      "effective_class_name": "motorcycle",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 3,
+      "confidence": 0.38640838861465454,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:2951cda4bc16a70bfe1f5c83",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 1210,
+        "second_track_id": 1269,
+        "first_episode_id": "b4-physical-episode:2951cda4bc16a70bfe1f5c83",
+        "second_episode_id": "b4-physical-episode:ad1898faa64c17559afadc09",
+        "last_first_frame": 1511,
+        "first_second_frame": 1512,
+        "gap_source_frames": 1,
+        "endpoint_center_distance_norm": 0.08460732224950251,
+        "endpoint_iou": 0.6469903826639426,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      1414,
+      1434,
+      1444,
+      1511,
+      1512,
+      1541,
+      1567
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:2951cda4bc16a70bfe1f5c83"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-06.jpg",
+    "contact_sheet_sha256": "76c4517532bb4b9fdd7b12c9cd81521193577d9f1321bfddaeef3e01eb1e45c6"
+  },
+  {
+    "case_id": "IDENTITY-07",
+    "track_id": 1304,
+    "member_track_ids": [
+      1304
+    ],
+    "physical_unit_id": "track:1304",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:1304:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 1712,
+    "first_frame": 1523,
+    "last_frame": 1652,
+    "source_ref": {
+      "frame_index": 1652,
+      "track_id": 1304,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        429.1153564453125,
+        174.4441375732422,
+        512.6984252929688,
+        242.6880340576172
+      ],
+      "point": [
+        470.9068908691406,
+        242.6880340576172
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.6946070194244385,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:fb454d59d96be5014e581b0f",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 1206,
+        "second_track_id": 1304,
+        "first_episode_id": "b4-physical-episode:bd4586c198504eab78a81149",
+        "second_episode_id": "b4-physical-episode:fb454d59d96be5014e581b0f",
+        "last_first_frame": 1518,
+        "first_second_frame": 1523,
+        "gap_source_frames": 5,
+        "endpoint_center_distance_norm": 0.04911351193332709,
+        "endpoint_iou": 0.825564145608898,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1233,
+        "second_track_id": 1304,
+        "first_episode_id": "b4-physical-episode:6f9f9f8e048b46233ca39cac",
+        "second_episode_id": "b4-physical-episode:fb454d59d96be5014e581b0f",
+        "last_first_frame": 1468,
+        "first_second_frame": 1523,
+        "gap_source_frames": 55,
+        "endpoint_center_distance_norm": 0.05092398213540867,
+        "endpoint_iou": 0.8097313235379038,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1259,
+        "second_track_id": 1304,
+        "first_episode_id": "b4-physical-episode:7ead00b795711da76b9e22f0",
+        "second_episode_id": "b4-physical-episode:fb454d59d96be5014e581b0f",
+        "last_first_frame": 1487,
+        "first_second_frame": 1523,
+        "gap_source_frames": 36,
+        "endpoint_center_distance_norm": 0.0493120679913988,
+        "endpoint_iou": 0.814178701872647,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      1468,
+      1487,
+      1503,
+      1518,
+      1523,
+      1533,
+      1652,
+      1682,
+      1712
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:fb454d59d96be5014e581b0f"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-07.jpg",
+    "contact_sheet_sha256": "4663c07d341a8f50900223e847dd6d1665b6bfc11ca6ffb33bb334c42eee0758"
+  },
+  {
+    "case_id": "IDENTITY-08",
+    "track_id": 1648,
+    "member_track_ids": [
+      1648,
+      1720
+    ],
+    "physical_unit_id": "retained-clique:1648,1720",
+    "episode_id": "unreviewed-vehicle|b4-raw:1648:start:1951",
+    "passage_id": "retained-clique:1648,1720:episode:unreviewed-vehicle|b4-raw:1648:start:1951:passage:1",
+    "decision_frame": 2078,
+    "first_frame": 1951,
+    "last_frame": 2018,
+    "source_ref": {
+      "frame_index": 2018,
+      "track_id": 1648,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        424.14434814453125,
+        177.16671752929688,
+        506.73883056640625,
+        266.2353820800781
+      ],
+      "point": [
+        465.44158935546875,
+        266.2353820800781
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle|b4-raw:1648:start:1951",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.5271487236022949,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:597e7fd7d75a21afda9e768f",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "RAW_VEHICLE_AFTER_BOUNDED_COMPONENT_CONTEXT_NO_ORIGIN_INHERITANCE",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 1655,
+        "second_track_id": 1648,
+        "first_episode_id": "b4-physical-episode:e67bd52960f9e1355a73d993",
+        "second_episode_id": "b4-physical-episode:597e7fd7d75a21afda9e768f",
+        "last_first_frame": 1921,
+        "first_second_frame": 1951,
+        "gap_source_frames": 30,
+        "endpoint_center_distance_norm": 0.013145225825746397,
+        "endpoint_iou": 0.9473587397403435,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1710,
+        "second_track_id": 1720,
+        "first_episode_id": "b4-physical-episode:4d3236ad099b3bc7e3fe94c8",
+        "second_episode_id": "b4-physical-episode:90862097b98c4e7ca9bc41fc",
+        "last_first_frame": 1995,
+        "first_second_frame": 2003,
+        "gap_source_frames": 8,
+        "endpoint_center_distance_norm": 0.008988842088659247,
+        "endpoint_iou": 0.9625408733101071,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1720,
+        "second_track_id": 1734,
+        "first_episode_id": "b4-physical-episode:90862097b98c4e7ca9bc41fc",
+        "second_episode_id": "b4-physical-episode:2a5468a0a4d1c004a7687dcc",
+        "last_first_frame": 2006,
+        "first_second_frame": 2015,
+        "gap_source_frames": 9,
+        "endpoint_center_distance_norm": 0.03238224925579671,
+        "endpoint_iou": 0.8930296217535131,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1720,
+        "second_track_id": 1745,
+        "first_episode_id": "b4-physical-episode:90862097b98c4e7ca9bc41fc",
+        "second_episode_id": "b4-physical-episode:4b1e39b8a9fa980ef3df0df7",
+        "last_first_frame": 2006,
+        "first_second_frame": 2023,
+        "gap_source_frames": 17,
+        "endpoint_center_distance_norm": 0.09663342548771611,
+        "endpoint_iou": 0.6698867883788252,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1720,
+        "second_track_id": 1748,
+        "first_episode_id": "b4-physical-episode:90862097b98c4e7ca9bc41fc",
+        "second_episode_id": "b4-physical-episode:1dc42b0dee319cb1ff3783cc",
+        "last_first_frame": 2006,
+        "first_second_frame": 2025,
+        "gap_source_frames": 19,
+        "endpoint_center_distance_norm": 0.047934583570293544,
+        "endpoint_iou": 0.8325198417841928,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      1921,
+      1931,
+      1951,
+      1961,
+      1995,
+      2003,
+      2006,
+      2015,
+      2018,
+      2023,
+      2025,
+      2048,
+      2078
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:597e7fd7d75a21afda9e768f",
+      "b4-physical-episode:90862097b98c4e7ca9bc41fc"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-08.jpg",
+    "contact_sheet_sha256": "4bda4573ce52947580c74fd182981b46069e67b898ae1b5f5a45f5abfbd422cd"
+  },
+  {
+    "case_id": "IDENTITY-09",
+    "track_id": 1745,
+    "member_track_ids": [
+      1745,
+      1758
+    ],
+    "physical_unit_id": "retained-clique:1745,1758",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "retained-clique:1745,1758:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 2191,
+    "first_frame": 2023,
+    "last_frame": 2131,
+    "source_ref": {
+      "frame_index": 2131,
+      "track_id": 1745,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        428.3262939453125,
+        180.61514282226562,
+        515.3631591796875,
+        244.89306640625
+      ],
+      "point": [
+        471.8447265625,
+        244.89306640625
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.6639194488525391,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:4b1e39b8a9fa980ef3df0df7",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 1490,
+        "second_track_id": 1745,
+        "first_episode_id": "b4-physical-episode:8e0e20fa9aee8129ae56f675",
+        "second_episode_id": "b4-physical-episode:4b1e39b8a9fa980ef3df0df7",
+        "last_first_frame": 1971,
+        "first_second_frame": 2023,
+        "gap_source_frames": 52,
+        "endpoint_center_distance_norm": 0.0826185098702207,
+        "endpoint_iou": 0.7252066209565745,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1710,
+        "second_track_id": 1758,
+        "first_episode_id": "b4-physical-episode:4d3236ad099b3bc7e3fe94c8",
+        "second_episode_id": "b4-physical-episode:3c833428626672633a607277",
+        "last_first_frame": 1995,
+        "first_second_frame": 2042,
+        "gap_source_frames": 47,
+        "endpoint_center_distance_norm": 0.025943261913352545,
+        "endpoint_iou": 0.8449900563400978,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1720,
+        "second_track_id": 1745,
+        "first_episode_id": "b4-physical-episode:90862097b98c4e7ca9bc41fc",
+        "second_episode_id": "b4-physical-episode:4b1e39b8a9fa980ef3df0df7",
+        "last_first_frame": 2006,
+        "first_second_frame": 2023,
+        "gap_source_frames": 17,
+        "endpoint_center_distance_norm": 0.09663342548771611,
+        "endpoint_iou": 0.6698867883788252,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1758,
+        "second_track_id": 1764,
+        "first_episode_id": "b4-physical-episode:3c833428626672633a607277",
+        "second_episode_id": "b4-physical-episode:c4db91191eb2ceb6ca23f171",
+        "last_first_frame": 2043,
+        "first_second_frame": 2049,
+        "gap_source_frames": 6,
+        "endpoint_center_distance_norm": 0.01945362826747049,
+        "endpoint_iou": 0.8743210391600523,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1758,
+        "second_track_id": 1774,
+        "first_episode_id": "b4-physical-episode:3c833428626672633a607277",
+        "second_episode_id": "b4-physical-episode:60ca454227056efd200c0dd5",
+        "last_first_frame": 2043,
+        "first_second_frame": 2065,
+        "gap_source_frames": 22,
+        "endpoint_center_distance_norm": 0.00956017031149285,
+        "endpoint_iou": 0.966022240711864,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1758,
+        "second_track_id": 1778,
+        "first_episode_id": "b4-physical-episode:3c833428626672633a607277",
+        "second_episode_id": "b4-physical-episode:4466f0443e79f86903d00665",
+        "last_first_frame": 2043,
+        "first_second_frame": 2072,
+        "gap_source_frames": 29,
+        "endpoint_center_distance_norm": 0.06023958561723058,
+        "endpoint_iou": 0.8129877696794618,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      1971,
+      1995,
+      2003,
+      2006,
+      2023,
+      2033,
+      2042,
+      2043,
+      2049,
+      2065,
+      2072,
+      2131,
+      2161,
+      2191
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:3c833428626672633a607277",
+      "b4-physical-episode:4b1e39b8a9fa980ef3df0df7"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-09.jpg",
+    "contact_sheet_sha256": "29bf04cc12b051fc3de44786df3935a00b9092ba1de544800b9e11e6ffd6bb36"
+  },
+  {
+    "case_id": "IDENTITY-10",
+    "track_id": 1843,
+    "member_track_ids": [
+      1843
+    ],
+    "physical_unit_id": "track:1843",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:1843:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 2211,
+    "first_frame": 2141,
+    "last_frame": 2151,
+    "source_ref": {
+      "frame_index": 2151,
+      "track_id": 1843,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        427.5528564453125,
+        182.7252197265625,
+        514.170166015625,
+        256.8103942871094
+      ],
+      "point": [
+        470.86151123046875,
+        256.8103942871094
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.7285687923431396,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:c285806d82ff0dd6299416b4",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 1783,
+        "second_track_id": 1843,
+        "first_episode_id": "b4-physical-episode:340e196374c01433bd4c35e4",
+        "second_episode_id": "b4-physical-episode:c285806d82ff0dd6299416b4",
+        "last_first_frame": 2084,
+        "first_second_frame": 2141,
+        "gap_source_frames": 57,
+        "endpoint_center_distance_norm": 0.06676435107462923,
+        "endpoint_iou": 0.7818434858324181,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1806,
+        "second_track_id": 1843,
+        "first_episode_id": "b4-physical-episode:108fd2bfadb4fd4efadbdc19",
+        "second_episode_id": "b4-physical-episode:c285806d82ff0dd6299416b4",
+        "last_first_frame": 2098,
+        "first_second_frame": 2141,
+        "gap_source_frames": 43,
+        "endpoint_center_distance_norm": 0.057964033915461774,
+        "endpoint_iou": 0.8246494167410368,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1812,
+        "second_track_id": 1843,
+        "first_episode_id": "b4-physical-episode:5461e88139802395932fcd88",
+        "second_episode_id": "b4-physical-episode:c285806d82ff0dd6299416b4",
+        "last_first_frame": 2105,
+        "first_second_frame": 2141,
+        "gap_source_frames": 36,
+        "endpoint_center_distance_norm": 0.017317206868898535,
+        "endpoint_iou": 0.9417956979562783,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      2084,
+      2098,
+      2105,
+      2121,
+      2141,
+      2151,
+      2181,
+      2211
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:c285806d82ff0dd6299416b4"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-10.jpg",
+    "contact_sheet_sha256": "aeed104efa6ee011741911bfbd6c75e2141ecdd1590d9aecb5ac332cdfce8381"
+  },
+  {
+    "case_id": "IDENTITY-11",
+    "track_id": 1837,
+    "member_track_ids": [
+      1837
+    ],
+    "physical_unit_id": "track:1837",
+    "episode_id": "unreviewed-vehicle|b4-raw:1837:start:2239",
+    "passage_id": "track:1837:episode:unreviewed-vehicle|b4-raw:1837:start:2239:passage:1",
+    "decision_frame": 2413,
+    "first_frame": 2239,
+    "last_frame": 2353,
+    "source_ref": {
+      "frame_index": 2353,
+      "track_id": 1837,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        427.70611572265625,
+        176.87869262695312,
+        486.98065185546875,
+        236.34475708007812
+      ],
+      "point": [
+        457.3433837890625,
+        236.34475708007812
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle|b4-raw:1837:start:2239",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.5621967315673828,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:75d908a9e82716a7a05b03ba",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "RAW_VEHICLE_AFTER_BOUNDED_COMPONENT_CONTEXT_NO_ORIGIN_INHERITANCE",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 1863,
+        "second_track_id": 1837,
+        "first_episode_id": "b4-physical-episode:29d447bb1467e7d2dd503c41",
+        "second_episode_id": "b4-physical-episode:75d908a9e82716a7a05b03ba",
+        "last_first_frame": 2185,
+        "first_second_frame": 2239,
+        "gap_source_frames": 54,
+        "endpoint_center_distance_norm": 0.013758869733790882,
+        "endpoint_iou": 0.94116719723666,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 1887,
+        "second_track_id": 1837,
+        "first_episode_id": "b4-physical-episode:469b2704829b38f36624d459",
+        "second_episode_id": "b4-physical-episode:75d908a9e82716a7a05b03ba",
+        "last_first_frame": 2202,
+        "first_second_frame": 2239,
+        "gap_source_frames": 37,
+        "endpoint_center_distance_norm": 0.006815555711767017,
+        "endpoint_iou": 0.9619582171324563,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      2185,
+      2202,
+      2219,
+      2239,
+      2249,
+      2353,
+      2383,
+      2413
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:75d908a9e82716a7a05b03ba"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-11.jpg",
+    "contact_sheet_sha256": "97e09b2f3061d9b2ba3bf488486e1527b1e7d7b3b4605db104a5db7b8056b743"
+  },
+  {
+    "case_id": "IDENTITY-12",
+    "track_id": 2282,
+    "member_track_ids": [
+      2282
+    ],
+    "physical_unit_id": "track:2282",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:2282:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 3201,
+    "first_frame": 3131,
+    "last_frame": 3141,
+    "source_ref": {
+      "frame_index": 3141,
+      "track_id": 2282,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        421.6533203125,
+        177.81341552734375,
+        570.5118408203125,
+        280.3954162597656
+      ],
+      "point": [
+        496.08258056640625,
+        280.3954162597656
+      ],
+      "class_name": "truck",
+      "effective_class_name": "truck",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 7,
+      "confidence": 0.6092219948768616,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:b48ddfc22efb7c6b605ead49",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2017,
+        "second_track_id": 2282,
+        "first_episode_id": "b4-physical-episode:ba26a4da3836b1121e2e5012",
+        "second_episode_id": "b4-physical-episode:b48ddfc22efb7c6b605ead49",
+        "last_first_frame": 3122,
+        "first_second_frame": 3131,
+        "gap_source_frames": 9,
+        "endpoint_center_distance_norm": 0.06114476729484989,
+        "endpoint_iou": 0.8475758805960887,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2282,
+        "second_track_id": 2289,
+        "first_episode_id": "b4-physical-episode:b48ddfc22efb7c6b605ead49",
+        "second_episode_id": "b4-physical-episode:c21e34c76f0dc03d378cf31d",
+        "last_first_frame": 3141,
+        "first_second_frame": 3145,
+        "gap_source_frames": 4,
+        "endpoint_center_distance_norm": 0.03225035469676061,
+        "endpoint_iou": 0.9085465071809049,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2282,
+        "second_track_id": 2295,
+        "first_episode_id": "b4-physical-episode:b48ddfc22efb7c6b605ead49",
+        "second_episode_id": "b4-physical-episode:101c5a48581081642b8fa3f4",
+        "last_first_frame": 3141,
+        "first_second_frame": 3159,
+        "gap_source_frames": 18,
+        "endpoint_center_distance_norm": 0.0042924771109086445,
+        "endpoint_iou": 0.9868121147233311,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      3111,
+      3122,
+      3131,
+      3141,
+      3145,
+      3159,
+      3171,
+      3201
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:b48ddfc22efb7c6b605ead49"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-12.jpg",
+    "contact_sheet_sha256": "55a5271d3967309739c24cdb7e3f8b6891f8d31de18c4ad38b76c79e5fb86ecf"
+  },
+  {
+    "case_id": "IDENTITY-13",
+    "track_id": 1214,
+    "member_track_ids": [
+      1214
+    ],
+    "physical_unit_id": "track:1214",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:1214:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 3346,
+    "first_frame": 1432,
+    "last_frame": 3286,
+    "source_ref": {
+      "frame_index": 3286,
+      "track_id": 1214,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        585.865478515625,
+        209.35308837890625,
+        639.8486328125,
+        241.0242919921875
+      ],
+      "point": [
+        612.8570556640625,
+        241.0242919921875
+      ],
+      "class_name": "motorcycle",
+      "effective_class_name": "motorcycle",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 3,
+      "confidence": 0.4481394588947296,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:eb449d524ea41d8a41b08120",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 937,
+        "second_track_id": 1214,
+        "first_episode_id": "b4-physical-episode:07f621a3341addbc17c50dea",
+        "second_episode_id": "b4-physical-episode:eb449d524ea41d8a41b08120",
+        "last_first_frame": 1376,
+        "first_second_frame": 1432,
+        "gap_source_frames": 56,
+        "endpoint_center_distance_norm": 0.03892273018424618,
+        "endpoint_iou": 0.8286647104462298,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      1376,
+      1412,
+      1432,
+      1442,
+      3286,
+      3316,
+      3346
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:eb449d524ea41d8a41b08120"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-13.jpg",
+    "contact_sheet_sha256": "01d925ad54a6ca2685f048e38854cf5b1f0109930f8c800368cf5b0cab8528f0"
+  },
+  {
+    "case_id": "IDENTITY-14",
+    "track_id": 2374,
+    "member_track_ids": [
+      2374
+    ],
+    "physical_unit_id": "track:2374",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:2374:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 3617,
+    "first_frame": 3456,
+    "last_frame": 3557,
+    "source_ref": {
+      "frame_index": 3557,
+      "track_id": 2374,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        420.744140625,
+        181.35354614257812,
+        569.41162109375,
+        284.039794921875
+      ],
+      "point": [
+        495.077880859375,
+        284.039794921875
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.6720660924911499,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:a64c2d23f86e97a0bfccda76",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2349,
+        "second_track_id": 2374,
+        "first_episode_id": "b4-physical-episode:2305e17d129f6a17da3548ed",
+        "second_episode_id": "b4-physical-episode:a64c2d23f86e97a0bfccda76",
+        "last_first_frame": 3399,
+        "first_second_frame": 3456,
+        "gap_source_frames": 57,
+        "endpoint_center_distance_norm": 0.006678747297168722,
+        "endpoint_iou": 0.9724934544943102,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2352,
+        "second_track_id": 2374,
+        "first_episode_id": "b4-physical-episode:7dd30fd9eba2308d1e440e79",
+        "second_episode_id": "b4-physical-episode:a64c2d23f86e97a0bfccda76",
+        "last_first_frame": 3402,
+        "first_second_frame": 3456,
+        "gap_source_frames": 54,
+        "endpoint_center_distance_norm": 0.007317468496385379,
+        "endpoint_iou": 0.9694182909548679,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2354,
+        "second_track_id": 2374,
+        "first_episode_id": "b4-physical-episode:ee032370ac8b899ed022826e",
+        "second_episode_id": "b4-physical-episode:a64c2d23f86e97a0bfccda76",
+        "last_first_frame": 3408,
+        "first_second_frame": 3456,
+        "gap_source_frames": 48,
+        "endpoint_center_distance_norm": 0.010461207134196652,
+        "endpoint_iou": 0.9570700348165496,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2364,
+        "second_track_id": 2374,
+        "first_episode_id": "b4-physical-episode:1c03bbbe220ce66738f581df",
+        "second_episode_id": "b4-physical-episode:a64c2d23f86e97a0bfccda76",
+        "last_first_frame": 3432,
+        "first_second_frame": 3456,
+        "gap_source_frames": 24,
+        "endpoint_center_distance_norm": 0.03513444358197084,
+        "endpoint_iou": 0.8817707553003497,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2374,
+        "second_track_id": 2393,
+        "first_episode_id": "b4-physical-episode:a64c2d23f86e97a0bfccda76",
+        "second_episode_id": "b4-physical-episode:63fe78e58af3cdec1607cf4a",
+        "last_first_frame": 3557,
+        "first_second_frame": 3574,
+        "gap_source_frames": 17,
+        "endpoint_center_distance_norm": 0.005483663568716921,
+        "endpoint_iou": 0.9795066236384213,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      3399,
+      3402,
+      3408,
+      3432,
+      3436,
+      3456,
+      3466,
+      3557,
+      3574,
+      3587,
+      3617
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:a64c2d23f86e97a0bfccda76"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-14.jpg",
+    "contact_sheet_sha256": "fa7e549468dacbc6164e3c156c50a564e6c8161381d5b44f2d2d5264875cb8df"
+  },
+  {
+    "case_id": "IDENTITY-15",
+    "track_id": 2445,
+    "member_track_ids": [
+      2445
+    ],
+    "physical_unit_id": "track:2445",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:2445:episode:unreviewed-vehicle:passage:2",
+    "decision_frame": 4036,
+    "first_frame": 3717,
+    "last_frame": 3976,
+    "source_ref": {
+      "frame_index": 3976,
+      "track_id": 2445,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        584.6464233398438,
+        212.110107421875,
+        639.7725219726562,
+        262.6517028808594
+      ],
+      "point": [
+        612.20947265625,
+        262.6517028808594
+      ],
+      "class_name": "motorcycle",
+      "effective_class_name": "motorcycle",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 3,
+      "confidence": 0.7388913631439209,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:53b5995885ae7d693e16a7f5",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2442,
+        "second_track_id": 2445,
+        "first_episode_id": "b4-physical-episode:2e28135997f494ab936c48de",
+        "second_episode_id": "b4-physical-episode:53b5995885ae7d693e16a7f5",
+        "last_first_frame": 3716,
+        "first_second_frame": 3717,
+        "gap_source_frames": 1,
+        "endpoint_center_distance_norm": 0.0282521731432802,
+        "endpoint_iou": 0.7878773811745913,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      3697,
+      3716,
+      3717,
+      3727,
+      3976,
+      4006,
+      4036
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:53b5995885ae7d693e16a7f5"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-15.jpg",
+    "contact_sheet_sha256": "134518d2920cf45d6928ba0312dc6ee83f2e9c173c0f622c6ba236075e3933c7"
+  },
+  {
+    "case_id": "IDENTITY-16",
+    "track_id": 2413,
+    "member_track_ids": [
+      2413
+    ],
+    "physical_unit_id": "track:2413",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:2413:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 4039,
+    "first_frame": 3640,
+    "last_frame": 3979,
+    "source_ref": {
+      "frame_index": 3979,
+      "track_id": 2413,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        424.67669677734375,
+        186.27322387695312,
+        535.77099609375,
+        260.69482421875
+      ],
+      "point": [
+        480.2238464355469,
+        260.69482421875
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.8472275137901306,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:3beba0b359660b11447aa617",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2327,
+        "second_track_id": 2413,
+        "first_episode_id": "b4-physical-episode:dea59e4acb29fd10d036716a",
+        "second_episode_id": "b4-physical-episode:3beba0b359660b11447aa617",
+        "last_first_frame": 3635,
+        "first_second_frame": 3640,
+        "gap_source_frames": 5,
+        "endpoint_center_distance_norm": 0.022000485737519674,
+        "endpoint_iou": 0.8694030363333265,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      3620,
+      3635,
+      3640,
+      3650,
+      3979,
+      4009,
+      4039
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:3beba0b359660b11447aa617"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-16.jpg",
+    "contact_sheet_sha256": "86d34053914445217d9663a42802a0ace35994251a8d9ea6db69a6ed6afbfd7b"
+  },
+  {
+    "case_id": "IDENTITY-17",
+    "track_id": 2535,
+    "member_track_ids": [
+      2535,
+      2539
+    ],
+    "physical_unit_id": "retained-clique:2535,2539",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "retained-clique:2535,2539:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 4128,
+    "first_frame": 3999,
+    "last_frame": 4068,
+    "source_ref": {
+      "frame_index": 4068,
+      "track_id": 2535,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        424.51953125,
+        183.04827880859375,
+        510.4652099609375,
+        262.83062744140625
+      ],
+      "point": [
+        467.49237060546875,
+        262.83062744140625
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.7401009798049927,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:f203ce62865ea28122f0ab75",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": []
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2537,
+        "second_track_id": 2539,
+        "first_episode_id": "b4-physical-episode:da4d4b35f71f99016c1c2fc7",
+        "second_episode_id": "b4-physical-episode:098ae1563860ec4036d937de",
+        "last_first_frame": 4005,
+        "first_second_frame": 4009,
+        "gap_source_frames": 4,
+        "endpoint_center_distance_norm": 0.017350859189476896,
+        "endpoint_iou": 0.8990417209661599,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2539,
+        "second_track_id": 2541,
+        "first_episode_id": "b4-physical-episode:098ae1563860ec4036d937de",
+        "second_episode_id": "b4-physical-episode:37a5020b07a335cde29179e8",
+        "last_first_frame": 4027,
+        "first_second_frame": 4030,
+        "gap_source_frames": 3,
+        "endpoint_center_distance_norm": 0.04195417340859854,
+        "endpoint_iou": 0.8651129039459026,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2539,
+        "second_track_id": 2544,
+        "first_episode_id": "b4-physical-episode:098ae1563860ec4036d937de",
+        "second_episode_id": "b4-physical-episode:a9f27327fd219494ea763d04",
+        "last_first_frame": 4027,
+        "first_second_frame": 4039,
+        "gap_source_frames": 12,
+        "endpoint_center_distance_norm": 0.003608994540188186,
+        "endpoint_iou": 0.9849711423727435,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      3979,
+      3999,
+      4005,
+      4009,
+      4027,
+      4030,
+      4039,
+      4068,
+      4098,
+      4128
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:098ae1563860ec4036d937de",
+      "b4-physical-episode:f203ce62865ea28122f0ab75"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-17.jpg",
+    "contact_sheet_sha256": "0256a39a22d8e2ea5f295245d7f4a4c5e341d611cccb07ec5549ecc9027b4c8d"
+  },
+  {
+    "case_id": "IDENTITY-18",
+    "track_id": 2560,
+    "member_track_ids": [
+      2560
+    ],
+    "physical_unit_id": "track:2560",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:2560:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 4152,
+    "first_frame": 4088,
+    "last_frame": 4092,
+    "source_ref": {
+      "frame_index": 4092,
+      "track_id": 2560,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        162.5286865234375,
+        91.25784301757812,
+        547.308837890625,
+        379.37481689453125
+      ],
+      "point": [
+        354.91876220703125,
+        379.37481689453125
+      ],
+      "class_name": "truck",
+      "effective_class_name": "truck",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 7,
+      "confidence": 0.44377464056015015,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:5dbea6dc8f6c652242f41cf8",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2557,
+        "second_track_id": 2560,
+        "first_episode_id": "b4-physical-episode:f753389ad0c3b7c174bd64c6",
+        "second_episode_id": "b4-physical-episode:5dbea6dc8f6c652242f41cf8",
+        "last_first_frame": 4082,
+        "first_second_frame": 4088,
+        "gap_source_frames": 6,
+        "endpoint_center_distance_norm": 0.03973639333648394,
+        "endpoint_iou": 0.707871236855307,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      4068,
+      4082,
+      4088,
+      4092,
+      4122,
+      4152
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:5dbea6dc8f6c652242f41cf8"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-18.jpg",
+    "contact_sheet_sha256": "39c17a0db27943621209262a2f99c21a79072e8a9f712386999c7df2b07ddf6b"
+  },
+  {
+    "case_id": "IDENTITY-19",
+    "track_id": 2544,
+    "member_track_ids": [
+      2544
+    ],
+    "physical_unit_id": "track:2544",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:2544:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 4181,
+    "first_frame": 4039,
+    "last_frame": 4121,
+    "source_ref": {
+      "frame_index": 4121,
+      "track_id": 2544,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        427.277587890625,
+        184.037109375,
+        537.03955078125,
+        235.97222900390625
+      ],
+      "point": [
+        482.1585693359375,
+        235.97222900390625
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.5321886539459229,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:a9f27327fd219494ea763d04",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2537,
+        "second_track_id": 2544,
+        "first_episode_id": "b4-physical-episode:da4d4b35f71f99016c1c2fc7",
+        "second_episode_id": "b4-physical-episode:a9f27327fd219494ea763d04",
+        "last_first_frame": 4005,
+        "first_second_frame": 4039,
+        "gap_source_frames": 34,
+        "endpoint_center_distance_norm": 0.01360350892492596,
+        "endpoint_iou": 0.8933390845202216,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2539,
+        "second_track_id": 2544,
+        "first_episode_id": "b4-physical-episode:098ae1563860ec4036d937de",
+        "second_episode_id": "b4-physical-episode:a9f27327fd219494ea763d04",
+        "last_first_frame": 4027,
+        "first_second_frame": 4039,
+        "gap_source_frames": 12,
+        "endpoint_center_distance_norm": 0.003608994540188186,
+        "endpoint_iou": 0.9849711423727435,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2541,
+        "second_track_id": 2544,
+        "first_episode_id": "b4-physical-episode:37a5020b07a335cde29179e8",
+        "second_episode_id": "b4-physical-episode:a9f27327fd219494ea763d04",
+        "last_first_frame": 4036,
+        "first_second_frame": 4039,
+        "gap_source_frames": 3,
+        "endpoint_center_distance_norm": 0.03403532219519787,
+        "endpoint_iou": 0.8886191434564777,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      4005,
+      4019,
+      4027,
+      4036,
+      4039,
+      4049,
+      4121,
+      4151,
+      4181
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:a9f27327fd219494ea763d04"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-19.jpg",
+    "contact_sheet_sha256": "fec5adfa472499404701af4737ef8b51883c8695b191643f490b3e585ad4f454"
+  },
+  {
+    "case_id": "IDENTITY-20",
+    "track_id": 2708,
+    "member_track_ids": [
+      2708,
+      2714
+    ],
+    "physical_unit_id": "retained-clique:2708,2714",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "retained-clique:2708,2714:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 4489,
+    "first_frame": 4408,
+    "last_frame": 4429,
+    "source_ref": {
+      "frame_index": 4429,
+      "track_id": 2708,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        428.4739074707031,
+        173.73135375976562,
+        505.8518371582031,
+        256.8845520019531
+      ],
+      "point": [
+        467.1628723144531,
+        256.8845520019531
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.6930619478225708,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:fb3b9437a889f5f1b502e396",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": []
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2679,
+        "second_track_id": 2714,
+        "first_episode_id": "b4-physical-episode:59d521f0030082c5b69e665f",
+        "second_episode_id": "b4-physical-episode:30665aefbb225329c154da39",
+        "last_first_frame": 4357,
+        "first_second_frame": 4416,
+        "gap_source_frames": 59,
+        "endpoint_center_distance_norm": 0.07695259579552155,
+        "endpoint_iou": 0.7676011668090401,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2712,
+        "second_track_id": 2714,
+        "first_episode_id": "b4-physical-episode:64231db498ce89a89b7094a2",
+        "second_episode_id": "b4-physical-episode:30665aefbb225329c154da39",
+        "last_first_frame": 4413,
+        "first_second_frame": 4416,
+        "gap_source_frames": 3,
+        "endpoint_center_distance_norm": 0.0016516422813234307,
+        "endpoint_iou": 0.990463001400493,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2714,
+        "second_track_id": 2715,
+        "first_episode_id": "b4-physical-episode:30665aefbb225329c154da39",
+        "second_episode_id": "b4-physical-episode:8608e8f504b07f6f7e9e6ca5",
+        "last_first_frame": 4420,
+        "first_second_frame": 4423,
+        "gap_source_frames": 3,
+        "endpoint_center_distance_norm": 0.002655580265250415,
+        "endpoint_iou": 0.9888752384895579,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2714,
+        "second_track_id": 2723,
+        "first_episode_id": "b4-physical-episode:30665aefbb225329c154da39",
+        "second_episode_id": "b4-physical-episode:0238e58cc9e8d3c7c8c92676",
+        "last_first_frame": 4420,
+        "first_second_frame": 4432,
+        "gap_source_frames": 12,
+        "endpoint_center_distance_norm": 0.06217852127116883,
+        "endpoint_iou": 0.8273852835937948,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2714,
+        "second_track_id": 2731,
+        "first_episode_id": "b4-physical-episode:30665aefbb225329c154da39",
+        "second_episode_id": "b4-physical-episode:3b1f37f2ea72bd2d18d25c09",
+        "last_first_frame": 4420,
+        "first_second_frame": 4461,
+        "gap_source_frames": 41,
+        "endpoint_center_distance_norm": 0.05747025410328756,
+        "endpoint_iou": 0.8227213442837421,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      4357,
+      4388,
+      4408,
+      4413,
+      4416,
+      4418,
+      4420,
+      4423,
+      4429,
+      4432,
+      4459,
+      4461,
+      4489
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:30665aefbb225329c154da39",
+      "b4-physical-episode:fb3b9437a889f5f1b502e396"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-20.jpg",
+    "contact_sheet_sha256": "f6bd19faaf435e55936d76c36ac26176a5e4e6ffd75fb64674b2458aa763a2e0"
+  },
+  {
+    "case_id": "IDENTITY-21",
+    "track_id": 2722,
+    "member_track_ids": [
+      2722
+    ],
+    "physical_unit_id": "track:2722",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:2722:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 4546,
+    "first_frame": 4432,
+    "last_frame": 4486,
+    "source_ref": {
+      "frame_index": 4486,
+      "track_id": 2722,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        429.24993896484375,
+        172.81097412109375,
+        516.8319702148438,
+        247.62118530273438
+      ],
+      "point": [
+        473.04095458984375,
+        247.62118530273438
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.5737698674201965,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:a7a57bf76a7e253652d49578",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 2694,
+        "second_track_id": 2722,
+        "first_episode_id": "b4-physical-episode:f92c7dc84cb6f4a43419cde5",
+        "second_episode_id": "b4-physical-episode:a7a57bf76a7e253652d49578",
+        "last_first_frame": 4372,
+        "first_second_frame": 4432,
+        "gap_source_frames": 60,
+        "endpoint_center_distance_norm": 0.0778151810981481,
+        "endpoint_iou": 0.7048213204818973,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 2715,
+        "second_track_id": 2722,
+        "first_episode_id": "b4-physical-episode:8608e8f504b07f6f7e9e6ca5",
+        "second_episode_id": "b4-physical-episode:a7a57bf76a7e253652d49578",
+        "last_first_frame": 4425,
+        "first_second_frame": 4432,
+        "gap_source_frames": 7,
+        "endpoint_center_distance_norm": 0.08216457438717707,
+        "endpoint_iou": 0.7903222118221304,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      4372,
+      4412,
+      4425,
+      4432,
+      4442,
+      4486,
+      4516,
+      4546
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:a7a57bf76a7e253652d49578"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-21.jpg",
+    "contact_sheet_sha256": "eab9a1b016caadf530003726e1b4492f00ee148f9569525bddfa12e6c49379cd"
+  },
+  {
+    "case_id": "IDENTITY-22",
+    "track_id": 2931,
+    "member_track_ids": [
+      2931,
+      3016
+    ],
+    "physical_unit_id": "retained-clique:2931,3016",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "retained-clique:2931,3016:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 5051,
+    "first_frame": 4777,
+    "last_frame": 4991,
+    "source_ref": {
+      "frame_index": 4991,
+      "track_id": 2931,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        426.1158447265625,
+        181.77529907226562,
+        501.8941650390625,
+        269.06439208984375
+      ],
+      "point": [
+        464.0050048828125,
+        269.06439208984375
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.6461401581764221,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:df38f7527efa9965bbf3fe75",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": []
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 3010,
+        "second_track_id": 3016,
+        "first_episode_id": "b4-physical-episode:ae9469fb6748ad1ea39bbb13",
+        "second_episode_id": "b4-physical-episode:6d072bfda10e7881ec199a06",
+        "last_first_frame": 4948,
+        "first_second_frame": 4969,
+        "gap_source_frames": 21,
+        "endpoint_center_distance_norm": 0.008915303252767052,
+        "endpoint_iou": 0.9667091234852679,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 3015,
+        "second_track_id": 3016,
+        "first_episode_id": "b4-physical-episode:e45640eeff54052838a1ded0",
+        "second_episode_id": "b4-physical-episode:6d072bfda10e7881ec199a06",
+        "last_first_frame": 4964,
+        "first_second_frame": 4969,
+        "gap_source_frames": 5,
+        "endpoint_center_distance_norm": 0.000960875956691214,
+        "endpoint_iou": 0.9875317421638493,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 3016,
+        "second_track_id": 3030,
+        "first_episode_id": "b4-physical-episode:6d072bfda10e7881ec199a06",
+        "second_episode_id": "b4-physical-episode:ceb4765961a74f7e2b983fdc",
+        "last_first_frame": 4970,
+        "first_second_frame": 4995,
+        "gap_source_frames": 25,
+        "endpoint_center_distance_norm": 0.05779490531466582,
+        "endpoint_iou": 0.7901024100011816,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 3016,
+        "second_track_id": 3033,
+        "first_episode_id": "b4-physical-episode:6d072bfda10e7881ec199a06",
+        "second_episode_id": "b4-physical-episode:31f093761675865834a98dd7",
+        "last_first_frame": 4970,
+        "first_second_frame": 5005,
+        "gap_source_frames": 35,
+        "endpoint_center_distance_norm": 0.012528454689897776,
+        "endpoint_iou": 0.9568516955285027,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      4757,
+      4777,
+      4787,
+      4948,
+      4964,
+      4969,
+      4970,
+      4991,
+      4995,
+      5005,
+      5021,
+      5051
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:6d072bfda10e7881ec199a06",
+      "b4-physical-episode:df38f7527efa9965bbf3fe75"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-22.jpg",
+    "contact_sheet_sha256": "430f3b8bd6f9f84c83e8555db03d36145e4e5ae5af7cd8742dfb074b7dc092f6"
+  },
+  {
+    "case_id": "IDENTITY-23",
+    "track_id": 3253,
+    "member_track_ids": [
+      3253
+    ],
+    "physical_unit_id": "track:3253",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:3253:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 6144,
+    "first_frame": 5469,
+    "last_frame": 6084,
+    "source_ref": {
+      "frame_index": 6084,
+      "track_id": 3253,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        406.57861328125,
+        164.15567016601562,
+        513.9156494140625,
+        290.7762756347656
+      ],
+      "point": [
+        460.24713134765625,
+        290.7762756347656
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.6002897024154663,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:0838c4e5261e333014c14c13",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 3199,
+        "second_track_id": 3253,
+        "first_episode_id": "b4-physical-episode:ad10aed1e1eaeca675412e9c",
+        "second_episode_id": "b4-physical-episode:0838c4e5261e333014c14c13",
+        "last_first_frame": 5413,
+        "first_second_frame": 5469,
+        "gap_source_frames": 56,
+        "endpoint_center_distance_norm": 0.030614200637482165,
+        "endpoint_iou": 0.7354878494251436,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 3237,
+        "second_track_id": 3253,
+        "first_episode_id": "b4-physical-episode:ca4d13e16f825ba8e24e068c",
+        "second_episode_id": "b4-physical-episode:0838c4e5261e333014c14c13",
+        "last_first_frame": 5460,
+        "first_second_frame": 5469,
+        "gap_source_frames": 9,
+        "endpoint_center_distance_norm": 0.04583471362491217,
+        "endpoint_iou": 0.7083169456411935,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      5413,
+      5449,
+      5460,
+      5469,
+      5479,
+      6084,
+      6114,
+      6144
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:0838c4e5261e333014c14c13"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-23.jpg",
+    "contact_sheet_sha256": "d5851d86cbd0935c0b41baa842f9543e8cc36330f71d3707f835b4953e3ac48e"
+  },
+  {
+    "case_id": "IDENTITY-24",
+    "track_id": 3557,
+    "member_track_ids": [
+      3557,
+      3574
+    ],
+    "physical_unit_id": "retained-clique:3557,3574",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "retained-clique:3557,3574:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 6475,
+    "first_frame": 6247,
+    "last_frame": 6415,
+    "source_ref": {
+      "frame_index": 6415,
+      "track_id": 3557,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        430.74627685546875,
+        173.87191772460938,
+        509.11273193359375,
+        232.05905151367188
+      ],
+      "point": [
+        469.92950439453125,
+        232.05905151367188
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.6731497049331665,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:5e2a6f584a780568e1a24b66",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": []
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 3571,
+        "second_track_id": 3574,
+        "first_episode_id": "b4-physical-episode:ccca4960ef04168bd47e8751",
+        "second_episode_id": "b4-physical-episode:293623887f5bcd2c965a5522",
+        "last_first_frame": 6272,
+        "first_second_frame": 6283,
+        "gap_source_frames": 11,
+        "endpoint_center_distance_norm": 0.009013985330980863,
+        "endpoint_iou": 0.9730103511542436,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 3574,
+        "second_track_id": 3580,
+        "first_episode_id": "b4-physical-episode:293623887f5bcd2c965a5522",
+        "second_episode_id": "b4-physical-episode:eac52b96e192a7fd469c8ed8",
+        "last_first_frame": 6292,
+        "first_second_frame": 6302,
+        "gap_source_frames": 10,
+        "endpoint_center_distance_norm": 0.017340343498709467,
+        "endpoint_iou": 0.9355374300841082,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 3574,
+        "second_track_id": 3596,
+        "first_episode_id": "b4-physical-episode:293623887f5bcd2c965a5522",
+        "second_episode_id": "b4-physical-episode:080711d1edc21d9f632d2356",
+        "last_first_frame": 6292,
+        "first_second_frame": 6339,
+        "gap_source_frames": 47,
+        "endpoint_center_distance_norm": 0.038358234019178115,
+        "endpoint_iou": 0.8403624763699413,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 3574,
+        "second_track_id": 3600,
+        "first_episode_id": "b4-physical-episode:293623887f5bcd2c965a5522",
+        "second_episode_id": "b4-physical-episode:78b0532c7ffe222e2495f389",
+        "last_first_frame": 6292,
+        "first_second_frame": 6349,
+        "gap_source_frames": 57,
+        "endpoint_center_distance_norm": 0.014059209979938914,
+        "endpoint_iou": 0.9169311129917518,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      6227,
+      6247,
+      6257,
+      6272,
+      6283,
+      6292,
+      6302,
+      6339,
+      6349,
+      6415,
+      6445,
+      6475
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:293623887f5bcd2c965a5522",
+      "b4-physical-episode:5e2a6f584a780568e1a24b66"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-24.jpg",
+    "contact_sheet_sha256": "f560c80f09aec88e31fdfd95d5de9d4deedbc59c4ef925559c42ffe365e1efb5"
+  },
+  {
+    "case_id": "IDENTITY-25",
+    "track_id": 3678,
+    "member_track_ids": [
+      3678
+    ],
+    "physical_unit_id": "track:3678",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:3678:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 6579,
+    "first_frame": 6470,
+    "last_frame": 6519,
+    "source_ref": {
+      "frame_index": 6519,
+      "track_id": 3678,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        425.4377746582031,
+        176.320068359375,
+        497.8027648925781,
+        242.1773681640625
+      ],
+      "point": [
+        461.6202697753906,
+        242.1773681640625
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.7396496534347534,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:0d42d63161d673834b0ebcdb",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 3652,
+        "second_track_id": 3678,
+        "first_episode_id": "b4-physical-episode:a9799e225eeb9d459efaa616",
+        "second_episode_id": "b4-physical-episode:0d42d63161d673834b0ebcdb",
+        "last_first_frame": 6431,
+        "first_second_frame": 6470,
+        "gap_source_frames": 39,
+        "endpoint_center_distance_norm": 0.05128660382958201,
+        "endpoint_iou": 0.7913233309462334,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      },
+      {
+        "first_track_id": 3667,
+        "second_track_id": 3678,
+        "first_episode_id": "b4-physical-episode:cf1ba2af87d33aa364b03391",
+        "second_episode_id": "b4-physical-episode:0d42d63161d673834b0ebcdb",
+        "last_first_frame": 6452,
+        "first_second_frame": 6470,
+        "gap_source_frames": 18,
+        "endpoint_center_distance_norm": 0.06683596401377105,
+        "endpoint_iou": 0.7635794764318767,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      6431,
+      6450,
+      6452,
+      6470,
+      6480,
+      6519,
+      6549,
+      6579
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:0d42d63161d673834b0ebcdb"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-25.jpg",
+    "contact_sheet_sha256": "9291eaba1aeed8fc6f4ff6810297f79816d0b64ad644081e8dc1f38f2a43bd2d"
+  },
+  {
+    "case_id": "IDENTITY-26",
+    "track_id": 3778,
+    "member_track_ids": [
+      3778
+    ],
+    "physical_unit_id": "track:3778",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:3778:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 6683,
+    "first_frame": 6616,
+    "last_frame": 6623,
+    "source_ref": {
+      "frame_index": 6623,
+      "track_id": 3778,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        458.4093017578125,
+        156.30780029296875,
+        588.5548095703125,
+        240.9273681640625
+      ],
+      "point": [
+        523.4820556640625,
+        240.9273681640625
+      ],
+      "class_name": "truck",
+      "effective_class_name": "truck",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 7,
+      "confidence": 0.5188682675361633,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:adb4558cd519d0d39ea6a250",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 3753,
+        "second_track_id": 3778,
+        "first_episode_id": "b4-physical-episode:69ec61d9d8ee48d72de966d8",
+        "second_episode_id": "b4-physical-episode:adb4558cd519d0d39ea6a250",
+        "last_first_frame": 6575,
+        "first_second_frame": 6616,
+        "gap_source_frames": 41,
+        "endpoint_center_distance_norm": 0.048847166721615265,
+        "endpoint_iou": 0.8141258547565782,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      6575,
+      6596,
+      6616,
+      6623,
+      6653,
+      6683
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:adb4558cd519d0d39ea6a250"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-26.jpg",
+    "contact_sheet_sha256": "de1636ab3203cdbec9caa3bc165c2a1305d4515fa9744f251a2fd952fb44211b"
+  },
+  {
+    "case_id": "IDENTITY-27",
+    "track_id": 3976,
+    "member_track_ids": [
+      3976
+    ],
+    "physical_unit_id": "track:3976",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:3976:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 7098,
+    "first_frame": 6819,
+    "last_frame": 7038,
+    "source_ref": {
+      "frame_index": 7038,
+      "track_id": 3976,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        429.154052734375,
+        154.57876586914062,
+        503.46142578125,
+        241.01589965820312
+      ],
+      "point": [
+        466.3077392578125,
+        241.01589965820312
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.5823755264282227,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:9aaaa35851a0c31936e03372",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 3935,
+        "second_track_id": 3976,
+        "first_episode_id": "b4-physical-episode:7781b3bbcc56a86f4d19a093",
+        "second_episode_id": "b4-physical-episode:9aaaa35851a0c31936e03372",
+        "last_first_frame": 6772,
+        "first_second_frame": 6819,
+        "gap_source_frames": 47,
+        "endpoint_center_distance_norm": 0.0398287822551965,
+        "endpoint_iou": 0.8675188820488676,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      6772,
+      6799,
+      6819,
+      6829,
+      7038,
+      7068,
+      7098
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:9aaaa35851a0c31936e03372"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-27.jpg",
+    "contact_sheet_sha256": "19681df480054fe1fcccb218b7940ddf58a7d93b1c3364c62dd3b226539d1e9c"
+  },
+  {
+    "case_id": "IDENTITY-28",
+    "track_id": 4200,
+    "member_track_ids": [
+      4200
+    ],
+    "physical_unit_id": "track:4200",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:4200:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 7413,
+    "first_frame": 7264,
+    "last_frame": 7353,
+    "source_ref": {
+      "frame_index": 7353,
+      "track_id": 4200,
+      "original_detection_index": 9,
+      "raw_bbox": [
+        177.61892700195312,
+        191.68032836914062,
+        219.84732055664062,
+        246.96774291992188
+      ],
+      "point": [
+        198.73312377929688,
+        246.96774291992188
+      ],
+      "class_name": "motorcycle",
+      "effective_class_name": "motorcycle",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 3,
+      "confidence": 0.5618565082550049,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:764fd48ce44663d410fb31f6",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 4196,
+        "second_track_id": 4200,
+        "first_episode_id": "b4-physical-episode:c96035c2c2f29bee5972da82",
+        "second_episode_id": "b4-physical-episode:764fd48ce44663d410fb31f6",
+        "last_first_frame": 7263,
+        "first_second_frame": 7264,
+        "gap_source_frames": 1,
+        "endpoint_center_distance_norm": 0.0209648524316181,
+        "endpoint_iou": 0.9082873660661821,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      7244,
+      7263,
+      7264,
+      7274,
+      7353,
+      7383,
+      7413
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:764fd48ce44663d410fb31f6"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-28.jpg",
+    "contact_sheet_sha256": "fb3966f5c31f86d09cb2b1832874464f3b00fa9e48898176411ac020aa10c165"
+  },
+  {
+    "case_id": "IDENTITY-29",
+    "track_id": 4525,
+    "member_track_ids": [
+      4525
+    ],
+    "physical_unit_id": "track:4525",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:4525:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 7677,
+    "first_frame": 7591,
+    "last_frame": 7617,
+    "source_ref": {
+      "frame_index": 7617,
+      "track_id": 4525,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        431.48504638671875,
+        144.6295166015625,
+        529.7269897460938,
+        213.96942138671875
+      ],
+      "point": [
+        480.60601806640625,
+        213.96942138671875
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.5542518496513367,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:6fb1dfe5a07cd89ffa4a1b9a",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 4457,
+        "second_track_id": 4525,
+        "first_episode_id": "b4-physical-episode:79e0c40a558950ce37e8701a",
+        "second_episode_id": "b4-physical-episode:6fb1dfe5a07cd89ffa4a1b9a",
+        "last_first_frame": 7549,
+        "first_second_frame": 7591,
+        "gap_source_frames": 42,
+        "endpoint_center_distance_norm": 0.013880230927429927,
+        "endpoint_iou": 0.934358348934627,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      7549,
+      7571,
+      7591,
+      7601,
+      7617,
+      7647,
+      7677
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:6fb1dfe5a07cd89ffa4a1b9a"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-29.jpg",
+    "contact_sheet_sha256": "3957cb8d141d3609d2a3e5953c05c0be3aeee0b44669353012a569c62ab5d1a5"
+  },
+  {
+    "case_id": "IDENTITY-30",
+    "track_id": 4808,
+    "member_track_ids": [
+      4808
+    ],
+    "physical_unit_id": "track:4808",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:4808:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 7964,
+    "first_frame": 7809,
+    "last_frame": 7907,
+    "source_ref": {
+      "frame_index": 7907,
+      "track_id": 4808,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        198.37655639648438,
+        193.436767578125,
+        243.74075317382812,
+        247.04437255859375
+      ],
+      "point": [
+        221.05865478515625,
+        247.04437255859375
+      ],
+      "class_name": "motorcycle",
+      "effective_class_name": "motorcycle",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 3,
+      "confidence": 0.649865984916687,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:e292889411d9a5c841655f0a",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 4778,
+        "second_track_id": 4808,
+        "first_episode_id": "b4-physical-episode:fb5390d4748a05fbe66c8fbb",
+        "second_episode_id": "b4-physical-episode:e292889411d9a5c841655f0a",
+        "last_first_frame": 7769,
+        "first_second_frame": 7809,
+        "gap_source_frames": 40,
+        "endpoint_center_distance_norm": 0.06731171068941116,
+        "endpoint_iou": 0.7465278824522636,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      7769,
+      7789,
+      7809,
+      7819,
+      7907,
+      7937,
+      7964
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:e292889411d9a5c841655f0a"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-30.jpg",
+    "contact_sheet_sha256": "afcf7fb532dd2d2ccbd9e19f077cdcca5ce1aa7b1a261b7671dbd839c7c873ce"
+  },
+  {
+    "case_id": "IDENTITY-31",
+    "track_id": 4944,
+    "member_track_ids": [
+      4944
+    ],
+    "physical_unit_id": "track:4944",
+    "episode_id": "unreviewed-vehicle",
+    "passage_id": "track:4944:episode:unreviewed-vehicle:passage:1",
+    "decision_frame": 8156,
+    "first_frame": 7999,
+    "last_frame": 8096,
+    "source_ref": {
+      "frame_index": 8096,
+      "track_id": 4944,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        434.4075927734375,
+        163.13845825195312,
+        505.625,
+        233.30978393554688
+      ],
+      "point": [
+        470.01629638671875,
+        233.30978393554688
+      ],
+      "class_name": "car",
+      "effective_class_name": "car",
+      "resolved_class_name": null,
+      "role": "vehicle",
+      "episode_id": "unreviewed-vehicle",
+      "association_verified": false,
+      "association_id": null,
+      "observed": true,
+      "emitted": true,
+      "class_id": 2,
+      "confidence": 0.6222894191741943,
+      "measurement_provenance": "retained_phase_8_detection",
+      "physical_episode_id": "b4-physical-episode:f9e5386373e7449c9177c853",
+      "identity_episode_boundary": false,
+      "identity_episode_reason": "INITIAL_OBSERVATION",
+      "identity_timeout_hold": [
+        "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      ]
+    },
+    "handoff_pairs": [
+      {
+        "first_track_id": 4918,
+        "second_track_id": 4944,
+        "first_episode_id": "b4-physical-episode:f20daffc5acfbe859bffc3d9",
+        "second_episode_id": "b4-physical-episode:f9e5386373e7449c9177c853",
+        "last_first_frame": 7959,
+        "first_second_frame": 7999,
+        "gap_source_frames": 40,
+        "endpoint_center_distance_norm": 0.025609690358138874,
+        "endpoint_iou": 0.7927063355691019,
+        "status": "UNRESOLVED_HOLD_TIMEOUT_ONLY",
+        "automatic_alias_created": false,
+        "appearance_features_used": false,
+        "reason": "POSSIBLE_UNVERIFIED_RAW_ID_HANDOFF_TIMEOUT_HELD"
+      }
+    ],
+    "planned_frames": [
+      7959,
+      7979,
+      7999,
+      8009,
+      8096,
+      8126,
+      8156
+    ],
+    "physical_episode_ids": [
+      "b4-physical-episode:f9e5386373e7449c9177c853"
+    ],
+    "contact_sheet": "results/phase_9/20261020_QC_BV4_SIANG/identity/evidence/IDENTITY-31.jpg",
+    "contact_sheet_sha256": "16bf666c587e3a8d269da6b5f1b019aa492277599e15e47bcfeb2eaec5cc9dd3"
+  }
+]

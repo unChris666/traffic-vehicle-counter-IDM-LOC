@@ -1,0 +1,36 @@
+{
+  "analysis_run_id": "li0-synthetic-001",
+  "config": {
+    "area_coverage": {
+      "metric_crs": "EPSG:32748",
+      "parameters": {
+        "building_radius_m": {
+          "unit": "m",
+          "value": 400.0
+        },
+        "max_area_m2": {
+          "unit": "m2",
+          "value": 550.0
+        },
+        "min_area_m2": {
+          "unit": "m2",
+          "value": 45.0
+        }
+      },
+      "unresolved_decisions": []
+    },
+    "version": "fixture-config-1"
+  },
+  "context_hash": "c9d04b4cf0c42bf72e9e37f9c5eab822b1cb6d01948cdcfa4f04c8e4ce716940",
+  "created_at": "2026-10-21T00:00:00Z",
+  "parent_analysis_run_id": null,
+  "schema_version": "location_intelligent_v1",
+  "target": {
+    "crs": "EPSG:4326",
+    "latitude": -6.43,
+    "longitude": 106.81,
+    "store_code": "SYNTHETIC",
+    "store_name": "LI-0 synthetic fixture only",
+    "unknown_reasons": {}
+  }
+}

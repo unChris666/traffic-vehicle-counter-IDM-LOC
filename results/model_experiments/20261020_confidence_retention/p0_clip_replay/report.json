@@ -1,0 +1,130 @@
+{
+  "executed_p0_sources": {
+    "counting": {
+      "path": "/workspace/traffic-vehicle-counter-IDM-LOC/notebooks/phase_8_b_v5_counting.py",
+      "sha256": "37df759e3967ab705871ad290601f14f7e458ca80717e26266ff90b2f882f51c"
+    },
+    "identity": {
+      "path": "/workspace/traffic-vehicle-counter-IDM-LOC/notebooks/phase_8_b_v5_identity.py",
+      "sha256": "51fec0774516d921a2965418af83d8a32d4beb03f1092a825d9de26f6c892e19"
+    }
+  },
+  "full_video_traffic_count": false,
+  "input_policy_sha256": "3defaf135c1a0fe0939e2454496327e8d977c7e42afa7d30f61022b6c309ea06",
+  "legacy_reviews_or_relations_applied": false,
+  "new_model_inference_by_this_replay": false,
+  "physical_accuracy_established": false,
+  "scope": "600 actual context frames per variant,540 evaluation frames; global=local+7380",
+  "shared_policy_sha256": "f80dd5f83e317bc504ea3fc6ca230ef3b431ab0f6df140aa3deb45efb69aef07",
+  "status": "COMPLETED_SCOPED_P0_REPLAY_ON_NEW_MODEL_CLIPS_PENDING_PHYSICAL_REVIEW",
+  "synthetic_prehistory_or_post_clip_frames": false,
+  "variants": [
+    {
+      "context_aggregate": {
+        "by_category": {
+          "motorcycle": 14
+        },
+        "by_direction": {
+          "A_TO_B": 7,
+          "B_TO_A": 7
+        },
+        "by_route": {
+          "LINE_MARGIN": 14
+        },
+        "cancelled": 5,
+        "inferred_total": 4,
+        "measured_total": 10,
+        "pedestrian_total": 0,
+        "pending": 11,
+        "total": 14,
+        "vehicle_total": 14
+      },
+      "detector_conf": 0.25,
+      "evaluation_activation_events": 13,
+      "evaluation_by_category": {
+        "motorcycle": 13
+      },
+      "evaluation_measured": 9,
+      "physical_passage_review": "PENDING_SEPARATE_SOURCE_REVIEW",
+      "source_identity": {
+        "clip_reset_not_full_video_history": true,
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "height": 480,
+        "parent_run_id": "phase9_confidence_retention_clip_v1",
+        "records_sha256": "e89974bf458c18421f57abf56322818cfd0875531547cdeb44ff2dc75eaa2f5f",
+        "source_frame_mapping": {
+          "discarded_unsupported_raw_observations": {
+            "fire hydrant": 1
+          },
+          "legacy_donor_relations_applied": false,
+          "legacy_raw_id_reviews_applied": false,
+          "local_end_frame": 599,
+          "local_start_frame": 0,
+          "source_end_frame": 7979,
+          "source_global_frame_equals_local_plus": 7380,
+          "source_start_frame": 7380,
+          "synthetic_post_clip_frames": 0,
+          "synthetic_prehistory_frames": 0
+        },
+        "variant": "baseline_conf025",
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "width": 640
+      },
+      "variant": "baseline_conf025"
+    },
+    {
+      "context_aggregate": {
+        "by_category": {
+          "motorcycle": 13
+        },
+        "by_direction": {
+          "A_TO_B": 5,
+          "B_TO_A": 8
+        },
+        "by_route": {
+          "ESTIMATED_TIMEOUT": 1,
+          "LINE_MARGIN": 12
+        },
+        "cancelled": 5,
+        "inferred_total": 1,
+        "measured_total": 12,
+        "pedestrian_total": 0,
+        "pending": 12,
+        "total": 13,
+        "vehicle_total": 13
+      },
+      "detector_conf": 0.1,
+      "evaluation_activation_events": 12,
+      "evaluation_by_category": {
+        "motorcycle": 12
+      },
+      "evaluation_measured": 11,
+      "physical_passage_review": "PENDING_SEPARATE_SOURCE_REVIEW",
+      "source_identity": {
+        "clip_reset_not_full_video_history": true,
+        "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+        "height": 480,
+        "parent_run_id": "phase9_confidence_retention_clip_v1",
+        "records_sha256": "d2a53e5c1fb93be98ded4f280a8883c314ae1b20aeedf3b531a583f56b8d0ed4",
+        "source_frame_mapping": {
+          "discarded_unsupported_raw_observations": {
+            "fire hydrant": 1
+          },
+          "legacy_donor_relations_applied": false,
+          "legacy_raw_id_reviews_applied": false,
+          "local_end_frame": 599,
+          "local_start_frame": 0,
+          "source_end_frame": 7979,
+          "source_global_frame_equals_local_plus": 7380,
+          "source_start_frame": 7380,
+          "synthetic_post_clip_frames": 0,
+          "synthetic_prehistory_frames": 0
+        },
+        "variant": "candidate_conf010",
+        "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+        "width": 640
+      },
+      "variant": "candidate_conf010"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+  "type": "SPLIT_IDENTITY",
+  "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+  "human_confirmation_status": "NOT_NEWLY_ADJUDICATED_BY_USER",
+  "scopes": [
+    {
+      "track_id": 4798,
+      "start_frame": 7888,
+      "end_frame": 7903,
+      "raw_family": "vehicle",
+      "physical_unit_id": "track:4798",
+      "episode_id": "unreviewed-vehicle"
+    }
+  ],
+  "confirmed_frames": [
+    7888,
+    7899,
+    7903
+  ],
+  "evidence": [
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v2/pixel_evidence.json",
+      "sha256": "b56a3c6ac382035aca2a14b6da63680b8829f7c1752a610bdffe5a486e054e46",
+      "frame_index": 7888,
+      "source_frame_pixel_sha256": "4101f6171e7407e0bc70ca4cecfa4cba50d127b1b190d3398a7aab127d444adf"
+    },
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v2/pixel_evidence.json",
+      "sha256": "b56a3c6ac382035aca2a14b6da63680b8829f7c1752a610bdffe5a486e054e46",
+      "frame_index": 7899,
+      "source_frame_pixel_sha256": "3082e021b26635bc4e3e7ad565670f3915c60ec2927d656cfe300fbdcf30d6de"
+    },
+    {
+      "path": "results/b_v8/fixtures/blocker4843_control4798_v2/pixel_evidence.json",
+      "sha256": "b56a3c6ac382035aca2a14b6da63680b8829f7c1752a610bdffe5a486e054e46",
+      "frame_index": 7903,
+      "source_frame_pixel_sha256": "94a2a393f429e435f9abf3b706e79ec114798f5c5dcd3f1b6110157697a421ee"
+    }
+  ],
+  "observation": "The foreground dark motorcycle4798 coexists with the red4808 and blue4843 before SUV occlusion; it is a separate physical unit from the reviewed red passage.",
+  "scope_basis": "Positive source-scoped distinct identity proof; keep its existing counting unit and episode to avoid splitting an already valid passage.",
+  "not_a_post_occlusion_alias_to_4874": true,
+  "no_global_raw_id_label": true
+}

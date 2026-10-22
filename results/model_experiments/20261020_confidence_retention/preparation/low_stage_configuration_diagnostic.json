@@ -1,0 +1,17 @@
+{
+  "status": "PASS_SOFTWARE_CONFIGURATION_DIAGNOSTIC_ONLY",
+  "execution_kind": "UPSTREAM_SPLIT_WITH_SYNTHETIC_DETECTIONS_NO_INFERENCE",
+  "input_scores": [
+    0.1,
+    0.2,
+    0.25,
+    0.8
+  ],
+  "retention010_low_stage_scores": [
+    0.20000000298023224
+  ],
+  "retention025_low_stage_scores": [],
+  "low_threshold_is_strict_greater_than_010": true,
+  "interpretation": "Retaining below0.25 enables low-stage candidates; no claim that these are physically correct matches or useful vehicle detections",
+  "thresholds_are_experiment_not_production_selection": true
+}

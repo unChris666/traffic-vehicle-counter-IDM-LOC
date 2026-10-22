@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Jakarta",
+  "python": "3.13.5",
+  "focused_test_command": "PROJ_NETWORK=OFF PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B -m unittest discover -s notebooks -p 'location_intelligent_*tests.py' -v",
+  "tests": {
+    "li0": 49,
+    "li1": 40,
+    "total": 89,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "baseline_test_count_confirmed": 43,
+  "new_li0_failures_reproduced_before_fix": 6,
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "notebooks/location_intelligent_buildings.py",
+        "--context",
+        "notebooks/fixtures/li1/context.json",
+        "--manifest",
+        "notebooks/fixtures/li1/manifest.json",
+        "--root",
+        "notebooks/fixtures/li1",
+        "--source-ref",
+        "fixture-buildings"
+      ],
+      "exit_code": 0,
+      "status": "SUCCEEDED",
+      "summary": {
+        "accounted_records": 9,
+        "complete_for_selection": true,
+        "excluded": 4,
+        "reason_counts": {
+          "AREA_NOT_ABOVE_MIN": 1,
+          "AREA_NOT_BELOW_MAX": 1,
+          "CLASS_UNSUPPORTED": 1,
+          "OUTSIDE_RADIUS": 1
+        },
+        "rejected": 0,
+        "selected": 5,
+        "source_records": 9
+      },
+      "result": "li1_fixture_result.json"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "notebooks/location_intelligent_buildings.py",
+        "--context",
+        "notebooks/fixtures/li1/context.json",
+        "--manifest",
+        "notebooks/fixtures/li1/invalid_manifest.json",
+        "--root",
+        "notebooks/fixtures/li1",
+        "--source-ref",
+        "fixture-buildings-invalid"
+      ],
+      "exit_code": 3,
+      "status": "PARTIAL",
+      "summary": {
+        "accounted_records": 9,
+        "complete_for_selection": false,
+        "excluded": 2,
+        "reason_counts": {
+          "ATTRIBUTE_REQUIRED": 1,
+          "BUILDING_ID_MISSING": 1,
+          "CLASS_UNSUPPORTED": 1,
+          "DUPLICATE_BUILDING_ID": 2,
+          "GEOMETRY_INVALID": 1,
+          "GEOMETRY_TYPE": 1,
+          "OUTSIDE_RADIUS": 1
+        },
+        "rejected": 6,
+        "selected": 1,
+        "source_records": 9
+      },
+      "result": "li1_invalid_fixture_result.json"
+    },
+    {
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "notebooks/location_intelligent_validator.py",
+        "--context",
+        "notebooks/fixtures/li0/context.json",
+        "--manifest",
+        "notebooks/fixtures/li0/manifest.json",
+        "--root",
+        "notebooks/fixtures/li0"
+      ],
+      "exit_code": 0,
+      "status": "VALID",
+      "result": "li0_cli_result.json"
+    }
+  ],
+  "cli_environment": "Only PROJ_NETWORK=OFF/PYTHONDONTWRITEBYTECODE=1; no credential inheritance",
+  "actual_real_building_snapshot_validated": false,
+  "live_source_requests": false,
+  "traffic_inference": false
+}

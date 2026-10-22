@@ -1,0 +1,59 @@
+{
+  "schema_version": "phase8_b_v6_audit_export_v1",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "branch": "machine",
+  "accepted": 74,
+  "invalid": 84,
+  "pending": 24,
+  "not_eligible": 17,
+  "measured": 66,
+  "inferred": 8,
+  "categories": [
+    "motorcycle",
+    "car",
+    "truck",
+    "bus",
+    "pedestrian"
+  ],
+  "invalid_contribution": 0,
+  "pending_contribution": 0,
+  "deliberate_ambiguity_exclusions_are_not_zero_actual_traffic": true,
+  "new_counting_or_model_execution": false,
+  "machine_and_reviewed_not_added": true,
+  "files": [
+    {
+      "path": "accepted_events.csv",
+      "bytes": 844991,
+      "sha256": "d12dce4ebb03fdadce26e34b15bd4c68c546857735aeaf0528995808ce623cbe"
+    },
+    {
+      "path": "invalid_passages.csv",
+      "bytes": 167406,
+      "sha256": "79201240804700caada27b58d0b61ffb5a2061d174590a0803c1f37d7fe1e6c8"
+    },
+    {
+      "path": "not_eligible_passages.csv",
+      "bytes": 36350,
+      "sha256": "221ba97056b398a12520e23f2e5095f2bfe9b82cc75eb66d2349ea7fc9ea1715"
+    },
+    {
+      "path": "pending_passages.csv",
+      "bytes": 50781,
+      "sha256": "29d2d038c3ad08ca4af904764d033930c02094e9684bc9b16d81ec60b7ac5e68"
+    },
+    {
+      "path": "summary_pivot.csv",
+      "bytes": 2493,
+      "sha256": "b745a61a5cdf0269166d366878349976d0bdb1cb2a66fd5dad2feb71ef0e7f55"
+    }
+  ],
+  "manifest_self_excluded": true
+}

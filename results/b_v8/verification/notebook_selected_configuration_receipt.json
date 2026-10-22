@@ -1,0 +1,15 @@
+{
+  "operation": "POST_EXECUTION_NOTEBOOK_ENTRYPOINT_CONFIGURATION_ONLY",
+  "path": "notebooks/09e_p1_pending_recovery.ipynb",
+  "before_sha256": "29f5f4a1e318ca19ed2b9a0b09284ea0fb54dd661741fe19b99501067d5ecb4b",
+  "after_sha256": "e084dc4835b1aaa497ca9aee4f90b7aa6095e993951b1973dd963ddbb865a6c4",
+  "replacements": {
+    "OVERLAY_PATH = REPO_ROOT / batch.OVERLAY_PATH": "OVERLAY_PATH = REPO_ROOT / \"results/b_v8/config/review_overlay_v5.json\"",
+    "POLICY_PATH = REPO_ROOT / batch.POLICY_PATH": "POLICY_PATH = REPO_ROOT / \"results/b_v8/config/policy_v5.json\""
+  },
+  "reason": "Use exact selected overlay/policy already executed through explicit CLI args in pilot_p1_reviewed_v3",
+  "runtime_counter_modules_changed": false,
+  "historical_source_snapshots_modified": false,
+  "notebook_executed_in_this_task": false,
+  "full_replay_repeated_for_entrypoint_change": false
+}

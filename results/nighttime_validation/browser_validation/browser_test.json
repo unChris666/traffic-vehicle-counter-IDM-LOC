@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "browser": "system Chromium via Playwright",
+  "actual_video_files_opened": [
+    "F1YV-WEEKDAY-MALAM.mp4",
+    "F1YV-WEEKEND-MALAM.mp4",
+    "FMMQ-MALAM.mp4",
+    "FMMQ-WEEKDAY-MALAM.mp4",
+    "TC0Q-WEEKDAY-MALAM.mp4",
+    "TC0Q-WEEKEND-MALAM.mp4",
+    "TKVQ-WEEKDAY-MALAM.mp4",
+    "TKVQ-WEEKEND-MALAM.mp4",
+    "TQHD-WEEKDAY-MALAM.mp4",
+    "TQHD-WEEKEND-MALAM.mp4"
+  ],
+  "native_preview_dimensions": {
+    "width": 640,
+    "height": 480
+  },
+  "eight_profiles_independent": true,
+  "all_eight_condition_profile_edits_verified": {
+    "weekday_malam": 0.7,
+    "weekend_malam": 1.1,
+    "weekday_pagi": 0.5,
+    "weekday_siang": 0.6,
+    "weekday_sore": 0.7,
+    "weekend_pagi": 0.9,
+    "weekend_siang": 1,
+    "weekend_sore": 1.1
+  },
+  "per_video_settings_independent": true,
+  "sha256_binding": true,
+  "export_import_and_persistence": true,
+  "seek_play_pause": true,
+  "page_errors": [],
+  "settings_are_test_values_not_selected_recipe": true,
+  "inference_executed": false
+}

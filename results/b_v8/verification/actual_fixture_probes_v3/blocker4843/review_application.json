@@ -1,0 +1,3993 @@
+{
+  "applied_measurements": {
+    "p1-blocker4843-blue-before-identity-split-v1": 32,
+    "p1-blocker4843-red-scoped-positive-identity-v1": 70,
+    "p1-distinct-foreground-unit-source-proof-v2": 16
+  },
+  "matched_reviewed_anchors": [
+    {
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "track_id": 4843,
+      "frame_index": 7874
+    },
+    {
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "track_id": 4843,
+      "frame_index": 7888
+    },
+    {
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "track_id": 4843,
+      "frame_index": 7899
+    },
+    {
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "track_id": 4843,
+      "frame_index": 7905
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4808,
+      "frame_index": 7860
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4808,
+      "frame_index": 7888
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4808,
+      "frame_index": 7899
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4808,
+      "frame_index": 7904
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4808,
+      "frame_index": 7907
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4843,
+      "frame_index": 7928
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4843,
+      "frame_index": 7930
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4843,
+      "frame_index": 7935
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4843,
+      "frame_index": 7950
+    },
+    {
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "track_id": 4843,
+      "frame_index": 7955
+    },
+    {
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "track_id": 4798,
+      "frame_index": 7888
+    },
+    {
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "track_id": 4798,
+      "frame_index": 7899
+    },
+    {
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "track_id": 4798,
+      "frame_index": 7903
+    }
+  ],
+  "source_links_checked": true,
+  "raw_measurements_modified": false,
+  "new_observations_created": 0,
+  "review_assignments": [
+    {
+      "frame_index": 7860,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        103.59925842285156,
+        190.20953369140625,
+        123.46234130859375,
+        217.37091064453125
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7861,
+      "track_id": 4808,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        104.97331237792969,
+        190.0001220703125,
+        124.74606323242188,
+        217.7841796875
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7862,
+      "track_id": 4808,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        106.47991943359375,
+        188.38580322265625,
+        126.33053588867188,
+        217.82867431640625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7863,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        107.80003356933594,
+        187.69166564941406,
+        128.24000549316406,
+        218.3650665283203
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7864,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        108.64027404785156,
+        187.20883178710938,
+        129.57093811035156,
+        218.95220947265625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7865,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        110.1123046875,
+        188.2005615234375,
+        130.85696411132812,
+        219.41336059570312
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7866,
+      "track_id": 4808,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        111.24305725097656,
+        188.19810485839844,
+        132.33018493652344,
+        219.6978302001953
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7867,
+      "track_id": 4808,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        112.70980834960938,
+        189.0419158935547,
+        133.5277862548828,
+        219.94300842285156
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7868,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        114.76226806640625,
+        187.906005859375,
+        136.394775390625,
+        220.2335205078125
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7869,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        115.6986083984375,
+        189.28506469726562,
+        138.03298950195312,
+        220.33645629882812
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7870,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        117.1324462890625,
+        188.5953369140625,
+        139.3031005859375,
+        220.3604736328125
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7871,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        118.53033447265625,
+        188.91049194335938,
+        140.70843505859375,
+        220.80154418945312
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7872,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        119.65510559082031,
+        186.9078369140625,
+        142.34422302246094,
+        220.9820556640625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7873,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        121.18971252441406,
+        187.9954071044922,
+        144.4025115966797,
+        221.28932189941406
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7874,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        122.48271942138672,
+        186.6134033203125,
+        146.437255859375,
+        221.58270263671875
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7874,
+      "track_id": 4843,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        169.0198974609375,
+        187.5238037109375,
+        186.7239990234375,
+        220.4200439453125
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7875,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        123.72591400146484,
+        185.44293212890625,
+        148.01480102539062,
+        222.1453857421875
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7875,
+      "track_id": 4843,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        169.48712158203125,
+        187.7116241455078,
+        188.32354736328125,
+        221.41407775878906
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7876,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        124.82272338867188,
+        187.4284210205078,
+        150.00064086914062,
+        222.6167449951172
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7876,
+      "track_id": 4843,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        169.6831512451172,
+        186.83169555664062,
+        190.1168975830078,
+        221.22824096679688
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7877,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        126.88661193847656,
+        189.19837951660156,
+        152.47511291503906,
+        223.15223693847656
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7877,
+      "track_id": 4843,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        170.87741088867188,
+        187.13076782226562,
+        192.10574340820312,
+        221.80819702148438
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7878,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        128.70480346679688,
+        187.3922882080078,
+        154.70529174804688,
+        223.43260192871094
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7878,
+      "track_id": 4843,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        172.19924926757812,
+        186.44337463378906,
+        194.53970336914062,
+        222.0377655029297
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7879,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        130.926025390625,
+        187.88287353515625,
+        156.65005493164062,
+        223.95263671875
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7879,
+      "track_id": 4843,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        172.86395263671875,
+        185.9322509765625,
+        196.28302001953125,
+        222.64373779296875
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7880,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        132.62454223632812,
+        185.53631591796875,
+        160.72647094726562,
+        224.69085693359375
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7880,
+      "track_id": 4843,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        173.58692932128906,
+        186.09646606445312,
+        198.2451629638672,
+        223.00704956054688
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7881,
+      "track_id": 4808,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        134.8809356689453,
+        185.62252807617188,
+        161.8910675048828,
+        225.38702392578125
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7881,
+      "track_id": 4843,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        178.0897216796875,
+        186.63795471191406,
+        200.814697265625,
+        223.7985382080078
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7882,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        136.9678955078125,
+        186.06222534179688,
+        164.105712890625,
+        226.43496704101562
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7882,
+      "track_id": 4843,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        178.64279174804688,
+        186.11502075195312,
+        202.62783813476562,
+        224.67691040039062
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7883,
+      "track_id": 4808,
+      "original_detection_index": 7,
+      "raw_bbox": [
+        138.16384887695312,
+        188.17312622070312,
+        165.52590942382812,
+        227.25888061523438
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7883,
+      "track_id": 4843,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        180.42581176757812,
+        186.65760803222656,
+        204.806884765625,
+        225.25254821777344
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7884,
+      "track_id": 4808,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        139.93267822265625,
+        189.02377319335938,
+        168.07012939453125,
+        228.35931396484375
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7884,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        180.85821533203125,
+        187.32525634765625,
+        205.64608764648438,
+        225.51568603515625
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7885,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        142.36756896972656,
+        192.52682495117188,
+        170.95310974121094,
+        228.8089599609375
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7885,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        181.1107177734375,
+        186.71722412109375,
+        208.6539306640625,
+        226.5443115234375
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7886,
+      "track_id": 4808,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        144.63461303710938,
+        187.38070678710938,
+        173.89407348632812,
+        229.27920532226562
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7886,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        184.12966918945312,
+        186.22393798828125,
+        209.66952514648438,
+        226.76022338867188
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7887,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        147.4175262451172,
+        188.52130126953125,
+        175.98582458496094,
+        230.11221313476562
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7887,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        185.1422119140625,
+        185.7005615234375,
+        212.34780883789062,
+        227.69482421875
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7888,
+      "track_id": 4798,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        223.77676391601562,
+        187.57406616210938,
+        284.7589416503906,
+        260.23687744140625
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7888,
+      "track_id": 4808,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        149.08221435546875,
+        187.35580444335938,
+        178.0750732421875,
+        230.98410034179688
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7888,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        186.6964111328125,
+        186.54376220703125,
+        214.510498046875,
+        227.79852294921875
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7889,
+      "track_id": 4798,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        227.30206298828125,
+        188.18472290039062,
+        290.9638671875,
+        261.4443664550781
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7889,
+      "track_id": 4808,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        151.03265380859375,
+        188.1936798095703,
+        181.87969970703125,
+        231.3727264404297
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7889,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        188.03509521484375,
+        185.387451171875,
+        216.39129638671875,
+        228.41619873046875
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7890,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        231.46141052246094,
+        186.20770263671875,
+        295.990478515625,
+        262.37603759765625
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7890,
+      "track_id": 4808,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        152.21975708007812,
+        189.25631713867188,
+        183.639892578125,
+        232.28799438476562
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7890,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        190.7972869873047,
+        187.14376831054688,
+        219.6652069091797,
+        229.37893676757812
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7891,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        235.625732421875,
+        185.61343383789062,
+        301.8289794921875,
+        263.87078857421875
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7891,
+      "track_id": 4808,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        154.47027587890625,
+        187.6405029296875,
+        186.6522216796875,
+        233.51373291015625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7891,
+      "track_id": 4843,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        192.89682006835938,
+        185.82455444335938,
+        224.01785278320312,
+        229.75955200195312
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7892,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        239.50425720214844,
+        187.88876342773438,
+        307.9500732421875,
+        265.4711608886719
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7892,
+      "track_id": 4808,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        156.3851776123047,
+        189.38075256347656,
+        189.3530731201172,
+        234.50001525878906
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7892,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        195.00965881347656,
+        188.7032470703125,
+        224.5013885498047,
+        230.79638671875
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7893,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        243.61822509765625,
+        188.08502197265625,
+        314.5743408203125,
+        266.85772705078125
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7893,
+      "track_id": 4808,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        158.20252990722656,
+        188.57730102539062,
+        193.1687774658203,
+        235.51889038085938
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7893,
+      "track_id": 4843,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        196.30633544921875,
+        187.8306121826172,
+        227.55419921875,
+        231.81166076660156
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7894,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        247.85955810546875,
+        189.62841796875,
+        321.20208740234375,
+        268.8446044921875
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7894,
+      "track_id": 4808,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        160.27120971679688,
+        185.67724609375,
+        195.75332641601562,
+        236.91409301757812
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7894,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        199.73617553710938,
+        187.84521484375,
+        231.83026123046875,
+        232.65231323242188
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7895,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        253.42733764648438,
+        189.49258422851562,
+        327.8446350097656,
+        270.45556640625
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7895,
+      "track_id": 4808,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        162.1290283203125,
+        184.82867431640625,
+        199.15872192382812,
+        237.52740478515625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7895,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        200.58432006835938,
+        188.69955444335938,
+        233.51174926757812,
+        233.87442016601562
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7896,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        257.8604736328125,
+        188.67208862304688,
+        335.125732421875,
+        271.7798767089844
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7896,
+      "track_id": 4808,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        166.14730834960938,
+        190.42617797851562,
+        201.84646606445312,
+        238.39321899414062
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7896,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        203.4004669189453,
+        186.81275939941406,
+        236.6114959716797,
+        234.38624572753906
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7897,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        262.6717529296875,
+        189.09912109375,
+        342.6895751953125,
+        273.36846923828125
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7897,
+      "track_id": 4808,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        169.2706298828125,
+        190.19580078125,
+        205.78466796875,
+        239.28750610351562
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7897,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        205.27911376953125,
+        188.21499633789062,
+        240.34918212890625,
+        234.75399780273438
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7898,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        267.8204345703125,
+        192.780029296875,
+        350.8846435546875,
+        275.2127685546875
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7898,
+      "track_id": 4808,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        171.33401489257812,
+        190.49038696289062,
+        209.48004150390625,
+        240.23785400390625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7898,
+      "track_id": 4843,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        208.55364990234375,
+        184.71194458007812,
+        245.89358520507812,
+        235.76010131835938
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7899,
+      "track_id": 4798,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        272.53411865234375,
+        187.00302124023438,
+        358.83087158203125,
+        276.48406982421875
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7899,
+      "track_id": 4808,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        174.28518676757812,
+        190.01058959960938,
+        212.94137573242188,
+        241.32254028320312
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7899,
+      "track_id": 4843,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        212.57815551757812,
+        185.8428955078125,
+        247.02291870117188,
+        236.50250244140625
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7900,
+      "track_id": 4798,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        278.3682861328125,
+        189.884521484375,
+        367.7579345703125,
+        278.71112060546875
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7900,
+      "track_id": 4808,
+      "original_detection_index": 5,
+      "raw_bbox": [
+        176.26976013183594,
+        192.00625610351562,
+        216.17066955566406,
+        242.059326171875
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7900,
+      "track_id": 4843,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        215.2107696533203,
+        187.61068725585938,
+        249.11048889160156,
+        237.43954467773438
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7901,
+      "track_id": 4798,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        283.715087890625,
+        188.5596923828125,
+        376.4775390625,
+        280.8135681152344
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7901,
+      "track_id": 4808,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        179.72918701171875,
+        190.24386596679688,
+        221.25640869140625,
+        243.05801391601562
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7901,
+      "track_id": 4843,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        218.56610107421875,
+        187.17025756835938,
+        253.01348876953125,
+        238.35330200195312
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7902,
+      "track_id": 4798,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        289.28436279296875,
+        190.7728271484375,
+        373.67315673828125,
+        269.8654479980469
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7902,
+      "track_id": 4808,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        182.98837280273438,
+        189.400390625,
+        227.29861450195312,
+        244.32037353515625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7902,
+      "track_id": 4843,
+      "original_detection_index": 4,
+      "raw_bbox": [
+        222.88375854492188,
+        188.22116088867188,
+        257.2330627441406,
+        239.28619384765625
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7903,
+      "track_id": 4798,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        295.25067138671875,
+        192.60263061523438,
+        366.76605224609375,
+        273.0228576660156
+      ],
+      "review_id": "p1-distinct-foreground-unit-source-proof-v2",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "track:4798",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7903,
+      "track_id": 4808,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        186.53268432617188,
+        190.97015380859375,
+        230.87628173828125,
+        245.3551025390625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7903,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        225.2503662109375,
+        189.9957275390625,
+        261.22698974609375,
+        240.07928466796875
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7904,
+      "track_id": 4808,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        188.7737274169922,
+        191.13943481445312,
+        234.11549377441406,
+        246.21261596679688
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7904,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        229.31243896484375,
+        187.27378845214844,
+        264.685791015625,
+        241.14674377441406
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7905,
+      "track_id": 4808,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        191.6802520751953,
+        191.04818725585938,
+        240.5572052001953,
+        247.23468017578125
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7905,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        232.28665161132812,
+        190.25210571289062,
+        268.4142150878906,
+        241.64453125
+      ],
+      "review_id": "p1-blocker4843-blue-before-identity-split-v1",
+      "review_type": "SPLIT_IDENTITY",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:blue_before_occlusion",
+        "episode_id": "reviewed-blue-before-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7906,
+      "track_id": 4808,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        195.3422088623047,
+        191.1634521484375,
+        242.15342712402344,
+        248.37411499023438
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7907,
+      "track_id": 4808,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        198.37655639648438,
+        193.436767578125,
+        243.74075317382812,
+        247.04437255859375
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4808",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7928,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        297.0770568847656,
+        192.04519653320312,
+        386.4894714355469,
+        279.0119934082031
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7929,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        299.1011962890625,
+        189.95724487304688,
+        395.41876220703125,
+        280.9594421386719
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7930,
+      "track_id": 4843,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        304.9366455078125,
+        191.88418579101562,
+        402.520751953125,
+        283.4154968261719
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7931,
+      "track_id": 4843,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        311.3381652832031,
+        193.379638671875,
+        410.5089416503906,
+        285.3138427734375
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7932,
+      "track_id": 4843,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        318.5217590332031,
+        188.8758544921875,
+        421.0073547363281,
+        288.3090515136719
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7933,
+      "track_id": 4843,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        325.875244140625,
+        187.10110473632812,
+        432.137451171875,
+        290.27069091796875
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7934,
+      "track_id": 4843,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        332.52142333984375,
+        192.3250732421875,
+        443.7589111328125,
+        292.6744384765625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7935,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        339.47021484375,
+        194.80825805664062,
+        446.837890625,
+        287.7295227050781
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7942,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        421.08795166015625,
+        203.73660278320312,
+        560.0962524414062,
+        318.3343811035156
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7943,
+      "track_id": 4843,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        404.3349609375,
+        196.05511474609375,
+        577.1970825195312,
+        321.62847900390625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7944,
+      "track_id": 4843,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        411.80303955078125,
+        207.6981201171875,
+        596.3909912109375,
+        325.82574462890625
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7945,
+      "track_id": 4843,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        419.5628662109375,
+        200.43202209472656,
+        615.521484375,
+        329.2021484375
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7946,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        428.2679443359375,
+        212.41043090820312,
+        635.79736328125,
+        334.2172546386719
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7947,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        433.8985290527344,
+        198.85609436035156,
+        639.3094482421875,
+        337.0771484375
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7948,
+      "track_id": 4843,
+      "original_detection_index": 3,
+      "raw_bbox": [
+        468.3424377441406,
+        195.65110778808594,
+        639.9854736328125,
+        339.2293701171875
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7949,
+      "track_id": 4843,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        484.18743896484375,
+        186.3632049560547,
+        639.8411254882812,
+        332.86517333984375
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7950,
+      "track_id": 4843,
+      "original_detection_index": 6,
+      "raw_bbox": [
+        499.9395446777344,
+        177.75918579101562,
+        639.8121337890625,
+        329.3387145996094
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7951,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        512.8446044921875,
+        214.46170043945312,
+        639.780517578125,
+        326.4158020019531
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7952,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        526.9400634765625,
+        214.01058959960938,
+        639.512939453125,
+        329.3973083496094
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7953,
+      "track_id": 4843,
+      "original_detection_index": 1,
+      "raw_bbox": [
+        542.1533203125,
+        211.65896606445312,
+        639.6302490234375,
+        329.8174133300781
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7954,
+      "track_id": 4843,
+      "original_detection_index": 2,
+      "raw_bbox": [
+        558.7630615234375,
+        217.36245727539062,
+        639.7049560546875,
+        332.1787414550781
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    },
+    {
+      "frame_index": 7955,
+      "track_id": 4843,
+      "original_detection_index": 0,
+      "raw_bbox": [
+        572.9859619140625,
+        215.2264404296875,
+        639.7020263671875,
+        334.26922607421875
+      ],
+      "review_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+      "review_type": "SAME_VEHICLE",
+      "before": {
+        "unit_id": "track:4843",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": false,
+        "association_id": null,
+        "component_of_unit_id": null
+      },
+      "after": {
+        "unit_id": "review:TGDI_SIANG:red_motorcycle_passage",
+        "episode_id": "reviewed-red-episode",
+        "role": "vehicle",
+        "resolved_class_name": null,
+        "association_verified": true,
+        "association_id": "p1-blocker4843-red-scoped-positive-identity-v1",
+        "component_of_unit_id": null
+      },
+      "claim_type": "ADJUDICATED_AI_PIXELS_REVIEW",
+      "source_measurement_unchanged": true
+    }
+  ]
+}

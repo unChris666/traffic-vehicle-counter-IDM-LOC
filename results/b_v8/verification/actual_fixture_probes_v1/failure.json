@@ -1,0 +1,6 @@
+{
+  "status": "FAILED_FIXTURE_HARNESS_NOT_RUNTIME_CHANGE",
+  "error": "Full measured frames must be continuous from zero",
+  "reason": "Initialprobe croppedframeindices7800..8010; immutableidentityengine requiresactualsourcehistoryfrom0",
+  "fix": "v2preservesactualsourceframes0..8010withonlyselectedtargetobservations; targetsnotpresentbefore7809. No BC orsyntheticmeasurementcreated."
+}

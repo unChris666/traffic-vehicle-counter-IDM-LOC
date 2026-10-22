@@ -1,0 +1,115 @@
+{
+  "baseline": {
+    "total": 172,
+    "by_category": {
+      "car": 16,
+      "motorcycle": 146,
+      "truck": 10
+    },
+    "by_direction": {
+      "A_TO_B": 78,
+      "B_TO_A": 94
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 34,
+      "LINE_MARGIN": 138
+    },
+    "measured_total": 121,
+    "inferred_total": 51,
+    "pending": 68,
+    "cancelled": 0,
+    "vehicle_total": 172,
+    "pedestrian_total": 0
+  },
+  "all_pending_cases_accounted_for": true,
+  "pending_cases": 68,
+  "recommend_close": 59,
+  "recommend_close_plus_zero": 57,
+  "recommend_count_plus_one": 2,
+  "unresolved_pending_cases": [
+    {
+      "case_id": "ROLE-13",
+      "raw_track_id": 2958,
+      "group": "roles"
+    },
+    {
+      "case_id": "ROLE-15",
+      "raw_track_id": 3185,
+      "group": "roles"
+    },
+    {
+      "case_id": "IDENTITY-06",
+      "raw_track_id": 1210,
+      "group": "identity"
+    },
+    {
+      "case_id": "IDENTITY-28",
+      "raw_track_id": 4200,
+      "group": "identity"
+    },
+    {
+      "case_id": "IDENTITY-30",
+      "raw_track_id": 4808,
+      "group": "identity"
+    },
+    {
+      "case_id": "QC_DUP_2549",
+      "raw_track_id": 2549,
+      "group": "duplicates"
+    },
+    {
+      "case_id": "QC_DUP_3761",
+      "raw_track_id": 3761,
+      "group": "duplicates"
+    },
+    {
+      "case_id": "QC_DUP_4115",
+      "raw_track_id": 4115,
+      "group": "duplicates"
+    },
+    {
+      "case_id": "QC_DUP_4774",
+      "raw_track_id": 4774,
+      "group": "duplicates"
+    }
+  ],
+  "pending_groups": {
+    "identity": {
+      "QC_RECOMMEND_CLOSE": 28,
+      "UNRESOLVED": 3
+    },
+    "roles": {
+      "QC_RECOMMEND_CLOSE": 27,
+      "UNRESOLVED": 2
+    },
+    "duplicates": {
+      "UNRESOLVED": 4,
+      "QC_RECOMMEND_CLOSE": 4
+    }
+  },
+  "unique_accepted_cancel_proposals": 16,
+  "accepted_timeout_control": {
+    "UNRESOLVED_ESTIMATE_NOT_FINALIZED": 20,
+    "PROPOSE_CANCEL": 14
+  },
+  "partial_closed_decision_delta_vs_machine": -14,
+  "partial_delta_is_not_final_video_total": true,
+  "machine_ledger_changed": false,
+  "new_model_or_counting_run": false,
+  "prior_review_assisted_pedestrian54_must_not_be_added_twice": true,
+  "physical_groups_crosslinked": [
+    [
+      "IDENTITY-18",
+      "QC_DUP_2549"
+    ],
+    [
+      "QC_DUP_4774",
+      "QC_DUP_4820"
+    ],
+    [
+      "4934",
+      "4946",
+      "4953"
+    ]
+  ]
+}

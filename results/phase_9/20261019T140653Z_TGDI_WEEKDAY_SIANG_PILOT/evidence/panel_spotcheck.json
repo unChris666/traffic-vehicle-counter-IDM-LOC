@@ -1,0 +1,44 @@
+{
+  "observed_frame": 9127,
+  "evidence_id": "PUBLISHED-BV3-FRAME-009127",
+  "manual_visual_transcription": {
+    "total": 584,
+    "measured": 121,
+    "inferred": 463,
+    "pending": 430,
+    "vehicle": 584,
+    "pedestrian": 0,
+    "motorcycle": 342,
+    "car": 169,
+    "truck": 73,
+    "A_TO_B": 327,
+    "B_TO_A": 257,
+    "LINE_MARGIN": 138,
+    "OCCLUSION_DIFF_POLYGON": 9,
+    "ESTIMATED_TIMEOUT": 437
+  },
+  "comparison_kind": "READ_ONLY_EXISTING_AGGREGATE_FIELD_MATCH_NOT_COUNTING_REPLAY",
+  "baseline_aggregate": {
+    "total": 584,
+    "by_category": {
+      "car": 169,
+      "motorcycle": 342,
+      "truck": 73
+    },
+    "by_direction": {
+      "A_TO_B": 327,
+      "B_TO_A": 257
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 437,
+      "LINE_MARGIN": 138,
+      "OCCLUSION_DIFF_POLYGON": 9
+    },
+    "measured_total": 121,
+    "inferred_total": 463,
+    "pending": 430,
+    "cancelled": 1,
+    "vehicle_total": 584,
+    "pedestrian_total": 0
+  }
+}

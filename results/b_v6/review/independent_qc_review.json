@@ -1,0 +1,1107 @@
+{
+  "schema_version": "phase9_bv6_independent_qc_v1",
+  "input_final_counting_result": "results/b_v6/execution/pilot_v6_machine_final/weekday_siang/counting_result.json.gz",
+  "input_final_counting_sha256": "82f80239e25e64386f0423a18817b2f87eac98b0e88e9d93081994d5b436ee3e",
+  "old_counting_sha256": "0a86e591b5b02d73baa4913b4271557c6b8bda6668438f12c0f89c17530c43db",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "models_or_counting_rerun_by_qc": false,
+  "ledger_checks": {
+    "status": "PASS_SOFTWARE_LEDGER_ONLY",
+    "active_events": 74,
+    "pending": 24,
+    "invalid_passage_scopes": 84,
+    "physical_accuracy_established": false
+  },
+  "old_aggregate": {
+    "total": 117,
+    "by_category": {
+      "car": 4,
+      "motorcycle": 112,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 53,
+      "B_TO_A": 64
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 9,
+      "LINE_MARGIN": 108
+    },
+    "measured_total": 98,
+    "inferred_total": 19,
+    "pending": 65,
+    "cancelled": 11,
+    "vehicle_total": 117,
+    "pedestrian_total": 0
+  },
+  "new_aggregate": {
+    "total": 74,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 71,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 28,
+      "B_TO_A": 46
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 5,
+      "LINE_MARGIN": 69
+    },
+    "measured_total": 66,
+    "inferred_total": 8,
+    "pending": 24,
+    "invalid": 84,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 84
+    },
+    "cancelled": 50,
+    "vehicle_total": 74,
+    "pedestrian_total": 0
+  },
+  "original_qc_inventory_reviewed": {
+    "pending": 68,
+    "accepted_cancellations": 16,
+    "discovery": 10
+  },
+  "old_16_control_duplicate_blockers": 0,
+  "old_16_controls_unresolved": 0,
+  "initial_exact_source_transition_counts": {
+    "ACCEPTED_SOURCE_COUNTERPART_PRESENT": 74,
+    "INTENTIONALLY_EXCLUDED_BY_AMBIGUITY_POLICY": 40,
+    "NO_DOCUMENTARY_COUNTERPART_REQUIRES_COVERAGE_REVIEW": 3
+  },
+  "supplemental_context_review": [
+    {
+      "raw_track_id": 506,
+      "old_event": {
+        "event_id": "b_v5_e4e57c2b2a42fca812cd577c",
+        "track_id": 506,
+        "physical_unit_id": "track:506",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:506:episode:unreviewed-vehicle:passage:1",
+        "category": "motorcycle",
+        "direction": "B_TO_A",
+        "route": "LINE_MARGIN",
+        "activation_frame": 598,
+        "decision_frame": 598,
+        "measured_crossing": false
+      },
+      "earlier_invalid_frame": 563,
+      "scope": {
+        "physical_unit_id": "track:506",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:506:episode:unreviewed-vehicle:passage:1"
+      },
+      "physical_context": "b5-physical-context:507ce8e5955717f010c0dbcb",
+      "observed_interval": [
+        563,
+        598
+      ],
+      "raw_detection_proofs": [
+        {
+          "frame_index": 563,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            147.8915557861328,
+            232.36712646484375,
+            182.9021759033203,
+            278.31402587890625
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 564,
+          "track_id": 506,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            144.7608642578125,
+            231.95266723632812,
+            178.187255859375,
+            276.89739990234375
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 565,
+          "track_id": 506,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            140.17178344726562,
+            231.86471557617188,
+            172.61575317382812,
+            275.5696716308594
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 566,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            138.07431030273438,
+            234.14794921875,
+            168.76004028320312,
+            275.10430908203125
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 567,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            135.68698120117188,
+            234.64080810546875,
+            164.38552856445312,
+            274.1119384765625
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 568,
+          "track_id": 506,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            133.35092163085938,
+            235.08169555664062,
+            161.22940063476562,
+            274.1618957519531
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 569,
+          "track_id": 506,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            131.5401611328125,
+            234.7760009765625,
+            158.72784423828125,
+            273.6627502441406
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 570,
+          "track_id": 506,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            130.29315185546875,
+            234.77499389648438,
+            156.69940185546875,
+            272.8401184082031
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 571,
+          "track_id": 506,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            129.085205078125,
+            235.78134155273438,
+            154.7435302734375,
+            272.2477111816406
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 572,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            127.24409484863281,
+            236.73959350585938,
+            152.9661102294922,
+            272.27569580078125
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 573,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            125.03565216064453,
+            238.47723388671875,
+            150.90899658203125,
+            274.13409423828125
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 574,
+          "track_id": 506,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            123.58772277832031,
+            240.80108642578125,
+            148.33702087402344,
+            273.62548828125
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 575,
+          "track_id": 506,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            121.98056030273438,
+            241.5369110107422,
+            146.19754028320312,
+            273.12115478515625
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 576,
+          "track_id": 506,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            121.00914001464844,
+            241.15061950683594,
+            143.94737243652344,
+            275.2945556640625
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 577,
+          "track_id": 506,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            118.64750671386719,
+            244.0496063232422,
+            141.3290252685547,
+            276.25799560546875
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 578,
+          "track_id": 506,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            116.45925903320312,
+            245.5996551513672,
+            138.48324584960938,
+            277.54412841796875
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 579,
+          "track_id": 506,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            115.11018371582031,
+            248.24908447265625,
+            136.79518127441406,
+            279.38677978515625
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 580,
+          "track_id": 506,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            114.12672424316406,
+            247.8673095703125,
+            134.31411743164062,
+            277.51263427734375
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 581,
+          "track_id": 506,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            112.691650390625,
+            243.59805297851562,
+            132.27386474609375,
+            273.1006164550781
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 582,
+          "track_id": 506,
+          "original_detection_index": 0,
+          "raw_bbox": [
+            110.91023254394531,
+            243.06143188476562,
+            130.61337280273438,
+            272.0716857910156
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 583,
+          "track_id": 506,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            109.55009460449219,
+            244.13909912109375,
+            128.9188995361328,
+            272.11798095703125
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 584,
+          "track_id": 506,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            108.50532531738281,
+            246.4414520263672,
+            127.24394226074219,
+            275.04803466796875
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 585,
+          "track_id": 506,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            106.74713134765625,
+            251.54183959960938,
+            125.54389953613281,
+            279.3817443847656
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 586,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            105.71705627441406,
+            253.33001708984375,
+            123.87344360351562,
+            280.52435302734375
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 587,
+          "track_id": 506,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            104.46037292480469,
+            253.32525634765625,
+            121.70085144042969,
+            279.1656494140625
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 588,
+          "track_id": 506,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            103.21172332763672,
+            252.22189331054688,
+            119.82396697998047,
+            278.3223571777344
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 589,
+          "track_id": 506,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            101.95286560058594,
+            252.56246948242188,
+            118.68156433105469,
+            278.0747985839844
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 590,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            99.9785385131836,
+            249.673095703125,
+            116.70047760009766,
+            274.78033447265625
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 591,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            98.7132568359375,
+            248.49905395507812,
+            115.4188232421875,
+            273.2871398925781
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 592,
+          "track_id": 506,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            97.32293701171875,
+            251.25814819335938,
+            113.09391784667969,
+            276.0661926269531
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 593,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            93.95011138916016,
+            250.56756591796875,
+            109.76348114013672,
+            275.30084228515625
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 594,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            91.21501159667969,
+            252.03872680664062,
+            107.09480285644531,
+            275.9270935058594
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 595,
+          "track_id": 506,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            90.27896118164062,
+            254.66098022460938,
+            106.14837646484375,
+            277.4566345214844
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 596,
+          "track_id": 506,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            89.42052459716797,
+            255.37118530273438,
+            104.92583465576172,
+            277.7779235839844
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 597,
+          "track_id": 506,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            88.81800842285156,
+            252.11526489257812,
+            103.73036193847656,
+            274.8870544433594
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 598,
+          "track_id": 506,
+          "original_detection_index": 4,
+          "raw_bbox": [
+            87.8582763671875,
+            249.52304077148438,
+            102.60711669921875,
+            271.3624572753906
+          ],
+          "physical_episode_id": "b5-physical-context:507ce8e5955717f010c0dbcb",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        }
+      ],
+      "verdict": "INTENTIONAL_INVALID_SAME_BOUNDED_EPISODE_AND_PASSAGE_DIFFERENT_SOURCE_WITNESS",
+      "exact_source_matcher_was_not_modified": true,
+      "physical_identity_was_not_established_from_raw_id_alone": true
+    },
+    {
+      "raw_track_id": 4558,
+      "old_event": {
+        "event_id": "b_v5_c70a86597dc9d69b58c4231a",
+        "track_id": 4558,
+        "physical_unit_id": "track:4558",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4558:episode:unreviewed-vehicle:passage:1",
+        "category": "motorcycle",
+        "direction": "A_TO_B",
+        "route": "LINE_MARGIN",
+        "activation_frame": 7652,
+        "decision_frame": 7652,
+        "measured_crossing": false
+      },
+      "earlier_invalid_frame": 7649,
+      "scope": {
+        "physical_unit_id": "track:4558",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4558:episode:unreviewed-vehicle:passage:1"
+      },
+      "physical_context": "b5-physical-context:729f0c999cb612fa1b03fd61",
+      "observed_interval": [
+        7649,
+        7652
+      ],
+      "raw_detection_proofs": [
+        {
+          "frame_index": 7649,
+          "track_id": 4558,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            283.79888916015625,
+            189.19509887695312,
+            339.44488525390625,
+            252.28994750976562
+          ],
+          "physical_episode_id": "b5-physical-context:729f0c999cb612fa1b03fd61",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 7650,
+          "track_id": 4558,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            287.62939453125,
+            189.1610107421875,
+            344.30145263671875,
+            253.43560791015625
+          ],
+          "physical_episode_id": "b5-physical-context:729f0c999cb612fa1b03fd61",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 7651,
+          "track_id": 4558,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            291.18402099609375,
+            192.33612060546875,
+            348.76727294921875,
+            254.3846435546875
+          ],
+          "physical_episode_id": "b5-physical-context:729f0c999cb612fa1b03fd61",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 7652,
+          "track_id": 4558,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            295.70880126953125,
+            194.70379638671875,
+            354.50201416015625,
+            255.16024780273438
+          ],
+          "physical_episode_id": "b5-physical-context:729f0c999cb612fa1b03fd61",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        }
+      ],
+      "verdict": "INTENTIONAL_INVALID_SAME_BOUNDED_EPISODE_AND_PASSAGE_DIFFERENT_SOURCE_WITNESS",
+      "exact_source_matcher_was_not_modified": true,
+      "physical_identity_was_not_established_from_raw_id_alone": true
+    },
+    {
+      "raw_track_id": 4953,
+      "old_event": {
+        "event_id": "b_v5_e3d5cb62584bdd795b1ea43d",
+        "track_id": 4953,
+        "physical_unit_id": "track:4953",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4953:episode:unreviewed-vehicle:passage:1",
+        "category": "motorcycle",
+        "direction": "B_TO_A",
+        "route": "LINE_MARGIN",
+        "activation_frame": 8025,
+        "decision_frame": 8025,
+        "measured_crossing": false
+      },
+      "earlier_invalid_frame": 8018,
+      "scope": {
+        "physical_unit_id": "track:4953",
+        "episode_id": "unreviewed-vehicle",
+        "passage_id": "track:4953:episode:unreviewed-vehicle:passage:1"
+      },
+      "physical_context": "b5-physical-context:616a266671beb6a0b92aa1b5",
+      "observed_interval": [
+        8018,
+        8025
+      ],
+      "raw_detection_proofs": [
+        {
+          "frame_index": 8018,
+          "track_id": 4953,
+          "original_detection_index": 5,
+          "raw_bbox": [
+            138.29306030273438,
+            217.27218627929688,
+            187.34805297851562,
+            278.31365966796875
+          ],
+          "physical_episode_id": "b5-physical-context:616a266671beb6a0b92aa1b5",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 8019,
+          "track_id": 4953,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            131.99331665039062,
+            219.40951538085938,
+            180.75576782226562,
+            275.9375
+          ],
+          "physical_episode_id": "b5-physical-context:616a266671beb6a0b92aa1b5",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 8020,
+          "track_id": 4953,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            127.37413787841797,
+            217.49783325195312,
+            175.2835693359375,
+            273.1142883300781
+          ],
+          "physical_episode_id": "b5-physical-context:616a266671beb6a0b92aa1b5",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 8021,
+          "track_id": 4953,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            123.17134857177734,
+            216.10772705078125,
+            170.07980346679688,
+            270.44476318359375
+          ],
+          "physical_episode_id": "b5-physical-context:616a266671beb6a0b92aa1b5",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 8022,
+          "track_id": 4953,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            121.74138641357422,
+            215.22268676757812,
+            166.13812255859375,
+            268.5914306640625
+          ],
+          "physical_episode_id": "b5-physical-context:616a266671beb6a0b92aa1b5",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 8023,
+          "track_id": 4953,
+          "original_detection_index": 3,
+          "raw_bbox": [
+            118.41228485107422,
+            214.97518920898438,
+            161.70263671875,
+            266.4360046386719
+          ],
+          "physical_episode_id": "b5-physical-context:616a266671beb6a0b92aa1b5",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 8024,
+          "track_id": 4953,
+          "original_detection_index": 1,
+          "raw_bbox": [
+            113.82456970214844,
+            213.1912841796875,
+            157.6004180908203,
+            264.50115966796875
+          ],
+          "physical_episode_id": "b5-physical-context:616a266671beb6a0b92aa1b5",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        },
+        {
+          "frame_index": 8025,
+          "track_id": 4953,
+          "original_detection_index": 2,
+          "raw_bbox": [
+            110.23312377929688,
+            213.54812622070312,
+            152.23147583007812,
+            262.7966613769531
+          ],
+          "physical_episode_id": "b5-physical-context:616a266671beb6a0b92aa1b5",
+          "identity_boundary": false,
+          "raw_detection_link_verified": true
+        }
+      ],
+      "verdict": "INTENTIONAL_INVALID_SAME_BOUNDED_EPISODE_AND_PASSAGE_DIFFERENT_SOURCE_WITNESS",
+      "exact_source_matcher_was_not_modified": true,
+      "physical_identity_was_not_established_from_raw_id_alone": true
+    }
+  ],
+  "supplemental_transition_accounting": {
+    "old_accepted_still_accepted": 74,
+    "old_accepted_intentionally_invalid": 43,
+    "old_accepted_unexplained_after_supplement": 0,
+    "invalid_passage_scopes_are_not_unique_physical_miss_count": true
+  },
+  "new_source_confirmed_blockers": [
+    {
+      "case_id": "V6-QC-NEW-1049-1123",
+      "claim_type": "SOURCE_SCOPED_MANUAL_QC_REVIEW_NOT_FORMAL_GROUND_TRUTH",
+      "verdict": "CONFIRMED_ONE_PHYSICAL_RED_MOTORCYCLE_PASSAGE_TWO_ACTIVE_EVENTS",
+      "scope_source_frames": [
+        1300,
+        1355
+      ],
+      "raw_track_transition": [
+        1049,
+        1123
+      ],
+      "observation": "Motor merah di sisi kiri pickup Daihatsu mendekati kamera; tracker1049 terlihat sampai1336, tertutup motor dengan penumpang berkerudung biru1340–1344, lalu kendaraan merah yang sama muncul sebagai1123 mulai1349. Dua event A_TO_B aktif pada1396.",
+      "active_events": [
+        {
+          "event_id": "b_v6_0614016fdf79d30943e54c1e",
+          "track_id": 1123,
+          "physical_unit_id": "track:1123",
+          "episode_id": "unreviewed-vehicle",
+          "passage_id": "track:1123:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "direction": "A_TO_B",
+          "route": "LINE_MARGIN",
+          "activation_frame": 1396,
+          "decision_frame": 1396,
+          "measured_crossing": false,
+          "display_id": "M2007"
+        },
+        {
+          "event_id": "b_v6_5b7c1ee459f68ff171c6ee56",
+          "track_id": 1049,
+          "physical_unit_id": "track:1049",
+          "episode_id": "unreviewed-vehicle",
+          "passage_id": "track:1049:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "direction": "A_TO_B",
+          "route": "ESTIMATED_TIMEOUT",
+          "activation_frame": 1396,
+          "decision_frame": 1396,
+          "measured_crossing": false,
+          "display_id": "M2008"
+        }
+      ],
+      "source_evidence": "independent_inferred_1049_1123_continuity.jpg",
+      "same_count_attribution_frame": 1396,
+      "physical_passages_reviewed_in_this_scope": 1,
+      "active_events_in_scope": 2,
+      "excess_events_for_this_known_single_passage": 1,
+      "canonical_event_or_count_correction_not_applied": true,
+      "measured_crossing_claimed": false,
+      "diagnostic": {
+        "last_old_frame": 1336,
+        "first_new_frame": 1349,
+        "gap_frames": 13,
+        "max_unobserved_frames": 60,
+        "endpoint_iou": 0.0,
+        "minimum_endpoint_iou": 0.59,
+        "normalized_center_jump": 0.6429919913800478,
+        "maximum_normalized_center_jump": 0.1,
+        "handoff_rejected_because": "ENDPOINT_IOU_AND_CENTER_CONTROLS_FAIL_DESPITE_GAP_WITHIN_HORIZON",
+        "root_cause_interpretation": "Static endpoint overlap cannot reliably represent vehicle motion through occlusion; relation was never proposed, so two units passed independent finalization."
+      },
+      "recommendation": "Motion-aware handoff candidate proposal and passage reconciliation as a separate source-bound experiment; unresolved relevant pair invalid/+0, verified identity may share one passage. Do not hardcode raw IDs or lower thresholds to fit this case."
+    }
+  ],
+  "known_controls": [
+    {
+      "raw_track_id": 4251,
+      "active_events": [],
+      "invalid_scopes": [
+        {
+          "frame_index": 7369,
+          "passage_id": "track:4251:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "reasons": [
+            "INVALID_AMBIGUOUS_UNIT"
+          ]
+        }
+      ],
+      "pending_scopes": []
+    },
+    {
+      "raw_track_id": 4281,
+      "active_events": [],
+      "invalid_scopes": [
+        {
+          "frame_index": 7371,
+          "passage_id": "track:4281:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "reasons": [
+            "INFERRED_ROUTE_PHYSICAL_MOTION_UNRESOLVED",
+            "INVALID_AMBIGUOUS_UNIT"
+          ]
+        }
+      ],
+      "pending_scopes": []
+    },
+    {
+      "raw_track_id": 4934,
+      "active_events": [],
+      "invalid_scopes": [
+        {
+          "frame_index": 8003,
+          "passage_id": "track:4934:episode:unreviewed-vehicle:passage:1",
+          "category": null,
+          "reasons": [
+            "RAW_CONTEXT_CHANGED_WITHOUT_PHYSICAL_CONTINUITY_PROOF",
+            "IDENTITY_CONTINUITY_UNRESOLVED_FOR_TIMEOUT",
+            "INVALID_AMBIGUOUS_UNIT"
+          ]
+        }
+      ],
+      "pending_scopes": []
+    },
+    {
+      "raw_track_id": 4953,
+      "active_events": [],
+      "invalid_scopes": [
+        {
+          "frame_index": 8018,
+          "passage_id": "track:4953:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "reasons": [
+            "INFERRED_ROUTE_PHYSICAL_MOTION_UNRESOLVED",
+            "INVALID_AMBIGUOUS_UNIT"
+          ]
+        }
+      ],
+      "pending_scopes": []
+    },
+    {
+      "raw_track_id": 4149,
+      "active_events": [],
+      "invalid_scopes": [
+        {
+          "frame_index": 7422,
+          "passage_id": "reviewed:siang:4149-truck:episode:reviewed:4149-truck-before7449|b4-raw:4149:start:7213:passage:1",
+          "category": "truck",
+          "reasons": [
+            "INVALID_AMBIGUOUS_UNIT"
+          ]
+        }
+      ],
+      "pending_scopes": []
+    },
+    {
+      "raw_track_id": 4367,
+      "active_events": [],
+      "invalid_scopes": [],
+      "pending_scopes": []
+    },
+    {
+      "raw_track_id": 2445,
+      "active_events": [],
+      "invalid_scopes": [
+        {
+          "frame_index": 3792,
+          "passage_id": "track:2445:episode:unreviewed-vehicle:passage:1",
+          "category": "motorcycle",
+          "reasons": [
+            "INVALID_AMBIGUOUS_UNIT"
+          ]
+        }
+      ],
+      "pending_scopes": []
+    },
+    {
+      "raw_track_id": 4552,
+      "active_events": [],
+      "invalid_scopes": [],
+      "pending_scopes": []
+    },
+    {
+      "raw_track_id": 4480,
+      "active_events": [],
+      "invalid_scopes": [
+        {
+          "frame_index": 7604,
+          "passage_id": "track:4480:episode:unreviewed-vehicle:passage:1",
+          "category": "car",
+          "reasons": [
+            "INVALID_AMBIGUOUS_UNIT"
+          ]
+        }
+      ],
+      "pending_scopes": []
+    }
+  ],
+  "source_4552_4480_coexistence": {
+    "source_frame": 7615,
+    "separated": true,
+    "assignments": [
+      {
+        "frame_index": 7615,
+        "track_id": 4480,
+        "physical_unit_id": "track:4480",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "category": "car",
+        "raw_category": "car",
+        "review_refs": [],
+        "association_verified": false,
+        "association_id": null,
+        "physical_episode_id": "b5-physical-context:6a6b040d4a8dc20663f47e57",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": [],
+        "p0_historical_unit_hypothesis": "retained-clique:4480,4552",
+        "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+      },
+      {
+        "frame_index": 7615,
+        "track_id": 4552,
+        "physical_unit_id": "track:4552",
+        "episode_id": "unreviewed-vehicle",
+        "role": "vehicle",
+        "category": "motorcycle",
+        "raw_category": "motorcycle",
+        "review_refs": [],
+        "association_verified": false,
+        "association_id": null,
+        "physical_episode_id": "b5-physical-context:3cecc51cbd4fb3385c52e661",
+        "identity_episode_boundary": false,
+        "identity_episode_reason": "INITIAL_OBSERVATION",
+        "identity_timeout_hold": [],
+        "p0_historical_unit_hypothesis": "retained-clique:4480,4552",
+        "p0_identity_basis": "ISOLATED_RAW_CONTEXT_PHYSICAL_CONTINUITY_UNVERIFIED"
+      }
+    ]
+  },
+  "pending_group_counts": {
+    "person_role_unresolved": 22,
+    "inferred_route_physical_motion_unresolved": 1,
+    "unknown_person_identity_continuity": 1
+  },
+  "invalid_interpretation": "84 invalid scopes do not mean84 distinct physical vehicles or84 corrected false counts. Some pairs cover one physical passage and intentional coverage losses remain.",
+  "gate_recommendation": "P0_BLOCKED_BY_NEW_SOURCE_CONFIRMED_DUPLICATE_1049_1123",
+  "may_start_p1_in_parallel": true,
+  "p1_readiness_constraint": "Research role/band-born/night may continue in isolation, but no P0 closure, production promotion or claim of reliable full counting before duplicate regression is resolved.",
+  "accuracy_or_zero_mistakes_established": false,
+  "formal_ground_truth_available": false,
+  "recommendation_priority": [
+    "Add this bounded source case and negative neighboring-vehicle examples to regression evidence.",
+    "Experiment with motion-aware proposal across occlusion and one-final-event-per-verified-physical-passage reconciliation.",
+    "Preserve raw measured BC and estimated status; identity repair does not manufacture crossing in gap.",
+    "Keep deliberate invalid losses and role/band-born coverage separate from performance improvement."
+  ]
+}

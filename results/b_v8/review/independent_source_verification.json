@@ -1,0 +1,503 @@
+{
+  "schema_version": "phase9_b_v8_independent_source_verification_v1",
+  "status": "PASS_SOURCE_BYTES_AND_SELECTED_PIXELS_NOT_COUNTING_VALIDATION",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "baseline_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "pending_source_measurements_verified": 24,
+  "native_source_frames_verified": [
+    {
+      "frame_index": 41,
+      "raw_bgr_pixel_sha256": "5a4353f5c7f101c4b3559b452d54af5786499cd7e3dd7e79296a7e387e958d3e",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 104,
+      "raw_bgr_pixel_sha256": "aaddc35d44b3ecc674b7b2f1dd48ce4e03c5af064d57a2bacb943de7d17d4868",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 105,
+      "raw_bgr_pixel_sha256": "c65e5e1e9f906eb31a77f4d3c81082f7c4a6958158a5d027f1ac7ded8bf4e8fa",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 112,
+      "raw_bgr_pixel_sha256": "823f64d42a9a5aa52c57c815e17cf05971815833244f501301f6ceff58ae90ea",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 127,
+      "raw_bgr_pixel_sha256": "9e58c3cbff25c1b07610ed8a7df98006bd4afb91e7bf642eb621fa63bf30325a",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 510,
+      "raw_bgr_pixel_sha256": "1a5323a5bd75d3b567f48fe8b7a1a00ab0ca16f6c6c17cfb1e35dbe71e47eace",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 1044,
+      "raw_bgr_pixel_sha256": "9d0c57c8b6c5dc5ab5e02820784f553f8416d4b584992d20269e7162492b63e7",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 1677,
+      "raw_bgr_pixel_sha256": "7fc50b9b6163b7f902955c63528ada0a69aacd166dd84cc78e8b77c67452b7e0",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 2002,
+      "raw_bgr_pixel_sha256": "961ad26cabf242ca9d2fe0bc8ae43fe992aaefe672ba5d0aeb74c47f957b79d3",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 2003,
+      "raw_bgr_pixel_sha256": "682c4ef14cc29ad62c60ac4e6a9d4cd2a9094fd01b5f0e108ab9367f3c77b3d6",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 2139,
+      "raw_bgr_pixel_sha256": "73a13042d0412c0bff048cc7d76b771c4703a17c1d78acfbed488b29aee87d8e",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 2350,
+      "raw_bgr_pixel_sha256": "4793f8b359940dfd0f0a5cbce08c9899b0d07a5c6fe6688903f2c519ae474871",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 3116,
+      "raw_bgr_pixel_sha256": "c4f03d6f26d4175b372de1517107b55c565bbd428577e4972eed3bd0ee68a90a",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 3997,
+      "raw_bgr_pixel_sha256": "1d44bd77f4472ec128afdb8413a05744b26ad59f85d8535ca0618b2a7d420bd9",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 5494,
+      "raw_bgr_pixel_sha256": "01d7ebe5265f2daa7980321717c7dd725fda3911a2159ff6cd6f5b27e383f70c",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 5579,
+      "raw_bgr_pixel_sha256": "b0e49a3716375d449e95d734009002db88cb625a77966e4c645689694182bba7",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 6105,
+      "raw_bgr_pixel_sha256": "99c90b3b8346df17cb91af6236600ee1c8c51c47001ccd69f05fa66892ba26ca",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 6269,
+      "raw_bgr_pixel_sha256": "f8f6a8d96def915996f11c7ddab08f78d643bce3f38e786ebcc3663b58552c2f",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 6717,
+      "raw_bgr_pixel_sha256": "34e543a462a263d9fba3ab64815af182417b3c758d721f4a3a9ecb4ba48a1c5b",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7063,
+      "raw_bgr_pixel_sha256": "a8bde3b5cfe9be4bb1d3e5809e5b2db4bf6c964254acf3b6643652e4f150919f",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7329,
+      "raw_bgr_pixel_sha256": "f096befe42c4f414334955b8ad31d57bb33e6ad920f7a9052f8c9e5faf5a55e8",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7354,
+      "raw_bgr_pixel_sha256": "ca9bf797c5b311cf9eff27f3db990f11ed23888a5751569ca1b42cf1355361b5",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7363,
+      "raw_bgr_pixel_sha256": "e7c10736ffac4f79be089191d3d5b618e1ae4661ceed9630ca290c252c8cf53c",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7451,
+      "raw_bgr_pixel_sha256": "833ab37b3387850de9203858322cd9cce6ac9bb7593b4a1975f43d92f8fc62fe",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7503,
+      "raw_bgr_pixel_sha256": "85161dac0234a218041f91dbbc96eb1394c61be23f63cd5291b47b728c8fb5c3",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7685,
+      "raw_bgr_pixel_sha256": "26b0a1a9e8c02075dce75788541c6aed88626c24b0e0e36f75c258d31e0c34d8",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7860,
+      "raw_bgr_pixel_sha256": "126fa1c413b5adfca04b031b2217067ca617933d1e27d84500f5b895317c1743",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7874,
+      "raw_bgr_pixel_sha256": "0a832635a4299b538981cd968cf6fe912a13061dc4abbb7fff4d2aae2ff1474b",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7888,
+      "raw_bgr_pixel_sha256": "4101f6171e7407e0bc70ca4cecfa4cba50d127b1b190d3398a7aab127d444adf",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7899,
+      "raw_bgr_pixel_sha256": "3082e021b26635bc4e3e7ad565670f3915c60ec2927d656cfe300fbdcf30d6de",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7904,
+      "raw_bgr_pixel_sha256": "6a6a648d0561a23a5a2a8356d4f63d21928e96389953a5417bb4562ae5d070c9",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7905,
+      "raw_bgr_pixel_sha256": "18e8a828289c313efc5c60aad2a2bea207740eec72268af0b512729ce599777b",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7907,
+      "raw_bgr_pixel_sha256": "2b1c7e2258cc143ddfa1c04a5e27a45cc421ad73061f436758a335c640753b76",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7915,
+      "raw_bgr_pixel_sha256": "f0d942f03a8ca318bb0ecd125dfba0059cc8e0daab0eb7d5dfdbdd7c84cae2e3",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7920,
+      "raw_bgr_pixel_sha256": "a34eb01892713f69c80c81129683c65222370c1bee5240165365ed3a0b267c09",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7928,
+      "raw_bgr_pixel_sha256": "3292d668d2682dd56c0c687cb23568ddc5ea28fbf7e96c6ad98e10c247783c42",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7930,
+      "raw_bgr_pixel_sha256": "f00ebe6f3463c44af135789f87bcfd9a8c86ff7d891d4afc5276eb1a77798d35",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7935,
+      "raw_bgr_pixel_sha256": "52854cda30e24c9704421c299aa36c6d6585411c7d787c01abbff0610f9eae24",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7942,
+      "raw_bgr_pixel_sha256": "1b5adc54eb01b7481b5b501c0f229c29241f9b3fb4df90ecb9dd227a171f6aa0",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7950,
+      "raw_bgr_pixel_sha256": "b153e2fa5c14668807c4ef42d04ca7d459359b9d4be57adef0f7cef493b4a049",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7955,
+      "raw_bgr_pixel_sha256": "d26854c1c24bfe703bf70a6b1dd6e0601e605c54c4cfe95ccafa5ebc22e42f75",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7960,
+      "raw_bgr_pixel_sha256": "72ddfad569f06bb88b7dcb9bd351153d8270bbca19d6f2131c16c344ba169708",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 7964,
+      "raw_bgr_pixel_sha256": "e58a4dabf3b6563b9ef0cf01253dc86d02fa429280ac095b75ce4d0a1dbdc7b3",
+      "frozen_cache_match": true
+    },
+    {
+      "frame_index": 8012,
+      "raw_bgr_pixel_sha256": "1e3e4bd649384f5de1dcdfa686e9573dfcfa3f5f43d36195407ca708b6a3977f",
+      "frozen_cache_match": true
+    }
+  ],
+  "role_review_images_hash_verified": [
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-01-raw12.jpg",
+      "sha256": "153a227d84f10116526bc24e91d4d0aa5f41aa7439a71ccf88efabecf0021aa4"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-02-raw54.jpg",
+      "sha256": "a62a45a0a91509049313acbfec25c8081db6ec8b94a3799dbe232483754cb4cc"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-03-raw375.jpg",
+      "sha256": "3107370260d1c334b3c771b80d816569d670961d811d4608ecbb5fce81528897"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-04-raw385.jpg",
+      "sha256": "c01ccccc5e079d668e678b29b3f7c6fcf2936c7f3bf2137bf9c9bd271394d246"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-05-raw1486.jpg",
+      "sha256": "bcaa20b04916365f8b7b6de7aa84c76ab96380d08ae692d85512d1123d979394"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-07-raw1686.jpg",
+      "sha256": "9748dcd5a902ae337af9b4cded5abfce54c0826117fae7631e5cba76f8ae345e"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-08-raw1687.jpg",
+      "sha256": "669cfcbb5e8afcc9091dd76038ae2b2d897de6ddbb78f10cdcc97b5794898e9c"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-09-raw1826.jpg",
+      "sha256": "356cdfcca396b40becfc299f49b748b61f2fb802f1b8b4907c068aa8d5182551"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-10-raw1948.jpg",
+      "sha256": "3b649f469eeec5ef25ade33b284c754ad8249fcb92c5fbbce0f18ca5fb0baf87"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-11-raw2195.jpg",
+      "sha256": "29990ebb9f6f899d9d50e77a143ace04bee7ba12df1d12e2e4e68889c4297b6b"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-12-raw2531.jpg",
+      "sha256": "96e2a06282f8f6ef0497eb79f8e7a9ad93a2837338fc0ffbc4574380dd89e593"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-14-raw3239.jpg",
+      "sha256": "cd6738755305f3f4494ddf312ca3c70f259dad673c94b5a4ae5e0bac43d44155"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-15-raw3185.jpg",
+      "sha256": "5e2cb453591ae05b77044b76fb91c4721698bd1cdeb08e6684b266853c23cffe"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-extra-raw3185.jpg",
+      "sha256": "028e1556d02b4803d6cb21af4ec4378d583a59d8f1bbaad728094ab9441e7d7f"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-16-raw3446.jpg",
+      "sha256": "a754fde791916d65b58516c846cf19f90fce6ad0a538bc394c646a38a3a5889f"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-19-raw3844.jpg",
+      "sha256": "5551c969c0594d12108432987d0f514d0bf479c0a0f2e16e01bd66e043978a67"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-20-raw4094.jpg",
+      "sha256": "8ddd37efce3096cb51a955c53d66836718e0401d53e8b96937ae83fb67e1c8dd"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-21-raw4198.jpg",
+      "sha256": "f84a1fd77fbbe7b24f42e522164529e95be314983408377c7ee6e41d3f2f0b27"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-22-raw4244.jpg",
+      "sha256": "afdbbfdbf88f4ed7a2e5ff3f55b1866d8b7fd875bc64832c73b00684163572cc"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-24-raw4175.jpg",
+      "sha256": "fd0ea0ff6e82c4d943271c9f192f8e730a17d67f5819bbbb0db0723d1e6f3289"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-25-raw4283.jpg",
+      "sha256": "46945dfc3f1db63871603b7f9f6bfb6239d1b7b940296fa6ce15f21605cbffde"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-26-raw4397.jpg",
+      "sha256": "46f060d0f2ca4bc6d30e988ee48135387bcd5ef2b2beac0aea325081bad43f73"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-27-raw4561.jpg",
+      "sha256": "1b3520662b8191190fbe54c53469b189955832f6cf3b45082f7b28841e9032ab"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/role-29-raw4938.jpg",
+      "sha256": "75433238c5f261ae510ed2fa1d82a33ad538ef0fa49aecadc13f032652307098"
+    }
+  ],
+  "role_evidence_scope_checks": [
+    {
+      "raw_track_id": 12,
+      "source_frame": 41,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 54,
+      "source_frame": 127,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "PEDESTRIAN",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 375,
+      "source_frame": 510,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 385,
+      "source_frame": 1044,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 1486,
+      "source_frame": 1677,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 1686,
+      "source_frame": 2002,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 1687,
+      "source_frame": 2003,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 1826,
+      "source_frame": 2139,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 1948,
+      "source_frame": 2350,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 2195,
+      "source_frame": 3116,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 2531,
+      "source_frame": 3997,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "VEHICLE_OCCUPANT",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 3239,
+      "source_frame": 5494,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 3185,
+      "source_frame": 5579,
+      "source_point_in_positive_role_review": false,
+      "proposed_role": "UNKNOWN",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 3446,
+      "source_frame": 6105,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 3844,
+      "source_frame": 6717,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 4094,
+      "source_frame": 7063,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 4198,
+      "source_frame": 7329,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 4244,
+      "source_frame": 7363,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 4175,
+      "source_frame": 7354,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 4283,
+      "source_frame": 7451,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 4397,
+      "source_frame": 7503,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "VEHICLE_OCCUPANT",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 4561,
+      "source_frame": 7685,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    },
+    {
+      "raw_track_id": 4938,
+      "source_frame": 8012,
+      "source_point_in_positive_role_review": true,
+      "proposed_role": "RIDER_PASSENGER",
+      "role_review_is_temporal_sample_not_entire_raw_id": true
+    }
+  ],
+  "decode_method": "SEQUENTIAL_FROM_SOURCE_ZERO",
+  "decoded_through_source_frame": 8012,
+  "role_images_independently_viewed": "All21positivecomponent/rider/occupantcase sheets plus54pedestrian and3185unknown were opened by this reviewer; cargo3555 and all3blockercontacts also opened.",
+  "physical_ground_truth_established": false,
+  "model_tracker_reid_counting_enhancement_executed": false
+}

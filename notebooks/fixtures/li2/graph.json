@@ -1,0 +1,126 @@
+{
+  "coverage": {
+    "bbox": [
+      699681.7953814812,
+      9288407.726777073,
+      700681.7953814812,
+      9289407.726777073
+    ],
+    "completeness": "COMPLETE",
+    "scope": "Synthetic directed graph fixture only; no actual OSM coverage claim"
+  },
+  "crs": "EPSG:32748",
+  "directed": true,
+  "edges": [
+    {
+      "access_allowed": true,
+      "edge_id": "access-AB",
+      "geometry": {
+        "coordinates": [
+          [
+            700431.7953814812,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288927.726777073
+          ]
+        ],
+        "type": "LineString"
+      },
+      "highway": "residential",
+      "key": "0",
+      "length_m": 250.0,
+      "service": null,
+      "travel_time_s": 128.57142857142858,
+      "u": "A",
+      "v": "B"
+    },
+    {
+      "access_allowed": false,
+      "edge_id": "network-BT-fast",
+      "geometry": {
+        "coordinates": [
+          [
+            700181.7953814812,
+            9288927.726777073
+          ],
+          [
+            700181.7953814812,
+            9288907.726777073
+          ]
+        ],
+        "type": "LineString"
+      },
+      "highway": "residential",
+      "key": "0",
+      "length_m": 20.0,
+      "service": null,
+      "travel_time_s": 10.285714285714286,
+      "u": "B",
+      "v": "T"
+    },
+    {
+      "access_allowed": false,
+      "edge_id": "network-BT-slow",
+      "geometry": {
+        "coordinates": [
+          [
+            700181.7953814812,
+            9288927.726777073
+          ],
+          [
+            700201.7953814812,
+            9288927.726777073
+          ],
+          [
+            700201.7953814812,
+            9288907.726777073
+          ],
+          [
+            700181.7953814812,
+            9288907.726777073
+          ]
+        ],
+        "type": "LineString"
+      },
+      "highway": "residential",
+      "key": "1",
+      "length_m": 60.0,
+      "service": null,
+      "travel_time_s": 30.857142857142858,
+      "u": "B",
+      "v": "T"
+    }
+  ],
+  "graph_id": "synthetic-directed-001",
+  "nodes": [
+    {
+      "node_id": "A",
+      "x": 700431.7953814812,
+      "y": 9288927.726777073
+    },
+    {
+      "node_id": "B",
+      "x": 700181.7953814812,
+      "y": 9288927.726777073
+    },
+    {
+      "node_id": "T",
+      "x": 700181.7953814812,
+      "y": 9288907.726777073
+    }
+  ],
+  "provenance": {
+    "description": "Hand-authored nodes/edges and connector permissions; not a real road/legal-access dataset",
+    "origin": "SYNTHETIC_FIXTURE",
+    "source_as_of": null,
+    "source_version": "fixture-1"
+  },
+  "schema_version": "li_directed_graph_v1",
+  "units": {
+    "coordinates": "m",
+    "distance": "m",
+    "travel_time": "s"
+  }
+}

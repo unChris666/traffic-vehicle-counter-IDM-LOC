@@ -1,0 +1,195 @@
+{
+  "filename": "TC0Q-WEEKDAY-MALAM.mp4",
+  "relative_path": "TC0Q-WEEKDAY-MALAM.mp4",
+  "extension": ".mp4",
+  "size_bytes": 21039450,
+  "source_sha256": "501026a5b3451149dde2c304f4e12169c0f3218737bc2689fb1658e2774056b4",
+  "source_unchanged": true,
+  "width": 1280,
+  "height": 720,
+  "fps_reported_ffprobe": 27.687809313515668,
+  "fps_reported_opencv": 27.687809313515668,
+  "duration_reported_seconds": 309.992022,
+  "duration_from_decoded_count_and_reported_fps_seconds": 309.9920222222222,
+  "codec": "h264",
+  "codec_tag": "avc1",
+  "pixel_format": "yuv420p",
+  "frame_count_reported_opencv": 8583,
+  "frame_count_decoded": 8583,
+  "decoded_dimensions": [
+    [
+      1280,
+      720
+    ]
+  ],
+  "decode_status": "SEQUENTIAL_DECODE_TO_EOF",
+  "first_unsuccessful_read_frame": 8583,
+  "decode_limit": "OpenCV sequential EOF plus header comparison; not a bitstream corruption certification.",
+  "ffprobe": {
+    "available": true,
+    "error": null,
+    "stream": {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 1280,
+      "height": 720,
+      "coded_width": 1280,
+      "coded_height": 720,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "16:9",
+      "pix_fmt": "yuv420p",
+      "level": 31,
+      "chroma_location": "left",
+      "field_order": "progressive",
+      "refs": 1,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "30/1",
+      "avg_frame_rate": "386235000/13949641",
+      "time_base": "1/90000",
+      "start_pts": 155970,
+      "start_time": "1.733000",
+      "duration_ts": 27899282,
+      "duration": "309.992022",
+      "bit_rate": "405321",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "8583",
+      "extradata_size": 45,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0,
+        "multilayer": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]"
+      }
+    },
+    "format": {
+      "filename": "/tmp/official-night-dataset/TC0Q-WEEKDAY-MALAM.mp4",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "nb_stream_groups": 0,
+      "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+      "format_long_name": "QuickTime / MOV",
+      "start_time": "1.732993",
+      "duration": "309.992029",
+      "size": "21039450",
+      "bit_rate": "542967",
+      "probe_score": 100,
+      "tags": {
+        "major_brand": "isom",
+        "minor_version": "512",
+        "compatible_brands": "isomiso2avc1mp41",
+        "encoder": "Lavf58.76.100"
+      }
+    }
+  },
+  "samples": [
+    {
+      "frame_index": 0,
+      "native_image": "frame_000000.png",
+      "image_sha256": "9f1f4c31b05f0b90fb8cb21c064480f835ed4a8f595f70f3fbcffe390ba5678d",
+      "decoded_bgr_sha256": "25a786f3fc9d6d180d56a5f60d3b733429410bf909d7f1e19d3fd6f9b759eafb",
+      "reported_position_msec": 0.0,
+      "luma_p05_p50_p95": [
+        31.0,
+        94.0,
+        160.0
+      ],
+      "fraction_luma_le_16": 0.007195095486111111,
+      "fraction_luma_ge_240": 0.01287868923611111,
+      "metric_limits": "Pixel summaries only; no detection/noise/visibility quality threshold."
+    },
+    {
+      "frame_index": 2146,
+      "native_image": "frame_002146.png",
+      "image_sha256": "120ea10ee7d19cc8abc518ce36fe552d03b7c26571a4e246fa222da18ce0dcf5",
+      "decoded_bgr_sha256": "5adbe91fd77e18ce3a848dea2f1132369f0969dda0c8a0732129bad6117cab41",
+      "reported_position_msec": 82331.22222222222,
+      "luma_p05_p50_p95": [
+        38.0,
+        100.0,
+        195.0
+      ],
+      "fraction_luma_le_16": 0.0011187065972222223,
+      "fraction_luma_ge_240": 0.020071614583333335,
+      "metric_limits": "Pixel summaries only; no detection/noise/visibility quality threshold."
+    },
+    {
+      "frame_index": 4291,
+      "native_image": "frame_004291.png",
+      "image_sha256": "a4a753fa689ce8f9f45d5a8911115b4b6396622b5fc79850e378bb73763169c1",
+      "decoded_bgr_sha256": "5c9a6c7fdf1df94e637383f393859f4bd1a30721e899b93b51cf72df007ade01",
+      "reported_position_msec": 155929.3777777778,
+      "luma_p05_p50_p95": [
+        30.0,
+        92.0,
+        160.0
+      ],
+      "fraction_luma_le_16": 0.005949435763888889,
+      "fraction_luma_ge_240": 0.01131076388888889,
+      "metric_limits": "Pixel summaries only; no detection/noise/visibility quality threshold."
+    },
+    {
+      "frame_index": 6436,
+      "native_image": "frame_006436.png",
+      "image_sha256": "bdc624434f2727bc1a4b0f8f5230f81eeab27023a959a67f4117b5d11c6fd110",
+      "decoded_bgr_sha256": "3eda0a0d095b59dcdaf597b46f1b7bf225540e6ac44c3a5ce9cad17ebc1c19be",
+      "reported_position_msec": 229427.44444444447,
+      "luma_p05_p50_p95": [
+        32.0,
+        94.0,
+        163.0
+      ],
+      "fraction_luma_le_16": 0.00041015625,
+      "fraction_luma_ge_240": 0.013114149305555555,
+      "metric_limits": "Pixel summaries only; no detection/noise/visibility quality threshold."
+    },
+    {
+      "frame_index": 8582,
+      "native_image": "frame_008582.png",
+      "image_sha256": "eb210b851c39a0d01000882ec0005b07203c83170c51a829761883c3a1315d45",
+      "decoded_bgr_sha256": "7357543570712c3d111cdf6099115b62dc326e4a0bd2bcc03fcd31a1871502d7",
+      "reported_position_msec": 308358.7555555556,
+      "luma_p05_p50_p95": [
+        25.0,
+        93.0,
+        194.0
+      ],
+      "fraction_luma_le_16": 0.010947265625,
+      "fraction_luma_ge_240": 0.019206814236111112,
+      "metric_limits": "Pixel summaries only; no detection/noise/visibility quality threshold."
+    }
+  ],
+  "sampling": "Sequential source indices at header-based 0/25/50/75/100%; actual end retained.",
+  "condition": null,
+  "condition_assignment": "UNASSIGNED_REQUIRES_REVIEW_NOT_FILENAME_INFERENCE",
+  "wall_seconds": 17.623228386000847
+}

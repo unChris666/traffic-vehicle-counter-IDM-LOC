@@ -1,0 +1,98 @@
+[
+  {
+    "code": "FIELD_REQUIRED",
+    "delete": "context.created_at",
+    "name": "missing_context_field",
+    "validity": "INVALID"
+  },
+  {
+    "code": "TYPE_NUMBER",
+    "name": "boolean_latitude",
+    "set": "context.target.latitude",
+    "validity": "INVALID",
+    "value": true
+  },
+  {
+    "code": "COORDINATE_RANGE",
+    "name": "latitude_range",
+    "set": "context.target.latitude",
+    "validity": "INVALID",
+    "value": 91
+  },
+  {
+    "code": "COORDINATE_RANGE",
+    "name": "longitude_range",
+    "set": "context.target.longitude",
+    "validity": "INVALID",
+    "value": 181
+  },
+  {
+    "code": "CONFIG_RANGE",
+    "name": "invalid_quantity",
+    "set": "context.config.area_coverage.parameters.building_radius_m.value",
+    "validity": "INVALID",
+    "value": 0
+  },
+  {
+    "code": "UNIT_INVALID",
+    "name": "unit_mismatch",
+    "set": "context.config.area_coverage.parameters.min_area_m2.unit",
+    "validity": "INVALID",
+    "value": "m"
+  },
+  {
+    "code": "CONFIG_REQUIRED",
+    "delete": "context.config.area_coverage.parameters.min_area_m2",
+    "name": "missing_quantity",
+    "validity": "VALID"
+  },
+  {
+    "code": "FIELD_REQUIRED",
+    "delete": "context.analysis_run_id",
+    "name": "missing_run_id",
+    "validity": "INVALID"
+  },
+  {
+    "code": "SCHEMA_UNSUPPORTED",
+    "name": "schema_unknown",
+    "set": "manifest.schema_version",
+    "validity": "INVALID",
+    "value": "v999"
+  },
+  {
+    "code": "CONTEXT_BINDING_MISMATCH",
+    "name": "run_binding",
+    "set": "manifest.analysis_run_id",
+    "validity": "INVALID",
+    "value": "different-run"
+  },
+  {
+    "code": "FIELD_REQUIRED",
+    "delete": "manifest.sources.0.provenance",
+    "name": "missing_provenance",
+    "validity": "INVALID"
+  },
+  {
+    "code": "FILE_FINGERPRINT_MISMATCH",
+    "name": "wrong_checksum",
+    "set": "manifest.sources.0.fingerprint.value",
+    "validity": "INVALID",
+    "value": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  {
+    "code": "LOCAL_FILE_MISSING",
+    "name": "missing_source_file",
+    "set": "manifest.sources.0.locator",
+    "validity": "VALID",
+    "value": "absent.geojson"
+  },
+  {
+    "code": "POLICY_UNRESOLVED",
+    "name": "unresolved_policy",
+    "set": "context.config.area_coverage.unresolved_decisions",
+    "validity": "VALID",
+    "value": [
+      "D08"
+    ]
+  }
+]

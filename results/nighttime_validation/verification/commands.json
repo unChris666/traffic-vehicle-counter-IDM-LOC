@@ -1,0 +1,100 @@
+{
+  "working_directory": "/workspace/traffic-vehicle-counter-IDM-LOC",
+  "executed": [
+    {
+      "command": [
+        "/workspace/.venvs/kaggle-cli/bin/kaggle",
+        "datasets",
+        "files",
+        "chrisbiran/video-traffic-malam",
+        "--csv"
+      ],
+      "evidence": "source_check/kaggle_file_listing.csv"
+    },
+    {
+      "command": [
+        "/workspace/.venvs/kaggle-cli/bin/kaggle",
+        "datasets",
+        "download",
+        "-d",
+        "chrisbiran/video-traffic-malam",
+        "-p",
+        "/tmp/official-night-dataset",
+        "--unzip",
+        "--quiet"
+      ],
+      "status": "SUCCESS_DOWNLOADED10FILES"
+    },
+    {
+      "command": [
+        "/workspace/.venvs/traffic-inspection/bin/python",
+        "notebooks/nighttime_input_inspection.py",
+        "--dataset-root",
+        "/tmp/official-night-dataset",
+        "--output",
+        "results/nighttime_validation/local_inspection",
+        "--execution-context",
+        "codex_downloaded_dataset"
+      ],
+      "evidence": "local_inspection/inventory.json"
+    },
+    {
+      "command": [
+        "/workspace/.venvs/kaggle-cli/bin/kaggle",
+        "kernels",
+        "push",
+        "-p",
+        "results/nighttime_validation/kaggle_packet",
+        "-t",
+        "600"
+      ],
+      "evidence": "source_check/kaggle_submission.txt"
+    },
+    {
+      "command": [
+        "/workspace/.venvs/kaggle-cli/bin/kaggle",
+        "kernels",
+        "output",
+        "chrisbiran/b-v8-nighttime-input-inspection",
+        "-p",
+        "results/nighttime_validation/kaggle_execution",
+        "--force"
+      ],
+      "evidence": "source_check/kaggle_output_download.txt"
+    },
+    {
+      "command": [
+        "/workspace/.venvs/traffic-inspection/bin/python",
+        "-m",
+        "unittest",
+        "-v",
+        "nighttime_validation_tests"
+      ],
+      "working_directory": "/workspace/traffic-vehicle-counter-IDM-LOC/notebooks",
+      "evidence": "software_tests.log",
+      "status": "PASS16"
+    },
+    {
+      "command": [
+        "node",
+        "results/nighttime_validation/verification/browser_review_test.js"
+      ],
+      "environment_selector": "NODE_PATH=/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules",
+      "evidence": "browser_validation/browser_test.json"
+    },
+    {
+      "command": [
+        "/workspace/.venvs/traffic-inspection/bin/python",
+        "results/nighttime_validation/verification/check_preview_and_baselines.py"
+      ],
+      "evidence": "browser_validation/preview_backend_parity.json"
+    }
+  ],
+  "not_executed": [
+    "full_video_model_inference",
+    "nighttime_detector_tracker_reid_counting_smoke",
+    "nighttime_annotation_render",
+    "area_coverage_or_ppac_job"
+  ],
+  "historical_results_overwritten": false
+}

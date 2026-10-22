@@ -1,0 +1,62 @@
+{
+  "analysis_run_id": "li1-synthetic-001",
+  "artifacts": [],
+  "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+  "modules": [
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "artifact_refs": [],
+      "config_hash": "118d0123db42180cae0125478330077a8d122d07c34c3544877d44825eb3fd7c",
+      "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+      "engine": null,
+      "error": null,
+      "finished_at": null,
+      "module": "area_coverage",
+      "module_run_id": "li1-selection-invalid-001",
+      "required_inputs": [
+        "fixture-buildings-invalid"
+      ],
+      "started_at": null,
+      "status": "NOT_RUN"
+    }
+  ],
+  "schema_version": "location_intelligent_v1",
+  "sources": [
+    {
+      "acquired_at": "2026-10-22T00:00:00Z",
+      "acquisition_mode": "SYNTHETIC_FIXTURE",
+      "availability": "AVAILABLE",
+      "byte_count": 6394,
+      "coverage": {
+        "completeness": "COMPLETE",
+        "scope": "Synthetic offline LI-1 fixture only; no actual store/source coverage verified"
+      },
+      "crs": "EPSG:4326",
+      "fingerprint": {
+        "algorithm": "sha256",
+        "value": "6ab2a2991059a67658d2c006a2d4974621713998354bac19a8db6f91aa69726b"
+      },
+      "freshness": "UNKNOWN",
+      "inventory_id": "SRC04",
+      "kind": "LOCAL_FILE",
+      "locator": "invalid_buildings.geojson",
+      "provenance": {
+        "dependencies": [],
+        "description": "Hand-authored fixture; not retrieved from Overture or any live provider",
+        "origin": "SYNTHETIC_FIXTURE"
+      },
+      "provider": "SYNTHETIC",
+      "row_count": 9,
+      "schema_version": "li_building_snapshot_v1",
+      "source_as_of": null,
+      "source_ref_id": "fixture-buildings-invalid",
+      "source_version": "li1-fixture-1",
+      "units": {
+        "coordinates": "degree"
+      },
+      "unknown_reasons": {
+        "source_as_of": "No observed real-world source vintage for synthetic fixture"
+      }
+    }
+  ]
+}

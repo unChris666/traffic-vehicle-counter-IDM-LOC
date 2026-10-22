@@ -1,0 +1,53 @@
+{
+  "context_aggregate": {
+    "by_category": {
+      "motorcycle": 14
+    },
+    "by_direction": {
+      "A_TO_B": 7,
+      "B_TO_A": 7
+    },
+    "by_route": {
+      "LINE_MARGIN": 14
+    },
+    "cancelled": 5,
+    "inferred_total": 4,
+    "measured_total": 10,
+    "pedestrian_total": 0,
+    "pending": 11,
+    "total": 14,
+    "vehicle_total": 14
+  },
+  "detector_conf": 0.25,
+  "evaluation_activation_events": 13,
+  "evaluation_by_category": {
+    "motorcycle": 13
+  },
+  "evaluation_measured": 9,
+  "physical_passage_review": "PENDING_SEPARATE_SOURCE_REVIEW",
+  "source_identity": {
+    "clip_reset_not_full_video_history": true,
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "height": 480,
+    "parent_run_id": "phase9_confidence_retention_clip_v1",
+    "records_sha256": "e89974bf458c18421f57abf56322818cfd0875531547cdeb44ff2dc75eaa2f5f",
+    "source_frame_mapping": {
+      "discarded_unsupported_raw_observations": {
+        "fire hydrant": 1
+      },
+      "legacy_donor_relations_applied": false,
+      "legacy_raw_id_reviews_applied": false,
+      "local_end_frame": 599,
+      "local_start_frame": 0,
+      "source_end_frame": 7979,
+      "source_global_frame_equals_local_plus": 7380,
+      "source_start_frame": 7380,
+      "synthetic_post_clip_frames": 0,
+      "synthetic_prehistory_frames": 0
+    },
+    "variant": "baseline_conf025",
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "width": 640
+  },
+  "variant": "baseline_conf025"
+}

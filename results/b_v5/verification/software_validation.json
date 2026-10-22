@@ -1,0 +1,29 @@
+{
+  "new_software_tests": {
+    "status": "PASS",
+    "count": 88,
+    "log": "results/b_v5/verification/software_tests_final.log",
+    "sha256": "5dba78cf103ab438035a05dc58e51eaebceb19ce9deb7a0463d75a505f754737"
+  },
+  "baseline_bv4_regression_tests_this_turn": {
+    "status": "PASS",
+    "count": 101,
+    "output_record": "Codex exec result 976a22; original executables hash-verified unchanged"
+  },
+  "frozen_files_checked": 1227,
+  "frozen_files_unchanged": true,
+  "notebook_validation": [
+    {
+      "path": "notebooks/09a_p0_qc_replay.ipynb",
+      "compiled_python_cells": 3
+    },
+    {
+      "path": "notebooks/09b_model_configuration_experiment.ipynb",
+      "compiled_python_cells": 3
+    }
+  ],
+  "p0_technical_execution": "PASS",
+  "p0_empirical_acceptance": "NOT_PASS",
+  "model_inference": "ACTUALLY_EXECUTED_IN_KAGGLE",
+  "new_defaults_selected": false
+}

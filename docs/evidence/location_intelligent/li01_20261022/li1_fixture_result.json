@@ -1,0 +1,504 @@
+{
+  "analysis_run_id": "li1-synthetic-001",
+  "backend": {
+    "axis_order": "XY",
+    "gdal": "3.10.3",
+    "geos": "3.13.1",
+    "metric_crs": "EPSG:32748",
+    "proj": "9.6.0",
+    "representative_point": "GEOS PointOnSurface in EPSG:4326 before projection"
+  },
+  "diagnostics": [],
+  "li0": {
+    "diagnostics": [
+      {
+        "blocking": false,
+        "code": "FRESHNESS_UNKNOWN",
+        "message": "Freshness is unverified; offline does not automatically mean stale.",
+        "path": "manifest.sources[0]",
+        "severity": "UNKNOWN"
+      },
+      {
+        "blocking": false,
+        "code": "VALUE_UNKNOWN",
+        "message": "Value remains unknown; supply evidence before using it.",
+        "path": "manifest.sources[0].source_as_of",
+        "severity": "UNKNOWN"
+      }
+    ],
+    "limitations": [
+      "No source retrieval or live authorization check.",
+      "No payload geometry/schema, geographic coverage or calculation validation.",
+      "No capacity, routing, Recount, Traffic or PPAC readiness claim."
+    ],
+    "live_readiness": "NOT_VERIFIED",
+    "offline_readiness": "READY",
+    "readiness_scope": "LI1_BUILDING_SELECTION_INPUT_CONTRACT_ONLY",
+    "schema_version": "location_intelligent_validation_v1",
+    "validation_status": "VALID",
+    "verified_local_source_count": 1
+  },
+  "limitations": [
+    "Reference building selection only; not routing/accessibility or capacity.",
+    "Declared coverage is not verified geographic completeness.",
+    "Synthetic fixtures do not validate live Overture integration."
+  ],
+  "live_readiness": "NOT_VERIFIED",
+  "reject_ledger": [
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "small-40",
+      "code": "AREA_NOT_ABOVE_MIN",
+      "config_hash": "118d0123db42180cae0125478330077a8d122d07c34c3544877d44825eb3fd7c",
+      "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+      "disposition": "EXCLUDED",
+      "field": "geometry/class/subclass",
+      "message": "Full projected footprint area must be strictly greater than min_area_m2.",
+      "metrics": {
+        "area_m2": 39.99999999743886,
+        "distance_to_store_m": 1.949475282021662e-07,
+        "lat": -6.4299999999982544,
+        "lon": 106.8099999999998,
+        "representative_point": {
+          "coordinates": [
+            106.8099999999998,
+            -6.4299999999982544
+          ],
+          "type": "Point"
+        }
+      },
+      "rule_version": "N1_BUILDING_SELECTION_V1",
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 5,
+      "stage": "SELECTION"
+    },
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "large-600",
+      "code": "AREA_NOT_BELOW_MAX",
+      "config_hash": "118d0123db42180cae0125478330077a8d122d07c34c3544877d44825eb3fd7c",
+      "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+      "disposition": "EXCLUDED",
+      "field": "geometry/class/subclass",
+      "message": "Standard residential footprint area must be strictly smaller than max_area_m2.",
+      "metrics": {
+        "area_m2": 599.9999999832362,
+        "distance_to_store_m": 1.7076664522203438e-06,
+        "lat": -6.429999999984837,
+        "lon": 106.8100000000029,
+        "representative_point": {
+          "coordinates": [
+            106.8100000000029,
+            -6.429999999984837
+          ],
+          "type": "Point"
+        }
+      },
+      "rule_version": "N1_BUILDING_SELECTION_V1",
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 6,
+      "stage": "SELECTION"
+    },
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "far-450",
+      "code": "OUTSIDE_RADIUS",
+      "config_hash": "118d0123db42180cae0125478330077a8d122d07c34c3544877d44825eb3fd7c",
+      "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+      "disposition": "EXCLUDED",
+      "field": "geometry/class/subclass",
+      "message": "A valid representative point lies outside the configured building radius.",
+      "metrics": {
+        "area_m2": 100.00000000093132,
+        "distance_to_store_m": 450.0000000015134,
+        "lat": -6.429985584619665,
+        "lon": 106.81406741752745,
+        "representative_point": {
+          "coordinates": [
+            106.81406741752745,
+            -6.429985584619665
+          ],
+          "type": "Point"
+        }
+      },
+      "rule_version": "N1_BUILDING_SELECTION_V1",
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 7,
+      "stage": "SELECTION"
+    },
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "building_id": "commercial-100",
+      "code": "CLASS_UNSUPPORTED",
+      "config_hash": "118d0123db42180cae0125478330077a8d122d07c34c3544877d44825eb3fd7c",
+      "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+      "disposition": "EXCLUDED",
+      "field": "geometry/class/subclass",
+      "message": "Neither a supported special class nor null/empty/residential subtype applies.",
+      "metrics": {
+        "area_m2": 99.99999999068677,
+        "distance_to_store_m": 250.00000000174623,
+        "lat": -6.429991995443466,
+        "lon": 106.81225967755353,
+        "representative_point": {
+          "coordinates": [
+            106.81225967755353,
+            -6.429991995443466
+          ],
+          "type": "Point"
+        }
+      },
+      "rule_version": "N1_BUILDING_SELECTION_V1",
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 8,
+      "stage": "SELECTION"
+    }
+  ],
+  "rule_version": "N1_BUILDING_SELECTION_V1",
+  "schema_version": "location_intelligent_building_selection_v1",
+  "selected": [
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "area_m2": 100.00000000512227,
+      "building_id": "standard-100",
+      "building_key": {
+        "building_id": "standard-100",
+        "provider": "SYNTHETIC",
+        "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+        "source_version": "li1-fixture-1"
+      },
+      "building_type": "standard_residential",
+      "class": "residential",
+      "distance_to_store_m": 3.501996570404388e-07,
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              106.80995496635599,
+              -6.430045368146356
+            ],
+            [
+              106.81004535352352,
+              -6.430045048161429
+            ],
+            [
+              106.81004503363607,
+              -6.429954631851832
+            ],
+            [
+              106.80995464648447,
+              -6.429954951832221
+            ],
+            [
+              106.80995496635599,
+              -6.430045368146356
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "lat": -6.429999999996825,
+      "lon": 106.81000000000003,
+      "metric_crs": "EPSG:32748",
+      "raw_properties": {
+        "building_id": "standard-100",
+        "class": "residential",
+        "subclass": "residential"
+      },
+      "representative_point": {
+        "coordinates": [
+          106.81000000000003,
+          -6.429999999996825
+        ],
+        "type": "Point"
+      },
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 0,
+      "subclass": "residential"
+    },
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "area_m2": 600.0000000037253,
+      "building_id": "apartment-600",
+      "building_key": {
+        "building_id": "apartment-600",
+        "provider": "SYNTHETIC",
+        "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+        "source_version": "li1-fixture-1"
+      },
+      "building_type": "apartment",
+      "class": "apartments",
+      "distance_to_store_m": 50.000000328058405,
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              106.81036202852165,
+              -6.430134344381903
+            ],
+            [
+              106.81054280284272,
+              -6.430133704243394
+            ],
+            [
+              106.8105418429171,
+              -6.429862455389455
+            ],
+            [
+              106.81036106869175,
+              -6.429863095500741
+            ],
+            [
+              106.81036202852165,
+              -6.430134344381903
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "lat": -6.429998399872067,
+      "lon": 106.81045193574334,
+      "metric_crs": "EPSG:32748",
+      "raw_properties": {
+        "building_id": "apartment-600",
+        "class": "apartments",
+        "subclass": "commercial"
+      },
+      "representative_point": {
+        "coordinates": [
+          106.81045193574334,
+          -6.429998399872067
+        ],
+        "type": "Point"
+      },
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 1,
+      "subclass": "commercial"
+    },
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "area_m2": 600.0000000018626,
+      "building_id": "dormitory-600",
+      "building_key": {
+        "building_id": "dormitory-600",
+        "provider": "SYNTHETIC",
+        "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+        "source_version": "li1-fixture-1"
+      },
+      "building_type": "dormitory",
+      "class": "dormitory",
+      "distance_to_store_m": 100.0000003281748,
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              106.81081396428986,
+              -6.430132743915943
+            ],
+            [
+              106.81099473856499,
+              -6.430132103617848
+            ],
+            [
+              106.81099377840007,
+              -6.429860854831978
+            ],
+            [
+              106.81081300422066,
+              -6.429861495102842
+            ],
+            [
+              106.81081396428986,
+              -6.430132743915943
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "lat": -6.429996799360345,
+      "lon": 106.81090387136894,
+      "metric_crs": "EPSG:32748",
+      "raw_properties": {
+        "building_id": "dormitory-600",
+        "class": "dormitory",
+        "subclass": null
+      },
+      "representative_point": {
+        "coordinates": [
+          106.81090387136894,
+          -6.429996799360345
+        ],
+        "type": "Point"
+      },
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 2,
+      "subclass": null
+    },
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "area_m2": 699.9999999925494,
+      "building_id": "hotel-700",
+      "building_key": {
+        "building_id": "hotel-700",
+        "provider": "SYNTHETIC",
+        "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+        "source_version": "li1-fixture-1"
+      },
+      "building_type": "hotel",
+      "class": "hotel",
+      "distance_to_store_m": 150.0000005332986,
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              106.81126597997078,
+              -6.43015374711297
+            ],
+            [
+              106.81144675420794,
+              -6.430153106653023
+            ],
+            [
+              106.81144563373637,
+              -6.4298366498156065
+            ],
+            [
+              106.81126485961089,
+              -6.429837290243778
+            ],
+            [
+              106.81126597997078,
+              -6.43015374711297
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "lat": -6.429995198448401,
+      "lon": 106.81135580688152,
+      "metric_crs": "EPSG:32748",
+      "raw_properties": {
+        "building_id": "hotel-700",
+        "class": "hotel",
+        "subclass": "commercial"
+      },
+      "representative_point": {
+        "coordinates": [
+          106.81135580688152,
+          -6.429995198448401
+        ],
+        "type": "Point"
+      },
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 3,
+      "subclass": "commercial"
+    },
+    {
+      "analysis_run_id": "li1-synthetic-001",
+      "area_m2": 100.00000000046566,
+      "building_id": "legacy-fallback",
+      "building_key": {
+        "building_id": "legacy-fallback",
+        "provider": "SYNTHETIC",
+        "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+        "source_version": "li1-fixture-1"
+      },
+      "building_type": "standard_residential",
+      "class": "office",
+      "distance_to_store_m": 200.00000000197906,
+      "geometry": {
+        "coordinates": [
+          [
+            [
+              106.81176270883404,
+              -6.430038965415773
+            ],
+            [
+              106.8118530959097,
+              -6.430038645111681
+            ],
+            [
+              106.81185277570317,
+              -6.429948228892851
+            ],
+            [
+              106.81176238864347,
+              -6.4299485491923996
+            ],
+            [
+              106.81176270883404,
+              -6.430038965415773
+            ]
+          ]
+        ],
+        "type": "Polygon"
+      },
+      "lat": -6.42999359715204,
+      "lon": 106.8118077422726,
+      "metric_crs": "EPSG:32748",
+      "raw_properties": {
+        "building_id": "legacy-fallback",
+        "class": "office",
+        "subclass": null
+      },
+      "representative_point": {
+        "coordinates": [
+          106.8118077422726,
+          -6.42999359715204
+        ],
+        "type": "Point"
+      },
+      "snapshot_sha256": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c",
+      "source_ref_id": "fixture-buildings",
+      "source_row_index": 4,
+      "subclass": null
+    }
+  ],
+  "snapshot": {
+    "acquisition_mode": "SYNTHETIC_FIXTURE",
+    "config_hash": "118d0123db42180cae0125478330077a8d122d07c34c3544877d44825eb3fd7c",
+    "context_hash": "fbca22784eadfa642c23e11ab2c1ee2684bdf02ce1a565ae4c651e5f48b99f92",
+    "coverage": {
+      "completeness": "COMPLETE",
+      "scope": "Synthetic offline LI-1 fixture only; no actual store/source coverage verified"
+    },
+    "crs": "EPSG:4326",
+    "fingerprint": {
+      "algorithm": "sha256",
+      "value": "d313b1c9c74e80e91ebb0ccf38a5e1ab2b7a5834b3f8cf16f5e294fe99a5c29c"
+    },
+    "provenance": {
+      "dependencies": [],
+      "description": "Hand-authored fixture; not retrieved from Overture or any live provider",
+      "origin": "SYNTHETIC_FIXTURE"
+    },
+    "provider": "SYNTHETIC",
+    "schema_version": "li_building_snapshot_v1",
+    "source_as_of": null,
+    "source_ref_id": "fixture-buildings",
+    "source_version": "li1-fixture-1"
+  },
+  "status": "SUCCEEDED",
+  "summary": {
+    "accounted_records": 9,
+    "complete_for_selection": true,
+    "excluded": 4,
+    "reason_counts": {
+      "AREA_NOT_ABOVE_MIN": 1,
+      "AREA_NOT_BELOW_MAX": 1,
+      "CLASS_UNSUPPORTED": 1,
+      "OUTSIDE_RADIUS": 1
+    },
+    "rejected": 0,
+    "selected": 5,
+    "source_records": 9
+  }
+}

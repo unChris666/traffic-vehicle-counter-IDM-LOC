@@ -1,0 +1,85 @@
+{
+  "schema_version": "phase9_b_v7_p0_gate_v1",
+  "decision": "BLOCKED_UNRESOLVED_SAME_RAW_ID_SOURCE_IDENTITY_4843",
+  "target_scope_gate": "PASS_SCOPED_DUPLICATE_PREVENTION_WITH_INTENTIONAL_COVERAGE_LOSS",
+  "p0_milestone_can_be_closed": false,
+  "production_ready": false,
+  "priority_p1_is_not_a_substitute_for_p0_acceptance": true,
+  "active_candidate": "results/b_v7/execution/pilot_v7_machine_final/weekday_siang/counting_result.json.gz",
+  "active_candidate_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "baseline_result_sha256": "82f80239e25e64386f0423a18817b2f87eac98b0e88e9d93081994d5b436ee3e",
+  "criteria": {
+    "1_duplicate_reproduced": "PASS_ACTUAL_RETAINED_FIXTURE_TWO_INFERRED",
+    "2_duplicate_prevented": "PASS_TARGET_TWO_TO_ZERO_INVALID_WITH_ONE_PHYSICAL_PASSAGE_EXCLUDED",
+    "3_provenance_preserved": "PASS_66_MEASURED_UNCHANGED_NO_INFERRED_PROMOTION",
+    "4_regression_controls": "PASS_WITH_SCOPED_SYNTHETIC_AND_SOURCE_REVIEW_LIMITS",
+    "5_software_suite": "PASS_211_TESTS",
+    "6_full_frozen_replay": "PASS_9128_SOURCE_FRAMES",
+    "7_independent_temporal_review": "PASS_MATERIAL_DELTAS_AND_EIGHT_BASELINE_ESTIMATES_REVIEWED_NOT_FORMAL_GT",
+    "8_historical_retention": "PASS_3936_FILES_UNCHANGED_168_BASELINE_ARTIFACTS_16_BINDINGS",
+    "9_unresolved_failure_reflected": "BLOCKED_SOURCE_IDENTITY_CONFLICT_4843_STILL_ACCEPTED_INFERRED"
+  },
+  "aggregate": {
+    "total": 72,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 69,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 26,
+      "B_TO_A": 46
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 4,
+      "LINE_MARGIN": 68
+    },
+    "measured_total": 66,
+    "inferred_total": 6,
+    "pending": 24,
+    "invalid": 86,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 86
+    },
+    "cancelled": 52,
+    "vehicle_total": 72,
+    "pedestrian_total": 0
+  },
+  "estimated_by_route": {
+    "ESTIMATED_TIMEOUT": 4,
+    "LINE_MARGIN": 2
+  },
+  "counting_event_deltas": {
+    "unchanged": 72,
+    "changed": 0,
+    "removed": 2,
+    "added": 0
+  },
+  "display_metadata_only_renumberings": 17,
+  "previous_pending_changed": false,
+  "new_physical_identity_merges": 0,
+  "target": {
+    "baseline_active_estimates": 2,
+    "candidate_active_events": 0,
+    "physical_passages_confirmed_in_source_review": 1,
+    "intentional_physical_passage_coverage_loss": 1,
+    "machine_identity_proof_established": false,
+    "stronger_1123_evidence_remains_inferred": true
+  },
+  "remaining_blocker": {
+    "case_id": "V7-QC-NEW-4843-CROSS-OBJECT-AFTER-OCCLUSION",
+    "preexisting_in_b_v6": true,
+    "raw_track_id": 4843,
+    "origin_frame": 7899,
+    "destination_frame": 7935,
+    "status": "ACCEPTED_INFERRED_WITH_MIXED_SOURCE_OBJECTS_REQUIRES_EPISODE_DISPOSITION",
+    "not_a_confirmed_extra_accepted_duplicate": true,
+    "evidence": "review/independent_4843_identity_review.json"
+  },
+  "newly_introduced_duplicate_or_distinct_suppression_confirmed_in_reviewed_delta": 0,
+  "global_error_rate_established": false,
+  "all_eight_videos_or_night_validated": false,
+  "new_model_tracker_reid_or_enhancement_execution": false,
+  "machine_and_human_reviewed_aggregates_mixed": false,
+  "next_recommendation": "Source-bound same-ID/same-class episode-splitting experiment for4843 plus close-distinct controls; do not tune globalmodel or promoteBv7 toproduction."
+}

@@ -1,0 +1,43 @@
+{
+  "qc_case_id": "ACCEPTED-DUP-4251-4281",
+  "claim_type": "AI_QC_VISUAL_SOURCE_REVIEW_NOT_GROUND_TRUTH",
+  "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+  "status": "QC_DECIDED",
+  "source_frames_viewed": [
+    7360,
+    7363,
+    7367,
+    7369,
+    7370,
+    7371,
+    7374,
+    7379
+  ],
+  "finding": "COEXISTENT_DUPLICATE_TRACK_BBOXES_ONE_PHYSICAL_MOTORCYCLE_ONE_PASSAGE",
+  "physical_evidence": "Pengendara helm gelap, anak di depan, wanita penumpang baju coklat dengan kain biru terlihat pada SATU motor. Dua bbox berimpitan pada frame yang sama; motor putih berlawanan arah adalah unit lain.",
+  "keep_event_id": "b_v4_2749e461446564058a9407fd",
+  "keep_display_id": "M1062",
+  "keep_measured_crossing": true,
+  "cancel_duplicate_event_id": "b_v4_90e26422bae172b528349fb5",
+  "cancel_duplicate_display_id": "M1063",
+  "duplicate_measured_crossing": false,
+  "proposed_aggregate_delta": {
+    "motorcycle": {
+      "B_TO_A": -1
+    },
+    "inferred_total": -1,
+    "measured_total": 0
+  },
+  "evidence": [
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/accepted-4251-4281-comparison.jpg",
+      "sha256": "b7b027d902241b9c37c8bcf166aefb7b77110e86a7ee78430ead9ccff1576197"
+    },
+    {
+      "path": "results/phase_9/20261020_QC_BV4_SIANG/roles/evidence/accepted-4251-4281-manifest.json",
+      "sha256": "4a96cc71ee36e40870e2fd544980ce8105822834533638688cf93eccfdf59962"
+    }
+  ],
+  "pipeline_or_ledger_changed": false,
+  "future_machine_status": "NOT_RUN"
+}

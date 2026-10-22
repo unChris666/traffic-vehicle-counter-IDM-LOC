@@ -1,0 +1,90 @@
+{
+  "schema_version": "phase9_bv7_all_baseline_inferred_review_v1",
+  "baseline_sha256": "82f80239e25e64386f0423a18817b2f87eac98b0e88e9d93081994d5b436ee3e",
+  "reviewed_estimates": [
+    {
+      "track_id": 368,
+      "event_id": "b_v6_a06f70b6ebe14a22bcca0df2",
+      "route": "ESTIMATED_TIMEOUT",
+      "direction": "A_TO_B",
+      "activation_frame": 514,
+      "measured_crossing": false,
+      "review": "Motor yang mendekat tertutup lalu raw368 hilang. Motor putih terlihat setelahnya dengan ID lain; continuity belum disahkan otomatis. Tidak ada event A_TO_B kedua dalam daftar accepted pada window400–600 yang terbukti sebagai unit sama dari sheet ini.",
+      "scope": "BOUNDED_SOURCE_REVIEW_NOT_EXHAUSTIVE_FULL_VIDEO_GROUND_TRUTH"
+    },
+    {
+      "track_id": 717,
+      "event_id": "b_v6_fcbb3163e6df126ee33d63ef",
+      "route": "ESTIMATED_TIMEOUT",
+      "direction": "A_TO_B",
+      "activation_frame": 1040,
+      "measured_crossing": false,
+      "review": "Motor yang mendekat tertutup arus lawan. Vehicle717 sebelum gap berbeda tampilan dari777 yang diterima1041. Tidak ada pasangan accepted duplikat terkonfirmasi pada sampel ini; estimasi tetap inferensi.",
+      "scope": "BOUNDED_SOURCE_REVIEW_NOT_EXHAUSTIVE_FULL_VIDEO_GROUND_TRUTH"
+    },
+    {
+      "track_id": 1123,
+      "event_id": "b_v6_0614016fdf79d30943e54c1e",
+      "route": "LINE_MARGIN",
+      "direction": "A_TO_B",
+      "activation_frame": 1396,
+      "measured_crossing": false,
+      "review": "Pasangan1049/1123 merupakan satu motor merah menurut review sumber; dua event aktif baseline. Lihat fixture1049_1123_v1 dan bukti kontinuitas Bv6.",
+      "scope": "BOUNDED_SOURCE_REVIEW_NOT_EXHAUSTIVE_FULL_VIDEO_GROUND_TRUTH"
+    },
+    {
+      "track_id": 1049,
+      "event_id": "b_v6_5b7c1ee459f68ff171c6ee56",
+      "route": "ESTIMATED_TIMEOUT",
+      "direction": "A_TO_B",
+      "activation_frame": 1396,
+      "measured_crossing": false,
+      "review": "Pasangan1049/1123 merupakan satu motor merah menurut review sumber; dua event aktif baseline. Lihat fixture1049_1123_v1 dan bukti kontinuitas Bv6.",
+      "scope": "BOUNDED_SOURCE_REVIEW_NOT_EXHAUSTIVE_FULL_VIDEO_GROUND_TRUTH"
+    },
+    {
+      "track_id": 2551,
+      "event_id": "b_v6_49f5ec6170afe7350417ef0f",
+      "route": "ESTIMATED_TIMEOUT",
+      "direction": "A_TO_B",
+      "activation_frame": 4145,
+      "measured_crossing": false,
+      "review": "Motor mendekat tertutup angkot putih; source setelah gap tidak cukup untuk memverifikasi destination atau successor. Route timeout tetap estimasi dan tidak boleh dianggap ground truth.",
+      "scope": "BOUNDED_SOURCE_REVIEW_NOT_EXHAUSTIVE_FULL_VIDEO_GROUND_TRUTH"
+    },
+    {
+      "track_id": 3211,
+      "event_id": "b_v6_ae5b1be20aedea7cfdcf02db",
+      "route": "ESTIMATED_TIMEOUT",
+      "direction": "B_TO_A",
+      "activation_frame": 5514,
+      "measured_crossing": false,
+      "review": "Motor bergerak menjauh lalu tertutup rider lain; tidak ada accepted pasangan baru terkonfirmasi di window5400–5550. Pemulihan identitas belum dibuktikan oleh sheet.",
+      "scope": "BOUNDED_SOURCE_REVIEW_NOT_EXHAUSTIVE_FULL_VIDEO_GROUND_TRUTH"
+    },
+    {
+      "track_id": 3670,
+      "event_id": "b_v6_fa20fc7a0dbd753a22330ca9",
+      "route": "LINE_MARGIN",
+      "direction": "A_TO_B",
+      "activation_frame": 6506,
+      "measured_crossing": false,
+      "review": "Motor putih mendekat, tertutup sesaat motor3682 arah berlawanan, kemudian terlihat lagi. Keduanya unit terpisah; event3670 tetap inferred karena bukti retained memiliki gap.",
+      "scope": "BOUNDED_SOURCE_REVIEW_NOT_EXHAUSTIVE_FULL_VIDEO_GROUND_TRUTH"
+    },
+    {
+      "track_id": 4843,
+      "event_id": "b_v6_430e97a31d96bc45eabb51a9",
+      "route": "LINE_MARGIN",
+      "direction": "A_TO_B",
+      "activation_frame": 7935,
+      "measured_crossing": false,
+      "review": "Konflik sumber terkonfirmasi: raw4843 motor biru sebelum gap, bbox motor merah setelahnya. Lihat independent_4843_identity_review.json.",
+      "scope": "BOUNDED_SOURCE_REVIEW_NOT_EXHAUSTIVE_FULL_VIDEO_GROUND_TRUTH"
+    }
+  ],
+  "reviewed_count": 8,
+  "newly_observed_preexisting_identity_conflict": "V7-QC-NEW-4843-CROSS-OBJECT-AFTER-OCCLUSION",
+  "models_tracking_counting_rerun_by_qc": false,
+  "all_estimates_validated": false
+}

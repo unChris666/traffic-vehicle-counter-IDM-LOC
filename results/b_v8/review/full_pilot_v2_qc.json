@@ -1,0 +1,177 @@
+{
+  "schema_version": "phase9_b_v8_p1_source_qc_v1",
+  "baseline_sha256": "b72269090426172cd67f814a40403b2367151cbab80889fe6cb77ab37c183bad",
+  "candidate_sha256": "236095307d2ab99ca1a70a94dcff6843f84e9e190564df80c8cda95d49c7c6c7",
+  "candidate_path": "results/b_v8/execution/pilot_p1_reviewed_v2/weekday_siang/counting_result.json.gz",
+  "baseline_branch": "machine",
+  "candidate_branch": "review_assisted",
+  "baseline_aggregate": {
+    "total": 72,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 69,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 26,
+      "B_TO_A": 46
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 4,
+      "LINE_MARGIN": 68
+    },
+    "measured_total": 66,
+    "inferred_total": 6,
+    "pending": 24,
+    "invalid": 86,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 86
+    },
+    "cancelled": 52,
+    "vehicle_total": 72,
+    "pedestrian_total": 0
+  },
+  "candidate_aggregate": {
+    "total": 73,
+    "by_category": {
+      "car": 2,
+      "motorcycle": 69,
+      "pedestrian": 1,
+      "truck": 1
+    },
+    "by_direction": {
+      "A_TO_B": 26,
+      "B_TO_A": 47
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 4,
+      "LINE_MARGIN": 69
+    },
+    "measured_total": 67,
+    "inferred_total": 6,
+    "pending": 1,
+    "invalid": 85,
+    "invalid_reasons": {
+      "INVALID_AMBIGUOUS_UNIT": 85
+    },
+    "cancelled": 52,
+    "vehicle_total": 72,
+    "pedestrian_total": 1
+  },
+  "source_identity_unchanged": true,
+  "event_count_changes": {
+    "unchanged": 70,
+    "changed": 2,
+    "removed": 0,
+    "added": 1
+  },
+  "display_id_renumberings": 0,
+  "category_changed_events": 0,
+  "direction_changed_events": 0,
+  "existing_event_evidence_level_transitions": {},
+  "pending_dispositions": {
+    "accepted": 1,
+    "pending": 1,
+    "resolved_not_eligible": 22
+  },
+  "unresolved_pending_reconciliation": [],
+  "unmatched_new_pending": [],
+  "reviewed_component_closures": 22,
+  "all_component_closures_have_plus_zero": true,
+  "measured_source_refs_verified_against_frozen_cache": 1029,
+  "source_frames_verified": 986,
+  "regression_controls": [
+    {
+      "raw_track_id": 1049,
+      "unchanged_source_counting_decisions": false,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 1123,
+      "unchanged_source_counting_decisions": false,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4251,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4281,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4149,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4367,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4934,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4946,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4953,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 2445,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4552,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 4480,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 0,
+      "candidate_accepted": 0
+    },
+    {
+      "raw_track_id": 3563,
+      "unchanged_source_counting_decisions": true,
+      "baseline_accepted": 1,
+      "candidate_accepted": 1
+    }
+  ],
+  "red_exactly_one_clean_inferred_passage": true,
+  "distinct_foreground_passage_kept": true,
+  "unsupported_blue_destination_presence_events": 0,
+  "published_log_total": 73,
+  "source_review_independent_from_implementation_reference": "independent_source_verification.json",
+  "additional_foreground_pixels_reviewed_by": "PRIMARY_ENGINEER_AI_REVIEW_NOT_NEW_HUMAN_CONFIRMATION",
+  "full_replay_comparison_performed_by": "PRIMARY_ENGINEER_READ_ONLY_QC",
+  "new_model_execution": false,
+  "new_counting_execution_by_qc": false,
+  "formal_ground_truth_or_accuracy_established": false,
+  "reviewed_red_reconstruction_is_net_new_aggregate_passage": false,
+  "known_intentional_exclusion_1049_1123_still_not_recovered": true,
+  "automatic_machine_baseline_p0_blocker_fixed": false,
+  "scoped_checks_pass": false
+}

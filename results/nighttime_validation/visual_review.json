@@ -1,0 +1,355 @@
+{
+  "schema_version": "nighttime_visual_review_v1",
+  "scope": "50 representative native sourceframes across10files plus12 early temporal anchors on2files; not exhaustive passage audit",
+  "claim_type": "OBSERVATION_NOT_MODEL_BENCHMARK",
+  "night_dataset_source": "chrisbiran/video-traffic-malam",
+  "video_reviews": [
+    {
+      "filename": "F1YV-WEEKDAY-MALAM.mp4",
+      "source_sha256": "12faf5b13dc16674eb63e7441ce7a484746220dd75bc0484ab0d98d47ac13e43",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2282,
+        4565,
+        6848,
+        9130
+      ],
+      "evidence": [
+        "local_inspection/video_000/frame_000000.png",
+        "local_inspection/video_000/frame_002282.png",
+        "local_inspection/video_000/frame_004565.png",
+        "local_inspection/video_000/frame_006848.png",
+        "local_inspection/video_000/frame_009130.png"
+      ],
+      "visibility": "Lampu jalan menerangi area dekat; kendaraan jauh kecil, badan gelap lebih sulit dibedakan dari latar.",
+      "exposure": "Ada halo lampu jalan dan headlight; area pohon/langit gelap.",
+      "blur": "Motor dekat padaframe0 tampak kurang tajam dibanding objek statis; belum memisahkan blur gerak dari kompresi.",
+      "occlusion": "Kendaraan besar pada9130 berpotensi menutupi lajur/objek lain.",
+      "framing": "Jalan tampak diagonal ke kejauhan; lima frame memberi framing relatif mirip, bukan sertifikasi stabilitas penuh.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "F1YV-WEEKEND-MALAM.mp4",
+      "source_sha256": "0ffe42942967b09793da0229ccdbcf111573cb52a0a94b32d5bf4bc777f1fa88",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2270,
+        4539,
+        6808,
+        9078
+      ],
+      "evidence": [
+        "local_inspection/video_001/frame_000000.png",
+        "local_inspection/video_001/frame_002270.png",
+        "local_inspection/video_001/frame_004539.png",
+        "local_inspection/video_001/frame_006808.png",
+        "local_inspection/video_001/frame_009078.png"
+      ],
+      "visibility": "Badan jalan/objek gelap lebih redup daripada pasangan weekday dalam sampel; motor/headlight tetap terlihat.",
+      "exposure": "Lampu jalan terang berdampingan dengan foreground gelap.",
+      "blur": "Detail kendaraan jauh terbatas pada resolusi640×480; penyebab blur tidak dipastikan.",
+      "occlusion": "Ada kendaraan di kedalaman berbeda; occlusion temporal belum diukur.",
+      "framing": "Pandangan jalan relatif mirip weekday pada contact sheet; geometri tetap perlu review source ini.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "FMMQ-MALAM.mp4",
+      "source_sha256": "a028c3c9c8d13f3b1f9239b1d5515a356872b0ade3bc3ca3d9133e6b98f7759d",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2215,
+        4430,
+        6645,
+        8860
+      ],
+      "evidence": [
+        "local_inspection/video_002/frame_000000.png",
+        "local_inspection/video_002/frame_002215.png",
+        "local_inspection/video_002/frame_004430.png",
+        "local_inspection/video_002/frame_006645.png",
+        "local_inspection/video_002/frame_008860.png"
+      ],
+      "visibility": "Bagian jalan/objek kanan sangat gelap; truk dekat2215 dan4430 masih terlihat.",
+      "exposure": "Headlight serta lampu kendaraan terang; kecerahan berubah kuat antarsampel.",
+      "blur": "Kendaraan dekat4430 tampak terseret/kurang tajam.",
+      "occlusion": "Truk besar4430 menutupi bagian kanan jalan.",
+      "framing": "Pandangan memanjang jalan; tidak dipetakan ke weekday/weekend dari nama FMMQ-MALAM.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "FMMQ-WEEKDAY-MALAM.mp4",
+      "source_sha256": "33c26d76c5bac43e27b3cacf79db9abb52129516fa8b52236b4100d00c1f7845",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2220,
+        4440,
+        6661,
+        8881
+      ],
+      "evidence": [
+        "local_inspection/video_003/frame_000000.png",
+        "local_inspection/video_003/frame_002220.png",
+        "local_inspection/video_003/frame_004440.png",
+        "local_inspection/video_003/frame_006661.png",
+        "local_inspection/video_003/frame_008881.png"
+      ],
+      "visibility": "Penurunan detail gelap jelas pada4440,6661,8881; native8881 sebagian besar foreground/latar sangat gelap.",
+      "exposure": "Highlight headlight kontras dengan badan kendaraan/latar yang gelap.",
+      "blur": "Ketajaman kendaraan jauh sulit dinilai dari sampel gelap; unknown.",
+      "occlusion": "Arus dengan kendaraan pada kedalaman berbeda; gap identitas belum diukur.",
+      "framing": "Posisi tepi jalan/tiang terlihat pada sampel; pergerakan kamera penuh belum ditinjau.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "TC0Q-WEEKDAY-MALAM.mp4",
+      "source_sha256": "501026a5b3451149dde2c304f4e12169c0f3218737bc2689fb1658e2774056b4",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2146,
+        4291,
+        6436,
+        8582
+      ],
+      "evidence": [
+        "local_inspection/video_004/frame_000000.png",
+        "local_inspection/video_004/frame_002146.png",
+        "local_inspection/video_004/frame_004291.png",
+        "local_inspection/video_004/frame_006436.png",
+        "local_inspection/video_004/frame_008582.png"
+      ],
+      "visibility": "Jalan relatif terang, kendaraan dan dua orang pada2146 terlihat; kendaraan gelap masih berkontras rendah.",
+      "exposure": "Glare/haze dekat headlight terlihat; bayangan panjang di jalan.",
+      "blur": "Native4291 memperlihatkan detail motor/lampu yang lembut; pengaruh gerak/kompresi belum dipisahkan.",
+      "occlusion": "Kendaraan parkir besar di kiri memotong foreground sepanjang sampel.",
+      "framing": "Frame miring; garis/polygon horizontal TGDI tidak boleh dianggap sesuai tanpa review.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "TC0Q-WEEKEND-MALAM.mp4",
+      "source_sha256": "950449e8397a78b6223766822b623bf55b1ed593adef6fbdc5a8fe200c5f75b5",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2120,
+        4241,
+        6362,
+        8482
+      ],
+      "evidence": [
+        "local_inspection/video_005/frame_000000.png",
+        "local_inspection/video_005/frame_002120.png",
+        "local_inspection/video_005/frame_004241.png",
+        "local_inspection/video_005/frame_006362.png",
+        "local_inspection/video_005/frame_008482.png"
+      ],
+      "visibility": "Badan jalan relatif terbuka dan terang; kendaraan yang melintas masih terlihat.",
+      "exposure": "Silau kuat pada2120 dan sorot kendaraan pada6362.",
+      "blur": "Kendaraan6362 tampak membaur/tersapu; sharpening bukan pengganti bukti temporal.",
+      "occlusion": "Foreground lebih terbuka daripada pasangan weekday, konfigurasi tidak diasumsikan identik.",
+      "framing": "Pandangan jalan samping; harus diperiksa sendiri sebelum crossing.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "TKVQ-WEEKDAY-MALAM.mp4",
+      "source_sha256": "2fa18fad1b5e46f5d17a46503bb21e6d6552038293b4407dc14e4fbd2bfda97e",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2259,
+        4518,
+        6777,
+        9036
+      ],
+      "evidence": [
+        "local_inspection/video_006/frame_000000.png",
+        "local_inspection/video_006/frame_002259.png",
+        "local_inspection/video_006/frame_004518.png",
+        "local_inspection/video_006/frame_006777.png",
+        "local_inspection/video_006/frame_009036.png"
+      ],
+      "visibility": "Frame0 seluruhnya hitam; frame1 sudah berisi jalan/kendaraan (dicek ulang0,1,2,5,15,30).",
+      "exposure": "Bodi kendaraan besar gelap sementara langit/toko masih terlihat; label malam tidak memastikan tingkat gelap seragam.",
+      "blur": "Kendaraan dekat melintas tampak kurang tajam; sumber blur belum diestimasi.",
+      "occlusion": "Truck/van dekat menutupi kendaraan/lajur pada2259 dan9036.",
+      "framing": "Jalan tampak dominan melintang; frame0 hitam bukan kegagalan decode seluruh file.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "TKVQ-WEEKEND-MALAM.mp4",
+      "source_sha256": "82b8973c280440a77515a9be1381c503829d25561adcd2c358d4f3a5fb40efee",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2330,
+        4661,
+        6992,
+        9322
+      ],
+      "evidence": [
+        "local_inspection/video_007/frame_000000.png",
+        "local_inspection/video_007/frame_002330.png",
+        "local_inspection/video_007/frame_004661.png",
+        "local_inspection/video_007/frame_006992.png",
+        "local_inspection/video_007/frame_009322.png"
+      ],
+      "visibility": "Badan truck besar sangat gelap; latar toko dan jalan sebagian masih terlihat.",
+      "exposure": "Headlight/taillight memberi titik terang di tengah foreground gelap.",
+      "blur": "Detail kendaraan bergerak pada beberapa sampel tidak tajam.",
+      "occlusion": "Bus0 dan truck2330/4661/6992 menutupi bagian besar scene.",
+      "framing": "Area jalan yang teramati berubah karena occluder besar; tidak mengarang posisi objek di belakangnya.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "TQHD-WEEKDAY-MALAM.mp4",
+      "source_sha256": "d28add553b084e3e38d81f7b6e9aaa793f32a0b2dffcc6e8e7e7cae2fd07a638",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2212,
+        4423,
+        6634,
+        8846
+      ],
+      "evidence": [
+        "local_inspection/video_008/frame_000000.png",
+        "local_inspection/video_008/frame_002212.png",
+        "local_inspection/video_008/frame_004423.png",
+        "local_inspection/video_008/frame_006634.png",
+        "local_inspection/video_008/frame_008846.png"
+      ],
+      "visibility": "Toko/lampu terang membantu melihat kendaraan; mobil gelap menutup jalan pada2212.",
+      "exposure": "Highlight lampu/taillight kontras; ada shadow besar di foreground.",
+      "blur": "Motor4423/6634 tampak terseret/kurang tajam.",
+      "occlusion": "Mobil dekat2212 menutupi bagian jalan.",
+      "framing": "Sudut kamera miring pada sebagian sampel; alignment geometri harus ditinjau temporal.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    },
+    {
+      "filename": "TQHD-WEEKEND-MALAM.mp4",
+      "source_sha256": "8d32848b5ce35f40547e92f346076515c0a27270fe2d5e44e1990d9e6a01801e",
+      "claim_type": "AI_VISUAL_OBSERVATION",
+      "reviewer": "PRIMARY_ENGINEER_AI_NOT_NEW_HUMAN_ANNOTATION",
+      "reviewed_frames": [
+        0,
+        2243,
+        4486,
+        6729,
+        8972
+      ],
+      "evidence": [
+        "local_inspection/video_009/frame_000000.png",
+        "local_inspection/video_009/frame_002243.png",
+        "local_inspection/video_009/frame_004486.png",
+        "local_inspection/video_009/frame_006729.png",
+        "local_inspection/video_009/frame_008972.png"
+      ],
+      "visibility": "Banyak motor parkir memenuhi foreground, arus jalan terlihat lebih jauh.",
+      "exposure": "Toko/lampu menerangi scene, masih ada area gelap dan glare kecil.",
+      "blur": "Detail arus bergerak dibatasi jarak dan occlusion; blur temporal belum diukur.",
+      "occlusion": "Motor parkir serta orang foreground menghalangi jalan pada banyak sampel.",
+      "framing": "Tambahanframe0,30,60,120,240,480 memperlihatkan landmark relatif serupa dengan sedikit perubahan; overlay speed bukan bukti kamera bergerak sendiri.",
+      "noise": "Noise sensor belum terpisah dari artefak kompresi; tidak ada estimasi noise atau klaim denoising. Review native dan before/after diperlukan.",
+      "model_risk_claim_type": "HYPOTHESIS_UNTESTED",
+      "control_relevance": {
+        "gamma": "Probe shadow/midtone; preserve raw comparator.",
+        "exposure_brightness": "Watch saturated headlights/highlights; digital adjustment is not sensor exposure.",
+        "shadows": "New explicit digital lift; may amplify noise/compression.",
+        "sharpness": "May strengthen edges/noise; does not recover motion-blurred or occluded evidence."
+      }
+    }
+  ],
+  "additional_evidence_directory": "temporal_inspection",
+  "all_reviewed_samples_are_development_exposed": true,
+  "missing_or_unsupported_inputs": [],
+  "input_warnings": [
+    {
+      "filename": "TKVQ-WEEKDAY-MALAM.mp4",
+      "issue": "SOURCE_FRAME_ZERO_BLACK_FRAME_ONE_DECODABLE_WITH_SCENE",
+      "skip_or_replace_source_automatically": false
+    },
+    {
+      "filename": "FMMQ-MALAM.mp4",
+      "issue": "DAY_GROUP_UNDEFINED_FROM_FILENAME",
+      "assign_to_weekend_automatically": false
+    }
+  ],
+  "quantitative_camera_stability_or_noise_established": false,
+  "counting_performance_established": false
+}

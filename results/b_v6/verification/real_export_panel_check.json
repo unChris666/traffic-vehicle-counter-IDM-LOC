@@ -1,0 +1,504 @@
+{
+  "schema_version": "phase9_b_v6_real_export_panel_check_v1",
+  "status": "PASS_SCOPED_FINAL_LEDGER_EXPORT_RENDER_INTEGRATION",
+  "claim_type": "ACTUAL_RETAINED_LEDGER_RENDER_EXPORT_VERIFICATION_NOT_TRAFFIC_ACCURACY",
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "result_path": "results/b_v6/execution/pilot_v6_machine_final/weekday_siang/counting_result.json.gz",
+  "result_sha256": "82f80239e25e64386f0423a18817b2f87eac98b0e88e9d93081994d5b436ee3e",
+  "new_model_execution": false,
+  "new_counting_execution": false,
+  "source_files_modified_by_this_check": false,
+  "counting_result_modified": false,
+  "all_frame_ledger_projection": {
+    "frames_checked": 9128,
+    "only_final_accepted_event_ids_at_every_frame": true,
+    "void_log_rows": 100,
+    "void_log_contribution": 0,
+    "checkpoints": [
+      {
+        "frame_index": 0,
+        "accepted_so_far": 0,
+        "measured_so_far": 0,
+        "inferred_so_far": 0,
+        "invalid_so_far": 0,
+        "pending_so_far": 0
+      },
+      {
+        "frame_index": 226,
+        "accepted_so_far": 4,
+        "measured_so_far": 4,
+        "inferred_so_far": 0,
+        "invalid_so_far": 0,
+        "pending_so_far": 2
+      },
+      {
+        "frame_index": 1089,
+        "accepted_so_far": 17,
+        "measured_so_far": 15,
+        "inferred_so_far": 2,
+        "invalid_so_far": 8,
+        "pending_so_far": 4
+      },
+      {
+        "frame_index": 5003,
+        "accepted_so_far": 44,
+        "measured_so_far": 39,
+        "inferred_so_far": 5,
+        "invalid_so_far": 46,
+        "pending_so_far": 11
+      },
+      {
+        "frame_index": 7369,
+        "accepted_so_far": 64,
+        "measured_so_far": 57,
+        "inferred_so_far": 7,
+        "invalid_so_far": 61,
+        "pending_so_far": 19
+      },
+      {
+        "frame_index": 7422,
+        "accepted_so_far": 65,
+        "measured_so_far": 58,
+        "inferred_so_far": 7,
+        "invalid_so_far": 63,
+        "pending_so_far": 20
+      },
+      {
+        "frame_index": 7615,
+        "accepted_so_far": 68,
+        "measured_so_far": 61,
+        "inferred_so_far": 7,
+        "invalid_so_far": 67,
+        "pending_so_far": 22
+      },
+      {
+        "frame_index": 7987,
+        "accepted_so_far": 72,
+        "measured_so_far": 64,
+        "inferred_so_far": 8,
+        "invalid_so_far": 76,
+        "pending_so_far": 23
+      },
+      {
+        "frame_index": 9127,
+        "accepted_so_far": 74,
+        "measured_so_far": 66,
+        "inferred_so_far": 8,
+        "invalid_so_far": 84,
+        "pending_so_far": 24
+      }
+    ]
+  },
+  "export": {
+    "accepted": 74,
+    "measured": 66,
+    "inferred": 8,
+    "invalid": 84,
+    "pending": 24,
+    "not_eligible": 17,
+    "pivot_rows": 10,
+    "bus_accepted": 0,
+    "bus_zero_rows_are_schema_coverage_not_absence_claim": true,
+    "manifest_hashes_verified": true,
+    "invalid_pending_noteligible_excluded": true,
+    "unique_invalid_passage_scopes": true,
+    "unique_pending_passage_scopes": true
+  },
+  "invalid_attribution": {
+    "offline_source_frame_separate_from_decision_frame": true,
+    "stored_candidate_frames_preserved": true,
+    "decision_frame_eof_rows": 0,
+    "explicit_original_decision_frame_fields": 0,
+    "per_row_final_decision_availability_explicitly_stored": false,
+    "rendered_decision_frame_falls_back_to_original_candidate_frame": true,
+    "offline_not_causal_labels_verified": true,
+    "metadata_limitation": "The original invalid rows lack decision_frame. The renderer decision field preserves candidate frame_index; it does not establish online final decision availability. Offline exclusions are finalized after full-video processing."
+  },
+  "raw_measurement_and_role": {
+    "source_record_frames_checked": 9128,
+    "raw_observations_checked": 70231,
+    "role_observation_counts": {
+      "vehicle": 51028,
+      "unknown_person": 8134
+    },
+    "positive_rider_union_observations": 11069,
+    "distinct_supported_rider_parent_pairs": 346,
+    "raw_ids_exactly_once_each_frame": true,
+    "vehicle_bc_from_raw_parent_not_display_union": true,
+    "unknown_person_not_silently_promoted": true
+  },
+  "preview_checks": [
+    {
+      "frame_index": 226,
+      "jpeg_sha256": "01f7f8f3b13c1f5be464a5172b69d068878783f17ebdd5ac1cb8b0e52a41c904",
+      "raw_ids_visible": [
+        20,
+        54,
+        71,
+        76,
+        158,
+        166,
+        174,
+        185,
+        189,
+        190,
+        194,
+        197
+      ],
+      "rider_parent_links": [
+        {
+          "component_track_id": 174,
+          "vehicle_track_id": 158,
+          "frame_index": 226,
+          "additional_increment": 0
+        },
+        {
+          "component_track_id": 166,
+          "vehicle_track_id": 185,
+          "frame_index": 226,
+          "additional_increment": 0
+        }
+      ],
+      "accepted": 4,
+      "invalid": 0
+    },
+    {
+      "frame_index": 1089,
+      "jpeg_sha256": "afe16432583adc11604f28e5cafea352b4f8a0830273bafb65440ae684eb40ed",
+      "raw_ids_visible": [
+        643,
+        789,
+        810,
+        838,
+        856,
+        857,
+        859,
+        860
+      ],
+      "rider_parent_links": [
+        {
+          "component_track_id": 789,
+          "vehicle_track_id": 810,
+          "frame_index": 1089,
+          "additional_increment": 0
+        },
+        {
+          "component_track_id": 857,
+          "vehicle_track_id": 856,
+          "frame_index": 1089,
+          "additional_increment": 0
+        }
+      ],
+      "accepted": 17,
+      "invalid": 8
+    },
+    {
+      "frame_index": 5003,
+      "jpeg_sha256": "623c49e5a6523282217d506289806bf0911d953ad07a903ade4e303bfa722eab",
+      "raw_ids_visible": [
+        2828,
+        2973,
+        2982,
+        2996,
+        3017,
+        3022,
+        3025,
+        3032
+      ],
+      "rider_parent_links": [
+        {
+          "component_track_id": 3017,
+          "vehicle_track_id": 2982,
+          "frame_index": 5003,
+          "additional_increment": 0
+        }
+      ],
+      "accepted": 44,
+      "invalid": 46
+    },
+    {
+      "frame_index": 7369,
+      "jpeg_sha256": "fd3b7309ca58dff4d229cc98f6e8cad59858a7ccf7fc3e1092b140232e3951fa",
+      "raw_ids_visible": [
+        4089,
+        4215,
+        4228,
+        4238,
+        4244,
+        4251,
+        4271,
+        4281,
+        4283,
+        4285,
+        4286,
+        4289
+      ],
+      "rider_parent_links": [
+        {
+          "component_track_id": 4244,
+          "vehicle_track_id": 4251,
+          "frame_index": 7369,
+          "additional_increment": 0
+        },
+        {
+          "component_track_id": 4286,
+          "vehicle_track_id": 4283,
+          "frame_index": 7369,
+          "additional_increment": 0
+        }
+      ],
+      "accepted": 64,
+      "invalid": 61
+    },
+    {
+      "frame_index": 7422,
+      "jpeg_sha256": "d50226830ad574a8388e50d9f4447547c3fd68c4ded6eae57813ed38dfff8104",
+      "raw_ids_visible": [
+        4149,
+        4215,
+        4228,
+        4238,
+        4271,
+        4281,
+        4283,
+        4296,
+        4306,
+        4320,
+        4327
+      ],
+      "rider_parent_links": [
+        {
+          "component_track_id": 4271,
+          "vehicle_track_id": 4281,
+          "frame_index": 7422,
+          "additional_increment": 0
+        },
+        {
+          "component_track_id": 4283,
+          "vehicle_track_id": 4306,
+          "frame_index": 7422,
+          "additional_increment": 0
+        }
+      ],
+      "accepted": 65,
+      "invalid": 63
+    },
+    {
+      "frame_index": 7615,
+      "jpeg_sha256": "171988f4955df210b8f07a2208d9259b295b9b3172ba864b540dbc2444374bf0",
+      "raw_ids_visible": [
+        4149,
+        4344,
+        4480,
+        4525,
+        4541,
+        4552
+      ],
+      "rider_parent_links": [],
+      "accepted": 68,
+      "invalid": 67
+    },
+    {
+      "frame_index": 7987,
+      "jpeg_sha256": "e1fb19fe0259e4752236f844ef5172f011b2c89202dc1847feb6a731442347f6",
+      "raw_ids_visible": [
+        4781,
+        4864,
+        4876,
+        4889,
+        4893,
+        4894,
+        4923,
+        4932,
+        4933
+      ],
+      "rider_parent_links": [
+        {
+          "component_track_id": 4923,
+          "vehicle_track_id": 4889,
+          "frame_index": 7987,
+          "additional_increment": 0
+        },
+        {
+          "component_track_id": 4894,
+          "vehicle_track_id": 4893,
+          "frame_index": 7987,
+          "additional_increment": 0
+        }
+      ],
+      "accepted": 72,
+      "invalid": 76
+    },
+    {
+      "frame_index": 9127,
+      "jpeg_sha256": "70ad591b339eb65ce722b703e20f44b5bcae9efcf836e07de4e5199d7b547575",
+      "raw_ids_visible": [
+        5252,
+        5298,
+        5299,
+        5302,
+        5305
+      ],
+      "rider_parent_links": [],
+      "accepted": 74,
+      "invalid": 84
+    }
+  ],
+  "visual_review": {
+    "frames": [
+      1089,
+      7422
+    ],
+    "raw_id_labels_readable": true,
+    "rider_parent_and_raw_ids_visible": true,
+    "void_plus_zero_and_offline_invalid_distinct_from_accepted": true,
+    "scope": "Two saved annotated stills only; not whole-video physical adjudication"
+  },
+  "notebook_and_snapshot": {
+    "pilot_only": true,
+    "machine_branch_separate": true,
+    "bus_covered": true,
+    "kaggle_donor_path_requires_explicit_configuration": true,
+    "current_config_matches_run_except_explicit_runtime_bindings": true,
+    "runtime_bindings_added": {
+      "execution_branch": "machine",
+      "review_manifest_sha256": "a3ecf3429a6dd61e68b62e2acf772bd97c5080e9bbc92c61e543921c2e761805",
+      "review_overlay_sha256": null
+    },
+    "retained_source_snapshot_files_verified": 25,
+    "current_sources_match_snapshot": true,
+    "current_source_mismatches": [],
+    "source_bindings": [
+      {
+        "path": "notebooks/phase_8_b_v2_batch.py",
+        "sha256": "34853db725f03932740cffbf2f823caf148f5c8b4ee05abb5800261026b0c902"
+      },
+      {
+        "path": "notebooks/phase_8_b_v2_counting.py",
+        "sha256": "b8e1ed7c815c38d4c2c8c86285c75ea3c14f2857f46cb690183f08235f8205db"
+      },
+      {
+        "path": "notebooks/phase_8_b_v2_annotation.py",
+        "sha256": "e5b4d1a70b3ef05a93d88e0489f3fe66b447a91927fce1f08bb8c5490673b70b"
+      },
+      {
+        "path": "notebooks/phase_5_geometry_helpers.py",
+        "sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9"
+      },
+      {
+        "path": "notebooks/phase_8_annotation_batch.py",
+        "sha256": "268a2c9680b50c0ed2465db7be7f83439e19d3e68056d4dfe031f5729e3ef927"
+      },
+      {
+        "path": "notebooks/phase_8_annotation_helpers.py",
+        "sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305"
+      },
+      {
+        "path": "notebooks/phase_8_b_v3_counting.py",
+        "sha256": "29cb1bdfd0ab27acd6a16c648ba711e6c90eeaa5807591360bad71d880a618d7"
+      },
+      {
+        "path": "notebooks/phase_8_b_v3_annotation.py",
+        "sha256": "ca78f5d109e66ea4d0256f52078225d15836889ea42bc85ccab6bc5331537ea5"
+      },
+      {
+        "path": "notebooks/phase_8_b_v3_batch.py",
+        "sha256": "d499d29bd6140da5d423266da85c85552513fbe44d1538e2dbe97b8a8e9a74dd"
+      },
+      {
+        "path": "notebooks/phase_8_b_v4_identity.py",
+        "sha256": "9fc016fad87e8259181160aa503969daf6e8315202dbb208ed04876a8953f405"
+      },
+      {
+        "path": "notebooks/phase_8_b_v4_counting.py",
+        "sha256": "569a7735642f4ba50f1b345c5b6516c1353893edcfd88360e5194e1b29913976"
+      },
+      {
+        "path": "notebooks/phase_8_b_v4_annotation.py",
+        "sha256": "22b28bf14653aef98293431ad91000450a6aab6a09014525d02e6ef4b39a4b86"
+      },
+      {
+        "path": "notebooks/phase_8_b_v4_batch.py",
+        "sha256": "7367caaf3f905eefe4fcef043486f5e088d07d128846d9963833f67c71a86531"
+      },
+      {
+        "path": "notebooks/08d_episode_eligibility_role_replay.ipynb",
+        "sha256": "9aff8cb9111386131f09254535d18701760fca78e6054f1157a39d0e1e740146"
+      },
+      {
+        "path": "notebooks/phase_8_b_v5_identity.py",
+        "sha256": "51fec0774516d921a2965418af83d8a32d4beb03f1092a825d9de26f6c892e19"
+      },
+      {
+        "path": "notebooks/phase_8_b_v5_counting.py",
+        "sha256": "37df759e3967ab705871ad290601f14f7e458ca80717e26266ff90b2f882f51c"
+      },
+      {
+        "path": "notebooks/phase_8_b_v5_batch.py",
+        "sha256": "b0e3d1d2b701b95eb8f55359e1414494e829c4cf7073229214d5e8b30e3d1ee4"
+      },
+      {
+        "path": "notebooks/phase_9_p0_qc_compare.py",
+        "sha256": "74ce8db2ff4022bc2a23ae63f4068c506f2c2eceac93d48537cff57d5a6d45fc"
+      },
+      {
+        "path": "notebooks/09a_p0_qc_replay.ipynb",
+        "sha256": "b9f6de4ae2c2407ef08c8005129d7cb0c355457ca0c4270f6c391b1b18f0b838"
+      },
+      {
+        "path": "notebooks/phase_8_b_v6_identity.py",
+        "sha256": "a7a4b4b33b70245349cc02e8bda09bfe7db75f3b1f4da1c4755bcc02102ad003"
+      },
+      {
+        "path": "notebooks/phase_8_b_v6_counting.py",
+        "sha256": "5bf378efa04d49cb676936494f540d6ea67327e433584d7a4fa218bc0b06685f"
+      },
+      {
+        "path": "notebooks/phase_8_b_v6_annotation.py",
+        "sha256": "61b12160886565578ca46da85a3fdb49fa8ca0a4e3ae30748684de0dd18b03a6"
+      },
+      {
+        "path": "notebooks/phase_8_b_v6_batch.py",
+        "sha256": "4b1a835939f3cdf10926fb6a6e02e74f6df1cfc41e977987b4c3bfdbfb08b3f9"
+      },
+      {
+        "path": "notebooks/phase_9_v6_qc_review.py",
+        "sha256": "17841ed1f71f35716e8b1c46cda19354e82935c5f1d47ace5c9105e44aeed458"
+      },
+      {
+        "path": "notebooks/09c_user_policy_replay.ipynb",
+        "sha256": "cddca77dc5386ede970310dc9857f28a8ad4b90ce4ec2b6487cffaa479a7c1f9"
+      }
+    ]
+  },
+  "limitations": [
+    "No detector/tracker/ReID/counting/enhancement was rerun.",
+    "This validates bookkeeping/rendering, not physical count accuracy or whether all invalid exclusions are appropriate.",
+    "BUS zero accepted does not establish absence of buses in the video.",
+    "Per-row actual final decision availability is not explicitly stored; rendered decision frame is fallback candidate metadata. OFFLINE labeling prevents causal claims."
+  ],
+  "wall_seconds": 20.10797905900108,
+  "verification_basis": {
+    "all_frame_ledger_projection_and_raw_scope_checks": "Executed against preliminary counting bytes; final full result is independently verified byte-identical",
+    "preliminary_result_path": "results/b_v6/execution/pilot_v6_machine/weekday_siang/counting_result.json.gz",
+    "final_result_path": "results/b_v6/execution/pilot_v6_machine_final/weekday_siang/counting_result.json.gz",
+    "full_counting_result_gzip_byte_identical": true,
+    "geometry_byte_identical": true,
+    "all_export_files_byte_identical": true,
+    "final_render_binding_receipt": "results/b_v6/verification/final_render_binding.json",
+    "final_render_binding_receipt_sha256": "b621abe7e841b72b1587d0c3cfc09d0bdb9ea3d66a1ba4556ffd9bcc1b972bcd",
+    "whole_video_render_receipt_hash_verified": true,
+    "whole_video_bytes_match_receipt": true,
+    "whole_video_written_and_redecoded_frames": 9128,
+    "new_render_or_counting_execution_by_this_check": false
+  },
+  "historical_source_note": "Preliminary replay serialized an empty invalid_finalization_audit filename. The final full replay retains the corrected ambiguity_invalid_audit source and current snapshot; full counting result bytes and all exports are identical."
+}

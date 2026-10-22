@@ -1,0 +1,107 @@
+{
+  "old_inferred": 463,
+  "new_inferred": 51,
+  "same_source_candidates": 44,
+  "old_without_accepted_source_counterpart": 419,
+  "new_without_old_accepted_source_counterpart": 7,
+  "net_delta": -412,
+  "mechanism_counts": {
+    "FEWER_THAN_THREE_CONTIGUOUS_MEASUREMENTS": 91,
+    "APPROACH_DISPLACEMENT_UNDER_25PX": 190,
+    "SOURCE_ENDPOINTS_MOVING_AWAY": 87,
+    "RETAINED_SOURCE_CANDIDATE": 43,
+    "EPISODE_CONTEXT_SPLIT": 29,
+    "IDENTITY_OR_ROLE_PENDING": 16,
+    "MEASURED_RETREAT_OR_TURN": 5,
+    "OTHER_ELIGIBILITY_OR_OBSERVATION_GUARD": 1,
+    "RETAINED_CANDIDATE_ROUTE_CHANGED": 1
+  },
+  "new_without_old_counterpart": [
+    {
+      "event_id": "b_v4_fdbd13f68a9fef968e342dae",
+      "track_id": 927,
+      "category": "car",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "activation_frame": 1247,
+      "source_frames": [
+        1141,
+        1187
+      ]
+    },
+    {
+      "event_id": "b_v4_2157e740e5150b31b9c02e71",
+      "track_id": 988,
+      "category": "truck",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "activation_frame": 1388,
+      "source_frames": [
+        1206,
+        1328
+      ]
+    },
+    {
+      "event_id": "b_v4_14dedd3dc0b90e85355b0baa",
+      "track_id": 1049,
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "activation_frame": 1396,
+      "source_frames": [
+        1272,
+        1336
+      ]
+    },
+    {
+      "event_id": "b_v4_20d1e53e11808330ddfe6742",
+      "track_id": 1101,
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "activation_frame": 1445,
+      "source_frames": [
+        1336,
+        1385
+      ]
+    },
+    {
+      "event_id": "b_v4_9199f55e0e872fba3d8d0369",
+      "track_id": 1431,
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "activation_frame": 1726,
+      "source_frames": [
+        1594,
+        1666
+      ]
+    },
+    {
+      "event_id": "b_v4_f7bfb76da19bd40c1e55fabf",
+      "track_id": 1513,
+      "category": "car",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "activation_frame": 1847,
+      "source_frames": [
+        1703,
+        1787
+      ]
+    },
+    {
+      "event_id": "b_v4_eeebb3aaf1fe8ccc1f89309e",
+      "track_id": 2982,
+      "category": "motorcycle",
+      "direction": "A_TO_B",
+      "route": "ESTIMATED_TIMEOUT",
+      "activation_frame": 5067,
+      "source_frames": [
+        4877,
+        5007
+      ]
+    }
+  ],
+  "matching_basis": "same category/direction + last observed origin source frame and detector-linked raw bbox/index + >=2 exact raw measurement refs; event ID not compared",
+  "classification_limit": "mechanisms are descriptive artifact classifications, not physical ground truth"
+}

@@ -1,0 +1,60 @@
+{
+  "dependencies": {
+    "core_python": "3.13.5",
+    "duckdb": "2.0.0",
+    "source_python": "3.12.14"
+  },
+  "errors": 0,
+  "failures": 0,
+  "full_official_overture_schema_validated": false,
+  "motor_fixture": "motor_policy_offline/routing_result.json",
+  "osm_graph_acquisition_executed": false,
+  "preserved_prior_notebook_and_fixture_files": [
+    "notebooks/fixtures/li1/buildings.geojson",
+    "notebooks/fixtures/li1/context.json",
+    "notebooks/fixtures/li1/empty.geojson",
+    "notebooks/fixtures/li1/expected.json",
+    "notebooks/fixtures/li1/invalid_buildings.geojson",
+    "notebooks/fixtures/li1/invalid_manifest.json",
+    "notebooks/fixtures/li1/manifest.json",
+    "notebooks/fixtures/li2/config.json",
+    "notebooks/fixtures/li2/graph.json",
+    "notebooks/location_intelligent_buildings.py",
+    "notebooks/location_intelligent_buildings_tests.py",
+    "notebooks/location_intelligent_routing.py",
+    "notebooks/location_intelligent_routing_tests.py",
+    "notebooks/location_intelligent_validator.py",
+    "notebooks/location_intelligent_validator_tests.py"
+  ],
+  "real_motor_accessibility_verified": false,
+  "real_source_report": "overture_20261021_n1_verified/report.json",
+  "replay": {
+    "motor_cli_command": [
+      "/usr/bin/python3",
+      "-B",
+      "notebooks/location_intelligent_motor_routing.py",
+      "--context",
+      "notebooks/fixtures/li1/context.json",
+      "--manifest",
+      "notebooks/fixtures/li1/manifest.json",
+      "--buildings",
+      "docs/evidence/location_intelligent/li01_20261022/li1_fixture_result.json",
+      "--graph",
+      "results/location_intelligent/motor_policy_offline/graph.json",
+      "--evidence",
+      "results/location_intelligent/motor_policy_offline/evidence.json",
+      "--policy",
+      "results/location_intelligent/motor_policy_offline/policy.json",
+      "--root",
+      "notebooks/fixtures/li1"
+    ],
+    "motor_cli_sha256": "823c689353e4ca3b95ade8055a23c2002b80a490a662765d7da1b8c8009c207a",
+    "motor_cli_two_runs": "BYTE_IDENTICAL",
+    "real_selection_and_capacity_offline_replay": "IDENTICAL"
+  },
+  "schema_version": "li_d34_execution_v1",
+  "skips": 0,
+  "test_command": "PROJ_NETWORK=OFF PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B -m unittest discover -s notebooks -p 'location_intelligent_*tests.py' -v",
+  "tests": 158,
+  "traffic_inference_executed": false
+}

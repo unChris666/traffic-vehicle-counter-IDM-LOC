@@ -1,0 +1,49 @@
+{
+  "schema_version": "b_v7_actual_source_case_v1",
+  "scope": "selected measured vehicle tracks1049/1123 within complete source window1272–1424; other tracks excluded only in isolated counting fixture and retained in raw source_records file",
+  "frame_count": 153,
+  "source_identity": {
+    "video_sha256": "5ffeec3d74e51eed43f45050c44fc019c989a8f2d5659c0bf6ccf3370284f4d1",
+    "geometry_sha256": "d4a3861f0a0130dc7fe0ba4cfe574b5ceeafd8cb9c7141be46ee4541163909d1",
+    "width": 640,
+    "height": 480,
+    "variant": "raw",
+    "parent_run_id": "phase8_20261015T085213_690310Z",
+    "records_sha256": "bc484aff0372242925f8b87e6d91ffc2ac11ae696ed3f59201a73d44f98a145b"
+  },
+  "target_observation_counts": {
+    "1049": 65,
+    "1123": 70
+  },
+  "fixture_baseline_accepted": 2,
+  "fixture_baseline_aggregate": {
+    "total": 2,
+    "by_category": {
+      "motorcycle": 2
+    },
+    "by_direction": {
+      "A_TO_B": 2
+    },
+    "by_route": {
+      "ESTIMATED_TIMEOUT": 1,
+      "LINE_MARGIN": 1
+    },
+    "measured_total": 0,
+    "inferred_total": 2,
+    "pending": 0,
+    "invalid": 0,
+    "invalid_reasons": {},
+    "cancelled": 0,
+    "vehicle_total": 2,
+    "pedestrian_total": 0
+  },
+  "baseline_previous_implementation_reproduced": true,
+  "baseline_fullvideo_result_sha256": "82f80239e25e64386f0423a18817b2f87eac98b0e88e9d93081994d5b436ee3e",
+  "expected_maximum_accepted_for_source_reviewed_one_physical_passage": 1,
+  "identity_relation_proven_by_machine": false,
+  "candidate_1123_is_stronger_existing_inferred_evidence_than_timeout1049": true,
+  "1123_measured_status_must_remain_false": true,
+  "review_reference": "results/b_v6/review/independent_qc_review.json",
+  "formal_ground_truth": false,
+  "raw_ID_runtime_special_case_allowed": false
+}

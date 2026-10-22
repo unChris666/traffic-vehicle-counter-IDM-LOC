@@ -1,59 +1,83 @@
-# Phase 9 — audit manual passage fisik
+# Phase 9 — audit bukti dan daftar perbaikan Phase 1–8
 
-**PROPOSAL — tugas berikut setelah snapshot revisi Phase 8 tersimpan:** audit hasil aktual dengan video sumber dan jejak keputusan. Phase 9 belum selesai hanya karena kode, tes, replay, atau anotasi selesai. Keputusan pengguna untuk contoh Phase 8 menjadi bukti review yang terbatas pada contoh tersebut.
+**REQUIREMENT — tujuan pengguna:** menghasilkan daftar perbaikan berbasis bukti untuk mengurangi hitungan palsu, duplikasi, salah penggabungan, dan passage terlewat. Pending dapat diselesaikan sebagai **tidak eligible/+0**. Pending turun bukan ukuran keberhasilan tunggal.
 
-**FACT — kesiapan teknis saat ini:** snapshot revisi `20261019T045405_106031Z` telah mereplay seluruh delapan video/72.590 frame dari cache terverifikasi, tanpa detector/tracker/ReID ulang. [Retensi aktual](../results/b_v3/execution/final_20261019T045405_106031Z/) dan [audit independen](../results/b_v3/verification/final_delta_audit.json) menyediakan event, pending, konfigurasi, source SHA, serta rekonsiliasi baseline. **Phase 9 sudah dapat dimulai untuk audit snapshot ini**; pending tidak perlu nol. Izin memulai audit bukan kesimpulan siap produksi dan bukan pernyataan audit telah selesai. Render penuh/publikasi anotasi mempunyai bukti delivery tersendiri; replay lokal yang dirujuk di sini tidak merender delapan video.
+**Status dokumen:** kontrak audit yang diperbarui setelah klarifikasi timeout. Pengguna kemudian mengotorisasi verifikasi input dan pilot TGDI-WEEKDAY-SIANG, serta memilih menyelesaikan pilot dan daftar perbaikan dahulu. [Hasil pilot aktual](../results/phase_9/20261019T140653Z_TGDI_WEEKDAY_SIANG_PILOT/REPORT.md) tersimpan terpisah; audit menyeluruh dan perbaikan algoritme belum dinyatakan selesai. Pengguna akan memberikan brief pivot untuk pekerjaan implementasi berikutnya.
 
-**FACT — anotasi untuk audit sudah tersedia:** [delapan video B v3 di GitHub](../results/b_v3/VIDEOS.md), [hasil Kaggle yang identik dengan replay lokal](../results/b_v3/verification/actual_kaggle_local_comparison.json), dan [checksum publikasi](../results/b_v3/publication/final_verification.json). Video tidak bergantung pada masa aktif sesi Kaggle. Phase 9 belum dinyatakan selesai.
+## Mulai dari sini
 
-## Objektif
+- [Protokol input → proses → output dan pemeriksaan setiap fase](PHASE_9_AUDIT_PROTOCOL.md).
+- [Prompt siap pakai untuk pelaksanaan audit](PHASE_9_PROMPT.md).
+- [Template rencana, inventory, kasus, keputusan dan backlog](templates/PHASE_9_AUDIT_TEMPLATES.md).
+- [Bukti kasus pedestrian/rider yang sudah diperiksa](PHASE_9_ROLE_REVIEW_WORKFLOW.md). Bagian agentic pada dokumen tersebut adalah usulan historis; audit ini dapat dilakukan dengan sistem biasa dan review manusia, tanpa membangun enam agen.
 
-Membangun referensi audit yang dapat ditelusuri tanpa menyebutnya ground truth formal. Pastikan setiap event yang direview mewakili passage fisik yang dimaksud, dan catat passage yang terlewat atau dihitung keliru. Tujuan bukan membuat pending nol.
+## Read first
 
-Audit dimulai dari snapshot reproducible: identitas input, konfigurasi efektif, kode/source hash, event dan agregat konsisten, serta frame/time sumber tersedia. Jika revisi masih partial, audit hanya menyatakan cakupan slot yang tersedia. Keberhasilan Phase 8 teknis tidak membuktikan kualitas counting produksi; pending yang sudah dijelaskan tetap dapat diaudit.
+`AGENTS.md`, `CODEX_WORKFLOW.md`, `docs/PROJECT_CONTEXT.md`, `docs/PRODUCT_SPEC.md`, `docs/MODEL_SPEC.md`, `docs/COUNTING_LOGIC.md`, `docs/ARCHITECTURE.md`, `docs/API_CONTRACT.md`, `docs/CONFIG_SCHEMA.md`, `docs/TEST_PLAN.md`, `docs/EVALUATION.md`, dan `docs/OPEN_DECISIONS.md`.
 
-Snapshot sekarang berisi3.500 accepted operasional:895 crossing terukur dan2.605 inferensi, termasuk2.454 timeout. Pedestrian accepted0 tidak membuktikan tidak ada pedestrian. Pending2.890 kunci mencakup2.427 unknown-person,462 vehicle dan1 positive-role pedestrian; ini bukan2.890 kendaraan yang gagal dihitung. Gunakan [enam keluarga keputusan](../results/b_v3/PENDING_DECISIONS.md), bukan mengaudit baris CSV berulang sebagai kasus fisik terpisah. Dua keluarga vehicle terbesar adalah return-timeout210 dan identitas201, tetapi accepted yang salah dan kendaraan tanpa kandidat tetap wajib diperiksa.
+Untuk status terbaru, baca juga [kontrak B v2](B_V2_COUNTING_CONTRACT.md), [kontrak revisi B v3](PHASE_8_REVISION_CONTRACT.md), [hasil B v3](../results/b_v3/README.md), [kelompok pending](../results/b_v3/PENDING_DECISIONS.md), serta protokol audit di atas. Status OPEN dalam snapshot historis tidak membatalkan keputusan pengguna yang lebih baru; bedakan aturan saat run dengan aturan penilaian audit.
 
-## Urutan review yang diusulkan
+## Baseline yang harus dipertahankan
 
-1. Periksa contoh regresi 73/93, 4149, dan motorcycle 2473→2507 bersama rider 2471. Cocokkan satu kendaraan/satu passage, pemisahan objek, sumber BC, kategori, arah, serta efeknya pada event lama.
-2. Review contoh per keluarga pending: identitas, peran pedestrian/rider, kategori/episode, geometri/gap, dan taxonomy. Pilih sampel yang mewakili kondisi berbeda, bukan hanya contoh berhasil.
-3. Audit accepted, terutama timeout dan perpindahan setelah gap, termasuk dugaan kendaraan diam ID 2/34. Periksa salah gabung, hitungan ganda, arah salah, pedestrian/rider, dan event tanpa crossing terukur.
-4. Tinjau segmen kontinu sebelum/sesudah passage pada delapan video, termasuk malam dan occlusion. Catat kendaraan yang tidak pernah menjadi kandidat; daftar pending saja tidak dapat menemukan semua missed passage.
-5. Bandingkan baseline, machine revision, dan review-assisted pada passage fisik yang sama. Pertahankan semua snapshot dan catat perubahan serta regresi secara terpisah.
+**EXPERIMENT RESULT — bukti tersimpan, bukan hasil audit baru:**
 
-Untuk contoh awal:73/93 hanya disambung pada episode car yang direview dan masih pending karena73/77 serta73/87; truck raw93 terdahulu berbeda. Truck4149 `T2013` memakai crossing terukur7422, sedangkan motorcycle4149 `M2213` memakai timeout7691 dan harus diperiksa secara fisik. Motorcycle2473/2507 `M1068` mempunyai satu crossing BC vehicle4231→4232 dengan keputusan4241; relasi2507 bersifat review-assisted, dan bbox simultan pada4277 memerlukan pemeriksaan agar tidak salah menyambung objek. Rider2471 hanya +0 dalam cakupan4204–4254.
-
-Sebelum memakai audit untuk menyetujui konfigurasi berikutnya, konfirmasi tiga preferensi yang masih terbuka: pedestrian hanya measured atau juga inferred route, BUS/huruf tampilannya, dan timeout passage berikutnya tanpa bukti baru. Run yang dibekukan memakai kontrol riset konservatif `measured_only`/`require_new_passage_evidence`; ini tidak boleh ditulis sebagai persetujuan pengguna. Untuk membandingkan varian kebijakan, simpan varian baru terpisah dan jangan menimpa snapshot audit.
-
-Jumlah/durasi segmen audit, cakupan penuh atau sampel, dan pembagian development/hold-out harus disepakati sebelum menyebut audit representatif. Contoh yang sudah dipakai memperbaiki kode adalah development, bukan hold-out yang belum pernah dilihat. Tidak ada target performa atau ambang kelulusan persentase yang dibuat tanpa protokol dan bukti.
-
-## Catatan minimum per kasus
-
-Simpan video/source hash, frame awal/akhir, raw ID dan ID passage/internal terkait, objek fisik, role pedestrian/rider, kategori, arah, asal BC, route, measured/inferred, event baseline/revisi, keputusan reviewer, alasan, dan frame bukti. Tandai `same_vehicle`, `different_vehicle`, `valid_passage`, `duplicate`, `missed_passage`, `wrong_category`, `wrong_direction`, `stationary_or_no_passage`, atau `still_uncertain` sesuai fakta; satu kasus dapat memiliki beberapa masalah.
-
-Keputusan koreksi harus menunjuk cakupan episode dan event yang diubah. Review yang tidak pasti tidak dipaksa menjadi accepted. Manual category/identity review tidak mengubah gap/prediksi menjadi crossing terukur. Review rider tidak berlaku otomatis pada penggunaan raw ID tersebut di kemudian hari.
-
-## Keluaran dan penerimaan audit
-
-- Register kasus dan keputusan reviewer, dibedakan antara machine dan reviewed.
-- Daftar kegagalan per keluarga, contoh evidence, dampak terhadap event/aggregat, dan prioritas perbaikan.
-- Ringkasan cakupan audit: video/segmen/frame yang benar-benar dilihat dan cakupan yang belum dilihat.
-- Perbandingan passage fisik yang sama dan regresi, termasuk accepted salah serta passage tanpa kandidat.
-- Keputusan terdokumentasi: kontrol yang dibekukan, perubahan berikut yang dibutuhkan, dan risiko yang belum terselesaikan.
-
-Audit selesai pada cakupan yang disepakati ketika setiap kasus dalam cakupan mempunyai keputusan atau status unresolved beserta perlakuannya, koreksi dapat ditelusuri, dan isu yang menghalangi tahap berikut dinyatakan. Ini tidak menjamin seluruh dunia nyata sudah tervalidasi. Klaim accuracy/precision/recall/F1/MAPE tetap memerlukan protokol ground truth yang belum tersedia; ikuti [EVALUATION.md](EVALUATION.md).
-
-## Fase menuju deployment
-
-Masih ada **lima fase jika Phase 9 ikut dihitung**, atau **empat fase setelah Phase 9 selesai**:
-
-| Fase | Objektif |
+| Komponen | Identitas |
 |---|---|
-| 9 — audit manual | Bukti keputusan, kegagalan, prioritas perbaikan, dan batas kepercayaan hasil. |
-| 10 — modular Python | Pindahkan logika yang sudah stabil dari notebook dengan perilaku tetap dan regresi teruji. |
-| 11 — UI | Upload/setup geometri, proses, hasil dan audit melalui engine yang sama. |
-| 12 — Docker | Paket runtime/dependensi dan GPU yang reproducible, dengan smoke test. |
-| 13 — GPU VM | Deploy, uji GPU/model/job, persistensi hasil, resource, serta restart. |
+| Input utama | Delapan video TGDI di `/kaggle/input/datasets/chrisbiran/tgdi-traffic-videos`; sumber asli tidak dimasukkan ke GitHub. |
+| Snapshot counting | `results/b_v3/execution/final_20261019T045405_106031Z/`, termasuk manifest retensi dan `batch_report.json.gz`. |
+| Eksekusi anotasi | Kaggle `chrisbiran/phase-8-tgdi-b-v3-review`, version2, run `20261019T070846_020453Z`. |
+| Bukti output | [Delapan video](../results/b_v3/VIDEOS.md), [delivery manifest](../results/b_v3/delivery_manifest.json), [kesamaan Kaggle/lokal](../results/b_v3/verification/actual_kaggle_local_comparison.json). |
+| Hasil operasional | 72.590 frame; 3.500 event kendaraan: 895 terukur dan 2.605 inferensi, termasuk 2.454 timeout. Bukan jumlah fisik yang selesai diaudit. |
+| Pending | 2.890 kunci unik: 2.427 unknown-person, 462 vehicle, 1 positive-role pedestrian. Kunci software bukan jumlah objek fisik. |
+| Pembanding lama | B v2 tetap disimpan; denominator pending berbeda sehingga jumlah pending tidak dibandingkan langsung sebagai tingkat kegagalan. |
 
-Urutan ini berasal dari [CODEX_WORKFLOW.md](../CODEX_WORKFLOW.md), bukan estimasi lama pengerjaan. Phase 10–13 tidak diimplementasikan dalam revisi Phase 8 ini. Keputusan produksi, vehicle-ReID final, taxonomy, ketahanan identitas, serta kebijakan timeout yang reliable tetap memerlukan bukti dan dapat menghasilkan perbaikan sebelum logika dibekukan untuk modularisasi.
+Policy, review manifest, geometri, source snapshot, MP4 dan artefak run tersebut tidak ditimpa. Penilaian terhadap kebijakan baru disimpan sebagai overlay audit terpisah.
+
+## Kontrak penilaian audit terbaru
+
+**REQUIREMENT — keputusan pengguna yang sudah disepakati dalam percakapan:**
+
+1. Unit hitung adalah **kendaraan fisik per passage**, bukan raw tracker ID. Pergantian raw ID tidak membuat passage baru. Satu raw ID juga dapat berpindah objek sehingga penyambungan maupun pemisahan episode perlu bukti.
+2. Motorcycle+rider/passenger menjadi satu motorcycle; rider memberi tambahan 0. Pedestrian adalah kategori tersendiri dan perlu bukti peran positif dalam interval yang jelas.
+3. BC kendaraan berasal dari bbox kendaraan mentah yang terukur dan terhubung ke deteksi; bbox union hanya tampilan. Koreksi role/kategori/identitas tidak mengubah gap atau prediksi menjadi crossing terukur.
+4. Timeout kandidat pertama adalah **60 frame sumber sejak terakhir terlihat di polygon asal**, hanya setelah eligible dan tanpa konflik identitas yang relevan. Hasil tetap estimasi. Observasi di polygon asal memperbarui clock; handoff terverifikasi melanjutkan episode/clock yang sama. Handoff ambigu menahan estimasi kandidat terkait, bukan menghentikan seluruh video.
+5. Passage yang selesai tidak dibuka lagi oleh timer atau pergantian ID. Kemunculan di polygon tujuan dengan bukti gerak menjauhi garis adalah tidak eligible/+0. Genuine return membutuhkan bukti perjalanan/passage baru; gerak menjauh tidak disimpulkan dari satu frame atau jitter bbox.
+6. Measured dan inferred dipisahkan. Machine dan reviewed adalah versi alternatif hasil, bukan dua subtotal yang dijumlahkan.
+
+Persetujuan terbaru pada butir4–5 adalah acuan audit/revisi berikutnya, **bukan klaim bahwa seluruh pengaman tersebut sudah ada pada kode atau hasil B v3**. Audit mencatat perbedaan executed policy dan assessment policy. Kriteria numerik verifikasi identitas/gerak belum dipilih; jangan mengarangnya.
+
+**OPEN:** perluasan occlusion/timeout untuk pedestrian; taxonomy BUS/angkot dan huruf tampilannya; kriteria numerik episode/handoff/role; konfigurasi vehicle-ReID final; enhancement malam produksi. Kontrol `pedestrian_routes=measured_only` pada B v3 adalah kontrol riset yang tercatat, bukan persetujuan perluasan atau pembatasan produk secara tersirat. Isu OPEN hanya menahan keputusan yang bergantung padanya.
+
+## Scope pekerjaan audit
+
+1. Validasi ketersediaan dan identitas video, versi anotasi, cache/model records, geometri, policy, review serta sumber executable.
+2. Catat cakupan audit sebelum review. Mulai dengan pilot development TGDI-WEEKDAY-SIANG untuk menyelaraskan pencatatan; target perluasan mencakup delapan video dan kondisi malam. Full-video versus sampling serta intervalnya masih perlu ditetapkan, tanpa mengarang jumlah sampel atau ambang persentase kelulusan.
+3. Untuk setiap segmen baru, buat inventory passage dari **video mentah sebelum melihat overlay model**. Simpan riwayat paparan reviewer; pengguna sudah melihat delapan anotasi sehingga audit ini tidak disebut blind.
+4. Cocokkan inventory dengan accepted, pending, rejected/cancelled, episode person dan objek tanpa kandidat. Audit accepted estimasi sama pentingnya dengan pending.
+5. Telusuri penyebab dari input → detection → association/episode → role/category → geometry → event → aggregate/output. Simpan penyebab primer dan faktor tambahan; satu kasus dapat menyentuh beberapa fase.
+6. Catat keputusan berbukti, perubahan yang diusulkan pada hasil reviewed, serta daftar perbaikan dengan target uji dan regresi. Belum menerapkan perubahan ke pipeline.
+
+**Di luar scope:** inference YOLO/BoT-SORT/ReID baru, tuning threshold, menjalankan ulang counting, enhancement baru, retraining, model role baru, refactor `src/`, UI, Docker, multi-GPU dan deployment. Decode sumber untuk review serta pembacaan/verifikasi artefak tersimpan diperbolehkan dalam tugas audit berikutnya. Ketika bukti tidak cukup, simpan unresolved atau rencana eksperimen, bukan hasil yang dibuat-buat.
+
+## Kasus development awal
+
+| Video / sumber kasus | Pemeriksaan yang dibutuhkan |
+|---|---|
+| WEEKDAY-SIANG, person 54 frame 57–107 | Review pengguna: pedestrian mendorong gerobak. Tetapkan scope role; validitas passage diperiksa terpisah. |
+| WEEKDAY-SIANG, person 166/motor 185 frame 226 | Periksa konteks188–301; pisahkan objek motor tepi jalan dari rider. Audit M1006 dan M1007 tanpa melabeli seluruh166 sebagai rider. |
+| WEEKDAY-SIANG, person 857/motor 856 frame 1089 | Tentukan interval relasi; dukungan1100–1113 tidak mengesahkan seluruh riwayat. Timeout motor 856 bukan crossing terukur. |
+| WEEKDAY-SIANG, person 3025 frame 5003 | Pedestrian menurut pengguna; angka50003 sudah dikoreksi menjadi5003. Jangan memperluas label tanpa review. |
+| WEEKDAY-SIANG, truck 4149 crossing7422 / dugaan return7509 | Pertahankan passage selesai; periksa apakah ada bukti perjalanan baru. Motorcycle raw 4149 pada7611 adalah episode lain. |
+| WEEKDAY-PAGI, 73/93; 2471/2473/2507 | Periksa scope handoff, konflik pasangan lain, rider+0, satu passage, serta sumber BC vehicle. Jangan membuat alias raw ID global. |
+
+Kasus yang sudah digunakan memilih aturan adalah development/regresi. Belum ada dasar menyebutnya hold-out independen.
+
+## Deliverables dan gate selesai
+
+Hasil audit ditempatkan di `results/phase_9/<audit_id>/`, sejajar dengan `results/b_v3/`; daftar nama dan template ada pada protokol. [Paket pilot aktual](../results/phase_9/README.md) kini tersedia. Keberadaan paket pilot tidak berarti full-video audit atau seluruh perbaikan telah dilaksanakan.
+
+Audit selesai pada cakupan yang disepakati bila input dan cakupan dapat ditelusuri, inventory mentah sudah dicocokkan, setiap kasus mempunyai keputusan atau unresolved beserta perlakuannya, dampak event/agregat dapat direkonsiliasi, serta backlog menyebut bukti dan uji regresi. Laporan harus mencatat area yang belum diperiksa dan apakah blocker masih menghalangi tahap berikutnya. Pending tidak harus nol.
+
+Keberhasilan audit adalah menemukan dan menjelaskan kesalahan beserta tindakan yang dapat diuji. **Berkurangnya kesalahan otomatis baru dapat dinyatakan sesudah revisi yang diotorisasi benar-benar dijalankan dan dibandingkan pada passage yang sama.** Koreksi manual saja tidak membuktikan perbaikan mesin. Jangan melaporkan accuracy, precision, recall, F1, MAPE atau counting accuracy tanpa protokol ground truth yang belum tersedia.
+
+Phase 10 belum otomatis dimulai. Sesudah laporan audit, pengguna memberi brief pivot untuk memilih perbaikan. Setelah Phase 9 masih ada Phase 10 modular Python, Phase 11 UI, Phase 12 Docker dan Phase 13 GPU VM; urutan teknis tidak menggantikan gate bukti.
