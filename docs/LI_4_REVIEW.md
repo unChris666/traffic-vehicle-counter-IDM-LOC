@@ -140,4 +140,4 @@ polygon di luar cakupan snapshot terlebih dahulu. Belum mengimplementasikan LI-5
 [Readiness, reproduksibilitas, cara membuka GitHub dan persiapan LI-5](LI_5_READINESS.md).
 Mengganti koordinat saja belum cukup: cached building packet saat ini terikat
 N1 dan target/CRS lain ditolak. GitHub blob tidak menjalankan HTML; distribusi
-paket lengkap memakai Release ZIP, bukan klaim GitHub Pages aktif.
+paket lengkap memakai [ZIP download](../results/location_intelligent/downloads/li4-n1-offline-review-v1.zip), bukan klaim GitHub Pages aktif.

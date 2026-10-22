@@ -53,8 +53,8 @@ akurasi dunia nyata.
 
 ## GitHub dan membuka review
 
-GitHub blob viewer tidak mengeksekusi HTML. Unduh paket ZIP dari Release
-`li4-n1-offline-review-v1`, ekstrak seluruh folder, lalu buka review.html.
+GitHub blob viewer tidak mengeksekusi HTML. Unduh [paket ZIP](../results/location_intelligent/downloads/li4-n1-offline-review-v1.zip)
+dari direktori downloads di GitHub, ekstrak seluruh folder, lalu buka review.html.
 GitHub Pages belum diaktifkan. Screenshot QA dapat dilihat langsung dari repo;
 HTML standalone tidak memerlukan Python/server/internet. Link ekspor memerlukan
 file tetangga dalam paket yang sama. Pada managed browser QA file:// diblok;
