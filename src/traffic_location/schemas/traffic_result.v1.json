@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:traffic-location:traffic-result:v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "execution_status",
+    "result_quality",
+    "result_version",
+    "branch",
+    "summary",
+    "native_semantic_sha256",
+    "runtime"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "traffic_result_v1"
+    },
+    "execution_status": {
+      "const": "SUCCEEDED"
+    },
+    "result_quality": {
+      "enum": [
+        "PARTIAL",
+        "COMPLETE_WITHIN_DECLARED_SCOPE"
+      ]
+    },
+    "result_version": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "native_semantic_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "branch": {
+      "enum": [
+        "machine",
+        "review_assisted"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "accepted_total",
+        "accepted_measured",
+        "accepted_estimated",
+        "pending",
+        "invalid"
+      ],
+      "properties": {
+        "accepted_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_measured": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_estimated": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pending": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "invalid": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "required": [
+        "python",
+        "implementation"
+      ],
+      "properties": {
+        "python": {
+          "type": "string"
+        },
+        "implementation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

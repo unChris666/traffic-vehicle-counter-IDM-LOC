@@ -1,0 +1,58 @@
+[
+  {
+    "source": "notebooks/location_intelligent_config.py",
+    "source_sha256": "0d5b63a59986be8e62edcac894704fa52b40dcfa8403482cc90eda1c343077ad",
+    "module": "src/traffic_location/location/config.py",
+    "module_sha256": "a27794b6717905e338534e4b832e4609201556f8ab2184d7e38bcf09352fbe43",
+    "transformations": [
+      "relative imports; remove CLI only; unchanged algorithms/backends"
+    ]
+  },
+  {
+    "source": "notebooks/location_intelligent_validator.py",
+    "source_sha256": "898edfca2c183101fba7887c6e1c505d2343c07eee82ef4c5bd5b232f9d257c0",
+    "module": "src/traffic_location/location/validation.py",
+    "module_sha256": "451c03640ffd33dc821f0ea58a445ce5a51f4c1a30a8080ed54715bd2e4b77fc",
+    "transformations": [
+      "relative imports; remove CLI only; unchanged algorithms/backends"
+    ]
+  },
+  {
+    "source": "notebooks/location_intelligent_buildings.py",
+    "source_sha256": "723ea39afcac220c4dc4065f5f4a09aeab2a1c5892bedee6c3047a53bd041c22",
+    "module": "src/traffic_location/location/selection.py",
+    "module_sha256": "b10f3b1e3cd2df510684187320a6d3336f7bdaf1d4d95d7d7ce6e65782d43a61",
+    "transformations": [
+      "relative imports; remove CLI only; unchanged algorithms/backends"
+    ]
+  },
+  {
+    "source": "notebooks/location_intelligent_capacity.py",
+    "source_sha256": "f395fec8f18106bf1ffac33a636b553b084f96e736fb6886418f0109c9e2b599",
+    "module": "src/traffic_location/location/capacity.py",
+    "module_sha256": "16c595e351437563b7ac870e951b50687ea6ec235bf581c927135bc698863295",
+    "transformations": [
+      "relative imports; remove CLI only; unchanged algorithms/backends"
+    ]
+  },
+  {
+    "source": "notebooks/location_intelligent_li4.py",
+    "source_sha256": "bb2e790194041ef2eef55951e19405369436f9e0f27e0c1aa1fe38adbf10a72f",
+    "module": "src/traffic_location/location/summary.py",
+    "module_sha256": "c81369634f4359748189c9ad8f2fc87d5be159f09ab902baa997b36238c21b3c",
+    "transformations": [
+      "capacity_groups only; no LI4 renderer/acquisition dependency"
+    ]
+  },
+  {
+    "source": "notebooks/location_intelligent_recount.py",
+    "source_sha256": "0af67d816c3c6a3da0ef19adc129fb153b0aa3c6ede4cc44b6e449d2b4f2fda5",
+    "module": "src/traffic_location/location/recount.py",
+    "module_sha256": "05c81ccfa97e275d15d7a9ea646051e35147a3e64c837c0c5f54dccce929b26e",
+    "transformations": [
+      "offline membership/derive only",
+      "policy resource local",
+      "new code version hashes the complete Location module set; old baselines stay immutable"
+    ]
+  }
+]

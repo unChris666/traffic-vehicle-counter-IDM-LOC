@@ -25,8 +25,11 @@ new delegation permits staged adapters/modularization/backend/UI work with
 internal regression gates and a clearly labeled experimental UI before all
 production-quality issues are resolved. It does not justify fabricating data,
 changing counting meaning silently, or claiming unknown accuracy/production
-readiness. For the current task, modify Markdown only; do not start code/cloud
-provisioning as part of this documentation update.
+readiness. The Markdown-only limit applied to the preceding documentation task.
+The subsequent owner request explicitly authorizes the scoped Traffic/Location
+modularization and independent bounded fresh-inference tests. Follow
+[ENGINE_MODULARIZATION_REVIEW](docs/ENGINE_MODULARIZATION_REVIEW.md) for its
+implementation gates. Cloud provisioning remains a separate milestone.
 
 ## Project
 

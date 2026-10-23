@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:traffic-location:location_recount_bundle.v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "execution_status",
+    "operation",
+    "result",
+    "membership",
+    "delta",
+    "runtime",
+    "result_version",
+    "historical_previous_result_imported"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "location_recount_bundle_v1"
+    },
+    "execution_status": {
+      "const": "SUCCEEDED"
+    },
+    "operation": {
+      "const": "OFFLINE_RECOUNT"
+    },
+    "result": {
+      "type": "object",
+      "properties": {
+        "mixed_unit_total": {
+          "type": "null"
+        },
+        "final_business_capacity": {
+          "type": "null"
+        }
+      }
+    },
+    "membership": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "delta": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "runtime": {
+      "type": "object"
+    },
+    "result_version": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "historical_previous_result_imported": {
+      "const": false
+    }
+  }
+}

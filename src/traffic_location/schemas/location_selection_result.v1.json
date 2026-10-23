@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:traffic-location:location_selection_result.v1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "execution_status",
+    "result_quality",
+    "claim_type",
+    "source_manifest_sha256",
+    "source_analysis_status",
+    "operation",
+    "result_version",
+    "engine_sha256",
+    "runtime",
+    "selection",
+    "capacity"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "location_selection_result_v1"
+    },
+    "execution_status": {
+      "const": "SUCCEEDED"
+    },
+    "result_quality": {
+      "enum": [
+        "PARTIAL",
+        "COMPLETE_IN_SCOPE"
+      ]
+    },
+    "claim_type": {
+      "const": "EXPERIMENTAL_SCENARIO"
+    },
+    "source_manifest_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "source_analysis_status": {
+      "type": "string"
+    },
+    "operation": {
+      "const": "OFFLINE_SELECTION_CAPACITY_NOT_ROUTING"
+    },
+    "result_version": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "engine_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "runtime": {
+      "type": "object"
+    },
+    "selection": {
+      "type": "object"
+    },
+    "capacity": {
+      "type": "object",
+      "properties": {
+        "mixed_unit_total": {
+          "type": "null"
+        },
+        "final_business_capacity": {
+          "type": "null"
+        }
+      }
+    }
+  }
+}

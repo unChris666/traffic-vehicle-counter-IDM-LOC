@@ -4,7 +4,12 @@ Workflow terkini: [evaluasi mandiri menuju UI input/output](docs/CURRENT_DEVELOP
 Video/result menggunakan Google Cloud Storage pada tahap integrasi;
 [stabilitas kedua engine](docs/REPRODUCIBILITY_POLICY.md) dan
 [panduan tahap GCS](docs/GCS_STORAGE_ONBOARDING_PLAN.md) terdokumentasi.
-Integrasi tersebut belum diimplementasikan oleh update Markdown ini.
+Integrasi GCS belum diimplementasikan.
+
+**Modularisasi bertahap:** [review dan batas kesiapan](docs/ENGINE_MODULARIZATION_REVIEW.md),
+[package dua engine](src/traffic_location), serta
+[bukti dan perintah replay](results/engine_modularization/README.md).
+Branch machine/review-assisted dipisahkan, dan snapshot historis dipertahankan.
 
 Vehicle/object traffic counting from real road videos, starting with a Kaggle GPU prototype and progressing to modular Python, UI, Docker, and GPU VM deployment after validation and manual audit.
 

@@ -1,5 +1,11 @@
 # Architecture
 
+Update implementasi 23 Oktober 2026: irisan adapter dan kernel terpisah sudah
+tersedia di `src/traffic_location/traffic` dan `src/traffic_location/location`.
+[ENGINE_MODULARIZATION_REVIEW](ENGINE_MODULARIZATION_REVIEW.md) menjadi status
+terkini untuk batas modul, kesetaraan dan keterbatasannya; batas notebook-only
+di bagian historis berikut tidak membatalkan otorisasi refactor bertahap ini.
+
 ## Cross-engine integration direction — 23 October 2026
 
 The active [workflow](CURRENT_DEVELOPMENT_WORKFLOW.md) separates Traffic and

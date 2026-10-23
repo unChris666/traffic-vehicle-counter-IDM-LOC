@@ -4,8 +4,10 @@ Versi dokumen `engine_io_contract/1.0.0-draft.1`, 23 Oktober 2026.
 **Baseline interface provisional di bawah delegasi evaluasi teknis owner**,
 bukan API/backend/validator yang sudah berjalan. Owner mereview melalui UI;
 review Markdown bukan gate rutin. Ini bukan klaim C01–C09 disetujui formal
-satu per satu atau standar produksi tervalidasi. Adapter ke format notebook
-existing belum diimplementasikan. Format
+satu per satu atau standar produksi tervalidasi. Adapter offline scoped ke format
+notebook kini diimplementasikan pada `src/traffic_location`; schema runtime dan
+bukti kesetaraan dijelaskan dalam [review modularisasi](ENGINE_MODULARIZATION_REVIEW.md).
+Draft ini tetap lebih luas daripada boundary CLI yang sudah berjalan. Format
 historis dan event asli tidak diubah. LI-5 eksperimen tersedia secara terpisah.
 
 ## Keputusan kerja yang dapat ditinjau melalui UI

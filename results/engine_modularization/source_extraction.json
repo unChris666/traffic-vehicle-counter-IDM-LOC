@@ -1,0 +1,158 @@
+[
+  {
+    "source": "notebooks/phase_5_geometry_helpers.py",
+    "source_sha256": "c344aa5b73b8b75fcdd567355b867e977a3d8e170feb512cdf0d15ac61b123c9",
+    "module": "src/traffic_location/traffic/_kernel/geometry.py",
+    "module_sha256": "367b81b3301de1525e82c8a9ee1e16a5b477d27b0be4a3707002bc5061818f91",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v5_counting.py",
+    "source_sha256": "37df759e3967ab705871ad290601f14f7e458ca80717e26266ff90b2f882f51c",
+    "module": "src/traffic_location/traffic/_kernel/passage.py",
+    "module_sha256": "b7ebfc04e550419e7d005c44bae6ffbdce287b56e1d30071dca0e90032be8ef2",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v6_counting.py",
+    "source_sha256": "5bf378efa04d49cb676936494f540d6ea67327e433584d7a4fa218bc0b06685f",
+    "module": "src/traffic_location/traffic/_kernel/eligibility.py",
+    "module_sha256": "8ac36429cf2735e6def7305a7d1215cc717fedc55d246fbc3712c625600a6297",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v7_counting.py",
+    "source_sha256": "4c96aebb1c759d9d33be3c05c61eb86e6357181daff0f6d8b3daf0c0247cb5f4",
+    "module": "src/traffic_location/traffic/_kernel/publication.py",
+    "module_sha256": "cc1859feece026095d1550a4c8c8ca56329249f58b4ec4e32d9f84ba4f9e0a4b",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v4_identity.py",
+    "source_sha256": "9fc016fad87e8259181160aa503969daf6e8315202dbb208ed04876a8953f405",
+    "module": "src/traffic_location/traffic/_kernel/identity_core.py",
+    "module_sha256": "86b0e1b8a9eeda67401b4e5af0db560071cd8f83f7bd0ed8bcb791edc6ea0663",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v5_identity.py",
+    "source_sha256": "51fec0774516d921a2965418af83d8a32d4beb03f1092a825d9de26f6c892e19",
+    "module": "src/traffic_location/traffic/_kernel/identity_lifecycle.py",
+    "module_sha256": "04d7ca25595ef2b918ac2c8f561d39c5d68accf71558685be797f42376259ac2",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v6_identity.py",
+    "source_sha256": "a7a4b4b33b70245349cc02e8bda09bfe7db75f3b1f4da1c4755bcc02102ad003",
+    "module": "src/traffic_location/traffic/_kernel/identity.py",
+    "module_sha256": "7f83b045cbf2b79390e0655163e5a686a55bc3f7a5013355465c914ccdf98780",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v7_handoff.py",
+    "source_sha256": "4e40e85d9b02a03d4f4ce5d206412f8d0f8bd586ba29e98879aab40be212a8fa",
+    "module": "src/traffic_location/traffic/_kernel/handoff.py",
+    "module_sha256": "4617e8bcc99b91706aac7bd5874ffb7fe0ebbeab345e2cd0263161c9ae265f64",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v8_finalize.py",
+    "source_sha256": "b83cceb3ca19329d71859af6f7f5809191de07af3626c32db98827884de8fb90",
+    "module": "src/traffic_location/traffic/_kernel/review_finalizer.py",
+    "module_sha256": "22ea3d413cd698d17b6011901ef82d795213bd7236bd486ea63057b952f8a763",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v8_review.py",
+    "source_sha256": "80abdaf31342535de4e1046dc5cf703075e6509c19b8a4567f75dcef0b9fa6f8",
+    "module": "src/traffic_location/traffic/_kernel/reviews.py",
+    "module_sha256": "7d83d5376095d9aef0f4a58d49a4dbc353f6d1898e6491773929090dde190282",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained",
+      "family helper is measurement adapter; source manifest binding supplied by validated request"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v4_batch.py",
+    "source_sha256": "7367caaf3f905eefe4fcef043486f5e088d07d128846d9963833f67c71a86531",
+    "module": "src/traffic_location/traffic/_kernel/overlay.py",
+    "module_sha256": "d58a269cbb3f0e3c0927172f4f648eec9b876c85f9c5b5aea729c41353719259",
+    "transformations": [
+      "extracted validate_overlay only",
+      "source_manifest_sha256 and video IDs explicit in supplied jobs; no global TGDI list",
+      "bound/read/require use standalone identical guards"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v6_annotation.py",
+    "source_sha256": "61b12160886565578ca46da85a3fdb49fa8ca0a4e3ae30748684de0dd18b03a6",
+    "module": "src/traffic_location/traffic/_kernel/render_kernel.py",
+    "module_sha256": "2c63e72d58009aeb0b3d5516d31c9af6a803fd04f9a3b393cc2fc35a825a9b96",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v3_annotation.py",
+    "source_sha256": "ca78f5d109e66ea4d0256f52078225d15836889ea42bc85ccab6bc5331537ea5",
+    "module": "src/traffic_location/traffic/_kernel/render_base.py",
+    "module_sha256": "e667eb4c76e14e04dd75ced9a14b29271d1973cfa12bfeeccdaf68a4ca24a8a0",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_annotation_helpers.py",
+    "source_sha256": "557f6f1ad59ef571e8d933247b9d7fbbb1fe290bdfa05396667d60a6290ed305",
+    "module": "src/traffic_location/traffic/_kernel/render_sources.py",
+    "module_sha256": "c1621e40dafca73afa70a0243048b93217864e34fa71e26e51a400c4d84fab1a",
+    "transformations": [
+      "relative imports only; algorithm constants and bodies retained"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v2_batch.py",
+    "source_sha256": "34853db725f03932740cffbf2f823caf148f5c8b4ee05abb5800261026b0c902",
+    "module": "src/traffic_location/traffic/_kernel/measurement_adapter.py",
+    "module_sha256": "580472c9bf37a2a0b3849b090842d88883a461a04b238acd2163efa3cf3d743b",
+    "transformations": [
+      "selected measurement/relation functions only; no batch globals; identical raw-link/BC/role rules"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v3_batch.py",
+    "source_sha256": "d499d29bd6140da5d423266da85c85552513fbe44d1538e2dbe97b8a8e9a74dd",
+    "module": "src/traffic_location/traffic/_kernel/measurement_adapter.py",
+    "module_sha256": "580472c9bf37a2a0b3849b090842d88883a461a04b238acd2163efa3cf3d743b",
+    "transformations": [
+      "selected measurement/relation functions only; no batch globals; identical raw-link/BC/role rules"
+    ]
+  },
+  {
+    "source": "notebooks/phase_8_b_v8_batch.py",
+    "source_sha256": "2917c803e593d35b67641a8b17e90a1b2bc12d99acda78ba951000cc09426f8d",
+    "module": "src/traffic_location/traffic/_kernel/review_metadata.py",
+    "module_sha256": "abb315a03fde07fad749e3746cc5dbf58968c1e361f64540ea6c1102ef19fd7c",
+    "transformations": [
+      "review event naming/provenance functions only; no batch orchestration"
+    ]
+  }
+]

@@ -3,8 +3,11 @@
 **Arahan owner, 23 Oktober 2026 (Asia/Jakarta).** Dokumen ini menjadi otoritas
 workflow terkini. Bagian roadmap/status lama dipertahankan sebagai riwayat;
 larangan melanjutkan hanya karena menunggu approval Markdown tidak lagi menjadi
-gate rutin. Permintaan saat ini hanya memperbarui Markdown, bukan mengimplementasikan
-kode, UI, bucket, akun cloud, atau deployment.
+gate rutin. Batas Markdown-only pada permintaan sebelumnya sudah digantikan oleh
+otorisasi implementasi adapter/modularisasi Traffic dan Location serta uji fresh
+inference terbatas. Scope dan bukti aktual ada di
+[ENGINE_MODULARIZATION_REVIEW](ENGINE_MODULARIZATION_REVIEW.md). Bucket, akun cloud,
+UI dan deployment belum diimplementasikan dalam irisan kerja ini.
 
 ## 1. Pembagian kerja dan batas otonomi
 
