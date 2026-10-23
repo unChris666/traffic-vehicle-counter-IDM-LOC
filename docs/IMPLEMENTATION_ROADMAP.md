@@ -1,5 +1,14 @@
 # Location Intelligent — roadmap implementasi
 
+## Update LI-5 terbaru
+
+Offline Recount pada N1 sudah PASS untuk scope eksperimen tanpa manual polygon.
+[Review](LI_5_REVIEW.md) mencatat31tes baru/259total, revision/delta/union dan
+snapshot preservation. Kebijakan bisnis Recount serta interface modularisasi
+menunggu review [kontrak draf C01–C09](ENGINE_IO_CONTRACT_DRAFT.md). Berikutnya
+schemas/adapters/golden parity setelah kontrak disetujui; tidak otomatis
+menjalankan LI-6, PPAC, refactor atau UI. Tabel di bawah mempertahankan sejarah.
+
 ## Update LI-4 terbaru — 23 Oktober 2026
 
 LI-4 scope terbatas selesai: paket N1 mandiri, peta/tabel/CSV/GeoJSON,

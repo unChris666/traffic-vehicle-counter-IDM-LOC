@@ -377,3 +377,13 @@ zero/accepted; mixed capacity units tidak dijumlahkan; experimental label wajib.
 Review sumber akses tetap pekerjaan terpisah. Implementasi dan bukti:
 [LI_4_REVIEW](LI_4_REVIEW.md). Tidak mengubah izin motor, threshold atau unit
 bisnis. Tidak mengesahkan produksi, LI-5, Recount atau PPAC.
+
+## D37 — LI-5 offline tanpa polygon manual
+
+Owner mengizinkan penyelesaian engine Recount offline dan meminta kontrak
+Traffic/Location untuk review. Digunakan LI5_EXPERIMENT_V1 dengan demo polygon
+otomatis; covers/selected/union/no-refetch ditetapkan sebagai profil eksperimen
+tercatat, bukan approval batas/kebijakan bisnis produksi. C01–C09 pada
+[ENGINE_IO_CONTRACT_DRAFT](ENGINE_IO_CONTRACT_DRAFT.md) tetap DRAFT.
+[LI_5_REVIEW](LI_5_REVIEW.md) berisi actual execution. Tidak mengubah Traffic
+atau mengesahkan PPAC, UI, refactor, dan universal location support.

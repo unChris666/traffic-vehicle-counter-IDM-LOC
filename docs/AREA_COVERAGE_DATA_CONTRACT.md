@@ -1,5 +1,20 @@
 # Area Coverage — kontrak data dan provenance
 
+## LI-5 serialization yang diimplementasikan
+
+li_recount_policy_v1 adalah profil eksperimen eksplisit; li_recount_polygons_v1
+memuat CRS EPSG:4326, revision, claim, unique polygon IDs dan geometri valid.
+li_recount_result_v1 memuat source/evaluated denominator, membership IDs,
+per-polygon/union status+unit subtotals, coverage, input/policy/polygon/code/
+software identities dan version. li5_manifest_v1 mengikat compact copied inputs
+ke original LI-4 manifest; bukan klaim seluruh raw sources disalin lagi.
+Semua source rows di ledger, selected saja dievaluasi. Revisions/delta tidak
+mengubah source/routing/capacity. [Review](LI_5_REVIEW.md).
+
+[ENGINE_IO_CONTRACT_DRAFT](ENGINE_IO_CONTRACT_DRAFT.md) adalah proposal envelope
+Traffic/Location untuk review, bukan schema/interface existing yang diganti.
+Measured/estimated Traffic tidak disamakan dengan modeled Location.
+
 ## LI-4 implemented offline package
 
 `li4_package_v1` adalah manifest paket view/export baru dengan package_status

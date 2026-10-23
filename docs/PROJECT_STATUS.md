@@ -1,5 +1,14 @@
 # Location Intelligent — status proyek terverifikasi
 
+## Status terbaru — LI-5 offline, 23 Oktober 2026
+
+LI-5 PASS teknis eksperimen tanpa polygon manual; snapshot N1 tetap PARTIAL.
+259 tes PASS. Dua revisi polygon otomatis; union663→1072, delta409masuk/0keluar;
+ini perubahan wilayah, bukan perbaikan akses. Seluruh2623source rows teraccount.
+5outputs replay byte-identical, relocated reopen tanpa jaringan. [Review LI-5](LI_5_REVIEW.md).
+[Kontrak kedua engine](ENGINE_IO_CONTRACT_DRAFT.md) berstatus DRAFT untuk
+persetujuan owner; belum refactor/API/UI/LI-6/PPAC. Bagian berikut adalah riwayat.
+
 ## Status terbaru — LI-4 terbatas, 23 Oktober 2026
 
 **LI-4 PASS untuk offline persistence/review/export N1; analisis PARTIAL.**

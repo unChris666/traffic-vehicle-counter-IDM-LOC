@@ -1,0 +1,51 @@
+{
+  "analysis_status": "PARTIAL",
+  "artifacts": {
+    "browser.cjs": "4289792f68000e27dbac9638eeaa1a52c7fdaae3ed49c941f47a042b553e6ce2",
+    "browser.json": "6d07df0af061c7612c4411eca6af3afd65d382e8ae160fa7a0fd07bd0b624c7f",
+    "core-tests.log": "f3dadd901214571246e16389584226c6eccc8411c0e3af9ec48b12765963ad73",
+    "r1.log": "7c230ee48c55cb274119e5b2e518f53bea1dd3a6db11c723d9ef830df2b8722c",
+    "r2.log": "53b12f0632182be6309baeb36588a885e70f55c0735cc1eacb7bf0057f5dce5c",
+    "repeat.log": "53b12f0632182be6309baeb36588a885e70f55c0735cc1eacb7bf0057f5dce5c",
+    "replay.json": "af668949cf47ca80e240275e05d7d053689448ba21de0c640e57e3a7fc821448",
+    "review-desktop.png": "d22a39ab6278e1151a9366abe92a5890f0034f8b9fda722204c3ee03415ece7a",
+    "review-mobile.png": "e6101f9ca7243cd51c483011baa66f9a08d93e893a78b50014679b91a0962078",
+    "source-tests.log": "d61cf136e0ba60911b229e8b0a4ba27d6704bd492d52fb0794e93f508b293511",
+    "tests.log": "8de25964e3fa8e50bd9af9c6d9126b18c61d899b5e68b86305c578d0fa0fa8a5"
+  },
+  "business_polygon_approved": false,
+  "code_sha256": {
+    "notebooks/fixtures/li5/policy.json": "b26ffe01465b45f3d7d079c1e51df7062146c8787ab7a1f354489e7ced87b6fb",
+    "notebooks/li5_recount_tests.py": "71d0d3ef5dbfbadb30581db0b48dcf4558cec45500ad1353e2122be422e1786e",
+    "notebooks/location_intelligent_recount.py": "0af67d816c3c6a3da0ef19adc129fb153b0aa3c6ede4cc44b6e449d2b4f2fda5"
+  },
+  "contract_status": "DRAFT_FOR_OWNER_REVIEW",
+  "date": "2026-10-23",
+  "delta_entered": 409,
+  "delta_exited": 0,
+  "evaluated_selected": 1322,
+  "manifests_sha256": {
+    "r1": "9fa41767b2e268e737ecec9953f449831dde9e9352a4fab55ed01ba8abb9ac60",
+    "r2": "19390341784572e35e437d7dbae121d2aa6afe67f2d93129a728f9677737281f"
+  },
+  "not_evaluated_source_rows": 1301,
+  "r1_union": 663,
+  "r2_union": 1072,
+  "replay_outputs_identical": 5,
+  "schema_version": "li5_quality_receipt_v1",
+  "scope": "Offline N1 experimental Recount; automatic demo polygons",
+  "source_rows": 2623,
+  "status": "PASS_TECHNICAL_EXPERIMENT",
+  "tests": {
+    "errors": 0,
+    "existing": 158,
+    "failures": 0,
+    "li3": 43,
+    "li4": 27,
+    "li5": 31,
+    "skips": 0,
+    "total": 259
+  },
+  "timezone": "Asia/Jakarta",
+  "traffic_or_routing_or_retrieval_executed": false
+}

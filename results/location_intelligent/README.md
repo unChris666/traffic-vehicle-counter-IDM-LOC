@@ -93,3 +93,15 @@ dijalankan. Semua status harus dibaca sesuai batas ini.
 [Review engineering](../../docs/LI_4_REVIEW.md).
 PASS packaging/reconciliation, analysis PARTIAL. Semua 2623 source rows
 dipertahankan; tidak mengambil data atau menjalankan routing ulang.
+
+## LI-5 offline N1 — 23 Oktober 2026
+
+[Review engineering](../../docs/LI_5_REVIEW.md) ·
+[Draf kontrak engine](../../docs/ENGINE_IO_CONTRACT_DRAFT.md) ·
+[Demo R2](li5_n1_20261023_r2/review.html) ·
+[QA receipt](li5_n1_20261023_validation/receipt.json).
+Polygon otomatis berlabel demo; union1072selected,565accepted skenario dalam
+union. Akses source tetap PARTIAL, bukan seluruh1072bangunan accessible.
+
+[Unduh paket LI-5 offline ZIP](downloads/li5-n1-offline-review-v1.zip)
+(ekstrak seluruh folder, lalu buka R2/review.html). Kontrak tetap DRAFT.

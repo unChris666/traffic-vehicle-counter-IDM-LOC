@@ -1,5 +1,12 @@
 # Area Coverage — rencana verifikasi
 
+## LI-5 executed offline
+
+31 tes Recount baru,259 total LI suites PASS. Membership boundary/hole/overlap/
+coverage/null/units, row preservation, delta/version mismatch, atomic export
+failure dan offline reopening diuji. Actual R2 replay5outputs byte-identical.
+[Scope dan bukti](LI_5_REVIEW.md); bukan validasi source access atau UI produksi.
+
 ## LI-4 executed scope — 23 Oktober 2026
 
 228 PASS =158 existing LI +43 LI-3 +27 LI-4. New suite:

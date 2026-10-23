@@ -1,0 +1,36 @@
+test_boundary_covers (li5_recount_tests.MembershipTests.test_boundary_covers) ... ok
+test_duplicate_key_fails (li5_recount_tests.MembershipTests.test_duplicate_key_fails) ... ok
+test_duplicate_polygon_id (li5_recount_tests.MembershipTests.test_duplicate_polygon_id) ... ok
+test_duplicate_row_fails (li5_recount_tests.MembershipTests.test_duplicate_row_fails) ... ok
+test_empty_polygons_explicit_empty_membership (li5_recount_tests.MembershipTests.test_empty_polygons_explicit_empty_membership) ... ok
+test_empty_records_not_fabricated (li5_recount_tests.MembershipTests.test_empty_records_not_fabricated) ... ok
+test_explicit_contains_excludes_boundary (li5_recount_tests.MembershipTests.test_explicit_contains_excludes_boundary) ... ok
+test_footprint_intersection_not_point_membership (li5_recount_tests.MembershipTests.test_footprint_intersection_not_point_membership) ... ok
+test_hole_and_hole_boundary (li5_recount_tests.MembershipTests.test_hole_and_hole_boundary) ... ok
+test_inside_outside (li5_recount_tests.MembershipTests.test_inside_outside) ... ok
+test_invalid_lon_lat (li5_recount_tests.MembershipTests.test_invalid_lon_lat) ... ok
+test_invalid_polygon_not_repaired (li5_recount_tests.MembershipTests.test_invalid_polygon_not_repaired) ... ok
+test_missing_revision (li5_recount_tests.MembershipTests.test_missing_revision) ... ok
+test_mixed_units_and_null (li5_recount_tests.MembershipTests.test_mixed_units_and_null) ... ok
+test_multipolygon (li5_recount_tests.MembershipTests.test_multipolygon) ... ok
+test_nan_point_fails (li5_recount_tests.MembershipTests.test_nan_point_fails) ... ok
+test_order_determinism (li5_recount_tests.MembershipTests.test_order_determinism) ... ok
+test_outside_scope_reported (li5_recount_tests.MembershipTests.test_outside_scope_reported) ... ok
+test_overlap_union_unique (li5_recount_tests.MembershipTests.test_overlap_union_unique) ... ok
+test_policy_requires_explicit_supported_values (li5_recount_tests.MembershipTests.test_policy_requires_explicit_supported_values) ... ok
+test_unknown_access_stays_unknown (li5_recount_tests.MembershipTests.test_unknown_access_stays_unknown) ... ok
+test_all_rows_source_decisions_unchanged (li5_recount_tests.PacketTests.test_all_rows_source_decisions_unchanged) ... ok
+test_build_reopen_relocated_without_network (li5_recount_tests.PacketTests.test_build_reopen_relocated_without_network) ... ok
+test_changed_geometry_requires_revision (li5_recount_tests.PacketTests.test_changed_geometry_requires_revision) ... ok
+test_delta_matches_set_difference (li5_recount_tests.PacketTests.test_delta_matches_set_difference) ... ok
+test_failure_partial_export_no_publish (li5_recount_tests.PacketTests.test_failure_partial_export_no_publish) ... ok
+test_immutable_output (li5_recount_tests.PacketTests.test_immutable_output) ... ok
+test_parent_unchanged (li5_recount_tests.PacketTests.test_parent_unchanged) ... ok
+test_policy_delta_mismatch (li5_recount_tests.PacketTests.test_policy_delta_mismatch) ... ok
+test_repeat_result_bytes_identical (li5_recount_tests.PacketTests.test_repeat_result_bytes_identical) ... ok
+test_tampering_fails (li5_recount_tests.PacketTests.test_tampering_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.281s
+
+OK
