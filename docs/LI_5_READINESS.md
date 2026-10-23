@@ -1,5 +1,16 @@
 # LI-4 readiness, reproducibility, dan persiapan LI-5
 
+## Workflow owner terbaru — 23 Oktober 2026
+
+[CURRENT_DEVELOPMENT_WORKFLOW](CURRENT_DEVELOPMENT_WORKFLOW.md) mengizinkan
+kelanjutan teknis dengan evaluasi mandiri; review owner melalui UI input/output.
+C01–C09 adalah working baseline provisional, tidak lagi menahan pekerjaan
+independen sampai approval Markdown. Riwayat instruksi menunggu approval di
+bawah menjelaskan keadaan sebelum arahan ini. Bukti hasil/run lama tidak berubah.
+GCS dipilih untuk video/result; [setup/CRUD](GCS_STORAGE_ONBOARDING_PLAN.md)
+belum dijalankan. [Stabilitas hasil](REPRODUCIBILITY_POLICY.md) wajib; fresh
+inference tidak dibuktikan oleh frozen replay saja. Update ini dokumentasi.
+
 23 Oktober 2026. LI-4 PASS terbatas untuk paket offline N1. Analysis tetap
 PARTIAL. Dokumen ini tidak mengimplementasikan LI-5 atau mengesahkan keputusan
 Recount yang masih proposal.

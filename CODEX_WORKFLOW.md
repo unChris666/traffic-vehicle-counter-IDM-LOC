@@ -1,5 +1,22 @@
 # Codex Development Workflow
 
+## Workflow aktif — evaluasi mandiri dan review melalui UI
+
+23 Oktober2026. Owner mengizinkan kelanjutan fase dengan evaluasi teknis mandiri;
+review owner dilakukan melalui UI input/output. Lihat
+[workflow aktif](docs/CURRENT_DEVELOPMENT_WORKFLOW.md) untuk M1–M6, batas delegasi,
+kontrak provisional, gate internal dan dependencies yang tetap unknown.
+Jangan mengulang approval Markdown atau meminta polygon manual untuk melanjutkan
+pekerjaan yang dapat diuji mandiri. Kode/schema/adapter belum dibuat oleh update
+Markdown ini. Nomor fase di bawah tetap untuk tracking historis dan domain.
+
+Requirement lintas fase: [hasil stabil](docs/REPRODUCIBILITY_POLICY.md), FROZEN
+normal/revision untuk refresh, measured/estimated/partial tetap eksplisit,
+Traffic/Location terpisah. GCS dipilih untuk video/result; panduan setup dan
+CRUD diberikan saat milestone storage. Belum ada provisioning atau uji GCS.
+UI minimum boleh bertahap untuk review hasil nyata/retained yang berlabel,
+bukan mengklaim semua engine atau production validation selesai.
+
 ## Operating Rule
 
 Work strictly phase-by-phase. A phase is complete only when its defined validation is satisfied or its unresolved limitations are explicitly documented.

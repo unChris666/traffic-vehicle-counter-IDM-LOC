@@ -1,5 +1,16 @@
 # LI-5 — Recount offline tanpa polygon manual
 
+## Workflow owner terbaru — 23 Oktober 2026
+
+[CURRENT_DEVELOPMENT_WORKFLOW](CURRENT_DEVELOPMENT_WORKFLOW.md) mengizinkan
+kelanjutan teknis dengan evaluasi mandiri; review owner melalui UI input/output.
+C01–C09 adalah working baseline provisional, tidak lagi menahan pekerjaan
+independen sampai approval Markdown. Riwayat instruksi menunggu approval di
+bawah menjelaskan keadaan sebelum arahan ini. Bukti hasil/run lama tidak berubah.
+GCS dipilih untuk video/result; [setup/CRUD](GCS_STORAGE_ONBOARDING_PLAN.md)
+belum dijalankan. [Stabilitas hasil](REPRODUCIBILITY_POLICY.md) wajib; fresh
+inference tidak dibuktikan oleh frozen replay saja. Update ini dokumentasi.
+
 23 Oktober 2026. **PASS untuk scope teknis offline eksperimen N1.**
 Polygon demo dibuat otomatis; bukan batas wilayah bisnis yang disetujui.
 Underlying accessibility tetap PARTIAL; LI-5 tidak menyelesaikan unknown akses.

@@ -1,13 +1,16 @@
-# Kontrak input/output Traffic dan Location — DRAFT UNTUK PERSETUJUAN
+# Kontrak input/output Traffic dan Location — BASELINE PROVISIONAL
 
 Versi dokumen `engine_io_contract/1.0.0-draft.1`, 23 Oktober 2026.
-**PROPOSAL interface modularisasi**, bukan API/backend/validator yang sudah
-berjalan. Adapter ke format notebook existing belum diimplementasikan. Format
+**Baseline interface provisional di bawah delegasi evaluasi teknis owner**,
+bukan API/backend/validator yang sudah berjalan. Owner mereview melalui UI;
+review Markdown bukan gate rutin. Ini bukan klaim C01–C09 disetujui formal
+satu per satu atau standar produksi tervalidasi. Adapter ke format notebook
+existing belum diimplementasikan. Format
 historis dan event asli tidak diubah. LI-5 eksperimen tersedia secara terpisah.
 
-## Keputusan yang diminta untuk review
+## Keputusan kerja yang dapat ditinjau melalui UI
 
-| No | Proposal | Pengaman/dampak |
+| No | Baseline kerja provisional | Pengaman/dampak |
 |---|---|---|
 | C01 | Dua engine independen: Traffic dan Location; backend hanya mengorkestrasi | UI/backend tidak menduplikasi algoritme counting/routing |
 | C02 | Status eksekusi, kualitas hasil, cakupan dan keputusan objek dipisahkan | Job selesai tidak otomatis berarti semua objek terselesaikan atau production-valid |
@@ -19,8 +22,11 @@ historis dan event asli tidak diubah. LI-5 eksperimen tersedia secara terpisah.
 | C08 | Recount v1 memakai selected universe, covers, union dedup, no refetch; scope eksperimen dulu | All source rows tetap diaudit; unselected tidak diam-diam menjadi eligible |
 | C09 | Versioned JSON manifests + artifact refs; database/object storage hanya adapter | Engine tidak tergantung framework UI atau vendor penyimpanan |
 
-Persetujuan C01–C09 belum diasumsikan. Request ini mengizinkan implementasi
-LI-5 offline pada profil eksperimen; bukan pengesahan seluruh kontrak produksi.
+Arahan owner terbaru mengizinkan kelanjutan teknis dengan evaluasi mandiri
+berdasarkan C01–C09 secara provisional. Jangan menunggu approval Markdown
+sebelum menyiapkan schemas/adapters, modularisasi dan UI bertahap. Perubahan
+kontrak harus versioned dan diuji; fakta/bisnis yang unknown tidak boleh
+ditetapkan tanpa bukti. [Workflow aktif](CURRENT_DEVELOPMENT_WORKFLOW.md).
 
 ## 1. Envelope input bersama
 
@@ -46,8 +52,12 @@ Location AREA wajib target koordinat finite dan CRS. Lokasi baru perlu sources
 sesuai coverage, bukan relabel input N1. RECOUNT/REOPEN wajib parent snapshot.
 
 ArtifactRef tidak menyimpan token, password atau URL bertanda tangan sementara
-sebagai identitas permanen. Lokasi storage boleh lokal/object store; checksum
-mengikat isi. Credential/storage download ditangani adapter/backend.
+sebagai identitas permanen. Provider video/result ditetapkan owner: Google
+Cloud Storage. Local adapter
+untuk development tetap boleh, dengan label local. ArtifactRef GCS mengikat
+bucket/object/generation/bytes/SHA256; signed URL bukan identity permanen.
+Metadata database belum dipilih. Checksum mengikat isi. Credential/storage
+download ditangani adapter/backend.
 
 ## 2. Envelope output bersama
 
@@ -198,9 +208,19 @@ policy/model/source/polygon/review membuat revision/run baru, bukan mengedit
 hasil lama. Sebelum refactor, golden outputs per domain dan validation gates
 harus tersedia. Draft ini tidak memindahkan notebook ke framework atau DB.
 
-## 6. Acceptance kontrak yang diusulkan
+## 6. Gate acceptance implementasi berikutnya
 
-Setelah disetujui: buat machine-readable schemas, schema validators/adapters,
+Dalam delegasi saat ini, engineer melanjutkan evaluasi dan membuat
+machine-readable schemas, schema validators/adapters,
 negative fixtures untuk missing/partial/unknown/unit/branch/target mismatches,
 round-trip artifact refs dan golden parity. Baru kemudian refactor boundaries.
 **Belum ada klaim validators/adapters untuk draft envelope ini sudah dibuat.**
+
+## Workflow dan stabilitas terkini
+
+[REPRODUCIBILITY_POLICY](REPRODUCIBILITY_POLICY.md) berlaku: FROZEN normal,
+reopen/replay/fresh inference/refresh dibedakan; retry tidak menambah hitungan.
+Update ini tidak mengimplementasikan lookup/cache/API. [GCS plan](GCS_STORAGE_ONBOARDING_PLAN.md)
+akan memandu owner saat storage milestone dengan CRUD sandbox terverifikasi.
+Kontrak tetap versioned draft/provisional sampai evidence schema/adapters dan
+review UI mendukung finalisasi; tidak memberi klaim akurasi atau legal access.

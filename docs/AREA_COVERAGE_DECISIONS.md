@@ -387,3 +387,16 @@ tercatat, bukan approval batas/kebijakan bisnis produksi. C01–C09 pada
 [ENGINE_IO_CONTRACT_DRAFT](ENGINE_IO_CONTRACT_DRAFT.md) tetap DRAFT.
 [LI_5_REVIEW](LI_5_REVIEW.md) berisi actual execution. Tidak mengubah Traffic
 atau mengesahkan PPAC, UI, refactor, dan universal location support.
+
+## D38 — delegasi evaluasi, GCS dan stabilitas hasil
+
+23 Oktober2026, arahan eksplisit owner: lanjut fase dengan evaluasi mandiri;
+owner hanya dapat mereview melalui UI input/output. C01–C09 dipakai sebagai
+baseline kerja provisional, bukan approval formal tiap detail. GCS dipilih
+untuk video/result; pandu setup sampai CRUD saat milestone storage. Metadata
+DB/project/bucket/region/IAM/retention belum dipilih. Kedua engine wajib
+mempertahankan hasil stabil pada pekerjaan frozen yang sama; fresh inference
+memiliki gate tersendiri, tidak dibuktikan oleh cache. [Workflow](CURRENT_DEVELOPMENT_WORKFLOW.md),
+[policy](REPRODUCIBILITY_POLICY.md), [GCS plan](GCS_STORAGE_ONBOARDING_PLAN.md).
+Scope task sekarang Markdown saja; tidak membuat code/cloud resources atau
+mengklaim GCS/reproducibility production PASS.

@@ -1,5 +1,20 @@
 # Decision Register
 
+## Workflow/storage update — 23 October 2026
+
+Owner delegates autonomous technical progression and reviews through an
+input/output UI. Routine Markdown/C01–C09 approval is no longer a global gate;
+working contract choices remain provisional and documented. Unknown sources,
+business units/formulas and production quality remain unknown.
+
+**DECIDED:** Google Cloud Storage for videos/result artifacts; normal frozen
+result stability is required for Traffic and Location. **OPEN:** GCP project,
+bucket/region/identities/retention, metadata database, UI/API/compute stack and
+empirical validation of fresh inference/backend parity. GCS/CRUD is not set up.
+See [workflow](CURRENT_DEVELOPMENT_WORKFLOW.md),
+[reproducibility](REPRODUCIBILITY_POLICY.md) and [GCS plan](GCS_STORAGE_ONBOARDING_PLAN.md).
+No old evidence or numeric business policy is changed by this update.
+
 **CURRENT STATUS — Phase 6:** pengguna memilih Opsi A dan mengizinkan [tugas counting](PHASE_6_TASK.md). [COUNTING_CONTRACT.md](COUNTING_CONTRACT.md) menetapkan prototype audit-gated: metrik passage, kendaraan+rider satu unit kendaraan, person bukan otomatis pedestrian, full-window unit/class evidence, same-unit/same-passage review dedup, independent genuine-return review, layered deterministic IDs dan accepted-only aggregate. Semua unreviewed/conflict tetap pending. Ini aturan eksperimen eksplisit dalam pilihan pengguna, bukan resolusi otomatis identitas atau default produk. [PHASE_6_REVIEW.md](PHASE_6_REVIEW.md) mencatat actual execution dan bounded pixel review; original Phase 1–5 evidence/status di bawah dipertahankan sebagai sejarah.
 
 **USER CASE REVIEW — 2026-10-13 (Asia/Jakarta):** [feedback tersimpan](evidence/phase_6/feedback/user_review_20261013_001.json) mengonfirmasi motorcycle 1772 dan rider 1774 sebagai satu unit motorcycle; ID1323 dipilih sebagai car untuk kasus ini. A→B/B→A dan raw-box BC sesuai pada kasus TOR3-PAGI yang direview. Ini tidak menetapkan taxonomy semua minivan/angkot, semua-video reliability, atau acceptance override terhadap histori komponen/gap. Snapshot Opsi A asli tetap immutable. Snapshot `A_updated` menerapkan feedback melalui gates lama dan tetap mempunyai 18 accepted/141 pending/7 rejected; tidak menambahkan recovery 1772 ke aggregate lama.

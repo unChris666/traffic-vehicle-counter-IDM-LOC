@@ -1,5 +1,20 @@
 # Location Intelligent — status proyek terverifikasi
 
+## Arahan aktif owner — 23 Oktober 2026
+
+Workflow berubah: lanjut fase dengan evaluasi teknis mandiri; owner mereview
+melalui UI input/output. Kontrak C01–C09 menjadi baseline provisional di bawah
+delegasi, bukan approval formal setiap detail. Google Cloud Storage dipilih
+untuk video/result; metadata DB, bucket/project/region/IAM/compute belum final.
+GCS setup/CRUD belum terjadi. Requirement hasil stabil Area/Traffic diperjelas
+pada [policy](REPRODUCIBILITY_POLICY.md).
+
+[Workflow aktif](CURRENT_DEVELOPMENT_WORKFLOW.md) dan
+[GCS plan](GCS_STORAGE_ONBOARDING_PLAN.md) menjadi rujukan berikutnya. **Update
+ini Markdown saja**; tidak ada schema/adapter/backend/UI/storage/cloud baru.
+259tes/replay LI-5 di bawah adalah hasil sebelumnya; tidak dijalankan ulang
+pada dokumentasi ini. Framework/produksi tidak dianggap sudah siap.
+
 ## Status terbaru — LI-5 offline, 23 Oktober 2026
 
 LI-5 PASS teknis eksperimen tanpa polygon manual; snapshot N1 tetap PARTIAL.

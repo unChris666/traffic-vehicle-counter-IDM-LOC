@@ -1,5 +1,16 @@
 # Area Coverage — rencana verifikasi
 
+## Gate integrasi di bawah delegasi owner
+
+Tambahkan pada milestone implementasi berikutnya: schema/adapter golden parity,
+independent repetition minimal3untuk scope/profile yang akan diklaim stabil,
+fresh inference dipisahkan dari cache replay, no duplicate effect pada retry,
+dan finalized artifact/reopen integrity. Ini **rencana tes baru**, belum hasil
+run baru. [REPRODUCIBILITY_POLICY](REPRODUCIBILITY_POLICY.md) memberi definisi
+output domain serta cara mencatat mismatch. GCS sandbox CRUD/IAM/generation/
+checksum/failure tests baru dilakukan pada milestone storage. UI input/output
+menjadi checkpoint owner; validasi mandiri tidak menunggu review Markdown.
+
 ## LI-5 executed offline
 
 31 tes Recount baru,259 total LI suites PASS. Membership boundary/hole/overlap/

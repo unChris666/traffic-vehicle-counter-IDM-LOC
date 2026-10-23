@@ -1,5 +1,33 @@
 # AGENTS.md
 
+## Current owner direction — 23 October 2026
+
+Read [CURRENT_DEVELOPMENT_WORKFLOW](docs/CURRENT_DEVELOPMENT_WORKFLOW.md)
+first for the active cross-engine workflow. The owner delegates technical
+phase progression and evidence-based evaluation, and can review through an
+input/output UI. Do not repeatedly block on Markdown/C01–C09 approval or
+manual polygons. Treat that contract as a provisional working baseline, not
+blanket business/production approval. Make reversible technical choices and
+record assumptions; preserve unknowns and continue independent work when a
+business/source dependency is blocked.
+
+Google Cloud Storage is selected for videos/result artifacts. No bucket/IAM/
+CRUD integration is yet verified; guide the owner at the storage milestone.
+Metadata DB and compute/UI frameworks remain subject to engineering evaluation.
+Both engines must preserve stable domain results for identical frozen inputs,
+config/code/model/environment and execution profile. Reopen, replay, fresh
+inference and refresh are distinct; cache does not prove inference determinism.
+Read [REPRODUCIBILITY_POLICY](docs/REPRODUCIBILITY_POLICY.md) and
+[GCS onboarding plan](docs/GCS_STORAGE_ONBOARDING_PLAN.md).
+
+Historical phase-specific task limits below remain evidence/history; the
+new delegation permits staged adapters/modularization/backend/UI work with
+internal regression gates and a clearly labeled experimental UI before all
+production-quality issues are resolved. It does not justify fabricating data,
+changing counting meaning silently, or claiming unknown accuracy/production
+readiness. For the current task, modify Markdown only; do not start code/cloud
+provisioning as part of this documentation update.
+
 ## Project
 
 Traffic Vehicle Counter: a computer-vision system for counting traffic objects by vehicle category from real-world handheld road videos.
@@ -144,4 +172,4 @@ During prototype phases:
 ## Production Transition Rule
 
 Do not modularize or containerize unstable logic merely to make the architecture look complete.
-The transition to `src/`, tests, UI, Docker, and VM deployment happens after the end-to-end prototype is validated through manual audit.
+The transition to modules, tests, UI, Docker, and deployment proceeds incrementally under the current owner delegation and internal evidence/regression gates. An experimental UI enables owner review; unresolved physical/business/night-quality limits remain explicit and block unsupported production claims. Preserve audited baselines and evaluate changed behavior separately.

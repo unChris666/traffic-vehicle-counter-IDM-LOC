@@ -1,5 +1,11 @@
 # Traffic Vehicle Counter
 
+Workflow terkini: [evaluasi mandiri menuju UI input/output](docs/CURRENT_DEVELOPMENT_WORKFLOW.md).
+Video/result menggunakan Google Cloud Storage pada tahap integrasi;
+[stabilitas kedua engine](docs/REPRODUCIBILITY_POLICY.md) dan
+[panduan tahap GCS](docs/GCS_STORAGE_ONBOARDING_PLAN.md) terdokumentasi.
+Integrasi tersebut belum diimplementasikan oleh update Markdown ini.
+
 Vehicle/object traffic counting from real road videos, starting with a Kaggle GPU prototype and progressing to modular Python, UI, Docker, and GPU VM deployment after validation and manual audit.
 
 ## Current status

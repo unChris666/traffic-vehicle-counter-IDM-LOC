@@ -1,5 +1,20 @@
 # Location Intelligent — roadmap implementasi
 
+## Workflow terkini — delegasi menuju UI, 23 Oktober 2026
+
+Owner melanjutkan pengembangan dengan evaluasi mandiri dan review melalui UI;
+C01–C09 tidak lagi menjadi gate approval dokumen rutin. Jadikan kontrak sebagai
+baseline provisional, pertahankan fakta/bisnis yang belum diketahui.
+[Workflow aktif M1–M6](CURRENT_DEVELOPMENT_WORKFLOW.md) mengatur urutan
+schemas/adapters/golden parity → modular engine → backend/job → GCS → UI
+input/output → staging. UI review minimum dapat bertahap tanpa menunggu review
+manual owner. Tidak menganggap semua gate produksi PASS.
+
+[GCS](GCS_STORAGE_ONBOARDING_PLAN.md) dipilih untuk video/result, belum setup/
+CRUD. [Stabilitas](REPRODUCIBILITY_POLICY.md) wajib pada kedua engine. Permintaan
+sekarang hanya Markdown; tahapan implementasi di atas belum dijalankan oleh
+update ini. Status LI-5/259tes di bawah adalah bukti historis, bukan run baru.
+
 ## Update LI-5 terbaru
 
 Offline Recount pada N1 sudah PASS untuk scope eksperimen tanpa manual polygon.

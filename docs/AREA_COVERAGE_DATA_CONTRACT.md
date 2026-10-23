@@ -1,5 +1,16 @@
 # Area Coverage — kontrak data dan provenance
 
+## Arah kontrak terkini
+
+Owner mendelegasikan evaluasi teknis menuju UI. [Kontrak Traffic/Location](ENGINE_IO_CONTRACT_DRAFT.md)
+menjadi working baseline provisional, bukan approval formal setiap C01–C09 atau
+schema validator/API yang sudah dibuat. Interface existing tetap berlaku sampai
+adapter versi baru lulus. Artifact storage dipilih GCS; refs perlu identity
+bucket/object/generation+checksum, tidak memakai signed URL sebagai identity.
+[Workflow](CURRENT_DEVELOPMENT_WORKFLOW.md) dan [stabilitas](REPRODUCIBILITY_POLICY.md)
+mengatur normal FROZEN, reopen/replay/fresh-inference/refresh dan versi hasil.
+Update ini dokumentasi saja, tidak memigrasikan payload atau storage.
+
 ## LI-5 serialization yang diimplementasikan
 
 li_recount_policy_v1 adalah profil eksperimen eksplisit; li_recount_polygons_v1

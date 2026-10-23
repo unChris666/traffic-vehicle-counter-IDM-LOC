@@ -1,5 +1,21 @@
 # Architecture
 
+## Cross-engine integration direction — 23 October 2026
+
+The active [workflow](CURRENT_DEVELOPMENT_WORKFLOW.md) separates Traffic and
+Location domain engines from backend/jobs/storage and UI. The owner delegates
+technical progression; owner review is through an input/output UI. A provisional
+contract guides adapters and behavior-preserving modularization; historical
+prototype boundaries below are not a blanket prohibition on the authorized
+next integration milestones. UI/backend/adapters are not implemented by this
+Markdown update. Production validation remains separate.
+
+Google Cloud Storage is selected for videos/results through a storage adapter;
+metadata database and compute hosting are not selected by that decision.
+[Reproducibility](REPRODUCIBILITY_POLICY.md) gates replay and fresh inference
+separately; no silent CPU/model/frame fallback or result overwrite. Traffic
+source/role/unit/passage safeguards remain authoritative.
+
 ## 1. Strategy and Current Scope
 
 **REQUIREMENT:** Develop phase by phase: Kaggle prototype first, production architecture after the single-video pipeline, eight-video processing, and manual audit are stable.

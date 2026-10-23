@@ -1,5 +1,19 @@
 # Location Intelligent / Area Coverage — arsitektur integrasi
 
+## Workflow/storage direction — 23 Oktober 2026
+
+Location dan Traffic adalah domain engine terpisah; backend/UI mengonsumsi
+kontrak provisional dan artifact refs. Owner review ditunda sampai UI input/
+output tersedia, sementara engineer mengevaluasi milestones secara mandiri.
+[Workflow aktif](CURRENT_DEVELOPMENT_WORKFLOW.md) memperbarui urutan kerja,
+bukan hasil/algoritme LI yang sudah dieksekusi.
+
+Video/hasil/snapshot artifacts direncanakan memakai GCS sesuai keputusan owner,
+belum merupakan integrasi yang diuji. Metadata DB masih OPEN. Normal reopen
+membaca hasil frozen; fresh area/source refresh adalah revisi baru eksplisit.
+[Stabilitas](REPRODUCIBILITY_POLICY.md) dan [GCS plan](GCS_STORAGE_ONBOARDING_PLAN.md).
+Tidak membuat bucket, backend atau UI pada update Markdown ini.
+
 ## LI-4 boundary terbaru
 
 `notebooks/location_intelligent_li4.py` membaca verified frozen LI-3, menyalin
