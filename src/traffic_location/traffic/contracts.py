@@ -4,7 +4,7 @@ from ..artifacts import require
 PROFILES={'machine','review_assisted','replay'}
 def valid_hash(value):return isinstance(value,str) and len(value)==64 and all(x in '0123456789abcdef' for x in value)
 REQUIRED={'schema_version','profile','video_id','frame_count','source_identity','artifacts','source_manifest_sha256'}
-OPTIONAL={'replay_branch','request_id'}
+OPTIONAL={'replay_branch','request_id','measurement_format'}
 ALLOWED_ARTIFACTS={'measurements','geometry','policy','relationships','baseline_reviews','review_overlay','adjudications','baseline_result','historical_baseline'}
 
 def validate_request(request):
@@ -17,6 +17,9 @@ def validate_request(request):
  require(isinstance(branch,str) and branch in {'machine','review_assisted'},'Replay requires an explicit replay_branch')
  require(r['profile']=='replay' or 'replay_branch' not in r,'replay_branch only allowed on replay')
  a=r['artifacts'];require(isinstance(a,dict) and {'measurements','geometry','policy'}<=set(a) and set(a)<=ALLOWED_ARTIFACTS,'Invalid artifact set')
+ require(r.get('measurement_format','notebook_native') in {'notebook_native','fresh_v1'},'Unsupported measurement format')
+ if r.get('measurement_format')=='fresh_v1':
+  require(branch=='machine' and not {'baseline_reviews','historical_baseline','review_overlay','adjudications','baseline_result','relationships'}&set(a),'Fresh machine input cannot inherit legacy review or relations')
  require(isinstance(r['source_identity'],dict),'Explicit source identity required')
  for ref in a.values():require(isinstance(ref,dict) and set(ref)=={'path','sha256'} and isinstance(ref['path'],str) and bool(ref['path']) and valid_hash(ref['sha256']),'Invalid artifact reference')
  require('baseline_reviews' not in a or 'historical_baseline' in a,'Historical review context needs an explicit frozen baseline')

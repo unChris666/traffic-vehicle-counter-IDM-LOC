@@ -30,6 +30,6 @@ def wrap_native(result,*,request,branch,implementation_hash):
    'pending':a['pending'],'invalid':a['invalid'],'native_aggregate':deepcopy(a)},
   'source_identity':deepcopy(request['source_identity']),'native_semantic_sha256':semantic_hash(result),
   'legacy_baseline_review_context_present':'baseline_reviews' in request['artifacts'],
-  'fresh_inference_executed':False,'production_ready':False,
+  'fresh_inference_executed':request.get('measurement_format')=='fresh_v1','production_ready':False,
   'limitations':['Counting correctness and identity/role generalization are not established by modular parity',
     'Machine native gate remains unresolved; review-assisted is not automatic model performance']}

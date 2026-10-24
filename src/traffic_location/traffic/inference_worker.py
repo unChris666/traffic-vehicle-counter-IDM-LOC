@@ -67,7 +67,7 @@ def execute(request,output):
    'onnxruntime':onnxruntime.__version__,'opencv':cv2.__version__,'numpy':np.__version__,
    'device':r['device'],'reid_providers':actual_providers,'torch_threads':torch.get_num_threads()}
  result={'schema_version':'fresh_inference_result_v1','status':'SUCCEEDED','scope':'BOUNDED_SOURCE_PREFIX_NOT_COUNTING_BENCHMARK',
-  'frames':len(records),'metadata':metadata,'source_sha256':r['artifacts']['video']['sha256'],'request_fingerprint':semantic_hash(r),
+  'frames':len(records),'metadata':metadata,'class_names':model.names,'source_sha256':r['artifacts']['video']['sha256'],'request_fingerprint':semantic_hash(r),
   'environment':environment,'effective_tracker_config':config,'records':records,'records_semantic_sha256':semantic_hash(records),
   'counting_executed':False,'physical_identity_accuracy_established':False,'vehicle_reid_suitability':'NOT_ESTABLISHED_PERSON_DOMAIN_CONTROL',
   'worker_process_isolation':True}

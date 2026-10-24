@@ -42,8 +42,12 @@ def run(request,*,root):
    for scope in review['scopes']:
     require(type(scope.get('start_frame')) is int and type(scope.get('end_frame')) is int and
       0<=scope['start_frame']<=scope['end_frame']<request['frame_count'],'Historical review scope outside video')
- frames=read_measurements(paths['measurements'],source,request['frame_count'],relationships=links,
-   baseline_reviews=base_reviews,baseline_reviews_sha256=refs.get('baseline_reviews',{}).get('sha256'),audit=audit)
+ if request.get('measurement_format')=='fresh_v1':
+  from .fresh_bridge import frames as fresh_frames
+  frames=fresh_frames(paths['measurements'],source,request['frame_count'],audit=audit)
+ else:
+  frames=read_measurements(paths['measurements'],source,request['frame_count'],relationships=links,
+    baseline_reviews=base_reviews,baseline_reviews_sha256=refs.get('baseline_reviews',{}).get('sha256'),audit=audit)
  if branch=='review_assisted':
   overlay=read(paths['review_overlay'])
   require(overlay.get('donor_manifest_sha256')==request['source_manifest_sha256'],'Overlay parent manifest differs')

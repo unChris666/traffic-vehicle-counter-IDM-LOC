@@ -15,6 +15,8 @@ Vehicle/object traffic counting from real road videos, starting with a Kaggle GP
 
 ## Current status
 
+**T7SL fresh batch — 24 Oktober 2026:** [notebook Kaggle baru](https://www.kaggle.com/code/chrisbiran/t7sl-fresh-modular-traffic-batch) sedang berjalan; dua Tesla T4 dan mount dataset teramati. [Scope, konfigurasi, revisi geometri dan status verifikasi](docs/T7SL_FRESH_BATCH_REVIEW.md). Belum ada total T7SL terverifikasi sebelum output terminal direkonsiliasi.
+
 **B v6 — kebijakan terbaru (20 Oktober 2026):** [review implementasi dan gate P0](docs/B_V6_USER_POLICY_REVIEW.md), [notebook replay cache](notebooks/09c_user_policy_replay.ipynb), dan [hasil/video audit](results/b_v6/README.md). Seluruh 9.128 frame pilot direplay tanpa model baru: 74 accepted (66 measured +8 estimasi), 24 pending dan 84 scope invalid/+0. BUS dan panel/ekspor baru tersedia; 146 tes software lulus. **P0 tetap BLOCKED:** review sumber menemukan dua estimasi untuk satu motor pada 1049→1123; penurunan pending belum membuktikan counting lebih benar.
 
 **P0 B v5 dan eksperimen model (20 Oktober 2026):** [review hasil dan gate P1](docs/B_V5_P0_REVIEW.md), [notebook replay P0](notebooks/09a_p0_qc_replay.ipynb), dan [eksperimen confidence CUDA aktual](docs/MODEL_CONFIGURATION_EXPERIMENT_REVIEW.md). Dua replay pilot serta eksperimen model selesai; B v5 masih mempunyai duplikasi residual dan false holds sehingga belum mengganti baseline. Confidence 0,10 belum dipilih sebagai default. Artefak baru tersimpan di `results/b_v5/` dan `results/model_experiments/`.

@@ -250,6 +250,12 @@
     "request_id": {
       "type": "string",
       "minLength": 1
+    },
+    "measurement_format": {
+      "enum": [
+        "notebook_native",
+        "fresh_v1"
+      ]
     }
   },
   "allOf": [
