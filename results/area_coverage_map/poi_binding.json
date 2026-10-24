@@ -1,0 +1,26 @@
+{
+  "schema_version": "osm_facilities_snapshot_binding_v1",
+  "dataset": "chrisbiran/area-coverage-800m-source-snapshot",
+  "filename": "osm_poi_snapshot.data",
+  "sha256": "a526da5a76088fcc6897d58b6ebcad218cce1d4a8ed7242fc58455022dff20d3",
+  "bytes": 43409,
+  "request_binding": {
+    "latitude": -6.409737552410453,
+    "longitude": 106.82835008971841,
+    "radius_m": 2000.0,
+    "rules": "osm_facilities_eight_categories_v1"
+  },
+  "source_as_of": "2026-10-24T08:34:21Z",
+  "count": 71,
+  "counts_by_category": {
+    "clinic": 13,
+    "government": 19,
+    "hospital": 8,
+    "market": 1,
+    "office": 10,
+    "police": 2,
+    "school": 17,
+    "university": 1
+  },
+  "completeness": "OSM_TAGGED_FEATURES_NOT_COMPLETE_PHYSICAL_FACILITY_INVENTORY"
+}

@@ -1,0 +1,7 @@
+.................../workspace/traffic-vehicle-counter-IDM-LOC/notebooks/location_intelligent_map_pilot.py:390: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  roads.append({'type':'Feature','geometry':mapping(transform(inverse.transform,clipped)),
+..
+----------------------------------------------------------------------
+Ran 21 tests in 2.309s
+
+OK

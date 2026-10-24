@@ -7,10 +7,71 @@ baru, bukan penggantian label snapshot N1.
 
 Notebook: [Kaggle CPU](https://www.kaggle.com/code/chrisbiran/area-coverage-800m-poi-2km-cpu)
 → [source di repo](../notebooks/area_coverage_cpu_800m_poi_2km.ipynb).
-43cell,13source Python ditulis penuh melalui cell `%%writefile`, lalu diimpor
+47cell,14source Python ditulis penuh melalui cell `%%writefile`, lalu diimpor
 secara eksplisit dari folder source terlihat. Tidak ada base64/remote code
 bootstrap atau implementasi diunduh dari Git. Dataset memuat data/provenance;
 `engine_source` di data archive tidak digunakan sebagai runtime implementation.
+
+## Update layer dan secret — 24 Oktober2026
+
+User mengonfirmasi secret Kaggle bernama **PROJECT_PPAC**. Default notebook dan
+helper kini membaca label tersebut melalui `UserSecretsClient().get_secret()`;
+value hanya dipakai di memory sebagai JSON service account, tidak dicetak.
+Nama lama `GCP_SERVICE_ACCOUNT_JSON` pada baseline versi3 bukan default aktif.
+
+Building counter menunjukkan jumlah **lolos seleksi800m**, termasuk filter area
+dan subtype N1 yang dipertahankan; bukan seluruh9151source records. Layer toko
+Indomaret/kompetitor tetap diseleksi≤2000m dari target pengguna. Setiap lokasi
+marker toko memiliki lingkaran400m dalam layer tersendiri yang dapat di-toggle.
+Lingkaran tetap utuh meskipun melewati lingkaran2km target; ia hanyalah radius
+visual, tidak mengubah routing, eligibility bangunan atau kapasitas.
+
+POI fasilitas menggunakan snapshot OpenStreetMap/Overpass terpisah dari BigQuery.
+Delapan layer: rumah sakit, klinik, pasar, kantor polisi, sekolah, kantor
+pemerintahan, kantor dan universitas. Rules/tag/query dan raw response ada pada
+source helper terlihat dan [binding POI](../results/area_coverage_map/poi_binding.json).
+Contoh: amenity=hospital/healthcare=hospital; klinik=clinic; pasar=marketplace;
+polisi=police; sekolah=school; universitas=university; pemerintahan memakai
+`office=government` atau `amenity=townhall`; kantor lain=office bertag non-vacant.
+Satu feature memperoleh satu kategori dengan prioritas eksplisit. Building tag
+saja tidak dipakai untuk mengarang fasilitas aktif.
+
+Akuisisi aktual source-as-of **24 Oktober2026 pukul15:34:21 WIB** menghasilkan
+73source features;71representative points masuk≤2000m: rumah sakit8, klinik13,
+pasar1, polisi2, sekolah17, pemerintahan19, kantor10, universitas1. Dua feature
+di luar radius akhir dikeluarkan. Ini fitur OSM, bukan inventori fasilitas fisik
+lengkap atau deduplikasi seluruh node/way/relation yang mungkin mewakili site
+sama. Center way/relation bukan entrance. Data tidak lengkap tidak boleh
+ditafsirkan sebagai tidak adanya fasilitas.
+
+Dataset sumber versi3 menambahkan `osm_poi_snapshot.data`43KB ber-checksum;
+bytes archive bangunan/jalan lama tetap sama. `POI_MODE=FROZEN` normal tidak
+melakukan re-fetch. Ganti target/radius/rules memerlukan snapshot/revision baru.
+`store_buffer_radius_m=400` adalah config tampilan yang dapat diedit.
+
+**21tes offline lulus**:13boundary tests lama+8tes POI/secret/radius toko.
+Tes400m memakai fixture sintetis terpisah dan memeriksa satu lingkaran per lokasi
+toko serta group toggle terpisah; bukan hasil eksperimen toko aktual. Preview
+browser sumber publik nyata menampilkan71POI dan15layer toggle tanpa error JS
+atau resource. [Bukti sumber publik dan tests](../results/area_coverage_map/verification/poi_v1/).
+
+**Kaggle versi4: COMPLETE**, CPU saja, full source9151rows dihitung ulang,
+selected3597 dan accepted skenario1048. Manifest kalkulasi identik dengan versi3
+(`d9535d8a4297230e1a9ed88d535e60df4948baa0772096b825d75aaf75ba1577`), sehingga
+penambahan layer tidak mengubah hasil domain. POI71berhasil diambil dari snapshot
+terlampir dan diekspor sebagai CSV/GeoJSON. Browser pada HTML hasil Kaggle aktual
+lulus dengan15toggle dan0JS/resource errors.
+
+**Blocker aktual:** dua layer toko `BLOCKED`, jumlah null. Read `PROJECT_PPAC`
+menghasilkan `ConnectionError` di runtime Kaggle sebelum credentials/query
+BigQuery tersedia. Ini belum membuktikan key salah, role IAM salah, atau tidak
+ada toko. Sumber resmi KaggleWebClient membungkus URLError/HTTPError sebagai
+ConnectionError, sehingga kelas error ini saja tidak cukup menentukan sebab.
+Owner perlu memeriksa akses secret pada notebook CPU yang sama; nilai key tidak
+diminta. Radius400m sudah lulus test positif fixture, tetapi belum memiliki
+marker toko aktual sampai query BigQuery berhasil. Map status
+`PARTIAL_MAP_INPUTS_UNAVAILABLE`; jangan mengklaim peta seluruh layer lengkap.
+[Bukti run versi4](../results/area_coverage_map/verification/kaggle_v4/retention.json).
 
 ## Konfigurasi dan sumber
 
@@ -62,18 +123,18 @@ Ini tidak otomatis membuktikan cross-runtime parity dengan Kaggle. Kaggle
 merekam versi GDAL/Python/PROJ/source packages yang benar-benar digunakan dan
 menjalankan source terlihat, bukan sekadar memuat angka di atas.
 
-**Kaggle versi3 terakhir: COMPLETE**, benar-benar menjalankan CPU; Python
+**Bukti baseline Kaggle versi3: COMPLETE**, benar-benar menjalankan CPU; Python
 3.13.15, GDAL3.8.4, PyProj3.8.0. Seluruh angka di tabel juga diperoleh pada
 Kaggle versi2 dan3. Manifest kalkulasi keduanya identik; ini bukti dua run
 Kaggle pada profil tersebut, bukan klaim byte parity lintas runtime workspace.
-Fingerprint source terlihat versi3 cocok dengan source notebook di repo:
+Fingerprint source terlihat baseline versi3 (sebelum penambahan POI/secret baru):
 `e8a8f3afdfea46374a9ca2e86687e35251cfa4d163b499f83690b3e286bfa539`.
-[Bukti run terakhir](../results/area_coverage_map/verification/kaggle_v3/retention.json).
+[Bukti baseline run](../results/area_coverage_map/verification/kaggle_v3/retention.json).
 Result view `29fd5925e13c40a852416f937eeeff4fb6d07d1805c1929da2f00b208e282d42`
 tetap **PARTIAL_BQ_BLOCKED_OR_FAILED**: kedua tabel BLOCKED, jumlah null.
 Sukses eksekusi notebook berbeda dari kelengkapan data bisnis.
 
-13offline boundary tests memeriksa schema binding numeric/geography/WKT,
+13baseline boundary tests memeriksa schema binding numeric/geography/WKT,
 unknown schema, parameter/identifier guard, duplicate history/conflicting IDs,
 failed authentication bukan0, frozen BQ reopen tanpa auth, bbox dan target guard.
 Peta aktual dengan footprint/network sudah diuji di browser: pan/zoom/layer
@@ -82,9 +143,9 @@ Bukan uji positif data BigQuery yang belum bisa diakses.
 
 ## BigQuery: setup dan batas validasi
 
-User mengonfirmasi credential belum tersedia. SDK workspace mengembalikan
-DefaultCredentialsError. **Live schema, izin, job query dan jumlah toko pada
-kedua tabel belum terverifikasi.** Alias kolom berdasarkan referensi N1 dan
+Pada baseline versi3 credential belum tersedia; SDK workspace mengembalikan
+DefaultCredentialsError. User kemudian menyediakan label **PROJECT_PPAC** di
+Kaggle; ini bukan bukti akses BigQuery sudah berhasil. Alias kolom berdasarkan referensi N1 dan
 pilihan eksplisit baru dipakai setelah `get_table()` mengonfirmasi field/type.
 Tidak mengarang nama/count marker dari basemap atau sumber lain.
 
@@ -101,10 +162,10 @@ Langkah owner:
 4. Kembali ke service account → Keys → Add key → Create new key → JSON.
    Salin **seluruh isi JSON**, bukan nama file atau hanya nilai `private_key`.
 5. Buka [editor notebook CPU](https://www.kaggle.com/code/chrisbiran/area-coverage-800m-poi-2km-cpu/edit)
-   → Add-ons → Secrets → Add a new secret. Label **GCP_SERVICE_ACCOUNT_JSON**,
+   → Add-ons → Secrets → Add a new secret. Label **PROJECT_PPAC**,
    value isi JSON tadi, lalu Save dan aktifkan akses secret untuk notebook ini.
 6. Save/Run All. Jika session sudah mempunyai variabel/hasil CPU, cukup jalankan
-   ulang bagian **6. Akses BigQuery → 7. Peta → 8. Export**. Tidak perlu mengambil
+   ulang bagian **6. Akses BigQuery → 6B. POI → 7. Peta → 8. Export**. Tidak perlu mengambil
    ulang footprint/jalan. Tanda akses berhasil: kedua layer `SUCCEEDED`, schema
    binding aktual tercetak, dan marker hasil query muncul jika tersedia.
 
@@ -148,8 +209,8 @@ Belum ada filter active/latest-period bisnis yang ditambahkan diam-diam.
    `latest_view.json` adalah pointer; view lama tidak ditimpa.
 
 Jika BQ belum bisa dibaca, map publik tetap tersedia dengan banner jelas dan
-status `PARTIAL_BQ_BLOCKED_OR_FAILED`. Jumlah source BQ null, bukan0. Output
-MAP_READY hanya ketika kedua query layer sukses; analysis underlying tetap
+status `PARTIAL_MAP_INPUTS_UNAVAILABLE`. Jumlah source BQ null, bukan0. Output
+MAP_READY hanya ketika kedua query layer dan sumber POI sukses; analysis underlying tetap
 memiliki status kualitas sendiri.
 
 Basemap OSM/CDN membutuhkan Internet untuk tampilan. Angka domain berasal dari

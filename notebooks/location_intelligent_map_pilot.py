@@ -209,7 +209,7 @@ def prepare_pilot(config, root, *, core_python='/usr/bin/python3', extension_dir
     return frozen
 
 
-def bq_credentials(secret_name='GCP_SERVICE_ACCOUNT_JSON'):
+def bq_credentials(secret_name='PROJECT_PPAC'):
     """No secret is displayed, written to output, or embedded in the notebook."""
     import google.auth
     try:
@@ -218,7 +218,11 @@ def bq_credentials(secret_name='GCP_SERVICE_ACCOUNT_JSON'):
         return google.auth.default(scopes=['https://www.googleapis.com/auth/cloud-platform'])[0]
     # Kaggle caller explicitly grants access to this named secret.
     from google.oauth2 import service_account
-    info=json.loads(UserSecretsClient().get_secret(secret_name))
+    user_secrets = UserSecretsClient()
+    secret_value_0 = user_secrets.get_secret(secret_name)
+    info=json.loads(secret_value_0)
+    if not isinstance(info,dict) or info.get('type')!='service_account':
+        raise ValueError('Expected a service-account JSON object in the named Kaggle Secret')
     return service_account.Credentials.from_service_account_info(info,scopes=['https://www.googleapis.com/auth/cloud-platform'])
 
 
@@ -327,7 +331,7 @@ def poi_locations(layer):
     return sorted(result,key=lambda g:(g['distance_m'],str(g['store_id']),g['latitude'],g['longitude']))
 
 
-def interactive_map(config, pilot, layers, output):
+def interactive_map(config, pilot, layers, output, *, facilities=None):
     """Display-only Folium layers; no routing, capacity or source fetch here."""
     import folium
     from folium.plugins import MarkerCluster, Fullscreen, MeasureControl
@@ -387,7 +391,8 @@ def interactive_map(config, pilot, layers, output):
             'properties':{'edge_id':edge['edge_id'],'highway':edge.get('highway'),'claim':'OSM graph; displayed geometry clipped only'}})
     folium.GeoJson({'type':'FeatureCollection','features':roads},name=f'Network OSM — tampilan {config["poi_radius_m"]:g} m',
         style_function=lambda f:{'color':'#334155','weight':1.3,'opacity':.55},tooltip=folium.GeoJsonTooltip(fields=['highway','edge_id'])).add_to(m)
-    statuses=[]
+    from location_intelligent_map_poi import add_poi_layers
+    statuses=add_poi_layers(m,config,facilities) if facilities is not None else []
     for kind,title,color in [('indomaret','Indomaret','blue'),('competitor','Kompetitor','orange')]:
         layer=layers[kind]
         if layer['status']=='SUCCEEDED':
@@ -398,17 +403,26 @@ def interactive_map(config, pilot, layers, output):
                 raise ValueError('Out-of-radius POI cannot enter map')
         locations=poi_locations(layer) if layer['status']=='SUCCEEDED' else None
         group=MarkerCluster(name=title+f' ≤{config["poi_radius_m"]:g}m'+(' — BELUM TERSEDIA' if locations is None else ''),show=True)
+        radius=float(config.get('store_buffer_radius_m',400.0))
+        if not math.isfinite(radius) or radius<=0:
+            raise ValueError('Store display buffer radius must be positive and finite')
+        buffers=folium.FeatureGroup(name=title+f' — radius {radius:g} m per toko'+(' — BELUM TERSEDIA' if locations is None else ''),show=True)
         for row in locations or []:
             popup='<br>'.join([escape(title),escape(str(row['store_id'])),escape(' / '.join(row['names'])),
                 f"Jarak {row['distance_m']:.1f} m",'KONFLIK ID/lokasi' if row['identity_location_conflict'] else '',escape(layer['table'])])
             folium.Marker([row['latitude'],row['longitude']],tooltip=escape(title+': '+(' / '.join(row['names']) or str(row['store_id']))),
                 popup=folium.Popup(popup,max_width=400),icon=folium.Icon(color=color,icon='shopping-cart')).add_to(group)
+            folium.Circle([row['latitude'],row['longitude']],radius=radius,color='#2563eb' if kind=='indomaret' else '#f97316',
+                weight=1,fill=True,fill_opacity=.045,
+                tooltip=escape(title+' '+str(row['store_id']))+f' — radius {radius:g} m (bukan routing)').add_to(buffers)
         group.add_to(m)
+        buffers.add_to(m)
         statuses.append(f'{title}: '+('BELUM TERSEDIA — '+escape(layer.get('error_type','UNKNOWN')) if locations is None else str(len(locations))+' lokasi marker'+(' — ada koordinat sumber invalid' if layer.get('coordinate_quality',{}).get('invalid_coordinates_global') else '')))
     legend=("<div style='position:fixed;bottom:25px;left:25px;z-index:9999;background:white;padding:12px;border:1px solid #777;max-width:380px;font-size:12px'>"
         f'<b>AREA COVERAGE — SKENARIO EKSPERIMEN</b><br>Bangunan {config["building_radius_m"]:g} m; toko/kompetitor {config["poi_radius_m"]:g} m.<br>'
-        +'<br>'.join(statuses)+f"<br>Selected: {len(selection['selected'])}; accepted skenario: {report['decision_counts_selected'].get('ACCEPTED',0)}"
+        +'<br>'.join(statuses)+f"<br>Building counter{config['building_radius_m']:g}m (lolos seleksi): <b>{len(selection['selected'])}</b>; accepted skenario: {report['decision_counts_selected'].get('ACCEPTED',0)}"
         '<br>Hijau=accepted skenario; jingga=unverified; abu=no connector; ungu=over-time; merah=no route.'
+        f'<br>Lingkaran toko{radius:g}m = radius visual, bukan rute/coverage tervalidasi.'
         '<br>7km/jam; round(menit)≤10; kapasitas bukan populasi.<br>OSM/Overture attribution tetap berlaku.</div>')
     m.get_root().html.add_child(folium.Element(legend))
     folium.LayerControl(collapsed=False).add_to(m);Fullscreen().add_to(m);MeasureControl().add_to(m)
@@ -418,7 +432,7 @@ def interactive_map(config, pilot, layers, output):
     return m
 
 
-def load_bq_layers(config, cache, *, secret_name='GCP_SERVICE_ACCOUNT_JSON', refresh=False, overrides=None):
+def load_bq_layers(config, cache, *, secret_name='PROJECT_PPAC', refresh=False, overrides=None):
     """A successful cached result can reopen without credentials or a new query."""
     cache=Path(cache);cache.mkdir(parents=True,exist_ok=True)
     definitions=config.get('bq_tables',{'indomaret':'locdeproject.DWH_NS_LOC.AREA_COVERAGE','competitor':'locdeproject.DWH_NS_LOC.COMPETITOR'})

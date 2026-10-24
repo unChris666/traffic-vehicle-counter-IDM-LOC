@@ -6,7 +6,7 @@ FILES=['location_intelligent_config.py','location_intelligent_validator.py','loc
  'location_intelligent_capacity.py','location_intelligent_routing.py','location_intelligent_motor_routing.py',
  'location_intelligent_overture_probe.py','location_intelligent_li3_sources.py','location_intelligent_li3_graph.py',
  'location_intelligent_li3_connectors.py','location_intelligent_li3_core.py','location_intelligent_li3.py',
- 'location_intelligent_map_pilot.py']
+ 'location_intelligent_map_pilot.py','location_intelligent_map_poi.py']
 
 def main():
  cells=[]
@@ -42,12 +42,14 @@ SOURCE_ROOT=Path('/kaggle/working/area_coverage_cpu_source')
 SOURCE_MODE='FROZEN'       # FROZEN or REFRESH; never silently fetch on a cache mismatch
 SOURCE_REVISION='user-target-800m-v1'
 BQ_MODE='ACQUIRE_ONCE'     # ACQUIRE_ONCE or FROZEN
-BQ_SECRET_NAME='GCP_SERVICE_ACCOUNT_JSON'
+BQ_SECRET_NAME='PROJECT_PPAC'  # User-confirmed Kaggle Secret; full service-account JSON
 BQ_FROZEN_CACHE_INPUT=None  # Optional path to a previously saved bq_snapshot directory in /kaggle/input
 BQ_SCHEMA_OVERRIDES={}    # e.g. {'indomaret': {'point':'KOORDINAT'}}; verified against actual table.schema
+POI_MODE='FROZEN'         # Explicit ACQUIRE_ONCE only for a new source revision
 CONFIG={
  'latitude':-6.409737552410453,'longitude':106.82835008971841,
- 'building_radius_m':800.0,'poi_radius_m':2000.0,'building_query_padding_m':50.0,
+ 'building_radius_m':800.0,'poi_radius_m':2000.0,'store_buffer_radius_m':400.0,'building_query_padding_m':50.0,
+ 'poi_overpass_endpoints':['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter'],
  'min_area_m2':45.0,'max_area_m2':550.0,'metric_crs':'EPSG:32748','network_radius_m':5500.0,
  'overture_release':'2026-10-21.0','overture_schema':'2.0.0','max_building_rows':50000,
  'bq_billing_project':'locdeproject','bq_maximum_bytes_billed':268435456,
@@ -76,6 +78,7 @@ print('Notebook Python',sys.version)
 os.environ['PYTHONPATH']=str(SOURCE_ROOT/'notebooks')
 from location_intelligent_li3_sources import read_json,write_json
 from location_intelligent_map_pilot import sha,prepare_pilot,load_bq_layers,interactive_map
+from location_intelligent_map_poi import load_osm_pois,POI_CATEGORIES
 from location_intelligent_li3 import build,make_manifest,verify_manifest
 from IPython.display import display,FileLink,HTML
 import importlib,platform,importlib.metadata
@@ -158,7 +161,7 @@ print('SOURCE WARNINGS:',report['source_warnings'])
  md('''## 6. Akses BigQuery dan radius2000m
 1. Buat service account pembaca di project `locdeproject`.
 2. Grant BigQuery Job User pada billing project dan Data Viewer pada kedua tabel.
-3. Buat JSON key dan simpan sebagai Kaggle Secret `GCP_SERVICE_ACCOUNT_JSON`; aktifkan akses notebook.
+3. User sudah menyimpan Kaggle Secret `PROJECT_PPAC`; aktifkan akses notebook ini. Isinya harus seluruh JSON service account.
 4. Jangan masukkan key ke source/outputs/GitHub/chat.
 
 Metadata schema dibaca lebih dahulu. Nama kolom belum diklaim terverifikasi sebelum metadata berhasil.
@@ -182,8 +185,27 @@ for kind,layer in layers.items():
  if layer['status']=='SUCCEEDED':
   print('VERIFIED SCHEMA BINDING',kind,layer['fields']);display(pd.DataFrame(locations))
 display(pd.DataFrame(rows))
+''')
+ md('''## 6B. POI fasilitas OpenStreetMap dalam2km
+Delapan layer terpisah: rumah sakit, klinik, pasar, kantor polisi, sekolah, kantor pemerintahan, kantor dan universitas.
+Sumber/tag/query serta data raw disimpan; nama fasilitas tidak dikarang.
+Snapshot default dibekukan agar rerun tidak mengambil keadaan OSM live yang berubah.
+Titik way/relation menggunakan center OSM, bukan pintu masuk. Counts adalah fitur OSM, bukan jaminan seluruh fasilitas fisik atau unique site.''')
+ code('''POI_EXPECTED_SHA='__POI_SNAPSHOT_SHA__'
+POI_INPUTS=[p for p in Path('/kaggle/input').rglob('osm_poi_snapshot.data') if sha(p)==POI_EXPECTED_SHA]
+assert len(POI_INPUTS)<=1,'Ambiguous duplicate POI snapshot inputs'
+facilities=load_osm_pois(CONFIG,OUTPUT/'osm_poi_snapshot.data',mode=POI_MODE,
+ frozen_input=POI_INPUTS[0] if POI_INPUTS else None,
+ expected_sha256=POI_EXPECTED_SHA if POI_MODE=='FROZEN' else None)
+write_json(OUTPUT/'facilities_readiness.json',{'status':facilities['status'],'count':facilities.get('count'),
+ 'counts_by_category':facilities.get('counts_by_category'),'source_as_of':facilities.get('source_as_of'),
+ 'error_type':facilities.get('error_type')})
+print('OSM FACILITIES:',facilities['status'])
+if facilities['status']=='SUCCEEDED':
+ display(pd.DataFrame([{'category':POI_CATEGORIES[k][0],'osm_features':v} for k,v in facilities['counts_by_category'].items()]))
 view_identity={'pilot_manifest_sha256':sha(PILOT/'manifest.json'),'code_sha256':CODE_SHA,
- 'poi_snapshots':{k:hashlib.sha256(json.dumps(v,sort_keys=True,separators=(',',':')).encode()).hexdigest() for k,v in layers.items()}}
+ 'poi_snapshots':{k:hashlib.sha256(json.dumps(v,sort_keys=True,separators=(',',':')).encode()).hexdigest() for k,v in layers.items()},
+ 'facilities_snapshot_sha256':hashlib.sha256(json.dumps(facilities,sort_keys=True,separators=(',',':')).encode()).hexdigest()}
 VIEW_VERSION=hashlib.sha256(json.dumps(view_identity,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 VIEW=OUTPUT/'views'/VIEW_VERSION
 VIEW.mkdir(parents=True,exist_ok=True)
@@ -194,12 +216,13 @@ if REOPEN_VIEW:
 print('VIEW VERSION:',VIEW_VERSION)
 ''')
  md('''## 7. Peta interaktif di output Kaggle
-Layer: target, lingkaran800m/2000m, footprint dengan keputusan skenario, network OSM, marker Indomaret dan kompetitor.
+Layer: building counter800m, target, lingkaran800m/2000m, footprint dengan keputusan skenario, network OSM, delapan kategori POI, marker Indomaret dan kompetitor.
+Radius400m untuk SETIAP marker toko ada dalam layer terpisah Indomaret/Kompetitor yang bisa diaktifkan. Bukan rute atau coverage bisnis tervalidasi.
 Layer Control, zoom/pan, tooltip/popup, marker cluster, fullscreen dan alat ukur tersedia.
 Marker hanya berasal dari hasil sumber aktual. Jika BQ belum tersedia, banner menyatakan keterbatasannya.
 Basemap OSM adalah konteks tampilan online; angka berasal dari snapshot, bukan perubahan tile basemap.''')
  code('''if not REOPEN_VIEW:
- m=interactive_map(CONFIG,PILOT,layers,VIEW/'area_coverage_map.html')
+ m=interactive_map(CONFIG,PILOT,layers,VIEW/'area_coverage_map.html',facilities=facilities)
  display(m)
 else:
  from html import escape
@@ -216,8 +239,15 @@ for kind,layer in layers.items():
   features=[{'type':'Feature','geometry':{'type':'Point','coordinates':[r['longitude'],r['latitude']]},'properties':{k:v for k,v in r.items() if k not in ['latitude','longitude']}} for r in poi_locations(layer)]
   write_json(VIEW/(kind+'_within_2km.geojson'),{'type':'FeatureCollection','features':features})
  public_metadata.append({'layer':kind,'status':layer['status'],'table':layer['table'],'count':None if layer['status']!='SUCCEEDED' else len(poi_locations(layer))})
-summary={'result_version':VIEW_VERSION,'status':'MAP_READY' if all(x['status']=='SUCCEEDED' for x in layers.values()) else 'PARTIAL_BQ_BLOCKED_OR_FAILED',
+if facilities['status']=='SUCCEEDED' and not REOPEN_VIEW:
+ pd.DataFrame(facilities['rows']).to_csv(VIEW/'osm_facilities_within_2km.csv',index=False)
+ features=[{'type':'Feature','geometry':{'type':'Point','coordinates':[r['longitude'],r['latitude']]},'properties':{k:v for k,v in r.items() if k not in ['latitude','longitude']}} for r in facilities['rows']]
+ write_json(VIEW/'osm_facilities_within_2km.geojson',{'type':'FeatureCollection','features':features})
+summary={'result_version':VIEW_VERSION,'status':'MAP_READY' if facilities['status']=='SUCCEEDED' and all(x['status']=='SUCCEEDED' for x in layers.values()) else 'PARTIAL_MAP_INPUTS_UNAVAILABLE',
  'target':{'latitude':CONFIG['latitude'],'longitude':CONFIG['longitude']},'building_radius_m':CONFIG['building_radius_m'],'poi_radius_m':CONFIG['poi_radius_m'],
+ 'store_buffer_radius_m':CONFIG['store_buffer_radius_m'],'facility_status':facilities['status'],
+ 'facility_count':facilities.get('count'),'facility_counts_by_category':facilities.get('counts_by_category'),
+ 'facility_source_as_of':facilities.get('source_as_of'),
  'analysis_status':report['status'],'source_records':report['source_records'],'selected_buildings':report['selected_buildings'],
  'decisions':report['decision_counts_selected'],'poi_layers':public_metadata,'source_manifest_sha256':sha(PILOT/'manifest.json'),
  'code_sha256':CODE_SHA,'gpu_used':False,'execution':'FROZEN_SOURCE_CPU_CALCULATION_OR_VERIFIED_REOPEN',
@@ -233,6 +263,11 @@ print(json.dumps(summary,indent=2));print('IMMUTABLE VIEW DIRECTORY:',VIEW)
   binding=json.loads(source_manifest.read_text())
   for cell in cells:
    cell['source']=[line.replace('__SOURCE_MANIFEST__',binding['manifest_sha256']).replace('__SOURCE_ARCHIVE__',binding['archive_sha256']) for line in cell['source']]
+ poi_binding=ROOT/'results/area_coverage_map/poi_binding.json'
+ if poi_binding.exists():
+  poi=json.loads(poi_binding.read_text())
+  for cell in cells:
+   cell['source']=[line.replace('__POI_SNAPSHOT_SHA__',poi['sha256']) for line in cell['source']]
  notebook={'nbformat':4,'nbformat_minor':5,'metadata':{'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'}},'cells':cells}
  path=ROOT/'notebooks/area_coverage_cpu_800m_poi_2km.ipynb';path.write_text(json.dumps(notebook,indent=1)+'\n')
  packet=ROOT/'results/area_coverage_map/kaggle_packet';packet.mkdir(parents=True,exist_ok=True)
