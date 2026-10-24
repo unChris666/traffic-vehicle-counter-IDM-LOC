@@ -1,5 +1,12 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+
+**Checkpoint Area Coverage — 24 Oktober 2026:** owner meminta audit kesiapan
+modularisasi terlebih dahulu. [Audit Area Coverage](AREA_COVERAGE_MODULARIZATION_READINESS_AUDIT.md)
+berstatus **menunggu persetujuan**. Pada scope Area Coverage, instruksi terbaru
+ini membatasi pekerjaan pada audit/dokumentasi; implementasi migrasi dimulai
+setelah audit disetujui. Traffic RC dan hasil historis tetap dipertahankan.
+
 **Checkpoint implementasi, 24 Oktober 2026:** owner telah mengotorisasi urutan
 freeze → kontrak/facade → adapter → domain → runtime/batch → renderer/export/storage
 → release candidate, dengan penyelesaian keputusan teknis secara mandiri.
