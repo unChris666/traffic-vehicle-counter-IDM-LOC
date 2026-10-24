@@ -151,3 +151,25 @@ Perintah verifikasi lokal:
 /usr/bin/python3 -m unittest discover -s notebooks -p 'location_intelligent_motor_routing_tests.py'
 PYTHONPATH=notebooks /workspace/.venvs/area-coverage-map/bin/python notebooks/area_coverage_market_smoke.py
 ```
+
+## Perbaikan error runtime NumPy pada session interaktif
+
+Traceback owner menunjukkan `AttributeError: numpy._core._multiarray_umath`
+`has no attribute _blas_supports_fpe` dalam rantai OSMnx → sklearn → SciPy →
+NumPy testing, sebelum query jaringan dijalankan. Ini konsisten dengan pergantian
+NumPy pada session yang telah memuat binary lama; bukan kegagalan renderer atau
+aturan Huff. Penyebab lingkungan lengkap belum direproduksi pada image Kaggle.
+
+Dependency cell sekarang mempertahankan versi NumPy/pandas/Shapely/pyproj dari
+image, bukan memaksakan NumPy2.5.4 ke kernel aktif. Pemeriksaan versi memory/disk
+serta impor numpy.testing/SciPy/sklearn/OSMnx dilakukan sebelum akuisisi.
+Session lama wajib Restart Session lalu Run All dari cell pertama.
+
+Pembuatan query dipindahkan sebelum penulisan state jaringan. Folder yang hanya
+berisi config/pilot.json dari crash sebelum query dapat dilanjutkan jika hash,
+policy dan bbox identik; folder dengan percobaan raw gagal tetap tidak ditimpa.
+Konfigurasi job dibandingkan dengan source Kaggle yang ditarik dan tetap sama.
+
+Validasi sesudah fix: 57 tes area (48 lulus, 9 skip GDAL); source helper/packet
+notebook identik dan seluruh cell parse. Source dipublikasikan QUICK_SAVE;
+full run pada session Kaggle bersih belum diverifikasi oleh perbaikan ini.

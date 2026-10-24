@@ -24,9 +24,6 @@ def acquire_market_network(config, root):
             if sha(root/name) != digest:
                 raise ValueError('Network cache corrupted')
         return root
-    if root.exists():
-        raise ValueError('Incomplete network acquisition; inspect failure then use a new source revision')
-    root.mkdir(parents=True)
     p = get_config()
     p['li3'].update(latitude=config['latitude'], longitude=config['longitude'],
                     metric_crs=config['metric_crs'], network_bbox_radius_m=config['network_radius_m'])
@@ -40,8 +37,20 @@ def acquire_market_network(config, root):
               'extraction_bbox_wgs84':[min(a for a,b in corners),min(b for a,b in corners),max(a for a,b in corners),max(b for a,b in corners)],
               'diagnostic_gap_m':10.0,'building_cache_files':{},'source_scope':'NEW_TARGET_OSM_MOTOR_NETWORK'}
     frozen['config_hash'] = canonical_hash(frozen)
-    write_json(root/'config/pilot.json', frozen, exclusive=True)
+    # Resolve imports/queries before creating any acquisition state.
     q = build_queries(frozen['extraction_bbox_wgs84'], p)
+    if root.exists():
+        files={str(f.relative_to(root)) for f in root.rglob('*') if f.is_file()}
+        if files!={'config/pilot.json'}:
+            raise ValueError('Incomplete network acquisition; inspect failure then use a new source revision')
+        previous=read_json(root/'config/pilot.json')
+        check=deepcopy(previous);digest=check.pop('config_hash')
+        if canonical_hash(check)!=digest or previous['policy']!=p or previous['extraction_bbox_wgs84']!=frozen['extraction_bbox_wgs84']:
+            raise ValueError('Pre-query network configuration changed; cannot resume')
+        frozen=previous
+    else:
+        root.mkdir(parents=True)
+        write_json(root/'config/pilot.json', frozen, exclusive=True)
     write_json(root/'config/queries.json', q, exclusive=True)
     stamp = None
     for name in ('roads','features'):

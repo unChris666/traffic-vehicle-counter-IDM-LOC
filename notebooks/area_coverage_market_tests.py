@@ -160,3 +160,25 @@ class MarketTests(unittest.TestCase):
             if name=='location_intelligent_map_pilot.py':
                 local=local.replace('    import google.auth\n',"    if globals().get('_NOTEBOOK_BQ_CREDENTIALS') is not None:return _NOTEBOOK_BQ_CREDENTIALS\n    import google.auth\n",1)
             self.assertEqual(body,local,name)
+    def test_import_failure_leaves_no_network_directory(self):
+        from location_intelligent_market_runtime import acquire_market_network
+        cfg={'latitude':-6.19,'longitude':106.83,'metric_crs':'EPSG:32748',
+             'network_radius_m':5500.,'poi_overpass_endpoints':[]}
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'network'
+            with patch('location_intelligent_li3_sources.build_queries',side_effect=AttributeError('numpy binary mismatch')):
+                with self.assertRaises(AttributeError):acquire_market_network(cfg,root)
+            self.assertFalse(root.exists())
+    def test_numpy_dependency_cell_retains_loaded_versions_and_stops_stale_session(self):
+        import ast
+        from types import SimpleNamespace
+        n=json.loads(Path(__file__).with_name('area_coverage_market_cpu_2km.ipynb').read_text())
+        s=next(''.join(c['source']) for c in n['cells'] if ''.join(c['source']).startswith('# Preserve the scientific stack'))
+        # Exercise the exact pre-install guard without pip or heavy imports.
+        prefix=s[:s.index('packages=')]
+        with patch('importlib.metadata.version',return_value='2.3.0'):
+            with self.assertRaisesRegex(RuntimeError,'Restart Session'):
+                exec(prefix,{'sys':SimpleNamespace(modules={'numpy':SimpleNamespace(__version__='2.2.0')})})
+            env={'sys':SimpleNamespace(modules={'numpy':SimpleNamespace(__version__='2.3.0')})}
+            exec(prefix,env);self.assertEqual(env['retained']['numpy'],'2.3.0')
+        self.assertNotIn('numpy==2.5.4',s)
