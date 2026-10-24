@@ -43,7 +43,11 @@ def main():
   checks.append({'native_sha256':semantic_hash(again['native']),'result_version':again['result']['result_version']})
  result['result']['fresh_inference_executed']=not bool(a.measurement and not a.smoke)
  publish(out/'counting',{'result.json':result['result'],'native.json.gz':result['native'],'request.json':q,'adapter_audit.json':result['adapter_audit'],'repetitions.json':{'total_runs':3,'status':'PASS','checks':checks}},metadata={'engine':'traffic'})
+ from traffic_location.traffic.annotation import render
+ annotated=Path(a.output).parent/'annotated'/(a.slot+('_smoke' if a.smoke else '')+'.mp4')
+ print(json.dumps({'stage':'annotation_start','video':a.slot,'output':str(annotated)}),flush=True)
+ render(video,measurement,out/'counting/native.json.gz',out/'geometry.json',annotated,preview_limit=96 if a.smoke else None)
  write(out/'job.json',{'status':'SUCCEEDED','video_id':a.slot,'experiment_sha256':sha(a.config),'branch':'machine',
-   'result_version':result['result']['result_version'],'measurement_reused':bool(a.measurement and not a.smoke),'scope':'SMOKE' if a.smoke else 'FULL_VIDEO','frames':r['frame_limit'],'native_path':str(out/'counting/native.json.gz')})
+   'result_version':result['result']['result_version'],'annotated_path':str(annotated),'measurement_reused':bool(a.measurement and not a.smoke),'scope':'SMOKE' if a.smoke else 'FULL_VIDEO','frames':r['frame_limit'],'native_path':str(out/'counting/native.json.gz')})
  print(json.dumps(result['result']['summary']),flush=True)
 if __name__=='__main__':main()

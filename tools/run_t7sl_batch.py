@@ -26,7 +26,7 @@ def main(config_path,video_root,output):
  def worker(job,gpu_id,dest,smoke=False):
   vid=Path(job['filename']).stem;dest.mkdir(parents=True,exist_ok=True)
   command=[sys.executable,'-u','tools/run_t7sl_job.py',str(Path(config_path).resolve()),str(video_root),str(dest),vid]+(['--smoke'] if smoke else ['--measurement',str(cache[vid])] if vid in cache else [])
-  limit=180 if smoke else 1800
+  limit=300 if smoke else 3600
   with (dest/(vid+'.log')).open('w') as log:
    proc=subprocess.Popen(command,env={**os.environ,'CUDA_VISIBLE_DEVICES':str(gpu_id),'OMP_NUM_THREADS':'4','MKL_NUM_THREADS':'4'},stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True,bufsize=1,start_new_session=True)
    def relay():

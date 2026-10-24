@@ -12,7 +12,7 @@ from ..artifacts import artifact,read,require,sha,semantic_hash
 def implementation_hash():
  root=Path(__file__).resolve().parent
  return semantic_hash({str(p.relative_to(root)):sha(p) for p in sorted(root.rglob('*.py'))
-   if not p.name.startswith('render') and p.name!='inference_worker.py'})
+   if not p.name.startswith('render') and p.name not in {'inference_worker.py','annotation.py'}})
 
 
 def run(request,*,root):
