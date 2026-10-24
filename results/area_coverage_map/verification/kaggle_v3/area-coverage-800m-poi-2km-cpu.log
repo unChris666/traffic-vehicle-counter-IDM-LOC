@@ -1,0 +1,144 @@
+[{"stream_name":"stderr","time":8.586147131,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.58620312,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.586209591,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.586213956,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":9.360119968,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":9.360165967,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":9.360170513,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":9.360173522,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":10.766625182,"data":"{\n"}
+,{"stream_name":"stdout","time":10.76665577,"data":"  \"latitude\": -6.409737552410453,\n"}
+,{"stream_name":"stdout","time":10.766661264,"data":"  \"longitude\": 106.82835008971841,\n"}
+,{"stream_name":"stdout","time":10.766665419,"data":"  \"building_radius_m\": 800.0,\n"}
+,{"stream_name":"stdout","time":10.766669367,"data":"  \"poi_radius_m\": 2000.0,\n"}
+,{"stream_name":"stdout","time":10.766673516,"data":"  \"building_query_padding_m\": 50.0,\n"}
+,{"stream_name":"stdout","time":10.766677577,"data":"  \"min_area_m2\": 45.0,\n"}
+,{"stream_name":"stdout","time":10.766681460000001,"data":"  \"max_area_m2\": 550.0,\n"}
+,{"stream_name":"stdout","time":10.766685387999999,"data":"  \"metric_crs\": \"EPSG:32748\",\n"}
+,{"stream_name":"stdout","time":10.766689524,"data":"  \"network_radius_m\": 5500.0,\n"}
+,{"stream_name":"stdout","time":10.766693537,"data":"  \"overture_release\": \"2026-10-21.0\",\n"}
+,{"stream_name":"stdout","time":10.766697568,"data":"  \"overture_schema\": \"2.0.0\",\n"}
+,{"stream_name":"stdout","time":10.766701674,"data":"  \"max_building_rows\": 50000,\n"}
+,{"stream_name":"stdout","time":10.766705604,"data":"  \"bq_billing_project\": \"locdeproject\",\n"}
+,{"stream_name":"stdout","time":10.766709918,"data":"  \"bq_maximum_bytes_billed\": 268435456,\n"}
+,{"stream_name":"stdout","time":10.766713789,"data":"  \"bq_tables\": {\n"}
+,{"stream_name":"stdout","time":10.766719555,"data":"    \"competitor\": \"locdeproject.DWH_NS_LOC.COMPETITOR\",\n"}
+,{"stream_name":"stdout","time":10.766729041,"data":"    \"indomaret\": \"locdeproject.DWH_NS_LOC.AREA_COVERAGE\"\n"}
+,{"stream_name":"stdout","time":10.766732935,"data":"  }\n"}
+,{"stream_name":"stdout","time":10.76673553,"data":"}\n"}
+,{"stream_name":"stdout","time":10.766738105,"data":"Execution: CPU only; no GPU requested\n"}
+,{"stream_name":"stderr","time":36.096390222,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":36.096426678,"data":"bigframes 2.48.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":36.096433559,"data":"ydata-profiling 4.18.4 requires numpy\u003c2.4,\u003e=1.22, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.096438433,"data":"ydata-profiling 4.18.4 requires pandas!=1.4.0,\u003c3.0,\u003e1.5, but you have pandas 3.1.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.096442925,"data":"google-colab 1.0.0 requires jupyter-server==2.20.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.09646183,"data":"google-colab 1.0.0 requires pandas==2.2.3, but you have pandas 3.1.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.096466128,"data":"google-colab 1.0.0 requires requests==2.32.4, but you have requests 2.34.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.096470084,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.096474294,"data":"gradio 6.26.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.096646325,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.09666212,"data":"numba 0.61.2 requires numpy\u003c2.3,\u003e=1.24, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299495755,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":36.299537276,"data":"bigframes 2.48.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":36.299544077,"data":"ydata-profiling 4.18.4 requires numpy\u003c2.4,\u003e=1.22, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299550276,"data":"ydata-profiling 4.18.4 requires pandas!=1.4.0,\u003c3.0,\u003e1.5, but you have pandas 3.1.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299559326,"data":"google-colab 1.0.0 requires jupyter-server==2.20.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299562337,"data":"google-colab 1.0.0 requires pandas==2.2.3, but you have pandas 3.1.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299565373,"data":"google-colab 1.0.0 requires requests==2.32.4, but you have requests 2.34.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299568436,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.29957134,"data":"gradio 6.26.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299574281,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299577282,"data":"numba 0.61.2 requires numpy\u003c2.3,\u003e=1.24, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.29958011,"data":"\n"}
+,{"stream_name":"stderr","time":36.299582759,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stderr","time":36.299585714,"data":"bigframes 2.48.0 requires google-cloud-bigquery-storage\u003c3.0.0,\u003e=2.30.0, which is not installed.\n"}
+,{"stream_name":"stderr","time":36.29958879,"data":"ydata-profiling 4.18.4 requires numpy\u003c2.4,\u003e=1.22, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299591636,"data":"ydata-profiling 4.18.4 requires pandas!=1.4.0,\u003c3.0,\u003e1.5, but you have pandas 3.1.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.29959451,"data":"google-colab 1.0.0 requires jupyter-server==2.20.0, but you have jupyter-server 2.12.5 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299613928,"data":"google-colab 1.0.0 requires pandas==2.2.3, but you have pandas 3.1.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299617042,"data":"google-colab 1.0.0 requires requests==2.32.4, but you have requests 2.34.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299619816,"data":"dopamine-rl 4.1.2 requires gym\u003c=0.25.2, but you have gym 0.26.2 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299624117,"data":"gradio 6.26.0 requires pillow\u003c13.0,\u003e=8.0, but you have pillow 13.0.0 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299627035,"data":"moviepy 1.0.3 requires decorator\u003c5.0,\u003e=4.0.2, but you have decorator 5.3.1 which is incompatible.\n"}
+,{"stream_name":"stderr","time":36.299630025,"data":"numba 0.61.2 requires numpy\u003c2.3,\u003e=1.24, but you have numpy 2.5.4 which is incompatible.\n"}
+,{"stream_name":"stdout","time":37.66062225,"data":"CORE 3.13.15 3.8.4 3.8.0\n"}
+,{"stream_name":"stdout","time":37.700965804,"data":"CORE 3.13.15 3.8.4 3.8.0\n"}
+,{"stream_name":"stdout","time":37.701022719,"data":"Notebook Python 3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]\n"}
+,{"stream_name":"stdout","time":37.75745275,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_config.py\n"}
+,{"stream_name":"stdout","time":37.815074367,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_validator.py\n"}
+,{"stream_name":"stdout","time":37.864584797,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_buildings.py\n"}
+,{"stream_name":"stdout","time":37.90486472,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_capacity.py\n"}
+,{"stream_name":"stdout","time":37.960089409,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_routing.py\n"}
+,{"stream_name":"stdout","time":38.010289683,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_motor_routing.py\n"}
+,{"stream_name":"stdout","time":38.052912675,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_overture_probe.py\n"}
+,{"stream_name":"stdout","time":38.093546828,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_li3_sources.py\n"}
+,{"stream_name":"stdout","time":38.139865586,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_li3_graph.py\n"}
+,{"stream_name":"stdout","time":38.187382999,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_li3_connectors.py\n"}
+,{"stream_name":"stdout","time":38.231863023,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_li3_core.py\n"}
+,{"stream_name":"stdout","time":38.287441997,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_li3.py\n"}
+,{"stream_name":"stdout","time":38.345346106,"data":"Writing /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_map_pilot.py\n"}
+,{"stream_name":"stdout","time":38.427334903,"data":"ACTIVE SOURCE: /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_li3.py\n"}
+,{"stream_name":"stdout","time":38.427366749,"data":"ACTIVE SOURCE: /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_motor_routing.py\n"}
+,{"stream_name":"stdout","time":38.427372239,"data":"ACTIVE SOURCE: /kaggle/working/area_coverage_cpu_source/notebooks/location_intelligent_map_pilot.py\n"}
+,{"stream_name":"stdout","time":38.42737673,"data":"OUTPUT: /kaggle/working/results/area_coverage_cpu/6e300b2ed32e88f6\n"}
+,{"stream_name":"stdout","time":40.653402773,"data":"VERIFIED FROZEN SOURCE: /kaggle/working/results/area_coverage_cpu/6e300b2ed32e88f6/input_snapshot/source_snapshot\n"}
+,{"stream_name":"stdout","time":41.365347673,"data":"ACTUAL CPU CORE: {'python': '3.13.15', 'gdal': '3.8.4', 'pyproj': '3.8.0'}\n"}
+,{"stream_name":"stdout","time":438.564655137,"data":"CPU calculation complete: 9151 source rows\n"}
+,{"stream_name":"stderr","time":439.04063409,"data":"/usr/local/lib/python3.13/dist-packages/pandas/core/arrays/masked.py:63: UserWarning: Pandas requires version '1.5.0' or newer of 'bottleneck' (version '1.4.2' currently installed).\n"}
+,{"stream_name":"stderr","time":439.040669777,"data":"  from pandas.core import (\n"}
+,{"stream_name":"stderr","time":439.040688582,"data":"\n"}
+,{"stream_name":"stderr","time":439.040694563,"data":"/usr/local/lib/python3.13/dist-packages/pandas/core/arrays/masked.py:63: UserWarning: Pandas requires version '1.5.0' or newer of 'bottleneck' (version '1.4.2' currently installed).\n"}
+,{"stream_name":"stderr","time":439.040700945,"data":"  from pandas.core import (\n"}
+,{"stream_name":"stdout","time":439.052129503,"data":"ANALYSIS STATUS: PARTIAL\n"}
+,{"stream_name":"stdout","time":439.061724499,"data":"CAPACITY — reference split units, not population: {'GUESTS_ESTIMATED': {'buildings': 0, 'known_subtotal': 0, 'unknown_buildings': 0}, 'N1_STANDARD_VALUE_UNIT_UNRESOLVED': {'buildings': 3597, 'known_subtotal': 14388, 'unknown_buildings': 0}, 'OCCUPIED_DWELLING_UNITS_ESTIMATED': {'buildings': 0, 'known_subtotal': 0, 'unknown_buildings': 0}, 'OCCUPIED_ROOMS_ESTIMATED': {'buildings': 0, 'known_subtotal': 0, 'unknown_buildings': 0}}\n"}
+,{"stream_name":"stdout","time":439.061768276,"data":"SOURCE WARNINGS: [{'code': 'NON_ATOMIC_SOURCE_TIMESTAMPS', 'effect': 'Shared source elements must match exactly; no temporal completeness claim', 'feature_as_of': '2026-10-24T07:27:16Z', 'road_as_of': '2026-10-24T07:26:11Z'}]\n"}
+,{"stream_name":"stdout","time":440.203022121,"data":"VIEW VERSION: 29fd5925e13c40a852416f937eeeff4fb6d07d1805c1929da2f00b208e282d42\n"}
+,{"stream_name":"stdout","time":466.738559256,"data":"{\n"}
+,{"stream_name":"stdout","time":466.738595257,"data":"  \"result_version\": \"29fd5925e13c40a852416f937eeeff4fb6d07d1805c1929da2f00b208e282d42\",\n"}
+,{"stream_name":"stdout","time":466.738601761,"data":"  \"status\": \"PARTIAL_BQ_BLOCKED_OR_FAILED\",\n"}
+,{"stream_name":"stdout","time":466.738607124,"data":"  \"target\": {\n"}
+,{"stream_name":"stdout","time":466.738612166,"data":"    \"latitude\": -6.409737552410453,\n"}
+,{"stream_name":"stdout","time":466.738617102,"data":"    \"longitude\": 106.82835008971841\n"}
+,{"stream_name":"stdout","time":466.738624398,"data":"  },\n"}
+,{"stream_name":"stdout","time":466.738634446,"data":"  \"building_radius_m\": 800.0,\n"}
+,{"stream_name":"stdout","time":466.738638346,"data":"  \"poi_radius_m\": 2000.0,\n"}
+,{"stream_name":"stdout","time":466.73864180099997,"data":"  \"analysis_status\": \"PARTIAL\",\n"}
+,{"stream_name":"stdout","time":466.7386455,"data":"  \"source_records\": 9151,\n"}
+,{"stream_name":"stdout","time":466.738648788,"data":"  \"selected_buildings\": 3597,\n"}
+,{"stream_name":"stdout","time":466.738652492,"data":"  \"decisions\": {\n"}
+,{"stream_name":"stdout","time":466.738655768,"data":"    \"ACCEPTED\": 1048,\n"}
+,{"stream_name":"stdout","time":466.738659105,"data":"    \"ACCESS_UNVERIFIED\": 1083,\n"}
+,{"stream_name":"stdout","time":466.738662336,"data":"    \"NO_ROUTE\": 88,\n"}
+,{"stream_name":"stdout","time":466.73866564,"data":"    \"NO_VALID_CONNECTOR\": 740,\n"}
+,{"stream_name":"stdout","time":466.738668917,"data":"    \"OVER_TIME_LIMIT\": 638\n"}
+,{"stream_name":"stdout","time":466.738685116,"data":"  },\n"}
+,{"stream_name":"stdout","time":466.738687854,"data":"  \"poi_layers\": [\n"}
+,{"stream_name":"stdout","time":466.738690573,"data":"    {\n"}
+,{"stream_name":"stdout","time":466.738693092,"data":"      \"layer\": \"competitor\",\n"}
+,{"stream_name":"stdout","time":466.738695853,"data":"      \"status\": \"BLOCKED\",\n"}
+,{"stream_name":"stdout","time":466.73869862,"data":"      \"table\": \"locdeproject.DWH_NS_LOC.COMPETITOR\",\n"}
+,{"stream_name":"stdout","time":466.738701425,"data":"      \"count\": null\n"}
+,{"stream_name":"stdout","time":466.738704016,"data":"    },\n"}
+,{"stream_name":"stdout","time":466.738706594,"data":"    {\n"}
+,{"stream_name":"stdout","time":466.738709493,"data":"      \"layer\": \"indomaret\",\n"}
+,{"stream_name":"stdout","time":466.738712376,"data":"      \"status\": \"BLOCKED\",\n"}
+,{"stream_name":"stdout","time":466.738715081,"data":"      \"table\": \"locdeproject.DWH_NS_LOC.AREA_COVERAGE\",\n"}
+,{"stream_name":"stdout","time":466.738717815,"data":"      \"count\": null\n"}
+,{"stream_name":"stdout","time":466.738720401,"data":"    }\n"}
+,{"stream_name":"stdout","time":466.738722893,"data":"  ],\n"}
+,{"stream_name":"stdout","time":466.738725419,"data":"  \"source_manifest_sha256\": \"d9535d8a4297230e1a9ed88d535e60df4948baa0772096b825d75aaf75ba1577\",\n"}
+,{"stream_name":"stdout","time":466.738728362,"data":"  \"code_sha256\": \"e8a8f3afdfea46374a9ca2e86687e35251cfa4d163b499f83690b3e286bfa539\",\n"}
+,{"stream_name":"stdout","time":466.738731114,"data":"  \"gpu_used\": false,\n"}
+,{"stream_name":"stdout","time":466.738733891,"data":"  \"execution\": \"FROZEN_SOURCE_CPU_CALCULATION_OR_VERIFIED_REOPEN\",\n"}
+,{"stream_name":"stdout","time":466.738736612,"data":"  \"claim\": \"EXPERIMENTAL_SCENARIO_NOT_PHYSICAL_ACCESS_OR_POPULATION_VALIDATION\"\n"}
+,{"stream_name":"stdout","time":466.738739423,"data":"}\n"}
+,{"stream_name":"stdout","time":466.738742021,"data":"IMMUTABLE VIEW DIRECTORY: /kaggle/working/results/area_coverage_cpu/6e300b2ed32e88f6/views/29fd5925e13c40a852416f937eeeff4fb6d07d1805c1929da2f00b208e282d42\n"}
+,{"stream_name":"stderr","time":471.498894909,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":471.498946183,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":471.70827641,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":471.708307365,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":472.638523552,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":473.210372539,"data":"[NbConvertApp] Writing 20874665 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":476.465079195,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":478.81085253,"data":"[NbConvertApp] Writing 22032094 bytes to __results__.html\n"}
+]

@@ -1,6 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
 
+**Checkpoint notebook Area Coverage — 24 Oktober 2026:** owner mengotorisasi
+prototype Kaggle CPU pada koordinat baru, radius bangunan800m dan layer toko/
+kompetitor BigQuery2000m. [Notebook dan scope](AREA_COVERAGE_KAGGLE_CPU_MAP.md).
+Ini bukan approval implementasi penuh rencana modularisasi Area. Audit tetap
+menunggu persetujuan untuk migrasi package; baseline N1 dan Traffic RC utuh.
+
+
 **Checkpoint Area Coverage — 24 Oktober 2026:** owner meminta audit kesiapan
 modularisasi terlebih dahulu. [Audit Area Coverage](AREA_COVERAGE_MODULARIZATION_READINESS_AUDIT.md)
 berstatus **menunggu persetujuan**. Pada scope Area Coverage, instruksi terbaru
