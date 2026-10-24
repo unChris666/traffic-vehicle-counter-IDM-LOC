@@ -1,0 +1,230 @@
+Warning: Looks like you're using an outdated `kaggle` version (installed: 2.2.4), please consider upgrading to the latest version (2.2.5)
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+{
+  "schema_version": "t7sl_experiment_v1",
+  "experiment_id": "t7sl_readable_resume_v2",
+  "dataset": "chrisbiran/t7sl-traffic-videos",
+  "preprocessing": "RAW",
+  "filter_production_selection": false,
+  "geometry_quality": "G2_ENGINEERING_PROVISIONAL",
+  "videos": [
+    {
+      "filename": "T7SL-WEEKDAY-MALAM.mp4",
+      "sha256": "c8bfa2ff55d46a06659cb8aa9f168f2d1eb3e6a09d2023e3314797e9a69fe1c2",
+      "bytes": 22029577,
+      "width": 720,
+      "height": 480,
+      "fps": 29.9460957088034,
+      "reported_frames": 9082,
+      "decoded_frames": 9082,
+      "duration_seconds": 303.27826666666664,
+      "sample_frames": [
+        0,
+        4541,
+        9081
+      ]
+    },
+    {
+      "filename": "T7SL-WEEKDAY-PAGI.mp4",
+      "sha256": "72faff73798d78ab5072647d68637dfd7464244096137e0989fb4a9e9bfc5d4d",
+      "bytes": 21971568,
+      "width": 720,
+      "height": 480,
+      "fps": 29.80365622372413,
+      "reported_frames": 9015,
+      "decoded_frames": 9015,
+      "duration_seconds": 302.4796666666667,
+      "sample_frames": [
+        0,
+        4507,
+        9014
+      ]
+    },
+    {
+      "filename": "T7SL-WEEKDAY-SIANG.mp4",
+      "sha256": "2732601fe6f4bb8ccc0bce40c9ef0d8c3100c1808033b8f87489449a6543cc10",
+      "bytes": 22067789,
+      "width": 720,
+      "height": 480,
+      "fps": 29.80256699007486,
+      "reported_frames": 9110,
+      "decoded_frames": 9110,
+      "duration_seconds": 305.67836666666665,
+      "sample_frames": [
+        0,
+        4555,
+        9109
+      ]
+    },
+    {
+      "filename": "T7SL-WEEKDAY-SORE.mp4",
+      "sha256": "68e2bec900f9129684f5238a110bb8c617b3bcfee3d827c58b6ee4419329a591",
+      "bytes": 21974811,
+      "width": 720,
+      "height": 480,
+      "fps": 29.32652578783342,
+      "reported_frames": 8899,
+      "decoded_frames": 8899,
+      "duration_seconds": 303.44542222222225,
+      "sample_frames": [
+        0,
+        4449,
+        8898
+      ]
+    },
+    {
+      "filename": "T7SL-WEEKEND-MALAM.mp4",
+      "sha256": "6774ae5e7851e8f2097701dddc5e4ce5d6201a3316ada5da2e6b68dbf397559c",
+      "bytes": 22027076,
+      "width": 720,
+      "height": 480,
+      "fps": 28.910926452325402,
+      "reported_frames": 8796,
+      "decoded_frames": 8796,
+      "duration_seconds": 304.24483333333336,
+      "sample_frames": [
+        0,
+        4398,
+        8795
+      ]
+    },
+    {
+      "filename": "T7SL-WEEKEND-PAGI.mp4",
+      "sha256": "873130d1134599a037f705a23d26acc5eb0886f3694283823242b23d0a2b2298",
+      "bytes": 21965595,
+      "width": 720,
+      "height": 480,
+      "fps": 28.314499136339162,
+      "reported_frames": 8574,
+      "decoded_frames": 8574,
+      "duration_seconds": 302.81305555555554,
+      "sample_frames": [
+        0,
+        4287,
+        8573
+      ]
+    },
+    {
+      "filename": "T7SL-WEEKEND-SIANG.mp4",
+      "sha256": "de266518b4ce024c6a6058c9a839eac3cda9b9b4d7fd36cf7ca732fac8b158d0",
+      "bytes": 22007993,
+      "width": 720,
+      "height": 480,
+      "fps": 29.781679975106627,
+      "reported_frames": 9052,
+      "decoded_frames": 9052,
+      "duration_seconds": 303.9452444444444,
+      "sample_frames": [
+        0,
+        4526,
+        9051
+      ]
+    },
+    {
+      "filename": "T7SL-WEEKEND-SORE.mp4",
+      "sha256": "71a9bf7658cad48a098af52e0b07f0c3a9e5bdd4ea613df7305072c11763d17b",
+      "bytes": 21995195,
+      "width": 720,
+      "height": 480,
+      "fps": 29.139743335584004,
+      "reported_frames": 8852,
+      "decoded_frames": 8852,
+      "duration_seconds": 303.7775555555556,
+      "sample_frames": [
+        0,
+        4426,
+        8851
+      ]
+    }
+  ]
+}
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/__init__.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/artifacts.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/persistence.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/__init__.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/__init__.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/eligibility.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/geometry.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/handoff.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/identity.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/identity_core.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/identity_lifecycle.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/measurement_adapter.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/overlay.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/passage.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/publication.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/render_base.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/render_kernel.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/render_sources.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/review_finalizer.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/review_metadata.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/reviews.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/_kernel/support.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/batch.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/contracts.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/fresh_bridge.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/inference_worker.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/measurements.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/orchestration.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/pipeline.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/render.py
+Writing /kaggle/working/t7sl_readable_v2_source/src/traffic_location/traffic/results.py
+Writing /kaggle/working/t7sl_readable_v2_source/tools/run_t7sl_job.py
+Writing /kaggle/working/t7sl_readable_v2_source/tools/run_t7sl_batch.py
+T7SL-WEEKDAY-MALAM.mp4 9082 29.9460957088034
+T7SL-WEEKDAY-PAGI.mp4 9015 29.80365622372413
+T7SL-WEEKDAY-SIANG.mp4 9110 29.80256699007486
+T7SL-WEEKDAY-SORE.mp4 8899 29.32652578783342
+T7SL-WEEKEND-MALAM.mp4 8796 28.910926452325402
+T7SL-WEEKEND-PAGI.mp4 8574 28.314499136339162
+T7SL-WEEKEND-SIANG.mp4 9052 29.781679975106627
+T7SL-WEEKEND-SORE.mp4 8852 29.139743335584004
+CACHE FILES
+/kaggle/input/t7sl-fresh-measurement-cache-v1/T7SL-WEEKDAY-MALAM.result.json
+/kaggle/input/t7sl-fresh-measurement-cache-v1/T7SL-WEEKDAY-PAGI.result.json
+/kaggle/input/t7sl-fresh-measurement-cache-v1/T7SL-WEEKDAY-SIANG.result.json
+/kaggle/input/t7sl-fresh-measurement-cache-v1/T7SL-WEEKDAY-SORE.result.json
+/kaggle/input/t7sl-fresh-measurement-cache-v1/T7SL-WEEKEND-MALAM.result.json
+ACTUAL GPU ['Tesla T4', 'Tesla T4']
+detector 401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7
+reid 8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb
+RUNTIME {"python": "3.13.15", "torch": "2.11.0+cu128", "cuda": "12.8", "devices": ["Tesla T4", "Tesla T4"], "ort_providers": ["TensorrtExecutionProvider", "CUDAExecutionProvider", "CPUExecutionProvider"]}
+RESUME_CACHE ['T7SL-WEEKDAY-MALAM', 'T7SL-WEEKDAY-PAGI', 'T7SL-WEEKDAY-SIANG', 'T7SL-WEEKDAY-SORE', 'T7SL-WEEKEND-MALAM']
+HEARTBEAT T7SL-WEEKDAY-PAGI elapsed=0s
+{"stream_name":"stdout","time":93.176802354,"data":"[GPU0 T7SL-WEEKDAY-PAGI] Creating new Ultralytics Settings v0.0.8 file â
+[GPU0 T7SL-WEEKDAY-PAGI] View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'
+[GPU0 T7SL-WEEKDAY-PAGI] Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/usage/settings.
+[GPU0 T7SL-WEEKDAY-PAGI] {"stage": "loading_detector", "device": "cuda:0"}
+[GPU0 T7SL-WEEKDAY-PAGI] {"stage": "loading_reid", "device": "cuda:0"}
+[GPU0 T7SL-WEEKDAY-PAGI] Loading /kaggle/working/t7sl_readable_v2_source/results/t7sl_modular/config/assets/yolo26n-reid.onnx for ONNX Runtime inference...
+[GPU0 T7SL-WEEKDAY-PAGI] Using ONNX Runtime 1.24.4 with CUDAExecutionProvider
+[GPU0 T7SL-WEEKDAY-PAGI] {"stage": "inference_start", "frames": 96, "providers": ["CUDAExecutionProvider", "CPUExecutionProvider"]}
+[GPU0 T7SL-WEEKDAY-PAGI] {"stage": "inference", "frame": 0, "of": 96, "fps_actual": 0.23, "detections": 4, "tracks": 4}
+HEARTBEAT T7SL-WEEKDAY-PAGI elapsed=20s
+[GPU0 T7SL-WEEKDAY-PAGI] {"stage": "inference_finished", "frames": 96, "wall_seconds": 10.22, "fps_actual": 9.4}
+[GPU0 T7SL-WEEKDAY-PAGI] {"status": "PASS", "frames": 96, "records_semantic_sha256": "520f0e876c5520f5f3357656c0ec09e249ea94ce3850dd992d224ccd687a2671", "environment": {"python": "3.13.15", "torch": "2.11.0+cu128", "ultralytics": "8.4.175", "onnxruntime": "1.24.4", "opencv": "4.14.0", "numpy": "2.1.3", "device": "cuda:0", "reid_providers": ["CUDAExecutionProvider", "CPUExecutionProvider"], "torch_threads": 4}}
+[GPU0 T7SL-WEEKDAY-PAGI] {"stage": "counting_start", "video": "T7SL-WEEKDAY-PAGI", "frames": 96}
+[GPU0 T7SL-WEEKDAY-PAGI] {"accepted_total": 1, "accepted_measured": 1, "accepted_estimated": 0, "pending": 0, "invalid": 0, "native_aggregate": {"total": 1, "by_category": {"motorcycle": 1}, "by_direction": {"A_TO_B": 1}, "by_route": {"LINE_MARGIN": 1}, "measured_total": 1, "inferred_total": 0, "pending": 0, "invalid": 0, "invalid_reasons": {}, "cancelled": 0, "vehicle_total": 1, "pedestrian_total": 0}}
+HEARTBEAT T7SL-WEEKDAY-PAGI elapsed=0s
+HEARTBEAT T7SL-WEEKDAY-MALAM elapsed=0s
+[GPU0 T7SL-WEEKDAY-MALAM] {"stage": "measurement_reused", "video": "T7SL-WEEKDAY-MALAM", "frames": 9082}
+[GPU0 T7SL-WEEKDAY-MALAM] {"stage": "counting_start", "video": "T7SL-WEEKDAY-MALAM", "frames": 9082}
+[GPU1 T7SL-WEEKDAY-PAGI] {"stage": "measurement_reused", "video": "T7SL-WEEKDAY-PAGI", "frames": 9015}
+[GPU1 T7SL-WEEKDAY-PAGI] {"stage": "counting_start", "video": "T7SL-WEEKDAY-PAGI", "frames": 9015}
+HEARTBEAT T7SL-WEEKDAY-MALAM elapsed=20s
+HEARTBEAT T7SL-WEEKDAY-PAGI elapsed=20s
+HEARTBEAT T7SL-WEEKDAY-MALAM elapsed=40s
+HEARTBEAT T7SL-WEEKDAY-PAGI elapsed=40s
+HEARTBEAT T7SL-WEEKDAY-MALAM elapsed=60s
+HEARTBEAT T7SL-WEEKDAY-PAGI elapsed=60s
+[GPU0 T7SL-WEEKDAY-MALAM] {"accepted_total": 7, "accepted_measured": 7, "accepted_estimated": 0, "pending": 23, "invalid": 9, "native_aggregate": {"total": 7, "by_category": {"car": 3, "motorcycle": 4}, "by_direction": {"B_TO_A": 7}, "by_route": {"LINE_MARGIN": 7}, "measured_total": 7, "inferred_total": 0, "pending": 23, "invalid": 9, "invalid_reasons": {"INVALID_AMBIGUOUS_UNIT": 9}, "cancelled": 6, "vehicle_total": 7, "pedestrian_total": 0}}
+VIDEO_FINISHED T7SL-WEEKDAY-MALAM SUCCEEDED
+HEARTBEAT T7SL-WEEKDAY-PAGI elapsed=80s
+HEARTBEAT T7SL-WEEKDAY-SIANG elapsed=0s
