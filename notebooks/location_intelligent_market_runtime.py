@@ -16,6 +16,17 @@ def acquire_market_network(config, root):
     from location_intelligent_li3_sources import build_queries, acquire_overpass, utc
     from location_intelligent_map_pilot import sha
     root = Path(root)
+    mode=config.get('network_feature_mode','FULL')
+    if mode not in {'FULL','ROADS_ONLY_EXPERIMENT'}:raise ValueError('Unknown network feature mode')
+    # Reuse successful roads from the previous draft without modifying it.
+    if mode=='ROADS_ONLY_EXPERIMENT' and not root.exists():
+        old=root.with_name('network')
+        if old!=root and (old/'config/pilot.json').exists() and (old/'raw/osm_roads.json.gz').exists():
+            previous=read_json(old/'config/pilot.json')['policy']['li3']
+            if any(previous[k]!=config[k] for k in ['latitude','longitude','metric_crs']):
+                raise ValueError('Previous road extract belongs to another location')
+            import shutil
+            shutil.copytree(old,root,ignore=shutil.ignore_patterns('network_manifest.json','osm_features_roads_only.json.gz'))
     if (root/'network_manifest.json').exists():
         m = read_json(root/'network_manifest.json')
         if m['config'] != config:
@@ -141,12 +152,16 @@ def build_market(config, market_config, pilot, layers, facilities, output):
     import location_intelligent_li3_connectors as connector_code
     import location_intelligent_motor_routing as motor_code
     policy=require_market_decisions(market_config)['allocation_requirements']
+    if config.get('network_feature_mode','FULL')!=market_config['sources'].get('network_feature_mode','FULL'):
+        raise ValueError('Market source mode differs from job configuration')
     if any(config[k]!=market_config['target'][k] for k in ('latitude','longitude')):
         raise ValueError('Market target differs from job')
     if config['building_radius_m']!=policy['zones_m'][-1] or config['min_area_m2']!=policy['residential_min_area_m2'] or config['max_area_m2']!=policy['residential_max_area_m2_exclusive'] or config.get('selection_profile')!='area-market-ge36-v1':
         raise ValueError('Market selection profile differs')
     pilot=Path(pilot);verify_manifest(pilot)
     frozen=read_json(pilot/'config/pilot.json')
+    if frozen['policy']['li3'].get('feature_source_mode','FULL')!=config.get('network_feature_mode','FULL'):
+        raise ValueError('Frozen network mode differs from market job')
     if any(frozen['policy']['li3'][k]!=config[k] for k in ('latitude','longitude','metric_crs')):
         raise ValueError('Pilot target differs from job')
     if frozen['policy']['travel']['reference_constant_speed']['value']!=policy['speed_kmh'] or frozen['policy']['travel']['max_travel_min']['value']!=policy['max_travel_minutes']:
@@ -239,6 +254,7 @@ def build_market(config, market_config, pilot, layers, facilities, output):
         rows.append(row)
     if len(rows)!=len(decisions):raise ValueError('Missing building identity; cannot reconcile market ledger')
     result={'schema_version':'area_market_result_v1','status':'PARTIAL','fingerprint':fingerprint,'identity':identity,
+            'network_feature_mode':frozen['policy']['li3'].get('feature_source_mode','FULL'),
             'output_path':str(root),'rows':rows,'summary':reconcile(rows),'stores':stores,'excluded_stores':excluded,
             'attractor_gate':gate,'market_inputs_complete':source_complete,'primary_routing_changed':False,
             'claim':'EXPERIMENTAL_HUFF_ESTIMATES_NOT_CALIBRATED_CUSTOMER_PROBABILITIES',

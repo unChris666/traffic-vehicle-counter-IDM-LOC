@@ -59,6 +59,18 @@ class MotorRoutingTests(unittest.TestCase):
         self.assertEqual(first['selected_candidate']['class_rank'], 0)
         self.assertGreater(first['selected_candidate']['total_time_min'], min(c['total_time_min'] for c in first['candidates']))
         self.assertEqual(r['provenance']['effective_policy'], self.p)
+    def test_road_only_scope_is_explicit_and_partial_not_complete(self):
+        self.e['restrictions_complete']=False
+        self.assertEqual(self.run_motor()['status'],'BLOCKED')
+        self.p['li3']['feature_source_mode']='ROADS_ONLY_EXPERIMENT'
+        self.e['feature_scope']='ROADS_ONLY_EXPERIMENT'
+        r=self.run_motor()
+        self.assertEqual(r['status'],'PARTIAL')
+        self.assertEqual(r['external_feature_validation'],'NOT_REQUESTED_ROAD_GRAPH_EXPERIMENT')
+        self.assertTrue(all(not row['physical_access_validated'] for row in r['routes']))
+        # Unknown/forbidden edge permissions still cannot be overridden.
+        for rule in self.e['edge_rules'].values():rule['allowed']=False
+        r=self.run_motor();self.assertEqual(r['summary']['scenario_accepted'],0)
 
     def test_unreachable_higher_class_falls_back(self):
         edge = self.g['edges'][0]

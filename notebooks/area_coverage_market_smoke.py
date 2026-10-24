@@ -17,14 +17,17 @@ def main():
     from unittest.mock import patch
     import argparse
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path)
+    parser.add_argument('--feature-mode',choices=['FULL','ROADS_ONLY_EXPERIMENT'],default='ROADS_ONLY_EXPERIMENT')
     args=parser.parse_args()
     root=args.output or Path(tempfile.mkdtemp(prefix='SYNTHETIC-market-'))
     root.mkdir(parents=True,exist_ok=True)
     market=get_market_config();target=market['target']
+    market['sources']['network_feature_mode']=args.feature_mode
     config={'latitude':target['latitude'],'longitude':target['longitude'],'metric_crs':'EPSG:32748',
      'building_radius_m':2000.,'poi_radius_m':2000.,'min_area_m2':36.,'max_area_m2':550.,
      'selection_profile':'area-market-ge36-v1','network_radius_m':5500.,'osm_use_policy_version':'osm_poi_use_v2',
      'poi_profile':'market_attractors_v2','core_python':'/usr/bin/python3'}
+    config['network_feature_mode']=args.feature_mode
     tx=Transformer.from_crs(4326,32748,always_xy=True);inv=Transformer.from_crs(32748,4326,always_xy=True)
     x,y=tx.transform(target['longitude'],target['latitude'])
     def point(a,b):
@@ -39,6 +42,11 @@ def main():
      {'type':'node','id':1,**point(-100,10)},{'type':'node','id':2,**point(1000,10)},
      {'type':'way','id':10,'nodes':[1,2],'tags':{'highway':'residential','name':'Jalan SYNTHETIC'}}]}}
     write_json(seed/'raw/osm_roads.json.gz',road)
+    if args.feature_mode=='ROADS_ONLY_EXPERIMENT':
+     write_json(seed/'raw/osm_features_roads_only.json.gz',{'status':'SUCCEEDED',
+      'provider':'DERIVED_FROM_ACTUAL_OSM_ROAD_EXTRACT','coverage':'ROAD_EXTRACT_ONLY_EXTERNAL_FEATURES_NOT_REQUESTED',
+      'source_roads_sha256':__import__('hashlib').sha256((seed/'raw/osm_roads.json.gz').read_bytes()).hexdigest(),
+      'external_features_requested':False,'restrictions_complete':False,'payload':road['payload']})
     write_json(seed/'raw/osm_features_pinned.json.gz',{'status':'SUCCEEDED','payload':{'osm3s':meta,'elements':[]}})
     elements=[]
     for i,a in enumerate([40,120,400],start=1):

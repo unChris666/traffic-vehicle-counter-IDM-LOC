@@ -86,3 +86,9 @@ program harus menunda pengambilan, bukan menghitung tanpa barrier.
   dinyatakan sukses; tidak mengulang seluruh job saat sumber masih tidak pasti.
 
 Referensi endpoint: https://wiki.openstreetmap.org/wiki/Overpass_API
+
+## Perubahan scope owner berikutnya
+
+[Mode graph jalan sederhana](AREA_COVERAGE_ROADS_ONLY.md) kini default pada
+notebook market: keenam request eksternal tidak dijalankan. Penjelasan strategi
+FULL di atas tetap riwayat/opsi; tidak lagi wajib pada skenario ROAD_ONLY.

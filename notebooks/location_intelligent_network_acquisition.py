@@ -104,6 +104,18 @@ def acquire_network_sources(root,frozen,queries,config,build_queries,fetch):
     boxes=[(west,south,mx,my),(mx,south,east,my),(west,my,mx,north),(mx,my,east,north)]
     stamp=None
     for kind,filename in [('roads','osm_roads.json.gz'),('features','osm_features_pinned.json.gz')]:
+        if kind=='features' and config.get('network_feature_mode')=='ROADS_ONLY_EXPERIMENT':
+            roads=read_json(root/'raw/osm_roads.json.gz')
+            derived={'status':'SUCCEEDED','provider':'DERIVED_FROM_ACTUAL_OSM_ROAD_EXTRACT',
+                     'coverage':'ROAD_EXTRACT_ONLY_EXTERNAL_FEATURES_NOT_REQUESTED',
+                     'external_features_requested':False,'restrictions_complete':False,
+                     'source_roads_sha256':hashlib.sha256((root/'raw/osm_roads.json.gz').read_bytes()).hexdigest(),
+                     'payload':roads['payload']}
+            path=root/'raw/osm_features_roads_only.json.gz'
+            if path.exists():
+                if read_json(path)!=derived:raise ValueError('Road-derived feature snapshot changed')
+            else:write_json(path,derived,exclusive=True)
+            break
         query=queries[kind]
         if stamp:query=query.replace(';','[date:"'+stamp+'"];',1)
         canonical=root/'raw'/filename
@@ -156,4 +168,6 @@ def acquire_network_sources(root,frozen,queries,config,build_queries,fetch):
         if kind=='roads':
             stamp=result['payload']['osm3s'].get('timestamp_osm_base')
             if not stamp:raise ValueError('Road snapshot timestamp unavailable')
-    status('network','SUCCEEDED',snapshot_as_of=stamp)
+    status('network','SUCCEEDED',snapshot_as_of=stamp,
+           feature_mode=config.get('network_feature_mode','FULL'),
+           external_features_requested=config.get('network_feature_mode')!='ROADS_ONLY_EXPERIMENT')

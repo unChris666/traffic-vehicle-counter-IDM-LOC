@@ -1,5 +1,12 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Scope sederhana owner —25 Oktober2026:** notebook market default memakai
+`ROADS_ONLY_EXPERIMENT`, melewati enam query fitur eksternal. Jalan, node,
+arah/izin yang tersedia tetap wajib; rute tidak ada tidak masuk cakupan calon.
+[Makna coverage, snapshot dan tes](AREA_COVERAGE_ROADS_ONLY.md). Status model
+bukan bukti akses fisik/kelengkapan barrier; mode FULL tetap terpisah.
+
+
 **Checkpoint market Area Coverage —24 Oktober2026:** owner menetapkan target
 -6.190690620514923,106.83819549844226, residential >=36 m², zona hingga2km,
 core100m dan alokasi satu rumah utuh dengan skor Huff berbasis routing.

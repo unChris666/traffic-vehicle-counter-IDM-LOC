@@ -88,6 +88,15 @@ def acquire(root):
 
 def select_feature_source(root):
     """Prefer a successful exact-as-of extract, preserve failed attempts."""
+    policy=read_json(root/'config/pilot.json')['policy']['li3']
+    if policy.get('feature_source_mode')=='ROADS_ONLY_EXPERIMENT':
+        path=root/'raw/osm_features_roads_only.json.gz'
+        source=read_json(path)
+        if source.get('coverage')!='ROAD_EXTRACT_ONLY_EXTERNAL_FEATURES_NOT_REQUESTED' or source.get('external_features_requested') is not False:
+            raise ValueError('Road-only feature provenance missing')
+        if source.get('source_roads_sha256')!=hashlib.sha256((root/'raw/osm_roads.json.gz').read_bytes()).hexdigest():
+            raise ValueError('Road-derived feature source does not match roads')
+        return path,[{'code':'EXTERNAL_FEATURES_NOT_REQUESTED','effect':'Road graph experiment; external barriers and turn restrictions not fully checked'}]
     pinned = root/'raw/osm_features_pinned.json.gz'
     if pinned.exists() and read_json(pinned)['status'] == 'SUCCEEDED':
         return pinned, []
@@ -195,7 +204,8 @@ def build(root):
     evidence = {'schema_version': 'li_motor_evidence_v1', 'graph_hash': canonical_hash(package['graph']),
                 'selection_hash': canonical_hash(selection), 'context_hash': context['context_hash'], 'policy_hash': canonical_hash(f['policy']),
                 'edge_rules': package['edge_rules'], 'blocked_turns': package['blocked_turns'],
-                'restrictions_complete': True, 'connectors': package['connectors']}
+                'restrictions_complete': f['policy']['li3'].get('feature_source_mode')!='ROADS_ONLY_EXPERIMENT',
+                'feature_scope': f['policy']['li3'].get('feature_source_mode','FULL'), 'connectors': package['connectors']}
     write_json(root/'graph/graph.json.gz', package['graph'])
     write_json(root/'graph/edge_sources.json.gz', package['edge_sources'])
     write_json(root/'connectors/evidence.json.gz', evidence)

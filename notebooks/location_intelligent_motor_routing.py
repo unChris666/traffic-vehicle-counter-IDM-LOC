@@ -201,7 +201,9 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
         if any(":conditional" in k for k in tags) and rule.get("conditional_resolved") is not True and rule['allowed'] is True:
             return stop("CONDITIONAL_RESTRICTION_UNRESOLVED")
         allowed[key] = rule["allowed"]
-    if evidence.get("restrictions_complete") is not True:
+    road_only=(policy.get('li3',{}).get('feature_source_mode')=='ROADS_ONLY_EXPERIMENT' and
+               evidence.get('feature_scope')=='ROADS_ONLY_EXPERIMENT')
+    if evidence.get("restrictions_complete") is not True and not road_only:
         return stop("TURN_OR_BARRIER_COVERAGE_UNRESOLVED")
     turns = evidence.get("blocked_turns")
     if not isinstance(turns, list):
@@ -325,7 +327,8 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
             if unresolved:
                 row.update(route_found=None, scenario_accessible=None)
     unknown = any(v is None for v in allowed.values())
-    result["status"] = "PARTIAL" if unknown or any(r["route_found"] is None for r in result["routes"]) or graph["coverage"]["completeness"] != "COMPLETE" or buildings["status"] == "PARTIAL" else "SUCCEEDED"
+    result["status"] = "PARTIAL" if road_only or unknown or any(r["route_found"] is None for r in result["routes"]) or graph["coverage"]["completeness"] != "COMPLETE" or buildings["status"] == "PARTIAL" else "SUCCEEDED"
+    result['external_feature_validation']='NOT_REQUESTED_ROAD_GRAPH_EXPERIMENT' if road_only else 'CONFIGURED_FEATURE_EVIDENCE'
     result["summary"] = {"input_selected": len(selected), "accounted": len(result["routes"]),
                          "scenario_accepted": sum(r["scenario_accessible"] is True for r in result["routes"]),
                          "no_route": sum(r["route_found"] is False for r in result["routes"]),

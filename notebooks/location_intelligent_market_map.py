@@ -67,6 +67,7 @@ def market_map(config, market_config, pilot, facilities, result, output):
         scores=[{'toko':names[s['store_key']],'skor_estimasi':round(s['huff_score'],6),
                  'jarak_rute_m':round(s['total_distance_m'],2)} for s in row['scores']]
         reason=row['reason']+' | akses: '+row['access_status']
+        if result.get('network_feature_mode')=='ROADS_ONLY_EXPERIMENT':reason+=' | ROAD_GRAPH_ONLY: external barrier/turn checks skipped'
         if scores:reason+=' | Huff: '+json.dumps(scores,ensure_ascii=False)
         if row.get('use_review_reason'):reason+=' | '+row['use_review_reason']
         features.append({'type':'Feature','geometry':f['geometry'],'properties':{

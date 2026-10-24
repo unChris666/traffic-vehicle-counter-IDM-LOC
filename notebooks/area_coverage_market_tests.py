@@ -202,6 +202,26 @@ class MarketTests(unittest.TestCase):
         self.assertEqual(result['status'],'RETRIEVAL_FAILED')
         self.assertEqual(result['attempts'][0]['failure_reason'],'OVERPASS_REMARK')
         self.assertIn('Query timed out',result['attempts'][0]['remark'])
+    def test_road_only_reuses_existing_roads_and_makes_no_feature_requests(self):
+        from location_intelligent_market_runtime import acquire_market_network
+        from location_intelligent_li3_sources import read_json
+        cfg={'latitude':-6.19,'longitude':106.83,'metric_crs':'EPSG:32748',
+             'network_radius_m':5500.,'poi_overpass_endpoints':['https://example.invalid']}
+        ok={'status':'SUCCEEDED','payload':{'osm3s':{'timestamp_osm_base':'2026-10-24T00:00:00Z'},'elements':[]}}
+        fail={'status':'RETRIEVAL_FAILED','attempts':[{'http_status':502}]}
+        q={'roads':'[out:json];roads;','features':'[out:json];features;'}
+        with tempfile.TemporaryDirectory() as d:
+            old=Path(d)/'network'
+            with patch('location_intelligent_li3_sources.build_queries',return_value=q),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=[ok,fail,fail,fail]):
+                with self.assertRaises(RuntimeError):acquire_market_network(cfg,old)
+            saved=(old/'raw/osm_roads.json.gz').read_bytes()
+            new=Path(d)/'network_roads_only'
+            with patch('location_intelligent_li3_sources.build_queries',return_value=q),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=AssertionError('No external calls; roads cached')):
+                acquire_market_network({**cfg,'network_feature_mode':'ROADS_ONLY_EXPERIMENT'},new)
+            derived=read_json(new/'raw/osm_features_roads_only.json.gz')
+            self.assertFalse(derived['restrictions_complete']);self.assertFalse(derived['external_features_requested'])
+            self.assertEqual(saved,(old/'raw/osm_roads.json.gz').read_bytes())
+            self.assertTrue((new/'network_manifest.json').exists())
     def test_notebook_export_failure_retry_reopen_and_private_bq_included(self):
         import zipfile
         from location_intelligent_map_pilot import sha
