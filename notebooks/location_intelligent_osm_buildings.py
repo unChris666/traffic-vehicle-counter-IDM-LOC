@@ -162,6 +162,11 @@ def prepare_osm_from_network(config,root,network_source,raw_path):
     from location_intelligent_map_pilot import normalize_cache,sha
     from location_intelligent_validator import canonical_hash
     root=Path(root);network_source=Path(network_source)
+    source_policy=read_json(network_source/'config/pilot.json')['policy']['li3']
+    if any(source_policy[k]!=config[k] for k in ['latitude','longitude','metric_crs']):
+        raise ValueError('OSM network seed belongs to another target/CRS')
+    if source_policy['network_bbox_radius_m']!=config['network_radius_m']:
+        raise ValueError('OSM network seed extent differs from request')
     root.mkdir(parents=True,exist_ok=False)
     write_json(root/'requested_config.json',config)
     raw=read_json(raw_path)

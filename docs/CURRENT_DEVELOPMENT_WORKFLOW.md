@@ -1,5 +1,12 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Checkpoint market Area Coverage —24 Oktober2026:** owner menetapkan target
+-6.190690620514923,106.83819549844226, residential >=36 m², zona hingga2km,
+core100m dan alokasi satu rumah utuh dengan skor Huff berbasis routing.
+[Aturan, implementasi dan batas eksekusi](AREA_COVERAGE_MARKET_RULES_DRAFT.md).
+Snapshot lokasi sebelumnya tidak direlabel. Run CPU aktual terhenti pada source
+barrier dan BQ secret; tidak ada angka market target baru yang tervalidasi.
+
 **Checkpoint sumber OSM —24 Oktober2026:** owner mengotorisasi perpindahan ke
 OSM buildings→seleksi→OSM motor graph→routing/perhitungan→OSM basemap.
 [Profil dan batas validasi](AREA_COVERAGE_OSM_MODE.md). Ini eksperimen sumber

@@ -44,6 +44,7 @@ MESSAGES = {
     "OUTSIDE_RADIUS": "A valid representative point lies outside the configured building radius.",
     "CLASS_UNSUPPORTED": "Neither a supported special class nor null/empty/residential subtype applies.",
     "AREA_NOT_ABOVE_MIN": "Full projected footprint area must be strictly greater than min_area_m2.",
+    "AREA_BELOW_MIN": "Full projected footprint area must be at least min_area_m2 in the market profile.",
     "AREA_NOT_BELOW_MAX": "Standard residential footprint area must be strictly smaller than max_area_m2.",
 }
 
@@ -58,14 +59,15 @@ def classify_building(building_class: str | None, subclass: str | None) -> str |
 
 
 def selection_reason(distance: float, area: float, building_type: str | None,
-                     *, radius: float, minimum: float, maximum: float) -> str | None:
+                     *, radius: float, minimum: float, maximum: float,
+                     minimum_inclusive: bool = False) -> str | None:
     """Full precision, order and strictness match N1; no jitter tolerance/rounding."""
     if distance > radius:
         return "OUTSIDE_RADIUS"
     if building_type is None:
         return "CLASS_UNSUPPORTED"
-    if area <= minimum:
-        return "AREA_NOT_ABOVE_MIN"
+    if (area < minimum if minimum_inclusive else area <= minimum):
+        return "AREA_BELOW_MIN" if minimum_inclusive else "AREA_NOT_ABOVE_MIN"
     if building_type == "standard_residential" and area >= maximum:
         return "AREA_NOT_BELOW_MAX"
     return None
@@ -281,6 +283,9 @@ def select_buildings(context: Any, manifest: Any, *, root: Path | str,
     params = context["config"]["area_coverage"]["parameters"]
     controls = {"radius": params["building_radius_m"]["value"], "minimum": params["min_area_m2"]["value"],
                 "maximum": params["max_area_m2"]["value"]}
+    if context['config']['version'] == 'area-market-ge36-v1':
+        controls['minimum_inclusive'] = True
+        result['rule_version'] = 'MARKET_BUILDING_SELECTION_GE_MIN_V1'
     fingerprint = source["fingerprint"]["value"]
 
     def reject(index, key, stage, code, field, metrics=None):
@@ -290,7 +295,7 @@ def select_buildings(context: Any, manifest: Any, *, root: Path | str,
             "disposition": "EXCLUDED" if stage == "SELECTION" else "REJECTED",
             "code": code, "message": MESSAGES[code], "field": field,
             "context_hash": context["context_hash"], "config_hash": result["snapshot"]["config_hash"],
-            "rule_version": RULE_VERSION, "metrics": metrics})
+            "rule_version": result['rule_version'], "metrics": metrics})
 
     for index, feature in enumerate(features):
         key = ids[index]

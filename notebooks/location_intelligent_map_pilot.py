@@ -140,7 +140,7 @@ def normalize_cache(raw_path, cache, config):
         'parent_analysis_run_id': None, 'created_at': stamp,
         'target': {'store_code': None, 'store_name': None, 'latitude': config['latitude'], 'longitude': config['longitude'],
                    'crs': 'EPSG:4326', 'unknown_reasons': {'store_code': 'User supplied coordinates only', 'store_name': 'User supplied coordinates only'}},
-        'config': {'version': 'area-map-800m-v1', 'area_coverage': {'metric_crs': config['metric_crs'],
+        'config': {'version': config.get('selection_profile','area-map-800m-v1'), 'area_coverage': {'metric_crs': config['metric_crs'],
             'parameters': {'building_radius_m': {'value': config['building_radius_m'], 'unit': 'm'},
                 'min_area_m2': {'value': config['min_area_m2'], 'unit': 'm2'},
                 'max_area_m2': {'value': config['max_area_m2'], 'unit': 'm2'}}, 'unresolved_decisions': []}}}

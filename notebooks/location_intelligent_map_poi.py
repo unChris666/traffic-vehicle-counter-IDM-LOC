@@ -15,15 +15,36 @@ POI_CATEGORIES = {
     'government': ('Kantor pemerintahan', 'purple', 'university'),
     'office': ('Kantor', 'cadetblue', 'briefcase'),
     'university': ('Universitas', 'darkpurple', 'graduation-cap'),
+    'station': ('Stasiun', 'black', 'train'),
+    'recreation': ('Rekreasi / taman', 'lightgreen', 'tree'),
+    'bank': ('Bank', 'darkred', 'bank'),
+    'restaurant': ('Restoran', 'beige', 'cutlery'),
+    'mall': ('Mall / pusat perbelanjaan', 'lightblue', 'shopping-bag'),
 }
 POI_RULE_VERSION = 'osm_facilities_eight_categories_v1'
 
 
-def classify_poi(tags):
+def categories_for(config):
+    return POI_CATEGORIES if config.get('poi_profile') == 'market_attractors_v2' else {
+        k: v for k, v in POI_CATEGORIES.items() if k not in {'station','recreation','bank','restaurant','mall'}}
+
+
+def classify_poi(tags, *, market=False):
     """One primary category per OSM feature; positive tags, not building shape."""
     amenity = tags.get('amenity', '').strip().lower()
     healthcare = tags.get('healthcare', '').strip().lower()
     office = tags.get('office', '').strip().lower()
+    if market:
+        if tags.get('railway') == 'station' or tags.get('public_transport') == 'station':
+            return 'station'
+        if tags.get('leisure') in {'park', 'garden', 'recreation_ground', 'theme_park'} or tags.get('tourism') in {'theme_park', 'zoo'}:
+            return 'recreation'
+        if amenity == 'bank':
+            return 'bank'
+        if amenity == 'restaurant':
+            return 'restaurant'
+        if tags.get('shop') in {'mall', 'shopping_centre'}:
+            return 'mall'
     if amenity == 'hospital' or healthcare == 'hospital':
         return 'hospital'
     if amenity == 'clinic' or healthcare == 'clinic':
@@ -45,7 +66,7 @@ def classify_poi(tags):
 
 def poi_binding(config):
     return {'latitude': config['latitude'], 'longitude': config['longitude'],
-            'radius_m': config['poi_radius_m'], 'rules': POI_RULE_VERSION}
+            'radius_m': config['poi_radius_m'], 'rules': 'osm_market_attractors_v2' if config.get('poi_profile') == 'market_attractors_v2' else POI_RULE_VERSION}
 
 
 def build_poi_query(config):
@@ -55,10 +76,17 @@ def build_poi_query(config):
         raise ValueError('Invalid target coordinates')
     radius = float(config['poi_radius_m']) + 100.0
     region = f'(around:{radius},{lat},{lon})'
+    extra = ''
+    if config.get('poi_profile') == 'market_attractors_v2':
+        extra = (f'nwr["railway"="station"]{region};nwr["public_transport"="station"]{region};'
+                 f'nwr["leisure"~"^(park|garden|recreation_ground|theme_park)$"]{region};'
+                 f'nwr["tourism"~"^(theme_park|zoo)$"]{region};'
+                 f'nwr["amenity"~"^(bank|restaurant)$"]{region};'
+                 f'nwr["shop"~"^(mall|shopping_centre)$"]{region};')
     return ('[out:json][timeout:45][maxsize:16777216];('
             f'nwr["amenity"~"^(hospital|clinic|marketplace|police|school|university|townhall)$"]{region};'
             f'nwr["healthcare"~"^(hospital|clinic)$"]{region};'
-            f'nwr["office"]{region};);out body center;')
+            f'nwr["office"]{region};{extra});out body center;')
 
 
 def normalize_pois(config, payload):
@@ -74,7 +102,7 @@ def normalize_pois(config, payload):
             raise ValueError('Duplicate OSM source identity in response')
         seen.add(key)
         tags = element.get('tags', {})
-        category = classify_poi(tags)
+        category = classify_poi(tags, market=config.get('poi_profile') == 'market_attractors_v2')
         if category is None:
             excluded.append({'source_id': key, 'reason': 'NO_SUPPORTED_ACTIVE_FACILITY_TAG'})
             continue
@@ -94,7 +122,7 @@ def normalize_pois(config, payload):
     rows.sort(key=lambda r: (r['category'], r['distance_m'], r['source_id']))
     return {'status': 'SUCCEEDED', 'provider': 'OPENSTREETMAP_OVERPASS', 'request_binding': poi_binding(config),
             'rows': rows, 'count': len(rows), 'counts_by_category': {
-                key: sum(r['category'] == key for r in rows) for key in POI_CATEGORIES},
+                key: sum(r['category'] == key for r in rows) for key in categories_for(config)},
             'source_elements': len(elements), 'excluded': excluded,
             'source_as_of': payload['osm3s'].get('timestamp_osm_base'),
             'completeness': 'OSM_TAGGED_FEATURES_NOT_COMPLETE_PHYSICAL_FACILITY_INVENTORY',
@@ -145,9 +173,9 @@ def add_poi_layers(map_object, config, layer):
         return ['POI OSM: BELUM TERSEDIA']
     if layer['request_binding'] != poi_binding(config):
         raise ValueError('POI layer belongs to another target/radius/rules')
-    counts = {key: 0 for key in POI_CATEGORIES}
+    counts = {key: 0 for key in categories_for(config)}
     groups = {}
-    for key, (label, color, icon) in POI_CATEGORIES.items():
+    for key, (label, color, icon) in categories_for(config).items():
         groups[key] = MarkerCluster(name=f'POI {label} ≤{config["poi_radius_m"]:g} m', show=True).add_to(map_object)
     for row in layer['rows']:
         if not math.isfinite(row['distance_m']) or not 0 <= row['distance_m'] <= config['poi_radius_m']:

@@ -1,0 +1,70 @@
+{
+  "schema_version": "market_validation_receipt_v1",
+  "recorded_at": "2026-10-24T16:02:56.725085+00:00",
+  "target": {
+    "latitude": -6.190690620514923,
+    "longitude": 106.83819549844226
+  },
+  "kaggle_kernel": "chrisbiran/area-coverage-market-osm-2km-cpu",
+  "submission": "CPU_SAVE_AND_RUN_ALL",
+  "observed_run_status": "ERROR",
+  "failure_stage": "OSM_BARRIER_FEATURE_ACQUISITION",
+  "roads": {
+    "status": "SUCCEEDED",
+    "source_elements": 191517,
+    "source_as_of": "2026-10-24T15:56:37Z"
+  },
+  "barriers": {
+    "status": "RETRIEVAL_FAILED",
+    "attempts": [
+      {
+        "endpoint": "https://overpass-api.de/api/interpreter",
+        "http_status": 502,
+        "status": "HTTP_ERROR",
+        "error_type": null,
+        "query_sha256": "3dbd1570d9c924699bf95327ddee75ca8142e1f4f6df08e2de7c73e88fae7316"
+      },
+      {
+        "endpoint": "https://overpass.kumi.systems/api/interpreter",
+        "http_status": null,
+        "status": "REQUEST_ERROR",
+        "error_type": "ReadTimeout",
+        "query_sha256": "3dbd1570d9c924699bf95327ddee75ca8142e1f4f6df08e2de7c73e88fae7316"
+      }
+    ]
+  },
+  "bigquery": {
+    "status": "BLOCKED",
+    "stage": "KAGGLE_SECRET_READ",
+    "error": {
+      "chain": [
+        {
+          "type": "ConnectionError"
+        },
+        {
+          "http_status": 400,
+          "type": "HTTPError"
+        }
+      ]
+    }
+  },
+  "actual_building_count": null,
+  "actual_candidate_market_count": null,
+  "actual_market_result": "NOT_PRODUCED",
+  "repair": "Bounded four-tile exact-as-of fallback added and synthetic regression-tested; no second full live job submitted after source failure",
+  "local_validation": {
+    "area_tests_total": 55,
+    "area_tests_pass": 46,
+    "area_tests_skipped_no_gdal": 9,
+    "system_osm_pass": 9,
+    "system_building_pass": 40,
+    "system_motor_pass": 16,
+    "synthetic_gdal_pipeline": "PASS_THREE_SYNTHETIC_BUILDINGS_NOT_REAL_COUNTS",
+    "browser": "PASS_27_LAYER_TOGGLES_NO_JS_OR_RESOURCE_ERRORS"
+  },
+  "limits": [
+    "No production/customer-accuracy claim",
+    "Real BQ snapshot not available to automatic job",
+    "Latest source publication is QUICK_SAVE, not a successful full execution"
+  ]
+}
