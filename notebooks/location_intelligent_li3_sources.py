@@ -83,7 +83,8 @@ def acquire_overpass(query, endpoints, timeout, max_bytes, session=None):
             raw = b''.join(chunks)
             payload = json.loads(raw)
             if payload.get('remark') or not isinstance(payload.get('elements'), list) or not isinstance(payload.get('osm3s'), dict):
-                attempt.update(status='PARTIAL_OR_INVALID', remark=payload.get('remark'))
+                attempt.update(status='PARTIAL_OR_INVALID', remark=str(payload.get('remark') or '')[:2000],
+                               failure_reason='OVERPASS_REMARK' if payload.get('remark') else 'INCOMPLETE_RESPONSE_SCHEMA')
                 continue
             attempt.update(status='SUCCEEDED', finished_at=utc(), response_bytes=size,
                            response_sha256=hashlib.sha256(raw).hexdigest(),

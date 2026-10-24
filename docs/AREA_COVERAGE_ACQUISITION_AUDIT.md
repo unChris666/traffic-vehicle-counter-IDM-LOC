@@ -77,3 +77,10 @@ Persiapan rencana modularisasi dapat memakai batas source adapter → snapshot �
 selection/routing → allocation → rendering/export. Migrasi engine keseluruhan
 belum dinyatakan lulus hanya karena retry network telah dites. Unknown tetap
 unknown; tidak perlu mengarang kelengkapan fisik OSM agar gate software lulus.
+
+## Checkpoint fitur barrier berikutnya
+
+[Penjelasan bagian5 dan strategi per kategori](AREA_COVERAGE_STAGE_5.md)
+menambahkan pemecahan enam jenis fitur setelah tile gabungan gagal. Catatan
+checkpoint sebelumnya tentang empat tile bukan batas strategi terbaru. Aturan
+market/routing dan syarat kelengkapan sumber tetap sama.

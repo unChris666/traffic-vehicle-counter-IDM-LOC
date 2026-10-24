@@ -4,6 +4,17 @@ import hashlib
 from location_intelligent_li3_sources import canonical_bytes,read_json,write_json
 
 
+def feature_part_queries(box,policy,stamp):
+    """Same feature selectors as the original union, independently retrievable."""
+    w,s,e,n=box;region=f'({s},{w},{n},{e})'
+    li=policy['li3'];timeout=min(20,li['request_timeout_s'])
+    header=f'[out:json][timeout:{timeout}][maxsize:{li["max_response_bytes"]}][date:"{stamp}"];'
+    selectors={'node_barriers':'node["barrier"]','way_barriers':'way["barrier"]',
+               'waterways':'way["waterway"]','water_polygons':'way["natural"="water"]',
+               'water_relations':'relation["natural"="water"]','turn_restrictions':'relation["type"="restriction"]'}
+    return {name:header+'('+selector+region+';);(._;>>;);out meta;' for name,selector in selectors.items()}
+
+
 def _save(path,value):
     """Only draft acquisition files may be replaced; retain failed history."""
     if path.exists():
@@ -27,7 +38,9 @@ def acquire_network_sources(root,frozen,queries,config,build_queries,fetch):
     def status(stage,state,**extra):
         write_json(root/'acquisition_status.json',{'stage':stage,'status':state,
                    'retry_action':'Rerun this acquisition cell; successful pieces are reused',**extra})
-    def request(path,query,stage,retry_failed):
+    fresh_requests=0
+    def request(path,query,stage,retry_failed,timeout=None):
+        nonlocal fresh_requests
         digest=hashlib.sha256(query.encode()).hexdigest()
         receipt=path.with_name(path.name+'.receipt.json')
         if path.exists():
@@ -38,15 +51,55 @@ def acquire_network_sources(root,frozen,queries,config,build_queries,fetch):
                 if receipt.exists() and read_json(receipt)['sha256']!=hashlib.sha256(path.read_bytes()).hexdigest():
                     raise ValueError('Cached successful source changed: '+str(path))
                 if not receipt.exists():write_json(receipt,{'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'query_sha256':digest},exclusive=True)
+                for name,digest in old.get('tile_sha256',{}).items():
+                    if hashlib.sha256((root/name).read_bytes()).hexdigest()!=digest:raise ValueError('Cached feature piece changed')
                 return old
             if not retry_failed:return old
         print('OSM acquisition:',stage,flush=True);status(stage,'RUNNING',query_sha256=digest)
-        result=fetch(query,endpoints,li['request_timeout_s'],li['max_response_bytes'])
+        if fresh_requests>=64:
+            status(stage,'PAUSED_REQUEST_BUDGET')
+            raise RuntimeError('Acquisition checkpoint: 64 request chains reached. Rerun cell5 to continue cached progress.')
+        fresh_requests+=1
+        result=fetch(query,endpoints,timeout or li['request_timeout_s'],li['max_response_bytes'])
         result['actual_query']=query
         _save(path,result)
         if result['status']=='SUCCEEDED':
             write_json(receipt,{'sha256':hashlib.sha256(path.read_bytes()).hexdigest(),'query_sha256':digest},exclusive=True)
         return result
+    def merge_pieces(pieces,query):
+        from location_intelligent_li3_graph import merge_elements
+        merged=[]
+        for path,piece in pieces:merged=list(merge_elements(merged,piece['payload']['elements']).values())
+        return {'status':'SUCCEEDED','payload':{'elements':sorted(merged,key=lambda r:(r['type'],r['id'])),
+                    'osm3s':{'timestamp_osm_base':stamp},'generator':pieces[0][1]['payload'].get('generator')},
+                'actual_query':query,'requested_snapshot_as_of':stamp,
+                'tile_sources':[str(path.relative_to(root)) for path,r in pieces],
+                'tile_sha256':{str(path.relative_to(root)):hashlib.sha256(path.read_bytes()).hexdigest() for path,r in pieces}}
+    def parts(box,base,depth=0,selected=None):
+        pieces=[]
+        for name,query in feature_part_queries(box,p,stamp).items():
+            if selected is not None and name!=selected:continue
+            path=base/(name+'.json.gz')
+            piece=request(path,query,'features/'+str(base.relative_to(root))+'/'+name,not (base/(name+'_children')).exists(),min(20,li['request_timeout_s']))
+            if piece['status']!='SUCCEEDED':
+                # Spatial subdivision helps server-reported resource exhaustion;
+                # it cannot repair an unavailable endpoint or denied request.
+                remarks=' '.join(str(a.get('remark','')).lower() for a in piece.get('attempts',[]))
+                resource=any(word in remarks for word in ['timed out','timeout','out of memory','memory limit','maxsize'])
+                if depth<2 and resource:
+                    w,s,e,n=box;mx,my=(w+e)/2,(s+n)/2
+                    children=[]
+                    for j,child in enumerate([(w,s,mx,my),(mx,s,e,my),(w,my,mx,n),(mx,my,e,n)]):
+                        # Only subdivide the failed category, not successful ones.
+                        children.extend(parts(child,base/(name+'_children')/str(j),depth+1,selected=name))
+                    piece=merge_pieces(children,query);_save(path,piece)
+                    write_json(path.with_name(path.name+'.receipt.json'),{'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+                else:
+                    safe=[{k:a.get(k) for k in ['endpoint','status','http_status','error_type','remark','failure_reason']} for a in piece.get('attempts',[])]
+                    status('features/'+name,'BLOCKED_SOURCE_UNAVAILABLE',attempts=safe,source_path=str(path))
+                    raise RuntimeError('OSM feature category '+name+' unavailable: '+str(safe)+'. Successful categories retained; inspect '+str(root/'acquisition_status.json'))
+            pieces.append((path,piece))
+        return pieces
     west,south,east,north=frozen['extraction_bbox_wgs84'];mx,my=(west+east)/2,(south+north)/2
     boxes=[(west,south,mx,my),(mx,south,east,my),(west,my,mx,north),(mx,my,east,north)]
     stamp=None
@@ -74,7 +127,11 @@ def acquire_network_sources(root,frozen,queries,config,build_queries,fetch):
                 tq=build_queries(box,p)[kind]
                 if stamp:tq=tq.replace(';','[date:"'+stamp+'"];',1)
                 path=root/f'raw/osm_{kind}_tile_{i}.json.gz'
-                tile=request(path,tq,f'{kind}_tile_{i+1}/4',True)
+                tile=request(path,tq,f'{kind}_tile_{i+1}/4',kind=='roads')
+                if tile['status']!='SUCCEEDED' and kind=='features':
+                    pieces=parts(box,root/'raw/feature_parts'/str(i))
+                    tile=merge_pieces(pieces,tq);_save(path,tile)
+                    write_json(path.with_name(path.name+'.receipt.json'),{'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
                 if tile['status']!='SUCCEEDED':
                     safe=[{k:a.get(k) for k in ['endpoint','status','http_status','error_type']} for a in tile.get('attempts',[])]
                     status(kind,'BLOCKED_SOURCE_UNAVAILABLE',failed_tile=i,attempts=safe)

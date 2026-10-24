@@ -116,8 +116,8 @@ class MarketTests(unittest.TestCase):
                 acquire_market_network(cfg,p)
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'network'
-            with patch('location_intelligent_li3_sources.build_queries',return_value={'roads':'[out:json];roads;','features':'[out:json];features;'}),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=[success,fail,fail]):
-                with self.assertRaisesRegex(RuntimeError,'features tile 1/4 unavailable'):acquire_market_network(cfg,p)
+            with patch('location_intelligent_li3_sources.build_queries',return_value={'roads':'[out:json];roads;','features':'[out:json];features;'}),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=[success,fail,fail,fail]):
+                with self.assertRaisesRegex(RuntimeError,'feature category node_barriers unavailable'):acquire_market_network(cfg,p)
             self.assertFalse((p/'network_manifest.json').exists())
     def test_failed_roads_resume_only_missing_tiles_and_preserve_snapshot(self):
         from location_intelligent_market_runtime import acquire_market_network
@@ -153,6 +153,55 @@ class MarketTests(unittest.TestCase):
                 with self.assertRaisesRegex(RuntimeError,'request rejected'):acquire_market_network(cfg,root)
                 self.assertEqual(fetch.call_count,1)
             self.assertFalse((root/'network_manifest.json').exists())
+    def test_feature_categories_resume_without_repeating_union_or_success(self):
+        from location_intelligent_market_runtime import acquire_market_network
+        cfg={'latitude':-6.19,'longitude':106.83,'metric_crs':'EPSG:32748',
+             'network_radius_m':5500.,'poi_overpass_endpoints':['https://example.invalid']}
+        ok={'status':'SUCCEEDED','payload':{'osm3s':{'timestamp_osm_base':'2026-10-24T00:00:00Z'},'elements':[]}}
+        fail={'status':'RETRIEVAL_FAILED','attempts':[{'http_status':502}]}
+        queries={'roads':'[out:json];roads;','features':'[out:json];features;'}
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'network'
+            with patch('location_intelligent_li3_sources.build_queries',return_value=queries),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=[ok,fail,fail,ok,fail]):
+                with self.assertRaisesRegex(RuntimeError,'feature category way_barriers unavailable'):acquire_market_network(cfg,root)
+            node=root/'raw/feature_parts/0/node_barriers.json.gz';saved=node.read_bytes()
+            with patch('location_intelligent_li3_sources.build_queries',return_value=queries),patch('location_intelligent_li3_sources.acquire_overpass',return_value=ok) as fetch:
+                acquire_market_network(cfg,root)
+                self.assertEqual(fetch.call_count,8)
+                self.assertTrue(all('node["barrier"]' not in c.args[0] for c in fetch.call_args_list))
+            self.assertEqual(saved,node.read_bytes())
+    def test_server_resource_remark_subdivides_only_failed_category(self):
+        from location_intelligent_market_runtime import acquire_market_network
+        cfg={'latitude':-6.19,'longitude':106.83,'metric_crs':'EPSG:32748',
+             'network_radius_m':5500.,'poi_overpass_endpoints':['https://example.invalid']}
+        ok={'status':'SUCCEEDED','payload':{'osm3s':{'timestamp_osm_base':'2026-10-24T00:00:00Z'},'elements':[]}}
+        fail={'status':'RETRIEVAL_FAILED','attempts':[{'http_status':502}]}
+        timedout={'status':'RETRIEVAL_FAILED','attempts':[{'http_status':200,'status':'PARTIAL_OR_INVALID','remark':'runtime error: Query timed out'}]}
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'network'
+            replies=[ok,fail,fail,timedout,*[deepcopy(ok) for _ in range(12)]]
+            with patch('location_intelligent_li3_sources.build_queries',return_value={'roads':'[out:json];roads;','features':'[out:json];features;'}),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=replies) as fetch:
+                acquire_market_network(cfg,root)
+                self.assertEqual(sum('node["barrier"]' in c.args[0] for c in fetch.call_args_list),5)
+            self.assertTrue((root/'network_manifest.json').exists())
+    def test_feature_parts_preserve_original_six_selectors_and_snapshot(self):
+        from location_intelligent_network_acquisition import feature_part_queries
+        from location_intelligent_config import get_config
+        parts=feature_part_queries((1,2,3,4),get_config(),'2026-10-24T00:00:00Z')
+        self.assertEqual(len(parts),6)
+        for selector in ['node["barrier"]','way["barrier"]','way["waterway"]','way["natural"="water"]','relation["natural"="water"]','relation["type"="restriction"]']:
+            self.assertTrue(any(selector in q for q in parts.values()))
+        self.assertTrue(all('[date:"2026-10-24T00:00:00Z"]' in q for q in parts.values()))
+    def test_http200_with_server_remark_is_not_source_success(self):
+        from types import SimpleNamespace
+        from location_intelligent_li3_sources import acquire_overpass
+        payload=json.dumps({'elements':[],'osm3s':{},'remark':'runtime error: Query timed out'}).encode()
+        response=SimpleNamespace(status_code=200,iter_content=lambda n:iter([payload]),close=lambda:None)
+        session=SimpleNamespace(post=lambda *a,**kw:response)
+        result=acquire_overpass('QUERY',['https://example.invalid'],20,10000,session=session)
+        self.assertEqual(result['status'],'RETRIEVAL_FAILED')
+        self.assertEqual(result['attempts'][0]['failure_reason'],'OVERPASS_REMARK')
+        self.assertIn('Query timed out',result['attempts'][0]['remark'])
     def test_notebook_export_failure_retry_reopen_and_private_bq_included(self):
         import zipfile
         from location_intelligent_map_pilot import sha
