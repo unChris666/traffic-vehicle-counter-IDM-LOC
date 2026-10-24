@@ -65,3 +65,8 @@ explicit current-snapshot retry returned HTTP406/429. These failures are retaine
 outside the dataset and not presented as empty buildings. Actual Kaggle execution
 is inspected separately before claiming an end-to-end OSM result. No current
 OSM building count or accuracy is invented to fill this source dependency.
+
+Kaggle versi10 sudah dikirim dan terakhir teramati RUNNING. Jumlah footprint,
+accepted/routing dan peta end-to-end OSM belum diverifikasi; null pada source
+plan bukan0. Perubahan label audit/guard seed terbaru disimpan sebagai source
+revision berikutnya tanpa menjadwalkan perhitungan penuh kedua.
