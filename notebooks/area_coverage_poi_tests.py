@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from pyproj import Geod
 from location_intelligent_map_poi import classify_poi, normalize_pois, load_osm_pois, build_poi_query
-from location_intelligent_map_pilot import bq_credentials, interactive_map, load_bq_layers
+from location_intelligent_map_pilot import bq_credentials, interactive_map, load_bq_layers, road_display_style
 
 
 CONFIG = {'latitude': -6.409737552410453, 'longitude': 106.82835008971841,
@@ -105,6 +105,13 @@ class FacilityTests(unittest.TestCase):
                    'report.json': {'source_records': 0, 'selected_buildings': 0, 'decision_counts_selected': {}},
                    'pilot.json': {'policy': {'li3': config}},
                    'context.json': {'config': {'area_coverage': {'parameters': {'building_radius_m': {'value': 800.0}}}}}}
+        sources['decisions.json.gz']=[{'building_id':'SYNTHETIC_BUILDING','decision_state':'NO_ROUTE',
+            'reason':'NO_VALID_REACHABLE_CONNECTORS','selection_status':'SELECTED','connector_count':1}]
+        sources['selection.json']={'selected':[{'building_id':'SYNTHETIC_BUILDING','area_m2':123.45}]}
+        sources['buildings.geojson']={'features':[{'type':'Feature','properties':{
+            'building_id':'SYNTHETIC_BUILDING','class':None,'subclass':None},'geometry':{'type':'Polygon','coordinates':[[
+             [106.8283,-6.4097],[106.8284,-6.4097],[106.8284,-6.4098],[106.8283,-6.4098],[106.8283,-6.4097]]]}}]}
+        sources['report.json'].update(source_records=1,selected_buildings=1)
         layers = {kind: {'status': 'SUCCEEDED', 'table': 'SYNTHETIC_TEST_FIXTURE',
                         'request_binding': {'latitude': config['latitude'], 'longitude': config['longitude'], 'radius_m': 2000.0},
                         'rows': [{'store_id': kind, 'store_name': 'SYNTHETIC', 'latitude': config['latitude'],
@@ -120,6 +127,20 @@ class FacilityTests(unittest.TestCase):
                 self.assertEqual(len(circles), 1)
                 self.assertEqual(circles[0].options['radius'], 400.0)
                 self.assertEqual(circles[0].location, [config['latitude'], config['longitude']])
+            properties=[feature['properties'] for group in map_object._children.values()
+                        for child in getattr(group,'_children',{}).values()
+                        for feature in getattr(child,'data',{}).get('features',[])
+                        if 'area_full_m2' in feature['properties']]
+            self.assertEqual(properties[0]['area_full_m2'],123.45)
+            self.assertEqual(properties[0]['class_source'],'UNKNOWN (source null)')
+            self.assertEqual(properties[0]['state'],'NO_ROUTE')
+
+    def test_road_styles_use_hierarchy_links_and_unknown_without_access_inference(self):
+        self.assertEqual(road_display_style('primary_link'),road_display_style('primary'))
+        self.assertGreater(road_display_style('primary')['weight'],road_display_style('service')['weight'])
+        self.assertNotEqual(road_display_style('primary')['color'],road_display_style('service')['color'])
+        self.assertEqual(road_display_style('path')['dashArray'],'4,4')
+        self.assertEqual(road_display_style(None),road_display_style('unsupported'))
 
 
 if __name__ == '__main__':

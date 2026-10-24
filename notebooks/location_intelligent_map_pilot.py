@@ -331,6 +331,21 @@ def poi_locations(layer):
     return sorted(result,key=lambda g:(g['distance_m'],str(g['store_id']),g['latitude'],g['longitude']))
 
 
+def road_display_style(highway):
+    """Readable road hierarchy; illustrative palette, not Google's proprietary style."""
+    name=highway if isinstance(highway,str) else 'unknown'
+    if name.endswith('_link'):
+        name=name[:-5]
+    palette={'motorway':('#e99a61',4.5),'trunk':('#f0ad61',4.2),'primary':('#f6bf43',3.8),
+             'secondary':('#f8d778',3.2),'tertiary':('#f4e5b2',2.6),
+             'unclassified':('#ffffff',2.0),'residential':('#ffffff',2.0),'living_street':('#eef1f4',1.8),
+             'service':('#c7cdd4',1.5),'track':('#a68b65',1.2),'path':('#8d9d80',1.0),
+             'footway':('#8d9d80',1.0),'steps':('#8d9d80',1.0)}
+    color,width=palette.get(name,('#8b7ca8',1.2))
+    return {'color':color,'weight':width,'opacity':1.0,
+            'dashArray':'4,4' if name in {'track','path','footway','steps'} else None}
+
+
 def interactive_map(config, pilot, layers, output, *, facilities=None):
     """Display-only Folium layers; no routing, capacity or source fetch here."""
     import folium
@@ -359,14 +374,26 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
     folium.Circle([config['latitude'],config['longitude']],radius=config['building_radius_m'],color='#2563eb',fill=False,tooltip=f'Seleksi bangunan {config["building_radius_m"]:g} m').add_to(m)
     folium.Circle([config['latitude'],config['longitude']],radius=config['poi_radius_m'],color='#7c3aed',fill=False,tooltip=f'Radius toko/kompetitor {config["poi_radius_m"]:g} m').add_to(m)
     selected_ids={b['building_id'] for b in selection['selected']}
+    selected_records={b['building_id']:b for b in selection['selected']}
+    excluded_metrics={b.get('building_id'):b.get('metrics') or {} for b in selection.get('reject_ledger',[])}
     colors={'ACCEPTED':'#16a34a','ACCESS_UNVERIFIED':'#f59e0b','NO_VALID_CONNECTOR':'#64748b','NO_ROUTE':'#dc2626','OVER_TIME_LIMIT':'#a855f7','EXCLUDED_BY_SELECTION':'#cbd5e1'}
     selected_group=folium.FeatureGroup(name=f'Bangunan terpilih {config["building_radius_m"]:g} m — status skenario',show=True)
-    excluded_group=folium.FeatureGroup(name='Footprint sumber di luar seleksi / excluded',show=False)
+    excluded_group=folium.FeatureGroup(name='Footprint sumber di luar seleksi / excluded',show=True)
     selected_features=[];excluded_features=[]
     for feature in buildings['features']:
         bid=feature['properties']['building_id'];row=by_id.get(bid,{})
         state=row.get('decision_state','UNKNOWN')
+        props=feature['properties']
+        measured=selected_records.get(bid) or excluded_metrics.get(bid,{})
+        area=measured.get('area_m2')
         view={'type':'Feature','geometry':feature['geometry'],'properties':{'building_id':bid,'state':state,
+            'area_full_m2':round(area,2) if area is not None else None,
+            'area_basis':'Full footprint in '+config['metric_crs']+'; not clipped to circle',
+            'class_source':props.get('class') or 'UNKNOWN (source null)',
+            'subclass_source':props.get('subclass') or 'UNKNOWN (source null)',
+            'selection_status':row.get('selection_status'),'reason':row.get('reason'),
+            'connector_count':row.get('connector_count'),
+            'routing_note':'125m = search limit, not proof of road connectivity or a route to store',
             'capacity_reference':row.get('capacity_reference_rounded'),'capacity_unit':row.get('capacity_unit'),
             'claim':'Skenario; bukan akses fisik/legal terverifikasi'}}
         (selected_features if bid in selected_ids else excluded_features).append(view)
@@ -374,7 +401,10 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
         if features:
             folium.GeoJson({'type':'FeatureCollection','features':features},
                 style_function=lambda f:{'fillColor':colors.get(f['properties']['state'],'#ef4444'),'color':colors.get(f['properties']['state'],'#ef4444'),'weight':.6,'fillOpacity':.45},
-                tooltip=folium.GeoJsonTooltip(fields=['building_id','state','capacity_reference','capacity_unit','claim'])).add_to(group)
+                tooltip=folium.GeoJsonTooltip(fields=['building_id','area_full_m2','class_source','subclass_source','state','reason'],
+                    aliases=['ID bangunan','Luas footprint (m²)','Kelas sumber','Subtype sumber','Status','Alasan']),
+                popup=folium.GeoJsonPopup(fields=['building_id','area_full_m2','area_basis','class_source','subclass_source',
+                    'selection_status','state','reason','connector_count','routing_note','claim'])).add_to(group)
     selected_group.add_to(m);excluded_group.add_to(m)
     inverse=Transformer.from_crs(config['metric_crs'],4326,always_xy=True)
     forward=Transformer.from_crs(4326,config['metric_crs'],always_xy=True)
@@ -383,14 +413,24 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
     for edge in graph['edges']:
         geom=edge.get('geometry')
         if not geom:continue
-        line=LineString(geom['coordinates']);key=line.wkb
+        line=LineString(geom['coordinates']);key=(line.wkb,edge.get('highway'))
         if key in seen:continue
         seen.add(key);clipped=line.intersection(display_disk)
         if clipped.is_empty or clipped.geom_type not in {'LineString','MultiLineString'}:continue
         roads.append({'type':'Feature','geometry':mapping(transform(inverse.transform,clipped)),
-            'properties':{'edge_id':edge['edge_id'],'highway':edge.get('highway'),'claim':'OSM graph; displayed geometry clipped only'}})
-    folium.GeoJson({'type':'FeatureCollection','features':roads},name=f'Network OSM — tampilan {config["poi_radius_m"]:g} m',
-        style_function=lambda f:{'color':'#334155','weight':1.3,'opacity':.55},tooltip=folium.GeoJsonTooltip(fields=['highway','edge_id'])).add_to(m)
+            'properties':{'edge_id':edge['edge_id'],'highway':edge.get('highway'),
+                'motor_access':('UNKNOWN' if edge.get('access_allowed') is None else 'ALLOWED' if edge['access_allowed'] else 'DENIED'),
+                'claim':'OSM graph; class color does not authorize motor access'}})
+    if roads:
+        road_group=folium.FeatureGroup(name=f'Network OSM — tampilan {config["poi_radius_m"]:g} m',show=True)
+        collection={'type':'FeatureCollection','features':roads}
+        folium.GeoJson(collection,style_function=lambda f:{'color':'#727b85',
+            'weight':road_display_style(f['properties']['highway'])['weight']+1.3,'opacity':.8},
+            interactive=False).add_to(road_group)
+        folium.GeoJson(collection,
+            style_function=lambda f:road_display_style(f['properties']['highway']),
+            tooltip=folium.GeoJsonTooltip(fields=['highway','motor_access','edge_id'])).add_to(road_group)
+        road_group.add_to(m)
     from location_intelligent_map_poi import add_poi_layers
     statuses=add_poi_layers(m,config,facilities) if facilities is not None else []
     for kind,title,color in [('indomaret','Indomaret','blue'),('competitor','Kompetitor','orange')]:
@@ -422,6 +462,9 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
         f'<b>AREA COVERAGE — SKENARIO EKSPERIMEN</b><br>Bangunan {config["building_radius_m"]:g} m; toko/kompetitor {config["poi_radius_m"]:g} m.<br>'
         +'<br>'.join(statuses)+f"<br>Building counter{config['building_radius_m']:g}m (lolos seleksi): <b>{len(selection['selected'])}</b>; accepted skenario: {report['decision_counts_selected'].get('ACCEPTED',0)}"
         '<br>Hijau=accepted skenario; jingga=unverified; abu=no connector; ungu=over-time; merah=no route.'
+        '<br>Footprint excluded ditampilkan; sebagian bangunan basemap dapat tidak ada pada sumber Overture.'
+        '<br>Jalan: oranye=motorway/trunk; kuning=primary/secondary; krem=tertiary; putih=lokal; abu=service; putus=track/path.'
+        '<br>Warna jalan adalah ilustrasi hierarki OSM, bukan style resmi Google.125m tidak menjamin rute ke toko.'
         f'<br>Lingkaran toko{radius:g}m = radius visual, bukan rute/coverage tervalidasi.'
         '<br>7km/jam; round(menit)≤10; kapasitas bukan populasi.<br>OSM/Overture attribution tetap berlaku.</div>')
     m.get_root().html.add_child(folium.Element(legend))
