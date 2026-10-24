@@ -266,7 +266,9 @@ class MarketTests(unittest.TestCase):
         from location_intelligent_li3_sources import read_json,write_json
         n=json.loads(Path(__file__).with_name('area_coverage_market_cpu_2km.ipynb').read_text())
         source=''.join(n['cells'][-1]['source']).split('# Keep the complete packet',1)[1]
-        source=source[source.index('archive='):]
+        source=source[source.index('archive='):].split("  finish_notebook_stage('output'",1)[0]
+        import textwrap
+        source=textwrap.dedent('  '+source)
         with tempfile.TemporaryDirectory() as d:
             root=Path(d)
             for folder in ['sources','pilot','bq_snapshot','market','code/notebooks','output']:
@@ -315,9 +317,10 @@ class MarketTests(unittest.TestCase):
         import ast
         from types import SimpleNamespace
         n=json.loads(Path(__file__).with_name('area_coverage_market_cpu_2km.ipynb').read_text())
-        s=next(''.join(c['source']) for c in n['cells'] if ''.join(c['source']).startswith('# Preserve the scientific stack'))
+        s=next(''.join(c['source']) for c in n['cells'] if '# Preserve the scientific stack' in ''.join(c['source']))
         # Exercise the exact pre-install guard without pip or heavy imports.
-        prefix=s[:s.index('packages=')]
+        import textwrap
+        prefix=textwrap.dedent('  '+s[s.index('# Preserve the scientific stack'):s.index('packages=')])
         with patch('importlib.metadata.version',return_value='2.3.0'):
             with self.assertRaisesRegex(RuntimeError,'Restart Session'):
                 exec(prefix,{'sys':SimpleNamespace(modules={'numpy':SimpleNamespace(__version__='2.2.0')})})
