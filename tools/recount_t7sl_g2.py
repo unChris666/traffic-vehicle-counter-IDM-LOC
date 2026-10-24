@@ -15,10 +15,13 @@ def worker(args):
  del baseline,original
  geometry=ROOT/'results/t7sl_modular/geometry_g2'/f'{vid}.json';q['artifacts']['geometry']={'path':str(geometry),'sha256':sha(geometry)}
  q['source_identity']['geometry_sha256']=sha(geometry);q['source_manifest_sha256']=revision_sha
+ q.update(profile='replay',replay_branch='machine')
  first=run(q,root=ROOT);checks=[]
  for _ in range(2):
   again=run(q,root=ROOT);require(semantic_hash(again['native'])==semantic_hash(first['native']) and again['result']['result_version']==first['result']['result_version'],'G2 repeat mismatch')
   checks.append({'native_sha256':semantic_hash(again['native']),'result_version':again['result']['result_version']})
+ # This operation consumes fresh-origin measurements but executes no inference.
+ first['result']['fresh_inference_executed']=False
  publish(out,{'result.json':first['result'],'native.json.gz':first['native'],'request.json':q,'checks.json':{'g1_cross_runtime_native_equal':True,'g2_counting_runs':3,'checks':checks}},metadata={'engine':'traffic','revision':'G2'})
  return {'video_id':vid,'status':'SUCCEEDED','scope':'FULL_VIDEO','experiment_sha256':revision_sha,'branch':'machine','result_version':first['result']['result_version'],'native':first['native']}
 def main(source_root):
