@@ -209,7 +209,7 @@ def prepare_pilot(config, root, *, core_python='/usr/bin/python3', extension_dir
     return frozen
 
 
-def bq_credentials(secret_name='PROJECT_PPAC'):
+def bq_credentials(secret_name='LocatioIntelligent'):
     """No secret is displayed, written to output, or embedded in the notebook."""
     import google.auth
     try:
@@ -448,7 +448,7 @@ def safe_error_diagnostics(error):
     return {'chain':chain}
 
 
-def load_bq_layers(config, cache, *, secret_name='PROJECT_PPAC', refresh=False, overrides=None):
+def load_bq_layers(config, cache, *, secret_name='LocatioIntelligent', refresh=False, overrides=None):
     """A successful cached result can reopen without credentials or a new query."""
     cache=Path(cache);cache.mkdir(parents=True,exist_ok=True)
     definitions=config.get('bq_tables',{'indomaret':'locdeproject.DWH_NS_LOC.AREA_COVERAGE','competitor':'locdeproject.DWH_NS_LOC.COMPETITOR'})

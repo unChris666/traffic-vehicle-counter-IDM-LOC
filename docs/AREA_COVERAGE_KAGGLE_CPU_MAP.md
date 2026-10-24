@@ -14,6 +14,18 @@ bootstrap atau implementasi diunduh dari Git. Dataset memuat data/provenance;
 
 ## Update layer dan secret — 24 Oktober2026
 
+**Label aktif terbaru: `LocatioIntelligent`**, persis ejaan owner. Source notebook
+dan default helper diselaraskan ke label ini; PROJECT_PPAC di bawah adalah
+riwayat versi4/5.22tes lokal lulus setelah perubahan label. Source disimpan ke
+Kaggle melalui QUICK_SAVE, bukan klaim eksekusi/auth baru. Auth live label baru
+belum terverifikasi. Jalankan [probe autentikasi](../notebooks/area_coverage_auth_check.py)
+di session editor Kaggle yang mengaktifkan secret tersebut; probe membedakan
+retrieval secret, format/identitas service account, metadata dan izin query.
+Email yang diharapkan `locationinteligent@locdeproject.iam.gserviceaccount.com`.
+Path `/kaggle/input/gcp-sa-key/nama-file-key-lu.json` hanya placeholder, bukan
+file yang sudah ditemukan. Pengambilan secret tidak otomatis mengisi ADC;
+client harus diberi Credentials.from_service_account_info secara eksplisit.
+
 User mengonfirmasi secret Kaggle bernama **PROJECT_PPAC**. Default notebook dan
 helper kini membaca label tersebut melalui `UserSecretsClient().get_secret()`;
 value hanya dipakai di memory sebagai JSON service account, tidak dicetak.

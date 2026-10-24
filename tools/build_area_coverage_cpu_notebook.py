@@ -42,7 +42,7 @@ SOURCE_ROOT=Path('/kaggle/working/area_coverage_cpu_source')
 SOURCE_MODE='FROZEN'       # FROZEN or REFRESH; never silently fetch on a cache mismatch
 SOURCE_REVISION='user-target-800m-v1'
 BQ_MODE='ACQUIRE_ONCE'     # ACQUIRE_ONCE or FROZEN
-BQ_SECRET_NAME='PROJECT_PPAC'  # User-confirmed Kaggle Secret; full service-account JSON
+BQ_SECRET_NAME='LocatioIntelligent'  # User-confirmed Kaggle Secret; full service-account JSON
 BQ_FROZEN_CACHE_INPUT=None  # Optional path to a previously saved bq_snapshot directory in /kaggle/input
 BQ_SCHEMA_OVERRIDES={}    # e.g. {'indomaret': {'point':'KOORDINAT'}}; verified against actual table.schema
 POI_MODE='FROZEN'         # Explicit ACQUIRE_ONCE only for a new source revision
@@ -161,7 +161,7 @@ print('SOURCE WARNINGS:',report['source_warnings'])
  md('''## 6. Akses BigQuery dan radius2000m
 1. Buat service account pembaca di project `locdeproject`.
 2. Grant BigQuery Job User pada billing project dan Data Viewer pada kedua tabel.
-3. User sudah menyimpan Kaggle Secret `PROJECT_PPAC`; aktifkan akses notebook ini. Isinya harus seluruh JSON service account.
+3. User sudah menyimpan Kaggle Secret `LocatioIntelligent`; aktifkan akses notebook ini. Isinya harus seluruh JSON service account.
 4. Jangan masukkan key ke source/outputs/GitHub/chat.
 
 Metadata schema dibaca lebih dahulu. Nama kolom belum diklaim terverifikasi sebelum metadata berhasil.

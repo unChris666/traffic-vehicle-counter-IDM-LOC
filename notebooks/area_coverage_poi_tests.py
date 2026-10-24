@@ -74,10 +74,10 @@ class FacilityTests(unittest.TestCase):
         self.assertNotIn('["building"]', query)
 
     def test_named_kaggle_secret_used_without_echo(self):
-        client = SimpleNamespace(get_secret=lambda name: json.dumps({'type': 'service_account'}) if name == 'PROJECT_PPAC' else '')
+        client = SimpleNamespace(get_secret=lambda name: json.dumps({'type': 'service_account'}) if name == 'LocatioIntelligent' else '')
         with patch.dict('sys.modules', {'kaggle_secrets': SimpleNamespace(UserSecretsClient=lambda: client)}), \
                 patch('google.oauth2.service_account.Credentials.from_service_account_info', return_value='TEST_CREDENTIALS'):
-            self.assertEqual(bq_credentials('PROJECT_PPAC'), 'TEST_CREDENTIALS')
+            self.assertEqual(bq_credentials(), 'TEST_CREDENTIALS')
 
     def test_wrapped_secret_http_error_preserves_status_without_secret_or_message(self):
         from urllib.error import HTTPError
