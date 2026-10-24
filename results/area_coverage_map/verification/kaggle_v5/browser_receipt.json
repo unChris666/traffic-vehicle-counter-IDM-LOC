@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "interactive_map_loaded": true,
+  "target_center": {
+    "lat": -6.409737552410453,
+    "lng": 106.82835008971841
+  },
+  "layer_controls": " openstreetmap\n Bangunan terpilih 800 m \u2014 status skenario\n Footprint sumber di luar seleksi / excluded\n Network OSM \u2014 tampilan 2000 m\n POI Rumah sakit \u22642000 m\n POI Klinik \u22642000 m\n POI Pasar \u22642000 m\n POI Kantor polisi \u22642000 m\n POI Sekolah \u22642000 m\n POI Kantor pemerintahan \u22642000 m\n POI Kantor \u22642000 m\n POI Universitas \u22642000 m\n Indomaret \u22642000m \u2014 BELUM TERSEDIA\n Indomaret \u2014 radius 400 m per toko \u2014 BELUM TERSEDIA\n Kompetitor \u22642000m \u2014 BELUM TERSEDIA\n Kompetitor \u2014 radius 400 m per toko \u2014 BELUM TERSEDIA",
+  "layer_toggles": 15,
+  "page_errors": [],
+  "failed_resources": [],
+  "bigquery_layers": [
+    {
+      "layer": "competitor",
+      "status": "BLOCKED",
+      "count": null
+    },
+    {
+      "layer": "indomaret",
+      "status": "BLOCKED",
+      "count": null
+    }
+  ],
+  "store_circles_400m": 0,
+  "facilities": 71,
+  "scope": "Actual Kaggle V5 map; no private store coordinates in this receipt",
+  "source_sha256": "252543375305501e89c609795174a587dcead890417a7488f6a78c4e76dc2e04"
+}

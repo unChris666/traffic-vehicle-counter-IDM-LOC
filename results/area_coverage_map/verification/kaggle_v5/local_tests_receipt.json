@@ -1,0 +1,8 @@
+{
+  "kind": "OBSERVED_LOCAL_TEST_RESULT",
+  "command": "PYTHONPATH=notebooks /workspace/.venvs/area-coverage-map/bin/python -B -m unittest discover -s notebooks -p 'area_coverage*tests.py'",
+  "tests": 22,
+  "result": "PASS",
+  "scope": "Offline regression fixtures; not successful live BigQuery validation",
+  "code_sha256": "aa99a066a971d9a9bca34defd17b7ccb039be16548aaf90b7cce720a05da3a3e"
+}

@@ -73,6 +73,30 @@ marker toko aktual sampai query BigQuery berhasil. Map status
 `PARTIAL_MAP_INPUTS_UNAVAILABLE`; jangan mengklaim peta seluruh layer lengkap.
 [Bukti run versi4](../results/area_coverage_map/verification/kaggle_v4/retention.json).
 
+### Retry setelah aktivasi secret — Kaggle versi5
+
+Owner mengonfirmasi baru mengaktifkan `PROJECT_PPAC` pada notebook CPU. Versi5
+dijalankan ulang setelah konfirmasi tersebut: **CPU COMPLETE**, bangunan3597,
+POI71 dan manifest kalkulasi tetap sama dengan versi3/4. Namun, kedua sumber BQ
+masih BLOCKED/null. Diagnostik aman kini mempertahankan chain
+`ConnectionError → HTTPError400` pada tahap `KAGGLE_SECRET_READ`. Tidak ada
+query/table metadata BigQuery yang berhasil; izin IAM dan isi key belum bisa
+dinilai dari error ini. Aktivasi menurut owner tidak disamakan dengan sukses
+pembacaan secret pada background run API.
+
+Penambahan diagnostik hanya menyimpan class error dan kode HTTP; tidak mencetak
+message/body/URL/header atau nilai secret.22tes lokal lulus, termasuk fixture
+HTTP403 yang menguji chain tetap terbaca dan string rahasia tidak bocor.403pada
+fixture bukan hasil run aktual; error aktual versi5 adalah **400**.
+
+Langkah berikutnya untuk mengisolasi konteks eksekusi: buka editor notebook yang
+sama, **Restart Session → Run All** melalui UI Kaggle dengan secret tetap aktif.
+Ini uji melalui session owner, bukan bukti pasti bahwa run UI akan berhasil.
+Peta bangunan/POI dan layer radius400m tetap bisa diperiksa pada output versi5;
+lingkaran toko aktual belum ada karena query belum berjalan. Jangan mengulang
+full CPU lewat API lagi hanya untuk mencoba secret yang sama tanpa perubahan
+atau bukti tambahan. [Bukti versi5](../results/area_coverage_map/verification/kaggle_v5/retention.json).
+
 ## Konfigurasi dan sumber
 
 | Komponen | Konfigurasi aktual |

@@ -181,7 +181,7 @@ from location_intelligent_map_pilot import poi_locations
 rows=[]
 for kind,layer in layers.items():
  locations=poi_locations(layer) if layer['status']=='SUCCEEDED' else None
- rows.append({'layer':kind,'table':layer['table'],'status':layer['status'],'marker_locations':None if locations is None else len(locations),'error_type':layer.get('error_type')})
+ rows.append({'layer':kind,'table':layer['table'],'status':layer['status'],'marker_locations':None if locations is None else len(locations),'error_type':layer.get('error_type'),'error_stage':layer.get('error_stage'),'safe_diagnostics':layer.get('error_diagnostics')})
  if layer['status']=='SUCCEEDED':
   print('VERIFIED SCHEMA BINDING',kind,layer['fields']);display(pd.DataFrame(locations))
 display(pd.DataFrame(rows))

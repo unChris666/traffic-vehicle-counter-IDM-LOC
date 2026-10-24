@@ -1,0 +1,40 @@
+{
+  "competitor": {
+    "status": "BLOCKED",
+    "error_type": "ConnectionError",
+    "error_stage": "KAGGLE_SECRET_READ",
+    "error_diagnostics": {
+      "chain": [
+        {
+          "type": "ConnectionError"
+        },
+        {
+          "http_status": 400,
+          "type": "HTTPError"
+        }
+      ]
+    },
+    "table": "locdeproject.DWH_NS_LOC.COMPETITOR",
+    "radius_m": 2000.0,
+    "count_source_rows_distinct": null
+  },
+  "indomaret": {
+    "status": "BLOCKED",
+    "error_type": "ConnectionError",
+    "error_stage": "KAGGLE_SECRET_READ",
+    "error_diagnostics": {
+      "chain": [
+        {
+          "type": "ConnectionError"
+        },
+        {
+          "http_status": 400,
+          "type": "HTTPError"
+        }
+      ]
+    },
+    "table": "locdeproject.DWH_NS_LOC.AREA_COVERAGE",
+    "radius_m": 2000.0,
+    "count_source_rows_distinct": null
+  }
+}

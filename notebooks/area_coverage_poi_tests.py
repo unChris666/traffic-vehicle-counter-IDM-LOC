@@ -8,7 +8,7 @@ from unittest.mock import patch
 
 from pyproj import Geod
 from location_intelligent_map_poi import classify_poi, normalize_pois, load_osm_pois, build_poi_query
-from location_intelligent_map_pilot import bq_credentials, interactive_map
+from location_intelligent_map_pilot import bq_credentials, interactive_map, load_bq_layers
 
 
 CONFIG = {'latitude': -6.409737552410453, 'longitude': 106.82835008971841,
@@ -78,6 +78,20 @@ class FacilityTests(unittest.TestCase):
         with patch.dict('sys.modules', {'kaggle_secrets': SimpleNamespace(UserSecretsClient=lambda: client)}), \
                 patch('google.oauth2.service_account.Credentials.from_service_account_info', return_value='TEST_CREDENTIALS'):
             self.assertEqual(bq_credentials('PROJECT_PPAC'), 'TEST_CREDENTIALS')
+
+    def test_wrapped_secret_http_error_preserves_status_without_secret_or_message(self):
+        from urllib.error import HTTPError
+        error = ConnectionError('SYNTHETIC_PRIVATE_VALUE_MUST_NOT_LEAK')
+        error.__cause__ = HTTPError('https://example.invalid/secret', 403, 'PRIVATE_ERROR_BODY', {}, None)
+        with tempfile.TemporaryDirectory() as d, patch('location_intelligent_map_pilot.bq_credentials', side_effect=error):
+            layers = load_bq_layers(CONFIG, d)
+        for layer in layers.values():
+            self.assertEqual(layer['error_stage'], 'KAGGLE_SECRET_READ')
+            self.assertEqual(layer['error_diagnostics']['chain'][1]['http_status'], 403)
+        serialized = json.dumps(layers)
+        self.assertNotIn('SYNTHETIC_PRIVATE_VALUE_MUST_NOT_LEAK', serialized)
+        self.assertNotIn('PRIVATE_ERROR_BODY', serialized)
+        self.assertNotIn('example.invalid', serialized)
 
     def test_one_400m_circle_per_store_and_separate_toggle_groups(self):
         from pyproj import Transformer

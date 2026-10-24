@@ -52,6 +52,14 @@ Only BQ readiness metadata is retained here; raw private data/maps stay in the
 private Kaggle output. Source code fingerprint:
 `2a455703bb19fa5d6cd027d78cd4d8434bc0b3b16b178f13531aa971eabfbc21`.
 
+`verification/kaggle_v5/`: actual retry after owner confirmed secret activation.
+CPU COMPLETE, same calculation manifest,3597selected and71facilities. Both BQ
+layers still BLOCKED: actual safe error chain is ConnectionError→HTTPError400
+at Kaggle secret retrieval, before BigQuery. No key/HTTP body/message retained.
+22local tests pass; the403regression fixture is synthetic, not the actual400.
+Next diagnostic is an owner UI Restart Session/Run All, not another unchanged
+API full replay. Private table rows/maps are not published here.
+
 `verification/browser/`: actual Kaggle V2 HTML opened in Chromium; layer toggle
 works, center and both radii verified, no JS/resource errors. Screenshot is from
 the real generated map with public building/network sources and unavailable

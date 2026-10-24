@@ -432,11 +432,27 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
     return m
 
 
+def safe_error_diagnostics(error):
+    """Exception classes/HTTP status only; never serialize messages, URLs or values."""
+    chain=[];seen=set()
+    while error is not None and id(error) not in seen and len(chain)<5:
+        seen.add(id(error))
+        item={'type':type(error).__name__}
+        status=getattr(error,'code',None)
+        if not isinstance(status,int):
+            status=getattr(getattr(error,'response',None),'status_code',None)
+        if isinstance(status,int) and 100<=status<=599:
+            item['http_status']=status
+        chain.append(item)
+        error=error.__cause__ or error.__context__
+    return {'chain':chain}
+
+
 def load_bq_layers(config, cache, *, secret_name='PROJECT_PPAC', refresh=False, overrides=None):
     """A successful cached result can reopen without credentials or a new query."""
     cache=Path(cache);cache.mkdir(parents=True,exist_ok=True)
     definitions=config.get('bq_tables',{'indomaret':'locdeproject.DWH_NS_LOC.AREA_COVERAGE','competitor':'locdeproject.DWH_NS_LOC.COMPETITOR'})
-    result={};credentials=None;credential_error=None
+    result={};credentials=None;credential_error=None;credential_diagnostics=None
     for kind,table in definitions.items():
         path=cache/(kind+'.json')
         binding={'latitude':config['latitude'],'longitude':config['longitude'],'radius_m':config['poi_radius_m'],
@@ -455,7 +471,9 @@ def load_bq_layers(config, cache, *, secret_name='PROJECT_PPAC', refresh=False, 
                 if credential_error:raise RuntimeError(credential_error)
                 try:credentials=bq_credentials(secret_name)
                 except Exception as error:
-                    credential_error=type(error).__name__;raise
+                    credential_error=type(error).__name__
+                    credential_diagnostics=safe_error_diagnostics(error)
+                    raise
             layer=query_bq_layer(config,table,kind,credentials=credentials,overrides=(overrides or {}).get(kind))
             layer['request_fingerprint']=fingerprint
             layer['request_binding']=binding
@@ -466,6 +484,8 @@ def load_bq_layers(config, cache, *, secret_name='PROJECT_PPAC', refresh=False, 
         except Exception as error:
             result[kind]={'status':'BLOCKED' if credentials is None else 'FAILED','kind':kind,'table':table,
                 'rows':None,'count_source_rows_distinct':None,'error_type':credential_error or type(error).__name__,
+                'error_stage':'KAGGLE_SECRET_READ' if credentials is None else 'BIGQUERY_METADATA_OR_QUERY',
+                'error_diagnostics':credential_diagnostics or safe_error_diagnostics(error),
                 'radius_m':config['poi_radius_m'],'request_fingerprint':fingerprint,
                 'next_action':'Enable Kaggle Secret and verify BigQuery read/job permissions; rerun BQ/map cells'}
     return result
