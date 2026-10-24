@@ -127,6 +127,14 @@ class FacilityTests(unittest.TestCase):
                 self.assertEqual(len(circles), 1)
                 self.assertEqual(circles[0].options['radius'], 400.0)
                 self.assertEqual(circles[0].location, [config['latitude'], config['longitude']])
+            rendered=(Path(d)/'test.html').read_text()
+            self.assertNotIn('AREA COVERAGE — SKENARIO EKSPERIMEN',rendered)
+            from folium.features import GeoJsonTooltip
+            building_tips=[tip for group in map_object._children.values()
+                           for child in getattr(group,'_children',{}).values()
+                           for tip in getattr(child,'_children',{}).values()
+                           if isinstance(tip,GeoJsonTooltip) and 'building_id' in tip.fields]
+            self.assertEqual(building_tips[0].fields,['building_id','area_full_m2','state','reason','alternatives'])
             properties=[feature['properties'] for group in map_object._children.values()
                         for child in getattr(group,'_children',{}).values()
                         for feature in getattr(child,'data',{}).get('features',[])

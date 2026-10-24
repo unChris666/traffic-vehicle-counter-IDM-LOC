@@ -1,0 +1,39 @@
+{
+  "inspection_date": "2026-10-24",
+  "scope": "Live public OSM tags, not retained owner routing evidence",
+  "buildings": [
+    {
+      "osm_id": "way/500294496",
+      "owner_reported_status": "ACCEPTED",
+      "source_url": "https://api.openstreetmap.org/api/0.6/way/500294496/full",
+      "osm_version": "1",
+      "osm_timestamp": "2017-06-14T02:11:31Z",
+      "tags": {
+        "building": "yes"
+      },
+      "routing_cause": "NOT_YET_VERIFIED_FROM_OWNER_SNAPSHOT"
+    },
+    {
+      "osm_id": "way/500294495",
+      "owner_reported_status": "NO_ROUTE",
+      "source_url": "https://api.openstreetmap.org/api/0.6/way/500294495/full",
+      "osm_version": "1",
+      "osm_timestamp": "2017-06-14T02:11:31Z",
+      "tags": {
+        "building": "yes"
+      },
+      "routing_cause": "NOT_YET_VERIFIED_FROM_OWNER_SNAPSHOT"
+    },
+    {
+      "osm_id": "way/500294493",
+      "owner_reported_status": "OVER_TIME_LIMIT",
+      "source_url": "https://api.openstreetmap.org/api/0.6/way/500294493/full",
+      "osm_version": "1",
+      "osm_timestamp": "2017-06-14T02:11:30Z",
+      "tags": {
+        "building": "yes"
+      },
+      "routing_cause": "NOT_YET_VERIFIED_FROM_OWNER_SNAPSHOT"
+    }
+  ]
+}

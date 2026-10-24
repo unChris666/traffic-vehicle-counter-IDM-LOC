@@ -94,7 +94,7 @@ def check_barriers(line, index, epsilon):
     return True, []
 
 
-def generate_connectors(base, metrics, feature_source, frozen):
+def generate_connectors(base, metrics, feature_source, frozen, *, alternative_targets=None):
     import numpy as np
     from shapely import STRtree
     from shapely.geometry import LineString, Point, shape
@@ -198,6 +198,17 @@ def generate_connectors(base, metrics, feature_source, frozen):
         for i in sorted(range(len(group_ids)), key=lambda i: (distances[i], group_ids[i])):
             if candidate('TARGET', None, target, None, i) is not None:
                 break
+    original_target=target
+    for store in sorted(alternative_targets or [],key=lambda r:r['store_key']):
+        target=Point(*store['target_xy'])
+        distances=[target.distance(g) for g in geometries]
+        for i in sorted(range(len(group_ids)),key=lambda i:(distances[i],group_ids[i])):
+            extra=candidate('TARGET',None,target,None,i)
+            if extra is not None:
+                extra['connector_id']='alternative_'+store['store_key']+'_'+extra['connector_id']
+                extra['alternative_store_key']=store['store_key']
+                break
+    target=original_target
     for b in sorted(metrics['selected_buildings'], key=lambda b: b['building_id']):
         point, footprint = Point(*b['representative_point_m']), footprints[b['building_id']]
         seen = set()

@@ -5,6 +5,14 @@ from pathlib import Path
 from location_intelligent_li3_sources import read_json,write_json,acquire_overpass,utc
 
 SCHEMA='osm_buildings_adapter_v1'
+FACILITY_AMENITIES={'hospital','clinic','doctors','dentist','pharmacy','marketplace','police','school',
+ 'kindergarten','college','university','townhall','courthouse','place_of_worship','library','bank',
+ 'restaurant','cafe','fast_food','bar','pub','cinema','theatre','fire_station','post_office','community_centre'}
+
+def use_tags(tags):
+    """Positive building-use hints, not every amenity such as a bench/bin."""
+    return [k+'='+tags[k] for k in ['amenity','healthcare','shop','office','tourism']
+            if tags.get(k) not in {None,'','no'} and (k!='amenity' or tags[k] in FACILITY_AMENITIES)]
 
 def join_rings(parts):
     parts=[list(p) for p in parts]
@@ -77,10 +85,54 @@ def normalize_osm(raw,with_diagnostics=False):
                  'osm_tags':deepcopy(tags),'osm_timestamp':e.get('timestamp')}})
         except (ValueError,RuntimeError,KeyError) as error:
             excluded.append({'source_id':bid,'reason':str(error)[:100]})
+    if raw.get('use_policy_version')=='osm_poi_use_v2':
+        evidence=deepcopy(raw.get('facility_evidence')) or {'status':'SUCCEEDED','rows':[]}
+        known={r['source_id'] for r in evidence['rows']}
+        for node in raw.get('use_poi_nodes',[]):
+            tags=node.get('tags',{})
+            active=use_tags(tags)
+            sid='node/'+str(node['id'])
+            if active and sid not in known:
+                evidence['rows'].append({'source_id':sid,'latitude':node['lat'],'longitude':node['lon'],'point_basis':'OSM_NODE'})
+        apply_poi_use_review(features,evidence if raw.get('facility_evidence') or 'use_poi_nodes' in raw else None)
     result={'type':'FeatureCollection','features':features}
     if with_diagnostics:return result,{'raw_elements':len(elements),'canonical_features':len(features),'excluded':excluded,
-        'class_policy':'explicit_OSM_tags_v1; building=yes keeps null legacy N1 fallback, not observed residential use'}
+        'class_policy':raw.get('use_policy_version','explicit_OSM_tags_v1; building=yes keeps null legacy N1 fallback, not observed residential use')}
     return result
+
+def apply_poi_use_review(features,facility_evidence):
+    """POI evidence precedes null residential fallback; no nearby-point guessing."""
+    from osgeo import ogr
+    import json
+    geometries={f['id']:ogr.CreateGeometryFromJson(json.dumps(f['geometry'])) for f in features}
+    hits={f['id']:[] for f in features}
+    if facility_evidence and facility_evidence.get('status')=='SUCCEEDED':
+        for poi in facility_evidence['rows']:
+            if poi['source_id'] in hits:
+                hits[poi['source_id']].append({'id':poi['source_id'],'basis':'SAME_OSM_OBJECT'});continue
+            if poi.get('point_basis')!='OSM_NODE':continue
+            point=ogr.Geometry(ogr.wkbPoint);point.AddPoint_2D(poi['longitude'],poi['latitude'])
+            owners=[bid for bid,g in geometries.items() if g.Intersects(point)]
+            for bid in owners:
+                hits[bid].append({'id':poi['source_id'],'basis':'CONTAINED_POI' if len(owners)==1 and geometries[bid].Contains(point) else 'AMBIGUOUS_BOUNDARY_OR_OVERLAP'})
+    residential={'house','detached','semidetached_house','terrace','residential','bungalow','apartments','dormitory'}
+    for f in features:
+        p=f['properties'];tags=p['osm_tags'];kind=tags.get('building')
+        nonres=use_tags(tags)
+        p['poi_use_evidence']=hits[f['id']]
+        p['use_policy_version']='osm_poi_use_v2'
+        if nonres and kind in residential:
+            p['class']='mixed_use_review';p['subclass']='mixed_use_review'
+            p['use_review_reason']='MIXED_USE_REVIEW:'+','.join(nonres)
+        elif nonres and kind=='yes':
+            p['subclass']='non_residential_poi';p['use_review_reason']='NON_RESIDENTIAL_OSM_TAG:'+','.join(nonres)
+        elif hits[f['id']] and kind in residential|{'yes'}:
+            p['class']='mixed_use_review';p['subclass']='poi_use_review'
+            p['use_review_reason']='POI_INSIDE_OR_BOUNDARY_REVIEW_NO_FLOOR_ALLOCATION'
+        elif kind=='yes' and not facility_evidence:
+            p['subclass']='unknown_use_review';p['use_review_reason']='POI_CHECK_UNAVAILABLE'
+        elif kind=='yes':
+            p['use_review_reason']='N1_NULL_USE_ASSUMPTION_AFTER_POI_CHECK_NOT_CONFIRMED_RESIDENTIAL'
 
 def normalize_source(raw):
     if raw.get('provider')=='OPENSTREETMAP':return normalize_osm(raw)
@@ -92,12 +144,15 @@ def acquire_osm(config,output,as_of):
     bbox=query_bbox(config['latitude'],config['longitude'],config['building_radius_m']+config['building_query_padding_m'])
     w,s,e,n=bbox;region=f'({s},{w},{n},{e})'
     date_clause=f'[date:"{as_of}"]' if as_of else ''
-    query=f'[out:json][timeout:60][maxsize:33554432]{date_clause};(way["building"]["building"!="no"]{region};relation["type"="multipolygon"]["building"]["building"!="no"]{region};);out meta geom;'
+    query=f'[out:json][timeout:60][maxsize:33554432]{date_clause};(way["building"]["building"!="no"]{region};relation["type"="multipolygon"]["building"]["building"!="no"]{region};node["amenity"]{region};node["shop"]{region};node["office"]{region};node["healthcare"]{region};node["tourism"]{region};);out meta geom;'
     result=acquire_overpass(query,config['poi_overpass_endpoints'],60,33554432)
     if result['status']!='SUCCEEDED':
         write_json(Path(str(output)+'.failed.json'),result);raise RuntimeError('OSM building acquisition failed')
+    payload=deepcopy(result['payload'])
+    use_nodes=[e for e in payload['elements'] if e['type']=='node']
+    payload['elements']=[e for e in payload['elements'] if e['type'] in {'way','relation'} and e.get('tags',{}).get('building') not in {None,'no'}]
     raw={'provider':'OPENSTREETMAP','release':as_of or result['payload']['osm3s']['timestamp_osm_base'],'schema_version':SCHEMA,'bbox':bbox,'query':query,
-         'payload':result['payload'],'attempts':result['attempts'],'acquired_at':utc(),'truncated':False,
+         'payload':payload,'use_poi_nodes':use_nodes,'attempts':result['attempts'],'acquired_at':utc(),'truncated':False,
          'bounded_query_complete':True,'source_as_of':as_of or result['payload']['osm3s']['timestamp_osm_base']}
     write_json(output,raw,exclusive=True);return raw
 
@@ -109,9 +164,18 @@ def prepare_osm_from_network(config,root,network_source,raw_path):
     root=Path(root);network_source=Path(network_source)
     root.mkdir(parents=True,exist_ok=False)
     write_json(root/'requested_config.json',config)
-    write_json(root/'osm_buildings_raw.json.gz',read_json(raw_path))
+    raw=read_json(raw_path)
+    raw['parent_raw_sha256']=sha(raw_path)
+    raw['use_policy_version']=config.get('osm_use_policy_version','legacy_v1')
+    if raw['use_policy_version']=='osm_poi_use_v2':
+        poi_path=config.get('osm_poi_snapshot_path')
+        evidence=read_json(poi_path) if poi_path else None
+        if evidence and (evidence['request_binding']['latitude']!=config['latitude'] or evidence['request_binding']['longitude']!=config['longitude']):
+            raise ValueError('POI evidence belongs to another target')
+        raw['facility_evidence']=evidence
+    write_json(root/'osm_buildings_raw.json.gz',raw)
     write_json(root/'normalization_config.json',config)
-    result=subprocess.run([config.get('core_python','/usr/bin/python3'),'-B',str(Path(__file__).with_name('location_intelligent_map_pilot.py')),'normalize',str(raw_path),str(root/'raw/building_cache'),str(root/'normalization_config.json')],capture_output=True,text=True)
+    result=subprocess.run([config.get('core_python','/usr/bin/python3'),'-B',str(Path(__file__).with_name('location_intelligent_map_pilot.py')),'normalize',str(root/'osm_buildings_raw.json.gz'),str(root/'raw/building_cache'),str(root/'normalization_config.json')],capture_output=True,text=True)
     if result.returncode:raise RuntimeError('OSM normalization failed: '+result.stderr[-1500:])
     for p in (network_source/'raw').glob('osm_*.json.gz'):
         shutil.copyfile(p,root/'raw'/p.name)

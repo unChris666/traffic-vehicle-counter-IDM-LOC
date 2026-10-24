@@ -352,15 +352,24 @@ def road_display_style(highway):
             'dashArray':'4,4' if name in {'track','path','footway','steps'} else None}
 
 
-def interactive_map(config, pilot, layers, output, *, facilities=None):
+def interactive_map(config, pilot, layers, output, *, facilities=None, alternatives=None):
     """Display-only Folium layers; no routing, capacity or source fetch here."""
     import folium
+    from location_intelligent_li3_sources import canonical_bytes
     from folium.plugins import MarkerCluster, Fullscreen, MeasureControl
     from html import escape
     from shapely.geometry import LineString,mapping,Point
     from shapely.ops import transform
     from pyproj import Transformer
     pilot=Path(pilot)
+    if alternatives and alternatives.get('status')=='SUCCEEDED':
+        identity=alternatives.get('identity',{})
+        if identity.get('pilot')!=sha(pilot/'manifest.json'):
+            raise ValueError('Alternative routes belong to another calculation snapshot')
+        if identity.get('attributes')!=config.get('store_attributes',{}):
+            raise ValueError('Store attributes changed; recalculate alternatives')
+        if identity.get('layer_hashes')!={k:hashlib.sha256(canonical_bytes(v)).hexdigest() for k,v in layers.items()}:
+            raise ValueError('Store snapshot changed; recalculate alternatives')
     decisions=read_json(pilot/'building_results/decisions.json.gz')
     selection=read_json(pilot/'building_results/selection.json')
     buildings=read_json(pilot/'normalized/buildings.geojson')
@@ -392,12 +401,19 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
         props=feature['properties']
         measured=selected_records.get(bid) or excluded_metrics.get(bid,{})
         area=measured.get('area_m2')
+        alt_rows=(alternatives or {}).get('by_building',{}).get(bid)
+        alt_names=[r['name'] for r in alt_rows] if alt_rows is not None else None
+        display_reason=row.get('reason') or 'UNKNOWN'
+        if props.get('use_review_reason'):display_reason+=' | '+props['use_review_reason']
+        if alt_names is None:display_reason+=' | ALTERNATIVES_NOT_VERIFIED'
+        elif not alt_names:display_reason+=' | NO_VERIFIED_ALTERNATIVE_IN_CONFIGURED_GRAPH'
         view={'type':'Feature','geometry':feature['geometry'],'properties':{'building_id':bid,'state':state,
             'area_full_m2':round(area,2) if area is not None else None,
             'area_basis':'Full footprint in '+config['metric_crs']+'; not clipped to circle',
             'class_source':props.get('class') or 'UNKNOWN (source null)',
             'subclass_source':props.get('subclass') or 'UNKNOWN (source null)',
-            'selection_status':row.get('selection_status'),'reason':row.get('reason'),
+            'selection_status':row.get('selection_status'),'reason':escape(display_reason),
+            'alternatives':escape(json.dumps(alt_names,ensure_ascii=False)) if alt_names is not None else 'Belum diverifikasi',
             'connector_count':row.get('connector_count'),
             'routing_note':'125m = search limit, not proof of road connectivity or a route to store',
             'capacity_reference':row.get('capacity_reference_rounded'),'capacity_unit':row.get('capacity_unit'),
@@ -407,10 +423,10 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
         if features:
             folium.GeoJson({'type':'FeatureCollection','features':features},
                 style_function=lambda f:{'fillColor':colors.get(f['properties']['state'],'#ef4444'),'color':colors.get(f['properties']['state'],'#ef4444'),'weight':.6,'fillOpacity':.45},
-                tooltip=folium.GeoJsonTooltip(fields=['building_id','area_full_m2','class_source','subclass_source','state','reason'],
-                    aliases=['ID bangunan','Luas footprint (m²)','Kelas sumber','Subtype sumber','Status','Alasan']),
-                popup=folium.GeoJsonPopup(fields=['building_id','area_full_m2','area_basis','class_source','subclass_source',
-                    'selection_status','state','reason','connector_count','routing_note','claim'])).add_to(group)
+                tooltip=folium.GeoJsonTooltip(fields=['building_id','area_full_m2','state','reason','alternatives'],
+                    aliases=['ID','AREA (m²)','Status','Reason','Alternatif'],max_width=440),
+                popup=folium.GeoJsonPopup(fields=['building_id','area_full_m2','state','reason','alternatives'],
+                    aliases=['ID','AREA (m²)','Status','Reason','Alternatif'])).add_to(group)
     selected_group.add_to(m);excluded_group.add_to(m)
     inverse=Transformer.from_crs(config['metric_crs'],4326,always_xy=True)
     forward=Transformer.from_crs(4326,config['metric_crs'],always_xy=True)
@@ -464,16 +480,6 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
         group.add_to(m)
         buffers.add_to(m)
         statuses.append(f'{title}: '+('BELUM TERSEDIA — '+escape(layer.get('error_type','UNKNOWN')) if locations is None else str(len(locations))+' lokasi marker'+(' — ada koordinat sumber invalid' if layer.get('coordinate_quality',{}).get('invalid_coordinates_global') else '')))
-    legend=("<div style='position:fixed;bottom:25px;left:25px;z-index:9999;background:white;padding:12px;border:1px solid #777;max-width:380px;font-size:12px'>"
-        f'<b>AREA COVERAGE — SKENARIO EKSPERIMEN</b><br>Bangunan {config["building_radius_m"]:g} m; toko/kompetitor {config["poi_radius_m"]:g} m.<br>'
-        +'<br>'.join(statuses)+f"<br>Building counter{config['building_radius_m']:g}m (lolos seleksi): <b>{len(selection['selected'])}</b>; accepted skenario: {report['decision_counts_selected'].get('ACCEPTED',0)}"
-        '<br>Hijau=accepted skenario; jingga=unverified; abu=no connector; ungu=over-time; merah=no route.'
-        '<br>Footprint excluded ditampilkan; sebagian bangunan basemap dapat tidak ada pada snapshot analitik.'
-        '<br>Jalan: oranye=motorway/trunk; kuning=primary/secondary; krem=tertiary; putih=lokal; abu=service; putus=track/path.'
-        '<br>Warna jalan adalah ilustrasi hierarki OSM, bukan style resmi Google.125m tidak menjamin rute ke toko.'
-        f'<br>Lingkaran toko{radius:g}m = radius visual, bukan rute/coverage tervalidasi.'
-        '<br>7km/jam; round(menit)≤10; kapasitas bukan populasi.<br>OSM/Overture attribution tetap berlaku.</div>')
-    m.get_root().html.add_child(folium.Element(legend))
     folium.LayerControl(collapsed=False).add_to(m);Fullscreen().add_to(m);MeasureControl().add_to(m)
     west,south,east,north=query_bbox(config['latitude'],config['longitude'],config['poi_radius_m']+100)
     m.fit_bounds([[south,west],[north,east]])

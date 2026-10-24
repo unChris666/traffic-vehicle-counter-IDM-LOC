@@ -28,4 +28,20 @@ class OSMTests(unittest.TestCase):
   e={'type':'way','id':1}
   with self.assertRaises(ValueError):normalize_osm(raw([e,e]))
   with self.assertRaises(ValueError):join_rings([[(0,0),(1,0)]])
+ def test_explicit_facility_precedes_generic_residential_fallback(self):
+  r=raw([{'type':'way','id':1,'tags':{'building':'yes','amenity':'school'},'geometry':geom([(0,0),(10,0),(10,10),(0,10),(0,0)])}]);r['use_policy_version']='osm_poi_use_v2'
+  p=normalize_osm(r)['features'][0]['properties']
+  self.assertEqual(p['subclass'],'non_residential_poi');self.assertIn('amenity=school',p['use_review_reason'])
+ def test_contained_shop_is_review_not_whole_building_relabel(self):
+  r=raw([{'type':'way','id':1,'tags':{'building':'house'},'geometry':geom([(0,0),(10,0),(10,10),(0,10),(0,0)])}]);r['use_policy_version']='osm_poi_use_v2'
+  r['use_poi_nodes']=[{'type':'node','id':5,'lat':5,'lon':5,'tags':{'shop':'convenience'}}]
+  p=normalize_osm(r)['features'][0]['properties'];self.assertEqual(p['subclass'],'poi_use_review');self.assertIn('NO_FLOOR_ALLOCATION',p['use_review_reason'])
+ def test_nearby_poi_outside_does_not_change_house(self):
+  r=raw([{'type':'way','id':1,'tags':{'building':'house'},'geometry':geom([(0,0),(10,0),(10,10),(0,10),(0,0)])}]);r['use_policy_version']='osm_poi_use_v2'
+  r['use_poi_nodes']=[{'type':'node','id':5,'lat':11,'lon':11,'tags':{'amenity':'school'}}]
+  p=normalize_osm(r)['features'][0]['properties'];self.assertEqual(p['subclass'],'residential')
+ def test_bench_inside_not_evidence_of_nonresidential_building(self):
+  r=raw([{'type':'way','id':1,'tags':{'building':'house'},'geometry':geom([(0,0),(10,0),(10,10),(0,10),(0,0)])}]);r['use_policy_version']='osm_poi_use_v2'
+  r['use_poi_nodes']=[{'type':'node','id':5,'lat':5,'lon':5,'tags':{'amenity':'bench'}}]
+  p=normalize_osm(r)['features'][0]['properties'];self.assertEqual(p['subclass'],'residential')
 if __name__=='__main__':unittest.main()
