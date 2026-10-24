@@ -113,6 +113,7 @@ def allocate_building(building, stores, routes, gate, policy, *, inputs_complete
     if building['access_status'] != 'ACCEPTED':
         row['reason'] = 'CANDIDATE_ACCESS_' + building['access_status']; return row
     if distance > policy['competition_cannibalization_zone_m'] and gate['state'] != 'OPEN':
+        if gate['state']=='UNKNOWN':row['market_status']='UNVERIFIED'
         row['reason'] = 'OUTER_GATE_' + gate['state']; return row
     if not inputs_complete:
         row.update(market_status='UNVERIFIED', reason='MARKET_INPUTS_INCOMPLETE'); return row

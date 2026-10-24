@@ -18,6 +18,7 @@ def main():
     import argparse
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path)
     parser.add_argument('--feature-mode',choices=['FULL','ROADS_ONLY_EXPERIMENT'],default='ROADS_ONLY_EXPERIMENT')
+    parser.add_argument('--poi-unavailable',action='store_true')
     args=parser.parse_args()
     root=args.output or Path(tempfile.mkdtemp(prefix='SYNTHETIC-market-'))
     root.mkdir(parents=True,exist_ok=True)
@@ -25,16 +26,16 @@ def main():
     market['sources']['network_feature_mode']=args.feature_mode
     config={'latitude':target['latitude'],'longitude':target['longitude'],'metric_crs':'EPSG:32748',
      'building_radius_m':2000.,'poi_radius_m':2000.,'min_area_m2':36.,'max_area_m2':550.,
-     'selection_profile':'area-market-ge36-v1','network_radius_m':5500.,'osm_use_policy_version':'osm_poi_use_v2',
+     'selection_profile':'area-market-ge36-v1','network_radius_m':3000.,'osm_use_policy_version':'osm_poi_use_v2',
      'poi_profile':'market_attractors_v2','core_python':'/usr/bin/python3'}
     config['network_feature_mode']=args.feature_mode
     tx=Transformer.from_crs(4326,32748,always_xy=True);inv=Transformer.from_crs(32748,4326,always_xy=True)
     x,y=tx.transform(target['longitude'],target['latitude'])
     def point(a,b):
      lon,lat=inv.transform(x+a,y+b);return {'lon':lon,'lat':lat}
-    seed=root/'seed';p=get_config();p['li3'].update(latitude=target['latitude'],longitude=target['longitude'],network_bbox_radius_m=5500.,metric_crs=config['metric_crs'])
+    seed=root/'seed';p=get_config();p['li3'].update(latitude=target['latitude'],longitude=target['longitude'],network_bbox_radius_m=config['network_radius_m'],metric_crs=config['metric_crs'])
     f={'schema_version':'li3_pilot_config_v1','algorithm_version':'LI3_V1','analysis_run_id':'SYNTHETIC',
-     'frozen_at':'2026-10-24T00:00:00Z','policy':p,'target_xy':[x,y],'reference_metric_bbox':[x-5500,y-5500,x+5500,y+5500],
+     'frozen_at':'2026-10-24T00:00:00Z','policy':p,'target_xy':[x,y],'reference_metric_bbox':[x-3000,y-3000,x+3000,y+3000],
      'diagnostic_gap_m':10.,'building_cache_files':{}}
     f['config_hash']=canonical_hash(f);write_json(seed/'config/pilot.json',f)
     meta={'timestamp_osm_base':'2026-10-24T00:00:00Z'}
@@ -57,6 +58,9 @@ def main():
      'payload':{'osm3s':meta,'elements':elements},'use_poi_nodes':[]}
     rawpath=root/'raw.json.gz';write_json(rawpath,raw)
     facilities=normalize_pois(config,{'osm3s':meta,'elements':[{'type':'node','id':999,**{'lat':point(700,0)['lat'],'lon':point(700,0)['lon']},'tags':{'amenity':'hospital','name':'SYNTHETIC HOSPITAL'}}]})
+    if args.poi_unavailable:
+     from location_intelligent_map_poi import poi_binding
+     facilities={'status':'FAILED','rows':None,'count':None,'request_binding':poi_binding(config),'error_type':'SYNTHETIC_UNAVAILABLE'}
     poipath=root/'pois.json';write_json(poipath,facilities);config['osm_poi_snapshot_path']=str(poipath)
     pilot=root/'pilot';prepare_osm_from_network(config,pilot,seed,rawpath)
     r=build(pilot);make_manifest(pilot)
@@ -70,7 +74,7 @@ def main():
     result=build_market(config,market,pilot,layers,facilities,root/'market')
     print('SYNTHETIC MARKET:',result['summary'],'GATE',result['attractor_gate']['state'])
     assert result['summary']['rows']==3 and result['summary']['assigned']==3
-    assert result['attractor_gate']['state']=='OPEN'
+    assert result['attractor_gate']['state']==('UNKNOWN' if args.poi_unavailable else 'OPEN')
     with patch('location_intelligent_li3_graph.build_graph',side_effect=AssertionError('Reopen must not rebuild')):
      assert result==build_market(config,market,pilot,layers,facilities,root/'market')
     html=render_market(config,market,pilot,facilities,result)

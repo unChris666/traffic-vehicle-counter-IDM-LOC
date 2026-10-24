@@ -81,6 +81,8 @@ def _poi_gate(config, policy, facilities, package, poi_targets, buildings):
     from shapely.geometry import shape, Point
     from shapely.ops import transform
     from shapely.strtree import STRtree
+    if not policy['outer_zone_requires_attractor']:
+        return {'state':'OPEN','reason':'ATTRACTOR_REQUIREMENT_DISABLED_BY_BUSINESS_POLICY','evidence':[]}
     if facilities.get('status') != 'SUCCEEDED':
         return {'state':'UNKNOWN','reason':'POI_INPUT_UNAVAILABLE','evidence':[]}
     graph = package['graph']; allowed = {k:r['allowed'] for k,r in package['edge_rules'].items()}
@@ -257,6 +259,7 @@ def build_market(config, market_config, pilot, layers, facilities, output):
             'network_feature_mode':frozen['policy']['li3'].get('feature_source_mode','FULL'),
             'output_path':str(root),'rows':rows,'summary':reconcile(rows),'stores':stores,'excluded_stores':excluded,
             'attractor_gate':gate,'market_inputs_complete':source_complete,'primary_routing_changed':False,
+            'poi_input_status':facilities['status'],'poi_required_for_pipeline':False,
             'claim':'EXPERIMENTAL_HUFF_ESTIMATES_NOT_CALIBRATED_CUSTOMER_PROBABILITIES',
             'limitations':['Bounded OSM motor graph; source gaps and unobserved barriers remain',
                            'Equal store attractiveness, beta=2; whole footprint winner, no random draw',

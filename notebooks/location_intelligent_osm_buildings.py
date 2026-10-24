@@ -86,7 +86,9 @@ def normalize_osm(raw,with_diagnostics=False):
         except (ValueError,RuntimeError,KeyError) as error:
             excluded.append({'source_id':bid,'reason':str(error)[:100]})
     if raw.get('use_policy_version')=='osm_poi_use_v2':
-        evidence=deepcopy(raw.get('facility_evidence')) or {'status':'SUCCEEDED','rows':[]}
+        external=raw.get('facility_evidence')
+        available=bool(external and external.get('status')=='SUCCEEDED')
+        evidence=deepcopy(external) if available else {'status':'SUCCEEDED','rows':[]}
         known={r['source_id'] for r in evidence['rows']}
         for node in raw.get('use_poi_nodes',[]):
             tags=node.get('tags',{})
@@ -94,7 +96,7 @@ def normalize_osm(raw,with_diagnostics=False):
             sid='node/'+str(node['id'])
             if active and sid not in known:
                 evidence['rows'].append({'source_id':sid,'latitude':node['lat'],'longitude':node['lon'],'point_basis':'OSM_NODE'})
-        apply_poi_use_review(features,evidence if raw.get('facility_evidence') or 'use_poi_nodes' in raw else None)
+        apply_poi_use_review(features,evidence if available or 'use_poi_nodes' in raw else None)
     result={'type':'FeatureCollection','features':features}
     if with_diagnostics:return result,{'raw_elements':len(elements),'canonical_features':len(features),'excluded':excluded,
         'class_policy':raw.get('use_policy_version','explicit_OSM_tags_v1; building=yes keeps null legacy N1 fallback, not observed residential use')}

@@ -1,5 +1,12 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**POI opsional —25 Oktober2026:** jalan/footprint tetap wajib, jaringan memakai
+parameter3km; unduhan POI gagal tidak menghentikan pipeline. Gate bisnis attractor
+zona luar tetap terpisah dan menjadi UNKNOWN bila bukti tidak tersedia.
+[Kontrak dan validasi](AREA_COVERAGE_OPTIONAL_POI.md). Gate tidak dihapus atau
+menerima seluruh zona2km secara otomatis.
+
+
 **Scope sederhana owner —25 Oktober2026:** notebook market default memakai
 `ROADS_ONLY_EXPERIMENT`, melewati enam query fitur eksternal. Jalan, node,
 arah/izin yang tersedia tetap wajib; rute tidak ada tidak masuk cakupan calon.

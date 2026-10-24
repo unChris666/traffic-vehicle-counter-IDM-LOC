@@ -222,6 +222,44 @@ class MarketTests(unittest.TestCase):
             self.assertFalse(derived['restrictions_complete']);self.assertFalse(derived['external_features_requested'])
             self.assertEqual(saved,(old/'raw/osm_roads.json.gz').read_bytes())
             self.assertTrue((new/'network_manifest.json').exists())
+    def test_optional_poi_failure_is_frozen_unknown_not_zero_or_refetch(self):
+        from location_intelligent_map_poi import load_optional_osm_pois
+        cfg={'latitude':-6.19,'longitude':106.83,'poi_radius_m':2000,
+             'poi_profile':'market_attractors_v2','poi_overpass_endpoints':['https://example.invalid']}
+        with tempfile.TemporaryDirectory() as d:
+            with patch('location_intelligent_map_poi.acquire_overpass',return_value={'status':'RETRIEVAL_FAILED','attempts':[{'http_status':502}]}):
+                result=load_optional_osm_pois(cfg,d)
+            self.assertEqual(result['status'],'FAILED');self.assertIsNone(result['count']);self.assertIsNone(result['rows'])
+            with patch('location_intelligent_map_poi.acquire_overpass',side_effect=AssertionError('Frozen unavailability; no refetch')):
+                self.assertEqual(result,load_optional_osm_pois(cfg,d,mode='FROZEN'))
+    def test_optional_poi_success_retains_real_inventory_for_reopen(self):
+        from location_intelligent_map_poi import load_optional_osm_pois
+        cfg={'latitude':-6.19,'longitude':106.83,'poi_radius_m':2000,
+             'poi_profile':'market_attractors_v2','poi_overpass_endpoints':['https://example.invalid']}
+        payload={'osm3s':{'timestamp_osm_base':'2026-10-25T00:00:00Z'},'elements':[
+            {'type':'node','id':1,'lat':-6.19,'lon':106.83,'tags':{'amenity':'hospital'}}]}
+        with tempfile.TemporaryDirectory() as d:
+            with patch('location_intelligent_map_poi.acquire_overpass',return_value={'status':'SUCCEEDED','payload':payload,'attempts':[]}):
+                result=load_optional_osm_pois(cfg,d)
+            self.assertEqual(result['count'],1)
+            with patch('location_intelligent_map_poi.acquire_overpass',side_effect=AssertionError('No re-fetch')):
+                self.assertEqual(result,load_optional_osm_pois(cfg,d,mode='FROZEN'))
+    def test_optional_input_failure_and_business_gate_are_separate(self):
+        from location_intelligent_market_runtime import _poi_gate
+        unavailable={'status':'FAILED','rows':None,'count':None}
+        gate=_poi_gate({},self.policy,unavailable,{},[],{})
+        self.assertEqual(gate['state'],'UNKNOWN')
+        self.assertEqual(self.run_case(gate=gate)['count_candidate'],1)
+        outer=self.run_case(self.building(900),gate=gate)
+        self.assertEqual(outer['market_status'],'UNVERIFIED');self.assertIsNone(outer['winner_store_key'])
+        p={**self.policy,'outer_zone_requires_attractor':False}
+        self.assertEqual(_poi_gate({},p,unavailable,{},[],{})['state'],'OPEN')
+    def test_main_notebook_has_optional_poi_and_3km_network(self):
+        n=json.loads(Path(__file__).with_name('area_coverage_market_cpu_2km.ipynb').read_text())
+        cell=next(''.join(c['source']) for c in n['cells'] if 'load_optional_osm_pois=poi_runtime.' in ''.join(c['source']))
+        self.assertNotIn("assert facilities['status']",cell)
+        self.assertIn("load_optional_osm_pois(CONFIG,SOURCES,mode='FROZEN')",cell)
+        self.assertEqual(get_market_config()['sources']['network_radius_m'],3000)
     def test_notebook_export_failure_retry_reopen_and_private_bq_included(self):
         import zipfile
         from location_intelligent_map_pilot import sha

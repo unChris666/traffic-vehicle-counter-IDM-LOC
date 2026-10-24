@@ -18,6 +18,8 @@ MARKET_CONFIG = {
         'buildings': 'OPENSTREETMAP',
         'network': 'OPENSTREETMAP_MOTOR_POLICY',
         'network_feature_mode': 'ROADS_ONLY_EXPERIMENT',
+        'network_radius_m': 3000.0,
+        'poi_required_for_pipeline': False,
         'basemap': 'OPENSTREETMAP',
         'competitor_table': 'locdeproject.DWH_NS_LOC.COMPETITOR',
         'indomaret_table': 'locdeproject.DWH_NS_LOC.AREA_COVERAGE',

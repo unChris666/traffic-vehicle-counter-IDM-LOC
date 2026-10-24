@@ -164,12 +164,42 @@ def load_osm_pois(config, cache, *, mode='FROZEN', frozen_input=None, expected_s
     return layer
 
 
+def load_optional_osm_pois(config, folder, *, mode='ACQUIRE_ONCE'):
+    """Freeze a successful inventory OR an unavailable observation, never fake zero.
+
+    Reopen returns the same observation. Refresh requires a new source revision.
+    """
+    folder=Path(folder);path=folder/'optional_poi_result.json'
+    receipt=folder/'optional_poi_result.receipt.json'
+    if path.exists():
+        if not receipt.exists() or read_json(receipt)['sha256']!=hashlib.sha256(path.read_bytes()).hexdigest():
+            raise ValueError('Optional POI observation changed')
+        saved=read_json(path)
+        if saved.get('request_binding')!=poi_binding(config):raise ValueError('Optional POI target/rules changed')
+        if saved['status']=='SUCCEEDED':
+            actual=normalize_pois(config,saved['raw_payload'])
+            if any(actual[k]!=saved[k] for k in ['rows','count','counts_by_category','source_elements','excluded']):
+                raise ValueError('Optional POI source evidence changed')
+        elif saved.get('rows') is not None or saved.get('count') is not None:
+            raise ValueError('Unavailable POI observation must preserve unknowns')
+        return saved
+    try:
+        layer=load_osm_pois(config,folder/'osm_poi_snapshot.data',mode=mode)
+    except (OSError,ValueError) as error:
+        layer={'status':'FAILED','provider':'OPENSTREETMAP_OVERPASS','rows':None,'count':None,
+               'request_binding':poi_binding(config),'error_type':type(error).__name__}
+    write_json(path,layer,exclusive=True)
+    write_json(receipt,{'sha256':hashlib.sha256(path.read_bytes()).hexdigest()},exclusive=True)
+    return layer
+
+
 def add_poi_layers(map_object, config, layer):
     """Render only measured source positions; no fabricated zero on retrieval failure."""
     import folium
     from folium.plugins import MarkerCluster
     from html import escape
     if layer is None or layer.get('status') != 'SUCCEEDED':
+        folium.FeatureGroup(name='POI — belum tersedia (input opsional)',show=False).add_to(map_object)
         return ['POI OSM: BELUM TERSEDIA']
     if layer['request_binding'] != poi_binding(config):
         raise ValueError('POI layer belongs to another target/radius/rules')

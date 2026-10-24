@@ -7,6 +7,12 @@ def geom(coords):return [{'lon':x,'lat':y} for x,y in coords]
 def raw(elements):return {'provider':'OPENSTREETMAP','schema_version':SCHEMA,'payload':{'elements':elements}}
 @unittest.skipUnless(find_spec('osgeo'), 'OSM geometry normalization requires system Python/GDAL')
 class OSMTests(unittest.TestCase):
+ def test_failed_optional_inventory_keeps_building_tags_and_local_poi_checks(self):
+  r=raw([{'type':'way','id':1,'tags':{'building':'house'},'geometry':geom([(0,0),(10,0),(10,10),(0,10),(0,0)])}])
+  r.update(use_policy_version='osm_poi_use_v2',facility_evidence={'status':'FAILED','rows':None,'count':None},use_poi_nodes=[])
+  self.assertEqual(normalize_osm(r)['features'][0]['properties']['subclass'],'residential')
+  r['use_poi_nodes']=[{'type':'node','id':9,'lat':5,'lon':5,'tags':{'shop':'convenience'}}]
+  self.assertEqual(normalize_osm(r)['features'][0]['properties']['subclass'],'poi_use_review')
  def test_closed_way_and_unknown_use_not_invented(self):
   r=normalize_osm(raw([{'type':'way','id':1,'tags':{'building':'yes'},'geometry':geom([(0,0),(1,0),(1,1),(0,0)])}]))
   p=r['features'][0]['properties'];self.assertEqual(p['building_id'],'way/1');self.assertIsNone(p['class']);self.assertIsNone(p['subclass'])
