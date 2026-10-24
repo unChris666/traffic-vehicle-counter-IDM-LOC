@@ -40,51 +40,20 @@ def acquire_market_network(config, root):
     # Resolve imports/queries before creating any acquisition state.
     q = build_queries(frozen['extraction_bbox_wgs84'], p)
     if root.exists():
-        files={str(f.relative_to(root)) for f in root.rglob('*') if f.is_file()}
-        if files!={'config/pilot.json'}:
-            raise ValueError('Incomplete network acquisition; inspect failure then use a new source revision')
         previous=read_json(root/'config/pilot.json')
         check=deepcopy(previous);digest=check.pop('config_hash')
         if canonical_hash(check)!=digest or previous['policy']!=p or previous['extraction_bbox_wgs84']!=frozen['extraction_bbox_wgs84']:
-            raise ValueError('Pre-query network configuration changed; cannot resume')
+            raise ValueError('Network configuration changed; cannot resume')
         frozen=previous
     else:
         root.mkdir(parents=True)
         write_json(root/'config/pilot.json', frozen, exclusive=True)
-    write_json(root/'config/queries.json', q, exclusive=True)
-    stamp = None
-    for name in ('roads','features'):
-        query = q[name]
-        if name == 'features' and stamp:
-            query = query.replace(';', '[date:"'+stamp+'"];', 1)
-        result = acquire_overpass(query, config['poi_overpass_endpoints'], p['li3']['request_timeout_s'], p['li3']['max_response_bytes'])
-        result['actual_query'] = query
-        if name == 'features':
-            result['requested_snapshot_as_of'] = stamp
-        path = root/('raw/osm_roads.json.gz' if name == 'roads' else 'raw/osm_features_pinned.json.gz')
-        write_json(path, result, exclusive=True)
-        if result['status'] != 'SUCCEEDED':
-            if name != 'features' or not stamp:
-                raise RuntimeError('OSM '+name+' unavailable; no valid empty graph; inspect '+str(path))
-            # The full request can exceed Overpass capacity in dense Jakarta.
-            # Retain the failure and require all four exact-as-of tiles.
-            west,south,east,north=frozen['extraction_bbox_wgs84']
-            mx,my=(west+east)/2,(south+north)/2
-            boxes=[(west,south,mx,my),(mx,south,east,my),
-                   (west,my,mx,north),(mx,my,east,north)]
-            for i,box in enumerate(boxes):
-                tile_query=build_queries(box,p)['features'].replace(';','[date:"'+stamp+'"];',1)
-                tile=acquire_overpass(tile_query,config['poi_overpass_endpoints'],p['li3']['request_timeout_s'],p['li3']['max_response_bytes'])
-                tile.update(actual_query=tile_query,requested_snapshot_as_of=stamp)
-                tile_path=root/f'raw/osm_features_tile_{i}.json.gz'
-                write_json(tile_path,tile,exclusive=True)
-                if tile['status']!='SUCCEEDED':
-                    raise RuntimeError('Barrier tile unavailable; partial extraction cannot authorize routing: '+str(tile_path))
-            from location_intelligent_li3 import select_feature_source
-            selected,_=select_feature_source(root)
-            if read_json(selected)['status']!='SUCCEEDED':
-                raise RuntimeError('Tiled barrier source not complete')
-        stamp = result['payload']['osm3s'].get('timestamp_osm_base') if name == 'roads' else stamp
+    if (root/'config/queries.json').exists():
+        if read_json(root/'config/queries.json')!=q:raise ValueError('Network query changed; use new source revision')
+    else:write_json(root/'config/queries.json',q,exclusive=True)
+
+    from location_intelligent_network_acquisition import acquire_network_sources
+    acquire_network_sources(root,frozen,q,config,build_queries,acquire_overpass)
     files = {str(p.relative_to(root)):sha(p) for p in root.rglob('*') if p.is_file()}
     write_json(root/'network_manifest.json', {'config':config,'files':files}, exclusive=True)
     return root

@@ -109,15 +109,50 @@ class MarketTests(unittest.TestCase):
             p=Path(d)/'network'
             with patch('location_intelligent_li3_sources.build_queries',return_value={'roads':'[out:json];roads;','features':'[out:json];features;'}),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=[success,fail,*[deepcopy(success) for _ in range(4)]]) as fetch:
                 acquire_market_network(cfg,p);self.assertEqual(fetch.call_count,6)
-            self.assertEqual(read_json(p/'raw/osm_features_pinned.json.gz')['status'],'RETRIEVAL_FAILED')
-            self.assertTrue((p/'raw/osm_features_combined.json.gz').exists())
+            self.assertEqual(read_json(p/'raw/osm_features_pinned.json.gz')['status'],'SUCCEEDED')
+            history=list((p/'raw/attempt_history').glob('*.gz'))
+            self.assertTrue(any(read_json(f)['status']=='RETRIEVAL_FAILED' for f in history))
             with patch('location_intelligent_li3_sources.acquire_overpass',side_effect=AssertionError('No re-fetch')):
                 acquire_market_network(cfg,p)
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'network'
             with patch('location_intelligent_li3_sources.build_queries',return_value={'roads':'[out:json];roads;','features':'[out:json];features;'}),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=[success,fail,fail]):
-                with self.assertRaisesRegex(RuntimeError,'Barrier tile unavailable'):acquire_market_network(cfg,p)
+                with self.assertRaisesRegex(RuntimeError,'features tile 1/4 unavailable'):acquire_market_network(cfg,p)
             self.assertFalse((p/'network_manifest.json').exists())
+    def test_failed_roads_resume_only_missing_tiles_and_preserve_snapshot(self):
+        from location_intelligent_market_runtime import acquire_market_network
+        from location_intelligent_li3_sources import read_json
+        cfg={'latitude':-6.19,'longitude':106.83,'metric_crs':'EPSG:32748',
+             'network_radius_m':5500.,'poi_overpass_endpoints':['https://example.invalid']}
+        ok={'status':'SUCCEEDED','payload':{'osm3s':{'timestamp_osm_base':'2026-10-24T00:00:00Z'},'elements':[]}}
+        fail={'status':'RETRIEVAL_FAILED','attempts':[{'http_status':429}]}
+        queries={'roads':'[out:json];roads;','features':'[out:json];features;'}
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'network'
+            with patch('location_intelligent_li3_sources.build_queries',return_value=queries),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=[fail,deepcopy(ok),fail]):
+                with self.assertRaisesRegex(RuntimeError,'roads tile 2/4 unavailable'):acquire_market_network(cfg,root)
+            first=(root/'raw/osm_roads_tile_0.json.gz').read_bytes()
+            self.assertFalse((root/'network_manifest.json').exists())
+            with patch('location_intelligent_li3_sources.build_queries',return_value=queries),patch('location_intelligent_li3_sources.acquire_overpass',side_effect=[deepcopy(ok) for _ in range(4)]) as fetch:
+                acquire_market_network(cfg,root)
+                self.assertEqual(fetch.call_count,4) # Three missing road tiles + features.
+                for call in fetch.call_args_list:self.assertIn('[date:"2026-10-24T00:00:00Z"]',call.args[0])
+            self.assertEqual(first,(root/'raw/osm_roads_tile_0.json.gz').read_bytes())
+            self.assertEqual(read_json(root/'acquisition_status.json')['status'],'SUCCEEDED')
+            with patch('location_intelligent_li3_sources.acquire_overpass',side_effect=AssertionError('No refetch')):
+                acquire_market_network(cfg,root)
+            (root/'raw/osm_roads_tile_0.json.gz').write_bytes(b'CORRUPT')
+            with self.assertRaisesRegex(ValueError,'corrupted'):acquire_market_network(cfg,root)
+    def test_permanent_http_rejection_does_not_retry_as_tiles(self):
+        from location_intelligent_market_runtime import acquire_market_network
+        cfg={'latitude':-6.19,'longitude':106.83,'metric_crs':'EPSG:32748',
+             'network_radius_m':5500.,'poi_overpass_endpoints':['https://example.invalid']}
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)/'network'
+            with patch('location_intelligent_li3_sources.build_queries',return_value={'roads':'[out:json];r;','features':'[out:json];f;'}),patch('location_intelligent_li3_sources.acquire_overpass',return_value={'status':'RETRIEVAL_FAILED','attempts':[{'http_status':403}]}) as fetch:
+                with self.assertRaisesRegex(RuntimeError,'request rejected'):acquire_market_network(cfg,root)
+                self.assertEqual(fetch.call_count,1)
+            self.assertFalse((root/'network_manifest.json').exists())
     def test_notebook_export_failure_retry_reopen_and_private_bq_included(self):
         import zipfile
         from location_intelligent_map_pilot import sha

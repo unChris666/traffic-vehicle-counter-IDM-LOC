@@ -173,3 +173,10 @@ Konfigurasi job dibandingkan dengan source Kaggle yang ditarik dan tetap sama.
 Validasi sesudah fix: 57 tes area (48 lulus, 9 skip GDAL); source helper/packet
 notebook identik dan seluruh cell parse. Source dipublikasikan QUICK_SAVE;
 full run pada session Kaggle bersih belum diverifikasi oleh perbaikan ini.
+
+
+## Checkpoint 25 Oktober2026
+
+[Audit akuisisi terbaru](AREA_COVERAGE_ACQUISITION_AUDIT.md) menggantikan batas
+retry draft pada catatan sebelumnya: raw gagal kini dapat dilanjutkan dengan
+riwayat dan checksum, tanpa mengubah snapshot finalized atau aturan market.
