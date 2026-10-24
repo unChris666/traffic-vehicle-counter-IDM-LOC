@@ -167,6 +167,11 @@ def build(root):
     prep = run_core(root, 'prepare')
     roads = read_json(root/'raw/osm_roads.json.gz') if (root/'raw/osm_roads.json.gz').exists() else {'status': 'SOURCE_MISSING'}
     feature_path, warnings = select_feature_source(root)
+    if f.get('building_network_timestamp_warning'):
+        warnings.append({'code':'BUILDING_NETWORK_SNAPSHOTS_DIFFER','details':f['building_network_timestamp_warning'],'effect':'Frozen separately; no atomic snapshot claim'})
+    osm_report=read_json(root/'raw/building_cache/report.json').get('osm_normalization')
+    if osm_report and any(r['reason']!='RELATION_MEMBER_COMPONENT' for r in osm_report['excluded']):
+        warnings.append({'code':'OSM_BUILDING_NORMALIZATION_EXCLUSIONS','effect':'Some raw objects unresolved; inspect raw/building_cache/report.json'})
     features = read_json(feature_path) if feature_path.exists() else {'status': 'SOURCE_MISSING'}
     resolved = {'road_source': 'raw/osm_roads.json.gz', 'feature_source': str(feature_path.relative_to(root)), 'warnings': warnings}
     write_json(root/'config/resolved_sources.json', resolved)

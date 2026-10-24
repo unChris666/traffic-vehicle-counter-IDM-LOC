@@ -121,13 +121,17 @@ def acquire_buildings(config, output, *, extension_directory=None, partition_ind
 
 def normalize_cache(raw_path, cache, config):
     """Runs under GDAL worker: same original WKB normalization and selection input."""
-    from location_intelligent_overture_probe import normalize
+    from location_intelligent_osm_buildings import normalize_source as normalize
     from location_intelligent_validator import canonical_hash, context_hash
     cache = Path(cache);cache.mkdir(parents=True, exist_ok=False)
     raw = read_json(raw_path)
     if raw['truncated'] or not raw['bounded_query_complete']:
         raise ValueError('Incomplete building input')
     features = normalize(raw)
+    osm_diagnostics=None
+    if raw.get('provider')=='OPENSTREETMAP':
+        from location_intelligent_osm_buildings import normalize_osm
+        _,osm_diagnostics=normalize_osm(raw,with_diagnostics=True)
     write_json(cache/'raw_probe.json.gz', raw)
     write_json(cache/'buildings.geojson', features)
     stamp = raw['acquired_at']
@@ -141,16 +145,17 @@ def normalize_cache(raw_path, cache, config):
                 'min_area_m2': {'value': config['min_area_m2'], 'unit': 'm2'},
                 'max_area_m2': {'value': config['max_area_m2'], 'unit': 'm2'}}, 'unresolved_decisions': []}}}
     context['context_hash'] = context_hash(context)
-    source = {'source_ref_id': 'overture-buildings-new-target', 'inventory_id': 'SRC04', 'kind': 'LOCAL_FILE',
-        'provider': 'OVERTURE_MAPS', 'locator': 'buildings.geojson', 'acquisition_mode': 'LIVE_ACQUIRED',
-        'availability': 'AVAILABLE', 'source_version': config['overture_release'], 'source_as_of': None,
+    is_osm=raw.get('provider')=='OPENSTREETMAP'
+    source = {'source_ref_id': 'osm-buildings-new-target' if is_osm else 'overture-buildings-new-target', 'inventory_id': 'SRC04', 'kind': 'LOCAL_FILE',
+        'provider': 'OPENSTREETMAP' if is_osm else 'OVERTURE_MAPS', 'locator': 'buildings.geojson', 'acquisition_mode': 'LIVE_ACQUIRED',
+        'availability': 'AVAILABLE', 'source_version': raw['release'] if is_osm else config['overture_release'], 'source_as_of': raw['source_as_of'] if is_osm else None,
         'acquired_at': stamp, 'schema_version': 'li_building_snapshot_v1',
         'fingerprint': {'algorithm': 'sha256', 'value': sha(cache/'buildings.geojson')},
         'byte_count': (cache/'buildings.geojson').stat().st_size, 'row_count': len(features['features']),
-        'coverage': {'scope': f'Complete bounded STAC query bbox={raw["bbox"]}; not physical completeness', 'completeness': 'COMPLETE'},
+        'coverage': {'scope': f'Bounded source query bbox={raw["bbox"]}; not physical completeness', 'completeness': 'COMPLETE'},
         'crs': 'EPSG:4326', 'units': {'coordinates': 'degree'}, 'freshness': 'UNKNOWN',
-        'provenance': {'origin': 'LIVE_ACQUIRED', 'description': 'Actual pinned Overture WKB; raw SHA256='+sha(raw_path), 'dependencies': []},
-        'unknown_reasons': {'source_as_of': 'Provider release is known; individual observation dates vary'}}
+        'provenance': {'origin': 'LIVE_ACQUIRED', 'description': ('Actual frozen OSM tags/topology; ' if is_osm else 'Actual pinned Overture WKB; ')+'raw SHA256='+sha(raw_path), 'dependencies': []},
+        'unknown_reasons': {} if is_osm else {'source_as_of': 'Provider release is known; individual observation dates vary'}}
     manifest = {'schema_version': 'location_intelligent_v1', 'analysis_run_id': run_id, 'context_hash': context['context_hash'],
         'sources': [source], 'artifacts': [], 'modules': [{'module_run_id': 'area-selection-new-target', 'module': 'area_coverage',
         'analysis_run_id': run_id, 'context_hash': context['context_hash'], 'config_hash': canonical_hash(context['config']),
@@ -159,7 +164,8 @@ def normalize_cache(raw_path, cache, config):
     write_json(cache/'context.json', context)
     write_json(cache/'manifest.json', manifest)
     write_json(cache/'report.json', {'bounded_query_complete': True, 'source_records': len(features['features']),
-        'raw_sha256': sha(raw_path), 'schema_validation_scope': 'Consumed columns/types and canonical geometry; not full official provider schema'})
+        'raw_sha256': sha(raw_path), 'schema_validation_scope': 'Consumed columns/types and canonical geometry; not full official provider schema',
+        'osm_normalization':osm_diagnostics})
 
 
 def prepare_pilot(config, root, *, core_python='/usr/bin/python3', extension_directory=None, partition_index=None):
@@ -462,7 +468,7 @@ def interactive_map(config, pilot, layers, output, *, facilities=None):
         f'<b>AREA COVERAGE — SKENARIO EKSPERIMEN</b><br>Bangunan {config["building_radius_m"]:g} m; toko/kompetitor {config["poi_radius_m"]:g} m.<br>'
         +'<br>'.join(statuses)+f"<br>Building counter{config['building_radius_m']:g}m (lolos seleksi): <b>{len(selection['selected'])}</b>; accepted skenario: {report['decision_counts_selected'].get('ACCEPTED',0)}"
         '<br>Hijau=accepted skenario; jingga=unverified; abu=no connector; ungu=over-time; merah=no route.'
-        '<br>Footprint excluded ditampilkan; sebagian bangunan basemap dapat tidak ada pada sumber Overture.'
+        '<br>Footprint excluded ditampilkan; sebagian bangunan basemap dapat tidak ada pada snapshot analitik.'
         '<br>Jalan: oranye=motorway/trunk; kuning=primary/secondary; krem=tertiary; putih=lokal; abu=service; putus=track/path.'
         '<br>Warna jalan adalah ilustrasi hierarki OSM, bukan style resmi Google.125m tidak menjamin rute ke toko.'
         f'<br>Lingkaran toko{radius:g}m = radius visual, bukan rute/coverage tervalidasi.'

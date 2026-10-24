@@ -1,5 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Checkpoint sumber OSM —24 Oktober2026:** owner mengotorisasi perpindahan ke
+OSM buildings→seleksi→OSM motor graph→routing/perhitungan→OSM basemap.
+[Profil dan batas validasi](AREA_COVERAGE_OSM_MODE.md). Ini eksperimen sumber
+baru; baseline Overture tetap immutable. Toko kompetitor/Indomaret tetap BQ.
+Notebook aktif dipelihara langsung; generator Overture lama diblok agar tidak
+menimpa provider, autentikasi dan cell audit. Tidak mengesahkan production
+accuracy, kelengkapan footprint, atau perubahan aturan bisnis.
+
 
 **Checkpoint notebook Area Coverage — 24 Oktober 2026:** owner mengotorisasi
 prototype Kaggle CPU pada koordinat baru, radius bangunan800m dan layer toko/

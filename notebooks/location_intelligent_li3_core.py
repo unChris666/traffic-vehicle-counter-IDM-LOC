@@ -23,7 +23,7 @@ def prepare(root):
     manifest = read_json(cache/'manifest.json')
     # The retained source packet includes raw WKB and the bounded-query proof.
     # Re-normalize and compare; do not rely on undocumented manual edits.
-    from location_intelligent_overture_probe import normalize
+    from location_intelligent_osm_buildings import normalize_source as normalize
     raw = read_json(cache/'raw_probe.json.gz')
     planned = frozen['policy']['sources']['buildings']
     if raw['release'] != planned['planned_release'] or raw['schema_version'] != planned['planned_schema_version']:
@@ -44,7 +44,7 @@ def prepare(root):
     data = (root/'normalized/buildings.geojson').read_bytes()
     source.update(locator='normalized/buildings.geojson', acquisition_mode='OFFLINE_SNAPSHOT',
                   byte_count=len(data), fingerprint={'algorithm': 'sha256', 'value': hashlib.sha256(data).hexdigest()},
-                  provenance={'origin': 'OFFLINE_SNAPSHOT', 'description': 'Verified reuse of actual Overture2026-10-21.0 raw probe; original acquisition metadata retained under raw/building_cache', 'dependencies': []})
+                  provenance={'origin': 'OFFLINE_SNAPSHOT', 'description': 'Verified raw building snapshot; provider/version retained under raw/building_cache', 'dependencies': []})
     for module in manifest['modules']:
         module.update(analysis_run_id=context['analysis_run_id'], context_hash=context['context_hash'], config_hash=canonical_hash(context['config']))
     write_json(root/'normalized/context.json', context)

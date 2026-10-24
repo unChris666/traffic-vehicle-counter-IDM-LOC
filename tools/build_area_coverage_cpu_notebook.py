@@ -9,6 +9,9 @@ FILES=['location_intelligent_config.py','location_intelligent_validator.py','loc
  'location_intelligent_map_pilot.py','location_intelligent_map_poi.py']
 
 def main():
+ active=ROOT/'notebooks/area_coverage_cpu_800m_poi_2km.ipynb'
+ if active.exists() and 'BUILDING_SOURCE_MODE=' in active.read_text():
+  raise SystemExit('Active OSM notebook is maintained directly; legacy Overture generator cannot overwrite it.')
  cells=[]
  def add(kind,text):
   cells.append({'cell_type':kind,'id':hashlib.sha256((kind+text).encode()).hexdigest()[:8],
