@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:traffic-location:traffic-result:v2",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "execution_status",
+    "result_quality",
+    "result_version",
+    "branch",
+    "summary",
+    "native_semantic_sha256",
+    "runtime",
+    "operation_executed",
+    "measurement_origin",
+    "fresh_inference_executed",
+    "counting_executed",
+    "effective_config_sha256",
+    "contract_version",
+    "algorithm_lineage"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "traffic_result_v2"
+    },
+    "execution_status": {
+      "const": "SUCCEEDED"
+    },
+    "result_quality": {
+      "enum": [
+        "PARTIAL",
+        "COMPLETE_WITHIN_DECLARED_SCOPE"
+      ]
+    },
+    "result_version": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "native_semantic_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "branch": {
+      "enum": [
+        "machine",
+        "review_assisted"
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "required": [
+        "accepted_total",
+        "accepted_measured",
+        "accepted_estimated",
+        "pending",
+        "invalid"
+      ],
+      "properties": {
+        "accepted_total": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_measured": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "accepted_estimated": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "pending": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "invalid": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "runtime": {
+      "type": "object",
+      "required": [
+        "python",
+        "implementation"
+      ],
+      "properties": {
+        "python": {
+          "type": "string"
+        },
+        "implementation": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "fresh_inference_executed": {
+      "const": false
+    },
+    "operation_executed": {
+      "const": "count_replay"
+    },
+    "measurement_origin": {
+      "enum": [
+        "fresh_inference",
+        "notebook_measurement"
+      ]
+    },
+    "counting_executed": {
+      "const": true
+    },
+    "effective_config_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "contract_version": {
+      "const": "traffic_facade_v2"
+    },
+    "algorithm_lineage": {
+      "const": "FROZEN_B_V8_COMPATIBILITY_KERNEL"
+    }
+  }
+}

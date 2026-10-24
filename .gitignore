@@ -5,3 +5,5 @@ __pycache__/
 *.egg-info/
 results/b_v4/videos/*.mp4
 results/b_v6/videos/*.mp4
+# Per-job advisory lock files are runtime state, not result artifacts.
+.locks/

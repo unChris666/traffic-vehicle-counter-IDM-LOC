@@ -105,10 +105,10 @@ class IsolationTests(unittest.TestCase):
     self.assertEqual(sha(ROOT/row['module']),row['module_sha256'])
  def test_golden_registry_matches_retained_bytes(self):
   for branch,row in read(ROOT/'results/engine_modularization/20261023/goldens/baselines.json').items():
-   p=Path(row['native_ref']['path']);self.assertEqual(sha(p),row['native_ref']['sha256']);self.assertEqual(semantic_hash(read(p)),row['canonical_native_sha256'])
+   p=ROOT/'results'/row['native_ref']['path'].split('/results/',1)[1];self.assertEqual(sha(p),row['native_ref']['sha256']);self.assertEqual(semantic_hash(read(p)),row['canonical_native_sha256'])
  def test_atomic_publication_and_reopen(self):
   golden=read(ROOT/'results/engine_modularization/20261023/goldens/baselines.json')['machine']
-  native=read(golden['native_ref']['path']);result={'native_semantic_sha256':semantic_hash(native)}
+  native=read(ROOT/'results'/golden['native_ref']['path'].split('/results/',1)[1]);result={'native_semantic_sha256':semantic_hash(native)}
   with tempfile.TemporaryDirectory() as d:
    out=Path(d)/'result';publish(out,{'native.json.gz':native,'result.json':result})
    self.assertEqual(reopen_traffic(out),result)

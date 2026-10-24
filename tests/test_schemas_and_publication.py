@@ -15,6 +15,10 @@ class SchemaTests(unittest.TestCase):
  def test_real_requests_match_schema(self):
   for name in ['machine','review_assisted']:jsonschema.validate(read(REQUESTS/(name+'.json')),self.schema('traffic_request.v1'))
   for name,schema in [('location_selection','location_selection_request.v1'),('location_recount_r1','location_recount_request.v1'),('location_recount_r2','location_recount_request.v1')]:jsonschema.validate(read(REQUESTS/(name+'.json')),self.schema(schema))
+ def test_actual_migration_result_v2_matches_schema(self):
+  result=ROOT/'results/traffic_migration/20261024/parity/T7SL-WEEKDAY-MALAM/result.json'
+  if not result.exists():self.skipTest('Migration receipt not retained')
+  jsonschema.validate(read(result),self.schema('traffic_result.v2'))
  def test_machine_overlay_mixing_rejected_by_schema(self):
   r=read(REQUESTS/'review_assisted.json');r['profile']='machine'
   with self.assertRaises(jsonschema.ValidationError):jsonschema.validate(r,self.schema('traffic_request.v1'))

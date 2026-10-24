@@ -1,6 +1,8 @@
 # Traffic Vehicle Counter
 
 Workflow terkini: [evaluasi mandiri menuju UI input/output](docs/CURRENT_DEVELOPMENT_WORKFLOW.md).
+Checkpoint 24 Oktober: [audit kesiapan modularisasi Traffic dan acceptance criteria](docs/TRAFFIC_MODULARIZATION_READINESS_AUDIT.md)
+tersimpan; implementasi migrasi berikutnya menunggu persetujuan audit. Fokus berikutnya audit Area Coverage.
 Video/result menggunakan Google Cloud Storage pada tahap integrasi;
 [stabilitas kedua engine](docs/REPRODUCIBILITY_POLICY.md) dan
 [panduan tahap GCS](docs/GCS_STORAGE_ONBOARDING_PLAN.md) terdokumentasi.
@@ -85,3 +87,8 @@ The user has authorized TOR3-MALAM raw-versus-enhancement experiments and approv
 ## Execute Phase 8 preparation
 
 Use the source bundle or repository checkout in Kaggle, attach `chrisbiran/tgdi-traffic-videos`, and open [08_end_to_end_batch.ipynb](notebooks/08_end_to_end_batch.ipynb). The [private Kaggle preparation notebook](https://www.kaggle.com/code/chrisbiran/phase-8-tgdi-batch-preparation) contains the exact hash-bound source bundle. Keep `MODE = 'prepare'`, then **Run All**. This retains discovery, runtime inventory, manifest readiness and software guard reports under `/kaggle/working/phase_8_batch/preparation/`. It does not run detection or count traffic. The user has approved the [eight G3-T1 views](docs/evidence/phase_8/geometry_proposals/TGDI_eight_video_G3_T1_overview.png) for the initial trial. Select [the active research v2 manifest](docs/evidence/phase_8/config/batch_manifest_TGDI_G3_T1_v2.json) explicitly for `run_batch`; it binds each actual video/native frame and the user-confirmed unknown store metadata. Missing facts are retained null, with business_metadata_complete=false. Raw and frozen Bv1 controls remain fixed, with sequential CUDA0 for new inference.
+
+
+Migrasi Traffic bertipe dan berversi: [release candidate dan bukti](docs/TRAFFIC_MODULARIZATION_RELEASE.md).
+Facade: `traffic_location.traffic.application.pipeline.process_video`; API mapping
+lama tetap tersedia melalui `traffic_location.traffic.pipeline.run`.

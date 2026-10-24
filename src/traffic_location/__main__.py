@@ -9,6 +9,7 @@ def main(argv=None):
  parser.add_argument('operation',choices=['traffic','location-selection','location-recount','reopen','fresh-inference'])
  parser.add_argument('--request');parser.add_argument('--root',default='.')
  parser.add_argument('--output',required=True)
+ parser.add_argument('--timeout-seconds',type=float,default=3600,help='Per-video fresh worker timeout; no silent fallback')
  parser.add_argument('--python',dest='python_executable',default=sys.executable,help='Explicit isolated inference worker runtime')
  args=parser.parse_args(argv)
  try:
@@ -20,13 +21,15 @@ def main(argv=None):
   if not args.request:raise ValueError('--request required')
   request=read(args.request)
   if args.operation=='traffic':
-   from .traffic.pipeline import run
-   value=run(request,root=args.root)
-   files={'result.json':value['result'],'native.json.gz':value['native'],'adapter_audit.json':value['adapter_audit'],'request.json':request}
-   engine='traffic'
+   from .traffic.application.runtime import execute_and_publish
+   from .traffic.artifact_store import LocalArtifactStore
+   target=Path(args.output).resolve()
+   value=execute_and_publish(request,root=args.root,store=LocalArtifactStore(target.parent),key=target.name)
+   print(json.dumps({'execution_status':value['execution_status'],'output':str(target),'result_version':value['result_version']}))
+   return 0
   elif args.operation=='fresh-inference':
    from .traffic.orchestration import fresh_inference
-   value=fresh_inference(args.request,args.output,python_executable=args.python_executable)
+   value=fresh_inference(args.request,args.output,python_executable=args.python_executable,timeout_seconds=args.timeout_seconds)
    print(json.dumps({'execution_status':value['status'],'frames':value['frames'],'output':str(args.output)}));return 0
   else:
    from .location.engine import run_selection,run_recount

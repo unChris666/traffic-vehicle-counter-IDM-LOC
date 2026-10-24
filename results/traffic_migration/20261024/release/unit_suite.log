@@ -1,0 +1,112 @@
+test_final_pivot_matches_saved_events (test_annotation.AnnotationTests.test_final_pivot_matches_saved_events) ... ok
+test_future_events_not_activated_early (test_annotation.AnnotationTests.test_future_events_not_activated_early) ... ok
+test_planning_does_not_modify_decisions (test_annotation.AnnotationTests.test_planning_does_not_modify_decisions) ... ok
+test_role_links_exact_frame_only (test_annotation.AnnotationTests.test_role_links_exact_frame_only) ... ok
+test_duplicate_rerun_rejected (test_fresh_batch.BatchTests.test_duplicate_rerun_rejected) ... ok
+test_eight_pivot_reconciles (test_fresh_batch.BatchTests.test_eight_pivot_reconciles) ... ok
+test_missing_is_partial_not_zero (test_fresh_batch.BatchTests.test_missing_is_partial_not_zero) ... ok
+test_pedestrian_separate_from_vehicle (test_fresh_batch.BatchTests.test_pedestrian_separate_from_vehicle) ... ok
+test_pending_invalid_do_not_enter_accepted (test_fresh_batch.BatchTests.test_pending_invalid_do_not_enter_accepted) ... ok
+test_policy_mix_rejected (test_fresh_batch.BatchTests.test_policy_mix_rejected) ... ok
+test_reviewed_not_added (test_fresh_batch.BatchTests.test_reviewed_not_added) ... ok
+test_smoke_cannot_be_counted (test_fresh_batch.BatchTests.test_smoke_cannot_be_counted) ... ok
+test_stable_repeated_and_order_independent (test_fresh_batch.BatchTests.test_stable_repeated_and_order_independent) ... ok
+test_actual_measurements_preserve_raw_bc_source (test_fresh_batch.FreshTests.test_actual_measurements_preserve_raw_bc_source) ... ok
+test_altered_raw_link_rejected (test_fresh_batch.FreshTests.test_altered_raw_link_rejected) ... ok
+test_integrity_failure_rejected (test_fresh_batch.FreshTests.test_integrity_failure_rejected) ... ok
+test_source_mismatch_rejected (test_fresh_batch.FreshTests.test_source_mismatch_rejected) ... ok
+test_synthetic_raw_id_role_change_uses_separate_context (test_fresh_batch.FreshTests.test_synthetic_raw_id_role_change_uses_separate_context) ... ok
+test_actual_membership_domain_equality_and_explicit_new_code_version (test_location_boundaries.RecountTests.test_actual_membership_domain_equality_and_explicit_new_code_version) ... skipped 'Run Shapely runtime separately'
+test_delta_only_from_same_new_engine (test_location_boundaries.RecountTests.test_delta_only_from_same_new_engine) ... skipped 'Run Shapely runtime separately'
+test_old_engine_previous_rejected (test_location_boundaries.RecountTests.test_old_engine_previous_rejected) ... skipped 'Run Shapely runtime separately'
+test_three_replays_and_order_isolation (test_location_boundaries.RecountTests.test_three_replays_and_order_isolation) ... skipped 'Run Shapely runtime separately'
+test_unknown_stays_unknown_and_units_separate (test_location_boundaries.RecountTests.test_unknown_stays_unknown_and_units_separate) ... skipped 'Run Shapely runtime separately'
+test_actual_snapshot_selection_capacity_exact (test_location_boundaries.SelectionTests.test_actual_snapshot_selection_capacity_exact) ... skipped 'Run GDAL runtime separately'
+test_blocked_source_not_false_zero (test_location_boundaries.SelectionTests.test_blocked_source_not_false_zero) ... skipped 'Run GDAL runtime separately'
+test_three_replays_and_no_input_mutation (test_location_boundaries.SelectionTests.test_three_replays_and_no_input_mutation) ... skipped 'Run GDAL runtime separately'
+test_not_another_packet_type (test_location_boundaries.SnapshotTests.test_not_another_packet_type) ... ok
+test_reconciles_all_source_rows (test_location_boundaries.SnapshotTests.test_reconciles_all_source_rows) ... ok
+test_wrong_manifest_binding_rejected (test_location_boundaries.SnapshotTests.test_wrong_manifest_binding_rejected) ... ok
+test_actual_migration_result_v2_matches_schema (test_schemas_and_publication.SchemaTests.test_actual_migration_result_v2_matches_schema) ... ok
+test_atomic_export_failure_does_not_publish_success (test_schemas_and_publication.SchemaTests.test_atomic_export_failure_does_not_publish_success) ... ok
+test_every_schema_is_valid_draft202012 (test_schemas_and_publication.SchemaTests.test_every_schema_is_valid_draft202012) ... ok
+test_machine_overlay_mixing_rejected_by_schema (test_schemas_and_publication.SchemaTests.test_machine_overlay_mixing_rejected_by_schema) ... ok
+test_manifest_detects_unlisted_artifacts (test_schemas_and_publication.SchemaTests.test_manifest_detects_unlisted_artifacts) ... ok
+test_output_traversal_rejected (test_schemas_and_publication.SchemaTests.test_output_traversal_rejected) ... ok
+test_real_requests_match_schema (test_schemas_and_publication.SchemaTests.test_real_requests_match_schema) ... ok
+test_replay_requires_explicit_branch (test_schemas_and_publication.SchemaTests.test_replay_requires_explicit_branch) ... ok
+test_actual_native_measurement_adapter (test_traffic_adapters.MeasurementTests.test_actual_native_measurement_adapter) ... ok
+test_measured_bbox_cannot_be_replaced (test_traffic_adapters.MeasurementTests.test_measured_bbox_cannot_be_replaced) ... ok
+test_missing_source_frame_rejected (test_traffic_adapters.MeasurementTests.test_missing_source_frame_rejected) ... ok
+test_new_video_job_has_no_hardcoded_pilot_id_or_length (test_traffic_adapters.MeasurementTests.test_new_video_job_has_no_hardcoded_pilot_id_or_length) ... ok
+test_wrong_source_video_rejected (test_traffic_adapters.MeasurementTests.test_wrong_source_video_rejected) ... ok
+test_actual_frame_matches_original_renderer_and_preserves_events (test_traffic_adapters.RenderingTests.test_actual_frame_matches_original_renderer_and_preserves_events) ... skipped 'Run recorded Traffic CPU runtime for pixel test'
+test_bad_prediction_input_rejected (test_traffic_boundaries.CountingTests.test_bad_prediction_input_rejected) ... ok
+test_frames_not_mutated (test_traffic_boundaries.CountingTests.test_frames_not_mutated) ... ok
+test_inferred_never_promoted (test_traffic_boundaries.CountingTests.test_inferred_never_promoted) ... ok
+test_job_order_does_not_leak_state (test_traffic_boundaries.CountingTests.test_job_order_does_not_leak_state) ... ok
+test_original_kernel_parity (test_traffic_boundaries.CountingTests.test_original_kernel_parity) ... ok
+test_positive_pedestrian_measured (test_traffic_boundaries.CountingTests.test_positive_pedestrian_measured) ... ok
+test_raw_bc_unchanged (test_traffic_boundaries.CountingTests.test_raw_bc_unchanged) ... ok
+test_three_independent_counts (test_traffic_boundaries.CountingTests.test_three_independent_counts) ... ok
+test_all_generated_imports_are_local_or_stdlib (test_traffic_boundaries.IsolationTests.test_all_generated_imports_are_local_or_stdlib) ... ok
+test_atomic_publication_and_reopen (test_traffic_boundaries.IsolationTests.test_atomic_publication_and_reopen) ... ok
+test_extraction_registry_matches_original_and_generated_sources (test_traffic_boundaries.IsolationTests.test_extraction_registry_matches_original_and_generated_sources) ... ok
+test_golden_registry_matches_retained_bytes (test_traffic_boundaries.IsolationTests.test_golden_registry_matches_retained_bytes) ... ok
+test_import_without_notebook_modules_or_cwd (test_traffic_boundaries.IsolationTests.test_import_without_notebook_modules_or_cwd) ... ok
+test_renderer_has_no_counting_dependency (test_traffic_boundaries.IsolationTests.test_renderer_has_no_counting_dependency) ... ok
+test_tampered_result_rejected (test_traffic_boundaries.IsolationTests.test_tampered_result_rejected) ... ok
+test_actual_frame_count_parameter (test_traffic_boundaries.ProfileTests.test_actual_frame_count_parameter) ... ok
+test_arbitrary_video_id_not_pilot_constant (test_traffic_boundaries.ProfileTests.test_arbitrary_video_id_not_pilot_constant) ... ok
+test_bool_frame_count_rejected (test_traffic_boundaries.ProfileTests.test_bool_frame_count_rejected) ... ok
+test_foreign_source_hash_rejected (test_traffic_boundaries.ProfileTests.test_foreign_source_hash_rejected) ... ok
+test_historical_context_needs_bound_baseline (test_traffic_boundaries.ProfileTests.test_historical_context_needs_bound_baseline) ... ok
+test_machine_adjudications_forbidden (test_traffic_boundaries.ProfileTests.test_machine_adjudications_forbidden) ... ok
+test_machine_valid (test_traffic_boundaries.ProfileTests.test_machine_valid) ... ok
+test_new_review_overlay_forbidden_on_machine (test_traffic_boundaries.ProfileTests.test_new_review_overlay_forbidden_on_machine) ... ok
+test_replay_explicit_branch (test_traffic_boundaries.ProfileTests.test_replay_explicit_branch) ... ok
+test_replay_must_name_branch (test_traffic_boundaries.ProfileTests.test_replay_must_name_branch) ... ok
+test_review_branch_requires_all_proofs (test_traffic_boundaries.ProfileTests.test_review_branch_requires_all_proofs) ... ok
+test_unknown_fields_rejected (test_traffic_boundaries.ProfileTests.test_unknown_fields_rejected) ... ok
+test_branch_and_future_schema_rejected (test_traffic_migration.ConfigTests.test_branch_and_future_schema_rejected) ... ok
+test_explicit_precedence_and_no_base_mutation (test_traffic_migration.ConfigTests.test_explicit_precedence_and_no_base_mutation) ... ok
+test_frozen_hash_and_no_environment_defaults (test_traffic_migration.ConfigTests.test_frozen_hash_and_no_environment_defaults) ... ok
+test_direct_constructors_cannot_hold_mutable_nested_payloads (test_traffic_migration.ContractTests.test_direct_constructors_cannot_hold_mutable_nested_payloads) ... ok
+test_fresh_review_assisted_unsupported (test_traffic_migration.ContractTests.test_fresh_review_assisted_unsupported) ... ok
+test_nested_state_frozen_and_lossless (test_traffic_migration.ContractTests.test_nested_state_frozen_and_lossless) ... ok
+test_nonfinite_and_noncanonical_rejected (test_traffic_migration.ContractTests.test_nonfinite_and_noncanonical_rejected) ... ok
+test_raw_bc_only_and_source_link (test_traffic_migration.ContractTests.test_raw_bc_only_and_source_link) ... ok
+test_request_roundtrip_preserves_every_legacy_field (test_traffic_migration.ContractTests.test_request_roundtrip_preserves_every_legacy_field) ... ok
+test_unknown_source_identity_rejected (test_traffic_migration.ContractTests.test_unknown_source_identity_rejected) ... ok
+test_wrong_branch_direct_constructor_rechecked (test_traffic_migration.ContractTests.test_wrong_branch_direct_constructor_rechecked) ... ok
+test_wrong_operation_never_runs_in_count_facade (test_traffic_migration.ContractTests.test_wrong_operation_never_runs_in_count_facade) ... ok
+test_json_csv_html_reconcile_without_changing_snapshot (test_traffic_migration.ExportTests.test_json_csv_html_reconcile_without_changing_snapshot) ... ok
+test_source_archive_and_kernel_retention (test_traffic_migration.FrozenBaselineTests.test_source_archive_and_kernel_retention) ... ok
+test_every_contract_config_domain_imports_without_gpu_or_network (test_traffic_migration.ImportDagTests.test_every_contract_config_domain_imports_without_gpu_or_network) ... ok
+test_layers_and_no_import_cycles (test_traffic_migration.ImportDagTests.test_layers_and_no_import_cycles) ... ok
+test_adjudication_cannot_promote_pending_or_change_crossing (test_traffic_migration.ReviewAuthorityTests.test_adjudication_cannot_promote_pending_or_change_crossing) ... ok
+test_known_reviews_roundtrip_no_evidence_loss (test_traffic_migration.ReviewAuthorityTests.test_known_reviews_roundtrip_no_evidence_loss) ... ok
+test_unknown_fields_are_not_ignored (test_traffic_migration.ReviewAuthorityTests.test_unknown_fields_are_not_ignored) ... ok
+test_unknown_phase_schema_action_rejected (test_traffic_migration.ReviewAuthorityTests.test_unknown_phase_schema_action_rejected) ... ok
+test_wrong_review_type_rejected_before_processing (test_traffic_migration.ReviewAuthorityTests.test_wrong_review_type_rejected_before_processing) ... ok
+test_atomic_publish_reopen_and_idempotent_retry (test_traffic_migration.StorageRuntimeTests.test_atomic_publish_reopen_and_idempotent_retry) ... ok
+test_binary_artifact_reopen_retry_and_tamper (test_traffic_migration.StorageRuntimeTests.test_binary_artifact_reopen_retry_and_tamper) ... ok
+test_concurrent_publisher_is_rejected_without_success (test_traffic_migration.StorageRuntimeTests.test_concurrent_publisher_is_rejected_without_success) ... ok
+test_crashed_publisher_lock_does_not_block_retry (test_traffic_migration.StorageRuntimeTests.test_crashed_publisher_lock_does_not_block_retry) ... ok
+test_export_failure_and_corruption_never_success (test_traffic_migration.StorageRuntimeTests.test_export_failure_and_corruption_never_success) ... ok
+test_inference_timeout_failure_logs_retained (test_traffic_migration.StorageRuntimeTests.test_inference_timeout_failure_logs_retained) ... ok
+test_invalid_native_never_published (test_traffic_migration.StorageRuntimeTests.test_invalid_native_never_published) ... ok
+test_renderer_cannot_change_counting_version (test_traffic_migration.StorageRuntimeTests.test_renderer_cannot_change_counting_version) ... ok
+test_unsafe_keys_rejected (test_traffic_migration.StorageRuntimeTests.test_unsafe_keys_rejected) ... ok
+test_changed_counting_policy_rejected (test_traffic_migration_batch.LockedBatchTests.test_changed_counting_policy_rejected) ... ok
+test_changed_geometry_rejected (test_traffic_migration_batch.LockedBatchTests.test_changed_geometry_rejected) ... ok
+test_duplicate_request_slots (test_traffic_migration_batch.LockedBatchTests.test_duplicate_request_slots) ... ok
+test_machine_review_mixing_rejected (test_traffic_migration_batch.LockedBatchTests.test_machine_review_mixing_rejected) ... ok
+test_prefix_cannot_claim_full_video (test_traffic_migration_batch.LockedBatchTests.test_prefix_cannot_claim_full_video) ... ok
+test_source_identity_foreign_video (test_traffic_migration_batch.LockedBatchTests.test_source_identity_foreign_video) ... ok
+test_unknown_manifest_schema (test_traffic_migration_batch.LockedBatchTests.test_unknown_manifest_schema) ... ok
+
+----------------------------------------------------------------------
+Ran 107 tests in 23.125s
+
+OK (skipped=9)

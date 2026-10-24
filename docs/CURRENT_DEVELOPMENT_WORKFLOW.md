@@ -1,5 +1,16 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Checkpoint implementasi, 24 Oktober 2026:** owner telah mengotorisasi urutan
+freeze → kontrak/facade → adapter → domain → runtime/batch → renderer/export/storage
+→ release candidate, dengan penyelesaian keputusan teknis secara mandiri.
+Audit sebelumnya disetujui untuk dilaksanakan oleh instruksi terbaru ini.
+Implementasi berada di branch `refactor/traffic-modularization-v2`; lihat
+[catatan migrasi dan gate](TRAFFIC_MODULARIZATION_RELEASE.md).
+Algoritma/kernel serta evidence historis tetap immutable. Perubahan angka bukan
+bagian refactor ini. Hasil aktual8/8 T7SL kini tersedia; asumsi keberhasilan pada
+checkpoint audit terdahulu tidak dipakai sebagai bukti. GCS nyata dan kesiapan
+produksi tetap memiliki gate tersendiri.
+
 **Arahan owner, 23 Oktober 2026 (Asia/Jakarta).** Dokumen ini menjadi otoritas
 workflow terkini. Bagian roadmap/status lama dipertahankan sebagai riwayat;
 larangan melanjutkan hanya karena menunggu approval Markdown tidak lagi menjadi
