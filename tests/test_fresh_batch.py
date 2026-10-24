@@ -29,6 +29,18 @@ class FreshTests(unittest.TestCase):
  def test_integrity_failure_rejected(self):
   self.v['records'][0]['frame_index']=1
   with self.assertRaises(ValueError):self.adapt()
+ def test_synthetic_raw_id_role_change_uses_separate_context(self):
+  row=copy.deepcopy(next(r for r in self.v['records'] if r['emitted_measurements']))
+  rows=[]
+  for i,cls in enumerate([2,0]):
+   r=copy.deepcopy(row);r['frame_index']=i;obs=copy.deepcopy(r['emitted_measurements'][0]);raw=copy.deepcopy(obs['raw_detection']);raw['class_id']=cls
+   obs.update(track_id=9,original_detection_index=0,raw_detection=raw);r.update(detections=[raw],emitted_measurements=[obs]);rows.append(r)
+  self.v.update(records=rows,frames=2,records_semantic_sha256=semantic_hash(rows))
+  with tempfile.TemporaryDirectory() as d:
+   p=Path(d)/'synthetic.json';write(p,self.v);out=list(frames(p,self.s,2))
+  self.assertEqual(out[0]['observations'][0]['unit_id'],'track:9')
+  self.assertEqual(out[1]['observations'][0]['unit_id'],'person-track:9')
+  self.assertNotEqual(out[0]['observations'][0]['episode_id'],out[1]['observations'][0]['episode_id'])
 class BatchTests(unittest.TestCase):
  def setUp(self):
   self.expected={str(i):f'{i:064x}' for i in range(8)};self.rows=[]

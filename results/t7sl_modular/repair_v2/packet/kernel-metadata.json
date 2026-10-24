@@ -1,0 +1,18 @@
+{
+  "id": "chrisbiran/t7sl-traffic-counter-readable",
+  "title": "T7SL traffic counter readable",
+  "code_file": "10_t7sl_readable_resume.ipynb",
+  "language": "python",
+  "kernel_type": "notebook",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "dataset_sources": [
+    "chrisbiran/t7sl-traffic-videos",
+    "chrisbiran/t7sl-fresh-measurement-cache-v1"
+  ],
+  "kernel_sources": [],
+  "competition_sources": [],
+  "docker_image": "gcr.io/kaggle-private-byod/python@sha256:9a6bcfda6d03b2cd9aa347ee8c1bae62043328ed0f4afe9bda014e4f8bbf9435"
+}

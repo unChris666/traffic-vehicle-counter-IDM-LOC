@@ -5,7 +5,7 @@ External assets are mandatory hash-bound inputs; this module never downloads wei
 """
 import os
 os.environ.setdefault('CUBLAS_WORKSPACE_CONFIG',':4096:8')
-import json,sys,random,platform
+import json,sys,random,platform,time
 from pathlib import Path
 from ..artifacts import artifact,read,write,require,sha,semantic_hash
 
@@ -28,10 +28,12 @@ def execute(request,output):
  require(r['preprocessing']=='RAW' and r['half'] is False,'Only declared RAW FP32 experiment profile supported')
  random.seed(r['seed']);np.random.seed(r['seed']);torch.manual_seed(r['seed']);torch.set_num_threads(r['threads'])
  torch.use_deterministic_algorithms(True);torch.backends.cudnn.benchmark=False;torch.backends.cudnn.deterministic=True
+ print(json.dumps({'stage':'loading_detector','device':r['device']}),flush=True)
  model=YOLO(str(paths['detector']))
  require(model.task=='detect','Unexpected model task')
  config=YAML.load(Path(ultralytics.__file__).parent/'cfg/trackers/botsort.yaml')
  config.update(r['tracker']);config.update(with_reid=True,model=str(paths['reid']),device=r['device'])
+ print(json.dumps({'stage':'loading_reid','device':r['device']}),flush=True)
  tracker=BOTSORT(IterableSimpleNamespace(**config))
  require(tracker.encoder is not None,'ReID must remain enabled')
  actual_providers=tracker.encoder.model.session.get_providers()
@@ -40,7 +42,8 @@ def execute(request,output):
  metadata={'width':int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),'height':int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)),
    'reported_frame_count':int(cap.get(cv2.CAP_PROP_FRAME_COUNT)),'reported_fps':cap.get(cv2.CAP_PROP_FPS)}
  require(metadata['reported_frame_count']>=r['frame_limit'],'Source shorter than requested prefix')
- records=[]
+ records=[];started=time.monotonic()
+ print(json.dumps({'stage':'inference_start','frames':r['frame_limit'],'providers':actual_providers}),flush=True)
  try:
   for index in range(r['frame_limit']):
    ok,image=cap.read();require(ok,'Decode failed within requested scope')
@@ -60,8 +63,9 @@ def execute(request,output):
    require(__import__('hashlib').sha256(image.tobytes()).hexdigest()==pixel_sha,'Inference mutated source pixels')
    records.append({'frame_index':index,'source_pixel_sha256':pixel_sha,
      'detections':detections,'emitted_measurements':observations,'reid_features':features})
-   if index%8==0:print(json.dumps({'frame':index,'detections':len(detections),'tracks':len(observations)}),flush=True)
+   if index%128==0:print(json.dumps({'stage':'inference','frame':index,'of':r['frame_limit'],'fps_actual':round((index+1)/max(time.monotonic()-started,1e-9),2),'detections':len(detections),'tracks':len(observations)}),flush=True)
  finally:cap.release()
+ print(json.dumps({'stage':'inference_finished','frames':len(records),'wall_seconds':round(time.monotonic()-started,2),'fps_actual':round(len(records)/max(time.monotonic()-started,1e-9),2)}),flush=True)
  require(all(sha(paths[k])==v['sha256'] for k,v in r['artifacts'].items()),'Fresh input changed')
  environment={'python':platform.python_version(),'torch':torch.__version__,'ultralytics':ultralytics.__version__,
    'onnxruntime':onnxruntime.__version__,'opencv':cv2.__version__,'numpy':np.__version__,

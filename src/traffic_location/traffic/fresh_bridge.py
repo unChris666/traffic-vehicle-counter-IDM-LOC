@@ -26,7 +26,8 @@ def frames(path,source_identity,frame_count,*,audit=None):
    observations.append({'frame_index':index,'track_id':track,'original_detection_index':di,
     'raw_bbox':deepcopy(box),'class_name':category,'class_id':raw['class_id'],'confidence':raw['confidence'],
     'observed':True,'emitted':True,'role':'unknown_person' if category=='person' else 'vehicle',
-    'unit_id':f'track:{track}','episode_id':'unreviewed-fresh','association_verified':False,
+    'unit_id':f'person-track:{track}' if category=='person' else f'track:{track}',
+    'episode_id':'unreviewed-person' if category=='person' else 'unreviewed-vehicle','association_verified':False,
     'measurement_provenance':'fresh_modular_detection_v1','source_ref':{'measurement_sha256':source_identity['records_sha256'],
      'source_pixel_sha256':row['source_pixel_sha256'],'frame_index':index,'original_detection_index':di}})
   yield {'frame_index':index,'observations':observations}
