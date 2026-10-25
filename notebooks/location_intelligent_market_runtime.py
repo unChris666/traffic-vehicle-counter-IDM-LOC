@@ -108,9 +108,179 @@ def _connector_tokens(package, connector):
     return corridor_tokens(package['edge_sources'][connector['road_edge_id']]['raw_tags'])
 
 
-def _poi_gate(config, policy, facilities, package, poi_targets, buildings):
+def _reuse_calculation_connectors(pilot,metrics,features,frozen,alternative_targets):
+    """Extend section-6 access points; never select building entrances again."""
+    from collections import defaultdict
+    from shapely.geometry import LineString,Point
+    from location_intelligent_li3_connectors import generate_connectors
+    from location_intelligent_li3_graph import apply_turns
+    base_graph=read_json(pilot/'graph/base_graph.json.gz')
+    base_sources=read_json(pilot/'graph/base_edge_sources.json.gz')
+    retained=read_json(pilot/'connectors/connectors.json.gz')
+    base_rules={}
+    # Base access_allowed and permission_reason precede turn quarantine.
+    # Reapply restrictions after new target split points, as the baseline does.
+    for edge in base_graph['edges']:
+        key=edge['edge_id'];source=base_sources[key];tags=deepcopy(source['raw_tags'])
+        for access_key in ('access','vehicle','motor_vehicle','motorcycle'):
+            directional=access_key+(':forward' if source['direction']=='f' else ':backward')
+            if directional in tags:tags[access_key]=tags[directional]
+        base_rules[key]={'allowed':edge['access_allowed'],'evidence_refs':['osm_way_'+str(source['osm_way_id'])],
+                         'raw_tags':tags,'reason':source['permission_reason']}
+    base={'graph':base_graph,'edge_sources':base_sources,'edge_rules':base_rules}
+    print('Market: building entrances from section 6; locating '+str(len(alternative_targets))+' extra store/POI targets',flush=True)
+    targets=generate_connectors(base,{**metrics,'selected_buildings':[]},features,frozen,
+                                alternative_targets=alternative_targets)
+    expected=next((c for c in retained if c['kind']=='TARGET' and not c.get('alternative_store_key')),None)
+    generated=next((c for c in targets['connectors'] if c['kind']=='TARGET' and not c.get('alternative_store_key')),None)
+    def entrance(c):return {k:v for k,v in c.items() if k!='road_edge_id'} if c else None
+    if entrance(expected)!=entrance(generated):raise ValueError('Retained candidate entrance differs from frozen base graph')
+    connectors=deepcopy(retained)+[deepcopy(c) for c in targets['connectors'] if c.get('alternative_store_key')]
+    cuts=defaultdict(dict);groups={};epsilon=frozen['policy']['li3']['projection_position_precision_m']
+    for edge in base_graph['edges']:
+        source=base_sources[edge['edge_id']];gid=f"w{source['osm_way_id']}_s{source['segment_index']}"
+        if gid not in groups:
+            forward=source['direction']=='f';coords=edge['geometry']['coordinates']
+            groups[gid]={'line':LineString(coords if forward else list(reversed(coords))),
+                         'a':edge['u'] if forward else edge['v'],'b':edge['v'] if forward else edge['u'],'members':[]}
+        groups[gid]['members'].append(edge)
+    for c in connectors:
+        gid=c['source_segment'];group=groups[gid];node=c['node_id']
+        if node==group['a']:position=0.0
+        elif node==group['b']:position=group['line'].length
+        elif node.startswith(gid+'_x'):
+            position=min(max(int(node[len(gid)+2:])*epsilon,epsilon),group['line'].length-epsilon)
+        else:raise ValueError('Unsupported retained access node')
+        cuts[gid][node]=position
+    nodes={n['node_id']:deepcopy(n) for n in base_graph['nodes']}
+    edges=[];sources={};rules={};incidents=defaultdict(list)
+    speed=frozen['policy']['travel']['reference_constant_speed']['value']*1000/3600
+    for gid in sorted(groups):
+        group=groups[gid];line=group['line']
+        positions={group['a']:0.0,group['b']:line.length,**cuts.get(gid,{})}
+        ordered=sorted(positions,key=lambda n:(positions[n],n))
+        for node in ordered:
+            point=line.interpolate(positions[node])
+            if node not in nodes:nodes[node]={'node_id':node,'x':point.x,'y':point.y}
+        for parent in group['members']:
+            pkey=parent['edge_id'];path=ordered if base_sources[pkey]['direction']=='f' else list(reversed(ordered))
+            for i,(a,b) in enumerate(zip(path,path[1:])):
+                coords=[[nodes[a]['x'],nodes[a]['y']],[nodes[b]['x'],nodes[b]['y']]];distance=math.dist(*coords)
+                if distance<=0:continue
+                key=pkey+'_p'+str(i)
+                edges.append({**parent,'edge_id':key,'u':a,'v':b,'key':key,'length_m':distance,'travel_time_s':distance/speed,
+                              'geometry':{'type':'LineString','coordinates':coords}})
+                sources[key]={**deepcopy(base_sources[pkey]),'parent_edge_id':pkey};rules[key]=deepcopy(base_rules[pkey])
+                incidents[(gid,a)].append(key);incidents[(gid,b)].append(key)
+    graph={**base_graph,'nodes':sorted(nodes.values(),key=lambda n:n['node_id']),'edges':sorted(edges,key=lambda e:e['edge_id'])}
+    for c in connectors:
+        c['road_edge_id']=min(k for k in incidents[(c['source_segment'],c['node_id'])] if rules[k]['allowed'] is True)
+    blocked,turn_diagnostics=apply_turns(graph,sources,rules,features)
+    print('Market: reused '+str(sum(c['kind']=='BUILDING' for c in retained))+' building connectors; added '+str(len(alternative_targets))+' target requests',flush=True)
+    return {'graph':graph,'edge_sources':sources,'edge_rules':rules,'blocked_turns':blocked,'connectors':connectors,
+            'diagnostics':{'building_connectors_reused':True,'turn_relations':turn_diagnostics}}
+
+
+class _MarketRoutes:
+    """One immutable adjacency per market invocation, with directed turn states."""
+    def __init__(self,package):
+        self.edges={e['edge_id']:e for e in package['graph']['edges']}
+        self.allowed={k:r['allowed'] for k,r in package['edge_rules'].items()}
+        self.blocked={(r['from_edge'],r['to_edge']) for r in package['blocked_turns']}
+        self.incoming={};self.outgoing={}
+        for key,e in self.edges.items():
+            if self.allowed.get(key) is True:
+                self.incoming.setdefault(e['v'],[]).append(key);self.outgoing.setdefault(e['u'],[]).append(key)
+    def reverse(self,target):
+        # Preserve baseline reverse accumulation, hop and edge-ID tie breaks.
+        import heapq
+        best={};queue=[]
+        for key in self.incoming.get(target,[]):
+            label=(self.edges[key]['length_m'],1,(key,));best[key]=label;heapq.heappush(queue,(*label,key))
+        while queue:
+            cost,hops,path,key=heapq.heappop(queue)
+            if best.get(key)!=(cost,hops,path):continue
+            for previous in self.incoming.get(self.edges[key]['u'],[]):
+                if (previous,key) in self.blocked:continue
+                label=(self.edges[previous]['length_m']+cost,hops+1,(previous,*path))
+                if previous not in best or label<best[previous]:best[previous]=label;heapq.heappush(queue,(*label,previous))
+        memo={}
+        def lookup(start):
+            if start==target:return {'distance_m':0.0,'path_sha256':hashlib.sha256(canonical_bytes([])).hexdigest()}
+            if start not in memo:
+                options=[best[k] for k in self.outgoing.get(start,[]) if k in best]
+                label=min(options) if options else None
+                memo[start]=None if label is None else {'distance_m':sum(self.edges[k]['length_m'] for k in label[2]),
+                    'path_sha256':hashlib.sha256(canonical_bytes(list(label[2]))).hexdigest()}
+            return memo[start]
+        return lookup
+    def forward(self,start):
+        import heapq
+        queue=[(0.0,0,(),start,'')];best={(start,''):(0.0,0,())};nodes={}
+        while queue:
+            cost,hops,path,node,previous=heapq.heappop(queue)
+            if best.get((node,previous))!=(cost,hops,path):continue
+            if node not in nodes:nodes[node]={'distance_m':cost}
+            for key in sorted(self.outgoing.get(node,[])):
+                if (previous,key) in self.blocked:continue
+                edge=self.edges[key];label=(cost+edge['length_m'],hops+1,(*path,key));state=(edge['v'],key)
+                if state not in best or label<best[state]:best[state]=label;heapq.heappush(queue,(*label,*state))
+        return lambda target:nodes.get(target)
+    def potential_forward(self,start):
+        outgoing={}
+        for key,e in self.edges.items():
+            if self.allowed.get(key) is not False:outgoing.setdefault(e['u'],[]).append(key)
+        nodes={start};seen=set();queue=[(start,'')]
+        while queue:
+            node,previous=queue.pop()
+            for key in outgoing.get(node,[]):
+                if key in seen or (previous,key) in self.blocked:continue
+                seen.add(key);dest=self.edges[key]['v'];nodes.add(dest);queue.append((dest,key))
+        return lambda target:target in nodes
+
+
+def _market_store_routes(package,stores,building_ids,network,primary_routes):
+    """Reuse source validation/lengths and one reverse search per store node."""
+    from location_intelligent_alternatives import rank_alternatives
+    by_store={s['store_key']:s for s in stores};sources={bid:[] for bid in building_ids};result={bid:[] for bid in building_ids}
+    if not building_ids:
+        print('Market routing: no eligible building/store pairs; rows remain in allocation ledger',flush=True);return result
+    for c in package['connectors']:
+        if (c['kind']=='BUILDING' and c.get('building_id') in sources and network.allowed.get(c['road_edge_id']) is True
+            and c['barrier_clear'] is True and c['status'] in {'VERIFIED','OWNER_ASSUMPTION'}):
+            sources[c['building_id']].append((c,_connector_length(c)))
+    targets=[]
+    for c in package['connectors']:
+        key=c.get('alternative_store_key') or ('candidate' if c['kind']=='TARGET' else None)
+        if key in by_store and network.allowed.get(c['road_edge_id']) is True and c['barrier_clear'] is True and c['status'] in {'VERIFIED','OWNER_ASSUMPTION'}:
+            targets.append((key,c))
+    grouped={}
+    for key,target in targets:grouped.setdefault(target['node_id'],[]).append((key,target))
+    for i,(node,targets_here) in enumerate(grouped.items(),1):
+        needed=any(key!='candidate' or any(primary_routes.get(bid,{}).get('selected_candidate') is None for bid in sources) for key,_ in targets_here)
+        print('Market routing: target node '+str(i)+'/'+str(len(grouped))+(' — reuse primary' if not needed else ''),flush=True)
+        if not needed:continue
+        lookup=network.reverse(node)
+        for key,target in targets_here:
+            target_m=_connector_length(target)
+            for bid,connectors in sources.items():
+                if key=='candidate' and primary_routes.get(bid,{}).get('selected_candidate') is not None:continue
+                options=[]
+                for c,source_m in connectors:
+                    path=lookup(c['node_id'])
+                    if path is not None:options.append((c['class_rank'],source_m+path['distance_m']+target_m,c['connector_id'],path))
+                if options:
+                    _,distance,source_id,path=min(options,key=lambda x:(x[0],x[1],x[2]))
+                    result[bid].append({**by_store[key],'total_distance_m':distance,'store_road_rank':target['class_rank'],
+                        'store_highway':network.edges[target['road_edge_id']]['highway'],'building_connector_id':source_id,
+                        'target_connector_id':target['connector_id'],'path_sha256':path['path_sha256'],
+                        'access_basis':'REACHABLE_IN_CONFIGURED_MOTOR_GRAPH_NOT_PHYSICAL_VERIFICATION'})
+        del lookup
+    return {bid:rank_alternatives(rows) for bid,rows in result.items()}
+
+
+def _poi_gate(config, policy, facilities, package, poi_targets, buildings, *, network=None):
     """Assess actual observed attractors and complete-link restaurant groups."""
-    from location_intelligent_motor_routing import _path_index, _potential_reachability
     from pyproj import Transformer
     from shapely.geometry import shape, Point
     from shapely.ops import transform
@@ -128,16 +298,20 @@ def _poi_gate(config, policy, facilities, package, poi_targets, buildings):
     tx = Transformer.from_crs(4326,config['metric_crs'],always_xy=True)
     shapes = [shape(f['geometry']) for f in buildings['features']]
     index = STRtree(shapes); by_id={f['properties']['building_id']:i for i,f in enumerate(buildings['features'])}
+    network=network or _MarketRoutes(package)
+    paths=network.forward(candidate['node_id']) if poi_targets else lambda node:None
+    potential=network.potential_forward(candidate['node_id']) if any(v is None for v in allowed.values()) else lambda node:False
     evidence=[]; restaurants=[]; incomplete=False
-    for p in poi_targets:
+    for i,p in enumerate(poi_targets,1):
+        if i==1 or i%25==0 or i==len(poi_targets):print('Market POI gate: '+str(i)+'/'+str(len(poi_targets)),flush=True)
         conn = targets.get(p['store_key'])
         record={'source_id':p['source_id'],'category':p['category'],'eligible':False}
         evidence.append(record)
         if conn is None or allowed.get(conn['road_edge_id']) is not True:
             record['reason']='POI_CONNECTOR_UNAVAILABLE';incomplete=True;continue
-        path = _path_index(graph,allowed,blocked,conn['node_id'])(candidate['node_id'])
+        path = paths(conn['node_id'])
         if path is None:
-            unknown = _potential_reachability(graph,allowed,blocked,conn['node_id'])(candidate['node_id'])
+            unknown = potential(conn['node_id'])
             record['reason']='ROUTE_UNVERIFIED' if unknown else 'NO_OBSERVED_ROUTE'
             incomplete |= unknown;continue
         record.update(route_distance_m=path['distance_m'] + _connector_length(candidate) + _connector_length(conn),
@@ -178,9 +352,6 @@ def build_market(config, market_config, pilot, layers, facilities, output):
     from pyproj import Transformer, Geod
     from location_intelligent_li3 import verify_manifest,select_feature_source
     from location_intelligent_map_pilot import sha,poi_locations
-    from location_intelligent_li3_graph import build_graph
-    from location_intelligent_li3_connectors import generate_connectors
-    from location_intelligent_alternatives import reachable_alternatives
     from location_intelligent_market_config import require_market_decisions
     import location_intelligent_market as domain
     import location_intelligent_alternatives as alternatives
@@ -194,7 +365,8 @@ def build_market(config, market_config, pilot, layers, facilities, output):
         raise ValueError('Market target differs from job')
     if config['building_radius_m']!=policy['zones_m'][-1] or config['min_area_m2']!=policy['residential_min_area_m2'] or config['max_area_m2']!=policy['residential_max_area_m2_exclusive'] or config.get('selection_profile')!='area-market-ge36-v1':
         raise ValueError('Market selection profile differs')
-    pilot=Path(pilot);verify_manifest(pilot)
+    from location_intelligent_li3_sources import timed_call
+    pilot=Path(pilot);timed_call('market_verify_calculation',verify_manifest,pilot)
     frozen=read_json(pilot/'config/pilot.json')
     if frozen['policy']['connectors'].get('building_entrance_profile','MULTI_ACCESS_LEGACY')!=config.get('building_entrance_profile','MULTI_ACCESS_LEGACY'):
         raise ValueError('Frozen entrance profile differs from requested calculation')
@@ -217,6 +389,7 @@ def build_market(config, market_config, pilot, layers, facilities, output):
         if manifest['identity']!=identity:raise ValueError('Market cache binding changed')
         for name,digest in manifest['files'].items():
             if sha(root/name)!=digest:raise ValueError('Market result cache corrupted')
+        print('Market: verified result cache HIT',flush=True)
         return read_json(root/'result.json')
     if root.exists():raise ValueError('Incomplete market result; inspect rather than overwrite')
     for layer in layers.values():
@@ -233,8 +406,6 @@ def build_market(config, market_config, pilot, layers, facilities, output):
     decisions=read_json(pilot/'building_results/decisions.json.gz')
     normalized=read_json(pilot/'normalized/buildings.geojson')
     features=read_json(select_feature_source(pilot)[0])
-    base=build_graph(read_json(pilot/'raw/osm_roads.json.gz'),features,frozen)
-    if base['graph'] is None:raise ValueError('Motor graph unavailable; market allocation blocked')
     stores=[];source_complete=all(l['status']=='SUCCEEDED' for l in layers.values());excluded=[]
     for kind,layer in sorted(layers.items()):
         for r in poi_locations(layer) if layer['status']=='SUCCEEDED' else []:
@@ -248,7 +419,8 @@ def build_market(config, market_config, pilot, layers, facilities, output):
     for p in facilities.get('rows') or []:
         if p['category'] in {'market','hospital','station','recreation','police','bank','mall','restaurant'}:
             pois.append({**p,'store_key':'poi:'+p['source_id'],'target_xy':list(tx.transform(p['longitude'],p['latitude']))})
-    package=generate_connectors(base,metrics,features,frozen,alternative_targets=[*stores,*pois])
+    from location_intelligent_li3_sources import timed_call
+    package=timed_call('market_reuse_connectors_add_targets',_reuse_calculation_connectors,pilot,metrics,features,frozen,[*stores,*pois])
     own_target=next((c for c in package['connectors'] if c['kind']=='TARGET' and not c.get('alternative_store_key')),None)
     candidate={'store_key':'candidate','kind':'candidate','name':'Calon toko','latitude':config['latitude'],
                'longitude':config['longitude'],'distance_to_candidate_m':0.0,'corridor_tokens':_connector_tokens(package,own_target) if own_target else []}
@@ -258,17 +430,17 @@ def build_market(config, market_config, pilot, layers, facilities, output):
         if c is None:
             source_complete=False;excluded.append({'store_key':s['store_key'],'reason':'STORE_CONNECTOR_UNAVAILABLE'})
     stores=[classify_store(s,candidate['corridor_tokens'],policy) for s in [candidate,*stores]]
-    route_package=deepcopy(package)
-    for c in route_package['connectors']:
-        if c['kind']=='TARGET' and not c.get('alternative_store_key'):c['alternative_store_key']='candidate'
-    matrix=reachable_alternatives(route_package,stores,[b['building_id'] for b in selected])
-    gate=_poi_gate(config,policy,facilities,package,pois,normalized)
+    primary_routes={r['building_id']:r for r in read_json(pilot/'building_results/routing.json.gz')['routes']}
+    network=timed_call('market_shared_routing_adjacency',_MarketRoutes,package)
+    accepted_ids={d['building_id'] for d in decisions if d['decision_state']=='ACCEPTED'}
+    eligible_ids=[b['building_id'] for b in selected if b['building_id'] in accepted_ids and b['building_type']=='standard_residential'] if source_complete else []
+    matrix=timed_call('market_store_routing',_market_store_routes,package,stores,eligible_ids,network,primary_routes)
+    gate=timed_call('market_poi_gate',_poi_gate,config,policy,facilities,package,pois,normalized,network=network)
     gate['snapshot_inventory_complete']=False
     property_by_id={f['properties']['building_id']:f['properties'] for f in normalized['features']}
     building_by_id={b['building_id']:b for b in selected}
     # Preserve primary per-building candidate route: extra graph split points
     # must not alter a validated baseline route or its origin policy.
-    primary_routes={r['building_id']:r for r in read_json(pilot/'building_results/routing.json.gz')['routes']}
     rows=[]
     for d in decisions:
         bid=d.get('building_id')

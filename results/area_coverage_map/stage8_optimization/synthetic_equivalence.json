@@ -1,0 +1,34 @@
+{
+  "scope": "SYNTHETIC_SECTION8_ONLY_NOT_REAL_KAGGLE_BENCHMARK",
+  "baseline_commit": "4a1e884",
+  "cases": [
+    {
+      "profile": "MULTI_ACCESS_LEGACY",
+      "poi_available": true,
+      "semantic_fields_equal": true,
+      "cache_reopen_equal": true,
+      "rows": 3
+    },
+    {
+      "profile": "MULTI_ACCESS_LEGACY",
+      "poi_available": false,
+      "semantic_fields_equal": true,
+      "cache_reopen_equal": true,
+      "rows": 3
+    },
+    {
+      "profile": "SINGLE_HIGHEST_CLASS_NEAREST_V1",
+      "poi_available": true,
+      "semantic_fields_equal": true,
+      "cache_reopen_equal": true,
+      "rows": 3
+    },
+    {
+      "profile": "SINGLE_HIGHEST_CLASS_NEAREST_V1",
+      "poi_available": false,
+      "semantic_fields_equal": true,
+      "cache_reopen_equal": true,
+      "rows": 3
+    }
+  ]
+}
