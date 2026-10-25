@@ -1,5 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**GCS / engine tanpa provider live —25 Oktober2026:** owner menetapkan data API
+disiapkan dahulu dalam GCS; engine menghitung dari input tersimpan. Ingestion
+terpisah, GCS staging lokal, snapshot/model/config immutable dan manifest wajib.
+[Audit dependency dan langkah onboarding](EXTERNAL_DEPENDENCY_GCS_AUDIT.md).
+Basemap/CDN serta unduhan bobot/setup juga masuk audit. ADC Codex belum tersedia;
+bucket/IAM/CRUD dan adapter Kaggle-GCS belum diverifikasi. Tidak mempublikasikan
+tile jalan yang belum lengkap sebagai snapshot siap pakai.
+
 **Source OSM GPU —25 Oktober2026:** transport adapter memperbaiki retry/subdivisi
 tile jalan dan diagnostik publik; tile/date/checksum dipertahankan. Kegagalan
 sources bukan kegagalan GPU; endpoint HTTP spesifik pada log owner masih unknown.
