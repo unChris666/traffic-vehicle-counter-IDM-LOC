@@ -254,6 +254,10 @@ def _market_store_routes(package,stores,building_ids,network,primary_routes):
         key=c.get('alternative_store_key') or ('candidate' if c['kind']=='TARGET' else None)
         if key in by_store and network.allowed.get(c['road_edge_id']) is True and c['barrier_clear'] is True and c['status'] in {'VERIFIED','OWNER_ASSUMPTION'}:
             targets.append((key,c))
+    source_groups={}
+    for bid,connectors in sources.items():
+        for c,length in connectors:source_groups.setdefault(c['node_id'],[]).append((bid,c,length))
+    print('Market routing clusters: '+str(len(source_groups))+' source access nodes for '+str(len(building_ids))+' buildings',flush=True)
     grouped={}
     for key,target in targets:grouped.setdefault(target['node_id'],[]).append((key,target))
     for i,(node,targets_here) in enumerate(grouped.items(),1):
@@ -263,12 +267,14 @@ def _market_store_routes(package,stores,building_ids,network,primary_routes):
         lookup=network.reverse(node)
         for key,target in targets_here:
             target_m=_connector_length(target)
-            for bid,connectors in sources.items():
-                if key=='candidate' and primary_routes.get(bid,{}).get('selected_candidate') is not None:continue
-                options=[]
-                for c,source_m in connectors:
-                    path=lookup(c['node_id'])
-                    if path is not None:options.append((c['class_rank'],source_m+path['distance_m']+target_m,c['connector_id'],path))
+            options_by_building={bid:[] for bid in building_ids}
+            for source_node,members in source_groups.items():
+                path=lookup(source_node)
+                if path is None:continue
+                for bid,c,source_m in members:
+                    if key=='candidate' and primary_routes.get(bid,{}).get('selected_candidate') is not None:continue
+                    options_by_building[bid].append((c['class_rank'],source_m+path['distance_m']+target_m,c['connector_id'],path))
+            for bid,options in options_by_building.items():
                 if options:
                     _,distance,source_id,path=min(options,key=lambda x:(x[0],x[1],x[2]))
                     result[bid].append({**by_store[key],'total_distance_m':distance,'store_road_rank':target['class_rank'],
@@ -348,6 +354,10 @@ def _connector_length(c):
     return sum(math.dist(a,b) for a,b in zip(xy,xy[1:]))
 
 
+def _market_store_in_scope(kind,distance_m,market_config):
+    return kind!='competitor' or distance_m<=market_config['sources'].get('competitor_calculation_radius_m',2000.0)
+
+
 def build_market(config, market_config, pilot, layers, facilities, output):
     from pyproj import Transformer, Geod
     from location_intelligent_li3 import verify_manifest,select_feature_source
@@ -410,6 +420,8 @@ def build_market(config, market_config, pilot, layers, facilities, output):
     stores=[];source_complete=all(l['status']=='SUCCEEDED' for l in layers.values());excluded=[]
     for kind,layer in sorted(layers.items()):
         for r in poi_locations(layer) if layer['status']=='SUCCEEDED' else []:
+            if not _market_store_in_scope(kind,r['distance_m'],market_config):
+                excluded.append({'kind':kind,'store_id':r['store_id'],'reason':'OUTSIDE_COMPETITOR_CALCULATION_RADIUS','distance_m':r['distance_m']});continue
             if r['identity_location_conflict']:
                 source_complete=False;excluded.append({'kind':kind,'store_id':r['store_id'],'reason':'IDENTITY_LOCATION_CONFLICT'});continue
             key=hashlib.sha256(canonical_bytes([kind,r['store_id'],r['latitude'],r['longitude']])).hexdigest()[:20]
@@ -464,10 +476,13 @@ def build_market(config, market_config, pilot, layers, facilities, output):
         row['use_review_reason']=props.get('use_review_reason')
         rows.append(row)
     if len(rows)!=len(decisions):raise ValueError('Missing building identity; cannot reconcile market ledger')
+    eligible_set=set(eligible_ids)
     result={'schema_version':'area_market_result_v1','status':'PARTIAL','fingerprint':fingerprint,'identity':identity,
             'road_rule_profile':frozen['policy']['li3'].get('road_rule_profile','STRICT_MOTOR_LEGACY'),
             'network_feature_mode':frozen['policy']['li3'].get('feature_source_mode','FULL'),
             'building_entrance_profile':frozen['policy']['connectors'].get('building_entrance_profile','MULTI_ACCESS_LEGACY'),
+            'competitor_groups':{tier:[s['store_key'] for s in stores if s['kind']=='competitor' and s['tier']==tier] for tier in ['PRIMARY','SECONDARY','UNVERIFIED_CORRIDOR']},
+            'routing_clusters':{'basis':'EXACT_SOURCE_ACCESS_NODE','source_nodes':len({c['node_id'] for c in package['connectors'] if c['kind']=='BUILDING' and c['building_id'] in eligible_set}),'eligible_buildings':len(eligible_ids)},
             'output_path':str(root),'rows':rows,'summary':reconcile(rows),'stores':stores,'excluded_stores':excluded,
             'attractor_gate':gate,'market_inputs_complete':source_complete,'primary_routing_changed':False,
             'poi_input_status':facilities['status'],'poi_required_for_pipeline':False,

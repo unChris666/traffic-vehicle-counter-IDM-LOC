@@ -1,5 +1,11 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Nearest dan kompetitor 800 m —25 Oktober2026:** owner mengotorisasi nearest
+valid entrance untuk bangunan/toko, subset kompetitor <=800 m, primer/sekunder
+terpisah, dan reuse rute berdasarkan node akses identik. Skor/keputusan tetap
+per bangunan. [Aturan dan pengujian](AREA_COVERAGE_NEAREST_800_CLUSTER.md).
+Profil entrance sebelumnya disimpan sebagai baseline; bagian 6 perlu job baru.
+
 **Aturan akses terbaru —25 Oktober2026:** owner memilih skenario barrier/one-way;
 izin/tag akses dan larangan belok tidak menjadi pembatas. Unknown yang tersisa
 tidak mengesahkan rute. [Profil dan batas](AREA_COVERAGE_BARRIER_ONEWAY_PROFILE.md).

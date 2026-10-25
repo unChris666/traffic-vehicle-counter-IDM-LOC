@@ -8,8 +8,8 @@ from copy import deepcopy
 
 MARKET_CONFIG = {
     'schema_version': 'area_market_spec_v1',
-    'policy_version': 'owner_market_barrier_oneway_v3_2026_10_25',
-    'access': {'building_entrance_profile':'SINGLE_HIGHEST_CLASS_NEAREST_V1',
+    'policy_version': 'owner_market_nearest_competitor800_v4_2026_10_25',
+    'access': {'building_entrance_profile':'SINGLE_NEAREST_VALID_V1',
                'road_rule_profile':'BARRIER_ONEWAY_EXPERIMENT_V1'},
     'status': 'EXPERIMENTAL_OWNER_CONFIRMED',
     'target': {'latitude': -6.190690620514923,
@@ -27,6 +27,7 @@ MARKET_CONFIG = {
         'indomaret_table': 'locdeproject.DWH_NS_LOC.AREA_COVERAGE',
         'reuse_previous_target_snapshot': False,
         'store_inventory_radius_m': 2000.0,
+        'competitor_calculation_radius_m': 800.0,
     },
     'display': {
         'candidate_pin_color': '#ffffff',

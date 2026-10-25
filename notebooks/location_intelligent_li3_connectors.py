@@ -99,8 +99,29 @@ def check_barriers(line, index, epsilon):
     return True, []
 
 
+def nearest_road_candidates(point,tree,geometries,group_ids,extent=None):
+    """Exact distance/ID order, expanding spatial search; no business snap cap."""
+    from shapely.geometry import box
+    if not geometries:return
+    first=int(tree.nearest(point));radius=max(1.0,point.distance(geometries[first]))
+    if extent is None:
+        xs=[g.bounds for g in geometries]
+        extent=(min(b[0] for b in xs),min(b[1] for b in xs),max(b[2] for b in xs),max(b[3] for b in xs))
+    x,y=point.x,point.y
+    limit=max(math.dist((x,y),(a,b)) for a in (extent[0],extent[2]) for b in (extent[1],extent[3]))+1.0
+    seen=set()
+    while True:
+        radius=min(radius,limit);batch=[]
+        for i in map(int,tree.query(box(math.nextafter(x-radius,-math.inf),math.nextafter(y-radius,-math.inf),math.nextafter(x+radius,math.inf),math.nextafter(y+radius,math.inf)))):
+            if i in seen:continue
+            distance=point.distance(geometries[i])
+            if distance<=radius:batch.append((distance,group_ids[i],i))
+        for distance,_,i in sorted(batch):seen.add(i);yield distance,i
+        if radius>=limit:return
+        radius=min(limit,radius*2)
+
+
 def generate_connectors(base, metrics, feature_source, frozen, *, alternative_targets=None):
-    import numpy as np
     from shapely import STRtree
     from shapely.geometry import LineString, Point, shape
     from shapely.ops import nearest_points
@@ -109,9 +130,10 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
     sources, rules = base['edge_sources'], base['edge_rules']
     policy = frozen['policy']
     profile=policy['connectors'].get('building_entrance_profile','MULTI_ACCESS_LEGACY')
-    if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1'}:
+    if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1','SINGLE_NEAREST_VALID_V1'}:
         raise ValueError('Unknown building entrance profile')
-    single=profile=='SINGLE_HIGHEST_CLASS_NEAREST_V1'
+    single=profile!='MULTI_ACCESS_LEGACY'
+    nearest=profile=='SINGLE_NEAREST_VALID_V1'
     epsilon = policy['li3']['projection_position_precision_m']
     inset = policy['li3']['entrance_inset_m']
     maximum = policy['connectors']['max_building_to_road_m']['value']
@@ -130,6 +152,8 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
     group_ids = sorted(groups)
     geometries = [groups[g]['line'] for g in group_ids]
     tree = STRtree(geometries)
+    bounds=[g.bounds for g in geometries]
+    road_extent=(min(b[0] for b in bounds),min(b[1] for b in bounds),max(b[2] for b in bounds),max(b[3] for b in bounds)) if bounds else None
     barrier = barrier_index(feature_source, frozen)
     footprints = {b['building_id']: shape(b['metric_geometry']) for b in metrics['all_buildings']}
     footprint_ids = sorted(footprints)
@@ -148,7 +172,7 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
     target = Point(*metrics['target_xy'])
     diagnostics = {'barrier_features': len(barrier['shapes']), 'unresolved_barrier_geometries': barrier['unresolved'],
                    'building_entrance_profile':profile,
-                   'entrance_selection':'CLASS_RANK_THEN_REPRESENTATIVE_POINT_DISTANCE_THEN_SEGMENT_ID' if single else 'LEGACY_MULTI_ACCESS',
+                   'entrance_selection':('REPRESENTATIVE_POINT_DISTANCE_THEN_SEGMENT_ID' if nearest else 'CLASS_RANK_THEN_REPRESENTATIVE_POINT_DISTANCE_THEN_SEGMENT_ID') if single else 'LEGACY_MULTI_ACCESS',
                    'route_failure_fallback':False if single else True,
                    'entrance_claim': 'OWNER_ACCEPTED_ASSUMPTION_NOT_OBSERVED_ENTRANCE'}
 
@@ -215,20 +239,19 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
     # No numerical target search cap. Nearest valid source geometry wins;
     # grade/barrier checks can reject it and proceed to the next road.
     if group_ids:
-        distances = np.array([target.distance(g) for g in geometries])
-        for i in sorted(range(len(group_ids)), key=lambda i: (distances[i], group_ids[i])):
-            if candidate('TARGET', None, target, None, i) is not None:
-                break
+        for distance,i in nearest_road_candidates(target,tree,geometries,group_ids,road_extent):
+            if candidate('TARGET',None,target,None,i,distance) is not None:break
     original_target=target
-    for store in sorted(alternative_targets or [],key=lambda r:r['store_key']):
-        target=Point(*store['target_xy'])
-        distances=[target.distance(g) for g in geometries]
-        for i in sorted(range(len(group_ids)),key=lambda i:(distances[i],group_ids[i])):
-            extra=candidate('TARGET',None,target,None,i)
+    alternatives=sorted(alternative_targets or [],key=lambda r:r['store_key'])
+    for number,store in enumerate(alternatives,1):
+        target=Point(*store['target_xy']);attempts=0
+        for distance,i in nearest_road_candidates(target,tree,geometries,group_ids,road_extent):
+            attempts+=1;extra=candidate('TARGET',None,target,None,i,distance)
             if extra is not None:
                 extra['connector_id']='alternative_'+store['store_key']+'_'+extra['connector_id']
-                extra['alternative_store_key']=store['store_key']
-                break
+                extra['alternative_store_key']=store['store_key'];break
+        if number==1 or number%25==0 or number==len(alternatives):
+            print('Target access: '+str(number)+'/'+str(len(alternatives))+'; last candidates checked='+str(attempts),flush=True)
     target=original_target
     if single:
         # Plan in building order, then evaluate each wave in segment batches.
@@ -240,7 +263,7 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
             point=Point(*b['representative_point_m']);options=[]
             for i in map(int,tree.query(point.buffer(maximum))):
                 distance=point.distance(geometries[i])
-                if distance<=maximum:options.append((groups[group_ids[i]]['rank'],distance,group_ids[i],i))
+                if distance<=maximum:options.append((distance if nearest else groups[group_ids[i]]['rank'],distance,group_ids[i],i))
             options.sort()
             if options:pending[b['building_id']]={'point':point,'options':options,'next':0}
         print('Connectors: single entrance; '+str(len(ordered_buildings))+' buildings, '+str(len(groups))+' road segments',flush=True)

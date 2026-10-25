@@ -155,10 +155,11 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
         if road_profile not in {'STRICT_MOTOR_LEGACY','BARRIER_ONEWAY_EXPERIMENT_V1'}:return stop('UNSUPPORTED_ROAD_RULE_PROFILE','FAILED')
         simplified=road_profile=='BARRIER_ONEWAY_EXPERIMENT_V1'
         profile=conn.get('building_entrance_profile','MULTI_ACCESS_LEGACY')
-        if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1'}:
+        if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1','SINGLE_NEAREST_VALID_V1'}:
             return stop('UNSUPPORTED_ENTRANCE_PROFILE','FAILED')
-        single=profile=='SINGLE_HIGHEST_CLASS_NEAREST_V1'
+        single=profile!='MULTI_ACCESS_LEGACY'
         expected_selection='HIGHEST_VALID_CLASS_THEN_NEAREST_REPRESENTATIVE_POINT_THEN_SEGMENT_ID' if single else 'HIGHEST_VALID_ACCESS_CLASS_THEN_MINIMUM_TOTAL_TIME'
+        if profile=='SINGLE_NEAREST_VALID_V1':expected_selection='NEAREST_VALID_ROAD_THEN_STABLE_SEGMENT_ID'
         expected_fallback='NO_ROUTE_NO_ENTRANCE_FALLBACK' if single else 'TRY_NEXT_REACHABLE_CLASS'
 
         speed = travel["reference_constant_speed"]["value"] * 1000 / 3600

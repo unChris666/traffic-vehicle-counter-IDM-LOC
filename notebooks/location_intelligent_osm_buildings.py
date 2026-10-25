@@ -204,10 +204,17 @@ def prepare_osm_from_network(config,root,network_source,raw_path):
             'Remaining UNKNOWN edges are not usable for acceptance']
 
     profile=config.get('building_entrance_profile','MULTI_ACCESS_LEGACY')
-    if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1'}:raise ValueError('Unknown building entrance profile')
+    if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1','SINGLE_NEAREST_VALID_V1'}:raise ValueError('Unknown building entrance profile')
     if profile=='SINGLE_HIGHEST_CLASS_NEAREST_V1':
         frozen['policy']['connectors'].update(building_entrance_profile=profile,
             candidate_selection='HIGHEST_VALID_CLASS_THEN_NEAREST_REPRESENTATIVE_POINT_THEN_SEGMENT_ID',
+            unreachable_higher_class='NO_ROUTE_NO_ENTRANCE_FALLBACK')
+
+    if profile=='SINGLE_NEAREST_VALID_V1':
+        frozen['policy']['connectors'].update(building_entrance_profile=profile,
+            candidate_selection='NEAREST_VALID_ROAD_THEN_STABLE_SEGMENT_ID',
+            road_facing_location_method='FACE_NEAREST_VALID_ROAD',
+            highest_class_vs_minimum_time_precedence='NOT_APPLICABLE_SINGLE_NEAREST_ENTRANCE',
             unreachable_higher_class='NO_ROUTE_NO_ENTRANCE_FALLBACK')
 
     frozen.pop('config_hash',None);frozen['config_hash']=canonical_hash(frozen)
