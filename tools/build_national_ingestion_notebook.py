@@ -115,7 +115,7 @@ print(json.dumps(manifest,indent=2));print('Manifest: gs://'+BUCKET+'/'+key)
     name='indonesia_gcs_source_ingestion.ipynb';p=ROOT/'notebooks'/name;p.write_text(json.dumps(notebook,indent=1)+'\n')
     packet=ROOT/'results/gcs/national_ingestion_packet';packet.mkdir(parents=True,exist_ok=True)
     (packet/name).write_bytes(p.read_bytes())
-    metadata={'id':'chrisbiran/indonesia-gcs-source-ingestion','title':'Indonesia GCS Source Ingestion CPU','code_file':name,
+    metadata={'id':'chrisbiran/indonesia-gcs-source-ingestion-cpu','title':'Indonesia GCS Source Ingestion CPU','code_file':name,
         'language':'python','kernel_type':'notebook','is_private':True,'enable_gpu':False,'enable_internet':True,
         'dataset_sources':[],'kernel_sources':[],'competition_sources':[]}
     (packet/'kernel-metadata.json').write_text(json.dumps(metadata,indent=2)+'\n');return packet
