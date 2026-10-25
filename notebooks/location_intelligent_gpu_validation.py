@@ -62,6 +62,19 @@ def gpu_compute_preflight(device=0):
     primitive=LineString([(0,5),(10,5)])
     hit,uncertain=geometry.primitive_intersections([(LineString([(5,0),(5,10)]),primitive)])[0]
     if not hit or uncertain:raise RuntimeError('GPU_BARRIER_SELF_TEST_FAILED')
+    # Exercise resident indexing, ownership exclusions, holes and reuse on device.
+    from shapely import STRtree
+    footprints={'a':polygon,'b':Polygon([(20,0),(30,0),(30,10),(20,10)])}
+    ids=sorted(footprints);tree=STRtree([footprints[fid] for fid in ids])
+    prepared=[{'kind':'TARGET','building_id':None,'target':Point(-1,5),'line':line,'epsilon':1e-6}
+              for line in [LineString([(-1,5),(31,5)]),LineString([(4,4),(6,6)]),LineString([(-1,0),(11,0)])]]
+    for _ in range(2):
+        actual=geometry.footprint_clear_batch(prepared,ids,footprints,tree,footprints.__getitem__)
+        expected=[[{'source':fid,'kind':'other_building'} for fid in ids
+                   if not footprints[fid].covers(item['target']) and item['line'].intersection(footprints[fid]).length>item['epsilon']]
+                  for item in prepared]
+        if [sorted(h,key=lambda x:x['source']) for h in actual]!=expected:raise RuntimeError('GPU_RESIDENT_FOOTPRINT_SELF_TEST_FAILED')
+    if geometry.audit.get('resident_polygon_uploads')!=1:raise RuntimeError('GPU_RESIDENT_REUSE_SELF_TEST_FAILED')
     graph={'nodes':[{'node_id':n} for n in 'abcd'],'edges':[
       {'edge_id':'ab','u':'a','v':'b','length_m':2.}, {'edge_id':'bc','u':'b','v':'c','length_m':3.},
       {'edge_id':'ac','u':'a','v':'c','length_m':9.}, {'edge_id':'cd','u':'c','v':'d','length_m':1.}]}

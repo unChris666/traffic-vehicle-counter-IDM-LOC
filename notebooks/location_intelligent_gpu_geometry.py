@@ -9,11 +9,12 @@ class GpuGeometry:
       double den=dx*dx+dy*dy,t=den>0?fmin(1.0,fmax(0.0,(x*dx+y*dy)/den)):0.0;
       out[i]=hypot(x-t*dx,y-t*dy);
     }'''
-    CLIP=r'''extern "C" __global__ void polygon_lengths(const double* q,const double* edges,const long long* offsets,int count,double* lengths,unsigned char* uncertain){
+    CLIP=r'''extern "C" __global__ void polygon_lengths(const double* q,const double* edges,const long long* offsets,const long long* line_ids,const long long* polygon_ids,int count,double* lengths,unsigned char* uncertain,double* errors){
       int i=blockDim.x*blockIdx.x+threadIdx.x;if(i>=count)return;
-      double px=q[i*4],py=q[i*4+1],dx=q[i*4+2]-px,dy=q[i*4+3]-py,L=hypot(dx,dy),integral=0;
+      long long li=line_ids[i],poly=polygon_ids[i];
+      double px=q[li*4],py=q[li*4+1],dx=q[li*4+2]-px,dy=q[li*4+3]-py,L=hypot(dx,dy),integral=0;
       int winding=0,events=0;unsigned char bad=0;double scale=1;
-      for(long long k=offsets[i];k<offsets[i+1];k++){
+      for(long long k=offsets[poly];k<offsets[poly+1];k++){
         double ax=edges[k*4]-px,ay=edges[k*4+1]-py,bx=edges[k*4+2]-px,by=edges[k*4+3]-py;
         double ex=bx-ax,ey=by-ay,cross0=ex*(-ay)-ey*(-ax);
         double tol=128.0*2.2204460492503131e-16*(fabs(ex*ay)+fabs(ey*ax)+fabs(dx*ey)+fabs(dy*ex)+1.0);
@@ -35,9 +36,9 @@ class GpuGeometry:
       }
       if(winding<0 || winding>1)bad=1;
       integral+=winding;
-      double err=1024.0*2.2204460492503131e-16*(offsets[i+1]-offsets[i]+1)*(scale+1)*(L+1);
+      double err=1024.0*2.2204460492503131e-16*(offsets[poly+1]-offsets[poly]+1)*(scale+1)*(L+1);
       if(integral < -err || integral>1+err || L==0 || (events>0 && fabs(integral*L)<=err))bad=1;
-      lengths[i]=integral*L;uncertain[i]=bad;
+      lengths[i]=integral*L;uncertain[i]=bad;errors[i]=err;
     }'''
     PRIMITIVES=r'''extern "C" __global__ void primitive_hits(const double* q,const double* edges,const long long* offsets,int count,unsigned char* hits,unsigned char* uncertain){
       int i=blockDim.x*blockIdx.x+threadIdx.x;if(i>=count)return;
@@ -61,7 +62,7 @@ class GpuGeometry:
             self.dist_kernel=cp.RawKernel(self.DISTANCE,'distances',options=('--std=c++11','--fmad=false'))
             self.primitive_kernel=cp.RawKernel(self.PRIMITIVES,'primitive_hits',options=('--std=c++11','--fmad=false'))
             self.clip_kernel=cp.RawKernel(self.CLIP,'polygon_lengths',options=('--std=c++11','--fmad=false'))
-        self.polygon_cache={}
+        self.polygon_cache={};self.footprint_store=None
     def fallback(self,reason,context=None):
         self.audit['cpu_fallback_queries']+=1;counts=self.audit['fallback_reasons'];counts[reason]=counts.get(reason,0)+1
         self.audit.setdefault('fallback_records',[]).append({'reason':reason,**(context or {})})
@@ -108,7 +109,8 @@ class GpuGeometry:
             with cp.cuda.Device(self.device):
                 q=cp.asarray(lines,dtype=cp.float64);es=cp.asarray(edges,dtype=cp.float64);off=cp.asarray(offsets,dtype=cp.int64)
                 lengths=cp.empty(len(valid),dtype=cp.float64);uncertain=cp.empty(len(valid),dtype=cp.uint8)
-                self.clip_kernel((((len(valid))+255)//256,),(256,),(q,es,off,np.int32(len(valid)),lengths,uncertain))
+                ids=cp.arange(len(valid),dtype=cp.int64);errors=cp.empty(len(valid),dtype=cp.float64)
+                self.clip_kernel((((len(valid))+255)//256,),(256,),(q,es,off,ids,ids,np.int32(len(valid)),lengths,uncertain,errors))
                 lh,uh=lengths.get(),uncertain.get()
             for j,i in enumerate(valid):
                 line,polygon=queries[i];px,py=line.coords[0];extent=max(1.0,abs(polygon.bounds[0]-px),abs(polygon.bounds[2]-px),abs(polygon.bounds[1]-py),abs(polygon.bounds[3]-py)) if not polygon.is_empty else 1.0
@@ -117,6 +119,9 @@ class GpuGeometry:
             self.audit['gpu_polygon_queries']+=len(valid);self.audit['actual_cuda_executed']=True
         return answers
     def footprint_clear_batch(self,prepared,footprint_ids,footprints,tree,inset_geometry):
+        # CPU-oracle subclasses override polygon_lengths and have no CUDA device.
+        if hasattr(self,'cp'):
+            return self.resident_footprint_batch(prepared,footprint_ids,footprints,tree,inset_geometry)
         queries=[];owners=[];hits=[[] for _ in prepared]
         for i,item in enumerate(prepared):
             if item is None:continue
@@ -131,6 +136,78 @@ class GpuGeometry:
             if uncertain or not math.isfinite(length) or abs(length-epsilon)<=error:
                 self.fallback('POLYGON_BOUNDARY_OR_THRESHOLD',{'building_id':prepared[i]['building_id'],'obstacle_id':fid,'line':list(line.coords)});length=line.intersection(poly).length
             if length>epsilon:hits[i].append({'source':fid,'kind':'other_building'})
+        return hits
+
+    def resident_footprint_batch(self,prepared,footprint_ids,footprints,tree,inset_geometry):
+        """Upload inset polygons once; GPU queries reference resident edge ranges.
+
+        STRtree is a CPU broadphase only. GPU performs the polygon intersections
+        and threshold decisions. GEOS is used for explicit numerical ambiguity.
+        """
+        import numpy as np
+        from time import perf_counter
+        cp=self.cp;started=perf_counter();hits=[[] for _ in prepared]
+        if self.footprint_store is None:
+            polygons=[inset_geometry(fid) for fid in footprint_ids];edges=[];offsets=[0];unsupported=set()
+            for j,polygon in enumerate(polygons):
+                rings=self.polygon_edges(polygon)
+                if rings is None:unsupported.add(j)
+                else:edges.extend(rings)
+                offsets.append(len(edges))
+            with cp.cuda.Device(self.device):
+                es=cp.asarray(np.asarray(edges,dtype=np.float64).reshape(-1,4));off=cp.asarray(offsets,dtype=cp.int64)
+            self.footprint_store={'ids':footprint_ids,'polygons':polygons,'edges':es,'offsets':off,
+                                  'unsupported':unsupported,'target_covers':{}}
+            self.audit.update(resident_footprint_count=len(polygons),resident_polygon_edges=len(edges),
+                              resident_polygon_uploads=1,resident_polygon_prepare_s=perf_counter()-started)
+        store=self.footprint_store
+        if footprint_ids!=store['ids']:raise RuntimeError('GPU_FOOTPRINT_SCOPE_CHANGED')
+        lines=[item['line'] if item else None for item in prepared]
+        # Vectorized broadphase, rather than a Python STRtree query per candidate.
+        pairs=tree.query(lines)
+        if not pairs.size:return hits
+        li,pi=pairs;keep=np.ones(len(li),dtype=bool)
+        own={fid:j for j,fid in enumerate(footprint_ids)}
+        owners=np.asarray([own.get(item['building_id'],-1) if item else -1 for item in prepared])
+        keep &= pi!=owners[li]
+        targets={}
+        for i,item in enumerate(prepared):
+            if item and item['kind']=='TARGET':targets.setdefault(tuple(item['target'].coords[0]),[]).append(i)
+        for xy,indexes in targets.items():
+            if xy not in store['target_covers']:
+                point=prepared[indexes[0]]['target']
+                store['target_covers'][xy]=[j for j in map(int,tree.query(point)) if footprints[footprint_ids[j]].covers(point)]
+            covered=store['target_covers'][xy]
+            if covered:keep &= ~(np.isin(li,indexes)&np.isin(pi,covered))
+        li,pi=li[keep],pi[keep]
+        if not len(li):return hits
+        q=np.asarray([list(line.coords[0])+list(line.coords[-1]) if line is not None else [0.]*4 for line in lines],dtype=np.float64)
+        epsilon=np.asarray([item['epsilon'] if item else 0. for item in prepared],dtype=np.float64)
+        with cp.cuda.Device(self.device):q_gpu=cp.asarray(q)
+        # Bound transient output memory; the polygon edge store stays on device.
+        for begin in range(0,len(li),262144):
+            a,b=li[begin:begin+262144],pi[begin:begin+262144];n=len(a)
+            with cp.cuda.Device(self.device):
+                lengths=cp.empty(n,dtype=cp.float64);uncertain=cp.empty(n,dtype=cp.uint8);errors=cp.empty(n,dtype=cp.float64)
+                self.clip_kernel(((n+255)//256,),(256,),
+                    (q_gpu,store['edges'],store['offsets'],cp.asarray(a),cp.asarray(b),np.int32(n),lengths,uncertain,errors))
+                eps=cp.asarray(epsilon[a]);amb=(uncertain!=0)|~cp.isfinite(lengths)|(cp.abs(lengths-eps)<=errors)
+                # Only transfer positive intersections / ambiguous cases.
+                indexes=cp.flatnonzero(amb|(lengths>eps)).get();ambiguous=amb[indexes].get()
+            for j,ambiguous_value in zip(indexes,ambiguous):
+                i=int(a[j]);p=int(b[j]);fid=footprint_ids[p];line=lines[i]
+                if ambiguous_value or p in store['unsupported']:
+                    self.fallback('POLYGON_BOUNDARY_OR_THRESHOLD',{'building_id':prepared[i]['building_id'],'obstacle_id':fid,'line':list(line.coords)})
+                    if line.intersection(store['polygons'][p]).length<=epsilon[i]:continue
+                hits[i].append({'source':fid,'kind':'other_building'})
+            # Unsupported polygons must never be silently considered empty.
+            for j in np.flatnonzero(np.isin(b,list(store['unsupported']))):
+                if j in indexes:continue
+                i=int(a[j]);p=int(b[j]);fid=footprint_ids[p]
+                self.fallback('UNSUPPORTED_FOOTPRINT',{'obstacle_id':fid})
+                if lines[i].intersection(store['polygons'][p]).length>epsilon[i]:hits[i].append({'source':fid,'kind':'other_building'})
+        self.audit['gpu_polygon_queries']+=len(li);self.audit['actual_cuda_executed']=True
+        self.audit['resident_footprint_batch_s']=self.audit.get('resident_footprint_batch_s',0.)+perf_counter()-started
         return hits
     def primitive_intersections(self,queries):
         import numpy as np

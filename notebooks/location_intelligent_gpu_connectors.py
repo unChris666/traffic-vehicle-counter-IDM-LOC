@@ -7,7 +7,7 @@ endpoint construction remains GEOS; ambiguous intersection falls back with audit
 from collections import defaultdict
 from copy import deepcopy
 import math
-def generate_connectors_gpu(base, metrics, feature_source, frozen, *, alternative_targets=None,device=0,audit_path=None):
+def generate_connectors_gpu(base, metrics, feature_source, frozen, *, alternative_targets=None,device=0,audit_path=None,candidate_window=32):
     from shapely import STRtree
     from shapely.geometry import LineString, Point, shape
     from shapely.ops import nearest_points
@@ -79,8 +79,7 @@ def generate_connectors_gpu(base, metrics, feature_source, frozen, *, alternativ
         if kind == 'BUILDING' and distance > maximum:
             return None
         if reason:
-            rejected.append({'kind': kind, 'building_id': building_id, 'source_segment': group_id, 'reason': reason, 'distance_m': distance})
-            return None
+            return {'rejection': {'kind': kind, 'building_id': building_id, 'source_segment': group_id, 'reason': reason, 'distance_m': distance}}
         if kind == 'BUILDING':
             interior = inset_geometry(building_id)
             interior = interior if not interior.is_empty else footprint.representative_point()
@@ -105,6 +104,8 @@ def generate_connectors_gpu(base, metrics, feature_source, frozen, *, alternativ
 
     def commit(item,clear,hits):
         if item is None:return None
+        if 'rejection' in item:
+            rejected.append(item['rejection']);return None
         kind=item['kind'];building_id=item['building_id'];group_id=item['group_id']
         node=item['node'];position=item['position'];coords=item['coords'];distance=item['distance'];line=item['line']
         name=groups[group_id]['road_class'];name=name[:-5] if name.endswith('_link') else name
@@ -124,41 +125,56 @@ def generate_connectors_gpu(base, metrics, feature_source, frozen, *, alternativ
         candidates.append(value)
         return value
 
+    if not isinstance(candidate_window,int) or not 1<=candidate_window<=256:
+        raise ValueError('GPU_CANDIDATE_WINDOW_MUST_BE_1_TO_256')
+    from itertools import islice
+    from time import perf_counter
     geometry=GpuGeometry(device)
     planner=GpuCandidatePlanner(geometry,geometries,group_ids,tree,metrics,alternative_targets,maximum)
     def evaluate(requests):
         items=[prepare(*request) for request in requests]
-        barriers=geometry.barrier_batch(items,barrier,epsilon)
-        footprint_hits=geometry.footprint_clear_batch(items,footprint_ids,footprints,footprint_tree,inset_geometry)
+        valid=[item if item is not None and 'rejection' not in item else None for item in items]
+        barriers=geometry.barrier_batch(valid,barrier,epsilon)
+        footprint_hits=geometry.footprint_clear_batch(valid,footprint_ids,footprints,footprint_tree,inset_geometry)
         results=[]
         for item,(clear,hits),obstacles in zip(items,barriers,footprint_hits):
             if clear is True and obstacles:clear=False;hits=hits+obstacles
-            results.append(commit(item,clear,hits))
+            results.append((item,clear,hits))
         return results
     def process(entries):
-        pending={}
+        pending={};started=perf_counter();waves=0;tested=0;consumed=0;exhausted=0
         for key,kind,bid,point,footprint in entries:
             iterator=iter(planner.ordered(point,maximum if kind=='BUILDING' else None))
-            option=next(iterator,None)
-            if option is not None:pending[key]=[kind,bid,point,footprint,iterator,option]
+            pending[key]=[kind,bid,point,footprint,iterator]
         while pending:
-            order=sorted(pending,key=lambda key:(group_ids[pending[key][5][1]],key))
-            requests=[]
+            # Finite windows are an execution batch size, never a search cap.
+            # Only consume the prefix through the FIRST valid canonical option.
+            order=sorted(pending)[:max(1,4096//candidate_window)]
+            requests=[];spans={}
             for key in order:
-                kind,bid,point,footprint,iterator,(distance,index)=pending[key]
-                requests.append((kind,bid,point,footprint,index,distance))
+                kind,bid,point,footprint,iterator=pending[key]
+                options=list(islice(iterator,candidate_window));spans[key]=(len(requests),len(options))
+                requests.extend((kind,bid,point,footprint,index,distance) for distance,index in options)
             answers=evaluate(requests)
-            for key,answer in zip(order,answers):
-                state=pending[key]
+            tested+=len(requests);waves+=1
+            for key in order:
+                state=pending[key];start,count=spans[key];answer=None
+                for item,clear,hits in answers[start:start+count]:
+                    consumed+=1;answer=commit(item,clear,hits)
+                    if answer is not None:break
                 if answer is not None:
                     if state[0]=='TARGET' and key!='candidate':
                         answer['connector_id']='alternative_'+key+'_'+answer['connector_id'];answer['alternative_store_key']=key
                     del pending[key]
-                else:
-                    option=next(state[4],None)
-                    if option is None:del pending[key]
-                    else:state[5]=option
-            print('GPU connector batch: '+str(len(order))+' candidates; remaining='+str(len(pending)),flush=True)
+                elif count<candidate_window:
+                    exhausted+=1;del pending[key]
+            if waves==1 or waves%10==0 or not pending:
+                print('GPU connectors: batches='+str(waves)+'; evaluated='+str(tested)+
+                      '; canonical_checked='+str(consumed)+'; remaining='+str(len(pending))+
+                      '; exhausted='+str(exhausted)+'; elapsed='+format(perf_counter()-started,'.1f')+'s',flush=True)
+        geometry.audit.update(candidate_window=candidate_window,speculative_evaluated=tested,
+            canonical_candidates_checked=consumed,exhausted_targets=exhausted,batch_count=waves,
+            connector_elapsed_s=perf_counter()-started)
     entries=[('candidate','TARGET',None,Point(*metrics['target_xy']),None)]
     entries += [(row['store_key'],'TARGET',None,Point(*row['target_xy']),None) for row in sorted(alternative_targets or [],key=lambda r:r['store_key'])]
     entries += [(b['building_id'],'BUILDING',b['building_id'],Point(*b['representative_point_m']),footprints[b['building_id']]) for b in sorted(metrics['selected_buildings'],key=lambda b:b['building_id'])]

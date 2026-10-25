@@ -1,0 +1,108 @@
+{
+  "scope": "NVRTC_COMPILE_ONLY_NO_GPU_EXECUTION",
+  "actual_cuda_executed": false,
+  "nvrtc_version": "12.8",
+  "status": "PASS",
+  "kernels": [
+    {
+      "file": "location_intelligent_gpu.py",
+      "kernel": "propagate",
+      "architecture": "compute_75",
+      "source_sha256": "d5eedc098bff5d211b89b78f4c47214ec3c58f95c766a616dd763b836c9c8c5d",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 2353,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "distances",
+      "architecture": "compute_75",
+      "source_sha256": "54cd4298fb5965d7cc9226fe85534c8b50bf4c31e12b6f77049979b946d390a1",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 3748,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "polygon_lengths",
+      "architecture": "compute_75",
+      "source_sha256": "40d7ec4dfa9acefcff2cd2fdb21c960ee8cc411e0a417e73c8569889f61d4b24",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 9437,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "primitive_hits",
+      "architecture": "compute_75",
+      "source_sha256": "5e062fe349d086371905d0561b58f32131137b676fcdee144c048fadc324fbfa",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 10974,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_weighted.py",
+      "kernel": "relax",
+      "architecture": "compute_75",
+      "source_sha256": "150c9eb3578bd2d2480ffefa916255b43bfb516bdbd7bd383c3a60caf3fa1b48",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 15550,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu.py",
+      "kernel": "propagate",
+      "architecture": "compute_80",
+      "source_sha256": "d5eedc098bff5d211b89b78f4c47214ec3c58f95c766a616dd763b836c9c8c5d",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 2353,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "distances",
+      "architecture": "compute_80",
+      "source_sha256": "54cd4298fb5965d7cc9226fe85534c8b50bf4c31e12b6f77049979b946d390a1",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 3748,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "polygon_lengths",
+      "architecture": "compute_80",
+      "source_sha256": "40d7ec4dfa9acefcff2cd2fdb21c960ee8cc411e0a417e73c8569889f61d4b24",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 9437,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "primitive_hits",
+      "architecture": "compute_80",
+      "source_sha256": "5e062fe349d086371905d0561b58f32131137b676fcdee144c048fadc324fbfa",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 10974,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_weighted.py",
+      "kernel": "relax",
+      "architecture": "compute_80",
+      "source_sha256": "150c9eb3578bd2d2480ffefa916255b43bfb516bdbd7bd383c3a60caf3fa1b48",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 15550,
+      "compiler_log": ""
+    }
+  ]
+}

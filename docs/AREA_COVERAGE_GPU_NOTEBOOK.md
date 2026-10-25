@@ -1,9 +1,10 @@
 # Area Coverage GPU V2 — 25 Oktober 2026
 
-Status: **backend kode V2 diimplementasikan; CUDA nyata belum dieksekusi**.
+Status terkini: **smoke sintetis CUDA lulus di Kaggle Tesla T4; validasi lokasi penuh belum dijalankan**.
 Notebook: https://www.kaggle.com/code/chrisbiran/area-coverage-market-gpu-hybrid/edit
-Tidak ada run Kaggle yang diajukan. Semua angka tes di bawah adalah lokal/oracle,
-bukan hasil CUDA atau benchmark performa lokasi aktual.
+Smoke terisolasi: https://www.kaggle.com/code/chrisbiran/area-coverage-gpu-connector-smoke
+Run smoke tidak memakai BQ/OSM atau menjalankan perhitungan lokasi penuh.
+Angka tes lokal, smoke CUDA, dan pengukuran lokasi nyata dibedakan di bawah.
 
 ## Business baseline tidak berubah
 
@@ -25,7 +26,7 @@ Tidak mengklaim akurasi, akses legal atau produksi dari skenario eksperimen.
 | Kandidat | Kernel CUDA FP64 point–segment untuk pasangan batch; GPU filter menggunakan padding numerik konservatif | STRtree broad phase untuk kandidat bangunan; canonical scalar distance pada kelompok urutan yang berdekatan |
 | Intersection | Kernel CUDA panjang intersection segmen dengan Polygon/MultiPolygon, outer/holes; kernel primitive untuk barrier line/point | Buffer/proyeksi/endpoint construction scalar, serta fallback boundary/kollinear/geometry unsupported |
 | Routing berbobot | CUDA FP64 reverse edge-state shortest-path, batch target; arah dan blocked transitions tetap | Ekstraksi path/penghitungan forward sum final; canonical graph search hanya untuk kasus ambigu yang diaudit |
-| Kesetaraan | Gate CPU reference wajib | Cold validation menghitung CPU baseline juga; ini terpisah dari fallback normal |
+| Kesetaraan | Mode VALIDATE membandingkan CPU reference | Default GPU_EXECUTE tidak menjalankan CPU reference penuh; hasil review belum disahkan untuk handoff |
 
 V1 sebelumnya hanya offload reachability/pruning. V2 bukan sekadar mengaktifkan
 GPU pada notebook: jalur default facade memakai kernel geometri dan weighted
@@ -38,8 +39,13 @@ GPU menghitung jarak kandidat secara batch, kemudian interval error numerik
 membentuk shortlist. Scalar GEOS pada shortlist menjaga urutan/tie yang sama;
 padding numerik bukan perubahan radius bisnis. Tidak mengkuantisasi koordinat.
 
-Candidate geometry dibentuk dengan endpoint/buffer acuan, lalu satu gelombang
-kandidat diperiksa batch terhadap footprint/barrier. Kernel mengintegrasikan
+Candidate geometry dibentuk dengan endpoint/buffer acuan. Satu window berisi
+32 kandidat per target diperiksa secara spekulatif; hanya prefix sampai kandidat
+valid pertama yang disahkan. Kandidat selebihnya tidak membuat cut graph atau
+catatan penolakan domain. Ukuran window bukan batas pencarian target.
+Inset footprint diratakan dan diunggah sekali; kernel berikutnya memakai indeks
+ke data resident GPU. STRtree melakukan broadphase vektor di CPU; intersection
+dan keputusan threshold biasa dilakukan GPU. Kernel mengintegrasikan
 winding sepanjang segmen untuk mengukur bagian di dalam polygon; holes memiliki
 orientasi berlawanan, bukan diisi sebagai footprint. Boundary, vertex-touch,
 kollinearitas, dekat epsilon, gate opening dan tipe unsupported menggunakan
@@ -62,16 +68,16 @@ tersimpan. Tidak menggunakan float32 atau membulatkan bobot jalan.
 Oracle lokal bukan bukti kernel CUDA benar. Karena itu ekuivalensi penuh pada
 sumber aktual tetap wajib dan hasil tidak diteruskan jika berbeda.
 
-## Gate sebelum output / Traffic Counter
+## Mode eksekusi dan gate Traffic Counter
 
 1. CuPy/device preflight integer V1 lalu V2: distance, holes, MultiPolygon,
    boundary, primitive barrier, weighted paths, one-way dan blocked transitions.
    Dijalankan sebelum OSM/BQ. GPU tidak tersedia/compile gagal -> dependencies
    FAILED; tidak ada silent CPU-only fallback yang diberi label GPU.
-2. Bagian 6 GPU -> frozen manifest -> shadow CPU reference dari input yang sama.
+2. Mode VALIDATE: bagian 6 GPU -> frozen manifest -> shadow CPU reference dari input yang sama.
    Bandingkan metric buildings, selection/capacity, graph, seluruh entrance,
    routing/path/distance/status dan keputusan per bangunan secara exact.
-3. Bagian 8 GPU -> CPU reference market dengan layers/POI yang sama. Bandingkan
+3. Mode VALIDATE: bagian 8 GPU -> CPU reference market dengan layers/POI yang sama. Bandingkan
    rows termasuk skor Huff, summary, stores, excluded stores, gate, kelompok
    kompetitor dan metadata cluster. Identity/path output berbeda bukan data
    business; field tersebut tidak dipakai sebagai pembanding semantic.
@@ -80,10 +86,15 @@ sumber aktual tetap wajib dan hasil tidak diteruskan jika berbeda.
 5. Handoff memerlukan calculation dan market PASS, actual CUDA V2 preflight,
    output/archive checksum valid dan cleanup berhasil. Tidak memulai traffic.
 
-**Mode notebook saat ini VALIDATE.** Run pertama juga menjalankan CPU reference
-penuh sehingga bisa lebih lama daripada GPU saja. Reference yang lengkap disimpan
-untuk reopen. Ukur waktu blok GPU dan waktu validation secara terpisah; durasi
-Run All mode validasi bukan benchmark percepatan produksi.
+**Default sekarang GPU_EXECUTE.** Mode ini menjalankan GPU utama tanpa otomatis
+mengulang seluruh perhitungan di CPU. CPU tetap menangani endpoint GEOS,
+buffer awal, graph assembly, I/O/Huff/render dan fallback numerik yang dicatat.
+Peta/tabel/ekspor tersedia untuk review dengan kesetaraan NOT_RUN dan banner
+belum tervalidasi. Handoff tetap NOT_READY; NOT_RUN tidak pernah menjadi PASS.
+Untuk pembuktian kesetaraan snapshot nyata, ubah satu variabel
+`GPU_VALIDATION_MODE='VALIDATE'` di cell konfigurasi, lalu jalankan tahapan sesudahnya.
+Mode ini memakai hasil GPU beku yang sesuai dan menghitung pembanding CPU.
+ZIP/manifest ekspor dipisahkan per mode agar metadata lama tidak dipakai ulang.
 
 ## Artefak / audit
 
@@ -104,9 +115,10 @@ source snapshot yang cocok dapat dipakai ulang. Source/secret BQ tidak diubah.
 
 1. Buka notebook, accelerator GPU (satu device 0 digunakan), Internet ON.
 2. Aktifkan secret `LocatioIntelligent` pada notebook ini bila belum aktif.
-3. Run All; periksa preflight V2 dan kedua gate PASS. GPU self-test tidak boleh
-   dianggap sudah lulus hanya karena tes oracle lokal lulus.
-4. Simpan artifact privat, periksa handoff, stop kernel GPU Area, baru jalankan
+3. Restart session agar modul lama tidak tertinggal, Run All. Default GPU_EXECUTE:
+   periksa preflight CUDA dan review hasil; kesetaraan masih NOT_RUN.
+4. Jalankan VALIDATE untuk kedua gate PASS sebelum handoff. Simpan artifact
+   privat, periksa handoff, stop kernel GPU Area, baru jalankan
    Traffic Counter GPU. Tidak menjalankan dua engine bersamaan.
 
 CuPy CUDA12x 13.6.0 dan fastrlock 0.8.3 diinstal jika perlu tanpa upgrade NumPy.
@@ -114,7 +126,7 @@ Driver/NVRTC image Kaggle tetap harus kompatibel dan dicek oleh preflight nyata.
 Pool dibebaskan tanpa deviceReset; CUDA context berakhir sepenuhnya ketika
 proses/kernel Area berhenti. Scheduler produksi lintas proses belum dibuat.
 
-## Pengujian yang benar-benar dijalankan
+## Pengujian V2 awal (historis sebelum perbaikan batch)
 
 - Workspace tidak mempunyai GPU/CuPy: CUDA **NOT_EXECUTED**.
 - Suite Area Coverage: 120 tes; 105 lulus, 15 skip untuk worker terpisah.
@@ -129,7 +141,7 @@ proses/kernel Area berhenti. Scheduler produksi lintas proses belum dibuat.
   tetap diverifikasi. Artefak: gpu_validation/cpu_oracle_v2_smoke.json,
   actual_cuda_executed=false. Tidak melaporkan hasil CUDA yang belum dieksekusi.
 
-Gate berikutnya: eksekusi owner di Kaggle, verifikasi kedua perbandingan pada
+Gate berikutnya: eksekusi lokasi owner di Kaggle, verifikasi kedua perbandingan pada
 snapshot nyata, ukur fallback share, waktu per komponen, transfer dan memory.
 Jika fallback mendominasi atau konektor scalar masih dominan, belum ada bukti
 bahwa target percepatan tercapai. Tidak menjanjikan speedup dari kode saja.
@@ -162,3 +174,36 @@ Regresi terkini: 123 tes Area Coverage, 108 lulus dan 15 skip. Tiga tes baru
 memeriksa persistensi compile log, status fail dan pembedaan compile vs device
 execution, termasuk larangan mencetak generic credential exception. Tidak ada
 run penuh Kaggle yang diajukan oleh perbaikan ini.
+
+## Perbaikan section 8 —25 Oktober2026
+
+Log owner berulang `remaining=25`, tanpa traceback. Tahap yang macet secara
+throughput masih `market_reuse_connectors_add_targets`, sebelum routing atau
+CPU reference. Implementasi lama memeriksa satu kandidat per target per wave;
+25 target sulit menyebabkan banyak launch kecil serta pengemasan ulang polygon
+di CPU. Tidak ada bukti infinite loop dari log tersebut.
+
+Perbaikan: window32 bounded batch4096, urutan kanonik tetap; upload footprint
+resident sekali, query broadphase vektor, perhitungan intersection/threshold di
+GPU, transfer balik hanya hit/ambigu. Progress mencatat evaluated, canonical
+checked, remaining, exhausted dan elapsed. Pencarian target tetap tak dibatasi
+secara numerik dalam graph sumber; target tanpa konektor valid tetap dilaporkan.
+
+Bukti aktual version1 smoke privat Kaggle:
+
+- Tesla T4, actual_cuda_executed=true, preflight seluruh kernel PASS.
+- Kasus kandidat valid pertama, setelah40 penolakan, dan seluruh70 kandidat
+  invalid: graph/connector/rejection/arah identik dengan CPU.
+- 402 konektor sintetis ×101 polygon (termasuk holes, batas, owner exclusion),
+  dua batch: hasil cocok dengan GEOS. Total17.508 pasangan GPU, 478 fallback
+  boundary/threshold; satu upload polygon. Durasi batch0,391s dan0,041s hanya
+  untuk fixture ini, bukan benchmark lokasi Jakarta atau pembanding speedup CPU.
+- Lokal127 tes:112 lulus,15 skip; oracle calculation/market setara CPU;
+  kompilasi NVRTC compute75/80:10/10 PASS.
+
+Artefak: `results/area_coverage_map/gpu_validation/kaggle_resident_smoke.json`,
+`kaggle_resident_kernel_compilation.json`, `nvrtc_resident_compile.json`,
+`cpu_oracle_resident_smoke.json` dan `retained_section8_log.json`.
+CPU baseline tidak berubah. Percepatan456 target nyata, fallback share lokasi,
+dan validasi market penuh masih belum diukur. GPU utilization tidak dijanjikan
+100%; CPU masih menyiapkan data dan membentuk endpoint kanonik.

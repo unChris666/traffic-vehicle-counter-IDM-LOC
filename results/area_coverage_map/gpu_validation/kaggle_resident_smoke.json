@@ -1,0 +1,7383 @@
+{
+  "scope": "SYNTHETIC_CUDA_SMOKE_NOT_LOCATION_BENCHMARK",
+  "status": "PASS",
+  "actual_cuda_executed": true,
+  "compiler": {
+    "scope": "CUDA_COMPILATION_ONLY",
+    "actual_cuda_executed": false,
+    "status": "PASS",
+    "kernels": [
+      {
+        "kernel": "propagate",
+        "source_sha256": "d5eedc098bff5d211b89b78f4c47214ec3c58f95c766a616dd763b836c9c8c5d",
+        "status": "PASS",
+        "compiler_log": ""
+      },
+      {
+        "kernel": "distances",
+        "source_sha256": "54cd4298fb5965d7cc9226fe85534c8b50bf4c31e12b6f77049979b946d390a1",
+        "status": "PASS",
+        "compiler_log": ""
+      },
+      {
+        "kernel": "polygon_lengths",
+        "source_sha256": "40d7ec4dfa9acefcff2cd2fdb21c960ee8cc411e0a417e73c8569889f61d4b24",
+        "status": "PASS",
+        "compiler_log": ""
+      },
+      {
+        "kernel": "primitive_hits",
+        "source_sha256": "5e062fe349d086371905d0561b58f32131137b676fcdee144c048fadc324fbfa",
+        "status": "PASS",
+        "compiler_log": ""
+      },
+      {
+        "kernel": "relax",
+        "source_sha256": "150c9eb3578bd2d2480ffefa916255b43bfb516bdbd7bd383c3a60caf3fa1b48",
+        "status": "PASS",
+        "compiler_log": ""
+      }
+    ]
+  },
+  "preflight": {
+    "status": "SUCCEEDED",
+    "backend": "GPU_WEIGHTED_GEOMETRY_V2",
+    "actual_cuda_executed": true,
+    "geometry": {
+      "backend": "CUDA_FP64_GEOMETRY_V2",
+      "gpu_distance_pairs": 2,
+      "gpu_polygon_queries": 13,
+      "cpu_fallback_queries": 2,
+      "fallback_reasons": {
+        "POLYGON_BOUNDARY_OR_THRESHOLD": 2
+      },
+      "canonical_scalar_distances": 0,
+      "actual_cuda_executed": true,
+      "gpu_primitive_queries": 1,
+      "resident_footprint_count": 2,
+      "resident_polygon_edges": 12,
+      "resident_polygon_uploads": 1,
+      "resident_polygon_prepare_s": 0.0003685800000141626,
+      "fallback_records": [
+        {
+          "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+          "building_id": null,
+          "obstacle_id": "a",
+          "line": [
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              11.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+          "building_id": null,
+          "obstacle_id": "a",
+          "line": [
+            [
+              -1.0,
+              0.0
+            ],
+            [
+              11.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "resident_footprint_batch_s": 1.0082954540000344
+    },
+    "weighted": {
+      "backend": "CUDA_FP64_WEIGHTED_V2",
+      "gpu_weighted_queries": 6,
+      "cpu_fallback_queries": 0,
+      "fallback_reasons": {},
+      "actual_cuda_executed": true,
+      "gpu_relax_iterations": 3,
+      "gpu_target_count": 2
+    }
+  },
+  "connector_cases": [
+    {
+      "first_valid": 0,
+      "status": "PASS",
+      "gpu": {
+        "backend": "CUDA_FP64_GEOMETRY_V2",
+        "gpu_distance_pairs": 70,
+        "gpu_polygon_queries": 0,
+        "cpu_fallback_queries": 0,
+        "fallback_reasons": {},
+        "canonical_scalar_distances": 32,
+        "actual_cuda_executed": true,
+        "gpu_filtered_pairs": 0,
+        "resident_footprint_count": 0,
+        "resident_polygon_edges": 0,
+        "resident_polygon_uploads": 1,
+        "resident_polygon_prepare_s": 0.00022959599999694547,
+        "candidate_window": 32,
+        "speculative_evaluated": 32,
+        "canonical_candidates_checked": 1,
+        "exhausted_targets": 0,
+        "batch_count": 1,
+        "connector_elapsed_s": 0.004359644999993861
+      }
+    },
+    {
+      "first_valid": 40,
+      "status": "PASS",
+      "gpu": {
+        "backend": "CUDA_FP64_GEOMETRY_V2",
+        "gpu_distance_pairs": 70,
+        "gpu_polygon_queries": 0,
+        "cpu_fallback_queries": 0,
+        "fallback_reasons": {},
+        "canonical_scalar_distances": 64,
+        "actual_cuda_executed": true,
+        "gpu_filtered_pairs": 0,
+        "resident_footprint_count": 0,
+        "resident_polygon_edges": 0,
+        "resident_polygon_uploads": 1,
+        "resident_polygon_prepare_s": 0.00016572699999528595,
+        "candidate_window": 32,
+        "speculative_evaluated": 64,
+        "canonical_candidates_checked": 41,
+        "exhausted_targets": 0,
+        "batch_count": 2,
+        "connector_elapsed_s": 0.004747790999999779
+      }
+    },
+    {
+      "first_valid": null,
+      "status": "PASS",
+      "gpu": {
+        "backend": "CUDA_FP64_GEOMETRY_V2",
+        "gpu_distance_pairs": 70,
+        "gpu_polygon_queries": 0,
+        "cpu_fallback_queries": 0,
+        "fallback_reasons": {},
+        "canonical_scalar_distances": 70,
+        "actual_cuda_executed": true,
+        "gpu_filtered_pairs": 0,
+        "resident_footprint_count": 0,
+        "resident_polygon_edges": 0,
+        "resident_polygon_uploads": 1,
+        "resident_polygon_prepare_s": 0.00014064599997709593,
+        "candidate_window": 32,
+        "speculative_evaluated": 70,
+        "canonical_candidates_checked": 70,
+        "exhausted_targets": 1,
+        "batch_count": 3,
+        "connector_elapsed_s": 0.0021597930000041288
+      }
+    }
+  ],
+  "device": "Tesla T4",
+  "resident_queries": 402,
+  "resident": {
+    "backend": "CUDA_FP64_GEOMETRY_V2",
+    "gpu_distance_pairs": 0,
+    "gpu_polygon_queries": 17508,
+    "cpu_fallback_queries": 478,
+    "fallback_reasons": {
+      "POLYGON_BOUNDARY_OR_THRESHOLD": 478
+    },
+    "canonical_scalar_distances": 0,
+    "actual_cuda_executed": true,
+    "resident_footprint_count": 101,
+    "resident_polygon_edges": 408,
+    "resident_polygon_uploads": 1,
+    "resident_polygon_prepare_s": 0.009595813000004227,
+    "fallback_records": [
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b14",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b13",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b11",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b10",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b9",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b8",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b7",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b6",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b12",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b30",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b29",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b28",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b27",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b26",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b25",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b5",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            40.710721693257845,
+            -6.942871059039456
+          ],
+          [
+            1024.0300309830632,
+            8.752732340965277
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            40.710721693257845,
+            -6.942871059039456
+          ],
+          [
+            1024.0300309830632,
+            8.752732340965277
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            40.710721693257845,
+            -6.942871059039456
+          ],
+          [
+            1024.0300309830632,
+            8.752732340965277
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            40.710721693257845,
+            -6.942871059039456
+          ],
+          [
+            1024.0300309830632,
+            8.752732340965277
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1229.5355105392318,
+            -4.460993728080426
+          ],
+          [
+            289.0000175584161,
+            39.72038897696168
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b76",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b75",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b74",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b73",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b72",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b71",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b78",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b77",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b96",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b95",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b94",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b93",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b92",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b91",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b76",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b75",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b78",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b77",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b92",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b91",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b14",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b13",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b11",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b10",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b9",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b8",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b7",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b6",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b12",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b31",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b30",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b29",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b28",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b27",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b26",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b25",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b33",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b32",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b14",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b13",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "hole",
+        "line": [
+          [
+            849.0092622125553,
+            33.82586218825528
+          ],
+          [
+            17.397207423614795,
+            7.0922079787695225
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b76",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b75",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b74",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b73",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b72",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b71",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b70",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b69",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b68",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b78",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b77",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b99",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b98",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b97",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b96",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b95",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b94",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b93",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b92",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b91",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b7",
+        "line": [
+          [
+            1191.595976209967,
+            22.217063599503206
+          ],
+          [
+            87.06835113900362,
+            -0.21967766403484035
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b14",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b13",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b12",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b31",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b30",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b29",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b28",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b27",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b26",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b25",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b36",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b35",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b34",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b33",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b32",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b76",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b75",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b74",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b73",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b78",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b77",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b99",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b98",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b97",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b96",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b95",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b94",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b93",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b92",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b91",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            25.279653871747144,
+            -0.23643821519286234
+          ],
+          [
+            974.1505206730527,
+            41.42655209219513
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            25.279653871747144,
+            -0.23643821519286234
+          ],
+          [
+            974.1505206730527,
+            41.42655209219513
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            25.279653871747144,
+            -0.23643821519286234
+          ],
+          [
+            974.1505206730527,
+            41.42655209219513
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b99",
+        "line": [
+          [
+            165.9632996572021,
+            45.66680307203528
+          ],
+          [
+            1213.3553378222527,
+            -1.7584068715794743
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b98",
+        "line": [
+          [
+            165.9632996572021,
+            45.66680307203528
+          ],
+          [
+            1213.3553378222527,
+            -1.7584068715794743
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            81.48028136553165,
+            -11.323700437013112
+          ],
+          [
+            1042.600255239411,
+            40.78893547261828
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            81.48028136553165,
+            -11.323700437013112
+          ],
+          [
+            1042.600255239411,
+            40.78893547261828
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            81.48028136553165,
+            -11.323700437013112
+          ],
+          [
+            1042.600255239411,
+            40.78893547261828
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            81.48028136553165,
+            -11.323700437013112
+          ],
+          [
+            1042.600255239411,
+            40.78893547261828
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b0",
+        "line": [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            20.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": "b0",
+        "obstacle_id": "b1",
+        "line": [
+          [
+            2.0,
+            2.0
+          ],
+          [
+            20.0,
+            2.0
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b14",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b13",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b11",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b10",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b9",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b8",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b7",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b6",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b12",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b30",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b29",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b28",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b27",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b26",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b25",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b5",
+        "line": [
+          [
+            1166.4667340998374,
+            -9.067248236156484
+          ],
+          [
+            67.12520794177743,
+            44.125955120927
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            40.710721693257845,
+            -6.942871059039456
+          ],
+          [
+            1024.0300309830632,
+            8.752732340965277
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            40.710721693257845,
+            -6.942871059039456
+          ],
+          [
+            1024.0300309830632,
+            8.752732340965277
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            40.710721693257845,
+            -6.942871059039456
+          ],
+          [
+            1024.0300309830632,
+            8.752732340965277
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            40.710721693257845,
+            -6.942871059039456
+          ],
+          [
+            1024.0300309830632,
+            8.752732340965277
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1229.5355105392318,
+            -4.460993728080426
+          ],
+          [
+            289.0000175584161,
+            39.72038897696168
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b76",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b75",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b74",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b73",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b72",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b71",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b78",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b77",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            22.594920057672482,
+            4.131785116036895
+          ],
+          [
+            1070.6690168672637,
+            39.64228038682136
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b96",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b95",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b94",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b93",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b92",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b91",
+        "line": [
+          [
+            -8.448614783252507,
+            -13.589438275499486
+          ],
+          [
+            1162.3442908528295,
+            13.150513510603908
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b76",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b75",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b78",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b77",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            54.85858701562151,
+            10.585343942936564
+          ],
+          [
+            1085.7030713842719,
+            -13.451877550788192
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b92",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b91",
+        "line": [
+          [
+            119.86766570722492,
+            6.528470723880098
+          ],
+          [
+            1105.0100910993856,
+            -14.970485833602034
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b14",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b13",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b11",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b10",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b9",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b8",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b7",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b6",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b12",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b31",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b30",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b29",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b28",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b27",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b26",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b25",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b33",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b32",
+        "line": [
+          [
+            1187.2005844763949,
+            -2.390750593955726
+          ],
+          [
+            74.82300268697466,
+            40.651236046701264
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b14",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b13",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1162.4643964061388,
+            4.411772492430583
+          ],
+          [
+            162.8965932900455,
+            -10.669685033345553
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "hole",
+        "line": [
+          [
+            849.0092622125553,
+            33.82586218825528
+          ],
+          [
+            17.397207423614795,
+            7.0922079787695225
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b76",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b75",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b74",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b73",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b72",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b71",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b70",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b69",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b68",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b78",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b77",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b99",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b98",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b97",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b96",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b95",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b94",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b93",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b92",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b91",
+        "line": [
+          [
+            71.70470041052106,
+            -4.508839538289891
+          ],
+          [
+            1248.4702351630658,
+            46.809010074606235
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b7",
+        "line": [
+          [
+            1191.595976209967,
+            22.217063599503206
+          ],
+          [
+            87.06835113900362,
+            -0.21967766403484035
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b14",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b13",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b12",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b31",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b30",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b29",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b28",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b27",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b26",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b25",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b36",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b35",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b34",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b33",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b32",
+        "line": [
+          [
+            1236.5143367780674,
+            -17.267873495840227
+          ],
+          [
+            140.4186090095723,
+            48.619649009240675
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b76",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b75",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b74",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b73",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b78",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b90",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b89",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b77",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b87",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b82",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b88",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b99",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b98",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b97",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b96",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b95",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b94",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b93",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b92",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b91",
+        "line": [
+          [
+            93.60681615590018,
+            4.9739220625780085
+          ],
+          [
+            1220.130833696795,
+            -7.754735379096411
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b15",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b24",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b23",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b22",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b21",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b20",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b19",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b18",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b17",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b16",
+        "line": [
+          [
+            1176.0115929873682,
+            32.88524218582241
+          ],
+          [
+            183.8830586461987,
+            -6.894651939393761
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b80",
+        "line": [
+          [
+            25.279653871747144,
+            -0.23643821519286234
+          ],
+          [
+            974.1505206730527,
+            41.42655209219513
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b79",
+        "line": [
+          [
+            25.279653871747144,
+            -0.23643821519286234
+          ],
+          [
+            974.1505206730527,
+            41.42655209219513
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b81",
+        "line": [
+          [
+            25.279653871747144,
+            -0.23643821519286234
+          ],
+          [
+            974.1505206730527,
+            41.42655209219513
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b99",
+        "line": [
+          [
+            165.9632996572021,
+            45.66680307203528
+          ],
+          [
+            1213.3553378222527,
+            -1.7584068715794743
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b98",
+        "line": [
+          [
+            165.9632996572021,
+            45.66680307203528
+          ],
+          [
+            1213.3553378222527,
+            -1.7584068715794743
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b86",
+        "line": [
+          [
+            81.48028136553165,
+            -11.323700437013112
+          ],
+          [
+            1042.600255239411,
+            40.78893547261828
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b85",
+        "line": [
+          [
+            81.48028136553165,
+            -11.323700437013112
+          ],
+          [
+            1042.600255239411,
+            40.78893547261828
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b84",
+        "line": [
+          [
+            81.48028136553165,
+            -11.323700437013112
+          ],
+          [
+            1042.600255239411,
+            40.78893547261828
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b83",
+        "line": [
+          [
+            81.48028136553165,
+            -11.323700437013112
+          ],
+          [
+            1042.600255239411,
+            40.78893547261828
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": null,
+        "obstacle_id": "b0",
+        "line": [
+          [
+            -1.0,
+            0.0
+          ],
+          [
+            20.0,
+            0.0
+          ]
+        ]
+      },
+      {
+        "reason": "POLYGON_BOUNDARY_OR_THRESHOLD",
+        "building_id": "b0",
+        "obstacle_id": "b1",
+        "line": [
+          [
+            2.0,
+            2.0
+          ],
+          [
+            20.0,
+            2.0
+          ]
+        ]
+      }
+    ],
+    "resident_footprint_batch_s": 0.4317380990000004
+  },
+  "resident_batch_seconds": [
+    0.39100615499998526,
+    0.041107643999993115
+  ],
+  "source_sha256": {
+    "location_intelligent_gpu.py": "25554e618abed0eb9e00fc4e43bb753678341d486ce002a9bdee8c00033180c8",
+    "location_intelligent_gpu_runtime.py": "99d49bfea64ff7ebb0834a6d152bc20c166f467cab6710c60dfb33fe2fe4cde3",
+    "location_intelligent_gpu_diagnostics.py": "598b3048701652b050c50e2e5feb1f134823a2861d812a39ca05d581608beb6d",
+    "location_intelligent_gpu_validation.py": "d36c27ebacdfc238332e4e004238111af8ccd97bea8079e22a7d0d7e71ea02cf",
+    "location_intelligent_gpu_weighted.py": "9c6bd0f9d8bf300bfdc099a7ee2d73497fdb3cadb46a494eb06d7e6d9890a77c",
+    "location_intelligent_gpu_connectors.py": "6b468e9d81ffa9aa50c2e461f5f23c5c4e3bb545f570cc00ba9ac410ef4e1def",
+    "location_intelligent_gpu_geometry.py": "182070c8314f8621a3619ca7679ace7270e2d255877ae9c25a24f7234a5ec082",
+    "location_intelligent_gpu_worker.py": "8f5b7e65f1c4aabc9631d93cfe69aa3c67d55534652cd8c92dde2dba9368b6e8"
+  }
+}

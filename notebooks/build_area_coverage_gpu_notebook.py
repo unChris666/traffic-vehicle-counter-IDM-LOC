@@ -27,8 +27,10 @@ def build():
 Notebook baru; notebook CPU tetap utuh. GPU menghitung kandidat jarak FP64, intersection batch dan shortest-path
 berbobot FP64. CPU mempertahankan preprocessing, konstruksi endpoint skalar,
 Huff dan fallback kasus ambigu yang diaudit.
-Percepatan belum diukur. Mode VALIDATE juga menjalankan CPU reference, sehingga
-run validasi pertama memang menambah biaya. Output/handoff diblok jika tidak setara.
+Percepatan belum diukur. Default GPU_EXECUTE tidak menjalankan pembanding CPU
+penuh. Output dapat direview sebagai HASIL EKSPERIMEN BELUM DIUJI KESETARAAN.
+Ubah GPU_VALIDATION_MODE='VALIDATE' untuk perbandingan CPU; handoff produksi
+tetap diblok sampai kedua uji kesetaraan PASS. Fallback numerik tetap diaudit.
 Tidak ada klaim accuracy/akses legal.
 
 Sebelum Run All: pilih accelerator GPU, aktifkan Internet, lalu aktifkan Kaggle
@@ -65,27 +67,31 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     config=re.sub(r"activate_notebook_sources\(SOURCE_ROOT/'notebooks',\{[^\n]+\}\)",
                   lambda m:"activate_notebook_sources(SOURCE_ROOT/'notebooks',"+repr(expected)+')',config)
     config=config.replace("  print('CPU; SOURCE:'", "  print('GPU HYBRID; SOURCE:'")
-    config=config.replace("  PILOT=OUTPUT/'pilot'","  PILOT=OUTPUT/'pilot'\n  GPU_REPORT=OUTPUT/'gpu_runtime.json'\n  GPU_EQUIVALENCE=OUTPUT/'gpu_equivalence.json'")
+    config=config.replace("  PILOT=OUTPUT/'pilot'","  PILOT=OUTPUT/'pilot'\n  GPU_REPORT=OUTPUT/'gpu_runtime.json'\n  GPU_EQUIVALENCE=OUTPUT/'gpu_equivalence.json'\n  GPU_VALIDATION_MODE='GPU_EXECUTE' # or VALIDATE: full CPU comparison, additional cost\n  if GPU_VALIDATION_MODE not in {'GPU_EXECUTE','VALIDATE'}:raise ValueError('Unknown GPU validation mode')\n  CPU_REFERENCE_PILOT=OUTPUT/'cpu_reference'\n  print('Execution mode:',GPU_VALIDATION_MODE)")
     notebook['cells'][50]['source']=config.splitlines(True)
     calculation=''.join(notebook['cells'][56]['source'])
     calculation=calculation.replace("  from location_intelligent_osm_buildings import prepare_osm_from_network", "  from location_intelligent_gpu_runtime import build_gpu\n  from location_intelligent_osm_buildings import prepare_osm_from_network")
     calculation=calculation.replace("timed_call('build',build,PILOT)","timed_call('build_gpu_hybrid',build_gpu,PILOT,GPU_REPORT,device=GPU_DEVICE)")
-    calculation=calculation.replace("  print('Access status", "  from location_intelligent_gpu_validation import validate_calculation\n  CPU_REFERENCE_PILOT=validate_calculation(PILOT,OUTPUT/'cpu_reference',GPU_EQUIVALENCE)\n  print('Access status")
+    calculation=calculation.replace("  print('Access status", "  from location_intelligent_gpu_validation import validate_calculation,_record\n  if GPU_VALIDATION_MODE=='VALIDATE':\n   CPU_REFERENCE_PILOT=validate_calculation(PILOT,OUTPUT/'cpu_reference',GPU_EQUIVALENCE)\n  else:\n   _record(GPU_EQUIVALENCE,'calculation',{'status':'NOT_RUN','reason':'GPU_EXECUTE: no full CPU reference requested'})\n   print('GPU result for review; CPU equivalence NOT_RUN')\n  print('Access status")
     notebook['cells'][56]['source']=calculation.splitlines(True)
     allocation=''.join(notebook['cells'][60]['source'])
     allocation=allocation.replace('  from location_intelligent_market_runtime import build_market', '  from location_intelligent_gpu_runtime import build_market_gpu')
     allocation=allocation.replace("MARKET=build_market(CONFIG,MARKET_CONFIG,PILOT,layers,facilities,OUTPUT/'market')",
         "MARKET=build_market_gpu(CONFIG,MARKET_CONFIG,PILOT,layers,facilities,OUTPUT/'market',report_path=GPU_REPORT,device=GPU_DEVICE)")
-    allocation=allocation.replace("  print('MARKET STATUS:", "  from location_intelligent_gpu_validation import validate_market\n  validate_market(CONFIG,MARKET_CONFIG,CPU_REFERENCE_PILOT,layers,facilities,MARKET,OUTPUT/'cpu_reference_market',GPU_EQUIVALENCE)\n  print('MARKET STATUS:")
+    allocation=allocation.replace("  print('MARKET STATUS:", "  from location_intelligent_gpu_validation import validate_market,_record\n  if GPU_VALIDATION_MODE=='VALIDATE':\n   validate_market(CONFIG,MARKET_CONFIG,CPU_REFERENCE_PILOT,layers,facilities,MARKET,OUTPUT/'cpu_reference_market',GPU_EQUIVALENCE)\n  else:\n   _record(GPU_EQUIVALENCE,'market',{'status':'NOT_RUN','reason':'GPU_EXECUTE: no full CPU reference requested'})\n   print('GPU result for review; CPU equivalence NOT_RUN')\n  print('MARKET STATUS:")
     notebook['cells'][60]['source']=allocation.splitlines(True)
     export=''.join(notebook['cells'][62]['source'])
     export=export.replace("    z.writestr('job_config.json'", "    z.writestr('gpu_execution.json',json.dumps({'preflight':GPU_PREFLIGHT,'runtime':read_json(GPU_REPORT) if GPU_REPORT.exists() else [],'profile':'GPU_WEIGHTED_GEOMETRY_V2'},sort_keys=True,indent=2))\n    for f in sorted(OUTPUT.glob('*-gpu-*.json.gz')):z.write(f,'gpu_runtime/'+f.name)\n    z.writestr('job_config.json'")
     export=export.replace("(PILOT,'pilot'),", "(PILOT,'pilot'),(CPU_REFERENCE_PILOT,'cpu_reference'),(OUTPUT/'cpu_reference_market','cpu_reference_market'),")
     export=export.replace("    z.writestr('gpu_execution.json'", "    z.writestr('gpu_equivalence.json',json.dumps(read_json(GPU_EQUIVALENCE),sort_keys=True,indent=2))\n    z.writestr('gpu_execution.json'")
+    export=export.replace("'profile':'GPU_WEIGHTED_GEOMETRY_V2'","'profile':'GPU_WEIGHTED_GEOMETRY_V2','validation_mode':GPU_VALIDATION_MODE")
+    export=export.replace("archive=OUTPUT/'market_result_and_sources.zip'","archive=OUTPUT/('market_result_and_sources_'+GPU_VALIDATION_MODE.lower()+'.zip')")
+    export=export.replace("archive_manifest=OUTPUT/'archive_manifest.json'","archive_manifest=OUTPUT/('archive_manifest_'+GPU_VALIDATION_MODE.lower()+'.json')")
+    export=export.replace("  display(HTML('<iframe", "  if GPU_VALIDATION_MODE!='VALIDATE':\n   display(HTML('<p><b>EKSPERIMEN GPU: kesetaraan CPU belum diuji. Hasil tersedia untuk review; handoff belum disahkan.</b></p>'))\n  display(HTML('<iframe")
     notebook['cells'][62]['source']=export.splitlines(True)
     # Remove CPU-specific instruction about patching only part8; backend changes need new job.
     notebook['cells'][59]['source']=['## 8. Market allocation — GPU weighted routing + audited geometry fallback\n',
-        'Mode VALIDATE: GPU dan CPU reference harus setara sebelum output dipakai.\n']
+        'GPU_EXECUTE: GPU utama, tanpa CPU reference penuh; hasil untuk review. VALIDATE: uji kesetaraan CPU tambahan.\n']
     helper_cells=[]
     for name in GPU_FILES:
         helper_cells.append({'cell_type':'code','metadata':{},'execution_count':None,'outputs':[],
@@ -134,9 +140,15 @@ print(handoff)
             text=''.join(cell['source']);ast.parse(text.split('\n',1)[1] if text.startswith('%%writefile ') else text)
             cell['execution_count']=None;cell['outputs']=[]
     DEST.write_text(json.dumps(notebook,ensure_ascii=False,indent=1)+'\n')
+    evidence=ROOT/'results/area_coverage_map/gpu_validation/kaggle_resident_smoke.json'
+    observed=json.loads(evidence.read_text()) if evidence.exists() else {}
+    verified_smoke=observed.get('status')=='PASS' and observed.get('actual_cuda_executed') is True and all(
+        observed.get('source_sha256',{}).get(name)==expected[name] for name in GPU_FILES)
     report={'baseline_commit':'b84c850','cpu_notebook_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
         'cpu_helpers_sha256':baseline,'gpu_profile':'GPU_WEIGHTED_GEOMETRY_V2',
-        'cuda_execution_status':'NOT_EXECUTED_IN_CODEX','business_configuration':'UNCHANGED'}
+        'cuda_execution_status':'SYNTHETIC_SMOKE_PASSED_KAGGLE_T4' if verified_smoke else 'NOT_EXECUTED_FOR_CURRENT_SOURCE',
+        'full_location_cuda_validation':'NOT_EXECUTED','default_validation_mode':'GPU_EXECUTE',
+        'business_configuration':'UNCHANGED'}
     packet=ROOT/'results/area_coverage_map/gpu_kaggle_packet';packet.mkdir(parents=True,exist_ok=True)
     (packet/DEST.name).write_bytes(DEST.read_bytes())
     metadata={'id':'chrisbiran/area-coverage-market-gpu-hybrid','title':'Area Coverage Market GPU Hybrid',

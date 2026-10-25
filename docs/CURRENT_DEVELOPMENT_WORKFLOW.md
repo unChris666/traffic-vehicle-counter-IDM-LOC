@@ -1,5 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Section8 GPU —25 Oktober2026:** window kandidat spekulatif32 dengan pemilihan
+valid pertama tetap kanonik; footprint resident dan intersection/threshold GPU.
+Smoke Kaggle TeslaT4 aktual PASS pada fixture sintetis, bukan lokasi penuh.
+Default `GPU_EXECUTE` menghindari full CPU reference otomatis; output review
+berlabel kesetaraan NOT_RUN, handoff NOT_READY. `VALIDATE` tetap wajib sebelum
+handoff, dengan uji CPU pada snapshot yang sama. [Bukti dan batas](AREA_COVERAGE_GPU_NOTEBOOK.md).
+Checkpoint V2 di bawah mencatat default VALIDATE sebelumnya.
+
 **GPU V2 —25 Oktober2026:** backend notebook GPU ditingkatkan menjadi jarak
 kandidat FP64, intersection batch dan weighted routing CUDA; CPU reference wajib
 sebelum output/handoff. [Kontrak dan batas](AREA_COVERAGE_GPU_NOTEBOOK.md).

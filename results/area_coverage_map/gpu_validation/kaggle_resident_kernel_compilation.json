@@ -1,0 +1,37 @@
+{
+  "scope": "CUDA_COMPILATION_ONLY",
+  "actual_cuda_executed": false,
+  "status": "PASS",
+  "kernels": [
+    {
+      "kernel": "propagate",
+      "source_sha256": "d5eedc098bff5d211b89b78f4c47214ec3c58f95c766a616dd763b836c9c8c5d",
+      "status": "PASS",
+      "compiler_log": ""
+    },
+    {
+      "kernel": "distances",
+      "source_sha256": "54cd4298fb5965d7cc9226fe85534c8b50bf4c31e12b6f77049979b946d390a1",
+      "status": "PASS",
+      "compiler_log": ""
+    },
+    {
+      "kernel": "polygon_lengths",
+      "source_sha256": "40d7ec4dfa9acefcff2cd2fdb21c960ee8cc411e0a417e73c8569889f61d4b24",
+      "status": "PASS",
+      "compiler_log": ""
+    },
+    {
+      "kernel": "primitive_hits",
+      "source_sha256": "5e062fe349d086371905d0561b58f32131137b676fcdee144c048fadc324fbfa",
+      "status": "PASS",
+      "compiler_log": ""
+    },
+    {
+      "kernel": "relax",
+      "source_sha256": "150c9eb3578bd2d2480ffefa916255b43bfb516bdbd7bd383c3a60caf3fa1b48",
+      "status": "PASS",
+      "compiler_log": ""
+    }
+  ]
+}
