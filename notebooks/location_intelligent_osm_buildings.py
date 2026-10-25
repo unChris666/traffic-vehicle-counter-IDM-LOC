@@ -194,6 +194,15 @@ def prepare_osm_from_network(config,root,network_source,raw_path):
     frozen['policy']['sources']['buildings'].update(provider='OPENSTREETMAP',planned_release=read_json(raw_path)['release'],planned_schema_version=SCHEMA,status='ACTUAL_FROZEN_OSM')
     frozen['policy']['li3']['building_cache']=str(root/'raw/building_cache')
     frozen['policy']['li3']['feature_source_mode']=config.get('network_feature_mode','FULL')
+    road_profile=config.get('road_rule_profile','STRICT_MOTOR_LEGACY')
+    if road_profile not in {'STRICT_MOTOR_LEGACY','BARRIER_ONEWAY_EXPERIMENT_V1'}:raise ValueError('Unknown road rule profile')
+    if road_profile=='BARRIER_ONEWAY_EXPERIMENT_V1':
+        frozen['policy']['li3']['road_rule_profile']=road_profile
+        frozen['policy']['motorcycle_access'].update(private_access_usable=True,pedestrian_only_usable=True,stairs_usable=True)
+        frozen['policy']['scenario_limitations']=['Access tags and turn restrictions ignored by owner experiment; not legal/physical access verification',
+            'Only extracted road graph is available; omitted paths are not fabricated',
+            'Remaining UNKNOWN edges are not usable for acceptance']
+
     profile=config.get('building_entrance_profile','MULTI_ACCESS_LEGACY')
     if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1'}:raise ValueError('Unknown building entrance profile')
     if profile=='SINGLE_HIGHEST_CLASS_NEAREST_V1':

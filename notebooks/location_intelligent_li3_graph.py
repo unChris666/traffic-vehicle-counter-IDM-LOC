@@ -6,7 +6,20 @@ import math
 from location_intelligent_motor_routing import motor_access
 
 
-def node_permission(tags):
+ROAD_RULE_PROFILE='BARRIER_ONEWAY_EXPERIMENT_V1'
+
+
+def barrier_only_permission(tags):
+    """Owner scenario: unknown barrier passable; positive physical closure blocks."""
+    if not tags.get('barrier'):return True,'OWNER_NO_MAPPED_BARRIER_ASSUMPTION'
+    if tags.get('locked')=='yes' or tags.get('gate:status')=='closed':return False,'KNOWN_CLOSED_BARRIER'
+    if tags.get('barrier') in {'wall','fence','block','jersey_barrier','guard_rail','retaining_wall'}:
+        return False,'KNOWN_PHYSICAL_BARRIER'
+    return True,'OWNER_UNCLEAR_BARRIER_PASSABLE_ASSUMPTION'
+
+
+def node_permission(tags,profile=None):
+    if profile==ROAD_RULE_PROFILE:return barrier_only_permission(tags)
     barrier = tags.get('barrier')
     if not barrier:
         return True, 'NO_MAPPED_NODE_BARRIER'
@@ -50,6 +63,9 @@ def build_graph(road_source, feature_source, frozen):
         return {'status': 'SOURCE_MISSING' if road_source.get('status') == 'SOURCE_MISSING' else 'RETRIEVAL_FAILED', 'graph': None, 'diagnostics': {'reason': 'ROAD_SOURCE_UNAVAILABLE'}}
     if feature_source.get('status') != 'SUCCEEDED':
         return {'status': 'SOURCE_MISSING' if feature_source.get('status') == 'SOURCE_MISSING' else 'RETRIEVAL_FAILED', 'graph': None, 'diagnostics': {'reason': 'RESTRICTION_OR_BARRIER_SOURCE_UNAVAILABLE'}}
+    profile=frozen['policy']['li3'].get('road_rule_profile','STRICT_MOTOR_LEGACY')
+    if profile not in {'STRICT_MOTOR_LEGACY',ROAD_RULE_PROFILE}:raise ValueError('Unknown road rule profile')
+    simple=profile==ROAD_RULE_PROFILE
     raw = road_source['payload']
     features = feature_source['payload']
     elements = merge_elements(raw['elements'], features['elements'])
@@ -67,8 +83,8 @@ def build_graph(road_source, feature_source, frozen):
         if any(i not in source_nodes for i in way['nodes']):
             rejects.append({'way_id': way_id, 'reason': 'MISSING_SOURCE_NODE'})
             continue
-        direction = way_direction(tags)
-        permission, permission_reason = motor_access(tags, tags['highway'])
+        direction = way_direction({k:v for k,v in tags.items() if ':conditional' not in k} if simple else tags)
+        permission, permission_reason = (True,'OWNER_ROAD_ACCESS_ASSUMPTION') if simple else motor_access(tags, tags['highway'])
         if direction is None:
             permission, permission_reason = None, 'DIRECTION_UNVERIFIED'
         for index, (a, b) in enumerate(zip(way['nodes'], way['nodes'][1:])):
@@ -90,7 +106,7 @@ def build_graph(road_source, feature_source, frozen):
                 allowed, reason = permission, permission_reason
                 barriers = []
                 for i in (u, v):
-                    status, why = node_permission(source_nodes[i].get('tags', {}))
+                    status, why = node_permission(source_nodes[i].get('tags', {}),profile=profile)
                     if source_nodes[i].get('tags', {}).get('barrier'):
                         barriers.append({'node_id': i, 'allowed': status, 'reason': why})
                     if status is False:
@@ -104,11 +120,11 @@ def build_graph(road_source, feature_source, frozen):
                     if directional in tags:
                         effective_tags[access_key] = tags[directional]
                 directional_allowed, directional_reason = motor_access(effective_tags, tags['highway'])
-                if directional_allowed is False:
+                if not simple and directional_allowed is False:
                     allowed, reason = False, directional_reason
-                elif directional_allowed is None and allowed is True:
+                elif not simple and directional_allowed is None and allowed is True:
                     allowed, reason = None, directional_reason
-                elif directional_allowed is True and permission is not True and direction is not None and not any(b['allowed'] is not True for b in barriers):
+                elif not simple and directional_allowed is True and permission is not True and direction is not None and not any(b['allowed'] is not True for b in barriers):
                     allowed, reason = True, directional_reason
                 edges.append({'edge_id': key, 'u': start['node_id'], 'v': end['node_id'], 'key': key,
                               'length_m': distance, 'travel_time_s': distance/speed, 'highway': tags['highway'],
@@ -136,7 +152,9 @@ def build_graph(road_source, feature_source, frozen):
               'way_count': len(road_way_ids), 'source_as_of': asof}}
 
 
-def apply_turns(graph, edge_sources, edge_rules, feature_source):
+def apply_turns(graph, edge_sources, edge_rules, feature_source, *, profile=None):
+    if profile==ROAD_RULE_PROFILE:
+        return [],[{'reason':'TURN_RESTRICTIONS_IGNORED_BY_OWNER_SCENARIO','claim_type':'ASSUMPTION'}]
     incoming, outgoing = defaultdict(list), defaultdict(list)
     for edge in graph['edges']:
         incoming[edge['v']].append(edge)

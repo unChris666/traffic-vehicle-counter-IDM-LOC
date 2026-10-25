@@ -21,7 +21,7 @@ def source_request_config(config):
     Compare both sides this way so legacy packets need no mutation/re-fetch.
     Target, extent, network mode and all other existing safeguards remain bound.
     """
-    return {k:v for k,v in config.items() if k!='building_entrance_profile'}
+    return {k:v for k,v in config.items() if k not in {'building_entrance_profile','road_rule_profile'}}
 
 
 def verify_market_source_packet(root,config):
@@ -175,7 +175,7 @@ def _reuse_calculation_connectors(pilot,metrics,features,frozen,alternative_targ
     graph={**base_graph,'nodes':sorted(nodes.values(),key=lambda n:n['node_id']),'edges':sorted(edges,key=lambda e:e['edge_id'])}
     for c in connectors:
         c['road_edge_id']=min(k for k in incidents[(c['source_segment'],c['node_id'])] if rules[k]['allowed'] is True)
-    blocked,turn_diagnostics=apply_turns(graph,sources,rules,features)
+    blocked,turn_diagnostics=apply_turns(graph,sources,rules,features,profile=frozen['policy']['li3'].get('road_rule_profile'))
     print('Market: reused '+str(sum(c['kind']=='BUILDING' for c in retained))+' building connectors; added '+str(len(alternative_targets))+' target requests',flush=True)
     return {'graph':graph,'edge_sources':sources,'edge_rules':rules,'blocked_turns':blocked,'connectors':connectors,
             'diagnostics':{'building_connectors_reused':True,'turn_relations':turn_diagnostics}}
@@ -368,6 +368,7 @@ def build_market(config, market_config, pilot, layers, facilities, output):
     from location_intelligent_li3_sources import timed_call
     pilot=Path(pilot);timed_call('market_verify_calculation',verify_manifest,pilot)
     frozen=read_json(pilot/'config/pilot.json')
+    if frozen['policy']['li3'].get('road_rule_profile','STRICT_MOTOR_LEGACY')!=config.get('road_rule_profile','STRICT_MOTOR_LEGACY'):raise ValueError('Frozen road rule profile differs from request')
     if frozen['policy']['connectors'].get('building_entrance_profile','MULTI_ACCESS_LEGACY')!=config.get('building_entrance_profile','MULTI_ACCESS_LEGACY'):
         raise ValueError('Frozen entrance profile differs from requested calculation')
     if frozen['policy']['li3'].get('feature_source_mode','FULL')!=config.get('network_feature_mode','FULL'):
@@ -464,6 +465,7 @@ def build_market(config, market_config, pilot, layers, facilities, output):
         rows.append(row)
     if len(rows)!=len(decisions):raise ValueError('Missing building identity; cannot reconcile market ledger')
     result={'schema_version':'area_market_result_v1','status':'PARTIAL','fingerprint':fingerprint,'identity':identity,
+            'road_rule_profile':frozen['policy']['li3'].get('road_rule_profile','STRICT_MOTOR_LEGACY'),
             'network_feature_mode':frozen['policy']['li3'].get('feature_source_mode','FULL'),
             'building_entrance_profile':frozen['policy']['connectors'].get('building_entrance_profile','MULTI_ACCESS_LEGACY'),
             'output_path':str(root),'rows':rows,'summary':reconcile(rows),'stores':stores,'excluded_stores':excluded,

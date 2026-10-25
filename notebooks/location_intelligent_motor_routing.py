@@ -151,6 +151,9 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
         return stop("NONFINITE_OR_MALFORMED_INPUT", "FAILED")
     try:
         travel, conn = policy["travel"], policy["connectors"]
+        road_profile=policy.get('li3',{}).get('road_rule_profile','STRICT_MOTOR_LEGACY')
+        if road_profile not in {'STRICT_MOTOR_LEGACY','BARRIER_ONEWAY_EXPERIMENT_V1'}:return stop('UNSUPPORTED_ROAD_RULE_PROFILE','FAILED')
+        simplified=road_profile=='BARRIER_ONEWAY_EXPERIMENT_V1'
         profile=conn.get('building_entrance_profile','MULTI_ACCESS_LEGACY')
         if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1'}:
             return stop('UNSUPPORTED_ENTRANCE_PROFILE','FAILED')
@@ -163,7 +166,7 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
         threshold = travel["max_travel_min"]["value"]
         if (not _number(travel["reference_constant_speed"]["value"]) or
             not all(_number(x) and x > 0 for x in (speed, limit, threshold)) or
-            any(policy["motorcycle_access"].get(k) is not False for k in ("private_access_usable", "pedestrian_only_usable", "stairs_usable", "invent_u_turns_or_reverse_edges")) or
+            any(policy["motorcycle_access"].get(k) is not expected for k,expected in [("private_access_usable",simplified),("pedestrian_only_usable",simplified),("stairs_usable",simplified),("invent_u_turns_or_reverse_edges",False)]) or
             travel["reference_constant_speed"]["unit"] != "km/h" or
             conn["max_building_to_road_m"]["unit"] != "m" or travel["max_travel_min"]["unit"] != "min" or
             travel["mode"] != "motorcycle" or travel["threshold_comparison"] != "<=" or
@@ -201,11 +204,11 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
         tags = rule.get("raw_tags", {})
         derived, reason = motor_access(tags, edges[key]["highway"])
         # Positive review cannot override explicit motor/private restrictions.
-        if derived is False and rule["allowed"] is True:
+        if not simplified and derived is False and rule["allowed"] is True:
             return stop("PERMISSION_OVERRIDES_PROHIBITION", "FAILED")
         if not isinstance(tags, dict) or any(not isinstance(k, str) or not isinstance(val, str) for k, val in tags.items()):
             return stop("MALFORMED_RAW_TAGS", "FAILED")
-        if any(":conditional" in k for k in tags) and rule.get("conditional_resolved") is not True and rule['allowed'] is True:
+        if not simplified and any(":conditional" in k for k in tags) and rule.get("conditional_resolved") is not True and rule['allowed'] is True:
             return stop("CONDITIONAL_RESTRICTION_UNRESOLVED")
         allowed[key] = rule["allowed"]
     road_only=(policy.get('li3',{}).get('feature_source_mode')=='ROADS_ONLY_EXPERIMENT' and
@@ -339,6 +342,10 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
                 row.update(route_found=None, scenario_accessible=None)
     unknown = any(v is None for v in allowed.values())
     result["status"] = "PARTIAL" if road_only or unknown or any(r["route_found"] is None for r in result["routes"]) or graph["coverage"]["completeness"] != "COMPLETE" or buildings["status"] == "PARTIAL" else "SUCCEEDED"
+    if simplified:
+        result['road_rule_profile']=road_profile
+        result['access_tag_validation']='NOT_APPLIED_BY_OWNER_POLICY'
+        result['turn_restriction_validation']='NOT_APPLIED_BY_OWNER_POLICY'
     result['external_feature_validation']='NOT_REQUESTED_ROAD_GRAPH_EXPERIMENT' if road_only else 'CONFIGURED_FEATURE_EVIDENCE'
     result["summary"] = {"input_selected": len(selected), "accounted": len(result["routes"]),
                          "scenario_accepted": sum(r["scenario_accessible"] is True for r in result["routes"]),

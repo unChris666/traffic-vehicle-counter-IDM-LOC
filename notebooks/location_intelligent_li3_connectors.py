@@ -10,6 +10,7 @@ def barrier_index(feature_source, frozen):
     from shapely.ops import polygonize, transform, unary_union
     from shapely import STRtree
     from location_intelligent_li3_graph import node_permission
+    rule_profile=frozen['policy']['li3'].get('road_rule_profile','STRICT_MOTOR_LEGACY')
     elements = feature_source['payload']['elements']
     nodes = {e['id']: e for e in elements if e['type'] == 'node'}
     ways = {e['id']: e for e in elements if e['type'] == 'way'}
@@ -23,7 +24,7 @@ def barrier_index(feature_source, frozen):
         tags = node.get('tags', {})
         if not tags.get('barrier'):
             continue
-        allowed, reason = node_permission(tags)
+        allowed, reason = node_permission(tags,profile=rule_profile)
         p = transform(tx, Point(node['lon'], node['lat']))
         if allowed is True:
             open_gates.append(p)
@@ -33,6 +34,8 @@ def barrier_index(feature_source, frozen):
         tags = way.get('tags', {})
         kind = 'water' if tags.get('natural') == 'water' or tags.get('waterway') else 'barrier' if tags.get('barrier') else None
         if not kind:
+            continue
+        if kind=='barrier' and rule_profile=='BARRIER_ONEWAY_EXPERIMENT_V1' and node_permission(tags,profile=rule_profile)[0] is True:
             continue
         if kind == 'water' and tags.get('tunnel') in {'yes', 'culvert'}:
             continue
@@ -69,7 +72,9 @@ def barrier_index(feature_source, frozen):
             unresolved.append({'source': f'osm_relation_{relation["id"]}', 'reason': 'INVALID_WATER_RELATION'})
             continue
         shapes.append(geom); records.append({'source': f'osm_relation_{relation["id"]}', 'kind': 'water', 'verified_denial': False})
-    return {'tree': STRtree(shapes), 'shapes': shapes, 'records': records, 'open_gates': open_gates, 'unresolved': unresolved}
+    assumed_unresolved=[]
+    if rule_profile=='BARRIER_ONEWAY_EXPERIMENT_V1':assumed_unresolved,unresolved=unresolved,[]
+    return {'assumed_passable_unresolved':assumed_unresolved,'tree': STRtree(shapes), 'shapes': shapes, 'records': records, 'open_gates': open_gates, 'unresolved': unresolved}
 
 
 def check_barriers(line, index, epsilon):
@@ -301,7 +306,7 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
     new_graph = {**graph, 'nodes': sorted(nodes.values(), key=lambda n: n['node_id']), 'edges': sorted(new_edges, key=lambda e: e['edge_id'])}
     for c in candidates:
         c['road_edge_id'] = min(k for k in incidents[(c['source_segment'], c['node_id'])] if new_rules[k]['allowed'] is True)
-    blocked, turn_diagnostics = apply_turns(new_graph, new_sources, new_rules, feature_source)
+    blocked, turn_diagnostics = apply_turns(new_graph, new_sources, new_rules, feature_source,profile=policy['li3'].get('road_rule_profile'))
     # Quarantine inherited by edge rules after split; connector usability is
     # checked again by the existing motor engine, not asserted by this generator.
     diagnostics.update(connectors=len(candidates), rejected_candidates=len(rejected),

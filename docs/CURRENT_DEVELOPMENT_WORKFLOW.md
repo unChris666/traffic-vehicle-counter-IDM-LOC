@@ -1,5 +1,11 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Aturan akses terbaru —25 Oktober2026:** owner memilih skenario barrier/one-way;
+izin/tag akses dan larangan belok tidak menjadi pembatas. Unknown yang tersisa
+tidak mengesahkan rute. [Profil dan batas](AREA_COVERAGE_BARRIER_ONEWAY_PROFILE.md).
+Ini menggantikan kebijakan akses strict hanya untuk job baru berprofil eksplisit;
+baseline lama tetap disimpan. Bagian 6 perlu dihitung ulang, sumber dapat dipakai ulang.
+
 **Konektor satu entrance —25 Oktober2026:** owner menetapkan batch per ruas,
 maksimal satu entrance asumsi per bangunan, prioritas kelas tertinggi lalu
 jarak terdekat; tidak ada entrance fallback jika rute gagal.

@@ -1,0 +1,23 @@
+{
+  "scope": "SYNTHETIC_ONLY_NOT_REAL_LOCATION_RESULT",
+  "scenarios": [
+    {
+      "profile": "STRICT_MOTOR_LEGACY",
+      "source_records": 3,
+      "decision_counts": {
+        "ACCESS_UNVERIFIED": 3
+      },
+      "all_rows_accounted": true
+    },
+    {
+      "profile": "BARRIER_ONEWAY_EXPERIMENT_V1",
+      "source_records": 3,
+      "decision_counts": {
+        "ACCEPTED": 3
+      },
+      "all_rows_accounted": true,
+      "market_reconciled": true,
+      "market_road_profile": "BARRIER_ONEWAY_EXPERIMENT_V1"
+    }
+  ]
+}

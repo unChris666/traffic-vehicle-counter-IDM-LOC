@@ -26,7 +26,7 @@ class SourceCompatibilityTests(unittest.TestCase):
  def notebook(self,index):return ''.join(json.loads((ROOT/'area_coverage_market_cpu_2km.ipynb').read_text())['cells'][index]['source'])
  def test_reproduce_legacy_full_config_assertion_then_reopen_unchanged(self):
   with tempfile.TemporaryDirectory() as d:
-   root=Path(d);old=self.packet(root/'sources');new={**old,'building_entrance_profile':'SINGLE_HIGHEST_CLASS_NEAREST_V1'}
+   root=Path(d);old=self.packet(root/'sources');new={**old,'building_entrance_profile':'SINGLE_HIGHEST_CLASS_NEAREST_V1','road_rule_profile':'BARRIER_ONEWAY_EXPERIMENT_V1'}
    before={p.name:p.read_bytes() for p in (root/'sources').iterdir()}
    with self.assertRaises(AssertionError):assert read_json(root/'sources/source_manifest.json')['config']==new
    self.assertEqual(verify_market_source_packet(root/'sources',new)['config'],old)
@@ -35,7 +35,7 @@ class SourceCompatibilityTests(unittest.TestCase):
  def test_actual_cells_accept_legacy_source_and_unblock_calculation_with_optional_poi_failure(self):
   for mode in ['ACQUIRE_ONCE','FROZEN']:
    with self.subTest(mode=mode),tempfile.TemporaryDirectory() as d,patch.dict(os.environ):
-    root=Path(d);old=self.packet(root/'sources');config={**old,'building_entrance_profile':'SINGLE_HIGHEST_CLASS_NEAREST_V1'}
+    root=Path(d);old=self.packet(root/'sources');config={**old,'building_entrance_profile':'SINGLE_HIGHEST_CLASS_NEAREST_V1','road_rule_profile':'BARRIER_ONEWAY_EXPERIMENT_V1'}
     env=self.env(root,config,mode);before=(root/'sources/source_manifest.json').read_bytes()
     with patch('importlib.reload',side_effect=lambda m:m),patch('location_intelligent_market_runtime.acquire_market_network',side_effect=AssertionError('MUST NOT REFETCH')) as fetch,patch('location_intelligent_map_poi.load_optional_osm_pois',return_value={'status':'FAILED','count':None,'rows':None}):
      exec(self.notebook(54),env)
