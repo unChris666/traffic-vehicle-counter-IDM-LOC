@@ -18,7 +18,8 @@ class GoogleNetworkTests(unittest.TestCase):
         for forbidden in ['apt-get','pip\',\'install','acquire_market_network(CONFIG','acquire_osm(CONFIG','from kaggle_secrets import UserSecretsClient']:
             self.assertNotIn(forbidden,execution)
         self.assertIn('GOOGLE_SESSION.credentials',execution)
-        self.assertIn('google_only_render as render_market',execution)
+        self.assertIn('render_esri as render_market',execution)
+        self.assertIn('setup_dependencies()',execution)
     def test_external_and_redirects_blocked_google_allowed(self):
         import requests,urllib.request
         with patch.object(requests.sessions.Session,'request',return_value='GOOGLE') as send,patch.object(

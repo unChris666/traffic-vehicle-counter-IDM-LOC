@@ -1,0 +1,28 @@
+{
+  "schema": "area_esri_validation_v1",
+  "suite": {
+    "command": "python -m unittest discover -s notebooks -p 'area_coverage*tests.py'",
+    "tests": 170,
+    "passed": 155,
+    "skipped": 15
+  },
+  "static_undefined_names": "PASS",
+  "folium_inline_js_node_syntax": "PASS",
+  "esri_tile_probes": {
+    "World_Imagery": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 11500
+    },
+    "World_Street_Map": {
+      "http": 200,
+      "type": "image/jpeg",
+      "bytes": 16947
+    }
+  },
+  "pypi_pinned_versions_available": true,
+  "cloud_upload_tests": "MOCK_ONLY",
+  "native_setup_tests": "MOCK_ONLY",
+  "full_national_gpu_run": "NOT_RUN",
+  "actual_gcs_bq_access": "NOT_VERIFIED_THIS_TASK"
+}

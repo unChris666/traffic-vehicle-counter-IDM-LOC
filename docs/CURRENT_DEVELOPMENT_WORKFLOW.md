@@ -1,5 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Area Esri development —25 Oktober2026 (keputusan terbaru):** setup dependency
+langsung Kaggle; input analitik PBF generation/SHA GCS + snapshot BQ. PMTiles/
+Planetiler dan bundle runtime bukan prasyarat. Browser memakai Esri Imagery/
+Street dan CDN Folium; engine tetap GCS/BQ. ZIP hasil diunggah GCS dengan manifest
+terakhir. [Langkah, pengujian, batas](AREA_ESRI_GCS_DEVELOPMENT.md). Checkpoint
+Google-only/basemap nasional di bawah adalah riwayat yang disupersede untuk
+notebook development ini; algoritma business/GPU tidak berubah.
+
 **Basemap nasional —25 Oktober2026:** persiapan runtime kini juga membangun
 vector PMTiles Indonesia dari PBF GCS, default native0–14/overzoom20. Runtime
 READY hanya setelah basemap READY. Area mengambil range GCS dan meng-inline

@@ -1,5 +1,9 @@
 # Area notebook: input Google Cloud saja
 
+> Superseded untuk notebook development: [GCS/BQ + setup Kaggle + Esri](AREA_ESRI_GCS_DEVELOPMENT.md).
+> PMTiles/runtime GCS bukan prasyarat run Area saat ini. Isi berikut disimpan sebagai riwayat.
+
+
 Update basemap: [persiapan nasional](NATIONAL_BASEMAP_PREPARATION.md) menggantikan
 mode background kosong di versi awal yang didokumentasikan di bawah. Run All
 persiapan kini mencakup PMTiles nasional, dan Area mensyaratkan referensi basemap

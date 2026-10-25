@@ -1,5 +1,9 @@
 # Basemap nasional pada notebook persiapan
 
+> Superseded untuk notebook development: [GCS/BQ + setup Kaggle + Esri](AREA_ESRI_GCS_DEVELOPMENT.md).
+> PMTiles/runtime GCS bukan prasyarat run Area saat ini. Isi berikut disimpan sebagai riwayat.
+
+
 25 Oktober2026, Asia/Jakarta. Owner meminta basemap nasional disertakan sebelum
 menjalankan notebook persiapan. Ini menambah pekerjaan ingestion/display,
 tanpa mengubah seleksi/routing/konektor/Huff atau Traffic counting.
