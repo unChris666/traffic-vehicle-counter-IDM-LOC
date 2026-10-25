@@ -1,5 +1,11 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**GPU V2 —25 Oktober2026:** backend notebook GPU ditingkatkan menjadi jarak
+kandidat FP64, intersection batch dan weighted routing CUDA; CPU reference wajib
+sebelum output/handoff. [Kontrak dan batas](AREA_COVERAGE_GPU_NOTEBOOK.md).
+CPU/business baseline b84c850 tetap utuh. Tes oracle lulus, CUDA nyata belum
+dieksekusi, dan tidak ada run Kaggle diajukan. V1 reachability saja disupersede.
+
 **Notebook GPU hibrida —25 Oktober2026:** owner meminta notebook Area baru tanpa
 perubahan business/perhitungan. [Backend, batas dan setup](AREA_COVERAGE_GPU_NOTEBOOK.md).
 CPU baseline b84c850 tetap utuh; traversal/pruning integer disiapkan untuk CUDA,

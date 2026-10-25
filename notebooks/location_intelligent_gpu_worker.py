@@ -31,8 +31,30 @@ def route(root,scope_path):
     scope=read_json(scope_path);verify_scope_binding(scope,graph,evidence)
     with scoped_routing(scope):return canonical_route(root)
 
+def route_weighted(root,scope_path,audit_path):
+    import location_intelligent_motor_routing as motor
+    from location_intelligent_gpu_weighted import WeightedLookup
+    from location_intelligent_li3_sources import read_json
+    from location_intelligent_li3_core import route as canonical_route
+    from location_intelligent_validator import canonical_hash
+    from location_intelligent_gpu_runtime import _report
+    graph=read_json(root/'graph/graph.json.gz');evidence=read_json(root/'connectors/evidence.json.gz');cache=read_json(scope_path)
+    if cache.get('schema')!='gpu_weighted_cache_v2' or cache['graph_hash']!=canonical_hash(graph) or cache['evidence_hash']!=canonical_hash(evidence):raise ValueError('GPU_WEIGHTED_CACHE_BINDING_MISMATCH')
+    original=motor._path_index;hosts={};audit=cache['audit']
+    def index(g,allowed,blocked,target):
+        if target not in hosts:hosts[target]=WeightedLookup(g,allowed,blocked,target,cache['labels'][target],audit)
+        return hosts[target]
+    motor._path_index=index
+    try:return canonical_route(root)
+    finally:
+        motor._path_index=original
+        _report(audit_path,{'stage':'calculation_weighted','routing':audit})
+
 if __name__=='__main__':
     import argparse,json
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root',required=True,type=Path);parser.add_argument('--scope',required=True,type=Path)
-    args=parser.parse_args();print(json.dumps(route(args.root,args.scope),sort_keys=True,allow_nan=False))
+    parser.add_argument('--weighted',action='store_true');parser.add_argument('--audit-path',type=Path)
+    args=parser.parse_args()
+    result=route_weighted(args.root,args.scope,args.audit_path) if args.weighted else route(args.root,args.scope)
+    print(json.dumps(result,sort_keys=True,allow_nan=False))

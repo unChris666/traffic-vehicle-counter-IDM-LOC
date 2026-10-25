@@ -1,116 +1,135 @@
-# Notebook GPU hibrida — 25 Oktober 2026
+# Area Coverage GPU V2 — 25 Oktober 2026
 
-Status: implementasi/adaptor diuji dengan oracle CPU; **CUDA aktual belum diuji**.
-Tidak ada run Kaggle yang diajukan. Notebook baru disimpan sebagai draft privat
-QUICK_SAVE: https://www.kaggle.com/code/chrisbiran/area-coverage-market-gpu-hybrid/edit
+Status: **backend kode V2 diimplementasikan; CUDA nyata belum dieksekusi**.
+Notebook: https://www.kaggle.com/code/chrisbiran/area-coverage-market-gpu-hybrid/edit
+Tidak ada run Kaggle yang diajukan. Semua angka tes di bawah adalah lokal/oracle,
+bukan hasil CUDA atau benchmark performa lokasi aktual.
 
-## Batas port dan baseline
+## Business baseline tidak berubah
 
-`notebooks/area_coverage_market_gpu_2km.ipynb` adalah notebook baru dengan semua
-helper terlihat dalam cell writefile. Tidak memakai ZIP/bootstrap tersembunyi.
-Notebook CPU tetap byte-identical. Baseline business commit b84c850 dan hashes
-helper tercatat pada AREA_COVERAGE_GPU_BASELINE.json. Generator menolak perubahan
-baseline CPU tanpa rebase eksplisit. CONFIG/MARKET_CONFIG serta semua helper
-CPU disalin tanpa perubahan arti/rumus: kompetitor <=800 m, primer/sekunder,
-nearest valid entrance, satu entrance, node clustering, barrier/oneway, unknown,
-core/zona, 7 km/jam, Python round<=10, Huff dan satuan kapasitas.
+Notebook CPU dan helper business b84c850 tetap utuh. Hash dicatat di
+AREA_COVERAGE_GPU_BASELINE.json. Generator menolak perubahan baseline tanpa
+rebase eksplisit. GPU connector adapter dihasilkan dari control flow/graph
+assembly CPU beku, dengan implementasi batch yang terlihat dalam notebook.
 
-Ini **bukan port seluruh kalkulasi ke GPU**. GEOS/GDAL, pencarian/validasi
-konektor, proyeksi, shortest-path numerik kanonik, Huff dan peta masih CPU.
-Memilih accelerator GPU saja tidak mempercepat operasi Shapely/NetworkX.
-Percepatan keseluruhan belum dibuktikan; jika konektor tetap mendominasi, backend
-ini belum menyelesaikan bottleneck tersebut. Tidak ada janji speedup atau
-kesiapan produksi hanya dari notebook tersedia.
+Kompetitor <=800 m, primer/sekunder/unknown, satu nearest valid entrance,
+125 m search bangunan, source snap tanpa batas numerik, barrier/one-way,
+unknown tidak mengesahkan akses, clustering node yang identik, biaya konektor,
+7 km/jam, Python round<=10, Huff per bangunan, core/zona dan kapasitas tetap.
+Tidak mengklaim akurasi, akses legal atau produksi dari skenario eksperimen.
 
-## Pekerjaan GPU nyata yang disiapkan
+## Target GPU yang kini diimplementasikan
 
-CuPy RawKernel melakukan fixed-point reachability **integer**, secara batch dan
-berarah, tanpa menambahkan edge balik atau mengubah izin. Profil tanpa larangan
-belok menggunakan graph node sederhana. Jika pembatasan belok ada, graph
-node-entry/edge-arrival memelihara transisi edge; tidak boleh reset previous-edge
-pada simpang sehingga larangan belok tidak hilang.
+| Pekerjaan | Backend V2 | CPU yang masih dipakai |
+|---|---|---|
+| Kandidat | Kernel CUDA FP64 point–segment untuk pasangan batch; GPU filter menggunakan padding numerik konservatif | STRtree broad phase untuk kandidat bangunan; canonical scalar distance pada kelompok urutan yang berdekatan |
+| Intersection | Kernel CUDA panjang intersection segmen dengan Polygon/MultiPolygon, outer/holes; kernel primitive untuk barrier line/point | Buffer/proyeksi/endpoint construction scalar, serta fallback boundary/kollinear/geometry unsupported |
+| Routing berbobot | CUDA FP64 reverse edge-state shortest-path, batch target; arah dan blocked transitions tetap | Ekstraksi path/penghitungan forward sum final; canonical graph search hanya untuk kasus ambigu yang diaudit |
+| Kesetaraan | Gate CPU reference wajib | Cold validation menghitung CPU baseline juga; ini terpisah dari fallback normal |
 
-1. Hitung scope yang mungkin dicapai dari seluruh origin connector. Pada scope
-   potential, UNKNOWN boleh menjelaskan ketidakpastian, bukan menerima
-   akses. Semua path dari origin yang relevan tetap ada dalam subgraph.
-2. Hitung reverse reachability target secara batch memakai edge yang allowed
-   True saja. Target yang tak terjangkau tidak memicu pencarian numerik sia-sia.
-3. CPU menjalankan algoritme jarak/hop/edge-ID tie-break baseline pada scope
-   tersebut. Tidak ada konversi bobot float32, pembulatan/quantization jarak,
-   atau penggantian rule threshold dengan hasil GPU yang mendekati saja.
+V1 sebelumnya hanya offload reachability/pruning. V2 bukan sekadar mengaktifkan
+GPU pada notebook: jalur default facade memakai kernel geometri dan weighted
+router baru. Tidak mengklaim seluruh operasi menjadi GPU: GEOS buffer, OSM/BQ,
+CRS, endpoint scalar, graph assembly, Huff dan rendering masih CPU.
 
-GPU dapat memangkas pekerjaan ketika graph mengandung bagian tidak relevan.
-Pada graph yang seluruhnya relevan, transfer/penyiapan GPU dapat menjadi
-**overhead**. Report mencatat original_edges/retained_edges, iterasi dan waktu;
-benchmark lokasi aktual diperlukan sebelum menyimpulkan manfaat.
+### Geometri
 
-## Kontrak eksekusi
+GPU menghitung jarak kandidat secara batch, kemudian interval error numerik
+membentuk shortlist. Scalar GEOS pada shortlist menjaga urutan/tie yang sama;
+padding numerik bukan perubahan radius bisnis. Tidak mengkuantisasi koordinat.
 
-- `GPU_REACHABILITY_CANONICAL_CPU_V1`; device default 0, satu GPU cukup. Tidak
-  mengklaim memakai kedua T4 paralel. Tidak memulai Traffic Counter.
-- GPU wajib: tanpa CuPy/device/kernel preflight yang lulus, dependencies FAILED;
-  tidak ada fallback diam-diam ke CPU yang dilabeli GPU.
-- Jika CuPy belum ada, instal cupy-cuda12x==13.6.0 dan fastrlock==0.8.3 dengan
-  --no-deps agar NumPy/scientific stack tidak diganti. Kedua rilis diverifikasi
-  tersedia di PyPI, bukan klaim versi terbaru. Image Kaggle tetap harus punya
-  driver/CUDA/NVRTC yang kompatibel; kernel preflight adalah pemeriksaan aktual.
-- Preflight GPU membandingkan traversal integer dengan oracle CPU pada graph
-  kecil (one-way, isolasi, self-target, turn transition), sebelum fetch OSM/BQ.
-- Perhitungan bagian 6 tetap memvalidasi input dan evidence asli. Worker GDAL
-  terpisah menerima scope yang terikat hash graph/evidence; patch routing hanya
-  berlaku di worker tersebut, bukan mengubah modul sumber baseline.
-- Bagian 8 memakai adaptor market yang scoped dan dipulihkan pada finally.
-  Facade hanya untuk job berurutan, bukan layanan paralel dalam satu interpreter.
-- CONFIG sumber tetap sama; namespace output GPU terpisah. Code hashes GPU masuk
-  identitas job; software/device/preflight/scope berada pada metadata runtime,
-  bukan angka domain nondeterministik. Hasil REOPEN berbeda dari fresh execution.
+Candidate geometry dibentuk dengan endpoint/buffer acuan, lalu satu gelombang
+kandidat diperiksa batch terhadap footprint/barrier. Kernel mengintegrasikan
+winding sepanjang segmen untuk mengukur bagian di dalam polygon; holes memiliki
+orientasi berlawanan, bukan diisi sebagai footprint. Boundary, vertex-touch,
+kollinearitas, dekat epsilon, gate opening dan tipe unsupported menggunakan
+predicate GEOS acuan dan dicatat sebagai fallback. Tidak menghapus lubang atau
+menyederhanakan polygon untuk mengejar kecepatan.
 
-## Output dan urutan engine
+### Routing berbobot
 
-Output domain tetap result.json, market_buildings.csv, GeoJSON, peta interaktif,
-manifest dan ZIP privat termasuk source snapshots. ZIP GPU juga menyimpan
-metadata GPU dan scope. BQ secret/key tidak disimpan dalam paket.
+Kernel melakukan relax berbobot FP64 atas edge states positif. Label memilih
+cost, hop count, lalu next-edge rank dari ID edge yang diurutkan. Saat first edge
+berbeda, ID pertama menentukan lexical path tie-break. Exact ties ditentukan
+secara deterministik di GPU; near-ties numerik diperlakukan konservatif.
 
-- `gpu_preflight.json`: apakah CUDA nyata/driver/kernel berhasil, nama device,
-  versi CuPy/CUDA/Python. Jangan membaca hasil pengujian oracle sebagai CUDA.
-- `<job>/gpu_runtime.json`: backend, traversal, jumlah edge dan actual_cuda_executed.
-- `<job>/engine_handoff.json`: READY_FOR_TRAFFIC_COUNTER hanya setelah stage output
-  berhasil, checksum market/archive diverifikasi, dan cleanup GPU berhasil.
-  Partial business result tetap PARTIAL; ready adalah kesiapan teknis output.
-  Export gagal/cleanup gagal menjadi NOT_READY. Tidak menjalankan traffic.
+Host mengekstrak path dan memeriksa transisi, hop, target serta reverse sum.
+Jumlah jarak final memakai forward summation CPU yang sama dengan baseline.
+Jika label/pointer ambigu, dekat tie numerik atau sum berbeda, canonical CPU
+index dibuat lazy untuk target tersebut. Alasan dan origin/target fallback
+tersimpan. Tidak menggunakan float32 atau membulatkan bobot jalan.
 
-Urutan yang dituju: Area selesai dan artifact tersimpan -> lepaskan pool GPU ->
-akhiri proses/kernel Area -> Traffic Counter GPU. Pool dibersihkan tanpa
-`deviceReset` yang dapat merusak context library lain; CUDA context kecil dapat
-bertahan sampai proses berakhir. Untuk notebook Kaggle terpisah, **stop sesi GPU
-Area dahulu** sebelum memulai Traffic. Queue/exclusive-worker produksi lintas
-proses belum diimplementasikan oleh notebook ini.
+Oracle lokal bukan bukti kernel CUDA benar. Karena itu ekuivalensi penuh pada
+sumber aktual tetap wajib dan hasil tidak diteruskan jika berbeda.
 
-## Langkah owner
+## Gate sebelum output / Traffic Counter
 
-1. Buka notebook baru, pilih accelerator GPU (T4/T4x2 sesuai ketersediaan), Internet ON.
-2. Add-ons -> Secrets: aktifkan `LocatioIntelligent` untuk notebook baru.
-   Memiliki secret di notebook lama tidak otomatis mengaktifkannya pada notebook baru.
-3. Run All; periksa GPU_PREFLIGHT, readiness dan peta. Simpan/download ZIP privat.
-4. Periksa engine_handoff.json, stop sesi Area, lalu jalankan Traffic Counter GPU.
+1. CuPy/device preflight integer V1 lalu V2: distance, holes, MultiPolygon,
+   boundary, primitive barrier, weighted paths, one-way dan blocked transitions.
+   Dijalankan sebelum OSM/BQ. GPU tidak tersedia/compile gagal -> dependencies
+   FAILED; tidak ada silent CPU-only fallback yang diberi label GPU.
+2. Bagian 6 GPU -> frozen manifest -> shadow CPU reference dari input yang sama.
+   Bandingkan metric buildings, selection/capacity, graph, seluruh entrance,
+   routing/path/distance/status dan keputusan per bangunan secara exact.
+3. Bagian 8 GPU -> CPU reference market dengan layers/POI yang sama. Bandingkan
+   rows termasuk skor Huff, summary, stores, excluded stores, gate, kelompok
+   kompetitor dan metadata cluster. Identity/path output berbeda bukan data
+   business; field tersebut tidak dipakai sebagai pembanding semantic.
+4. Mismatch menyimpan FAIL di gpu_equivalence.json, stage FAILED, output diblok.
+   Tidak otomatis mengganti seluruh hasil dengan CPU dan menyebutnya GPU lulus.
+5. Handoff memerlukan calculation dan market PASS, actual CUDA V2 preflight,
+   output/archive checksum valid dan cleanup berhasil. Tidak memulai traffic.
 
-Jangan menjalankan keduanya bersamaan untuk membandingkan performa. Tidak perlu
-mengubah secret/key ke dalam cell; autentikasi BQ baseline tetap sama.
+**Mode notebook saat ini VALIDATE.** Run pertama juga menjalankan CPU reference
+penuh sehingga bisa lebih lama daripada GPU saja. Reference yang lengkap disimpan
+untuk reopen. Ukur waktu blok GPU dan waktu validation secara terpisah; durasi
+Run All mode validasi bukan benchmark percepatan produksi.
 
-## Validasi yang benar-benar dijalankan di Codex
+## Artefak / audit
 
-- Tidak ada nvidia-smi maupun CuPy/GPU pada workspace; CUDA **NOT_EXECUTED**.
-- Suite Area Coverage: 114 tes; 99 lulus, 15 skip karena kebutuhan worker GDAL.
-- Tes GPU-adaptor memakai oracle CPU eksplisit, bukan fallback produksi. Pada
-  30 graph random berarah/unknown/blocked-turn, reachability, hasil path lengkap
-  dan potential reachability cocok dengan baseline kanonik untuk seluruh
-  pasangan origin/target yang diuji. Scope basi ditolak; tanpa CuPy gagal jelas.
-- Matriks market, gate POI, immutability, notebook AST/helper hashes, business
-  CONFIG dan output-failure handoff diuji. Semua cell notebook belum dieksekusi.
-- Smoke SYNTHETIC dengan scope oracle: selection, capacity, routing, decisions,
-  graph, connectors serta semantic market sama dengan CPU. Manifest diverifikasi.
-  Evidence: results/area_coverage_map/gpu_validation/cpu_oracle_smoke.json,
-  dengan actual_cuda_executed=false. Ini tidak membuktikan kernel CUDA berjalan.
+- gpu_preflight.json: device/CUDA/CuPy dan hasil self-test aktual ketika dijalankan.
+- <job>/gpu_runtime.json: jumlah pasangan GPU, polygon/primitive queries, weighted
+  iterations/targets, query GPU vs fallback, alasan dan referensi kasus fallback.
+- <job>/pilot-gpu-weighted.json.gz: label FP64/hop/next-edge terikat hash graph dan
+  evidence; worker GDAL memvalidasi binding sebelum memakai label.
+- <job>/gpu_equivalence.json: PASS/FAIL dan field mismatch, reference location.
+- Peta, tabel, JSON, CSV, GeoJSON dan ZIP tetap tersedia. ZIP juga berisi CPU
+  reference, hasil comparison, GPU metadata dan kode yang terlihat.
+- <job>/engine_handoff.json: NOT_READY bila mismatch/export/cleanup gagal.
 
-Gate berikutnya adalah Run All owner setelah Add-ons siap: CUDA preflight,
-kesetaraan artifact pada sumber beku, durasi end-to-end dan resource aktual.
+Cold GPU execution vs REOPEN tetap berbeda. Code hashes baru membentuk job baru;
+source snapshot yang cocok dapat dipakai ulang. Source/secret BQ tidak diubah.
+
+## Setup owner
+
+1. Buka notebook, accelerator GPU (satu device 0 digunakan), Internet ON.
+2. Aktifkan secret `LocatioIntelligent` pada notebook ini bila belum aktif.
+3. Run All; periksa preflight V2 dan kedua gate PASS. GPU self-test tidak boleh
+   dianggap sudah lulus hanya karena tes oracle lokal lulus.
+4. Simpan artifact privat, periksa handoff, stop kernel GPU Area, baru jalankan
+   Traffic Counter GPU. Tidak menjalankan dua engine bersamaan.
+
+CuPy CUDA12x 13.6.0 dan fastrlock 0.8.3 diinstal jika perlu tanpa upgrade NumPy.
+Driver/NVRTC image Kaggle tetap harus kompatibel dan dicek oleh preflight nyata.
+Pool dibebaskan tanpa deviceReset; CUDA context berakhir sepenuhnya ketika
+proses/kernel Area berhenti. Scheduler produksi lintas proses belum dibuat.
+
+## Pengujian yang benar-benar dijalankan
+
+- Workspace tidak mempunyai GPU/CuPy: CUDA **NOT_EXECUTED**.
+- Suite Area Coverage: 120 tes; 105 lulus, 15 skip untuk worker terpisah.
+- Recurrence weighted diuji dengan oracle Python pada 35 graph random berarah,
+  blocked-turn/unknown: hasil path/distance sama dengan canonical CPU untuk
+  seluruh pasangan yang diuji. Exact ties deterministik; near-tie memicu audit.
+- Ring orientation/holes dan batched adapter diuji dengan oracle CPU, termasuk
+  target banyak agar koordinat toko tidak salah memakai titik calon toko.
+- Smoke oracle V2 fresh calculation -> mandatory CPU reference -> GPU-adapter
+  market -> CPU market PASS pada tiga building SYNTHETIC, dengan beberapa toko.
+- Gate mismatch diuji menolak hasil. AST, visible helpers/hash dan CONFIG CPU
+  tetap diverifikasi. Artefak: gpu_validation/cpu_oracle_v2_smoke.json,
+  actual_cuda_executed=false. Tidak melaporkan hasil CUDA yang belum dieksekusi.
+
+Gate berikutnya: eksekusi owner di Kaggle, verifikasi kedua perbandingan pada
+snapshot nyata, ukur fallback share, waktu per komponen, transfer dan memory.
+Jika fallback mendominasi atau konektor scalar masih dominan, belum ada bukti
+bahwa target percepatan tercapai. Tidak menjanjikan speedup dari kode saja.

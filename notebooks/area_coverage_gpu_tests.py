@@ -56,19 +56,20 @@ class MarketAdapterTests(unittest.TestCase):
  def test_market_matrix_gate_and_restore_match_canonical(self):
   import area_coverage_market_routing_tests as tests
   from location_intelligent_market_runtime import _MarketRoutes,_market_store_routes,_poi_gate
-  from location_intelligent_gpu_runtime import market_routes_class
+  from location_intelligent_gpu_runtime import weighted_market_routes_class
   from location_intelligent_market_config import get_market_config
   f=tests.MarketRoutingTests()
   with tempfile.TemporaryDirectory() as d:
    root=Path(d);_,package=f.packages(root)
    before=deepcopy(package);cpu=_MarketRoutes(package)
-   cls=market_routes_class(root/'gpu.json',engine_factory=OracleEngine);gpu=cls(package)
+   from area_coverage_gpu_v2_tests import WeightedOracle
+   cls=weighted_market_routes_class(router_factory=WeightedOracle);gpu=cls(package)
    stores=[{'store_key':key} for key in ['candidate','a','b','end']]
    self.assertEqual(_market_store_routes(package,stores,['b0','b1'],cpu,{}),_market_store_routes(package,stores,['b0','b1'],gpu,{}))
    policy=get_market_config()['allocation_requirements'];pois=[{'source_id':'a','store_key':'a','category':'hospital'}]
    args=({'metric_crs':'EPSG:32748'},policy,{'status':'SUCCEEDED'},package,pois,{'features':[]})
    self.assertEqual(_poi_gate(*args,network=cpu),_poi_gate(*args,network=gpu));self.assertEqual(package,before)
-   self.assertFalse(json.loads((root/'gpu.json').read_text())[0]['stats']['actual_cuda_executed'])
+   self.assertFalse(gpu.router.audit['actual_cuda_executed'])
  def test_missing_gpu_never_calls_cpu_fallback(self):
   from location_intelligent_gpu import CupyReachability
   with patch.dict(sys.modules,{'cupy':None}):

@@ -1,0 +1,37 @@
+{
+  "scope": "CPU_ORACLES_ONLY_NOT_CUDA_EXECUTION",
+  "actual_cuda_executed": false,
+  "gpu_v2_algorithm_control": "PASS",
+  "equivalence": {
+    "calculation": {
+      "compared": [
+        "normalized/metric_buildings.json",
+        "building_results/selection.json",
+        "building_results/capacity.json",
+        "graph/graph.json.gz",
+        "connectors/connectors.json.gz",
+        "building_results/routing.json.gz",
+        "building_results/decisions.json.gz"
+      ],
+      "mismatches": [],
+      "reference": "/workspace/scratch/area-map/gpu-v2-oracle-w6llokdx/cpu_reference",
+      "status": "PASS"
+    },
+    "market": {
+      "compared": [
+        "rows",
+        "summary",
+        "stores",
+        "excluded_stores",
+        "attractor_gate",
+        "market_inputs_complete",
+        "competitor_groups",
+        "routing_clusters"
+      ],
+      "mismatches": [],
+      "status": "PASS"
+    },
+    "schema": "gpu_equivalence_v2"
+  },
+  "rows": 3
+}

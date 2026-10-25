@@ -4,7 +4,8 @@ import ast,hashlib,json,re
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'notebooks/area_coverage_market_cpu_2km.ipynb'
 DEST=ROOT/'notebooks/area_coverage_market_gpu_2km.ipynb'
-GPU_FILES=['location_intelligent_gpu.py','location_intelligent_gpu_worker.py','location_intelligent_gpu_runtime.py']
+GPU_FILES=['location_intelligent_gpu.py','location_intelligent_gpu_worker.py','location_intelligent_gpu_runtime.py',
+ 'location_intelligent_gpu_geometry.py','location_intelligent_gpu_weighted.py','location_intelligent_gpu_connectors.py','location_intelligent_gpu_validation.py']
 
 
 def build():
@@ -23,10 +24,12 @@ def build():
         cell['source']=text.splitlines(True)
     notebook['cells'][0]['source']=('''# Area Coverage — GPU hybrid, business baseline unchanged
 
-Notebook baru; notebook CPU tetap utuh. GPU menghitung reachability integer dan
-menyaring scope routing; CPU mempertahankan geometri, angka jarak, tie-break,
-Huff dan ekspor acuan. Ini bukan port seluruh geometri/shortest-path ke GPU.
-Percepatan belum diukur. Tidak ada klaim accuracy/akses legal.
+Notebook baru; notebook CPU tetap utuh. GPU menghitung kandidat jarak FP64, intersection batch dan shortest-path
+berbobot FP64. CPU mempertahankan preprocessing, konstruksi endpoint skalar,
+Huff dan fallback kasus ambigu yang diaudit.
+Percepatan belum diukur. Mode VALIDATE juga menjalankan CPU reference, sehingga
+run validasi pertama memang menambah biaya. Output/handoff diblok jika tidak setara.
+Tidak ada klaim accuracy/akses legal.
 
 Sebelum Run All: pilih accelerator GPU, aktifkan Internet, lalu aktifkan Kaggle
 Secret `LocatioIntelligent` pada notebook ini. Secret tidak disalin dari notebook
@@ -62,28 +65,36 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     config=re.sub(r"activate_notebook_sources\(SOURCE_ROOT/'notebooks',\{[^\n]+\}\)",
                   lambda m:"activate_notebook_sources(SOURCE_ROOT/'notebooks',"+repr(expected)+')',config)
     config=config.replace("  print('CPU; SOURCE:'", "  print('GPU HYBRID; SOURCE:'")
-    config=config.replace("  PILOT=OUTPUT/'pilot'","  PILOT=OUTPUT/'pilot'\n  GPU_REPORT=OUTPUT/'gpu_runtime.json'")
+    config=config.replace("  PILOT=OUTPUT/'pilot'","  PILOT=OUTPUT/'pilot'\n  GPU_REPORT=OUTPUT/'gpu_runtime.json'\n  GPU_EQUIVALENCE=OUTPUT/'gpu_equivalence.json'")
     notebook['cells'][50]['source']=config.splitlines(True)
     calculation=''.join(notebook['cells'][56]['source'])
     calculation=calculation.replace("  from location_intelligent_osm_buildings import prepare_osm_from_network", "  from location_intelligent_gpu_runtime import build_gpu\n  from location_intelligent_osm_buildings import prepare_osm_from_network")
     calculation=calculation.replace("timed_call('build',build,PILOT)","timed_call('build_gpu_hybrid',build_gpu,PILOT,GPU_REPORT,device=GPU_DEVICE)")
+    calculation=calculation.replace("  print('Access status", "  from location_intelligent_gpu_validation import validate_calculation\n  CPU_REFERENCE_PILOT=validate_calculation(PILOT,OUTPUT/'cpu_reference',GPU_EQUIVALENCE)\n  print('Access status")
     notebook['cells'][56]['source']=calculation.splitlines(True)
     allocation=''.join(notebook['cells'][60]['source'])
     allocation=allocation.replace('  from location_intelligent_market_runtime import build_market', '  from location_intelligent_gpu_runtime import build_market_gpu')
     allocation=allocation.replace("MARKET=build_market(CONFIG,MARKET_CONFIG,PILOT,layers,facilities,OUTPUT/'market')",
         "MARKET=build_market_gpu(CONFIG,MARKET_CONFIG,PILOT,layers,facilities,OUTPUT/'market',report_path=GPU_REPORT,device=GPU_DEVICE)")
+    allocation=allocation.replace("  print('MARKET STATUS:", "  from location_intelligent_gpu_validation import validate_market\n  validate_market(CONFIG,MARKET_CONFIG,CPU_REFERENCE_PILOT,layers,facilities,MARKET,OUTPUT/'cpu_reference_market',GPU_EQUIVALENCE)\n  print('MARKET STATUS:")
     notebook['cells'][60]['source']=allocation.splitlines(True)
     export=''.join(notebook['cells'][62]['source'])
-    export=export.replace("    z.writestr('job_config.json'", "    z.writestr('gpu_execution.json',json.dumps({'preflight':GPU_PREFLIGHT,'runtime':read_json(GPU_REPORT) if GPU_REPORT.exists() else [],'profile':'GPU_REACHABILITY_CANONICAL_CPU_V1'},sort_keys=True,indent=2))\n    for f in sorted(OUTPUT.glob('*-gpu-scope.json.gz')):z.write(f,'gpu_runtime/'+f.name)\n    z.writestr('job_config.json'")
+    export=export.replace("    z.writestr('job_config.json'", "    z.writestr('gpu_execution.json',json.dumps({'preflight':GPU_PREFLIGHT,'runtime':read_json(GPU_REPORT) if GPU_REPORT.exists() else [],'profile':'GPU_WEIGHTED_GEOMETRY_V2'},sort_keys=True,indent=2))\n    for f in sorted(OUTPUT.glob('*-gpu-*.json.gz')):z.write(f,'gpu_runtime/'+f.name)\n    z.writestr('job_config.json'")
+    export=export.replace("(PILOT,'pilot'),", "(PILOT,'pilot'),(CPU_REFERENCE_PILOT,'cpu_reference'),(OUTPUT/'cpu_reference_market','cpu_reference_market'),")
+    export=export.replace("    z.writestr('gpu_execution.json'", "    z.writestr('gpu_equivalence.json',json.dumps(read_json(GPU_EQUIVALENCE),sort_keys=True,indent=2))\n    z.writestr('gpu_execution.json'")
     notebook['cells'][62]['source']=export.splitlines(True)
     # Remove CPU-specific instruction about patching only part8; backend changes need new job.
-    notebook['cells'][59]['source']=['## 8. Market allocation — GPU reachability + canonical CPU routing\n',
-        'Backend terpisah; aturan business dan perhitungan tetap identik dengan baseline CPU.\n']
+    notebook['cells'][59]['source']=['## 8. Market allocation — GPU weighted routing + audited geometry fallback\n',
+        'Mode VALIDATE: GPU dan CPU reference harus setara sebelum output dipakai.\n']
     helper_cells=[]
     for name in GPU_FILES:
         helper_cells.append({'cell_type':'code','metadata':{},'execution_count':None,'outputs':[],
             'source':('%%writefile /kaggle/working/area_coverage_gpu_source/notebooks/'+name+'\n'+(ROOT/'notebooks'/name).read_text()).splitlines(True)})
     # Written before dependency preflight; only stdlib is imported at GPU-module import.
+    # All CPU helper writefiles must exist before V2 self-test imports routing.
+    preflight={'cell_type':'code','metadata':{},'execution_count':None,'outputs':[],
+        'source':("if STAGES['dependencies']['status']=='SUCCEEDED':\n try:\n  activate_notebook_sources(SOURCE_ROOT/'notebooks',"+repr(expected)+")\n  from location_intelligent_gpu_validation import gpu_compute_preflight\n  GPU_PREFLIGHT['v2']=gpu_compute_preflight(GPU_DEVICE)\n  GPU_PREFLIGHT['profile']='GPU_WEIGHTED_GEOMETRY_V2'\n  (NOTEBOOK_REPORT_PATH.parent/'gpu_preflight.json').write_text(json.dumps(GPU_PREFLIGHT,indent=2))\n  print('GPU V2 preflight passed')\n except Exception as error:\n  GPU_PREFLIGHT['v2']={'status':'FAILED','error_type':type(error).__name__,'action':'Check GPU/CUDA/NVRTC compatibility; no business result is accepted'}\n  (NOTEBOOK_REPORT_PATH.parent/'gpu_preflight.json').write_text(json.dumps(GPU_PREFLIGHT,indent=2))\n  print(GPU_PREFLIGHT['v2'])\n  fail_notebook_stage('dependencies',error)\n").splitlines(True)}
+    notebook['cells'].insert(50,preflight)
     notebook['cells'][2:2]=helper_cells
     notebook['cells'].append({'cell_type':'markdown','metadata':{},'source':[
         '## Handoff berurutan: Area Coverage → Traffic Counter\n',
@@ -99,6 +110,9 @@ try:
   for name,digest in market_manifest['files'].items():
    if sha(Path(MARKET['output_path'])/name)!=digest:raise RuntimeError('MARKET_MANIFEST_CHANGED')
   if sha(archive)!=read_json(archive_manifest)['sha256']:raise RuntimeError('ARCHIVE_CHANGED')
+  equivalence=read_json(GPU_EQUIVALENCE)
+  if any(equivalence.get(stage,{}).get('status')!='PASS' for stage in ['calculation','market']):raise RuntimeError('GPU_EQUIVALENCE_REQUIRED')
+  if not GPU_PREFLIGHT.get('v2',{}).get('actual_cuda_executed'):raise RuntimeError('GPU_V2_PREFLIGHT_REQUIRED')
   from location_intelligent_gpu import release_gpu
   released=release_gpu(GPU_DEVICE)
   handoff.update(status='READY_FOR_TRAFFIC_COUNTER',area_business_status=MARKET['status'],
@@ -121,7 +135,7 @@ print(handoff)
             cell['execution_count']=None;cell['outputs']=[]
     DEST.write_text(json.dumps(notebook,ensure_ascii=False,indent=1)+'\n')
     report={'baseline_commit':'b84c850','cpu_notebook_sha256':hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
-        'cpu_helpers_sha256':baseline,'gpu_profile':'GPU_REACHABILITY_CANONICAL_CPU_V1',
+        'cpu_helpers_sha256':baseline,'gpu_profile':'GPU_WEIGHTED_GEOMETRY_V2',
         'cuda_execution_status':'NOT_EXECUTED_IN_CODEX','business_configuration':'UNCHANGED'}
     packet=ROOT/'results/area_coverage_map/gpu_kaggle_packet';packet.mkdir(parents=True,exist_ok=True)
     (packet/DEST.name).write_bytes(DEST.read_bytes())

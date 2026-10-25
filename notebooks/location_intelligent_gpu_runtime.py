@@ -2,7 +2,8 @@
 from pathlib import Path
 from threading import RLock
 import json,os,subprocess
-from location_intelligent_gpu import CupyReachability,prepare_scope,PROFILE
+from location_intelligent_gpu import CupyReachability
+PROFILE='GPU_WEIGHTED_GEOMETRY_V2'
 _LOCK=RLock()
 
 
@@ -13,71 +14,82 @@ def _report(path,report):
 
 
 def build_gpu(root,report_path,device=0):
-    """Reuse build unchanged; replace only its route worker for this invocation."""
+    """GPU candidates/intersections + GPU weighted labels; CPU validates contracts."""
     import location_intelligent_li3 as canonical
+    import location_intelligent_li3_connectors as connectors
+    from location_intelligent_gpu_connectors import generate_connectors_gpu
+    from location_intelligent_gpu_weighted import CupyWeightedRouter
     from location_intelligent_li3_sources import read_json,write_json
     from location_intelligent_validator import canonical_hash
-    root=Path(root);original=canonical.run_core
+    root=Path(root);original=canonical.run_core;original_connectors=connectors.generate_connectors
+    def connector_adapter(*args,**kwargs):return generate_connectors_gpu(*args,**kwargs,device=device,audit_path=report_path)
     def runner(pilot,stage):
         if stage!='route':return original(pilot,stage)
         graph=read_json(pilot/'graph/graph.json.gz');evidence=read_json(pilot/'connectors/evidence.json.gz')
-        engine=CupyReachability(device)
-        try:
-            scope=prepare_scope({'graph':graph,**{k:evidence[k] for k in ['connectors','edge_rules','blocked_turns']}},engine)
-        finally:engine.close()
-        scope.update(graph_hash=canonical_hash(graph),evidence_hash=canonical_hash(evidence))
-        path=Path(report_path).parent/(pilot.name+'-gpu-scope.json.gz');write_json(path,scope)
-        _report(report_path,{'stage':'calculation','profile':PROFILE,'stats':scope['stats'],
-                'original_edges':scope['original_edges'],'retained_edges':scope['retained_edges']})
+        allowed={k:r['allowed'] for k,r in evidence['edge_rules'].items()}
+        blocked={(r['from_edge'],r['to_edge']) for r in evidence['blocked_turns']}
+        router=CupyWeightedRouter(graph,allowed,blocked,device)
+        router.compute([c['node_id'] for c in evidence['connectors'] if c['kind']=='TARGET'])
+        cache={'schema':'gpu_weighted_cache_v2','graph_hash':canonical_hash(graph),'evidence_hash':canonical_hash(evidence),
+               'labels':router.export_labels(),'audit':router.audit}
+        path=Path(report_path).parent/(pilot.name+'-gpu-weighted.json.gz');write_json(path,cache)
         completed=subprocess.run(['/usr/bin/python3','-B',str(Path(__file__).with_name('location_intelligent_gpu_worker.py')),
-            '--root',str(pilot),'--scope',str(path)],capture_output=True,text=True,
+            '--root',str(pilot),'--scope',str(path),'--weighted','--audit-path',str(report_path)],capture_output=True,text=True,
             env={**os.environ,'PROJ_NETWORK':'OFF','PYTHONDONTWRITEBYTECODE':'1'})
-        if completed.returncode:raise RuntimeError('GPU_CANONICAL_WORKER_FAILED: '+completed.stderr[-1200:])
+        if completed.returncode:raise RuntimeError('GPU_WEIGHTED_WORKER_FAILED: '+completed.stderr[-1200:])
         return json.loads(completed.stdout)
     with _LOCK:
-        canonical.run_core=runner
+        canonical.run_core=runner;connectors.generate_connectors=connector_adapter
         try:return canonical.build(root)
-        finally:canonical.run_core=original
-
-
-def market_routes_class(report_path,device=0,engine_factory=None):
-    from location_intelligent_market_runtime import _MarketRoutes as CanonicalRoutes
-    class GpuCanonicalRoutes(CanonicalRoutes):
-        def __init__(self,package):
-            engine=engine_factory() if engine_factory else CupyReachability(device)
-            try:scope=prepare_scope(package,engine)
-            finally:engine.close()
-            keep=set(scope['edge_ids']);self.origins=set(scope['origin_nodes']);self.scope=scope
-            filtered={**package,'graph':{**package['graph'],'edges':[e for e in package['graph']['edges'] if e['edge_id'] in keep]}}
-            # Keep all original rule entries for connector eligibility checks.
-            super().__init__(filtered)
-            self.edges={e['edge_id']:e for e in package['graph']['edges']}
-            self.filtered_graph=filtered['graph']
-            _report(report_path,{'stage':'market','profile':PROFILE,'stats':scope['stats'],
-                     'original_edges':scope['original_edges'],'retained_edges':scope['retained_edges']})
-        def reverse(self,target):
-            if target not in self.scope['reachable_nodes']:raise ValueError('GPU_SCOPE_TARGET_MISSING')
-            reached=set(self.scope['reachable_nodes'][target])
-            canonical=super().reverse(target) if reached & self.origins else None
-            def lookup(start):
-                if start not in self.origins:raise ValueError('GPU_SCOPE_ORIGIN_MISSING')
-                return canonical(start) if canonical and start in reached else None
-            return lookup
-        def forward(self,start):
-            if start not in self.origins:raise ValueError('GPU_SCOPE_ORIGIN_MISSING')
-            return super().forward(start)
-        def potential_forward(self,start):
-            if start not in self.origins:raise ValueError('GPU_SCOPE_ORIGIN_MISSING')
-            # Canonical forward already uses all non-False edges in filtered graph.
-            return super().potential_forward(start)
-    return GpuCanonicalRoutes
+        finally:canonical.run_core=original;connectors.generate_connectors=original_connectors
 
 
 def build_market_gpu(config,market_config,pilot,layers,facilities,output,*,report_path,device=0):
     import location_intelligent_market_runtime as canonical
+    import location_intelligent_li3_connectors as connectors
+    from location_intelligent_gpu_connectors import generate_connectors_gpu
     with _LOCK:
-        original=canonical._MarketRoutes
-        adapter=market_routes_class(report_path,device)
+        original=canonical._MarketRoutes;original_connectors=connectors.generate_connectors;instances=[]
+        adapter=weighted_market_routes_class(device,instances)
         canonical._MarketRoutes=adapter
+        connectors.generate_connectors=lambda *a,**kw:generate_connectors_gpu(*a,**kw,device=device,audit_path=report_path)
         try:return canonical.build_market(config,market_config,pilot,layers,facilities,output)
-        finally:canonical._MarketRoutes=original
+        finally:
+            canonical._MarketRoutes=original;connectors.generate_connectors=original_connectors
+            for instance in instances:_report(report_path,{'stage':'market_weighted','routing':dict(instance.router.audit)})
+
+
+def weighted_market_routes_class(device=0,instances=None,router_factory=None):
+    from location_intelligent_market_runtime import _MarketRoutes as CanonicalRoutes
+    from location_intelligent_gpu_weighted import CupyWeightedRouter
+    from location_intelligent_gpu import StateTopology
+    import hashlib
+    from location_intelligent_li3_sources import canonical_bytes
+    class WeightedGpuRoutes(CanonicalRoutes):
+        def __init__(self,package):
+            super().__init__(package);self.package=package;self.hosts={};self.potential_cache={}
+            self.router=(router_factory or CupyWeightedRouter)(package['graph'],self.allowed,self.blocked,device)
+            self.router.compute([c['node_id'] for c in package['connectors'] if c['kind']=='TARGET'])
+            if instances is not None:instances.append(self)
+        def reverse(self,target):
+            if target not in self.hosts:self.hosts[target]=self.router.lookup(target)
+            host=self.hosts[target]
+            def lookup(start):
+                path=host(start)
+                return None if path is None else {'distance_m':path['distance_m'],'path_sha256':hashlib.sha256(canonical_bytes(path['edges'])).hexdigest()}
+            return lookup
+        def forward(self,start):
+            def lookup(target):
+                if target not in self.hosts:self.hosts[target]=self.router.lookup(target)
+                path=self.hosts[target](start)
+                return None if path is None else {'distance_m':path['distance_m']}
+            return lookup
+        def potential_forward(self,start):
+            if start not in self.potential_cache:
+                topology=StateTopology(self.package['graph'],self.allowed,self.blocked,potential=True)
+                engine=CupyReachability(device)
+                try:visited=engine.reach(topology,[topology.source_seeds([start])])[0]
+                finally:engine.close()
+                self.potential_cache[start]={node for node in topology.nodes if any(visited[i] for i in topology.target_seeds(node))}
+            return lambda target:target in self.potential_cache[start]
+    return WeightedGpuRoutes
