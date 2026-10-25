@@ -1,5 +1,10 @@
 # Status implementasi migrasi Area —26 Oktober2026
 
+> Pembaruan: baseline aktual sudah diterima/diverifikasi dan migrasi dilanjutkan.
+> Lihat [release candidate dan bukti aktual](AREA_MODULARIZATION_RELEASE.md).
+> Isi berikut adalah checkpoint historis sebelum upload tiga bagian ZIP.
+
+
 Instruksi owner: freeze -> kontrak/facade -> adapter -> domain/backend ->
 runtime/job -> renderer/export/storage -> release candidate. Implementasi
 mematuhi gate audit: output aktual wajib diverifikasi sebelum algoritme domain

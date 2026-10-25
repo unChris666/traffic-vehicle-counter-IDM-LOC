@@ -43,3 +43,15 @@ def reopen(request):
         'native_result_fingerprint':native['fingerprint'],'equivalence_status':status,
         'reproducibility_status':'NOT_VERIFIED','publication_status':'LOCAL_VERIFIED_ARTIFACT',
         'rows':native['rows'],'summary':native['summary'],'capacity':snapshot.capacity}
+
+
+def execute(request,output):
+    """Execute a typed frozen-input job; worker/backend selection stays explicit."""
+    from .application.pipeline import execute as run
+    return run(request,output)
+
+
+def reopen_result(root):
+    """Read a finalized modular result without source downloads or computation."""
+    from .validation import reopen_execution
+    return reopen_execution(root)

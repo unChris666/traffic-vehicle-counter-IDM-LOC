@@ -1,0 +1,14 @@
+{
+  "gpu_tested_wheel": "traffic_location_engines-0.2.0rc1-py3-none-any.whl",
+  "sha256": "59c0ad6e96349fe990b720bcba1f9db7d2fc3cb9c2bb082c1576b98218af0d91",
+  "kernel_python_files": 36,
+  "kernel_bytes_identical_to_current_rc": true,
+  "post_gpu_test_changes": [
+    "public facade forwarding aliases",
+    "local ZIP/GCS output facade",
+    "timeout termination race handling",
+    "result typing",
+    "package version metadata"
+  ],
+  "post_gpu_test_changes_validation": "targeted unit tests and recorded-label replay; no numerical kernel changes"
+}

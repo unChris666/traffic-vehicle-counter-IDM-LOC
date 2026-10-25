@@ -1,0 +1,44 @@
+{
+  "schema": "area_modular_release_candidate_v1",
+  "package_version": "0.3.0rc1",
+  "scope": "OSM_GPU_MARKET_V5_FROZEN_SOURCES_ONE_ACTUAL_LOCATION",
+  "status": "SCOPED_RC_VERIFIED",
+  "production_ready": false,
+  "gates": {
+    "M0_actual_baseline": "VERIFIED",
+    "M1_contract_facade": "IMPLEMENTED_AND_TESTED",
+    "M2_adapters": "PRIVATE_ACTUAL_SOURCES_VERIFIED",
+    "M3_domain_backend": "FRESH_GPU_PARITY_PASS_V5_AND_V6",
+    "M4_job_runtime": "ISOLATED_WORKERS_FAILURE_LOCK_TIMEOUT_TESTED",
+    "M5_renderer_export_storage": "ACTUAL_RENDER_LOCAL_EXPORT_VERIFIED_GCS_BOUNDARY_MOCKED",
+    "M6_release_candidate": "PASS_IN_DECLARED_SCOPE"
+  },
+  "package_tests": {
+    "total": 125,
+    "passed": 116,
+    "skipped": 9
+  },
+  "notebook_tests": {
+    "total": 184,
+    "passed": 169,
+    "skipped": 15
+  },
+  "recorded_replay_repetitions": 3,
+  "recorded_replay_identical": true,
+  "fresh_gpu_runs_passed": [
+    5,
+    6
+  ],
+  "fresh_gpu_source_only_passed": true,
+  "gpu_cpu_equivalence": "NOT_VERIFIED",
+  "traffic_started": false,
+  "unchanged_candidate_buildings": 22,
+  "remaining_gates": [
+    "full CPU/GPU equivalence for legacy handoff",
+    "new-location/source quality validation",
+    "live GCS result publication integration",
+    "API/UI authentication and job scheduling",
+    "container no-provider-egress test",
+    "production business acceptance and customer-behavior validation"
+  ]
+}

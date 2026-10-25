@@ -1,0 +1,26 @@
+{
+  "calculation_fields": [
+    "graph/graph.json.gz",
+    "connectors/connectors.json.gz",
+    "normalized/metric_buildings.json",
+    "building_results/routing.json.gz",
+    "building_results/decisions.json.gz"
+  ],
+  "capacity_domain_exact": true,
+  "domain_sha256": "ccf757ccf20d039e1cab58bf15411ecaf8e16e98d58c516015f465c2321dbcbc",
+  "golden_sha256": "f7340d3fd913020ddf661dc87674ff204511095f2494bd9b5b0036d7575bbc8c",
+  "input_contains_prior_results": false,
+  "market_fields": [
+    "rows",
+    "summary",
+    "stores",
+    "excluded_stores",
+    "attractor_gate",
+    "market_inputs_complete",
+    "competitor_groups",
+    "routing_clusters"
+  ],
+  "schema": "area_source_only_reference_parity_v1",
+  "source_bundle_sha256": "72408fe67255a16411885ebbdb36ba2e8dd928f6e091620760ce8b222599a28d",
+  "status": "PASS"
+}

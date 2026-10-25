@@ -1,5 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Area actual baseline + modular RC —26 Oktober2026:** tiga bagian input cocok
+receipt/SHA;36.536baris direkonsiliasi,22bangunan calon tetap. Source diekstrak
+menjadi package, isolated job/typed source-only contract/render/export tersedia.
+Fresh GPU T4 version 5 dan source-only RC version 6 cocok baseline.
+Engine menerima sumber tanpa hasil lama; unknown tetap dipertahankan. [Scope, gate dan batas](AREA_MODULARIZATION_RELEASE.md). Tidak
+mengklaim generalisasi lokasi/produksi atau CPU–GPU equivalence sudah selesai.
+
+
 **Area migration started —26 Oktober2026:** source freeze dan boundary
 artefak freeze/reopen beserta adapter ZIP telah dibuat; full domain migration
 belum dimulai karena golden output V5 belum dapat diakses Codex. Collector

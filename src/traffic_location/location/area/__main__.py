@@ -6,12 +6,15 @@ from ...artifacts import read
 
 def main(argv=None):
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('operation',choices=['freeze','reopen']);p.add_argument('--request',required=True)
+    p.add_argument('operation',choices=['freeze','reopen','execute']);p.add_argument('--request',required=True)
     p.add_argument('--output');args=p.parse_args(argv)
-    if args.operation=='freeze' and not args.output:p.error('--output required for freeze')
+    if args.operation in {'freeze','execute'} and not args.output:p.error('--output required for freeze')
     q=read(args.request)
-    if q.get('operation')!=args.operation:raise ValueError('AREA_OPERATION_MISMATCH')
-    value=freeze(q,args.output) if args.operation=='freeze' else reopen(q)
+    if args.operation!='execute' and q.get('operation')!=args.operation:raise ValueError('AREA_OPERATION_MISMATCH')
+    if args.operation=='execute':
+        from .application.pipeline import execute
+        value=execute(q,args.output)
+    else:value=freeze(q,args.output) if args.operation=='freeze' else reopen(q)
     print(json.dumps({k:v for k,v in value.items() if k not in {'rows','capacity'}},ensure_ascii=False))
     return 0
 

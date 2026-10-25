@@ -1,0 +1,57 @@
+{
+  "schema": "area_actual_baseline_audit_v1",
+  "status": "VERIFIED",
+  "source_zip_bytes": 69951800,
+  "source_zip_sha256": "f7340d3fd913020ddf661dc87674ff204511095f2494bd9b5b0036d7575bbc8c",
+  "owner_reported_gcs_generation": 1792953229286584,
+  "live_gcs_generation_rechecked": false,
+  "zip_members": 96,
+  "source_rows": 36536,
+  "selected": 17227,
+  "access_counts": {
+    "ACCEPTED": 1577,
+    "ACCESS_UNVERIFIED": 469,
+    "NO_ROUTE": 146,
+    "NO_VALID_CONNECTOR": 1423,
+    "OVER_TIME_LIMIT": 13612
+  },
+  "market_status_counts": {
+    "COMPETITOR_OWNED": 1074,
+    "INDOMARET_OWNED": 189,
+    "MARKET_CANNIBALIZATION": 17,
+    "OTHERS": 34961,
+    "UNVERIFIED": 290,
+    "VALID": 5
+  },
+  "assigned": 1285,
+  "unassigned": 35251,
+  "candidate_buildings": 22,
+  "market_inputs_complete": true,
+  "outer_gate": "OPEN",
+  "positive_poi_triggers": 12,
+  "participants": {
+    "candidate": 1,
+    "competitor": 9,
+    "indomaret": 8
+  },
+  "competitor_tier_counts": {
+    "PRIMARY": 0,
+    "SECONDARY": 0,
+    "UNVERIFIED_CORRIDOR": 9
+  },
+  "candidate_corridor_known": false,
+  "baseline_gpu_cpu_equivalence": {
+    "calculation": {
+      "reason": "GPU_EXECUTE: no full CPU reference requested",
+      "status": "NOT_RUN"
+    },
+    "market": {
+      "reason": "GPU_EXECUTE: no full CPU reference requested",
+      "status": "NOT_RUN"
+    },
+    "schema": "gpu_equivalence_v2"
+  },
+  "handoff_blocker": "GPU_EQUIVALENCE_REQUIRED",
+  "business_status": "PARTIAL",
+  "raw_snapshots_committed": false
+}

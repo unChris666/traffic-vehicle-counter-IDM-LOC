@@ -1,0 +1,1 @@
+"""Area engine component boundary."""

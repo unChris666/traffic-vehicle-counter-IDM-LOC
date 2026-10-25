@@ -1,0 +1,70 @@
+{
+  "claim_type": "EXPERIMENTAL_SCENARIO",
+  "data_quality_status": "PARTIAL",
+  "environment": {
+    "packages": {
+      "cupy-cuda12x": "13.6.0",
+      "folium": "0.20.0",
+      "networkx": "3.6.1",
+      "numpy": "2.1.3",
+      "pandas": "2.3.3",
+      "pyproj": "3.7.2",
+      "shapely": "2.1.2"
+    },
+    "python": "3.13.15"
+  },
+  "execution_status": "SUCCEEDED",
+  "gpu_cpu_equivalence": "NOT_VERIFIED",
+  "native_domain_sha256": "ccf757ccf20d039e1cab58bf15411ecaf8e16e98d58c516015f465c2321dbcbc",
+  "operation": "compute_gpu_sources",
+  "parity_scope": {
+    "calculation_compared": [],
+    "compared": [],
+    "fresh_gpu_executed": true,
+    "golden_result_required": false,
+    "mismatches": [],
+    "prior_result_used": false,
+    "status": "NOT_REQUESTED"
+  },
+  "presentation_ref": "presentation/views/esri-a7ce27e77a1b5402c85fed06e972495090be041d76972d22350022164648bdb2/market_map.html",
+  "production_ready": false,
+  "result_version": "27db5997d7726083fe6bca52353c243fcadaa733368c7a14fb2accb0e9c11ee4",
+  "schema_version": "area_execution_result_v1",
+  "source_zip_sha256": "72408fe67255a16411885ebbdb36ba2e8dd928f6e091620760ce8b222599a28d",
+  "summary": {
+    "assigned": 1285,
+    "candidate_whole_buildings": 22,
+    "market_status_counts": {
+      "COMPETITOR_OWNED": 1074,
+      "INDOMARET_OWNED": 189,
+      "MARKET_CANNIBALIZATION": 17,
+      "OTHERS": 34961,
+      "UNVERIFIED": 290,
+      "VALID": 5
+    },
+    "reason_counts": {
+      "AREA_BELOW_MIN": 4547,
+      "AREA_NOT_BELOW_MAX": 576,
+      "CANDIDATE_ACCESS_ACCESS_UNVERIFIED": 467,
+      "CANDIDATE_ACCESS_NO_ROUTE": 145,
+      "CANDIDATE_ACCESS_NO_VALID_CONNECTOR": 1419,
+      "CANDIDATE_ACCESS_OVER_TIME_LIMIT": 13568,
+      "CLASS_UNSUPPORTED": 1488,
+      "EXCLUSIVE_100M_CORE": 288,
+      "HUFF_ROUTE_DISTANCE": 962,
+      "NOT_ELIGIBLE_RESIDENTIAL": 53,
+      "OUTSIDE_RADIUS": 12698,
+      "OVERLAPPING_CORES_HUFF": 35,
+      "PRIMARY_CORRIDOR_UNVERIFIED": 290
+    },
+    "rows": 36536,
+    "unassigned": 35251
+  },
+  "evidence": {
+    "notebook": "chrisbiran/area-modular-v5-frozen-parity",
+    "version": 6,
+    "source_input_private": true,
+    "raw_result_sha256": "7923616efc65307a542c3192dcfaf79740e687b763e526b4373975aee5163b25",
+    "comparison_report_sha256": "d571b505d53548603d77f5b1765067c8be90b212970a8d83866f8330d2892dc5"
+  }
+}
