@@ -72,7 +72,7 @@ class CupyWeightedRouter:
       }
       unsigned char uncertain=0;
       if(isfinite(best)){
-        double tolerance=256.0*2.2204460492503131e-16*fmax(1.0,fabs(best))*fmax(1,bh);
+        double tolerance=256.0*2.2204460492503131e-16*fmax(1.0,fabs(best))*fmax(1.0,(double)bh);
         for(long long p=offsets[e];p<offsets[e+1];p++){
           int f=successors[p];if(f==bn)continue;
           double value=weights[e]+d[(long long)f*batch+c];

@@ -133,3 +133,32 @@ Gate berikutnya: eksekusi owner di Kaggle, verifikasi kedua perbandingan pada
 snapshot nyata, ukur fallback share, waktu per komponen, transfer dan memory.
 Jika fallback mendominasi atau konektor scalar masih dominan, belum ada bukti
 bahwa target percepatan tercapai. Tidak menjanjikan speedup dari kode saja.
+
+## Perbaikan CompileException routing —25 Oktober 2026
+
+Bug kernel direproduksi memakai NVRTC 12.8 tanpa GPU. `fmax(1,bh)` mempunyai
+argumen `(int,int)` dan ambigu antara overload float/double; compile relax.cu
+berhenti pada baris tolerance. Diperbaiki menjadi `fmax(1.0,(double)bh)` agar
+FP64 eksplisit. Nilai max/hop dan kebijakan numerik tidak berubah.
+
+Lima kernel diuji ulang ke PTX pada compute_75 (T4) dan compute_80: 10/10 PASS.
+Ini compile-only, **bukan eksekusi device** atau benchmark GPU. Bukti before/fixed
+tersimpan sebagai gpu_validation/nvrtc_compile_before.json dan
+nvrtc_compile_fixed.json. Tool maintainer `notebooks/check_gpu_nvrtc.py` dapat
+mengulang pengujian dengan standalone library NVRTC; tidak membutuhkan CuPy/GPU.
+
+Notebook sekarang eager-compile semua kernel sebelum functional self-test dan
+sebelum OSM/BQ. Hasil per kernel ada di kernel_compilation.json; kegagalan
+menyimpan `<kernel>_compile.log` serta compiler_log lengkap di gpu_preflight.json.
+Generic auth/BQ exception messages tidak ditambahkan ke diagnostic publik.
+
+dependencies FAILED sengaja memblok configuration dan stage berikutnya.
+Memperbaiki source kompilasi membuat preflight bisa diteruskan; gate tidak
+bypass dan bukan diubah menjadi sukses palsu. Muat notebook versi terbaru dan
+Run All agar cell helper serta hash source diperbarui bersama. Tidak perlu
+mengubah izin BQ atau setting accelerator untuk bug overload ini.
+
+Regresi terkini: 123 tes Area Coverage, 108 lulus dan 15 skip. Tiga tes baru
+memeriksa persistensi compile log, status fail dan pembedaan compile vs device
+execution, termasuk larangan mencetak generic credential exception. Tidak ada
+run penuh Kaggle yang diajukan oleh perbaikan ini.

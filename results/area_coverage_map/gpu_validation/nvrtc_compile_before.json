@@ -1,0 +1,58 @@
+{
+  "scope": "NVRTC_COMPILE_ONLY_NO_GPU_EXECUTION",
+  "actual_cuda_executed": false,
+  "nvrtc_version": "12.8",
+  "status": "FAIL",
+  "kernels": [
+    {
+      "file": "location_intelligent_gpu.py",
+      "kernel": "propagate",
+      "architecture": "compute_75",
+      "source_sha256": "d5eedc098bff5d211b89b78f4c47214ec3c58f95c766a616dd763b836c9c8c5d",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 2353,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "distances",
+      "architecture": "compute_75",
+      "source_sha256": "54cd4298fb5965d7cc9226fe85534c8b50bf4c31e12b6f77049979b946d390a1",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 3748,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "polygon_lengths",
+      "architecture": "compute_75",
+      "source_sha256": "b113766aecb180ea46b329c4f61f2c7e63fc57d69fd12e79d3ae631dc51600d9",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 8883,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_geometry.py",
+      "kernel": "primitive_hits",
+      "architecture": "compute_75",
+      "source_sha256": "5e062fe349d086371905d0561b58f32131137b676fcdee144c048fadc324fbfa",
+      "compile_status": "PASS",
+      "nvrtc_result": 0,
+      "ptx_bytes": 10974,
+      "compiler_log": ""
+    },
+    {
+      "file": "location_intelligent_gpu_weighted.py",
+      "kernel": "relax",
+      "architecture": "compute_75",
+      "source_sha256": "ad17512b59b853d60953525574a4c6bae5153380f60fca2d731e18e5b815b8d0",
+      "compile_status": "FAIL",
+      "nvrtc_result": 6,
+      "ptx_bytes": 0,
+      "compiler_log": "relax.cu(18): error: more than one instance of overloaded function \"fmax\" matches the argument list:\n            function \"fmax(float, float)\" (declared implicitly)\n            function \"fmax(double, double)\" (declared implicitly)\n            argument types are: (int, int)\n          double tolerance=256.0*2.2204460492503131e-16*fmax(1.0,fabs(best))*fmax(1,bh);\n                                                                             ^\n\n1 error detected in the compilation of \"relax.cu\".\n"
+    }
+  ]
+}

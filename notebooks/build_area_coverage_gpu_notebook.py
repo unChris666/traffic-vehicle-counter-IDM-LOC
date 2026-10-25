@@ -5,7 +5,7 @@ ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'notebooks/area_coverage_market_cpu_2km.ipynb'
 DEST=ROOT/'notebooks/area_coverage_market_gpu_2km.ipynb'
 GPU_FILES=['location_intelligent_gpu.py','location_intelligent_gpu_worker.py','location_intelligent_gpu_runtime.py',
- 'location_intelligent_gpu_geometry.py','location_intelligent_gpu_weighted.py','location_intelligent_gpu_connectors.py','location_intelligent_gpu_validation.py']
+ 'location_intelligent_gpu_geometry.py','location_intelligent_gpu_weighted.py','location_intelligent_gpu_connectors.py','location_intelligent_gpu_validation.py','location_intelligent_gpu_diagnostics.py']
 
 
 def build():
@@ -93,7 +93,7 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     # Written before dependency preflight; only stdlib is imported at GPU-module import.
     # All CPU helper writefiles must exist before V2 self-test imports routing.
     preflight={'cell_type':'code','metadata':{},'execution_count':None,'outputs':[],
-        'source':("if STAGES['dependencies']['status']=='SUCCEEDED':\n try:\n  activate_notebook_sources(SOURCE_ROOT/'notebooks',"+repr(expected)+")\n  from location_intelligent_gpu_validation import gpu_compute_preflight\n  GPU_PREFLIGHT['v2']=gpu_compute_preflight(GPU_DEVICE)\n  GPU_PREFLIGHT['profile']='GPU_WEIGHTED_GEOMETRY_V2'\n  (NOTEBOOK_REPORT_PATH.parent/'gpu_preflight.json').write_text(json.dumps(GPU_PREFLIGHT,indent=2))\n  print('GPU V2 preflight passed')\n except Exception as error:\n  GPU_PREFLIGHT['v2']={'status':'FAILED','error_type':type(error).__name__,'action':'Check GPU/CUDA/NVRTC compatibility; no business result is accepted'}\n  (NOTEBOOK_REPORT_PATH.parent/'gpu_preflight.json').write_text(json.dumps(GPU_PREFLIGHT,indent=2))\n  print(GPU_PREFLIGHT['v2'])\n  fail_notebook_stage('dependencies',error)\n").splitlines(True)}
+        'source':("if STAGES['dependencies']['status']=='SUCCEEDED':\n try:\n  activate_notebook_sources(SOURCE_ROOT/'notebooks',"+repr(expected)+")\n  from location_intelligent_gpu_diagnostics import compile_cuda_kernels,diagnostic\n  GPU_PREFLIGHT['kernel_compilation']=compile_cuda_kernels(NOTEBOOK_REPORT_PATH.parent,GPU_DEVICE)\n  from location_intelligent_gpu_validation import gpu_compute_preflight\n  GPU_PREFLIGHT['v2']=gpu_compute_preflight(GPU_DEVICE)\n  GPU_PREFLIGHT['profile']='GPU_WEIGHTED_GEOMETRY_V2'\n  GPU_PREFLIGHT['status']='SUCCEEDED'\n  (NOTEBOOK_REPORT_PATH.parent/'gpu_preflight.json').write_text(json.dumps(GPU_PREFLIGHT,indent=2))\n  print('GPU V2 preflight passed')\n except Exception as error:\n  from location_intelligent_gpu_diagnostics import diagnostic\n  GPU_PREFLIGHT['v2']=diagnostic(error,'gpu_v2_preflight')\n  GPU_PREFLIGHT['status']='FAILED'\n  (NOTEBOOK_REPORT_PATH.parent/'gpu_preflight.json').write_text(json.dumps(GPU_PREFLIGHT,indent=2))\n  print(GPU_PREFLIGHT['v2'])\n  print('GPU compile details:',NOTEBOOK_REPORT_PATH.parent/'kernel_compilation.json')\n  fail_notebook_stage('dependencies',error)\n").splitlines(True)}
     notebook['cells'].insert(50,preflight)
     notebook['cells'][2:2]=helper_cells
     notebook['cells'].append({'cell_type':'markdown','metadata':{},'source':[
