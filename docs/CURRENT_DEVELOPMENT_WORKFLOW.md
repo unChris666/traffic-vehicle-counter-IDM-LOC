@@ -1,5 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Nasional / pengecualian BQ —25 Oktober2026:** owner meminta sumber Indonesia
+nasional di GCS, bobot/video/config dan build container terkunci; BQ boleh live.
+Owner melaporkan CRUD Kaggle PASS untuk feeder-location-intelligent/us-central1.
+[Rencana dan status ingestion](NATIONAL_DATA_DEPLOYMENT_PLAN.md). PBF nasional
+tersedia menurut probe HTTP; upload, indeks/adaptor, Overture/basemap nasional
+dan container belum terbukti selesai. Hasil BQ per job perlu dipin untuk replay.
+Ketentuan ini menggantikan larangan live-BQ pada checkpoint GCS di bawah.
+
 **GCS / engine tanpa provider live —25 Oktober2026:** owner menetapkan data API
 disiapkan dahulu dalam GCS; engine menghitung dari input tersimpan. Ingestion
 terpisah, GCS staging lokal, snapshot/model/config immutable dan manifest wajib.
