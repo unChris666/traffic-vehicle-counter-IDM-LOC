@@ -91,3 +91,44 @@ parent byte-identical, corrupt input, payload berbeda, checksum salah,
 referensi PBF berbeda, recovery terputus dan diagnostik kode aman. Ekstraksi
 CLI pada fixture di-stub; tidak mengklaim full run nasional/GPU atau upload
 GCS baru sudah berhasil. Bukti: results/area_coverage_map/pbf_provenance_validation.
+
+## Allocation scope V5 —26 Oktober2026
+
+Owner menetapkan: verifikasi bagian6 -> POI pemicu400m -> kompetitor dan
+Indomaret <=800m -> akses toko -> reuse rute per node -> alokasi per bangunan
+-> agregasi. Jarak zona memakai Geod/geodesik; akses toko tetap graph motor.
+Snapshot BQ/POI2km boleh digunakan ulang sebagai inventory, bukan seluruhnya
+menjadi target routing. Semua POI dikeluarkan dari daftar target konektor.
+Gate tidak memerlukan connector calon/POI atau traversal graph. Missing POI
+masih UNKNOWN; tanpa pemicu hanya zona800–2000m ditahan. Radius400m berlaku
+pada POI pemicu, bukan radius minimum/maksimum residential yang berubah.
+
+Kategori pemicu lama dipertahankan. Klaster restoran tetap minimal5bangunan
+unik, luas>=40m² dan jarak antarpasangan<=200m, satu koridor. Karena konektor POI
+dihapus, bukti koridor memakai nama/ref ruas terdekat melalui indeks spasial;
+ini asumsi geometris yang dicatat sebagai NEAREST_ROAD_NAME_REF_ASSUMPTION,
+bukan bukti akses. Tie jalan berbeda tanpa token bersama tetap UNVERIFIED.
+Tidak ada pencarian konektor atau routing untuk restoran.
+
+Adapter allocation-only scoped berlaku pada GPU dan pembanding CPU sekaligus,
+dipulihkan setelah sukses/gagal. Fungsi domain/baseline CPU, kernel, source
+snapshot dan aturan Huff/core/time tidak diubah. Kebijakan+hash adapter masuk
+identity market sehingga hasil lama tidak dipakai sebagai alokasi baru.
+CODE_SHA calculation mengecualikan hanya module allocation baru agar manifest
+bagian6 tetap dapat dipakai. Saat menambah modul domain lain jangan mengecualikan
+hashnya. Modul allocation tetap terverifikasi hash dan ikut archive source.
+BQ peserta Indomaret/kompetitor di luar800m tidak dirouting/tidak diberi skor;
+legacy excluded_stores memakai label OUTSIDE_COMPETITOR_CALCULATION_RADIUS
+untuk kedua kind, kolom kind tetap membedakannya.
+
+Run All pada draft baru di session yang sama akan membuka kembali bagian6
+jika manifest/cache masih utuh. Bagian8 mencetak `Market scope: routing N store
+targets; POI routing disabled`, lalu log locating hanya berisi target toko.
+JumlahN mengikuti snapshot aktual, tidak diasumsikan. Target toko yang aksesnya
+sulit masih dapat mahal; tidak ada janji seluruh konektor pasti tersedia.
+Hasil tersimpan sebagai versi market baru, bukan overwrite baseline.
+
+Regresi184tes:169lulus,15skip; tes gate tanpa graph/connector, batas800m kedua
+jenis toko, POI399/401m, missingPOI unknown, klaster restoran5vs4, isolasi policy,
+penghapusan targetPOI dan pemulihan scope ketika error. Full Kaggle allocation
+baru belum dieksekusi. Bukti lokal: results/area_coverage_map/market_scope_validation.

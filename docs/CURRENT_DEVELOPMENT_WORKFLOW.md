@@ -1,5 +1,11 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Allocation V5 —26 Oktober2026:** POI pemicu <=400m tanpa routing;
+kompetitor/Indomaret peserta <=800m. Reuse bagian6 dan rute per node, Huff/core
+utuh. Policy allocation berversi terpisah agar cache calculation tetap dapat
+dipakai. [Aturan dan batas](AREA_ESRI_GCS_DEVELOPMENT.md).
+
+
 **PBF provenance recovery —26 Oktober2026:** adapter menambahkan checksum
 road-derived features dan validasi dini. Cache legacy utuh dipulihkan ke revisi
 lokal baru dengan manifest baru; parent/PBF/extract dipertahankan. Kode error

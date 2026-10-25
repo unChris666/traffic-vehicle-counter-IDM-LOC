@@ -66,7 +66,7 @@ class ExecutionModeTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);env={'begin_notebook_stage':lambda *a:True,'finish_notebook_stage':lambda *a:None,
                 'fail_notebook_stage':lambda stage,error:(_ for _ in ()).throw(error),
-                'CONFIG':{},'MARKET_CONFIG':{},'PILOT':root,'layers':{},'facilities':{},'OUTPUT':root,
+                'CONFIG':{},'MARKET_CONFIG':__import__('location_intelligent_market_config').get_market_config(),'PILOT':root,'layers':{},'facilities':{},'OUTPUT':root,
                 'GPU_REPORT':root/'gpu.json','GPU_DEVICE':0,'GPU_VALIDATION_MODE':'GPU_EXECUTE',
                 'GPU_EQUIVALENCE':root/'eq.json','display':lambda *a:None,'report':{'source_records':0}}
             import pandas as pd
