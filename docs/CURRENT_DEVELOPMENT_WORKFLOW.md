@@ -1,5 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Audit modularisasi Area —26 Oktober2026:** owner melaporkan notebook sukses;
+source Kaggle identik dengan baseline V5. Audit memperbolehkan rencana migrasi
+bertahap, dengan gate freeze/verifikasi output aktual sebelum ekstraksi domain.
+Package LI4/LI5 belum mewakili seluruh AreaGPU/market. [Temuan,29file rancangan,
+M0–M6 dan acceptance criteria](AREA_COVERAGE_MODULARIZATION_AUDIT_20261026.md).
+Tidak mengubah implementasi engine atau mengklaim parity/stabilitas produksi.
+
+
 **Allocation V5 —26 Oktober2026:** POI pemicu <=400m tanpa routing;
 kompetitor/Indomaret peserta <=800m. Reuse bagian6 dan rute per node, Huff/core
 utuh. Policy allocation berversi terpisah agar cache calculation tetap dapat

@@ -1,5 +1,10 @@
 # Audit kesiapan modularisasi Area Coverage
 
+> Pembaruan baseline OSM/GPU/Market V5 tersedia pada
+> [audit26Oktober2026](AREA_COVERAGE_MODULARIZATION_AUDIT_20261026.md).
+> Dokumen di bawah tetap audit historis N1/LI-4/LI-5.
+
+
 24 Oktober 2026, Asia/Jakarta. **AUDIT SAJA — IMPLEMENTASI MENUNGGU PERSETUJUAN.**
 Acuan pemeriksaan repository: commit `0564ae87b606db047f8aa906bc072a975a1ce0d8`.
 Instruksi owner terbaru membatasi pekerjaan ini pada audit, bukan kelanjutan
