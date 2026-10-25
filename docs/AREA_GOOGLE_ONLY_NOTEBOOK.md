@@ -43,8 +43,9 @@ harus dibuat lewat job ingestion TERPISAH terlebih dahulu.
 
 Notebook `notebooks/area_gcs_runtime_preparation.ipynb` adalah versi preparation
 pada https://www.kaggle.com/code/chrisbiran/indonesia-gcs-source-ingestion-cpu/edit.
-Aktifkan Secret LocatioIntelligent, gunakan image/package environment yang sama
-dengan notebook Area, lalu Run All interaktif. Ia mengambil paket dari provider
+Aktifkan Secret LocatioIntelligent, pilih accelerator/image yang sama dengan
+Area (T4x2), lalu Run All interaktif. Komputasi preparation tetap CPU; pemilihan
+image GPU menjaga paket ilmiah kompatibel. Ia mengambil paket dari provider
 hanya pada INGESTION ini dan mengunggah runtime/native/frontend ke GCS. Tidak
 menjalankan engine/GPU, BQ, atau mengunduh PBF Indonesia lagi.
 Jika CPU dan GPU image berbeda paket ilmiahnya, preparation perlu memakai image
