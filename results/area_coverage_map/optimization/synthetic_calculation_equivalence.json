@@ -1,0 +1,44 @@
+{
+  "scope": "SYNTHETIC_FROZEN_PILOT_ONLY",
+  "all_equal": true,
+  "artifacts_compared": [
+    "building_results/selection.json",
+    "building_results/capacity.json",
+    "building_results/routing.json.gz",
+    "building_results/decisions.json.gz",
+    "normalized/metric_buildings.json",
+    "connectors/connectors.json.gz"
+  ],
+  "timings": [
+    {
+      "duration_seconds": 0.1034688619984081,
+      "stage": "selection_capacity_projection",
+      "status": "SUCCEEDED"
+    },
+    {
+      "duration_seconds": 0.04857318499853136,
+      "stage": "road_graph",
+      "status": "SUCCEEDED"
+    },
+    {
+      "duration_seconds": 0.04598393599735573,
+      "stage": "connectors",
+      "status": "SUCCEEDED"
+    },
+    {
+      "duration_seconds": 0.06081296899355948,
+      "stage": "graph_diagnostics",
+      "status": "SUCCEEDED"
+    },
+    {
+      "duration_seconds": 0.10151616099756211,
+      "stage": "routing",
+      "status": "SUCCEEDED"
+    },
+    {
+      "duration_seconds": 0.0012412389987730421,
+      "stage": "decisions_export",
+      "status": "SUCCEEDED"
+    }
+  ]
+}

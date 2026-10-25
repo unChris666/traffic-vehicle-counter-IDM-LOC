@@ -121,17 +121,13 @@ def acquire_buildings(config, output, *, extension_directory=None, partition_ind
 
 def normalize_cache(raw_path, cache, config):
     """Runs under GDAL worker: same original WKB normalization and selection input."""
-    from location_intelligent_osm_buildings import normalize_source as normalize
     from location_intelligent_validator import canonical_hash, context_hash
     cache = Path(cache);cache.mkdir(parents=True, exist_ok=False)
     raw = read_json(raw_path)
     if raw['truncated'] or not raw['bounded_query_complete']:
         raise ValueError('Incomplete building input')
-    features = normalize(raw)
-    osm_diagnostics=None
-    if raw.get('provider')=='OPENSTREETMAP':
-        from location_intelligent_osm_buildings import normalize_osm
-        _,osm_diagnostics=normalize_osm(raw,with_diagnostics=True)
+    from location_intelligent_osm_buildings import cached_normalization
+    features,osm_diagnostics=cached_normalization(raw,cache/'normalization_cache.json')
     write_json(cache/'raw_probe.json.gz', raw)
     write_json(cache/'buildings.geojson', features)
     stamp = raw['acquired_at']

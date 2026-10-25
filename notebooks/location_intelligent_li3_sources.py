@@ -95,3 +95,27 @@ def acquire_overpass(query, endpoints, timeout, max_bytes, session=None):
         except requests.RequestException as exc:
             attempt.update(status='REQUEST_ERROR', error_type=type(exc).__name__, error=str(exc)[:300])
     return {'status': 'RETRIEVAL_FAILED', 'payload': None, 'attempts': attempts}
+
+
+
+def timed_call(label, function, *args, **kwargs):
+    """Operational timing outside frozen result packets; domain outputs unchanged."""
+    import time,os
+    started=time.perf_counter();state='FAILED'
+    print('Calculation: '+label+' START',flush=True)
+    try:
+        result=function(*args,**kwargs);state='SUCCEEDED';return result
+    finally:
+        elapsed=time.perf_counter()-started
+        print('Calculation: '+label+' '+state+' '+format(elapsed,'.3f')+' s',flush=True)
+        target=os.environ.get('LI_PERFORMANCE_REPORT')
+        if target:
+            try:
+                path=Path(target);path.parent.mkdir(parents=True,exist_ok=True)
+                rows=read_json(path) if path.exists() else []
+                if not isinstance(rows,list):raise ValueError('Invalid timing journal')
+                rows.append({'stage':label,'status':state,'duration_seconds':elapsed})
+                tmp=path.with_suffix('.partial');write_json(tmp,rows);tmp.replace(path)
+            except (OSError,ValueError,TypeError):
+                # Telemetry must not mask domain success or the original failure.
+                print('Calculation timing: journal unavailable; console duration retained',flush=True)

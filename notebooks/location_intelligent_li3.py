@@ -24,6 +24,8 @@ def run_core(root, stage):
     result = subprocess.run(cmd, capture_output=True, text=True, env=env)
     if result.returncode:
         raise RuntimeError('Core stage failed: '+stage+' '+result.stderr[-1800:]+result.stdout[-1800:])
+    for line in result.stderr.splitlines():
+        if line.startswith('Normalization cache:'):print(line,flush=True)
     return json.loads(result.stdout)
 
 
@@ -173,7 +175,8 @@ def build(root):
     if canonical_hash(f) != expected:
         raise ValueError('Frozen configuration changed')
     f['config_hash'] = expected
-    prep = run_core(root, 'prepare')
+    from location_intelligent_li3_sources import timed_call
+    prep = timed_call('selection_capacity_projection',run_core,root,'prepare')
     roads = read_json(root/'raw/osm_roads.json.gz') if (root/'raw/osm_roads.json.gz').exists() else {'status': 'SOURCE_MISSING'}
     feature_path, warnings = select_feature_source(root)
     if f.get('building_network_timestamp_warning'):
@@ -184,7 +187,7 @@ def build(root):
     features = read_json(feature_path) if feature_path.exists() else {'status': 'SOURCE_MISSING'}
     resolved = {'road_source': 'raw/osm_roads.json.gz', 'feature_source': str(feature_path.relative_to(root)), 'warnings': warnings}
     write_json(root/'config/resolved_sources.json', resolved)
-    base = build_graph(roads, features, f)
+    base = timed_call('road_graph',build_graph,roads,features,f)
     write_json(root/'diagnostics/source_graph.json', base['diagnostics'])
     if base['graph'] is None:
         selection = read_json(root/'building_results/selection.json')
@@ -196,7 +199,7 @@ def build(root):
     write_json(root/'graph/base_graph.json.gz', base['graph'])
     write_json(root/'graph/base_edge_sources.json.gz', base['edge_sources'])
     metrics = read_json(root/'normalized/metric_buildings.json')
-    package = generate_connectors(base, metrics, features, f)
+    package = timed_call('connectors',generate_connectors,base,metrics,features,f)
     for edge in package['graph']['edges']:
         edge['access_allowed'] = package['edge_rules'][edge['edge_id']]['allowed']
     selection = read_json(root/'building_results/selection.json')
@@ -212,10 +215,10 @@ def build(root):
     write_json(root/'connectors/connectors.json.gz', package['connectors'])
     write_json(root/'connectors/rejected.json.gz', package['rejected_candidates'])
     write_json(root/'diagnostics/connectors.json', package['diagnostics'])
-    gd = graph_diagnostics(package['graph'], package['edge_rules'], f['diagnostic_gap_m'])
+    gd = timed_call('graph_diagnostics',graph_diagnostics,package['graph'],package['edge_rules'],f['diagnostic_gap_m'])
     write_json(root/'diagnostics/graph.json', gd)
-    outcome = run_core(root, 'route')
-    return finalize(root, package, prep, warnings)
+    outcome = timed_call('routing',run_core,root,'route')
+    return timed_call('decisions_export',finalize,root,package,prep,warnings)
 
 
 def finalize(root, package=None, prep=None, warnings=None):

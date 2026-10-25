@@ -22,8 +22,7 @@ def prepare(root):
     context = read_json(cache/'context.json')
     manifest = read_json(cache/'manifest.json')
     # The retained source packet includes raw WKB and the bounded-query proof.
-    # Re-normalize and compare; do not rely on undocumented manual edits.
-    from location_intelligent_osm_buildings import normalize_source as normalize
+    # Verify content/code/runtime-bound normalization; old packets recompute.
     raw = read_json(cache/'raw_probe.json.gz')
     planned = frozen['policy']['sources']['buildings']
     if raw['release'] != planned['planned_release'] or raw['schema_version'] != planned['planned_schema_version']:
@@ -31,7 +30,10 @@ def prepare(root):
     target = context['target']; pilot = frozen['policy']['li3']
     if target['longitude'] != pilot['longitude'] or target['latitude'] != pilot['latitude'] or context['config']['area_coverage']['metric_crs'] != pilot['metric_crs']:
         raise ValueError('Building cache target/CRS differs from approved pilot')
-    normalized = normalize(raw)
+    from location_intelligent_osm_buildings import cached_normalization
+    import contextlib,sys
+    with contextlib.redirect_stdout(sys.stderr):
+        normalized,_ = cached_normalization(raw,cache/'normalization_cache.json',write=False)
     old = read_json(cache/'buildings.geojson')
     if normalized != old:
         raise ValueError('Cached normalized building data differs from retained raw source')

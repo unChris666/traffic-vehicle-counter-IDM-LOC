@@ -4,6 +4,8 @@ import importlib
 import sys
 import json
 import hashlib
+import time
+_STAGE_START={}
 
 _STAGE_ORDER=['dependencies','configuration','bq_auth','sources','calculation','stores','allocation','output']
 STAGES={name:{'status':'NOT_RUN'} for name in _STAGE_ORDER}
@@ -33,17 +35,21 @@ def begin_notebook_stage(name,required=()):
     if missing:
         STAGES[name]={'status':'BLOCKED','reason':'UPSTREAM_NOT_READY','required':missing}
         print(name+': BLOCKED — '+', '.join(missing));save_notebook_readiness();return False
-    STAGES[name]={'status':'RUNNING'};return True
+    _STAGE_START[name]=time.perf_counter()
+    STAGES[name]={'status':'RUNNING'};print(name+': START',flush=True);return True
 
 
 def finish_notebook_stage(name,status='SUCCEEDED'):
-    STAGES[name]={'status':status};save_notebook_readiness()
+    elapsed=time.perf_counter()-_STAGE_START.pop(name,time.perf_counter())
+    STAGES[name]={'status':status,'duration_seconds':elapsed}
+    print(name+': '+status+' '+format(elapsed,'.3f')+' s',flush=True);save_notebook_readiness()
 
 
 def fail_notebook_stage(name,error):
     # No exception message/locals: credential values cannot enter this report.
     import traceback
-    STAGES[name]={'status':'FAILED','error_type':type(error).__name__,
+    elapsed=time.perf_counter()-_STAGE_START.pop(name,time.perf_counter())
+    STAGES[name]={'status':'FAILED','duration_seconds':elapsed,'error_type':type(error).__name__,
                   'trace':[{'file':Path(f.filename).name,'line':f.lineno,'function':f.name}
                            for f in traceback.extract_tb(error.__traceback__)[-5:]],
                   'action':'Inspect source readiness; retry failed stage after dependency/source recovery'}

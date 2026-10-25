@@ -108,13 +108,14 @@ def apply_poi_use_review(features,facility_evidence):
     import json
     geometries={f['id']:ogr.CreateGeometryFromJson(json.dumps(f['geometry'])) for f in features}
     hits={f['id']:[] for f in features}
+    spatial=EnvelopePointIndex([(bid,g.GetEnvelope()) for bid,g in geometries.items()])
     if facility_evidence and facility_evidence.get('status')=='SUCCEEDED':
         for poi in facility_evidence['rows']:
             if poi['source_id'] in hits:
                 hits[poi['source_id']].append({'id':poi['source_id'],'basis':'SAME_OSM_OBJECT'});continue
             if poi.get('point_basis')!='OSM_NODE':continue
             point=ogr.Geometry(ogr.wkbPoint);point.AddPoint_2D(poi['longitude'],poi['latitude'])
-            owners=[bid for bid,g in geometries.items() if g.Intersects(point)]
+            owners=[bid for bid in spatial.query(poi['longitude'],poi['latitude']) if geometries[bid].Intersects(point)]
             for bid in owners:
                 hits[bid].append({'id':poi['source_id'],'basis':'CONTAINED_POI' if len(owners)==1 and geometries[bid].Contains(point) else 'AMBIGUOUS_BOUNDARY_OR_OVERLAP'})
     residential={'house','detached','semidetached_house','terrace','residential','bungalow','apartments','dormitory'}
@@ -182,7 +183,8 @@ def prepare_osm_from_network(config,root,network_source,raw_path):
         raw['facility_evidence']=evidence
     write_json(root/'osm_buildings_raw.json.gz',raw)
     write_json(root/'normalization_config.json',config)
-    result=subprocess.run([config.get('core_python','/usr/bin/python3'),'-B',str(Path(__file__).with_name('location_intelligent_map_pilot.py')),'normalize',str(root/'osm_buildings_raw.json.gz'),str(root/'raw/building_cache'),str(root/'normalization_config.json')],capture_output=True,text=True)
+    from location_intelligent_li3_sources import timed_call
+    result=timed_call('normalization',subprocess.run,[config.get('core_python','/usr/bin/python3'),'-B',str(Path(__file__).with_name('location_intelligent_map_pilot.py')),'normalize',str(root/'osm_buildings_raw.json.gz'),str(root/'raw/building_cache'),str(root/'normalization_config.json')],capture_output=True,text=True)
     if result.returncode:raise RuntimeError('OSM normalization failed: '+result.stderr[-1500:])
     for p in (network_source/'raw').glob('osm_*.json.gz'):
         shutil.copyfile(p,root/'raw'/p.name)
@@ -197,3 +199,67 @@ def prepare_osm_from_network(config,root,network_source,raw_path):
     frozen['building_network_timestamp_warning']={'buildings_as_of':read_json(raw_path)['source_as_of'],'roads_as_of':road_stamp} if road_stamp!=read_json(raw_path)['source_as_of'] else None
     frozen.pop('config_hash',None);frozen['config_hash']=canonical_hash(frozen)
     write_json(root/'config/pilot.json',frozen)
+
+
+class EnvelopePointIndex:
+    """Conservative envelope grid; exact OGR predicates still decide ownership.
+
+    No Shapely dependency in the separate GDAL worker. Query preserves original
+    footprint order, including overlaps, holes and boundary-touching candidates.
+    """
+    def __init__(self, records):
+        self.records=list(records);self.cells={}
+        if not self.records:return
+        bounds=[e for _,e in self.records]
+        self.x0=min(e[0] for e in bounds);self.x1=max(e[1] for e in bounds)
+        self.y0=min(e[2] for e in bounds);self.y1=max(e[3] for e in bounds)
+        self.n=max(1,min(128,math.ceil(math.sqrt(len(bounds)))))
+        self.dx=max(self.x1-self.x0,1e-12)/self.n
+        self.dy=max(self.y1-self.y0,1e-12)/self.n
+        for i,(_,e) in enumerate(self.records):
+            a,b=self.cell(e[0],e[2]);c,d=self.cell(e[1],e[3])
+            for x in range(a,c+1):
+                for y in range(b,d+1):self.cells.setdefault((x,y),[]).append(i)
+    def cell(self,x,y):
+        return (max(0,min(self.n-1,math.floor((x-self.x0)/self.dx))),
+                max(0,min(self.n-1,math.floor((y-self.y0)/self.dy))))
+    def query(self,x,y):
+        if not self.records or x<self.x0 or x>self.x1 or y<self.y0 or y>self.y1:return []
+        return [self.records[i][0] for i in self.cells.get(self.cell(x,y),[])
+                if self.records[i][1][0]<=x<=self.records[i][1][1]
+                and self.records[i][1][2]<=y<=self.records[i][1][3]]
+
+
+def cached_normalization(raw, path, *, write=True):
+    """Content-bound normalization only; never cache selection/routing decisions.
+
+    Raw includes consumed use-policy, local POI and optional facility evidence.
+    Historical packets without a receipt remain readable using full validation.
+    """
+    import hashlib,json,platform
+    from osgeo import gdal
+    from location_intelligent_validator import canonical_hash
+    path=Path(path)
+    code_files=[Path(__file__)]
+    if raw.get('provider')!='OPENSTREETMAP':
+        code_files.append(Path(__file__).with_name('location_intelligent_overture_probe.py'))
+    binding={'raw':canonical_hash(raw),'code':{f.name:hashlib.sha256(f.read_bytes()).hexdigest() for f in code_files},
+             'python':platform.python_version(),'gdal':gdal.VersionInfo('RELEASE_NAME'),
+             'gdal_build':gdal.VersionInfo('BUILD_INFO')}
+    if path.exists():
+        receipt=read_json(path)
+        payload=receipt['payload']
+        if receipt.get('schema')!='normalization_cache_v1' or receipt['payload_sha256']!=canonical_hash(payload):
+            raise ValueError('Corrupt normalization cache')
+        if receipt['binding']==binding:
+            print('Normalization cache: HIT',flush=True)
+            return payload['features'],payload['diagnostics']
+    print('Normalization cache: MISS — exact normalization',flush=True)
+    if raw.get('provider')=='OPENSTREETMAP':features,diagnostics=normalize_osm(raw,with_diagnostics=True)
+    else:features,diagnostics=normalize_source(raw),None
+    if write:
+        payload={'features':features,'diagnostics':diagnostics}
+        receipt={'schema':'normalization_cache_v1','binding':binding,'payload':payload,'payload_sha256':canonical_hash(payload)}
+        path.parent.mkdir(parents=True,exist_ok=True)
+        tmp=path.with_suffix(path.suffix+'.partial');write_json(tmp,receipt);tmp.replace(path)
+    return features,diagnostics
