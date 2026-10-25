@@ -1,6 +1,6 @@
 """Ingestion-only CPU job. External downloads happen here, never in Area engine."""
 from pathlib import Path
-import base64,hashlib,importlib.metadata,json,mimetypes,os,platform,re,subprocess,sys,sysconfig,tarfile
+import base64,hashlib,importlib.metadata,json,mimetypes,os,platform,re,shutil,subprocess,sys,sysconfig,tarfile
 
 
 def fingerprint():
@@ -91,6 +91,7 @@ def run():
     (root/'frontend.json').write_text(json.dumps(assets))
     from national_basemap import ensure_basemap
     basemap=ensure_basemap(bucket,root.parent/'national_basemap')
+    if not isinstance(basemap,dict) or basemap.get('status')!='READY':raise RuntimeError('BASEMAP_NOT_READY')
     files={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob('*')
            if p.is_file() and p.name!='bundle.json' and not p.is_symlink() and not p.is_relative_to(native)}
     (root/'bundle.json').write_text(json.dumps({'environment':env,'retained':retained,'files':files},indent=2))

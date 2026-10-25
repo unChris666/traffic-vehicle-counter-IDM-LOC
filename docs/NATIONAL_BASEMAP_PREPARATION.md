@@ -76,6 +76,21 @@ Statistik tile/read GCS disimpan dalam basemap_view.json, terpisah dari agregat.
 
 ## Pengujian yang benar-benar dijalankan
 
+Perbaikan25Oktober2026: driver memakai `shutil.rmtree` tanpa mengimpor
+`shutil`; ini kesalahan kode, bukan konfigurasi owner. Error direproduksi dari
+versi sebelumnya dan diperbaiki pada script serta cell notebook. Pemeriksaan
+sebelumnya belum menjalankan driver persiapan sehingga defect ini lolos.
+
+Gate sebelum publikasi kini: `python tools/check_area_preparation.py` dengan
+environment development yang memuat Ruff dan dependency tes Area. Gate memeriksa
+sinkronisasi notebook/script, syntax dan nama belum terdefinisi, lalu menjalankan
+enam tes driver dari globals baru: cache kosong, reuse cache, cache rusak,
+build gagal/partial, upload gagal dan dependency native gagal. Filesystem/hash/
+arsip/manifest dieksekusi; pip/apt, HTTP, Secret, build basemap serta GCS memakai
+fixture eksplisit. Basemap bukan READY ditolak sebelum publikasi runtime.
+Suite Area keseluruhan:161tes,146lulus,15skip. Ini bukan bukti build nasional
+atau upload GCS nyata berhasil; keduanya tetap memerlukan Run All interaktif.
+
 - JAR0.10.2 diunduh dan SHA diverifikasi; Java21 menjalankan profile pada PBF
   sintetis nyata: menghasilkan5tile dengan roads/buildings/POI. Ini BUKAN
   pembangunan Indonesia penuh atau benchmark nasional.
