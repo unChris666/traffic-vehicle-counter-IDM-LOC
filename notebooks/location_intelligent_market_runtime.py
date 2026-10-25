@@ -8,6 +8,38 @@ from location_intelligent_market import (classify_store, corridor_tokens, restau
                                          allocate_building, reconcile)
 
 
+class SourcePacketError(ValueError):
+    """Public diagnostic code only; never contains credentials or raw responses."""
+    def __init__(self,code):
+        self.code=code
+        super().__init__(code)
+
+
+def source_request_config(config):
+    """Drop only calculation-only entrance selection from source identity.
+
+    Compare both sides this way so legacy packets need no mutation/re-fetch.
+    Target, extent, network mode and all other existing safeguards remain bound.
+    """
+    return {k:v for k,v in config.items() if k!='building_entrance_profile'}
+
+
+def verify_market_source_packet(root,config):
+    from location_intelligent_map_pilot import sha
+    root=Path(root)
+    if not (root/'source_manifest.json').is_file():raise SourcePacketError('FROZEN_SOURCE_PACKET_MISSING')
+    manifest=read_json(root/'source_manifest.json')
+    if source_request_config(manifest['config'])!=source_request_config(config):
+        raise SourcePacketError('SOURCE_CONFIG_MISMATCH')
+    for name,digest in manifest['files'].items():
+        path=root/name
+        if not path.resolve().is_relative_to(root.resolve()) or path.is_symlink():
+            raise SourcePacketError('SOURCE_PATH_INVALID')
+        if not path.is_file() or sha(path)!=digest:
+            raise SourcePacketError('SOURCE_SNAPSHOT_CHANGED')
+    return manifest
+
+
 def acquire_market_network(config, root):
     """New-location roads/barriers only; never relabel the old network seed."""
     from pyproj import Transformer
@@ -16,7 +48,7 @@ def acquire_market_network(config, root):
     from location_intelligent_li3_sources import build_queries, acquire_overpass, utc
     from location_intelligent_map_pilot import sha
     # Entrance policy is calculation-only; reuse the same immutable sources.
-    config={k:v for k,v in config.items() if k!='building_entrance_profile'}
+    config=source_request_config(config)
     root = Path(root)
     mode=config.get('network_feature_mode','FULL')
     if mode not in {'FULL','ROADS_ONLY_EXPERIMENT'}:raise ValueError('Unknown network feature mode')

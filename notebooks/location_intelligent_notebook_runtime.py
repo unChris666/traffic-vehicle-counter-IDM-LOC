@@ -53,7 +53,11 @@ def fail_notebook_stage(name,error):
                   'trace':[{'file':Path(f.filename).name,'line':f.lineno,'function':f.name}
                            for f in traceback.extract_tb(error.__traceback__)[-5:]],
                   'action':'Inspect source readiness; retry failed stage after dependency/source recovery'}
-    print(name+': FAILED ('+type(error).__name__+'). See notebook_readiness.json; no counts generated for missing inputs.')
+    public_codes={'FROZEN_SOURCE_PACKET_MISSING','SOURCE_CONFIG_MISMATCH','SOURCE_SNAPSHOT_CHANGED','SOURCE_PATH_INVALID','BUILDING_SOURCE_CAP_REACHED'}
+    code=getattr(error,'code',None)
+    if code in public_codes:STAGES[name]['error_code']=code
+    suffix=' ['+code+']' if code in public_codes else ''
+    print(name+': FAILED ('+type(error).__name__+')'+suffix+'. See notebook_readiness.json; no counts generated for missing inputs.')
     save_notebook_readiness()
 
 

@@ -79,3 +79,5 @@ Belum ada rerun penuh lokasi aktual Kaggle setelah perubahan ini. Ukur log
 konektor/routing dan audit bangunan yang berubah status sebelum menyatakan
 perbaikan waktu/kualitas lokasi aktual. Buka versi notebook terbaru lalu Run All;
 job hasil baru memakai profil baru, source snapshot yang cocok tetap digunakan.
+
+Fix kompatibilitas snapshot lama pada sel 5: [detail dan regresi](AREA_COVERAGE_SOURCE_COMPATIBILITY_FIX.md).
