@@ -37,6 +37,80 @@ def read_extract(path):
     return nodes,ways,relations
 
 
+
+class PbfProvenanceError(ValueError):
+    """Safe public code: no source payload or credentials in error output."""
+    def __init__(self, code):
+        self.code = code
+        super().__init__(code)
+
+
+def validate_road_provenance(root):
+    from location_intelligent_map_pilot import sha
+    network = Path(root) / 'network_roads_only'
+    roads = network / 'raw/osm_roads.json.gz'
+    features = read_json(network / 'raw/osm_features_roads_only.json.gz')
+    if (features.get('coverage') != 'ROAD_EXTRACT_ONLY_EXTERNAL_FEATURES_NOT_REQUESTED'
+            or features.get('external_features_requested') is not False):
+        raise PbfProvenanceError('PBF_ROAD_PROVENANCE_FLAGS_INVALID')
+    if features.get('source_roads_sha256') != sha(roads):
+        raise PbfProvenanceError('PBF_ROAD_PROVENANCE_HASH_MISMATCH')
+
+
+def recover_legacy_packet(root, config, pbf_ref):
+    """Create an atomic new revision; never bless corrupt or edit frozen input."""
+    import shutil
+    import tempfile
+    from location_intelligent_map_pilot import sha
+    from location_intelligent_market_runtime import verify_market_source_packet
+    root = Path(root)
+    verify_market_source_packet(root, config)
+    if read_json(root / 'pbf_source.json')['input'] != pbf_ref:
+        raise PbfProvenanceError('PBF_INPUT_REFERENCE_MISMATCH')
+    feature = root / 'network_roads_only/raw/osm_features_roads_only.json.gz'
+    features = read_json(feature)
+    if 'source_roads_sha256' in features:
+        validate_road_provenance(root)
+        return root
+    roads = read_json(root / 'network_roads_only/raw/osm_roads.json.gz')
+    if (roads.get('status') != 'SUCCEEDED' or roads.get('provider') != 'GCS_PBF'
+            or roads.get('pbf_input') != pbf_ref or features.get('status') != 'SUCCEEDED'
+            or features.get('payload') != roads.get('payload')
+            or features.get('external_features_requested') is not False
+            or features.get('coverage') != 'ROAD_EXTRACT_ONLY_EXTERNAL_FEATURES_NOT_REQUESTED'):
+        raise PbfProvenanceError('PBF_LEGACY_RECOVERY_UNSAFE')
+    recovered = root.with_name(root.name + '-provenance-v2')
+    parent_hash = sha(root / 'source_manifest.json')
+    if recovered.exists():
+        verify_market_source_packet(recovered, config)
+        receipt = read_json(recovered / 'provenance_recovery.json')
+        if receipt['parent_manifest_sha256'] != parent_hash:
+            raise PbfProvenanceError('PBF_RECOVERY_PARENT_MISMATCH')
+        validate_road_provenance(recovered)
+        return recovered
+    with tempfile.TemporaryDirectory(prefix='.pbf-recovery-', dir=root.parent) as temp:
+        draft = Path(temp) / 'snapshot'
+        shutil.copytree(root, draft)
+        network = draft / 'network_roads_only'
+        features['source_roads_sha256'] = sha(network / 'raw/osm_roads.json.gz')
+        write_json(network / 'raw/osm_features_roads_only.json.gz', features)
+        manifest = read_json(network / 'network_manifest.json')
+        manifest['files'] = {str(p.relative_to(network)): sha(p) for p in network.rglob('*')
+                             if p.is_file() and p.name != 'network_manifest.json'}
+        write_json(network / 'network_manifest.json', manifest)
+        write_json(draft / 'provenance_recovery.json', {
+            'schema': 'pbf_provenance_recovery_v1', 'parent_manifest_sha256': parent_hash,
+            'parent_path': str(root), 'change': 'Add missing road file hash; domain data unchanged'})
+        manifest = read_json(draft / 'source_manifest.json')
+        manifest['files'] = {str(p.relative_to(draft)): sha(p) for p in draft.rglob('*')
+                             if p.is_file() and p != draft / 'source_manifest.json'}
+        write_json(draft / 'source_manifest.json', manifest)
+        verify_market_source_packet(draft, config)
+        validate_road_provenance(draft)
+        draft.rename(recovered)
+    print('PBF provenance: recovered immutable local revision; no download or rescan:', recovered, flush=True)
+    return recovered
+
 def materialize(config,folder,pbf,osmium_binary,pbf_ref):
     import osmium
     from pyproj import Transformer
@@ -47,7 +121,7 @@ def materialize(config,folder,pbf,osmium_binary,pbf_ref):
     from location_intelligent_map_poi import normalize_pois
     from location_intelligent_market_runtime import source_request_config,verify_market_source_packet
     root=Path(folder)
-    if (root/'source_manifest.json').exists():verify_market_source_packet(root,config);return
+    if (root/'source_manifest.json').exists():return recover_legacy_packet(root,config,pbf_ref)
     if config['network_feature_mode']!='ROADS_ONLY_EXPERIMENT':raise RuntimeError('PBF_FULL_FEATURE_PROFILE_NOT_VALIDATED')
     root.mkdir(parents=True,exist_ok=True);network=root/'network_roads_only'
     def emit(path,value,**kwargs):
@@ -145,7 +219,9 @@ def materialize(config,folder,pbf,osmium_binary,pbf_ref):
     roads_raw={'status':'SUCCEEDED','payload':payload,'provider':'GCS_PBF','pbf_input':pbf_ref}
     emit(network/'raw/osm_roads.json.gz',roads_raw)
     emit(network/'raw/osm_features_roads_only.json.gz',{'status':'SUCCEEDED','payload':payload,
-        'coverage':'ROAD_EXTRACT_ONLY_EXTERNAL_FEATURES_NOT_REQUESTED','external_features_requested':False},exclusive=True)
+        'coverage':'ROAD_EXTRACT_ONLY_EXTERNAL_FEATURES_NOT_REQUESTED','external_features_requested':False,
+        'source_roads_sha256':sha(network/'raw/osm_roads.json.gz')},exclusive=True)
+    validate_road_provenance(root)
     emit(network/'network_manifest.json',{'config':source_request_config(config),
         'files':{str(p.relative_to(network)):sha(p) for p in network.rglob('*') if p.is_file() and p.name!='network_manifest.json'}},exclusive=True)
     emit(root/'pbf_source.json',{'input':pbf_ref,'header_timestamp':stamp,'profile':'PBF_LOCAL_V1',
@@ -155,4 +231,6 @@ def materialize(config,folder,pbf,osmium_binary,pbf_ref):
                   'POI inventory bounded by complete-way/multipolygon extract, not complete real-world inventory']},exclusive=True)
     emit(root/'source_manifest.json',{'config':source_request_config(config),
         'files':{str(p.relative_to(root)):sha(p) for p in root.rglob('*') if p.is_file()}},exclusive=True)
+    verify_market_source_packet(root,config)
     print('GCS PBF source finalized:',root,flush=True)
+    return root

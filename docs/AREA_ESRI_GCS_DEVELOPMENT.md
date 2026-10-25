@@ -55,3 +55,39 @@ masih diperlukan; layanan eksternal tidak dapat dijamin tanpa gangguan.
 
 Produksi: dependency dipasang saat build image, bukan setiap analisis. PMTiles
 nasional menjadi pekerjaan terpisah; Planetiler/Java tidak diperlukan run ini.
+
+## Perbaikan provenance PBF — 26 Oktober 2026
+
+Adapter sebelumnya tidak menyertakan `source_roads_sha256` pada road-derived
+features. Sources dinyatakan berhasil, tetapi pemeriksaan calculation
+`select_feature_source` menolak relasi sumber sebelum road_graph dimulai.
+Ini defect adapter, bukan kegagalan transfer, CUDA atau data bisnis.
+
+Sumber baru menambahkan hash byte file jalan dan memvalidasi provenance sebelum
+manifest sumber dipublikasikan. Cache legacy yang manifest-nya utuh, referensi
+PBF cocok dan payload roads/features identik dipulihkan ke sibling
+`<source_key>-provenance-v2` secara lokal. Parent tetap immutable. Manifest
+network dan source dihitung ulang; receipt mencatat parent hash. Recovery
+atomik: output belum dianggap tersedia sebelum seluruh validasi lulus.
+Checksum yang sudah ada namun salah tidak diperbaiki otomatis. Cache rusak atau
+payload berbeda ditolak. Tidak ada download/scan ulang pada jalur recovery.
+
+Notebook menggunakan path return adapter dan memperbarui NETWORK_FOLDER.
+Configuration menghitung CODE_SHA baru sehingga job/pilot hasil parsial lama
+tidak ditimpa. Guard menampilkan kode provenance aman, trace lokasi dan aksi
+pemulihan tanpa payload/kredensial. Cache lama yang salah tetap tersimpan
+sebagai bukti. Snapshot/PILOT tidak dimodifikasi manual.
+
+Sesudah membuka draft baru: pertahankan session/disk Kaggle bila masih hidup,
+jangan restart/delete `/kaggle/working`; jalankan ulang cell helper dan
+configuration (Run All paling mudah agar versi modul konsisten). Cache PBF
+valid dipakai ulang; sources akan mencetak recovery revision. Calculation dan
+cell sesudahnya kemudian berjalan pada job baru. Bila sesi lama telah berakhir,
+cache temporer memang hilang dan PBF perlu ditarik lagi dari GCS.
+
+Regresi lokal178tes:163lulus,15skip. Mencakup PBF sintetis nyata -> adapter ->
+fungsi gate calculation; reproduksi bug legacy -> recovery -> gate; reopen,
+parent byte-identical, corrupt input, payload berbeda, checksum salah,
+referensi PBF berbeda, recovery terputus dan diagnostik kode aman. Ekstraksi
+CLI pada fixture di-stub; tidak mengklaim full run nasional/GPU atau upload
+GCS baru sudah berhasil. Bukti: results/area_coverage_map/pbf_provenance_validation.

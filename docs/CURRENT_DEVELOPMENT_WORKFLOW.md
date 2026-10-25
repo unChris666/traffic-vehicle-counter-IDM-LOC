@@ -1,5 +1,11 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**PBF provenance recovery —26 Oktober2026:** adapter menambahkan checksum
+road-derived features dan validasi dini. Cache legacy utuh dipulihkan ke revisi
+lokal baru dengan manifest baru; parent/PBF/extract dipertahankan. Kode error
+provenance aman ditampilkan. [Recovery dan batas tes](AREA_ESRI_GCS_DEVELOPMENT.md).
+
+
 **Area Esri development —25 Oktober2026 (keputusan terbaru):** setup dependency
 langsung Kaggle; input analitik PBF generation/SHA GCS + snapshot BQ. PMTiles/
 Planetiler dan bundle runtime bukan prasyarat. Browser memakai Esri Imagery/

@@ -130,7 +130,16 @@ class PbfTests(unittest.TestCase):
             self.assertEqual([m['role'] for m in building['members']],['outer','inner'])
             self.assertEqual(building['members'][1]['geometry'][0],{'lon':106.82955,'lat':-6.18975})
             pois=load_optional_osm_pois(config,root/'sources',mode='FROZEN');self.assertEqual(pois['count'],1)
+            from location_intelligent_pbf_sources import validate_road_provenance
+            validate_road_provenance(root/'sources')
             network=root/'sources/network_roads_only';frozen=read_json(network/'config/pilot.json')
+            from location_intelligent_li3 import select_feature_source
+            calculation=root/'calculation_gate';shutil.copytree(network,calculation)
+            gate_config=read_json(calculation/'config/pilot.json')
+            gate_config['policy']['li3']['feature_source_mode']='ROADS_ONLY_EXPERIMENT'
+            from location_intelligent_li3_sources import write_json
+            write_json(calculation/'config/pilot.json',gate_config)
+            select_feature_source(calculation)
             graph=build_graph(read_json(network/'raw/osm_roads.json.gz'),read_json(network/'raw/osm_features_roads_only.json.gz'),frozen)
             self.assertEqual(len(graph['graph']['edges']),1)
             self.assertEqual(graph['graph']['edges'][0]['u'],'n1')
