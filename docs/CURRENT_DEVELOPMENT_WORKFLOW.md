@@ -1,5 +1,11 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Konektor satu entrance —25 Oktober2026:** owner menetapkan batch per ruas,
+maksimal satu entrance asumsi per bangunan, prioritas kelas tertinggi lalu
+jarak terdekat; tidak ada entrance fallback jika rute gagal.
+[Profil, batas dan pengujian](AREA_COVERAGE_SINGLE_ENTRANCE.md).
+Baseline multi-access tetap tersimpan; ini perubahan kebijakan bisnis.
+
 **POI opsional —25 Oktober2026:** jalan/footprint tetap wajib, jaringan memakai
 parameter3km; unduhan POI gagal tidak menghentikan pipeline. Gate bisnis attractor
 zona luar tetap terpisah dan menjadi UNKNOWN bila bukti tidak tersedia.

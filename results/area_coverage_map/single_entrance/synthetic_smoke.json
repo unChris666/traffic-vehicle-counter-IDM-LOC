@@ -1,0 +1,25 @@
+{
+  "scope": "SYNTHETIC_ONLY",
+  "source_records": 3,
+  "all_rows_accounted": true,
+  "maximum_entrances_per_building": 1,
+  "manifest_verified": true,
+  "connector_diagnostics": {
+    "barrier_features": 0,
+    "batching": "ROAD_SEGMENT_WAVES",
+    "building_candidates_checked": 3,
+    "building_entrance_profile": "SINGLE_HIGHEST_CLASS_NEAREST_V1",
+    "buildings_evaluated": 3,
+    "buildings_with_selected_entrance": 3,
+    "connectors": 4,
+    "entrance_claim": "OWNER_ACCEPTED_ASSUMPTION_NOT_OBSERVED_ENTRANCE",
+    "entrance_selection": "CLASS_RANK_THEN_REPRESENTATIVE_POINT_DISTANCE_THEN_SEGMENT_ID",
+    "footprint_buffers_calculated": 3,
+    "grade_separation_policy": "NO_DIRECT_ENTRY_TO_ELEVATED_OR_TUNNEL_EDGE",
+    "rejected_candidates": 0,
+    "route_failure_fallback": false,
+    "target_connector_found": true,
+    "turn_relations": [],
+    "unresolved_barrier_geometries": []
+  }
+}

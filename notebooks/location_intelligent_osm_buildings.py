@@ -194,6 +194,13 @@ def prepare_osm_from_network(config,root,network_source,raw_path):
     frozen['policy']['sources']['buildings'].update(provider='OPENSTREETMAP',planned_release=read_json(raw_path)['release'],planned_schema_version=SCHEMA,status='ACTUAL_FROZEN_OSM')
     frozen['policy']['li3']['building_cache']=str(root/'raw/building_cache')
     frozen['policy']['li3']['feature_source_mode']=config.get('network_feature_mode','FULL')
+    profile=config.get('building_entrance_profile','MULTI_ACCESS_LEGACY')
+    if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1'}:raise ValueError('Unknown building entrance profile')
+    if profile=='SINGLE_HIGHEST_CLASS_NEAREST_V1':
+        frozen['policy']['connectors'].update(building_entrance_profile=profile,
+            candidate_selection='HIGHEST_VALID_CLASS_THEN_NEAREST_REPRESENTATIVE_POINT_THEN_SEGMENT_ID',
+            unreachable_higher_class='NO_ROUTE_NO_ENTRANCE_FALLBACK')
+
     frozen.pop('config_hash',None);frozen['config_hash']=canonical_hash(frozen)
     road_stamp=read_json(root/'raw/osm_roads.json.gz')['payload']['osm3s'].get('timestamp_osm_base')
     frozen['building_network_timestamp_warning']={'buildings_as_of':read_json(raw_path)['source_as_of'],'roads_as_of':road_stamp} if road_stamp!=read_json(raw_path)['source_as_of'] else None

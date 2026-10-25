@@ -15,6 +15,8 @@ def acquire_market_network(config, root):
     from location_intelligent_validator import canonical_hash
     from location_intelligent_li3_sources import build_queries, acquire_overpass, utc
     from location_intelligent_map_pilot import sha
+    # Entrance policy is calculation-only; reuse the same immutable sources.
+    config={k:v for k,v in config.items() if k!='building_entrance_profile'}
     root = Path(root)
     mode=config.get('network_feature_mode','FULL')
     if mode not in {'FULL','ROADS_ONLY_EXPERIMENT'}:raise ValueError('Unknown network feature mode')
@@ -162,6 +164,8 @@ def build_market(config, market_config, pilot, layers, facilities, output):
         raise ValueError('Market selection profile differs')
     pilot=Path(pilot);verify_manifest(pilot)
     frozen=read_json(pilot/'config/pilot.json')
+    if frozen['policy']['connectors'].get('building_entrance_profile','MULTI_ACCESS_LEGACY')!=config.get('building_entrance_profile','MULTI_ACCESS_LEGACY'):
+        raise ValueError('Frozen entrance profile differs from requested calculation')
     if frozen['policy']['li3'].get('feature_source_mode','FULL')!=config.get('network_feature_mode','FULL'):
         raise ValueError('Frozen network mode differs from market job')
     if any(frozen['policy']['li3'][k]!=config[k] for k in ('latitude','longitude','metric_crs')):
@@ -257,6 +261,7 @@ def build_market(config, market_config, pilot, layers, facilities, output):
     if len(rows)!=len(decisions):raise ValueError('Missing building identity; cannot reconcile market ledger')
     result={'schema_version':'area_market_result_v1','status':'PARTIAL','fingerprint':fingerprint,'identity':identity,
             'network_feature_mode':frozen['policy']['li3'].get('feature_source_mode','FULL'),
+            'building_entrance_profile':frozen['policy']['connectors'].get('building_entrance_profile','MULTI_ACCESS_LEGACY'),
             'output_path':str(root),'rows':rows,'summary':reconcile(rows),'stores':stores,'excluded_stores':excluded,
             'attractor_gate':gate,'market_inputs_complete':source_complete,'primary_routing_changed':False,
             'poi_input_status':facilities['status'],'poi_required_for_pipeline':False,

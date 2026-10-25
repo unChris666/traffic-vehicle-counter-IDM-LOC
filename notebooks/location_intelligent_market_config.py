@@ -8,7 +8,8 @@ from copy import deepcopy
 
 MARKET_CONFIG = {
     'schema_version': 'area_market_spec_v1',
-    'policy_version': 'owner_market_huff_v1_2026_10_24',
+    'policy_version': 'owner_market_huff_single_entrance_v2_2026_10_25',
+    'access': {'building_entrance_profile':'SINGLE_HIGHEST_CLASS_NEAREST_V1'},
     'status': 'EXPERIMENTAL_OWNER_CONFIRMED',
     'target': {'latitude': -6.190690620514923,
                'longitude': 106.83819549844226,

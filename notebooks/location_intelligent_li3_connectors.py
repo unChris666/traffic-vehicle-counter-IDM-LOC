@@ -103,6 +103,10 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
     graph = base['graph']
     sources, rules = base['edge_sources'], base['edge_rules']
     policy = frozen['policy']
+    profile=policy['connectors'].get('building_entrance_profile','MULTI_ACCESS_LEGACY')
+    if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1'}:
+        raise ValueError('Unknown building entrance profile')
+    single=profile=='SINGLE_HIGHEST_CLASS_NEAREST_V1'
     epsilon = policy['li3']['projection_position_precision_m']
     inset = policy['li3']['entrance_inset_m']
     maximum = policy['connectors']['max_building_to_road_m']['value']
@@ -126,12 +130,24 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
     footprint_ids = sorted(footprints)
     footprint_geoms = [footprints[k] for k in footprint_ids]
     footprint_tree = STRtree(footprint_geoms)
+    # Each footprint inset is calculated at most once, including neighbours.
+    buffered={}
+    def inset_geometry(bid):
+        if bid not in buffered:buffered[bid]=footprints[bid].buffer(-inset)
+        return buffered[bid]
+    for gid,group in groups.items():
+        name=group['road_class'];name=name[:-5] if name.endswith('_link') else name
+        group['rank']=ranking.get(name,float('inf'))
+        group['length']=group['line'].length
     cuts, candidates, rejected = defaultdict(dict), [], []
     target = Point(*metrics['target_xy'])
     diagnostics = {'barrier_features': len(barrier['shapes']), 'unresolved_barrier_geometries': barrier['unresolved'],
+                   'building_entrance_profile':profile,
+                   'entrance_selection':'CLASS_RANK_THEN_REPRESENTATIVE_POINT_DISTANCE_THEN_SEGMENT_ID' if single else 'LEGACY_MULTI_ACCESS',
+                   'route_failure_fallback':False if single else True,
                    'entrance_claim': 'OWNER_ACCEPTED_ASSUMPTION_NOT_OBSERVED_ENTRANCE'}
 
-    def candidate(kind, building_id, rep, footprint, index):
+    def candidate(kind, building_id, rep, footprint, index, measured_distance=None):
         group_id = group_ids[index]; group = groups[group_id]
         reason = None
         name = group['road_class']
@@ -142,20 +158,20 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
             reason = 'ACCESS_UNVERIFIED' if any(rules[e['edge_id']]['allowed'] is None for e in group['members']) else 'ACCESS_PROHIBITED'
         elif group['tags'].get('bridge') not in {None, 'no'} or group['tags'].get('tunnel') not in {None, 'no'} or group['tags'].get('layer', '0') not in {'0', '0.0'}:
             reason = 'GRADE_SEPARATED_DIRECT_ENTRY_UNVERIFIED'
-        distance = rep.distance(group['line'])
+        distance = rep.distance(group['line']) if measured_distance is None else measured_distance
         if kind == 'BUILDING' and distance > maximum:
             return None
         if reason:
             rejected.append({'kind': kind, 'building_id': building_id, 'source_segment': group_id, 'reason': reason, 'distance_m': distance})
             return None
         if kind == 'BUILDING':
-            interior = footprint.buffer(-inset)
+            interior = inset_geometry(building_id)
             interior = interior if not interior.is_empty else footprint.representative_point()
             entrance, access = nearest_points(interior, group['line'])
         else:
             entrance, access = target, nearest_points(target, group['line'])[1]
         position = group['line'].project(access)
-        length = group['line'].length
+        length = group['length']
         if position <= epsilon:
             node, access, position = group['a'], Point(group['line'].coords[0]), 0.0
         elif length-position <= epsilon:
@@ -173,7 +189,7 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
                 j = int(j); fid = footprint_ids[j]
                 if fid == building_id or (kind == 'TARGET' and footprint_geoms[j].covers(target)):
                     continue
-                if line.intersection(footprint_geoms[j].buffer(-inset)).length > epsilon:
+                if line.intersection(inset_geometry(fid)).length > epsilon:
                     clear = False; hits.append({'source': fid, 'kind': 'other_building'})
         if clear is not True:
             rejected.append({'kind': kind, 'building_id': building_id, 'source_segment': group_id,
@@ -209,18 +225,52 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
                 extra['alternative_store_key']=store['store_key']
                 break
     target=original_target
-    for b in sorted(metrics['selected_buildings'], key=lambda b: b['building_id']):
-        point, footprint = Point(*b['representative_point_m']), footprints[b['building_id']]
-        seen = set()
-        for i in sorted(map(int, tree.query(point.buffer(maximum))), key=lambda i: group_ids[i]):
-            c = candidate('BUILDING', b['building_id'], point, footprint, i)
-            if c:
-                unique = (c['node_id'], c['class_rank'])
-                if unique in seen:
-                    candidates.remove(c)
-                    rejected.append({'kind': 'BUILDING', 'building_id': b['building_id'], 'source_segment': c['source_segment'], 'reason': 'DUPLICATE_NODE_AND_CLASS'})
-                else:
-                    seen.add(unique)
+    if single:
+        # Plan in building order, then evaluate each wave in segment batches.
+        # Failed geometry advances to the next ranked candidate; route failure
+        # never participates in entrance selection and cannot reopen this list.
+        pending={};examined=0;selected_count=0
+        ordered_buildings=sorted(metrics['selected_buildings'],key=lambda b:b['building_id'])
+        for b in ordered_buildings:
+            point=Point(*b['representative_point_m']);options=[]
+            for i in map(int,tree.query(point.buffer(maximum))):
+                distance=point.distance(geometries[i])
+                if distance<=maximum:options.append((groups[group_ids[i]]['rank'],distance,group_ids[i],i))
+            options.sort()
+            if options:pending[b['building_id']]={'point':point,'options':options,'next':0}
+        print('Connectors: single entrance; '+str(len(ordered_buildings))+' buildings, '+str(len(groups))+' road segments',flush=True)
+        while pending:
+            batches=defaultdict(list)
+            for bid,state in pending.items():
+                option=state['options'][state['next']]
+                batches[option[2]].append((bid,option))
+            completed=[]
+            for gid in sorted(batches):
+                for bid,option in sorted(batches[gid]):
+                    state=pending[bid];examined+=1
+                    c=candidate('BUILDING',bid,state['point'],footprints[bid],option[3],option[1])
+                    if c is not None:
+                        selected_count+=1;completed.append(bid)
+                    else:
+                        state['next']+=1
+                        if state['next']==len(state['options']):completed.append(bid)
+            for bid in completed:del pending[bid]
+            print('Connectors: '+str(selected_count)+' entrances selected; '+str(len(pending))+' buildings remaining; '+str(examined)+' candidates checked',flush=True)
+        diagnostics.update(buildings_evaluated=len(ordered_buildings),building_candidates_checked=examined,
+                           buildings_with_selected_entrance=selected_count,batching='ROAD_SEGMENT_WAVES')
+    else:
+        for b in sorted(metrics['selected_buildings'], key=lambda b: b['building_id']):
+            point, footprint = Point(*b['representative_point_m']), footprints[b['building_id']]
+            seen = set()
+            for i in sorted(map(int, tree.query(point.buffer(maximum))), key=lambda i: group_ids[i]):
+                c = candidate('BUILDING', b['building_id'], point, footprint, i)
+                if c:
+                    unique = (c['node_id'], c['class_rank'])
+                    if unique in seen:
+                        candidates.remove(c)
+                        rejected.append({'kind': 'BUILDING', 'building_id': b['building_id'], 'source_segment': c['source_segment'], 'reason': 'DUPLICATE_NODE_AND_CLASS'})
+                    else:
+                        seen.add(unique)
     nodes = {n['node_id']: deepcopy(n) for n in graph['nodes']}
     new_edges, new_sources, new_rules, incidents = [], {}, {}, defaultdict(list)
     speed = policy['travel']['reference_constant_speed']['value']*1000/3600
@@ -255,6 +305,7 @@ def generate_connectors(base, metrics, feature_source, frozen, *, alternative_ta
     # Quarantine inherited by edge rules after split; connector usability is
     # checked again by the existing motor engine, not asserted by this generator.
     diagnostics.update(connectors=len(candidates), rejected_candidates=len(rejected),
+                       footprint_buffers_calculated=len(buffered),
                        target_connector_found=any(c['kind'] == 'TARGET' for c in candidates),
                        turn_relations=turn_diagnostics, grade_separation_policy='NO_DIRECT_ENTRY_TO_ELEVATED_OR_TUNNEL_EDGE')
     return {'graph': new_graph, 'edge_sources': new_sources, 'edge_rules': new_rules,

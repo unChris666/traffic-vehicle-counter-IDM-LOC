@@ -151,6 +151,13 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
         return stop("NONFINITE_OR_MALFORMED_INPUT", "FAILED")
     try:
         travel, conn = policy["travel"], policy["connectors"]
+        profile=conn.get('building_entrance_profile','MULTI_ACCESS_LEGACY')
+        if profile not in {'MULTI_ACCESS_LEGACY','SINGLE_HIGHEST_CLASS_NEAREST_V1'}:
+            return stop('UNSUPPORTED_ENTRANCE_PROFILE','FAILED')
+        single=profile=='SINGLE_HIGHEST_CLASS_NEAREST_V1'
+        expected_selection='HIGHEST_VALID_CLASS_THEN_NEAREST_REPRESENTATIVE_POINT_THEN_SEGMENT_ID' if single else 'HIGHEST_VALID_ACCESS_CLASS_THEN_MINIMUM_TOTAL_TIME'
+        expected_fallback='NO_ROUTE_NO_ENTRANCE_FALLBACK' if single else 'TRY_NEXT_REACHABLE_CLASS'
+
         speed = travel["reference_constant_speed"]["value"] * 1000 / 3600
         limit = conn["max_building_to_road_m"]["value"]
         threshold = travel["max_travel_min"]["value"]
@@ -162,9 +169,9 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
             travel["mode"] != "motorcycle" or travel["threshold_comparison"] != "<=" or
             travel["threshold_rounding"] != "PYTHON_ROUND_HALF_EVEN_TOTAL_MINUTES_BEFORE_COMPARISON" or
             travel["segment_speed_model"] != "ALL_SEGMENTS_USE_REFERENCE_CONSTANT_SPEED" or
-            conn["candidate_selection"] != "HIGHEST_VALID_ACCESS_CLASS_THEN_MINIMUM_TOTAL_TIME" or
+            conn["candidate_selection"] != expected_selection or
             conn["max_target_snap_m"] != {"value": None, "unit": "m", "limit_type": "UNBOUNDED"} or
-            conn["unreachable_higher_class"] != "TRY_NEXT_REACHABLE_CLASS"):
+            conn["unreachable_higher_class"] != expected_fallback):
             return stop("UNSUPPORTED_MOTOR_POLICY", "FAILED")
         rank = {name: i for i, group in enumerate(conn["road_class_hierarchy"]) for name in group}
         if not rank or len(rank) != sum(map(len, conn["road_class_hierarchy"])):
@@ -284,6 +291,10 @@ def route_motor_buildings(context, manifest, buildings, graph, evidence, *, root
             if coords[0] != node_xy or coords[-1] != target_xy:
                 return stop("TARGET_CONNECTOR_MISMATCH", "FAILED")
             targets.append(r)
+    if single:
+        counts={}
+        for source in sources:counts[source['building_id']]=counts.get(source['building_id'],0)+1
+        if any(count>1 for count in counts.values()):return stop('MULTIPLE_ENTRANCES_IN_SINGLE_PROFILE','FAILED')
     indexes = {c['node_id']: _path_index(graph, allowed, blocked, c['node_id']) for c in targets if c['usable']}
     potential = {c['node_id']: _potential_reachability(graph, allowed, blocked, c['node_id']) for c in targets
                  if c['structural_usable'] and c['permission'] is not False} if any(v is None for v in allowed.values()) else {}
