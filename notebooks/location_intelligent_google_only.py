@@ -82,6 +82,9 @@ def bootstrap_runtime():
     import importlib.metadata
     session=google_session();env=environment();key=hashlib.sha256(json.dumps(env,sort_keys=True).encode()).hexdigest()[:20]
     manifest=gcs_json(session,'runtime/area/'+key+'/manifest.json')
+    basemap=manifest.get('basemap')
+    if not basemap or basemap.get('status')!='READY' or basemap.get('source')!=PBF:
+        raise RuntimeError('GCS_BASEMAP_PREPARATION_REQUIRED')
     if manifest['environment']!=env:raise RuntimeError('GCS_RUNTIME_ENVIRONMENT_MISMATCH')
     for package,version in manifest['retained'].items():
         if importlib.metadata.version(package)!=version:raise RuntimeError('GCS_RUNTIME_PACKAGE_MISMATCH: '+package)
@@ -100,17 +103,22 @@ def bootstrap_runtime():
     subprocess.run([str(root/'core-python'),'-c','from osgeo import gdal;import pyproj;assert int(gdal.VersionInfo("VERSION_NUM"))>=3070000'],check=True)
     subprocess.run([str(root/'osmium'),'--version'],check=True)
     os.environ['LI_GCS_RUNTIME_ROOT']=str(root);os.environ['PROJ_NETWORK']='OFF'
-    print('GOOGLE-ONLY runtime verified:',root,flush=True);return root,session
+    print('GOOGLE-ONLY runtime and national basemap manifest verified:',root,flush=True);return root,session,basemap
 
 
-def google_only_render(config,market_config,pilot,facilities,result):
+def google_only_render(config,market_config,pilot,facilities,result,*,session=None,basemap_ref=None):
     import folium
     from unittest.mock import patch
     from location_intelligent_market_map import market_map
     from location_intelligent_li3_sources import read_json,write_json,canonical_bytes
+    from location_intelligent_gcs_basemap import VECTORGRID_URL,load_tiles,basemap_layer
+    from location_intelligent_map_pilot import query_bbox
+    if session is None or basemap_ref is None:raise RuntimeError('GCS_BASEMAP_SESSION_REQUIRED')
     if read_json(Path(result['output_path'])/'result.json')!=result:raise ValueError('Retained market result changed')
     identity={'result_sha256':sha(Path(result['output_path'])/'result.json'),'adapter_sha256':sha(__file__),
-              'frontend_sha256':sha(Path(os.environ['LI_GCS_RUNTIME_ROOT'])/'frontend.json')}
+              'frontend_sha256':sha(Path(os.environ['LI_GCS_RUNTIME_ROOT'])/'frontend.json'),
+              'basemap_adapter_sha256':sha(Path(__file__).with_name('location_intelligent_gcs_basemap.py')),
+              'basemap':basemap_ref}
     version=hashlib.sha256(canonical_bytes(identity)).hexdigest()
     view=Path(result['output_path'])/'views'/('google-'+version);manifest=view/'view_manifest.json'
     if manifest.exists():
@@ -121,11 +129,16 @@ def google_only_render(config,market_config,pilot,facilities,result):
         return view/'market_map.html'
     if view.exists():raise RuntimeError('GCS_PRESENTATION_INCOMPLETE')
     path=view/'market_map.html'
+    box=query_bbox(config['latitude'],config['longitude'],max(config['building_radius_m'],config['poi_radius_m'])+1000)
+    tiles,audit=load_tiles(session,basemap_ref,box)
     assets=json.loads((Path(os.environ['LI_GCS_RUNTIME_ROOT'])/'frontend.json').read_text())
     original=folium.Map.__init__
-    def init(self,*a,**kw):kw['tiles']=None;return original(self,*a,**kw)
+    def init(self,*a,**kw):
+        kw['tiles']=None;original(self,*a,**kw);self.add_child(basemap_layer(tiles,basemap_ref['maxzoom']))
     with patch.object(folium.Map,'__init__',init):market_map(config,market_config,pilot,facilities,result,path)
     text=path.read_text()
+    text=text.replace('</head>','<script src="'+VECTORGRID_URL+'"></script></head>',1)
+    if VECTORGRID_URL not in assets:raise RuntimeError('GCS_FRONTEND_VECTORGRID_MISSING')
     def script(match):
         url=match.group(1)
         if url not in assets:raise RuntimeError('GCS_FRONTEND_ASSET_MISSING: '+urlsplit(url).hostname)
@@ -137,7 +150,8 @@ def google_only_render(config,market_config,pilot,facilities,result):
     text=re.sub(r'<script[^>]+src="([^"]+)"[^>]*>\s*</script>',script,text)
     text=re.sub(r'<link[^>]+href="([^"]+)"[^>]*>',css,text)
     if re.search(r'(?:src|url\()\s*[=\"\s]*https?://',text):raise RuntimeError('EXTERNAL_FRONTEND_RESOURCE_REMAINS')
-    text=text.replace('<body>','<body><p>Layer analitik GCS/BQ. Basemap nasional belum tersedia. © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL.</p>',1)
+    text=text.replace('<body>','<body><p>Basemap OSM Indonesia dari GCS; tile tampilan wilayah ini tersimpan di HTML. © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>, ODbL.</p>',1)
     path.write_text(text)
-    write_json(manifest,{'identity':identity,'files':{n:sha(view/n) for n in ['market_map.html','market_map.geojson']}},exclusive=True)
+    write_json(view/'basemap_view.json',audit,exclusive=True)
+    write_json(manifest,{'identity':identity,'files':{n:sha(view/n) for n in ['market_map.html','market_map.geojson','basemap_view.json']}},exclusive=True)
     return path

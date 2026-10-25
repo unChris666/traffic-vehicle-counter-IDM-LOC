@@ -6,7 +6,7 @@ SOURCE=ROOT/'notebooks/area_coverage_market_cpu_2km.ipynb'
 DEST=ROOT/'notebooks/area_coverage_market_gpu_2km.ipynb'
 GPU_FILES=['location_intelligent_gpu.py','location_intelligent_gpu_worker.py','location_intelligent_gpu_runtime.py',
  'location_intelligent_gpu_geometry.py','location_intelligent_gpu_weighted.py','location_intelligent_gpu_connectors.py','location_intelligent_gpu_validation.py','location_intelligent_gpu_diagnostics.py']
-TRANSPORT_FILES=['location_intelligent_google_only.py','location_intelligent_pbf_sources.py']
+TRANSPORT_FILES=['location_intelligent_google_only.py','location_intelligent_pbf_sources.py','location_intelligent_gcs_basemap.py']
 
 
 def build():
@@ -66,7 +66,7 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
   import importlib.metadata
   sys.path.insert(0,str(SOURCE_ROOT/'notebooks'))
   from location_intelligent_google_only import bootstrap_runtime
-  GCS_RUNTIME_ROOT,GOOGLE_SESSION=bootstrap_runtime()
+  GCS_RUNTIME_ROOT,GOOGLE_SESSION,GCS_BASEMAP_REF=bootstrap_runtime()
   CORE_PYTHON=str(GCS_RUNTIME_ROOT/'core-python')
   for name in ['PROJ_LIB','PROJ_DATA','GDAL_DATA']:os.environ.pop(name,None)
   os.environ['PROJ_NETWORK']='OFF'
@@ -135,6 +135,8 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     notebook['cells'][60]['source']=allocation.splitlines(True)
     export=''.join(notebook['cells'][62]['source'])
     export=export.replace('from location_intelligent_market_map import render_market','from location_intelligent_google_only import google_only_render as render_market')
+    export=export.replace('MAP_HTML=render_market(CONFIG,MARKET_CONFIG,PILOT,facilities,MARKET)',
+        'MAP_HTML=render_market(CONFIG,MARKET_CONFIG,PILOT,facilities,MARKET,session=GOOGLE_SESSION,basemap_ref=GCS_BASEMAP_REF)')
     export=export.replace("    z.writestr('job_config.json'", "    z.writestr('gpu_execution.json',json.dumps({'preflight':GPU_PREFLIGHT,'runtime':read_json(GPU_REPORT) if GPU_REPORT.exists() else [],'profile':'GPU_WEIGHTED_GEOMETRY_V2'},sort_keys=True,indent=2))\n    for f in sorted(OUTPUT.glob('*-gpu-*.json.gz')):z.write(f,'gpu_runtime/'+f.name)\n    z.writestr('job_config.json'")
     export=export.replace("(PILOT,'pilot'),", "(PILOT,'pilot'),(CPU_REFERENCE_PILOT,'cpu_reference'),(OUTPUT/'cpu_reference_market','cpu_reference_market'),")
     export=export.replace("    z.writestr('gpu_execution.json'", "    z.writestr('gpu_equivalence.json',json.dumps(read_json(GPU_EQUIVALENCE),sort_keys=True,indent=2))\n    z.writestr('gpu_execution.json'")
@@ -142,11 +144,12 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     export=export.replace("archive=OUTPUT/'market_result_and_sources.zip'","archive=OUTPUT/('market_result_and_sources_'+GPU_VALIDATION_MODE.lower()+'.zip')")
     export=export.replace("archive_manifest=OUTPUT/'archive_manifest.json'","archive_manifest=OUTPUT/('archive_manifest_'+GPU_VALIDATION_MODE.lower()+'.json')")
     export=export.replace("  display(HTML('<iframe", "  if GPU_VALIDATION_MODE!='VALIDATE':\n   display(HTML('<p><b>EKSPERIMEN GPU: kesetaraan CPU belum diuji. Hasil tersedia untuk review; handoff belum disahkan.</b></p>'))\n  display(HTML('<iframe")
+    export=export.replace("  fail_notebook_stage('output',error)","  fail_notebook_stage('output',error)\n  code=str(error).split(':',1)[0]\n  if code.startswith(('BASEMAP_','GCS_')):\n   print('Basemap/output diagnostic:',code);STAGES['output']['error_code']=code;save_notebook_readiness()")
     notebook['cells'][62]['source']=export.splitlines(True)
     notebook['cells'][0]['source'] += ['\n## Google-only input profile\n',
         'PBF generation/SHA pinned dari GCS, BigQuery tetap tersedia. Tidak ada Overpass/PyPI/apt/CDN/tile eksternal saat run.\n',
         'Runtime/frontend bundle harus tersedia dahulu di GCS. Credential bootstrap memakai Kaggle Secret.\n',
-        'Basemap nasional belum tersedia: peta tetap menampilkan layer analitik tanpa background tile eksternal.\n',
+        'Basemap vector OSM nasional dibangun sekali ke GCS. Tile wilayah tampilan dibaca range HTTPS dan di-inline; tanpa tile eksternal.\n',
         'PBF adalah snapshot baru; kesetaraan terhadap snapshot Overpass lama tidak diklaim.\n']
     notebook['cells'][0]['source'] += ['Persiapan sekali: jalankan versi runtime preparation pada ',
         'https://www.kaggle.com/code/chrisbiran/indonesia-gcs-source-ingestion-cpu/edit ',

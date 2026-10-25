@@ -1,0 +1,59 @@
+{
+  "minzoom": 0,
+  "maxzoom": 14,
+  "tiles": 5,
+  "layers": [
+    "buildings",
+    "pois",
+    "roads"
+  ],
+  "bounds": [
+    106.0,
+    -7.0,
+    108.0,
+    -5.0
+  ],
+  "metadata": {
+    "vector_layers": [
+      {
+        "id": "buildings",
+        "fields": {
+          "class": "String"
+        },
+        "minzoom": 14,
+        "maxzoom": 14
+      },
+      {
+        "id": "pois",
+        "fields": {
+          "class": "String",
+          "name": "String"
+        },
+        "minzoom": 14,
+        "maxzoom": 14
+      },
+      {
+        "id": "roads",
+        "fields": {
+          "class": "String"
+        },
+        "minzoom": 12,
+        "maxzoom": 14
+      }
+    ],
+    "attribution": "\u00a9 OpenStreetMap contributors, ODbL",
+    "description": "OSM vector basemap; mapped features only; analytic counting is independent",
+    "name": "Indonesia OSM Basic",
+    "planetiler:buildtime": "2026-03-28T14:35:36.815Z",
+    "planetiler:githash": "0e5588c4a6e8c29a270a33afe8df62027d889604",
+    "planetiler:osm:osmosisreplicationseq": "0",
+    "planetiler:osm:osmosisreplicationtime": "2026-10-24T20:21:00Z",
+    "planetiler:osm:osmosisreplicationurl": "",
+    "planetiler:version": "0.10.2",
+    "type": "baselayer"
+  },
+  "scope": "SYNTHETIC_PBF_REAL_JAVA_BUILD_NOT_NATIONAL",
+  "actual_java_execution": true,
+  "planetiler_sha256": "f310bd0413e2e4512b27f4046d418664e8e1d3bf31603c2a70e23de06c167e4d",
+  "profile_sha256": "2ae8cf15f63e771479e9008fc73e8bd90e82a558bf99c9757047ff0a5d52650b"
+}

@@ -60,19 +60,23 @@ class GoogleNetworkTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);result={'output_path':str(root/'market')}
             write_json(root/'market/result.json',result)
+            from location_intelligent_gcs_basemap import VECTORGRID_URL
             write_json(root/'frontend.json',{'https://cdn.example/test.js':'window.TEST=true;',
-                'https://cdn.example/test.css':'body { color: black; }'})
+                'https://cdn.example/test.css':'body { color: black; }',VECTORGRID_URL:'window.GRID=true;'})
             def render(*args):
                 path=args[-1];path.parent.mkdir(parents=True)
-                path.write_text('<html><body><script src="https://cdn.example/test.js"></script><link href="https://cdn.example/test.css"></body></html>')
+                path.write_text('<html><head></head><body><script src="https://cdn.example/test.js"></script><link href="https://cdn.example/test.css"></body></html>')
                 write_json(path.with_suffix('.geojson'),{'type':'FeatureCollection','features':[]})
-            with patch.dict(os.environ,{'LI_GCS_RUNTIME_ROOT':str(root)}),patch('location_intelligent_market_map.market_map',side_effect=render) as draw:
-                path=google_only_render({}, {},root,{},result)
+            config={'latitude':-6.19,'longitude':106.83,'building_radius_m':2000,'poi_radius_m':2000}
+            ref={'maxzoom':14};kwargs={'session':object(),'basemap_ref':ref}
+            with patch.dict(os.environ,{'LI_GCS_RUNTIME_ROOT':str(root)}),patch('location_intelligent_market_map.market_map',side_effect=render) as draw,patch(
+                'location_intelligent_gcs_basemap.load_tiles',return_value=({}, {'scope':'STUB_ONLY'})):
+                path=google_only_render(config, {},root,{},result,**kwargs)
                 self.assertNotIn('src="https://',path.read_text());self.assertNotIn('<link',path.read_text())
                 self.assertIn('window.TEST=true;',path.read_text())
-                self.assertEqual(google_only_render({}, {},root,{},result),path);self.assertEqual(draw.call_count,1)
+                self.assertEqual(google_only_render(config, {},root,{},result,**kwargs),path);self.assertEqual(draw.call_count,1)
                 path.write_text('CORRUPT')
-                with self.assertRaisesRegex(RuntimeError,'GCS_PRESENTATION_CHANGED'):google_only_render({}, {},root,{},result)
+                with self.assertRaisesRegex(RuntimeError,'GCS_PRESENTATION_CHANGED'):google_only_render(config, {},root,{},result,**kwargs)
 
 
 class PbfTests(unittest.TestCase):

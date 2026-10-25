@@ -21,13 +21,21 @@ def run():
     creds=service_account.Credentials.from_service_account_info(info)
     bucket=storage.Client(project='locdeproject',credentials=creds).bucket('feeder-location-intelligent')
     env=fingerprint();key=hashlib.sha256(json.dumps(env,sort_keys=True).encode()).hexdigest()[:20]
-    root=Path('/kaggle/working/area_runtime_prepare');root.mkdir(exist_ok=True)
+    root=Path('/kaggle/working/area_runtime_prepare')/key;root.mkdir(parents=True,exist_ok=True)
     wheels=root/'wheels';wheels.mkdir(exist_ok=True);native=root/'native';native.mkdir(exist_ok=True)
     retained=env['retained_packages']
     specs=['duckdb==2.0.0','osmnx==2.1.1','geopandas==1.2.0','google-cloud-bigquery==3.46.2',
-           'google-cloud-storage','google-crc32c','folium==0.20.0','osmium==4.3.2','cupy-cuda12x==13.6.0','fastrlock==0.8.3']
+           'google-cloud-storage','google-crc32c','folium==0.20.0','osmium==4.3.2','pmtiles==3.8.1','cupy-cuda12x==13.6.0','fastrlock==0.8.3']
     specs += [k+'=='+v for k,v in retained.items()]
-    subprocess.run([sys.executable,'-m','pip','download','--only-binary=:all:','--dest',str(wheels),*specs],check=True)
+    request={'specs':specs,'retained':retained};lock=root/'wheels_lock.json'
+    cached=json.loads(lock.read_text()) if lock.exists() else None
+    if cached and cached['request']==request:
+        for name,digest in cached['files'].items():
+            if not (wheels/name).is_file() or hashlib.sha256((wheels/name).read_bytes()).hexdigest()!=digest:raise RuntimeError('WHEEL_CACHE_CHANGED')
+    else:
+        shutil.rmtree(wheels);wheels.mkdir()
+        subprocess.run([sys.executable,'-m','pip','download','--only-binary=:all:','--dest',str(wheels),*specs],check=True)
+        lock.write_text(json.dumps({'request':request,'files':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in wheels.glob('*.whl')}}))
     (root/'requirements.txt').write_text('\n'.join(specs)+'\n')
     subprocess.run(['apt-get','update','-qq'],check=True)
     roots=['python3-gdal','python3-pyproj','osmium-tool']
@@ -56,7 +64,7 @@ def run():
     subprocess.run([str(root/'core-python'),'-c','from osgeo import gdal;import pyproj;assert int(gdal.VersionInfo("VERSION_NUM"))>=3070000;print(gdal.VersionInfo())'],check=True)
     subprocess.run([str(root/'osmium'),'--version'],check=True)
     # Resolve every CSS image/font to data URI in the ingestion job.
-    subprocess.run([sys.executable,'-m','pip','install','--no-index','--find-links',str(wheels),'folium==0.20.0'],check=True)
+    subprocess.run([sys.executable,'-m','pip','install','--no-index','--find-links',str(wheels),'folium==0.20.0','osmium==4.3.2','pmtiles==3.8.1'],check=True)
     import folium
     from folium.plugins import Fullscreen,MarkerCluster
     from urllib.parse import urljoin
@@ -79,9 +87,12 @@ def run():
     for cls in [folium.Map,Fullscreen,MarkerCluster]:
         for _,url in cls.default_js:fetch(url)
         for _,url in cls.default_css:fetch(url,True)
+    fetch('https://unpkg.com/leaflet.vectorgrid@1.3.0/dist/Leaflet.VectorGrid.bundled.js')
     (root/'frontend.json').write_text(json.dumps(assets))
+    from national_basemap import ensure_basemap
+    basemap=ensure_basemap(bucket,root.parent/'national_basemap')
     files={str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest() for p in root.rglob('*')
-           if p.is_file() and not p.is_symlink() and not p.is_relative_to(native)}
+           if p.is_file() and p.name!='bundle.json' and not p.is_symlink() and not p.is_relative_to(native)}
     (root/'bundle.json').write_text(json.dumps({'environment':env,'retained':retained,'files':files},indent=2))
     archive=root.parent/'area-runtime.tar.gz'
     with tarfile.open(archive,'w:gz') as t:
@@ -90,8 +101,8 @@ def run():
     sha=hashlib.sha256(archive.read_bytes()).hexdigest();object_name='runtime/area/'+key+'/'+sha+'/area-runtime.tar.gz'
     blob=bucket.blob(object_name);blob.metadata={'sha256':sha}
     blob.upload_from_filename(str(archive),if_generation_match=0,checksum='crc32c',timeout=600);blob.reload()
-    manifest={'schema':'area_gcs_runtime_v1','environment':env,'object':object_name,'generation':int(blob.generation),
-        'sha256':sha,'bytes':archive.stat().st_size,'retained':retained}
+    manifest={'schema':'area_gcs_runtime_v2_with_basemap','environment':env,'object':object_name,'generation':int(blob.generation),
+        'sha256':sha,'bytes':archive.stat().st_size,'retained':retained,'basemap':basemap}
     pointer=bucket.blob('runtime/area/'+key+'/manifest.json')
     generation=0
     if pointer.exists():pointer.reload();generation=int(pointer.generation)

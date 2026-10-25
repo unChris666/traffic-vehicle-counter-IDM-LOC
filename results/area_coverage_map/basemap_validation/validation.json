@@ -1,0 +1,30 @@
+{
+  "scope": "LOCAL_SYNTHETIC_BASEMAP_VALIDATION_NOT_NATIONAL_BUILD",
+  "tests": {
+    "run": 155,
+    "passed": 140,
+    "skipped": 15,
+    "failed": 0
+  },
+  "actual_java21_planetiler_execution": true,
+  "fixture_tiles": 5,
+  "fixture_layers": [
+    "buildings",
+    "pois",
+    "roads"
+  ],
+  "national_basemap_uploaded": false,
+  "national_build_executed": false,
+  "gcs_range_tests": "STUBBED",
+  "inline_javascript_syntax": {
+    "status": "PASS",
+    "scripts": 7
+  },
+  "browser_render": "NOT_VALIDATED: Chromium times out even on static HELLO page",
+  "business_rules_changed": false,
+  "cpu_notebook_baseline_unchanged": true,
+  "preparation_ready_gate": "Requires validated national basemap and runtime before READY",
+  "owner_action": "Run updated preparation interactively with LocatioIntelligent and matching Area image",
+  "kaggle_preparation_draft_verified_equal": true,
+  "kaggle_area_draft_verified_equal": true
+}

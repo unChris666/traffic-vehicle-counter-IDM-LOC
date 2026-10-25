@@ -1,5 +1,13 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Basemap nasional —25 Oktober2026:** persiapan runtime kini juga membangun
+vector PMTiles Indonesia dari PBF GCS, default native0–14/overzoom20. Runtime
+READY hanya setelah basemap READY. Area mengambil range GCS dan meng-inline
+tile viewport; tidak membutuhkan tile/CDN eksternal atau CORS/public bucket.
+[Profil, resource, batas viewport dan bukti](NATIONAL_BASEMAP_PREPARATION.md).
+Fixture Java nyata lulus; Indonesia penuh/upload masih menunggu Run All owner.
+Pernyataan basemap pending di checkpoint sebelumnya adalah riwayat sebelum ini.
+
 **Area Google-only —25 Oktober2026:** notebook GPU memakai generation/SHA PBF
 GCS yang dilaporkan owner dan BigQuery; tidak Overpass/PyPI/apt/CDN saat run.
 Runtime/frontend bundle GCS perlu disiapkan ingestion terpisah; prep otomatis

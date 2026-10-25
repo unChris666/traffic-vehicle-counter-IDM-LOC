@@ -1,5 +1,11 @@
 # Area notebook: input Google Cloud saja
 
+Update basemap: [persiapan nasional](NATIONAL_BASEMAP_PREPARATION.md) menggantikan
+mode background kosong di versi awal yang didokumentasikan di bawah. Run All
+persiapan kini mencakup PMTiles nasional, dan Area mensyaratkan referensi basemap
+READY sebelum berjalan. Arsip nasional belum dibangun oleh Codex; fixture kecil
+sudah diuji dengan Java/Planetiler nyata.
+
 25 Oktober2026, Asia/Jakarta. Notebook tujuan tetap
 https://www.kaggle.com/code/chrisbiran/area-coverage-market-gpu-hybrid/edit.
 
