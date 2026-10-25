@@ -1,0 +1,27 @@
+{
+  "scope": "LOCAL_TESTS_NOT_FULL_KAGGLE_PBF_EXECUTION",
+  "tests": {
+    "run": 149,
+    "passed": 134,
+    "skipped": 15,
+    "failed": 0
+  },
+  "cpu_baseline_embedded_helpers_unchanged": true,
+  "small_real_pbf_parser": "PASS",
+  "native_osmium_extract_in_unit_test": "STUBBED",
+  "GCS_transport_in_unit_test": "STUBBED",
+  "oracle_full_calculation_market": "PASS",
+  "HTTP_non_Google_and_redirects": "BLOCKED_IN_TEST",
+  "frontend_inlining_cache_tamper": "PASS",
+  "national_PBF_run": "NOT_EXECUTED",
+  "runtime_preparation_auto_run": {
+    "notebook": "chrisbiran/indonesia-gcs-source-ingestion-cpu",
+    "version": 3,
+    "status": "FAILED_SECRET_BOOTSTRAP",
+    "error_type": "ConnectionError",
+    "GCS_runtime_uploaded": false
+  },
+  "required_owner_action": "Run runtime preparation interactively with Secret enabled, then Area Run All",
+  "kaggle_area_draft_verified_download_equal": true,
+  "notebook_sha256": "8d8cc17faeb6bff43b793a9b8367b3495bc2632207727ee205409b28d240197a"
+}

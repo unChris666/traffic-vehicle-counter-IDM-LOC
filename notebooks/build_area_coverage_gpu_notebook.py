@@ -6,7 +6,7 @@ SOURCE=ROOT/'notebooks/area_coverage_market_cpu_2km.ipynb'
 DEST=ROOT/'notebooks/area_coverage_market_gpu_2km.ipynb'
 GPU_FILES=['location_intelligent_gpu.py','location_intelligent_gpu_worker.py','location_intelligent_gpu_runtime.py',
  'location_intelligent_gpu_geometry.py','location_intelligent_gpu_weighted.py','location_intelligent_gpu_connectors.py','location_intelligent_gpu_validation.py','location_intelligent_gpu_diagnostics.py']
-TRANSPORT_FILES=['location_intelligent_gpu_sources.py']
+TRANSPORT_FILES=['location_intelligent_google_only.py','location_intelligent_pbf_sources.py']
 
 
 def build():
@@ -61,6 +61,29 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     dependencies=dependencies.replace(marker,install+marker)
     dependencies=dependencies.replace(' except Exception as error:\n  fail_notebook_stage'," except Exception as error:\n  GPU_PREFLIGHT={'status':'FAILED','error_type':type(error).__name__}\n  NOTEBOOK_REPORT_PATH.parent.mkdir(parents=True,exist_ok=True)\n  (NOTEBOOK_REPORT_PATH.parent/'gpu_preflight.json').write_text(json.dumps(GPU_PREFLIGHT,indent=2))\n  fail_notebook_stage")
     notebook['cells'][3]['source']=dependencies.splitlines(True)
+    dependencies='''if begin_notebook_stage('dependencies',[]):
+ try:
+  import importlib.metadata
+  sys.path.insert(0,str(SOURCE_ROOT/'notebooks'))
+  from location_intelligent_google_only import bootstrap_runtime
+  GCS_RUNTIME_ROOT,GOOGLE_SESSION=bootstrap_runtime()
+  CORE_PYTHON=str(GCS_RUNTIME_ROOT/'core-python')
+  for name in ['PROJ_LIB','PROJ_DATA','GDAL_DATA']:os.environ.pop(name,None)
+  os.environ['PROJ_NETWORK']='OFF'
+  from location_intelligent_gpu import gpu_preflight
+  GPU_PREFLIGHT=gpu_preflight(GPU_DEVICE)
+  NOTEBOOK_REPORT_PATH.parent.mkdir(parents=True,exist_ok=True)
+  (NOTEBOOK_REPORT_PATH.parent/'gpu_preflight.json').write_text(json.dumps(GPU_PREFLIGHT,indent=2))
+  finish_notebook_stage('dependencies','SUCCEEDED')
+ except Exception as error:
+  GPU_PREFLIGHT={'status':'FAILED','error_type':type(error).__name__}
+  code=str(error).split(':',1)[0]
+  if code.startswith(('GCS_','KAGGLE_SECRET_','EXTERNAL_NETWORK_')):print('Google-only setup:',str(error))
+  fail_notebook_stage('dependencies',error)
+  if code.startswith(('GCS_','KAGGLE_SECRET_','EXTERNAL_NETWORK_')):
+   STAGES['dependencies']['error_code']=code;save_notebook_readiness()
+'''
+    notebook['cells'][3]['source']=dependencies.splitlines(True)
     config=''.join(notebook['cells'][50]['source'])
     # Expected source hashes include GPU adapter files too, while policy remains exact.
     expected=dict(baseline)
@@ -68,14 +91,37 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     config=re.sub(r"activate_notebook_sources\(SOURCE_ROOT/'notebooks',\{[^\n]+\}\)",
                   lambda m:"activate_notebook_sources(SOURCE_ROOT/'notebooks',"+repr(expected)+')',config)
     config=config.replace("  print('CPU; SOURCE:'", "  print('GPU HYBRID; SOURCE:'")
+    adapter_hash=hashlib.sha256((ROOT/'notebooks/location_intelligent_pbf_sources.py').read_bytes()).hexdigest()[:12]
+    config=config.replace("SOURCE_REVISION='new-target-market-v1'", "SOURCE_REVISION='gcs-pbf-v1-"+adapter_hash+"'")
+    config=config.replace("SOURCE_MODE='ACQUIRE_ONCE'", "SOURCE_MODE='FROZEN_GCS_PBF'")
+    config=config.replace("'poi_overpass_endpoints':['https://overpass-api.de/api/interpreter','https://overpass.kumi.systems/api/interpreter']", "'poi_overpass_endpoints':[]")
+    config=config.replace("'core_python':'/usr/bin/python3'", "'core_python':CORE_PYTHON")
     config=config.replace("  PILOT=OUTPUT/'pilot'","  PILOT=OUTPUT/'pilot'\n  GPU_REPORT=OUTPUT/'gpu_runtime.json'\n  GPU_EQUIVALENCE=OUTPUT/'gpu_equivalence.json'\n  GPU_VALIDATION_MODE='GPU_EXECUTE' # or VALIDATE: full CPU comparison, additional cost\n  if GPU_VALIDATION_MODE not in {'GPU_EXECUTE','VALIDATE'}:raise ValueError('Unknown GPU validation mode')\n  CPU_REFERENCE_PILOT=OUTPUT/'cpu_reference'\n  print('Execution mode:',GPU_VALIDATION_MODE)")
     notebook['cells'][50]['source']=config.splitlines(True)
-    sources=''.join(notebook['cells'][54]['source'])
-    sources=sources.replace('  from location_intelligent_osm_buildings import acquire_osm',
-        '  from location_intelligent_gpu_sources import acquire_market_network_gpu,explain_source_failure\n  from location_intelligent_osm_buildings import acquire_osm')
-    sources=sources.replace('   acquire_market_network(CONFIG,NETWORK_FOLDER)','   acquire_market_network_gpu(CONFIG,NETWORK_FOLDER)')
-    sources=sources.replace("  fail_notebook_stage('sources',error)","  fail_notebook_stage('sources',error)\n  from location_intelligent_gpu_sources import explain_source_failure\n  explain_source_failure(error,NETWORK_FOLDER,STAGES,NOTEBOOK_REPORT_PATH)")
+    sources='''if begin_notebook_stage('sources',['configuration']):
+ try:
+  from location_intelligent_google_only import PBF,stage
+  from location_intelligent_pbf_sources import materialize
+  local_pbf=stage(GOOGLE_SESSION,PBF,Path('/kaggle/working/gcs_inputs')/(PBF['sha256']+'.osm.pbf'))
+  materialize(CONFIG,SOURCES,local_pbf,GCS_RUNTIME_ROOT/'osmium',PBF)
+  from location_intelligent_map_poi import load_optional_osm_pois
+  facilities=load_optional_osm_pois(CONFIG,SOURCES,mode='FROZEN')
+  if facilities['status']!='SUCCEEDED':raise RuntimeError('GCS_PBF_POI_SNAPSHOT_INVALID')
+  print('GCS-only source:',SOURCES,'POIs:',facilities['count'])
+  finish_notebook_stage('sources','SUCCEEDED')
+ except Exception as error:
+  code=str(error).split(':',1)[0]
+  if code.startswith(('GCS_','PBF_','REQUEST_OUTSIDE_','LOCAL_INPUT_')):print('Source diagnostic:',str(error))
+  fail_notebook_stage('sources',error)
+  if code.startswith(('GCS_','PBF_','REQUEST_OUTSIDE_','LOCAL_INPUT_')):
+   STAGES['sources']['error_code']=code;save_notebook_readiness()
+'''
     notebook['cells'][54]['source']=sources.splitlines(True)
+    bq=''.join(notebook['cells'][52]['source'])
+    start=bq.index("     from kaggle_secrets import UserSecretsClient")
+    end=bq.index("    elif BQ_AUTH_METHOD=='FILE':",start)
+    bq=bq[:start]+"     credentials=GOOGLE_SESSION.credentials\n"+bq[end:]
+    notebook['cells'][52]['source']=bq.splitlines(True)
     calculation=''.join(notebook['cells'][56]['source'])
     calculation=calculation.replace("  from location_intelligent_osm_buildings import prepare_osm_from_network", "  from location_intelligent_gpu_runtime import build_gpu\n  from location_intelligent_osm_buildings import prepare_osm_from_network")
     calculation=calculation.replace("timed_call('build',build,PILOT)","timed_call('build_gpu_hybrid',build_gpu,PILOT,GPU_REPORT,device=GPU_DEVICE)")
@@ -88,6 +134,7 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     allocation=allocation.replace("  print('MARKET STATUS:", "  from location_intelligent_gpu_validation import validate_market,_record\n  if GPU_VALIDATION_MODE=='VALIDATE':\n   validate_market(CONFIG,MARKET_CONFIG,CPU_REFERENCE_PILOT,layers,facilities,MARKET,OUTPUT/'cpu_reference_market',GPU_EQUIVALENCE)\n  else:\n   _record(GPU_EQUIVALENCE,'market',{'status':'NOT_RUN','reason':'GPU_EXECUTE: no full CPU reference requested'})\n   print('GPU result for review; CPU equivalence NOT_RUN')\n  print('MARKET STATUS:")
     notebook['cells'][60]['source']=allocation.splitlines(True)
     export=''.join(notebook['cells'][62]['source'])
+    export=export.replace('from location_intelligent_market_map import render_market','from location_intelligent_google_only import google_only_render as render_market')
     export=export.replace("    z.writestr('job_config.json'", "    z.writestr('gpu_execution.json',json.dumps({'preflight':GPU_PREFLIGHT,'runtime':read_json(GPU_REPORT) if GPU_REPORT.exists() else [],'profile':'GPU_WEIGHTED_GEOMETRY_V2'},sort_keys=True,indent=2))\n    for f in sorted(OUTPUT.glob('*-gpu-*.json.gz')):z.write(f,'gpu_runtime/'+f.name)\n    z.writestr('job_config.json'")
     export=export.replace("(PILOT,'pilot'),", "(PILOT,'pilot'),(CPU_REFERENCE_PILOT,'cpu_reference'),(OUTPUT/'cpu_reference_market','cpu_reference_market'),")
     export=export.replace("    z.writestr('gpu_execution.json'", "    z.writestr('gpu_equivalence.json',json.dumps(read_json(GPU_EQUIVALENCE),sort_keys=True,indent=2))\n    z.writestr('gpu_execution.json'")
@@ -96,6 +143,14 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     export=export.replace("archive_manifest=OUTPUT/'archive_manifest.json'","archive_manifest=OUTPUT/('archive_manifest_'+GPU_VALIDATION_MODE.lower()+'.json')")
     export=export.replace("  display(HTML('<iframe", "  if GPU_VALIDATION_MODE!='VALIDATE':\n   display(HTML('<p><b>EKSPERIMEN GPU: kesetaraan CPU belum diuji. Hasil tersedia untuk review; handoff belum disahkan.</b></p>'))\n  display(HTML('<iframe")
     notebook['cells'][62]['source']=export.splitlines(True)
+    notebook['cells'][0]['source'] += ['\n## Google-only input profile\n',
+        'PBF generation/SHA pinned dari GCS, BigQuery tetap tersedia. Tidak ada Overpass/PyPI/apt/CDN/tile eksternal saat run.\n',
+        'Runtime/frontend bundle harus tersedia dahulu di GCS. Credential bootstrap memakai Kaggle Secret.\n',
+        'Basemap nasional belum tersedia: peta tetap menampilkan layer analitik tanpa background tile eksternal.\n',
+        'PBF adalah snapshot baru; kesetaraan terhadap snapshot Overpass lama tidak diklaim.\n']
+    notebook['cells'][0]['source'] += ['Persiapan sekali: jalankan versi runtime preparation pada ',
+        'https://www.kaggle.com/code/chrisbiran/indonesia-gcs-source-ingestion-cpu/edit ',
+        'secara interaktif (Secret aktif), lalu Run All notebook Area ini.\n']
     # Remove CPU-specific instruction about patching only part8; backend changes need new job.
     notebook['cells'][59]['source']=['## 8. Market allocation — GPU weighted routing + audited geometry fallback\n',
         'GPU_EXECUTE: GPU utama, tanpa CPU reference penuh; hasil untuk review. VALIDATE: uji kesetaraan CPU tambahan.\n']

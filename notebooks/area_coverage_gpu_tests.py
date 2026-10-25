@@ -92,7 +92,20 @@ class GpuNotebookTests(unittest.TestCase):
   def configs(n):
    code=next(''.join(c['source']) for c in n['cells'] if "begin_notebook_stage('configuration'" in ''.join(c['source']))
    return {node.targets[0].id:ast.dump(node.value) for node in ast.walk(ast.parse(code)) if isinstance(node,ast.Assign) and len(node.targets)==1 and isinstance(node.targets[0],ast.Name) and node.targets[0].id in ['CONFIG','MARKET_CONFIG','SOURCE_REVISION','SOURCE_MODE','BQ_MODE']}
-  self.assertEqual(configs(cpu),configs(gpu))
+  old,new=configs(cpu),configs(gpu)
+  self.assertEqual(old['MARKET_CONFIG'],new['MARKET_CONFIG']);self.assertEqual(old['BQ_MODE'],new['BQ_MODE'])
+  self.assertNotEqual(old['SOURCE_MODE'],new['SOURCE_MODE'])
+  self.assertIn('FROZEN_GCS_PBF',new['SOURCE_MODE'])
+  # Only the core runtime locator changes inside CONFIG; domain fields stay exact.
+  def config_fields(n):
+   code=next(''.join(c['source']) for c in n['cells'] if "begin_notebook_stage('configuration'" in ''.join(c['source']))
+   node=next(x for x in ast.walk(ast.parse(code)) if isinstance(x,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='CONFIG' for t in x.targets))
+   return {ast.literal_eval(k):ast.dump(v) for k,v in zip(node.value.keys,node.value.values)}
+  a,b=config_fields(cpu),config_fields(gpu)
+  transport={'core_python','poi_overpass_endpoints'}
+  self.assertEqual({k:v for k,v in a.items() if k not in transport},{k:v for k,v in b.items() if k not in transport})
+  self.assertEqual(b['core_python'],"Name(id='CORE_PYTHON', ctx=Load())")
+  self.assertEqual(b['poi_overpass_endpoints'],'List(elts=[], ctx=Load())')
   for c in gpu['cells']:
    if c['cell_type']=='code':
     code=''.join(c['source']);ast.parse(code.split('\n',1)[1] if code.startswith('%%writefile ') else code)

@@ -7,6 +7,19 @@ PROFILE='GPU_WEIGHTED_GEOMETRY_V2'
 _LOCK=RLock()
 
 
+def run_core_with_python(root,stage):
+    from location_intelligent_li3 import CORE
+    from location_intelligent_li3_sources import read_json
+    config=Path(root)/'requested_config.json'
+    python=read_json(config).get('core_python','/usr/bin/python3') if config.exists() else '/usr/bin/python3'
+    result=subprocess.run([python,'-B',str(CORE),stage,'--root',str(root)],capture_output=True,text=True,
+        env={**os.environ,'PROJ_NETWORK':'OFF','PYTHONDONTWRITEBYTECODE':'1'})
+    if result.returncode:raise RuntimeError('Core stage failed: '+stage+' '+result.stderr[-1800:]+result.stdout[-1800:])
+    for line in result.stderr.splitlines():
+        if line.startswith('Normalization cache:'):print(line,flush=True)
+    return json.loads(result.stdout)
+
+
 def _report(path,report):
     from location_intelligent_li3_sources import write_json,read_json
     path=Path(path);rows=read_json(path) if path.exists() else []
@@ -24,7 +37,7 @@ def build_gpu(root,report_path,device=0):
     root=Path(root);original=canonical.run_core;original_connectors=connectors.generate_connectors
     def connector_adapter(*args,**kwargs):return generate_connectors_gpu(*args,**kwargs,device=device,audit_path=report_path)
     def runner(pilot,stage):
-        if stage!='route':return original(pilot,stage)
+        if stage!='route':return run_core_with_python(pilot,stage)
         graph=read_json(pilot/'graph/graph.json.gz');evidence=read_json(pilot/'connectors/evidence.json.gz')
         allowed={k:r['allowed'] for k,r in evidence['edge_rules'].items()}
         blocked={(r['from_edge'],r['to_edge']) for r in evidence['blocked_turns']}
@@ -33,7 +46,8 @@ def build_gpu(root,report_path,device=0):
         cache={'schema':'gpu_weighted_cache_v2','graph_hash':canonical_hash(graph),'evidence_hash':canonical_hash(evidence),
                'labels':router.export_labels(),'audit':router.audit}
         path=Path(report_path).parent/(pilot.name+'-gpu-weighted.json.gz');write_json(path,cache)
-        completed=subprocess.run(['/usr/bin/python3','-B',str(Path(__file__).with_name('location_intelligent_gpu_worker.py')),
+        core=read_json(pilot/'requested_config.json').get('core_python','/usr/bin/python3')
+        completed=subprocess.run([core,'-B',str(Path(__file__).with_name('location_intelligent_gpu_worker.py')),
             '--root',str(pilot),'--scope',str(path),'--weighted','--audit-path',str(report_path)],capture_output=True,text=True,
             env={**os.environ,'PROJ_NETWORK':'OFF','PYTHONDONTWRITEBYTECODE':'1'})
         if completed.returncode:raise RuntimeError('GPU_WEIGHTED_WORKER_FAILED: '+completed.stderr[-1200:])

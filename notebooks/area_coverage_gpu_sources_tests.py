@@ -164,16 +164,16 @@ class SourceCellTests(unittest.TestCase):
         calculation=next(''.join(c['source']) for c in notebook['cells'] if "if begin_notebook_stage('calculation'" in ''.join(c['source']))
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);env={};exec((root_code/'location_intelligent_notebook_runtime.py').read_text(),env)
-            env.update(Path=Path,FROZEN_SOURCE_INPUT=None,SOURCE_MODE='ACQUIRE_ONCE',SOURCES=root/'sources',
+            env.update(Path=Path,GOOGLE_SESSION=object(),GCS_RUNTIME_ROOT=root/'runtime',SOURCES=root/'sources',
                 NETWORK_FOLDER=root/'sources/network_roads_only',CONFIG={},NOTEBOOK_REPORT_PATH=root/'ready.json')
             env['STAGES']['configuration']={'status':'SUCCEEDED'}
             with patch('importlib.reload',side_effect=lambda m:m),patch(
-                'location_intelligent_gpu_sources.acquire_market_network_gpu',side_effect=OsmAcquisitionError('OSM_ROAD_TILE_UNAVAILABLE')):
+                'location_intelligent_google_only.stage',side_effect=RuntimeError('GCS_INPUT_HASH_MISMATCH')):
                 exec(sources,env)
             with patch('location_intelligent_gpu_runtime.build_gpu',side_effect=AssertionError('No GPU without roads')):
                 exec(calculation,env)
             report=read_json(root/'ready.json')
-            self.assertEqual(report['stages']['sources']['source_diagnostic']['error_code'],'OSM_ROAD_TILE_UNAVAILABLE')
+            self.assertEqual(report['stages']['sources']['error_code'],'GCS_INPUT_HASH_MISMATCH')
             self.assertEqual(report['stages']['calculation']['status'],'BLOCKED')
             self.assertIsNone(report['candidate_buildings'])
             self.assertIsNone(env['MARKET'])

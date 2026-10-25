@@ -16,7 +16,10 @@ def validate_calculation(pilot,reference,report_path):
     else:
         if reference.exists():raise ValueError('INCOMPLETE_CPU_REFERENCE_INSPECT_REQUIRED')
         shutil.copytree(pilot,reference);(reference/'manifest.json').unlink()
-        build(reference);make_manifest(reference)
+        from unittest.mock import patch
+        from location_intelligent_gpu_runtime import run_core_with_python
+        with patch('location_intelligent_li3.run_core',run_core_with_python):build(reference)
+        make_manifest(reference)
     paths=['normalized/metric_buildings.json','building_results/selection.json','building_results/capacity.json',
            'graph/graph.json.gz','connectors/connectors.json.gz','building_results/routing.json.gz','building_results/decisions.json.gz']
     mismatches=[name for name in paths if read_json(pilot/name)!=read_json(reference/name)]

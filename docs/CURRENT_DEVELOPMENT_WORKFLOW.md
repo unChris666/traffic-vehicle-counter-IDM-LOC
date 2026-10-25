@@ -1,5 +1,12 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Area Google-only —25 Oktober2026:** notebook GPU memakai generation/SHA PBF
+GCS yang dilaporkan owner dan BigQuery; tidak Overpass/PyPI/apt/CDN saat run.
+Runtime/frontend bundle GCS perlu disiapkan ingestion terpisah; prep otomatis
+gagal Secret bootstrap, perlu Run All interaktif. Peta analitik tanpa tile
+eksternal, basemap nasional masih pending. [Kontrak, langkah dan batas tes](AREA_GOOGLE_ONLY_NOTEBOOK.md).
+PBF_LOCAL_V1 adalah snapshot baru, bukan klaim angka setara Overpass lama.
+
 **Nasional / pengecualian BQ —25 Oktober2026:** owner meminta sumber Indonesia
 nasional di GCS, bobot/video/config dan build container terkunci; BQ boleh live.
 Owner melaporkan CRUD Kaggle PASS untuk feeder-location-intelligent/us-central1.
