@@ -18,13 +18,16 @@
     ]
   },
   {
-    "source": "notebooks/location_intelligent_buildings.py",
+    "source": "results/engine_modularization/source_archive/723ea39afcac220c4dc4065f5f4a09aeab2a1c5892bedee6c3047a53bd041c22/location_intelligent_buildings.py",
     "source_sha256": "723ea39afcac220c4dc4065f5f4a09aeab2a1c5892bedee6c3047a53bd041c22",
     "module": "src/traffic_location/location/selection.py",
     "module_sha256": "b10f3b1e3cd2df510684187320a6d3336f7bdaf1d4d95d7d7ce6e65782d43a61",
     "transformations": [
       "relative imports; remove CLI only; unchanged algorithms/backends"
-    ]
+    ],
+    "historical_source_path": "notebooks/location_intelligent_buildings.py",
+    "historical_source_commit": "f83fc4a51e3a172b18f6f54fbe5fc1fa0d74f952",
+    "provenance_note": "Original recorded bytes pinned from Git; current source and extracted algorithm unchanged"
   },
   {
     "source": "notebooks/location_intelligent_capacity.py",

@@ -1,5 +1,12 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Area migration started —26 Oktober2026:** source freeze dan boundary
+artefak freeze/reopen beserta adapter ZIP telah dibuat; full domain migration
+belum dimulai karena golden output V5 belum dapat diakses Codex. Collector
+read-only ditambahkan ke notebook sukses, tanpa analisis ulang. [Gate, status,
+langkah akses dan batas bukti](AREA_MODULARIZATION_PROGRESS.md). Bukan Area RC.
+
+
 **Audit modularisasi Area —26 Oktober2026:** owner melaporkan notebook sukses;
 source Kaggle identik dengan baseline V5. Audit memperbolehkan rencana migrasi
 bertahap, dengan gate freeze/verifikasi output aktual sebelum ekstraksi domain.

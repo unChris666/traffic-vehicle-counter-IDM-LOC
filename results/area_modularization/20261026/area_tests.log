@@ -1,0 +1,396 @@
+...../workspace/traffic-vehicle-counter-IDM-LOC/notebooks/location_intelligent_li3_connectors.py:22: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  return transform(tx, LineString([(nodes[i]['lon'], nodes[i]['lat']) for i in way['nodes']]))
+...s......Setup: install GDAL/PyProj/osmium with apt dependency resolver
+...Setup: install explicit development packages: ['osmnx==2.1.1', 'geopandas==1.2.0', 'folium==0.20.0', 'osmium==4.3.2', 'google-cloud-bigquery==3.46.2', 'google-cloud-storage==3.6.0', 'google-crc32c==1.7.1', 'cupy-cuda12x==13.6.0', 'fastrlock==0.8.3']
+..GCS transfer interrupted; retry 2 /3; retained finalized cache unchanged
+GCS transfer interrupted; retry 3 /3; retained finalized cache unchanged
+.GCS transfer interrupted; retry 2 /3; retained finalized cache unchanged
+......GCS staging: input.pbf 11 bytes
+GCS local cache verified: input.pbf
+..GCS staging: input.pbf 3 bytes
+...PBF: local extraction START; native CPU scan, no Overpass
+GCS PBF source finalized: /tmp/tmpt5pd2p0l/sources
+..GPU result for review; CPU equivalence NOT_RUN
+MARKET STATUS: SUCCEEDED (experimental, bounded sources)
+Outer-zone gate: OPEN fixture
+Inputs complete: True
+Whole residential buildings assigned to candidate: 0
+Gate evidence:
+Excluded/uncertain stores:
+Competitors within 800 m:
+Exact access-node routing clusters: {}
+Connectors: single entrance; 0 buildings, 70 road segments
+GPU connectors: batches=1; evaluated=32; canonical_checked=1; remaining=0; exhausted=0; elapsed=0.0s
+.Connectors: single entrance; 0 buildings, 70 road segments
+GPU connectors: batches=1; evaluated=1; canonical_checked=1; remaining=1; exhausted=0; elapsed=0.0s
+GPU connectors: batches=10; evaluated=10; canonical_checked=10; remaining=1; exhausted=0; elapsed=0.0s
+GPU connectors: batches=20; evaluated=20; canonical_checked=20; remaining=1; exhausted=0; elapsed=0.0s
+GPU connectors: batches=30; evaluated=30; canonical_checked=30; remaining=1; exhausted=0; elapsed=0.0s
+GPU connectors: batches=40; evaluated=40; canonical_checked=40; remaining=1; exhausted=0; elapsed=0.0s
+GPU connectors: batches=41; evaluated=41; canonical_checked=41; remaining=0; exhausted=0; elapsed=0.0s
+Connectors: single entrance; 0 buildings, 70 road segments
+GPU connectors: batches=1; evaluated=7; canonical_checked=7; remaining=1; exhausted=0; elapsed=0.0s
+GPU connectors: batches=6; evaluated=42; canonical_checked=41; remaining=0; exhausted=0; elapsed=0.0s
+Connectors: single entrance; 0 buildings, 70 road segments
+GPU connectors: batches=1; evaluated=32; canonical_checked=32; remaining=1; exhausted=0; elapsed=0.0s
+GPU connectors: batches=2; evaluated=64; canonical_checked=41; remaining=0; exhausted=0; elapsed=0.0s
+Connectors: single entrance; 0 buildings, 70 road segments
+GPU connectors: batches=1; evaluated=64; canonical_checked=41; remaining=0; exhausted=0; elapsed=0.0s
+.Connectors: single entrance; 0 buildings, 70 road segments
+GPU connectors: batches=1; evaluated=32; canonical_checked=32; remaining=1; exhausted=0; elapsed=0.0s
+GPU connectors: batches=3; evaluated=70; canonical_checked=70; remaining=0; exhausted=1; elapsed=0.0s
+.GPU kernel compile: propagate
+GPU kernel compile: distances
+GPU kernel compile: polygon_lengths
+GPU kernel compile: primitive_hits
+GPU kernel compile: relax
+.GPU kernel compile: propagate
+GPU kernel compile: distances
+GPU kernel compile: polygon_lengths
+GPU kernel compile: primitive_hits
+GPU kernel compile: relax
+..OSM road tile: subdivide depth=1; successful children reused
+OSM road subtile: cached 6fa2816565
+.OSM road retry 1/1
+.OSM road tile: subdivide depth=1; successful children reused
+.OSM acquisition: roads_full
+OSM acquisition: roads_tile_1/4
+OSM acquisition: roads_tile_2/4
+OSM road retry 1/1
+OSM acquisition: roads_tile_2/4
+OSM acquisition: roads_tile_3/4
+OSM acquisition: roads_tile_4/4
+...OSM road tile: subdivide depth=1; successful children reused
+OSM road tile: subdivide depth=2; successful children reused
+OSM road subtile: cached 6fa2816565
+..OSM road tile: subdivide depth=1; successful children reused
+OSM road tile: subdivide depth=1; successful children reused
+OSM road subtile: cached fae58d2916
+.OSM road retry 1/1
+.OSM road tile: subdivide depth=1; successful children reused
+..sources: START
+...Source diagnostic: GCS_INPUT_HASH_MISMATCH
+sources: FAILED (RuntimeError). See notebook_readiness.json; no counts generated for missing inputs.
+calculation: BLOCKED — sources
+{'status': 'NOT_READY', 'traffic_started': False, 'area_business_status': None, 'gpu_cleanup': {'status': 'RELEASED'}}
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 0 buildings, 3 road segments
+Market: reused 2 building connectors; added 3 target requests
+Market routing clusters: 2 source access nodes for 2 buildings
+Market routing: target node 1/3
+Market routing: target node 2/3
+Market routing: target node 3/3
+Market routing clusters: 2 source access nodes for 2 buildings
+Market routing: target node 1/3
+Market routing: target node 2/3
+Market routing: target node 3/3
+Market POI gate: 1/1
+Market POI gate: 1/1
+...GPU routing scope: 12 -> 1 relevant edges; targets=9
+GPU routing scope: 14 -> 11 relevant edges; targets=9
+GPU routing scope: 17 -> 9 relevant edges; targets=9
+GPU routing scope: 15 -> 3 relevant edges; targets=9
+GPU routing scope: 15 -> 8 relevant edges; targets=9
+GPU routing scope: 10 -> 4 relevant edges; targets=9
+GPU routing scope: 12 -> 3 relevant edges; targets=9
+GPU routing scope: 10 -> 0 relevant edges; targets=9
+GPU routing scope: 11 -> 3 relevant edges; targets=9
+GPU routing scope: 15 -> 7 relevant edges; targets=9
+GPU routing scope: 10 -> 2 relevant edges; targets=9
+GPU routing scope: 16 -> 8 relevant edges; targets=9
+GPU routing scope: 13 -> 6 relevant edges; targets=9
+GPU routing scope: 16 -> 8 relevant edges; targets=9
+GPU routing scope: 10 -> 4 relevant edges; targets=9
+GPU routing scope: 15 -> 10 relevant edges; targets=9
+GPU routing scope: 16 -> 3 relevant edges; targets=9
+GPU routing scope: 15 -> 5 relevant edges; targets=9
+GPU routing scope: 18 -> 15 relevant edges; targets=9
+GPU routing scope: 18 -> 12 relevant edges; targets=9
+GPU routing scope: 14 -> 8 relevant edges; targets=9
+GPU routing scope: 13 -> 4 relevant edges; targets=9
+GPU routing scope: 13 -> 5 relevant edges; targets=9
+GPU routing scope: 14 -> 4 relevant edges; targets=9
+GPU routing scope: 9 -> 4 relevant edges; targets=9
+GPU routing scope: 12 -> 2 relevant edges; targets=9
+GPU routing scope: 14 -> 5 relevant edges; targets=9
+GPU routing scope: 21 -> 12 relevant edges; targets=9
+GPU routing scope: 12 -> 2 relevant edges; targets=9
+GPU routing scope: 15 -> 0 relevant edges; targets=9
+.GPU VALIDATION: CPU reference market
+.Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+GPU connectors: batches=1; evaluated=18; canonical_checked=6; remaining=0; exhausted=0; elapsed=0.0s
+.Connectors: single entrance; 1 buildings, 1 road segments
+Connectors: 1 entrances selected; 0 buildings remaining; 1 candidates checked
+GPU connectors: batches=1; evaluated=2; canonical_checked=2; remaining=0; exhausted=0; elapsed=0.0s
+.................Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Market: reused 6 building connectors; added 3 target requests
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Market: reused 6 building connectors; added 3 target requests
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Market: reused 6 building connectors; added 3 target requests
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Market: reused 6 building connectors; added 3 target requests
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 0 buildings, 3 road segments
+Market: reused 2 building connectors; added 3 target requests
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 0 buildings, 3 road segments
+Market: reused 2 building connectors; added 3 target requests
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 0 buildings, 3 road segments
+Market: reused 2 building connectors; added 3 target requests
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 0 buildings, 3 road segments
+Market: reused 2 building connectors; added 3 target requests
+...Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 0 buildings, 3 road segments
+Market: reused 2 building connectors; added 3 target requests
+Market POI gate: 1/2
+Market POI gate: 2/2
+.Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 0 buildings, 3 road segments
+Market: reused 2 building connectors; added 3 target requests
+Market routing clusters: 1 source access nodes for 1 buildings
+Market routing: target node 1/1 — reuse primary
+.Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market: building entrances from section 6; locating 3 extra store/POI targets
+Target access: 1/3; last candidates checked=1
+Target access: 3/3; last candidates checked=1
+Connectors: single entrance; 0 buildings, 3 road segments
+Market: reused 2 building connectors; added 3 target requests
+Market routing clusters: 2 source access nodes for 2 buildings
+Market routing: target node 1/3
+Market routing: target node 2/3
+Market routing: target node 3/3
+..../workspace/traffic-vehicle-counter-IDM-LOC/notebooks/area_coverage_market_scope_tests.py:43: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  features.append({'geometry':mapping(transform(inv.transform,footprint)),'properties':{'building_id':sid}})
+/workspace/traffic-vehicle-counter-IDM-LOC/notebooks/location_intelligent_market_scope.py:64: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  i=ids[0];area=transform(tx.transform,shapes[i]).area;row['footprint_area_m2']=area
+.Market scope: routing 1 store targets; POI routing disabled
+....OSM acquisition: roads_full
+OSM acquisition: roads_tile_1/4
+OSM acquisition: roads_tile_2/4
+OSM acquisition: roads_tile_2/4
+OSM acquisition: roads_tile_3/4
+OSM acquisition: roads_tile_4/4
+OSM acquisition: features_full
+.OSM acquisition: roads_full
+OSM acquisition: features_full
+OSM acquisition: features_tile_1/4
+OSM acquisition: features/raw/feature_parts/0/node_barriers
+OSM acquisition: features/raw/feature_parts/0/way_barriers
+OSM acquisition: features/raw/feature_parts/0/way_barriers
+OSM acquisition: features/raw/feature_parts/0/waterways
+OSM acquisition: features/raw/feature_parts/0/water_polygons
+OSM acquisition: features/raw/feature_parts/0/water_relations
+OSM acquisition: features/raw/feature_parts/0/turn_restrictions
+OSM acquisition: features_tile_2/4
+OSM acquisition: features_tile_3/4
+OSM acquisition: features_tile_4/4
+..........OSM acquisition: roads_full
+OSM acquisition: features_full
+OSM acquisition: features_tile_1/4
+OSM acquisition: features_tile_2/4
+OSM acquisition: features_tile_3/4
+OSM acquisition: features_tile_4/4
+OSM acquisition: roads_full
+OSM acquisition: features_full
+OSM acquisition: features_tile_1/4
+OSM acquisition: features/raw/feature_parts/0/node_barriers
+.........Contains BQ store results: retain privately. No secret/key is included.
+Contains BQ store results: retain privately. No secret/key is included.
+OSM acquisition: roads_full
+...OSM acquisition: roads_full
+OSM acquisition: features_full
+OSM acquisition: features_tile_1/4
+OSM acquisition: features/raw/feature_parts/0/node_barriers
+.OSM acquisition: roads_full
+OSM acquisition: features_full
+OSM acquisition: features_tile_1/4
+OSM acquisition: features/raw/feature_parts/0/node_barriers
+OSM acquisition: features/raw/feature_parts/0/node_barriers_children/0/node_barriers
+OSM acquisition: features/raw/feature_parts/0/node_barriers_children/1/node_barriers
+OSM acquisition: features/raw/feature_parts/0/node_barriers_children/2/node_barriers
+OSM acquisition: features/raw/feature_parts/0/node_barriers_children/3/node_barriers
+OSM acquisition: features/raw/feature_parts/0/way_barriers
+OSM acquisition: features/raw/feature_parts/0/waterways
+OSM acquisition: features/raw/feature_parts/0/water_polygons
+OSM acquisition: features/raw/feature_parts/0/water_relations
+OSM acquisition: features/raw/feature_parts/0/turn_restrictions
+OSM acquisition: features_tile_2/4
+OSM acquisition: features_tile_3/4
+OSM acquisition: features_tile_4/4
+......Connectors: single entrance; 1 buildings, 2 road segments
+Connectors: 1 entrances selected; 0 buildings remaining; 1 candidates checked
+Connectors: single entrance; 1 buildings, 2 road segments
+Connectors: 0 entrances selected; 1 buildings remaining; 1 candidates checked
+Connectors: 1 entrances selected; 0 buildings remaining; 2 candidates checked
+.Connectors: single entrance; 2 buildings, 3 road segments
+Connectors: 2 entrances selected; 0 buildings remaining; 2 candidates checked
+Market routing clusters: 1 source access nodes for 2 buildings
+Market routing: target node 1/1
+..sources: START
+sources: FAILED (RuntimeError). See notebook_readiness.json; no counts generated for missing inputs.
+calculation: BLOCKED — sources
+allocation: BLOCKED — calculation, stores
+output: BLOCKED — allocation
+NOTEBOOK STATUS: NOT_READY
+Candidate buildings: None
+Readiness report: /tmp/tmp2tyiooz7/readiness.json
+sources: START
+..ssssssssss.....sources: FAILED (RuntimeError). See notebook_readiness.json; no counts generated for missing inputs.
+calculation: BLOCKED — sources
+allocation: BLOCKED — calculation, stores
+output: BLOCKED — allocation
+NOTEBOOK STATUS: NOT_READY
+Candidate buildings: None
+Readiness report: /tmp/tmpj4q2kehq/readiness.json
+PBF provenance: recovered immutable local revision; no download or rescan: /tmp/tmpjrzvf710/sources-provenance-v2
+.calculation: START
+calculation: FAILED (PbfProvenanceError) [PBF_ROAD_PROVENANCE_HASH_MISMATCH]. See notebook_readiness.json; no counts generated for missing inputs.
+Diagnostic: PBF_ROAD_PROVENANCE_HASH_MISMATCH
+...Calculation: ok START
+Calculation: ok SUCCEEDED 0.000 s
+Calculation timing: journal unavailable; console duration retained
+Calculation: bad START
+Calculation: bad FAILED 0.000 s
+Calculation timing: journal unavailable; console duration retained
+.Calculation: ok START
+Calculation: ok SUCCEEDED 0.000 s
+Calculation: bad START
+Calculation: bad FAILED 0.000 s
+.ss....../workspace/traffic-vehicle-counter-IDM-LOC/notebooks/location_intelligent_map_pilot.py:438: DeprecationWarning: The 'shapely.ops.transform()' function is deprecated. Use 'shapely.transform()' or 'shapely.transform_coordseq()' instead. See https://shapely.readthedocs.io/en/latest/manual.html#shapely.ops.transform for more details.
+  roads.append({'type':'Feature','geometry':mapping(transform(inverse.transform,clipped)),
+............Target access: 1/2; last candidates checked=1
+Target access: 2/2; last candidates checked=1
+...Connectors: single entrance; 1 buildings, 1 road segments
+Connectors: 1 entrances selected; 0 buildings remaining; 1 candidates checked
+Connectors: single entrance; 1 buildings, 1 road segments
+Connectors: 1 entrances selected; 0 buildings remaining; 1 candidates checked
+Connectors: single entrance; 1 buildings, 1 road segments
+.Connectors: single entrance; 1 buildings, 2 road segments
+Connectors: 1 entrances selected; 0 buildings remaining; 1 candidates checked
+.OSM acquisition: roads_full
+OSM acquisition: features_full
+.Connectors: single entrance; 1 buildings, 2 road segments
+Connectors: 0 entrances selected; 1 buildings remaining; 1 candidates checked
+Connectors: 1 entrances selected; 0 buildings remaining; 2 candidates checked
+.Connectors: single entrance; 1 buildings, 2 road segments
+Connectors: 1 entrances selected; 0 buildings remaining; 1 candidates checked
+.Connectors: single entrance; 1 buildings, 2 road segments
+Connectors: 0 entrances selected; 1 buildings remaining; 1 candidates checked
+Connectors: 1 entrances selected; 0 buildings remaining; 2 candidates checked
+.Connectors: single entrance; 1 buildings, 4 road segments
+Connectors: 1 entrances selected; 0 buildings remaining; 1 candidates checked
+Connectors: single entrance; 1 buildings, 4 road segments
+Connectors: 1 entrances selected; 0 buildings remaining; 1 candidates checked
+.sssources: START
+REOPEN source snapshot; no re-fetch
+POI status: FAILED Count: None — unknown tetap unknown, bukan nol
+Frozen source packet: /tmp/tmp7k4uogwd/sources
+sources: PARTIAL 0.000 s
+calculation: START
+Calculation: verify_frozen_manifest START
+Calculation: verify_frozen_manifest SUCCEEDED 0.000 s
+REOPEN frozen calculation, no routing replay
+Access status (separate from market ownership):
+calculation: PARTIAL 0.000 s
+sources: START
+REOPEN source snapshot; no re-fetch
+POI status: FAILED Count: None — unknown tetap unknown, bukan nol
+Frozen source packet: /tmp/tmparje0919/sources
+sources: PARTIAL 0.000 s
+calculation: START
+Calculation: verify_frozen_manifest START
+Calculation: verify_frozen_manifest SUCCEEDED 0.000 s
+REOPEN frozen calculation, no routing replay
+Access status (separate from market ownership):
+calculation: PARTIAL 0.000 s
+..sources: START
+..
+----------------------------------------------------------------------
+Ran 184 tests in 2.934s
+
+OK (skipped=15)
+sources: FAILED (SourcePacketError) [SOURCE_CONFIG_MISMATCH]. See notebook_readiness.json; no counts generated for missing inputs.
+calculation: BLOCKED — sources
