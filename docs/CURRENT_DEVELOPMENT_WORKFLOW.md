@@ -1,5 +1,11 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Notebook GPU hibrida —25 Oktober2026:** owner meminta notebook Area baru tanpa
+perubahan business/perhitungan. [Backend, batas dan setup](AREA_COVERAGE_GPU_NOTEBOOK.md).
+CPU baseline b84c850 tetap utuh; traversal/pruning integer disiapkan untuk CUDA,
+angka/tie-break tetap kanonik CPU. Belum diuji CUDA nyata dan tidak ada run Kaggle
+yang diajukan. Area -> artifact/handoff -> stop proses GPU Area -> Traffic GPU.
+
 **Nearest dan kompetitor 800 m —25 Oktober2026:** owner mengotorisasi nearest
 valid entrance untuk bangunan/toko, subset kompetitor <=800 m, primer/sekunder
 terpisah, dan reuse rute berdasarkan node akses identik. Skor/keputusan tetap

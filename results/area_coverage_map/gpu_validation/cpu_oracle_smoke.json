@@ -1,0 +1,17 @@
+{
+  "scope": "SYNTHETIC_CPU_ORACLE_ONLY",
+  "actual_cuda_executed": false,
+  "cuda_validation": "NOT_EXECUTED_NO_GPU_IN_CODEX",
+  "canonical_calculation_artifacts_equal": [
+    "building_results/selection.json",
+    "building_results/capacity.json",
+    "building_results/routing.json.gz",
+    "building_results/decisions.json.gz",
+    "graph/graph.json.gz",
+    "connectors/connectors.json.gz"
+  ],
+  "market_semantic_fields_equal": true,
+  "manifest_verified": true,
+  "business_baseline": "b84c850",
+  "source_records": 3
+}
