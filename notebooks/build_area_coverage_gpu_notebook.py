@@ -6,6 +6,7 @@ SOURCE=ROOT/'notebooks/area_coverage_market_cpu_2km.ipynb'
 DEST=ROOT/'notebooks/area_coverage_market_gpu_2km.ipynb'
 GPU_FILES=['location_intelligent_gpu.py','location_intelligent_gpu_worker.py','location_intelligent_gpu_runtime.py',
  'location_intelligent_gpu_geometry.py','location_intelligent_gpu_weighted.py','location_intelligent_gpu_connectors.py','location_intelligent_gpu_validation.py','location_intelligent_gpu_diagnostics.py']
+TRANSPORT_FILES=['location_intelligent_gpu_sources.py']
 
 
 def build():
@@ -63,12 +64,18 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     config=''.join(notebook['cells'][50]['source'])
     # Expected source hashes include GPU adapter files too, while policy remains exact.
     expected=dict(baseline)
-    for name in GPU_FILES:expected[name]=hashlib.sha256((ROOT/'notebooks'/name).read_bytes()).hexdigest()
+    for name in GPU_FILES+TRANSPORT_FILES:expected[name]=hashlib.sha256((ROOT/'notebooks'/name).read_bytes()).hexdigest()
     config=re.sub(r"activate_notebook_sources\(SOURCE_ROOT/'notebooks',\{[^\n]+\}\)",
                   lambda m:"activate_notebook_sources(SOURCE_ROOT/'notebooks',"+repr(expected)+')',config)
     config=config.replace("  print('CPU; SOURCE:'", "  print('GPU HYBRID; SOURCE:'")
     config=config.replace("  PILOT=OUTPUT/'pilot'","  PILOT=OUTPUT/'pilot'\n  GPU_REPORT=OUTPUT/'gpu_runtime.json'\n  GPU_EQUIVALENCE=OUTPUT/'gpu_equivalence.json'\n  GPU_VALIDATION_MODE='GPU_EXECUTE' # or VALIDATE: full CPU comparison, additional cost\n  if GPU_VALIDATION_MODE not in {'GPU_EXECUTE','VALIDATE'}:raise ValueError('Unknown GPU validation mode')\n  CPU_REFERENCE_PILOT=OUTPUT/'cpu_reference'\n  print('Execution mode:',GPU_VALIDATION_MODE)")
     notebook['cells'][50]['source']=config.splitlines(True)
+    sources=''.join(notebook['cells'][54]['source'])
+    sources=sources.replace('  from location_intelligent_osm_buildings import acquire_osm',
+        '  from location_intelligent_gpu_sources import acquire_market_network_gpu,explain_source_failure\n  from location_intelligent_osm_buildings import acquire_osm')
+    sources=sources.replace('   acquire_market_network(CONFIG,NETWORK_FOLDER)','   acquire_market_network_gpu(CONFIG,NETWORK_FOLDER)')
+    sources=sources.replace("  fail_notebook_stage('sources',error)","  fail_notebook_stage('sources',error)\n  from location_intelligent_gpu_sources import explain_source_failure\n  explain_source_failure(error,NETWORK_FOLDER,STAGES,NOTEBOOK_REPORT_PATH)")
+    notebook['cells'][54]['source']=sources.splitlines(True)
     calculation=''.join(notebook['cells'][56]['source'])
     calculation=calculation.replace("  from location_intelligent_osm_buildings import prepare_osm_from_network", "  from location_intelligent_gpu_runtime import build_gpu\n  from location_intelligent_osm_buildings import prepare_osm_from_network")
     calculation=calculation.replace("timed_call('build',build,PILOT)","timed_call('build_gpu_hybrid',build_gpu,PILOT,GPU_REPORT,device=GPU_DEVICE)")
@@ -93,7 +100,7 @@ berhasil diverifikasi dan pool GPU dibebaskan; tidak menjalankan Traffic Counter
     notebook['cells'][59]['source']=['## 8. Market allocation — GPU weighted routing + audited geometry fallback\n',
         'GPU_EXECUTE: GPU utama, tanpa CPU reference penuh; hasil untuk review. VALIDATE: uji kesetaraan CPU tambahan.\n']
     helper_cells=[]
-    for name in GPU_FILES:
+    for name in GPU_FILES+TRANSPORT_FILES:
         helper_cells.append({'cell_type':'code','metadata':{},'execution_count':None,'outputs':[],
             'source':('%%writefile /kaggle/working/area_coverage_gpu_source/notebooks/'+name+'\n'+(ROOT/'notebooks'/name).read_text()).splitlines(True)})
     # Written before dependency preflight; only stdlib is imported at GPU-module import.

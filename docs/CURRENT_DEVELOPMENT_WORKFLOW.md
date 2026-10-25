@@ -1,5 +1,11 @@
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
+**Source OSM GPU —25 Oktober2026:** transport adapter memperbaiki retry/subdivisi
+tile jalan dan diagnostik publik; tile/date/checksum dipertahankan. Kegagalan
+sources bukan kegagalan GPU; endpoint HTTP spesifik pada log owner masih unknown.
+Jalan belum lengkap tetap BLOCKED, bukan kosong/sukses. CPU/business baseline
+beku dan kernel CUDA tidak berubah. [Aturan recovery dan tes](AREA_COVERAGE_GPU_NOTEBOOK.md).
+
 **Section8 GPU —25 Oktober2026:** window kandidat spekulatif32 dengan pemilihan
 valid pertama tetap kanonik; footprint resident dan intersection/threshold GPU.
 Smoke Kaggle TeslaT4 aktual PASS pada fixture sintetis, bukan lokasi penuh.

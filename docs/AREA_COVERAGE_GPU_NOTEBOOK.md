@@ -207,3 +207,49 @@ Artefak: `results/area_coverage_map/gpu_validation/kaggle_resident_smoke.json`,
 CPU baseline tidak berubah. Percepatan456 target nyata, fallback share lokasi,
 dan validasi market penuh masih belum diukur. GPU utilization tidak dijanjikan
 100%; CPU masih menyiapkan data dan membentuk endpoint kanonik.
+
+## Pemulihan source OSM —25 Oktober2026
+
+Owner melaporkan `roads_tile_2/4`, `roads_tile_3/4`, lalu sumber FAILED dengan
+RuntimeError. Ringkasan ini tidak memuat HTTP status/exception endpoint. Hasil
+unduhan diagnostik dari API Kaggle juga tidak berisi receipt kegagalan session
+tersebut; penyebab spesifik (misalnya502 versus ReadTimeout) tetap UNKNOWN.
+Kode sumber menunjukkan penghentian segera saat tile jalan tidak tersedia,
+sementara guard notebook menyembunyikan detail exception generik untuk menjaga
+credential. Ini adalah kelemahan recovery/observability yang diperbaiki, bukan
+bukti kegagalan kernel GPU.
+
+Adapter `location_intelligent_gpu_sources.py` khusus notebook GPU:
+
+- Memakai transport dan cache baseline; tanpa mengubah helper CPU beku.
+- Retry terbatas untuk error sementara; timeout/resource error atau HTTP500/502/
+  504 dapat membagi tile jalan yang gagal, maksimum2 tingkat tambahan.
+- Retry503/429 maksimum sekali setelah jeda;403 tidak dicoba berulang.
+- Maksimum16 request-chain per pemanggilan dan pemeriksaan budget240detik
+  sebelum memulai chain baru; request yang sedang berjalan tunduk timeout HTTP.
+- Tile berhasil dipakai ulang, receipt/checksum tetap diverifikasi; request anak
+  berikutnya memakai snapshot date yang sama. Parent yang sudah mulai dipecah
+  melanjutkan anak tanpa mengulang request parent. Konflik versi tidak digabung.
+- Enam query fitur eksternal tetap dilewati dalam ROADS_ONLY_EXPERIMENT.
+- Layar menampilkan error code, endpoint/HTTP/error type serta lokasi
+  `acquisition_status.json` dan `network_roads_only_transport_status.json`.
+  Readiness menyimpan referensi tersebut; pesan/key credential tidak dicetak.
+
+Server eksternal tetap dapat unavailable; adapter tidak mengubah data jalan
+yang belum lengkap menjadi kosong/sukses. Perhitungan GPU tetap BLOCKED sampai
+input utama tersedia. POI opsional tetap terpisah dari kebutuhan jalan wajib.
+Ini perubahan transport saja; aturan akses, biaya, geometri/Huff tetap sama.
+
+Pengujian offline140 tes:125 lulus,15 skip. Termasuk simulasi502/503, retry
+pulih, exhaustion budget, subdivisi bertingkat, reuse tile lama secara byte,
+date pinning, conflict/checksum, diagnostik rusak, restore hook, serta cell GPU
+sources gagal -> calculation BLOCKED/tidak ada false zero. Angka ini bukan bukti
+server OSM pada session owner sudah pulih. Kernel CUDA tidak diubah atau di-run
+ulang untuk perbaikan transport ini. Belum menjalankan lokasi penuh.
+
+Gunakan session Kaggle yang sama, muat source/helper terbaru, jalankan konfigurasi
+dan sources kembali (Run All juga dapat memakai cache source yang sama).
+Jangan mengganti SOURCE_REVISION untuk retry biasa: source key dipertahankan.
+Job perhitungan tetap berversi menurut code hash; snapshot lengkap yang sudah
+dibekukan tidak di-fetch ulang. Simpan paket source lengkap agar reuse tetap
+tersedia jika session Kaggle berakhir.
