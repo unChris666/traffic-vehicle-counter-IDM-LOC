@@ -9,7 +9,7 @@ from ..artifact_store import ArtifactStore
 from .pipeline import run, implementation_hash
 
 
-def fresh_inference(request_path, output, *, python_executable, timeout_seconds=3600):
+def fresh_inference(request_path, output, *, python_executable, timeout_seconds=3600, gpu_id=None):
     require(type(timeout_seconds) in (int, float) and timeout_seconds > 0, 'Positive worker timeout required')
     request = read(request_path)
     require_reid(request)
@@ -18,13 +18,16 @@ def fresh_inference(request_path, output, *, python_executable, timeout_seconds=
     output.parent.mkdir(parents=True, exist_ok=True)
     stage = Path(tempfile.mkdtemp(prefix='.inference-', dir=output.parent))
     try:
+        options={'gpu_id':gpu_id} if gpu_id is not None else {}
         code = execute_worker(request_path, stage / 'worker', python_executable=python_executable,
-                              log_path=stage / 'worker.log', timeout_seconds=timeout_seconds)
+                              log_path=stage / 'worker.log', timeout_seconds=timeout_seconds, **options)
         require(code == 0, 'Inference worker failed; inspect retained failure log')
         value = read(stage / 'worker/result.json.gz')
         require(value['status'] == 'SUCCEEDED' and value['request_fingerprint'] == semantic_hash(request), 'Worker request/result mismatch')
         require(value['records_semantic_sha256'] == semantic_hash(value['records']), 'Worker records integrity mismatch')
         shutil.move(stage / 'worker/result.json.gz', stage / 'result.json.gz')
+        if (stage / 'worker/performance.json').exists():
+            shutil.move(stage / 'worker/performance.json', stage / 'performance.json')
         (stage / 'worker').rmdir()
         require(not output.exists(), 'Output appeared during inference')
         stage.rename(output)
@@ -46,9 +49,13 @@ def execute_and_publish(request, *, root, store: ArtifactStore, key):
         for ref in request['artifacts'].values():
             artifact(ref, root)
         return result
+    from ..experiments.performance import active_progress
+    timing = active_progress()
     value = run(request, root=root)
-    store.publish_result(key, {'result.json': value['result'], 'native.json.gz': value['native'],
+    with timing.stage('publication'):
+        store.publish_result(key, {'result.json': value['result'], 'native.json.gz': value['native'],
         'adapter_audit.json': value['adapter_audit'], 'request.json': request},
         metadata={'engine': 'traffic', 'operation': 'count_replay', 'result_version': value['result']['result_version'],
                   'counting_implementation_sha256': code_hash})
+    timing.snapshot('published')
     return store.reopen(key)

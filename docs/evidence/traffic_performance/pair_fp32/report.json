@@ -1,0 +1,316 @@
+{
+  "assets": {},
+  "automatic_promotion": false,
+  "best_config": {
+    "backend": "pytorch",
+    "batch_size": 1,
+    "crop_batch": 32,
+    "name": "baseline",
+    "precision": "FP32",
+    "reid_precision": "FP32",
+    "reid_transport": "original",
+    "reid_window": 1
+  },
+  "full_frames": 9015,
+  "ground_truth_accuracy": "NOT_EVALUATED",
+  "runs_per_config": 1,
+  "schema_version": "single_gpu_config_sweep_v2",
+  "screen": {
+    "baseline": {
+      "comparison": null,
+      "eligible": true,
+      "processing_plus_counting_seconds": 700.1303219649999,
+      "runs": [
+        {
+          "aggregate": {
+            "by_category": {
+              "bus": 2,
+              "car": 4,
+              "motorcycle": 112,
+              "truck": 15
+            },
+            "by_direction": {
+              "A_TO_B": 6,
+              "B_TO_A": 127
+            },
+            "by_route": {
+              "LINE_MARGIN": 133
+            },
+            "cancelled": 10,
+            "inferred_total": 0,
+            "invalid": 11,
+            "invalid_reasons": {
+              "INVALID_AMBIGUOUS_UNIT": 11
+            },
+            "measured_total": 133,
+            "pedestrian_total": 0,
+            "pending": 28,
+            "total": 133,
+            "vehicle_total": 133
+          },
+          "config": "baseline",
+          "counting_seconds": 83.15312470499975,
+          "environment": {
+            "batch_size": 1,
+            "cuda_peak_allocated_bytes": 174557696,
+            "cuda_peak_reserved_bytes": 188743680,
+            "device": "cuda:0",
+            "encoder_input": [
+              "batch",
+              3,
+              "height",
+              "width"
+            ],
+            "experiment": {
+              "backend": "pytorch",
+              "batch_size": 1,
+              "crop_batch": 32,
+              "name": "baseline",
+              "precision": "FP32",
+              "reid_precision": "FP32",
+              "reid_transport": "original",
+              "reid_window": 1
+            },
+            "first_input_shape": [
+              448,
+              640,
+              3
+            ],
+            "first_preprocessed_sha256": "6e910bafd54d64e031842f158d19b4d535c60c0c9336f43c72f407f0a15f50d9",
+            "input_shape": [
+              640,
+              640
+            ],
+            "numpy": "2.1.3",
+            "onnxruntime": "1.24.4",
+            "opencv": "4.14.0",
+            "precision": "FP32",
+            "python": "3.13.15",
+            "reid_providers": [
+              "CUDAExecutionProvider",
+              "CPUExecutionProvider"
+            ],
+            "torch": "2.11.0+cu128",
+            "torch_threads": 4,
+            "ultralytics": "8.4.175"
+          },
+          "folder": "/kaggle/working/config-pair/results/full-baseline",
+          "frames": 9015,
+          "inference_process_seconds": 631.6912889050002,
+          "model_setup_and_warmup_seconds": 8.070510542999955,
+          "performance": {
+            "completed": 9015,
+            "cuda_pending_samples": 0,
+            "cuda_sample_count": {},
+            "cuda_sample_ms": {},
+            "cuda_timing_scope": "TORCH_CURRENT_STREAM_ONLY_NOT_ORT",
+            "elapsed_seconds": 625.047,
+            "encoder_calls": 9015,
+            "eta_seconds": 0.0,
+            "fps_actual": 14.422907392673547,
+            "processing_seconds": 616.9771972600001,
+            "stage": "finished",
+            "startup_seconds": 8.070510542999955,
+            "startup_stages": {
+              "detector_load": 0.18154087500010974,
+              "reid_backend_inference_and_internal_copies": 1.3783486219999759,
+              "reid_crop_cpu": 0.010018941999987874,
+              "reid_features_to_cpu": 0.00010493800004951481,
+              "reid_host_to_device": 0.0002482439999766939,
+              "reid_load": 0.5428604660000929,
+              "reid_resize_normalize_cpu": 0.017726683000091725
+            },
+            "total": 9015,
+            "wall_seconds": {
+              "association_and_track_bookkeeping": 17.845210173987425,
+              "decode": 6.620923614990716,
+              "detector_to_cpu": 0.6076676920026785,
+              "detector_wall": 181.9217132259946,
+              "evidence": 55.48198557702085,
+              "reid_backend_inference_and_internal_copies": 304.7693937419899,
+              "reid_crop_cpu": 12.381288955992432,
+              "reid_features_to_cpu": 1.7896857130037915,
+              "reid_host_to_device": 7.8869831620163495,
+              "reid_resize_normalize_cpu": 23.608647250986223,
+              "serialization": 1.8601641149998613,
+              "tracker_reid": 368.7592514870021
+            },
+            "warmup_seconds": 3.8594001040000876,
+            "worker_total_seconds": 625.0477094940002
+          },
+          "processing_seconds": 616.9771972600001,
+          "records_sha256": "c3477688222aa685d2f07f38b4bc8e5f5d35ceb60a7801a8d7deec7f48704462",
+          "startup_seconds": 14.714091645000053,
+          "status": "SUCCEEDED"
+        }
+      ],
+      "startup_seconds": 14.714091645000053,
+      "status": "COMPLETE",
+      "total_plus_counting_seconds": 714.84441361
+    },
+    "candidate_fp32": {
+      "comparison": {
+        "checks": {
+          "accepted_event_anchors": false,
+          "aggregate": true,
+          "cancelled_event_anchors": false,
+          "decision_anchors": false,
+          "detector_preprocessing": true,
+          "frame_assignments": false,
+          "frame_coverage": true,
+          "invalid_decision_anchors": false,
+          "track_links": false
+        },
+        "domain_equivalent": false,
+        "exact_records_equal": false,
+        "first_decision_anchor_difference": {
+          "baseline": 4834,
+          "candidate": 4833,
+          "path": "$[41].track_id"
+        },
+        "first_event_anchor_difference": {
+          "baseline": 3024,
+          "candidate": 3026,
+          "path": "$[67].track_id"
+        },
+        "first_record_difference": {
+          "baseline": 0.5228660106658936,
+          "candidate": 0.5228672623634338,
+          "path": "$[0].detections[1].confidence"
+        },
+        "note": "Artifact-bound event IDs retained separately. Anchor projections do not establish accuracy.",
+        "raw_event_ids_equal": false
+      },
+      "eligible": false,
+      "processing_plus_counting_seconds": 471.7135711279998,
+      "runs": [
+        {
+          "aggregate": {
+            "by_category": {
+              "bus": 2,
+              "car": 4,
+              "motorcycle": 112,
+              "truck": 15
+            },
+            "by_direction": {
+              "A_TO_B": 6,
+              "B_TO_A": 127
+            },
+            "by_route": {
+              "LINE_MARGIN": 133
+            },
+            "cancelled": 10,
+            "inferred_total": 0,
+            "invalid": 11,
+            "invalid_reasons": {
+              "INVALID_AMBIGUOUS_UNIT": 11
+            },
+            "measured_total": 133,
+            "pedestrian_total": 0,
+            "pending": 28,
+            "total": 133,
+            "vehicle_total": 133
+          },
+          "config": "candidate_fp32",
+          "counting_seconds": 83.42855826499999,
+          "environment": {
+            "batch_size": 4,
+            "cuda_peak_allocated_bytes": 409817600,
+            "cuda_peak_reserved_bytes": 499122176,
+            "device": "cuda:0",
+            "encoder_input": [
+              "batch",
+              3,
+              "height",
+              "width"
+            ],
+            "experiment": {
+              "backend": "pytorch",
+              "batch_size": 4,
+              "crop_batch": 32,
+              "name": "candidate_fp32",
+              "precision": "FP32",
+              "reid_precision": "FP32",
+              "reid_transport": "io_binding",
+              "reid_window": 8
+            },
+            "first_input_shape": [
+              448,
+              640,
+              3
+            ],
+            "first_preprocessed_sha256": "6e910bafd54d64e031842f158d19b4d535c60c0c9336f43c72f407f0a15f50d9",
+            "input_shape": [
+              640,
+              640
+            ],
+            "numpy": "2.1.3",
+            "onnxruntime": "1.24.4",
+            "opencv": "4.14.0",
+            "precision": "FP32",
+            "python": "3.13.15",
+            "reid_providers": [
+              "CUDAExecutionProvider",
+              "CPUExecutionProvider"
+            ],
+            "torch": "2.11.0+cu128",
+            "torch_threads": 4,
+            "ultralytics": "8.4.175"
+          },
+          "folder": "/kaggle/working/config-pair/results/full-candidate_fp32",
+          "frames": 9015,
+          "inference_process_seconds": 394.36200431299994,
+          "model_setup_and_warmup_seconds": 3.2799732579997,
+          "performance": {
+            "completed": 9015,
+            "cuda_pending_samples": 0,
+            "cuda_sample_count": {},
+            "cuda_sample_ms": {},
+            "cuda_timing_scope": "TORCH_CURRENT_STREAM_ONLY_NOT_ORT",
+            "elapsed_seconds": 391.565,
+            "encoder_calls": 0,
+            "eta_seconds": 0.0,
+            "fps_actual": 23.02301853638498,
+            "processing_seconds": 388.2850128629998,
+            "stage": "finished",
+            "startup_seconds": 3.2799732579997,
+            "startup_stages": {
+              "detector_load": 0.12305884299985337,
+              "reid_crop_cpu": 0.0004672079999181733,
+              "reid_host_to_device": 0.00026799100032803835,
+              "reid_load": 0.2916738669996448,
+              "reid_ort_io_binding_and_output_copy": 0.7732929759999934,
+              "reid_resize_normalize_cpu": 0.015067301000271982
+            },
+            "total": 9015,
+            "wall_seconds": {
+              "association_and_track_bookkeeping": 14.930406961985227,
+              "decode": 6.619366437993904,
+              "detector_to_cpu": 0.31334460198877423,
+              "detector_wall": 164.05064211200352,
+              "evidence": 51.38813231202357,
+              "reid_crop_cpu": 11.767032424997979,
+              "reid_host_to_device": 7.168933243002812,
+              "reid_ort_io_binding_and_output_copy": 105.64353993600389,
+              "reid_prefetch_prepare": 12.780277111008672,
+              "reid_resize_normalize_cpu": 21.977555153001504,
+              "serialization": 1.8209926389999964,
+              "tracker_reid": 14.857833029005178
+            },
+            "warmup_seconds": 1.6716145159998632,
+            "worker_total_seconds": 391.5649878219997
+          },
+          "processing_seconds": 388.2850128629998,
+          "records_sha256": "3e7da676fa4ab3e59e3449697421658afb5304c969001934bb3f4d28b0d01227",
+          "startup_seconds": 6.0769914500001505,
+          "status": "SUCCEEDED"
+        }
+      ],
+      "startup_seconds": 6.0769914500001505,
+      "status": "COMPLETE",
+      "total_plus_counting_seconds": 477.79056257799994
+    }
+  },
+  "selection_scope": "FASTEST_ELIGIBLE_OF_TWO_CONFIGS_ONE_FULL_VIDEO_RUN_EACH",
+  "status": "COMPLETE"
+}

@@ -54,6 +54,8 @@ def process_video(request: VideoRequest, config: EffectiveConfig | None = None, 
     # Revalidate even directly constructed DTOs, not only the JSON decoder path.
     checked = decode_request(request.legacy.object())
     require(checked.branch is request.branch, 'DTO branch differs from payload')
+    from ..experiments.performance import active_progress
+    timing = active_progress()
     data = checked.legacy.object(); branch = checked.branch.value
     root = Path(root).resolve(); refs = data['artifacts']
     paths = {k: artifact(v, root) for k, v in refs.items()}
@@ -67,7 +69,9 @@ def process_video(request: VideoRequest, config: EffectiveConfig | None = None, 
     geometry = video_input.load_geometry(paths['geometry'], source)
     links = notebook_measurements.relationship_evidence(paths['relationships']) if 'relationships' in paths else {}
     base_reviews = _historical_reviews(data, paths)
-    frames = measurement.read_frames(data, paths, links=links, baseline_reviews=base_reviews, audit=audit)
+    timing.snapshot('measurement_load')
+    with timing.stage('measurement_load'):
+        frames = measurement.read_frames(data, paths, links=links, baseline_reviews=base_reviews, audit=audit)
     overlay = None
     guards = []
     if branch == 'review_assisted':
@@ -83,11 +87,15 @@ def process_video(request: VideoRequest, config: EffectiveConfig | None = None, 
             frame_count=data['frame_count'], overlay_sha256=refs['review_overlay']['sha256'],
             verified_reviews=verified, records=anchors, guarded=guards)
         frames = reviewed['frames']
-    resolved = identity.resolve(frames, geometry, policy, relationships=links)
+    timing.snapshot('identity')
+    with timing.stage('identity'):
+        resolved = identity.resolve(frames, geometry, policy, relationships=links)
     trajectory.validate_scope(resolved['frames'], data['frame_count'])
     effective = deepcopy(policy)
     effective['episode_relations'], _ = role_association.relations(resolved)
-    native = counting.count(resolved['frames'], geometry, source_identity=source, policy=effective)
+    timing.snapshot('counting')
+    with timing.stage('counting'):
+        native = counting.count(resolved['frames'], geometry, source_identity=source, policy=effective)
     if branch == 'review_assisted':
         manifest = read(paths['adjudications'])
         require(manifest['baseline_result_sha256'] == refs['baseline_result']['sha256'], 'Review baseline bytes mismatch')
@@ -96,7 +104,9 @@ def process_video(request: VideoRequest, config: EffectiveConfig | None = None, 
         baseline = read(paths['baseline_result'])
         notebook_measurements.verify_adjudications(native, manifest, baseline=baseline, source=source, root=root)
         native = candidate_adjudication.apply(native, typed_adjudication, baseline_result=baseline, finalization_frame=data['frame_count'] - 1)
-    native = finalization.finalize(native, request=data, branch=branch, resolved=resolved, overlay=overlay)
+    timing.snapshot('finalization')
+    with timing.stage('finalization'):
+        native = finalization.finalize(native, request=data, branch=branch, resolved=resolved, overlay=overlay)
     require(all(sha(paths[k]) == h for k, h in before.items()), 'Input mutated during execution')
     require(all(sha(g['path']) == g['sha256'] for g in guards), 'Review proof mutated during execution')
     envelope = wrap_native(native, request=data, branch=branch, implementation_hash=implementation_hash())
@@ -104,7 +114,10 @@ def process_video(request: VideoRequest, config: EffectiveConfig | None = None, 
         measurement_origin='fresh_inference' if data.get('measurement_format') == 'fresh_v1' else 'notebook_measurement',
         fresh_inference_executed=False, counting_executed=True, effective_config_sha256=frozen.fingerprint,
         contract_version='traffic_facade_v2', algorithm_lineage='FROZEN_B_V8_COMPATIBILITY_KERNEL')
-    return VideoResult(FrozenDocument.freeze(envelope), FrozenDocument.freeze(native), FrozenDocument.freeze(audit))
+    with timing.stage('result_freeze'):
+        result = VideoResult(FrozenDocument.freeze(envelope), FrozenDocument.freeze(native), FrozenDocument.freeze(audit))
+    timing.snapshot('counting_finished', completed=data['frame_count'], total=data['frame_count'])
+    return result
 
 
 def run(request, *, root):
