@@ -1,0 +1,22 @@
+{
+  "package_version": "0.4.8rc1",
+  "gradio_version": "5.49.1",
+  "full_suite": {
+    "tests": 214,
+    "skipped": 9,
+    "passed": true
+  },
+  "focused_gradio_checks": {
+    "tests": 7,
+    "passed": true
+  },
+  "local_http": 200,
+  "public_http": 200,
+  "public_config_components": 38,
+  "model_inference_executed_by_agent": false,
+  "known_limits": [
+    "No new ground-truth evaluation",
+    "No new real dual-GPU inference",
+    "Public URL requires running notebook and tunnel"
+  ]
+}

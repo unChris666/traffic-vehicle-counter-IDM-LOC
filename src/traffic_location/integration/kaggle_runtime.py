@@ -382,13 +382,18 @@ class KaggleRuntime:
                 exc=RuntimeError(outcome['message']);exc.code=outcome['error_type']
                 yield item,None,exc
 
-    def execute(self,mode,parameters,*,input_root='/kaggle/input',target_confirmed=False):
+    def execute(self,mode,parameters,*,input_root='/kaggle/input',target_confirmed=False,video_ids=None):
         """One invocation per engine/video; failures and successes always visible."""
         from datetime import datetime
         need(mode in ('area','traffic','workflow'),'MODE_INVALID','Pilih Area, Traffic, atau gabungan.')
         if mode=='workflow':need(target_confirmed,'TARGET_BINDING_REQUIRED','Konfirmasi bahwa video dan Area dipakai untuk target yang sama.')
         root=self.base/'runs'/datetime.now().strftime('%Y%m%dT%H%M%S_%f');root.mkdir(parents=True)
         inventory=self.video_inventory(input_root)
+        if video_ids is not None and mode!='area':
+            need(isinstance(video_ids,list) and bool(video_ids) and len(video_ids)==len(set(video_ids)),
+                 'VIDEO_SELECTION_INVALID','Pilih minimal satu video unik.')
+            need(set(video_ids)<=set(v['id'] for v in inventory),'VIDEO_SELECTION_INVALID','Video di luar dataset terikat.')
+            inventory=[v for v in inventory if v['id'] in video_ids]
         tasks=([{'id':'area','kind':'area'}] if mode in ('area','workflow') else [])+([{**v,'kind':'traffic'} for v in inventory] if mode in ('traffic','workflow') else [])
         receipts=[];jobs=[];bindings=[]
         for item,result,error in self._scheduled_tasks(tasks,root):

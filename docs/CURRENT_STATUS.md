@@ -1,6 +1,6 @@
 # Status sistem —27 Oktober2026
 
-Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.4.7rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
+Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.4.8rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
 
 | Bagian | Kondisi kode saat ini | Batas bukti |
 |---|---|---|
@@ -10,7 +10,7 @@ Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondis
 | Integration layer | `KaggleRuntime.execute` -> `_scheduled_tasks` -> `run_video_jobs` -> `run_video` -> `fresh_inference` -> worker kandidat -> counting -> gate -> PPAC | HasilArea/Traffic tetap independen. ReadinessGCS, runtime dan model adalah status terpisah |
 | PPAC | Formula referensi tersedia; Residential/Traffic/Fasum/total dipisah di packagePPAC | STD/hari adalah outputformula; prediksi penjualan nyata belum tervalidasi |
 | Storage | Adapter/probe/download/hash/cacheGCS diimplementasikan; SecretKaggle `LocatioIntelligent` | Hakakses dan isiobject tetap harus diperiksa pada sesi pengguna |
-| UI/VM | Workflow dapat berjalan headless; notebook menyediakan quiz bisnis tipis | Deployment produksiVM dan UIproduk belum diverifikasi |
+| UI/VM | Workflow headless dengan UI sementara Gradio pada notebook14 | Deployment produksiVM dan UIproduk belum diverifikasi |
 
 ## Pilihan runtime Traffic
 
@@ -34,12 +34,14 @@ MVP menerima video300–306detik tanpa rescaling; sepeda tidak diwajibkan. Looku
 
 ## Notebook dan cara mencoba
 
-[WorkflowSorong+T7SL diKaggle](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) **versi6** memakai [notebook11](../notebooks/11_gate2_t7sl_sorong_quiz.ipynb), exactwheel0.4.7rc1 besertaSHA, force-reinstall dan verifikasisource. Setup/engineOFF saat disimpan; publikasi tidak menjalankanArea/Traffic/PPAC.
+[WorkflowSorong+T7SL diKaggle](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) **versi7** memakai [notebook14 Gradio](../notebooks/14_gate2_sorong_t7sl_gradio.ipynb), exactwheel0.4.8rc1 besertaSHA, force-reinstall dan verifikasisource. Server Gradio dapat berjalan saat notebook dijalankan; engine menunggu tombol pengguna.
 
-Buka revisiterbaru, aktifkanGPU danInternet serta Secret`LocatioIntelligent`, ubah`ENABLE_NOTEBOOK_SETUP=True`, lalu jalankan cell. Isi quiz -> Simpanjawaban -> Periksakesiapan -> Mulaiuji. Pastikan jam<=15 bila hanya memakai8video dan ingin mencobaPPAC. KoordinatSorong: latitude-0.8994976613947719, longitude131.3221639428227. GCSmodel memakai prefix`models/traffic/` terikatSHA.
+Buka revisiterbaru, aktifkanGPU danInternet serta Secret`LocatioIntelligent`, jalankan notebook, lalu buka GRADIO_PUBLIC_URL. Isi form -> Periksa kesiapan -> Mulai proses. Pastikan jam<=15 bila hanya memakai8video dan ingin mencobaPPAC. KoordinatSorong: latitude-0.8994976613947719, longitude131.3221639428227. GCSmodel memakai prefix`models/traffic/` terikatSHA.
 
 [Notebookduakonfigurasi](https://www.kaggle.com/code/chrisbiran/t7sl-single-gpu-config-sweep) adalah benchmark terpisah. Ia sengaja menguji satuGPU dan tidak menjalankanArea/PPAC.
 
 ## Validasi dan dokumentasi
 
 Rilis kode:208tes lokal selesai,8dilewati; wheel berhasil dibangun. Perbandinganpilot bukan uji baru dualGPU dan bukan evaluasi anotasi. DokumenMarkdown naratif mendapat penunjukstatus; artefakhasil, bukti dan referensihistoris dipertahankan byte-nya agarhash/receipt tetap bermakna. [Inventarisaudit](evidence/documentation_sync_20261027/inventory.json) mencatat seluruhMarkdown pada awalaudit, klasifikasi danchecksum. Dokumen ini ditambahkan setelah inventarisawal.
+
+UI sementara: [Gradio](GRADIO_INTEGRATION_UI.md), source integration/gradio_app.py. Notebook menyalakan server dan mencetak URL publik; engine tetap menunggu tombol pengguna. Notebook11 adalah alternatif kuis klasik.

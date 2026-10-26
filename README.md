@@ -3,15 +3,17 @@
 
 # Traffic Vehicle Counter + Area Coverage + PPAC
 
-Package **0.4.7rc1** menyediakan engine modular dan workflow headless. Traffic memakai YOLO26M FP32 batch4, ReID IO binding/window8/crop32; satu GPU menangani satu video dan dua GPU dapat menangani dua video bersamaan.
+Package **0.4.8rc1** menyediakan engine modular dan workflow headless. Traffic memakai YOLO26M FP32 batch4, ReID IO binding/window8/crop32; satu GPU menangani satu video dan dua GPU dapat menangani dua video bersamaan.
 
 Mulai dari [status terkini](docs/CURRENT_STATUS.md), [integration layer](docs/GATE2_INTEGRATION.md), dan [perubahan Traffic/GPU](docs/TRAFFIC_CANDIDATE_GPU_RUNTIME.md).
 
-[Notebook Kaggle workflow Sorong + T7SL](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) memakai paket tertanam yang sama. Setup dan engine OFF saat disimpan; aktifkan GPU, Internet, Secret `LocatioIntelligent`, lalu `ENABLE_NOTEBOOK_SETUP=True`.
+[Notebook Kaggle workflow Sorong + T7SL](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) memakai paket tertanam yang sama. Aktifkan GPU, Internet dan Secret `LocatioIntelligent`, lalu jalankan notebook. Gradio mencetak URL publik; engine menunggu tombol pengguna.
 
 Area dan Traffic dapat dijalankan terpisah. PPAC MVP v2 menerima hasil PARTIAL yang lolos validasi; input hilang/gagal/tidak kompatibel tetap ditolak. Jam operasional >15 memerlukan sesi tambahan, sehingga delapan video T7SL belum cukup untuk PPAC18jam.
 
 Kandidat menghemat33,16% pada satu video, dengan total133 yang sama tetapi identitas track berbeda. Precision/recall dan percepatan dua GPU belum dibuktikan.
+
+UI sementara sekarang memakai [Gradio](docs/GRADIO_INTEGRATION_UI.md). Jalankan notebook, lalu buka `GRADIO_PUBLIC_URL`; seluruh input dan proses dilakukan dari browser.
 
 ## Riwayat checkpoint dan hasil terdahulu
 
