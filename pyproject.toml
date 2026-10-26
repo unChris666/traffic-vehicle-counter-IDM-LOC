@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "traffic-location-engines"
+version = "0.4.1rc1"
+description = "Explicit frozen-input Traffic and Location research engine adapters"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+validation = ["jsonschema==4.26.0"]
+migration = ["mypy==1.18.2", "build==1.3.0"]
+area = ["numpy==2.1.3", "pandas==2.3.3", "shapely==2.1.2", "pyproj==3.7.2", "networkx==3.6.1", "folium==0.20.0", "osmnx==2.1.1", "geopandas==1.2.0", "osmium==4.3.2"]
+area-gpu = ["cupy-cuda12x==13.6.0", "fastrlock==0.8.3"]
+gcp = ["google-cloud-storage==3.6.0", "google-cloud-bigquery==3.46.2", "google-crc32c==1.7.1"]
+
+[project.scripts]
+traffic-location = "traffic_location.__main__:main"
+area-engine = "traffic_location.location.area.__main__:main"
+engine-workflow = "traffic_location.integration.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+traffic_location = ["schemas/*.json", "location/*.json", "ppac/*.json", "ppac/*.md"]

@@ -1,0 +1,21 @@
+{
+  "repository": "unChris666/traffic-vehicle-counter-IDM-LOC",
+  "commit": "ba8eb090deb757759d80a0dde3bcc7f3ff9954d8",
+  "reference_files": [
+    {
+      "source": "counter-ppac/ppac.py",
+      "source_sha256": "169fe3e24e33a0b7d903da66a5969cf37d47bb59ea6275a915c5e8fa430fec77",
+      "module": "_reference.py",
+      "module_sha256": "bd69f565f13f8c85928086d0d942cf3c10e0c83f595a59e55b24a675886f1f46",
+      "transform": "relative constants import only"
+    },
+    {
+      "source": "counter-ppac/konstatna.py",
+      "source_sha256": "23498f856ef9adc96bc5d6e43c68b4cda242d0ca9074afd7434137450c5d6ec1",
+      "module": "konstatna.py",
+      "module_sha256": "23498f856ef9adc96bc5d6e43c68b4cda242d0ca9074afd7434137450c5d6ec1",
+      "transform": "none"
+    }
+  ],
+  "new_policy": "Residential owner 40/60 or 35/45/20 on allocated buildings x4; Fasum distance sum 2/1. Reference Residential/Fasum retained only for historical tests; service uses new domain modules."
+}
