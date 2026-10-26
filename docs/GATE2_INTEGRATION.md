@@ -1,3 +1,48 @@
+# Update jalur uji nyata Sorong + T7SL —0.4.2rc1
+
+Notebook Kaggle memakai bootstrap exact wheel+SHA, --force-reinstall, purge modul
+lama dan verifikasi seluruh source package terhadap wheel. File wheel0.4.0/0.4.1
+lama boleh tetap di cache, tetapi tidak dipilih lewat glob. Restart session Kaggle
+untuk membuka notebook revisi terbaru; set ENABLE_NOTEBOOK_SETUP=True lalu run
+cell kuis. Pilih GPU dan aktifkan Secret LocatioIntelligent. Tombol Mulai uji
+adalah satu-satunya pemicu engine; tidak ada sakelar runtime/model tambahan.
+
+`integration/kaggle_runtime.py` menangani deployment/ingestion, bukan perhitungan
+analitik. Pemeriksaan GCS memanggil metadata API sebelum menampilkan status:
+NOT_CHECKED, NOT_FOUND, ACCESS_DENIED, ERROR, READY. READY metadata tidak berarti
+SHA penuh sudah diperiksa; staging selalu memverifikasi generation+SHA.
+
+Registry integration/gate2/runtime-manifest.json tidak diperlukan lagi. Area
+Sorong dibangun dari PBF nasional GCS yang generation/SHA-nya sudah dipin engine,
+kemudian BQ snapshot target-bound dengan budget query yang sudah ditetapkan.
+BQ diperiksa sebelum download PBF besar. Projection Sorong dihitung EPSG:32752,
+bukan32748 lokasi lama. Ingestion berjalan pada interpreter baru setelah setup
+agar tidak memakai NumPy/GDAL/GEOS lama dari kernel notebook. SourceBundle data
+baru dibekukan sebelum facade Area dipanggil. Cache input baru dicoba ke GCS
+content-addressed tanpa overwrite; read-only IAM boleh mempertahankan cache lokal.
+
+Model diambil dari object GCS deterministik berdasarkan SHA. Bila API memastikan
+object NOT_FOUND, bobot resmi Ultralytics versi terkunci diunduh, SHA diperiksa,
+dan cache GCS dicoba. Akses GCS ditolak tidak dianggap object kosong dan tidak
+memicu unduhan alternatif diam-diam. Ini bootstrap sumber bobot sama, bukan
+penggantian model. Runtime ilmiah Area/GDAL serta Traffic/ReID otomatis disiapkan
+pada mode terkait, tanpa fallback CPU.
+
+Area dan setiap video T7SL diisolasi; failure dicatat ke progress.json dan hasil
+berikut tetap diproses. Summary menampilkan hasil engine sukses meskipun PPAC
+BLOCKED. PPAC tidak menggunakan false-zero untuk engine/video yang gagal.
+Sesuai jawaban owner, rumus jam>15 tetap memerlukan sesi tambahan: delapan video
+normal tidak otomatis diekstrapolasi menjadi18jam. Uji Area/Traffic tetap berjalan;
+PPAC dapat diuji sampai hasil dengan <=15jam bila input lainnya valid.
+
+Bukti: pengujian fault-injection storage/permission/hash/cache/independent jobs,
+static notebook execution-OFF dan exact embedded-wheel, installed wheel dari
+/tmp. Tidak ada claim akses cloud, coverage PBF Sorong, izin BQ/GCS, atau GPU
+nyata telah diuji pada akun Kaggle owner. Notebook dipublikasikan dengan CPU
+preparation-OFF; lokasi/video nyata belum dijalankan dalam persiapan ini.
+
+---
+
 # Update MVP v2 — keputusan owner
 
 Aktif pada notebook Kaggle versi3, package0.4.1rc1, schema `ppac_parameters_mvp_v2`.
