@@ -1,3 +1,20 @@
+# Koreksi sumber model Traffic —0.4.3rc1
+
+Owner menetapkan kedua sumber GCS berikut:
+
+- `gs://feeder-location-intelligent/models/traffic/detector/401cea9ab23ad19246ff7744859816bc599f350e93c9dd30367b6f0a0745d0b7/yolo26m.pt`
+- `gs://feeder-location-intelligent/models/traffic/reid/8529c383197ae4c468eda535d1b165f8b4162cf17bf5fbcff49c7cb6455bc0bb/yolo26n-reid.onnx`
+
+`traffic/adapters/model_sources.py` menjadi sumber alamat bersama. Pemeriksaan
+readiness, staging download dan cache upload Kaggle memakai helper yang sama;
+prefix `sources/models/` tidak dipakai lagi pada jalur ini. SHA/model/counting
+policy tidak berubah. Notebook memuat wheel0.4.3rc1 dengan SHA baru; force install
+serta verifikasi source tetap aktif. Pengujian menggunakan mock transport dan
+mencocokkan URI persis; tidak mengklaim akses GCS live telah diuji di luar akun
+Kaggle owner, dan tidak menjalankan inferensi video.
+
+---
+
 # Update jalur uji nyata Sorong + T7SL —0.4.2rc1
 
 Notebook Kaggle memakai bootstrap exact wheel+SHA, --force-reinstall, purge modul

@@ -2,7 +2,7 @@
 from pathlib import Path
 import tempfile,unittest
 from unittest.mock import Mock,patch
-from traffic_location.artifacts import write,sha
+from traffic_location.artifacts import write,sha,read
 from traffic_location.integration.kaggle_runtime import KaggleRuntime,area_config,continue_jobs,error_status
 
 class NotFound(Exception):pass
@@ -68,6 +68,22 @@ class KaggleRuntimeTests(unittest.TestCase):
         with patch('traffic_location.integration.kaggle_runtime.subprocess.run') as proc:
             KaggleRuntime(self.root/'other',self.root,0,131)
         proc.assert_not_called()
+    def test_readiness_and_stage_use_owner_model_prefixes(self):
+        from traffic_location.traffic.adapters.model_sources import gcs_model_ref
+        profile=read(Path(__file__).resolve().parents[1]/'results/t7sl_modular/config/fresh_request.json')
+        write(self.root/'config/fresh_request.json',profile)
+        with patch.object(self.runtime,'object_status',return_value={'status':'READY','generation':7,'bytes':1}) as observe:
+            self.runtime.probe()
+            probe_refs=[c.args[0] for c in observe.call_args_list][1:]
+            observe.reset_mock()
+            with patch.object(self.runtime,'stage',side_effect=lambda ref,dest:dest) as stage:
+                self.runtime.prepare_models()
+            stage_refs=[c.args[0] for c in stage.call_args_list]
+        for i,role in enumerate(('detector','reid')):
+            expected=gcs_model_ref(role,profile['artifacts'][role])
+            self.assertEqual(probe_refs[i],expected)
+            self.assertEqual(stage_refs[i],{**expected,'generation':7})
+            self.assertNotIn('sources/models',stage_refs[i]['object'])
     def test_missing_gcs_models_bootstrap_exact_official_weights_and_cache(self):
         seed=self.root/'seed';seed.write_bytes(b'SOFTWARE_FIXTURE_WEIGHTS');digest=sha(seed)
         write(self.root/'config/fresh_request.json',{'artifacts':{k:{'path':name,'sha256':digest} for k,name in [('detector','yolo26m.pt'),('reid','yolo26n-reid.onnx')]}})

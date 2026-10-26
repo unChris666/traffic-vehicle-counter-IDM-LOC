@@ -15,6 +15,7 @@ import sys
 from ..artifacts import read,write,sha,semantic_hash
 from .contracts import need,GateError
 from .workflow import run
+from ..traffic.adapters.model_sources import gcs_model_ref
 
 BUCKET='feeder-location-intelligent'
 SECRET='LocatioIntelligent'
@@ -105,7 +106,7 @@ class KaggleRuntime:
         profile=read(self.config_root/'fresh_request.json')
         for key in ('detector','reid'):
             r=profile['artifacts'][key];name=Path(r['path']).name
-            pointer={'bucket':BUCKET,'object':f"sources/models/{r['sha256']}/{name}"}
+            pointer=gcs_model_ref(key,r)
             observed=self.object_status(pointer);observed['object']=pointer['object']
             observed['recovery']='Jika belum ada, bootstrap bobot resmi dengan SHA yang sama; cache GCS jika izin tulis tersedia.'
             items[key]=observed
@@ -142,7 +143,7 @@ class KaggleRuntime:
         profile=read(self.config_root/'fresh_request.json');folder=self.base/'models';folder.mkdir(exist_ok=True)
         for key in ('detector','reid'):
             r=profile['artifacts'][key];name=Path(r['path']).name;destination=folder/name
-            pointer={'object':f"sources/models/{r['sha256']}/{name}",'sha256':r['sha256']}
+            pointer=gcs_model_ref(key,r)
             if destination.exists():
                 need(sha(destination)==r['sha256'],'MODEL_CHANGED','Model lokal tidak cocok dengan SHA terkunci.')
                 self.state['models'][key]={'status':'READY','path':str(destination),'sha256':r['sha256'],'source':'VERIFIED_LOCAL_CACHE'};continue
