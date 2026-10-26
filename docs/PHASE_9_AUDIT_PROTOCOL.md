@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Protokol Phase 9 — input, penelusuran masalah, dan output perbaikan
 
 **REQUIREMENT:** menghasilkan daftar perbaikan Phase 1–8 berbasis bukti. Audit menguji hitungan palsu, duplikasi, salah gabung, passage terlewat, role, kategori, arah dan sumber crossing. Pending boleh selesai sebagai tidak eligible/+0. Dokumen ini merancang pekerjaan; tidak berisi hasil eksperimen baru.

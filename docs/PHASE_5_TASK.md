@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 5 — staged geometry collaboration on TOR3-PAGI
 
 **AUTHORIZATION:** the user requested the staged workflow: visual candidate → feedback → revision → documented rules → synthetic tests → temporal review → parameter selection. The subsequent G3 approval, in the context of the explicit G3-and-initial-rules question, authorizes progression to the documented qualitative contract, synthetic validation and retained-track replay. Keep the question and answer together; this does not mean the user restated every rule or accepted numerical product parameters.

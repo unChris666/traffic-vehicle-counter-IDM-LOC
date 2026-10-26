@@ -1,3 +1,12 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+## Status implementasi aktif
+
+Request fresh inference tetap fresh_inference_request_v1. execution_profile menerima candidate_fp32 (defaultCUDA) atau baseline_fp32; kandidat menetapkan batch4, FP32 dan ReIDIO/window8/crop32. gpu_allocation mencatat GPUfisik sementara device tetap localcuda:0. Jangan menyamakan perubahan profil dengan revisipolicycounting. Notebook memakai ppac_parameters_mvp_v2; lihat kontrakGATE2_INTEGRATION.md.
+
+## Konteks dan kontrak terdahulu
+
 # Preliminary Configuration Schema
 
 Status: preliminary product schema established in Phase 0, complemented by the accepted [Phase 5 geometry contract](GEOMETRY_CONTRACT.md), original [Phase 6 Opsi A audit-gated counting contract](COUNTING_CONTRACT.md) and implemented [Opsi B unit/episode experiment](PHASE_6_OPTION_B_TASK.md). Actual B findings belong to [PHASE_6_OPTION_B_REVIEW.md](PHASE_6_OPTION_B_REVIEW.md). Scoped geometry/counting configuration and prototype `CountEvent` exist; finalized production configuration/schema remain OPEN. Actual evidence and limits are reported separately in [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) and [PHASE_6_REVIEW.md](PHASE_6_REVIEW.md). Historical visual drafts retain their original statuses.

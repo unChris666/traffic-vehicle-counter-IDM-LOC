@@ -1,3 +1,12 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+## Status implementasi aktif
+
+Validasi rilis0.4.7rc1:208tes lokal selesai,8dilewati. Cakupan baru meliputi pemilihanprofile, maskGPU perchild, eksklusi satuvideo/GPU, antrean1/2GPU, failurecontinuation, reusecache dan independensiArea/Traffic. GPUganda diuji simulasi; belum ada dualGPUbenchmark nyata. Akurasianotasi belum dievaluasi.
+
+## Konteks dan kontrak terdahulu
+
 # Test Plan
 
 ## 1. Ground Truth Status

@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 6 — proposal pembanding Opsi B
 
 **STATUS: PROPOSAL HISTORIS.** Isi usulan di bawah mempertahankan konteks sebelum implementasi. Pengguna kemudian mengizinkan [tugas eksperimen](PHASE_6_OPTION_B_TASK.md); resolver dan pembanding notebook telah diimplementasikan serta dijalankan sebagai eksperimen terbatas. [Review aktual Opsi B](PHASE_6_OPTION_B_REVIEW.md) dan [run final v1](evidence/phase_6/20261013T104301_354775Z/report.json) mencatat bukti, parameter eksperimen yang dibekukan, koreksi dukungan identitas temporal, hasil mesin dan batasnya. Status OPEN/PROPOSAL pada bagian historis bukan pernyataan bahwa implementasi saat ini belum ada. [Snapshot awal Opsi A](PHASE_6_REVIEW.md) tetap tersendiri dan immutable; Opsi B belum dipilih sebagai default produksi.

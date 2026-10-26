@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 2 review and Phase 3 gate
 
 **STATUS — PASS for the defined technical objective.** This review reads retained execution/audit/review evidence; Phase 2 was not rerun. The user's subsequent instruction authorizes Phase 3 if Phase 2 is ready. That condition is met for a one-video, raw-detection tracking experiment, with the limitations below.

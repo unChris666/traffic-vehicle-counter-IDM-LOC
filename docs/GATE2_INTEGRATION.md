@@ -1,3 +1,20 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+# Gate2 — integrasi aktif0.4.7rc1
+
+`KaggleRuntime.execute` menjalankan Area dan Traffic secara independen, memakai `candidate_fp32`, lalu meneruskan hasil tervalidasi ke PPAC. `_scheduled_tasks` menyiapkan runtime/model sekali dan memakai `run_video_jobs`; GPUdialokasikan per child process lewat `CUDA_VISIBLE_DEVICES`. YOLO dan ReID di child sama-sama memakai local `cuda:0`. Satu GPU berarti antrean serial; dua GPU berarti maksimal dua video aktif. Tidak ada CPUfallback diam-diam.
+
+Fresh inference -> measurement -> counting -> hasilengine -> validasi context/source/schema/frame -> PPAC. Setiap tahap punya artefak dan status; cache terikat kode, runtime, sumber serta profil eksekusi. Mengubah input bisnis PPAC tidak perlu menjalankan ulang engine yang hasilnya masih cocok.
+
+Notebook workflow terbaru: [Sorong+T7SL](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz), source [notebook11](../notebooks/11_gate2_t7sl_sorong_quiz.ipynb), exact wheel0.4.7rc1 + SHA dan verifikasi source. Setup/engineOFF saat disimpan. Notebook13 dua-konfigurasi adalah benchmark terpisah, bukan workflowArea+Traffic+PPAC.
+
+Policy aktif notebook ialah MVPv2: durasi300–306detik, tidak memerlukan sepeda/lookup, PARTIAL boleh dengan label dan validasi; jam>15 tetap butuh sesi tambahan. Status GCS NOT_CHECKED/NOT_FOUND/ACCESS_DENIED/ERROR/READY dibedakan. READYmetadata belum berarti runtime/model atau checksum isi sudah siap. Tidak mengklaim akses GCS live sudah diuji di sesi pengembangan ini.
+
+Baseline714,84s dan kandidat477,79s pada satu video; total133 sama tetapi kesetaraantrack gagal. Owner mengizinkan adoption kandidat; gate integrasi memvalidasi kompatibilitas input, tidak membuktikan akurasi identitas kendaraan. [Rincian bukti dan batas](TRAFFIC_CANDIDATE_GPU_RUNTIME.md).
+
+## Riwayat rilis dan Gate v1 — bukan konfigurasi default saat ini
+
 # Koreksi sumber model Traffic —0.4.3rc1
 
 Owner menetapkan kedua sumber GCS berikut:

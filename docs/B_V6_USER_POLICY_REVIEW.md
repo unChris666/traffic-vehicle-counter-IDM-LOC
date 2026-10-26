@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Review B v6 — kebijakan terbaru dan gate P0
 
 20 Oktober 2026. **Implementasi, regresi dan replay pilot selesai. P0 BELUM

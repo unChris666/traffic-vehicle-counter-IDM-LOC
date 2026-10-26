@@ -1,3 +1,12 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](docs/CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+## Status implementasi aktif
+
+Rujukan faseaktif adalah docs/CURRENT_STATUS.md dan docs/CURRENT_DEVELOPMENT_WORKFLOW.md. Owner mengizinkan adoptioncandidateFP32, multiGPU satuvideo/GPU serta updateintegrasi; jangan meminta konfirmasi ulang untuk cakupan itu. Jangan mengganti bukti akurasi yang belum ada dengan hasil unit test atau jumlahcount yang sama.
+
+## Konteks dan kontrak terdahulu
+
 # Codex Development Workflow
 
 ## Workflow aktif — evaluasi mandiri dan review melalui UI

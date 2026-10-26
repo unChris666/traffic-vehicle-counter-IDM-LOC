@@ -1,3 +1,12 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+## Status implementasi aktif
+
+Gate2 kini mempunyai facadeArea/Traffic, PPACmodular, validasi dan workflowheadless. MigrasiArea dan coreTraffic tersedia dalam package0.4.7rc1. KandidatTraffic diadopsi dengan batas kesetaraantrack yang diketahui. Statusblocked historis di bawah dibaca menurut gate/tanggalnya; bukan bukti bahwa seluruh modul saat ini belum dibuat.
+
+## Konteks dan kontrak terdahulu
+
 # Review modularisasi Traffic dan Location — 23 Oktober 2026
 
 **Scope:** implementasi irisan pertama modularisasi yang diminta owner, dengan

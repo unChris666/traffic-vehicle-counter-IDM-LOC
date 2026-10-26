@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 5 — review geometri dan replay TOR3-PAGI
 
 **EXPERIMENT RESULT — gate software:** notebook [05_geometry_replay.ipynb](../notebooks/05_geometry_replay.ipynb) benar-benar dieksekusi di Codex cloud CPU. **40/40 tes sintetis PASS**, 0 fail/error/skip, sebelum enam konfigurasi replay. [Audit independen](evidence/phase_5/20261011T161440_100155Z_2e39a11c/replay_audit.json) mencatat **25 PASS, 0 FAIL** terhadap artefak tersimpan, tanpa mengulang pipeline. Seluruh 877 baris transisi antar konfigurasi ditelusuri; baris ini bukan 877 kendaraan.

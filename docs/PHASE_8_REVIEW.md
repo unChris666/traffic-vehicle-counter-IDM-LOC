@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 8 — status pengembangan TGDI
 
 **STATUS — 15 Oktober 2026:** Phase8 dimulai atas instruksi pengguna. Persiapan input aktual dan implementasi notebook tersedia; pemrosesan/counting delapan video belum dinyatakan selesai. [Task](PHASE_8_TASK.md) menetapkan acceptance dan batas fase.

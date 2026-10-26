@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Kontrak geometri Phase 5 — TOR3-PAGI
 
 **FACT — keputusan dan asal persetujuan:** [feedback G3 001](evidence/phase_5/feedback/G3_review_001.json) mempertahankan G3 dan polygon B, serta memberi nama pada empat titik A yang sudah ada. Jawaban tersebut dibaca dalam konteks pertanyaan yang menyertakan aturan awal BC, segmen terbatas, batas netral, sentuhan, endpoint, gap, dan prediksi. Ini penerimaan kontekstual atas baseline kualitatif, bukan kutipan persetujuan terpisah untuk setiap aturan atau pemilihan threshold numerik. Pertanyaan, jawaban, dan interpretasi disimpan bersama; draft historis G1/G2/G3 tidak ditulis ulang.

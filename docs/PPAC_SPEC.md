@@ -1,3 +1,18 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+# PPAC modular — status aktif MVP v2
+
+Formula referensi tersedia di `counter-ppac/`; implementasi modular berada di `src/traffic_location/ppac`. Entry point integrasi: `ppac_parameters_mvp_v2`. Hasil berunit STD/hari; ini belum validasi prediksi penjualan nyata.
+
+Residential memakai jumlah bangunan yang dialokasikan ke calon toko x4 dan policy zona40/60 atau35/45/20. Fasum memakai penjumlahan jarak: <=400m mendapat2, >400..800m mendapat1. Traffic memakai profil jalan PPAC dan observasi weekday/weekend; sepeda tidak diwajibkan pada MVP. Lookup koefisien Residential dan balance tidak digunakan; multiplier1 adalah keputusan MVP, bukan hasil penelusuran lookup.
+
+Input bisnis: hari operasional/minggu, faktorSWOT, profil jalan, jam/hari, drive-thru, potonganTraffic dan faktorparkir, beserta provenance. Durasi300–306detik diterima tanpa rescaling. Hasil PARTIAL dapat dipakai sambil mempertahankan kualitasPARTIAL; sumber/frame/context harus valid. Jam>15 menunggu sesi shift3 tambahan; dilarang mengekstrapolasi empat sesi untuk18jam.
+
+Kegagalan atau input wajib hilang menghasilkan BLOCKED dan STD null. Gate v1 lama tetap lebih ketat dan memerlukan koefisien eksplisit. [Kontrak runtime](GATE2_INTEGRATION.md), [status lintasengine](CURRENT_STATUS.md).
+
+## Riwayat audit sumber sebelum formula ditemukan
+
 # PPAC — interface, batas makna dan gate bisnis
 
 Status **BLOCKED untuk perhitungan SPD**. Dokumentasi interface tersedia;

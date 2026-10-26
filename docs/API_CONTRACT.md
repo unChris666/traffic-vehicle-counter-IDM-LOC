@@ -1,3 +1,12 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+## Status implementasi aktif
+
+Runtime aktif menyediakan fresh_inference(request_path, output, python_executable=..., gpu_id=...) serta run_video_jobs(jobs,worker). Workercallback menerima(job,gpu_id); fresh inference membuat childprocess baru. KaggleRuntime.execute menggabungkan hasilengine, validasicontext/schema/source/frame, lalu PPAC. ReceiptFAILED/BLOCKED mempertahankan alasan; tidak diubah menjadi angka0.
+
+## Konteks dan kontrak terdahulu
+
 # Conceptual Pipeline Contract
 
 Status: conceptual product contract established in Phase 0, complemented by the scoped [Phase 5 geometry contract](GEOMETRY_CONTRACT.md) and the original [Phase 6 Opsi A audit-gated counting contract](COUNTING_CONTRACT.md). The subsequently authorized [Opsi B task](PHASE_6_OPTION_B_TASK.md) adds an implemented unit/episode resolver experiment, reviewed separately in [PHASE_6_OPTION_B_REVIEW.md](PHASE_6_OPTION_B_REVIEW.md). Notebook-prototype callable interfaces and `CountEvent` encoding now exist; final production schemas/public API remain OPEN. This document does not define a REST endpoint. Actual execution/review and limits belong to [PHASE_5_REVIEW.md](PHASE_5_REVIEW.md) and [PHASE_6_REVIEW.md](PHASE_6_REVIEW.md). Newly proposed product payload names below remain **PROPOSAL**; minimum documented track fields are retained from [MODEL_SPEC.md](MODEL_SPEC.md).

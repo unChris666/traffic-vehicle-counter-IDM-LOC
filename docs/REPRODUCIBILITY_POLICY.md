@@ -1,3 +1,12 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+## Status implementasi aktif
+
+Profilcandidate_fp32 adalah keputusanadoption owner27Oktober2026, bukan klaim kesetaraan denganbaseline. Pilot menunjukkan aggregate sama tetapi tracklinks/identitasevent berbeda. Reproducibility dinilai untuk sumber+model+kode+runtime+profile yang sama; cache bukan uji ulang determinisme. AssignmentGPU dan perubahanprofile terikatidentitascache.
+
+## Konteks dan kontrak terdahulu
+
 # Stabilitas hasil — Traffic dan Location
 
 23 Oktober 2026. **Requirement owner**, berlaku pada pengembangan menuju UI.

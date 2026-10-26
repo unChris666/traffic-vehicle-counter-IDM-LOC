@@ -1,3 +1,12 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+## Status implementasi aktif
+
+Boundary aktif: integration/KaggleRuntime mengatur kesiapan, antreanGPU dan artefak; traffic/model_worker menghasilkanmeasurement; traffic/application/pipeline menghitung crossing; ppac/service hanya menerima features tervalidasi. Model tidak dimuat olehPPAC. Satu childprocess pervideo dengan maskGPU terpisah; run_video_jobs mempunyai satu lane perGPU.
+
+## Konteks dan kontrak terdahulu
+
 # Architecture
 
 Update implementasi 23 Oktober 2026: irisan adapter dan kernel terpisah sudah

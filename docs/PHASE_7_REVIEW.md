@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 7 — TOR3-MALAM, raw versus enhancement
 
 **EXPERIMENT RESULT, 14 Oktober 2026:** Phase 7 selesai dalam scope eksperimen TOR3-MALAM: screening, temporal raw/gamma, hold-out, review passage dan biaya pemrosesan aktual. **RECOMMENDATION:** pertahankan raw sebagai baseline penelitian berikutnya; gamma0,7 tidak dipromosikan menjadi konfigurasi produksi. Hasil ini tidak menetapkan total traffic seluruh video atau manfaat counting otomatis secara umum.

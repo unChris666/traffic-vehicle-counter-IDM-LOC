@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 6 — review per passage Opsi A/B
 
 **EXPERIMENT RESULT — 13 Oktober 2026:** uji sintetis, replay episode kendaraan dari cache TOR3-PAGI, dan perbandingan passage telah dijalankan. Opsi B memulihkan satu passage motorcycle1772/rider1774 secara otomatis, tetapi belum menyelesaikan duplikasi964/973 secara otomatis. Keputusan produksi untuk memakai resolusi otomatis tetap **OPEN**. Pending yang turun setelah review gambar bukan keberhasilan otomatis B.

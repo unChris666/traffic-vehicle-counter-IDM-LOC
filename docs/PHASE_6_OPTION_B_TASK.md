@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 6 — eksperimen resolusi unit Opsi B dan pembanding A/B
 
 **USER AUTHORIZATION — 13 Oktober 2026, Asia/Jakarta:** pengguna meminta menjalankan urutan **uji sintetis pengelompokan komponen dan pemisahan episode → replay kasus TOR3-PAGI → bandingkan keputusan A/B per passage**. Perbandingan harus memeriksa salah penggabungan, duplikasi, kategori dan sumber crossing; penurunan pending saja tidak membuktikan perbaikan. Ini melanjutkan [proposal Opsi B](PHASE_6_OPTION_B_PROPOSAL.md), bukan izin untuk fase selanjutnya.

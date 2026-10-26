@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Protokol eksperimen enhancement TOR3-MALAM
 
 **REQUIREMENT — Phase 7:** bandingkan kontribusi enhancement terhadap input malam dengan pipeline tetap dan raw sebagai kontrol. [Task/gate](PHASE_7_TASK.md) memisahkan photometric/YOLO screen DEV dari eksperimen temporal. N1/arah malam telah diterima untuk uji awal; shortlist DEV dibekukan sebelum inference temporal/hold-out. Screen dan raw-versus-gamma temporal benar-benar selesai di Kaggle pada 14 Oktober 2026. Dokumen ini menyatakan recipe, metode penilaian dan execution yang tersedia; penilaian passage serta keputusan akhir berada di [PHASE_7_REVIEW.md](PHASE_7_REVIEW.md).

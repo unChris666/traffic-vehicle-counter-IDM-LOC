@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Prompt Phase 9 — audit bukti dan backlog perbaikan Phase 1–8
 
 **Status: prompt tugas, belum merupakan hasil audit.** Salin blok berikut untuk memulai audit. Paket ini tidak menjalankan ulang model/counting atau mengubah hasil Phase 8. Protokol operasional ada di [PHASE_9_AUDIT_PROTOCOL.md](PHASE_9_AUDIT_PROTOCOL.md); gunakan [template audit](templates/PHASE_9_AUDIT_TEMPLATES.md) untuk mencatat input, cakupan, kasus, keputusan, dan backlog. [PHASE_9_TASK.md](PHASE_9_TASK.md) menjelaskan tujuan dan batas fase.

@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 1 — Video Inspection Execution Status
 
 **CURRENT STATUS — 2026-10-11:** the uploaded TOR3 morning/night Kaggle reports passed the scoped [Phase 1 acceptance](PHASE_1_ACCEPTANCE.md). They retain matching input hashes, metadata, sampling, and earlier AI-assisted observations. Technical limitations remain explicit. The user's conditional authorization now permits Phase 2; the separate [detection notebook/task](PHASE_2_TASK.md) records its own evidence. The inspection notebook itself remains Phase 1 only.

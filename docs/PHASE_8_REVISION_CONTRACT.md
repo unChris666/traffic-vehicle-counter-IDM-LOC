@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Revisi Phase 8 — identitas fisik, passage, dan pedestrian
 
 **REQUIREMENT — keputusan pengguna, 19 Oktober 2026:** perbaiki kode Phase 8, lakukan uji ulang, dan kelompokkan pending untuk keputusan bersama. Dokumen ini menetapkan kontrak revisi. Hasil eksekusi aktual harus dibaca pada artefak run revisi; status penulisan kode atau lulus tes sintetis tidak membuktikan delapan video selesai.

@@ -29,6 +29,11 @@ class NotebookRouteTests(unittest.TestCase):
         package=zipfile.ZipFile(io.BytesIO(wheel))
         source=package.read('traffic_location/integration/kaggle_runtime.py')
         self.assertEqual(source,(ROOT/'src/traffic_location/integration/kaggle_runtime.py').read_bytes())
+        for name in package.namelist():
+            if name.startswith('traffic_location/') and name.endswith('.py'):
+                path=ROOT/'src'/name
+                self.assertTrue(path.is_file(), 'Stale Python module in embedded wheel: '+name)
+                self.assertEqual(package.read(name),path.read_bytes(),name)
     def test_user_quiz_has_no_technical_paths_or_manual_runtime_switch(self):
         quiz=next(s for s in self.code if 'import ipywidgets' in s)
         for token in ('area_path','core_path','assets_path','model_folder','provenance=W.Text'):

@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](../CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 9 — template berkas audit dan daftar perbaikan
 
 **PROPOSAL — template dokumentasi, belum merupakan hasil audit.** Gunakan bersama [protokol audit](../PHASE_9_AUDIT_PROTOCOL.md) dan [tugas Phase 9](../PHASE_9_TASK.md). Dokumen ini tidak menjalankan model, menghitung ulang video, menerapkan label, atau mengubah snapshot Phase 8. Semua kolom hasil diisi hanya setelah sumber benar-benar diperiksa.

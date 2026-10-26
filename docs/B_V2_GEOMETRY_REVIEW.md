@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Review geometri TGDI dan usulan kebijakan B v2
 
 Status: alat review dan analisis; belum ada perubahan counting Phase 8. Hasil B v1, geometri yang sudah diterima, dan seluruh bukti sebelumnya tetap tersimpan. Dokumen ini membedakan keputusan pengguna, fakta implementasi, dan usulan eksperimen.

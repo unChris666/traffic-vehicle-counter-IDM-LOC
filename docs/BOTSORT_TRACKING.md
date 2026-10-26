@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 3 — BoT-SORT tracking status
 
 **REQUIREMENT:** the user authorized Phase 3 after a Phase 2 review without rerunning detection. [PHASE_2_REVIEW.md](PHASE_2_REVIEW.md) records the technical gate; [PHASE_3_TASK.md](PHASE_3_TASK.md) defines the scope. This capability replays the retained detector stream, then decodes the matching video for alignment and rendering. It does not load YOLO weights or execute detector inference.

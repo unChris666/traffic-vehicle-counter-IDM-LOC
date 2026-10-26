@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 8 — end-to-end delapan video satu lokasi
 
 **REQUIREMENT — otorisasi awal pengguna 14 Oktober 2026, diperjelas 15 Oktober 2026:** pengguna meminta penjelasan input/metadata/geometri, penilaian objektif Phase 7, dan coding Phase 8 jika objektif tersebut selesai. [Review Phase 7](PHASE_7_REVIEW.md) dan [keputusan aktual](evidence/phase_7/selection/TOR3-MALAM_final_decision_v1.json) memenuhi gate eksperimen scoped TOR3-MALAM. Enhancement tidak wajib menang; raw tetap baseline penelitian.

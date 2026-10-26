@@ -1,3 +1,10 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](docs/CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+# Current execution direction —27 October2026
+
+The owner explicitly adopted candidate FP32 despite the reported strict track-equivalence failure and authorized one video per available GPU, superseding the earlier single-GPU preference. Package0.4.7rc1 and Gate2 route use this profile. Preserve counting semantics, baseline evidence and the accuracy limitation. Follow [current status](docs/CURRENT_STATUS.md); older phase limits below are dated history, not a new approval requirement.
+
 # AGENTS.md
 
 ## Current owner direction — 23 October 2026

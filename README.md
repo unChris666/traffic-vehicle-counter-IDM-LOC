@@ -1,21 +1,19 @@
-# Traffic Vehicle Counter
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](docs/CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
 
-Workflow terkini: [evaluasi mandiri menuju UI input/output](docs/CURRENT_DEVELOPMENT_WORKFLOW.md).
-Checkpoint 24 Oktober: [audit kesiapan modularisasi Traffic dan acceptance criteria](docs/TRAFFIC_MODULARIZATION_READINESS_AUDIT.md)
-tersimpan; implementasi migrasi berikutnya menunggu persetujuan audit. Fokus berikutnya audit Area Coverage.
-Video/result menggunakan Google Cloud Storage pada tahap integrasi;
-[stabilitas kedua engine](docs/REPRODUCIBILITY_POLICY.md) dan
-[panduan tahap GCS](docs/GCS_STORAGE_ONBOARDING_PLAN.md) terdokumentasi.
-Integrasi GCS belum diimplementasikan.
+# Traffic Vehicle Counter + Area Coverage + PPAC
 
-**Modularisasi bertahap:** [review dan batas kesiapan](docs/ENGINE_MODULARIZATION_REVIEW.md),
-[package dua engine](src/traffic_location), serta
-[bukti dan perintah replay](results/engine_modularization/README.md).
-Branch machine/review-assisted dipisahkan, dan snapshot historis dipertahankan.
+Package **0.4.7rc1** menyediakan engine modular dan workflow headless. Traffic memakai YOLO26M FP32 batch4, ReID IO binding/window8/crop32; satu GPU menangani satu video dan dua GPU dapat menangani dua video bersamaan.
 
-Vehicle/object traffic counting from real road videos, starting with a Kaggle GPU prototype and progressing to modular Python, UI, Docker, and GPU VM deployment after validation and manual audit.
+Mulai dari [status terkini](docs/CURRENT_STATUS.md), [integration layer](docs/GATE2_INTEGRATION.md), dan [perubahan Traffic/GPU](docs/TRAFFIC_CANDIDATE_GPU_RUNTIME.md).
 
-## Current status
+[Notebook Kaggle workflow Sorong + T7SL](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) memakai paket tertanam yang sama. Setup dan engine OFF saat disimpan; aktifkan GPU, Internet, Secret `LocatioIntelligent`, lalu `ENABLE_NOTEBOOK_SETUP=True`.
+
+Area dan Traffic dapat dijalankan terpisah. PPAC MVP v2 menerima hasil PARTIAL yang lolos validasi; input hilang/gagal/tidak kompatibel tetap ditolak. Jam operasional >15 memerlukan sesi tambahan, sehingga delapan video T7SL belum cukup untuk PPAC18jam.
+
+Kandidat menghemat33,16% pada satu video, dengan total133 yang sama tetapi identitas track berbeda. Precision/recall dan percepatan dua GPU belum dibuktikan.
+
+## Riwayat checkpoint dan hasil terdahulu
 
 **T7SL fresh batch — 24 Oktober 2026:** [notebook Kaggle baru](https://www.kaggle.com/code/chrisbiran/t7sl-fresh-modular-traffic-batch) sedang berjalan; dua Tesla T4 dan mount dataset teramati. [Scope, konfigurasi, revisi geometri dan status verifikasi](docs/T7SL_FRESH_BATCH_REVIEW.md). Belum ada total T7SL terverifikasi sebelum output terminal direkonsiliasi.
 

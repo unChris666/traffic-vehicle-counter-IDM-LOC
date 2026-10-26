@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 4 — TOR3-PAGI appearance association experiment
 
 **REQUIREMENT:** the user authorized a controlled TOR3-PAGI ReID experiment and Phase 5 readiness analysis. Scope and acceptance are in [PHASE_4_TASK.md](PHASE_4_TASK.md). Phase 5 implementation is outside this task.

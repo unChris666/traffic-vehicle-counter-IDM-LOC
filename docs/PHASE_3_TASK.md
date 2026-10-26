@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 3 — BoT-SORT tracking of retained Phase 2 detections
 
 **AUTHORIZATION:** the user requested a Phase 2 review without rerunning it, then authorized Phase 3 if the technical gate passed. [PHASE_2_REVIEW.md](PHASE_2_REVIEW.md) records PASS with explicit limits. This task establishes a tracking baseline on one actual video; no Phase 3 result is claimed by this task specification.

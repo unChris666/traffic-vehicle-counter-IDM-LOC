@@ -1,3 +1,12 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+## Status implementasi aktif
+
+Profil CUDAaktif adalah candidate_fp32: YOLO26M FP32batch4 dan encoderReID ONNX yang sama, IO binding/window8/crop32. Encoder diekstrak di adapters/reid_encoder.py; model_worker.py dipakai bersama oleh runtime dan benchmark. Tracker diperbarui berurutan perframe. Profilebaseline_fp32 tetap tersedia. Precision/recall kendaraan belum terbukti; lihat CURRENT_STATUS.md.
+
+## Konteks dan kontrak terdahulu
+
 # Model Specification
 
 ## 1. Confirmed Target Architecture

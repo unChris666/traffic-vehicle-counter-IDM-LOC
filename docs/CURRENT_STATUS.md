@@ -1,0 +1,45 @@
+# Status sistem —27 Oktober2026
+
+Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.4.7rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
+
+| Bagian | Kondisi kode saat ini | Batas bukti |
+|---|---|---|
+| Area Coverage | Engine modular mandiri, sumberPBF GCS terikat generation/SHA dan snapshotBQ; persiapan input Sorong otomatis | Parity Area pada sumberbaseline tertentu tersedia; tidak membuktikan semua lokasi/runtime setara |
+| Traffic Counter | YOLO26M FP32 batch4, ReID ONNX FP32 IO binding, window8frame/cropbatch32; BoT-SORT berurutan | Totalcount pilot sama; identitastrack berbeda, precision/recall tidak diukur |
+| GPU scheduling | Satu video aktif per GPU terlihat; workerprocess baru untuk setiap video; antrean lanjut setelah kegagalan | Unit/integration mock satu/duaGPU lulus; belum ada uji nyata duaGPU baru |
+| Integration layer | `KaggleRuntime.execute` -> `_scheduled_tasks` -> `run_video_jobs` -> `run_video` -> `fresh_inference` -> worker kandidat -> counting -> gate -> PPAC | HasilArea/Traffic tetap independen. ReadinessGCS, runtime dan model adalah status terpisah |
+| PPAC | Formula referensi tersedia; Residential/Traffic/Fasum/total dipisah di packagePPAC | STD/hari adalah outputformula; prediksi penjualan nyata belum tervalidasi |
+| Storage | Adapter/probe/download/hash/cacheGCS diimplementasikan; SecretKaggle `LocatioIntelligent` | Hakakses dan isiobject tetap harus diperiksa pada sesi pengguna |
+| UI/VM | Workflow dapat berjalan headless; notebook menyediakan quiz bisnis tipis | Deployment produksiVM dan UIproduk belum diverifikasi |
+
+## Pilihan runtime Traffic
+
+CUDA fresh inference memakai `candidate_fp32` secara default. `baseline_fp32` tetap tersedia secara eksplisit; CPU memakai baseline. Filemodel, geometry, policycounting dan seluruhframe dipertahankan. Perubahanbatch dapat mengubah angka floatingpoint sekalipunFP32. Profileterekam dalam request/environment dan identitascache; jangan menganggap cachebaseline sebagai inferencekandidat.
+
+Untuk1GPU, video diproses bergantian. Untuk2GPU, masing-masingGPU menangani satuvideo dan GPU yang bebas mengambil video berikutnya. MaskGPU ditetapkan pada environmentchild; parent tidak diubah. Torch danONNXRuntime pada child memakai local`cuda:0`, merujuk GPUfisik yang dialokasikan. Tidak ada pemecahan satuvideo ke duaGPU. CPU/disk tetap dibagi dan percepatan2x belum terbukti.
+
+## Bukti pilot satuvideo
+
+T7SL-WEEKDAY-PAGI,9015frame, satu run per konfigurasi. Baseline714,84detik, kandidat477,79detik: **hemat33,16% (1,50x)**. Keduanya133kendaraan:112motor,4mobil,2bus,15truk; arah6/127; pending28,invalid11,cancelled10. **Tracklinks dan identitasevent berbeda; gatekesetaraan gagal.** Owner meminta kandidat diadopsi dengan batas ini tetap tercatat. Totalcount sama tidak berarti akurasi100%.
+
+[Reportasli](evidence/traffic_performance/pair_fp32/report.json), [analisis](evidence/traffic_performance/pair_fp32/comparison.md), [runtimeTraffic](TRAFFIC_CANDIDATE_GPU_RUNTIME.md).
+
+## Kontrak PPAC aktif
+
+Notebook memakai `ppac_parameters_mvp_v2`. Residential memakai bangunan yang dialokasikan ke calon toko x4 dengan policyzona40/60 atau35/45/20. Fasum: <=400m +2, >400..800m +1. ProfiljalanPPAC, hari/jamoperasional, drive-thru, SWOT, potonganTraffic dan parkir adalah inputbisnis.
+
+MVP menerima video300–306detik tanpa rescaling; sepeda tidak diwajibkan. LookupResidential/balance dinonaktifkan sesuai keputusanowner; multiplier1 bukan hasil lookup. HasilPARTIAL boleh dipakai sambil mempertahankan kualitasPARTIAL. Kontraksource/context/branch, keutuhanframe dan kelengkapanobservasi tetap divalidasi. Truck secara eksplisit tidak dipakai dalam mappingPPAC saat ini.
+
+**Jam>15 tetap memerlukan sesi tambahan shift3.** Delapanvideo normal tidak cukup untuk PPAC18jam. Engine masih dapat dijalankan; PPACmenungguinput dengan statusBLOCKED/STDnull. Inputgagal/hilang/tidakkompatibel bukan nilai0. Gatev1 lama tetap tersedia dengan syarat lebih ketat.
+
+## Notebook dan cara mencoba
+
+[WorkflowSorong+T7SL diKaggle](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) **versi6** memakai [notebook11](../notebooks/11_gate2_t7sl_sorong_quiz.ipynb), exactwheel0.4.7rc1 besertaSHA, force-reinstall dan verifikasisource. Setup/engineOFF saat disimpan; publikasi tidak menjalankanArea/Traffic/PPAC.
+
+Buka revisiterbaru, aktifkanGPU danInternet serta Secret`LocatioIntelligent`, ubah`ENABLE_NOTEBOOK_SETUP=True`, lalu jalankan cell. Isi quiz -> Simpanjawaban -> Periksakesiapan -> Mulaiuji. Pastikan jam<=15 bila hanya memakai8video dan ingin mencobaPPAC. KoordinatSorong: latitude-0.8994976613947719, longitude131.3221639428227. GCSmodel memakai prefix`models/traffic/` terikatSHA.
+
+[Notebookduakonfigurasi](https://www.kaggle.com/code/chrisbiran/t7sl-single-gpu-config-sweep) adalah benchmark terpisah. Ia sengaja menguji satuGPU dan tidak menjalankanArea/PPAC.
+
+## Validasi dan dokumentasi
+
+Rilis kode:208tes lokal selesai,8dilewati; wheel berhasil dibangun. Perbandinganpilot bukan uji baru dualGPU dan bukan evaluasi anotasi. DokumenMarkdown naratif mendapat penunjukstatus; artefakhasil, bukti dan referensihistoris dipertahankan byte-nya agarhash/receipt tetap bermakna. [Inventarisaudit](evidence/documentation_sync_20261027/inventory.json) mencatat seluruhMarkdown pada awalaudit, klasifikasi danchecksum. Dokumen ini ditambahkan setelah inventarisawal.

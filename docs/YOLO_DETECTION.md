@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Phase 2 — detection status
 
 **REQUIREMENT:** Phase 1 reports have passed the documented acceptance gate and the user has authorized Phase 2. Detection uses YOLO26M through the Ultralytics Python API on one actual video. [Phase 2 task](PHASE_2_TASK.md) defines the scope; no tracking/counting phase is authorized by this result.

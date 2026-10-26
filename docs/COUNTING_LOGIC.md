@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Counting Logic
 
 **Current authorized experiment — 18 October 2026:** [B v2 counting contract](B_V2_COUNTING_CONTRACT.md) defines the user's shared TGDI geometry, 25px half-margin, band/occlusion/automatic 60-frame timeout routes, category-at-band priority, genuine return and separate measured/inferred evidence. It is implemented in new helpers/notebook 08b over retained measurements. Earlier Phase 5/6 rules below remain historical B v1 contracts; they do not silently veto the explicitly authorized new gap/timeout routes. B v1 data/code remain unchanged and [pre-update context bytes](../results/b_v2/baseline/context_retention_mapping.json) are retained. The new operational subtotal is not a measured-crossing accuracy claim.

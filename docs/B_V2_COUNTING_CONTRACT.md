@@ -1,3 +1,6 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
 # Kontrak eksperimen counting B v2
 
 Status: perubahan yang diminta pengguna untuk replay pengukuran Phase 8 yang sudah tersimpan. Kontrak ini mendefinisikan perilaku perangkat lunak; bukan hasil delapan video, bukti akurasi, atau persetujuan produksi. Kebijakan, kode, event, dan bukti B v1 tetap menjadi pembanding historis yang terpisah.

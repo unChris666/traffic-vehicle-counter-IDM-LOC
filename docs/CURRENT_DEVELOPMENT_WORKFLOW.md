@@ -1,3 +1,18 @@
+<!-- current-status:2026-10-27 -->
+> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
+
+# Workflow aktif —27 Oktober2026
+
+Rujukan aktif: [CURRENT_STATUS](CURRENT_STATUS.md). Gate2 sudah menghubungkan Area, Traffic kandidat FP32, dan PPAC modular tanpa mencampur perhitungan analitik. Package0.4.7rc1 dan notebook workflow memakai kode integrasi terbaru.
+
+Urutan eksekusi: siapkan/priksa GCS dan runtime, jalankan Area independen, siapkan model Traffic sekali, antrekan video per GPU, validasi hasil, lalu jalankan PPAC bila seluruh input yang diperlukan tersedia. Kegagalan per engine/video dicatat terpisah.
+
+MVP v2 menerima video300–306detik dan hasilPARTIAL; sepeda/lookup Residential serta balance dinonaktifkan sesuai keputusan owner. Untuk jam>15, sesi shift3 tetap wajib. Baseline FP32 masih dapat dipilih eksplisit; adoption kandidat tidak berarti akurasi identitas telah lulus.
+
+Validasi rilis:208tes lokal selesai,8dilewati. Uji dual-GPU nyata dan ground truth belum tersedia.
+
+## Riwayat keputusan — dibaca menurut tanggal dan scope
+
 # Workflow pengembangan aktif — evaluasi mandiri hingga review UI
 
 **Area actual baseline + modular RC —26 Oktober2026:** tiga bagian input cocok
