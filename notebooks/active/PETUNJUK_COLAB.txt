@@ -1,0 +1,20 @@
+COLAB L4 — KANDIDAT 0.6.2rc1
+
+Notebook: 15_colab_l4_area_first.ipynb
+Gunakan notebook ini untuk Colab; notebook14 adalah varian Kaggle.
+
+1. Upload/import notebook ke Colab. Pilih Runtime > Change runtime type > L4 GPU, lalu reconnect.
+2. Run All. Cell awal menampilkan GPU yang benar-benar dialokasikan; selain L4 ditolak.
+3. Setup memasang dependency sekali per sesi ke Python3.12 terisolasi, tidak mengubah paket kernel Colab. Dibutuhkan sedikitnya18GiB ruang kosong. Unduhan awal beberapa GB dapat memakan waktu.
+4. Import dan CUDA diperiksa di environment aplikasi. Kegagalan pip check, import, GDAL/PROJ, CuPy/Torch/ONNX CUDA menghentikan startup. Tidak fallback ke CPU.
+5. Ikuti dialog login Google. Akun itu harus punya akses sumber, query BigQuery dan baca/tulis hasil. Tidak perlu menempelkan service-account JSON. Kredensial tidak dimasukkan ke ZIP hasil atau GitHub.
+6. Buka GRADIO_PUBLIC_URL. Isi KDTK4karakter, Nama Toko, Latitude dan Longitude. Pilih Area Coverage dan Process; tidak perlu video.
+7. Buka RESULT dan Buka hasil BQ untuk job yang sama. Periksa tabel Area, kompetitor, Indomaret dan peta pan/zoom/layer. Pastikan hasil GCS/BQ terbaca kembali. Penerimaan HTML oleh viewer tidak membuktikan tile/CDN tersedia di browser.
+8. Traffic/PPAC dibuka setelah hasil Area Colab L4 terbaca kembali, dengan target/periode/koordinat/versi yang cocok. Gunakan upload video atau gs:// pada slot. Path lokal opsional hanya /content/videos/. Dataset Kaggle tidak otomatis tersedia.
+9. Traffic boleh subset video; PPAC tetap membutuhkan seluruh observasi wajib, termasuk shift3 untuk jam>15. Hasil hilang bukan nol.
+10. Setelah job selesai, hentikan cell server. Unduh paket diagnosis dari Gradio atau jalankan cell unduh terakhir. Simpan job_id sebelum runtime Colab berakhir.
+
+Tujuan output tetap gs://aretfak-location-intelligence dan locdeproject.location_intelligence.
+Notebook tidak membuat tabel atau mengubah IAM. Probe awal menggunakan pemeriksaan izin, metadata dan query kecil; job Area menguji write/publish/reopen nyata.
+Server/worker tidak memasang dependency ketika job berjalan. Sesi Colab baru membutuhkan setup lagi.
+Belum diuji pada L4/Colab nyata atau cloud owner; ini kandidat untuk owner-run user testing. Main dan refactor/deployment-foundation belum dipromosikan. Formula engine dan Markdown aktif dipertahankan.

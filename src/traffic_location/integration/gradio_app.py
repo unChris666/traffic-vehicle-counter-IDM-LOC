@@ -249,6 +249,8 @@ class Controller:
             frames=[frame(result[t],list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')]
             status='Hasil tersimpan dari BigQuery: '+result['job_id']+'. '+result['map_status']
             status+=' '+' '.join(result.get('read_errors',[])+result.get('artifact_status',[]))
+            note=getattr(type(runtime),'note_reopened_area',None)
+            if callable(note):status+=' '+str(note(runtime,result))
             if result.get('truncated'):status+=' Tampilan traffic dibatasi; gunakan query BQ untuk seluruh baris.'
             return status,result['job_id'],result['map_html'],*frames,*display_frames(result),*annotation_buttons(result),result.get('identity_text','')
         except Exception as exc:
@@ -364,6 +366,8 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
     import gradio as gr
     if default_mode not in MODES:raise ValueError('Mode awal tidak valid.')
     controller=Controller(base,config_root,input_root=input_root,runtime_factory=runtime_factory)
+    import os
+    local_video='/content/videos/...' if os.environ.get('LI_RUNTIME_PLATFORM')=='colab' else '/kaggle/input/...'
     with gr.Blocks(title='Area · Traffic · PPAC') as app:
         with gr.Tabs():
             with gr.Tab('HOME'):
@@ -382,21 +386,21 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                 with gr.Group() as upload_group:
                     gr.Markdown('Delapan slot utama: satu video per kondisi dan waktu. Maksimal 1 GiB/file dan 2 GiB total. Slot kosong tidak dianggap nol.')
                     slot_files=[];slot_refs=[]
-                    gr.Markdown("Jika upload terputus: unggah video ke GCS melalui Cloud Console, lalu isi gs://bucket/object di slot yang sesuai. Bisa juga memakai path /kaggle/input/... dari Add Input. Jangan ubah file menjadi publik.")
+                    gr.Markdown("Jika upload terputus: unggah video ke GCS melalui Cloud Console, lalu isi gs://bucket/object di slot yang sesuai. Referensi file lokal: "+local_video+". Jangan ubah file menjadi publik.")
                     for d in ('weekday','weekend'):
                         gr.Markdown('### '+('Weekday' if d=='weekday' else 'Weekend'))
                         with gr.Row():
                             for t in ('pagi','siang','sore','malam'):
                                 with gr.Column():
                                     slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
-                                    slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau /kaggle/input/...'))
+                                    slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau '+local_video))
                     with gr.Accordion('Sesi tambahan untuk operasional >15 jam',open=False):
                         for d in ('weekday','weekend'):
                             with gr.Row():
                                 for t in ('tengah_malam','dini_hari','subuh'):
                                     with gr.Column():
                                         slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
-                                        slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau /kaggle/input/...'))
+                                        slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau '+local_video))
                     prepare=gr.Button('Siapkan video dan geometri')
                     upload_status=gr.Textbox(label='Kesiapan video',interactive=False)
                     selected=gr.Dropdown(choices=[],label='Video yang ditinjau')
@@ -508,8 +512,8 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
     return app,controller
 
 
-def launch(base,config_root,*,input_root='/kaggle/input',share=True,default_mode='Gabungan + PPAC',**kwargs):
-    app,controller=build_app(base,config_root,input_root=input_root,default_mode=default_mode)
+def launch(base,config_root,*,input_root='/kaggle/input',share=True,default_mode='Gabungan + PPAC',runtime_factory=KaggleRuntime,**kwargs):
+    app,controller=build_app(base,config_root,input_root=input_root,default_mode=default_mode,runtime_factory=runtime_factory)
     from starlette.requests import ClientDisconnect
     from .upload_transport import disconnected_upload
     app_kwargs=kwargs.pop('app_kwargs',{})

@@ -31,6 +31,7 @@ class ResultsReader:
                         **{'target_id':target_id,**({'job_id':job_id} if job_id else {})})
         if not jobs:raise ValueError('Belum ada hasil READY untuk kode toko/job ini. Jalankan engine dan pastikan publikasi selesai.')
         job=jobs[0];result={'identity_text':'**Periode:** '+str(job.get('period_id',''))+' · **KDTK:** '+str(job.get('target_id',''))+' · **Nama Toko:** (belum tercatat)', 'job_id':job['job_id'],'map_html':'','map_status':'Peta belum tersedia pada job ini.'}
+        result['job_context']={k:job.get(k) for k in ('target_id','period_id','latitude','longitude','package_version')}
         result['read_errors']=[]
         for table in ('traffic_counts','area_results','ppac_results'):
             # Select explicit schema: additive metadata is visible, unrelated columns are excluded.
@@ -59,6 +60,7 @@ class ResultsReader:
         if job.get('manifest_uri'):
             try:
                 manifest=json.loads(self.verified_bytes(job,job['manifest_uri'],job['manifest_sha256'],8*1024**2))
+                result['manifest_job_id']=manifest.get('job_id')
                 def document(entries,label,limit=8*1024**2):
                     if len(entries)!=1:
                         if len(entries)>1:result['artifact_status'].append(label+': referensi artefak ambigu.')

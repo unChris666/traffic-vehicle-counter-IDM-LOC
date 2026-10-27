@@ -1,0 +1,88 @@
+{
+  "schema_version": "colab_l4_candidate_validation_v1",
+  "candidate": "0.6.2rc1",
+  "date_jakarta": "2026-10-27",
+  "branch": "fix/area-user-testing",
+  "status": "READY_FOR_OWNER_COLAB_TEST_NOT_PROMOTED",
+  "notebook": {
+    "path": "notebooks/active/15_colab_l4_area_first.ipynb",
+    "sha256": "d1d3bbde5d826df782477f8d4382ab87d9003a69be8dc4e764da28bcc44bf904",
+    "exact_embedded_source_wheel": true,
+    "cells_compile": true,
+    "outputs_cleared": true
+  },
+  "software_tests": {
+    "total": 302,
+    "passed": 292,
+    "skipped": 10,
+    "errors": 0,
+    "seconds": 47.182
+  },
+  "strict_mypy": {
+    "files": 14,
+    "status": "PASS"
+  },
+  "build": "sdist/wheel PASS",
+  "installed_wheel_imports": "PASS outside checkout",
+  "pip_lock": {
+    "pinned_packages": 137,
+    "resolution": "PASS unchanged for CPython3.12 / x86_64-manylinux_2_35",
+    "sha256": "35cd6dcbb8c4337302acaafc20bc23fc8f738ca53e8e84cd26ff4cc69e4610d8",
+    "full_gpu_dependency_install_here": false
+  },
+  "conda": {
+    "core_lock_sha256": "9956119c1a216d9429b29ba598d4684b40b4a8a28d5d98457183a46d12a07877",
+    "science_lock_sha256": "a29c86a057e61781ef7b184940c78d046908b9984461408512c9dfcb8dbda0fc",
+    "both_locks_solved": true,
+    "all_package_urls_and_sha256_pinned": true,
+    "core_installed_locally": true
+  },
+  "native_core": {
+    "smoke": {
+      "python": "3.12.12",
+      "gdal": "3.10.3",
+      "pyproj": "3.7.1",
+      "utm_sorong": [
+        758438.2823933754,
+        9900496.149623865
+      ]
+    },
+    "reference_suite": {
+      "total": 11,
+      "passed": 6,
+      "skipped": 5,
+      "status": "PASS",
+      "scope": "Retained CPU selection/capacity snapshot; not fresh Area Sorong or GPU validation"
+    }
+  },
+  "native_setup_findings": [
+    "Unbound PROJ data can fail CRS lookup even when imports work; generated core wrapper binds its own PROJ/GDAL data without changing scientific process environment.",
+    "Exploratory GDAL3.8.5 differed from retained backend metadata/derived hash. Final core pinned to retained GDAL3.10.3, GEOS3.13.1, PROJ9.6.0; retained exact selection/capacity checks pass."
+  ],
+  "workflow_guards": [
+    "Require actual NVIDIA L4 allocation",
+    "Initial isolated dependency setup; no pip/apt in jobs",
+    "Google ADC in isolated subprocess and workers",
+    "Input metadata, destination schema/IAM, and query permission preflight",
+    "Start with Area only",
+    "Only verified same-job Colab L4 trace, BQ Area row, GCS display tables and map unlock Traffic/PPAC",
+    "Changed target/date/coordinate/version needs new verification",
+    "Missing traffic sessions remain missing, not zero"
+  ],
+  "mocked_only": [
+    "GCS/BQ preflight permissions and read checks",
+    "Area-reopen workflow gate"
+  ],
+  "not_run_here": [
+    "Google Colab notebook runtime",
+    "Actual L4 GPU/CuPy/Torch/ONNX CUDA smoke",
+    "Google user login and ADC in actual Colab",
+    "Owner live GCS/BQ CRUD and Area publish/reopen",
+    "Fresh GPU Area Sorong/Traffic/PPAC",
+    "Production capacity or cloud deployment"
+  ],
+  "formula_or_kernel_changed": false,
+  "existing_markdown_changed": false,
+  "foundation_promoted": false,
+  "main_merged": false
+}

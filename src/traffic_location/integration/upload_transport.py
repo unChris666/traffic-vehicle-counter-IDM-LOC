@@ -12,8 +12,9 @@ def resolve_reference(value,root,client_factory):
     value=value.strip();root=Path(root);root.mkdir(parents=True,exist_ok=True)
     if not value.startswith('gs://'):
         path=Path(value).resolve()
-        if not any(path.is_relative_to(Path(p)) for p in ('/kaggle/input','/kaggle/working/videos')):
-            raise ValueError('Path video harus di /kaggle/input atau /kaggle/working/videos.')
+        allowed=('/content/videos',) if os.environ.get('LI_RUNTIME_PLATFORM')=='colab' else ('/kaggle/input','/kaggle/working/videos')
+        if not any(path.is_relative_to(Path(p)) for p in allowed):
+            raise ValueError('Path video harus di '+ ' atau '.join(allowed)+'.')
         if not path.is_file() or path.stat().st_size>MAX_FILE_BYTES:raise ValueError('File tidak tersedia atau melebihi 1 GiB.')
         return str(path)
     uri=urlsplit(value)
