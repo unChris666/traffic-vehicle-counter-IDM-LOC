@@ -84,6 +84,20 @@ class UploadedControllerTests(UploadFixture):
         output=list(c.process(*values))[-1]
         self.assertEqual(seen[0]['uploaded_videos'],rows)
         self.assertEqual(seen[0]['video_ids'],[rows[0]['id']]);self.assertIsNotNone(output[4])
+    def test_uploaded_workflow_binding_never_claims_t7sl_source_provenance(self):
+        rows=self.review(self.prepare());video_id=rows[0]['id'];area=self.root/'area';area.mkdir()
+        write(area/'result.json',{'result_version':'b'*64})
+        r=KaggleRuntime(self.root/'runtime',ROOT/'results/t7sl_modular/config',0,0,client=Mock(),upload_root=self.upload_root)
+        def scheduled(tasks,root):
+            for task in tasks:
+                kind=task['kind'];folder=str(area) if kind=='area' else 'software-fixture'
+                yield task,{'execution_status':'SUCCEEDED','jobs':[{'id':task['id'],'engine':kind,'quality':'PARTIAL','summary':{},'result_version':'b'*64,'result_ref':{'path':folder,'sha256':'a'*64}}]},None
+        with patch.object(r,'_scheduled_tasks',side_effect=scheduled),patch.object(r,'_experiment_stage',return_value={'ppac':{'execution_status':'BLOCKED','std_total':None}}):
+            result=r.execute('workflow',{},uploaded_videos=rows,target_confirmed=True)
+        binding=read(Path(result['output'])/'binding.json')
+        self.assertIn('User-uploaded source',binding['traffic'][0]['evidence'])
+        self.assertNotIn('T7SL',binding['traffic'][0]['evidence'])
+        self.assertEqual(binding['traffic'][0]['job_id'],video_id)
     def test_publication_retry_has_no_runtime_setup_or_counting(self):
         from traffic_location.integration.cloud_schema import CloudDestination
         runtime=KaggleRuntime(self.root/'runtime',ROOT/'results/t7sl_modular/config',0,0,client=Mock(),publication=CloudDestination())

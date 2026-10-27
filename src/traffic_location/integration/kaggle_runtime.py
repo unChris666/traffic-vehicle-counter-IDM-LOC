@@ -461,7 +461,7 @@ class KaggleRuntime:
                     bindings.append({'job_id':item['id'],'result_version':job['result_version'],'video_sha256':item['slot']['sha256'],
                       'target_id':self.target_id,'period_id':self.period_id,'day':day.lower(),'session':session.lower(),
                       'observed_seconds':item['duration_seconds'],'observed_categories':['motorcycle','car','bus','truck','pedestrian'],
-                      'evidence':'User target declaration; pinned T7SL source inspection durations, no count rescaling'})
+                      'evidence':('User-uploaded source; SHA-bound inspection; per-video geometry/day/session review; user target/period declaration; no rescaling' if item.get('origin')=='USER_UPLOAD_REVIEWED' else 'User target declaration; pinned T7SL source inspection durations, no count rescaling')})
             except Exception as exc:
                 if self.state['runtime'].get(item['kind'],{}).get('status')=='PREPARING':
                     self.state['runtime'][item['kind']]={'status':'FAILED','code':type(exc).__name__}
