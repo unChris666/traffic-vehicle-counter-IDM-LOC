@@ -1,0 +1,32 @@
+{
+  "before_exit": 1,
+  "before_error": "Traceback (most recent call last):\n  File \"/workspace/work/colab-cuda-proof/probe.py\", line 2, in <module>\n    nvrtc=ctypes.CDLL('libnvrtc.so.12')\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/ctypes/__init__.py\", line 379, in __init__\n    self._handle = _dlopen(self._name, mode)\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: libnvrtc.so.12: cannot open shared object file: No such file or directory\n",
+  "after_exit": 0,
+  "after_output": "{\"nvrtc_version\": [12, 6], \"libcudart_loaded\": true, \"compute_89_ptx_compiled\": true, \"ptx_bytes\": 450, \"gpu_execution\": false}\n",
+  "after_error": "",
+  "host_environment_unchanged": true,
+  "scope": "Native NVRTC library loading and synthetic kernel compilation to compute_89 PTX on CPU. No GPU execution or cloud test.",
+  "schema_version": "colab_setup_r4_validation_v1",
+  "date_jakarta": "2026-10-28",
+  "package_version": "0.6.2rc1",
+  "notebook_revision": "setup-r4",
+  "branch": "fix/area-user-testing",
+  "dependency_versions_changed": false,
+  "engine_source_changed": false,
+  "live_colab_l4_execution_here": false,
+  "fresh_area_or_cloud_crud": false,
+  "main_or_foundation_promoted": false,
+  "local_full_tests": {
+    "total": 315,
+    "passed": 305,
+    "skipped": 10,
+    "seconds": 60.652
+  },
+  "additional_cuda_suite": {
+    "total": 4,
+    "passed": 4,
+    "note": "Includes one recovery regression added after full-suite discovery; 316 distinct tests total."
+  },
+  "wheel_sha256": "ef4a2f10b35357485e813ac179a9c99d39fb7afadbfbaf39c174f01b19c56f2c",
+  "notebook_sha256": "e86eee4f6678d33cca5638eb939e3e043bf43e6939ce2e61c8194547db0c5725"
+}

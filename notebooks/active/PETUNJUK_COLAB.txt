@@ -1,4 +1,4 @@
-COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r3
+COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r4
 
 Notebook: 15_colab_l4_area_first.ipynb
 Gunakan notebook ini untuk Colab; notebook14 adalah varian Kaggle.
@@ -32,3 +32,10 @@ Log owner menunjukkan pip check lulus, GDAL/CRS lulus, lalu import OSMnx gagal k
 Setup, runtime check, cloud preflight, server dan worker sekarang memakai MPLBACKEND=Agg khusus pada proses anak. Backend kernel Colab tidak diubah. Dependency/formula/model tetap sama.
 Untuk mempertahankan sesi Colab yang sudah selesai memasang dependency: salin colab_mpl_recovery.py ke CELL BARU pada notebook r2 yang sedang gagal, lalu jalankan sekali. Setelah SETUP_READY lanjut ke cell Periksa import dan CUDA; jangan jalankan ulang cell setup r2 lama. Gunakan notebook r3 untuk run berikutnya.
 Perbaikan ini direproduksi dengan Matplotlib3.11.2/OSMnx2.1.1 dan lolos import/render PNG pada CPU. Verifikasi CUDA L4 serta fresh Area/GCS/BQ tetap dijalankan owner pada tahap berikutnya.
+
+PERBAIKAN CUDA LOADER r4
+Log owner berikutnya menunjukkan setup/pip check sudah lulus, tetapi CuPy tidak menemukan libnvrtc.so.12 saat runtime-check. Dependency nvidia-cuda-nvrtc-cu12 sudah ada di requirements.lock; library wheel tidak otomatis masuk pencarian dynamic loader interpreter terisolasi.
+Notebook r4 mencari site-packages dari interpreter aplikasi (bukan Python kernel), lalu menambahkan nvidia/*/lib dan torch/lib ke LD_LIBRARY_PATH sebelum subprocess verify/preflight/server dimulai. Worker mewarisi jalur yang sama. Jalur driver bawaan dipertahankan, backend Agg tetap dipakai, environment kernel tidak diubah, dependency/model/formula tidak di-upgrade.
+Untuk sesi r2/r3 yang sedang gagal: salin SELURUH colab_cuda_recovery.py ke CELL BARU, lalu jalankan. Tidak memasang dependency. Cell itu menyiapkan child_env dan langsung mengulang runtime-check; sesudah lulus lanjut autentikasi/pemeriksaan akses dan UI. Jangan ulang cell setup lama setelah cell pemulihan. Untuk sesi baru, gunakan notebook r4.
+Jika file library memang tidak terpasang, startup berhenti dengan path file dan instruksi mengulang setup terkunci; tidak fallback ke CPU. GPU L4 nyata dan Area/GCS/BQ masih harus diverifikasi pada sesi owner.
+Validasi lokal mereproduksi error loader, lalu memuat NVRTC12.6 dan libcudart serta mengompilasi kernel sintetis compute_89 ke PTX; ini kompilasi CPU, bukan eksekusi GPU atau bukti hasil Area.

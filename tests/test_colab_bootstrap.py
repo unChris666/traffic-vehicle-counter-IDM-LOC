@@ -26,7 +26,8 @@ class BootstrapTests(unittest.TestCase):
             notebook=json.loads((ROOT/'notebooks/active/15_colab_l4_area_first.ipynb').read_text())
             code=next(c['source'] for c in notebook['cells'] if c['cell_type']=='code' and 'def child_env(' in c['source'])
             fn=next(x for x in ast.parse(code).body if isinstance(x,ast.FunctionDef) and x.name=='child_env')
-            env={'os':os,'CORE':'fixture-core','BASE':Path(d)}
+            env={'os':os,'CORE':'fixture-core','BASE':Path(d),'SCIENCE':sys.executable,
+                 'cuda_child_environment':lambda science,env:env}
             exec(compile(ast.Module(body=[fn],type_ignores=[]),'child-env','exec'),env)
             self.assertEqual(env['child_env']()['MPLBACKEND'],'Agg')
             self.assertEqual(os.environ['MPLBACKEND'],inherited)
