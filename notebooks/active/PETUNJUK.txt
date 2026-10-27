@@ -1,0 +1,12 @@
+KANDIDAT USER TEST AREA — 0.6.1rc1
+
+1. Buka salinan notebook Kaggle, lalu File > Import Notebook dan pilih 14_gate2_area_user_testing.ipynb.
+2. Aktifkan GPU, Internet, dan Secret LocatioIntelligent. Jangan menempelkan credential ke cell atau chat.
+3. Run All dan buka GRADIO_PUBLIC_URL. Startup tidak menjalankan engine.
+4. Isi KDTK, Nama Toko dan koordinat. Pada Action, mode awal Area Coverage. Tidak perlu upload video.
+5. Periksa kesiapan lalu Process. Pada RESULT, periksa status, tabel, peta pan/zoom/layer.
+6. Catat job_id. Buka hasil BQ kembali untuk job yang sama dan pastikan tabel/peta tersimpan dapat dibaca.
+7. Jika gagal, unduh ZIP dari tombol Siapkan paket diagnosis Area. Jika UI tidak bisa mengunduh, interrupt cell server dan jalankan cell diagnosis terakhir; unduh dari Files Kaggle.
+8. Kirim hasil pengujian, job_id dan ZIP diagnosis. Jangan hapus sesi sebelum bukti disimpan.
+
+Kandidat tersedia pada branch fix/area-user-testing untuk diunduh. Belum ada promosi ke refactor/deployment-foundation, merge ke main, atau publikasi/eksekusi Kaggle. Formula engine tidak diubah. Markdown aktif menunggu hasil user testing. Penyebab sesi lama belum dapat dipastikan tanpa log; dua cacat pemuatan/diagnosis sudah direproduksi dan diperbaiki secara lokal. Uji runtime Sorong, IAM dan penyimpanan cloud nyata belum dilakukan.

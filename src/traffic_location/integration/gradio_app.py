@@ -163,15 +163,40 @@ class Controller:
             return 'Project tersimpan: gs://'+self.destination.bucket+'/'+name+'. Metadata/geometri tersimpan; video upload lokal belum otomatis menjadi input GCS.'
         except Exception as exc:return 'Save project belum berhasil: '+(str(exc) if isinstance(exc,ValueError) else type(exc).__name__)+'. Draft lokal tetap tersedia pada sesi Kaggle.'
 
+    def diagnostic_runtime(self,values):
+        # Log reading must not require store name, videos, geometry or PPAC inputs.
+        if len(values)<5:raise ValueError('Isi KDTK, koordinat dan periode untuk memilih workspace.')
+        target,latitude,longitude,period=values[1:5]
+        if not re.fullmatch(r'[A-Za-z0-9_-]{1,32}',target or ''):raise ValueError('KDTK tidak valid.')
+        from .kaggle_runtime import area_config
+        area_config(latitude,longitude,target_id=target)
+        if not re.fullmatch(r'[A-Za-z0-9_-]{1,80}',period or ''):raise ValueError('Periode tidak valid.')
+        return self.runtime({'target_id':target,'latitude':latitude,'longitude':longitude,'period':period})
+
     def area_diagnostic(self,*values):
-        from .failure_details import details
+        from .area_trace import latest_report
+        from .failure_details import safe
         try:
-            values=list(values);values[0]='Area Coverage';x=validate(values,self.video_choices)
-            runtime=self.runtime(x)
-            report=details(runtime.base,GateError('AREA_DIAGNOSTIC','Log Area pada sesi/workspace ini.'))
-            if not report['evidence']:return 'Log error Area tidak tersedia pada workspace sesi ini. Jika sesi lama sudah dihapus, pilih Area Coverage lalu proses Area saja untuk merekam diagnosis baru; Traffic tidak dijalankan.'
-            return '\n'.join(e['log']+'\n'+'\n'.join(e['errors']) for e in report['evidence'])
-        except Exception as exc:return 'Diagnosis Area gagal ('+type(exc).__name__+').'
+            runtime=self.diagnostic_runtime(values);report=latest_report(runtime.base)
+            lines=[];trace=report['trace']
+            if trace:
+                lines.append('Area '+trace['execution_status']+' — tahap '+trace['stage']+' — package '+trace['package_version'])
+                if trace.get('result'):lines.append('Hasil: '+str(trace['result']))
+                if trace.get('failure'):lines.append('Penyebab: '+str(trace['failure']))
+            if report.get('publication'):lines.append('Penyimpanan: '+str(report['publication']))
+            lines.extend(e['log']+'\n'+'\n'.join(e['errors']) for e in report['diagnostics']['evidence'])
+            return '\n'.join(lines) if lines else 'Belum ada jejak/log error Area pada workspace ini. Pilih Area Coverage dan proses Area saja; Traffic tidak dijalankan.'
+        except Exception as exc:return 'Diagnosis Area gagal: '+safe(exc)
+
+    def export_area_diagnostics(self,*values):
+        from .area_trace import export_report
+        from .failure_details import safe
+        try:
+            from uuid import uuid4
+            runtime=self.diagnostic_runtime(values)
+            path=export_report(runtime.base,self.exports/('area-diagnostics-'+uuid4().hex+'.zip'))
+            return str(path),'Paket diagnosis siap. Tidak memuat secret, video, source rows atau perhitungan baru.'
+        except Exception as exc:return None,'Paket diagnosis gagal: '+safe(exc)
 
     def prepare_slot_sources(self,*values):
         from .upload_transport import resolve_reference
@@ -335,8 +360,9 @@ class Controller:
             yield 'Proses gagal ('+type(exc).__name__+'). Periksa log notebook; hasil engine tersimpan tetap dipertahankan.',[],{},self.progress_text(runtime,started),None,None
 
 
-def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=KaggleRuntime):
+def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=KaggleRuntime,default_mode='Gabungan + PPAC'):
     import gradio as gr
+    if default_mode not in MODES:raise ValueError('Mode awal tidak valid.')
     controller=Controller(base,config_root,input_root=input_root,runtime_factory=runtime_factory)
     with gr.Blocks(title='Area · Traffic · PPAC') as app:
         with gr.Tabs():
@@ -392,7 +418,7 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                                            info='Data contoh tetap tersedia untuk regression/pilot.')
                 gr.Markdown('Hasil job disimpan ke **gs://aretfak-location-intelligence** dan **locdeproject.location_intelligence**. Tabel perlu disiapkan sekali; kegagalan penyimpanan tidak menghapus hasil lokal.')
                 gr.Markdown('## Action')
-                mode=gr.Dropdown(list(MODES),value='Gabungan + PPAC',label='Proses')
+                mode=gr.Dropdown(list(MODES),value=default_mode,label='Proses')
                 with gr.Accordion('Input bisnis PPAC',open=False):
                     with gr.Row():
                         road=gr.Dropdown(ROADS,value='mainstreet',label='Profil jalan PPAC')
@@ -465,6 +491,8 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         diagnostic_text=gr.Textbox(label='Diagnosis Area — penyebab dari log worker',lines=8,interactive=False)
         gr.Button('Lihat log proses (Area/Traffic)').click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='engines',concurrency_limit=1)
         diagnostic.click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='engines',concurrency_limit=1)
+        diagnostic_file=gr.File(label='Paket diagnosis Area (ZIP)',interactive=False)
+        gr.Button('Siapkan paket diagnosis Area').click(controller.export_area_diagnostics,inputs,[diagnostic_file,diagnostic_text],api_name=False,concurrency_id='engines',concurrency_limit=1)
         check.click(controller.check,inputs,[status,readiness],api_name=False,concurrency_id='engines',concurrency_limit=1)
         def readable_process(*values):
             from .ppac_view import rows
@@ -480,8 +508,8 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
     return app,controller
 
 
-def launch(base,config_root,*,input_root='/kaggle/input',share=True,**kwargs):
-    app,controller=build_app(base,config_root,input_root=input_root)
+def launch(base,config_root,*,input_root='/kaggle/input',share=True,default_mode='Gabungan + PPAC',**kwargs):
+    app,controller=build_app(base,config_root,input_root=input_root,default_mode=default_mode)
     from starlette.requests import ClientDisconnect
     from .upload_transport import disconnected_upload
     app_kwargs=kwargs.pop('app_kwargs',{})

@@ -1,0 +1,89 @@
+{
+  "schema_version": "area_user_test_candidate_validation_v1",
+  "date_jakarta": "2026-10-27",
+  "candidate_package": "0.6.1rc1",
+  "base_commit": "36ba7698f22086e07f4adc36324d0cb69faf55dd",
+  "local_branch": "fix/area-user-testing",
+  "status": "READY_FOR_OWNER_TEST_NOT_PROMOTED",
+  "owner_session_root_cause": "UNKNOWN: no original Area worker/preparation logs available. Confirmed defects below are reproducible local findings, not a claim about the historical session.",
+  "confirmed_defects": [
+    {
+      "issue": "BQ source diagnostic context was dropped from preparation error and log scanner",
+      "reproduced_before_fix": true,
+      "regression_after_fix": "PASS"
+    },
+    {
+      "issue": "PPAC artifact read failure prevented independent Area map manifest fallback",
+      "reproduced_before_fix": true,
+      "regression_after_fix": "PASS"
+    },
+    {
+      "issue": "Log reading required full UI/business inputs, including store name",
+      "reproduced_before_fix": "Covered by regression against relaxed diagnostic-only inputs",
+      "regression_after_fix": "PASS"
+    }
+  ],
+  "tests": {
+    "total": 290,
+    "passed": 280,
+    "skipped": 10,
+    "errors": 0,
+    "seconds": 53.267,
+    "skips": [
+      "test_map_controls_merge_markers_and_radii_without_changing_layers (test_kaggle_transport.TransportTests.test_map_controls_merge_markers_and_radii_without_changing_layers) ... skipped 'Optional Area presentation dependency absent'",
+      "test_actual_membership_domain_equality_and_explicit_new_code_version (test_location_boundaries.RecountTests.test_actual_membership_domain_equality_and_explicit_new_code_version) ... skipped 'Run Shapely runtime separately'",
+      "test_delta_only_from_same_new_engine (test_location_boundaries.RecountTests.test_delta_only_from_same_new_engine) ... skipped 'Run Shapely runtime separately'",
+      "test_old_engine_previous_rejected (test_location_boundaries.RecountTests.test_old_engine_previous_rejected) ... skipped 'Run Shapely runtime separately'",
+      "test_three_replays_and_order_isolation (test_location_boundaries.RecountTests.test_three_replays_and_order_isolation) ... skipped 'Run Shapely runtime separately'",
+      "test_unknown_stays_unknown_and_units_separate (test_location_boundaries.RecountTests.test_unknown_stays_unknown_and_units_separate) ... skipped 'Run Shapely runtime separately'",
+      "test_actual_snapshot_selection_capacity_exact (test_location_boundaries.SelectionTests.test_actual_snapshot_selection_capacity_exact) ... skipped 'Run GDAL runtime separately'",
+      "test_blocked_source_not_false_zero (test_location_boundaries.SelectionTests.test_blocked_source_not_false_zero) ... skipped 'Run GDAL runtime separately'",
+      "test_three_replays_and_no_input_mutation (test_location_boundaries.SelectionTests.test_three_replays_and_no_input_mutation) ... skipped 'Run GDAL runtime separately'",
+      "test_actual_frame_matches_original_renderer_and_preserves_events (test_traffic_adapters.RenderingTests.test_actual_frame_matches_original_renderer_and_preserves_events) ... skipped 'Run recorded Traffic CPU runtime for pixel test'"
+    ]
+  },
+  "mypy": {
+    "strict": true,
+    "files": 14,
+    "status": "PASS"
+  },
+  "build": {
+    "wheel": "PASS",
+    "sdist": "PASS"
+  },
+  "notebook": {
+    "path": "notebooks/active/14_gate2_area_user_testing.ipynb",
+    "sha256": "20c41745c9bc43d2e9c2cd751cb50defd749e611023321622b4c5340305f0070",
+    "source_wheel_exact": true,
+    "cells_compiled": true,
+    "outputs_cleared": true,
+    "default_mode": "Area Coverage",
+    "auto_engine_execution": false
+  },
+  "saved_map_viewer": {
+    "status": "PASS",
+    "html_bytes": 35595179,
+    "hash_bound": true,
+    "viewer_http": 200,
+    "unknown_map_http": 404,
+    "gcs_transport": "MOCK",
+    "fresh_gpu_inference": false,
+    "scope": "Retained baseline HTML viewer only, not fresh Area Sorong or browser tile availability."
+  },
+  "map_controls_separate_folium_runtime": "PASS (one test; no inference)",
+  "kernel_and_ppac_formulas_changed": false,
+  "existing_markdown_changed": false,
+  "github_push": "CANDIDATE_BRANCH_ONLY_FOR_FILE_DELIVERY",
+  "main_merge": false,
+  "kaggle_publish_or_execution": false,
+  "live_cloud_crud": false,
+  "pending": [
+    "Owner-run Area on intended coordinates",
+    "Inspect interactive map in browser, including actual Esri/CDN availability",
+    "Confirm tables and map reopen from actual GCS/BQ for same job_id",
+    "Share diagnostic ZIP if any stage fails",
+    "After success, push reviewed candidate into refactor/deployment-foundation and update active Markdown"
+  ],
+  "github_delivery_branch": "fix/area-user-testing",
+  "foundation_promotion": false
+}

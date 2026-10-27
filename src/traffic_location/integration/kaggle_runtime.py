@@ -143,7 +143,8 @@ class KaggleRuntime:
             prepare(root,result,inventory,context,parameters,self.publication,annotate=self.annotate)
             return self.cloud_publisher().publish(root)
         except Exception as exc:
-            status={'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Hasil lokal tetap tersimpan. Periksa tabel BQ dan izin GCS/BQ, lalu ulangi penyimpanan.'}
+            from .failure_details import safe
+            status={'status':'FAILED','diagnostics':{'code':type(exc).__name__,'message':safe(exc)},'code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Hasil lokal tetap tersimpan. Periksa tabel BQ dan izin GCS/BQ, lalu ulangi penyimpanan.'}
             write(Path(root)/'publication-status.json',status);return status
 
     def retry_publication(self,root):
@@ -153,7 +154,8 @@ class KaggleRuntime:
             saved=read(Path(root)/'summary.json');saved['publication']=status;write(Path(root)/'summary.json',saved)
             return status
         except Exception as exc:
-            status={'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Publikasi belum berhasil; hasil lokal tidak dihapus.'}
+            from .failure_details import safe
+            status={'status':'FAILED','diagnostics':{'code':type(exc).__name__,'message':safe(exc)},'code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Publikasi belum berhasil; hasil lokal tidak dihapus.'}
             write(Path(root)/'publication-status.json',status);return status
 
     def stage(self,ref,destination):
@@ -278,7 +280,9 @@ class KaggleRuntime:
                 layers=bq_runtime.load_bq_layers(configuration['CONFIG'],root/'bq_snapshot')
             finally:bq_runtime._NOTEBOOK_BQ_CREDENTIALS=prior
             write(root/'bq-readiness.json',layers)
-            need(all(x['status']=='SUCCEEDED' for x in layers.values()),'BQ_SOURCE_UNAVAILABLE','Snapshot toko/kompetitor gagal; bukan nol kompetitor. Traffic tetap dapat berjalan.')
+            from .failure_details import source_failures
+            failures=source_failures(layers)
+            need(not failures,'BQ_SOURCE_UNAVAILABLE','Snapshot toko/kompetitor gagal: '+json.dumps(failures,ensure_ascii=False)+'. Lihat bq-readiness.json; bukan nol kompetitor.')
             pbf=self.stage(PBF,self.base/'national'/f"{PBF['sha256']}.osm.pbf")
             source=materialize(configuration['CONFIG'],root/'sources',pbf,runtime['osmium'],PBF)
             command='import platform,json,pyproj;from osgeo import gdal;print(json.dumps({"python":platform.python_version(),"gdal":gdal.VersionInfo("RELEASE_NAME"),"pyproj":pyproj.__version__}))'
@@ -312,14 +316,29 @@ class KaggleRuntime:
         return child['request']
 
     def run_area(self,root):
+        from .area_trace import AreaTrace
+        root=Path(root);root.mkdir(parents=True,exist_ok=True)
+        trace=AreaTrace(self.base,root,{'target_id':self.target_id,'period_id':self.period_id,
+                                      'latitude':self.latitude,'longitude':self.longitude})
+        try:
+            result=self._run_area(root,trace.mark)
+        except BaseException as exc:
+            try:trace.finish(error=exc)
+            except (OSError,ValueError):pass
+            raise
+        trace.finish(result=result)
+        return result
+
+    def _run_area(self,root,mark):
         root=Path(root);root.mkdir(parents=True,exist_ok=True)
         from ..location.area._kernel.location_intelligent_google_only import PBF
         status=self.object_status(PBF)
-        need(status['status']=='READY','AREA_GCS_'+status['status'],'PBF nasional GCS tidak siap: '+status['status']+'. Traffic tetap dapat diuji.')
+        need(status['status']=='READY','AREA_GCS_'+status['status'],'PBF nasional GCS tidak siap: '+status['status']+' ('+str(status.get('code',''))+'). Traffic tetap dapat diuji.')
         from ..traffic.experiments.performance import Progress
         timing=Progress(root/'area-progress.json');timing.snapshot('area_source')
+        mark('runtime_setup');self.setup_runtime('area')
         with timing.stage('area_source'):
-            request=self.prepare_area()
+            mark('source_preparation');request=self.prepare_area()
         timing.snapshot('area_compute')
         def compute(folder):
             write(folder/'request.json',request)
@@ -331,6 +350,7 @@ class KaggleRuntime:
             return result
         identity={**request,'input':{'sha256':request['input']['sha256']},'target':{'latitude':self.latitude,'longitude':self.longitude,'id':self.target_id,'period':self.period_id}}
         with timing.stage('area_compute'):
+            mark('computation_and_presentation')
             result=self._experiment_stage('area',identity,compute,root)
         timing.snapshot('area_finished')
         return result

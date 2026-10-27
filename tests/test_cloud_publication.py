@@ -58,6 +58,16 @@ class PublicationTests(unittest.TestCase):
         self.bucket=Bucket();self.storage=Mock();self.storage.bucket.return_value=self.bucket
         self.bq=Mock();self.bq.get_dataset.return_value=SimpleNamespace(location='US')
         self.bq.get_table.side_effect=lambda name,**kw:SimpleNamespace(schema=[SimpleNamespace(name=k,field_type=v) for k,v in SCHEMAS[name.split('.')[-1]].items()])
+    def test_failed_area_trace_is_preserved_in_cloud_manifest(self):
+        trace={'schema_version':'area_trace_v1','execution_status':'FAILED','stage':'source_access','failure':{'code':'AREA_GCS_ACCESS_DENIED'}}
+        write(self.output/'area/area-trace.json',trace)
+        self.result['engines'].append({'id':'area','engine':'area','execution_status':'FAILED','code':'AREA_GCS_ACCESS_DENIED'})
+        q=self.prepared()
+        entries=[e for e in q['entries'] if e['object'].endswith('/diagnostics/area-trace.json')]
+        self.assertEqual(len(entries),1);self.assertEqual(entries[0]['sha256'],sha(self.output/'area/area-trace.json'))
+        summary=read(self.output/'cloud-payload/summary.json')
+        self.assertTrue(summary['engines'][-1]['trace_uri'].endswith('/diagnostics/area-trace.json'))
+
     def prepared(self):return prepare(self.output,self.result,self.inventory,self.context,{},self.destination)
     def publisher(self):return CloudPublisher(self.destination,self.storage,self.bq)
     def test_owner_destinations_and_setup_are_explicit_non_destructive(self):

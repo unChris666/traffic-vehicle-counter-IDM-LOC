@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 from .ppac_view import scalar
 from .cloud_schema import SCHEMAS
+from .failure_details import safe
 
 MAX_HTML_BYTES=64*1024**2
 
@@ -50,27 +51,37 @@ class ResultsReader:
                 result['map_html']=self.map_html(job,areas[0])
                 result['map_status']='Peta Folium/Esri dari artefak hasil terverifikasi.'
             except Exception as exc:
-                result['map_status']='Peta gagal dibuka ('+type(exc).__name__+'); tabel BQ tetap tersedia.'
+                result['map_status']='Peta gagal dibuka: '+safe(exc)+'; tabel BQ tetap tersedia.'
         result['annotated_videos']=[]
         result['display']={};result['ppac_document']=None;result['artifact_status']=[]
+        if areas and areas[0].get('map_html_uri'):
+            result['artifact_status'].append('Referensi peta: '+areas[0]['map_html_uri']+'; SHA256 '+str(areas[0].get('map_html_sha256','')))
         if job.get('manifest_uri'):
             try:
                 manifest=json.loads(self.verified_bytes(job,job['manifest_uri'],job['manifest_sha256'],8*1024**2))
+                def document(entries,label,limit=8*1024**2):
+                    if len(entries)!=1:
+                        if len(entries)>1:result['artifact_status'].append(label+': referensi artefak ambigu.')
+                        return None
+                    e=entries[0]
+                    try:
+                        value=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],limit))
+                        if not isinstance(value,dict):raise ValueError('Artefak harus berupa object JSON.')
+                        return value
+                    except Exception as exc:
+                        result['artifact_status'].append(label+' gagal dibaca/diverifikasi: '+safe(exc))
+                        return None
                 matches=[e for e in manifest['files'] if e['object'].endswith('/presentation/display-tables.json')]
-                if len(matches)==1:
-                    e=matches[0]
-                    try:result['display']=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],8*1024**2))
-                    except Exception:result['artifact_status'].append('Tabel detail Area gagal diverifikasi.')
+                result['display']=document(matches,'Tabel detail Area') or {}
                 ppacs=[e for e in manifest['files'] if e['object'].endswith('/ppac/result.json')]
-                if len(ppacs)==1:
-                    e=ppacs[0];result['ppac_document']=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],8*1024**2))
+                result['ppac_document']=document(ppacs,'PPAC')
                 presentation_errors=[e for e in manifest['files'] if e['object'].endswith('/presentation/error.json')]
-                if len(presentation_errors)==1:
-                    e=presentation_errors[0];failure=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],65536))
-                    result['map_status']='Perhitungan Area tersimpan; renderer peta gagal: '+failure.get('code','')+' '+failure.get('message','')
+                failure=document(presentation_errors,'Diagnosis renderer',65536)
+                if failure:
+                    result['map_status']='Perhitungan Area tersimpan; renderer peta gagal: '+str(failure.get('code',''))+' '+safe(failure.get('message',''))
                 summaries=[e for e in manifest['files'] if e['object'].endswith('/summary.json') and '/engines/' not in e['object']]
-                if len(summaries)==1:
-                    e=summaries[0];summary=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],8*1024**2))
+                summary=document(summaries,'Ringkasan job')
+                if summary:
                     from html import escape
                     name=summary.get('context',{}).get('store_name')
                     if name:result['identity_text']='**Periode:** '+str(job.get('period_id',''))+' · **KDTK:** '+str(job.get('target_id',''))+' · **Nama Toko:** '+escape(name)
@@ -84,11 +95,19 @@ class ResultsReader:
                             if len(bound)==1:result['annotated_videos'].append({**video,'url':'https://console.cloud.google.com/storage/browser/_details/'+self.destination.bucket+'/'+quote(object_name,safe='/')})
                         if engine.get('engine')=='area' and engine.get('execution_status')!='SUCCEEDED':
                             result['map_status']='Area gagal; peta belum dibuat. '+str(engine.get('code',''))+' '+str(engine.get('message',''))+' '+json.dumps(engine.get('diagnostics',[]),ensure_ascii=False)
+                traces=[e for e in manifest['files'] if e['object'].endswith('/diagnostics/area-trace.json')]
+                trace=document(traces,'Jejak Area')
+                if trace:
+                    result['area_trace']=trace
+                    result['artifact_status'].append('Area trace: '+str(trace.get('execution_status'))+'; tahap '+str(trace.get('stage'))+'.')
+                    if trace.get('execution_status') in ('FAILED','INTERRUPTED') and not result['map_html']:
+                        result['map_status']='Area gagal pada tahap '+str(trace.get('stage'))+': '+safe(json.dumps(trace.get('failure',{}),ensure_ascii=False))
                 maps=[e for e in manifest['files'] if '/engines/area/' in e['object'] and e['object'].endswith('/market_map.html')]
                 if not result['map_html'] and len(maps)==1:
                     e=maps[0];result['map_html']=self.map_html(job,{'map_html_uri':'gs://'+self.destination.bucket+'/'+e['object'],'map_html_sha256':e['sha256']})
                     result['map_status']='Peta HTML interaktif dari manifest GCS terverifikasi.'
-            except Exception as exc:result['artifact_status'].append('Artefak hasil GCS gagal dibaca/diverifikasi ('+type(exc).__name__+').')
+                    result['artifact_status'].append('Referensi peta: gs://'+self.destination.bucket+'/'+e['object']+'; SHA256 '+e['sha256'])
+            except Exception as exc:result['artifact_status'].append('Manifest/artefak hasil GCS gagal dibaca/diverifikasi: '+safe(exc))
         return result
 
     def verified_bytes(self,job,uri,digest,limit):
