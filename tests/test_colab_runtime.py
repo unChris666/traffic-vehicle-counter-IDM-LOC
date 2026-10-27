@@ -113,13 +113,18 @@ class ColabPreflightTests(unittest.TestCase):
         self.assertEqual(publisher.bq.query.call_args.args[0],'SELECT 1 AS access_probe')
         publisher.storage.bucket.return_value.blob.assert_not_called()
     def test_core_wrapper_sets_only_core_data_paths_and_is_valid_shell(self):
-        import shlex,subprocess
-        path=ROOT/'tools/colab_bootstrap.py';tree=ast.parse(path.read_text())
-        node=next(n for n in ast.walk(tree) if isinstance(n,ast.Expr) and isinstance(n.value,ast.Call) and isinstance(n.value.func,ast.Attribute) and n.value.func.attr=='write_text' and isinstance(n.value.func.value,ast.Name) and n.value.func.value.id=='core')
+        import importlib.util,subprocess
+        spec=importlib.util.spec_from_file_location('wrapper_bootstrap',ROOT/'tools/colab_bootstrap.py')
+        bootstrap=importlib.util.module_from_spec(spec);spec.loader.exec_module(bootstrap)
         with tempfile.TemporaryDirectory() as d:
-            core=Path(d)/'core-python';exec(compile(ast.Module(body=[node],type_ignores=[]),'wrapper','exec'),{'base':Path(d),'core':core,'shlex':shlex})
+            base=Path(d);site=base/'scientific-site';(site/'traffic_location').mkdir(parents=True)
+            with patch('subprocess.check_output',return_value=str(site)+'\n'):
+                core=bootstrap.write_core_wrapper(base,'/science/python')
             self.assertTrue(core.read_bytes().startswith(b'#!/bin/sh\nunset PROJ_LIB\n'))
             self.assertIn('runtime/core/share/proj',core.read_text())
+            self.assertIn('export PYTHONPATH=',core.read_text())
+            self.assertNotIn(str(site),core.read_text())
+            self.assertEqual((base/'runtime/core-application/traffic_location').resolve(),site/'traffic_location')
             subprocess.run(['/bin/sh','-n',str(core)],check=True)
 
 if __name__=='__main__':unittest.main()

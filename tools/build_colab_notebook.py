@@ -18,10 +18,11 @@ def build(wheel,output):
         for p in sorted((root/'results/t7sl_modular/config').rglob('*.json')):z.write(p,'config/'+str(p.relative_to(root/'results/t7sl_modular/config')))
     raw=data.getvalue();cells=[]
     cuda_environment=(root/'tools/colab_cuda_environment.py').read_text()
+    core_isolation_check=(root/'tools/colab_core_check.py').read_text()
     def md(s):cells.append({'cell_type':'markdown','metadata':{},'source':s})
     def code(s):
         compile(s,'colab-cell','exec');cells.append({'cell_type':'code','metadata':{},'source':s,'execution_count':None,'outputs':[]})
-    md(f'''# Colab L4 — Area dahulu, Traffic dan PPAC sesudah verifikasi\n\nKandidat **{version} — perbaikan setup r4**, branch pengujian fix/area-user-testing. Belum lulus fresh Area Sorong/L4 atau deployment. Formula engine tidak diubah. Notebook ini tidak menjalankan analisis saat startup; pemrosesan dimulai dari tombol Gradio.\n\n1. Pilih **Runtime → Change runtime type → L4 GPU**, kemudian reconnect. Metadata notebook hanya petunjuk; pemeriksaan di bawah menolak GPU selain L4. Alokasi bergantung akses/kuota Colab.\n2. Run All. Dependency dipasang sekali di awal pada Python3.12 terisolasi; paket bawaan kernel Colab tidak diubah. GDAL/PROJ memakai interpreter core terpisah. Setiap sesi Colab baru memerlukan setup lagi. Unduhan beberapa GB memerlukan waktu dan ruang; kegagalan pip check/import/CUDA menghentikan startup.\n3. Ikuti dialog autentikasi Google. Gunakan akun yang berizin membaca sumber, membuat query BQ dan membaca/menulis hasil. Kredensial tidak perlu ditempel ke notebook.\n4. Buka GRADIO_PUBLIC_URL, isi KDTK/Nama Toko/koordinat, jalankan **Area Coverage** tanpa video.\n5. Buka RESULT dan **Buka hasil BQ** untuk job yang sama. Tabel dan peta GCS harus berhasil dibaca dan diverifikasi sebelum Traffic/PPAC dibuka untuk target/periode/koordinat/versi tersebut. Penerimaan artefak oleh viewer bukan bukti tile eksternal/pan/zoom berhasil; tinjau sendiri di browser.\n6. Setelah itu, gunakan upload Gradio atau gs:// pada slot video. Path lokal yang diizinkan: /content/videos/. Dataset Kaggle tidak dimount otomatis. PPAC tetap menunggu Area valid serta semua sesi yang diwajibkan, termasuk shift3 untuk jam>15. Missing bukan nol.\n\nOutput: **gs://aretfak-location-intelligence**, dataset **locdeproject.location_intelligence**. Sumber model/PBF/toko tetap terpisah. Setup tidak membuat tabel, tidak mengubah IAM, dan tidak membuka bucket publik. Workspace /content sementara; simpan diagnosis/hasil sebelum runtime dihentikan. Jangan menyalin ADC/private key ke chat atau GitHub. Main dan refactor/deployment-foundation belum dipromosikan.''')
+    md(f'''# Colab L4 — Area dahulu, Traffic dan PPAC sesudah verifikasi\n\nKandidat **{version} — perbaikan setup r5**, branch pengujian fix/area-user-testing. Belum lulus fresh Area Sorong/L4 atau deployment. Formula engine tidak diubah. Notebook ini tidak menjalankan analisis saat startup; pemrosesan dimulai dari tombol Gradio.\n\n1. Pilih **Runtime → Change runtime type → L4 GPU**, kemudian reconnect. Metadata notebook hanya petunjuk; pemeriksaan di bawah menolak GPU selain L4. Alokasi bergantung akses/kuota Colab.\n2. Run All. Dependency dipasang sekali di awal pada Python3.12 terisolasi; paket bawaan kernel Colab tidak diubah. GDAL/PROJ memakai interpreter core terpisah. Setiap sesi Colab baru memerlukan setup lagi. Unduhan beberapa GB memerlukan waktu dan ruang; kegagalan pip check/import/CUDA menghentikan startup.\n3. Ikuti dialog autentikasi Google. Gunakan akun yang berizin membaca sumber, membuat query BQ dan membaca/menulis hasil. Kredensial tidak perlu ditempel ke notebook.\n4. Buka GRADIO_PUBLIC_URL, isi KDTK/Nama Toko/koordinat, jalankan **Area Coverage** tanpa video.\n5. Buka RESULT dan **Buka hasil BQ** untuk job yang sama. Tabel dan peta GCS harus berhasil dibaca dan diverifikasi sebelum Traffic/PPAC dibuka untuk target/periode/koordinat/versi tersebut. Penerimaan artefak oleh viewer bukan bukti tile eksternal/pan/zoom berhasil; tinjau sendiri di browser.\n6. Setelah itu, gunakan upload Gradio atau gs:// pada slot video. Path lokal yang diizinkan: /content/videos/. Dataset Kaggle tidak dimount otomatis. PPAC tetap menunggu Area valid serta semua sesi yang diwajibkan, termasuk shift3 untuk jam>15. Missing bukan nol.\n\nOutput: **gs://aretfak-location-intelligence**, dataset **locdeproject.location_intelligence**. Sumber model/PBF/toko tetap terpisah. Setup tidak membuat tabel, tidak mengubah IAM, dan tidak membuka bucket publik. Workspace /content sementara; simpan diagnosis/hasil sebelum runtime dihentikan. Jangan menyalin ADC/private key ke chat atau GitHub. Main dan refactor/deployment-foundation belum dipromosikan.''')
     code('''import csv,io,json,os,subprocess,sys,time,signal
 from pathlib import Path
 BASE=Path('/content/location-intelligence-colab');BASE.mkdir(parents=True,exist_ok=True)
@@ -100,8 +101,8 @@ def child_env():
 def command(operation):
     return [SCIENCE,'-u','-m','traffic_location.integration.colab_runtime',operation,'--base',str(BASE),'--config-root',str(BASE/'config')]
 ''')
-    md('## Periksa import dan CUDA\nPemeriksaan ini menjalankan tensor/kernel sintetis kecil pada CuPy, Torch, dan ONNX Runtime CUDA. Tidak menjalankan Area/Traffic atau model inference. Provider CUDA harus benar-benar bekerja; tidak ada fallback CPU tersembunyi.')
-    code("run_logged(command('verify'),'runtime-check',env=child_env())\n")
+    md('## Periksa import dan CUDA\nPemeriksaan ini menjalankan tensor/kernel sintetis kecil pada CuPy, Torch, dan ONNX Runtime CUDA. Core diperiksa ulang dengan PYTHONPATH worker untuk menangkap pencampuran dependency sebelum job Area. Tidak menjalankan Area/Traffic atau model inference. Provider CUDA harus benar-benar bekerja; tidak ada fallback CPU tersembunyi.')
+    code("run_logged(command('verify'),'runtime-check',env=child_env())\n"+core_isolation_check)
     md('## Autentikasi Google dan pemeriksaan akses\nDialog ini untuk akun Google pemilik pengujian. ADC dipakai proses terisolasi dan worker. Pemeriksaan mencakup metadata sumber, schema/izin tabel hasil, izin object GCS, serta query kecil. Keberhasilan write/publish/reopen nyata tetap diuji lewat job Area; IAM check bukan transaksi write.')
     code('''from google.colab import auth
 auth.authenticate_user(project_id='locdeproject')
@@ -150,7 +151,7 @@ def clean(v):
     return v
 with zipfile.ZipFile(base/'colab-diagnostics.zip','w',zipfile.ZIP_DEFLATED) as z:
     z.writestr('area-report.json',json.dumps(clean(report),indent=2))
-    for name in ('gpu-allocation.json','colab-runtime-verified.json','colab-preflight.json','colab-startup-failure.json','setup-status.json'):
+    for name in ('gpu-allocation.json','colab-runtime-verified.json','colab-preflight.json','colab-startup-failure.json','setup-status.json','core-runtime-isolation.json'):
         path=base/name
         if path.is_file() and path.stat().st_size<131072:z.writestr(name,json.dumps(clean(json.loads(path.read_text())),indent=2))
 print('DIAGNOSTIC_ZIP='+str(base/'colab-diagnostics.zip'))
@@ -165,7 +166,7 @@ if 'SCIENCE' in globals() and Path(SCIENCE).is_file():
     if exported:print(result.stdout)
 with zipfile.ZipFile(archive,'a' if exported else 'w',zipfile.ZIP_DEFLATED) as bundle:
     if not exported:bundle.writestr('status.txt','Setup/startup diagnosis only; Area report not available yet.')
-    for name in ('setup-status.json','setup.log','runtime-check.log','cloud-preflight.log'):
+    for name in ('setup-status.json','setup.log','runtime-check.log','cloud-preflight.log','core-isolation.log','core-runtime-isolation.json'):
         path=BASE/name
         if not path.is_file():continue
         with path.open('rb') as stream:

@@ -62,6 +62,25 @@ def ensure_environment(binary,prefix,lock,env,progress,name):
     progress.run('environment_'+name,[str(binary),'--no-rc',operation,'--yes','--prefix',str(prefix),'--file',str(lock)],env=env,timeout=1800)
 
 
+def write_core_wrapper(base,science_python):
+    """Expose application code to core without exposing scientific dependencies."""
+    base=Path(base).resolve()
+    site=Path(subprocess.check_output([str(science_python),'-I','-c',
+        'import sysconfig;print(sysconfig.get_path("purelib"))'],text=True,timeout=30).strip())
+    application=site/'traffic_location'
+    if not application.is_dir():raise RuntimeError('Wheel aplikasi belum terpasang; jalankan setup dahulu.')
+    bridge=base/'runtime/core-application';bridge.mkdir(parents=True,exist_ok=True)
+    link=bridge/'traffic_location'
+    if link.is_symlink():
+        if link.resolve()!=application.resolve():raise RuntimeError('Core application bridge berbeda; gunakan workspace terpisah.')
+    elif link.exists():raise RuntimeError('Core application bridge bukan symlink aplikasi.')
+    else:link.symlink_to(application,target_is_directory=True)
+    core=base/'runtime/core-python'
+    core.write_text('#!/bin/sh\nunset PROJ_LIB\nunset PYTHONHOME\nexport PYTHONNOUSERSITE=1\nexport PYTHONPATH='+shlex.quote(str(bridge))+'\nexport PROJ_DATA='+shlex.quote(str(base/'runtime/core/share/proj'))+'\nexport GDAL_DATA='+shlex.quote(str(base/'runtime/core/share/gdal'))+'\nexec '+shlex.quote(str(base/'runtime/core/bin/python'))+' "$@"\n')
+    core.chmod(0o755)
+    return core
+
+
 def setup(base,wheel_name=None,progress=None):
     base=Path(base).resolve();base.mkdir(parents=True,exist_ok=True)
     progress=progress or Progress(base);progress.mark('input_validation')
@@ -92,9 +111,6 @@ def setup(base,wheel_name=None,progress=None):
         ensure_environment(binary,base/'runtime'/name,base/'locks'/(name+'-linux-64.lock'),env,progress,name)
     # GDAL/PROJ data belongs to the core process only. Never leak conda's
     # PROJ database into the scientific interpreter's pip pyproj wheel.
-    progress.mark('core_wrapper')
-    core.write_text('#!/bin/sh\nunset PROJ_LIB\nexport PROJ_DATA='+shlex.quote(str(base/'runtime/core/share/proj'))+'\nexport GDAL_DATA='+shlex.quote(str(base/'runtime/core/share/gdal'))+'\nexec '+shlex.quote(str(base/'runtime/core/bin/python'))+' "$@"\n')
-    core.chmod(0o755)
     progress.mark('system_binaries')
     missing=[name for name in ('ffmpeg','ffprobe','osmium') if shutil.which(name) is None]
     if missing:
@@ -103,6 +119,8 @@ def setup(base,wheel_name=None,progress=None):
         progress.run('apt_install',['apt-get','install','-y','--no-install-recommends','ffmpeg','osmium-tool'],timeout=600,env={**env,'DEBIAN_FRONTEND':'noninteractive'})
     progress.run('pip_locked_dependencies',[str(science),'-m','pip','install','--require-hashes','--only-binary=:all:','--no-cache-dir','--disable-pip-version-check','--timeout','60','--retries','2','-r',str(base/'locks/requirements.lock')],timeout=2400)
     progress.run('application_wheel',[str(science),'-m','pip','install','--no-deps','--force-reinstall',str(wheel)],timeout=120)
+    progress.mark('core_wrapper')
+    write_core_wrapper(base,science)
     progress.run('pip_check',[str(science),'-m','pip','check'],timeout=120)
     progress.run('core_import_crs',[str(core),'-c','from osgeo import gdal,osr;import pyproj;assert int(gdal.VersionInfo("VERSION_NUM"))>=3070000;s=osr.SpatialReference();assert s.ImportFromEPSG(4326)==0;print("GDAL",gdal.VersionInfo("RELEASE_NAME"),"PROJ",pyproj.__version__)'],timeout=60)
     progress.run('scientific_imports',[str(science),'-c','import numpy,pandas,shapely,pyproj,osmnx,geopandas,folium,osmium,cupy,torch,onnxruntime;from google.cloud import storage,bigquery'],timeout=120)

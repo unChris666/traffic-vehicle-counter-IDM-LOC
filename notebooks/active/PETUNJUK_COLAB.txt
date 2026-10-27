@@ -1,4 +1,4 @@
-COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r4
+COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r5
 
 Notebook: 15_colab_l4_area_first.ipynb
 Gunakan notebook ini untuk Colab; notebook14 adalah varian Kaggle.
@@ -39,3 +39,10 @@ Notebook r4 mencari site-packages dari interpreter aplikasi (bukan Python kernel
 Untuk sesi r2/r3 yang sedang gagal: salin SELURUH colab_cuda_recovery.py ke CELL BARU, lalu jalankan. Tidak memasang dependency. Cell itu menyiapkan child_env dan langsung mengulang runtime-check; sesudah lulus lanjut autentikasi/pemeriksaan akses dan UI. Jangan ulang cell setup lama setelah cell pemulihan. Untuk sesi baru, gunakan notebook r4.
 Jika file library memang tidak terpasang, startup berhenti dengan path file dan instruksi mengulang setup terkunci; tidak fallback ke CPU. GPU L4 nyata dan Area/GCS/BQ masih harus diverifikasi pada sesi owner.
 Validasi lokal mereproduksi error loader, lalu memuat NVRTC12.6 dan libcudart serta mengompilasi kernel sintetis compute_89 ke PTX; ini kompilasi CPU, bukan eksekusi GPU atau bukti hasil Area.
+
+PERBAIKAN ISOLASI CORE r5
+Area sudah masuk komputasi tetapi berhenti AREA_FROZEN_RUNTIME_MISMATCH: core_runtime. Penyebab yang direproduksi: pipeline installed-wheel menambahkan seluruh scientific site-packages ke PYTHONPATH worker. Subprocess core mewarisinya dan mengimpor scientific pyproj3.7.2, berbeda dari core pyproj3.7.1 yang dicatat saat source freeze.
+Wrapper core sekarang mengganti PYTHONPATH dengan direktori khusus yang hanya berisi symlink package traffic_location. Kode aplikasi tetap bisa diimpor, tetapi dependency scientific tidak ikut masuk. PYTHONHOME dihapus dan user site dinonaktifkan untuk core saja. GDAL/PROJ tetap menggunakan data core. Versi dependency, wheel aplikasi, kernel notebook, snapshot dan algoritma tetap sama; pemeriksaan frozen-runtime tidak dilewati.
+Untuk sesi r4 yang sudah gagal: hentikan cell server setelah job selesai/gagal. Salin seluruh colab_core_recovery.py ke cell baru lalu jalankan. Cell itu memperbaiki wrapper tanpa pip/apt/conda, menguji isolasi dengan PYTHONPATH worker asli, lalu mengulang pemeriksaan CUDA. Setelah lulus, jalankan kembali cell server dan Process Area untuk job baru. Jangan ulang setup notebook lama. Tidak perlu menghapus cache atau mengubah job lama.
+Untuk sesi baru gunakan notebook r5. Cell Periksa import dan CUDA juga menguji core-isolation dan menyimpan core-runtime-isolation.json/core-isolation.log; keduanya ikut diagnosis. Job lama tetap FAILED. Status penyimpanan READY hanya berarti receipt/manifest berhasil disimpan, bukan Area berhasil.
+Validasi lokal menggunakan core Python3.12.12/GDAL3.10.3/pyproj3.7.1 dan scientific pyproj3.7.2; mismatch sebelum perbaikan berhasil direproduksi dan versi core tepat sesudah perbaikan. Pengujian GPU L4/hasil Area/GCS/BQ lengkap tetap membutuhkan eksekusi owner.

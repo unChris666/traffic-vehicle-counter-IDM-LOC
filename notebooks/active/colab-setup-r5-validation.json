@@ -1,0 +1,60 @@
+{
+  "frozen_core": {
+    "python": "3.12.12",
+    "gdal": "3.10.3",
+    "pyproj": "3.7.1",
+    "pyproj_file": "/workspace/work/colab-l4/core-reference/lib/python3.12/site-packages/pyproj/__init__.py"
+  },
+  "before_core_in_worker": {
+    "python": "3.12.12",
+    "gdal": "3.10.3",
+    "pyproj": "3.7.2",
+    "pyproj_file": "/workspace/work/colab-mpl-test/lib/python3.12/site-packages/pyproj/__init__.py"
+  },
+  "before_mismatch": true,
+  "after_core_in_worker": {
+    "python": "3.12.12",
+    "gdal": "3.10.3",
+    "pyproj": "3.7.1",
+    "pyproj_file": "/workspace/work/colab-core-proof/runtime/core/lib/python3.12/site-packages/pyproj/__init__.py"
+  },
+  "after_exact_match": true,
+  "scope": "Actual Python3.12.12/GDAL3.10.3/pyproj3.7.1 core versus scientific pyproj3.7.2; CPU subprocess isolation, not Area GPU execution.",
+  "schema_version": "colab_setup_r5_validation_v1",
+  "date_jakarta": "2026-10-28",
+  "package_version": "0.6.2rc1",
+  "notebook_revision": "setup-r5",
+  "branch": "fix/area-user-testing",
+  "dependency_versions_changed": false,
+  "engine_source_changed": false,
+  "frozen_runtime_guard_preserved": true,
+  "snapshot_modified": false,
+  "local_full_tests": {
+    "total": 319,
+    "passed": 309,
+    "skipped": 10,
+    "seconds": 48.494
+  },
+  "native_core_tests": {
+    "total": 11,
+    "passed": 6,
+    "skipped": 5,
+    "scope": "Retained location selection/capacity exact and repeated replays under core wrapper; no fresh Area GPU run."
+  },
+  "core_isolation_probe": {
+    "status": "PASS",
+    "core": {
+      "python": "3.12.12",
+      "gdal": "3.10.3",
+      "pyproj": "3.7.1",
+      "pyproj_file": "/workspace/work/colab-core-proof/runtime/core/lib/python3.12/site-packages/pyproj/__init__.py",
+      "gdal_file": "/workspace/work/colab-core-proof/runtime/core/lib/python3.12/site-packages/osgeo/gdal.py"
+    },
+    "scope": "Core import and worker PYTHONPATH isolation; not Area execution."
+  },
+  "live_colab_l4_execution_here": false,
+  "fresh_area_or_cloud_crud": false,
+  "main_or_foundation_promoted": false,
+  "notebook_sha256": "012d9e81c2f9a80aebf0037199efc7fab9b808a33d065b3038eab7334ae05b0a",
+  "wheel_sha256": "ef4a2f10b35357485e813ac179a9c99d39fb7afadbfbaf39c174f01b19c56f2c"
+}
