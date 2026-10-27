@@ -1,3 +1,5 @@
+Area gagal atau peta kosong: [diagnosis dan pemulihan](docs/AREA_FAILURE_RECOVERY.md).
+
 Kaggle: [hasil BQ, HTML peta dari GCS dan tabel breakdown PPAC](docs/KAGGLE_READABLE_RESULTS.md).
 
 Kaggle terbaru: [upload terputus, sumber GCS/Input, tabel ringkas dan isi PPAC](docs/KAGGLE_UPLOAD_RECOVERY.md).

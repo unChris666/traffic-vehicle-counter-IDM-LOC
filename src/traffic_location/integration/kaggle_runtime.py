@@ -235,11 +235,18 @@ class KaggleRuntime:
         gpu=subprocess.run(['nvidia-smi','-L'],capture_output=True,text=True,timeout=30)
         need(gpu.returncode==0 and 'GPU' in gpu.stdout,'GPU_REQUIRED','GPU Kaggle belum aktif; aktifkan accelerator, kemudian ulangi uji.')
         if engine=='area':
-            from ..location.area._kernel.location_intelligent_kaggle_esri import setup_dependencies
-            subprocess.run([sys.executable,'-m','pip','install','--only-binary=:all:',*[k+'=='+v for k,v in SCIENTIFIC.items()]],check=True,timeout=900)
-            core,osmium=setup_dependencies()
+            info=self.base/'area-runtime.json'
+            command=('import json,subprocess,sys;'
+                     'from traffic_location.integration.kaggle_runtime import SCIENTIFIC;'
+                     'subprocess.run([sys.executable,"-m","pip","install","--only-binary=:all:",*[k+"=="+v for k,v in SCIENTIFIC.items()]],check=True,timeout=900);'
+                     'from traffic_location.location.area._kernel.location_intelligent_kaggle_esri import setup_dependencies;'
+                     'core,osmium=setup_dependencies();'
+                     'from traffic_location.artifacts import write;'
+                     'write(sys.argv[1],{"status":"READY","core_python":core,"osmium":osmium})')
+            with (self.base/'area-setup.log').open('w') as stream:
+                subprocess.run([sys.executable,'-u','-c',command,str(info)],stdout=stream,stderr=subprocess.STDOUT,check=True,timeout=2400)
             for key in ('PROJ_LIB','PROJ_DATA','GDAL_DATA'):os.environ.pop(key,None)
-            self.state['runtime'][engine]={'status':'READY','core_python':core,'osmium':osmium}
+            self.state['runtime'][engine]=read(info)
         else:
             subprocess.run([sys.executable,'-m','pip','install','ultralytics==8.4.175','lap==0.5.13','onnx==1.20.1','onnxruntime-gpu==1.24.4'],check=True,timeout=900)
             # New subprocess sees newly installed packages even in an old notebook kernel.
@@ -317,7 +324,9 @@ class KaggleRuntime:
             write(folder/'request.json',request)
             q={'schema_version':'gate2_workflow_v1','jobs':[{'id':'area','engine':'area','action':'run','request_ref':{'path':str(folder/'request.json'),'sha256':sha(folder/'request.json')},'root':str(folder)}],'ppac':None}
             result=run(q,folder/'workflow',root=folder,operation='area')
-            need(result['execution_status']=='SUCCEEDED','ENGINE_JOB_FAILED','Area gagal; hasil tidak disimpan sebagai cache sukses')
+            if result['execution_status']!='SUCCEEDED':
+                failed=[j for j in result.get('jobs',[]) if j['execution_status']!='SUCCEEDED']
+                raise GateError('AREA_ENGINE_FAILED','Area gagal: '+str([j.get('diagnostics',[]) for j in failed]))
             return result
         identity={**request,'input':{'sha256':request['input']['sha256']},'target':{'latitude':self.latitude,'longitude':self.longitude,'id':self.target_id,'period':self.period_id}}
         with timing.stage('area_compute'):
@@ -457,6 +466,8 @@ class KaggleRuntime:
             inventory=[v for v in inventory if v['id'] in video_ids]
         tasks=([{'id':'area','kind':'area'}] if mode in ('area','workflow') else [])+([{**v,'kind':'traffic'} for v in inventory] if mode in ('traffic','workflow') else [])
         receipts=[];jobs=[];bindings=[]
+        import time
+        run_started=time.time()
         for item,result,error in self._scheduled_tasks(tasks,root):
             print('START',item['id'],flush=True)
             try:
@@ -476,13 +487,15 @@ class KaggleRuntime:
                 if self.state['runtime'].get(item['kind'],{}).get('status')=='PREPARING':
                     self.state['runtime'][item['kind']]={'status':'FAILED','code':type(exc).__name__}
                 self.record()
-                receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),
-                                 'message':str(exc) if isinstance(exc,GateError) else 'Tahap gagal ('+type(exc).__name__+'); periksa log setup/worker. Engine/video berikut tetap diproses.'})
+                from .failure_details import details
+                failure=details(self.base,exc,run_started);write(root/(item['id']+'-failure.json'),failure)
+                receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'FAILED','diagnostics':[failure],'code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),
+                                 'message':failure['message'] if isinstance(exc,GateError) else 'Tahap gagal ('+type(exc).__name__+'); periksa log setup/worker. Engine/video berikut tetap diproses.'})
             write(root/'progress.json',receipts);print('FINISH',item['id'],receipts[-1]['execution_status'],flush=True)
         ppac={'execution_status':'NOT_RUN','std_total':None}
         if mode=='workflow':
             if any(r['execution_status']!='SUCCEEDED' for r in receipts):
-                ppac={'execution_status':'BLOCKED','std_total':None,'diagnostics':[{'code':'REQUIRED_ENGINE_UNAVAILABLE','message':'Hasil wajib engine/video gagal. Hasil sukses tetap tersedia.'}]}
+                ppac={'execution_status':'BLOCKED','std_total':None,'diagnostics':[{'code':'REQUIRED_ENGINE_UNAVAILABLE','message':'Hasil wajib engine/video gagal. Hasil sukses tetap tersedia.','failed_engines':[{'id':r['id'],'engine':r['engine'],'code':r.get('code'),'message':r.get('message'),'diagnostics':r.get('diagnostics',[])} for r in receipts if r['execution_status']!='SUCCEEDED']}]}
             else:
                 area=next(j for j in jobs if j['engine']=='area')
                 binding={'schema_version':'gate2_binding_v1','context':{'target_id':self.target_id,'period_id':self.period_id,

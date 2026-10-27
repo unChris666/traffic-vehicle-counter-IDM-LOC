@@ -69,6 +69,7 @@ def prepare(root,result,inventory,context,parameters,destination):
                 request=read(request_path);ref=request.get('baseline',request.get('input'))
                 if ref:add(artifact(ref,folder),'inputs/area/source-bundle.zip',ref['sha256'])
         else:r=n=None;manifest_uri=None
+        if e['execution_status']!='SUCCEEDED':base.update(code=e.get('code'),message=e.get('message'),diagnostics=e.get('diagnostics',[]))
         safe_engines.append(base)
         if e['engine']=='traffic':
             item=by_id[e['id']];slot=item['slot']

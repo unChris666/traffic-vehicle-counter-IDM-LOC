@@ -1,6 +1,6 @@
 # Status sistem —27 Oktober2026
 
-Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.5.3rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
+Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.5.4rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
 
 | Bagian | Kondisi kode saat ini | Batas bukti |
 |---|---|---|
@@ -57,3 +57,5 @@ UI sementara: [Gradio](GRADIO_INTEGRATION_UI.md), source integration/gradio_app.
 Arahan terbaru: fokus Kaggle; Docker ditunda. Upload terputus ditangani per-request, tersedia referensi GCS/Kaggle Input per slot. Peta dan tabel ringkas serta asumsi1bangunan=1KK=4penduduk: [pemulihan dan penggunaan](KAGGLE_UPLOAD_RECOVERY.md).
 
 Tampilan hasil terbaru: [BQ, HTML peta GCS dan PPAC terbaca](KAGGLE_READABLE_RESULTS.md).
+
+Kegagalan Area dan renderer dipisah; setup Area child/log dan diagnosis tersedia. [Pemulihan serta batas bukti](AREA_FAILURE_RECOVERY.md).

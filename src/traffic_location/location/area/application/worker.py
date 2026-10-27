@@ -98,13 +98,13 @@ def execute(request,root):
         record(root,'recorded_routing','SUCCEEDED')
     # Render from a relocated copy. Only presentation output_path changes.
     if request['render']:
-        from ..outputs.map import render_esri
+        from ..outputs.map import render_safely
         native=copy.deepcopy(native);target=root/'presentation';target.mkdir()
         native['output_path']=str(target);write(target/'result.json',native)
         facilities=read(work/'sources/optional_poi_result.json')
-        html=render_esri(config,policy,pilot,facilities,native)
-        record(root,'renderer','SUCCEEDED',html=str(html.relative_to(root)))
-        presentation_ref=str(html.relative_to(root))
+        presentation=render_safely(config,policy,pilot,facilities,native)
+        presentation_ref=str(Path(presentation['html']).relative_to(root)) if presentation['status']=='SUCCEEDED' else None
+        record(root,'renderer',presentation['status'],code=presentation.get('code'),html=presentation_ref)
     write(root/'native.json.gz',native)
     write(root/'capacity.json',snapshot.capacity if not fresh else read(pilot/'building_results/capacity.json'))
     result={'schema_version':'area_execution_result_v1','execution_status':'SUCCEEDED',
@@ -112,7 +112,8 @@ def execute(request,root):
         'claim_type':'EXPERIMENTAL_SCENARIO','source_zip_sha256':snapshot.source_zip_sha256,
         'summary':native['summary'],'native_domain_sha256':semantic_hash({k:v for k,v in native.items() if k not in {'identity','fingerprint','output_path'}}),
         'parity_scope':scope,'environment':fingerprint(),'gpu_cpu_equivalence':'NOT_VERIFIED',
-        'production_ready':False,'presentation_ref':presentation_ref if request['render'] else None}
+        'production_ready':False,'presentation_ref':presentation_ref if request['render'] else None,
+        'presentation_status':presentation['status'] if request['render'] else 'NOT_REQUESTED'}
     write(root/'result.json',result);record(root,'worker','SUCCEEDED')
     return result
 

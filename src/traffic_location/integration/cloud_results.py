@@ -63,6 +63,16 @@ class ResultsReader:
                 ppacs=[e for e in manifest['files'] if e['object'].endswith('/ppac/result.json')]
                 if len(ppacs)==1:
                     e=ppacs[0];result['ppac_document']=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],8*1024**2))
+                presentation_errors=[e for e in manifest['files'] if e['object'].endswith('/presentation/error.json')]
+                if len(presentation_errors)==1:
+                    e=presentation_errors[0];failure=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],65536))
+                    result['map_status']='Perhitungan Area tersimpan; renderer peta gagal: '+failure.get('code','')+' '+failure.get('message','')
+                summaries=[e for e in manifest['files'] if e['object'].endswith('/summary.json') and '/engines/' not in e['object']]
+                if len(summaries)==1:
+                    e=summaries[0];summary=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],8*1024**2))
+                    for engine in summary.get('engines',[]):
+                        if engine.get('engine')=='area' and engine.get('execution_status')!='SUCCEEDED':
+                            result['map_status']='Area gagal; peta belum dibuat. '+str(engine.get('code',''))+' '+str(engine.get('message',''))+' '+json.dumps(engine.get('diagnostics',[]),ensure_ascii=False)
                 maps=[e for e in manifest['files'] if '/engines/area/' in e['object'] and e['object'].endswith('/market_map.html')]
                 if not result['map_html'] and len(maps)==1:
                     e=maps[0];result['map_html']=self.map_html(job,{'map_html_uri':'gs://'+self.destination.bucket+'/'+e['object'],'map_html_sha256':e['sha256']})

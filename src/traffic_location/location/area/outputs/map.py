@@ -17,13 +17,9 @@ def consolidate(map_object):
     for group in groups.values():group.add_to(map_object)
 
 
-def render_esri(config,market_config,pilot,facilities,result,**kwargs):
-    import folium
+def display_tables(config,pilot,facilities,result):
     from shapely.geometry import shape
     from pyproj import Geod
-    save=folium.Map.save
-    def grouped(m,*args,**kw):consolidate(m);return save(m,*args,**kw)
-    with patch.object(folium.Map,'save',grouped):html=original_render(config,market_config,pilot,facilities,result,**kwargs)
     # UI counts retain engine allocation; bins are explicitly centroid geodesic display radii.
     allocated={r['building_id'] for r in result['rows'] if r['count_candidate']==1}
     counts=[0,0,0];geod=Geod(ellps='WGS84')
@@ -49,6 +45,29 @@ def render_esri(config,market_config,pilot,facilities,result,**kwargs):
              'kk_basis':'OWNER_ASSUMPTION_ONE_ALLOCATED_BUILDING_ONE_KK_FOUR_PEOPLE','poi':[{'tipe_POI':r['category'],'nama_POI':r.get('name')} for r in (facilities.get('rows') or [])],
              'poi_status':facilities.get('status'),'competitors':stores('competitor'),'indomaret':stores('indomaret')}
     write(Path(result['output_path'])/'display-tables.json',payload)
-    return html
+    return payload
 
-__all__=['render_esri']
+
+def render_esri(config,market_config,pilot,facilities,result,**kwargs):
+    import folium
+    display_tables(config,pilot,facilities,result)
+    save=folium.Map.save
+    def grouped(m,*args,**kw):consolidate(m);return save(m,*args,**kw)
+    with patch.object(folium.Map,'save',grouped):
+        return original_render(config,market_config,pilot,facilities,result,**kwargs)
+
+
+def render_safely(config,policy,pilot,facilities,native):
+    import shutil
+    try:
+        html=render_esri(config,policy,pilot,facilities,native)
+        return {'status':'SUCCEEDED','html':str(html)}
+    except Exception as exc:
+        target=Path(native['output_path'])
+        # Never publish a partially written map as a completed HTML artifact.
+        shutil.rmtree(target/'views',ignore_errors=True)
+        error={'status':'FAILED','stage':'presentation','code':type(exc).__name__,'message':str(exc)[:500]}
+        write(target/'error.json',error)
+        return error
+
+__all__=['render_esri','render_safely','display_tables']

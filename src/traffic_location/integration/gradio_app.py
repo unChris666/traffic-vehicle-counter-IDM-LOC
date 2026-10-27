@@ -32,6 +32,9 @@ def frame(data,columns):
 def display_frames(result=None):
     from .ppac_view import rows as ppac_rows
     has_result=bool(result);result=result or {};detail=result.get('display',{});traffic={}
+    if not detail.get('area') and result.get('area_results'):
+        a=result['area_results'][0];count=a.get('allocated_buildings') if a.get('execution_status')=='SUCCEEDED' else None
+        detail={**detail,'area':[{'radius':'Total alokasi (rincian radius belum tersedia)' if count is not None else 'Area gagal/belum selesai; periksa diagnosis Area','jumlah_bangunan':count,'jumlah_KK':count}]}
     document=result.get('ppac_document')
     if has_result and document is None:document={'execution_status':'UNAVAILABLE','std_total':None,'reason':'ppac.json belum tersedia atau belum lolos verifikasi GCS. Muat ulang hasil dan periksa status penyimpanan.'}
     for r in result.get('traffic_counts',[]):
@@ -85,7 +88,7 @@ def engine_rows(result):
     for item in result.get('engines',[]):
         brief=item.get('summary') or {}
         rows.append([item['id'],item.get('execution_status'),item.get('quality',''),
-                     json.dumps(brief,ensure_ascii=False) if brief else item.get('message',item.get('code',''))])
+                     json.dumps(brief,ensure_ascii=False) if brief else (str(item.get('message') or item.get('code') or 'Tahap gagal')+' '+json.dumps(item.get('diagnostics',[]),ensure_ascii=False))])
     return rows
 
 
@@ -136,6 +139,16 @@ class Controller:
         except Exception as exc:
             message=str(exc) if isinstance(exc,ValueError) else 'Video gagal dibaca ('+type(exc).__name__+'). Periksa format video dan FFmpeg.'
             return [],gr.update(choices=[],value=None),message
+
+    def area_diagnostic(self,*values):
+        from .failure_details import details
+        try:
+            values=list(values);values[0]='Area Coverage';x=validate(values,self.video_choices)
+            runtime=self.runtime(x)
+            report=details(runtime.base,GateError('AREA_DIAGNOSTIC','Log Area pada sesi/workspace ini.'))
+            if not report['evidence']:return 'Log error Area tidak tersedia pada workspace sesi ini. Jika sesi lama sudah dihapus, pilih Area Coverage lalu proses Area saja untuk merekam diagnosis baru; Traffic tidak dijalankan.'
+            return '\n'.join(e['log']+'\n'+'\n'.join(e['errors']) for e in report['evidence'])
+        except Exception as exc:return 'Diagnosis Area gagal ('+type(exc).__name__+').'
 
     def prepare_slot_sources(self,*values):
         from .upload_transport import resolve_reference
@@ -388,6 +401,9 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         for field in (day,session,direction):field.input(controller.invalidate_review,[upload_state,selected],[upload_state,reviewed,review_status],api_name=False)
         retried=retry.click(controller.retry_storage,job_pointer,[status,download],api_name=False,concurrency_id='engines',concurrency_limit=1)
         inputs=[mode,target,latitude,longitude,period,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,upload_state]
+        diagnostic=gr.Button('Periksa penyebab kegagalan Area (tanpa proses ulang)')
+        diagnostic_text=gr.Textbox(label='Diagnosis Area — penyebab dari log worker',lines=8,interactive=False)
+        diagnostic.click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='engines',concurrency_limit=1)
         check.click(controller.check,inputs,[status,readiness],api_name=False,concurrency_id='engines',concurrency_limit=1)
         def readable_process(*values):
             from .ppac_view import rows
