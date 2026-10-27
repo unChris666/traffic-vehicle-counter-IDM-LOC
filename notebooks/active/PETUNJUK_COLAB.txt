@@ -1,4 +1,4 @@
-COLAB L4 — KANDIDAT 0.6.2rc1
+COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r2
 
 Notebook: 15_colab_l4_area_first.ipynb
 Gunakan notebook ini untuk Colab; notebook14 adalah varian Kaggle.
@@ -18,3 +18,11 @@ Tujuan output tetap gs://aretfak-location-intelligence dan locdeproject.location
 Notebook tidak membuat tabel atau mengubah IAM. Probe awal menggunakan pemeriksaan izin, metadata dan query kecil; job Area menguji write/publish/reopen nyata.
 Server/worker tidak memasang dependency ketika job berjalan. Sesi Colab baru membutuhkan setup lagi.
 Belum diuji pada L4/Colab nyata atau cloud owner; ini kandidat untuk owner-run user testing. Main dan refactor/deployment-foundation belum dipromosikan. Formula engine dan Markdown aktif dipertahankan.
+
+PERBAIKAN SETUP r2
+Output setup/verify/preflight diteruskan melalui Python notebook, ditampilkan live dan disimpan ke setup.log/runtime-check.log/cloud-preflight.log.
+Tahap setup disimpan ke setup-status.json. Jika gagal, RuntimeError menyebut tahap, exit code dan tail error asli.
+Retry memakai micromamba install pada prefix conda yang sudah ada; tidak mereset environment. Wheel aplikasi dipilih eksplisit, sehingga sisa wheel lama tidak dipakai.
+Cell unduh diagnosis terakhir tetap berfungsi bila setup gagal sebelum SCIENCE tersedia. ZIP diagnosis menyertakan tail log terbatas dan tahap gagal, tanpa credential.
+Traceback CalledProcessError dari notebook lama hanya membuktikan bootstrap exit1; penyebab sesi owner belum diketahui. Host Python3.13 belum terbukti sebagai penyebab; aplikasi tetap memakai Python3.12 terisolasi.
+Gunakan revisi notebook terbaru. Salinan lama di Colab tidak otomatis mengikuti perubahan GitHub. Jangan menghapus /content atau meng-upgrade dependency secara acak untuk mencari penyebab.

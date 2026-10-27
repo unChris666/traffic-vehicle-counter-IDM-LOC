@@ -1,0 +1,44 @@
+{
+  "schema_version": "colab_setup_r2_validation_v1",
+  "package_version": "0.6.2rc1",
+  "notebook_revision": "setup-r2",
+  "branch": "fix/area-user-testing",
+  "date_jakarta": "2026-10-27",
+  "original_owner_failure": {
+    "phase": "bootstrap",
+    "exit_code": 1,
+    "root_cause": "UNKNOWN; original notebook did not forward child stdout/stderr into visible cell output. No inner error available.",
+    "host_python": "3.13 per owner traceback; not established as the cause"
+  },
+  "changes": [
+    "Python-level live stdout/stderr streaming, with setup.log and explicit stage/failure checkpoint",
+    "Explicit app wheel selection; no glob selection of old wheels",
+    "Retry existing conda prefix with install rather than destructive create",
+    "Verify/cloud-preflight logs also forwarded",
+    "Diagnostic ZIP works before application Python exists"
+  ],
+  "tests": {
+    "total": 309,
+    "passed": 299,
+    "skipped": 10,
+    "errors": 0,
+    "seconds": 51.418
+  },
+  "regressions": [
+    "Controlled exit7 prints real stderr and identifies pip_locked_dependencies in notebook RuntimeError",
+    "Successful child stdout is visible and written to log; bearer credentials redacted",
+    "Retry preserves existing prefix/files and selects install",
+    "Explicit wheel selects intended artifact when old wheels remain",
+    "Failed CLI writes stage and host Python metadata",
+    "Diagnosis downloads with no SCIENCE variable/application interpreter"
+  ],
+  "app_wheel_sha256": "ef4a2f10b35357485e813ac179a9c99d39fb7afadbfbaf39c174f01b19c56f2c",
+  "notebook_sha256": "b25c9b52202cb25245e4af787c49ec6f76720d603263a247d21ed460a90152a2",
+  "bootstrap_sha256": "505434995e48a1a2158e6fe5e86040eb50977b92fcdbb1d6422dd0afb8a8a422",
+  "dependency_or_engine_source_changed": false,
+  "application_wheel_changed": false,
+  "gcs_bq_or_gpu_execution": false,
+  "owner_install_failure_verified_resolved": false,
+  "main_or_foundation_promoted": false,
+  "status": "READY_FOR_OWNER_RETRY_AND_DIAGNOSIS"
+}
