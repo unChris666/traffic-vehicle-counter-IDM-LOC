@@ -1,5 +1,6 @@
 steps:
   - name: gcr.io/cloud-builders/docker
+    env: ['DOCKER_BUILDKIT=1']
     args: ['build', '-t', '${_IMAGE}', '.']
   - name: gcr.io/cloud-builders/docker
     args: ['run', '--rm', '${_IMAGE}', 'python', '-m', 'pip', 'check']

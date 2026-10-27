@@ -27,10 +27,13 @@ RUN --mount=type=secret,id=proxy_ca,mode=0444 \
     PIP_CERT="$task_ca" python -m pip install --no-cache-dir --require-hashes -r deploy/requirements.lock && \
     python -m pip install --no-deps --no-build-isolation . && \
     python -m pip check && \
-    python -m traffic_location.integration.container_runtime --verify && \
+    useradd --uid 10001 --create-home appuser && \
+    mkdir -p /data/ultralytics /data/gradio /data/matplotlib && \
+    chown -R appuser:appuser /data && chmod -R a+rX /app/config && \
+    su -s /bin/sh appuser -c 'python -m traffic_location.integration.container_runtime --verify' && \
+    su -s /bin/sh appuser -c "python -c 'from traffic_location.artifacts import read;read(\"/app/config/experiment.json\")'" && \
     dpkg-query -W > /app/deploy/os-packages.txt && \
-    python -m pip freeze --all > /app/deploy/python-packages.txt && \
-    useradd --uid 10001 --create-home appuser && mkdir -p /data && chown -R appuser:appuser /data
+    python -m pip freeze --all > /app/deploy/python-packages.txt
 USER 10001:10001
 EXPOSE 8080
 CMD ["python", "-m", "traffic_location.integration.container_runtime"]

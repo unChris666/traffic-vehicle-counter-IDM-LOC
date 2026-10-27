@@ -311,3 +311,20 @@ job panjang otomatis andal. Satu-instance pilot juga bukan distributed locking.
 - [Timeout layanan](https://cloud.google.com/run/docs/configuring/request-timeout)
 - [Cloud Build image dan push](https://cloud.google.com/build/docs/building/build-containers)
 - [Cloud Run service identity](https://cloud.google.com/run/docs/securing/service-identity)
+
+## Bukti validasi rilis ini
+
+257 tes lokal selesai (248 lulus,9 dilewati), mypy14file lulus. Notebook Kaggle
+versi10 diverifikasi source sesuai wheel0.5.1rc1, privat/GPU aktif, HTTP200,
+delapan label slot dan tiga tabel/panel peta tersedia. Belum ada inference baru.
+
+Build image dependency lokal berhasil: `pip check` tanpa broken requirements,
+import dan binary Area/Traffic lulus. Setelah itu resep menambahkan normalisasi
+izin config dan pemeriksaan sebagai UID10001. Rebuild resep final serta startup
+container non-root tertahan kapasitas disk Docker VFS lokal; image belum
+promoted/pushed. Jalankan Cloud Build yang disediakan sebelum deploy. Ini bukan
+klaim image final sudah diuji di Cloud Run atau GPU L4.
+
+Entrypoint Hypercorn diuji di luar Docker: health HTTP/2 200 dan upload34.603.008
+byte (>32MiB) HTTP/2 200. Payload adalah fixture transport kosong, bukan video
+analitik. Jalur ingress/proxy Cloud Run dan video nyata tetap perlu diuji.

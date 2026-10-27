@@ -19,5 +19,40 @@
   "live_owner_cloud_crud_verified": false,
   "gpu_inference_rerun": false,
   "owner_reports_previous_gcs_bq_setup_done": true,
-  "docker_build_validation": "PENDING_AT_FEATURE_COMMIT"
+  "docker": {
+    "dependency_image_build": "PASS_BEFORE_NONROOT_PERMISSION_HARDENING",
+    "pip_check": "NO_BROKEN_REQUIREMENTS",
+    "native_imports": "BUNDLED_RUNTIME_OK_CPU_IMPORTS_ONLY",
+    "final_nonroot_recipe_rebuild": "NOT_RUN_LOCAL_VFS_DISK_LIMIT",
+    "container_startup": "BLOCKED_LOCAL_VFS_DISK_LIMIT",
+    "image_promoted": false,
+    "gpu_verified": false,
+    "requirements_lock_unchanged_after_successful_dependency_build": true
+  },
+  "http2_entrypoint_local": {
+    "health_http_version": "2",
+    "health_status": 200,
+    "upload_http_version": "2",
+    "upload_status": 200,
+    "payload_bytes": 34603008,
+    "fixture": "ZERO_FILLED_TRANSPORT_ONLY_NOT_A_VALID_VIDEO",
+    "ran_inside_docker": false,
+    "ran_through_cloud_run_ingress": false,
+    "engine_started": false
+  },
+  "kaggle": {
+    "kaggle_version": 10,
+    "package_version": "0.5.1rc1",
+    "source_matches_tested": true,
+    "private": true,
+    "gpu": true,
+    "http_status": 200,
+    "config_status": 200,
+    "eight_slot_labels": true,
+    "bq_table_labels": true,
+    "folium_esri_panel": true,
+    "tracebacks": 0,
+    "gpu_inference_executed": false,
+    "live_cloud_crud_verified": false
+  }
 }
