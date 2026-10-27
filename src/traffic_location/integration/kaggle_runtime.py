@@ -83,6 +83,11 @@ class KaggleRuntime:
         return deepcopy(self.state)
 
     def connect(self):
+        if self.client is None and os.environ.get('LI_AUTH_MODE')=='adc':
+            import google.auth
+            from google.cloud import storage
+            self.credentials,project=google.auth.default(scopes=['https://www.googleapis.com/auth/cloud-platform'])
+            self.client=storage.Client(project=project or 'locdeproject',credentials=self.credentials)
         if self.client is None:
             from kaggle_secrets import UserSecretsClient
             from google.oauth2 import service_account
@@ -220,6 +225,11 @@ class KaggleRuntime:
         if self.state['runtime'].get(engine,{}).get('status')=='READY':return self.state['runtime'][engine]
         need(self.state['runtime'].get(engine,{}).get('status')!='FAILED','RUNTIME_SETUP_FAILED','Runtime '+engine+' gagal disiapkan; periksa log setup. Engine lain tetap berjalan.')
         self.state['runtime'][engine]={'status':'PREPARING'};self.record()
+        if os.environ.get('LI_RUNTIME_MODE')=='bundled':
+            from .container_runtime import verify_runtime
+            self.state['runtime'][engine]=verify_runtime(engine,require_gpu=True)
+            self.record();return self.state['runtime'][engine]
+        need(os.environ.get('LI_RUNTIME_MODE','kaggle')=='kaggle','RUNTIME_MODE_INVALID','Mode runtime tidak dikenal.')
         import shutil
         need(shutil.which('nvidia-smi') is not None,'GPU_REQUIRED','Pilih GPU pada Notebook Settings Kaggle sebelum Mulai uji.')
         gpu=subprocess.run(['nvidia-smi','-L'],capture_output=True,text=True,timeout=30)
@@ -273,7 +283,7 @@ class KaggleRuntime:
         self.state['area']={'status':'READY','source_bundle':str(bundle_path),'sha256':sha(bundle_path),'metric_crs':configuration['CONFIG']['metric_crs'],'gcs_cache':cache}
         self.record()
         return {'schema_version':'area_execution_request_v2','operation':'compute_gpu_sources',
-                'input':{'path':str(bundle_path),'sha256':sha(bundle_path)},'core_python':runtime['core_python'],'render':False,'timeout_seconds':3600}
+                'input':{'path':str(bundle_path),'sha256':sha(bundle_path)},'core_python':runtime['core_python'],'render':True,'timeout_seconds':3600}
 
     def prepare_area(self):
         # Native ingestion runs in a fresh interpreter after pip/apt, avoiding

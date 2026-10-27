@@ -65,7 +65,9 @@ CREATE TABLE IF NOT EXISTS `locdeproject.location_intelligence.area_results` (
   outer_zone_open BOOL,
   fasum_le400 INT64,
   fasum_gt400_le800 INT64,
-  manifest_uri STRING
+  manifest_uri STRING,
+  map_html_uri STRING,
+  map_html_sha256 STRING
 )
 PARTITION BY DATE(created_at)
 CLUSTER BY target_id, job_id;
@@ -86,6 +88,10 @@ CREATE TABLE IF NOT EXISTS `locdeproject.location_intelligence.ppac_results` (
 )
 PARTITION BY DATE(created_at)
 CLUSTER BY target_id, job_id;
+
+ALTER TABLE `locdeproject.location_intelligence.area_results` ADD COLUMN IF NOT EXISTS map_html_uri STRING;
+
+ALTER TABLE `locdeproject.location_intelligence.area_results` ADD COLUMN IF NOT EXISTS map_html_sha256 STRING;
 
 CREATE VIEW IF NOT EXISTS `locdeproject.location_intelligence.traffic_ppac_samples` AS
 SELECT v.job_id, v.target_id, v.video_id, v.day_group, v.session,

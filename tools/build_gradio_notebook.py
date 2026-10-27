@@ -21,11 +21,11 @@ def build(wheel,output):
         cells.append({'cell_type':'code','metadata':{},'source':text,'execution_count':None,'outputs':[]})
     md('''# Gradio — Area Coverage, Traffic Counter, PPAC
 
-Jalankan notebook dengan Internet dan GPU aktif. Aktifkan Secret **LocatioIntelligent** pada pengaturan notebook. Upload video Anda melalui Gradio. Dataset T7SL juga tersedia sebagai contoh.
+Jalankan notebook dengan Internet dan GPU aktif. Aktifkan Secret **LocatioIntelligent** pada pengaturan notebook. Isi delapan slot video weekday/weekend × pagi/siang/sore/malam melalui Gradio. Dataset T7SL juga tersedia sebagai contoh.
 
 Notebook menyiapkan aplikasi lalu mencetak **GRADIO_PUBLIC_URL**. Buka URL itu untuk mengisi lokasi/input bisnis, mengunggah video, meninjau geometri/hari/sesi setiap video, memeriksa kesiapan, dan menekan **Mulai proses**. Setup aplikasi tidak menjalankan engine. URL aktif selama sesi notebook/server berjalan. Hentikan cell terakhir untuk menutup UI.
 
-Hasil job menggunakan GCS **aretfak-location-intelligence** dan BQ **locdeproject.location_intelligence**. Siapkan tabel sekali sesuai panduan CLOUD_STORAGE_SETUP.md; model/PBF tetap memakai sumber terpisah yang sudah ada. Folder job dibuat otomatis saat penyimpanan.
+Hasil job menggunakan GCS **aretfak-location-intelligence** dan BQ **locdeproject.location_intelligence**. Siapkan tabel sekali sesuai panduan CLOUD_STORAGE_SETUP.md; model/PBF tetap memakai sumber terpisah yang sudah ada. Folder job dibuat otomatis saat penyimpanan. Jika setup BQ sudah dilakukan, jalankan ulang SQL terbaru untuk menambahkan referensi peta (tanpa menghapus data). Panel hasil membuka tabel BQ dan peta Folium/Esri dari artefak GCS.
 
 Default lokasi Sorong: latitude -0.8994976613947719, longitude 131.3221639428227. Traffic menggunakan kandidat FP32 dan satu video per GPU; akurasi identitas belum tervalidasi. Untuk PPAC dengan delapan video normal, gunakan jam operasional <=15. Operasional >15 jam tetap menunggu sesi tambahan.
 ''')

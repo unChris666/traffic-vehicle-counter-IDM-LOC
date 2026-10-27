@@ -62,6 +62,24 @@ class PublicationTests(unittest.TestCase):
         sql=setup_sql();self.assertEqual(sql.count('CREATE TABLE IF NOT EXISTS'),5)
         self.assertEqual(sql.count('CREATE VIEW IF NOT EXISTS'),2);self.assertNotIn('DROP ',sql);self.assertNotIn('REPLACE',sql)
         checked=(Path(__file__).resolve().parents[1]/'sql/location_intelligence_setup.sql').read_text();self.assertEqual(checked,sql)
+    def test_area_presentation_is_a_verified_bq_pointer_not_inline_html(self):
+        from traffic_location.location.area.domain.aggregation import reconcile
+        identity={'market_config':{'target':{'latitude':0.,'longitude':0.}}}
+        n={'status':'SUCCEEDED','rows':[],'summary':reconcile([]),'identity':identity,'fingerprint':semantic_hash(identity),
+           'attractor_gate':{'state':'CLOSED','evidence':[]}}
+        r={'schema_version':'area_execution_result_v1','execution_status':'SUCCEEDED','result_version':'b'*64,
+           'summary':n['summary'],'data_quality_status':'SUCCEEDED',
+           'native_domain_sha256':semantic_hash({k:v for k,v in n.items() if k not in {'identity','fingerprint','output_path'}}),
+           'presentation_ref':'presentation/map.html'}
+        folder=self.root/'area'
+        publish(folder,{'result.json':r,'native.json.gz':n,'presentation/map.html':{'software_fixture':'map'}},
+                metadata={'engine':'area','result_version':r['result_version']})
+        self.result['engines'].append({'id':'area','engine':'area','execution_status':'SUCCEEDED','quality':'SUCCEEDED','summary':r['summary'],'result_ref':ref(folder)})
+        q=self.prepared();row=q['rows']['area_results'][0]
+        self.assertTrue(row['map_html_uri'].endswith('/engines/area/area/presentation/map.html'))
+        self.assertEqual(row['map_html_sha256'],sha(folder/'presentation/map.html'))
+        self.assertNotIn('software_fixture',str(row));self.assertIn('ADD COLUMN IF NOT EXISTS map_html_uri',setup_sql())
+
     def test_flat_counts_are_only_accepted_ledger_not_pending(self):
         q=self.prepared();rows=q['rows']['traffic_counts'];self.assertEqual(sum(r['accepted_count'] for r in rows),2)
         self.assertEqual(sum(r['accepted_count'] for r in rows if r['evidence_level']=='measured'),1)

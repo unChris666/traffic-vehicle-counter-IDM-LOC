@@ -45,11 +45,15 @@ def prepare(root,result,inventory,context,parameters,destination):
         return 'gs://'+destination.bucket+'/'+entry['object']
     by_id={v['id']:v for v in inventory};safe_engines=[]
     for e in result['engines']:
+        map_uri=map_sha=None
         base={'id':e['id'],'engine':e['engine'],'execution_status':e['execution_status'],'quality':e.get('quality')}
         if e['execution_status']=='SUCCEEDED':
             h=inspect(e['engine'],e['result_ref'],root);folder=Path(e['result_ref']['path']);manifest=verify_manifest(folder)
             engine_prefix='engines/'+e['engine']+'/'+e['id']
-            for file in manifest['files']:add(folder/file['path'],engine_prefix+'/'+file['path'],file['sha256'])
+            for file in manifest['files']:
+                uri=add(folder/file['path'],engine_prefix+'/'+file['path'],file['sha256'])
+                if e['engine']=='area' and file['path']==h['result'].get('presentation_ref'):
+                    map_uri,map_sha=uri,file['sha256']
             manifest_uri=add(folder/'manifest.json',engine_prefix+'/manifest.json',e['result_ref']['sha256'])
             r,n=h['result'],h['native']
             need(e.get('quality')==h['quality'],'PUBLICATION_QUALITY_MISMATCH','Kualitas receipt berbeda dari hasil engine.')
@@ -104,7 +108,8 @@ def prepare(root,result,inventory,context,parameters,destination):
                 'unverified_buildings':s.get('market_status_counts',{}).get('UNVERIFIED',0) if n else None,
                 'outer_zone_open':gate['state']=='OPEN' if gate.get('state') in ('OPEN','CLOSED') else None,
                 'fasum_le400':sum(d<=400 for d in distances) if n else None,
-                'fasum_gt400_le800':sum(400<d<=800 for d in distances) if n else None,'manifest_uri':manifest_uri})
+                'fasum_gt400_le800':sum(400<d<=800 for d in distances) if n else None,'manifest_uri':manifest_uri,
+                'map_html_uri':map_uri,'map_html_sha256':map_sha})
     ppac=result['ppac']
     if ppac['execution_status']=='SUCCEEDED':
         need(ppac.get('parameters')==parameters,'PUBLICATION_PARAMETERS_MISMATCH','Parameter PPAC berbeda dari job tersimpan.')

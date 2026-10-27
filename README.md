@@ -1,3 +1,5 @@
+Panduan terbaru: [Docker dan Cloud Run GPU](docs/DOCKER_CLOUD_RUN_GUIDE.md), termasuk delapan slot upload dan hasil BQ/peta.
+
 > Upload video Gradio dan konfigurasi hasil GCS/BQ0.5.0rc1: [panduan setup owner](docs/CLOUD_STORAGE_SETUP.md), [SQL tabel/view](sql/location_intelligence_setup.sql). Sumber model/PBF/reference tetap terpisah.
 
 <!-- current-status:2026-10-27 -->

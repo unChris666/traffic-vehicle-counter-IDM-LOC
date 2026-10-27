@@ -30,7 +30,8 @@ SCHEMAS={
                   'evidence_level':'STRING','accepted_count':'INT64'},
  'area_results':{**COMMON,'result_version':'STRING','execution_status':'STRING','result_quality':'STRING',
                  'allocated_buildings':'INT64','unverified_buildings':'INT64','outer_zone_open':'BOOL',
-                 'fasum_le400':'INT64','fasum_gt400_le800':'INT64','manifest_uri':'STRING'},
+                 'fasum_le400':'INT64','fasum_gt400_le800':'INT64','manifest_uri':'STRING',
+                 'map_html_uri':'STRING','map_html_sha256':'STRING'},
  'ppac_results':{**COMMON,'execution_status':'STRING','result_quality':'STRING','std_total':'FLOAT64',
                  'std_residential':'FLOAT64','std_traffic':'FLOAT64','std_fasum':'FLOAT64',
                  'policy_version':'STRING','parameters_json':'JSON','diagnostics_json':'JSON'}
@@ -43,6 +44,8 @@ def setup_sql(destination=None):
     for table,fields in SCHEMAS.items():
         columns=',\n  '.join(name+' '+kind for name,kind in fields.items())
         statements.append(f'CREATE TABLE IF NOT EXISTS `{d}.{table}` (\n  {columns}\n)\nPARTITION BY DATE(created_at)\nCLUSTER BY target_id, job_id;')
+    for name in ('map_html_uri','map_html_sha256'):
+        statements.append(f'ALTER TABLE `{d}.area_results` ADD COLUMN IF NOT EXISTS {name} STRING;')
     statements.append(f'''CREATE VIEW IF NOT EXISTS `{d}.traffic_ppac_samples` AS
 SELECT v.job_id, v.target_id, v.video_id, v.day_group, v.session,
        v.source_sha256, v.result_version, v.result_quality, v.observed_seconds,

@@ -4,12 +4,17 @@ Tujuan hasil yang ditetapkan owner:
 
 - Bucket: **gs://aretfak-location-intelligence** (ejaan sesuai nama bucket owner).
 - Dataset: **locdeproject.location_intelligence**.
-- Package **0.5.0rc1**, Gradio sementara di notebook14. Tidak ada klaim akurasi baru.
+- Package **0.5.1rc1**, Gradio sementara di notebook14. Tidak ada klaim akurasi baru.
 
 Bucket/dataset ini adalah OUTPUT. Sumber PBF/model di bucket lama dan tabel
 referensi Area `locdeproject.DWH_NS_LOC.*` tetap INPUT terpisah. Dataset hasil
 kosong bukan pengganti tabel sumber kompetitor/toko. Tidak ada migrasi atau
 penghapusan sumber lama secara otomatis.
+
+Rilis 0.5.1rc1 menambahkan referensi peta pada `area_results`. Jika setup sebelumnya
+sudah dijalankan, **jalankan ulang SQL setup terbaru**: hanya menambah kolom
+`map_html_uri` dan `map_html_sha256` dengan `ADD COLUMN IF NOT EXISTS`.
+Lihat [panduan Docker/Cloud Run](DOCKER_CLOUD_RUN_GUIDE.md) untuk image dan deployment.
 
 ## 1. GCS: tidak perlu membuat folder manual
 
@@ -120,15 +125,17 @@ membuat dataset atau memindahkan region. Aplikasi Gradio tidak membuat tabel dia
 1. Buka notebook Gate2 versi terbaru, aktifkan Internet, GPU dan Secret
    `LocatioIntelligent`, lalu jalankan dan buka URL Gradio yang dicetak.
 2. Masukkan kode toko, koordinat dan tanggal/periode analisis.
-3. Pilih **Upload video**, pilih file, lalu **Siapkan video dan geometri**.
-4. Untuk setiap video pada dropdown: tinjau frame pertama/template, pilih weekday/weekend,
-   sesi dan arti arah. Jika perlu ubah geometri: pilih bagian, **Ulangi bagian**, klik
+3. Pilih **Upload video**, isi delapan slot weekday/weekend × pagi/siang/sore/malam, lalu **Siapkan video dan geometri**.
+4. Untuk setiap video pada dropdown: tinjau frame pertama/template dan arti arah; hari/sesi mengikuti slot upload. Jika perlu ubah geometri: pilih bagian, **Ulangi bagian**, klik
    titik perimeter (garis dua titik; polygon minimal tiga), lalu konfirmasi dan
    **Simpan tinjauan video**. Perubahan metadata/geometri membatalkan tinjauan lama.
 5. Tekan **Periksa kesiapan**. Penyimpanan GCS/BQ harus READY setelah tabel dan IAM siap.
 6. Pilih Area/Traffic/Gabungan dan tekan **Mulai proses**. Hasil disimpan di prefix job
    dan tabel di atas. Jika penyimpanan FAILED, hasil lokal tetap ada; perbaiki IAM/tabel
    lalu tekan **Ulangi penyimpanan hasil**. Tombol ini tidak menjalankan inference/counting.
+7. Panel hasil BQ menampilkan tiga tabel dan peta job yang baru dipublikasikan.
+   Gunakan kode toko dan Job ID untuk membuka hasil sebelumnya tanpa engine.
+   Job lama yang belum menyimpan referensi peta tetap dapat dibuka tabelnya.
 
 Batas teknis upload awal: 1 GiB/file, 2 GiB/batch, maksimal14 video, maksimal32 megapixel.
 Ini batas operasional awal, bukan hasil benchmark kapasitas. Video disalin tanpa

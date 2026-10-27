@@ -46,6 +46,13 @@ class GradioTests(unittest.TestCase):
         except ImportError:self.skipTest('Optional Gradio UI dependency not installed')
         with patch('traffic_location.integration.gradio_app.KaggleRuntime') as factory:
             app,c=build_app(self.root/'app',self.config,runtime_factory=factory)
-            self.assertTrue(app.enable_queue);factory.assert_not_called();app.close()
+            self.assertTrue(app.enable_queue);factory.assert_not_called()
+            labels=[c.get('props',{}).get('label') for c in app.get_config_file()['components']]
+            for day in ('weekday','weekend'):
+                for session in ('pagi','siang','sore','malam'):
+                    self.assertIn(day+' / '+session,labels)
+            for table in ('traffic_counts','area_results','ppac_results'):
+                self.assertIn(table,labels)
+            app.close()
 
 if __name__=='__main__':unittest.main()

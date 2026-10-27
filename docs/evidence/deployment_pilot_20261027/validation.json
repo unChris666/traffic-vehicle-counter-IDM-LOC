@@ -1,0 +1,23 @@
+{
+  "package_version": "0.5.1rc1",
+  "local_tests": {
+    "total": 257,
+    "passed": 248,
+    "skipped": 9
+  },
+  "mypy_contract_files": 14,
+  "primary_upload_slots": 8,
+  "optional_shift3_slots": 6,
+  "bq_result_tables": [
+    "traffic_counts",
+    "area_results",
+    "ppac_results"
+  ],
+  "map_storage": "GCS_HTML_REFERENCED_BY_BQ_URI_AND_SHA256",
+  "schema_migration": "ADDITIVE_TWO_NULLABLE_COLUMNS",
+  "numerical_kernel_changes": false,
+  "live_owner_cloud_crud_verified": false,
+  "gpu_inference_rerun": false,
+  "owner_reports_previous_gcs_bq_setup_done": true,
+  "docker_build_validation": "PENDING_AT_FEATURE_COMMIT"
+}
