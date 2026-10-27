@@ -3,13 +3,17 @@
 
 # Workflow aktif —27 Oktober2026
 
-Rujukan aktif: [CURRENT_STATUS](CURRENT_STATUS.md). Gate2 sudah menghubungkan Area, Traffic kandidat FP32, dan PPAC modular tanpa mencampur perhitungan analitik. Package0.4.8rc1 dan notebook workflow memakai kode integrasi terbaru.
+Navigasi: [Mulai dari sini](START_HERE.md). Pengembangan pada
+`refactor/deployment-foundation`; main hanya dipromosikan melalui PR dan
+[gate stabilitas](MERGE_READINESS.md).
+
+Rujukan aktif: [CURRENT_STATUS](CURRENT_STATUS.md). Gate2 sudah menghubungkan Area, Traffic kandidat FP32, dan PPAC modular tanpa mencampur perhitungan analitik. Package0.6.0rc1 dan notebook14 adalah jalur integrasi aktif.
 
 Urutan eksekusi: siapkan/priksa GCS dan runtime, jalankan Area independen, siapkan model Traffic sekali, antrekan video per GPU, validasi hasil, lalu jalankan PPAC bila seluruh input yang diperlukan tersedia. Kegagalan per engine/video dicatat terpisah.
 
 MVP v2 menerima video300–306detik dan hasilPARTIAL; sepeda/lookup Residential serta balance dinonaktifkan sesuai keputusan owner. Untuk jam>15, sesi shift3 tetap wajib. Baseline FP32 masih dapat dipilih eksplisit; adoption kandidat tidak berarti akurasi identitas telah lulus.
 
-Validasi rilis:208tes lokal selesai,8dilewati. Uji dual-GPU nyata dan ground truth belum tersedia.
+Checkpoint0.6.0rc1:279tes,269lulus/10dilewati; pemeriksaan P0 terbaru di MERGE_READINESS. Uji dual-GPU nyata dan ground truth belum tersedia.
 
 UI sementara Gradio tersedia: notebook14 -> URL publik -> input/probe/proses -> runtime yang sama. Publikasi UI tidak menjalankan engine; lihat [panduan](GRADIO_INTEGRATION_UI.md).
 

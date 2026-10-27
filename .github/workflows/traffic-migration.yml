@@ -1,9 +1,8 @@
 name: Traffic migration contracts and parity gates
 on:
+  workflow_dispatch:
   push:
-    paths: ['Dockerfile', 'deploy/**', 'cloudbuild.yaml', 'src/**', 'tests/**', 'sql/**', 'notebooks/11_gate2_t7sl_sorong_quiz.ipynb', 'notebooks/14_gate2_sorong_t7sl_gradio.ipynb', 'tools/build_gradio_notebook.py', 'tools/refresh_gate2_quiz_wheel.py', 'pyproject.toml', '.github/workflows/traffic-migration.yml']
   pull_request:
-    paths: ['Dockerfile', 'deploy/**', 'cloudbuild.yaml', 'src/**', 'tests/**', 'sql/**', 'notebooks/11_gate2_t7sl_sorong_quiz.ipynb', 'notebooks/14_gate2_sorong_t7sl_gradio.ipynb', 'tools/build_gradio_notebook.py', 'tools/refresh_gate2_quiz_wheel.py', 'pyproject.toml', '.github/workflows/traffic-migration.yml']
 permissions:
   contents: read
 jobs:

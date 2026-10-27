@@ -1,31 +1,34 @@
-UI Kaggle: [HOME / RESULT dan batas Save Project/annotated](docs/HOME_RESULT_UI.md).
-
-Area gagal atau peta kosong: [diagnosis dan pemulihan](docs/AREA_FAILURE_RECOVERY.md).
-
-Kaggle: [hasil BQ, HTML peta dari GCS dan tabel breakdown PPAC](docs/KAGGLE_READABLE_RESULTS.md).
-
-Kaggle terbaru: [upload terputus, sumber GCS/Input, tabel ringkas dan isi PPAC](docs/KAGGLE_UPLOAD_RECOVERY.md).
-
-Panduan terbaru: [Docker dan Cloud Run GPU](docs/DOCKER_CLOUD_RUN_GUIDE.md), termasuk delapan slot upload dan hasil BQ/peta.
-
-> Upload video Gradio dan konfigurasi hasil GCS/BQ0.5.0rc1: [panduan setup owner](docs/CLOUD_STORAGE_SETUP.md), [SQL tabel/view](sql/location_intelligence_setup.sql). Sumber model/PBF/reference tetap terpisah.
-
-<!-- current-status:2026-10-27 -->
-> Sinkronisasi 27 Oktober 2026: [status sistem saat ini](docs/CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
-
 # Traffic Vehicle Counter + Area Coverage + PPAC
 
-Package **0.4.8rc1** menyediakan engine modular dan workflow headless. Traffic memakai YOLO26M FP32 batch4, ReID IO binding/window8/crop32; satu GPU menangani satu video dan dua GPU dapat menangani dua video bersamaan.
+**Mulai dari [panduan kode dan notebook aktif](docs/START_HERE.md).**
+Package aktif **0.6.0rc1**. Branch konsolidasi:
+`refactor/deployment-foundation`, baseline `e077672`.
+`main` digunakan untuk versi stabil setelah pemeriksaan dan PR;
+pengembangan dilakukan pada branch lain. Kandidat ini belum dipromosikan.
 
-Mulai dari [status terkini](docs/CURRENT_STATUS.md), [integration layer](docs/GATE2_INTEGRATION.md), dan [perubahan Traffic/GPU](docs/TRAFFIC_CANDIDATE_GPU_RUNTIME.md).
+| Kebutuhan | Panduan |
+| --- | --- |
+| Menemukan Traffic, Area, PPAC dan entry point | [Mulai dari sini](docs/START_HERE.md) |
+| Mengetahui perubahan branch dan baseline | [Inventaris branch](docs/BRANCH_INVENTORY.md) |
+| Memeriksa kesiapan sebelum merge | [Gate dan hasil pemeriksaan](docs/MERGE_READINESS.md), [kebijakan main](docs/BRANCH_POLICY.md) |
+| Menggunakan Kaggle | [Notebook14](notebooks/14_gate2_sorong_t7sl_gradio.ipynb), [HOME/RESULT](docs/HOME_RESULT_UI.md) |
+| Area gagal/peta kosong | [Diagnosis Area](docs/AREA_FAILURE_RECOVERY.md) |
+| Setup dan hasil GCS/BQ | [Setup](docs/CLOUD_STORAGE_SETUP.md), [hasil terbaca](docs/KAGGLE_READABLE_RESULTS.md) |
+| Persiapan deployment berikutnya | [Docker/Cloud Run](docs/DOCKER_CLOUD_RUN_GUIDE.md) |
 
-[Notebook Kaggle workflow Sorong + T7SL](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) memakai paket tertanam yang sama. Aktifkan GPU, Internet dan Secret `LocatioIntelligent`, lalu jalankan notebook. Gradio mencetak URL publik; engine menunggu tombol pengguna.
+[Kaggle Gate2](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz)
+memakai Gradio sementara. BE/FE produksi terpisah belum tersedia. Engine Area,
+Traffic dan PPAC sudah berupa package Python; path dan kontrak I/O dijelaskan
+pada panduan awal. Tidak ada pemindahan kode engine pada konsolidasi P0.
 
-Area dan Traffic dapat dijalankan terpisah. PPAC MVP v2 menerima hasil PARTIAL yang lolos validasi; input hilang/gagal/tidak kompatibel tetap ditolak. Jam operasional >15 memerlukan sesi tambahan, sehingga delapan video T7SL belum cukup untuk PPAC18jam.
+Area dan Traffic dapat dijalankan terpisah; Traffic menerima subset video.
+PPAC tetap memerlukan semua observasi yang diwajibkan policy, termasuk shift3
+untuk jam operasional>15. Input hilang/gagal bukan nol.
 
-Kandidat menghemat33,16% pada satu video, dengan total133 yang sama tetapi identitas track berbeda. Precision/recall dan percepatan dua GPU belum dibuktikan.
-
-UI sementara sekarang memakai [Gradio](docs/GRADIO_INTEGRATION_UI.md). Jalankan notebook, lalu buka `GRADIO_PUBLIC_URL`; seluruh input dan proses dilakukan dari browser.
+[Status sistem](docs/CURRENT_STATUS.md) mencatat batas runtime. CI/software
+lulus tidak membuktikan akurasi counting, keberhasilan Area pada semua lokasi,
+CRUD cloud owner, atau kesiapan produksi. Checkpoint historis di bawah tetap
+berlaku hanya pada scope/tanggal masing-masing.
 
 ## Riwayat checkpoint dan hasil terdahulu
 
