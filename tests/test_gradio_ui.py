@@ -35,7 +35,7 @@ class GradioTests(unittest.TestCase):
         output=list(c.process(*inputs(video_ids=VIDEOS[:1])))[-1]
         self.assertEqual(len(output[1]),2);self.assertEqual(output[2]['execution_status'],'BLOCKED')
         self.assertEqual(seen[0][1]['video_ids'],VIDEOS[:1])
-        self.assertNotIn('do-not-export',Path(output[4]).read_text())
+        self.assertIsNone(output[4]);self.assertNotIn('do-not-export',str(output[2]))
     def test_bad_input_never_constructs_runtime(self):
         with patch('traffic_location.integration.gradio_app.KaggleRuntime') as factory:
             c=Controller(self.root/'app',self.config,runtime_factory=factory)
@@ -46,6 +46,13 @@ class GradioTests(unittest.TestCase):
         except ImportError:self.skipTest('Optional Gradio UI dependency not installed')
         with patch('traffic_location.integration.gradio_app.KaggleRuntime') as factory:
             app,c=build_app(self.root/'app',self.config,runtime_factory=factory)
-            self.assertTrue(app.enable_queue);factory.assert_not_called();app.close()
+            self.assertTrue(app.enable_queue);factory.assert_not_called()
+            labels=[c.get('props',{}).get('label') for c in app.get_config_file()['components']]
+            for day in ('weekday','weekend'):
+                for session in ('pagi','siang','sore','malam'):
+                    self.assertIn(day+' / '+session,labels)
+            for table in ('traffic_counts','area_results','ppac_results'):
+                self.assertIn(table,labels)
+            app.close()
 
 if __name__=='__main__':unittest.main()

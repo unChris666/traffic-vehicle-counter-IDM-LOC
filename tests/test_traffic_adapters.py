@@ -11,7 +11,11 @@ REQUEST=ROOT/'results/engine_modularization/20261023/requests/machine.json'
 class MeasurementTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
-  cls.request=read(REQUEST);p=Path(cls.request['artifacts']['measurements']['path'])
+  cls.request=read(REQUEST)
+  for ref in cls.request['artifacts'].values():
+   if not Path(ref['path']).exists() and '/results/' in ref['path']:
+    ref['path']=str(ROOT/'results'/ref['path'].split('/results/',1)[1])
+  p=Path(cls.request['artifacts']['measurements']['path'])
   if not p.exists():raise unittest.SkipTest('Download the exact measurement cache first; see results README')
   cls.rows=[]
   for row in records(p):

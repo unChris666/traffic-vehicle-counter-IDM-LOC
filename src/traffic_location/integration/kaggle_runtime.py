@@ -61,13 +61,15 @@ def continue_jobs(jobs,callback):
     for item in jobs:
         try:row={'id':item['id'],'status':'SUCCEEDED','result':callback(item)}
         except Exception as exc:
-            row={'id':item['id'],'status':'FAILED','code':getattr(exc,'code',type(exc).__name__)}
+            row={'id':item['id'],'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__)}
         rows.append(row)
     return rows
 
 
 class KaggleRuntime:
-    def __init__(self,base,config_root,latitude,longitude,*,target_id='T7SL',period_id='analysis',client=None,credentials=None,performance=None):
+    def __init__(self,base,config_root,latitude,longitude,*,target_id='T7SL',period_id='analysis',client=None,credentials=None,performance=None,publication=None,upload_root=None,store_name=None,annotate=False):
+        self.store_name=store_name;self.annotate=annotate
+        self.publication=publication;self.upload_root=Path(upload_root) if upload_root is not None else Path(base)/'uploads'
         self.performance=deepcopy(performance) if performance is not None else None
         if self.performance is not None:
             from ..traffic.experiments.performance import batch_size
@@ -82,6 +84,11 @@ class KaggleRuntime:
         return deepcopy(self.state)
 
     def connect(self):
+        if self.client is None and os.environ.get('LI_AUTH_MODE')=='adc':
+            import google.auth
+            from google.cloud import storage
+            self.credentials,project=google.auth.default(scopes=['https://www.googleapis.com/auth/cloud-platform'])
+            self.client=storage.Client(project=project or 'locdeproject',credentials=self.credentials)
         if self.client is None:
             from kaggle_secrets import UserSecretsClient
             from google.oauth2 import service_account
@@ -102,7 +109,7 @@ class KaggleRuntime:
             if ref.get('bytes') is not None:need(blob.size==ref['bytes'],'SIZE_CHANGED','Ukuran object berbeda.')
             return {'status':'READY','validation':'METADATA_ONLY','generation':int(blob.generation),'bytes':blob.size}
         except Exception as exc:
-            return {'status':error_status(exc),'code':getattr(exc,'code',type(exc).__name__)}
+            return {'status':error_status(exc),'code':(exc.code if isinstance(exc,GateError) else type(exc).__name__)}
 
     def probe(self):
         from ..location.area._kernel.location_intelligent_google_only import PBF
@@ -117,7 +124,37 @@ class KaggleRuntime:
         root_status='READY' if all(x['status']=='READY' for x in items.values()) else 'NOT_FOUND' if any(x['status']=='NOT_FOUND' for x in items.values()) else 'ACCESS_DENIED' if any(x['status']=='ACCESS_DENIED' for x in items.values()) else 'ERROR'
         self.state['gcs']={'status':root_status,'objects':items,'area_source':'BUILDABLE_FROM_PINNED_PBF' if items['national_pbf']['status']=='READY' else 'UNAVAILABLE',
                            'note':'Tidak membutuhkan registry integration/gate2/runtime-manifest.json.'}
+        if self.publication is not None:
+            try:self.state['publication']=self.cloud_publisher().check()
+            except Exception as exc:self.state['publication']={'status':'NOT_READY','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'bucket':self.publication.bucket,'dataset':self.publication.dataset}
         return self.record()
+
+    def cloud_publisher(self):
+        from google.cloud import bigquery
+        from .cloud_publish import CloudPublisher
+        self.connect()
+        return CloudPublisher(self.publication,self.client,bigquery.Client(project=self.publication.dataset.split('.')[0],credentials=self.credentials))
+
+    def publish_output(self,root,result,inventory,parameters):
+        from .cloud_publish import prepare,progress
+        context={'target_id':self.target_id,'period_id':self.period_id,'latitude':self.latitude,'longitude':self.longitude,'store_name':self.store_name}
+        try:
+            progress(root,'Menyiapkan artefak hasil')
+            prepare(root,result,inventory,context,parameters,self.publication,annotate=self.annotate)
+            return self.cloud_publisher().publish(root)
+        except Exception as exc:
+            status={'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Hasil lokal tetap tersimpan. Periksa tabel BQ dan izin GCS/BQ, lalu ulangi penyimpanan.'}
+            write(Path(root)/'publication-status.json',status);return status
+
+    def retry_publication(self,root):
+        need(self.publication is not None,'PUBLICATION_NOT_CONFIGURED','Tujuan cloud belum disetel.')
+        try:
+            status=self.cloud_publisher().publish(root)
+            saved=read(Path(root)/'summary.json');saved['publication']=status;write(Path(root)/'summary.json',saved)
+            return status
+        except Exception as exc:
+            status={'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Publikasi belum berhasil; hasil lokal tidak dihapus.'}
+            write(Path(root)/'publication-status.json',status);return status
 
     def stage(self,ref,destination):
         client=self.connect();path=Path(destination);path.parent.mkdir(parents=True,exist_ok=True)
@@ -189,16 +226,28 @@ class KaggleRuntime:
         if self.state['runtime'].get(engine,{}).get('status')=='READY':return self.state['runtime'][engine]
         need(self.state['runtime'].get(engine,{}).get('status')!='FAILED','RUNTIME_SETUP_FAILED','Runtime '+engine+' gagal disiapkan; periksa log setup. Engine lain tetap berjalan.')
         self.state['runtime'][engine]={'status':'PREPARING'};self.record()
+        if os.environ.get('LI_RUNTIME_MODE')=='bundled':
+            from .container_runtime import verify_runtime
+            self.state['runtime'][engine]=verify_runtime(engine,require_gpu=True)
+            self.record();return self.state['runtime'][engine]
+        need(os.environ.get('LI_RUNTIME_MODE','kaggle')=='kaggle','RUNTIME_MODE_INVALID','Mode runtime tidak dikenal.')
         import shutil
         need(shutil.which('nvidia-smi') is not None,'GPU_REQUIRED','Pilih GPU pada Notebook Settings Kaggle sebelum Mulai uji.')
         gpu=subprocess.run(['nvidia-smi','-L'],capture_output=True,text=True,timeout=30)
         need(gpu.returncode==0 and 'GPU' in gpu.stdout,'GPU_REQUIRED','GPU Kaggle belum aktif; aktifkan accelerator, kemudian ulangi uji.')
         if engine=='area':
-            from ..location.area._kernel.location_intelligent_kaggle_esri import setup_dependencies
-            subprocess.run([sys.executable,'-m','pip','install','--only-binary=:all:',*[k+'=='+v for k,v in SCIENTIFIC.items()]],check=True,timeout=900)
-            core,osmium=setup_dependencies()
+            info=self.base/'area-runtime.json'
+            command=('import json,subprocess,sys;'
+                     'from traffic_location.integration.kaggle_runtime import SCIENTIFIC;'
+                     'subprocess.run([sys.executable,"-m","pip","install","--only-binary=:all:",*[k+"=="+v for k,v in SCIENTIFIC.items()]],check=True,timeout=900);'
+                     'from traffic_location.location.area._kernel.location_intelligent_kaggle_esri import setup_dependencies;'
+                     'core,osmium=setup_dependencies();'
+                     'from traffic_location.artifacts import write;'
+                     'write(sys.argv[1],{"status":"READY","core_python":core,"osmium":osmium})')
+            with (self.base/'area-setup.log').open('w') as stream:
+                subprocess.run([sys.executable,'-u','-c',command,str(info)],stdout=stream,stderr=subprocess.STDOUT,check=True,timeout=2400)
             for key in ('PROJ_LIB','PROJ_DATA','GDAL_DATA'):os.environ.pop(key,None)
-            self.state['runtime'][engine]={'status':'READY','core_python':core,'osmium':osmium}
+            self.state['runtime'][engine]=read(info)
         else:
             subprocess.run([sys.executable,'-m','pip','install','ultralytics==8.4.175','lap==0.5.13','onnx==1.20.1','onnxruntime-gpu==1.24.4'],check=True,timeout=900)
             # New subprocess sees newly installed packages even in an old notebook kernel.
@@ -242,7 +291,7 @@ class KaggleRuntime:
         self.state['area']={'status':'READY','source_bundle':str(bundle_path),'sha256':sha(bundle_path),'metric_crs':configuration['CONFIG']['metric_crs'],'gcs_cache':cache}
         self.record()
         return {'schema_version':'area_execution_request_v2','operation':'compute_gpu_sources',
-                'input':{'path':str(bundle_path),'sha256':sha(bundle_path)},'core_python':runtime['core_python'],'render':False,'timeout_seconds':3600}
+                'input':{'path':str(bundle_path),'sha256':sha(bundle_path)},'core_python':runtime['core_python'],'render':True,'timeout_seconds':3600}
 
     def prepare_area(self):
         # Native ingestion runs in a fresh interpreter after pip/apt, avoiding
@@ -276,7 +325,9 @@ class KaggleRuntime:
             write(folder/'request.json',request)
             q={'schema_version':'gate2_workflow_v1','jobs':[{'id':'area','engine':'area','action':'run','request_ref':{'path':str(folder/'request.json'),'sha256':sha(folder/'request.json')},'root':str(folder)}],'ppac':None}
             result=run(q,folder/'workflow',root=folder,operation='area')
-            need(result['execution_status']=='SUCCEEDED','ENGINE_JOB_FAILED','Area gagal; hasil tidak disimpan sebagai cache sukses')
+            if result['execution_status']!='SUCCEEDED':
+                failed=[j for j in result.get('jobs',[]) if j['execution_status']!='SUCCEEDED']
+                raise GateError('AREA_ENGINE_FAILED','Area gagal: '+str([j.get('diagnostics',[]) for j in failed]))
             return result
         identity={**request,'input':{'sha256':request['input']['sha256']},'target':{'latitude':self.latitude,'longitude':self.longitude,'id':self.target_id,'period':self.period_id}}
         with timing.stage('area_compute'):
@@ -288,8 +339,11 @@ class KaggleRuntime:
         rows=[]
         for slot in read(self.config_root/'experiment.json')['videos']:
             matches=[p for p in Path(input_root).rglob(slot['filename']) if p.is_file()]
-            rows.append({'id':Path(slot['filename']).stem,'status':'READY' if len(matches)==1 else 'NOT_FOUND' if not matches else 'AMBIGUOUS',
-                         'path':str(matches[0]) if len(matches)==1 else None,'duration_seconds':slot['duration_seconds'],'slot':slot})
+            video_id=Path(slot['filename']).stem
+            _,day,session=video_id.split('-');slot={**slot,'day':day.lower(),'session':session.lower()}
+            rows.append({'id':video_id,'status':'READY' if len(matches)==1 else 'NOT_FOUND' if not matches else 'AMBIGUOUS',
+                         'path':str(matches[0]) if len(matches)==1 else None,'filename':slot['filename'],
+                         'duration_seconds':slot['duration_seconds'],'slot':slot})
         return rows
 
     def _experiment_stage(self,stage,identity,build,root):
@@ -318,6 +372,10 @@ class KaggleRuntime:
                 self.connect();self.setup_runtime('traffic');models=self.prepare_models()
         setup.snapshot('setup_finished')
         slot=item['slot'];video=Path(item['path']);need(sha(video)==slot['sha256'],'VIDEO_CHANGED','Video SHA berbeda')
+        geometry=self.config_root/'geometry'/(item['id']+'.json')
+        if item.get('geometry_ref'):
+            from ..artifacts import artifact
+            geometry=artifact(item['geometry_ref'],self.base)
         config=read(self.config_root/'experiment.json');profile=read(self.config_root/'fresh_request.json')
         profile.update(device='cuda:0',input_root=str(self.base),frame_limit=slot['decoded_frames'])
         profile['execution_profile']='candidate_fp32'
@@ -339,11 +397,18 @@ class KaggleRuntime:
         measurement_ref=self._experiment_stage('inference',inference_identity,infer,root)
         measurement=Path(measurement_ref['path'])
         need(sha(measurement)==measurement_ref['sha256'],'MEASUREMENT_CHANGED','Measurement checksum berbeda')
-        geometry=self.config_root/'geometry'/(item['id']+'.json');policy=self.config_root/'policy.json'
+        policy=self.config_root/'policy.json'
+        source_manifest=self.config_root/'experiment.json';parent_run=config['experiment_id']
+        if item.get('origin')=='USER_UPLOAD_REVIEWED':
+            source_manifest=root/'source-manifest.json'
+            manifest={'schema_version':'user_upload_source_v1','video_sha256':slot['sha256'],
+                      'inspection':read(item['inspection_ref']['path']),'geometry_sha256':sha(geometry),
+                      'day':slot['day'],'session':slot['session'],'direction':slot['direction']}
+            write(source_manifest,manifest);parent_run='upload-'+semantic_hash(manifest)[:32]
         source={'video_sha256':slot['sha256'],'records_sha256':sha(measurement),'geometry_sha256':sha(geometry),
-                'width':slot['width'],'height':slot['height'],'variant':'raw','parent_run_id':config['experiment_id']}
+                'width':slot['width'],'height':slot['height'],'variant':'raw','parent_run_id':parent_run}
         request={'schema_version':'traffic_request_v1','profile':'machine','measurement_format':'fresh_v1','video_id':item['id'],
-          'frame_count':slot['decoded_frames'],'source_identity':source,'source_manifest_sha256':sha(self.config_root/'experiment.json'),
+          'frame_count':slot['decoded_frames'],'source_identity':source,'source_manifest_sha256':sha(source_manifest),
           'artifacts':{k:{'path':str(p),'sha256':sha(p)} for k,p in [('measurements',measurement),('geometry',geometry),('policy',policy)]}}
         identity={**request,'artifacts':{k:v['sha256'] for k,v in request['artifacts'].items()}}
         def count(folder):
@@ -382,13 +447,19 @@ class KaggleRuntime:
                 exc=RuntimeError(outcome['message']);exc.code=outcome['error_type']
                 yield item,None,exc
 
-    def execute(self,mode,parameters,*,input_root='/kaggle/input',target_confirmed=False,video_ids=None):
+    def execute(self,mode,parameters,*,input_root='/kaggle/input',target_confirmed=False,video_ids=None,uploaded_videos=None):
         """One invocation per engine/video; failures and successes always visible."""
         from datetime import datetime
         need(mode in ('area','traffic','workflow'),'MODE_INVALID','Pilih Area, Traffic, atau gabungan.')
         if mode=='workflow':need(target_confirmed,'TARGET_BINDING_REQUIRED','Konfirmasi bahwa video dan Area dipakai untuk target yang sama.')
         root=self.base/'runs'/datetime.now().strftime('%Y%m%dT%H%M%S_%f');root.mkdir(parents=True)
-        inventory=self.video_inventory(input_root)
+        from ..runtime_resources import record as resource_record
+        resource_record(root,'start')
+        if mode=='area':inventory=[]
+        elif uploaded_videos is not None:
+            from .uploads import inventory as upload_inventory
+            inventory=upload_inventory(uploaded_videos,self.upload_root)
+        else:inventory=self.video_inventory(input_root)
         if video_ids is not None and mode!='area':
             need(isinstance(video_ids,list) and bool(video_ids) and len(video_ids)==len(set(video_ids)),
                  'VIDEO_SELECTION_INVALID','Pilih minimal satu video unik.')
@@ -396,6 +467,8 @@ class KaggleRuntime:
             inventory=[v for v in inventory if v['id'] in video_ids]
         tasks=([{'id':'area','kind':'area'}] if mode in ('area','workflow') else [])+([{**v,'kind':'traffic'} for v in inventory] if mode in ('traffic','workflow') else [])
         receipts=[];jobs=[];bindings=[]
+        import time
+        run_started=time.time()
         for item,result,error in self._scheduled_tasks(tasks,root):
             print('START',item['id'],flush=True)
             try:
@@ -404,22 +477,26 @@ class KaggleRuntime:
                 job=result['jobs'][0];jobs.append({'id':job['id'],'engine':job['engine'],'action':'reuse','result_ref':job['result_ref']})
                 receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'SUCCEEDED','quality':job['quality'],'summary':job['summary'],'result_ref':job['result_ref']})
                 if item['kind']=='traffic':
-                    _,day,session=item['id'].split('-')
+                    if 'day' in item['slot'] and 'session' in item['slot']:
+                        day,session=item['slot']['day'],item['slot']['session']
+                    else:_,day,session=item['id'].split('-')
                     bindings.append({'job_id':item['id'],'result_version':job['result_version'],'video_sha256':item['slot']['sha256'],
                       'target_id':self.target_id,'period_id':self.period_id,'day':day.lower(),'session':session.lower(),
                       'observed_seconds':item['duration_seconds'],'observed_categories':['motorcycle','car','bus','truck','pedestrian'],
-                      'evidence':'User target declaration; pinned T7SL source inspection durations, no count rescaling'})
+                      'evidence':('User-uploaded source; SHA-bound inspection; per-video geometry/day/session review; user target/period declaration; no rescaling' if item.get('origin')=='USER_UPLOAD_REVIEWED' else 'User target declaration; pinned T7SL source inspection durations, no count rescaling')})
             except Exception as exc:
                 if self.state['runtime'].get(item['kind'],{}).get('status')=='PREPARING':
                     self.state['runtime'][item['kind']]={'status':'FAILED','code':type(exc).__name__}
                 self.record()
-                receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'FAILED','code':getattr(exc,'code',type(exc).__name__),
-                                 'message':str(exc) if isinstance(exc,GateError) else 'Tahap gagal ('+type(exc).__name__+'); periksa log setup/worker. Engine/video berikut tetap diproses.'})
+                from .failure_details import details
+                failure=details(self.base,exc,run_started);write(root/(item['id']+'-failure.json'),failure)
+                receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'FAILED','diagnostics':[failure],'code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),
+                                 'message':failure['message'] if isinstance(exc,GateError) else 'Tahap gagal ('+type(exc).__name__+'); periksa log setup/worker. Engine/video berikut tetap diproses.'})
             write(root/'progress.json',receipts);print('FINISH',item['id'],receipts[-1]['execution_status'],flush=True)
         ppac={'execution_status':'NOT_RUN','std_total':None}
         if mode=='workflow':
             if any(r['execution_status']!='SUCCEEDED' for r in receipts):
-                ppac={'execution_status':'BLOCKED','std_total':None,'diagnostics':[{'code':'REQUIRED_ENGINE_UNAVAILABLE','message':'Hasil wajib engine/video gagal. Hasil sukses tetap tersedia.'}]}
+                ppac={'execution_status':'BLOCKED','std_total':None,'diagnostics':[{'code':'REQUIRED_ENGINE_UNAVAILABLE','message':'Hasil wajib engine/video gagal. Hasil sukses tetap tersedia.','failed_engines':[{'id':r['id'],'engine':r['engine'],'code':r.get('code'),'message':r.get('message'),'diagnostics':r.get('diagnostics',[])} for r in receipts if r['execution_status']!='SUCCEEDED']}]}
             else:
                 area=next(j for j in jobs if j['engine']=='area')
                 binding={'schema_version':'gate2_binding_v1','context':{'target_id':self.target_id,'period_id':self.period_id,
@@ -433,7 +510,12 @@ class KaggleRuntime:
                     lambda folder:run(q,folder/'joined',root=root,operation='ppac'),root)
                 ppac=joined['ppac']
         result={'schema_version':'kaggle_real_route_v1','engines':receipts,'ppac':ppac,'output':str(root),'system':self.record()}
-        write(root/'summary.json',result);return result
+        write(root/'summary.json',result)
+        if self.publication is not None:
+            result['publication']=self.publish_output(root,result,inventory,parameters)
+            write(root/'summary.json',result)
+        resource_record(root,'finished')
+        return result
 
 
 def main():

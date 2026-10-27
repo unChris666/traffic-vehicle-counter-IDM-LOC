@@ -1,3 +1,15 @@
+UI Kaggle: [HOME / RESULT dan batas Save Project/annotated](docs/HOME_RESULT_UI.md).
+
+Area gagal atau peta kosong: [diagnosis dan pemulihan](docs/AREA_FAILURE_RECOVERY.md).
+
+Kaggle: [hasil BQ, HTML peta dari GCS dan tabel breakdown PPAC](docs/KAGGLE_READABLE_RESULTS.md).
+
+Kaggle terbaru: [upload terputus, sumber GCS/Input, tabel ringkas dan isi PPAC](docs/KAGGLE_UPLOAD_RECOVERY.md).
+
+Panduan terbaru: [Docker dan Cloud Run GPU](docs/DOCKER_CLOUD_RUN_GUIDE.md), termasuk delapan slot upload dan hasil BQ/peta.
+
+> Upload video Gradio dan konfigurasi hasil GCS/BQ0.5.0rc1: [panduan setup owner](docs/CLOUD_STORAGE_SETUP.md), [SQL tabel/view](sql/location_intelligence_setup.sql). Sumber model/PBF/reference tetap terpisah.
+
 <!-- current-status:2026-10-27 -->
 > Sinkronisasi 27 Oktober 2026: [status sistem saat ini](docs/CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
 
