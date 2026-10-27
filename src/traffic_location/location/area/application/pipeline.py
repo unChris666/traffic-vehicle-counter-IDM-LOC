@@ -1,6 +1,6 @@
 """Isolated worker execution and idempotent local publication; no live acquisition."""
 from pathlib import Path
-import os,shutil,subprocess,sys,tempfile,signal,time
+import os,shutil,subprocess,sys,tempfile,signal,time,fcntl
 from ..artifact_refs import checked
 from ..runtime.environment import fingerprint
 from ..outputs.export import finalize
@@ -41,9 +41,16 @@ def execute(request,output):
         if manifest['metadata'].get('result_version')!=version:raise ValueError('AREA_JOB_REVISION_CONFLICT')
         return read(output/'result.json')
     lock=output.with_name('.'+output.name+'.lock')
-    try:fd=os.open(lock,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
-    except FileExistsError:raise RuntimeError('AREA_JOB_ALREADY_RUNNING: inspect '+str(lock)) from None
-    os.close(fd)
+    # Keep the inode stable. The OS releases flock after exit/SIGKILL; a
+    # leftover filename therefore cannot prevent a retry after a crash. The
+    # worker inherits this descriptor so a live orphan still owns the lock.
+    fd=os.open(lock,os.O_CREAT|os.O_RDWR|os.O_NOFOLLOW,0o600)
+    try:fcntl.flock(fd,fcntl.LOCK_EX|fcntl.LOCK_NB)
+    except BaseException as error:
+        os.close(fd)
+        if isinstance(error,BlockingIOError):
+            raise RuntimeError('AREA_JOB_ALREADY_RUNNING: inspect '+str(lock)) from None
+        raise
     stage=None
     try:
         if output.exists():
@@ -57,7 +64,7 @@ def execute(request,output):
         with (stage/'worker.log').open('w') as log:
             process=subprocess.Popen([sys.executable,'-m','traffic_location.location.area.application.worker',
                 str(stage/'request.json'),str(stage)],stdout=log,stderr=subprocess.STDOUT,env=env,
-                start_new_session=True)
+                start_new_session=True,pass_fds=(fd,))
             deadline=time.monotonic()+request['timeout_seconds']
             try:
                 while True:
@@ -86,4 +93,5 @@ def execute(request,output):
         if stage is not None:record(stage,'worker','FAILED',error_type=type(error).__name__,published_success=False)
         raise
     finally:
-        lock.unlink(missing_ok=True)
+        # Never unlink a lock: another process may already hold this inode.
+        os.close(fd)

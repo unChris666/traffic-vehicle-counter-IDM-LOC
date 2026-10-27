@@ -1,0 +1,26 @@
+{
+  "package_version": "0.4.9rc1",
+  "base_commit": "fef49db153b83dd0a2fb122abe82c36f9c66a737",
+  "local_tests": {
+    "total": 220,
+    "passed": 211,
+    "skipped": 9
+  },
+  "mypy_files": 14,
+  "wheel_and_sdist_build": "PASS",
+  "gradio_http": {
+    "gradio": "5.49.1",
+    "http_status": 200,
+    "engine_calls_at_startup": 0,
+    "scope": "LOCAL_HTTP_ONLY_NO_GCS_NO_GPU_NO_SHARE_TUNNEL"
+  },
+  "kernel_numerical_sources_changed": false,
+  "gpu_inference_rerun": false,
+  "kaggle_active_session_modified": false,
+  "limitations": [
+    "No fresh single/dual GPU execution in this change",
+    "Resource samples do not establish capacity limits",
+    "Existing active notebook session retains loaded code"
+  ],
+  "wheel_sha256": "734a856f140dd74a340484a47208bec9bb5df72f59d4d8b32c559af049a3acb0"
+}

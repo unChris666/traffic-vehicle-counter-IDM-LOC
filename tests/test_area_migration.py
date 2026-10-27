@@ -32,17 +32,38 @@ class AreaMigrationTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);p=root/'source.zip';p.write_bytes(b'fixture')
             worker=SimpleNamespace(returncode=1,wait=lambda **kw:1)
-            with patch('traffic_location.location.area.application.pipeline.subprocess.Popen',return_value=worker):
+            with patch('traffic_location.location.area.application.pipeline.subprocess.Popen',return_value=worker) as launch:
                 with self.assertRaisesRegex(RuntimeError,'AREA_WORKER_FAILED'):execute(self.request(p),root/'out')
-            self.assertFalse((root/'out').exists());self.assertFalse((root/'.out.lock').exists())
+                self.assertEqual(len(launch.call_args.kwargs['pass_fds']),1)
+            self.assertFalse((root/'out').exists());self.assertTrue((root/'.out.lock').exists())
             failure=next(root.glob('.area-job-*/checkpoint.json'))
             self.assertEqual(read(failure)['status'],'FAILED')
     def test_concurrent_same_output_is_rejected_before_starting_worker(self):
         with tempfile.TemporaryDirectory() as d:
-            root=Path(d);p=root/'source.zip';p.write_bytes(b'fixture');(root/'.out.lock').write_text('running')
+            root=Path(d);p=root/'source.zip';p.write_bytes(b'fixture')
+            import fcntl
+            held=(root/'.out.lock').open('a');self.addCleanup(held.close)
+            fcntl.flock(held,fcntl.LOCK_EX|fcntl.LOCK_NB)
             with patch('traffic_location.location.area.application.pipeline.subprocess.Popen') as launch:
                 with self.assertRaisesRegex(RuntimeError,'ALREADY_RUNNING'):execute(self.request(p),root/'out')
                 launch.assert_not_called()
+    def test_dead_process_lock_allows_retry_without_manual_cleanup(self):
+        import subprocess,sys
+        from types import SimpleNamespace
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);p=root/'source.zip';p.write_bytes(b'fixture')
+            lock=root/'.out.lock'
+            code="import sys,fcntl,os;f=open(sys.argv[1],'a');fcntl.flock(f,fcntl.LOCK_EX);os._exit(9)"
+            dead=subprocess.run([sys.executable,'-c',code,str(lock)],check=False)
+            self.assertEqual(dead.returncode,9);self.assertTrue(lock.exists())
+            worker=SimpleNamespace(returncode=1,wait=lambda **kw:1)
+            with patch('traffic_location.location.area.application.pipeline.subprocess.Popen',return_value=worker) as launch:
+                for _ in range(2):
+                    with self.assertRaisesRegex(RuntimeError,'AREA_WORKER_FAILED'):
+                        execute(self.request(p),root/'out')
+                self.assertEqual(launch.call_count,2)
+            self.assertFalse((root/'out').exists())
+
     def test_timeout_kills_worker_group_without_publishing_or_leaking_lock(self):
         import subprocess
         from types import SimpleNamespace
@@ -56,7 +77,7 @@ class AreaMigrationTests(unittest.TestCase):
                 'traffic_location.location.area.application.pipeline.os.killpg') as kill:
                 with self.assertRaises(subprocess.TimeoutExpired):execute(self.request(p),root/'out')
                 kill.assert_called_once()
-            self.assertFalse((root/'out').exists());self.assertFalse((root/'.out.lock').exists())
+            self.assertFalse((root/'out').exists());self.assertTrue((root/'.out.lock').exists())
 
     def test_public_facade_forwards_without_changing_request(self):
         from traffic_location.location.area import execute as public_execute

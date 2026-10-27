@@ -21,9 +21,11 @@ def build(wheel,output):
         cells.append({'cell_type':'code','metadata':{},'source':text,'execution_count':None,'outputs':[]})
     md('''# Gradio — Area Coverage, Traffic Counter, PPAC
 
-Jalankan notebook dengan Internet dan GPU aktif. Aktifkan Secret **LocatioIntelligent** pada pengaturan notebook. Dataset T7SL sudah terpasang.
+Jalankan notebook dengan Internet dan GPU aktif. Aktifkan Secret **LocatioIntelligent** pada pengaturan notebook. Isi delapan slot video weekday/weekend × pagi/siang/sore/malam melalui Gradio. Dataset T7SL juga tersedia sebagai contoh.
 
-Notebook menyiapkan aplikasi lalu mencetak **GRADIO_PUBLIC_URL**. Buka URL itu untuk mengisi lokasi/input bisnis, memilih video, memeriksa kesiapan, dan menekan **Mulai proses**. Setup aplikasi tidak menjalankan engine. URL aktif selama sesi notebook/server berjalan. Hentikan cell terakhir untuk menutup UI.
+Notebook menyiapkan aplikasi lalu mencetak **GRADIO_PUBLIC_URL**. Buka URL itu untuk mengisi lokasi/input bisnis, mengunggah video, meninjau geometri/hari/sesi setiap video, memeriksa kesiapan, dan menekan **Mulai proses**. Setup aplikasi tidak menjalankan engine. URL aktif selama sesi notebook/server berjalan. Hentikan cell terakhir untuk menutup UI.
+
+Hasil job menggunakan GCS **aretfak-location-intelligence** dan BQ **locdeproject.location_intelligence**. Siapkan tabel sekali sesuai panduan CLOUD_STORAGE_SETUP.md; model/PBF tetap memakai sumber terpisah yang sudah ada. Folder job dibuat otomatis saat penyimpanan. Jika setup BQ sudah dilakukan, jalankan ulang SQL terbaru untuk menambahkan referensi peta (tanpa menghapus data). Panel hasil membuka tabel BQ dan peta Folium/Esri dari artefak GCS.
 
 Default lokasi Sorong: latitude -0.8994976613947719, longitude 131.3221639428227. Traffic menggunakan kandidat FP32 dan satu video per GPU; akurasi identitas belum tervalidasi. Untuk PPAC dengan delapan video normal, gunakan jam operasional <=15. Operasional >15 jam tetap menunggu sesi tambahan.
 ''')
@@ -36,7 +38,7 @@ zipfile.ZipFile(io.BytesIO(PAYLOAD)).extractall(BASE)
 WHEEL=BASE/'package'/'''+repr(wheel.name)+'''
 assert hashlib.sha256(WHEEL.read_bytes()).hexdigest()=='''+repr(hashlib.sha256(wheel.read_bytes()).hexdigest())+'''
 subprocess.run([sys.executable,'-m','pip','install','--no-deps','--force-reinstall',str(WHEEL)],check=True)
-subprocess.run([sys.executable,'-m','pip','install','gradio==5.49.1','google-cloud-storage==3.6.0','jsonschema==4.26.0','numpy==2.1.3','pandas==2.3.3'],check=True)
+subprocess.run([sys.executable,'-m','pip','install','gradio==5.49.1','google-cloud-storage==3.6.0','google-cloud-bigquery==3.46.2','google-crc32c==1.7.1','jsonschema==4.26.0','numpy==2.1.3','pandas==2.3.3'],check=True)
 for key in list(sys.modules):
     if key=='traffic_location' or key.startswith('traffic_location.'):del sys.modules[key]
 importlib.invalidate_caches()
@@ -50,10 +52,15 @@ with zipfile.ZipFile(WHEEL) as package:
 print('Paket dan UI siap. Belum ada engine berjalan.')
 ''')
     code('''from traffic_location.integration.gradio_app import launch
+if 'APP' in globals():
+    APP.close()
 APP, PUBLIC_URL=launch(BASE/'system',BASE/'config',share=True)
 print('GRADIO_PUBLIC_URL='+PUBLIC_URL,flush=True)
 print('Buka URL publik tersebut. Engine berjalan setelah tombol Mulai proses ditekan.',flush=True)
-APP.block_thread()
+try:
+    APP.block_thread()
+finally:
+    APP.close()
 ''')
     for i,c in enumerate(cells):c['id']='gradio-'+str(i)
     n={'nbformat':4,'nbformat_minor':5,'metadata':{'kernelspec':{'name':'python3','display_name':'Python 3'},'language_info':{'name':'python'}},'cells':cells}

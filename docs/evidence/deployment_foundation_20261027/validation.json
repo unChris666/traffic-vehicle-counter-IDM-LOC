@@ -1,0 +1,82 @@
+{
+  "schema_version": "foundation_validation_v1",
+  "observed_at_utc": "2026-10-27T12:49:55.016672+00:00",
+  "package": "0.6.0rc1",
+  "baseline": "e077672b302aecf455d00e4437a6f133cb2f1184",
+  "branch": "refactor/deployment-foundation",
+  "scope": "P0 branch inventory, navigation, governance and CI triggers; engine implementation unchanged from baseline.",
+  "history_complete": true,
+  "legacy_branch_tips_with_unreconciled_commits": 0,
+  "unit_integration": {
+    "total": 279,
+    "passed": 269,
+    "skipped": 10,
+    "errors": 0,
+    "failures": 0,
+    "seconds": 47.139,
+    "skipped_cases": [
+      "test_map_controls_merge_markers_and_radii_without_changing_layers (test_kaggle_transport.TransportTests.test_map_controls_merge_markers_and_radii_without_changing_layers) ... skipped 'Optional Area presentation dependency absent'",
+      "test_actual_membership_domain_equality_and_explicit_new_code_version (test_location_boundaries.RecountTests.test_actual_membership_domain_equality_and_explicit_new_code_version) ... skipped 'Run Shapely runtime separately'",
+      "test_delta_only_from_same_new_engine (test_location_boundaries.RecountTests.test_delta_only_from_same_new_engine) ... skipped 'Run Shapely runtime separately'",
+      "test_old_engine_previous_rejected (test_location_boundaries.RecountTests.test_old_engine_previous_rejected) ... skipped 'Run Shapely runtime separately'",
+      "test_three_replays_and_order_isolation (test_location_boundaries.RecountTests.test_three_replays_and_order_isolation) ... skipped 'Run Shapely runtime separately'",
+      "test_unknown_stays_unknown_and_units_separate (test_location_boundaries.RecountTests.test_unknown_stays_unknown_and_units_separate) ... skipped 'Run Shapely runtime separately'",
+      "test_actual_snapshot_selection_capacity_exact (test_location_boundaries.SelectionTests.test_actual_snapshot_selection_capacity_exact) ... skipped 'Run GDAL runtime separately'",
+      "test_blocked_source_not_false_zero (test_location_boundaries.SelectionTests.test_blocked_source_not_false_zero) ... skipped 'Run GDAL runtime separately'",
+      "test_three_replays_and_no_input_mutation (test_location_boundaries.SelectionTests.test_three_replays_and_no_input_mutation) ... skipped 'Run GDAL runtime separately'",
+      "test_actual_frame_matches_original_renderer_and_preserves_events (test_traffic_adapters.RenderingTests.test_actual_frame_matches_original_renderer_and_preserves_events) ... skipped 'Run recorded Traffic CPU runtime for pixel test'"
+    ]
+  },
+  "mypy": {
+    "status": "PASS",
+    "strict": true,
+    "files": 14,
+    "scope": [
+      "src/traffic_location/traffic/contracts",
+      "src/traffic_location/traffic/config"
+    ]
+  },
+  "build": {
+    "status": "PASS",
+    "sdist": true,
+    "wheel": true
+  },
+  "installed_wheel_smoke": {
+    "status": "PASS",
+    "isolated_venv": true,
+    "outside_checkout": true,
+    "cli_help": [
+      "traffic-location",
+      "engine-workflow",
+      "area-engine"
+    ],
+    "facade_imports": [
+      "traffic.application.pipeline.process_video",
+      "traffic.application.batch.run_batch",
+      "ppac.service.calculate",
+      "location.area.application.pipeline.execute"
+    ]
+  },
+  "documentation_link_targets": {
+    "checked": 123,
+    "missing": 0
+  },
+  "p0_source_notebook_sql_dependencies_image_recipes_unchanged": true,
+  "ci_trigger_review": "Every push and pull_request, plus workflow_dispatch; no path filters.",
+  "initial_local_test_attempt": {
+    "errors": 1,
+    "reason": "SQL file absent from local sparse checkout; expanded checkout to include sql and deploy, then reran full suite successfully. No code fix or test removal."
+  },
+  "github_ci": "See PR checks for the latest head SHA; no claim from a previous head.",
+  "main_merge": "HOLD",
+  "main_protection_read": "HTTP403 Resource not accessible by integration; enforcement unknown, no settings changed.",
+  "not_performed": [
+    "fresh GPU inference",
+    "live owner GCS/BQ CRUD",
+    "Area owner failure reproduction or successful Sorong rerun",
+    "real eight-video annotation/capacity benchmark",
+    "final image GPU runtime or cloud deployment",
+    "branch deletion",
+    "main merge"
+  ]
+}

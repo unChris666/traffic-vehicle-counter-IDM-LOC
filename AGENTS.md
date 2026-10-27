@@ -1,3 +1,7 @@
+> Navigasi P0: [START_HERE](docs/START_HERE.md), [BRANCH_POLICY](docs/BRANCH_POLICY.md),
+> [MERGE_READINESS](docs/MERGE_READINESS.md). Development di branch lain; main
+> untuk kandidat stabil melalui PR. Jangan mempromosikan berdasarkan CI saja.
+
 <!-- current-status:2026-10-27 -->
 > Sinkronisasi 27 Oktober 2026: [status sistem saat ini](docs/CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
 
