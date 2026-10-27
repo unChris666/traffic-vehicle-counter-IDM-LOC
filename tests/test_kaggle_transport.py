@@ -42,7 +42,7 @@ class TransportTests(unittest.TestCase):
     def test_display_aggregates_accepted_but_preserves_missing_std(self):
         frames=display_frames({'traffic_counts':[{'day_group':'weekday','session':'pagi','category':'car','accepted_count':2},{'day_group':'weekday','session':'pagi','category':'car','accepted_count':3}], 'ppac_results':[{'std_total':None}]})
         self.assertEqual(frames[0].iloc[0]['jumlah kendaraan lewat'],5)
-        self.assertTrue(frames[-1]['Jumlah STD'].isna().all())
+        self.assertIn('UNAVAILABLE',frames[-1]['Status'].tolist())  # Never invent a breakdown from BQ totals.
     def test_map_controls_merge_markers_and_radii_without_changing_layers(self):
         try:import folium
         except ImportError:self.skipTest('Optional Area presentation dependency absent')

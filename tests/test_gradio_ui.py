@@ -35,7 +35,7 @@ class GradioTests(unittest.TestCase):
         output=list(c.process(*inputs(video_ids=VIDEOS[:1])))[-1]
         self.assertEqual(len(output[1]),2);self.assertEqual(output[2]['execution_status'],'BLOCKED')
         self.assertEqual(seen[0][1]['video_ids'],VIDEOS[:1])
-        self.assertNotIn('do-not-export',Path(output[4]).read_text())
+        self.assertIsNone(output[4]);self.assertNotIn('do-not-export',str(output[2]))
     def test_bad_input_never_constructs_runtime(self):
         with patch('traffic_location.integration.gradio_app.KaggleRuntime') as factory:
             c=Controller(self.root/'app',self.config,runtime_factory=factory)

@@ -1,3 +1,5 @@
+Kaggle: [hasil BQ, HTML peta dari GCS dan tabel breakdown PPAC](docs/KAGGLE_READABLE_RESULTS.md).
+
 Kaggle terbaru: [upload terputus, sumber GCS/Input, tabel ringkas dan isi PPAC](docs/KAGGLE_UPLOAD_RECOVERY.md).
 
 Panduan terbaru: [Docker dan Cloud Run GPU](docs/DOCKER_CLOUD_RUN_GUIDE.md), termasuk delapan slot upload dan hasil BQ/peta.

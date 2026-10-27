@@ -83,7 +83,7 @@ class UploadedControllerTests(UploadFixture):
         values=['Traffic Counter','STORE',0.,0.,'2026-10-27',[],'mainstreet',7,15,False,1.,1.,1.,False,'Upload video',rows]
         output=list(c.process(*values))[-1]
         self.assertEqual(seen[0]['uploaded_videos'],rows)
-        self.assertEqual(seen[0]['video_ids'],[rows[0]['id']]);self.assertIsNotNone(output[4])
+        self.assertEqual(seen[0]['video_ids'],[rows[0]['id']]);self.assertIsNone(output[4])
     def test_uploaded_workflow_binding_never_claims_t7sl_source_provenance(self):
         rows=self.review(self.prepare());video_id=rows[0]['id'];area=self.root/'area';area.mkdir()
         write(area/'result.json',{'result_version':'b'*64})

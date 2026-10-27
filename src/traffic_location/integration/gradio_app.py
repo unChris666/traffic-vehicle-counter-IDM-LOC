@@ -19,16 +19,26 @@ EXTRA_SLOTS=tuple((d,t) for d in ('weekday','weekend') for t in ('tengah_malam',
 ROADS=['highway','mainstreet','street','substreet']
 DISPLAY_TABLES={'Traffic Counter':['sesi','waktu','tipe kendaraan','jumlah kendaraan lewat'],
  'Area Coverage':['radius','jumlah_bangunan','jumlah_KK'], 'POI':['tipe_POI','nama_POI'],
- 'Kompetitor (5 terdekat)':['Kdtk','nama_toko'],'Indomaret (5 terdekat)':['Kdtk','nama_toko'],'PPAC':['Jumlah STD']}
+ 'Kompetitor (5 terdekat)':['Kdtk','nama_toko'],'Indomaret (5 terdekat)':['Kdtk','nama_toko'],'PPAC':['Bagian','Rincian','Nilai','Status','Reason']}
+
+def frame(data,columns):
+    import pandas as pd
+    from .ppac_view import scalar
+    f=pd.DataFrame(data,columns=columns).astype(object)
+    f=f.where(pd.notna(f),None)
+    f=f.map(scalar) if hasattr(f,'map') else f.applymap(scalar)
+    return f.astype(object).where(pd.notna(f),None)
 
 def display_frames(result=None):
-    import pandas as pd
-    result=result or {};detail=result.get('display',{});traffic={}
+    from .ppac_view import rows as ppac_rows
+    has_result=bool(result);result=result or {};detail=result.get('display',{});traffic={}
+    document=result.get('ppac_document')
+    if has_result and document is None:document={'execution_status':'UNAVAILABLE','std_total':None,'reason':'ppac.json belum tersedia atau belum lolos verifikasi GCS. Muat ulang hasil dan periksa status penyimpanan.'}
     for r in result.get('traffic_counts',[]):
         key=(r.get('day_group'),r.get('session'),r.get('category'))
         if r.get('accepted_count') is not None:traffic[key]=traffic.get(key,0)+r['accepted_count']
-    data=[[dict(zip(DISPLAY_TABLES['Traffic Counter'],(*k,v))) for k,v in traffic.items()],detail.get('area',[]),detail.get('poi',[]),detail.get('competitors',[]),detail.get('indomaret',[]),[{'Jumlah STD':r.get('std_total')} for r in result.get('ppac_results',[])]]
-    return [pd.DataFrame(rows,columns=columns) for rows,columns in zip(data,DISPLAY_TABLES.values())]
+    data=[[dict(zip(DISPLAY_TABLES['Traffic Counter'],(*k,v))) for k,v in traffic.items()],detail.get('area',[]),detail.get('poi',[]),detail.get('competitors',[]),detail.get('indomaret',[]),ppac_rows(document)]
+    return [frame(rows,columns) for rows,columns in zip(data,DISPLAY_TABLES.values())]
 
 INPUT_NAMES=('mode','target_id','latitude','longitude','period','video_ids','road','days','hours',
              'drive_thru','swot','cut','parking','confirmed')
@@ -87,6 +97,7 @@ class Controller:
         from .cloud_schema import CloudDestination
         self.destination=CloudDestination.configured()
         self.upload_root=self.base/'uploads';self.upload_root.mkdir(parents=True,exist_ok=True)
+        self.maps=self.base/'saved-maps';self.maps.mkdir(parents=True,exist_ok=True)
         self.exports=self.base/'exports';self.exports.mkdir(parents=True,exist_ok=True)
 
     def runtime(self,x):
@@ -172,10 +183,11 @@ class Controller:
             if not re.fullmatch(r'[A-Za-z0-9_-]{1,32}',target_id or ''):raise ValueError('Kode toko tidak valid.')
             runtime=self.runtime({'target_id':target_id,'period':'saved-results','latitude':0.,'longitude':0.})
             publisher=runtime.cloud_publisher()
-            reader=ResultsReader(self.destination,publisher.storage,publisher.bq)
+            reader=ResultsReader(self.destination,publisher.storage,publisher.bq,map_cache=self.maps)
             result=reader.load(target_id,job_id.strip() if job_id else None)
-            frames=[pd.DataFrame(result[t],columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')]
+            frames=[frame(result[t],list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')]
             status='Hasil tersimpan dari BigQuery: '+result['job_id']+'. '+result['map_status']
+            status+=' '+' '.join(result.get('read_errors',[])+result.get('artifact_status',[]))
             if result.get('truncated'):status+=' Tampilan traffic dibatasi; gunakan query BQ untuk seluruh baris.'
             return status,result['job_id'],result['map_html'],*frames,*display_frames(result)
         except Exception as exc:
@@ -237,9 +249,7 @@ class Controller:
         if not folder.is_relative_to(self.base):return 'Lokasi job tidak valid.',None
         runtime=self.runtime(pointer['context'])
         status=runtime.retry_publication(folder)
-        export={'schema_version':'publication_retry_v1','publication':status,'target':{k:pointer['context'][k] for k in ('target_id','latitude','longitude','period')}}
-        path=self.exports/(uuid4().hex+'.json');write(path,export)
-        return 'Penyimpanan: '+status['status']+' '+str(status.get('code','')),str(path)
+        return 'Penyimpanan: '+status['status']+' '+str(status.get('code','')),None
 
     def progress_text(self,runtime,started):
         lines=[]
@@ -280,15 +290,10 @@ class Controller:
                     time.sleep(1)
                 result=future.result()
             ppac=result['ppac']
-            export={'schema_version':'gradio_summary_v1','target':{k:x[k] for k in ('target_id','latitude','longitude','period')},
-                    'mode':x['mode'],'video_ids':x['video_ids'],'parameters':x['parameters'],
-                    'engines':[{k:v for k,v in row.items() if k!='result_ref'} for row in result['engines']],
-                    'ppac':ppac,'publication':result.get('publication',{'status':'NOT_REQUESTED'})}
-            path=self.exports/(uuid4().hex+'.json');write(path,export)
             failed=sum(row.get('execution_status')!='SUCCEEDED' for row in result['engines'])
             publication=result.get('publication',{'status':'NOT_REQUESTED'})
             status=f"Selesai. Engine/video gagal: {failed}. PPAC: {ppac['execution_status']}. Penyimpanan: {publication['status']} {publication.get('code','')}."
-            yield status,engine_rows(result),ppac,self.progress_text(runtime,started),str(path),{'output':result.get('output',''),'context':x}
+            yield status,engine_rows(result),ppac,self.progress_text(runtime,started),None,{'output':result.get('output',''),'context':x}
         except GateError as exc:yield str(exc),[],{},self.progress_text(runtime,started),None,None
         except Exception as exc:
             yield 'Proses gagal ('+type(exc).__name__+'). Periksa log notebook; hasil engine tersimpan tetap dipertahankan.',[],{},self.progress_text(runtime,started),None,None
@@ -365,8 +370,9 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         readiness=gr.Dataframe(headers=['Sumber','Status'],datatype=['str','str'],interactive=False,label='Kesiapan sumber')
         progress=gr.Textbox(label='Tahap aktif dan progres',lines=8,interactive=False)
         engines=gr.Dataframe(headers=['Engine/video','Status','Kualitas','Ringkasan'],datatype=['str']*4,interactive=False,label='Hasil masing-masing engine')
-        ppac=gr.JSON(label='Hasil PPAC / alasan menunggu input')
-        download=gr.File(label='Unduh ringkasan JSON',interactive=False)
+        from .ppac_view import HEADERS
+        ppac=gr.Dataframe(headers=HEADERS,datatype=['str']*5,label='PPAC — breakdown dan status proses',interactive=False)
+        download=gr.State(None)
         retry=gr.Button('Ulangi penyimpanan hasil (tanpa inferensi)')
         def toggle_source(value):return gr.update(visible=value==VIDEO_SOURCES[0]),gr.update(visible=value==VIDEO_SOURCES[1])
         source.change(toggle_source,source,[upload_group,dataset_group],api_name=False)
@@ -383,13 +389,18 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         retried=retry.click(controller.retry_storage,job_pointer,[status,download],api_name=False,concurrency_id='engines',concurrency_limit=1)
         inputs=[mode,target,latitude,longitude,period,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,upload_state]
         check.click(controller.check,inputs,[status,readiness],api_name=False,concurrency_id='engines',concurrency_limit=1)
-        processed=start.click(controller.process,inputs,[status,engines,ppac,progress,download,job_pointer],api_name=False,concurrency_id='engines',concurrency_limit=1)
+        def readable_process(*values):
+            from .ppac_view import rows
+            for output in controller.process(*values):
+                result=list(output);result[2]=rows(result[2]);result[4]=None;yield tuple(result)
+        processed=start.click(readable_process,inputs,[status,engines,ppac,progress,download,job_pointer],api_name=False,concurrency_id='engines',concurrency_limit=1)
         gr.Markdown('## Hasil tersimpan di BigQuery\nKosongkan Job ID untuk membuka job terbaru pada kode toko ini. Peta menggunakan referensi artefak GCS pada baris Area di BQ. Membuka hasil tidak menjalankan engine.')
         saved_job=gr.Textbox(label='Job ID tersimpan (opsional)')
         refresh=gr.Button('Buka / muat ulang hasil BQ')
         saved_status=gr.Textbox(label='Status hasil BQ',interactive=False)
         map_view=gr.HTML(label='Area Coverage — Folium / Esri')
-        table_views=[gr.Dataframe(label=t,interactive=False,type='pandas',wrap=True) for t in ('traffic_counts','area_results','ppac_results')]
+        with gr.Accordion('Rincian rekap BQ',open=False):
+            table_views=[gr.Dataframe(label=t,interactive=False,type='pandas',wrap=True,visible=t!='ppac_results') for t in ('traffic_counts','area_results','ppac_results')]
         gr.Markdown('Ringkasan: bangunan yang dialokasikan = KK estimasi; 1 KK = 4 penduduk. Radius tampilan memakai jarak geodesik centroid bangunan, bukan pembagian persentase PPAC. Kualitas dan status PPAC tetap dilihat pada hasil lengkap.')
         display_views=[gr.Dataframe(label=name,headers=columns,interactive=False,type='pandas',wrap=True) for name,columns in DISPLAY_TABLES.items()]
         result_outputs=[saved_status,saved_job,map_view,*table_views,*display_views]
@@ -408,6 +419,8 @@ def launch(base,config_root,*,input_root='/kaggle/input',share=True,**kwargs):
     app_kwargs['exception_handlers']={**app_kwargs.get('exception_handlers',{}),ClientDisconnect:disconnected_upload}
     _,local_url,share_url=app.launch(app_kwargs=app_kwargs,share=share,server_name='0.0.0.0',inline=False,show_error=False,
                                    allowed_paths=[str(controller.exports)],max_file_size='1024mb',prevent_thread_lock=True,**kwargs)
+    from .map_view import install_map_route
+    install_map_route(app.app,controller.maps)
     if share and not share_url:
         app.close();raise RuntimeError('URL publik Gradio gagal dibuat. Periksa Internet/tunnel pada sesi Kaggle; engine belum dijalankan.')
     return app,share_url or local_url

@@ -180,7 +180,7 @@ class CloudPublisher:
         except Exception as exc:
             if type(exc).__name__!='NotFound':raise
             blob.metadata={'sha256':entry['sha256']}
-            try:blob.upload_from_filename(str(p),if_generation_match=0,checksum='crc32c',timeout=600)
+            try:blob.upload_from_filename(str(p),if_generation_match=0,checksum='crc32c',timeout=600,content_type='text/html; charset=utf-8' if p.suffix.lower()=='.html' else None)
             except Exception as error:
                 if type(error).__name__ not in ('PreconditionFailed','Conflict'):raise
             blob.reload(timeout=30)
