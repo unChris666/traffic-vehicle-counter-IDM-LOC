@@ -61,13 +61,14 @@ def continue_jobs(jobs,callback):
     for item in jobs:
         try:row={'id':item['id'],'status':'SUCCEEDED','result':callback(item)}
         except Exception as exc:
-            row={'id':item['id'],'status':'FAILED','code':getattr(exc,'code',type(exc).__name__)}
+            row={'id':item['id'],'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__)}
         rows.append(row)
     return rows
 
 
 class KaggleRuntime:
-    def __init__(self,base,config_root,latitude,longitude,*,target_id='T7SL',period_id='analysis',client=None,credentials=None,performance=None):
+    def __init__(self,base,config_root,latitude,longitude,*,target_id='T7SL',period_id='analysis',client=None,credentials=None,performance=None,publication=None,upload_root=None):
+        self.publication=publication;self.upload_root=Path(upload_root) if upload_root is not None else Path(base)/'uploads'
         self.performance=deepcopy(performance) if performance is not None else None
         if self.performance is not None:
             from ..traffic.experiments.performance import batch_size
@@ -102,7 +103,7 @@ class KaggleRuntime:
             if ref.get('bytes') is not None:need(blob.size==ref['bytes'],'SIZE_CHANGED','Ukuran object berbeda.')
             return {'status':'READY','validation':'METADATA_ONLY','generation':int(blob.generation),'bytes':blob.size}
         except Exception as exc:
-            return {'status':error_status(exc),'code':getattr(exc,'code',type(exc).__name__)}
+            return {'status':error_status(exc),'code':(exc.code if isinstance(exc,GateError) else type(exc).__name__)}
 
     def probe(self):
         from ..location.area._kernel.location_intelligent_google_only import PBF
@@ -117,7 +118,37 @@ class KaggleRuntime:
         root_status='READY' if all(x['status']=='READY' for x in items.values()) else 'NOT_FOUND' if any(x['status']=='NOT_FOUND' for x in items.values()) else 'ACCESS_DENIED' if any(x['status']=='ACCESS_DENIED' for x in items.values()) else 'ERROR'
         self.state['gcs']={'status':root_status,'objects':items,'area_source':'BUILDABLE_FROM_PINNED_PBF' if items['national_pbf']['status']=='READY' else 'UNAVAILABLE',
                            'note':'Tidak membutuhkan registry integration/gate2/runtime-manifest.json.'}
+        if self.publication is not None:
+            try:self.state['publication']=self.cloud_publisher().check()
+            except Exception as exc:self.state['publication']={'status':'NOT_READY','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'bucket':self.publication.bucket,'dataset':self.publication.dataset}
         return self.record()
+
+    def cloud_publisher(self):
+        from google.cloud import bigquery
+        from .cloud_publish import CloudPublisher
+        self.connect()
+        return CloudPublisher(self.publication,self.client,bigquery.Client(project=self.publication.dataset.split('.')[0],credentials=self.credentials))
+
+    def publish_output(self,root,result,inventory,parameters):
+        from .cloud_publish import prepare,progress
+        context={'target_id':self.target_id,'period_id':self.period_id,'latitude':self.latitude,'longitude':self.longitude}
+        try:
+            progress(root,'Menyiapkan artefak hasil')
+            prepare(root,result,inventory,context,parameters,self.publication)
+            return self.cloud_publisher().publish(root)
+        except Exception as exc:
+            status={'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Hasil lokal tetap tersimpan. Periksa tabel BQ dan izin GCS/BQ, lalu ulangi penyimpanan.'}
+            write(Path(root)/'publication-status.json',status);return status
+
+    def retry_publication(self,root):
+        need(self.publication is not None,'PUBLICATION_NOT_CONFIGURED','Tujuan cloud belum disetel.')
+        try:
+            status=self.cloud_publisher().publish(root)
+            saved=read(Path(root)/'summary.json');saved['publication']=status;write(Path(root)/'summary.json',saved)
+            return status
+        except Exception as exc:
+            status={'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Publikasi belum berhasil; hasil lokal tidak dihapus.'}
+            write(Path(root)/'publication-status.json',status);return status
 
     def stage(self,ref,destination):
         client=self.connect();path=Path(destination);path.parent.mkdir(parents=True,exist_ok=True)
@@ -288,8 +319,11 @@ class KaggleRuntime:
         rows=[]
         for slot in read(self.config_root/'experiment.json')['videos']:
             matches=[p for p in Path(input_root).rglob(slot['filename']) if p.is_file()]
-            rows.append({'id':Path(slot['filename']).stem,'status':'READY' if len(matches)==1 else 'NOT_FOUND' if not matches else 'AMBIGUOUS',
-                         'path':str(matches[0]) if len(matches)==1 else None,'duration_seconds':slot['duration_seconds'],'slot':slot})
+            video_id=Path(slot['filename']).stem
+            _,day,session=video_id.split('-');slot={**slot,'day':day.lower(),'session':session.lower()}
+            rows.append({'id':video_id,'status':'READY' if len(matches)==1 else 'NOT_FOUND' if not matches else 'AMBIGUOUS',
+                         'path':str(matches[0]) if len(matches)==1 else None,'filename':slot['filename'],
+                         'duration_seconds':slot['duration_seconds'],'slot':slot})
         return rows
 
     def _experiment_stage(self,stage,identity,build,root):
@@ -318,6 +352,10 @@ class KaggleRuntime:
                 self.connect();self.setup_runtime('traffic');models=self.prepare_models()
         setup.snapshot('setup_finished')
         slot=item['slot'];video=Path(item['path']);need(sha(video)==slot['sha256'],'VIDEO_CHANGED','Video SHA berbeda')
+        geometry=self.config_root/'geometry'/(item['id']+'.json')
+        if item.get('geometry_ref'):
+            from ..artifacts import artifact
+            geometry=artifact(item['geometry_ref'],self.base)
         config=read(self.config_root/'experiment.json');profile=read(self.config_root/'fresh_request.json')
         profile.update(device='cuda:0',input_root=str(self.base),frame_limit=slot['decoded_frames'])
         profile['execution_profile']='candidate_fp32'
@@ -339,11 +377,18 @@ class KaggleRuntime:
         measurement_ref=self._experiment_stage('inference',inference_identity,infer,root)
         measurement=Path(measurement_ref['path'])
         need(sha(measurement)==measurement_ref['sha256'],'MEASUREMENT_CHANGED','Measurement checksum berbeda')
-        geometry=self.config_root/'geometry'/(item['id']+'.json');policy=self.config_root/'policy.json'
+        policy=self.config_root/'policy.json'
+        source_manifest=self.config_root/'experiment.json';parent_run=config['experiment_id']
+        if item.get('origin')=='USER_UPLOAD_REVIEWED':
+            source_manifest=root/'source-manifest.json'
+            manifest={'schema_version':'user_upload_source_v1','video_sha256':slot['sha256'],
+                      'inspection':read(item['inspection_ref']['path']),'geometry_sha256':sha(geometry),
+                      'day':slot['day'],'session':slot['session'],'direction':slot['direction']}
+            write(source_manifest,manifest);parent_run='upload-'+semantic_hash(manifest)[:32]
         source={'video_sha256':slot['sha256'],'records_sha256':sha(measurement),'geometry_sha256':sha(geometry),
-                'width':slot['width'],'height':slot['height'],'variant':'raw','parent_run_id':config['experiment_id']}
+                'width':slot['width'],'height':slot['height'],'variant':'raw','parent_run_id':parent_run}
         request={'schema_version':'traffic_request_v1','profile':'machine','measurement_format':'fresh_v1','video_id':item['id'],
-          'frame_count':slot['decoded_frames'],'source_identity':source,'source_manifest_sha256':sha(self.config_root/'experiment.json'),
+          'frame_count':slot['decoded_frames'],'source_identity':source,'source_manifest_sha256':sha(source_manifest),
           'artifacts':{k:{'path':str(p),'sha256':sha(p)} for k,p in [('measurements',measurement),('geometry',geometry),('policy',policy)]}}
         identity={**request,'artifacts':{k:v['sha256'] for k,v in request['artifacts'].items()}}
         def count(folder):
@@ -382,7 +427,7 @@ class KaggleRuntime:
                 exc=RuntimeError(outcome['message']);exc.code=outcome['error_type']
                 yield item,None,exc
 
-    def execute(self,mode,parameters,*,input_root='/kaggle/input',target_confirmed=False,video_ids=None):
+    def execute(self,mode,parameters,*,input_root='/kaggle/input',target_confirmed=False,video_ids=None,uploaded_videos=None):
         """One invocation per engine/video; failures and successes always visible."""
         from datetime import datetime
         need(mode in ('area','traffic','workflow'),'MODE_INVALID','Pilih Area, Traffic, atau gabungan.')
@@ -390,7 +435,11 @@ class KaggleRuntime:
         root=self.base/'runs'/datetime.now().strftime('%Y%m%dT%H%M%S_%f');root.mkdir(parents=True)
         from ..runtime_resources import record as resource_record
         resource_record(root,'start')
-        inventory=self.video_inventory(input_root)
+        if mode=='area':inventory=[]
+        elif uploaded_videos is not None:
+            from .uploads import inventory as upload_inventory
+            inventory=upload_inventory(uploaded_videos,self.upload_root)
+        else:inventory=self.video_inventory(input_root)
         if video_ids is not None and mode!='area':
             need(isinstance(video_ids,list) and bool(video_ids) and len(video_ids)==len(set(video_ids)),
                  'VIDEO_SELECTION_INVALID','Pilih minimal satu video unik.')
@@ -406,7 +455,9 @@ class KaggleRuntime:
                 job=result['jobs'][0];jobs.append({'id':job['id'],'engine':job['engine'],'action':'reuse','result_ref':job['result_ref']})
                 receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'SUCCEEDED','quality':job['quality'],'summary':job['summary'],'result_ref':job['result_ref']})
                 if item['kind']=='traffic':
-                    _,day,session=item['id'].split('-')
+                    if 'day' in item['slot'] and 'session' in item['slot']:
+                        day,session=item['slot']['day'],item['slot']['session']
+                    else:_,day,session=item['id'].split('-')
                     bindings.append({'job_id':item['id'],'result_version':job['result_version'],'video_sha256':item['slot']['sha256'],
                       'target_id':self.target_id,'period_id':self.period_id,'day':day.lower(),'session':session.lower(),
                       'observed_seconds':item['duration_seconds'],'observed_categories':['motorcycle','car','bus','truck','pedestrian'],
@@ -415,7 +466,7 @@ class KaggleRuntime:
                 if self.state['runtime'].get(item['kind'],{}).get('status')=='PREPARING':
                     self.state['runtime'][item['kind']]={'status':'FAILED','code':type(exc).__name__}
                 self.record()
-                receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'FAILED','code':getattr(exc,'code',type(exc).__name__),
+                receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),
                                  'message':str(exc) if isinstance(exc,GateError) else 'Tahap gagal ('+type(exc).__name__+'); periksa log setup/worker. Engine/video berikut tetap diproses.'})
             write(root/'progress.json',receipts);print('FINISH',item['id'],receipts[-1]['execution_status'],flush=True)
         ppac={'execution_status':'NOT_RUN','std_total':None}
@@ -436,6 +487,9 @@ class KaggleRuntime:
                 ppac=joined['ppac']
         result={'schema_version':'kaggle_real_route_v1','engines':receipts,'ppac':ppac,'output':str(root),'system':self.record()}
         write(root/'summary.json',result)
+        if self.publication is not None:
+            result['publication']=self.publish_output(root,result,inventory,parameters)
+            write(root/'summary.json',result)
         resource_record(root,'finished')
         return result
 

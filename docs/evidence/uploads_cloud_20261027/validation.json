@@ -1,0 +1,49 @@
+{
+  "package_version": "0.5.0rc1",
+  "local_tests": {
+    "total": 246,
+    "passed": 237,
+    "skipped": 9
+  },
+  "mypy_contract_files": 14,
+  "output_bucket": "aretfak-location-intelligence",
+  "output_dataset": "locdeproject.location_intelligence",
+  "setup_sql_tables": 5,
+  "setup_sql_views": 2,
+  "numerical_kernel_changes": false,
+  "http_ui_validation": {
+    "http_status": 200,
+    "uploaded_videos": 1,
+    "decoded_frames": 30,
+    "preview_exists": true,
+    "review_saved": true,
+    "runtime_calls": 0,
+    "source_fixture": "SYNTHETIC_1_SECOND_SOFTWARE_IO_ONLY",
+    "cloud_writes_executed": false,
+    "gpu_inference_executed": false
+  },
+  "retained_video_inspection": {
+    "scope": "RETAINED_VIDEO_DECODE_PREVIEW_ONLY_NO_INFERENCE",
+    "video_id": "T7SL-WEEKDAY-PAGI",
+    "checks": {
+      "width": true,
+      "height": true,
+      "decoded_frames": true,
+      "source_sha256": true
+    },
+    "observation": {
+      "width": 720,
+      "height": 480,
+      "coded_width": 720,
+      "coded_height": 480,
+      "decoded_frames": 9015,
+      "fps": 29.80365622372413,
+      "duration_seconds": 302.479667,
+      "inspection": "FFPROBE_FULL_DECODE_COUNT_NO_RESAMPLING"
+    }
+  },
+  "live_cloud_crud_verified": false,
+  "cloud_objects_created_by_agent": false,
+  "gpu_inference_rerun": false,
+  "wheel_sha256": "aff6cdd42b4ec554781978b315ebfcac3f7a1fd13caeeae22eef10ed994618e3"
+}

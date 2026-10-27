@@ -1,6 +1,6 @@
 # Status sistem —27 Oktober2026
 
-Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.4.9rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
+Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.5.0rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
 
 | Bagian | Kondisi kode saat ini | Batas bukti |
 |---|---|---|
@@ -11,6 +11,10 @@ Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondis
 | PPAC | Formula referensi tersedia; Residential/Traffic/Fasum/total dipisah di packagePPAC | STD/hari adalah outputformula; prediksi penjualan nyata belum tervalidasi |
 | Storage | Adapter/probe/download/hash/cacheGCS diimplementasikan; SecretKaggle `LocatioIntelligent` | Hakakses dan isiobject tetap harus diperiksa pada sesi pengguna |
 | UI/VM | Workflow headless dengan UI sementara Gradio pada notebook14 | Deployment produksiVM dan UIproduk belum diverifikasi |
+
+## Upload dan penyimpanan hasil
+
+Gradio menerima video user dengan staging/hash/inspeksi frame dan tinjauan geometri per video. Template awal dapat diedit pada frame pertama; hari/sesi/arah disimpan eksplisit. Dataset T7SL tetap pilihan contoh. Output job memakai **gs://aretfak-location-intelligence** dan **locdeproject.location_intelligence**; input model/PBF/tabel referensi tetap terpisah. Lima tabel dan dua view disiapkan lewat SQL sekali, bukan dibuat diam-diam saat inference. [Langkah owner dan layout job](CLOUD_STORAGE_SETUP.md). Adapter dan failure/retry diuji dengan transport mock; izin serta CRUD cloud owner belum diverifikasi di environment pengembangan. Publikasi gagal mempertahankan hasil lokal dan tidak menjadi false zero. Pemisahan antrean GPU/CPU dan benchmark kapasitas tetap pekerjaan berikutnya.
 
 ## Stabilitas notebook
 
@@ -38,7 +42,7 @@ MVP menerima video300–306detik tanpa rescaling; sepeda tidak diwajibkan. Looku
 
 ## Notebook dan cara mencoba
 
-[WorkflowSorong+T7SL diKaggle](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) **versi7** memakai [notebook14 Gradio](../notebooks/14_gate2_sorong_t7sl_gradio.ipynb), exactwheel0.4.8rc1 besertaSHA, force-reinstall dan verifikasisource. Server Gradio dapat berjalan saat notebook dijalankan; engine menunggu tombol pengguna.
+[WorkflowSorong+T7SL diKaggle](https://www.kaggle.com/code/chrisbiran/gate2-t7sl-sorong-integration-quiz) **versi terbaru** memakai [notebook14 Gradio](../notebooks/14_gate2_sorong_t7sl_gradio.ipynb), exactwheel0.4.8rc1 besertaSHA, force-reinstall dan verifikasisource. Server Gradio dapat berjalan saat notebook dijalankan; engine menunggu tombol pengguna.
 
 Buka revisiterbaru, aktifkanGPU danInternet serta Secret`LocatioIntelligent`, jalankan notebook, lalu buka GRADIO_PUBLIC_URL. Isi form -> Periksa kesiapan -> Mulai proses. Pastikan jam<=15 bila hanya memakai8video dan ingin mencobaPPAC. KoordinatSorong: latitude-0.8994976613947719, longitude131.3221639428227. GCSmodel memakai prefix`models/traffic/` terikatSHA.
 

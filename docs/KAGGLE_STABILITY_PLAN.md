@@ -5,6 +5,11 @@ RUNNING saat pemeriksaan; server Gradio yang menunggu tombol memang tetap berjal
 Tidak ada alasan membatalkan sesi sehat atau mengganti repository untuk perbaikan ini.
 Status RUNNING bukan bukti seluruh pipeline GPU telah dijalankan atau tidak akan gagal.
 
+Permintaan owner berikutnya mendahulukan upload video Gradio dan tujuan output GCS/BQ.
+Implementasi0.5.0rc1 dan SQL tersedia pada [panduan setup](CLOUD_STORAGE_SETUP.md).
+Ini memperbarui urutan implementasi bagian3 di bawah; setup IAM/tabel dan validasi
+cloud live tetap diperlukan. Pemisahan antrean dan benchmark bagian2 belum dilaksanakan.
+
 ## 1. Stabilitas notebook sekarang: package 0.4.9rc1
 
 - Dependency tes IPython 9.6.0 dinyatakan dalam extra `test`; CI memasangnya.

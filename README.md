@@ -1,3 +1,5 @@
+> Upload video Gradio dan konfigurasi hasil GCS/BQ0.5.0rc1: [panduan setup owner](docs/CLOUD_STORAGE_SETUP.md), [SQL tabel/view](sql/location_intelligence_setup.sql). Sumber model/PBF/reference tetap terpisah.
+
 <!-- current-status:2026-10-27 -->
 > Sinkronisasi 27 Oktober 2026: [status sistem saat ini](docs/CURRENT_STATUS.md) adalah rujukan runtime dan integrasi. Versi/hasil/fase bertanggal di dokumen ini berlaku pada cakupannya saat ditulis; tidak membuktikan status rilis atau akurasi terbaru. Runtime Traffic kini memakai kandidat FP32 dan antrean satu video per GPU.
 

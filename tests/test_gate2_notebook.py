@@ -22,7 +22,7 @@ class NotebookRouteTests(unittest.TestCase):
         assignment=next(n for n in ast.walk(tree) if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='PAYLOAD' for t in n.targets))
         raw=base64.b64decode(ast.literal_eval(assignment.value.args[0]));z=zipfile.ZipFile(io.BytesIO(raw))
         names=[n for n in z.namelist() if n.startswith('package/')]
-        self.assertEqual(names,['package/traffic_location_engines-0.4.9rc1-py3-none-any.whl'])
+        self.assertEqual(names,['package/traffic_location_engines-0.5.0rc1-py3-none-any.whl'])
         wheel=z.read(names[0]);self.assertIn(hashlib.sha256(wheel).hexdigest(),bootstrap)
         self.assertIn('--force-reinstall',bootstrap)
         self.assertFalse(any(isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute) and n.func.attr=='glob' for n in ast.walk(tree)))
