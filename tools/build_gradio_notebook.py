@@ -50,10 +50,15 @@ with zipfile.ZipFile(WHEEL) as package:
 print('Paket dan UI siap. Belum ada engine berjalan.')
 ''')
     code('''from traffic_location.integration.gradio_app import launch
+if 'APP' in globals():
+    APP.close()
 APP, PUBLIC_URL=launch(BASE/'system',BASE/'config',share=True)
 print('GRADIO_PUBLIC_URL='+PUBLIC_URL,flush=True)
 print('Buka URL publik tersebut. Engine berjalan setelah tombol Mulai proses ditekan.',flush=True)
-APP.block_thread()
+try:
+    APP.block_thread()
+finally:
+    APP.close()
 ''')
     for i,c in enumerate(cells):c['id']='gradio-'+str(i)
     n={'nbformat':4,'nbformat_minor':5,'metadata':{'kernelspec':{'name':'python3','display_name':'Python 3'},'language_info':{'name':'python'}},'cells':cells}

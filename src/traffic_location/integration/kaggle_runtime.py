@@ -388,6 +388,8 @@ class KaggleRuntime:
         need(mode in ('area','traffic','workflow'),'MODE_INVALID','Pilih Area, Traffic, atau gabungan.')
         if mode=='workflow':need(target_confirmed,'TARGET_BINDING_REQUIRED','Konfirmasi bahwa video dan Area dipakai untuk target yang sama.')
         root=self.base/'runs'/datetime.now().strftime('%Y%m%dT%H%M%S_%f');root.mkdir(parents=True)
+        from ..runtime_resources import record as resource_record
+        resource_record(root,'start')
         inventory=self.video_inventory(input_root)
         if video_ids is not None and mode!='area':
             need(isinstance(video_ids,list) and bool(video_ids) and len(video_ids)==len(set(video_ids)),
@@ -433,7 +435,9 @@ class KaggleRuntime:
                     lambda folder:run(q,folder/'joined',root=root,operation='ppac'),root)
                 ppac=joined['ppac']
         result={'schema_version':'kaggle_real_route_v1','engines':receipts,'ppac':ppac,'output':str(root),'system':self.record()}
-        write(root/'summary.json',result);return result
+        write(root/'summary.json',result)
+        resource_record(root,'finished')
+        return result
 
 
 def main():

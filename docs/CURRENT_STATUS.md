@@ -1,6 +1,6 @@
 # Status sistem —27 Oktober2026
 
-Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.4.8rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
+Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.4.9rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
 
 | Bagian | Kondisi kode saat ini | Batas bukti |
 |---|---|---|
@@ -11,6 +11,10 @@ Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondis
 | PPAC | Formula referensi tersedia; Residential/Traffic/Fasum/total dipisah di packagePPAC | STD/hari adalah outputformula; prediksi penjualan nyata belum tervalidasi |
 | Storage | Adapter/probe/download/hash/cacheGCS diimplementasikan; SecretKaggle `LocatioIntelligent` | Hakakses dan isiobject tetap harus diperiksa pada sesi pengguna |
 | UI/VM | Workflow headless dengan UI sementara Gradio pada notebook14 | Deployment produksiVM dan UIproduk belum diverifikasi |
+
+## Stabilitas notebook
+
+Perbaikan CI, advisory lock Area, diagnostik resource dan exact-wheel notebook tersedia di0.4.9rc1. [Urutan kerja dan batas validasi](KAGGLE_STABILITY_PLAN.md). Sesi Kaggle yang sedang berjalan tidak otomatis memakai package baru. Angka validasi lama di bawah adalah checkpoint0.4.8, bukan hasil tes rilis ini.
 
 ## Pilihan runtime Traffic
 

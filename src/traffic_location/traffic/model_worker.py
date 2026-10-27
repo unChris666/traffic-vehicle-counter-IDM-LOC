@@ -128,6 +128,8 @@ def execute(request,output,*,profile=None):
  if r['device'].startswith('cuda'):
   environment['cuda_peak_allocated_bytes']=torch.cuda.max_memory_allocated()
   environment['cuda_peak_reserved_bytes']=torch.cuda.max_memory_reserved()
+ from ..runtime_resources import snapshot as resource_snapshot
+ environment['resource_observation']=resource_snapshot(output.parent)
  result={'schema_version':'fresh_inference_result_v1','status':'SUCCEEDED','scope':'BOUNDED_SOURCE_PREFIX_NOT_COUNTING_BENCHMARK',
   'frames':len(records),'metadata':metadata,'class_names':model.names,'source_sha256':r['artifacts']['video']['sha256'],'request_fingerprint':semantic_hash(r),
   'environment':environment,'effective_tracker_config':config,'records':records,'records_semantic_sha256':semantic_hash(records),
