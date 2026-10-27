@@ -1,6 +1,6 @@
 # Status sistem —27 Oktober2026
 
-Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.5.1rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
+Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.5.2rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
 
 | Bagian | Kondisi kode saat ini | Batas bukti |
 |---|---|---|
@@ -53,3 +53,5 @@ Buka revisiterbaru, aktifkanGPU danInternet serta Secret`LocatioIntelligent`, ja
 Rilis kode:208tes lokal selesai,8dilewati; wheel berhasil dibangun. Perbandinganpilot bukan uji baru dualGPU dan bukan evaluasi anotasi. DokumenMarkdown naratif mendapat penunjukstatus; artefakhasil, bukti dan referensihistoris dipertahankan byte-nya agarhash/receipt tetap bermakna. [Inventarisaudit](evidence/documentation_sync_20261027/inventory.json) mencatat seluruhMarkdown pada awalaudit, klasifikasi danchecksum. Dokumen ini ditambahkan setelah inventarisawal.
 
 UI sementara: [Gradio](GRADIO_INTEGRATION_UI.md), source integration/gradio_app.py. Notebook menyalakan server dan mencetak URL publik; engine tetap menunggu tombol pengguna. Notebook11 adalah alternatif kuis klasik.
+
+Arahan terbaru: fokus Kaggle; Docker ditunda. Upload terputus ditangani per-request, tersedia referensi GCS/Kaggle Input per slot. Peta dan tabel ringkas serta asumsi1bangunan=1KK=4penduduk: [pemulihan dan penggunaan](KAGGLE_UPLOAD_RECOVERY.md).

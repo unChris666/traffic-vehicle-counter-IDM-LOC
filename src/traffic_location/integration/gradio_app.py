@@ -17,6 +17,19 @@ VIDEO_SOURCES=('Upload video','Dataset T7SL (contoh)')
 UPLOAD_SLOTS=tuple((d,t) for d in ('weekday','weekend') for t in ('pagi','siang','sore','malam'))
 EXTRA_SLOTS=tuple((d,t) for d in ('weekday','weekend') for t in ('tengah_malam','dini_hari','subuh'))
 ROADS=['highway','mainstreet','street','substreet']
+DISPLAY_TABLES={'Traffic Counter':['sesi','waktu','tipe kendaraan','jumlah kendaraan lewat'],
+ 'Area Coverage':['radius','jumlah_bangunan','jumlah_KK'], 'POI':['tipe_POI','nama_POI'],
+ 'Kompetitor (5 terdekat)':['Kdtk','nama_toko'],'Indomaret (5 terdekat)':['Kdtk','nama_toko'],'PPAC':['Jumlah STD']}
+
+def display_frames(result=None):
+    import pandas as pd
+    result=result or {};detail=result.get('display',{});traffic={}
+    for r in result.get('traffic_counts',[]):
+        key=(r.get('day_group'),r.get('session'),r.get('category'))
+        if r.get('accepted_count') is not None:traffic[key]=traffic.get(key,0)+r['accepted_count']
+    data=[[dict(zip(DISPLAY_TABLES['Traffic Counter'],(*k,v))) for k,v in traffic.items()],detail.get('area',[]),detail.get('poi',[]),detail.get('competitors',[]),detail.get('indomaret',[]),[{'Jumlah STD':r.get('std_total')} for r in result.get('ppac_results',[])]]
+    return [pd.DataFrame(rows,columns=columns) for rows,columns in zip(data,DISPLAY_TABLES.values())]
+
 INPUT_NAMES=('mode','target_id','latitude','longitude','period','video_ids','road','days','hours',
              'drive_thru','swot','cut','parking','confirmed')
 
@@ -113,6 +126,24 @@ class Controller:
             message=str(exc) if isinstance(exc,ValueError) else 'Video gagal dibaca ('+type(exc).__name__+'). Periksa format video dan FFmpeg.'
             return [],gr.update(choices=[],value=None),message
 
+    def prepare_slot_sources(self,*values):
+        from .upload_transport import resolve_reference
+        import gradio as gr
+        count=len(UPLOAD_SLOTS+EXTRA_SLOTS);files=list(values[:count]);refs=values[count:]
+        try:
+            for i,reference in enumerate(refs):
+                if reference and reference.strip():
+                    if files[i]:raise ValueError('Pilih file ATAU referensi pada slot yang sama, bukan keduanya.')
+                    def connect():
+                        runtime=self.runtime({'target_id':'video-staging','period':'sources','latitude':0.,'longitude':0.})
+                        return runtime.connect()
+                    files[i]=resolve_reference(reference,self.upload_root/'references',connect)
+                    from .uploads import MAX_BATCH_BYTES
+                    if sum(Path(p).stat().st_size for p in files if p)>MAX_BATCH_BYTES:raise ValueError('Total video maksimal 2 GiB per batch.')
+            return self.prepare_slots(*files)
+        except Exception as exc:
+            return [],gr.update(choices=[],value=None),str(exc) if isinstance(exc,ValueError) else 'Sumber video gagal diambil ('+type(exc).__name__+'). Periksa path/izin GCS.'
+
     def prepare_slots(self,*files):
         from .uploads import prepare
         import gradio as gr
@@ -146,10 +177,10 @@ class Controller:
             frames=[pd.DataFrame(result[t],columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')]
             status='Hasil tersimpan dari BigQuery: '+result['job_id']+'. '+result['map_status']
             if result.get('truncated'):status+=' Tampilan traffic dibatasi; gunakan query BQ untuk seluruh baris.'
-            return status,result['job_id'],result['map_html'],*frames
+            return status,result['job_id'],result['map_html'],*frames,*display_frames(result)
         except Exception as exc:
             message=str(exc) if isinstance(exc,ValueError) else 'Pembacaan BQ/GCS gagal ('+type(exc).__name__+'). Periksa izin dan schema.'
-            return message,job_id or '','',*empty
+            return message,job_id or '','',*empty,*display_frames()
 
     def current_cloud_results(self,pointer,target_id,job_id):
         if pointer:
@@ -160,11 +191,11 @@ class Controller:
             from .cloud_schema import SCHEMAS
             import pandas as pd
             return ('Hasil job ini belum dipublikasikan. Periksa status penyimpanan.', '', '',
-                    *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')])
+                    *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*display_frames())
         from .cloud_schema import SCHEMAS
         import pandas as pd
         return ('Belum ada hasil job ini yang dapat dibuka. Gunakan tombol Buka hasil BQ untuk hasil sebelumnya.','','',
-                *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')])
+                *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*display_frames())
 
     def preview_upload(self,rows,video_id):
         from .uploads import find,render
@@ -279,17 +310,22 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         upload_state=gr.State([]);job_pointer=gr.State(None)
         with gr.Group() as upload_group:
             gr.Markdown('Delapan slot utama: satu video per kondisi dan waktu. Maksimal 1 GiB/file dan 2 GiB total. Slot kosong tidak dianggap nol.')
-            slot_files=[]
+            slot_files=[];slot_refs=[]
+            gr.Markdown("Jika upload terputus: unggah video ke GCS melalui Cloud Console, lalu isi gs://bucket/object di slot yang sesuai. Bisa juga memakai path /kaggle/input/... dari Add Input. Jangan ubah file menjadi publik.")
             for d in ('weekday','weekend'):
                 gr.Markdown('### '+('Weekday' if d=='weekday' else 'Weekend'))
                 with gr.Row():
                     for t in ('pagi','siang','sore','malam'):
-                        slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
+                        with gr.Column():
+                            slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
+                            slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau /kaggle/input/...'))
             with gr.Accordion('Sesi tambahan untuk operasional >15 jam',open=False):
                 for d in ('weekday','weekend'):
                     with gr.Row():
                         for t in ('tengah_malam','dini_hari','subuh'):
-                            slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
+                            with gr.Column():
+                                slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
+                                slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau /kaggle/input/...'))
             prepare=gr.Button('Siapkan video dan geometri')
             upload_status=gr.Textbox(label='Kesiapan video',interactive=False)
             selected=gr.Dropdown(choices=[],label='Video yang ditinjau')
@@ -334,9 +370,9 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         retry=gr.Button('Ulangi penyimpanan hasil (tanpa inferensi)')
         def toggle_source(value):return gr.update(visible=value==VIDEO_SOURCES[0]),gr.update(visible=value==VIDEO_SOURCES[1])
         source.change(toggle_source,source,[upload_group,dataset_group],api_name=False)
-        for file in slot_files:
+        for file in slot_files+slot_refs:
             file.change(lambda:([],gr.update(choices=[],value=None),None,'Daftar upload berubah. Tekan Siapkan video dan geometri.'),None,[upload_state,selected,preview,upload_status],api_name=False,concurrency_id='engines',concurrency_limit=1)
-        prepared=prepare.click(controller.prepare_slots,slot_files,[upload_state,selected,upload_status],api_name=False,concurrency_id='engines',concurrency_limit=1)
+        prepared=prepare.click(controller.prepare_slot_sources,slot_files+slot_refs,[upload_state,selected,upload_status],api_name=False,concurrency_id='engines',concurrency_limit=1)
         prepared.then(controller.preview_upload,[upload_state,selected],[preview,day,session,direction,reviewed,review_status],api_name=False)
         selected.change(controller.preview_upload,[upload_state,selected],[preview,day,session,direction,reviewed,review_status],api_name=False)
         def clicked(rows,video_id,part,evt:gr.SelectData):return controller.edit_geometry(rows,video_id,part,point=evt.index)
@@ -354,7 +390,9 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         saved_status=gr.Textbox(label='Status hasil BQ',interactive=False)
         map_view=gr.HTML(label='Area Coverage — Folium / Esri')
         table_views=[gr.Dataframe(label=t,interactive=False,type='pandas',wrap=True) for t in ('traffic_counts','area_results','ppac_results')]
-        result_outputs=[saved_status,saved_job,map_view,*table_views]
+        gr.Markdown('Ringkasan: bangunan yang dialokasikan = KK estimasi; 1 KK = 4 penduduk. Radius tampilan memakai jarak geodesik centroid bangunan, bukan pembagian persentase PPAC. Kualitas dan status PPAC tetap dilihat pada hasil lengkap.')
+        display_views=[gr.Dataframe(label=name,headers=columns,interactive=False,type='pandas',wrap=True) for name,columns in DISPLAY_TABLES.items()]
+        result_outputs=[saved_status,saved_job,map_view,*table_views,*display_views]
         refresh.click(controller.cloud_results,[target,saved_job],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
         for event in (processed,retried):
             event.then(controller.current_cloud_results,[job_pointer,target,saved_job],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
@@ -364,7 +402,11 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
 
 def launch(base,config_root,*,input_root='/kaggle/input',share=True,**kwargs):
     app,controller=build_app(base,config_root,input_root=input_root)
-    _,local_url,share_url=app.launch(share=share,server_name='0.0.0.0',inline=False,show_error=False,
+    from starlette.requests import ClientDisconnect
+    from .upload_transport import disconnected_upload
+    app_kwargs=kwargs.pop('app_kwargs',{})
+    app_kwargs['exception_handlers']={**app_kwargs.get('exception_handlers',{}),ClientDisconnect:disconnected_upload}
+    _,local_url,share_url=app.launch(app_kwargs=app_kwargs,share=share,server_name='0.0.0.0',inline=False,show_error=False,
                                    allowed_paths=[str(controller.exports)],max_file_size='1024mb',prevent_thread_lock=True,**kwargs)
     if share and not share_url:
         app.close();raise RuntimeError('URL publik Gradio gagal dibuat. Periksa Internet/tunnel pada sesi Kaggle; engine belum dijalankan.')
