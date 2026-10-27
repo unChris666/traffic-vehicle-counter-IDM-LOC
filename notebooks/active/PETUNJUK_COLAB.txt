@@ -1,4 +1,4 @@
-COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r2
+COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r3
 
 Notebook: 15_colab_l4_area_first.ipynb
 Gunakan notebook ini untuk Colab; notebook14 adalah varian Kaggle.
@@ -26,3 +26,9 @@ Retry memakai micromamba install pada prefix conda yang sudah ada; tidak mereset
 Cell unduh diagnosis terakhir tetap berfungsi bila setup gagal sebelum SCIENCE tersedia. ZIP diagnosis menyertakan tail log terbatas dan tahap gagal, tanpa credential.
 Traceback CalledProcessError dari notebook lama hanya membuktikan bootstrap exit1; penyebab sesi owner belum diketahui. Host Python3.13 belum terbukti sebagai penyebab; aplikasi tetap memakai Python3.12 terisolasi.
 Gunakan revisi notebook terbaru. Salinan lama di Colab tidak otomatis mengikuti perubahan GitHub. Jangan menghapus /content atau meng-upgrade dependency secara acak untuk mencari penyebab.
+
+PERBAIKAN BACKEND MATPLOTLIB r3
+Log owner menunjukkan pip check lulus, GDAL/CRS lulus, lalu import OSMnx gagal karena MPLBACKEND notebook menunjuk module://matplotlib_inline.backend_inline. Module backend notebook itu tidak tersedia di interpreter scientific yang terisolasi.
+Setup, runtime check, cloud preflight, server dan worker sekarang memakai MPLBACKEND=Agg khusus pada proses anak. Backend kernel Colab tidak diubah. Dependency/formula/model tetap sama.
+Untuk mempertahankan sesi Colab yang sudah selesai memasang dependency: salin colab_mpl_recovery.py ke CELL BARU pada notebook r2 yang sedang gagal, lalu jalankan sekali. Setelah SETUP_READY lanjut ke cell Periksa import dan CUDA; jangan jalankan ulang cell setup r2 lama. Gunakan notebook r3 untuk run berikutnya.
+Perbaikan ini direproduksi dengan Matplotlib3.11.2/OSMnx2.1.1 dan lolos import/render PNG pada CPU. Verifikasi CUDA L4 serta fresh Area/GCS/BQ tetap dijalankan owner pada tahap berikutnya.

@@ -29,6 +29,9 @@ class Progress:
         self.path.parent.mkdir(parents=True,exist_ok=True)
         temporary=self.path.with_suffix('.partial');temporary.write_text(json.dumps(self.value,indent=2));temporary.replace(self.path)
     def run(self,stage,command,**kwargs):
+        # Colab's inline backend belongs to the notebook kernel, not workers.
+        supplied=kwargs.pop('env',None)
+        kwargs['env']={**(os.environ if supplied is None else supplied),'MPLBACKEND':'Agg'}
         self.mark(stage);return subprocess.run(command,check=True,**kwargs)
     def fail(self,error):
         self.value.update(status='FAILED',error_type=type(error).__name__,message=safe(error),
@@ -107,7 +110,7 @@ def setup(base,wheel_name=None,progress=None):
     progress.mark('runtime_freeze')
     saved={'schema_version':'colab_setup_v1','identity':identity,'science_python':str(science),'core_python':str(core),
            'requirements_sha256':sha(base/'locks/requirements.lock'),'core_lock_sha256':sha(base/'locks/core-linux-64.lock'),
-           'freeze':subprocess.check_output([str(science),'-m','pip','freeze'],text=True)}
+           'freeze':subprocess.check_output([str(science),'-m','pip','freeze'],text=True,env={**os.environ,'MPLBACKEND':'Agg'})}
     temporary=marker.with_suffix('.partial');temporary.write_text(json.dumps(saved,indent=2));temporary.replace(marker)
     progress.finish()
     print('SETUP_READY. Dependency terisolasi; belum ada engine berjalan.',flush=True)

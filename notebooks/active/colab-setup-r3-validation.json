@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "reproduced_original_error": true,
+  "before_exit_code": 1,
+  "before_error": "ValueError: Key backend: 'module://matplotlib_inline.backend_inline' is not a valid value for backend; supported values are ['gtk3agg', 'gtk3cairo', 'gtk4agg', 'gtk4cairo', 'macosx', 'nbagg', 'notebook', 'qtagg', 'qtcairo', 'qt5agg', 'qt5cairo', 'tkagg', 'tkcairo', 'webagg', 'wx', 'wxagg', 'wxcairo', 'agg', 'cairo', 'pdf', 'pgf', 'ps', 'svg', 'template']",
+  "after_exit_code": 0,
+  "after": "3.11.2 2.1.1 Agg",
+  "rendered_png": true,
+  "caller_backend_unchanged": true,
+  "scope": "Exact Matplotlib3.11.2 and OSMnx2.1.1 imports and synthetic plot in isolated CPU environment; not a Colab/L4 engine run.",
+  "schema_version": "colab_setup_r3_validation_v1",
+  "package_version": "0.6.2rc1",
+  "notebook_revision": "setup-r3",
+  "date_jakarta": "2026-10-27",
+  "branch": "fix/area-user-testing",
+  "tests": {
+    "total": 312,
+    "passed": 302,
+    "skipped": 10,
+    "errors": 0,
+    "seconds": 55.127
+  },
+  "dependency_versions_changed": false,
+  "engine_source_changed": false,
+  "host_notebook_environment_mutated": false,
+  "all_child_stages_covered": [
+    "bootstrap",
+    "runtime_check",
+    "cloud_preflight",
+    "server",
+    "worker_inheritance"
+  ],
+  "recovery_cell": "Validated with setup transport mock, preserving host backend and initializing science/core/child_env for existing r2 session",
+  "live_colab_l4_execution_here": false,
+  "fresh_area_or_cloud_crud": false,
+  "main_or_foundation_promoted": false,
+  "notebook_sha256": "fc5ee66b75fa2c5f38d7d64d6250c6511195f08e8a83a0b3fb4c35505ea95d22"
+}
