@@ -67,7 +67,8 @@ def continue_jobs(jobs,callback):
 
 
 class KaggleRuntime:
-    def __init__(self,base,config_root,latitude,longitude,*,target_id='T7SL',period_id='analysis',client=None,credentials=None,performance=None,publication=None,upload_root=None):
+    def __init__(self,base,config_root,latitude,longitude,*,target_id='T7SL',period_id='analysis',client=None,credentials=None,performance=None,publication=None,upload_root=None,store_name=None,annotate=False):
+        self.store_name=store_name;self.annotate=annotate
         self.publication=publication;self.upload_root=Path(upload_root) if upload_root is not None else Path(base)/'uploads'
         self.performance=deepcopy(performance) if performance is not None else None
         if self.performance is not None:
@@ -136,10 +137,10 @@ class KaggleRuntime:
 
     def publish_output(self,root,result,inventory,parameters):
         from .cloud_publish import prepare,progress
-        context={'target_id':self.target_id,'period_id':self.period_id,'latitude':self.latitude,'longitude':self.longitude}
+        context={'target_id':self.target_id,'period_id':self.period_id,'latitude':self.latitude,'longitude':self.longitude,'store_name':self.store_name}
         try:
             progress(root,'Menyiapkan artefak hasil')
-            prepare(root,result,inventory,context,parameters,self.publication)
+            prepare(root,result,inventory,context,parameters,self.publication,annotate=self.annotate)
             return self.cloud_publisher().publish(root)
         except Exception as exc:
             status={'status':'FAILED','code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),'message':'Hasil lokal tetap tersimpan. Periksa tabel BQ dan izin GCS/BQ, lalu ulangi penyimpanan.'}

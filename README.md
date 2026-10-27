@@ -1,3 +1,5 @@
+UI Kaggle: [HOME / RESULT dan batas Save Project/annotated](docs/HOME_RESULT_UI.md).
+
 Area gagal atau peta kosong: [diagnosis dan pemulihan](docs/AREA_FAILURE_RECOVERY.md).
 
 Kaggle: [hasil BQ, HTML peta dari GCS dan tabel breakdown PPAC](docs/KAGGLE_READABLE_RESULTS.md).

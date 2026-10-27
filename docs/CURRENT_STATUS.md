@@ -1,6 +1,6 @@
 # Status sistem —27 Oktober2026
 
-Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.5.4rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
+Dokumen ini menjadi rujukan aktif; checkpoint bertanggal lain menjelaskan kondisi pada scope/tanggalnya. Versi package: **0.6.0rc1**. Tidak ada klaim siap produksi atau ground truth accuracy.
 
 | Bagian | Kondisi kode saat ini | Batas bukti |
 |---|---|---|
@@ -59,3 +59,5 @@ Arahan terbaru: fokus Kaggle; Docker ditunda. Upload terputus ditangani per-requ
 Tampilan hasil terbaru: [BQ, HTML peta GCS dan PPAC terbaca](KAGGLE_READABLE_RESULTS.md).
 
 Kegagalan Area dan renderer dipisah; setup Area child/log dan diagnosis tersedia. [Pemulihan serta batas bukti](AREA_FAILURE_RECOVERY.md).
+
+UI HOME/RESULT, snapshot Save Project dan annotated links: [panduan](HOME_RESULT_UI.md).

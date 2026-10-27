@@ -28,7 +28,7 @@ def _crc32c(path):
     return base64.b64encode(checksum.digest()).decode()
 
 
-def prepare(root,result,inventory,context,parameters,destination):
+def prepare(root,result,inventory,context,parameters,destination,*,annotate=False):
     root=Path(root).resolve();saved=root/'publication-request.json'
     if saved.exists():return read(saved)
     for key in ('target_id','period_id'):
@@ -90,6 +90,22 @@ def prepare(root,result,inventory,context,parameters,destination):
                 'accepted_measured':summary.get('accepted_measured'),'accepted_estimated':summary.get('accepted_estimated'),
                 'pending':summary.get('pending'),'invalid':summary.get('invalid'),
                 'direction_semantics':slot.get('direction'),'manifest_uri':manifest_uri})
+            if n is not None and annotate:
+                from ..traffic.annotation import render
+                output=root/'annotations'/e['id']/'annotated.mp4'
+                try:
+                    progress(root,'Annotated video: '+e['id'])
+                    output.parent.mkdir(parents=True,exist_ok=True)
+                    if output.exists():
+                        report=read(output.with_suffix('.json'))
+                        need(report['output_sha256']==sha(output) and report['scope']=='FULL_VIDEO','ANNOTATION_CHANGED','Annotated output tidak cocok receipt.')
+                    else:render(item['path'],artifact(request['artifacts']['measurements'],folder),folder/'native.json.gz',artifact(request['artifacts']['geometry'],folder),output)
+                    add(output.with_suffix('.json'),'annotations/'+e['id']+'/render-report.json')
+                    uri=add(output,'annotations/'+e['id']+'/annotated.mp4')
+                    base['annotated_video']={'uri':uri,'sha256':sha(output),'day':slot.get('day'),'session':slot.get('session'),'filename':item.get('filename',e['id'])}
+                except Exception as exc:
+                    from .failure_details import safe
+                    base['annotation_status']={'status':'FAILED','code':type(exc).__name__,'message':safe(exc)}
             if n is not None:
                 counts=Counter((v['category'],v['direction'],'measured' if v['evidence']['measured_crossing'] is True else 'estimated') for v in n['events'])
                 for c in n['report']['supported_categories']:

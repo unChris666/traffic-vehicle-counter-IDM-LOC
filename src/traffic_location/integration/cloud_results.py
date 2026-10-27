@@ -29,14 +29,14 @@ class ResultsReader:
         jobs=self.query(f"SELECT * FROM `{d}.job_runs` WHERE target_id=@target_id AND publication_status='READY'{job_filter} ORDER BY created_at DESC LIMIT 1",
                         **{'target_id':target_id,**({'job_id':job_id} if job_id else {})})
         if not jobs:raise ValueError('Belum ada hasil READY untuk kode toko/job ini. Jalankan engine dan pastikan publikasi selesai.')
-        job=jobs[0];result={'job_id':job['job_id'],'map_html':'','map_status':'Peta belum tersedia pada job ini.'}
+        job=jobs[0];result={'identity_text':'**Periode:** '+str(job.get('period_id',''))+' · **KDTK:** '+str(job.get('target_id',''))+' · **Nama Toko:** (belum tercatat)', 'job_id':job['job_id'],'map_html':'','map_status':'Peta belum tersedia pada job ini.'}
         result['read_errors']=[]
         for table in ('traffic_counts','area_results','ppac_results'):
             # Select explicit schema: additive metadata is visible, unrelated columns are excluded.
             order='video_id, category, direction, evidence_level' if table=='traffic_counts' else 'created_at'
             selection=', '.join(SCHEMAS[table]);source=f'`{d}.{table}`'
             if table=='traffic_counts':
-                selection=', '.join('c.'+k for k in SCHEMAS[table])+', v.day_group, v.session'
+                selection=', '.join('c.'+k for k in SCHEMAS[table])+', v.day_group, v.session, v.filename'
                 source=f'`{d}.traffic_counts` c LEFT JOIN `{d}.traffic_videos` v USING(job_id,target_id,video_id)'
             try:
                 rows=self.query(f"SELECT {selection} FROM {source} WHERE target_id=@target_id AND job_id=@job_id ORDER BY {order} LIMIT 1001",target_id=target_id,job_id=job['job_id'])
@@ -51,6 +51,7 @@ class ResultsReader:
                 result['map_status']='Peta Folium/Esri dari artefak hasil terverifikasi.'
             except Exception as exc:
                 result['map_status']='Peta gagal dibuka ('+type(exc).__name__+'); tabel BQ tetap tersedia.'
+        result['annotated_videos']=[]
         result['display']={};result['ppac_document']=None;result['artifact_status']=[]
         if job.get('manifest_uri'):
             try:
@@ -70,7 +71,17 @@ class ResultsReader:
                 summaries=[e for e in manifest['files'] if e['object'].endswith('/summary.json') and '/engines/' not in e['object']]
                 if len(summaries)==1:
                     e=summaries[0];summary=json.loads(self.verified_bytes(job,'gs://'+self.destination.bucket+'/'+e['object'],e['sha256'],8*1024**2))
+                    from html import escape
+                    name=summary.get('context',{}).get('store_name')
+                    if name:result['identity_text']='**Periode:** '+str(job.get('period_id',''))+' · **KDTK:** '+str(job.get('target_id',''))+' · **Nama Toko:** '+escape(name)
                     for engine in summary.get('engines',[]):
+                        if engine.get('annotation_status',{}).get('status')=='FAILED':result['artifact_status'].append('Annotated '+engine['id']+': '+engine['annotation_status']['code']+' '+engine['annotation_status'].get('message',''))
+                        video=engine.get('annotated_video')
+                        if video:
+                            from urllib.parse import quote
+                            object_name=video['uri'].removeprefix('gs://'+self.destination.bucket+'/')
+                            bound=[f for f in manifest['files'] if f['object']==object_name and f['sha256']==video['sha256']]
+                            if len(bound)==1:result['annotated_videos'].append({**video,'url':'https://console.cloud.google.com/storage/browser/_details/'+self.destination.bucket+'/'+quote(object_name,safe='/')})
                         if engine.get('engine')=='area' and engine.get('execution_status')!='SUCCEEDED':
                             result['map_status']='Area gagal; peta belum dibuat. '+str(engine.get('code',''))+' '+str(engine.get('message',''))+' '+json.dumps(engine.get('diagnostics',[]),ensure_ascii=False)
                 maps=[e for e in manifest['files'] if '/engines/area/' in e['object'] and e['object'].endswith('/market_map.html')]

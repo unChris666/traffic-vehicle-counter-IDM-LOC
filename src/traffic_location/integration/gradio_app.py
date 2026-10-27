@@ -29,6 +29,12 @@ def frame(data,columns):
     f=f.map(scalar) if hasattr(f,'map') else f.applymap(scalar)
     return f.astype(object).where(pd.notna(f),None)
 
+def annotation_buttons(result=None):
+    import gradio as gr
+    by_slot={(v['day'],v['session']):v for v in (result or {}).get('annotated_videos',[])}
+    names={(v.get('day_group'),v.get('session')):v.get('filename',v.get('video_id')) for v in (result or {}).get('traffic_counts',[])}
+    return [gr.update(value='Buka annotated video' if slot in by_slot else 'Annotated belum tersedia',link=by_slot.get(slot,{}).get('url'),interactive=slot in by_slot) for slot in UPLOAD_SLOTS]+[gr.update(value=by_slot.get(slot,{}).get('filename') or names.get(slot) or (' / '.join(slot))) for slot in UPLOAD_SLOTS]
+
 def display_frames(result=None):
     from .ppac_view import rows as ppac_rows
     has_result=bool(result);result=result or {};detail=result.get('display',{});traffic={}
@@ -51,6 +57,11 @@ def validate(values,video_choices):
     x=dict(zip(INPUT_NAMES,values[:len(INPUT_NAMES)]))
     x['video_source']=values[14] if len(values)>14 else VIDEO_SOURCES[1]
     x['uploads']=values[15] if len(values)>15 else []
+    x['store_name']=values[16] if len(values)>16 else None
+    x['annotate']=bool(values[17]) if len(values)>17 else False
+    if x['store_name'] is not None:
+        if not re.fullmatch('[A-Za-z0-9]{4}',str(x['target_id'])):raise ValueError('KDTK harus tepat 4 karakter huruf/angka.')
+        if not str(x['store_name']).strip() or len(str(x['store_name']))>160:raise ValueError('Isi nama toko (maksimal 160 karakter).')
     if x['video_source'] not in VIDEO_SOURCES:raise ValueError('Pilih sumber video yang tersedia.')
     if x['mode'] not in MODES:raise ValueError('Pilih mode yang tersedia.')
     if not re.fullmatch(r'[A-Za-z0-9_-]{1,32}',str(x['target_id'])):
@@ -108,7 +119,7 @@ class Controller:
         key=semantic_hash({k:x[k] for k in ('target_id','latitude','longitude','period')})
         return self.runtime_factory(self.base/'targets'/key,self.config_root,x['latitude'],x['longitude'],
                                     target_id=x['target_id'],period_id=x['period'],performance={'reuse':True},
-                                    publication=self.destination,upload_root=self.upload_root)
+                                    publication=self.destination,upload_root=self.upload_root,store_name=x.get('store_name'),annotate=x.get('annotate',False))
 
     def check(self,*values):
         try:
@@ -139,6 +150,18 @@ class Controller:
         except Exception as exc:
             message=str(exc) if isinstance(exc,ValueError) else 'Video gagal dibaca ('+type(exc).__name__+'). Periksa format video dan FFmpeg.'
             return [],gr.update(choices=[],value=None),message
+
+    def save_project(self,*values):
+        try:
+            original=list(values);original[0]='Area Coverage';x=validate(original,self.video_choices)
+            payload={'schema_version':'li_project_v1','period':x['period'],'kdtk':x['target_id'],'store_name':x['store_name'],
+                     'latitude':x['latitude'],'longitude':x['longitude'],'parameters':x['parameters'],
+                     'videos':[{'id':r['id'],'filename':r['filename'],'sha256':r['sha256'],'day':r['day'],'session':r['session'],'reviewed':r['reviewed'],'geometry':r['geometry']} for r in x['uploads']]}
+            path=self.base/'projects'/(uuid4().hex+'.json');write(path,payload)
+            runtime=self.runtime(x);name='projects/'+x['target_id']+'/'+x['period']+'/'+path.name
+            runtime.connect().bucket(self.destination.bucket).blob(name).upload_from_filename(str(path),if_generation_match=0,content_type='application/json',checksum='crc32c')
+            return 'Project tersimpan: gs://'+self.destination.bucket+'/'+name+'. Metadata/geometri tersimpan; video upload lokal belum otomatis menjadi input GCS.'
+        except Exception as exc:return 'Save project belum berhasil: '+(str(exc) if isinstance(exc,ValueError) else type(exc).__name__)+'. Draft lokal tetap tersedia pada sesi Kaggle.'
 
     def area_diagnostic(self,*values):
         from .failure_details import details
@@ -202,10 +225,10 @@ class Controller:
             status='Hasil tersimpan dari BigQuery: '+result['job_id']+'. '+result['map_status']
             status+=' '+' '.join(result.get('read_errors',[])+result.get('artifact_status',[]))
             if result.get('truncated'):status+=' Tampilan traffic dibatasi; gunakan query BQ untuk seluruh baris.'
-            return status,result['job_id'],result['map_html'],*frames,*display_frames(result)
+            return status,result['job_id'],result['map_html'],*frames,*display_frames(result),*annotation_buttons(result),result.get('identity_text','')
         except Exception as exc:
             message=str(exc) if isinstance(exc,ValueError) else 'Pembacaan BQ/GCS gagal ('+type(exc).__name__+'). Periksa izin dan schema.'
-            return message,job_id or '','',*empty,*display_frames()
+            return message,job_id or '','',*empty,*display_frames(),*annotation_buttons(),''
 
     def current_cloud_results(self,pointer,target_id,job_id):
         if pointer:
@@ -216,11 +239,11 @@ class Controller:
             from .cloud_schema import SCHEMAS
             import pandas as pd
             return ('Hasil job ini belum dipublikasikan. Periksa status penyimpanan.', '', '',
-                    *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*display_frames())
+                    *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*display_frames(),*annotation_buttons(),'')
         from .cloud_schema import SCHEMAS
         import pandas as pd
         return ('Belum ada hasil job ini yang dapat dibuka. Gunakan tombol Buka hasil BQ untuk hasil sebelumnya.','','',
-                *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*display_frames())
+                *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*display_frames(),*annotation_buttons(),'')
 
     def preview_upload(self,rows,video_id):
         from .uploads import find,render
@@ -316,77 +339,114 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
     import gradio as gr
     controller=Controller(base,config_root,input_root=input_root,runtime_factory=runtime_factory)
     with gr.Blocks(title='Area · Traffic · PPAC') as app:
-        gr.Markdown('# Area Coverage · Traffic Counter · PPAC\nMasukkan input, periksa kesiapan, lalu mulai proses. Upload video Anda, tinjau geometri setiap video, lalu jalankan engine. Dataset T7SL tetap tersedia sebagai contoh.')
-        with gr.Row():
-            mode=gr.Dropdown(list(MODES),value='Gabungan + PPAC',label='Proses')
-            target=gr.Textbox(value='T7SL',label='Kode toko')
-            period=gr.Textbox(value=datetime.now(ZoneInfo('Asia/Jakarta')).date().isoformat(),label='Tanggal analisis (YYYY-MM-DD)')
-        with gr.Row():
-            latitude=gr.Number(value=-0.8994976613947719,label='Latitude')
-            longitude=gr.Number(value=131.3221639428227,label='Longitude')
-        source=gr.Radio(VIDEO_SOURCES,value=VIDEO_SOURCES[0],label='Sumber video')
-        upload_state=gr.State([]);job_pointer=gr.State(None)
-        with gr.Group() as upload_group:
-            gr.Markdown('Delapan slot utama: satu video per kondisi dan waktu. Maksimal 1 GiB/file dan 2 GiB total. Slot kosong tidak dianggap nol.')
-            slot_files=[];slot_refs=[]
-            gr.Markdown("Jika upload terputus: unggah video ke GCS melalui Cloud Console, lalu isi gs://bucket/object di slot yang sesuai. Bisa juga memakai path /kaggle/input/... dari Add Input. Jangan ubah file menjadi publik.")
-            for d in ('weekday','weekend'):
-                gr.Markdown('### '+('Weekday' if d=='weekday' else 'Weekend'))
+        with gr.Tabs():
+            with gr.Tab('HOME'):
+                gr.Markdown('## Identity')
                 with gr.Row():
-                    for t in ('pagi','siang','sore','malam'):
-                        with gr.Column():
-                            slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
-                            slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau /kaggle/input/...'))
-            with gr.Accordion('Sesi tambahan untuk operasional >15 jam',open=False):
-                for d in ('weekday','weekend'):
+                    target=gr.Textbox(value='T7SL',label='KDTK (4 karakter)',max_length=4)
+                    store_name=gr.Textbox(label='Nama Toko',max_length=160)
+                    period=gr.DateTime(value=datetime.now(ZoneInfo('Asia/Jakarta')).date().isoformat(),include_time=False,type='string',interactive=False,label='Periode (tanggal pembuatan)')
+                gr.Markdown('## Input Area Coverage')
+                with gr.Row():
+                    latitude=gr.Number(value=-0.8994976613947719,label='Latitude')
+                    longitude=gr.Number(value=131.3221639428227,label='Longitude')
+                gr.Markdown('## Input Traffic Counter')
+                source=gr.Radio(VIDEO_SOURCES,value=VIDEO_SOURCES[0],label='Sumber video')
+                upload_state=gr.State([]);job_pointer=gr.State(None)
+                with gr.Group() as upload_group:
+                    gr.Markdown('Delapan slot utama: satu video per kondisi dan waktu. Maksimal 1 GiB/file dan 2 GiB total. Slot kosong tidak dianggap nol.')
+                    slot_files=[];slot_refs=[]
+                    gr.Markdown("Jika upload terputus: unggah video ke GCS melalui Cloud Console, lalu isi gs://bucket/object di slot yang sesuai. Bisa juga memakai path /kaggle/input/... dari Add Input. Jangan ubah file menjadi publik.")
+                    for d in ('weekday','weekend'):
+                        gr.Markdown('### '+('Weekday' if d=='weekday' else 'Weekend'))
+                        with gr.Row():
+                            for t in ('pagi','siang','sore','malam'):
+                                with gr.Column():
+                                    slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
+                                    slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau /kaggle/input/...'))
+                    with gr.Accordion('Sesi tambahan untuk operasional >15 jam',open=False):
+                        for d in ('weekday','weekend'):
+                            with gr.Row():
+                                for t in ('tengah_malam','dini_hari','subuh'):
+                                    with gr.Column():
+                                        slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
+                                        slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau /kaggle/input/...'))
+                    prepare=gr.Button('Siapkan video dan geometri')
+                    upload_status=gr.Textbox(label='Kesiapan video',interactive=False)
+                    selected=gr.Dropdown(choices=[],label='Video yang ditinjau')
+                    preview=gr.Image(type='filepath',interactive=False,label='Frame pertama: garis merah, polygon A biru, polygon B kuning')
                     with gr.Row():
-                        for t in ('tengah_malam','dini_hari','subuh'):
-                            with gr.Column():
-                                slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
-                                slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau /kaggle/input/...'))
-            prepare=gr.Button('Siapkan video dan geometri')
-            upload_status=gr.Textbox(label='Kesiapan video',interactive=False)
-            selected=gr.Dropdown(choices=[],label='Video yang ditinjau')
-            preview=gr.Image(type='filepath',interactive=False,label='Frame pertama: garis merah, polygon A biru, polygon B kuning')
-            with gr.Row():
-                day=gr.Dropdown(['weekday','weekend'],label='Kelompok hari (dari slot)',interactive=False)
-                session=gr.Dropdown(['pagi','siang','sore','malam','tengah_malam','dini_hari','subuh'],label='Sesi perekaman (dari slot)',interactive=False)
-            from .uploads import DIRECTIONS
-            direction=gr.Dropdown(DIRECTIONS,value=DIRECTIONS[0],label='Arti arah pada video')
-            gr.Markdown('Template awal harus ditinjau per video. Untuk menggambar ulang: pilih bagian, tekan **Ulangi bagian**, lalu klik titik berurutan pada gambar. Garis: 2 titik; polygon: minimal 3 titik perimeter. Video asli tidak diubah.')
-            with gr.Row():
-                component=gr.Dropdown(['Garis','Polygon A','Polygon B'],value='Garis',label='Bagian yang diedit')
-                clear=gr.Button('Ulangi bagian')
-            reviewed=gr.Checkbox(value=False,label='Saya telah meninjau geometri, arah, hari dan sesi video ini.')
-            save=gr.Button('Simpan tinjauan video')
-            review_status=gr.Textbox(label='Tinjauan per video',interactive=False)
-        with gr.Group(visible=False) as dataset_group:
-            videos=gr.CheckboxGroup(controller.video_choices,value=controller.video_choices,label='Video contoh T7SL',
-                                   info='Data contoh tetap tersedia untuk regression/pilot.')
-        gr.Markdown('Hasil job disimpan ke **gs://aretfak-location-intelligence** dan **locdeproject.location_intelligence**. Tabel perlu disiapkan sekali; kegagalan penyimpanan tidak menghapus hasil lokal.')
-        with gr.Accordion('Input bisnis PPAC',open=True):
-            with gr.Row():
-                road=gr.Dropdown(ROADS,value='mainstreet',label='Profil jalan PPAC')
-                days=gr.Dropdown(list(range(1,8)),value=7,label='Hari operasional per minggu')
-                hours=gr.Dropdown(list(range(1,25)),value=15,label='Jam operasional per hari')
-                drive=gr.Checkbox(value=False,label='Drive thru')
-            with gr.Row():
-                swot=gr.Number(value=1,minimum=0,label='Faktor SWOT (1 = tanpa penyesuaian)')
-                cut=gr.Number(value=1,minimum=0,label='Faktor potongan Traffic (1 = tanpa penyesuaian)')
-                parking=gr.Number(value=1,minimum=0,label='Faktor parkir (1 = tanpa penyesuaian)')
-        gr.Markdown('Operasional **lebih dari 15 jam** memerlukan sesi tambahan. Memilih sebagian video dapat membuat PPAC menunggu input. Hasil parsial tetap ditandai; akurasi identitas kendaraan belum tervalidasi.')
-        confirmed=gr.Checkbox(value=False,label='Saya memastikan video yang dipilih digunakan untuk analisis target lokasi ini.')
-        with gr.Row():
-            check=gr.Button('Periksa kesiapan')
-            start=gr.Button('Mulai proses',variant='primary')
-        status=gr.Textbox(label='Status',interactive=False)
-        readiness=gr.Dataframe(headers=['Sumber','Status'],datatype=['str','str'],interactive=False,label='Kesiapan sumber')
-        progress=gr.Textbox(label='Tahap aktif dan progres',lines=8,interactive=False)
-        engines=gr.Dataframe(headers=['Engine/video','Status','Kualitas','Ringkasan'],datatype=['str']*4,interactive=False,label='Hasil masing-masing engine')
-        from .ppac_view import HEADERS
-        ppac=gr.Dataframe(headers=HEADERS,datatype=['str']*5,label='PPAC — breakdown dan status proses',interactive=False)
-        download=gr.State(None)
-        retry=gr.Button('Ulangi penyimpanan hasil (tanpa inferensi)')
+                        day=gr.Dropdown(['weekday','weekend'],label='Kelompok hari (dari slot)',interactive=False)
+                        session=gr.Dropdown(['pagi','siang','sore','malam','tengah_malam','dini_hari','subuh'],label='Sesi perekaman (dari slot)',interactive=False)
+                    from .uploads import DIRECTIONS
+                    direction=gr.Dropdown(DIRECTIONS,value=DIRECTIONS[0],label='Arti arah pada video')
+                    gr.Markdown('Template awal harus ditinjau per video. Untuk menggambar ulang: pilih bagian, tekan **Ulangi bagian**, lalu klik titik berurutan pada gambar. Garis: 2 titik; polygon: minimal 3 titik perimeter. Video asli tidak diubah.')
+                    with gr.Row():
+                        component=gr.Dropdown(['Garis','Polygon A','Polygon B'],value='Garis',label='Bagian yang diedit')
+                        clear=gr.Button('Ulangi bagian')
+                    reviewed=gr.Checkbox(value=False,label='Saya telah meninjau geometri, arah, hari dan sesi video ini.')
+                    save=gr.Button('Simpan tinjauan video')
+                    review_status=gr.Textbox(label='Tinjauan per video',interactive=False)
+                with gr.Group(visible=False) as dataset_group:
+                    videos=gr.CheckboxGroup(controller.video_choices,value=controller.video_choices,label='Video contoh T7SL',
+                                           info='Data contoh tetap tersedia untuk regression/pilot.')
+                gr.Markdown('Hasil job disimpan ke **gs://aretfak-location-intelligence** dan **locdeproject.location_intelligence**. Tabel perlu disiapkan sekali; kegagalan penyimpanan tidak menghapus hasil lokal.')
+                gr.Markdown('## Action')
+                mode=gr.Dropdown(list(MODES),value='Gabungan + PPAC',label='Proses')
+                with gr.Accordion('Input bisnis PPAC',open=False):
+                    with gr.Row():
+                        road=gr.Dropdown(ROADS,value='mainstreet',label='Profil jalan PPAC')
+                        days=gr.Dropdown(list(range(1,8)),value=7,label='Hari operasional per minggu')
+                        hours=gr.Dropdown(list(range(1,25)),value=15,label='Jam operasional per hari')
+                        drive=gr.Checkbox(value=False,label='Drive thru')
+                    with gr.Row():
+                        swot=gr.Number(value=1,minimum=0,label='Faktor SWOT (1 = tanpa penyesuaian)')
+                        cut=gr.Number(value=1,minimum=0,label='Faktor potongan Traffic (1 = tanpa penyesuaian)')
+                        parking=gr.Number(value=1,minimum=0,label='Faktor parkir (1 = tanpa penyesuaian)')
+                gr.Markdown('Operasional **lebih dari 15 jam** memerlukan sesi tambahan. Memilih sebagian video dapat membuat PPAC menunggu input. Hasil parsial tetap ditandai; akurasi identitas kendaraan belum tervalidasi.')
+                confirmed=gr.Checkbox(value=False,label='Saya memastikan video yang dipilih digunakan untuk analisis target lokasi ini.')
+                annotate=gr.Checkbox(value=True,label='Buat annotated video (tahap CPU tambahan setelah counting)')
+                save_project=gr.Button('Save Project')
+                project_status=gr.Textbox(label='Status penyimpanan project',interactive=False)
+                with gr.Row():
+                    check=gr.Button('Periksa kesiapan')
+                    start=gr.Button('Process',variant='primary')
+                status=gr.Textbox(label='Status',interactive=False)
+                readiness=gr.Dataframe(headers=['Sumber','Status'],datatype=['str','str'],interactive=False,label='Kesiapan sumber')
+                progress=gr.Textbox(label='Tahap aktif dan progres',lines=8,interactive=False)
+            with gr.Tab('RESULT'):
+                gr.Markdown('## Identity')
+                result_identity=gr.Markdown()
+                gr.Markdown('## Status dan log proses')
+                engines=gr.Dataframe(headers=['Engine/video','Status','Kualitas','Ringkasan'],datatype=['str']*4,interactive=False,label='Hasil masing-masing engine')
+                from .ppac_view import HEADERS
+                ppac=gr.State([])
+                download=gr.State(None)
+                retry=gr.Button('Ulangi penyimpanan hasil (tanpa inferensi)')
+                gr.Markdown('## Hasil tersimpan di BigQuery\nKosongkan Job ID untuk membuka job terbaru pada kode toko ini. Peta menggunakan referensi artefak GCS pada baris Area di BQ. Membuka hasil tidak menjalankan engine.')
+                saved_job=gr.Textbox(label='Job ID tersimpan (opsional)')
+                refresh=gr.Button('Buka / muat ulang hasil BQ')
+                saved_status=gr.Textbox(label='Status hasil BQ',interactive=False)
+                gr.Markdown('## Area Coverage Result')
+                map_view=gr.HTML(label='Area Coverage — Folium / Esri')
+                with gr.Accordion('Rincian rekap BQ',open=False):
+                    table_views=[gr.Dataframe(label=t,interactive=False,type='pandas',wrap=True,visible=t!='ppac_results') for t in ('traffic_counts','area_results','ppac_results')]
+                gr.Markdown('Ringkasan: bangunan yang dialokasikan = KK estimasi; 1 KK = 4 penduduk. Radius tampilan memakai jarak geodesik centroid bangunan, bukan pembagian persentase PPAC. Kualitas dan status PPAC tetap dilihat pada hasil lengkap.')
+                display_views=[None]*len(DISPLAY_TABLES)
+                items=list(DISPLAY_TABLES.items())
+                for index in (1,3,4,2,0):
+                    name,columns=items[index]
+                    if index==0:gr.Markdown('## Traffic Counter Result')
+                    display_views[index]=gr.Dataframe(label=name,headers=columns,interactive=False,type='pandas',wrap=True)
+                gr.Markdown('## Annotated Video')
+                annotated_buttons=[];annotated_names=[]
+                for day_key,time_key in UPLOAD_SLOTS:
+                    with gr.Row():
+                        annotated_names.append(gr.Textbox(value=day_key+' / '+time_key,label='Nama video',interactive=False,scale=2))
+                        annotated_buttons.append(gr.Button('Annotated belum tersedia',interactive=False,scale=1))
+                gr.Markdown('## PPAC Result')
+                name,columns=list(DISPLAY_TABLES.items())[5]
+                display_views[5]=gr.Dataframe(label=name,headers=columns,interactive=False,type='pandas',wrap=True)
         def toggle_source(value):return gr.update(visible=value==VIDEO_SOURCES[0]),gr.update(visible=value==VIDEO_SOURCES[1])
         source.change(toggle_source,source,[upload_group,dataset_group],api_name=False)
         for file in slot_files+slot_refs:
@@ -400,9 +460,10 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         save.click(controller.save_review,[upload_state,selected,day,session,direction,reviewed],[upload_state,review_status],api_name=False,concurrency_id='engines',concurrency_limit=1)
         for field in (day,session,direction):field.input(controller.invalidate_review,[upload_state,selected],[upload_state,reviewed,review_status],api_name=False)
         retried=retry.click(controller.retry_storage,job_pointer,[status,download],api_name=False,concurrency_id='engines',concurrency_limit=1)
-        inputs=[mode,target,latitude,longitude,period,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,upload_state]
+        inputs=[mode,target,latitude,longitude,period,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,upload_state,store_name,annotate]
         diagnostic=gr.Button('Periksa penyebab kegagalan Area (tanpa proses ulang)')
         diagnostic_text=gr.Textbox(label='Diagnosis Area — penyebab dari log worker',lines=8,interactive=False)
+        gr.Button('Lihat log proses (Area/Traffic)').click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='engines',concurrency_limit=1)
         diagnostic.click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='engines',concurrency_limit=1)
         check.click(controller.check,inputs,[status,readiness],api_name=False,concurrency_id='engines',concurrency_limit=1)
         def readable_process(*values):
@@ -410,16 +471,8 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
             for output in controller.process(*values):
                 result=list(output);result[2]=rows(result[2]);result[4]=None;yield tuple(result)
         processed=start.click(readable_process,inputs,[status,engines,ppac,progress,download,job_pointer],api_name=False,concurrency_id='engines',concurrency_limit=1)
-        gr.Markdown('## Hasil tersimpan di BigQuery\nKosongkan Job ID untuk membuka job terbaru pada kode toko ini. Peta menggunakan referensi artefak GCS pada baris Area di BQ. Membuka hasil tidak menjalankan engine.')
-        saved_job=gr.Textbox(label='Job ID tersimpan (opsional)')
-        refresh=gr.Button('Buka / muat ulang hasil BQ')
-        saved_status=gr.Textbox(label='Status hasil BQ',interactive=False)
-        map_view=gr.HTML(label='Area Coverage — Folium / Esri')
-        with gr.Accordion('Rincian rekap BQ',open=False):
-            table_views=[gr.Dataframe(label=t,interactive=False,type='pandas',wrap=True,visible=t!='ppac_results') for t in ('traffic_counts','area_results','ppac_results')]
-        gr.Markdown('Ringkasan: bangunan yang dialokasikan = KK estimasi; 1 KK = 4 penduduk. Radius tampilan memakai jarak geodesik centroid bangunan, bukan pembagian persentase PPAC. Kualitas dan status PPAC tetap dilihat pada hasil lengkap.')
-        display_views=[gr.Dataframe(label=name,headers=columns,interactive=False,type='pandas',wrap=True) for name,columns in DISPLAY_TABLES.items()]
-        result_outputs=[saved_status,saved_job,map_view,*table_views,*display_views]
+        save_project.click(controller.save_project,inputs,project_status,api_name=False,concurrency_id='engines',concurrency_limit=1)
+        result_outputs=[saved_status,saved_job,map_view,*table_views,*display_views,*annotated_buttons,*annotated_names,result_identity]
         refresh.click(controller.cloud_results,[target,saved_job],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
         for event in (processed,retried):
             event.then(controller.current_cloud_results,[job_pointer,target,saved_job],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)

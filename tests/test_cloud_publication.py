@@ -43,8 +43,12 @@ class PublicationTests(unittest.TestCase):
            'counting_executed':True,'operation_executed':'count_replay','scope':{'source_frames':30,'processed_frames':30},
            'source_identity':source,'result_quality':'PARTIAL','native_semantic_sha256':semantic_hash(native),
            'summary':{'accepted_total':2,'accepted_measured':1,'accepted_estimated':1,'pending':1,'invalid':0}}
+        refs={}
+        for name in ('measurements','geometry'):
+            path=self.root/(name+'.json');write(path,{'scope':'SOFTWARE_IO_FIXTURE_NOT_INFERENCE'})
+            refs[name]={'path':str(path),'sha256':sha(path)}
         folder=self.root/'engine';publish(folder,{'result.json':r,'native.json.gz':native,
-             'request.json':{'source_identity':source,'profile':'machine','frame_count':30,'artifacts':{},'software_fixture':True}},
+             'request.json':{'source_identity':source,'profile':'machine','frame_count':30,'artifacts':refs,'software_fixture':True}},
              metadata={'engine':'traffic','result_version':r['result_version']})
         self.result={'engines':[{'id':'upload_fixture','engine':'traffic','execution_status':'SUCCEEDED','quality':'PARTIAL','summary':r['summary'],'result_ref':ref(folder)}],
                      'ppac':{'execution_status':'BLOCKED','std_total':None,'diagnostics':[{'code':'OBSERVATIONS_INCOMPLETE'}]}}
@@ -79,6 +83,25 @@ class PublicationTests(unittest.TestCase):
         self.assertTrue(row['map_html_uri'].endswith('/engines/area/area/presentation/map.html'))
         self.assertEqual(row['map_html_sha256'],sha(folder/'presentation/map.html'))
         self.assertNotIn('software_fixture',str(row));self.assertIn('ADD COLUMN IF NOT EXISTS map_html_uri',setup_sql())
+
+    def test_annotation_failure_does_not_hide_counts_or_successful_engine(self):
+        with patch('traffic_location.traffic.annotation.render',side_effect=RuntimeError('SOFTWARE_CODEC_FAILURE')):
+            q=prepare(self.output,self.result,self.inventory,self.context,{},self.destination,annotate=True)
+        self.assertEqual(sum(r['accepted_count'] for r in q['rows']['traffic_counts']),2)
+        summary=read(self.output/'cloud-payload/summary.json')
+        self.assertEqual(summary['engines'][0]['annotation_status']['status'],'FAILED')
+        self.assertEqual(summary['engines'][0]['execution_status'],'SUCCEEDED')
+    def test_annotation_and_receipt_are_published_without_inference_or_recount(self):
+        def render(video,measurement,native,geometry,output):
+            Path(output).write_bytes(b'SOFTWARE_ANNOTATED_FIXTURE_NO_CODEC')
+            write(Path(output).with_suffix('.json'),{'scope':'FULL_VIDEO','output_sha256':sha(output)})
+        before=sha(self.video)
+        with patch('traffic_location.traffic.annotation.render',side_effect=render) as renderer:
+            q=prepare(self.output,self.result,self.inventory,self.context,{},self.destination,annotate=True)
+        renderer.assert_called_once();self.assertEqual(before,sha(self.video))
+        summary=read(self.output/'cloud-payload/summary.json')
+        self.assertTrue(summary['engines'][0]['annotated_video']['uri'].endswith('/annotated.mp4'))
+        self.assertTrue(any(e['object'].endswith('/render-report.json') for e in q['entries']))
 
     def test_flat_counts_are_only_accepted_ledger_not_pending(self):
         q=self.prepared();rows=q['rows']['traffic_counts'];self.assertEqual(sum(r['accepted_count'] for r in rows),2)
