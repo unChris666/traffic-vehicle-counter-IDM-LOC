@@ -31,3 +31,17 @@ class NotebookCleanupTests(unittest.TestCase):
             with self.assertRaises(KeyboardInterrupt):
                 exec(compile(code,'launch-cell','exec'),{'BASE':Path(d),'APP':old})
         old.close.assert_called_once();app.close.assert_called_once()
+
+class ReleaseVersionTests(unittest.TestCase):
+    def test_package_notebook_and_build_metadata_share_one_version(self):
+        import tomllib
+        from traffic_location import __version__
+        declared=tomllib.loads((ROOT/'pyproject.toml').read_text())['project']['version']
+        self.assertEqual(declared,__version__)
+        notebook=json.loads((ROOT/'notebooks/14_gate2_sorong_t7sl_gradio.ipynb').read_text())
+        code=next(c['source'] if isinstance(c['source'],str) else ''.join(c['source']) for c in notebook['cells'] if 'PAYLOAD=' in ''.join(c['source']))
+        assignment=next(x for x in ast.walk(ast.parse(code)) if isinstance(x,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='PAYLOAD' for t in x.targets))
+        bundle=zipfile.ZipFile(io.BytesIO(base64.b64decode(ast.literal_eval(assignment.value.args[0]))))
+        wheel=zipfile.ZipFile(io.BytesIO(bundle.read('package/traffic_location_engines-'+declared+'-py3-none-any.whl')))
+        metadata=wheel.read('traffic_location_engines-'+declared+'.dist-info/METADATA').decode()
+        self.assertIn('\nVersion: '+declared+'\n',metadata)
