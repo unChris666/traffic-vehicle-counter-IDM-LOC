@@ -267,12 +267,13 @@ class KaggleRuntime:
         runtime=self.setup_runtime('area');self.connect()
         configuration=area_config(self.latitude,self.longitude,runtime['core_python'],self.target_id)
         from ..location.area._kernel.location_intelligent_google_only import PBF
-        sourcekey=semantic_hash({'configuration':configuration,'pbf':PBF,'analysis_period':self.period_id})
+        from ..location.area.sources import pbf_local
+        sourcekey=semantic_hash({'configuration':configuration,'pbf':PBF,'analysis_period':self.period_id,
+                                 'reader_version':pbf_local.READER_VERSION,'reader_sha256':sha(pbf_local.__file__)})
         root=self.base/'area-source'/sourcekey;root.mkdir(parents=True,exist_ok=True)
         from ..location.area.sources.bundle import SourceBundle,create_source_bundle
         bundle_path=root/'source-bundle.zip'
         if not bundle_path.exists():
-            from ..location.area._kernel.location_intelligent_pbf_sources import materialize
             from ..location.area._kernel import location_intelligent_map_pilot as bq_runtime
             prior=getattr(bq_runtime,'_NOTEBOOK_BQ_CREDENTIALS',None)
             try:
@@ -284,7 +285,7 @@ class KaggleRuntime:
             failures=source_failures(layers)
             need(not failures,'BQ_SOURCE_UNAVAILABLE','Snapshot toko/kompetitor gagal: '+json.dumps(failures,ensure_ascii=False)+'. Lihat bq-readiness.json; bukan nol kompetitor.')
             pbf=self.stage(PBF,self.base/'national'/f"{PBF['sha256']}.osm.pbf")
-            source=materialize(configuration['CONFIG'],root/'sources',pbf,runtime['osmium'],PBF)
+            source=pbf_local.materialize(configuration['CONFIG'],root/'sources',pbf,runtime['osmium'],PBF)
             command='import platform,json,pyproj;from osgeo import gdal;print(json.dumps({"python":platform.python_version(),"gdal":gdal.VersionInfo("RELEASE_NAME"),"pyproj":pyproj.__version__}))'
             core=json.loads(subprocess.check_output([runtime['core_python'],'-c',command],text=True))
             profile={'scientific':{'python':platform.python_version(),'packages':{k:importlib.metadata.version(k) for k in SCIENTIFIC}},'core':core}
@@ -307,10 +308,18 @@ class KaggleRuntime:
                     'period_id':self.period_id,'runtime':runtime})
         self.state['area']={'status':'PREPARING'};self.record()
         log=self.base/'area-preparation.log'
-        with log.open('w') as stream:
-            subprocess.run([sys.executable,'-u','-m','traffic_location.integration.kaggle_runtime',
-                            'prepare-area',str(path)],stdout=stream,stderr=subprocess.STDOUT,
-                           check=True,timeout=7200)
+        failure_path=self.base/'area-preparation-failure.json'
+        failure_path.unlink(missing_ok=True)
+        try:
+            with log.open('w') as stream:
+                subprocess.run([sys.executable,'-u','-m','traffic_location.integration.kaggle_runtime',
+                                'prepare-area',str(path)],stdout=stream,stderr=subprocess.STDOUT,
+                               check=True,timeout=7200)
+        except subprocess.CalledProcessError:
+            if failure_path.is_file():
+                failure=read(failure_path)
+                raise GateError(failure['code'],failure['message']) from None
+            raise
         child=read(self.base/'area-preparation-result.json')
         self.state['area']=child['area'];self.record()
         return child['request']
@@ -578,7 +587,11 @@ def main():
     args=parser.parse_args();q=read(args.request)
     runtime=KaggleRuntime(q['base'],q['config_root'],q['latitude'],q['longitude'],target_id=q['target_id'],period_id=q['period_id'])
     runtime.state['runtime']['area']=q['runtime']
-    request=runtime._prepare_area()
+    try:request=runtime._prepare_area()
+    except Exception as error:
+        from .failure_details import safe
+        write(Path(q['base'])/'area-preparation-failure.json',{'code':getattr(error,'code',type(error).__name__),'message':safe(error)})
+        raise
     write(Path(q['base'])/'area-preparation-result.json',{'request':request,'area':runtime.state['area']})
 
 if __name__=='__main__':main()

@@ -1,0 +1,39 @@
+{
+  "schema_version": "pbf_source_fix_validation_v1",
+  "date": "2026-10-28",
+  "package_version": "0.6.5rc1",
+  "branch": "fix/area-user-testing",
+  "target": {
+    "latitude": -7.33058110387148,
+    "longitude": 110.50486365193136,
+    "metric_crs": "EPSG:32749"
+  },
+  "tests": {
+    "total": 345,
+    "passed": 331,
+    "skipped": 14,
+    "seconds": 52.41
+  },
+  "native_pbf_suite": {
+    "total": 6,
+    "passed": 6,
+    "scope": "Actual pyosmium PBF write/read and source materialization with simulated osmium CLI extraction; synthetic road fixtures, not owner PBF."
+  },
+  "before": "Crossing-road fixture raises PBF_NO_ROADS_IN_REQUESTED_EXTENT with frozen reader",
+  "after": "Same crossing-road fixture materializes a verified source manifest and one selected road",
+  "access_filter_exclusions_preserved": true,
+  "missing_nodes_not_bridged": true,
+  "root_cause_propagation_and_stale_failure_tests": "PASS",
+  "frozen_kernel_registry_unchanged": true,
+  "cache_key_includes_reader_version_and_sha256": true,
+  "build": "PASS",
+  "mypy": "PASS 14 files",
+  "installed_wheel_import": "PASS outside repository",
+  "owner_failure_root_cause_confirmed": false,
+  "owner_pbf_anonymous_http_status": 403,
+  "live_owner_colab_or_cloud_execution_here": false,
+  "dependency_versions_changed": false,
+  "main_or_foundation_promoted": false,
+  "wheel_sha256": "bc69216c43fed018e510e96a67a327d7f9d71160da1a1a6c57ecac269376c9af",
+  "notebook_sha256": "f6f81c87e37c15ac8b3827c00faad8a86b9df16711dd083fd089fd3704694e56"
+}
