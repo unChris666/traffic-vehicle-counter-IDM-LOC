@@ -757,6 +757,12 @@ def launch(base,config_root,*,input_root='/kaggle/input',share=True,default_mode
                                    allowed_paths=[str(controller.exports)],max_file_size='1024mb',prevent_thread_lock=True,**kwargs)
     from .map_view import install_map_route
     install_map_route(app.app,controller.maps)
+    from fastapi import Body,HTTPException
+    @app.app.post('/remote-check')
+    def remote_check(payload:dict=Body(...)):
+        nonce=payload.get('nonce')
+        if not isinstance(nonce,str) or not re.fullmatch('[a-f0-9]{32}',nonce):raise HTTPException(status_code=400,detail='Invalid probe')
+        return {'nonce':nonce,'engine_started':False}
     if share and not share_url:
         app.close();raise RuntimeError('URL publik Gradio gagal dibuat. Periksa Internet/tunnel pada sesi Kaggle; engine belum dijalankan.')
     return app,share_url or local_url

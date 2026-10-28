@@ -1,0 +1,27 @@
+{
+  "candidate": "0.7.3rc1",
+  "status": "LOCAL_GATES_PASS_PUBLIC_TUNNEL_UNVERIFIED",
+  "main_suite": {
+    "total": 392,
+    "passed": 374,
+    "skipped": 18,
+    "seconds": 57.43
+  },
+  "final_remote_tests": {
+    "total": 4,
+    "passed": 4
+  },
+  "local_remote_smoke": "Real Gradio HTML/config/POST pass; runtime factory forbidden, no engine started",
+  "live_public_test": "FAILED to create share link: login to server failed / session shutdown; not Colab/browser/device verification",
+  "build": "PASS",
+  "mypy": "PASS14files",
+  "installed_wheel": "PASS",
+  "notebook_sha256": "73564f4214f7ef278648e0319783327a3af2344b992838fa471ee36c5847fba3",
+  "wheel_sha256": "23f12ebbda8b1ece4a9c128cebbb6d6d66a1293366413517154237a776ca7ca8",
+  "limits": [
+    "No guarantee of public Gradio service/network uptime.",
+    "Notebook readiness requires public GET/GET/POST; 502 never passes.",
+    "GPU inference and second-device access await owner testing.",
+    "Main/foundation unchanged."
+  ]
+}

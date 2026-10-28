@@ -3,7 +3,8 @@ import argparse,base64,hashlib,io,json,zipfile
 from pathlib import Path
 
 
-def build(wheel,output,*,component_flow=False,phase123=False):
+def build(wheel,output,*,component_flow=False,phase123=False,remote_gradio=False):
+    phase123=phase123 or remote_gradio
     component_flow=component_flow or phase123
     root=Path(__file__).resolve().parents[1];wheel=Path(wheel).resolve()
     version=wheel.name.split('-')[1]
@@ -192,7 +193,7 @@ if 'SCIENCE' in globals() and Path(SCIENCE).is_file():
     if exported:print(result.stdout)
 with zipfile.ZipFile(archive,'a' if exported else 'w',zipfile.ZIP_DEFLATED) as bundle:
     if not exported:bundle.writestr('status.txt','Setup/startup diagnosis only; Area report not available yet.')
-    for name in ('setup-status.json','setup.log','runtime-check.log','cloud-preflight.log','core-isolation.log','core-runtime-isolation.json','server.log','server-status.json','server-lifecycle.json','server-watchdog.json','server-stacks.log'):
+    for name in ('setup-status.json','setup.log','runtime-check.log','cloud-preflight.log','core-isolation.log','core-runtime-isolation.json','server.log','server-status.json','server-lifecycle.json','server-watchdog.json','server-stacks.log','remote-access-check.json','share-setup.log'):
         path=BASE/name
         if not path.is_file() or name in bundle.namelist():continue
         with path.open('rb') as stream:
@@ -235,9 +236,21 @@ HOME/RESULT, peta Folium/Esri, upload8video, GCS gs://aretfak-location-intellige
             if c['cell_type']=='code' and 'def child_env(' in c['source']:
                 c['source']=c['source'].replace("'LI_COMPONENT_FLOW':'1',","'LI_COMPONENT_FLOW':'1','LI_PHASE123':'1',")
     cells[0]['source']+='\n\nAkses utama kini proxy resmi Colab (UI_ACCESS=colab pada cell server), tanpa share tunnel gradio.live. Buka link **Buka aplikasi — colab** setelah HTTP lokal siap. Tetap login Colab pada browser yang sama. Opsi UI_ACCESS=gradio tersedia; jangan mengganti akses ketika job aktif.'
+    if remote_gradio:
+        cells[0]['source']='# Colab L4 — Gradio lintas perangkat · '+version+'\n\nNotebook18 memakai Gradio share=True, tanpa proxy/login browser Colab. Jalankan setup/autentikasi/server pada komputer host, lalu buka link publik dari perangkat lain. HOME/RESULT dan Running background/polling tetap.\n\nServer menilai link siap hanya setelah GET halaman, GET config dan POST probe publik lulus. Probe tidak menjalankan engine. Jika502, status tetap BELUM SIAP; jangan memulai job. Pemeriksaan dari notebook tidak menggantikan uji browser perangkat lain. Link bersifat sementara; cell server/runtime harus tetap hidup. Pengguna link dapat mengoperasikan prototipe ini; bagikan hanya kepada tester yang diizinkan.'
+        for c in cells:
+            if c['cell_type']=='code' and "UI_ACCESS='colab'" in c['source']:
+                c['source']=c['source'].replace("UI_ACCESS='colab'", "UI_ACCESS='gradio'")
+                c['source']=c['source'].replace("server_env=child_env();server_env['LI_COLAB_ACCESS']=UI_ACCESS","server_env=child_env();server_env['HF_HOME']=str(BASE/'huggingface-cache');server_env['LI_COLAB_ACCESS']=UI_ACCESS")
+                c['source']=(root/'tools/colab_remote_probe.py').read_text()+'\n'+c['source']
+                c['source']=c['source'].replace("            if health['status']=='RUNNING_LOCAL_HTTP_OK':", "            remote=probe_remote(health.get('public_url')) if health['status']=='RUNNING_LOCAL_HTTP_OK' else {'status':'NOT_READY','reason':'LOCAL_SERVER_NOT_READY'}\n            (BASE/'remote-access-check.json').write_text(json.dumps(remote,indent=2))\n            print('PUBLIC_ACCESS='+json.dumps(remote),flush=True)\n            if health['status']=='RUNNING_LOCAL_HTTP_OK' and remote['status']=='READY':")
+                c['source']=c['source'].replace("                print('HTTP lokal siap. Link Colab memerlukan sesi browser Colab aktif. Jangan memakai URL gradio.live lama.',flush=True)", "                print('LINK PUBLIK SIAP: HTML/config/POST lulus. Buka link ini dari perangkat lain; tetap biarkan cell server berjalan.',flush=True)\n            elif health['status']=='RUNNING_LOCAL_HTTP_OK':\n                print('LINK PUBLIK BELUM SIAP. Lihat PUBLIC_ACCESS/kode HTTP; jangan klik Running. Probe diulang30detik tanpa menjalankan engine.',flush=True)")
+    if remote_gradio:
+        position=next(i for i,c in enumerate(cells) if c['cell_type']=='code' and 'SERVER=subprocess.Popen' in c['source'])
+        cells.insert(position,{'cell_type':'code','source':"# Siapkan binary tunnel sekali; Gradio memverifikasi checksum pinned binary.\nshare_env=child_env();share_env['HF_HOME']=str(BASE/'huggingface-cache')\nrun_logged([SCIENCE,'-u','-c','from gradio.tunneling import Tunnel;Tunnel.download_binary();print(\"GRADIO_TUNNEL_BINARY_READY\")'],'share-setup',env=share_env)\n",'metadata':{},'outputs':[],'execution_count':None})
     for i,c in enumerate(cells):c['id']='colab-l4-'+str(i)
     notebook={'nbformat':4,'nbformat_minor':5,'metadata':{'accelerator':'GPU','colab':{'name':Path(output).name,'gpuType':'L4'},'kernelspec':{'name':'python3','display_name':'Python 3'},'language_info':{'name':'python'}},'cells':cells}
     output=Path(output);output.parent.mkdir(parents=True,exist_ok=True);output.write_text(json.dumps(notebook,ensure_ascii=False,indent=1)+'\n');print('Prepared',output,output.stat().st_size)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--wheel',required=True);p.add_argument('--output',default='notebooks/active/15_colab_l4_area_first.ipynb');p.add_argument('--component-flow',action='store_true');p.add_argument('--phase123',action='store_true');a=p.parse_args();build(a.wheel,a.output,component_flow=a.component_flow,phase123=a.phase123)
+    p=argparse.ArgumentParser();p.add_argument('--wheel',required=True);p.add_argument('--output',default='notebooks/active/15_colab_l4_area_first.ipynb');p.add_argument('--component-flow',action='store_true');p.add_argument('--phase123',action='store_true');p.add_argument('--remote-gradio',action='store_true');a=p.parse_args();build(a.wheel,a.output,component_flow=a.component_flow,phase123=a.phase123,remote_gradio=a.remote_gradio)
