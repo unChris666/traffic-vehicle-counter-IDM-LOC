@@ -475,15 +475,25 @@ class KaggleRuntime:
                 except Exception as exc:yield item,None,exc
         videos=[v for v in tasks if v['kind']=='traffic']
         if not videos:return
+        from .job_status import stage
+        preparation=root/'traffic-preparation'
+        name='traffic_runtime_validation'
         try:
-            self.connect();self.setup_runtime('traffic');models=self.prepare_models()
-            from ..traffic.gpu_scheduler import run_video_jobs
+            stage(preparation,name);self.connect();self.setup_runtime('traffic');stage(preparation,name,'SUCCEEDED')
+            name='traffic_model_preparation';stage(preparation,name);models=self.prepare_models();stage(preparation,name,'SUCCEEDED')
+            from ..traffic.gpu_scheduler import run_video_jobs,visible_gpu_ids
+            name='traffic_gpu_discovery';stage(preparation,name);gpu_ids=visible_gpu_ids();stage(preparation,name,'SUCCEEDED')
+            name='traffic_videos';stage(preparation,name)
             def worker(item,gpu):
                 print('START',item['id'],'GPU',gpu,flush=True)
                 try:return self.run_video(item,root/item['id'],gpu_id=gpu,models=models)
                 finally:print('WORKER FINISHED',item['id'],'GPU',gpu,flush=True)
-            outcomes=run_video_jobs(videos,worker)
+            outcomes=run_video_jobs(videos,worker,gpu_ids=gpu_ids)
+            stage(preparation,name,'FAILED' if any(v['execution_status']!='SUCCEEDED' for v in outcomes) else 'SUCCEEDED')
         except Exception as exc:
+            from .failure_details import safe,category
+            stage(preparation,name,'FAILED',error_type=type(exc).__name__,message=safe(exc),category=category(getattr(exc,'code',''),str(exc)))
+            print('TRAFFIC_PREPARATION_FAILED:',name,type(exc).__name__,safe(exc),flush=True)
             for item in videos:yield item,None,exc
             return
         for item,outcome in zip(videos,outcomes):
@@ -501,6 +511,7 @@ class KaggleRuntime:
         need(mode in ('area','traffic','workflow'),'MODE_INVALID','Pilih Area, Traffic, atau gabungan.')
         if mode=='workflow':need(target_confirmed,'TARGET_BINDING_REQUIRED','Konfirmasi bahwa video dan Area dipakai untuk target yang sama.')
         root=self.base/'runs'/datetime.now().strftime('%Y%m%dT%H%M%S_%f');root.mkdir(parents=True)
+        self._active_run_root=root
         from ..runtime_resources import record as resource_record
         resource_record(root,'start')
         component_flow=os.environ.get('LI_COMPONENT_FLOW')=='1'
@@ -572,6 +583,7 @@ class KaggleRuntime:
                 receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'FAILED','diagnostics':[failure],'code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),
                                  'message':failure['message'] if isinstance(exc,GateError) else 'Tahap gagal ('+type(exc).__name__+'); periksa log setup/worker. Engine/video berikut tetap diproses.'})
             write(root/'progress.json',receipts);print('FINISH',item['id'],receipts[-1]['execution_status'],flush=True)
+            if receipts[-1]['execution_status']=='FAILED':print('ENGINE_FAILURE:',item['id'],failure['category'],failure['code'],failure['message'],flush=True)
         stage(root,'engine_execution','FAILED' if any(r['execution_status']!='SUCCEEDED' for r in receipts) else 'SUCCEEDED')
         stage(root,'ppac_calculation')
         ppac={'execution_status':'NOT_RUN','std_total':None}

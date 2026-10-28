@@ -1,0 +1,27 @@
+{
+  "candidate": "0.7.0rc2",
+  "observed_at": "2026-10-28T06:53:20.621539+00:00",
+  "status": "LOCAL_GATES_PASS_FREEZE_ROOT_CAUSE_UNCONFIRMED",
+  "main_tests": {
+    "total": 367,
+    "passed": 352,
+    "skipped": 15,
+    "seconds": 48.858
+  },
+  "additional_validation": [
+    "Real local Gradio HTTP readiness, shutdown lifecycle distinction and actual faulthandler thread-stack capture: PASS. Synthetic failure; not reproduction of owner freeze.",
+    "Strict mypy contracts/config: PASS14files.",
+    "Build sdist/wheel: PASS.",
+    "Installed wheel imports outside repository: PASS.",
+    "Exact embedded wheel/current-source identity and clean notebook cells: PASS in main suite."
+  ],
+  "limitations": [
+    "No fresh Colab/L4 retest or public Gradio tunnel reproduction.",
+    "No authenticated real GCS/BQ access in this environment.",
+    "15 optional native tests remain skipped in main environment; this patch does not change native kernels.",
+    "Freeze preceded owner interrupt. Original bundle proves Area/map success and subsequent server shutdown, but lacks original Traffic failure details and contemporaneous HTTP/stack evidence.",
+    "No automatic server restart/job resume and no change to numerical/counting semantics or dependency locks."
+  ],
+  "wheel_sha256": "469618f3edfcf7a85b5222eebc53d7a65be35a99fee2dcd174c48d05de59e1f8",
+  "notebook_sha256": "bbe79605cc1e5611e529c877f054341e8c2c19c6c1bde7791e2ad31062ee7f21"
+}

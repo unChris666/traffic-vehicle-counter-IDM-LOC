@@ -198,6 +198,11 @@ class Controller:
                     lines.append('Kategori: '+trace['failure'].get('category','UNKNOWN'))
                     lines.append('Penyebab: '+str(trace['failure']))
             if report.get('publication'):lines.append('Penyimpanan: '+str(report['publication']))
+            if report.get('traffic_preparation_status'):
+                stage=report['traffic_preparation_status'];lines.append('Traffic: '+str(stage.get('stage'))+' '+str(stage.get('status'))+' '+str(stage.get('message','')))
+            for receipt in report.get('current_engine_receipts',[]):
+                lines.append(str(receipt.get('id'))+': '+str(receipt.get('execution_status'))+' '+str(receipt.get('code',''))+' '+str(receipt.get('message','')))
+                if receipt.get('execution_status')=='FAILED':lines.append(str(receipt.get('diagnostics',[])))
             lines.extend(e['log']+'\n'+'\n'.join(e['errors']) for e in report['diagnostics']['evidence'])
             return '\n'.join(lines) if lines else 'Belum ada jejak/log error Area pada workspace ini. Pilih Area Coverage dan proses Area saja; Traffic tidak dijalankan.'
         except Exception as exc:return 'Diagnosis Area gagal: '+safe(exc)
@@ -209,6 +214,9 @@ class Controller:
             from uuid import uuid4
             runtime=self.diagnostic_runtime(values)
             path=export_report(runtime.base,self.exports/('area-diagnostics-'+uuid4().hex+'.zip'))
+            if os.environ.get('LI_AUTH_MODE')=='adc':
+                from .server_watchdog import append_diagnostics
+                append_diagnostics(self.base.parent,path)
             return str(path),'Paket diagnosis siap. Tidak memuat secret, video, source rows atau perhitungan baru.'
         except Exception as exc:return None,'Paket diagnosis gagal: '+safe(exc)
 
@@ -411,6 +419,18 @@ class Controller:
             except (OSError,ValueError,KeyError,TypeError):continue
         return '\n'.join(lines[-24:]) or 'Menyiapkan sumber/runtime; rincian setup tersedia di log notebook.'
 
+    def live_engine_rows(self,runtime,identity):
+        if not identity:return []
+        try:
+            root=getattr(runtime,'_active_run_root',None)
+            if root is None:return []
+            path=Path(root)/'progress.json';snapshot=Path(root)/'job-input.json'
+            if not snapshot.is_file() or snapshot.stat().st_size>2*1024**2:return []
+            if read(snapshot).get('job_id')!=identity['job_id']:return []
+            if not path.is_file() or path.stat().st_size>1024**2:return []
+            return engine_rows({'engines':read(path)})
+        except (OSError,ValueError,KeyError,TypeError):return []
+
     def process(self,*values):
         try:
             x=deepcopy(validate(values,self.video_choices))
@@ -433,7 +453,7 @@ class Controller:
                 future=pool.submit(runtime.execute,x['mode'],x['parameters'],input_root=self.input_root,
                                    target_confirmed=x['confirmed'],video_ids=x['video_ids'],**options)
                 while not future.done():
-                    yield 'Engine berjalan…',[],{},self.progress_text(runtime,started),None,None
+                    yield 'Engine berjalan…',self.live_engine_rows(runtime,identity),{},self.progress_text(runtime,started),None,None
                     time.sleep(1)
                 result=future.result()
             ppac=result['ppac']

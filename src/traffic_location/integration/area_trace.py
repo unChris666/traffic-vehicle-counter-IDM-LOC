@@ -82,9 +82,23 @@ def latest_report(base):
         if source_path.is_file() and source_path.stat().st_size<=65536:
             try:source_status=read(source_path)
             except (OSError,ValueError):pass
+    receipts=[];traffic_status=None
+    if latest_root:
+        try:
+            path=latest_root/'progress.json'
+            if path.is_file() and path.stat().st_size<=1024**2:
+                values=read(path)
+                if isinstance(values,list):
+                    receipts=[{k:v for k,v in r.items() if k in ('id','engine','execution_status','quality','code','message','diagnostics')} for r in values[:32] if isinstance(r,dict)]
+            path=latest_root/'traffic-preparation/job-status.json'
+            if path.is_file() and path.stat().st_size<=65536:traffic_status=read(path)
+        except (OSError,ValueError):pass
     evidence=details(base,RuntimeError('Diagnosis workspace; tidak menjalankan engine.'),started)
+    evidence['category']='DIAGNOSTIC_COLLECTION_ONLY'
+    evidence['scope']='Collected evidence, not a new engine failure; inspect current_engine_receipts for actual failures.'
     return {'schema_version':'area_diagnostic_report_v1','package_version':__version__,
             'generated_at':stamp(),'source_preparation_status':source_status,'current_job':current_job,'current_job_status':current_status,
+            'current_engine_receipts':receipts,'traffic_preparation_status':traffic_status,
             'area_trace_is_latest_job':not current_job or bool(traces and traces[-1].parent.parent==latest_root),'trace':trace,'publication':publication,'diagnostics':evidence,
             'scope':'Latest job input/status and latest Area trace in this target workspace; no credentials, source rows, video or inference included.'}
 

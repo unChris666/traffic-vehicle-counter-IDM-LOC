@@ -152,8 +152,10 @@ finally:
 import sys,json,zipfile
 from traffic_location.integration.area_trace import latest_report
 from traffic_location.integration.failure_details import safe
-base=Path(sys.argv[1]);traces=sorted((base/'system/targets').glob('*/runs/*/area/area-trace.json'),key=lambda p:p.stat().st_mtime)
-report=latest_report(traces[-1].parents[3]) if traces else {'status':'NO_AREA_RUN'}
+from traffic_location.integration.server_watchdog import observation
+base=Path(sys.argv[1]);candidates=[(p.stat().st_mtime,p.parents[2]) for p in (base/'system/targets').glob('*/runs/*/job-input.json')]
+candidates.extend((p.stat().st_mtime,p.parents[3]) for p in (base/'system/targets').glob('*/runs/*/area/area-trace.json'))
+report=latest_report(max(candidates,key=lambda v:v[0])[1]) if candidates else {'status':'NO_ENGINE_RUN'}
 def clean(v):
     if isinstance(v,str):return safe(v)
     if isinstance(v,dict):return {k:clean(x) for k,x in v.items()}
@@ -161,6 +163,7 @@ def clean(v):
     return v
 with zipfile.ZipFile(base/'colab-diagnostics.zip','w',zipfile.ZIP_DEFLATED) as z:
     z.writestr('area-report.json',json.dumps(clean(report),indent=2))
+    z.writestr('server-observation.json',json.dumps(clean(observation(base,public=True)),indent=2))
     for name in ('gpu-allocation.json','colab-runtime-verified.json','colab-preflight.json','colab-startup-failure.json','setup-status.json','core-runtime-isolation.json'):
         path=base/name
         if path.is_file() and path.stat().st_size<131072:z.writestr(name,json.dumps(clean(json.loads(path.read_text())),indent=2))
@@ -176,7 +179,7 @@ if 'SCIENCE' in globals() and Path(SCIENCE).is_file():
     if exported:print(result.stdout)
 with zipfile.ZipFile(archive,'a' if exported else 'w',zipfile.ZIP_DEFLATED) as bundle:
     if not exported:bundle.writestr('status.txt','Setup/startup diagnosis only; Area report not available yet.')
-    for name in ('setup-status.json','setup.log','runtime-check.log','cloud-preflight.log','core-isolation.log','core-runtime-isolation.json','server.log','server-status.json'):
+    for name in ('setup-status.json','setup.log','runtime-check.log','cloud-preflight.log','core-isolation.log','core-runtime-isolation.json','server.log','server-status.json','server-lifecycle.json','server-watchdog.json','server-stacks.log'):
         path=BASE/name
         if not path.is_file() or name in bundle.namelist():continue
         with path.open('rb') as stream:

@@ -3,7 +3,7 @@ import os,time
 from pathlib import Path
 from ..artifacts import read,write
 
-LABELS={'engine_execution':'Menjalankan engine yang dipilih','bq_snapshot':'Membaca snapshot toko/kompetitor','pbf_download_verify':'Menyiapkan PBF lokal',
+LABELS={'traffic_runtime_validation':'Validasi runtime Traffic','traffic_model_preparation':'Menyiapkan bobot Traffic','traffic_gpu_discovery':'Memeriksa slot GPU Traffic','traffic_videos':'Memproses video Traffic','engine_execution':'Menjalankan engine yang dipilih','bq_snapshot':'Membaca snapshot toko/kompetitor','pbf_download_verify':'Menyiapkan PBF lokal',
 'pbf_extract_and_parse':'Ekstraksi dan pembacaan wilayah PBF','source_bundle_freeze':'Membekukan sumber job',
 'source_cache_upload':'Menyimpan snapshot sumber ke GCS','gpu_preflight':'Uji GPU',
 'runtime_validation':'Validasi runtime','normalization':'Normalisasi bangunan',

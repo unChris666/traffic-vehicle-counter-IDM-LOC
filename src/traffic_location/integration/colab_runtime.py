@@ -189,12 +189,20 @@ def _main(args,base):
     # Recheck imports/GPU and permissions so stale marker files cannot bypass readiness.
     verify();preflight(base,args.config_root)
     from .gradio_app import launch
-    app,url=launch(base/'system',args.config_root,input_root='/content/videos',share=True,
-                   default_mode='Area Coverage',runtime_factory=ColabRuntime)
-    print('GRADIO_PUBLIC_URL='+url,flush=True)
-    try:app.block_thread()
+    from .server_watchdog import Watchdog,lifecycle
+    app=None;watchdog=None
+    lifecycle(base,'STARTING')
+    try:
+        app,url=launch(base/'system',args.config_root,input_root='/content/videos',share=True,
+                       default_mode='Area Coverage',runtime_factory=ColabRuntime)
+        watchdog=Watchdog(base,app.server_port).start()
+        lifecycle(base,'SERVING')
+        print('GRADIO_PUBLIC_URL='+url,flush=True)
+        app.block_thread()
     finally:
-        app.close()
+        lifecycle(base,'STOPPING')
+        if watchdog:watchdog.close()
+        if app:app.close()
         import psutil
         children=psutil.Process().children(recursive=True)
         for child in children:
@@ -204,5 +212,6 @@ def _main(args,base):
         for child in alive:
             try:child.kill()
             except psutil.NoSuchProcess:pass
+        lifecycle(base,'STOPPED')
 
 if __name__=='__main__':main()
