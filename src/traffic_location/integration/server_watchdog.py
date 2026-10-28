@@ -21,6 +21,7 @@ def probe(url,*,public=False):
         if len(data)>1024*1024:raise ValueError('CONFIG_RESPONSE_TOO_LARGE')
         config=json.loads(data)
         return {'status':'READY' if isinstance(config,dict) and isinstance(config.get('components'),list) else 'INVALID_RESPONSE','code':code}
+    except urllib.error.HTTPError as exc:return {'status':'HTTP_ERROR','code':exc.code,'error_type':type(exc).__name__}
     except Exception as exc:return {'status':'UNREACHABLE','error_type':type(exc).__name__}
 
 
@@ -46,7 +47,9 @@ def observation(base,*,public=False):
             'local_http':local,'public_tunnel':{'status':'NOT_PROBED'},'lifecycle':life,
             'previous_monitor_sample':previous,'watchdog':saved('server-watchdog.json'),'ui_poll_observation':saved('system/ui-poll-status.json'),
             'scope':'Fresh HTTP/process observations; HTTP readiness does not prove event streaming, browser responsiveness or engine progress.'}
-    if public and alive is True and not closing:
+    if previous.get('access_mode')=='colab':
+        result['public_tunnel']={'status':'BROWSER_AUTH_REQUIRED_NOT_PROBED'}
+    elif public and alive is True and not closing:
         result['public_tunnel']=probe((previous.get('public_url') or '')+'/config',public=True)
     return result
 

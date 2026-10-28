@@ -190,14 +190,17 @@ def _main(args,base):
     verify();preflight(base,args.config_root)
     from .gradio_app import launch
     from .server_watchdog import Watchdog,lifecycle
+    from .colab_access import options
+    access,proxy_url=options(os.environ.get('LI_COLAB_ACCESS','colab'),os.environ.get('LI_COLAB_PROXY_URL'))
     app=None;watchdog=None
     lifecycle(base,'STARTING')
     try:
-        app,url=launch(base/'system',args.config_root,input_root='/content/videos',share=True,
+        app,url=launch(base/'system',args.config_root,input_root='/content/videos',**access,
                        default_mode='Area Coverage',runtime_factory=ColabRuntime)
         watchdog=Watchdog(base,app.server_port).start()
         lifecycle(base,'SERVING')
-        print('GRADIO_PUBLIC_URL='+url,flush=True)
+        print('GRADIO_PUBLIC_URL='+(proxy_url or url),flush=True)
+        print('UI_ACCESS_MODE='+os.environ.get('LI_COLAB_ACCESS','colab'),flush=True)
         app.block_thread()
     finally:
         lifecycle(base,'STOPPING')

@@ -28,13 +28,23 @@ def server_snapshot(process, base, previous=None):
             http.update(code=code,status='READY' if isinstance(config,dict) and isinstance(config.get('components'),list) else 'INVALID_RESPONSE')
         except urllib.error.HTTPError as error:http.update(status='HTTP_ERROR',code=error.code)
         except Exception as error:http.update(status='UNREACHABLE',error_type=type(error).__name__)
+    public_http={'status':'NOT_PROBED'}
+    if previous.get('access_mode')=='gradio' and public and exit_code is None and http['status']=='READY':
+        try:
+            class PublicNoRedirect(urllib.request.HTTPRedirectHandler):
+                def redirect_request(self,*args,**kwargs):return None
+            with urllib.request.build_opener(PublicNoRedirect()).open(public+'/config',timeout=5) as response:
+                data=response.read(1024*1024+1);config=json.loads(data)
+                public_http={'status':'READY' if len(data)<=1024*1024 and isinstance(config,dict) and isinstance(config.get('components'),list) else 'INVALID_RESPONSE','code':response.status}
+        except urllib.error.HTTPError as error:public_http={'status':'HTTP_ERROR','code':error.code}
+        except Exception as error:public_http={'status':'UNREACHABLE','error_type':type(error).__name__}
     status=('STOPPED' if exit_code is not None else
             'RUNNING_LOCAL_HTTP_OK' if http['status']=='READY' else
             'STARTING' if not local else 'RUNNING_LOCAL_HTTP_UNAVAILABLE')
     return {'schema_version':'colab_server_status_v1',
             'observed_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
             'status':status,'pid':process.pid,'exit_code':exit_code,'local_url':local,'public_url':public,
-            'local_http':http,'public_tunnel':'NOT_PROBED',
+            'public_http':public_http,'local_http':http,'public_tunnel':'BROWSER_AUTH_REQUIRED_NOT_PROBED' if previous.get('access_mode')=='colab' else 'NOT_PROBED','access_mode':previous.get('access_mode','gradio'),
             'scope':'Local HTTP readiness only; does not prove public tunnel/browser access or engine success.'}
 
 

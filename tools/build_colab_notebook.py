@@ -114,9 +114,17 @@ print('Akses awal diperiksa. Belum ada engine berjalan.')
     code((root/'tools/colab_server_monitor.py').read_text()+'''
 if 'SERVER' in globals() and SERVER.poll() is None:
     raise RuntimeError('Server masih aktif; hentikan dahulu.')
+UI_ACCESS='colab' # 'gradio' adalah opsi jika proxy Colab tidak dapat dipakai.
+server_env=child_env();server_env['LI_COLAB_ACCESS']=UI_ACCESS
+proxy_url=None
+if UI_ACCESS=='colab':
+    from google.colab.output import eval_js
+    proxy_url=eval_js('google.colab.kernel.proxyPort(7860)')
+    server_env['LI_COLAB_PROXY_URL']=proxy_url
+    print('Akses utama memakai proxy Colab; tunggu HTTP lokal siap sebelum membuka link.',flush=True)
 log_path=BASE/'server.log';stream=log_path.open('wb')
-SERVER=subprocess.Popen(command('serve'),env=child_env(),stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
-offset=0;health=None;next_health=0;stop_reason='PROCESS_EXITED'
+SERVER=subprocess.Popen(command('serve'),env=server_env,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+offset=0;health={'public_url':proxy_url,'access_mode':UI_ACCESS};next_health=0;stop_reason='PROCESS_EXITED';link_shown=False
 print('PERHATIAN: menghentikan/interrupt cell ini MENUTUP server Gradio dan tunnel. URL publik tidak dapat dipakai setelah server ditutup. Biarkan cell berjalan selama memakai UI.',flush=True)
 try:
     while SERVER.poll() is None:
@@ -126,7 +134,12 @@ try:
         if time.monotonic()>=next_health:
             health=record_server_status(SERVER,BASE,health);next_health=time.monotonic()+30
             if health['status']=='RUNNING_LOCAL_HTTP_OK':
-                print('HTTP lokal siap. Jika URL publik timeout, periksa tunnel/jaringan browser; akses publik belum diuji oleh probe lokal.',flush=True)
+                if not link_shown and health.get('public_url'):
+                    from IPython.display import display,HTML
+                    from html import escape
+                    display(HTML('<a target="_blank" rel="noopener" href="'+escape(health['public_url'],quote=True)+'">Buka aplikasi — '+escape(UI_ACCESS)+'</a>'))
+                    print('UI_URL='+health['public_url'],flush=True);link_shown=True
+                print('HTTP lokal siap. Link Colab memerlukan sesi browser Colab aktif. Jangan memakai URL gradio.live lama.',flush=True)
         time.sleep(1)
     with log_path.open('rb') as logs:
         logs.seek(offset);print(logs.read().decode('utf-8',errors='replace'),end='')
@@ -221,6 +234,7 @@ HOME/RESULT, peta Folium/Esri, upload8video, GCS gs://aretfak-location-intellige
         for c in cells:
             if c['cell_type']=='code' and 'def child_env(' in c['source']:
                 c['source']=c['source'].replace("'LI_COMPONENT_FLOW':'1',","'LI_COMPONENT_FLOW':'1','LI_PHASE123':'1',")
+    cells[0]['source']+='\n\nAkses utama kini proxy resmi Colab (UI_ACCESS=colab pada cell server), tanpa share tunnel gradio.live. Buka link **Buka aplikasi — colab** setelah HTTP lokal siap. Tetap login Colab pada browser yang sama. Opsi UI_ACCESS=gradio tersedia; jangan mengganti akses ketika job aktif.'
     for i,c in enumerate(cells):c['id']='colab-l4-'+str(i)
     notebook={'nbformat':4,'nbformat_minor':5,'metadata':{'accelerator':'GPU','colab':{'name':Path(output).name,'gpuType':'L4'},'kernelspec':{'name':'python3','display_name':'Python 3'},'language_info':{'name':'python'}},'cells':cells}
     output=Path(output);output.parent.mkdir(parents=True,exist_ok=True);output.write_text(json.dumps(notebook,ensure_ascii=False,indent=1)+'\n');print('Prepared',output,output.stat().st_size)

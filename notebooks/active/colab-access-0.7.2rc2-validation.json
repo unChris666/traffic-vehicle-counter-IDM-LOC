@@ -1,0 +1,22 @@
+{
+  "candidate": "0.7.2rc2",
+  "status": "LOCAL_GATES_PASS_REAL_COLAB_ACCESS_RETEST_PENDING",
+  "tests": {
+    "total": 388,
+    "passed": 370,
+    "skipped": 18,
+    "seconds": 45.672
+  },
+  "HTTP_proof": "PASS actual loopback Gradio with simulated absolute proxy root_path; config root correct; submit/poll JSON non-generating; duplicate click one fixture engine",
+  "build": "PASS",
+  "mypy": "PASS14files",
+  "installed_wheel": "PASS outside repo",
+  "notebook_sha256": "2e5329ce3a7521b075fe9c100d5c00070a1f461a7121a87eea31b462b643b39f",
+  "wheel_sha256": "57f423e007dbfffcc4096f344d9d0fd9a5a4208dc92c44d7f447342f57bf3ad4",
+  "limits": [
+    "Owner gateway502 not directly captured before stop; no engine run in ZIP.",
+    "Real authenticated Colab proxy/browser/public tunnel not tested here.",
+    "Default Colab proxy eliminates mandatory gradio.live share dependency, not all network failures.",
+    "No promotion to main/foundation."
+  ]
+}
