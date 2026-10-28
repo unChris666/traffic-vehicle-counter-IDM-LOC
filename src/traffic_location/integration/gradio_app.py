@@ -3,6 +3,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import date, datetime
 import json
 import math
+import os
 from pathlib import Path
 import re
 import time
@@ -12,7 +13,7 @@ from ..artifacts import read, write, semantic_hash
 from .contracts import GateError
 from .kaggle_runtime import KaggleRuntime
 
-MODES={'Area Coverage':'area','Traffic Counter':'traffic','Gabungan + PPAC':'workflow'}
+MODES={'Area Coverage':'area','Traffic Counter':'traffic','Gabungan + PPAC':'workflow','PPAC':'workflow'}
 VIDEO_SOURCES=('Upload video','Dataset T7SL (contoh)')
 UPLOAD_SLOTS=tuple((d,t) for d in ('weekday','weekend') for t in ('pagi','siang','sore','malam'))
 EXTRA_SLOTS=tuple((d,t) for d in ('weekday','weekend') for t in ('tengah_malam','dini_hari','subuh'))
@@ -71,16 +72,18 @@ def validate(values,video_choices):
             raise ValueError('Koordinat lokasi tidak valid.')
     try:date.fromisoformat(x['period'])
     except (ValueError,TypeError):raise ValueError('Tanggal analisis harus YYYY-MM-DD.') from None
+    component_flow=os.environ.get('LI_COMPONENT_FLOW')=='1'
     mode=MODES[x['mode']]
     selected=[] if mode=='area' else (x['video_ids'] or [])
     if mode!='area' and x['video_source']==VIDEO_SOURCES[0]:
-        if not x['uploads'] or not all(r.get('reviewed') is True for r in x['uploads']):
+        reviewed=[r for r in x['uploads'] if isinstance(r,dict) and r.get('reviewed') is True]
+        if not reviewed or (not component_flow and len(reviewed)!=len(x['uploads'])):
             raise ValueError('Upload video, lalu tinjau dan simpan geometri setiap video.')
-        selected=[r['id'] for r in x['uploads']]
+        selected=[r['id'] for r in (reviewed if component_flow else x['uploads'])]
     if mode!='area' and x['video_source']==VIDEO_SOURCES[1] and (not selected or len(selected)!=len(set(selected)) or not set(selected)<=set(video_choices)):
         raise ValueError('Pilih minimal satu video T7SL yang tersedia.')
-    if mode=='workflow':
-        if not x['confirmed']:raise ValueError('Konfirmasi kesesuaian video dengan target lokasi untuk PPAC.')
+    if mode=='workflow' or component_flow:
+        if mode=='workflow' and not x['confirmed']:raise ValueError('Konfirmasi kesesuaian video dengan target lokasi untuk PPAC.')
         if x['road'] not in ROADS:raise ValueError('Pilih profil jalan PPAC.')
         for field,low,high in (('days',1,7),('hours',1,24),('swot',0,None),('cut',0,None),('parking',0,None)):
             v=x[field]
@@ -100,6 +103,7 @@ def engine_rows(result):
         brief=item.get('summary') or {}
         rows.append([item['id'],item.get('execution_status'),item.get('quality',''),
                      json.dumps(brief,ensure_ascii=False) if brief else (str(item.get('message') or item.get('code') or 'Tahap gagal')+' '+json.dumps(item.get('diagnostics',[]),ensure_ascii=False))])
+    rows.extend([v.get('video_id'),'SKIPPED','',v.get('code','')+': '+v.get('reason','')] for v in result.get('skipped_videos',[]))
     return rows
 
 
@@ -128,7 +132,10 @@ class Controller:
             if x['mode']=='area':inventory=[]
             elif x['video_source']==VIDEO_SOURCES[0]:
                 from .uploads import inventory as upload_inventory
-                inventory=upload_inventory(x['uploads'],self.upload_root)
+                if os.environ.get('LI_COMPONENT_FLOW')=='1':
+                    from .uploads import valid_inventory
+                    inventory,skipped=valid_inventory(x['uploads'],self.upload_root)
+                else:inventory=upload_inventory(x['uploads'],self.upload_root)
             else:inventory=runtime.video_inventory(self.input_root)
             objects=state['gcs'].get('objects',{})
             rows=[[name,item['status']] for name,item in objects.items()]
@@ -199,6 +206,7 @@ class Controller:
         except Exception as exc:return None,'Paket diagnosis gagal: '+safe(exc)
 
     def prepare_slot_sources(self,*values):
+        if os.environ.get('LI_COMPONENT_FLOW')=='1':return self.prepare_independent_sources(*values)
         from .upload_transport import resolve_reference
         import gradio as gr
         count=len(UPLOAD_SLOTS+EXTRA_SLOTS);files=list(values[:count]);refs=values[count:]
@@ -215,6 +223,38 @@ class Controller:
             return self.prepare_slots(*files)
         except Exception as exc:
             return [],gr.update(choices=[],value=None),str(exc) if isinstance(exc,ValueError) else 'Sumber video gagal diambil ('+type(exc).__name__+'). Periksa path/izin GCS.'
+
+    def prepare_independent_sources(self,*values):
+        from .upload_transport import resolve_reference
+        from .uploads import prepare,MAX_BATCH_BYTES
+        from .failure_details import safe
+        import gradio as gr
+        slots=UPLOAD_SLOTS+EXTRA_SLOTS;count=len(slots)
+        files=list(values[:count]);refs=list(values[count:]);errors=[];rows=[];seen=set();total=0
+        template=read(self.config_root/'geometry/T7SL-WEEKDAY-PAGI.json')
+        for i,(day,session) in enumerate(slots):
+            path=files[i] if i<len(files) else None;reference=refs[i] if i<len(refs) else None
+            if not path and not reference:continue
+            try:
+                if path and reference:raise ValueError('Pilih file ATAU referensi pada slot yang sama.')
+                if reference:
+                    def connect():
+                        runtime=self.runtime({'target_id':'video-staging','period':'sources','latitude':0.,'longitude':0.})
+                        return runtime.connect()
+                    path=resolve_reference(reference,self.upload_root/'references',connect)
+                size=Path(path).stat().st_size
+                if total+size>MAX_BATCH_BYTES:raise ValueError('Total video valid maksimal2GiB per batch.')
+                row=prepare([path],self.upload_root,template)[0]
+                if row['sha256'] in seen:raise ValueError('Video sumber duplikat pada slot lain.')
+                total+=size;seen.add(row['sha256'])
+                row.update(day=day,session=session,upload_slot=[day,session]);rows.append(row)
+            except Exception as error:
+                errors.append({'id':'skipped_'+day+'_'+session,'reviewed':False,'skip_reason':safe(error),
+                               'skip_code':getattr(error,'code',type(error).__name__)})
+        choices=[(r['day']+' / '+r['session']+' — '+r['filename'],r['id']) for r in rows]
+        message=str(len(rows))+' video valid disiapkan; tinjau dan simpan geometri. '+str(len(errors))+' slot dilewati.'
+        if errors:message+=' '+ '; '.join(r['id']+': '+r['skip_reason'] for r in errors)
+        return rows+errors,gr.update(choices=choices,value=rows[0]['id'] if rows else None),message
 
     def prepare_slots(self,*files):
         from .uploads import prepare
@@ -355,7 +395,8 @@ class Controller:
             ppac=result['ppac']
             failed=sum(row.get('execution_status')!='SUCCEEDED' for row in result['engines'])
             publication=result.get('publication',{'status':'NOT_REQUESTED'})
-            status=f"Selesai. Engine/video gagal: {failed}. PPAC: {ppac['execution_status']}. Penyimpanan: {publication['status']} {publication.get('code','')}."
+            status=f"Selesai. Engine/video gagal: {failed}. Video dilewati: {len(result.get('skipped_videos',[]))}. PPAC: {ppac['execution_status']}. Penyimpanan: {publication['status']} {publication.get('code','')}."
+            if ppac.get('scope') in ('area','traffic'):status+=' Komponen '+ppac['scope']+' saja; STD total belum lengkap.'
             yield status,engine_rows(result),ppac,self.progress_text(runtime,started),None,{'output':result.get('output',''),'context':x}
         except GateError as exc:yield str(exc),[],{},self.progress_text(runtime,started),None,None
         except Exception as exc:
@@ -422,7 +463,11 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                                            info='Data contoh tetap tersedia untuk regression/pilot.')
                 gr.Markdown('Hasil job disimpan ke **gs://aretfak-location-intelligence** dan **locdeproject.location_intelligence**. Tabel perlu disiapkan sekali; kegagalan penyimpanan tidak menghapus hasil lokal.')
                 gr.Markdown('## Action')
-                mode=gr.Dropdown(list(MODES),value=default_mode,label='Proses')
+                choices=['Area Coverage','Traffic Counter','PPAC'] if os.environ.get('LI_COMPONENT_FLOW')=='1' else ['Area Coverage','Traffic Counter','Gabungan + PPAC']
+                if default_mode not in choices:default_mode=choices[-1]
+                mode=gr.Dropdown(choices,value=default_mode,label='Proses')
+                if os.environ.get('LI_COMPONENT_FLOW')=='1':
+                    gr.Markdown('**Area Coverage:** Area → PPAC Residential/Fasum. **Traffic Counter:** video valid → PPAC Traffic. **PPAC:** Area → Traffic → PPAC gabungan. STD total menunggu semua input wajib lengkap; komponen tersedia tetap ditampilkan.')
                 with gr.Accordion('Input bisnis PPAC',open=False):
                     with gr.Row():
                         road=gr.Dropdown(ROADS,value='mainstreet',label='Profil jalan PPAC')
@@ -493,10 +538,10 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         inputs=[mode,target,latitude,longitude,period,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,upload_state,store_name,annotate]
         diagnostic=gr.Button('Periksa penyebab kegagalan Area (tanpa proses ulang)')
         diagnostic_text=gr.Textbox(label='Diagnosis Area — penyebab dari log worker',lines=8,interactive=False)
-        gr.Button('Lihat log proses (Area/Traffic)').click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='engines',concurrency_limit=1)
-        diagnostic.click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='engines',concurrency_limit=1)
+        gr.Button('Lihat log proses (Area/Traffic)').click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
+        diagnostic.click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
         diagnostic_file=gr.File(label='Paket diagnosis Area (ZIP)',interactive=False)
-        gr.Button('Siapkan paket diagnosis Area').click(controller.export_area_diagnostics,inputs,[diagnostic_file,diagnostic_text],api_name=False,concurrency_id='engines',concurrency_limit=1)
+        gr.Button('Siapkan paket diagnosis Area').click(controller.export_area_diagnostics,inputs,[diagnostic_file,diagnostic_text],api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
         check.click(controller.check,inputs,[status,readiness],api_name=False,concurrency_id='engines',concurrency_limit=1)
         def readable_process(*values):
             from .ppac_view import rows

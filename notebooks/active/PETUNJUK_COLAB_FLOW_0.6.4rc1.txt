@@ -1,0 +1,20 @@
+COLAB L4 — NOTEBOOK16, FLOW INDEPENDEN, PACKAGE0.6.4rc1
+
+Gunakan 16_colab_l4_independent_flow.ipynb untuk alur baru ini. Notebook15 tetap menjadi varian Area-first lama; opsi flow independen hanya diaktifkan notebook16.
+
+1. Pilih runtime L4 dan jalankan cell setup sekali di awal. Pemeriksaan import/CUDA/core, autentikasi Google dan pemeriksaan cloud tetap ada. Tidak perlu membuat tabel BQ, bucket atau credential baru.
+2. Jalankan cell server dan biarkan terus berjalan. Stop/Interrupt menutup server serta tunnel Gradio; gunakan URL baru sesudah restart.
+3. HOME menampilkan tiga mode:
+   Area Coverage: hanya engine Area; hitung komponen PPAC Residential dan Fasum. Tidak memerlukan video. STD total tetap null karena Traffic tidak diminta.
+   Traffic Counter: hanya engine Traffic untuk video valid; hitung komponen PPAC Traffic. Tidak memerlukan job Area sebelumnya atau membuka hasil Area untuk membuka akses. STD total tetap null karena Area tidak diminta.
+   PPAC: Area -> Traffic -> PPAC gabungan. STD total hanya tersedia jika sumber/observasi wajib lengkap. Komponen yang berhasil tetap ditampilkan ketika total BLOCKED.
+4. Isi identitas/lokasi dan parameter bisnis untuk setiap mode, sebab komponen PPAC dihitung pada semua mode. Mode PPAC memerlukan konfirmasi kesesuaian video/lokasi. Input dalam job yang sama menjadi binding; notebook tidak menggabungkan hasil job lama diam-diam.
+5. Untuk Traffic/PPAC, upload video atau isi referensi GCS pada slot. Siapkan lalu tinjau dan simpan geometri per video. Template hanyalah titik awal. Slot gagal inspeksi/referensi, file berubah, duplikat atau belum ditinjau dilewati dengan alasan. Satu slot rusak tidak menghapus slot valid lainnya. Alasan skip terlihat di UI dan disimpan dalam diagnosis job.
+6. Video yang bisa dicacah belum tentu sampel PPAC yang sah: sample PPAC tetap300–306detik, tanpa penskalaan count. Video pendek tetap memiliki hasil counting tetapi dikecualikan dari sampel PPAC. Bila ada sampel sah lain, komponen dihitung dari sampel tersebut dan ditandai sementara. Bila tidak ada, PPAC komponen BLOCKED dan counting tetap tersedia.
+7. Observasi lengkap untuk jam<=15 adalah weekday/weekend x pagi/siang/sore/malam; jam>15 juga memerlukan tengah_malam/dini_hari/subuh untuk kedua hari. Sesi/kategori hilang tetap tidak diisi dengan sampel nol. Komponen Traffic yang sementara memakai formula MVP yang sudah ada (rata-rata observasi tersedia dan bobot hari Excel4/3); provisional=true dan daftar missing_observations disertakan. Bukan STD total final.
+8. PPAC Residential tetap memakai alokasi calon toko + UNVERIFIED tanpa hitung ganda; status UNVERIFIED dipertahankan. Rumus1bangunan=1KK=4orang, faktorSTD, Huff, routing dan counting tetap. Keberhasilan komponen SUCCEEDED tidak sama dengan total lengkap; periksa cakupan, kualitas dan Reason.
+9. RESULT tetap memuat peta Area bila mode menjalankan Area, tabel Area/Traffic, annotated video dan grid PPAC. Hasil komponen serta total null dipublikasikan ke GCS/BQ dengan schema yang sudah ada. Sumber yang tidak diminta tidak difabrikasi menjadi nol. Tidak perlu SQL/IAM baru.
+10. Tombol diagnosis memakai antrean terpisah dari engine sehingga dapat digunakan ketika job panjang masih aktif. server.log dan status proses/HTTP lokal tetap ikut diagnosis Colab. HTTP lokal READY tidak menjamin tunnel publik atau engine sehat.
+
+Validasi lokal menggunakan software engine packets yang immutable, bukan fresh inference lokasi nyata: mode Area memanggil Area saja; Traffic memanggil Traffic saja; PPAC memanggil Area lalu Traffic. Fixture PPAC lengkap tetap menghasilkan272 yang sama; ini angka tes software, bukan hasil toko pengguna atau bukti akurasi.
+Uji L4/cloud nyata untuk ketiga mode tetap dijalankan owner. Main dan refactor/deployment-foundation tidak dipromosikan.

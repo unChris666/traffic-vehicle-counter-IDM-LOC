@@ -1,0 +1,40 @@
+{
+  "schema_version": "colab_independent_flow_validation_v1",
+  "date": "2026-10-28",
+  "package_version": "0.6.4rc1",
+  "branch": "fix/area-user-testing",
+  "notebook": "16_colab_l4_independent_flow.ipynb",
+  "tests": {
+    "total": 337,
+    "passed": 326,
+    "skipped": 11,
+    "seconds": 46.156
+  },
+  "checks": {
+    "area_only_no_traffic": "PASS",
+    "traffic_only_no_area": "PASS",
+    "combined_area_then_traffic": "PASS",
+    "full_formula_fixture_272_preserved": "PASS synthetic fixture only",
+    "partial_components_null_total": "PASS",
+    "invalid_unreviewed_changed_duplicate_upload_isolation": "PASS",
+    "bad_slot_preserves_valid_slot": "PASS",
+    "short_clip_counting_preserved_ppac_sample_excluded": "PASS",
+    "area_component_cloud_payload_null_total": "PASS local payload only",
+    "three_mode_ui_and_separate_diagnostic_queue": "PASS",
+    "new_notebook_exact_embedded_wheel_and_opt_in": "PASS",
+    "legacy_area_first_adapter_gates": "PASS",
+    "build": "PASS",
+    "mypy": "PASS 14 source files",
+    "installed_wheel_import_outside_repository": "PASS",
+    "folium_marker_order": "PASS separate GIS environment"
+  },
+  "user_partial_total_policy": "Show available components; total waits for complete combined inputs.",
+  "dependency_versions_changed": false,
+  "numerical_area_or_traffic_kernels_changed": false,
+  "ppac_numeric_formulas_changed": false,
+  "live_colab_l4_run_here": false,
+  "live_cloud_crud_here": false,
+  "main_or_foundation_promoted": false,
+  "wheel_sha256": "bc1583696aef7d4387766b497b863a9c185134d287c198491c0f369e2c6b5c3d",
+  "notebook_sha256": "120c07cce313df994d0d11b67f30f3ffa1d2db353d9274dfa799e3ab18597c46"
+}

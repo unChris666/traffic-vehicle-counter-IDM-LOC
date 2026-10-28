@@ -173,3 +173,23 @@ def inventory(rows,root):
                        'duration_seconds':r['duration_seconds'],'slot':slot,'geometry_ref':r['geometry_ref'],
                        'inspection_ref':r['inspection_ref'],'origin':'USER_UPLOAD_REVIEWED'})
     return result
+
+
+def valid_inventory(rows,root):
+    """Notebook16: isolate invalid/review-pending inputs, preserving each reason."""
+    need(isinstance(rows,list) and len(rows)<=MAX_FILES,'UPLOAD_REQUIRED','Upload maksimal14 video.')
+    valid=[];skipped=[];ids=set();hashes=set();slots=set()
+    for row in rows:
+        try:
+            if isinstance(row,dict) and row.get('skip_reason'):
+                raise ValueError(row['skip_reason'])
+            item=inventory([row],root)[0]
+            slot=(item['slot']['day'],item['slot']['session'])
+            need(item['id'] not in ids and item['slot']['sha256'] not in hashes,'UPLOAD_DUPLICATE','Video sumber berulang.')
+            need(slot not in slots,'DUPLICATE_SLOT','Satu video valid per hari/sesi; slot ini sudah terisi.')
+            valid.append(item);ids.add(item['id']);hashes.add(item['slot']['sha256']);slots.add(slot)
+        except (ValueError,KeyError,TypeError,OSError) as error:
+            skipped.append({'video_id':row.get('id') if isinstance(row,dict) else None,
+                            'status':'SKIPPED','code':row.get('skip_code',getattr(error,'code',type(error).__name__)) if isinstance(row,dict) else type(error).__name__,
+                            'reason':str(error)[:500]})
+    return valid,skipped

@@ -3,7 +3,7 @@ from copy import deepcopy
 from .contracts import need, fields
 from ..ppac.konstatna import CATEGORIES, SESSIONS_NORMAL, SESSIONS_SHIFT3, DAY_WEIGHTS
 
-def features(binding, results, parameters):
+def features(binding, results, parameters, *, traffic_only=False):
     fields(binding, {'schema_version','context','area','traffic','category_mapping','supplemental'})
     need(binding['schema_version']=='gate2_binding_v1','BINDING_SCHEMA_UNSUPPORTED','Gunakan gate2_binding_v1')
     mvp=parameters.get('schema_version')=='ppac_parameters_mvp_v2'
@@ -11,16 +11,20 @@ def features(binding, results, parameters):
     context=binding['context'];fields(context, {'target_id','period_id','latitude','longitude','evidence'})
     need(all(isinstance(context[k],str) and bool(context[k].strip()) for k in ('target_id','period_id','evidence')),
          'CONTEXT_MISSING','Target, periode dan referensi bukti binding wajib eksplisit')
-    area=binding['area'];fields(area,{'job_id','result_version'})
-    ah=_select(area,results,'area');an=ah['native'];ar=ah['result']
-    need((mvp and ah['quality'] in ('SUCCEEDED','PARTIAL')) or (ah['quality']=='SUCCEEDED' and an['market_inputs_complete'] is True and
-         an['summary']['market_status_counts'].get('UNVERIFIED',0)==0),'AREA_INCOMPLETE',
-         'Area masih PARTIAL/UNVERIFIED atau input market belum lengkap; bukan Residential 0')
-    target=an['identity']['market_config']['target']
-    need(all(target[k]==context[k] for k in ('latitude','longitude')),'TARGET_MISMATCH','Koordinat target Area berbeda')
-    gate=an['attractor_gate']
-    need(gate['state'] in ('OPEN','CLOSED'),'AREA_GATE_UNKNOWN','Kelayakan zona luar belum diketahui')
-    facilities=[{'distance_m':r['distance_to_candidate_m']} for r in gate['evidence']]
+    if traffic_only:
+        need(binding['area'] is None,'UNEXPECTED_AREA','Traffic saja tidak menerima hasil Area.')
+        ah=an=ar=None;area=None;gate=None;facilities=None
+    else:
+        area=binding['area'];fields(area,{'job_id','result_version'})
+        ah=_select(area,results,'area');an=ah['native'];ar=ah['result']
+        need((mvp and ah['quality'] in ('SUCCEEDED','PARTIAL')) or (ah['quality']=='SUCCEEDED' and an['market_inputs_complete'] is True and
+             an['summary']['market_status_counts'].get('UNVERIFIED',0)==0),'AREA_INCOMPLETE',
+             'Area masih PARTIAL/UNVERIFIED atau input market belum lengkap; bukan Residential 0')
+        target=an['identity']['market_config']['target']
+        need(all(target[k]==context[k] for k in ('latitude','longitude')),'TARGET_MISMATCH','Koordinat target Area berbeda')
+        gate=an['attractor_gate']
+        need(gate['state'] in ('OPEN','CLOSED'),'AREA_GATE_UNKNOWN','Kelayakan zona luar belum diketahui')
+        facilities=[{'distance_m':r['distance_to_candidate_m']} for r in gate['evidence']]
     need(parameters.get('schema_version') in ('ppac_parameters_v1','ppac_parameters_mvp_v2'),'PARAMETER_SCHEMA_UNSUPPORTED','Gunakan ppac_parameters_v1')
     fields(parameters, {'schema_version','residential','traffic','aggregation','provenance'})
     need(isinstance(parameters['provenance'],str) and bool(parameters['provenance'].strip()),
@@ -29,8 +33,8 @@ def features(binding, results, parameters):
     fields(parameters['traffic'],{'road_type','operating_hours','drive_thru'} if mvp else {'road_type','operating_hours','balance_multiplier','drive_thru'})
     fields(parameters['aggregation'],{'traffic_cut_factor','parking_factor'})
     from ..ppac._reference import _number
-    _number(an['summary']['candidate_whole_buildings'],'candidate_whole_buildings')
-    for facility in facilities:
+    if not traffic_only:_number(an['summary']['candidate_whole_buildings'],'candidate_whole_buildings')
+    for facility in facilities or []:
         _number(facility['distance_m'],'fasum.distance_m')
     for k,v in parameters['residential'].items():
         _number(v,k,maximum=7 if k=='operating_days_per_week' else None)
@@ -48,7 +52,7 @@ def features(binding, results, parameters):
     need(isinstance(mapping,dict) and all(v is None or v in categories for v in mapping.values()),
          'CATEGORY_MAPPING_INVALID','Kategori harus kategori PPAC atau null untuk eksklusi eksplisit')
     need(isinstance(binding['traffic'],list) and bool(binding['traffic']),'TRAFFIC_MISSING','Tidak ada binding Traffic')
-    selected={area['job_id']};videos=set();slots=set();branch=None;lineage=[];excluded=[]
+    selected=set() if traffic_only else {area['job_id']};videos=set();slots=set();branch=None;lineage=[];excluded=[]
     for b in binding['traffic']:
         fields(b,{'job_id','result_version','video_sha256','target_id','period_id','day','session','observed_seconds','observed_categories','evidence'})
         h=_select(b,results,'traffic');r=h['result'];n=h['native']
@@ -97,17 +101,18 @@ def features(binding, results, parameters):
              'OBSERVATION_INVALID','Count integer nonnegatif dan bukti wajib tersedia')
         samples[d][s][c]=obs['count']
     missing=[f'{d}/{s}/{c}' for d in samples for s in samples[d] for c in categories if c not in samples[d][s]]
-    need(not missing,'OBSERVATIONS_INCOMPLETE','Belum dicacah: '+', '.join(missing))
+    if not traffic_only:need(not missing,'OBSERVATIONS_INCOMPLETE','Belum dicacah: '+', '.join(missing))
     need(selected==set(results),'UNSELECTED_RESULT','Ada hasil yang tidak dipilih eksplisit dalam binding')
     from .area_residential import building_basis
-    residential_basis=building_basis(an)
+    residential_basis=building_basis(an) if not traffic_only else None
     return {'schema_version':'ppac_features_v1','context':deepcopy(context),
-            'allocated_buildings':residential_basis['ppac_buildings'] if mvp else an['summary']['candidate_whole_buildings'],
-            'area_building_basis':residential_basis if mvp else {'policy':'ALLOCATED_ONLY','status':ah['quality']},
-            'outer_zone_open':gate['state']=='OPEN','samples':samples,'fasum':facilities,
+            'allocated_buildings':None if traffic_only else residential_basis['ppac_buildings'] if mvp else an['summary']['candidate_whole_buildings'],
+            'area_building_basis':None if traffic_only else residential_basis if mvp else {'policy':'ALLOCATED_ONLY','status':ah['quality']},
+            'outer_zone_open':None if traffic_only else gate['state']=='OPEN','samples':samples,'fasum':facilities,
+            'missing_observations':missing,
             'upstream_quality':{k:{'quality':h['quality'],'summary':h['summary']} for k,h in results.items()},
             'duration_policy':'300_TO_306_SECONDS_NO_RESCALE' if mvp else 'EXACT_300_SECONDS',
-            'lineage':{'area':ah['result_ref'],'area_result_version':ah['result_version'],'traffic':lineage},
+            'lineage':{'area':None if traffic_only else ah['result_ref'],'area_result_version':None if traffic_only else ah['result_version'],'traffic':lineage},
             'supplemental':deepcopy(binding['supplemental']),'excluded_events':excluded,
             'traffic_policy':'ACCEPTED_MEASURED_AND_ESTIMATED_BOTH_DIRECTIONS',
             'binding_trust':'Caller asserts target/period/duration; not independently GPS/PTS verified'}

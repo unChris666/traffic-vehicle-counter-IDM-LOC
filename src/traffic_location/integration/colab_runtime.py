@@ -55,6 +55,8 @@ class ColabRuntime(KaggleRuntime):
             except (OSError,ValueError):pass  # Missing proof keeps the next stage blocked; preserve engine outcome.
 
     def note_reopened_area(self,result):
+        if os.environ.get('LI_COMPONENT_FLOW')=='1':
+            return 'Mode independen aktif: Traffic tidak memerlukan job Area sebelumnya. STD total hanya untuk PPAC gabungan dengan input lengkap.'
         job=result.get('job_context',{});areas=result.get('area_results',[])
         display=result.get('display',{});trace=result.get('area_trace',{})
         verified=(trace.get('runtime_platform')=='colab' and trace.get('execution_status')=='SUCCEEDED'
@@ -80,7 +82,7 @@ class ColabRuntime(KaggleRuntime):
     def execute(self,mode,parameters,**kwargs):
         need(os.environ.get('LI_RUNTIME_MODE')=='bundled' and os.environ.get('LI_AUTH_MODE')=='adc',
              'COLAB_STARTUP_REQUIRED','Jalankan cell setup dan autentikasi Colab dahulu; runtime tidak memasang dependency saat job berjalan.')
-        if mode!='area':
+        if mode!='area' and os.environ.get('LI_COMPONENT_FLOW')!='1':
             context={'target_id':self.target_id,'period_id':self.period_id,'latitude':self.latitude,'longitude':self.longitude}
             proof=self.gate_path(context)
             need(proof.is_file() and not proof.is_symlink(),'AREA_REOPEN_REQUIRED',

@@ -39,5 +39,6 @@ def rows(result):
     add('STD Total','STD/hari',result.get('std_total'),status,reason)
     add('Status','Eksekusi',status,status,reason)
     add('Status','Kualitas',result.get('result_quality'))
+    if result.get('scope'):add('Status','Cakupan hasil',{'area':'Residential + Fasum saja','traffic':'Traffic saja','combined':'Area + Traffic + PPAC'}.get(result['scope'],result['scope']))
     add('Reason','Alasan / diagnosis',reason or ('Tidak ada diagnosis kegagalan.' if status=='SUCCEEDED' else 'Alasan tidak tersedia pada hasil tersimpan.'))
     return output

@@ -475,16 +475,30 @@ class KaggleRuntime:
         root=self.base/'runs'/datetime.now().strftime('%Y%m%dT%H%M%S_%f');root.mkdir(parents=True)
         from ..runtime_resources import record as resource_record
         resource_record(root,'start')
+        component_flow=os.environ.get('LI_COMPONENT_FLOW')=='1'
+        skipped=[]
         if mode=='area':inventory=[]
         elif uploaded_videos is not None:
             from .uploads import inventory as upload_inventory
-            inventory=upload_inventory(uploaded_videos,self.upload_root)
+            if component_flow:
+                from .uploads import valid_inventory
+                inventory,skipped=valid_inventory(uploaded_videos,self.upload_root)
+            else:inventory=upload_inventory(uploaded_videos,self.upload_root)
         else:inventory=self.video_inventory(input_root)
         if video_ids is not None and mode!='area':
             need(isinstance(video_ids,list) and bool(video_ids) and len(video_ids)==len(set(video_ids)),
                  'VIDEO_SELECTION_INVALID','Pilih minimal satu video unik.')
-            need(set(video_ids)<=set(v['id'] for v in inventory),'VIDEO_SELECTION_INVALID','Video di luar dataset terikat.')
+            allowed=set(v['id'] for v in inventory)|({r['video_id'] for r in skipped} if component_flow else set())
+            need(set(video_ids)<=allowed,'VIDEO_SELECTION_INVALID','Video di luar dataset terikat.')
             inventory=[v for v in inventory if v['id'] in video_ids]
+        if component_flow and mode!='area':
+            candidates=[]
+            for item in inventory:
+                if item['status']=='READY':candidates.append(item)
+                else:skipped.append({'video_id':item['id'],'status':'SKIPPED','code':'VIDEO_UNAVAILABLE','reason':item['status']})
+            inventory=candidates
+            write(root/'skipped-videos.json',skipped)
+            need(bool(inventory) or mode=='workflow','NO_VALID_VIDEOS','Tidak ada video valid yang dapat diproses; lihat skipped-videos.json.')
         tasks=([{'id':'area','kind':'area'}] if mode in ('area','workflow') else [])+([{**v,'kind':'traffic'} for v in inventory] if mode in ('traffic','workflow') else [])
         receipts=[];jobs=[];bindings=[]
         import time
@@ -529,7 +543,27 @@ class KaggleRuntime:
                 joined=self._experiment_stage('ppac',{'binding':binding,'parameters':parameters,'jobs':jobs},
                     lambda folder:run(q,folder/'joined',root=root,operation='ppac'),root)
                 ppac=joined['ppac']
-        result={'schema_version':'kaggle_real_route_v1','engines':receipts,'ppac':ppac,'output':str(root),'system':self.record()}
+        if component_flow and mode in ('area','traffic'):
+            try:
+                from .component_flow import component_result
+                context={'target_id':self.target_id,'period_id':self.period_id,'latitude':self.latitude,
+                         'longitude':self.longitude,'evidence':'User target/period declaration; single-engine PPAC component.'}
+                ppac=component_result(mode,jobs,bindings,context,parameters,root)
+            except Exception as error:
+                ppac={'execution_status':'BLOCKED','std_total':None,'scope':mode,
+                      'diagnostics':[{'code':getattr(error,'code',type(error).__name__),'message':str(error)[:1000]}]}
+        if component_flow and mode=='workflow':
+            ppac['scope']='combined'
+            if ppac['execution_status']!='SUCCEEDED':
+                from .component_flow import available_components
+                context={'target_id':self.target_id,'period_id':self.period_id,'latitude':self.latitude,
+                         'longitude':self.longitude,'evidence':'User target/period declaration; available combined-job components.'}
+                parts,component_features,component_errors=available_components(jobs,bindings,context,parameters,root)
+                ppac.update(parts,component_features=component_features,parameters=parameters,result_quality='UNVERIFIED' if parts.get('residential',{}).get('building_basis',{}).get('status')=='UNVERIFIED' else 'PARTIAL')
+                ppac.setdefault('diagnostics',[]).extend(component_errors)
+        if component_flow and skipped:
+            ppac.setdefault('diagnostics',[]).append({'code':'VIDEOS_SKIPPED','videos':skipped})
+        result={'schema_version':'kaggle_real_route_v1','engines':receipts,'ppac':ppac,'output':str(root),'system':self.record(),'skipped_videos':skipped}
         write(root/'summary.json',result)
         if self.publication is not None:
             result['publication']=self.publish_output(root,result,inventory,parameters)

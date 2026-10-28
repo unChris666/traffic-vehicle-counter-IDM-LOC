@@ -3,7 +3,7 @@ import argparse,base64,hashlib,io,json,zipfile
 from pathlib import Path
 
 
-def build(wheel,output):
+def build(wheel,output,*,component_flow=False):
     root=Path(__file__).resolve().parents[1];wheel=Path(wheel).resolve()
     version=wheel.name.split('-')[1]
     with zipfile.ZipFile(wheel) as z:
@@ -187,9 +187,33 @@ with zipfile.ZipFile(archive,'a' if exported else 'w',zipfile.ZIP_DEFLATED) as b
 from google.colab import files
 files.download(str(archive))
 """)
+    if component_flow:
+        cells[0]['source']=f"""# Colab L4 — Area / Traffic / PPAC · {version}
+
+Notebook16 menyediakan tiga mode independen:
+
+| Mode | Engine yang dijalankan | PPAC |
+| --- | --- | --- |
+| Area Coverage | Area saja | Residential + Fasum; STD total belum lengkap |
+| Traffic Counter | Traffic untuk video valid saja | Komponen Traffic; observasi kurang ditandai sementara, STD total belum lengkap |
+| PPAC | Area → Traffic | STD total hanya bila sumber/observasi wajib lengkap |
+
+Pilih runtime L4, jalankan setup sekali dan autentikasi Google, kemudian buka UI. Tidak perlu menjalankan Area atau membuka job Area lebih dahulu untuk memakai Traffic Counter maupun PPAC. Identitas dan parameter bisnis wajib jelas. Video harus lolos inspeksi dan tinjauan geometri; video yang tidak valid dilewati dengan alasan. Durasi yang tidak memenuhi policy300–306detik tetap boleh dicacah tetapi tidak otomatis menjadi sampel PPAC5menit. Mode PPAC tetap membutuhkan konfirmasi video/lokasi.
+
+Untuk STD gabungan: weekday/weekend × pagi/siang/sore/malam wajib lengkap; jam operasional>15 memerlukan sesi tambahan. Hasil komponen tersedia dipertahankan bila STD total BLOCKED. Sesi hilang tidak dibuat sebagai sampel nol. Kebijakan bangunan alokasi+UNVERIFIED tetap, status UNVERIFIED tidak diubah menjadi terverifikasi.
+
+HOME/RESULT, peta Folium/Esri, upload8video, GCS gs://aretfak-location-intelligence dan BQ locdeproject.location_intelligence tetap. Dataset/tabel/IAM tidak dibuat otomatis. Semua perhitungan memakai input dalam job yang sama; notebook tidak menggabungkan job lama secara diam-diam. Server dan tunnel ditutup saat cell server dihentikan. Kandidat pengujian; belum membuktikan kesiapan produksi.
+"""
+        for c in cells:
+            if c['cell_type']=='code' and 'def child_env(' in c['source']:
+                c['source']=c['source'].replace("'LI_RUNTIME_PLATFORM':'colab',","'LI_RUNTIME_PLATFORM':'colab','LI_COMPONENT_FLOW':'1',")
+            if c['cell_type']=='markdown' and c['source'].startswith('## Jalankan UI'):
+                c['source']='## Jalankan UI — pilih Area Coverage, Traffic Counter atau PPAC\nPilih mode pada HOME dan Process. Mode Area dan Traffic menghitung komponen PPAC masing-masing. Mode PPAC menjalankan Area → Traffic → PPAC gabungan. Periksa scope, kualitas, video SKIPPED dan reason pada RESULT. Diagnosis berjalan pada antrean tersendiri.\n\n**Biarkan cell server tetap berjalan. Stop/Interrupt menutup server DAN tunnel; URL publik menjadi tidak aktif.** Status proses dan HTTP lokal dicetak setiap30detik. HTTP lokal READY tidak membuktikan tunnel/browser maupun engine sehat. Hentikan setelah job selesai dan simpan diagnosis sebelum runtime Colab berakhir.'
+            if c['cell_type']=='markdown' and c['source'].startswith('## Autentikasi'):
+                c['source']+='\nAkses cloud disiapkan sebelum UI; pemilihan mode menentukan engine yang dieksekusi.'
     for i,c in enumerate(cells):c['id']='colab-l4-'+str(i)
-    notebook={'nbformat':4,'nbformat_minor':5,'metadata':{'accelerator':'GPU','colab':{'name':'15_colab_l4_area_first.ipynb','gpuType':'L4'},'kernelspec':{'name':'python3','display_name':'Python 3'},'language_info':{'name':'python'}},'cells':cells}
+    notebook={'nbformat':4,'nbformat_minor':5,'metadata':{'accelerator':'GPU','colab':{'name':Path(output).name,'gpuType':'L4'},'kernelspec':{'name':'python3','display_name':'Python 3'},'language_info':{'name':'python'}},'cells':cells}
     output=Path(output);output.parent.mkdir(parents=True,exist_ok=True);output.write_text(json.dumps(notebook,ensure_ascii=False,indent=1)+'\n');print('Prepared',output,output.stat().st_size)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--wheel',required=True);p.add_argument('--output',default='notebooks/active/15_colab_l4_area_first.ipynb');a=p.parse_args();build(a.wheel,a.output)
+    p=argparse.ArgumentParser();p.add_argument('--wheel',required=True);p.add_argument('--output',default='notebooks/active/15_colab_l4_area_first.ipynb');p.add_argument('--component-flow',action='store_true');a=p.parse_args();build(a.wheel,a.output,component_flow=a.component_flow)

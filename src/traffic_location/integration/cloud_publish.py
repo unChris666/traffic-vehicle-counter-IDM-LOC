@@ -145,6 +145,9 @@ def prepare(root,result,inventory,context,parameters,destination,*,annotate=Fals
     write(snapshot/'parameters.json',parameters);add(snapshot/'parameters.json','inputs/parameters.json')
     write(snapshot/'ppac.json',ppac);add(snapshot/'ppac.json','ppac/result.json')
     summary={'schema_version':'cloud_job_summary_v1','job_id':job_id,'context':context,'engines':safe_engines,'ppac':ppac}
+    if result.get('skipped_videos'):
+        summary['skipped_videos']=result['skipped_videos']
+        write(snapshot/'skipped-videos.json',result['skipped_videos']);add(snapshot/'skipped-videos.json','diagnostics/skipped-videos.json')
     write(snapshot/'summary.json',summary);add(snapshot/'summary.json','summary.json')
     manifest={'schema_version':'cloud_job_manifest_v1','job_id':job_id,'created_at':created,
               'files':[{k:v for k,v in e.items() if k!='path'} for e in entries]}
