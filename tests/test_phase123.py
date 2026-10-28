@@ -133,7 +133,7 @@ class LiveResultTests(unittest.TestCase):
             with patch.object(c,'cloud_results') as old:
                 response=c.current_cloud_results(pointer,'TGDI','job_'+'2'*32,rows({'execution_status':'SUCCEEDED','residential':{'std_residential':84},'std_total':None,'scope':'area'}))
             old.assert_not_called();self.assertIn('belum terbukti tersimpan',response[0])
-            self.assertIn(84,response[11]['Nilai'].tolist());self.assertIn('110.504',response[-1])
+            self.assertIn(84,response[11]['Total'].tolist());self.assertIn('110.504',response[-1])
 
 @unittest.skipUnless(importlib.util.find_spec('folium'),'Run native presentation environment')
 class PreviewTests(unittest.TestCase):

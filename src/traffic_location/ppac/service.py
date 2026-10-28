@@ -12,7 +12,7 @@ def calculate(features, parameters):
         raise ValueError('PPAC_OBSERVATIONS_INCOMPLETE: ' + ', '.join(traffic['missing_observations']))
     res_params={**parameters['residential'],**({'combined_coefficient':1.0} if mvp else {})}
     res = residential.calculate(features['allocated_buildings'], outer_zone_open=features['outer_zone_open'],
-                                **res_params)
+                                population_estimate=features.get('area_building_basis',{}).get('population_estimate'),**res_params)
     if features.get('area_building_basis'):
         res['building_basis']=features['area_building_basis']
     facilities = fasum.calculate(features['fasum'])

@@ -20,8 +20,8 @@ UPLOAD_SLOTS=tuple((d,t) for d in ('weekday','weekend') for t in ('pagi','siang'
 EXTRA_SLOTS=tuple((d,t) for d in ('weekday','weekend') for t in ('tengah_malam','dini_hari','subuh'))
 ROADS=['highway','mainstreet','street','substreet']
 DISPLAY_TABLES={'Traffic Counter':['sesi','waktu','tipe kendaraan','jumlah kendaraan lewat'],
- 'Area Coverage':['radius','jumlah_bangunan','jumlah_KK'], 'POI':['tipe_POI','nama_POI'],
- 'Kompetitor (5 terdekat)':['Kdtk','nama_toko'],'Indomaret (5 terdekat)':['Kdtk','nama_toko'],'PPAC':['Bagian','Rincian','Nilai','Status','Reason']}
+ 'Area Coverage':['radius','Tipe Bangunan','Jumlah bangunan','jumlah kepala'], 'POI':['tipe_POI','nama_POI'],
+ 'Kompetitor (5 terdekat)':['Kdtk','nama_toko'],'Indomaret (5 terdekat)':['KDTK','NAMA_TOKO','TGL_GO','TIPE_TOKO','DOMAIN','SOCIO_CLASS','Investasi','RAB','STD','Jarak (m)','Tipe Jalan'],'PPAC':['SOURCE','Jumlah','Konstanta','Total']}
 
 def frame(data,columns):
     import pandas as pd
@@ -38,7 +38,7 @@ def annotation_buttons(result=None):
     return [gr.update(value='Buka annotated video' if slot in by_slot else 'Annotated belum tersedia',link=by_slot.get(slot,{}).get('url'),interactive=slot in by_slot) for slot in UPLOAD_SLOTS]+[gr.update(value=by_slot.get(slot,{}).get('filename') or names.get(slot) or (' / '.join(slot))) for slot in UPLOAD_SLOTS]
 
 def display_frames(result=None):
-    from .ppac_view import rows as ppac_rows
+    from .ppac_view import rows as ppac_rows,grid_from_rows
     has_result=bool(result);result=result or {};detail=result.get('display',{});traffic={}
     if not detail.get('area') and result.get('area_results'):
         a=result['area_results'][0];count=a.get('allocated_buildings') if a.get('execution_status')=='SUCCEEDED' else None
@@ -48,7 +48,7 @@ def display_frames(result=None):
     for r in result.get('traffic_counts',[]):
         key=(r.get('day_group'),r.get('session'),r.get('category'))
         if r.get('accepted_count') is not None:traffic[key]=traffic.get(key,0)+r['accepted_count']
-    data=[[dict(zip(DISPLAY_TABLES['Traffic Counter'],(*k,v))) for k,v in traffic.items()],detail.get('area',[]),detail.get('poi',[]),detail.get('competitors',[]),detail.get('indomaret',[]),ppac_rows(document)]
+    data=[[dict(zip(DISPLAY_TABLES['Traffic Counter'],(*k,v))) for k,v in traffic.items()],detail.get('area',[]),detail.get('poi',[]),detail.get('competitors',[]),detail.get('indomaret',[]),grid_from_rows(ppac_rows(document))]
     return [frame(rows,columns) for rows,columns in zip(data,DISPLAY_TABLES.values())]
 
 INPUT_NAMES=('mode','target_id','latitude','longitude','period','video_ids','road','days','hours',
@@ -95,6 +95,10 @@ def validate(values,video_choices):
                 'traffic':{'road_type':x['road'],'operating_hours':x['hours'],'drive_thru':bool(x['drive_thru'])},
                 'aggregation':{'traffic_cut_factor':x['cut'],'parking_factor':x['parking']},
                 'provenance':'Input bisnis pengguna melalui Gradio; lookup Residential/balance dinonaktifkan sesuai MVP v2.'}
+    if len(values)>20:
+        from .population import RWI
+        if values[20] not in RWI:raise ValueError('Pilih RWI sebelum proses/pratinjau.')
+        parameters['residential']['rwi']=values[20]
     return {**x,'mode':mode,'parameters':parameters,'video_ids':selected}
 
 
@@ -324,7 +328,9 @@ class Controller:
             c=pointer.get('context',{})
             identity_text='**Job:** '+escape(str(pointer.get('job_id','')))+' · **KDTK:** '+escape(str(c.get('target_id','')))+' · **Latitude:** '+str(c.get('latitude'))+' · **Longitude:** '+str(c.get('longitude'))
             live_frames=display_frames()
-            if live_ppac:live_frames[-1]=frame(live_ppac,DISPLAY_TABLES['PPAC'])
+            if live_ppac:
+                from .ppac_view import grid_from_rows
+                live_frames[-1]=frame(grid_from_rows(live_ppac),DISPLAY_TABLES['PPAC'])
             return ('Hasil job ini belum dipublikasikan. Grid PPAC berisi hasil komputasi lokal bila tersedia; belum terbukti tersimpan. Periksa status penyimpanan.', '', '',
                     *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*live_frames,*annotation_buttons(),identity_text)
         from .cloud_schema import SCHEMAS
@@ -557,6 +563,7 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                         cut=gr.Number(value=1,minimum=0,label='Faktor potongan Traffic (1 = tanpa penyesuaian)')
                         parking=gr.Number(value=1,minimum=0,label='Faktor parkir (1 = tanpa penyesuaian)')
                 gr.Markdown('Operasional **lebih dari 15 jam** memerlukan sesi tambahan. Memilih sebagian video dapat membuat PPAC menunggu input. Hasil parsial tetap ditandai; akurasi identitas kendaraan belum tervalidasi.')
+                rwi=gr.Dropdown(choices=['MENENGAH ATAS','MENENGAH BAWAH'],value=None,label='RWI — asumsi estimasi penduduk') if phase123 else None
                 confirmed=gr.Checkbox(value=False,label='Saya memastikan video yang dipilih digunakan untuk analisis target lokasi ini.')
                 annotate=gr.Checkbox(value=True,label='Buat annotated video (tahap CPU tambahan setelah counting)')
                 save_project=gr.Button('Save Project')
@@ -570,6 +577,7 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
             with gr.Tab('RESULT'):
                 gr.Markdown('## Identity')
                 result_identity=gr.Markdown()
+                gr.Markdown('Jumlah kepala = estimasi penduduk (orang), bukan KK. Radius berupa zona terpisah. Tipe Jalan memakai segmen graf terdekat, bukan bukti akses toko. Konstanta pada grid PPAC adalah rasio efektif Total/Jumlah; formula zona, pembulatan, faktor bisnis, dan bobot Traffic tetap mengikuti policy tersimpan. STD total dibaca dari hasil engine, bukan penjumlahan ulang tampilan.')
                 gr.Markdown('## Status dan log proses')
                 engines=gr.Dataframe(headers=['Engine/video','Status','Kualitas','Ringkasan'],datatype=['str']*4,interactive=False,label='Hasil masing-masing engine')
                 from .ppac_view import HEADERS
@@ -615,12 +623,13 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         retried=retry.click(controller.retry_storage,job_pointer,[status,download],api_name=False,concurrency_id='engines',concurrency_limit=1)
         inputs=[mode,target,latitude,longitude,period,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,upload_state,store_name,annotate]
         if phase123:
-            preview_job_button.click(controller.preview_job,inputs,[input_review,input_map,input_summary,input_confirmed],api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
+            preview_inputs=inputs+[input_review,input_confirmed,rwi]
+            preview_job_button.click(controller.preview_job,preview_inputs,[input_review,input_map,input_summary,input_confirmed],api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
             def invalidate_input_review():return None,False,'Input berubah. Pratinjau dan konfirmasi ulang sebelum Process.',''
-            for field in (mode,target,latitude,longitude,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,store_name,annotate):
+            for field in (mode,target,latitude,longitude,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,store_name,annotate,rwi):
                 field.input(invalidate_input_review,None,[input_review,input_confirmed,input_summary,input_map],api_name=False,queue=False)
             upload_state.change(invalidate_input_review,None,[input_review,input_confirmed,input_summary,input_map],api_name=False,queue=False)
-            inputs=inputs+[input_review,input_confirmed]
+            inputs=inputs+[input_review,input_confirmed,rwi]
         diagnostic=gr.Button('Periksa penyebab kegagalan Area (tanpa proses ulang)')
         diagnostic_text=gr.Textbox(label='Diagnosis Area — penyebab dari log worker',lines=8,interactive=False)
         gr.Button('Lihat log proses (Area/Traffic)').click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
@@ -640,7 +649,8 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                     if first or terminal:
                         live=list(controller.current_cloud_results(None,None,None))
                         live[0]='Hasil eksekusi saat ini; pembacaan GCS/BQ menyusul. '+output[0]
-                        live[3+len(table_views)+5]=result[2]
+                        from .ppac_view import grid_from_rows
+                        live[3+len(table_views)+5]=frame(grid_from_rows(result[2]),DISPLAY_TABLES['PPAC'])
                         live[-1]=accepted
                         result.extend(live)
                     else:result.extend(gr.skip() for _ in result_outputs)

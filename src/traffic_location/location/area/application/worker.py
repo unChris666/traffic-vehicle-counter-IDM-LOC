@@ -103,6 +103,9 @@ def execute(request,root):
                'huff_retained_contenders_exact':True,'aggregate_exact':True,
                'not_compared':['fresh candidate generation','fresh graph/connectors','full market route matrix generation']}
         record(root,'recorded_routing','SUCCEEDED')
+    if request.get('population_rwi'):
+        from ....integration.population import records
+        native['population_estimates']=records(read(pilot/'normalized/buildings.geojson')['features'],native['rows'],request['population_rwi'])
     # Render from a relocated copy. Only presentation output_path changes.
     if request['render']:
         from ..outputs.map import render_safely

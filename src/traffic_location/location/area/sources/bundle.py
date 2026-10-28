@@ -70,6 +70,7 @@ def create_source_bundle(config,sources,bq_snapshot,runtime_profile,output):
                 return value
             for base,prefix in [(sources,'sources'),(bq_snapshot,'bq_snapshot')]:
                 members=[base/name for name in source_manifest['files']]+[base/'source_manifest.json'] if prefix=='sources' else [base/'competitor.json',base/'indomaret.json']
+                if prefix=='bq_snapshot' and (base/'indomaret-details.json').is_file():members.append(base/'indomaret-details.json')
                 for p in sorted(members):
                     if p.is_symlink():raise ValueError('AREA_SOURCE_SYMLINK')
                     if p.is_file():

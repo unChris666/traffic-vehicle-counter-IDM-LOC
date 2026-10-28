@@ -15,6 +15,10 @@ def implementation_hash():
 
 
 def execute(request,output):
+    request=dict(request);population_rwi=request.pop('population_rwi',None)
+    if population_rwi is not None:
+        from ....integration.population import RWI
+        if population_rwi not in RWI:raise ValueError('RWI_INVALID')
     source_request=request.get('schema_version')=='area_execution_request_v2'
     if source_request:
         if set(request)!={'schema_version','operation','input','core_python','render','timeout_seconds'} or request['operation']!='compute_gpu_sources':
@@ -32,8 +36,9 @@ def execute(request,output):
     from ..input_contracts import AreaArtifactRequest
     AreaArtifactRequest.parse({'schema_version':'area_artifact_request_v1','operation':'reopen',**request['baseline']})
     checked(request['baseline']['path'],request['baseline']['sha256'])
+    if population_rwi is not None:request['population_rwi']=population_rwi
     version=semantic_hash({'operation':request['operation'],'baseline':request['baseline']['sha256'],
-                           'render':request['render'],'code':implementation_hash(),'environment':fingerprint(),
+                           'population_rwi':population_rwi,'population_policy_code':sha(Path(__file__).resolve().parents[3]/'integration/population.py') if population_rwi else None,'render':request['render'],'code':implementation_hash(),'environment':fingerprint(),
                            'core_python':request['core_python']})
     output=Path(output).resolve();output.parent.mkdir(parents=True,exist_ok=True)
     if output.exists():

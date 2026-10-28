@@ -29,7 +29,10 @@ def features(binding, results, parameters, *, traffic_only=False):
     fields(parameters, {'schema_version','residential','traffic','aggregation','provenance'})
     need(isinstance(parameters['provenance'],str) and bool(parameters['provenance'].strip()),
          'PARAMETER_PROVENANCE_MISSING','Nyatakan sumber parameter; lookup AC17/AK30/AE18 belum otomatis')
-    fields(parameters['residential'],{'operating_days_per_week','swot_factor'} if mvp else {'combined_coefficient','operating_days_per_week','swot_factor'})
+    fields(parameters['residential'],({'operating_days_per_week','swot_factor'} if mvp else {'combined_coefficient','operating_days_per_week','swot_factor'}) | ({'rwi'} if 'rwi' in parameters['residential'] else set()))
+    if 'rwi' in parameters['residential']:
+        from .population import RWI
+        need(parameters['residential']['rwi'] in RWI,'RWI_INVALID','Pilih RWI yang valid')
     fields(parameters['traffic'],{'road_type','operating_hours','drive_thru'} if mvp else {'road_type','operating_hours','balance_multiplier','drive_thru'})
     fields(parameters['aggregation'],{'traffic_cut_factor','parking_factor'})
     from ..ppac._reference import _number
@@ -37,6 +40,7 @@ def features(binding, results, parameters, *, traffic_only=False):
     for facility in facilities or []:
         _number(facility['distance_m'],'fasum.distance_m')
     for k,v in parameters['residential'].items():
+        if k=='rwi':continue
         _number(v,k,maximum=7 if k=='operating_days_per_week' else None)
     for k in ('traffic_cut_factor','parking_factor'):
         _number(parameters['aggregation'][k],k)
@@ -105,6 +109,9 @@ def features(binding, results, parameters, *, traffic_only=False):
     need(selected==set(results),'UNSELECTED_RESULT','Ada hasil yang tidak dipilih eksplisit dalam binding')
     from .area_residential import building_basis
     residential_basis=building_basis(an) if not traffic_only else None
+    if residential_basis is not None and parameters['residential'].get('rwi'):
+        from .population import total
+        residential_basis['population_estimate']=total(an,parameters['residential']['rwi'])
     return {'schema_version':'ppac_features_v1','context':deepcopy(context),
             'allocated_buildings':None if traffic_only else residential_basis['ppac_buildings'] if mvp else an['summary']['candidate_whole_buildings'],
             'area_building_basis':None if traffic_only else residential_basis if mvp else {'policy':'ALLOCATED_ONLY','status':ah['quality']},

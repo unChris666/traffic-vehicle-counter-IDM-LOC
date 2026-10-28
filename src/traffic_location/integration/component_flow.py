@@ -17,6 +17,9 @@ def component_result(mode,jobs,bindings,context,parameters,root):
         need(all(target[k]==context[k] for k in ('latitude','longitude')),'TARGET_MISMATCH','Koordinat Area berbeda.')
         gate=native['attractor_gate'];need(gate['state'] in ('OPEN','CLOSED'),'AREA_GATE_UNKNOWN','Zona luar belum diketahui.')
         basis=building_basis(native)
+        if parameters['residential'].get('rwi'):
+            from .population import total
+            basis['population_estimate']=total(native,parameters['residential']['rwi'])
         f={'schema_version':'ppac_features_v1','context':context,'allocated_buildings':basis['ppac_buildings'],
            'outer_zone_open':gate['state']=='OPEN','area_building_basis':basis,
            'fasum':[{'distance_m':r['distance_to_candidate_m']} for r in gate['evidence']],

@@ -2,7 +2,7 @@
 from ._reference import _number, excel_round
 
 def calculate(buildings, *, outer_zone_open, combined_coefficient,
-              operating_days_per_week, swot_factor):
+              operating_days_per_week, swot_factor, rwi=None, population_estimate=None):
     buildings = _number(buildings, 'allocated_buildings')
     if not buildings.is_integer():
         raise ValueError('allocated_buildings harus integer')
@@ -11,7 +11,8 @@ def calculate(buildings, *, outer_zone_open, combined_coefficient,
     coefficient = _number(combined_coefficient, 'combined_coefficient')
     days = _number(operating_days_per_week, 'operating_days_per_week', maximum=7)
     swot = _number(swot_factor, 'swot_factor')
-    people = buildings * 4
+    if rwi is not None and (population_estimate is None or population_estimate.get('rwi')!=rwi):raise ValueError('POPULATION_ESTIMATE_REQUIRED')
+    people = _number(population_estimate['population'],'estimated_population') if population_estimate is not None else buildings * 4
     shares = (0.35, 0.45, 0.20) if outer_zone_open else (0.40, 0.60, 0.)
     monthly = days * 4 + (2 if days > 6 else 0)
     groups = []
@@ -20,5 +21,5 @@ def calculate(buildings, *, outer_zone_open, combined_coefficient,
         std = excel_round(population / 30 * multiplier * coefficient * monthly / 30 * swot)
         groups.append({'zone': label, 'share': share, 'estimated_occupants': population, 'std': std})
     return {'std_residential': sum(g['std'] for g in groups), 'total_penghuni': people,
-            'allocation_method': 'owner_35_45_20' if outer_zone_open else 'owner_40_60',
+            'population_estimate': population_estimate, 'allocation_method': 'owner_35_45_20' if outer_zone_open else 'owner_40_60',
             'allocated_buildings': int(buildings), 'groups': groups, 'operating_days_month': monthly}

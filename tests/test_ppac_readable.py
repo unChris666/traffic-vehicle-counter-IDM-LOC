@@ -47,8 +47,8 @@ class ReadableTests(unittest.TestCase):
         manifest={'files':[{'object':'jobs/T/P/'+job['job_id']+'/ppac/result.json','sha256':'c'*64}]}
         reader=ResultsReader(CloudDestination(),Mock(),bq)
         with patch.object(reader,'verified_bytes',side_effect=[json.dumps(manifest).encode(),json.dumps(document).encode()]):data=reader.load('T')
-        display=display_frames(data)[-1];std=display[display['Bagian']=='STD Total'].iloc[0]
-        self.assertEqual(std['Nilai'],105);self.assertNotEqual(std['Nilai'],999)
+        display=display_frames(data)[-1];std=display[display['SOURCE']=='STD total'].iloc[0]
+        self.assertEqual(std['Total'],105);self.assertNotEqual(std['Total'],999)
 
     def test_map_response_is_small_and_references_verified_cached_gcs_html(self):
         with tempfile.TemporaryDirectory() as d:

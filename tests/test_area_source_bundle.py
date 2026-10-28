@@ -34,6 +34,16 @@ class SourceBundles(unittest.TestCase):
             self.assertEqual(snapshot.config,args[0])
             second=create_source_bundle(*args,root/'same-input.zip')
             self.assertEqual(sha(output),sha(second))
+    def test_optional_store_metadata_is_frozen_with_checksum(self):
+        import zipfile
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);args=self.fixture(root)
+            write(args[2]/'indomaret-details.json',{'status':'READY','rows':[{'KDTK':'TEST','STD':None}]})
+            output=create_source_bundle(*args,root/'input.zip');SourceBundle(output)
+            with zipfile.ZipFile(output) as z:
+                self.assertIn('bq_snapshot/indomaret-details.json',z.namelist())
+                metadata=json.loads(z.read('source_bundle_manifest.json'))
+                self.assertEqual(metadata['files']['bq_snapshot/indomaret-details.json'],sha(args[2]/'indomaret-details.json'))
     def test_different_bq_location_is_rejected_without_publishing(self):
         with tempfile.TemporaryDirectory() as d:
             root=Path(d);args=self.fixture(root)

@@ -269,7 +269,7 @@ class KaggleRuntime:
         configuration=area_config(self.latitude,self.longitude,runtime['core_python'],self.target_id)
         from ..location.area._kernel.location_intelligent_google_only import PBF
         from ..location.area.sources import pbf_local
-        sourcekey=semantic_hash({'configuration':configuration,'pbf':PBF,'analysis_period':self.period_id,
+        sourcekey=semantic_hash({'store_details_schema':'optional_indomaret_v1','configuration':configuration,'pbf':PBF,'analysis_period':self.period_id,
                                  'reader_version':pbf_local.READER_VERSION,'reader_sha256':sha(pbf_local.__file__)})
         root=self.base/'area-source'/sourcekey;root.mkdir(parents=True,exist_ok=True)
         from ..location.area.sources.bundle import SourceBundle,create_source_bundle
@@ -282,6 +282,8 @@ class KaggleRuntime:
                 stage(self.base,'bq_snapshot')
                 layers=bq_runtime.load_bq_layers(configuration['CONFIG'],root/'bq_snapshot')
             finally:bq_runtime._NOTEBOOK_BQ_CREDENTIALS=prior
+            from .store_details import snapshot as store_snapshot
+            store_snapshot(configuration['CONFIG'],root/'bq_snapshot',self.credentials)
             write(root/'bq-readiness.json',layers)
             from .failure_details import source_failures
             failures=source_failures(layers)
@@ -359,7 +361,9 @@ class KaggleRuntime:
         mark('runtime_setup');self.setup_runtime('area')
         with timing.stage('area_source'):
             mark('source_preparation')
-            try:request=self.prepare_area()
+            try:
+                request=self.prepare_area()
+                if getattr(self,'_population_rwi',None):request['population_rwi']=self._population_rwi
             finally:
                 status_path=self.base/'job-status.json'
                 try:
@@ -507,6 +511,7 @@ class KaggleRuntime:
         """One invocation per engine/video; failures and successes always visible."""
         from datetime import datetime
         parameters=deepcopy(parameters);video_ids=deepcopy(video_ids);uploaded_videos=deepcopy(uploaded_videos)
+        self._population_rwi=parameters.get('residential',{}).get('rwi')
         from .job_status import stage
         need(mode in ('area','traffic','workflow'),'MODE_INVALID','Pilih Area, Traffic, atau gabungan.')
         if mode=='workflow':need(target_confirmed,'TARGET_BINDING_REQUIRED','Konfirmasi bahwa video dan Area dipakai untuk target yang sama.')

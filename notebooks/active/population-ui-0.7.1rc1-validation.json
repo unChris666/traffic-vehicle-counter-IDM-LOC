@@ -1,0 +1,30 @@
+{
+  "candidate": "0.7.1rc1",
+  "observed_at": "2026-10-28T08:45:51.095127+00:00",
+  "status": "LOCAL_GATES_PASS_OWNER_TESTING_PENDING",
+  "main_suite": {
+    "total": 375,
+    "passed": 358,
+    "skipped": 17,
+    "seconds": 45.726
+  },
+  "native_GIS_population_tests": {
+    "total": 7,
+    "passed": 7,
+    "skipped": 0
+  },
+  "gradio_stream": "PASS21inputs35outputs; Dataframe postprocessing PASS",
+  "mypy": "PASS14files contracts/config",
+  "build": "PASS sdist/wheel",
+  "installed_wheel": "PASS outside repository including population policy",
+  "notebook_sha256": "d6bad05006e2c90e5b477ddee915f875cb3a1e0bbe94300dbb186cb698b19c7b",
+  "wheel_sha256": "dd3616cc58af014701a128557dad83e48950bd8fd7387c979a92d88096e57072",
+  "limitations": [
+    "No actual Colab/L4 inference or browser testing in this environment.",
+    "Optional Indomaret BQ metadata read not verified with real cloud credentials; unavailable fields remain null.",
+    "Default/effective minimum floors are scenario assumptions; actual levels retained.",
+    "Frozen routing/Huff/counting kernels unchanged; population-to-Residential PPAC policy explicitly updated.",
+    "Konstanta Residential/Traffic in grid is effective Total/Jumlah ratio, not replacement of the saved zonal/traffic formula.",
+    "No promotion to main/foundation before owner acceptance."
+  ]
+}

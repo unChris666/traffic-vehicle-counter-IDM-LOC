@@ -11,7 +11,7 @@ def calculate(features,parameters,scope):
             'diagnostics':[{'code':'COMBINED_INPUTS_NOT_REQUESTED','message':'Engine lain tidak dijalankan pada mode ini.'}]}
     if scope=='area':
         res=residential.calculate(features['allocated_buildings'],outer_zone_open=features['outer_zone_open'],
-                                  combined_coefficient=1.,**parameters['residential'])
+                                  combined_coefficient=1.,population_estimate=features['area_building_basis'].get('population_estimate'),**parameters['residential'])
         res['building_basis']=features['area_building_basis']
         result.update(residential=res,fasum=fasum.calculate(features['fasum']))
         if features['area_building_basis']['status']=='UNVERIFIED':result['result_quality']='UNVERIFIED'
