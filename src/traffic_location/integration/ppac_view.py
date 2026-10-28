@@ -40,5 +40,7 @@ def rows(result):
     add('Status','Eksekusi',status,status,reason)
     add('Status','Kualitas',result.get('result_quality'))
     if result.get('scope'):add('Status','Cakupan hasil',{'area':'Residential + Fasum saja','traffic':'Traffic saja','combined':'Area + Traffic + PPAC'}.get(result['scope'],result['scope']))
+    for component,state in result.get('components_status',{}).items():add('Status','Komponen '+component,state)
+    if result.get('std_total_status'):add('Status','Kelengkapan STD total',result['std_total_status'])
     add('Reason','Alasan / diagnosis',reason or ('Tidak ada diagnosis kegagalan.' if status=='SUCCEEDED' else 'Alasan tidak tersedia pada hasil tersimpan.'))
     return output

@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 import time
 from uuid import uuid4
+from copy import deepcopy
 from zoneinfo import ZoneInfo
 from ..artifacts import read, write, semantic_hash
 from .contracts import GateError
@@ -186,10 +187,16 @@ class Controller:
         try:
             runtime=self.diagnostic_runtime(values);report=latest_report(runtime.base)
             lines=[];trace=report['trace']
+            if report.get('current_job'):
+                job=report['current_job'];lines.append('Job '+job['job_id']+' — mode '+job['mode']+' — input '+job['input_sha256'])
+                if report.get('current_job_status'):lines.append('Tahap job: '+str(report['current_job_status'].get('stage'))+' '+str(report['current_job_status'].get('observed_status',report['current_job_status'].get('status'))))
+                if trace and not report.get('area_trace_is_latest_job'):lines.append('Jejak Area di bawah adalah milik job sebelumnya; bukan status Area pada job saat ini.')
             if trace:
                 lines.append('Area '+trace['execution_status']+' — tahap '+trace['stage']+' — package '+trace['package_version'])
                 if trace.get('result'):lines.append('Hasil: '+str(trace['result']))
-                if trace.get('failure'):lines.append('Penyebab: '+str(trace['failure']))
+                if trace.get('failure'):
+                    lines.append('Kategori: '+trace['failure'].get('category','UNKNOWN'))
+                    lines.append('Penyebab: '+str(trace['failure']))
             if report.get('publication'):lines.append('Penyimpanan: '+str(report['publication']))
             lines.extend(e['log']+'\n'+'\n'.join(e['errors']) for e in report['diagnostics']['evidence'])
             return '\n'.join(lines) if lines else 'Belum ada jejak/log error Area pada workspace ini. Pilih Area Coverage dan proses Area saja; Traffic tidak dijalankan.'
@@ -297,7 +304,7 @@ class Controller:
             message=str(exc) if isinstance(exc,ValueError) else 'Pembacaan BQ/GCS gagal ('+type(exc).__name__+'). Periksa izin dan schema.'
             return message,job_id or '','',*empty,*display_frames(),*annotation_buttons(),''
 
-    def current_cloud_results(self,pointer,target_id,job_id):
+    def current_cloud_results(self,pointer,target_id,job_id,live_ppac=None):
         if pointer:
             try:
                 saved=read(Path(pointer['output'])/'publication-status.json')
@@ -305,8 +312,13 @@ class Controller:
             except (OSError,KeyError,ValueError):pass
             from .cloud_schema import SCHEMAS
             import pandas as pd
-            return ('Hasil job ini belum dipublikasikan. Periksa status penyimpanan.', '', '',
-                    *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*display_frames(),*annotation_buttons(),'')
+            from html import escape
+            c=pointer.get('context',{})
+            identity_text='**Job:** '+escape(str(pointer.get('job_id','')))+' · **KDTK:** '+escape(str(c.get('target_id','')))+' · **Latitude:** '+str(c.get('latitude'))+' · **Longitude:** '+str(c.get('longitude'))
+            live_frames=display_frames()
+            if live_ppac:live_frames[-1]=frame(live_ppac,DISPLAY_TABLES['PPAC'])
+            return ('Hasil job ini belum dipublikasikan. Grid PPAC berisi hasil komputasi lokal bila tersedia; belum terbukti tersimpan. Periksa status penyimpanan.', '', '',
+                    *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*live_frames,*annotation_buttons(),identity_text)
         from .cloud_schema import SCHEMAS
         import pandas as pd
         return ('Belum ada hasil job ini yang dapat dibuka. Gunakan tombol Buka hasil BQ untuk hasil sebelumnya.','','',
@@ -354,7 +366,32 @@ class Controller:
         status=runtime.retry_publication(folder)
         return 'Penyimpanan: '+status['status']+' '+str(status.get('code','')),None
 
+    def preview_job(self,*values):
+        from .job_input import review
+        try:
+            x=validate(values,self.video_choices)
+            import folium
+            m=folium.Map(location=[x['latitude'],x['longitude']],zoom_start=15,tiles=None)
+            folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',attr='Esri',name='Esri Imagery').add_to(m)
+            folium.Marker([x['latitude'],x['longitude']],tooltip='Calon toko').add_to(m)
+            for radius in (400,2000):folium.Circle([x['latitude'],x['longitude']],radius=radius,fill=False).add_to(m)
+            token=review(x)
+            summary={'KDTK':x['target_id'],'Nama Toko':x.get('store_name'),'Periode':x['period'],
+                     'Latitude':x['latitude'],'Longitude':x['longitude'],'Mode':x['mode'],
+                     'Video dipilih':x['video_ids'],'Parameter':x['parameters'],'Review SHA256':token['fingerprint']}
+            return token,m._repr_html_().replace('<iframe ','<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" '),json.dumps(summary,ensure_ascii=False,indent=2),False
+        except Exception as error:
+            from .failure_details import safe
+            return None,'','Pratinjau gagal: '+safe(error),False
+
     def progress_text(self,runtime,started):
+        if os.environ.get('LI_PHASE123')=='1':
+            from .job_status import lines as observed
+            cached=getattr(runtime,'_phase_progress_cache',None)
+            if cached and time.time()-cached[0]<2:return cached[1]
+            text='\n'.join(observed(runtime.base,started)) or 'Menyiapkan job; belum ada checkpoint. Server hidup bukan bukti engine maju.'
+            runtime._phase_progress_cache=(time.time(),text)
+            return text
         lines=[]
         for path in sorted(runtime.base.rglob('*progress.json')):
             try:
@@ -375,17 +412,24 @@ class Controller:
         return '\n'.join(lines[-24:]) or 'Menyiapkan sumber/runtime; rincian setup tersedia di log notebook.'
 
     def process(self,*values):
-        try:x=validate(values,self.video_choices)
+        try:
+            x=deepcopy(validate(values,self.video_choices))
+            if os.environ.get('LI_PHASE123')=='1':
+                from .job_input import checked_review
+                x=checked_review(x,values[18] if len(values)>18 else None,values[19] if len(values)>19 else False)
         except ValueError as exc:
-            yield str(exc),[],{},'',None,None;return
+            yield ('INPUT_ERROR: '+str(exc) if os.environ.get('LI_PHASE123')=='1' else str(exc)),[],{},'',None,None;return
         started=time.time()
         try:runtime=self.runtime(x)
         except Exception as exc:
             yield 'Workspace gagal disiapkan ('+type(exc).__name__+').',[],{},'',None,None;return
-        yield 'Proses dimulai. Biarkan notebook tetap berjalan.',[],{},'Memeriksa sumber dan menyiapkan runtime.',None,None
+        identity={'job_id':'job_'+uuid4().hex,'review_sha256':values[18]['fingerprint']} if os.environ.get('LI_PHASE123')=='1' else None
+        yield ('Job '+identity['job_id']+' — Latitude '+str(x['latitude'])+', Longitude '+str(x['longitude'])+'. Input dibekukan; snapshot GCS dipersiapkan. Biarkan notebook berjalan.' if identity else 'Proses dimulai. Biarkan notebook tetap berjalan.'),[],{},'Memeriksa sumber dan menyiapkan runtime.',None,None
         try:
             with ThreadPoolExecutor(max_workers=1) as pool:
                 options={'uploaded_videos':x['uploads']} if x['video_source']==VIDEO_SOURCES[0] and x['mode']!='area' else {}
+                if os.environ.get('LI_PHASE123')=='1':
+                    options['request_identity']=identity
                 future=pool.submit(runtime.execute,x['mode'],x['parameters'],input_root=self.input_root,
                                    target_confirmed=x['confirmed'],video_ids=x['video_ids'],**options)
                 while not future.done():
@@ -397,9 +441,15 @@ class Controller:
             publication=result.get('publication',{'status':'NOT_REQUESTED'})
             status=f"Selesai. Engine/video gagal: {failed}. Video dilewati: {len(result.get('skipped_videos',[]))}. PPAC: {ppac['execution_status']}. Penyimpanan: {publication['status']} {publication.get('code','')}."
             if ppac.get('scope') in ('area','traffic'):status+=' Komponen '+ppac['scope']+' saja; STD total belum lengkap.'
-            yield status,engine_rows(result),ppac,self.progress_text(runtime,started),None,{'output':result.get('output',''),'context':x}
-        except GateError as exc:yield str(exc),[],{},self.progress_text(runtime,started),None,None
+            yield status,engine_rows(result),ppac,self.progress_text(runtime,started),None,{'output':result.get('output',''),'context':x,'job_id':identity['job_id'] if identity else publication.get('job_id')}
+        except GateError as exc:
+            from .failure_details import category
+            yield category(exc.code,str(exc))+': '+str(exc),[],{},self.progress_text(runtime,started),None,None
         except Exception as exc:
+            if os.environ.get('LI_PHASE123')=='1':
+                from .failure_details import category,safe
+                yield category(type(exc).__name__,str(exc))+': '+safe(exc),[],{},self.progress_text(runtime,started),None,None
+                return
             yield 'Proses gagal ('+type(exc).__name__+'). Periksa log notebook; hasil engine tersimpan tetap dipertahankan.',[],{},self.progress_text(runtime,started),None,None
 
 
@@ -421,6 +471,14 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                 with gr.Row():
                     latitude=gr.Number(value=-0.8994976613947719,label='Latitude')
                     longitude=gr.Number(value=131.3221639428227,label='Longitude')
+                phase123=os.environ.get('LI_PHASE123')=='1'
+                if phase123:
+                    input_review=gr.State(None)
+                    preview_job_button=gr.Button('Pratinjau lokasi dan seluruh input sebelum Process')
+                    input_map=gr.HTML(label='Pratinjau titik calon toko')
+                    input_summary=gr.Textbox(label='Ringkasan input yang akan dibekukan',lines=12,interactive=False)
+                    input_confirmed=gr.Checkbox(value=False,label='Saya memastikan titik calon toko dan seluruh input pada ringkasan sudah benar.')
+                    gr.Markdown('Lengkapi input/video/parameter di bawah, lalu tekan Pratinjau. Mengubah input setelah pratinjau mewajibkan konfirmasi ulang. Mengubah HOME saat job berjalan tidak mengubah input job tersebut.')
                 gr.Markdown('## Input Traffic Counter')
                 source=gr.Radio(VIDEO_SOURCES,value=VIDEO_SOURCES[0],label='Sumber video')
                 upload_state=gr.State([]);job_pointer=gr.State(None)
@@ -536,6 +594,13 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         for field in (day,session,direction):field.input(controller.invalidate_review,[upload_state,selected],[upload_state,reviewed,review_status],api_name=False)
         retried=retry.click(controller.retry_storage,job_pointer,[status,download],api_name=False,concurrency_id='engines',concurrency_limit=1)
         inputs=[mode,target,latitude,longitude,period,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,upload_state,store_name,annotate]
+        if phase123:
+            preview_job_button.click(controller.preview_job,inputs,[input_review,input_map,input_summary,input_confirmed],api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
+            def invalidate_input_review():return None,False,'Input berubah. Pratinjau dan konfirmasi ulang sebelum Process.',''
+            for field in (mode,target,latitude,longitude,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,store_name,annotate):
+                field.input(invalidate_input_review,None,[input_review,input_confirmed,input_summary,input_map],api_name=False,queue=False)
+            upload_state.change(invalidate_input_review,None,[input_review,input_confirmed,input_summary,input_map],api_name=False,queue=False)
+            inputs=inputs+[input_review,input_confirmed]
         diagnostic=gr.Button('Periksa penyebab kegagalan Area (tanpa proses ulang)')
         diagnostic_text=gr.Textbox(label='Diagnosis Area — penyebab dari log worker',lines=8,interactive=False)
         gr.Button('Lihat log proses (Area/Traffic)').click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
@@ -543,16 +608,30 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         diagnostic_file=gr.File(label='Paket diagnosis Area (ZIP)',interactive=False)
         gr.Button('Siapkan paket diagnosis Area').click(controller.export_area_diagnostics,inputs,[diagnostic_file,diagnostic_text],api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
         check.click(controller.check,inputs,[status,readiness],api_name=False,concurrency_id='engines',concurrency_limit=1)
+        result_outputs=[saved_status,saved_job,map_view,*table_views,*display_views,*annotated_buttons,*annotated_names,result_identity]
         def readable_process(*values):
             from .ppac_view import rows
+            first=True;accepted=''
             for output in controller.process(*values):
-                result=list(output);result[2]=rows(result[2]);result[4]=None;yield tuple(result)
-        processed=start.click(readable_process,inputs,[status,engines,ppac,progress,download,job_pointer],api_name=False,concurrency_id='engines',concurrency_limit=1)
+                result=list(output);result[2]=rows(result[2]);result[4]=None
+                if phase123:
+                    terminal=output[5] is not None or (not first and output[0]!='Engine berjalan…')
+                    if first:accepted=output[0]
+                    if first or terminal:
+                        live=list(controller.current_cloud_results(None,None,None))
+                        live[0]='Hasil eksekusi saat ini; pembacaan GCS/BQ menyusul. '+output[0]
+                        live[3+len(table_views)+5]=result[2]
+                        live[-1]=accepted
+                        result.extend(live)
+                    else:result.extend(gr.skip() for _ in result_outputs)
+                    first=False
+                yield tuple(result)
+        outputs=[status,engines,ppac,progress,download,job_pointer]+(result_outputs if phase123 else [])
+        processed=start.click(readable_process,inputs,outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
         save_project.click(controller.save_project,inputs,project_status,api_name=False,concurrency_id='engines',concurrency_limit=1)
-        result_outputs=[saved_status,saved_job,map_view,*table_views,*display_views,*annotated_buttons,*annotated_names,result_identity]
         refresh.click(controller.cloud_results,[target,saved_job],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
         for event in (processed,retried):
-            event.then(controller.current_cloud_results,[job_pointer,target,saved_job],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
+            event.then(controller.current_cloud_results,[job_pointer,target,saved_job,ppac],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
     app.queue(max_size=4,default_concurrency_limit=1)
     return app,controller
 

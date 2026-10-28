@@ -33,7 +33,13 @@ def prepare(root,result,inventory,context,parameters,destination,*,annotate=Fals
     if saved.exists():return read(saved)
     for key in ('target_id','period_id'):
         need(re.fullmatch(r'[A-Za-z0-9_-]{1,80}',context[key]) is not None,'PUBLICATION_CONTEXT_INVALID','Target/periode tidak aman.')
-    job_id='job_'+uuid4().hex;prefix=f"jobs/{context['target_id']}/{context['period_id']}/{job_id}"
+    snapshot=read(root/'job-input.json') if (root/'job-input.json').exists() else None
+    if snapshot:
+        need(all(snapshot['context'][k]==context[k] for k in ('target_id','period_id','latitude','longitude')) and snapshot['parameters']==parameters,'PUBLICATION_INPUT_MISMATCH','Konteks/parameter berubah dari snapshot job.')
+        need(semantic_hash({k:v for k,v in snapshot.items() if k!='input_sha256'})==snapshot['input_sha256'],'PUBLICATION_INPUT_CHANGED','Snapshot input berubah.')
+    job_id=snapshot['job_id'] if snapshot else 'job_'+uuid4().hex
+    need(re.fullmatch(r'job_[a-f0-9]{32}',job_id) is not None,'PUBLICATION_CONTEXT_INVALID','Job ID tidak valid.')
+    prefix=f"jobs/{context['target_id']}/{context['period_id']}/{job_id}"
     created=datetime.now(timezone.utc).isoformat();common={'job_id':job_id,'target_id':context['target_id'],'created_at':created}
     rows={t:[] for t in SCHEMAS};entries=[];names=set()
     def add(path,name,expected=None):
@@ -72,6 +78,8 @@ def prepare(root,result,inventory,context,parameters,destination,*,annotate=Fals
         if e['execution_status']!='SUCCEEDED':base.update(code=e.get('code'),message=e.get('message'),diagnostics=e.get('diagnostics',[]))
         if e['engine']=='area' and (root/'area/area-trace.json').is_file():
             base['trace_uri']=add(root/'area/area-trace.json','diagnostics/area-trace.json')
+        if e['engine']=='area' and (root/'area/source-preparation-status.json').is_file():
+            add(root/'area/source-preparation-status.json','diagnostics/source-preparation-status.json')
         safe_engines.append(base)
         if e['engine']=='traffic':
             item=by_id[e['id']];slot=item['slot']
@@ -141,6 +149,7 @@ def prepare(root,result,inventory,context,parameters,destination,*,annotate=Fals
         'policy_version':ppac.get('policy_version'),'parameters_json':parameters,'diagnostics_json':ppac.get('diagnostics',[])})
     snapshot=root/'cloud-payload';snapshot.mkdir(exist_ok=True)
     write(snapshot/'context.json',context);add(snapshot/'context.json','inputs/context.json')
+    if (root/'job-input.json').is_file():add(root/'job-input.json','inputs/job-input.json')
     write(snapshot/'video-inventory.json',[{k:v for k,v in i.items() if k not in ('path','geometry_ref','inspection_ref')} for i in inventory]);add(snapshot/'video-inventory.json','inputs/video-inventory.json')
     write(snapshot/'parameters.json',parameters);add(snapshot/'parameters.json','inputs/parameters.json')
     write(snapshot/'ppac.json',ppac);add(snapshot/'ppac.json','ppac/result.json')

@@ -30,9 +30,11 @@ def execute(request,root):
         from .._kernel.location_intelligent_osm_buildings import prepare_osm_from_network
         from .._kernel.location_intelligent_li3 import make_manifest
         from .._kernel.location_intelligent_market_scope import market_scope
+        record(root,'gpu_preflight','RUNNING')
         report=gpu_preflight(0)
         write(root/'gpu_preflight.json',report)
         # Fresh CUDA cannot proceed on a different declared scientific runtime.
+        record(root,'runtime_validation','RUNNING')
         import importlib.metadata,platform
         expected=(snapshot.runtime_profile['scientific']['packages'] if snapshot.native is None else read(work/'pilot/config/source_software.json')['packages'])
         names=['numpy','pandas','shapely','pyproj','networkx','folium','osmnx']
@@ -43,7 +45,9 @@ def execute(request,root):
         if differences:raise RuntimeError('AREA_FROZEN_RUNTIME_MISMATCH: '+','.join(differences))
         config['core_python']=request['core_python'];pilot=root/'computation/pilot'
         normalized={**config,'osm_poi_snapshot_path':str(work/'sources/optional_poi_result.json')}
+        record(root,'normalization','RUNNING')
         prepare_osm_from_network(normalized,pilot,work/'sources/network_roads_only',work/'sources/osm_buildings_raw.json.gz')
+        record(root,'graph_routing','RUNNING')
         build_gpu(pilot,root/'gpu_runtime.json',device=0);make_manifest(pilot)
         from .._kernel.location_intelligent_li3 import map_decisions
         calc_paths=['graph/graph.json.gz','connectors/connectors.json.gz','normalized/metric_buildings.json',
@@ -59,8 +63,11 @@ def execute(request,root):
         record(root,'calculation','SUCCEEDED')
         layers={kind:read(work/'bq_snapshot'/f'{kind}.json') for kind in ['competitor','indomaret']}
         facilities=read(work/'sources/optional_poi_result.json')
+        record(root,'market_allocation','RUNNING')
         with market_scope():native=build_market_gpu(config,policy,pilot,layers,facilities,root/'computed_market',report_path=root/'gpu_runtime.json',device=0)
         from .._kernel.location_intelligent_gpu import release_gpu
+        record(root,'market_allocation','SUCCEEDED')
+        record(root,'gpu_release','RUNNING')
         write(root/'gpu_release.json',release_gpu(0))
         fields=['rows','summary','stores','excluded_stores','attractor_gate','market_inputs_complete','competitor_groups','routing_clusters']
         mismatch=[k for k in fields if native[k]!=snapshot.native[k]] if snapshot.native is not None else []
@@ -102,9 +109,11 @@ def execute(request,root):
         native=copy.deepcopy(native);target=root/'presentation';target.mkdir()
         native['output_path']=str(target);write(target/'result.json',native)
         facilities=read(work/'sources/optional_poi_result.json')
+        record(root,'renderer','RUNNING')
         presentation=render_safely(config,policy,pilot,facilities,native)
         presentation_ref=str(Path(presentation['html']).relative_to(root)) if presentation['status']=='SUCCEEDED' else None
         record(root,'renderer',presentation['status'],code=presentation.get('code'),html=presentation_ref)
+    record(root,'export','RUNNING')
     write(root/'native.json.gz',native)
     write(root/'capacity.json',snapshot.capacity if not fresh else read(pilot/'building_results/capacity.json'))
     result={'schema_version':'area_execution_result_v1','execution_status':'SUCCEEDED',
@@ -122,5 +131,7 @@ if __name__=='__main__':
     request=read(sys.argv[1]);root=Path(sys.argv[2])
     try:execute(request,root)
     except BaseException as error:
-        write(root/'failure.json',{'execution_status':'FAILED','error_type':type(error).__name__,'published_success':False})
+        try:checkpoint=read(root/'checkpoint.json')
+        except (OSError,ValueError):checkpoint={'stage':'startup'}
+        write(root/'failure.json',{'execution_status':'FAILED','stage':checkpoint['stage'],'error_type':type(error).__name__,'code':getattr(error,'code',type(error).__name__),'message':str(error)[:1000],'published_success':False})
         raise

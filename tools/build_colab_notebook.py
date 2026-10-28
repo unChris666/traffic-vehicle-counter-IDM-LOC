@@ -3,7 +3,8 @@ import argparse,base64,hashlib,io,json,zipfile
 from pathlib import Path
 
 
-def build(wheel,output,*,component_flow=False):
+def build(wheel,output,*,component_flow=False,phase123=False):
+    component_flow=component_flow or phase123
     root=Path(__file__).resolve().parents[1];wheel=Path(wheel).resolve()
     version=wheel.name.split('-')[1]
     with zipfile.ZipFile(wheel) as z:
@@ -211,9 +212,14 @@ HOME/RESULT, peta Folium/Esri, upload8video, GCS gs://aretfak-location-intellige
                 c['source']='## Jalankan UI — pilih Area Coverage, Traffic Counter atau PPAC\nPilih mode pada HOME dan Process. Mode Area dan Traffic menghitung komponen PPAC masing-masing. Mode PPAC menjalankan Area → Traffic → PPAC gabungan. Periksa scope, kualitas, video SKIPPED dan reason pada RESULT. Diagnosis berjalan pada antrean tersendiri.\n\n**Biarkan cell server tetap berjalan. Stop/Interrupt menutup server DAN tunnel; URL publik menjadi tidak aktif.** Status proses dan HTTP lokal dicetak setiap30detik. HTTP lokal READY tidak membuktikan tunnel/browser maupun engine sehat. Hentikan setelah job selesai dan simpan diagnosis sebelum runtime Colab berakhir.'
             if c['cell_type']=='markdown' and c['source'].startswith('## Autentikasi'):
                 c['source']+='\nAkses cloud disiapkan sebelum UI; pemilihan mode menentukan engine yang dieksekusi.'
+    if phase123:
+        cells[0]['source']=cells[0]['source'].replace('Notebook16','Notebook17')+'\n\n## Fase1–3 — konfirmasi input, progres, dan kualitas hasil\nLengkapi HOME, lalu klik **Pratinjau lokasi dan seluruh input sebelum Process**. Pastikan pin peta, Latitude/Longitude, mode, video dan parameter benar; centang konfirmasi sebelum Process. Perubahan input setelah pratinjau mewajibkan pratinjau ulang. Input job dibekukan dan dikirim ke GCS sebelum engine mulai; perubahan HOME saat job berjalan tidak mengubah job tersebut.\n\nProgres menunjukkan tahap, durasi, umur checkpoint, CPU/RAM proses aktif jika tersedia. Proses hidup bukan bukti pekerjaan maju; persentase dan ETA tidak dibuat-buat. Diagnosis tetap tersedia saat engine bekerja. SOURCE_DATA_UNAVAILABLE berbeda dari INPUT_ERROR, RUNTIME_ERROR, PRESENTATION_ERROR atau kegagalan penyimpanan.\n\nSnapshot persisten hanya di GCS; file lokal adalah staging sementara. BQ tetap rekap/referensi artefak, tanpa tabel baru. Sumber nasional dianggap valid sebagai asumsi kerja; tidak ada uji verifikasi cakupan nasional. User testing lintas karakter wilayah berjalan bersamaan. Modul routing/Huff/counting dan rumus PPAC tetap. STD total menunggu input gabungan lengkap; UNVERIFIED tetap terlihat.'
+        for c in cells:
+            if c['cell_type']=='code' and 'def child_env(' in c['source']:
+                c['source']=c['source'].replace("'LI_COMPONENT_FLOW':'1',","'LI_COMPONENT_FLOW':'1','LI_PHASE123':'1',")
     for i,c in enumerate(cells):c['id']='colab-l4-'+str(i)
     notebook={'nbformat':4,'nbformat_minor':5,'metadata':{'accelerator':'GPU','colab':{'name':Path(output).name,'gpuType':'L4'},'kernelspec':{'name':'python3','display_name':'Python 3'},'language_info':{'name':'python'}},'cells':cells}
     output=Path(output);output.parent.mkdir(parents=True,exist_ok=True);output.write_text(json.dumps(notebook,ensure_ascii=False,indent=1)+'\n');print('Prepared',output,output.stat().st_size)
 
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--wheel',required=True);p.add_argument('--output',default='notebooks/active/15_colab_l4_area_first.ipynb');p.add_argument('--component-flow',action='store_true');a=p.parse_args();build(a.wheel,a.output,component_flow=a.component_flow)
+    p=argparse.ArgumentParser();p.add_argument('--wheel',required=True);p.add_argument('--output',default='notebooks/active/15_colab_l4_area_first.ipynb');p.add_argument('--component-flow',action='store_true');p.add_argument('--phase123',action='store_true');a=p.parse_args();build(a.wheel,a.output,component_flow=a.component_flow,phase123=a.phase123)

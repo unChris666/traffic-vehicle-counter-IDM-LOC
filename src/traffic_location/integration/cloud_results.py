@@ -73,6 +73,16 @@ class ResultsReader:
                     except Exception as exc:
                         result['artifact_status'].append(label+' gagal dibaca/diverifikasi: '+safe(exc))
                         return None
+                inputs=[e for e in manifest['files'] if e['object'].endswith('/inputs/job-input.json')]
+                frozen=document(inputs,'Snapshot input job',2*1024**2)
+                if frozen:
+                    if frozen.get('schema_version')!='job_input_v1':raise ValueError('INPUT_SNAPSHOT_SCHEMA_UNSUPPORTED')
+                    from ..artifacts import semantic_hash
+                    if frozen.get('job_id')!=job['job_id'] or any(frozen.get('context',{}).get(k)!=job.get(k) for k in ('target_id','period_id','latitude','longitude')):
+                        raise ValueError('INPUT_SNAPSHOT_CONTEXT_MISMATCH')
+                    if semantic_hash({k:v for k,v in frozen.items() if k!='input_sha256'})!=frozen.get('input_sha256'):
+                        raise ValueError('INPUT_SNAPSHOT_HASH_MISMATCH')
+                    result['input_snapshot']=frozen
                 matches=[e for e in manifest['files'] if e['object'].endswith('/presentation/display-tables.json')]
                 result['display']=document(matches,'Tabel detail Area') or {}
                 ppacs=[e for e in manifest['files'] if e['object'].endswith('/ppac/result.json')]
@@ -110,6 +120,9 @@ class ResultsReader:
                     result['map_status']='Peta HTML interaktif dari manifest GCS terverifikasi.'
                     result['artifact_status'].append('Referensi peta: gs://'+self.destination.bucket+'/'+e['object']+'; SHA256 '+e['sha256'])
             except Exception as exc:result['artifact_status'].append('Manifest/artefak hasil GCS gagal dibaca/diverifikasi: '+safe(exc))
+        result['identity_text']+=' · **Latitude:** '+str(job.get('latitude'))+' · **Longitude:** '+str(job.get('longitude'))+' · **Job:** '+job['job_id']
+        if result.get('input_snapshot'):
+            result['identity_text']+=' · **Review SHA256:** '+str(result['input_snapshot'].get('review_sha256'))
         return result
 
     def verified_bytes(self,job,uri,digest,limit):

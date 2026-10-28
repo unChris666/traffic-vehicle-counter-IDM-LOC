@@ -264,6 +264,7 @@ class KaggleRuntime:
         This is ingestion. No routing/counting/market calculation happens here.
         The engine receives a data-only SourceBundle after freeze.
         """
+        from .job_status import stage
         runtime=self.setup_runtime('area');self.connect()
         configuration=area_config(self.latitude,self.longitude,runtime['core_python'],self.target_id)
         from ..location.area._kernel.location_intelligent_google_only import PBF
@@ -278,21 +279,27 @@ class KaggleRuntime:
             prior=getattr(bq_runtime,'_NOTEBOOK_BQ_CREDENTIALS',None)
             try:
                 bq_runtime._NOTEBOOK_BQ_CREDENTIALS=self.credentials
+                stage(self.base,'bq_snapshot')
                 layers=bq_runtime.load_bq_layers(configuration['CONFIG'],root/'bq_snapshot')
             finally:bq_runtime._NOTEBOOK_BQ_CREDENTIALS=prior
             write(root/'bq-readiness.json',layers)
             from .failure_details import source_failures
             failures=source_failures(layers)
             need(not failures,'BQ_SOURCE_UNAVAILABLE','Snapshot toko/kompetitor gagal: '+json.dumps(failures,ensure_ascii=False)+'. Lihat bq-readiness.json; bukan nol kompetitor.')
+            stage(self.base,'pbf_download_verify')
             pbf=self.stage(PBF,self.base/'national'/f"{PBF['sha256']}.osm.pbf")
+            stage(self.base,'pbf_extract_and_parse')
             source=pbf_local.materialize(configuration['CONFIG'],root/'sources',pbf,runtime['osmium'],PBF)
             command='import platform,json,pyproj;from osgeo import gdal;print(json.dumps({"python":platform.python_version(),"gdal":gdal.VersionInfo("RELEASE_NAME"),"pyproj":pyproj.__version__}))'
             core=json.loads(subprocess.check_output([runtime['core_python'],'-c',command],text=True))
             profile={'scientific':{'python':platform.python_version(),'packages':{k:importlib.metadata.version(k) for k in SCIENTIFIC}},'core':core}
+            stage(self.base,'source_bundle_freeze')
             create_source_bundle(configuration,source,root/'bq_snapshot',profile,bundle_path)
         bundle=SourceBundle(bundle_path)
         need(bundle.config['CONFIG']['latitude']==self.latitude and bundle.config['CONFIG']['longitude']==self.longitude,'AREA_TARGET_CHANGED','Bundle bukan target Sorong.')
+        stage(self.base,'source_cache_upload')
         cache=self.cache_upload(bundle_path,f'sources/area-coverage/{sourcekey}/source-bundle.zip')
+        stage(self.base,'source_cache_upload','SUCCEEDED')
         self.state['area']={'status':'READY','source_bundle':str(bundle_path),'sha256':sha(bundle_path),'metric_crs':configuration['CONFIG']['metric_crs'],'gcs_cache':cache}
         self.record()
         return {'schema_version':'area_execution_request_v2','operation':'compute_gpu_sources',
@@ -310,12 +317,16 @@ class KaggleRuntime:
         log=self.base/'area-preparation.log'
         failure_path=self.base/'area-preparation-failure.json'
         failure_path.unlink(missing_ok=True)
+        (self.base/'job-status.json').unlink(missing_ok=True)
         try:
             with log.open('w') as stream:
                 subprocess.run([sys.executable,'-u','-m','traffic_location.integration.kaggle_runtime',
                                 'prepare-area',str(path)],stdout=stream,stderr=subprocess.STDOUT,
                                check=True,timeout=7200)
-        except subprocess.CalledProcessError:
+        except subprocess.SubprocessError:
+            from .job_status import stage
+            try:stage(self.base,read(self.base/'job-status.json')['stage'],'FAILED')
+            except (OSError,ValueError,KeyError):pass
             if failure_path.is_file():
                 failure=read(failure_path)
                 raise GateError(failure['code'],failure['message']) from None
@@ -347,7 +358,13 @@ class KaggleRuntime:
         timing=Progress(root/'area-progress.json');timing.snapshot('area_source')
         mark('runtime_setup');self.setup_runtime('area')
         with timing.stage('area_source'):
-            mark('source_preparation');request=self.prepare_area()
+            mark('source_preparation')
+            try:request=self.prepare_area()
+            finally:
+                status_path=self.base/'job-status.json'
+                try:
+                    if status_path.is_file() and status_path.stat().st_size<=65536:write(root/'source-preparation-status.json',read(status_path))
+                except (OSError,ValueError):pass
         timing.snapshot('area_compute')
         def compute(folder):
             write(folder/'request.json',request)
@@ -476,9 +493,11 @@ class KaggleRuntime:
                 exc=RuntimeError(outcome['message']);exc.code=outcome['error_type']
                 yield item,None,exc
 
-    def execute(self,mode,parameters,*,input_root='/kaggle/input',target_confirmed=False,video_ids=None,uploaded_videos=None):
+    def execute(self,mode,parameters,*,input_root='/kaggle/input',target_confirmed=False,video_ids=None,uploaded_videos=None,request_identity=None):
         """One invocation per engine/video; failures and successes always visible."""
         from datetime import datetime
+        parameters=deepcopy(parameters);video_ids=deepcopy(video_ids);uploaded_videos=deepcopy(uploaded_videos)
+        from .job_status import stage
         need(mode in ('area','traffic','workflow'),'MODE_INVALID','Pilih Area, Traffic, atau gabungan.')
         if mode=='workflow':need(target_confirmed,'TARGET_BINDING_REQUIRED','Konfirmasi bahwa video dan Area dipakai untuk target yang sama.')
         root=self.base/'runs'/datetime.now().strftime('%Y%m%dT%H%M%S_%f');root.mkdir(parents=True)
@@ -508,10 +527,27 @@ class KaggleRuntime:
             inventory=candidates
             write(root/'skipped-videos.json',skipped)
             need(bool(inventory) or mode=='workflow','NO_VALID_VIDEOS','Tidak ada video valid yang dapat diproses; lihat skipped-videos.json.')
+        if os.environ.get('LI_PHASE123')=='1':
+            from .job_input import freeze,upload
+            need(isinstance(request_identity,dict) and isinstance(request_identity.get('review_sha256'),str) and len(request_identity['review_sha256'])==64,
+                 'INPUT_REVIEW_REQUIRED','Pratinjau dan konfirmasi input job sebelum Process.')
+            context={'target_id':self.target_id,'period_id':self.period_id,'latitude':self.latitude,'longitude':self.longitude,'store_name':self.store_name}
+            snapshot=freeze(root,mode,context,parameters,inventory,{**request_identity,'requested_video_ids':video_ids or [],'skipped_videos':skipped,'target_confirmed':target_confirmed,'video_source':'NOT_REQUESTED' if mode=='area' else 'UPLOAD' if uploaded_videos is not None else 'DATASET'})
+            stage(root,'request_snapshot',job_id=snapshot['job_id'],input_sha256=snapshot['input_sha256'])
+            try:
+                if self.publication is not None:
+                    uri=upload(snapshot,self.publication,self.connect())
+                    write(root/'input-storage.json',{'status':'READY','uri':uri,'input_sha256':snapshot['input_sha256']})
+                stage(root,'request_snapshot','SUCCEEDED')
+            except Exception as error:
+                from .failure_details import safe
+                stage(root,'request_snapshot','FAILED',category='STORAGE_ERROR')
+                raise GateError('INPUT_SNAPSHOT_STORAGE_FAILED',safe(error)) from error
         tasks=([{'id':'area','kind':'area'}] if mode in ('area','workflow') else [])+([{**v,'kind':'traffic'} for v in inventory] if mode in ('traffic','workflow') else [])
         receipts=[];jobs=[];bindings=[]
         import time
         run_started=time.time()
+        stage(root,'engine_execution')
         for item,result,error in self._scheduled_tasks(tasks,root):
             print('START',item['id'],flush=True)
             try:
@@ -536,6 +572,8 @@ class KaggleRuntime:
                 receipts.append({'id':item['id'],'engine':item['kind'],'execution_status':'FAILED','diagnostics':[failure],'code':(exc.code if isinstance(exc,GateError) else type(exc).__name__),
                                  'message':failure['message'] if isinstance(exc,GateError) else 'Tahap gagal ('+type(exc).__name__+'); periksa log setup/worker. Engine/video berikut tetap diproses.'})
             write(root/'progress.json',receipts);print('FINISH',item['id'],receipts[-1]['execution_status'],flush=True)
+        stage(root,'engine_execution','FAILED' if any(r['execution_status']!='SUCCEEDED' for r in receipts) else 'SUCCEEDED')
+        stage(root,'ppac_calculation')
         ppac={'execution_status':'NOT_RUN','std_total':None}
         if mode=='workflow':
             if any(r['execution_status']!='SUCCEEDED' for r in receipts):
@@ -573,10 +611,16 @@ class KaggleRuntime:
         if component_flow and skipped:
             ppac.setdefault('diagnostics',[]).append({'code':'VIDEOS_SKIPPED','videos':skipped})
         result={'schema_version':'kaggle_real_route_v1','engines':receipts,'ppac':ppac,'output':str(root),'system':self.record(),'skipped_videos':skipped}
+        if component_flow:
+            from .result_status import annotate
+            annotate(ppac,mode)
+        stage(root,'ppac_calculation',ppac['execution_status'])
         write(root/'summary.json',result)
         if self.publication is not None:
+            stage(root,'publication')
             result['publication']=self.publish_output(root,result,inventory,parameters)
             write(root/'summary.json',result)
+            stage(root,'publication',result['publication']['status'])
         resource_record(root,'finished')
         return result
 

@@ -1,2 +1,2 @@
 """Versioned engine boundaries. No inference, network or filesystem work on import."""
-__version__ = '0.6.5rc1'
+__version__ = '0.7.0rc1'

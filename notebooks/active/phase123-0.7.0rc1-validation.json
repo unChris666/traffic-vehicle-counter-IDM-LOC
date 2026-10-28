@@ -1,0 +1,64 @@
+{
+  "schema_version": "prototype_phase123_validation_v1",
+  "candidate": "0.7.0rc1",
+  "observed_at": "2026-10-28T06:04:21.356576+00:00",
+  "branch": "fix/area-user-testing",
+  "status": "LOCAL_GATES_PASS_USER_TESTING_PENDING",
+  "wheel_sha256": "fbf4b4e5079e12908d826f6da379eb76c2a2ba5070331cdbc1f375cd6df5b287",
+  "notebook_sha256": "04d33a16d608ffb9f2b487463cfdc47e69833b465c902b002025e6fb47844a6a",
+  "validation": [
+    {
+      "check": "main unittest suite",
+      "tests": 359,
+      "passed": 344,
+      "skipped": 15,
+      "seconds": 44.353
+    },
+    {
+      "check": "native GIS/Folium/Shapely/PBF including input preview",
+      "tests": 14,
+      "passed": 14,
+      "skipped": 0,
+      "seconds": 2.623
+    },
+    {
+      "check": "isolated GDAL/core source boundaries",
+      "tests": 11,
+      "passed": 6,
+      "skipped": 5,
+      "note": "Five Shapely cases intentionally absent in core; passed in GIS environment."
+    },
+    {
+      "check": "Gradio phase123 streaming output wiring",
+      "status": "PASS",
+      "inputs": 20,
+      "outputs": 35,
+      "note": "Fixture event stream, not browser/cloud/engine execution."
+    },
+    {
+      "check": "strict mypy traffic contracts/config",
+      "status": "PASS",
+      "files": 14
+    },
+    {
+      "check": "sdist and wheel build",
+      "status": "PASS"
+    },
+    {
+      "check": "installed wheel import outside repository",
+      "status": "PASS"
+    },
+    {
+      "check": "embedded notebook wheel equals current Python sources; clean compiled cells",
+      "status": "PASS"
+    }
+  ],
+  "remaining_unexecuted_test": "Annotated-video pixel comparison: OpenCV/NumPy unavailable in main test environment and source video fixture absent. No claim of pixel equivalence from this run.",
+  "scope_limits": [
+    "No fresh L4 inference or real Colab browser run in this environment.",
+    "No authenticated real GCS/BQ CRUD or national-capacity claim; storage boundaries exercised with fixtures/mocks.",
+    "National source validity is an owner-specified assumption; no nationwide coverage audit added.",
+    "Frozen numerical kernels, counting semantics and PPAC coefficients unchanged.",
+    "Phase acceptance requires owner user testing. No promotion/merge to main or refactor/deployment-foundation."
+  ]
+}

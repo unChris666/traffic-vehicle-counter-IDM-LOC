@@ -3,6 +3,7 @@ from datetime import datetime,timezone
 from pathlib import Path
 import json
 import time
+import os
 import zipfile
 from .. import __version__
 from ..artifacts import read,write
@@ -23,10 +24,12 @@ class AreaTrace:
         self.mark('source_access')
 
     def save(self):
+        self.value.update(updated_epoch=time.time(),pid=os.getpid())
         temporary=self.path.with_suffix('.partial')
         write(temporary,self.value);temporary.replace(self.path)
 
     def mark(self,stage):
+        if self.value.get('stage')!=stage or 'stage_started_epoch' not in self.value:self.value['stage_started_epoch']=time.time()
         self.value['stage']=stage;self.value['events'].append({'stage':stage,'at':stamp()});self.save()
 
     def finish(self,result=None,error=None):
@@ -58,11 +61,32 @@ def latest_report(base):
             if status.is_file() and not status.is_symlink() and status.stat().st_size<=65536:
                 saved=read(status)
                 publication={k:saved[k] for k in ('status','code','message','job_id','manifest_uri','manifest_sha256','diagnostics') if k in saved}
-    started=trace.get('started_epoch',0) if trace else 0
+    current_job=None;current_status=None;latest_root=None
+    inputs=sorted(base.glob('runs/*/job-input.json'),key=lambda p:p.stat().st_mtime)
+    if inputs and inputs[-1].is_file() and not inputs[-1].is_symlink() and inputs[-1].stat().st_size<=2*1024**2:
+        try:
+            current_job=read(inputs[-1]);latest_root=inputs[-1].parent
+            if not isinstance(current_job,dict) or current_job.get('schema_version')!='job_input_v1':current_job=None
+            status_path=latest_root/'job-status.json'
+            if status_path.is_file() and status_path.stat().st_size<=65536:
+                current_status=read(status_path)
+                if current_status.get('status')=='RUNNING' and current_status.get('pid'):
+                    from .job_status import observation
+                    seen=observation(current_status['pid']);current_status['process_observation']=seen
+                    if seen['process_alive'] is False:current_status['observed_status']='INTERRUPTED_PROCESS_EXITED'
+        except (OSError,ValueError):pass
+    started=inputs[-1].stat().st_mtime if current_job else trace.get('started_epoch',0) if trace else 0
+    source_status=None
+    if latest_root:
+        source_path=latest_root/'area/source-preparation-status.json'
+        if source_path.is_file() and source_path.stat().st_size<=65536:
+            try:source_status=read(source_path)
+            except (OSError,ValueError):pass
     evidence=details(base,RuntimeError('Diagnosis workspace; tidak menjalankan engine.'),started)
     return {'schema_version':'area_diagnostic_report_v1','package_version':__version__,
-            'generated_at':stamp(),'trace':trace,'publication':publication,'diagnostics':evidence,
-            'scope':'Latest Area run in this target workspace; no credentials, source rows, video or inference included.'}
+            'generated_at':stamp(),'source_preparation_status':source_status,'current_job':current_job,'current_job_status':current_status,
+            'area_trace_is_latest_job':not current_job or bool(traces and traces[-1].parent.parent==latest_root),'trace':trace,'publication':publication,'diagnostics':evidence,
+            'scope':'Latest job input/status and latest Area trace in this target workspace; no credentials, source rows, video or inference included.'}
 
 
 def export_report(base,output):

@@ -73,7 +73,9 @@ def execute(request,output):
                     except subprocess.TimeoutExpired:
                         if time.monotonic()>=deadline:raise
                         checkpoint=read(stage/'checkpoint.json')
-                        print('Area worker active:',checkpoint['stage'],checkpoint['status'],flush=True)
+                        from ....integration.job_status import observation
+                        write(stage/'worker-heartbeat.json',{**checkpoint,'updated_epoch':time.time(),'worker':observation(process.pid)})
+                        print('Area worker active:',checkpoint['stage'],checkpoint['status'],'— liveness only, not progress proof',flush=True)
             except BaseException:
                 try:os.killpg(process.pid,signal.SIGTERM)
                 except ProcessLookupError:pass
@@ -90,7 +92,7 @@ def execute(request,output):
         finalize(stage,output,{'engine':'area','result_version':version,'operation':request['operation']})
         return result
     except BaseException as error:
-        if stage is not None:record(stage,'worker','FAILED',error_type=type(error).__name__,published_success=False)
+        if stage is not None:record(stage,'worker','FAILED',error_type=type(error).__name__,exit_code=getattr(locals().get('process'),'returncode',None),published_success=False)
         raise
     finally:
         # Never unlink a lock: another process may already hold this inode.

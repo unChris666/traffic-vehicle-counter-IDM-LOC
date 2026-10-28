@@ -28,11 +28,19 @@ def source_failures(layers):
 def details(base,error,started=0):
     code=getattr(error,'code',None)
     if not isinstance(code,str):code=type(error).__name__
-    result={'code':code,'message':safe(error),'evidence':[]}
+    result={'code':code,'message':safe(error),'category':category(code,str(error)),'evidence':[]}
     candidates=[]
-    for pattern in ('area-setup.log','area-preparation.log','worker.log','failure.json'):
-        candidates.extend(p for p in Path(base).rglob(pattern) if p.is_file() and p.stat().st_mtime>=started)
+    for pattern in ('area-setup.log','area-preparation.log','worker.log','failure.json','error.json'):
+        candidates.extend(p for p in Path(base).rglob(pattern) if p.is_file() and p.stat().st_mtime>=started and (pattern!='error.json' or p.parent.name=='presentation'))
     for path in sorted(candidates,key=lambda p:p.stat().st_mtime)[-4:]:
+        if path.name in ('failure.json','error.json') and path.stat().st_size<=65536:
+            try:
+                value=json.loads(path.read_text());metadata={k:value.get(k) for k in ('stage','code','error_type','message') if value.get(k) is not None}
+                result['evidence'].append({'log':str(path.relative_to(base)),'errors':[safe(json.dumps(metadata))]})
+                if result['category']=='COMPUTATION_ERROR':
+                    result['category']='PRESENTATION_ERROR' if metadata.get('stage')=='presentation' else category(metadata.get('code',''),metadata.get('message',''))
+            except (OSError,ValueError,TypeError):pass
+            continue
         with path.open('rb') as stream:
             stream.seek(max(0,path.stat().st_size-65536));lines=stream.read().decode('utf-8',errors='replace').splitlines()
         matches=[line.strip() for line in lines if re.match(r'^(?:[\w.]+(?:Error|Exception)|RuntimeError|ValueError|Forbidden|NotFound|PermissionDenied|Unauthenticated|BadRequest|ServiceUnavailable|ERROR:|[A-Z][A-Z0-9_]{5,})',line.strip())]
@@ -45,3 +53,13 @@ def details(base,error,started=0):
             if failures:result['evidence'].append({'log':str(path.relative_to(base)),'errors':[json.dumps(v,ensure_ascii=False) for v in failures]})
         except (OSError,ValueError,TypeError):continue
     return result
+
+
+def category(code,message=''):
+    text=str(code)+' '+str(message)
+    if any(k in text for k in ('PBF_NO_ROADS','EXTRACT_EMPTY','NO_HIGHWAY_WAYS','ACCESS_FILTER_EXCLUDED_ALL','REQUEST_OUTSIDE_PBF_HEADER_COVERAGE')):return 'SOURCE_DATA_UNAVAILABLE'
+    if any(k in text for k in ('INVALID','INPUT_REVIEW','TARGET_MISMATCH','GEOMETRY_REVIEW','VIDEO_SELECTION')):return 'INPUT_ERROR'
+    if any(k in text for k in ('RUNTIME_MISMATCH','DEPENDENCY','ModuleNotFoundError','ImportError','CUDA')):return 'RUNTIME_ERROR'
+    if any(k in text for k in ('PRESENTATION','RENDER','renderer')):return 'PRESENTATION_ERROR'
+    if any(k in text for k in ('PUBLICATION','STORAGE','GCS','BQ_','Forbidden','PermissionDenied','DefaultCredentialsError','RefreshError','Unauthenticated','Unauthorized')):return 'STORAGE_OR_ACCESS_ERROR'
+    return 'COMPUTATION_ERROR'
