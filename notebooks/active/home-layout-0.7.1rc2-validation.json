@@ -1,0 +1,30 @@
+{
+  "candidate": "0.7.1rc2",
+  "observed_at": "2026-10-28T09:28:29.364426+00:00",
+  "status": "LOCAL_GATES_PASS_OWNER_TESTING_PENDING",
+  "main_suite": {
+    "total": 378,
+    "passed": 360,
+    "skipped": 18,
+    "seconds": 50.316
+  },
+  "GIS_suite": {
+    "total": 11,
+    "passed": 11,
+    "skipped": 0
+  },
+  "layout_callback_proof": "PASS: mode/PPAC/Area/Traffic/Running order; closed upload/edit accordions; SAVE2inputs2outputs queue=False; process21inputs35outputs; event stream lengths",
+  "mypy": "PASS14files",
+  "build": "PASS",
+  "isolated_wheel_import": "PASS",
+  "notebook_sha256": "fba0b241c8dee965a2cf92e268bd416491bfe17eeca078bae98d2663e9da2480",
+  "wheel_sha256": "d84fb558fa33b6a5a484caf5088c3e928c978fec70f3d74a2c2daad671ba26bf",
+  "limitations": [
+    "Original freeze before Stop not reproduced or proven.",
+    "ZIP proves local HTTP200 before SIGINT during BQ preparation, then shutdown; it does not prove tunnel/browser responsiveness.",
+    "No actual Colab/L4/cloud run in this environment.",
+    "Coordinate SAVE is a local draft, persistent job-input snapshot goes to GCS at accepted Running.",
+    "No numerical policy/counting/kernel changes or automatic job resume.",
+    "No promotion to main/foundation."
+  ]
+}

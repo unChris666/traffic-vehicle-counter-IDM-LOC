@@ -57,6 +57,7 @@ def details(base,error,started=0):
 
 def category(code,message=''):
     text=str(code)+' '+str(message)
+    if any(k in text for k in ('Signals.SIGINT','Signals.SIGTERM','KeyboardInterrupt')):return 'INTERRUPTED'
     if any(k in text for k in ('PBF_NO_ROADS','EXTRACT_EMPTY','NO_HIGHWAY_WAYS','ACCESS_FILTER_EXCLUDED_ALL','REQUEST_OUTSIDE_PBF_HEADER_COVERAGE')):return 'SOURCE_DATA_UNAVAILABLE'
     if any(k in text for k in ('INVALID','INPUT_REVIEW','TARGET_MISMATCH','GEOMETRY_REVIEW','VIDEO_SELECTION')):return 'INPUT_ERROR'
     if any(k in text for k in ('RUNTIME_MISMATCH','DEPENDENCY','ModuleNotFoundError','ImportError','CUDA')):return 'RUNTIME_ERROR'

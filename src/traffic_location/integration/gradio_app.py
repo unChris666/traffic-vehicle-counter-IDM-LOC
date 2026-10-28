@@ -380,20 +380,35 @@ class Controller:
         status=runtime.retry_publication(folder)
         return 'Penyimpanan: '+status['status']+' '+str(status.get('code','')),None
 
+    def location_preview(self,latitude,longitude):
+        from html import escape
+        for value,low,high in ((latitude,-80,84),(longitude,-180,180)):
+            if type(value) not in (int,float) or not math.isfinite(value) or not low<=value<=high:raise ValueError('Koordinat lokasi tidak valid.')
+        import folium
+        m=folium.Map(location=[latitude,longitude],zoom_start=15,tiles=None)
+        folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',attr='Esri',name='Esri Imagery').add_to(m)
+        folium.Marker([latitude,longitude],tooltip='Calon toko').add_to(m)
+        for radius in (400,2000):folium.Circle([latitude,longitude],radius=radius,fill=False).add_to(m)
+        return '<iframe title="Peta lokasi calon toko" sandbox="allow-scripts" referrerpolicy="no-referrer" style="width:100%;height:460px;border:0" srcdoc="'+escape(m.get_root().render(),quote=True)+'"></iframe>'
+
+    def save_location(self,latitude,longitude):
+        from .failure_details import safe
+        try:
+            html=self.location_preview(latitude,longitude)
+            write(self.base/'locations'/(uuid4().hex+'.json'),{'schema_version':'location_draft_v1','latitude':latitude,'longitude':longitude,'created_at':datetime.now(ZoneInfo('Asia/Jakarta')).isoformat()})
+            return html,'Lokasi tersimpan sementara: '+str(latitude)+', '+str(longitude)+'. Snapshot GCS dibuat saat Running; tinjau dan konfirmasi seluruh input sebelum memproses.'
+        except Exception as error:return '', 'SAVE lokasi gagal: '+safe(error)
+
     def preview_job(self,*values):
         from .job_input import review
         try:
             x=validate(values,self.video_choices)
-            import folium
-            m=folium.Map(location=[x['latitude'],x['longitude']],zoom_start=15,tiles=None)
-            folium.TileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',attr='Esri',name='Esri Imagery').add_to(m)
-            folium.Marker([x['latitude'],x['longitude']],tooltip='Calon toko').add_to(m)
-            for radius in (400,2000):folium.Circle([x['latitude'],x['longitude']],radius=radius,fill=False).add_to(m)
+            html=self.location_preview(x['latitude'],x['longitude'])
             token=review(x)
             summary={'KDTK':x['target_id'],'Nama Toko':x.get('store_name'),'Periode':x['period'],
                      'Latitude':x['latitude'],'Longitude':x['longitude'],'Mode':x['mode'],
                      'Video dipilih':x['video_ids'],'Parameter':x['parameters'],'Review SHA256':token['fingerprint']}
-            return token,m._repr_html_().replace('<iframe ','<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" '),json.dumps(summary,ensure_ascii=False,indent=2),False
+            return token,html,json.dumps(summary,ensure_ascii=False,indent=2),False
         except Exception as error:
             from .failure_details import safe
             return None,'','Pratinjau gagal: '+safe(error),False
@@ -488,71 +503,20 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
     with gr.Blocks(title='Area · Traffic · PPAC') as app:
         with gr.Tabs():
             with gr.Tab('HOME'):
-                gr.Markdown('## Identity')
-                with gr.Row():
-                    target=gr.Textbox(value='T7SL',label='KDTK (4 karakter)',max_length=4)
-                    store_name=gr.Textbox(label='Nama Toko',max_length=160)
-                    period=gr.DateTime(value=datetime.now(ZoneInfo('Asia/Jakarta')).date().isoformat(),include_time=False,type='string',interactive=False,label='Periode (tanggal pembuatan)')
-                gr.Markdown('## Input Area Coverage')
-                with gr.Row():
-                    latitude=gr.Number(value=-0.8994976613947719,label='Latitude')
-                    longitude=gr.Number(value=131.3221639428227,label='Longitude')
                 phase123=os.environ.get('LI_PHASE123')=='1'
-                if phase123:
-                    input_review=gr.State(None)
-                    preview_job_button=gr.Button('Pratinjau lokasi dan seluruh input sebelum Process')
-                    input_map=gr.HTML(label='Pratinjau titik calon toko')
-                    input_summary=gr.Textbox(label='Ringkasan input yang akan dibekukan',lines=12,interactive=False)
-                    input_confirmed=gr.Checkbox(value=False,label='Saya memastikan titik calon toko dan seluruh input pada ringkasan sudah benar.')
-                    gr.Markdown('Lengkapi input/video/parameter di bawah, lalu tekan Pratinjau. Mengubah input setelah pratinjau mewajibkan konfirmasi ulang. Mengubah HOME saat job berjalan tidak mengubah input job tersebut.')
-                gr.Markdown('## Input Traffic Counter')
-                source=gr.Radio(VIDEO_SOURCES,value=VIDEO_SOURCES[0],label='Sumber video')
-                upload_state=gr.State([]);job_pointer=gr.State(None)
-                with gr.Group() as upload_group:
-                    gr.Markdown('Delapan slot utama: satu video per kondisi dan waktu. Maksimal 1 GiB/file dan 2 GiB total. Slot kosong tidak dianggap nol.')
-                    slot_files=[];slot_refs=[]
-                    gr.Markdown("Jika upload terputus: unggah video ke GCS melalui Cloud Console, lalu isi gs://bucket/object di slot yang sesuai. Referensi file lokal: "+local_video+". Jangan ubah file menjadi publik.")
-                    for d in ('weekday','weekend'):
-                        gr.Markdown('### '+('Weekday' if d=='weekday' else 'Weekend'))
-                        with gr.Row():
-                            for t in ('pagi','siang','sore','malam'):
-                                with gr.Column():
-                                    slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
-                                    slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau '+local_video))
-                    with gr.Accordion('Sesi tambahan untuk operasional >15 jam',open=False):
-                        for d in ('weekday','weekend'):
-                            with gr.Row():
-                                for t in ('tengah_malam','dini_hari','subuh'):
-                                    with gr.Column():
-                                        slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
-                                        slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau '+local_video))
-                    prepare=gr.Button('Siapkan video dan geometri')
-                    upload_status=gr.Textbox(label='Kesiapan video',interactive=False)
-                    selected=gr.Dropdown(choices=[],label='Video yang ditinjau')
-                    preview=gr.Image(type='filepath',interactive=False,label='Frame pertama: garis merah, polygon A biru, polygon B kuning')
-                    with gr.Row():
-                        day=gr.Dropdown(['weekday','weekend'],label='Kelompok hari (dari slot)',interactive=False)
-                        session=gr.Dropdown(['pagi','siang','sore','malam','tengah_malam','dini_hari','subuh'],label='Sesi perekaman (dari slot)',interactive=False)
-                    from .uploads import DIRECTIONS
-                    direction=gr.Dropdown(DIRECTIONS,value=DIRECTIONS[0],label='Arti arah pada video')
-                    gr.Markdown('Template awal harus ditinjau per video. Untuk menggambar ulang: pilih bagian, tekan **Ulangi bagian**, lalu klik titik berurutan pada gambar. Garis: 2 titik; polygon: minimal 3 titik perimeter. Video asli tidak diubah.')
-                    with gr.Row():
-                        component=gr.Dropdown(['Garis','Polygon A','Polygon B'],value='Garis',label='Bagian yang diedit')
-                        clear=gr.Button('Ulangi bagian')
-                    reviewed=gr.Checkbox(value=False,label='Saya telah meninjau geometri, arah, hari dan sesi video ini.')
-                    save=gr.Button('Simpan tinjauan video')
-                    review_status=gr.Textbox(label='Tinjauan per video',interactive=False)
-                with gr.Group(visible=False) as dataset_group:
-                    videos=gr.CheckboxGroup(controller.video_choices,value=controller.video_choices,label='Video contoh T7SL',
-                                           info='Data contoh tetap tersedia untuk regression/pilot.')
-                gr.Markdown('Hasil job disimpan ke **gs://aretfak-location-intelligence** dan **locdeproject.location_intelligence**. Tabel perlu disiapkan sekali; kegagalan penyimpanan tidak menghapus hasil lokal.')
-                gr.Markdown('## Action')
+                gr.Markdown('## 1. Pilih Mode')
                 choices=['Area Coverage','Traffic Counter','PPAC'] if os.environ.get('LI_COMPONENT_FLOW')=='1' else ['Area Coverage','Traffic Counter','Gabungan + PPAC']
                 if default_mode not in choices:default_mode=choices[-1]
                 mode=gr.Dropdown(choices,value=default_mode,label='Proses')
                 if os.environ.get('LI_COMPONENT_FLOW')=='1':
                     gr.Markdown('**Area Coverage:** Area → PPAC Residential/Fasum. **Traffic Counter:** video valid → PPAC Traffic. **PPAC:** Area → Traffic → PPAC gabungan. STD total menunggu semua input wajib lengkap; komponen tersedia tetap ditampilkan.')
-                with gr.Accordion('Input bisnis PPAC',open=False):
+                gr.Markdown('## 2. PPAC')
+                gr.Markdown('## Identity')
+                with gr.Row():
+                    target=gr.Textbox(value='T7SL',label='KDTK (4 karakter)',max_length=4)
+                    store_name=gr.Textbox(label='Nama Toko',max_length=160)
+                    period=gr.DateTime(value=datetime.now(ZoneInfo('Asia/Jakarta')).date().isoformat(),include_time=False,type='string',interactive=False,label='Periode (tanggal pembuatan)')
+                with gr.Group():
                     with gr.Row():
                         road=gr.Dropdown(ROADS,value='mainstreet',label='Profil jalan PPAC')
                         days=gr.Dropdown(list(range(1,8)),value=7,label='Hari operasional per minggu')
@@ -564,13 +528,72 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                         parking=gr.Number(value=1,minimum=0,label='Faktor parkir (1 = tanpa penyesuaian)')
                 gr.Markdown('Operasional **lebih dari 15 jam** memerlukan sesi tambahan. Memilih sebagian video dapat membuat PPAC menunggu input. Hasil parsial tetap ditandai; akurasi identitas kendaraan belum tervalidasi.')
                 rwi=gr.Dropdown(choices=['MENENGAH ATAS','MENENGAH BAWAH'],value=None,label='RWI — asumsi estimasi penduduk') if phase123 else None
+                gr.Markdown('## 3. Area Coverage')
+                with gr.Row(equal_height=True):
+                    with gr.Column(scale=1,min_width=220):
+                        latitude=gr.Number(value=-0.8994976613947719,label='Latitude')
+                        longitude=gr.Number(value=131.3221639428227,label='Longitude')
+                        save_location=gr.Button('SAVE')
+                        location_status=gr.Textbox(label='Status lokasi',interactive=False)
+                    with gr.Column(scale=3,min_width=320):
+                        input_map=gr.HTML(label='Peta lokasi calon toko')
+                gr.Markdown('SAVE menyimpan koordinat dan menampilkan pin. Peta membutuhkan Leaflet/Esri dari jaringan browser. SAVE tidak menjalankan engine atau mengonfirmasi seluruh input job.')
+                gr.Markdown('## 4. Traffic Counter')
+                source=gr.Radio(VIDEO_SOURCES,value=VIDEO_SOURCES[0],label='Sumber video')
+                upload_state=gr.State([]);job_pointer=gr.State(None)
+                with gr.Group() as upload_group:
+                    with gr.Accordion('Menu upload',open=False):
+                        gr.Markdown('Delapan slot utama: satu video per kondisi dan waktu. Maksimal 1 GiB/file dan 2 GiB total. Slot kosong tidak dianggap nol.')
+                        slot_files=[];slot_refs=[]
+                        gr.Markdown("Jika upload terputus: unggah video ke GCS melalui Cloud Console, lalu isi gs://bucket/object di slot yang sesuai. Referensi file lokal: "+local_video+". Jangan ubah file menjadi publik.")
+                        for d in ('weekday','weekend'):
+                            gr.Markdown('### '+('Weekday' if d=='weekday' else 'Weekend'))
+                            with gr.Row():
+                                for t in ('pagi','siang','sore','malam'):
+                                    with gr.Column():
+                                        slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
+                                        slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau '+local_video))
+                        with gr.Accordion('Sesi tambahan untuk operasional >15 jam',open=False):
+                            for d in ('weekday','weekend'):
+                                with gr.Row():
+                                    for t in ('tengah_malam','dini_hari','subuh'):
+                                        with gr.Column():
+                                            slot_files.append(gr.File(file_count='single',file_types=['video'],type='filepath',label=d+' / '+t))
+                                            slot_refs.append(gr.Textbox(label='Referensi '+d+' / '+t,placeholder='gs://aretfak-location-intelligence/incoming/video.mp4 atau '+local_video))
+                        prepare=gr.Button('Siapkan video dan geometri')
+                        upload_status=gr.Textbox(label='Kesiapan video',interactive=False)
+                    with gr.Accordion('Menu edit geometri',open=False):
+                        selected=gr.Dropdown(choices=[],label='Video yang ditinjau')
+                        preview=gr.Image(type='filepath',interactive=False,label='Frame pertama: garis merah, polygon A biru, polygon B kuning')
+                        with gr.Row():
+                            day=gr.Dropdown(['weekday','weekend'],label='Kelompok hari (dari slot)',interactive=False)
+                            session=gr.Dropdown(['pagi','siang','sore','malam','tengah_malam','dini_hari','subuh'],label='Sesi perekaman (dari slot)',interactive=False)
+                        from .uploads import DIRECTIONS
+                        direction=gr.Dropdown(DIRECTIONS,value=DIRECTIONS[0],label='Arti arah pada video')
+                        gr.Markdown('Template awal harus ditinjau per video. Untuk menggambar ulang: pilih bagian, tekan **Ulangi bagian**, lalu klik titik berurutan pada gambar. Garis: 2 titik; polygon: minimal 3 titik perimeter. Video asli tidak diubah.')
+                        with gr.Row():
+                            component=gr.Dropdown(['Garis','Polygon A','Polygon B'],value='Garis',label='Bagian yang diedit')
+                            clear=gr.Button('Ulangi bagian')
+                        reviewed=gr.Checkbox(value=False,label='Saya telah meninjau geometri, arah, hari dan sesi video ini.')
+                        save=gr.Button('Simpan tinjauan video')
+                        review_status=gr.Textbox(label='Tinjauan per video',interactive=False)
+                with gr.Group(visible=False) as dataset_group:
+                    videos=gr.CheckboxGroup(controller.video_choices,value=controller.video_choices,label='Video contoh T7SL',
+                                           info='Data contoh tetap tersedia untuk regression/pilot.')
                 confirmed=gr.Checkbox(value=False,label='Saya memastikan video yang dipilih digunakan untuk analisis target lokasi ini.')
                 annotate=gr.Checkbox(value=True,label='Buat annotated video (tahap CPU tambahan setelah counting)')
+                gr.Markdown('## 5. Running')
+                if phase123:
+                    input_review=gr.State(None)
+                    preview_job_button=gr.Button('Pratinjau lokasi dan seluruh input sebelum Process')
+                    input_summary=gr.Textbox(label='Ringkasan input yang akan dibekukan',lines=6,interactive=False)
+                    input_confirmed=gr.Checkbox(value=False,label='Saya memastikan titik calon toko dan seluruh input pada ringkasan sudah benar.')
+                    gr.Markdown('Tinjau dan konfirmasi input sebelum Running. Perubahan HOME saat job berjalan tidak mengubah input job tersebut.')
                 save_project=gr.Button('Save Project')
                 project_status=gr.Textbox(label='Status penyimpanan project',interactive=False)
                 with gr.Row():
                     check=gr.Button('Periksa kesiapan')
-                    start=gr.Button('Process',variant='primary')
+                    start=gr.Button('Running',variant='primary')
                 status=gr.Textbox(label='Status',interactive=False)
                 readiness=gr.Dataframe(headers=['Sumber','Status'],datatype=['str','str'],interactive=False,label='Kesiapan sumber')
                 progress=gr.Textbox(label='Tahap aktif dan progres',lines=8,interactive=False)
@@ -592,7 +615,7 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                 map_view=gr.HTML(label='Area Coverage — Folium / Esri')
                 with gr.Accordion('Rincian rekap BQ',open=False):
                     table_views=[gr.Dataframe(label=t,interactive=False,type='pandas',wrap=True,visible=t!='ppac_results') for t in ('traffic_counts','area_results','ppac_results')]
-                gr.Markdown('Ringkasan: bangunan yang dialokasikan = KK estimasi; 1 KK = 4 penduduk. Radius tampilan memakai jarak geodesik centroid bangunan, bukan pembagian persentase PPAC. Kualitas dan status PPAC tetap dilihat pada hasil lengkap.')
+                gr.Markdown('Jumlah kepala adalah estimasi orang menurut tipe bangunan, lantai, RWI dan okupansi. Status UNVERIFIED tetap dipertahankan. Radius memakai centroid bangunan, berbeda dari proporsi zona bisnis PPAC.')
                 display_views=[None]*len(DISPLAY_TABLES)
                 items=list(DISPLAY_TABLES.items())
                 for index in (1,3,4,2,0):
@@ -608,6 +631,8 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                 gr.Markdown('## PPAC Result')
                 name,columns=list(DISPLAY_TABLES.items())[5]
                 display_views[5]=gr.Dataframe(label=name,headers=columns,interactive=False,type='pandas',wrap=True)
+        app.load(controller.location_preview,[latitude,longitude],input_map,api_name=False,queue=False)
+        save_location.click(controller.save_location,[latitude,longitude],[input_map,location_status],api_name=False,queue=False)
         def toggle_source(value):return gr.update(visible=value==VIDEO_SOURCES[0]),gr.update(visible=value==VIDEO_SOURCES[1])
         source.change(toggle_source,source,[upload_group,dataset_group],api_name=False)
         for file in slot_files+slot_refs:
@@ -625,11 +650,13 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
         if phase123:
             preview_inputs=inputs+[input_review,input_confirmed,rwi]
             preview_job_button.click(controller.preview_job,preview_inputs,[input_review,input_map,input_summary,input_confirmed],api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
-            def invalidate_input_review():return None,False,'Input berubah. Pratinjau dan konfirmasi ulang sebelum Process.',''
+            def invalidate_input_review():return None,False,'Input berubah. Pratinjau dan konfirmasi ulang sebelum Process.'
             for field in (mode,target,latitude,longitude,videos,road,days,hours,drive,swot,cut,parking,confirmed,source,store_name,annotate,rwi):
-                field.input(invalidate_input_review,None,[input_review,input_confirmed,input_summary,input_map],api_name=False,queue=False)
-            upload_state.change(invalidate_input_review,None,[input_review,input_confirmed,input_summary,input_map],api_name=False,queue=False)
+                field.input(invalidate_input_review,None,[input_review,input_confirmed,input_summary],api_name=False,queue=False)
+            upload_state.change(invalidate_input_review,None,[input_review,input_confirmed,input_summary],api_name=False,queue=False)
             inputs=inputs+[input_review,input_confirmed,rwi]
+        for coordinate in (latitude,longitude):
+            coordinate.input(lambda:('','Koordinat berubah; tekan SAVE untuk memperbarui peta.'),None,[input_map,location_status],api_name=False,queue=False)
         diagnostic=gr.Button('Periksa penyebab kegagalan Area (tanpa proses ulang)')
         diagnostic_text=gr.Textbox(label='Diagnosis Area — penyebab dari log worker',lines=8,interactive=False)
         gr.Button('Lihat log proses (Area/Traffic)').click(controller.area_diagnostic,inputs,diagnostic_text,api_name=False,concurrency_id='diagnostics',concurrency_limit=1)
