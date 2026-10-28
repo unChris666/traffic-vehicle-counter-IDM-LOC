@@ -1,4 +1,4 @@
-COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r5
+COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r6
 
 Notebook: 15_colab_l4_area_first.ipynb
 Gunakan notebook ini untuk Colab; notebook14 adalah varian Kaggle.
@@ -46,3 +46,11 @@ Wrapper core sekarang mengganti PYTHONPATH dengan direktori khusus yang hanya be
 Untuk sesi r4 yang sudah gagal: hentikan cell server setelah job selesai/gagal. Salin seluruh colab_core_recovery.py ke cell baru lalu jalankan. Cell itu memperbaiki wrapper tanpa pip/apt/conda, menguji isolasi dengan PYTHONPATH worker asli, lalu mengulang pemeriksaan CUDA. Setelah lulus, jalankan kembali cell server dan Process Area untuk job baru. Jangan ulang setup notebook lama. Tidak perlu menghapus cache atau mengubah job lama.
 Untuk sesi baru gunakan notebook r5. Cell Periksa import dan CUDA juga menguji core-isolation dan menyimpan core-runtime-isolation.json/core-isolation.log; keduanya ikut diagnosis. Job lama tetap FAILED. Status penyimpanan READY hanya berarti receipt/manifest berhasil disimpan, bukan Area berhasil.
 Validasi lokal menggunakan core Python3.12.12/GDAL3.10.3/pyproj3.7.1 dan scientific pyproj3.7.2; mismatch sebelum perbaikan berhasil direproduksi dan versi core tepat sesudah perbaikan. Pengujian GPU L4/hasil Area/GCS/BQ lengkap tetap membutuhkan eksekusi owner.
+
+MONITOR SERVER DAN DIAGNOSIS r6
+ZIP diagnosis sekarang menyertakan tail server.log (maksimal64KiB, redaksi token/private key), server-status.json, serta hasil dan log setup yang tersedia. Entri yang sudah ada tidak ditambahkan dua kali.
+Cell server mencetak peringatan bahwa Stop/Interrupt menutup server DAN tunnel Gradio, sehingga URL tidak aktif. Biarkan cell berjalan selama memakai UI. Setelah restart gunakan URL baru.
+Status proses dan probe GET /config melalui loopback dicetak setiap30detik, timeout2detik, dan disimpan atomik ke server-status.json. STARTING = URL lokal belum diumumkan. RUNNING_LOCAL_HTTP_OK = proses hidup dan HTTP lokal Gradio siap. RUNNING_LOCAL_HTTP_UNAVAILABLE = proses hidup tetapi HTTP lokal belum merespons valid. STOPPED = proses sudah keluar, termasuk exit code dan alasan Stop bila diketahui. Snapshot terakhir saat proses masih berjalan disertakan dalam status akhir.
+Probe tidak mengakses URL publik dan tidak mengikuti redirect, sehingga HTTP lokal READY tidak membuktikan tunnel publik/browser sehat. Bila browser timeout tetapi lokal READY, periksa tunnel atau jaringan browser. Probe tidak membuktikan engine berhasil.
+Untuk sesi yang sudah selesai setup: hentikan server lama setelah job selesai, ganti seluruh cell server dengan colab_server_cell.py dan seluruh cell diagnosis dengan colab_diagnostics_cell.py. Jalankan cell server baru; tidak perlu pip/apt/conda atau mengulang setup. Untuk sesi baru gunakan notebook r6.
+Dependency/wheel aplikasi, pemeriksaan CUDA/core dan formula engine tidak diubah. Runtime Colab dapat dihentikan provider dan tautan share bukan hosting permanen.

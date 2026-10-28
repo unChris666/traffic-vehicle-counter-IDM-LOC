@@ -96,11 +96,18 @@ class BootstrapExportTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             base=Path(d);(base/'setup-status.json').write_text(json.dumps({'stage':'disk_preflight','status':'FAILED'}))
             (base/'setup.log').write_text('ERROR: storage fixture\nAuthorization: Bearer fixture-secret\n')
+            (base/'server.log').write_text('x'*70000+'\nServer fixture stopped\nAuthorization: Bearer server-secret\n')
+            (base/'server-status.json').write_text(json.dumps({'status':'STOPPED','exit_code':0}))
             files=Mock();module=types.ModuleType('google.colab');module.files=files
             with patch.dict(sys.modules,{'google.colab':module}):exec(compile(code,'diagnostic-cell','exec'),{'BASE':base,'Path':Path})
             files.download.assert_called_once_with(str(base/'colab-diagnostics.zip'))
             with zipfile.ZipFile(base/'colab-diagnostics.zip') as z:
                 self.assertIn('setup-status.json',z.namelist());self.assertIn('storage fixture',z.read('setup.log').decode())
                 self.assertNotIn('fixture-secret',z.read('setup.log').decode())
+                self.assertIn('Server fixture stopped',z.read('server.log').decode())
+                self.assertNotIn('server-secret',z.read('server.log').decode())
+                self.assertLessEqual(len(z.read('server.log')),65536)
+                self.assertEqual(json.loads(z.read('server-status.json'))['status'],'STOPPED')
+                self.assertEqual(len(z.namelist()),len(set(z.namelist())))
 
 if __name__=='__main__':unittest.main()

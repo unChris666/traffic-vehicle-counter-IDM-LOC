@@ -1,0 +1,26 @@
+{
+  "schema_version": "colab_setup_r6_validation_v1",
+  "date": "2026-10-28",
+  "package_version": "0.6.2rc1",
+  "notebook_revision": "setup-r6",
+  "branch": "fix/area-user-testing",
+  "tests": {
+    "total": 321,
+    "passed": 311,
+    "skipped": 10,
+    "seconds": 47.59
+  },
+  "checks": [
+    "Real loopback HTTP config ready, invalid response, rejected redirect and unavailable listener",
+    "Exited process detected without HTTP probe",
+    "Stopped status preserves prior running observation",
+    "Diagnosis export includes bounded/redacted server log and process status without duplicate members",
+    "Generated notebook cells compile and embedded wheel/locks/bootstrap match repository"
+  ],
+  "dependency_versions_changed": false,
+  "engine_source_changed": false,
+  "public_tunnel_verified": false,
+  "live_colab_execution_here": false,
+  "main_or_foundation_promoted": false,
+  "notebook_sha256": "2119c7be32fcc47739fdf4e0ad7cc38f178502698c471efdf8899202db1246a4"
+}

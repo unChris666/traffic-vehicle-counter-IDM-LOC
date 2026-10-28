@@ -22,7 +22,7 @@ def build(wheel,output):
     def md(s):cells.append({'cell_type':'markdown','metadata':{},'source':s})
     def code(s):
         compile(s,'colab-cell','exec');cells.append({'cell_type':'code','metadata':{},'source':s,'execution_count':None,'outputs':[]})
-    md(f'''# Colab L4 — Area dahulu, Traffic dan PPAC sesudah verifikasi\n\nKandidat **{version} — perbaikan setup r5**, branch pengujian fix/area-user-testing. Belum lulus fresh Area Sorong/L4 atau deployment. Formula engine tidak diubah. Notebook ini tidak menjalankan analisis saat startup; pemrosesan dimulai dari tombol Gradio.\n\n1. Pilih **Runtime → Change runtime type → L4 GPU**, kemudian reconnect. Metadata notebook hanya petunjuk; pemeriksaan di bawah menolak GPU selain L4. Alokasi bergantung akses/kuota Colab.\n2. Run All. Dependency dipasang sekali di awal pada Python3.12 terisolasi; paket bawaan kernel Colab tidak diubah. GDAL/PROJ memakai interpreter core terpisah. Setiap sesi Colab baru memerlukan setup lagi. Unduhan beberapa GB memerlukan waktu dan ruang; kegagalan pip check/import/CUDA menghentikan startup.\n3. Ikuti dialog autentikasi Google. Gunakan akun yang berizin membaca sumber, membuat query BQ dan membaca/menulis hasil. Kredensial tidak perlu ditempel ke notebook.\n4. Buka GRADIO_PUBLIC_URL, isi KDTK/Nama Toko/koordinat, jalankan **Area Coverage** tanpa video.\n5. Buka RESULT dan **Buka hasil BQ** untuk job yang sama. Tabel dan peta GCS harus berhasil dibaca dan diverifikasi sebelum Traffic/PPAC dibuka untuk target/periode/koordinat/versi tersebut. Penerimaan artefak oleh viewer bukan bukti tile eksternal/pan/zoom berhasil; tinjau sendiri di browser.\n6. Setelah itu, gunakan upload Gradio atau gs:// pada slot video. Path lokal yang diizinkan: /content/videos/. Dataset Kaggle tidak dimount otomatis. PPAC tetap menunggu Area valid serta semua sesi yang diwajibkan, termasuk shift3 untuk jam>15. Missing bukan nol.\n\nOutput: **gs://aretfak-location-intelligence**, dataset **locdeproject.location_intelligence**. Sumber model/PBF/toko tetap terpisah. Setup tidak membuat tabel, tidak mengubah IAM, dan tidak membuka bucket publik. Workspace /content sementara; simpan diagnosis/hasil sebelum runtime dihentikan. Jangan menyalin ADC/private key ke chat atau GitHub. Main dan refactor/deployment-foundation belum dipromosikan.''')
+    md(f'''# Colab L4 — Area dahulu, Traffic dan PPAC sesudah verifikasi\n\nKandidat **{version} — perbaikan setup r6**, branch pengujian fix/area-user-testing. Belum lulus fresh Area Sorong/L4 atau deployment. Formula engine tidak diubah. Notebook ini tidak menjalankan analisis saat startup; pemrosesan dimulai dari tombol Gradio.\n\n1. Pilih **Runtime → Change runtime type → L4 GPU**, kemudian reconnect. Metadata notebook hanya petunjuk; pemeriksaan di bawah menolak GPU selain L4. Alokasi bergantung akses/kuota Colab.\n2. Run All. Dependency dipasang sekali di awal pada Python3.12 terisolasi; paket bawaan kernel Colab tidak diubah. GDAL/PROJ memakai interpreter core terpisah. Setiap sesi Colab baru memerlukan setup lagi. Unduhan beberapa GB memerlukan waktu dan ruang; kegagalan pip check/import/CUDA menghentikan startup.\n3. Ikuti dialog autentikasi Google. Gunakan akun yang berizin membaca sumber, membuat query BQ dan membaca/menulis hasil. Kredensial tidak perlu ditempel ke notebook.\n4. Buka GRADIO_PUBLIC_URL, isi KDTK/Nama Toko/koordinat, jalankan **Area Coverage** tanpa video.\n5. Buka RESULT dan **Buka hasil BQ** untuk job yang sama. Tabel dan peta GCS harus berhasil dibaca dan diverifikasi sebelum Traffic/PPAC dibuka untuk target/periode/koordinat/versi tersebut. Penerimaan artefak oleh viewer bukan bukti tile eksternal/pan/zoom berhasil; tinjau sendiri di browser.\n6. Setelah itu, gunakan upload Gradio atau gs:// pada slot video. Path lokal yang diizinkan: /content/videos/. Dataset Kaggle tidak dimount otomatis. PPAC tetap menunggu Area valid serta semua sesi yang diwajibkan, termasuk shift3 untuk jam>15. Missing bukan nol.\n\nOutput: **gs://aretfak-location-intelligence**, dataset **locdeproject.location_intelligence**. Sumber model/PBF/toko tetap terpisah. Setup tidak membuat tabel, tidak mengubah IAM, dan tidak membuka bucket publik. Workspace /content sementara; simpan diagnosis/hasil sebelum runtime dihentikan. Jangan menyalin ADC/private key ke chat atau GitHub. Main dan refactor/deployment-foundation belum dipromosikan.''')
     code('''import csv,io,json,os,subprocess,sys,time,signal
 from pathlib import Path
 BASE=Path('/content/location-intelligence-colab');BASE.mkdir(parents=True,exist_ok=True)
@@ -109,23 +109,30 @@ auth.authenticate_user(project_id='locdeproject')
 run_logged(command('preflight'),'cloud-preflight',env=child_env())
 print('Akses awal diperiksa. Belum ada engine berjalan.')
 ''')
-    md('## Jalankan UI — Area Coverage lebih dahulu\nBuka GRADIO_PUBLIC_URL yang tercetak. Isi identity/koordinat, pilih Area Coverage lalu Process. Tinjau tabel dan map di RESULT, kemudian Buka hasil BQ untuk job yang sama. Traffic/PPAC ditahan sampai pembacaan ulang terverifikasi. Startup UI mengulang pemeriksaan ringan tanpa instalasi.\n\nCell ini tetap berjalan selama UI digunakan. Interrupt untuk menutup server. Hentikan setelah job selesai bila ingin menyimpan hasil lengkap; interrupt saat job aktif dapat membatalkan worker. Log tersimpan di /content/location-intelligence-colab/server.log. Nama panggilan L4 tidak membuktikan performa, akurasi atau parity dengan T4.')
-    code('''if 'SERVER' in globals() and SERVER.poll() is None:
+    md('## Jalankan UI — Area Coverage lebih dahulu\nBuka GRADIO_PUBLIC_URL yang tercetak. Isi identity/koordinat, pilih Area Coverage lalu Process. Tinjau tabel dan map di RESULT, kemudian Buka hasil BQ untuk job yang sama. Traffic/PPAC ditahan sampai pembacaan ulang terverifikasi. Startup UI mengulang pemeriksaan ringan tanpa instalasi.\n\n**PENTING: biarkan cell ini terus berjalan selama UI digunakan. Stop/interrupt cell ini menutup server dan tunnel Gradio; URL publik menjadi tidak aktif.** Status proses dan HTTP lokal dicetak setiap30detik dan disimpan ke server-status.json. RUNNING_LOCAL_HTTP_OK hanya membuktikan server lokal merespons, bukan tunnel publik berhasil. Interrupt untuk menutup server. Hentikan setelah job selesai bila ingin menyimpan hasil lengkap; interrupt saat job aktif dapat membatalkan worker. Log tersimpan di /content/location-intelligence-colab/server.log. Nama panggilan L4 tidak membuktikan performa, akurasi atau parity dengan T4.')
+    code((root/'tools/colab_server_monitor.py').read_text()+'''
+if 'SERVER' in globals() and SERVER.poll() is None:
     raise RuntimeError('Server masih aktif; hentikan dahulu.')
 log_path=BASE/'server.log';stream=log_path.open('wb')
 SERVER=subprocess.Popen(command('serve'),env=child_env(),stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
-offset=0
+offset=0;health=None;next_health=0;stop_reason='PROCESS_EXITED'
+print('PERHATIAN: menghentikan/interrupt cell ini MENUTUP server Gradio dan tunnel. URL publik tidak dapat dipakai setelah server ditutup. Biarkan cell berjalan selama memakai UI.',flush=True)
 try:
     while SERVER.poll() is None:
         with log_path.open('rb') as logs:
             logs.seek(offset);chunk=logs.read();offset=logs.tell()
         if chunk:print(chunk.decode('utf-8',errors='replace'),end='',flush=True)
+        if time.monotonic()>=next_health:
+            health=record_server_status(SERVER,BASE,health);next_health=time.monotonic()+30
+            if health['status']=='RUNNING_LOCAL_HTTP_OK':
+                print('HTTP lokal siap. Jika URL publik timeout, periksa tunnel/jaringan browser; akses publik belum diuji oleh probe lokal.',flush=True)
         time.sleep(1)
     with log_path.open('rb') as logs:
         logs.seek(offset);print(logs.read().decode('utf-8',errors='replace'),end='')
     if SERVER.returncode:raise RuntimeError('Server berhenti; lihat pesan terakhir dan server.log. Jangan lanjut ke Traffic sebelum Area terverifikasi.')
 except KeyboardInterrupt:
-    print('Menghentikan server dan worker milik sesi aplikasi ini...')
+    stop_reason='NOTEBOOK_INTERRUPT'
+    print('Cell di-interrupt: server dan tunnel Gradio ditutup. Jalankan kembali cell ini lalu gunakan URL baru untuk membuka UI.',flush=True)
 finally:
     if SERVER.poll() is None:
         os.killpg(SERVER.pid,signal.SIGINT)
@@ -136,8 +143,10 @@ finally:
             except subprocess.TimeoutExpired:
                 os.killpg(SERVER.pid,signal.SIGKILL);SERVER.wait(timeout=5)
     stream.close()
+    health=record_server_status(SERVER,BASE,health,reason=stop_reason)
+    print('Gradio BERHENTI. URL publik sesi ini tidak aktif. Jalankan kembali cell server untuk memperoleh URL aktif.',flush=True)
 ''')
-    md('## Unduh diagnosis setelah server dihentikan\nTombol Siapkan paket diagnosis Area juga tersedia di Gradio. Cell berikut tetap bisa diunduh bila setup gagal sebelum Python aplikasi tersedia. ZIP memuat tahap gagal dan tail log terbatas; jika Area pernah berjalan, laporan run terakhir juga disertakan. Tidak memuat file credential/source/video. Unduhan ini tidak menjalankan ulang engine.')
+    md('## Unduh diagnosis setelah server dihentikan\nTombol Siapkan paket diagnosis Area juga tersedia di Gradio. Cell berikut tetap bisa diunduh bila setup gagal sebelum Python aplikasi tersedia. ZIP memuat server.log, server-status.json, tahap gagal dan tail log terbatas; jika Area pernah berjalan, laporan run terakhir juga disertakan. Tidak memuat file credential/source/video. Unduhan ini tidak menjalankan ulang engine.')
     script='''from pathlib import Path
 import sys,json,zipfile
 from traffic_location.integration.area_trace import latest_report
@@ -166,9 +175,9 @@ if 'SCIENCE' in globals() and Path(SCIENCE).is_file():
     if exported:print(result.stdout)
 with zipfile.ZipFile(archive,'a' if exported else 'w',zipfile.ZIP_DEFLATED) as bundle:
     if not exported:bundle.writestr('status.txt','Setup/startup diagnosis only; Area report not available yet.')
-    for name in ('setup-status.json','setup.log','runtime-check.log','cloud-preflight.log','core-isolation.log','core-runtime-isolation.json'):
+    for name in ('setup-status.json','setup.log','runtime-check.log','cloud-preflight.log','core-isolation.log','core-runtime-isolation.json','server.log','server-status.json'):
         path=BASE/name
-        if not path.is_file():continue
+        if not path.is_file() or name in bundle.namelist():continue
         with path.open('rb') as stream:
             stream.seek(max(0,path.stat().st_size-65536));text=stream.read().decode('utf-8',errors='replace')
         text=re.sub(r'-----BEGIN[^\\n]*PRIVATE KEY-----.*?-----END[^\\n]*PRIVATE KEY-----','[REDACTED_KEY]',text,flags=re.S)
