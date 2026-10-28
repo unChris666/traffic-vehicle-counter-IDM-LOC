@@ -131,6 +131,7 @@ class Controller:
                                     publication=self.destination,upload_root=self.upload_root,store_name=x.get('store_name'),annotate=x.get('annotate',False))
 
     def check(self,*values):
+        if getattr(self,'background_runs',None) and self.background_runs.current():return 'Job masih aktif; pantau progres atau diagnosis tanpa pemeriksaan runtime baru.',[]
         try:
             x=validate(values,self.video_choices);runtime=self.runtime(x)
             state=runtime.probe()
@@ -373,6 +374,7 @@ class Controller:
         return rows,False,'Metadata berubah. Simpan kembali tinjauan video ini.'
 
     def retry_storage(self,pointer):
+        if getattr(self,'background_runs',None) and self.background_runs.current():return 'Job masih aktif; tunggu publikasi selesai sebelum retry.',None
         if not pointer:return 'Belum ada job yang dapat disimpan ulang.',None
         folder=Path(pointer['output']).resolve()
         if not folder.is_relative_to(self.base):return 'Lokasi job tidak valid.',None
@@ -475,7 +477,7 @@ class Controller:
                                    target_confirmed=x['confirmed'],video_ids=x['video_ids'],**options)
                 while not future.done():
                     yield 'Engine berjalan…',self.live_engine_rows(runtime,identity),{},self.progress_text(runtime,started),None,None
-                    time.sleep(1)
+                    time.sleep(2)
                 result=future.result()
             ppac=result['ppac']
             failed=sum(row.get('execution_status')!='SUCCEEDED' for row in result['engines'])
@@ -684,10 +686,62 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                     first=False
                 yield tuple(result)
         outputs=[status,engines,ppac,progress,download,job_pointer]+(result_outputs if phase123 else [])
-        processed=start.click(readable_process,inputs,outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
+        if phase123:
+            from .background_runs import BackgroundRuns
+            background=BackgroundRuns();controller.background_runs=background
+            monitor_token=gr.State(None);monitor_revision=gr.State(0)
+            monitor_timer=gr.Timer(2,active=True)
+            reconnect=gr.Button('Hubungkan kembali pantauan job (tanpa proses ulang)')
+            def background_events(values):
+                last=None
+                for event in readable_process(*values):
+                    last=list(event);yield tuple(last)
+                # Cloud lookup runs in this worker, not in an HTTP polling call.
+                if last is not None and last[5]:
+                    pointer=last[5]
+                    saved=controller.current_cloud_results(pointer,pointer['context'].get('target_id'),None,last[2])
+                    last[6:]=saved
+                    yield tuple(last)
+            def submit_job(*values):
+                active=background.current()
+                if active:return active,0,*[gr.skip() for _ in outputs],gr.update(interactive=True)
+                from .job_input import checked_review
+                try:
+                    checked_review(validate(values,controller.video_choices),values[18],values[19])
+                    token,event,reused=background.submit(lambda:background_events(deepcopy(values)))
+                    print('JOB_SUBMIT_REATTACHED' if reused else 'JOB_SUBMIT_ACCEPTED',flush=True)
+                    if reused:
+                        return token,0,*[gr.skip() for _ in outputs],gr.update(interactive=True)
+                    return token,1,*event,gr.update(interactive=True)
+                except Exception as error:
+                    from .failure_details import safe
+                    return gr.skip(),gr.skip(),'INPUT_ERROR: '+safe(error),*[gr.skip() for _ in outputs[1:]],gr.update(interactive=True)
+            def poll_job(token,revision):
+                state=background.snapshot(token) if token==background.current(completed=True) else None
+                if state and time.time()-getattr(controller,'_last_ui_poll_record',0)>=5:
+                    try:
+                        write(controller.base/'ui-poll-status.json',{'observed_at':datetime.now(ZoneInfo('Asia/Jakarta')).isoformat(),'monitor_hash':semantic_hash(token),'revision':state['revision'],'done':state['done'],'scope':'Last status HTTP poll received by server; not proof of browser rendering or engine progress.'})
+                        controller._last_ui_poll_record=time.time()
+                    except (OSError,ValueError):pass
+                if not state or state['revision']==revision:
+                    return revision,*[gr.skip() for _ in outputs]
+                event=list(state['value'])
+                if state['error']:event[0]='Pemantauan job gagal: '+state['error']+'. Periksa diagnosis; jangan langsung mengulang job.'
+                return state['revision'],*event
+            def reconnect_job():return background.current(completed=True),0
+            def attach_active():return background.current(),0
+            start.click(submit_job,inputs,[monitor_token,monitor_revision,*outputs,start],api_name=False,queue=False)
+            monitor_timer.tick(poll_job,[monitor_token,monitor_revision],[monitor_revision,*outputs],api_name=False,queue=False,show_progress='hidden',trigger_mode='once')
+            gr.Button('Perbarui status sekarang').click(poll_job,[monitor_token,monitor_revision],[monitor_revision,*outputs],api_name=False,queue=False,show_progress='hidden')
+            reconnect.click(reconnect_job,None,[monitor_token,monitor_revision],api_name=False,queue=False)
+            app.load(attach_active,None,[monitor_token,monitor_revision],api_name=False,queue=False)
+            processed=None
+        else:
+            processed=start.click(readable_process,inputs,outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
         save_project.click(controller.save_project,inputs,project_status,api_name=False,concurrency_id='engines',concurrency_limit=1)
         refresh.click(controller.cloud_results,[target,saved_job],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
         for event in (processed,retried):
+            if event is None:continue
             event.then(controller.current_cloud_results,[job_pointer,target,saved_job,ppac],result_outputs,api_name=False,concurrency_id='engines',concurrency_limit=1)
     app.queue(max_size=4,default_concurrency_limit=1)
     return app,controller

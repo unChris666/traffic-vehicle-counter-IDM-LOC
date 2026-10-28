@@ -44,7 +44,7 @@ def observation(base,*,public=False):
     state='STOPPED' if alive is False else 'STOPPING' if closing else 'RUNNING_LOCAL_HTTP_OK' if local['status']=='READY' else 'RUNNING_LOCAL_HTTP_UNAVAILABLE' if alive else 'UNKNOWN'
     result={'observed_at':datetime.now(timezone.utc).isoformat(),'status':state,'pid':pid,'process_alive':alive,
             'local_http':local,'public_tunnel':{'status':'NOT_PROBED'},'lifecycle':life,
-            'previous_monitor_sample':previous,'watchdog':saved('server-watchdog.json'),
+            'previous_monitor_sample':previous,'watchdog':saved('server-watchdog.json'),'ui_poll_observation':saved('system/ui-poll-status.json'),
             'scope':'Fresh HTTP/process observations; HTTP readiness does not prove event streaming, browser responsiveness or engine progress.'}
     if public and alive is True and not closing:
         result['public_tunnel']=probe((previous.get('public_url') or '')+'/config',public=True)

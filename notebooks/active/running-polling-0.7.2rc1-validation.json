@@ -1,0 +1,40 @@
+{
+  "candidate": "0.7.2rc1",
+  "observed_at": "2026-10-28T09:53:09.532785+00:00",
+  "status": "LOCAL_GATES_PASS_COLAB_TUNNEL_RETEST_PENDING",
+  "main_suite": {
+    "total": 383,
+    "passed": 365,
+    "skipped": 18,
+    "seconds": 45.573
+  },
+  "GIS_suite": {
+    "total": 11,
+    "passed": 11
+  },
+  "background_tests": {
+    "total": 5,
+    "passed": 5
+  },
+  "real_HTTP_Gradio_proof": {
+    "transport": "loopback POST JSON, no request generator",
+    "submit_seconds": 0.023466379,
+    "duplicate_seconds": 0.019800728,
+    "poll_seconds": 0.010248238,
+    "final_poll_seconds": 0.010967043,
+    "engine_calls": 1,
+    "is_generating": false,
+    "scope": "Held fixture engine, not L4 inference/public tunnel"
+  },
+  "mypy": "PASS14files",
+  "build": "PASS",
+  "wheel_import": "PASS outside repository",
+  "notebook_sha256": "4ccefe000c90f0546778271b67cf4dc88bed5ae8fc255efb0f769b1edc065cd7",
+  "wheel_sha256": "406796359290dc4a0d1773103fca016d74ef1cdc04b3cfe66db2785d2b141710",
+  "limits": [
+    "Original freeze not reproduced; request-long-lifetime dependency removed.",
+    "In-memory single active prototype job per server; no restart recovery.",
+    "No Colab/public tunnel/browser/cloud/GPU validation here.",
+    "No promotion to main/foundation."
+  ]
+}
