@@ -1,4 +1,4 @@
-COLAB L4 — KANDIDAT 0.6.2rc1, PERBAIKAN SETUP r6
+COLAB L4 — KANDIDAT 0.6.3rc1, PERBAIKAN PETA DAN INPUT PPAC
 
 Notebook: 15_colab_l4_area_first.ipynb
 Gunakan notebook ini untuk Colab; notebook14 adalah varian Kaggle.
@@ -54,3 +54,9 @@ Status proses dan probe GET /config melalui loopback dicetak setiap30detik, time
 Probe tidak mengakses URL publik dan tidak mengikuti redirect, sehingga HTTP lokal READY tidak membuktikan tunnel publik/browser sehat. Bila browser timeout tetapi lokal READY, periksa tunnel atau jaringan browser. Probe tidak membuktikan engine berhasil.
 Untuk sesi yang sudah selesai setup: hentikan server lama setelah job selesai, ganti seluruh cell server dengan colab_server_cell.py dan seluruh cell diagnosis dengan colab_diagnostics_cell.py. Jalankan cell server baru; tidak perlu pip/apt/conda atau mengulang setup. Untuk sesi baru gunakan notebook r6.
 Dependency/wheel aplikasi, pemeriksaan CUDA/core dan formula engine tidak diubah. Runtime Colab dapat dihentikan provider dan tautan share bukan hosting permanen.
+
+PETA DAN PPAC 0.6.3rc1
+Perbaikan renderer: grup Calon toko, POI, Indomaret & Kompetitor didefinisikan sebelum kontrol layer Folium. Urutan lama dapat mereferensikan grup yang belum ada dan menghentikan JavaScript sebelum titik tampil. Marker memakai koordinat snapshot asli; POI/toko yang tidak ada pada sumber tidak dibuat-buat. Simpan/kelompokkan berulang tidak menumpuk grup.
+Kebijakan owner untuk PPAC aktif (parameter MVP v2, hasil policy owner_integration_mvp_v3): input Residential = bangunan alokasi calon toko + bangunan market_status UNVERIFIED, berdasarkan union building_id tanpa hitung ganda. Bangunan milik kompetitor/Indomaret dan OTHERS tidak ikut ditambahkan. Status/winner/count_candidate/summary Area tidak ditulis ulang. Rumus1bangunan=1KK=4orang serta formulaSTD tetap. Basis hitungan terurai di residential.building_basis, result_quality PPAC tetap UNVERIFIED bila ada status itu; keberhasilan eksekusi SUCCEEDED berbeda dari kualitas data. Jumlah allocated_buildings di BQ Area tetap alokasi engine; jumlah PPAC yang mencakup UNVERIFIED ada pada PPAC JSON/Grid. Observasi Traffic wajib, gate zona dan validasi binding tetap berlaku; schema parameter legacy v1 mempertahankan gate ketat historis.
+Gunakan notebook baru yang menyertakan wheel0.6.3rc1. Sesi lama harus menghentikan server sebelum mengganti paket. Buat job baru; membuka job GCS/BQ lama tetap menampilkan artefak lama. Versi/manifest hasil historis tidak dimutasi. Tidak ada tabel BQ baru atau upgrade dependency pada perubahan ini.
+Colab startup/isolation/CUDA r6 tetap. Pengujian fresh lokasi padat dan tampilan browser dilakukan owner. Kandidat ini belum dipromosikan ke main atau branch konsolidasi.

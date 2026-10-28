@@ -1,4 +1,3 @@
-# Ganti SELURUH cell unduh diagnosis lama dengan kode ini.
 # This cell also works when setup failed before SCIENCE was assigned.
 import zipfile,re
 archive=BASE/'colab-diagnostics.zip'

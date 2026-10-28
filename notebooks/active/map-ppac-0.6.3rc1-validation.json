@@ -1,0 +1,32 @@
+{
+  "before_all_group_variables_defined_before_control": false,
+  "after_all_group_variables_defined_before_control": true,
+  "scope": "Real Folium0.20 generated JS initialization order and preservation of all four marker types; no browser/CDN/GCS/GPU run.",
+  "schema_version": "map_ppac_0_6_3rc1_validation_v1",
+  "date": "2026-10-28",
+  "package_version": "0.6.3rc1",
+  "branch": "fix/area-user-testing",
+  "tests": {
+    "total": 324,
+    "passed": 313,
+    "skipped": 11,
+    "seconds": 47.605
+  },
+  "folium_marker_regression": {
+    "total": 1,
+    "passed": 1,
+    "environment": "Folium0.20.0"
+  },
+  "integration_unverified_policy_test": "PASS: 1000 allocated + 1 UNVERIFIED = 1001 PPAC buildings / 4004 estimated people; Area status unchanged; PPAC quality UNVERIFIED",
+  "double_count_and_other_ownership_exclusion": "PASS",
+  "build": "PASS",
+  "mypy": "PASS 14 source files",
+  "installed_wheel_import": "PASS outside repository",
+  "dependency_versions_changed": false,
+  "numerical_area_kernels_changed": false,
+  "traffic_kernels_changed": false,
+  "live_colab_or_kaggle_run_here": false,
+  "cloud_publication_or_browser_verified_here": false,
+  "main_or_foundation_promoted": false,
+  "wheel_sha256": "37cc336298071e6e1a68247c4063c72c8198a9e3d1ad7d15a0ba6b98a2802411"
+}

@@ -99,8 +99,11 @@ def features(binding, results, parameters):
     missing=[f'{d}/{s}/{c}' for d in samples for s in samples[d] for c in categories if c not in samples[d][s]]
     need(not missing,'OBSERVATIONS_INCOMPLETE','Belum dicacah: '+', '.join(missing))
     need(selected==set(results),'UNSELECTED_RESULT','Ada hasil yang tidak dipilih eksplisit dalam binding')
+    from .area_residential import building_basis
+    residential_basis=building_basis(an)
     return {'schema_version':'ppac_features_v1','context':deepcopy(context),
-            'allocated_buildings':an['summary']['candidate_whole_buildings'],
+            'allocated_buildings':residential_basis['ppac_buildings'] if mvp else an['summary']['candidate_whole_buildings'],
+            'area_building_basis':residential_basis if mvp else {'policy':'ALLOCATED_ONLY','status':ah['quality']},
             'outer_zone_open':gate['state']=='OPEN','samples':samples,'fasum':facilities,
             'upstream_quality':{k:{'quality':h['quality'],'summary':h['summary']} for k,h in results.items()},
             'duration_policy':'300_TO_306_SECONDS_NO_RESCALE' if mvp else 'EXACT_300_SECONDS',

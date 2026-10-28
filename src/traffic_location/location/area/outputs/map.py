@@ -10,11 +10,17 @@ def consolidate(map_object):
     groups={}
     for key,child in list(map_object._children.items()):
         name=getattr(child,'layer_name','')
+        if name in ('POI','Indomaret & Kompetitor','Calon toko'):continue
         group=('POI' if name.startswith('POI ') else 'Indomaret & Kompetitor' if name.startswith(('Kompetitor','Indomaret')) else 'Calon toko' if name.startswith(('Calon toko','Calon —')) else None)
         if group:
             if group not in groups:groups[group]=folium.FeatureGroup(name=group,show=True)
             del map_object._children[key];child.add_to(groups[group])
     for group in groups.values():group.add_to(map_object)
+    # LayerControl JS references the regrouped layers. Those variables must be
+    # defined first; controls left in their old position stop map initialization.
+    for key,child in list(map_object._children.items()):
+        if isinstance(child,folium.LayerControl):
+            del map_object._children[key];child.add_to(map_object)
 
 
 def display_tables(config,pilot,facilities,result):

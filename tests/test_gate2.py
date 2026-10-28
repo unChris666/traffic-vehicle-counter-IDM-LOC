@@ -185,6 +185,23 @@ class Gate2Tests(unittest.TestCase):
         r['native_domain_sha256']=self.domain(n);self.packet('partial-area','area',r,n)
         self.binding['area']['job_id']='partial-area';r=self.flow()
         self.assertEqual(r['ppac']['execution_status'],'SUCCEEDED');self.assertEqual(r['ppac']['result_quality'],'PARTIAL')
+    def test_mvp_includes_unverified_buildings_without_changing_area_status(self):
+        self.use_mvp();job=self.q['jobs'].pop(0);p=Path(job['result_ref']['path'])
+        r=read(p/'result.json');n=read(p/'native.json.gz')
+        n['rows'].append({'building_id':'unverified-fixture','winner_store_key':None,
+            'count_candidate':0,'market_status':'UNVERIFIED','reason':'PRIMARY_CORRIDOR_UNVERIFIED','scores':[]})
+        from traffic_location.location.area.domain.aggregation import reconcile
+        n['summary']=reconcile(n['rows']);r['summary']=n['summary']
+        n['status']=r['data_quality_status']='PARTIAL';r['native_domain_sha256']=self.domain(n)
+        self.packet('unverified-area','area',r,n);self.binding['area']['job_id']='unverified-area'
+        result=self.flow();p=result['ppac']
+        self.assertEqual(p['execution_status'],'SUCCEEDED');self.assertEqual(p['result_quality'],'UNVERIFIED')
+        self.assertEqual(p['features']['allocated_buildings'],1001)
+        self.assertEqual(p['residential']['total_penghuni'],4004)
+        self.assertEqual(p['residential']['building_basis']['allocated_buildings'],1000)
+        self.assertEqual(p['residential']['building_basis']['unverified_buildings_included'],1)
+        self.assertEqual(read(self.root/'unverified-area/native.json.gz')['rows'][-1]['market_status'],'UNVERIFIED')
+
     def test_mvp_pending_not_accepted_or_zero_filled(self):
         self.use_mvp();job=self.q['jobs'].pop(1);p=Path(job['result_ref']['path'])
         r=read(p/'result.json');n=read(p/'native.json.gz');r['result_quality']='PARTIAL'
