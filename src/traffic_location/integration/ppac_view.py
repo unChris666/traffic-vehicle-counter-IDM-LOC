@@ -48,13 +48,17 @@ def rows(result):
     add('Reason','Alasan / diagnosis',reason or ('Tidak ada diagnosis kegagalan.' if status=='SUCCEEDED' else 'Alasan tidak tersedia pada hasil tersimpan.'))
     return output
 
-GRID_HEADERS=['SOURCE','Jumlah','Konstanta','Total']
+GRID_HEADERS=['Source','Kontribusi']
 def grid_from_rows(values):
+    if not values:return []
     def find(section,label):
         return next((r[2] for r in values if r[0]==section and r[1]==label),None)
-    population=find('Breakdown Residential','total penghuni');res=find('Breakdown Residential','std residential')
-    traffic=find('Breakdown Traffic','std traffic raw');traffic_count=find('Grid','Traffic jumlah');fasum=find('Breakdown Fasum','std fasum')
-    # Residential uses zonal rounding; the displayed effective ratio is explanatory,
-    # not an independent replacement of the original PPAC formula.
-    ratio=res/population if isinstance(res,(int,float)) and isinstance(population,(int,float)) and population else None
-    return [['Residential',population,ratio,res],['Traffic',traffic_count,(traffic/traffic_count if isinstance(traffic,(int,float)) and traffic_count else None),traffic],['Fasum',None,'≤400m: 2; >400–800m: 1',fasum],['STD total',None,None,find('STD Total','STD/hari')],['Status',find('Status','Eksekusi'),find('Status','Kualitas'),find('Status','Kelengkapan STD total')],['Reason',find('Reason','Alasan / diagnosis'),None,None]] if values else []
+    res=find('Breakdown Residential','std residential')
+    fasum=find('Breakdown Fasum','std fasum')
+    area=res+fasum if res is not None and fasum is not None else None
+    traffic=find('Breakdown Traffic','std traffic raw')
+    adjusted=find('Total','std traffic including fasum')
+    drive=find('Total','std drive thru')
+    if adjusted is not None:
+        traffic=adjusted-fasum+drive if fasum is not None and drive is not None else None
+    return [['Traffic',traffic],['Area',area],['total',find('STD Total','STD/hari')]]

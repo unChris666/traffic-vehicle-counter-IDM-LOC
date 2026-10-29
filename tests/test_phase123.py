@@ -131,9 +131,9 @@ class LiveResultTests(unittest.TestCase):
             c=Controller(root/'ui',root/'config');write(root/'run/publication-status.json',{'status':'FAILED'})
             pointer={'output':str(root/'run'),'job_id':'job_'+'1'*32,'context':{'target_id':'TGDI','latitude':-7.33,'longitude':110.504}}
             with patch.object(c,'cloud_results') as old:
-                response=c.current_cloud_results(pointer,'TGDI','job_'+'2'*32,rows({'execution_status':'SUCCEEDED','residential':{'std_residential':84},'std_total':None,'scope':'area'}))
+                response=c.current_cloud_results(pointer,'TGDI','job_'+'2'*32,rows({'execution_status':'SUCCEEDED','residential':{'std_residential':84},'fasum':{'std_fasum':0},'std_total':None,'scope':'area'}))
             old.assert_not_called();self.assertIn('belum terbukti tersimpan',response[0])
-            self.assertIn(84,response[11]['Total'].tolist());self.assertIn('110.504',response[-1])
+            self.assertIn(84,response[11]['Kontribusi'].tolist());self.assertIn('110.504',response[-1])
 
 @unittest.skipUnless(importlib.util.find_spec('folium'),'Run native presentation environment')
 class PreviewTests(unittest.TestCase):

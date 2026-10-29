@@ -21,7 +21,7 @@ EXTRA_SLOTS=tuple((d,t) for d in ('weekday','weekend') for t in ('tengah_malam',
 ROADS=['highway','mainstreet','street','substreet']
 DISPLAY_TABLES={'Traffic Counter':['sesi','waktu','tipe kendaraan','jumlah kendaraan lewat'],
  'Area Coverage':['radius','Tipe Bangunan','Jumlah bangunan','jumlah kepala'], 'POI':['tipe_POI','nama_POI'],
- 'Kompetitor (5 terdekat)':['Kdtk','nama_toko'],'Indomaret (5 terdekat)':['KDTK','NAMA_TOKO','TGL_GO','TIPE_TOKO','DOMAIN','SOCIO_CLASS','Investasi','RAB','STD','Jarak (m)','Tipe Jalan'],'PPAC':['SOURCE','Jumlah','Konstanta','Total']}
+ 'Kompetitor (5 terdekat)':['Kdtk','nama_toko'],'Indomaret (5 terdekat)':['KDTK','NAMA_TOKO','TGL_GO','TIPE_TOKO','DOMAIN','SOCIO_CLASS','Investasi','RAB','STD','Jarak (m)','Tipe Jalan'],'Kontribusi':['Source','Kontribusi']}
 
 def frame(data,columns):
     import pandas as pd
@@ -309,6 +309,9 @@ class Controller:
             frames=[frame(result[t],list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')]
             status='Hasil tersimpan dari BigQuery: '+result['job_id']+'. '+result['map_status']
             status+=' '+' '.join(result.get('read_errors',[])+result.get('artifact_status',[]))
+            document=result.get('ppac_document') or {}
+            from .failure_details import safe
+            status+=' PPAC: '+str(document.get('execution_status','UNAVAILABLE'))+'. '+safe(document.get('diagnostics') or document.get('reason') or '')
             note=getattr(type(runtime),'note_reopened_area',None)
             if callable(note):status+=' '+str(note(runtime,result))
             if result.get('truncated'):status+=' Tampilan traffic dibatasi; gunakan query BQ untuk seluruh baris.'
@@ -331,8 +334,8 @@ class Controller:
             live_frames=display_frames()
             if live_ppac:
                 from .ppac_view import grid_from_rows
-                live_frames[-1]=frame(grid_from_rows(live_ppac),DISPLAY_TABLES['PPAC'])
-            return ('Hasil job ini belum dipublikasikan. Grid PPAC berisi hasil komputasi lokal bila tersedia; belum terbukti tersimpan. Periksa status penyimpanan.', '', '',
+                live_frames[-1]=frame(grid_from_rows(live_ppac),DISPLAY_TABLES['Kontribusi'])
+            return ('Hasil job ini belum dipublikasikan. Tabel Kontribusi berisi hasil komputasi lokal bila tersedia; belum terbukti tersimpan. Periksa status penyimpanan.', '', '',
                     *[pd.DataFrame(columns=list(SCHEMAS[t])) for t in ('traffic_counts','area_results','ppac_results')],*live_frames,*annotation_buttons(),identity_text)
         from .cloud_schema import SCHEMAS
         import pandas as pd
@@ -483,6 +486,9 @@ class Controller:
             failed=sum(row.get('execution_status')!='SUCCEEDED' for row in result['engines'])
             publication=result.get('publication',{'status':'NOT_REQUESTED'})
             status=f"Selesai. Engine/video gagal: {failed}. Video dilewati: {len(result.get('skipped_videos',[]))}. PPAC: {ppac['execution_status']}. Penyimpanan: {publication['status']} {publication.get('code','')}."
+            from .failure_details import safe
+            explanation=ppac.get('diagnostics') or ppac.get('reason')
+            if explanation:status+=' Alasan: '+safe(explanation)
             if ppac.get('scope') in ('area','traffic'):status+=' Komponen '+ppac['scope']+' saja; STD total belum lengkap.'
             yield status,engine_rows(result),ppac,self.progress_text(runtime,started),None,{'output':result.get('output',''),'context':x,'job_id':identity['job_id'] if identity else publication.get('job_id')}
         except GateError as exc:
@@ -602,7 +608,7 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
             with gr.Tab('RESULT'):
                 gr.Markdown('## Identity')
                 result_identity=gr.Markdown()
-                gr.Markdown('Jumlah kepala = estimasi penduduk (orang), bukan KK. Radius berupa zona terpisah. Tipe Jalan memakai segmen graf terdekat, bukan bukti akses toko. Konstanta pada grid PPAC adalah rasio efektif Total/Jumlah; formula zona, pembulatan, faktor bisnis, dan bobot Traffic tetap mengikuti policy tersimpan. STD total dibaca dari hasil engine, bukan penjumlahan ulang tampilan.')
+                gr.Markdown('Jumlah kepala = estimasi penduduk (orang), bukan KK. Radius berupa zona terpisah. Tipe Jalan memakai segmen graf terdekat, bukan bukti akses toko. Kontribusi dalam STD/hari: Area = Residential + Fasum; Traffic memakai hasil setelah penyesuaian bisnis jika tersedia. Total berasal dari hasil tersimpan; kosong berarti belum lengkap.')
                 gr.Markdown('## Status dan log proses')
                 engines=gr.Dataframe(headers=['Engine/video','Status','Kualitas','Ringkasan'],datatype=['str']*4,interactive=False,label='Hasil masing-masing engine')
                 from .ppac_view import HEADERS
@@ -630,7 +636,7 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                     with gr.Row():
                         annotated_names.append(gr.Textbox(value=day_key+' / '+time_key,label='Nama video',interactive=False,scale=2))
                         annotated_buttons.append(gr.Button('Annotated belum tersedia',interactive=False,scale=1))
-                gr.Markdown('## PPAC Result')
+                gr.Markdown('## Kontribusi')
                 name,columns=list(DISPLAY_TABLES.items())[5]
                 display_views[5]=gr.Dataframe(label=name,headers=columns,interactive=False,type='pandas',wrap=True)
         app.load(controller.location_preview,[latitude,longitude],input_map,api_name=False,queue=False)
@@ -679,7 +685,7 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                         live=list(controller.current_cloud_results(None,None,None))
                         live[0]='Hasil eksekusi saat ini; pembacaan GCS/BQ menyusul. '+output[0]
                         from .ppac_view import grid_from_rows
-                        live[3+len(table_views)+5]=frame(grid_from_rows(result[2]),DISPLAY_TABLES['PPAC'])
+                        live[3+len(table_views)+5]=frame(grid_from_rows(result[2]),DISPLAY_TABLES['Kontribusi'])
                         live[-1]=accepted
                         result.extend(live)
                     else:result.extend(gr.skip() for _ in result_outputs)

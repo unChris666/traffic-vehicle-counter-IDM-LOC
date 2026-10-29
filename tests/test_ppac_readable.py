@@ -15,6 +15,11 @@ class ReadableTests(unittest.TestCase):
         view=rows(result)
         self.assertIn(['STD Total','STD/hari',105,'SUCCEEDED',''],view)
         self.assertEqual({r[0] for r in view},{'Breakdown Residential','Breakdown Traffic','Breakdown Fasum','Total','STD Total','Status','Reason'})
+    def test_contributions_reconcile_adjusted_traffic_without_double_fasum(self):
+        from traffic_location.integration.ppac_view import grid_from_rows
+        result={'execution_status':'SUCCEEDED','std_total':90,'residential':{'std_residential':40},'traffic':{'std_traffic_raw':100},'fasum':{'std_fasum':5},'total':{'std_traffic_including_fasum':35,'std_drive_thru':15}}
+        self.assertEqual(grid_from_rows(rows(result)),[['Traffic',45],['Area',45],['total',90]])
+        self.assertEqual(grid_from_rows(rows({'execution_status':'SUCCEEDED','std_total':None,'residential':{'std_residential':40},'fasum':{'std_fasum':5}})),[['Traffic',None],['Area',45],['total',None]])
     def test_blocked_result_keeps_null_and_explains_reason(self):
         view=rows({'execution_status':'BLOCKED','std_total':None,'diagnostics':[{'code':'MISSING_VIDEO','message':'Weekend malam belum ada'}]})
         std=next(r for r in view if r[0]=='STD Total');self.assertIsNone(std[2]);self.assertIn('Weekend malam',std[-1])
@@ -47,8 +52,8 @@ class ReadableTests(unittest.TestCase):
         manifest={'files':[{'object':'jobs/T/P/'+job['job_id']+'/ppac/result.json','sha256':'c'*64}]}
         reader=ResultsReader(CloudDestination(),Mock(),bq)
         with patch.object(reader,'verified_bytes',side_effect=[json.dumps(manifest).encode(),json.dumps(document).encode()]):data=reader.load('T')
-        display=display_frames(data)[-1];std=display[display['SOURCE']=='STD total'].iloc[0]
-        self.assertEqual(std['Total'],105);self.assertNotEqual(std['Total'],999)
+        display=display_frames(data)[-1];std=display[display['Source']=='total'].iloc[0]
+        self.assertEqual(std['Kontribusi'],105);self.assertNotEqual(std['Kontribusi'],999)
 
     def test_map_response_is_small_and_references_verified_cached_gcs_html(self):
         with tempfile.TemporaryDirectory() as d:
