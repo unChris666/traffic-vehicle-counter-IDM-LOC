@@ -5,6 +5,15 @@ from unittest.mock import patch
 from traffic_location.integration.background_runs import BackgroundRuns
 from traffic_location.artifacts import write
 class RunnerTests(unittest.TestCase):
+    def test_elapsed_seconds_increase_even_without_new_snapshot_and_stop_at_completion(self):
+        from traffic_location.integration.background_runs import elapsed_line
+        state={'started_monotonic':100.,'snapshot_monotonic':105.,'done':False}
+        self.assertIn('10 detik',elapsed_line(state,110))
+        self.assertIn('20 detik',elapsed_line(state,120))
+        self.assertIn('15 detik',elapsed_line(state,120))
+        state.update(done=True,finished_monotonic=125.)
+        self.assertIn('25 detik',elapsed_line(state,200))
+
     def test_disconnected_browser_and_duplicate_submit_do_not_duplicate_engine(self):
         runner=BackgroundRuns();entered=threading.Event();release=threading.Event();finished=threading.Event();calls=[]
         self.addCleanup(release.set)
@@ -73,6 +82,9 @@ class PollingCallbackTests(unittest.TestCase):
             with patch.object(c,'process',side_effect=process):
                 initial=functions['submit_job'].fn(*values);token=initial[0]
                 self.assertEqual(len(initial),38)
+                unchanged=functions['poll_job'].fn(token,1)
+                self.assertIn('Waktu total job:',unchanged[4])
+                self.assertIn('umur snapshot pemantauan:',unchanged[4])
                 duplicate=functions['submit_job'].fn(*values);self.assertEqual(duplicate[0],token)
                 poll=functions['poll_job'].fn(token,0);self.assertEqual(len(poll),36)
                 release.set();self.assertTrue(done.wait(1))

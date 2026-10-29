@@ -56,8 +56,8 @@ def lines(base,since):
                 found.append((p.stat().st_mtime,p,value))
             except (OSError,ValueError):pass
     output=[]
-    for _,path,v in sorted(found,key=lambda x:x[0],reverse=True)[:10]:
-        now=time.time();started=v.get('stage_started_epoch',v.get('updated_epoch',now));age=now-v.get('updated_epoch',now)
+    for modified,path,v in sorted(found,key=lambda x:x[0],reverse=True)[:10]:
+        now=time.time();started=v.get('stage_started_epoch',v.get('updated_epoch',modified));age=now-v.get('updated_epoch',modified)
         item=('Job '+v['job_id']+' | ' if v.get('job_id') else '')+LABELS.get(v.get('stage'),v.get('stage','worker'))+' — '+v.get('status','UNKNOWN')
         if v.get('completed') is not None:item+=f" | {v['completed']}/{v.get('total','?')} {v.get('unit','frame')}"
         if v.get('fps_actual') is not None:item+=f" | {v['fps_actual']:.1f} FPS"

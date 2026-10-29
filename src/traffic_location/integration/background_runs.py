@@ -3,7 +3,7 @@
 Memory holds only bounded UI snapshots. Disk/GCS receipts remain authoritative;
 this is not a persistent queue or restart recovery service.
 """
-import threading
+import threading,time
 from uuid import uuid4
 
 class BackgroundRuns:
@@ -20,7 +20,7 @@ class BackgroundRuns:
             generator=iter(factory())
             try:first=next(generator)
             except StopIteration:raise ValueError('JOB_SUBMISSION_EMPTY') from None
-            self.records[token]={'value':first,'revision':1,'done':False,'error':None}
+            self.records[token]={'value':first,'revision':1,'done':False,'error':None,'started_monotonic':time.monotonic(),'snapshot_monotonic':time.monotonic()}
             self.active=self.latest=token
             old=[k for k in self.records if k!=token and self.records[k]['done']]
             for key in old[:-19]:del self.records[key]
@@ -33,7 +33,7 @@ class BackgroundRuns:
         try:
             for value in generator:
                 with self.lock:
-                    r=self.records[token];r.update(value=value,revision=r['revision']+1)
+                    r=self.records[token];r.update(value=value,revision=r['revision']+1,snapshot_monotonic=time.monotonic())
         except Exception as exc:
             from .failure_details import safe
             error=safe(exc)
@@ -43,7 +43,7 @@ class BackgroundRuns:
                 if close:close()
             finally:
                 with self.lock:
-                    r=self.records[token];r.update(done=True,error=error,revision=r['revision']+1)
+                    r=self.records[token];r.update(done=True,error=error,revision=r['revision']+1,finished_monotonic=time.monotonic())
                     if self.active==token:self.active=None
 
     def snapshot(self,token):
@@ -53,3 +53,15 @@ class BackgroundRuns:
 
     def current(self,*,completed=False):
         with self.lock:return self.active or (self.latest if completed else None)
+
+
+def elapsed_line(state,now=None):
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    now=time.monotonic() if now is None else now
+    end=state.get('finished_monotonic',now)
+    elapsed=max(0,end-state['started_monotonic'])
+    age=max(0,now-state['snapshot_monotonic'])
+    return ('Waktu total job: '+str(int(elapsed))+' detik | '+('SELESAI' if state['done'] else 'AKTIF')+
+            ' | polling UI: '+datetime.now(ZoneInfo('Asia/Jakarta')).strftime('%H:%M:%S %Z')+
+            ' | umur snapshot pemantauan: '+str(int(age))+' detik. Polling hidup bukan bukti engine maju.')

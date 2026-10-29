@@ -729,9 +729,14 @@ def build_app(base,config_root,*,input_root='/kaggle/input',runtime_factory=Kagg
                         write(controller.base/'ui-poll-status.json',{'observed_at':datetime.now(ZoneInfo('Asia/Jakarta')).isoformat(),'monitor_hash':semantic_hash(token),'revision':state['revision'],'done':state['done'],'scope':'Last status HTTP poll received by server; not proof of browser rendering or engine progress.'})
                         controller._last_ui_poll_record=time.time()
                     except (OSError,ValueError):pass
-                if not state or state['revision']==revision:
-                    return revision,*[gr.skip() for _ in outputs]
-                event=list(state['value'])
+                if not state:return revision,*[gr.skip() for _ in outputs]
+                from .background_runs import elapsed_line
+                progress_text=elapsed_line(state)+'\n'+str(state['value'][3] or '')
+                if state['revision']==revision:
+                    event=[gr.skip() for _ in outputs]
+                    if not state['done']:event[3]=progress_text
+                    return revision,*event
+                event=list(state['value']);event[3]=progress_text
                 if state['error']:event[0]='Pemantauan job gagal: '+state['error']+'. Periksa diagnosis; jangan langsung mengulang job.'
                 return state['revision'],*event
             def reconnect_job():return background.current(completed=True),0
