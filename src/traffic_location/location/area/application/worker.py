@@ -26,7 +26,7 @@ def execute(request,root):
     scope={};fresh=request['operation'] in {'compute_gpu_frozen','compute_gpu_sources'}
     if fresh:
         from .._kernel.location_intelligent_gpu import gpu_preflight
-        from .._kernel.location_intelligent_gpu_runtime import build_gpu,build_market_gpu
+        from ..backends.runtime_gpu import build_gpu,build_market_gpu
         from .._kernel.location_intelligent_osm_buildings import prepare_osm_from_network
         from .._kernel.location_intelligent_li3 import make_manifest
         from .._kernel.location_intelligent_market_scope import market_scope

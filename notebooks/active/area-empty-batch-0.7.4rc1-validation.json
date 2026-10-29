@@ -1,0 +1,27 @@
+{
+  "candidate": "0.7.4rc1",
+  "status": "LOCAL_REGRESSION_PASS_L4_OWNER_RETEST_PENDING",
+  "main_suite": {
+    "total": 400,
+    "passed": 380,
+    "skipped": 20,
+    "seconds": 54.705
+  },
+  "native_geometry_tests": {
+    "total": 6,
+    "passed": 6
+  },
+  "reproduction": "Shapely2.1.2 STRtree.query([]) raises exact TypeError: Array should be of object dtype",
+  "scope": "Adapter skips zero candidate footprint batches; nonempty algorithms delegate unchanged. Both source/market runtimes scoped. Frozen registry parity tests pass.",
+  "limits": [
+    "Full owner traceback not supplied; exact call site inferred from code and matching reproduction.",
+    "No fresh L4 or owner-location rerun in this environment.",
+    "Public tunnel access remains subject to network/service availability.",
+    "Main/foundation unchanged."
+  ],
+  "build": "PASS",
+  "mypy": "PASS14files",
+  "isolated_wheel": "PASS empty-batch path without CUDA",
+  "notebook_sha256": "c17692ce545de0e8eb987050c6511801cc525a9320a0212ca034a14cf91ec1cd",
+  "wheel_sha256": "ac5d226dc3332c7a56d959ea50aca393362383011b00eb7023e505b6382c2cc9"
+}

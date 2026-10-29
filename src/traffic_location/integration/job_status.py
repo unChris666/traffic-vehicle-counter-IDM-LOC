@@ -64,7 +64,8 @@ def lines(base,since):
         end=now if v.get('status')=='RUNNING' else v.get('updated_epoch',now)
         item+=f' | durasi tahap {max(0,end-started):.0f} detik | umur checkpoint {max(0,age):.0f} detik'
         if v.get('pid'):
-            o=observation(v['pid']);item+=' | proses '+('hidup' if o['process_alive'] else 'berhenti/tidak teramati')
+            o=observation(v['pid']);item+=' | proses pemilik checkpoint '+('hidup' if o['process_alive'] else 'berhenti/tidak teramati')
+            if v.get('status')=='RUNNING' and o['process_alive'] is False:item+=' | CHECKPOINT LAMA: proses sudah keluar; bukan RUNNING terkonfirmasi'
             if 'cpu_seconds_current_processes' in o:item+=f" | CPU kumulatif proses aktif {o['cpu_seconds_current_processes']:.1f}s | RAM saat ini {o['rss_bytes_current_processes']/1024**2:.0f} MiB"
         output.append(item)
     if output:output.append(gpu_line())
